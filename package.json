@@ -10,7 +10,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "check": "astro check"
+    "check": "astro check",
+    "import:agenda": "node scripts/import-agenda.mjs",
+    "drafts": "node scripts/list-drafts.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^6.0.3",
