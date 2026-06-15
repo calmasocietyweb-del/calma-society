@@ -83,7 +83,7 @@ const rssHref = locale === "es" ? "/rss.xml" : "/en/rss.xml";
 
     {/* MailerLite Universal (carga la cuenta; el formulario se conecta en NewsletterSignup) */}
     {
-      SITE.newsletter.accountId && (
+      SITE.newsletter.enabled && SITE.newsletter.accountId && (
         <script is:inline define:vars={{ mlAccount: SITE.newsletter.accountId }}>
           (function (w, d, e, u, f, l, n) {
             w[f] =

@@ -55,6 +55,9 @@ export const SITE = {
    * Mientras esté vacío, el formulario se muestra pero no envía.
    */
   newsletter: {
+    // Interruptor general: false = newsletter EN PAUSA (no carga MailerLite,
+    // no aparece el pop-up ni los botones). Ponlo en true cuando quieras lanzarla.
+    enabled: false,
     provider: 'mailerlite' as const,
     accountId: '2445939', // ID de cuenta MailerLite (script universal)
     // Formulario emergente (pop-up): nuestro botón abre el formulario de MailerLite.

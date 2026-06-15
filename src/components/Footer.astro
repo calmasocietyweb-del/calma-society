@@ -70,11 +70,15 @@ const legalLinks =
                 {t("nav.about")}
               </a>
             </li>
-            <li>
-              <a href={newsletterHref} class="text-piedra transition-colors hover:text-mar">
-                {t("nav.newsletter")}
-              </a>
-            </li>
+            {
+              SITE.newsletter.enabled && (
+                <li>
+                  <a href={newsletterHref} class="text-piedra transition-colors hover:text-mar">
+                    {t("nav.newsletter")}
+                  </a>
+                </li>
+              )
+            }
             <li>
               <a href={contactHref} class="text-piedra transition-colors hover:text-mar">
                 {t("nav.contact")}
