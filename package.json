@@ -1,9 +1,9 @@
 {
-  "name": "revista-menorca",
+  "name": "calma-society",
   "type": "module",
   "version": "0.0.1",
   "private": true,
-  "description": "Revista digital independiente sobre Menorca — multilingüe europea (Astro)",
+  "description": "Calma Society — revista de lujo tranquilo en el Mediterráneo. Primera edición: Menorca. Multilingüe (Astro).",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

@@ -12,7 +12,9 @@
 
 ## 1. Qué estamos construyendo
 
-Una **revista digital independiente sobre Menorca**, **multilingüe europea** (arranca en español + inglés y se amplía a alemán, francés, italiano… con calidad real), con criterio editorial, dirección de arte premium y cobertura de la isla **los 365 días del año**. Para quien la visita, quien la vive y quien sueña con quedarse. Aspira a ser **la revista sobre Menorca más popular de Europa**.
+**Calma Society** es una **revista digital independiente de lujo tranquilo** (*quiet luxury*) sobre el Mediterráneo: criterio editorial, dirección de arte premium y **multilingüe europea** (arranca en español + inglés y se amplía a alemán, francés, italiano… con calidad real). Es una **marca paraguas**: la **primera edición es Menorca** — la isla los 365 días del año, con sus experiencias **elevadas a una mirada de lujo** —, y es **ampliable a otros destinos** (Mallorca, Cícladas…). Para el viajero exigente, el propietario internacional y quien sueña con la isla. Aspira a ser **la referencia premium sobre Menorca (y, después, el Mediterráneo) en Europa**.
+
+> **Posicionamiento de lujo:** cubrimos lo mismo que las demás guías (playas, gastronomía, qué hacer) pero **elevado**: experiencias exclusivas, criterio, estética y servicio de gama alta. El lujo que defendemos es **calma, espacio, tiempo y autenticidad** — no ostentación. Es el segmento más rentable y peor servido editorialmente en Menorca (ver `docs/ANALISIS-MERCADO-MENORCA.md` §2.7).
 
 > **Operativa:** semi-automatizada pero **con aprobación humana**. La máquina propone (agenda, borradores, traducciones); una persona aprueba antes de publicar. La estructura es **genérica y ampliable** a otros temas/destinos en el futuro. Ver `docs/AUTOMATIZACION-Y-FLUJO-EDITORIAL.md`.
 
@@ -28,10 +30,10 @@ Una **revista digital independiente sobre Menorca**, **multilingüe europea** (a
 
 | # | Decisión | Valor por defecto | Cámbialo si… |
 |---|---|---|---|
-| 1 | **Nombre / marca** | `[PENDIENTE]` — usar placeholder `"Revista Menorca"` y centralizarlo en `src/config/site.ts` | Ya hay nombre y dominio decididos |
+| 1 | **Nombre / marca** | **Calma Society** — marca paraguas de lujo tranquilo; **primera edición: Menorca**, ampliable a otros destinos. Dominio `calmasociety.com`. Instagram `@calma.society`. Centralizado en `src/config/site.ts` | Cambio de marca o dominio |
 | 2 | **Idiomas** | **Multilingüe europeo.** Arranque **ES + EN**; arquitectura lista para N idiomas; despliegue por mercados (→ DE/FR/IT → NL/PL…). Traducción **asistida y revisada**, nunca automática chapucera. Ver `docs/ESTRATEGIA-MULTIIDIOMA.md` | Se quiere otro orden de mercados o limitar idiomas |
 | 3 | **Stack** | **Astro + TypeScript + Tailwind + MDX + i18n nativo** (sitio estático) | Se prefiere no mantener código → entonces NO es proyecto de Claude Code, sino Ghost/WordPress (no-code) |
-| 4 | **Audiencia** | Multi-segmento; **prioridad de contenido: gastronomía → agenda/qué hacer → lifestyle/vivir → descubrir → práctica** | Se decide enfocar a un solo segmento |
+| 4 | **Audiencia** | **Enfoque premium / lujo.** Prioridad: viajero exigente + propietario internacional (alto poder adquisitivo). Contenido: experiencias elevadas → gastronomía de alta gama → lifestyle/propiedad → descubrir → práctica. Todo con mirada de lujo | Se reequilibra hacia un público más amplio |
 | 5 | **Hosting** | **Cloudflare Pages** (o Netlify/Vercel), plan gratuito al inicio | Hay otra preferencia de despliegue |
 | 6 | **Newsletter** | **MailerLite** o **Buttondown** (free tier generoso), integrable por formulario/API | Se prefiere Beehiiv, Substack u otro |
 | 7 | **Analítica** | **Cloudflare Web Analytics** o **Plausible/Umami** (respetuosas con la privacidad, sin cookies invasivas) | Se exige Google Analytics |

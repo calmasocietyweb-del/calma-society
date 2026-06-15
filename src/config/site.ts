@@ -22,12 +22,15 @@ export interface LocaleConfig {
 }
 
 export const SITE = {
-  // [PENDIENTE] Nombre y dominio reales — ver docs/MARKETING-CRECIMIENTO-Y-NOMBRE.md
-  name: 'Revista Menorca',
-  shortName: 'Revista Menorca',
+  // Marca paraguas premium. Menorca es la PRIMERA EDICIÓN; ampliable a otros
+  // destinos (ver docs/MARKETING-CRECIMIENTO-Y-NOMBRE.md).
+  name: 'Calma Society',
+  shortName: 'Calma',
+  /** Edición/destino actual. Mañana: 'Mallorca', 'Cyclades'… */
+  edition: 'Menorca',
   description:
-    'Revista digital independiente sobre Menorca: criterio editorial, dirección de arte y la isla los 365 días del año.',
-  url: 'https://revista-menorca.example.com', // [PENDIENTE] dominio real
+    'Calma Society — el arte del lujo tranquilo en el Mediterráneo. Primera edición: Menorca, sus experiencias elevadas.',
+  url: 'https://calmasociety.com',
 
   /** Idioma por defecto (va en la raíz, sin prefijo). */
   defaultLocale: 'es' as Locale,
@@ -38,9 +41,9 @@ export const SITE = {
     { code: 'en', label: 'English', htmlLang: 'en-GB' },
   ] as LocaleConfig[],
 
-  /** Redes sociales (rellenar cuando existan). */
+  /** Redes sociales. */
   social: {
-    instagram: '', // [PENDIENTE]
+    instagram: 'https://www.instagram.com/calma.society/',
   },
 };
 

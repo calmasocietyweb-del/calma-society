@@ -243,7 +243,7 @@ Suscriptores de newsletter · recurrencia · engagement · nº de negocios en di
 2. **Operativa → semi-automatizada con aprobación humana.** La "máquina" automatiza la fontanería (agenda, SEO técnico, imágenes, borradores de traducción, envío de newsletter y redes); el "alma" editorial la decide una persona. **Todo post/contenido pasa por una pantalla de aprobación antes de publicarse.** Detalle en `docs/AUTOMATIZACION-Y-FLUJO-EDITORIAL.md`.
 3. **Ampliable a cualquier tema.** El modelo de contenido se diseña genérico para poder extenderse más allá de Menorca en el futuro (otros destinos/temas) sin rehacer la base.
 4. **Marketing, monetización y tráfico a negocios propios** como parte del diseño, no un añadido. Detalle en `docs/MARKETING-CRECIMIENTO-Y-NOMBRE.md`.
-5. **Punto de partida = de cero.** Sin nombre/dominio/marca todavía: se eligen con metodología de investigación de palabras clave (ver doc de marketing). Stack y construcción con Claude Code (Astro a medida).
+5. **Marca elegida: `Calma Society`** (dominio `calmasociety.com`, Instagram `@calma.society`). Marca paraguas de **lujo tranquilo**; **primera edición: Menorca**, ampliable a otros destinos. **Enfoque editorial premium/lujo**: las experiencias de la isla, elevadas — el segmento más rentable y peor servido (§2.7). Stack y construcción con Claude Code (Astro a medida). Detalle en `MARKETING-CRECIMIENTO-Y-NOMBRE.md`.
 
 ### Cuestiones aún abiertas (a confirmar con el dueño)
 - **Recursos:** ¿solo / con socios / presupuesto para traducción y fotografía?

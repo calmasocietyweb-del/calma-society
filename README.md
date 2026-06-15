@@ -1,7 +1,11 @@
-# Revista Menorca *(nombre provisional)*
+# Calma Society
 
-Revista digital independiente sobre Menorca, **multilingüe europea**, con criterio
-editorial y cobertura de la isla los 365 días del año. Construida con [Astro](https://astro.build/).
+Revista de **lujo tranquilo** sobre el Mediterráneo, **multilingüe europea**, con
+criterio editorial y dirección de arte premium. **Marca paraguas**: la primera
+edición es **Menorca**, ampliable a otros destinos. Construida con [Astro](https://astro.build/).
+
+- **Dominio:** calmasociety.com
+- **Instagram:** [@calma.society](https://www.instagram.com/calma.society/)
 
 > 📖 La **fuente de verdad** del proyecto es [`CLAUDE.md`](./CLAUDE.md). La estrategia
 > completa está en [`docs/`](./docs/). Léelos antes de tocar nada.

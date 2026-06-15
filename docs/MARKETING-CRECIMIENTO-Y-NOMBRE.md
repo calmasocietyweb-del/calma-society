@@ -13,7 +13,19 @@
 
 ---
 
-## 2. Elección de nombre y dominio (primer entregable, sin código)
+## 2. Nombre y dominio — DECISIÓN TOMADA (junio 2026)
+
+> **Marca elegida: `Calma Society`.** Marca paraguas de **lujo tranquilo**; la **primera edición es Menorca**, ampliable a otros destinos (formato "*[Destino]*" / nuevas ediciones).
+>
+> - **Dominio principal:** `calmasociety.com` (libre, sin colisión de marca de viajes — verificado por RDAP y búsqueda web).
+> - **Instagram:** `@calma.society` (el handle exacto `@calmasociety` estaba cogido por una cuenta ajena; usamos la variante con punto).
+> - **A registrar (defensivos):** `calmasociety.es`, `calmasociety.eu`, `calmasociety.travel`, y handles a juego en las redes que se vayan a usar (Instagram, TikTok, YouTube, X/Threads, Pinterest, LinkedIn).
+> - **Por qué Calma Society:** "Calma" = el posicionamiento hecho marca (lujo sereno, anti-masificación, lo opuesto a Mallorca/Ibiza); "Society" = club/comunidad selecta, que conecta con el activo nº1 (audiencia leal y membresía).
+> - **Enfoque editorial de lujo:** las mismas experiencias que las guías generalistas, pero **elevadas** (exclusividad, criterio, estética y servicio de gama alta). Segmento más rentable y peor servido (ver `ANALISIS-MERCADO-MENORCA.md` §2.7).
+>
+> *Nota:* la verificación de Instagram por herramientas no es fiable (el servidor responde igual exista o no el handle). Confirmar siempre los handles a mano al crearlos.
+
+### Metodología empleada (para futuras ediciones/marcas)
 
 **Método (lo hace Claude con investigación de palabras clave):**
 
