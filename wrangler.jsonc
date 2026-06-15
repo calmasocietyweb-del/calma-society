@@ -1,0 +1,12 @@
+{
+  // Despliegue del sitio ESTÁTICO en Cloudflare (sin SSR ni KV → sin el fallo recurrente).
+  // El Worker solo sirve los archivos estáticos generados por Astro en ./dist.
+  "name": "calma-society",
+  "compatibility_date": "2025-06-15",
+  "main": "worker.js",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page"
+  }
+}

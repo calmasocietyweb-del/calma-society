@@ -2,6 +2,7 @@
 // Dedicated newsletter page (EN). Capture = KPI #1 (CLAUDE.md §3.1).
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import NewsletterSignup from "../../components/NewsletterSignup.astro";
+import { SITE } from "../../config/site";
 
 const alternates = { es: "/newsletter", en: "/en/newsletter" };
 
@@ -40,7 +41,15 @@ const benefits = [
     </ul>
   </section>
 
-  <div class="mt-14">
-    <NewsletterSignup />
-  </div>
+  {
+    SITE.newsletter.enabled ? (
+      <div class="mt-14">
+        <NewsletterSignup />
+      </div>
+    ) : (
+      <p class="mx-auto mt-12 max-w-prosa px-5 text-center text-piedra-suave sm:px-8">
+        We're putting it together, calmly. <strong class="text-piedra">Very soon</strong> you'll be able to subscribe.
+      </p>
+    )
+  }
 </BaseLayout>

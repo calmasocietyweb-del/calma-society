@@ -15,6 +15,10 @@ const jobs = [
   { src: `${SRC}/_web_CC/Menorca_Cala_Turqueta_Menorca_06.jpg`, out: "cala-turqueta.webp" },
   { src: `${SRC}/Cala-Mitjana-desde-el-Aire.jpg`, out: "cala-mitjana.webp" },
   { src: `${SRC}/cala pregonda.jpg`, out: "cala-pregonda.webp" },
+  { src: `${SRC}/pelayo-arbues-OYUj4l3FoPQ-unsplash.jpg`, out: "menorca-hero.webp" },
+  { src: `${SRC}/pelayo-arbues-B1gDa1LjMG4-unsplash.jpg`, out: "cala-macarelleta.webp" },
+  { src: `${SRC}/pelayo-arbues-CkZ1gMcK-iE-unsplash.jpg`, out: "cami-de-cavalls.webp" },
+  { src: `${SRC}/ciuta.avif`, out: "ciutadella.webp" },
 ];
 
 mkdirSync(OUT, { recursive: true });
