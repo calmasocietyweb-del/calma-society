@@ -1,0 +1,17 @@
+{
+  "name": "Cala Pregonda",
+  "lang": "es",
+  "translationKey": "cala-pregonda",
+  "type": "cala",
+  "description": "Una de las calas más icónicas del norte: arena de tono rojizo, islotes frente a la orilla y un aire casi lunar. No tiene servicios, y ahí reside su encanto.",
+  "coordinates": { "lat": 40.0489, "lng": 4.0512 },
+  "area": "Norte (Es Mercadal)",
+  "practicalInfo": {
+    "acceso": "A pie, unos 30 min desde el aparcamiento de Binimel·là",
+    "aparcamiento": "De pago en Binimel·là, muy limitado en verano",
+    "servicios": "Ninguno: lleva agua, comida y sombra",
+    "mejorEpoca": "Mayo–junio y septiembre; en agosto, a primera hora"
+  },
+  "tags": ["norte", "arena rojiza", "camí de cavalls"],
+  "status": "published"
+}

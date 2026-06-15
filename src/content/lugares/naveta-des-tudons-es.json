@@ -1,0 +1,16 @@
+{
+  "name": "Naveta des Tudons",
+  "lang": "es",
+  "translationKey": "naveta-tudons",
+  "type": "monumento",
+  "description": "El monumento funerario talayótico mejor conservado de Menorca y símbolo de la isla. Forma parte de Menorca Talayótica, Patrimonio Mundial de la UNESCO desde 2023.",
+  "coordinates": { "lat": 39.9967, "lng": 3.884 },
+  "area": "Ciutadella (oeste)",
+  "practicalInfo": {
+    "acceso": "Junto a la carretera Me-1, con aparcamiento señalizado",
+    "horario": "Recinto al aire libre; consultar horario de acceso",
+    "mejorEpoca": "Todo el año; especialmente bello al atardecer"
+  },
+  "tags": ["talayótico", "patrimonio", "unesco"],
+  "status": "published"
+}
