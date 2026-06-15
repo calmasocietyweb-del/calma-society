@@ -53,8 +53,12 @@ export const SITE = {
    */
   newsletter: {
     provider: 'mailerlite' as const,
-    action: '', // [PENDIENTE] p. ej. https://assets.mailerlite.com/jsonp/XXXX/forms/YYYY/subscribe
-    emailField: 'fields[email]', // nombre del campo de email en MailerLite
+    accountId: '2445939', // ID de cuenta MailerLite (script universal)
+    // Opción A (mantiene nuestro diseño): URL "action" de la versión HTML del formulario.
+    action: '', // [PENDIENTE] p. ej. https://assets.mailerlite.com/jsonp/2445939/forms/YYYY/subscribe
+    // Opción B (formulario de MailerLite): código "data-form" del formulario embebido.
+    formId: '', // [PENDIENTE]
+    emailField: 'fields[email]',
   },
 
   /**

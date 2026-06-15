@@ -1,8 +1,9 @@
 ---
 // Captación de suscriptores — el KPI nº1 (CLAUDE.md §3.1).
-// Envía al formulario embebido de MailerLite (SITE.newsletter.action), sin
-// claves secretas. Si la URL aún no está configurada, el formulario se muestra
-// pero el botón queda desactivado.
+// Tres modos según la config de MailerLite (SITE.newsletter):
+//   - "custom":   nuestro formulario premium POST a la URL `action` (versión HTML).
+//   - "embedded": el formulario de MailerLite renderizado por su script (`formId`).
+//   - "preview":  aún sin conectar; se muestra el diseño, sin envío.
 import { SITE } from "../config/site";
 import { useTranslations } from "../i18n/ui";
 import { currentLocale } from "../i18n/utils";
@@ -10,8 +11,8 @@ import { currentLocale } from "../i18n/utils";
 const locale = currentLocale(Astro.url.pathname);
 const t = useTranslations(locale);
 const inputId = "newsletter-email";
-const action = SITE.newsletter.action;
-const connected = action.length > 0;
+const { action, formId, emailField } = SITE.newsletter;
+const mode = action ? "custom" : formId ? "embedded" : "preview";
 ---
 
 <section class="bg-mar-hondo text-lino">
@@ -24,36 +25,42 @@ const connected = action.length > 0;
       {t("newsletter.text")}
     </p>
 
-    <form
-      action={connected ? action : undefined}
-      method="post"
-      target="_blank"
-      class="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row"
-    >
-      <label for={inputId} class="sr-only">{t("newsletter.placeholder")}</label>
-      <input
-        id={inputId}
-        type="email"
-        name={SITE.newsletter.emailField}
-        required
-        autocomplete="email"
-        placeholder={t("newsletter.placeholder")}
-        class="w-full rounded-md border border-lino/20 bg-lino/10 px-4 py-3 text-sm text-lino placeholder:text-lino/50 focus-visible:outline-oro"
-      />
-      <button
-        type="submit"
-        disabled={!connected}
-        class="shrink-0 rounded-md bg-oro px-6 py-3 text-sm font-semibold text-mar-hondo transition-colors hover:bg-lino disabled:cursor-not-allowed disabled:opacity-60"
-      >
-        {t("newsletter.cta")}
-      </button>
-    </form>
+    {
+      mode === "embedded" ? (
+        <div class="ml-embedded mx-auto mt-8 max-w-md" data-form={formId} />
+      ) : (
+        <form
+          action={mode === "custom" ? action : undefined}
+          method="post"
+          target="_blank"
+          class="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row"
+        >
+          <label for={inputId} class="sr-only">{t("newsletter.placeholder")}</label>
+          <input
+            id={inputId}
+            type="email"
+            name={emailField}
+            required
+            autocomplete="email"
+            placeholder={t("newsletter.placeholder")}
+            class="w-full rounded-md border border-lino/20 bg-lino/10 px-4 py-3 text-sm text-lino placeholder:text-lino/50 focus-visible:outline-oro"
+          />
+          <button
+            type="submit"
+            disabled={mode === "preview"}
+            class="shrink-0 rounded-md bg-oro px-6 py-3 text-sm font-semibold text-mar-hondo transition-colors hover:bg-lino disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            {t("newsletter.cta")}
+          </button>
+        </form>
+      )
+    }
 
     <p class="mt-4 text-xs text-lino/60">{t("newsletter.privacy")}</p>
     {
-      !connected && (
+      mode === "preview" && (
         <p class="mt-2 text-xs text-lino/40">
-          (Conexión con MailerLite pendiente de configurar.)
+          (Conexión con MailerLite pendiente del código del formulario.)
         </p>
       )
     }
