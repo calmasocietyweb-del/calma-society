@@ -79,7 +79,7 @@ export const SITE = {
     responsible: 'Cristian Camps',
     email: 'calmasocietyweb@gmail.com',
     phone: '670 424 593',
-    cif: '', // [PENDIENTE] CIF de Menorca Bus, S.L.
+    cif: 'B07642218',
     address: '', // [PENDIENTE] domicilio social completo
   },
 };
