@@ -1,0 +1,29 @@
+---
+// Hero editorial reutilizable. Presentacional: recibe textos por props.
+interface Props {
+  eyebrow?: string;
+  title: string;
+  subtitle?: string;
+}
+const { eyebrow, title, subtitle } = Astro.props;
+---
+
+<section class="mx-auto max-w-4xl px-5 pb-12 pt-20 text-center sm:px-8 sm:pt-28">
+  {
+    eyebrow && (
+      <p class="text-xs font-semibold uppercase tracking-[0.3em] text-oro">
+        {eyebrow}
+      </p>
+    )
+  }
+  <h1 class="mt-5 font-display text-5xl leading-[1.05] text-tinta sm:text-6xl md:text-7xl">
+    {title}
+  </h1>
+  {
+    subtitle && (
+      <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-piedra-suave">
+        {subtitle}
+      </p>
+    )
+  }
+</section>

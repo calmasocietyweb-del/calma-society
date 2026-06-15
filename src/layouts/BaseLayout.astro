@@ -1,11 +1,18 @@
 ---
 /**
- * Layout base — esqueleto HTML común a todas las páginas.
- * En la Fase 1 se le añadirán Header, Footer, navegación y el sistema de diseño.
- * En la Fase 4 se le añadirá el componente Seo (Open Graph, JSON-LD, hreflang).
+ * Layout base — esqueleto común a todas las páginas.
+ * Incluye el sistema de diseño (fuentes + tokens), cabecera y pie.
+ * El SEO completo (Open Graph ampliado, JSON-LD, hreflang) llega en la Fase 4.
  */
+import "@fontsource-variable/fraunces";
+import "@fontsource-variable/inter";
 import "../styles/global.css";
+
 import { SITE, getLocaleConfig, type Locale } from "../config/site";
+import { currentLocale } from "../i18n/utils";
+import { useTranslations } from "../i18n/ui";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
   title: string;
@@ -13,13 +20,11 @@ interface Props {
   locale?: Locale;
 }
 
-const {
-  title,
-  description = SITE.description,
-  locale = SITE.defaultLocale,
-} = Astro.props;
-
+const { title, description = SITE.description } = Astro.props;
+const locale = Astro.props.locale ?? currentLocale(Astro.url.pathname);
 const localeConfig = getLocaleConfig(locale);
+const t = useTranslations(locale);
+const ogLocale = localeConfig.htmlLang.replace("-", "_");
 ---
 
 <!doctype html>
@@ -30,9 +35,29 @@ const localeConfig = getLocaleConfig(locale);
     <title>{title} · {SITE.name}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={Astro.url.href} />
+
+    <!-- Open Graph básico (se amplía en la Fase 4) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={`${title} · ${SITE.name}`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:url" content={Astro.url.href} />
+
+    <meta name="theme-color" content="#143c49" />
     <meta name="generator" content={Astro.generator} />
   </head>
-  <body class="min-h-screen bg-[#FAF8F3] text-[#4A4A42] antialiased">
-    <slot />
+  <body class="flex min-h-screen flex-col bg-lino font-sans text-piedra antialiased">
+    <a
+      href="#contenido"
+      class="sr-only rounded-md bg-mar px-4 py-2 text-lino focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50"
+    >
+      {t("a11y.skip")}
+    </a>
+    <Header />
+    <main id="contenido" class="flex-1">
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>

@@ -1,0 +1,77 @@
+---
+// Pie de página: marca, secciones, redes y avisos legales.
+import { SITE } from "../config/site";
+import { SECTIONS } from "../config/sections";
+import { useTranslations } from "../i18n/ui";
+import { currentLocale } from "../i18n/utils";
+
+const locale = currentLocale(Astro.url.pathname);
+const t = useTranslations(locale);
+const year = new Date().getFullYear();
+const igUrl = SITE.social.instagram;
+---
+
+<footer class="mt-24 border-t border-niebla bg-arena/40">
+  <div class="mx-auto max-w-6xl px-5 py-14 sm:px-8">
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      <!-- Marca -->
+      <div class="lg:col-span-2">
+        <p class="font-display text-2xl text-tinta">{SITE.name}</p>
+        <p class="mt-3 max-w-sm text-sm leading-relaxed text-piedra-suave">
+          {t("footer.about")}
+        </p>
+      </div>
+
+      <!-- Secciones -->
+      <nav aria-label={t("footer.sections")}>
+        <h2 class="text-xs font-semibold uppercase tracking-widest text-oro">
+          {t("footer.sections")}
+        </h2>
+        <ul class="mt-4 space-y-2 text-sm">
+          {
+            SECTIONS.map((s) => (
+              <li>
+                <a
+                  href={s.href[locale]}
+                  class="text-piedra transition-colors hover:text-mar"
+                >
+                  {s.label[locale]}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <!-- Redes -->
+      <div>
+        <h2 class="text-xs font-semibold uppercase tracking-widest text-oro">
+          {t("footer.follow")}
+        </h2>
+        <ul class="mt-4 space-y-2 text-sm">
+          {
+            igUrl && (
+              <li>
+                <a
+                  href={igUrl}
+                  rel="me noopener"
+                  target="_blank"
+                  class="text-piedra transition-colors hover:text-mar"
+                >
+                  Instagram
+                </a>
+              </li>
+            )
+          }
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="mt-12 flex flex-col gap-3 border-t border-niebla pt-6 text-xs text-piedra-suave sm:flex-row sm:items-center sm:justify-between"
+    >
+      <p>© {year} {SITE.name}. {t("footer.rights")}</p>
+      <p class="text-piedra-suave/70">{SITE.edition} · {SITE.url.replace("https://", "")}</p>
+    </div>
+  </div>
+</footer>

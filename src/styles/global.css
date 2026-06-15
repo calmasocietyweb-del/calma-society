@@ -1,4 +1,67 @@
-/* Estilos globales — Tailwind CSS v4.
-   Los design tokens (colores, tipografía) se centralizan aquí en la Fase 1
-   mediante la directiva @theme. Por ahora, solo la base. */
+/* ============================================================
+   Calma Society — Sistema de diseño "lujo tranquilo" (quiet luxury)
+   Tokens centralizados con Tailwind CSS v4 (@theme).
+   Las fuentes (Fraunces / Inter) se importan en BaseLayout.astro.
+   ============================================================ */
 @import "tailwindcss";
+
+@theme {
+  /* ---- Color: paleta Calma ---- */
+  --color-lino: #f7f4ee; /* fondo principal (blanco cálido, lino) */
+  --color-arena: #ece4d6; /* fondo secundario (arena) */
+  --color-niebla: #ded4c4; /* bordes y separadores sutiles */
+  --color-tinta: #17150f; /* titulares (negro cálido) */
+  --color-piedra: #46423a; /* texto principal (gris cálido) */
+  --color-piedra-suave: #6b6557; /* texto secundario */
+  --color-mar: #1e5566; /* primario (azul mar profundo, sobrio) */
+  --color-mar-hondo: #143c49; /* primario oscuro (hover, fondos) */
+  --color-oro: #a8895c; /* acento de lujo (oro viejo / latón) */
+  --color-terracota: #b96a4b; /* acento cálido secundario */
+
+  /* ---- Tipografía ---- */
+  --font-display: "Fraunces Variable", ui-serif, Georgia, "Times New Roman", serif;
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* ---- Anchura de lectura cómoda (~70 caracteres) ---- */
+  --container-prosa: 42rem;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-lino);
+    color: var(--color-piedra);
+    font-feature-settings: "kern", "liga";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: var(--color-tinta);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  /* Foco visible y accesible en toda la navegación por teclado */
+  :focus-visible {
+    outline: 2px solid var(--color-mar);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Respeta a quien prefiere menos movimiento */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}

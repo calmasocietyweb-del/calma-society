@@ -1,0 +1,81 @@
+---
+// Cabecera: marca + edición, navegación de secciones y selector de idioma.
+// Menú móvil con <details> nativo: accesible y sin JavaScript de cliente.
+import { SITE } from "../config/site";
+import { SECTIONS } from "../config/sections";
+import { useTranslations } from "../i18n/ui";
+import { currentLocale, homePath } from "../i18n/utils";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+
+const locale = currentLocale(Astro.url.pathname);
+const t = useTranslations(locale);
+const home = homePath(locale);
+---
+
+<header class="border-b border-niebla bg-lino/95 backdrop-blur-sm">
+  <div class="mx-auto max-w-6xl px-5 sm:px-8">
+    <div class="flex items-center justify-between gap-4 py-4">
+      <!-- Marca -->
+      <a href={home} class="flex items-baseline gap-2.5" aria-label={`${SITE.name} — ${t("nav.home")}`}>
+        <span class="font-display text-xl leading-none tracking-tight text-tinta sm:text-2xl">
+          {SITE.name}
+        </span>
+        <span class="hidden text-[0.6rem] uppercase tracking-[0.25em] text-oro sm:inline">
+          {SITE.edition}
+        </span>
+      </a>
+
+      <div class="flex items-center gap-5">
+        <!-- Navegación de escritorio -->
+        <nav aria-label="Principal" class="hidden items-center gap-6 text-sm md:flex">
+          {
+            SECTIONS.map((s) => (
+              <a
+                href={s.href[locale]}
+                class="text-piedra transition-colors hover:text-mar"
+              >
+                {s.label[locale]}
+              </a>
+            ))
+          }
+        </nav>
+
+        <LanguageSwitcher />
+
+        <!-- Menú móvil (sin JS) -->
+        <details class="group relative md:hidden">
+          <summary
+            class="flex cursor-pointer list-none items-center gap-1.5 text-sm text-piedra [&::-webkit-details-marker]:hidden"
+          >
+            <svg
+              class="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+            </svg>
+            <span>{t("nav.menu")}</span>
+          </summary>
+          <nav
+            aria-label="Principal (móvil)"
+            class="absolute right-0 z-20 mt-3 w-56 rounded-lg border border-niebla bg-lino p-2 shadow-lg shadow-tinta/5"
+          >
+            {
+              SECTIONS.map((s) => (
+                <a
+                  href={s.href[locale]}
+                  class="block rounded-md px-3 py-2 text-sm text-piedra transition-colors hover:bg-arena hover:text-mar"
+                >
+                  {s.label[locale]}
+                </a>
+              ))
+            }
+          </nav>
+        </details>
+      </div>
+    </div>
+  </div>
+</header>

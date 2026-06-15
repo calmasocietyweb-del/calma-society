@@ -1,27 +1,69 @@
 ---
 // Home en español (idioma por defecto, en la raíz).
+// Portada de muestra para enseñar el sistema de diseño (Fase 1).
+// El contenido real llega con las content collections (Fase 2/3).
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { useTranslations } from "../i18n/ui";
+import Hero from "../components/Hero.astro";
+import ArticleCard from "../components/ArticleCard.astro";
+import NewsletterSignup from "../components/NewsletterSignup.astro";
 import { SITE } from "../config/site";
+import { useTranslations } from "../i18n/ui";
 
 const t = useTranslations("es");
+
+// Contenido de MUESTRA (solo para demostrar el diseño; no es real).
+const muestra = [
+  {
+    kicker: "Comer y beber",
+    title: "Mesa para dos: la alta cocina discreta de Menorca",
+    excerpt:
+      "Cocineros que trabajan con producto de la isla y reservas que se cuentan con los dedos de una mano.",
+  },
+  {
+    kicker: "Descubrir",
+    title: "Las calas del norte que aún guardan el silencio",
+    excerpt:
+      "Cómo llegar, cuándo ir y por qué madrugar merece la pena en la costa de tramuntana.",
+  },
+  {
+    kicker: "Vivir",
+    title: "Una casa de piedra restaurada en el interior",
+    excerpt:
+      "Arquitectura tradicional menorquina, reinterpretada con calma y buen gusto.",
+  },
+];
 ---
 
 <BaseLayout title="Inicio" locale="es">
-  <main class="mx-auto flex min-h-screen max-w-2xl flex-col items-center justify-center px-6 py-24 text-center">
-    <p class="text-sm font-medium uppercase tracking-[0.2em] text-[#3FA7B5]">
-      {SITE.name} · {SITE.edition}
-    </p>
-    <h1 class="mt-4 text-4xl font-semibold text-[#1C1B18] sm:text-5xl">
-      {t("site.tagline")}
-    </h1>
-    <p class="mt-6 text-lg text-[#4A4A42]">
-      {t("home.building")}
-    </p>
-    <p class="mt-12 text-sm">
-      <a class="text-[#1E5F74] underline underline-offset-4" href="/en/">
-        {t("lang.switch")}
-      </a>
-    </p>
-  </main>
+  <Hero
+    eyebrow={`${SITE.name} · ${SITE.edition}`}
+    title={t("home.hero.title")}
+    subtitle={t("home.hero.subtitle")}
+  />
+
+  <section class="mx-auto max-w-6xl px-5 sm:px-8">
+    <div class="flex items-baseline justify-between border-b border-niebla pb-3">
+      <h2 class="font-display text-2xl text-tinta">{t("home.featured")}</h2>
+      <span class="text-[0.65rem] uppercase tracking-widest text-piedra-suave/70">
+        {t("home.preview")}
+      </span>
+    </div>
+
+    <div class="mt-8 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        muestra.map((a) => (
+          <ArticleCard
+            kicker={a.kicker}
+            title={a.title}
+            excerpt={a.excerpt}
+            href="#"
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  <div class="mt-24">
+    <NewsletterSignup />
+  </div>
 </BaseLayout>

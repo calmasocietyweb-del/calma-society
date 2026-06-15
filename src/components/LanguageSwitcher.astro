@@ -1,0 +1,35 @@
+---
+// Selector de idioma. Enlaza a la versión equivalente en cada idioma activo.
+import { SITE, type Locale } from "../config/site";
+import { useTranslations } from "../i18n/ui";
+import { currentLocale, localizedPath } from "../i18n/utils";
+
+const path = Astro.url.pathname;
+const active = currentLocale(path);
+const t = useTranslations(active);
+---
+
+<nav aria-label={t("lang.label")} class="flex items-center gap-1.5 text-xs font-medium">
+  {
+    SITE.locales.map(({ code, label }, i) => (
+      <>
+        {i > 0 && <span aria-hidden="true" class="text-niebla">·</span>}
+        <a
+          href={localizedPath(path, code as Locale)}
+          hreflang={code}
+          lang={code}
+          title={label}
+          aria-current={code === active ? "true" : undefined}
+          class:list={[
+            "uppercase tracking-widest transition-colors",
+            code === active
+              ? "text-tinta"
+              : "text-piedra-suave hover:text-mar",
+          ]}
+        >
+          {code}
+        </a>
+      </>
+    ))
+  }
+</nav>

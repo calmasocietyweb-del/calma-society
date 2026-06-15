@@ -133,22 +133,24 @@ Regla absoluta: **nada se publica sin aprobación humana** (principio §3.10). E
 
 **Tono visual:** mediterráneo, sereno, premium, editorial. Mucho aire (whitespace), tipografía con carácter, **la fotografía es la protagonista**. Coherente con la marca del destino: auténtico, calmado, anti-ruido. Lo contrario de una web recargada de banners.
 
-**Tokens iniciales (propuesta — centralizar en Tailwind config + `src/styles`):**
+**Tokens implementados (Fase 1)** — fuente real: `src/styles/global.css` (Tailwind v4 `@theme`). Paleta "lujo tranquilo":
 
 ```
-Color (paleta "Menorca"):
-  --blanco-cal:    #FAF8F3   (fondo principal, casas encaladas)
-  --arena:         #E8DFCF   (fondos secundarios)
-  --azul-mar:      #1E5F74   (primario, mar del sur / turquesa profundo)
-  --turquesa:      #3FA7B5   (acento, agua de cala)
-  --terracota:     #C26B4A   (acento cálido, tierra roja del norte)
-  --piedra:        #4A4A42   (texto principal, gris cálido)
-  --negro-tinta:   #1C1B18   (titulares)
+Color (paleta "Calma"):
+  --color-lino:         #F7F4EE   (fondo principal, blanco cálido / lino)
+  --color-arena:        #ECE4D6   (fondos secundarios)
+  --color-niebla:       #DED4C4   (bordes y separadores)
+  --color-tinta:        #17150F   (titulares, negro cálido)
+  --color-piedra:       #46423A   (texto principal, gris cálido)
+  --color-piedra-suave: #6B6557   (texto secundario)
+  --color-mar:          #1E5566   (primario, azul mar profundo sobrio)
+  --color-mar-hondo:    #143C49   (primario oscuro, fondos)
+  --color-oro:          #A8895C   (acento de lujo, oro viejo / latón)
+  --color-terracota:    #B96A4B   (acento cálido secundario)
 
-Tipografía:
-  Titulares / editorial:  serif con carácter  → "Fraunces" o "Lora"
-  Texto / UI:             sans legible        → "Inter" o "Source Sans 3"
-  (cargar con fuentes locales o subset; sin penalizar rendimiento)
+Tipografía (autoalojada con Fontsource, sin Google Fonts → privacidad + rendimiento):
+  Titulares / editorial:  "Fraunces Variable"  (serif con carácter)
+  Texto / UI:             "Inter Variable"     (sans legible)
 
 Layout:
   - Mobile-first siempre.

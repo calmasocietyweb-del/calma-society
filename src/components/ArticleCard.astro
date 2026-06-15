@@ -1,0 +1,43 @@
+---
+// Tarjeta de artículo (presentacional). En la Fase 2/3 recibirá entradas reales
+// de las content collections, con su <Image> optimizada de astro:assets.
+interface Props {
+  kicker?: string;
+  title: string;
+  excerpt?: string;
+  href: string;
+}
+const { kicker, title, excerpt, href } = Astro.props;
+---
+
+<article class="group relative flex flex-col">
+  <!-- Marcador de imagen (placeholder de diseño hasta la Fase 2) -->
+  <div
+    class="aspect-[4/3] w-full overflow-hidden rounded-lg border border-niebla bg-gradient-to-br from-arena to-niebla"
+    aria-hidden="true"
+  >
+  </div>
+
+  {
+    kicker && (
+      <p class="mt-4 text-xs font-semibold uppercase tracking-widest text-oro">
+        {kicker}
+      </p>
+    )
+  }
+
+  <h3 class="mt-2 font-display text-xl leading-snug text-tinta">
+    <a
+      href={href}
+      class="transition-colors after:absolute after:inset-0 group-hover:text-mar"
+    >
+      {title}
+    </a>
+  </h3>
+
+  {
+    excerpt && (
+      <p class="mt-2 text-sm leading-relaxed text-piedra-suave">{excerpt}</p>
+    )
+  }
+</article>
