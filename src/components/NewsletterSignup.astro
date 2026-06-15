@@ -1,9 +1,10 @@
 ---
 // Captación de suscriptores — el KPI nº1 (CLAUDE.md §3.1).
-// Tres modos según la config de MailerLite (SITE.newsletter):
-//   - "custom":   nuestro formulario premium POST a la URL `action` (versión HTML).
-//   - "embedded": el formulario de MailerLite renderizado por su script (`formId`).
-//   - "preview":  aún sin conectar; se muestra el diseño, sin envío.
+// Modos según la config de MailerLite (SITE.newsletter):
+//   - "custom":   nuestro formulario premium POST a la URL `action`.
+//   - "embedded": el formulario de MailerLite renderizado (`formId`).
+//   - "popup":    nuestro botón abre el formulario emergente (`popupFormId`).
+//   - "preview":  aún sin conectar.
 import { SITE } from "../config/site";
 import { useTranslations } from "../i18n/ui";
 import { currentLocale } from "../i18n/utils";
@@ -11,8 +12,14 @@ import { currentLocale } from "../i18n/utils";
 const locale = currentLocale(Astro.url.pathname);
 const t = useTranslations(locale);
 const inputId = "newsletter-email";
-const { action, formId, emailField } = SITE.newsletter;
-const mode = action ? "custom" : formId ? "embedded" : "preview";
+const { action, formId, popupFormId, emailField } = SITE.newsletter;
+const mode = action
+  ? "custom"
+  : formId
+    ? "embedded"
+    : popupFormId
+      ? "popup"
+      : "preview";
 ---
 
 <section class="bg-mar-hondo text-lino">
@@ -28,6 +35,14 @@ const mode = action ? "custom" : formId ? "embedded" : "preview";
     {
       mode === "embedded" ? (
         <div class="ml-embedded mx-auto mt-8 max-w-md" data-form={formId} />
+      ) : mode === "popup" ? (
+        <button
+          type="button"
+          class="mx-auto mt-8 block rounded-md bg-oro px-8 py-3.5 text-sm font-semibold text-mar-hondo transition-colors hover:bg-lino"
+          onclick={`ml('show', '${popupFormId}', true)`}
+        >
+          {t("newsletter.cta")}
+        </button>
       ) : (
         <form
           action={mode === "custom" ? action : undefined}
