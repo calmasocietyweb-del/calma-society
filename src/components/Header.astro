@@ -17,6 +17,7 @@ const t = useTranslations(locale);
 const home = homePath(locale);
 const aboutHref = locale === "es" ? "/quienes-somos" : "/en/about";
 const newsletterHref = locale === "es" ? "/newsletter" : "/en/newsletter";
+const contactHref = locale === "es" ? "/contacto" : "/en/contact";
 ---
 
 <header class="border-b border-niebla bg-lino/95 backdrop-blur-sm">
@@ -73,6 +74,9 @@ const newsletterHref = locale === "es" ? "/newsletter" : "/en/newsletter";
             <hr class="my-2 border-niebla" />
             <a href={aboutHref} class="block rounded-md px-3 py-2 text-sm text-piedra transition-colors hover:bg-arena hover:text-mar">
               {t("nav.about")}
+            </a>
+            <a href={contactHref} class="block rounded-md px-3 py-2 text-sm text-piedra transition-colors hover:bg-arena hover:text-mar">
+              {t("nav.contact")}
             </a>
             <a href={newsletterHref} class="block rounded-md px-3 py-2 text-sm font-medium text-mar transition-colors hover:bg-arena">
               {t("nav.newsletter")}

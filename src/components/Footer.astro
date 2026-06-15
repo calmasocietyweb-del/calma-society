@@ -12,6 +12,7 @@ const igUrl = SITE.social.instagram;
 
 const aboutHref = locale === "es" ? "/quienes-somos" : "/en/about";
 const newsletterHref = locale === "es" ? "/newsletter" : "/en/newsletter";
+const contactHref = locale === "es" ? "/contacto" : "/en/contact";
 ---
 
 <footer class="mt-24 border-t border-niebla bg-arena/40">
@@ -58,6 +59,11 @@ const newsletterHref = locale === "es" ? "/newsletter" : "/en/newsletter";
             <li>
               <a href={newsletterHref} class="text-piedra transition-colors hover:text-mar">
                 {t("nav.newsletter")}
+              </a>
+            </li>
+            <li>
+              <a href={contactHref} class="text-piedra transition-colors hover:text-mar">
+                {t("nav.contact")}
               </a>
             </li>
           </ul>

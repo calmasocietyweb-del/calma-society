@@ -1,0 +1,48 @@
+---
+// Formulario de contacto. Envía a SITE.forms.contact (p. ej. Formspree), sin
+// backend propio. Si no está configurado, muestra el correo directo.
+import { SITE } from "../config/site";
+import { useTranslations } from "../i18n/ui";
+import { currentLocale } from "../i18n/utils";
+
+const locale = currentLocale(Astro.url.pathname);
+const t = useTranslations(locale);
+const action = SITE.forms.contact;
+const connected = action.length > 0;
+
+const field =
+  "mt-1 w-full rounded-md border border-niebla bg-white/60 px-4 py-3 text-sm text-piedra focus-visible:outline-mar";
+---
+
+{
+  connected && (
+    <form action={action} method="POST" class="space-y-5">
+      <div>
+        <label for="name" class="text-sm font-medium text-piedra">{t("contact.name")}</label>
+        <input id="name" type="text" name="name" required autocomplete="name" class={field} />
+      </div>
+      <div>
+        <label for="email" class="text-sm font-medium text-piedra">{t("contact.email")}</label>
+        <input id="email" type="email" name="email" required autocomplete="email" class={field} />
+      </div>
+      <div>
+        <label for="message" class="text-sm font-medium text-piedra">{t("contact.message")}</label>
+        <textarea id="message" name="message" rows="5" required class={field} />
+      </div>
+      <input type="hidden" name="_subject" value="Calma Society — mensaje de contacto" />
+      <button
+        type="submit"
+        class="rounded-md bg-mar px-6 py-3 text-sm font-semibold text-lino transition-colors hover:bg-mar-hondo"
+      >
+        {t("contact.send")}
+      </button>
+    </form>
+  )
+}
+
+<p class:list={["text-sm text-piedra-suave", connected && "mt-8"]}>
+  {t("contact.directemail")}{" "}
+  <a href={`mailto:${SITE.email}`} class="font-medium text-mar hover:text-mar-hondo">
+    {SITE.email}
+  </a>
+</p>

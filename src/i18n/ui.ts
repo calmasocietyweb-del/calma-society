@@ -62,6 +62,15 @@ export const ui = {
     "newsletter.cta": "Suscribirme",
     "newsletter.privacy": "Sin spam. Te das de baja cuando quieras.",
 
+    "nav.contact": "Contacto",
+    "contact.lead": "¿Tienes una historia, una propuesta o una colaboración en mente? Escríbenos.",
+    "contact.name": "Nombre",
+    "contact.email": "Correo electrónico",
+    "contact.message": "Mensaje",
+    "contact.send": "Enviar mensaje",
+    "contact.directemail": "O escríbenos directamente a",
+    "contact.sent": "¡Gracias! Te responderemos pronto.",
+
     "footer.about":
       "Calma Society — el arte del lujo tranquilo en el Mediterráneo. Primera edición: Menorca.",
     "footer.sections": "Secciones",
@@ -122,6 +131,15 @@ export const ui = {
     "newsletter.placeholder": "Your email address",
     "newsletter.cta": "Subscribe",
     "newsletter.privacy": "No spam. Unsubscribe anytime.",
+
+    "nav.contact": "Contact",
+    "contact.lead": "Have a story, a pitch or a collaboration in mind? Get in touch.",
+    "contact.name": "Name",
+    "contact.email": "Email",
+    "contact.message": "Message",
+    "contact.send": "Send message",
+    "contact.directemail": "Or email us directly at",
+    "contact.sent": "Thank you! We'll be in touch soon.",
 
     "footer.about":
       "Calma Society — the art of quiet luxury in the Mediterranean. First edition: Menorca.",

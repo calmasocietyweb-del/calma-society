@@ -1,20 +1,22 @@
 ---
 // Captación de suscriptores — el KPI nº1 (CLAUDE.md §3.1).
-// El envío real se conecta en la Fase 5 (MailerLite/Buttondown); de momento
-// el formulario es presentacional (action="#").
+// Envía al formulario embebido de MailerLite (SITE.newsletter.action), sin
+// claves secretas. Si la URL aún no está configurada, el formulario se muestra
+// pero el botón queda desactivado.
+import { SITE } from "../config/site";
 import { useTranslations } from "../i18n/ui";
 import { currentLocale } from "../i18n/utils";
 
 const locale = currentLocale(Astro.url.pathname);
 const t = useTranslations(locale);
 const inputId = "newsletter-email";
+const action = SITE.newsletter.action;
+const connected = action.length > 0;
 ---
 
 <section class="bg-mar-hondo text-lino">
   <div class="mx-auto max-w-3xl px-5 py-16 text-center sm:px-8 sm:py-20">
-    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">
-      Newsletter
-    </p>
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Newsletter</p>
     <h2 class="mt-3 font-display text-3xl text-lino sm:text-4xl">
       {t("newsletter.title")}
     </h2>
@@ -23,15 +25,16 @@ const inputId = "newsletter-email";
     </p>
 
     <form
-      action="#"
+      action={connected ? action : undefined}
       method="post"
+      target="_blank"
       class="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row"
     >
       <label for={inputId} class="sr-only">{t("newsletter.placeholder")}</label>
       <input
         id={inputId}
         type="email"
-        name="email"
+        name={SITE.newsletter.emailField}
         required
         autocomplete="email"
         placeholder={t("newsletter.placeholder")}
@@ -39,12 +42,20 @@ const inputId = "newsletter-email";
       />
       <button
         type="submit"
-        class="shrink-0 rounded-md bg-oro px-6 py-3 text-sm font-semibold text-mar-hondo transition-colors hover:bg-lino"
+        disabled={!connected}
+        class="shrink-0 rounded-md bg-oro px-6 py-3 text-sm font-semibold text-mar-hondo transition-colors hover:bg-lino disabled:cursor-not-allowed disabled:opacity-60"
       >
         {t("newsletter.cta")}
       </button>
     </form>
 
     <p class="mt-4 text-xs text-lino/60">{t("newsletter.privacy")}</p>
+    {
+      !connected && (
+        <p class="mt-2 text-xs text-lino/40">
+          (Conexión con MailerLite pendiente de configurar.)
+        </p>
+      )
+    }
   </div>
 </section>

@@ -45,6 +45,28 @@ export const SITE = {
   social: {
     instagram: 'https://www.instagram.com/calma.society/',
   },
+
+  /**
+   * Newsletter (MailerLite). Pega aquí la URL "action" del formulario embebido
+   * (MailerLite → Forms → Embedded form → versión HTML → copia el `action`).
+   * Mientras esté vacío, el formulario se muestra pero no envía.
+   */
+  newsletter: {
+    provider: 'mailerlite' as const,
+    action: '', // [PENDIENTE] p. ej. https://assets.mailerlite.com/jsonp/XXXX/forms/YYYY/subscribe
+    emailField: 'fields[email]', // nombre del campo de email en MailerLite
+  },
+
+  /**
+   * Formulario de contacto. Endpoint que recibe el envío (p. ej. Formspree).
+   * Mientras esté vacío, se muestra el correo de contacto en su lugar.
+   */
+  forms: {
+    contact: '', // [PENDIENTE] p. ej. https://formspree.io/f/XXXX
+  },
+
+  /** Correo de contacto público. */
+  email: 'hola@calmasociety.com', // [PENDIENTE] crear este buzón
 };
 
 /** Lista de códigos de idioma, para la configuración de i18n de Astro. */

@@ -1,0 +1,28 @@
+---
+/**
+ * Enlace saliente con los atributos `rel` correctos según su naturaleza.
+ * Para enlaces a tus negocios, afiliación o patrocinadores: protege el SEO y
+ * mantiene la transparencia (ver docs/MARKETING-CRECIMIENTO-Y-NOMBRE.md §5).
+ *
+ * Uso:
+ *   <OutboundLink href="https://tu-negocio.com" kind="partner">Reserva aquí</OutboundLink>
+ *   <OutboundLink href="https://afiliado.com/..." kind="affiliate">Ver precio</OutboundLink>
+ */
+interface Props {
+  href: string;
+  kind?: "external" | "sponsored" | "affiliate" | "partner";
+  class?: string;
+}
+const { href, kind = "external", class: className } = Astro.props;
+
+const REL: Record<string, string> = {
+  external: "noopener",
+  sponsored: "sponsored noopener",
+  affiliate: "sponsored nofollow noopener",
+  partner: "sponsored noopener",
+};
+---
+
+<a href={href} target="_blank" rel={REL[kind]} class={className}>
+  <slot />
+</a>
