@@ -1,0 +1,50 @@
+---
+// Historia destacada (lead) — el ancla visual editorial de la portada.
+// Imagen grande + titular generoso. Listo para foto real (astro:assets) en Fase 3.
+interface Props {
+  kicker?: string;
+  title: string;
+  excerpt?: string;
+  href: string;
+  cta?: string;
+}
+const { kicker, title, excerpt, href, cta } = Astro.props;
+---
+
+<article class="group relative grid items-center gap-8 md:grid-cols-2 md:gap-12">
+  <a href={href} class="block overflow-hidden rounded-xl" tabindex="-1" aria-hidden="true">
+    <div
+      class="aspect-[5/4] w-full bg-gradient-to-br from-niebla via-arena to-niebla transition-transform duration-700 group-hover:scale-[1.02] md:aspect-[4/3]"
+    >
+    </div>
+  </a>
+
+  <div>
+    {
+      kicker && (
+        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">
+          {kicker}
+        </p>
+      )
+    }
+    <h2 class="mt-3 font-display text-3xl leading-tight text-tinta sm:text-4xl md:text-5xl">
+      <a href={href} class="transition-colors after:absolute after:inset-0 group-hover:text-mar">
+        {title}
+      </a>
+    </h2>
+    {
+      excerpt && (
+        <p class="mt-4 max-w-prosa text-base leading-relaxed text-piedra-suave sm:text-lg">
+          {excerpt}
+        </p>
+      )
+    }
+    {
+      cta && (
+        <span class="mt-6 inline-block border-b border-mar pb-0.5 text-sm font-medium text-mar">
+          {cta} →
+        </span>
+      )
+    }
+  </div>
+</article>

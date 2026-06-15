@@ -20,6 +20,7 @@ export const ui = {
     "home.hero.subtitle":
       "Las experiencias, el criterio y la belleza de la isla — elevados. Una publicación de Calma Society.",
     "home.featured": "Selección del editor",
+    "home.readmore": "Leer la historia",
 
     "newsletter.title": "Únete a Calma Society",
     "newsletter.text":
@@ -46,6 +47,7 @@ export const ui = {
     "home.hero.subtitle":
       "The island's experiences, taste and beauty — elevated. A Calma Society publication.",
     "home.featured": "Editor's selection",
+    "home.readmore": "Read the story",
 
     "newsletter.title": "Join Calma Society",
     "newsletter.text":

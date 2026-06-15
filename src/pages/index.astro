@@ -4,6 +4,7 @@
 // El contenido real llega con las content collections (Fase 2/3).
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
+import LeadStory from "../components/LeadStory.astro";
 import ArticleCard from "../components/ArticleCard.astro";
 import NewsletterSignup from "../components/NewsletterSignup.astro";
 import { SITE } from "../config/site";
@@ -31,6 +32,12 @@ const muestra = [
     excerpt:
       "Arquitectura tradicional menorquina, reinterpretada con calma y buen gusto.",
   },
+  {
+    kicker: "Cultura",
+    title: "Los oficios que se resisten a desaparecer",
+    excerpt:
+      "Artesanos y avarques: las manos que sostienen la identidad de la isla.",
+  },
 ];
 ---
 
@@ -41,7 +48,19 @@ const muestra = [
     subtitle={t("home.hero.subtitle")}
   />
 
-  <section class="mx-auto max-w-6xl px-5 sm:px-8">
+  <!-- Historia destacada (lead) -->
+  <section class="mx-auto max-w-6xl px-5 pb-4 sm:px-8">
+    <LeadStory
+      kicker={muestra[0].kicker}
+      title={muestra[0].title}
+      excerpt={muestra[0].excerpt}
+      href="#"
+      cta={t("home.readmore")}
+    />
+  </section>
+
+  <!-- Selección del editor -->
+  <section class="mx-auto mt-16 max-w-6xl px-5 sm:px-8">
     <div class="flex items-baseline justify-between border-b border-niebla pb-3">
       <h2 class="font-display text-2xl text-tinta">{t("home.featured")}</h2>
       <span class="text-[0.65rem] uppercase tracking-widest text-piedra-suave/70">
@@ -51,13 +70,8 @@ const muestra = [
 
     <div class="mt-8 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
       {
-        muestra.map((a) => (
-          <ArticleCard
-            kicker={a.kicker}
-            title={a.title}
-            excerpt={a.excerpt}
-            href="#"
-          />
+        muestra.slice(1).map((a) => (
+          <ArticleCard kicker={a.kicker} title={a.title} excerpt={a.excerpt} href="#" />
         ))
       }
     </div>

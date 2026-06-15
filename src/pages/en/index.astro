@@ -4,6 +4,7 @@
 // Real content arrives with the content collections (Phase 2/3).
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Hero from "../../components/Hero.astro";
+import LeadStory from "../../components/LeadStory.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
 import NewsletterSignup from "../../components/NewsletterSignup.astro";
 import { SITE } from "../../config/site";
@@ -31,6 +32,12 @@ const sample = [
     excerpt:
       "Traditional Menorcan architecture, reinterpreted with calm and good taste.",
   },
+  {
+    kicker: "Culture",
+    title: "The crafts that refuse to disappear",
+    excerpt:
+      "Artisans and avarques: the hands that hold the island's identity together.",
+  },
 ];
 ---
 
@@ -41,7 +48,19 @@ const sample = [
     subtitle={t("home.hero.subtitle")}
   />
 
-  <section class="mx-auto max-w-6xl px-5 sm:px-8">
+  <!-- Lead story -->
+  <section class="mx-auto max-w-6xl px-5 pb-4 sm:px-8">
+    <LeadStory
+      kicker={sample[0].kicker}
+      title={sample[0].title}
+      excerpt={sample[0].excerpt}
+      href="#"
+      cta={t("home.readmore")}
+    />
+  </section>
+
+  <!-- Editor's selection -->
+  <section class="mx-auto mt-16 max-w-6xl px-5 sm:px-8">
     <div class="flex items-baseline justify-between border-b border-niebla pb-3">
       <h2 class="font-display text-2xl text-tinta">{t("home.featured")}</h2>
       <span class="text-[0.65rem] uppercase tracking-widest text-piedra-suave/70">
@@ -51,13 +70,8 @@ const sample = [
 
     <div class="mt-8 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
       {
-        sample.map((a) => (
-          <ArticleCard
-            kicker={a.kicker}
-            title={a.title}
-            excerpt={a.excerpt}
-            href="#"
-          />
+        sample.slice(1).map((a) => (
+          <ArticleCard kicker={a.kicker} title={a.title} excerpt={a.excerpt} href="#" />
         ))
       }
     </div>
