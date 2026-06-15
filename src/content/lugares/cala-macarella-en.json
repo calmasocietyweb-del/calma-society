@@ -1,0 +1,17 @@
+{
+  "name": "Cala Macarella",
+  "lang": "en",
+  "translationKey": "cala-macarella",
+  "type": "cala",
+  "description": "The definitive postcard of southern Menorca: a horseshoe of white sand, turquoise water and pines down to the shore. Beside it, its little sister, Cala Macarelleta. Serene beauty, best enjoyed early.",
+  "coordinates": { "lat": 39.9356, "lng": 3.9286 },
+  "area": "South (Ciutadella)",
+  "practicalInfo": {
+    "acceso": "On foot from Cala Galdana (~30 min along the Camí de Cavalls) or by seasonal bus; car access is restricted in summer",
+    "aparcamiento": "Paid car park further away, very limited in summer (bus or arrive very early)",
+    "servicios": "Seasonal beach bar; bring water and shade",
+    "mejorEpoca": "June and September; in July-August, first thing in the morning"
+  },
+  "tags": ["south", "turquoise", "white sand", "camí de cavalls", "ciutadella"],
+  "status": "published"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Cala en Turqueta",
+  "lang": "es",
+  "translationKey": "cala-turqueta",
+  "type": "cala",
+  "description": "Aguas de un turquesa casi irreal y arena fina protegida por pinos. Más recogida y familiar, es de las calas más queridas del suroeste. Su nombre lo dice todo.",
+  "coordinates": { "lat": 39.9268, "lng": 3.913 },
+  "area": "Sur (Ciutadella)",
+  "practicalInfo": {
+    "acceso": "Corta caminata (~10-15 min) desde el aparcamiento por un sendero entre pinos",
+    "aparcamiento": "Parking de pago que se llena pronto en verano",
+    "servicios": "Sin chiringuito: lleva agua, comida y sombra",
+    "mejorEpoca": "Mayo, junio y septiembre; en agosto, muy temprano"
+  },
+  "tags": ["sur", "turquesa", "familiar", "ciutadella"],
+  "status": "published"
+}

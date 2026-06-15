@@ -1,0 +1,17 @@
+{
+  "name": "Cala Macarella",
+  "lang": "es",
+  "translationKey": "cala-macarella",
+  "type": "cala",
+  "description": "La postal por excelencia del sur de Menorca: una herradura de arena blanca, agua turquesa y pinar hasta la orilla. Junto a ella, su hermana pequeña, Cala Macarelleta. Belleza serena que conviene disfrutar temprano.",
+  "coordinates": { "lat": 39.9356, "lng": 3.9286 },
+  "area": "Sur (Ciutadella)",
+  "practicalInfo": {
+    "acceso": "A pie desde Cala Galdana (~30 min por el Camí de Cavalls) o en autobús de temporada; en verano el acceso en coche está restringido",
+    "aparcamiento": "Parking de pago alejado; muy limitado en verano (mejor bus o ir muy temprano)",
+    "servicios": "Chiringuito estacional; conviene llevar agua y sombra",
+    "mejorEpoca": "Junio y septiembre; en julio-agosto, a primera hora de la mañana"
+  },
+  "tags": ["sur", "turquesa", "arena blanca", "camí de cavalls", "ciutadella"],
+  "status": "published"
+}
