@@ -1,7 +1,6 @@
 ---
 // Plantilla de artículo. El cuerpo (MDX) se inyecta por <slot/>.
 import { type CollectionEntry } from "astro:content";
-import { Image } from "astro:assets";
 import BaseLayout from "./BaseLayout.astro";
 import JsonLd from "../components/JsonLd.astro";
 import { getSection } from "../config/sections";
@@ -102,12 +101,12 @@ const breadcrumb = breadcrumbSchema([
     {
       data.heroImage && (
         <figure class="mt-8">
-          <Image
+          <img
             src={data.heroImage}
             alt={data.heroImageAlt ?? data.title}
-            widths={[480, 800, 1200]}
-            sizes="(max-width: 768px) 100vw, 768px"
             class="w-full rounded-xl"
+            loading="lazy"
+            decoding="async"
           />
         </figure>
       )

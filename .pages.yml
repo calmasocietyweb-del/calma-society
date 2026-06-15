@@ -1,0 +1,208 @@
+# =============================================================================
+# Panel de gestión (Pages CMS) — https://pagescms.org
+# Entra en https://app.pagescms.org con tu cuenta de GitHub, autoriza el
+# repositorio y gestiona todo el contenido desde aquí. Al guardar, se publica solo.
+#
+# REGLA DE ORO: el contenido nuevo nace en estado "draft" (borrador). Solo sale
+# a la web cuando lo pones en "published" (tu aprobación).
+# =============================================================================
+
+media:
+  input: public/uploads
+  output: /uploads
+
+content:
+  # ----- ARTÍCULOS -----
+  - name: articulos
+    label: Artículos
+    type: collection
+    path: src/content/articulos
+    filename: "{fields.lang}-{fields.translationKey}.mdx"
+    view:
+      fields: [title, lang, section, status, publishDate]
+      primary: title
+    fields:
+      - { name: title, label: Título, type: string, required: true }
+      - {
+          name: lang,
+          label: Idioma,
+          type: select,
+          required: true,
+          options: { values: [es, en] },
+        }
+      - {
+          name: translationKey,
+          label: "Clave de traducción (la MISMA en la versión ES y EN)",
+          type: string,
+          required: true,
+        }
+      - {
+          name: section,
+          label: Sección,
+          type: select,
+          required: true,
+          options:
+            {
+              values:
+                [descubrir, agenda, comer-y-beber, vivir, cultura, practica],
+            },
+        }
+      - {
+          name: excerpt,
+          label: "Entradilla / resumen (ideal ~155 caracteres para SEO)",
+          type: text,
+          required: true,
+        }
+      - { name: publishDate, label: Fecha de publicación, type: date, required: true }
+      - {
+          name: author,
+          label: "Autor (slug del autor, p. ej. ana-pons)",
+          type: string,
+          required: true,
+        }
+      - { name: heroImage, label: Imagen principal, type: image }
+      - {
+          name: heroImageAlt,
+          label: "Texto alternativo de la imagen (descríbela; importante para SEO y accesibilidad)",
+          type: string,
+        }
+      - { name: tags, label: Etiquetas, type: string, list: true }
+      - {
+          name: status,
+          label: "Estado (draft = borrador, published = publicado)",
+          type: select,
+          default: draft,
+          options: { values: [draft, pending, published] },
+        }
+      - { name: featured, label: "Destacado en portada", type: boolean }
+      - { name: sponsored, label: "Patrocinado (contenido pagado)", type: boolean }
+      - name: seo
+        label: SEO (opcional, avanzado)
+        type: object
+        fields:
+          - { name: title, label: "Título SEO (50-60 caracteres)", type: string }
+          - {
+              name: description,
+              label: "Meta descripción (150-160 caracteres)",
+              type: text,
+            }
+      - { name: body, label: Contenido del artículo, type: rich-text }
+
+  # ----- LUGARES (calas, restaurantes, monumentos…) -----
+  - name: lugares
+    label: Lugares
+    type: collection
+    path: src/content/lugares
+    format: json
+    filename: "{fields.translationKey}-{fields.lang}.json"
+    view:
+      fields: [name, lang, type, status]
+      primary: name
+    fields:
+      - { name: name, label: Nombre, type: string, required: true }
+      - {
+          name: lang,
+          label: Idioma,
+          type: select,
+          required: true,
+          options: { values: [es, en] },
+        }
+      - { name: translationKey, label: Clave de traducción, type: string, required: true }
+      - {
+          name: type,
+          label: Tipo,
+          type: select,
+          required: true,
+          options:
+            {
+              values:
+                [cala, restaurante, alojamiento, monumento, comercio, otro],
+            },
+        }
+      - { name: description, label: Descripción, type: text, required: true }
+      - name: coordinates
+        label: Coordenadas (mapa)
+        type: object
+        required: true
+        fields:
+          - { name: lat, label: Latitud, type: number, required: true }
+          - { name: lng, label: Longitud, type: number, required: true }
+      - { name: area, label: "Zona (norte, sur, municipio…)", type: string, required: true }
+      - { name: images, label: Imágenes, type: image, list: true }
+      - {
+          name: status,
+          label: Estado,
+          type: select,
+          default: draft,
+          options: { values: [draft, pending, published] },
+        }
+      - { name: tags, label: Etiquetas, type: string, list: true }
+
+  # ----- AGENDA (eventos) -----
+  - name: eventos
+    label: Agenda (eventos)
+    type: collection
+    path: src/content/eventos
+    format: json
+    filename: "{fields.translationKey}-{fields.lang}.json"
+    view:
+      fields: [title, lang, startDate, status]
+      primary: title
+    fields:
+      - { name: title, label: Título, type: string, required: true }
+      - {
+          name: lang,
+          label: Idioma,
+          type: select,
+          required: true,
+          options: { values: [es, en] },
+        }
+      - { name: translationKey, label: Clave de traducción, type: string, required: true }
+      - { name: startDate, label: Fecha de inicio, type: date, required: true }
+      - { name: endDate, label: Fecha de fin (opcional), type: date }
+      - { name: location, label: Lugar, type: string, required: true }
+      - {
+          name: category,
+          label: Categoría,
+          type: select,
+          required: true,
+          options:
+            {
+              values:
+                [fiesta, concierto, mercado, deporte, cultura, gastronomia, otro],
+            },
+        }
+      - { name: description, label: Descripción, type: text, required: true }
+      - {
+          name: status,
+          label: Estado,
+          type: select,
+          default: draft,
+          options: { values: [draft, pending, published] },
+        }
+
+  # ----- AUTORES -----
+  - name: autores
+    label: Autores
+    type: collection
+    path: src/content/autores
+    format: json
+    filename: "{fields.name}.json"
+    view:
+      fields: [name]
+      primary: name
+    fields:
+      - { name: name, label: Nombre, type: string, required: true }
+      - name: role
+        label: Rol
+        type: object
+        fields:
+          - { name: es, label: "Rol (español)", type: string }
+          - { name: en, label: "Rol (inglés)", type: string }
+      - name: bio
+        label: Biografía
+        type: object
+        fields:
+          - { name: es, label: "Bio (español)", type: text }
+          - { name: en, label: "Bio (inglés)", type: text }
+      - { name: avatar, label: Foto del autor, type: image }

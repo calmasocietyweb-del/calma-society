@@ -39,8 +39,7 @@ const seo = z
 /** Artículos editoriales (Markdown/MDX). */
 const articulos = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/articulos" }),
-  schema: ({ image }) =>
-    z
+  schema: z
       .object({
         title: z.string(),
         lang: LOCALE,
@@ -51,7 +50,7 @@ const articulos = defineCollection({
         publishDate: z.coerce.date(),
         updatedDate: z.coerce.date().optional(),
         author: reference("autores"),
-        heroImage: image().optional(),
+        heroImage: z.string().optional(), // ruta pública (p. ej. /uploads/foto.jpg), gestionable desde el CMS
         heroImageAlt: z.string().optional(),
         tags: z.array(z.string()).default([]),
         status: STATUS,
@@ -141,12 +140,11 @@ const eventos = defineCollection({
 /** Autores (E-E-A-T). Una entrada por persona; textos localizados. */
 const autores = defineCollection({
   loader: glob({ pattern: "**/*.json", base: "./src/content/autores" }),
-  schema: ({ image }) =>
-    z.object({
+  schema: z.object({
       name: z.string(),
       role: z.object({ es: z.string(), en: z.string() }),
       bio: z.object({ es: z.string(), en: z.string() }),
-      avatar: image().optional(),
+      avatar: z.string().optional(),
       social: z
         .object({
           instagram: z.url().optional(),
