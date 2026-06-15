@@ -1,0 +1,27 @@
+---
+// Página 404 (se sirve para cualquier ruta no encontrada).
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="404" description="Página no encontrada." locale="es">
+  <section class="mx-auto max-w-prosa px-5 py-28 text-center sm:px-8">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">404</p>
+    <h1 class="mt-4 font-display text-4xl text-tinta sm:text-5xl">
+      Esta página se perdió en alguna cala
+    </h1>
+    <p class="mt-5 text-lg leading-relaxed text-piedra-suave">
+      No encontramos lo que buscabas. Volvamos a tierra firme.
+      <span class="block text-base text-piedra-suave/80">
+        We couldn't find that page. Let's head back.
+      </span>
+    </p>
+    <p class="mt-8 flex justify-center gap-6">
+      <a href="/" class="border-b border-mar pb-0.5 font-medium text-mar hover:text-mar-hondo">
+        Inicio →
+      </a>
+      <a href="/en/" class="border-b border-mar pb-0.5 font-medium text-mar hover:text-mar-hondo">
+        English →
+      </a>
+    </p>
+  </section>
+</BaseLayout>
