@@ -5,6 +5,8 @@ import sitemap from '@astrojs/sitemap';
 
 import { SITE, LOCALE_CODES } from './src/config/site';
 
+import cloudflare from '@astrojs/cloudflare';
+
 // Tailwind CSS v4 se carga vía PostCSS (ver postcss.config.mjs),
 // compatible con el bundler Rolldown/Vite de Astro 6.
 
@@ -32,4 +34,6 @@ export default defineConfig({
       },
     }),
   ],
+
+  adapter: cloudflare(),
 });

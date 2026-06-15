@@ -27,3 +27,9 @@ Thumbs.db
 # Material fuente de fotos y vídeos (NO va al repo; a la web solo van public/uploads)
 MATERIAL FOTOS RRSS/
 MATERIAL VIDEOS RRSS/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
