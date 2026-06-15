@@ -35,7 +35,7 @@
 | 3 | **Stack** | **Astro + TypeScript + Tailwind + MDX + i18n nativo** (sitio estático) | Se prefiere no mantener código → entonces NO es proyecto de Claude Code, sino Ghost/WordPress (no-code) |
 | 4 | **Audiencia** | **Enfoque premium / lujo.** Prioridad: viajero exigente + propietario internacional (alto poder adquisitivo). Contenido: experiencias elevadas → gastronomía de alta gama → lifestyle/propiedad → descubrir → práctica. Todo con mirada de lujo | Se reequilibra hacia un público más amplio |
 | 5 | **Hosting** | **Cloudflare Pages** (o Netlify/Vercel), plan gratuito al inicio | Hay otra preferencia de despliegue |
-| 6 | **Newsletter** | **MailerLite** o **Buttondown** (free tier generoso), integrable por formulario/API | Se prefiere Beehiiv, Substack u otro |
+| 6 | **Newsletter** | **MailerLite** (elegido; cuenta creada). Integración por formulario embebido, sin claves secretas en el código. Config en `src/config/site.ts` (`newsletter.action`) | Se cambia de proveedor |
 | 7 | **Analítica** | **Cloudflare Web Analytics** o **Plausible/Umami** (respetuosas con la privacidad, sin cookies invasivas) | Se exige Google Analytics |
 | 8 | **CMS** | Empezar con **archivos MDX en el repo**; añadir **Keystatic** (editor visual sobre Git) cuando haga falta editar sin tocar código | Se quiere headless CMS (Sanity/Storyblok) desde ya |
 | 9 | **Automatización** | **Asistida, no automática.** La máquina propone (agenda, borradores, traducciones, SEO, imágenes, envío newsletter/redes); **el dueño aprueba antes de publicar**. Nada se publica solo. Ver `docs/AUTOMATIZACION-Y-FLUJO-EDITORIAL.md` | Se acepta publicar sin revisión (NO recomendado: rompe el moat de calidad) |
