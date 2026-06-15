@@ -1,0 +1,38 @@
+---
+/**
+ * Layout base — esqueleto HTML común a todas las páginas.
+ * En la Fase 1 se le añadirán Header, Footer, navegación y el sistema de diseño.
+ * En la Fase 4 se le añadirá el componente Seo (Open Graph, JSON-LD, hreflang).
+ */
+import "../styles/global.css";
+import { SITE, getLocaleConfig, type Locale } from "../config/site";
+
+interface Props {
+  title: string;
+  description?: string;
+  locale?: Locale;
+}
+
+const {
+  title,
+  description = SITE.description,
+  locale = SITE.defaultLocale,
+} = Astro.props;
+
+const localeConfig = getLocaleConfig(locale);
+---
+
+<!doctype html>
+<html lang={localeConfig.htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · {SITE.name}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={Astro.url.href} />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body class="min-h-screen bg-[#FAF8F3] text-[#4A4A42] antialiased">
+    <slot />
+  </body>
+</html>

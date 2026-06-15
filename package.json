@@ -1,0 +1,24 @@
+{
+  "name": "revista-menorca",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Revista digital independiente sobre Menorca — multilingüe europea (Astro)",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^6.0.3",
+    "@astrojs/sitemap": "^3.7.3",
+    "astro": "^6.4.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.1",
+    "tailwindcss": "^4.3.1"
+  }
+}

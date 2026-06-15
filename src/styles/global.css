@@ -1,0 +1,4 @@
+/* Estilos globales — Tailwind CSS v4.
+   Los design tokens (colores, tipografía) se centralizan aquí en la Fase 1
+   mediante la directiva @theme. Por ahora, solo la base. */
+@import "tailwindcss";
