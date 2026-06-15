@@ -40,6 +40,8 @@ const sectionLabel = (key: string) => getSection(key)?.label[locale];
           excerpt={lead.data.excerpt}
           href={articleUrl(locale, lead.id)}
           cta={t("home.readmore")}
+          image={lead.data.heroImage}
+          imageAlt={lead.data.heroImageAlt}
         />
       </section>
     )
@@ -58,6 +60,8 @@ const sectionLabel = (key: string) => getSection(key)?.label[locale];
               title={a.data.title}
               excerpt={a.data.excerpt}
               href={articleUrl(locale, a.id)}
+              image={a.data.heroImage}
+              imageAlt={a.data.heroImageAlt}
             />
           ))}
         </div>

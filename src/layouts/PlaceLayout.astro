@@ -56,6 +56,18 @@ const breadcrumb = breadcrumbSchema([
     <p class="mt-5 text-lg leading-relaxed text-piedra-suave">{data.description}</p>
 
     {
+      data.images && data.images.length > 0 && (
+        <img
+          src={data.images[0]}
+          alt={data.name}
+          class="mt-8 w-full rounded-xl"
+          loading="lazy"
+          decoding="async"
+        />
+      )
+    }
+
+    {
       rows.length > 0 && (
         <section class="mt-10 rounded-xl border border-niebla bg-arena/30 p-6">
           <h2 class="text-xs font-semibold uppercase tracking-widest text-oro">
