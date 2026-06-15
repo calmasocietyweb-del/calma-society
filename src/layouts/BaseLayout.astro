@@ -54,6 +54,11 @@ const rssHref = locale === "es" ? "/rss.xml" : "/en/rss.xml";
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {
+      SITE.googleSiteVerification && (
+        <meta name="google-site-verification" content={SITE.googleSiteVerification} />
+      )
+    }
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="alternate" type="application/rss+xml" title={`${SITE.name} — RSS`} href={rssHref} />

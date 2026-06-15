@@ -32,6 +32,9 @@ export const SITE = {
     'Calma Society — el arte del lujo tranquilo en el Mediterráneo. Primera edición: Menorca, sus experiencias elevadas.',
   url: 'https://calmasociety.com',
 
+  /** Token de verificación de Google Search Console (método "etiqueta HTML"). */
+  googleSiteVerification: '', // [PENDIENTE] pega aquí el código que te dé Google
+
   /** Idioma por defecto (va en la raíz, sin prefijo). */
   defaultLocale: 'es' as Locale,
 
@@ -80,7 +83,7 @@ export const SITE = {
     email: 'calmasocietyweb@gmail.com',
     phone: '670 424 593',
     cif: 'B07642218',
-    address: '', // [PENDIENTE] domicilio social completo
+    address: 'C/ Bajolí 7, POIMA, 07714 Maó (Menorca), Illes Balears',
   },
 };
 
