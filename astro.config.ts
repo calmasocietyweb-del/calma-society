@@ -22,5 +22,14 @@ export default defineConfig({
     },
   },
 
-  integrations: [mdx(), sitemap()],
+  integrations: [
+    mdx(),
+    sitemap({
+      // Añade enlaces hreflang entre idiomas en el sitemap.
+      i18n: {
+        defaultLocale: "es",
+        locales: { es: "es-ES", en: "en-GB" },
+      },
+    }),
+  ],
 });

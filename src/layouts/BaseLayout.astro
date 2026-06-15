@@ -1,8 +1,8 @@
 ---
 /**
  * Layout base — esqueleto común a todas las páginas.
- * Incluye el sistema de diseño (fuentes + tokens), cabecera y pie.
- * El SEO completo (Open Graph ampliado, JSON-LD, hreflang) llega en la Fase 4.
+ * Incluye el sistema de diseño (fuentes + tokens), SEO, datos estructurados
+ * globales (Organization + WebSite), cabecera y pie.
  */
 import "@fontsource-variable/fraunces";
 import "@fontsource-variable/inter";
@@ -11,6 +11,9 @@ import "../styles/global.css";
 import { SITE, getLocaleConfig, type Locale } from "../config/site";
 import { currentLocale } from "../i18n/utils";
 import { useTranslations } from "../i18n/ui";
+import { organizationSchema, websiteSchema } from "../lib/schema";
+import Seo from "../components/Seo.astro";
+import JsonLd from "../components/JsonLd.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
@@ -18,15 +21,32 @@ interface Props {
   title: string;
   description?: string;
   locale?: Locale;
-  /** URLs equivalentes por idioma (para el selector). Ligadas por translationKey. */
+  /** URLs equivalentes por idioma (para selector + hreflang). */
   alternates?: Partial<Record<Locale, string>>;
+  type?: "website" | "article";
+  image?: string;
+  imageAlt?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  authorName?: string;
 }
 
-const { title, description = SITE.description, alternates } = Astro.props;
+const {
+  title,
+  description = SITE.description,
+  alternates,
+  type = "website",
+  image,
+  imageAlt,
+  publishedTime,
+  modifiedTime,
+  authorName,
+} = Astro.props;
+
 const locale = Astro.props.locale ?? currentLocale(Astro.url.pathname);
 const localeConfig = getLocaleConfig(locale);
 const t = useTranslations(locale);
-const ogLocale = localeConfig.htmlLang.replace("-", "_");
+const rssHref = locale === "es" ? "/rss.xml" : "/en/rss.xml";
 ---
 
 <!doctype html>
@@ -34,20 +54,27 @@ const ogLocale = localeConfig.htmlLang.replace("-", "_");
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title} · {SITE.name}</title>
-    <meta name="description" content={description} />
-    <link rel="canonical" href={Astro.url.href} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="alternate" type="application/rss+xml" title={`${SITE.name} — RSS`} href={rssHref} />
 
-    <!-- Open Graph básico (se amplía en la Fase 4) -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content={SITE.name} />
-    <meta property="og:title" content={`${title} · ${SITE.name}`} />
-    <meta property="og:description" content={description} />
-    <meta property="og:locale" content={ogLocale} />
-    <meta property="og:url" content={Astro.url.href} />
+    <Seo
+      title={title}
+      description={description}
+      locale={locale}
+      type={type}
+      image={image}
+      imageAlt={imageAlt}
+      alternates={alternates}
+      publishedTime={publishedTime}
+      modifiedTime={modifiedTime}
+      authorName={authorName}
+    />
 
     <meta name="theme-color" content="#143c49" />
     <meta name="generator" content={Astro.generator} />
+
+    <JsonLd schema={[organizationSchema(), websiteSchema()]} />
   </head>
   <body class="flex min-h-screen flex-col bg-lino font-sans text-piedra antialiased">
     <a

@@ -2,8 +2,11 @@
 // Plantilla de lugar (cala, restaurante, monumento…). Datos estructurados.
 import { type CollectionEntry } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
+import JsonLd from "../components/JsonLd.astro";
 import { useTranslations, placeTypeLabel } from "../i18n/ui";
-import type { Locale } from "../config/site";
+import { SITE, type Locale } from "../config/site";
+import { placeUrl, homePath } from "../i18n/utils";
+import { abs, placeSchema, breadcrumbSchema } from "../lib/schema";
 
 interface Props {
   entry: CollectionEntry<"lugares">;
@@ -24,6 +27,23 @@ const rows: { label: string; value?: string }[] = [
 ].filter((r) => r.value);
 
 const mapUrl = `https://www.google.com/maps/search/?api=1&query=${data.coordinates.lat},${data.coordinates.lng}`;
+
+const canonical = abs(placeUrl(locale, entry.id));
+const placeLd = placeSchema({
+  name: data.name,
+  description: data.description,
+  url: canonical,
+  type: data.type,
+  area: data.area,
+  lat: data.coordinates.lat,
+  lng: data.coordinates.lng,
+  priceRange: data.priceRange,
+  website: data.website,
+});
+const breadcrumb = breadcrumbSchema([
+  { name: SITE.name, url: abs(homePath(locale)) },
+  { name: data.name, url: canonical },
+]);
 ---
 
 <BaseLayout title={data.name} description={data.description} locale={locale} alternates={alternates}>
@@ -76,4 +96,6 @@ const mapUrl = `https://www.google.com/maps/search/?api=1&query=${data.coordinat
       }
     </p>
   </article>
+
+  <JsonLd schema={[placeLd, breadcrumb]} />
 </BaseLayout>

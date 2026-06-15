@@ -2,10 +2,12 @@
 // Vista de autor: bio + artículos firmados (E-E-A-T). Dentro de BaseLayout.
 import type { CollectionEntry } from "astro:content";
 import ArticleCard from "./ArticleCard.astro";
+import JsonLd from "./JsonLd.astro";
 import { getArticles } from "../lib/content";
 import { useTranslations } from "../i18n/ui";
-import { articleUrl } from "../i18n/utils";
-import type { Locale } from "../config/site";
+import { articleUrl, authorUrl, homePath } from "../i18n/utils";
+import { SITE, type Locale } from "../config/site";
+import { abs, personSchema, breadcrumbSchema } from "../lib/schema";
 
 interface Props {
   entry: CollectionEntry<"autores">;
@@ -17,6 +19,18 @@ const articles = (await getArticles(locale)).filter(
   (a) => a.data.author.id === entry.id,
 );
 const social = entry.data.social;
+
+const canonical = abs(authorUrl(locale, entry.id));
+const personLd = personSchema({
+  name: entry.data.name,
+  description: entry.data.bio[locale],
+  url: canonical,
+  sameAs: social ? Object.values(social).filter(Boolean) : undefined,
+});
+const breadcrumb = breadcrumbSchema([
+  { name: SITE.name, url: abs(homePath(locale)) },
+  { name: entry.data.name, url: canonical },
+]);
 ---
 
 <section class="mx-auto max-w-prosa px-5 pt-12 sm:px-8 sm:pt-16">
@@ -54,3 +68,5 @@ const social = entry.data.social;
     </section>
   )
 }
+
+<JsonLd schema={[personLd, breadcrumb]} />
