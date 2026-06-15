@@ -1,0 +1,76 @@
+---
+// Legal notice (EN). Reviewable base; data from SITE.company.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { SITE } from "../../config/site";
+
+const c = SITE.company;
+const cif = c.cif || "[tax ID pending]";
+const address = c.address || "[registered address pending]";
+const alternates = { es: "/aviso-legal", en: "/en/legal-notice" };
+---
+
+<BaseLayout title="Legal notice" description="Legal notice for Calma Society." locale="en" alternates={alternates}>
+  <article class="mx-auto max-w-prosa px-5 pb-8 pt-12 sm:px-8 sm:pt-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Legal</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Legal notice</h1>
+    <p class="mt-2 text-sm text-piedra-suave">Last updated: June 2026</p>
+
+    <div class="article-body mt-8">
+      <h2>1. Site owner</h2>
+      <p>
+        This website (<strong>{SITE.name}</strong>, at {SITE.url.replace("https://", "")})
+        is owned and operated by:
+      </p>
+      <ul>
+        <li><strong>Owner:</strong> {c.legalName}</li>
+        <li><strong>Tax ID (CIF):</strong> {cif}</li>
+        <li><strong>Registered address:</strong> {address}</li>
+        <li><strong>Responsible:</strong> {c.responsible}</li>
+        <li><strong>Email:</strong> {c.email}</li>
+        <li><strong>Phone:</strong> {c.phone}</li>
+      </ul>
+
+      <h2>2. Purpose</h2>
+      <p>
+        {SITE.name} is an editorial digital publication about Menorca and the
+        Mediterranean. Accessing and using the site implies acceptance of this notice.
+      </p>
+
+      <h2>3. Terms of use</h2>
+      <p>
+        Users agree to make appropriate use of the content and not to use it for
+        unlawful purposes or in ways that may harm the rights of third parties or the owner.
+      </p>
+
+      <h2>4. Intellectual property</h2>
+      <p>
+        The content (text, photography, design, logos and brand) belongs to
+        {c.legalName} or its authors and is protected by intellectual property law.
+        Reproduction, distribution or transformation without express authorisation
+        is prohibited.
+      </p>
+
+      <h2>5. Liability</h2>
+      <p>
+        The owner is not liable for misuse of the site or damages arising from its
+        use. We strive for accurate, up-to-date information but cannot guarantee the
+        absence of errors or uninterrupted availability.
+      </p>
+
+      <h2>6. Third-party links</h2>
+      <p>
+        The site may include links to third-party pages (including affiliate or
+        partner links, clearly identified). The owner is not responsible for their
+        content or policies.
+      </p>
+
+      <h2>7. Governing law</h2>
+      <p>
+        This notice is governed by Spanish law, with submission to the competent
+        courts as established by applicable law.
+      </p>
+
+      <p>See also our <a href="/en/privacy">Privacy policy</a> and <a href="/en/cookies">Cookie policy</a>.</p>
+    </div>
+  </article>
+</BaseLayout>

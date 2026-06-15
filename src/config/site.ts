@@ -71,7 +71,17 @@ export const SITE = {
   },
 
   /** Correo de contacto público. */
-  email: 'hola@calmasociety.com', // [PENDIENTE] crear este buzón
+  email: 'calmasocietyweb@gmail.com',
+
+  /** Datos de la empresa titular (para páginas legales). */
+  company: {
+    legalName: 'Menorca Bus, S.L.',
+    responsible: 'Cristian Camps',
+    email: 'calmasocietyweb@gmail.com',
+    phone: '670 424 593',
+    cif: '', // [PENDIENTE] CIF de Menorca Bus, S.L.
+    address: '', // [PENDIENTE] domicilio social completo
+  },
 };
 
 /** Lista de códigos de idioma, para la configuración de i18n de Astro. */

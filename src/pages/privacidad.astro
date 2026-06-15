@@ -1,0 +1,69 @@
+---
+// Política de privacidad (ES) — RGPD / LOPDGDD. Base revisable.
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE } from "../config/site";
+
+const c = SITE.company;
+const cif = c.cif || "[CIF pendiente]";
+const address = c.address || "[domicilio social pendiente]";
+const alternates = { es: "/privacidad", en: "/en/privacy" };
+---
+
+<BaseLayout title="Política de privacidad" description="Cómo trata Calma Society tus datos personales." locale="es" alternates={alternates}>
+  <article class="mx-auto max-w-prosa px-5 pb-8 pt-12 sm:px-8 sm:pt-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Legal</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Política de privacidad</h1>
+    <p class="mt-2 text-sm text-piedra-suave">Última actualización: junio de 2026</p>
+
+    <div class="article-body mt-8">
+      <h2>1. Responsable del tratamiento</h2>
+      <ul>
+        <li><strong>Responsable:</strong> {c.legalName} (CIF {cif})</li>
+        <li><strong>Domicilio:</strong> {address}</li>
+        <li><strong>Email:</strong> {c.email} · <strong>Tel.:</strong> {c.phone}</li>
+      </ul>
+
+      <h2>2. Qué datos tratamos y con qué finalidad</h2>
+      <ul>
+        <li><strong>Suscripción a la newsletter:</strong> tu dirección de correo electrónico, para enviarte nuestros contenidos. Base legal: tu consentimiento.</li>
+        <li><strong>Formulario de contacto:</strong> nombre, email y el mensaje que nos envíes, para atender tu consulta. Base legal: tu consentimiento.</li>
+        <li><strong>Datos de navegación:</strong> datos técnicos y de uso de forma agregada y anónima para el funcionamiento y mejora del sitio. Base legal: interés legítimo.</li>
+      </ul>
+
+      <h2>3. Conservación</h2>
+      <p>
+        Conservamos tus datos mientras mantengas tu suscripción o hasta que
+        solicites su supresión, y durante los plazos legalmente exigibles.
+      </p>
+
+      <h2>4. Destinatarios y encargados del tratamiento</h2>
+      <p>No vendemos tus datos. Trabajamos con proveedores que actúan como encargados del tratamiento:</p>
+      <ul>
+        <li><strong>MailerLite</strong> (gestión de la newsletter).</li>
+        <li><strong>Cloudflare</strong> (alojamiento y entrega del sitio).</li>
+      </ul>
+      <p>
+        Algunos proveedores pueden tratar datos fuera del Espacio Económico Europeo;
+        en tal caso, se aplican las garantías adecuadas previstas por el RGPD
+        (cláusulas contractuales tipo u otros mecanismos válidos).
+      </p>
+
+      <h2>5. Tus derechos</h2>
+      <p>
+        Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición,
+        limitación y portabilidad escribiendo a <strong>{c.email}</strong>. También
+        puedes retirar tu consentimiento en cualquier momento (por ejemplo, con el
+        enlace de baja de cada newsletter) y presentar una reclamación ante la
+        Agencia Española de Protección de Datos (<a href="https://www.aepd.es" rel="noopener" target="_blank">aepd.es</a>).
+      </p>
+
+      <h2>6. Seguridad</h2>
+      <p>
+        Aplicamos medidas técnicas y organizativas razonables para proteger tus
+        datos. El sitio se sirve siempre mediante conexión cifrada (HTTPS).
+      </p>
+
+      <p>Véase también el <a href="/aviso-legal">Aviso legal</a> y la <a href="/cookies">Política de cookies</a>.</p>
+    </div>
+  </article>
+</BaseLayout>

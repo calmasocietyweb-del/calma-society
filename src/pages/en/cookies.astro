@@ -1,0 +1,44 @@
+---
+// Cookie policy (EN). Reviewable base.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { SITE } from "../../config/site";
+
+const c = SITE.company;
+const alternates = { es: "/cookies", en: "/en/cookies" };
+---
+
+<BaseLayout title="Cookie policy" description="Which cookies and technologies Calma Society uses." locale="en" alternates={alternates}>
+  <article class="mx-auto max-w-prosa px-5 pb-8 pt-12 sm:px-8 sm:pt-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Legal</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Cookie policy</h1>
+    <p class="mt-2 text-sm text-piedra-suave">Last updated: June 2026</p>
+
+    <div class="article-body mt-8">
+      <h2>What are cookies?</h2>
+      <p>Cookies are small files a website stores on your device to remember information. We also use similar technologies (scripts).</p>
+
+      <h2>Cookies and services we use</h2>
+      <ul>
+        <li><strong>Strictly necessary.</strong> Required for the site to work and stay secure (e.g. security and performance cookies from <strong>Cloudflare</strong>, our hosting provider).</li>
+        <li><strong>Third-party (newsletter).</strong> We load a <strong>MailerLite</strong> script to run the subscription form, which may set cookies when you interact with it.</li>
+      </ul>
+      <p>
+        We currently <strong>do not use advertising or invasive tracking cookies</strong>.
+        If we add analytics in the future, it will be a privacy-friendly provider and
+        reflected here.
+      </p>
+
+      <h2>Managing cookies</h2>
+      <p>
+        You can configure or delete cookies in your browser settings (Chrome, Safari,
+        Firefox, Edge…). Disabling some cookies may affect parts of the site.
+      </p>
+
+      <h2>More information</h2>
+      <p>
+        For any questions about this policy, write to <strong>{c.email}</strong>.
+        See also the <a href="/en/legal-notice">Legal notice</a> and <a href="/en/privacy">Privacy policy</a>.
+      </p>
+    </div>
+  </article>
+</BaseLayout>

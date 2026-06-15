@@ -6,6 +6,7 @@ import { SECTIONS } from "../config/sections";
 import { useTranslations } from "../i18n/ui";
 import { currentLocale, homePath } from "../i18n/utils";
 import LanguageSwitcher from "./LanguageSwitcher.astro";
+import Logo from "./Logo.astro";
 
 interface Props {
   alternates?: Partial<Record<Locale, string>>;
@@ -24,10 +25,8 @@ const contactHref = locale === "es" ? "/contacto" : "/en/contact";
   <div class="mx-auto max-w-6xl px-5 sm:px-8">
     <div class="flex items-center justify-between gap-4 py-4">
       <!-- Marca -->
-      <a href={home} class="flex items-baseline gap-2.5" aria-label={`${SITE.name} — ${t("nav.home")}`}>
-        <span class="font-display text-xl leading-none tracking-tight text-tinta sm:text-2xl">
-          {SITE.name}
-        </span>
+      <a href={home} class="flex items-center gap-2.5" aria-label={`${SITE.name} — ${t("nav.home")}`}>
+        <Logo />
         <span class="hidden text-[0.6rem] uppercase tracking-[0.25em] text-oro sm:inline">
           {SITE.edition}
         </span>

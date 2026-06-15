@@ -1,0 +1,62 @@
+---
+// Privacy policy (EN) — GDPR. Reviewable base.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { SITE } from "../../config/site";
+
+const c = SITE.company;
+const cif = c.cif || "[tax ID pending]";
+const address = c.address || "[registered address pending]";
+const alternates = { es: "/privacidad", en: "/en/privacy" };
+---
+
+<BaseLayout title="Privacy policy" description="How Calma Society handles your personal data." locale="en" alternates={alternates}>
+  <article class="mx-auto max-w-prosa px-5 pb-8 pt-12 sm:px-8 sm:pt-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Legal</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Privacy policy</h1>
+    <p class="mt-2 text-sm text-piedra-suave">Last updated: June 2026</p>
+
+    <div class="article-body mt-8">
+      <h2>1. Data controller</h2>
+      <ul>
+        <li><strong>Controller:</strong> {c.legalName} (Tax ID {cif})</li>
+        <li><strong>Address:</strong> {address}</li>
+        <li><strong>Email:</strong> {c.email} · <strong>Phone:</strong> {c.phone}</li>
+      </ul>
+
+      <h2>2. What data we process and why</h2>
+      <ul>
+        <li><strong>Newsletter subscription:</strong> your email address, to send you our content. Legal basis: your consent.</li>
+        <li><strong>Contact form:</strong> your name, email and message, to answer your enquiry. Legal basis: your consent.</li>
+        <li><strong>Usage data:</strong> technical and usage data in aggregate, anonymous form to run and improve the site. Legal basis: legitimate interest.</li>
+      </ul>
+
+      <h2>3. Retention</h2>
+      <p>We keep your data while you remain subscribed or until you request deletion, and for any legally required periods.</p>
+
+      <h2>4. Recipients and processors</h2>
+      <p>We do not sell your data. We work with providers acting as data processors:</p>
+      <ul>
+        <li><strong>MailerLite</strong> (newsletter management).</li>
+        <li><strong>Cloudflare</strong> (hosting and content delivery).</li>
+      </ul>
+      <p>
+        Some providers may process data outside the European Economic Area; where
+        that happens, appropriate GDPR safeguards apply (e.g. standard contractual clauses).
+      </p>
+
+      <h2>5. Your rights</h2>
+      <p>
+        You may exercise your rights of access, rectification, erasure, objection,
+        restriction and portability by writing to <strong>{c.email}</strong>. You can
+        withdraw consent at any time (e.g. via the unsubscribe link in each
+        newsletter) and lodge a complaint with the Spanish Data Protection Agency
+        (<a href="https://www.aepd.es" rel="noopener" target="_blank">aepd.es</a>).
+      </p>
+
+      <h2>6. Security</h2>
+      <p>We apply reasonable technical and organisational measures, and the site is always served over an encrypted (HTTPS) connection.</p>
+
+      <p>See also the <a href="/en/legal-notice">Legal notice</a> and <a href="/en/cookies">Cookie policy</a>.</p>
+    </div>
+  </article>
+</BaseLayout>
