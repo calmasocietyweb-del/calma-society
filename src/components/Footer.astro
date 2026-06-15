@@ -1,5 +1,5 @@
 ---
-// Pie de página: marca, secciones, redes y avisos legales.
+// Pie de página: marca, secciones, enlaces "más", redes y avisos legales.
 import { SITE } from "../config/site";
 import { SECTIONS } from "../config/sections";
 import { useTranslations } from "../i18n/ui";
@@ -9,6 +9,9 @@ const locale = currentLocale(Astro.url.pathname);
 const t = useTranslations(locale);
 const year = new Date().getFullYear();
 const igUrl = SITE.social.instagram;
+
+const aboutHref = locale === "es" ? "/quienes-somos" : "/en/about";
+const newsletterHref = locale === "es" ? "/newsletter" : "/en/newsletter";
 ---
 
 <footer class="mt-24 border-t border-niebla bg-arena/40">
@@ -31,10 +34,7 @@ const igUrl = SITE.social.instagram;
           {
             SECTIONS.map((s) => (
               <li>
-                <a
-                  href={s.href[locale]}
-                  class="text-piedra transition-colors hover:text-mar"
-                >
+                <a href={s.href[locale]} class="text-piedra transition-colors hover:text-mar">
                   {s.label[locale]}
                 </a>
               </li>
@@ -43,27 +43,42 @@ const igUrl = SITE.social.instagram;
         </ul>
       </nav>
 
-      <!-- Redes -->
-      <div>
-        <h2 class="text-xs font-semibold uppercase tracking-widest text-oro">
-          {t("footer.follow")}
-        </h2>
-        <ul class="mt-4 space-y-2 text-sm">
-          {
-            igUrl && (
-              <li>
-                <a
-                  href={igUrl}
-                  rel="me noopener"
-                  target="_blank"
-                  class="text-piedra transition-colors hover:text-mar"
-                >
-                  Instagram
-                </a>
-              </li>
-            )
-          }
-        </ul>
+      <!-- Más + Redes -->
+      <div class="space-y-8">
+        <nav aria-label={t("footer.more")}>
+          <h2 class="text-xs font-semibold uppercase tracking-widest text-oro">
+            {t("footer.more")}
+          </h2>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>
+              <a href={aboutHref} class="text-piedra transition-colors hover:text-mar">
+                {t("nav.about")}
+              </a>
+            </li>
+            <li>
+              <a href={newsletterHref} class="text-piedra transition-colors hover:text-mar">
+                {t("nav.newsletter")}
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        {
+          igUrl && (
+            <div>
+              <h2 class="text-xs font-semibold uppercase tracking-widest text-oro">
+                {t("footer.follow")}
+              </h2>
+              <ul class="mt-4 space-y-2 text-sm">
+                <li>
+                  <a href={igUrl} rel="me noopener" target="_blank" class="text-piedra transition-colors hover:text-mar">
+                    Instagram
+                  </a>
+                </li>
+              </ul>
+            </div>
+          )
+        }
       </div>
     </div>
 

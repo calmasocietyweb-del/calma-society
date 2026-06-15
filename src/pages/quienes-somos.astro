@@ -1,0 +1,56 @@
+---
+// Quiénes somos / Criterio editorial (ES). Clave para E-E-A-T y citas de IA.
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const alternates = { es: "/quienes-somos", en: "/en/about" };
+---
+
+<BaseLayout
+  title="Quiénes somos"
+  description="Calma Society: revista independiente de lujo tranquilo sobre el Mediterráneo. Nuestro criterio editorial, independencia y mirada de la isla."
+  locale="es"
+  alternates={alternates}
+>
+  <article class="mx-auto max-w-prosa px-5 pb-8 pt-12 sm:px-8 sm:pt-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Calma Society</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Quiénes somos</h1>
+    <p class="mt-5 text-lg leading-relaxed text-piedra-suave">
+      Calma Society es una revista digital independiente de <strong>lujo tranquilo</strong>
+      sobre el Mediterráneo. Empezamos por Menorca: sus experiencias, su gente y su
+      belleza, contadas con criterio y sin prisa.
+    </p>
+
+    <div class="article-body mt-10">
+      <h2>Qué hacemos</h2>
+      <p>
+        Cubrimos lo mismo que las demás guías —calas, gastronomía, agenda, lugares
+        donde quedarse— pero <strong>elevado</strong>: con criterio editorial, fotografía
+        propia y una mirada de lujo sereno. No creemos en el ruido ni en la ostentación;
+        creemos en el espacio, el tiempo, el producto honesto y la autenticidad.
+      </p>
+
+      <h2>Nuestro criterio editorial</h2>
+      <ul>
+        <li><strong>Independencia.</strong> Recomendamos por convicción, no por comisión.</li>
+        <li><strong>Primera mano.</strong> Escribimos sobre lo que conocemos y pisamos.</li>
+        <li><strong>Calidad sobre cantidad.</strong> Mejor una historia excelente que cinco de relleno.</li>
+        <li><strong>Datos claros.</strong> Horarios, accesos, fechas y precios cuando ayudan.</li>
+      </ul>
+
+      <h2>Independencia y transparencia</h2>
+      <p>
+        Cuando un contenido está patrocinado, <strong>lo decimos siempre</strong> y con
+        claridad. La confianza del lector es nuestro principal activo, y no la ponemos
+        en venta. Los enlaces de afiliación, si los hay, nunca condicionan nuestro criterio.
+      </p>
+
+      <h2>Por qué Menorca, y qué viene después</h2>
+      <p>
+        Menorca —Reserva de la Biosfera y, desde 2023, Patrimonio Mundial por su legado
+        talayótico— es lo opuesto al turismo de masas: tranquila, natural, auténtica. Es
+        nuestra primera edición. Con el tiempo, Calma Society llegará a otros destinos del
+        Mediterráneo con el mismo espíritu.
+      </p>
+    </div>
+  </article>
+</BaseLayout>

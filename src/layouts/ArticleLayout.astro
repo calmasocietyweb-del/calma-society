@@ -1,0 +1,107 @@
+---
+// Plantilla de artículo. El cuerpo (MDX) se inyecta por <slot/>.
+import { type CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+import BaseLayout from "./BaseLayout.astro";
+import { getSection } from "../config/sections";
+import { useTranslations } from "../i18n/ui";
+import { formatDate, placeUrl } from "../i18n/utils";
+import type { Locale } from "../config/site";
+
+interface Props {
+  entry: CollectionEntry<"articulos">;
+  author: CollectionEntry<"autores"> | null;
+  relatedPlaces?: CollectionEntry<"lugares">[];
+  alternates?: Partial<Record<Locale, string>>;
+}
+
+const { entry, author, relatedPlaces = [], alternates } = Astro.props;
+const { data } = entry;
+const locale = data.lang as Locale;
+const t = useTranslations(locale);
+const section = getSection(data.section);
+---
+
+<BaseLayout
+  title={data.seo?.title ?? data.title}
+  description={data.seo?.description ?? data.excerpt}
+  locale={locale}
+  alternates={alternates}
+>
+  <article class="mx-auto max-w-prosa px-5 pb-8 pt-12 sm:px-8 sm:pt-16">
+    <header>
+      <div class="flex items-center gap-3 text-xs font-semibold uppercase tracking-widest">
+        {
+          section && (
+            <a href={section.href[locale]} class="text-oro hover:text-mar">
+              {section.label[locale]}
+            </a>
+          )
+        }
+        {
+          data.sponsored && (
+            <span class="rounded-full bg-arena px-2 py-0.5 text-piedra-suave">
+              {t("article.sponsored")}
+            </span>
+          )
+        }
+      </div>
+
+      <h1 class="mt-4 font-display text-4xl leading-tight text-tinta sm:text-5xl">
+        {data.title}
+      </h1>
+
+      <p class="mt-5 text-lg leading-relaxed text-piedra-suave">{data.excerpt}</p>
+
+      <div class="mt-6 flex flex-wrap items-center gap-x-2 gap-y-1 border-y border-niebla py-4 text-sm text-piedra-suave">
+        {author && <span>{t("article.by")} <strong class="font-medium text-piedra">{author.data.name}</strong></span>}
+        <span aria-hidden="true">·</span>
+        <time datetime={data.publishDate.toISOString()}>{formatDate(data.publishDate, locale)}</time>
+        {
+          data.updatedDate && (
+            <span class="text-piedra-suave/70">
+              · {t("article.updated")} {formatDate(data.updatedDate, locale)}
+            </span>
+          )
+        }
+      </div>
+    </header>
+
+    {
+      data.heroImage && (
+        <figure class="mt-8">
+          <Image
+            src={data.heroImage}
+            alt={data.heroImageAlt ?? data.title}
+            widths={[480, 800, 1200]}
+            sizes="(max-width: 768px) 100vw, 768px"
+            class="w-full rounded-xl"
+          />
+        </figure>
+      )
+    }
+
+    <div class="article-body mt-10">
+      <slot />
+    </div>
+
+    {
+      relatedPlaces.length > 0 && (
+        <aside class="mt-14 border-t border-niebla pt-8">
+          <h2 class="text-xs font-semibold uppercase tracking-widest text-oro">
+            {t("article.related")}
+          </h2>
+          <ul class="mt-4 space-y-2">
+            {relatedPlaces.map((p) => (
+              <li>
+                <a href={placeUrl(locale, p.id)} class="text-mar hover:text-mar-hondo">
+                  {p.data.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      )
+    }
+  </article>
+</BaseLayout>

@@ -1,0 +1,46 @@
+---
+// Dedicated newsletter page (EN). Capture = KPI #1 (CLAUDE.md §3.1).
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import NewsletterSignup from "../../components/NewsletterSignup.astro";
+
+const alternates = { es: "/newsletter", en: "/en/newsletter" };
+
+const benefits = [
+  "A curated pick of the best of Menorca — with judgement, no filler.",
+  "First-hand recommendations: calm coves, fine tables, a real what's-on.",
+  "Stories from the island 365 days a year, off-season included.",
+];
+---
+
+<BaseLayout
+  title="Newsletter"
+  description="Subscribe to Calma Society: every fortnight, the best of Menorca through a quiet-luxury lens."
+  locale="en"
+  alternates={alternates}
+>
+  <section class="mx-auto max-w-prosa px-5 pt-12 text-center sm:px-8 sm:pt-20">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Newsletter</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">
+      The island, in your inbox
+    </h1>
+    <p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-piedra-suave">
+      Calma Society's asset isn't noise, it's trust. Join a community that prefers
+      quality over quantity.
+    </p>
+
+    <ul class="mx-auto mt-8 max-w-md space-y-3 text-left">
+      {
+        benefits.map((b) => (
+          <li class="flex gap-3 text-sm leading-relaxed text-piedra">
+            <span aria-hidden="true" class="text-oro">—</span>
+            <span>{b}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <div class="mt-14">
+    <NewsletterSignup />
+  </div>
+</BaseLayout>

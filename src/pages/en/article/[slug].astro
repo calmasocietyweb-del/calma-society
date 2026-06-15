@@ -1,0 +1,33 @@
+---
+// Article in English: /en/article/[slug]
+import { getCollection, getEntry, render } from "astro:content";
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import { articleSlugFor } from "../../../lib/content";
+import { articleUrl, homePath } from "../../../i18n/utils";
+
+export async function getStaticPaths() {
+  const arts = await getCollection(
+    "articulos",
+    (e) => e.data.lang === "en" && e.data.status === "published",
+  );
+  return arts.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const author = await getEntry(entry.data.author);
+const relatedPlaces = entry.data.relatedPlaces
+  ? await Promise.all(entry.data.relatedPlaces.map((ref) => getEntry(ref)))
+  : [];
+
+const esSlug = await articleSlugFor(entry.data.translationKey, "es");
+const alternates = {
+  en: articleUrl("en", entry.id),
+  es: esSlug ? articleUrl("es", esSlug) : homePath("es"),
+};
+---
+
+<ArticleLayout entry={entry} author={author} relatedPlaces={relatedPlaces} alternates={alternates}>
+  <Content />
+</ArticleLayout>

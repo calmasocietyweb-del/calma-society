@@ -1,12 +1,20 @@
 ---
-// Selector de idioma. Enlaza a la versión equivalente en cada idioma activo.
+// Selector de idioma. Si la página le pasa `alternates` (URLs equivalentes por
+// idioma, ligadas por translationKey), las usa; si no, intercambia el prefijo.
 import { SITE, type Locale } from "../config/site";
 import { useTranslations } from "../i18n/ui";
 import { currentLocale, localizedPath } from "../i18n/utils";
 
+interface Props {
+  alternates?: Partial<Record<Locale, string>>;
+}
+const { alternates } = Astro.props;
+
 const path = Astro.url.pathname;
 const active = currentLocale(path);
 const t = useTranslations(active);
+
+const hrefFor = (code: Locale) => alternates?.[code] ?? localizedPath(path, code);
 ---
 
 <nav aria-label={t("lang.label")} class="flex items-center gap-1.5 text-xs font-medium">
@@ -15,16 +23,14 @@ const t = useTranslations(active);
       <>
         {i > 0 && <span aria-hidden="true" class="text-niebla">·</span>}
         <a
-          href={localizedPath(path, code as Locale)}
+          href={hrefFor(code as Locale)}
           hreflang={code}
           lang={code}
           title={label}
           aria-current={code === active ? "true" : undefined}
           class:list={[
             "uppercase tracking-widest transition-colors",
-            code === active
-              ? "text-tinta"
-              : "text-piedra-suave hover:text-mar",
+            code === active ? "text-tinta" : "text-piedra-suave hover:text-mar",
           ]}
         >
           {code}

@@ -18,9 +18,11 @@ interface Props {
   title: string;
   description?: string;
   locale?: Locale;
+  /** URLs equivalentes por idioma (para el selector). Ligadas por translationKey. */
+  alternates?: Partial<Record<Locale, string>>;
 }
 
-const { title, description = SITE.description } = Astro.props;
+const { title, description = SITE.description, alternates } = Astro.props;
 const locale = Astro.props.locale ?? currentLocale(Astro.url.pathname);
 const localeConfig = getLocaleConfig(locale);
 const t = useTranslations(locale);
@@ -54,7 +56,7 @@ const ogLocale = localeConfig.htmlLang.replace("-", "_");
     >
       {t("a11y.skip")}
     </a>
-    <Header />
+    <Header alternates={alternates} />
     <main id="contenido" class="flex-1">
       <slot />
     </main>

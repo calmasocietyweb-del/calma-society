@@ -1,0 +1,46 @@
+---
+// Página dedicada de newsletter (ES). Captación = KPI nº1 (CLAUDE.md §3.1).
+import BaseLayout from "../layouts/BaseLayout.astro";
+import NewsletterSignup from "../components/NewsletterSignup.astro";
+
+const alternates = { es: "/newsletter", en: "/en/newsletter" };
+
+const beneficios = [
+  "Una selección de lo mejor de Menorca, con criterio y sin relleno.",
+  "Recomendaciones de primera mano: calas con calma, buenas mesas, agenda real.",
+  "Historias de la isla los 365 días del año, también fuera de temporada.",
+];
+---
+
+<BaseLayout
+  title="Newsletter"
+  description="Suscríbete a Calma Society: cada quince días, lo mejor de Menorca con mirada de lujo tranquilo."
+  locale="es"
+  alternates={alternates}
+>
+  <section class="mx-auto max-w-prosa px-5 pt-12 text-center sm:px-8 sm:pt-20">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Newsletter</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">
+      La isla, en tu bandeja de entrada
+    </h1>
+    <p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-piedra-suave">
+      El activo de Calma Society no es el ruido, es la confianza. Únete a una comunidad
+      que prefiere la calidad a la cantidad.
+    </p>
+
+    <ul class="mx-auto mt-8 max-w-md space-y-3 text-left">
+      {
+        beneficios.map((b) => (
+          <li class="flex gap-3 text-sm leading-relaxed text-piedra">
+            <span aria-hidden="true" class="text-oro">—</span>
+            <span>{b}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <div class="mt-14">
+    <NewsletterSignup />
+  </div>
+</BaseLayout>

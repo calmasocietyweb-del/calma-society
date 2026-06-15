@@ -1,0 +1,42 @@
+---
+// Tarjeta de evento (agenda). Presentacional.
+import type { CollectionEntry } from "astro:content";
+import { eventCategoryLabel } from "../i18n/ui";
+import { formatDate } from "../i18n/utils";
+import type { Locale } from "../config/site";
+
+interface Props {
+  event: CollectionEntry<"eventos">;
+  locale: Locale;
+}
+const { event, locale } = Astro.props;
+const { data } = event;
+
+const intl = locale === "es" ? "es-ES" : "en-GB";
+const day = data.startDate.getDate();
+const month = data.startDate.toLocaleDateString(intl, { month: "short" });
+const sameDay =
+  data.endDate && data.endDate.toDateString() === data.startDate.toDateString();
+const dateLabel =
+  !data.endDate || sameDay
+    ? formatDate(data.startDate, locale)
+    : `${formatDate(data.startDate, locale)} – ${formatDate(data.endDate, locale)}`;
+---
+
+<article class="flex gap-5 border-b border-niebla py-6">
+  <div class="w-14 shrink-0 text-center">
+    <div class="font-display text-3xl leading-none text-tinta">{day}</div>
+    <div class="mt-1 text-xs uppercase tracking-wide text-piedra-suave">{month}</div>
+  </div>
+  <div>
+    <p class="text-xs font-semibold uppercase tracking-widest text-oro">
+      {eventCategoryLabel(data.category, locale)}
+    </p>
+    <h3 class="mt-1 font-display text-xl text-tinta">{data.title}</h3>
+    <p class="mt-1 text-sm text-piedra-suave">{data.location}</p>
+    <p class="mt-1 text-sm text-piedra-suave/80">{dateLabel}</p>
+    <p class="mt-2 max-w-prosa text-sm leading-relaxed text-piedra-suave">
+      {data.description}
+    </p>
+  </div>
+</article>

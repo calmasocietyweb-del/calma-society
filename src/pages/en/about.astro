@@ -1,0 +1,56 @@
+---
+// About / Editorial standards (EN). Key for E-E-A-T and AI citations.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const alternates = { es: "/quienes-somos", en: "/en/about" };
+---
+
+<BaseLayout
+  title="About"
+  description="Calma Society: an independent quiet-luxury magazine about the Mediterranean. Our editorial standards, independence and view of the island."
+  locale="en"
+  alternates={alternates}
+>
+  <article class="mx-auto max-w-prosa px-5 pb-8 pt-12 sm:px-8 sm:pt-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Calma Society</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">About us</h1>
+    <p class="mt-5 text-lg leading-relaxed text-piedra-suave">
+      Calma Society is an independent <strong>quiet-luxury</strong> magazine about the
+      Mediterranean. We begin with Menorca: its experiences, its people and its beauty,
+      told with judgement and in no hurry.
+    </p>
+
+    <div class="article-body mt-10">
+      <h2>What we do</h2>
+      <p>
+        We cover the same things other guides do —coves, food, what's on, places to stay—
+        but <strong>elevated</strong>: with editorial judgement, our own photography and a
+        serene, luxurious eye. We don't believe in noise or ostentation; we believe in
+        space, time, honest produce and authenticity.
+      </p>
+
+      <h2>Our editorial standards</h2>
+      <ul>
+        <li><strong>Independence.</strong> We recommend out of conviction, not commission.</li>
+        <li><strong>First-hand.</strong> We write about what we know and have walked.</li>
+        <li><strong>Quality over quantity.</strong> One excellent story beats five fillers.</li>
+        <li><strong>Clear facts.</strong> Hours, access, dates and prices when they help.</li>
+      </ul>
+
+      <h2>Independence and transparency</h2>
+      <p>
+        When content is sponsored, <strong>we always say so</strong>, clearly. The reader's
+        trust is our main asset, and it is not for sale. Affiliate links, where present,
+        never shape our judgement.
+      </p>
+
+      <h2>Why Menorca, and what comes next</h2>
+      <p>
+        Menorca —a UNESCO Biosphere Reserve and, since 2023, a World Heritage Site for its
+        Talayotic legacy— is the opposite of mass tourism: calm, natural, authentic. It is
+        our first edition. In time, Calma Society will reach other Mediterranean destinations
+        in the same spirit.
+      </p>
+    </div>
+  </article>
+</BaseLayout>

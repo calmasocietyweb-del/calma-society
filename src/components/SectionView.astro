@@ -1,0 +1,61 @@
+---
+// Vista de sección reutilizable: cabecera + listado de artículos (o eventos en
+// "agenda"). Solo contenido publicado. Se incrusta dentro de BaseLayout.
+import ArticleCard from "./ArticleCard.astro";
+import EventCard from "./EventCard.astro";
+import { getArticlesBySection, getEvents } from "../lib/content";
+import { getSection } from "../config/sections";
+import { SITE, type Locale } from "../config/site";
+import { useTranslations } from "../i18n/ui";
+import { articleUrl } from "../i18n/utils";
+
+interface Props {
+  sectionKey: string;
+  locale: Locale;
+}
+const { sectionKey, locale } = Astro.props;
+const section = getSection(sectionKey)!;
+const t = useTranslations(locale);
+
+const isAgenda = sectionKey === "agenda";
+const articles = isAgenda ? [] : await getArticlesBySection(locale, sectionKey);
+const events = isAgenda ? await getEvents(locale) : [];
+---
+
+<section class="mx-auto max-w-6xl px-5 pt-12 sm:px-8 sm:pt-16">
+  <header class="max-w-prosa border-b border-niebla pb-8">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">
+      {SITE.name} · {SITE.edition}
+    </p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">
+      {section.label[locale]}
+    </h1>
+    <p class="mt-4 text-lg leading-relaxed text-piedra-suave">
+      {section.intro[locale]}
+    </p>
+  </header>
+
+  {
+    isAgenda ? (
+      <div class="mt-8 max-w-3xl">
+        {events.length > 0 ? (
+          events.map((e) => <EventCard event={e} locale={locale} />)
+        ) : (
+          <p class="text-piedra-suave">{t("agenda.empty")}</p>
+        )}
+      </div>
+    ) : articles.length > 0 ? (
+      <div class="mt-10 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+        {articles.map((a) => (
+          <ArticleCard
+            title={a.data.title}
+            excerpt={a.data.excerpt}
+            href={articleUrl(locale, a.id)}
+          />
+        ))}
+      </div>
+    ) : (
+      <p class="mt-10 text-piedra-suave">{t("section.empty")}</p>
+    )
+  }
+</section>

@@ -1,0 +1,26 @@
+---
+// Páginas de sección en español: /descubrir, /agenda, /comer-y-beber, …
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionView from "../components/SectionView.astro";
+import { SECTIONS, getSection } from "../config/sections";
+
+export async function getStaticPaths() {
+  return SECTIONS.map((s) => ({
+    params: { section: s.href.es.replace(/^\//, "") },
+    props: { key: s.key },
+  }));
+}
+
+const { key } = Astro.props;
+const section = getSection(key)!;
+const alternates = { es: section.href.es, en: section.href.en };
+---
+
+<BaseLayout
+  title={section.label.es}
+  description={section.intro.es}
+  locale="es"
+  alternates={alternates}
+>
+  <SectionView sectionKey={key} locale="es" />
+</BaseLayout>

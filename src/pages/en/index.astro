@@ -1,44 +1,27 @@
 ---
-// Home in English (under the /en prefix).
-// Sample homepage to showcase the design system (Phase 1).
-// Real content arrives with the content collections (Phase 2/3).
+// Home in English (/en/). Real content from collections (published only).
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Hero from "../../components/Hero.astro";
 import LeadStory from "../../components/LeadStory.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
+import EventCard from "../../components/EventCard.astro";
 import NewsletterSignup from "../../components/NewsletterSignup.astro";
 import { SITE } from "../../config/site";
+import { getSection } from "../../config/sections";
 import { useTranslations } from "../../i18n/ui";
+import { getArticles, getFeaturedArticle, getEvents } from "../../lib/content";
+import { articleUrl } from "../../i18n/utils";
 
-const t = useTranslations("en");
+const locale = "en";
+const t = useTranslations(locale);
 
-// SAMPLE content (design demonstration only; not real).
-const sample = [
-  {
-    kicker: "Eat & Drink",
-    title: "Table for two: Menorca's quiet fine dining",
-    excerpt:
-      "Chefs working with island produce, and tables you can count on one hand.",
-  },
-  {
-    kicker: "Discover",
-    title: "The northern coves that still keep their silence",
-    excerpt:
-      "How to get there, when to go, and why an early start pays off on the tramuntana coast.",
-  },
-  {
-    kicker: "Living",
-    title: "A restored stone house inland",
-    excerpt:
-      "Traditional Menorcan architecture, reinterpreted with calm and good taste.",
-  },
-  {
-    kicker: "Culture",
-    title: "The crafts that refuse to disappear",
-    excerpt:
-      "Artisans and avarques: the hands that hold the island's identity together.",
-  },
-];
+const lead = await getFeaturedArticle(locale);
+const rest = (await getArticles(locale))
+  .filter((a) => a.id !== lead?.id)
+  .slice(0, 3);
+const events = (await getEvents(locale)).slice(0, 3);
+
+const sectionLabel = (key: string) => getSection(key)?.label[locale];
 ---
 
 <BaseLayout title="Home" locale="en">
@@ -48,34 +31,54 @@ const sample = [
     subtitle={t("home.hero.subtitle")}
   />
 
-  <!-- Lead story -->
-  <section class="mx-auto max-w-6xl px-5 pb-4 sm:px-8">
-    <LeadStory
-      kicker={sample[0].kicker}
-      title={sample[0].title}
-      excerpt={sample[0].excerpt}
-      href="#"
-      cta={t("home.readmore")}
-    />
-  </section>
+  {
+    lead && (
+      <section class="mx-auto max-w-6xl px-5 pb-4 sm:px-8">
+        <LeadStory
+          kicker={sectionLabel(lead.data.section)}
+          title={lead.data.title}
+          excerpt={lead.data.excerpt}
+          href={articleUrl(locale, lead.id)}
+          cta={t("home.readmore")}
+        />
+      </section>
+    )
+  }
 
-  <!-- Editor's selection -->
-  <section class="mx-auto mt-16 max-w-6xl px-5 sm:px-8">
-    <div class="flex items-baseline justify-between border-b border-niebla pb-3">
-      <h2 class="font-display text-2xl text-tinta">{t("home.featured")}</h2>
-      <span class="text-[0.65rem] uppercase tracking-widest text-piedra-suave/70">
-        {t("home.preview")}
-      </span>
-    </div>
+  {
+    rest.length > 0 && (
+      <section class="mx-auto mt-16 max-w-6xl px-5 sm:px-8">
+        <h2 class="border-b border-niebla pb-3 font-display text-2xl text-tinta">
+          {t("home.featured")}
+        </h2>
+        <div class="mt-8 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          {rest.map((a) => (
+            <ArticleCard
+              kicker={sectionLabel(a.data.section)}
+              title={a.data.title}
+              excerpt={a.data.excerpt}
+              href={articleUrl(locale, a.id)}
+            />
+          ))}
+        </div>
+      </section>
+    )
+  }
 
-    <div class="mt-8 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-      {
-        sample.slice(1).map((a) => (
-          <ArticleCard kicker={a.kicker} title={a.title} excerpt={a.excerpt} href="#" />
-        ))
-      }
-    </div>
-  </section>
+  {
+    events.length > 0 && (
+      <section class="mx-auto mt-20 max-w-3xl px-5 sm:px-8">
+        <h2 class="border-b border-niebla pb-3 font-display text-2xl text-tinta">
+          {t("home.agenda")}
+        </h2>
+        <div class="mt-2">
+          {events.map((e) => (
+            <EventCard event={e} locale={locale} />
+          ))}
+        </div>
+      </section>
+    )
+  }
 
   <div class="mt-24">
     <NewsletterSignup />

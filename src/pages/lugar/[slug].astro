@@ -1,0 +1,24 @@
+---
+// Lugar en español: /lugar/[slug]
+import { getCollection } from "astro:content";
+import PlaceLayout from "../../layouts/PlaceLayout.astro";
+import { placeSlugFor } from "../../lib/content";
+import { placeUrl, homePath } from "../../i18n/utils";
+
+export async function getStaticPaths() {
+  const places = await getCollection(
+    "lugares",
+    (e) => e.data.lang === "es" && e.data.status === "published",
+  );
+  return places.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const enSlug = await placeSlugFor(entry.data.translationKey, "en");
+const alternates = {
+  es: placeUrl("es", entry.id),
+  en: enSlug ? placeUrl("en", enSlug) : homePath("en"),
+};
+---
+
+<PlaceLayout entry={entry} alternates={alternates} />
