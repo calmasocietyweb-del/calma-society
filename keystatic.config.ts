@@ -129,6 +129,11 @@ export default config({
           description:
             "Describe la imagen en una frase (OBLIGATORIO si hay foto). Ayuda a personas ciegas y a Google a entender la imagen. Ej.: «Cala de arena blanca y aguas turquesa en el norte de Menorca».",
         }),
+        heroImageCredit: fields.text({
+          label: "Crédito / pie de foto (fuente)",
+          description:
+            "De dónde es la foto, p. ej. «Adobe Stock» o «Autor / Wikimedia Commons (CC BY-SA 4.0)». Aparece pequeñito bajo la imagen. Déjalo vacío si es foto propia.",
+        }),
         tags: fields.array(fields.text({ label: "Etiqueta" }), {
           label: "Etiquetas",
           itemLabel: (props) => props.value,

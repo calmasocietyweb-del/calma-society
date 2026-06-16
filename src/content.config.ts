@@ -52,6 +52,7 @@ const articulos = defineCollection({
         author: reference("autores"),
         heroImage: z.string().optional(), // ruta pública (p. ej. /uploads/foto.jpg), gestionable desde el CMS
         heroImageAlt: z.string().optional(),
+        heroImageCredit: z.string().optional(), // pie de foto / crédito (autor o fuente), p. ej. "Adobe Stock"
         tags: z.array(z.string()).default([]),
         status: STATUS,
         featured: z.boolean().default(false),

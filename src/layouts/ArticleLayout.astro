@@ -101,19 +101,26 @@ const breadcrumb = breadcrumbSchema([
 
     {
       data.heroImage && (
-        <figure class="mt-8 aspect-[3/2] overflow-hidden rounded-xl">
-          <img
-            src={data.heroImage}
-            srcset={srcset(data.heroImage)}
-            sizes="(min-width: 700px) 672px, 100vw"
-            alt={data.heroImageAlt ?? data.title}
-            width="1500"
-            height="1000"
-            class="h-full w-full object-cover"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-          />
+        <figure class="mt-8">
+          <div class="aspect-[3/2] overflow-hidden rounded-xl">
+            <img
+              src={data.heroImage}
+              srcset={srcset(data.heroImage)}
+              sizes="(min-width: 700px) 672px, 100vw"
+              alt={data.heroImageAlt ?? data.title}
+              width="1500"
+              height="1000"
+              class="h-full w-full object-cover"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </div>
+          {data.heroImageCredit && (
+            <figcaption class="mt-2 text-xs text-piedra-suave">
+              {locale === "es" ? "Foto" : "Photo"}: {data.heroImageCredit}
+            </figcaption>
+          )}
         </figure>
       )
     }

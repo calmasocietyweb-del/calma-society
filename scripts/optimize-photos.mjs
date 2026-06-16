@@ -37,6 +37,8 @@ const jobs = [
   { src: `${SRC}/_stock/atardecer-menorca.jpg`, out: "atardecer-menorca" },
   { src: `${SRC}/_stock/navegar-menorca.jpg`, out: "navegar-menorca" },
   { src: `${SRC}/_stock/calma-menorca.jpg`, out: "calma-menorca" },
+  // s'Albufera des Grau — Wikimedia Commons (Nicolas G. Mertens, CC BY-SA 4.0).
+  { src: `${SRC}/_stock/albufera-des-grau.jpg`, out: "albufera-des-grau" },
 ];
 
 mkdirSync(OUT, { recursive: true });
