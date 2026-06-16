@@ -38,8 +38,16 @@ const ESTADOS = [
 ] as const;
 
 export default config({
-  // Modo LOCAL: trastear sin riesgo en tu ordenador. Nada se sube solo.
-  storage: { kind: "local" },
+  // Almacenamiento según el entorno:
+  //  - En tu ordenador (`npm run dev`): modo LOCAL → editas archivos de tu PC,
+  //    nada se sube solo (trastear sin riesgo).
+  //  - En Vercel (panel con login): modo GitHub → los cambios van al repositorio
+  //    a través del login de GitHub, y la web pública se actualiza sola.
+  // `import.meta.env.DEV` lo sustituye Vite en compilación (no es process.env,
+  // que rompería en el navegador).
+  storage: import.meta.env.DEV
+    ? { kind: "local" }
+    : { kind: "github", repo: "calmasocietyweb-del/calma-society" },
 
   ui: {
     brand: { name: "Calma Society" },

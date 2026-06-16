@@ -4,23 +4,41 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
 import keystatic from '@keystatic/astro';
+import vercel from '@astrojs/vercel';
 
 import { SITE, LOCALE_CODES } from './src/config/site';
 
 // Tailwind CSS v4 se carga vía PostCSS (ver postcss.config.mjs),
 // compatible con el bundler Rolldown/Vite de Astro 6.
 
-// EDITOR VISUAL (Keystatic): solo se activa al editar en local (`npm run dev`).
-// En la build de producción (Cloudflare) NO se carga, así el sitio sigue 100%
-// estático y el despliegue no se ve afectado. Las rutas de Keystatic necesitan
-// servidor, y aquí no usamos adaptador: por eso queda restringido a desarrollo.
+// TRES MODOS DE BUILD (un solo repo, dos despliegues):
+//
+//  1) Cloudflare (web pública)  → NI adaptador NI Keystatic. 100% estática,
+//     EXACTAMENTE como hasta ahora. Es lo que sirve calmasociety.com.
+//     (No hay VERCEL ni npm_lifecycle_event de dev → cmsEnabled = false.)
+//
+//  2) Desarrollo local (`npm run dev`/`cms`) → Keystatic en modo LOCAL,
+//     sin adaptador (lo sirve el dev server). Para trastear en tu PC.
+//
+//  3) Vercel (panel de edición con login) → Keystatic en modo GitHub +
+//     adaptador de Vercel (rutas con servidor para el login). Es el panel
+//     que usan los editores desde cualquier ordenador.
+//
+// Así NUNCA volvemos a meter el adaptador en Cloudflare (que fue lo que congeló
+// la web por el KV). Ver memoria deployment-cloudflare.
+const onVercel = !!process.env.VERCEL;
 const cmsEnabled =
+  onVercel ||
   process.env.KEYSTATIC === 'true' ||
   ['dev', 'start', 'cms'].includes(process.env.npm_lifecycle_event ?? '');
 
 // https://astro.build/config
 export default defineConfig({
   site: SITE.url,
+
+  // Adaptador SOLO en Vercel (panel de edición). En Cloudflare y en local NO hay
+  // adaptador → la web pública sigue siendo estática pura.
+  adapter: onVercel ? vercel() : undefined,
 
   // i18n nativa de Astro, preparada para multi-idioma.
   // El idioma por defecto (es) va en la raíz; el resto bajo prefijo (/en, /de…).
@@ -41,7 +59,7 @@ export default defineConfig({
         locales: { es: "es-ES", en: "en-GB" },
       },
     }),
-    // React + Keystatic SOLO en desarrollo (ver nota arriba).
+    // React + Keystatic solo en desarrollo y en Vercel (NUNCA en Cloudflare).
     ...(cmsEnabled ? [react(), keystatic()] : []),
   ],
 

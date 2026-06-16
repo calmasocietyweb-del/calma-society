@@ -7,6 +7,9 @@ dist/
 # Cache de Astro
 .astro/
 
+# Salida del adaptador de Vercel (build del panel de edición)
+.vercel/
+
 # Variables de entorno (NUNCA subir claves al repo)
 .env
 .env.production
