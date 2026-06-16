@@ -74,6 +74,8 @@ export const ui = {
     "contact.send": "Enviar mensaje",
     "contact.directemail": "O escríbenos directamente a",
     "contact.sent": "¡Gracias! Te responderemos pronto.",
+    "contact.consent": "He leído y acepto la",
+    "contact.consentLink": "Política de privacidad",
 
     "footer.about":
       "Calma Society — el arte del lujo tranquilo en el Mediterráneo. Primera edición: Menorca.",
@@ -148,6 +150,8 @@ export const ui = {
     "contact.send": "Send message",
     "contact.directemail": "Or email us directly at",
     "contact.sent": "Thank you! We'll be in touch soon.",
+    "contact.consent": "I have read and accept the",
+    "contact.consentLink": "Privacy policy",
 
     "footer.about":
       "Calma Society — the art of quiet luxury in the Mediterranean. First edition: Menorca.",

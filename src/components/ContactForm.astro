@@ -9,6 +9,7 @@ const locale = currentLocale(Astro.url.pathname);
 const t = useTranslations(locale);
 const action = SITE.forms.contact;
 const connected = action.length > 0;
+const privacyHref = locale === "es" ? "/privacidad" : "/en/privacy";
 
 const field =
   "mt-1 w-full rounded-md border border-niebla bg-white/60 px-4 py-3 text-sm text-piedra focus-visible:outline-mar";
@@ -30,6 +31,22 @@ const field =
         <textarea id="message" name="message" rows="5" required class={field} />
       </div>
       <input type="hidden" name="_subject" value="Calma Society — mensaje de contacto" />
+      <div class="flex items-start gap-2.5">
+        <input
+          id="consent"
+          type="checkbox"
+          name="consent"
+          value="acepto"
+          required
+          class="mt-1 h-4 w-4 shrink-0 accent-mar"
+        />
+        <label for="consent" class="text-sm leading-relaxed text-piedra-suave">
+          {t("contact.consent")}{" "}
+          <a href={privacyHref} class="font-medium text-mar underline hover:text-mar-hondo">
+            {t("contact.consentLink")}
+          </a>.
+        </label>
+      </div>
       <button
         type="submit"
         class="rounded-md bg-mar px-6 py-3 text-sm font-semibold text-lino transition-colors hover:bg-mar-hondo"
