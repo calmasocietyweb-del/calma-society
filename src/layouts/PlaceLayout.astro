@@ -7,6 +7,7 @@ import { useTranslations, placeTypeLabel } from "../i18n/ui";
 import { SITE, type Locale } from "../config/site";
 import { placeUrl, homePath } from "../i18n/utils";
 import { abs, placeSchema, breadcrumbSchema } from "../lib/schema";
+import { srcset } from "../lib/img";
 
 interface Props {
   entry: CollectionEntry<"lugares">;
@@ -60,6 +61,8 @@ const breadcrumb = breadcrumbSchema([
         <figure class="mt-8 aspect-[3/2] overflow-hidden rounded-xl">
           <img
             src={data.images[0]}
+            srcset={srcset(data.images[0])}
+            sizes="(min-width: 700px) 672px, 100vw"
             alt={data.name}
             width="1500"
             height="1000"

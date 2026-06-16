@@ -2,6 +2,7 @@
 // Hero editorial reutilizable.
 //  - Con `image`: hero a pantalla completa con foto de fondo y texto superpuesto.
 //  - Sin `image`: hero de texto sobrio.
+import { srcset } from "../lib/img";
 interface Props {
   eyebrow?: string;
   title: string;
@@ -17,6 +18,8 @@ const { eyebrow, title, subtitle, image, imageAlt } = Astro.props;
     <section class="relative flex min-h-[70svh] items-center justify-center overflow-hidden">
       <img
         src={image}
+        srcset={srcset(image)}
+        sizes="100vw"
         alt={imageAlt ?? ""}
         width="1600"
         height="1000"

@@ -1,6 +1,7 @@
 ---
 // Historia destacada (lead) — el ancla visual editorial de la portada.
 // Imagen grande + titular generoso. Si no hay foto, muestra un degradado sobrio.
+import { srcset } from "../lib/img";
 interface Props {
   kicker?: string;
   title: string;
@@ -19,6 +20,8 @@ const { kicker, title, excerpt, href, cta, image, imageAlt } = Astro.props;
       image ? (
         <img
           src={image}
+          srcset={srcset(image)}
+          sizes="(min-width: 768px) 45vw, 100vw"
           alt={imageAlt ?? ""}
           width="1600"
           height="1280"

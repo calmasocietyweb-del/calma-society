@@ -1,6 +1,7 @@
 ---
 // Tarjeta de artículo (presentacional). Muestra la foto si la hay; si no, un
 // degradado sobrio como marcador.
+import { srcset } from "../lib/img";
 interface Props {
   kicker?: string;
   title: string;
@@ -20,6 +21,8 @@ const { kicker, title, excerpt, href, image, imageAlt } = Astro.props;
       image && (
         <img
           src={image}
+          srcset={srcset(image)}
+          sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
           alt={imageAlt ?? ""}
           width="1600"
           height="1200"
