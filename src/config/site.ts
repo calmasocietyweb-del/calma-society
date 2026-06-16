@@ -33,7 +33,7 @@ export const SITE = {
   url: 'https://calmasociety.com',
 
   /** Token de verificación de Google Search Console (método "etiqueta HTML"). */
-  googleSiteVerification: '', // [PENDIENTE] pega aquí el código que te dé Google
+  googleSiteVerification: 'lRhppI_bkJUfmIJUuXg6D15p7A2eJV1CMEpzb-a1djk', // Google Search Console (etiqueta HTML)
 
   /** Idioma por defecto (va en la raíz, sin prefijo). */
   defaultLocale: 'es' as Locale,
