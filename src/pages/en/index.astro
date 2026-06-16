@@ -7,7 +7,7 @@ import ArticleCard from "../../components/ArticleCard.astro";
 import EventCard from "../../components/EventCard.astro";
 import NewsletterSignup from "../../components/NewsletterSignup.astro";
 import { SITE } from "../../config/site";
-import { getSection } from "../../config/sections";
+import { getSection, SECTIONS } from "../../config/sections";
 import { useTranslations } from "../../i18n/ui";
 import { getArticles, getFeaturedArticle, getEvents } from "../../lib/content";
 import { articleUrl } from "../../i18n/utils";
@@ -86,7 +86,41 @@ const sectionLabel = (key: string) => getSection(key)?.label[locale];
     )
   }
 
-  <div class="mt-24">
-    <NewsletterSignup />
-  </div>
+  <section class="mx-auto mt-24 max-w-6xl px-5 sm:px-8">
+    <h2 class="border-b border-niebla pb-3 font-display text-2xl text-tinta">
+      {t("home.explore")}
+    </h2>
+    <p class="mt-3 text-piedra-suave">{t("home.sections.intro")}</p>
+    <div class="mt-8 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        SECTIONS.map((s) => (
+          <a href={s.href[locale]} class="group block border-t border-niebla pt-5">
+            <h3 class="font-display text-xl text-tinta transition-colors group-hover:text-mar">
+              {s.label[locale]}
+            </h3>
+            <p class="mt-2 text-sm leading-relaxed text-piedra-suave">{s.intro[locale]}</p>
+            <span class="mt-3 inline-block text-xs font-semibold uppercase tracking-widest text-oro transition-colors group-hover:text-mar">
+              {t("common.viewall")} →
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="mt-24 bg-mar-hondo">
+    <div class="mx-auto max-w-3xl px-5 py-20 text-center sm:px-8">
+      <p class="font-display text-2xl leading-relaxed text-lino sm:text-3xl">
+        {t("home.manifesto")}
+      </p>
+      <a
+        href="/en/about"
+        class="mt-8 inline-block rounded-full border border-lino/40 px-6 py-2.5 text-sm font-semibold uppercase tracking-widest text-lino transition-colors hover:bg-lino hover:text-mar-hondo"
+      >
+        {t("home.manifesto.cta")}
+      </a>
+    </div>
+  </section>
+
+  <NewsletterSignup />
 </BaseLayout>

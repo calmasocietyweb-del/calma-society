@@ -29,6 +29,10 @@ export const ui = {
     "home.readmore": "Leer la historia",
     "home.agenda": "No te lo pierdas",
     "home.explore": "Explora la isla",
+    "home.sections.intro": "Seis maneras de mirar Menorca, todas con criterio.",
+    "home.manifesto":
+      "No somos una guía más. Somos criterio, fotografía propia y una mirada de lujo tranquilo sobre Menorca, los 365 días del año.",
+    "home.manifesto.cta": "Conoce Calma Society",
 
     "article.by": "Por",
     "article.published": "Publicado el",
@@ -99,6 +103,10 @@ export const ui = {
     "home.readmore": "Read the story",
     "home.agenda": "Don't miss",
     "home.explore": "Explore the island",
+    "home.sections.intro": "Six ways of looking at Menorca, all with judgement.",
+    "home.manifesto":
+      "Not just another guide. We're judgement, original photography and a quiet-luxury look at Menorca, 365 days a year.",
+    "home.manifesto.cta": "About Calma Society",
 
     "article.by": "By",
     "article.published": "Published on",

@@ -19,6 +19,17 @@ const jobs = [
   { src: `${SRC}/pelayo-arbues-B1gDa1LjMG4-unsplash.jpg`, out: "cala-macarelleta.webp" },
   { src: `${SRC}/pelayo-arbues-CkZ1gMcK-iE-unsplash.jpg`, out: "cami-de-cavalls.webp" },
   { src: `${SRC}/ciuta.avif`, out: "ciutadella.webp" },
+  // Fotos de Adobe Stock (licenciadas) para los temas sin portada propia.
+  { src: `${SRC}/_stock/fine-dining.jpg`, out: "fine-dining.webp" },
+  { src: `${SRC}/_stock/queso-curacion.jpg`, out: "queso-curacion.webp" },
+  { src: `${SRC}/_stock/casa-piedra.jpg`, out: "casa-piedra.webp" },
+  { src: `${SRC}/_stock/menorca-punta-nati.jpg`, out: "menorca-punta-nati.webp" },
+  { src: `${SRC}/_stock/puerto-mao.jpg`, out: "puerto-mao.webp" },
+  { src: `${SRC}/_stock/fornells.jpg`, out: "fornells.webp" },
+  // Artículos nuevos.
+  { src: `${SRC}/_stock/faro-artrutx.jpg`, out: "faro-artrutx.webp" },
+  { src: `${SRC}/_stock/gin-menorca.jpg`, out: "gin-menorca.webp" },
+  { src: `${SRC}/_stock/villa-menorca.jpg`, out: "villa-menorca.webp" },
 ];
 
 mkdirSync(OUT, { recursive: true });
