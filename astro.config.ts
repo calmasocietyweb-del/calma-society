@@ -2,11 +2,21 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
+import react from '@astrojs/react';
+import keystatic from '@keystatic/astro';
 
 import { SITE, LOCALE_CODES } from './src/config/site';
 
 // Tailwind CSS v4 se carga vía PostCSS (ver postcss.config.mjs),
 // compatible con el bundler Rolldown/Vite de Astro 6.
+
+// EDITOR VISUAL (Keystatic): solo se activa al editar en local (`npm run dev`).
+// En la build de producción (Cloudflare) NO se carga, así el sitio sigue 100%
+// estático y el despliegue no se ve afectado. Las rutas de Keystatic necesitan
+// servidor, y aquí no usamos adaptador: por eso queda restringido a desarrollo.
+const cmsEnabled =
+  process.env.KEYSTATIC === 'true' ||
+  ['dev', 'start', 'cms'].includes(process.env.npm_lifecycle_event ?? '');
 
 // https://astro.build/config
 export default defineConfig({
@@ -31,6 +41,8 @@ export default defineConfig({
         locales: { es: "es-ES", en: "en-GB" },
       },
     }),
+    // React + Keystatic SOLO en desarrollo (ver nota arriba).
+    ...(cmsEnabled ? [react(), keystatic()] : []),
   ],
 
   vite: {
