@@ -73,7 +73,7 @@ export const SITE = {
    * Mientras esté vacío, se muestra el correo de contacto en su lugar.
    */
   forms: {
-    contact: '', // [PENDIENTE] p. ej. https://formspree.io/f/XXXX
+    contact: 'https://formspree.io/f/xzdqwzrq', // Formspree → calmasocietyweb@gmail.com
   },
 
   /** Correo de contacto público. */
