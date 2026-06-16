@@ -62,6 +62,8 @@ const breadcrumb = breadcrumbSchema([
             title={a.data.title}
             excerpt={a.data.excerpt}
             href={articleUrl(locale, a.id)}
+            image={a.data.heroImage}
+            imageAlt={a.data.heroImageAlt}
           />
         ))}
       </div>
