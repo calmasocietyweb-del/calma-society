@@ -1,6 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "_comentario": "Este archivo SOLO lo lee Vercel (el panel de edición). Cloudflare NO lo usa. Añade 'noindex' a TODO el despliegue de Vercel para que Google no indexe esta copia ni el panel: la web pública real es calmasociety.com (Cloudflare). Así evitamos contenido duplicado.",
   "headers": [
     {
       "source": "/(.*)",
