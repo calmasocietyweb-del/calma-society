@@ -31,6 +31,12 @@ const jobs = [
   { src: `${SRC}/_stock/faro-artrutx.jpg`, out: "faro-artrutx" },
   { src: `${SRC}/_stock/gin-menorca.jpg`, out: "gin-menorca" },
   { src: `${SRC}/_stock/villa-menorca.jpg`, out: "villa-menorca" },
+  // Entradas nuevas (jun 2026).
+  { src: `${SRC}/_stock/mao-puerto.jpg`, out: "mao-puerto", cover: { w: 1600, h: 1000 } }, // origen vertical → recorte apaisado
+  { src: `${SRC}/_stock/binibeca.jpg`, out: "binibeca" },
+  { src: `${SRC}/_stock/atardecer-menorca.jpg`, out: "atardecer-menorca" },
+  { src: `${SRC}/_stock/navegar-menorca.jpg`, out: "navegar-menorca" },
+  { src: `${SRC}/_stock/calma-menorca.jpg`, out: "calma-menorca" },
 ];
 
 mkdirSync(OUT, { recursive: true });
