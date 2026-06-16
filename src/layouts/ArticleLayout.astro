@@ -90,7 +90,7 @@ const breadcrumb = breadcrumbSchema([
         <time datetime={data.publishDate.toISOString()}>{formatDate(data.publishDate, locale)}</time>
         {
           data.updatedDate && (
-            <span class="text-piedra-suave/70">
+            <span class="text-piedra-suave">
               · {t("article.updated")} {formatDate(data.updatedDate, locale)}
             </span>
           )
