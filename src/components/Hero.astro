@@ -14,15 +14,15 @@ const { eyebrow, title, subtitle, image, imageAlt } = Astro.props;
 
 {
   image ? (
-    <section class="relative isolate flex min-h-[68vh] items-center justify-center overflow-hidden">
+    <section class="relative flex min-h-[70svh] items-center justify-center overflow-hidden">
       <img
         src={image}
         alt={imageAlt ?? ""}
-        class="absolute inset-0 -z-10 h-full w-full object-cover"
+        class="absolute inset-0 h-full w-full object-cover"
         fetchpriority="high"
       />
-      <div class="absolute inset-0 -z-10 bg-gradient-to-b from-tinta/45 via-tinta/25 to-tinta/65" />
-      <div class="mx-auto max-w-3xl px-5 py-24 text-center">
+      <div class="absolute inset-0 bg-gradient-to-b from-tinta/45 via-tinta/25 to-tinta/65" />
+      <div class="relative z-10 mx-auto max-w-3xl px-5 py-24 text-center">
         {eyebrow && (
           <p class="text-xs font-semibold uppercase tracking-[0.3em] text-lino/90">
             {eyebrow}
