@@ -100,12 +100,15 @@ const breadcrumb = breadcrumbSchema([
 
     {
       data.heroImage && (
-        <figure class="mt-8">
+        <figure class="mt-8 aspect-[3/2] overflow-hidden rounded-xl">
           <img
             src={data.heroImage}
             alt={data.heroImageAlt ?? data.title}
-            class="w-full rounded-xl"
-            loading="lazy"
+            width="1500"
+            height="1000"
+            class="h-full w-full object-cover"
+            loading="eager"
+            fetchpriority="high"
             decoding="async"
           />
         </figure>

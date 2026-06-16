@@ -20,6 +20,8 @@ const { kicker, title, excerpt, href, cta, image, imageAlt } = Astro.props;
         <img
           src={image}
           alt={imageAlt ?? ""}
+          width="1600"
+          height="1280"
           class="aspect-[5/4] w-full object-cover transition-transform duration-700 group-hover:scale-[1.02] md:aspect-[4/3]"
           loading="lazy"
           decoding="async"
