@@ -32,4 +32,21 @@ export default defineConfig({
       },
     }),
   ],
+
+  vite: {
+    server: {
+      watch: {
+        // El vigilante de archivos NO debe seguir las carpetas de material
+        // fuente en bruto (fotos/vídeos pesados que Adobe mantiene bloqueados)
+        // ni los archivos temporales. Si no, en Windows lanza errores
+        // "unhandled rejection" EBUSY/ENOENT en cascada. Estas carpetas ya
+        // están fuera del repo (.gitignore); aquí las sacamos del vigilante.
+        ignored: [
+          "**/MATERIAL FOTOS RRSS/**",
+          "**/MATERIAL VIDEOS RRSS/**",
+          "**/*.tmp.*",
+        ],
+      },
+    },
+  },
 });
