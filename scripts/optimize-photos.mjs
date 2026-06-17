@@ -39,6 +39,12 @@ const jobs = [
   { src: `${SRC}/_stock/calma-menorca.jpg`, out: "calma-menorca" },
   // s'Albufera des Grau — Wikimedia Commons (Nicolas G. Mertens, CC BY-SA 4.0).
   { src: `${SRC}/_stock/albufera-des-grau.jpg`, out: "albufera-des-grau" },
+  // Guía de productos de Menorca (Adobe Stock, licenciadas — jun 2026).
+  { src: `${SRC}/_stock/productos-menorca.jpg`, out: "productos-menorca" },
+  { src: `${SRC}/_stock/avarcas-menorca.jpg`, out: "avarcas-menorca" },
+  { src: `${SRC}/_stock/vino-menorca.jpg`, out: "vino-menorca" },
+  { src: `${SRC}/_stock/embutidos-menorca.jpg`, out: "embutidos-menorca" },
+  { src: `${SRC}/_stock/dulces-menorca.jpg`, out: "dulces-menorca" },
 ];
 
 mkdirSync(OUT, { recursive: true });
