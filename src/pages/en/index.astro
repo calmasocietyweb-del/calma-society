@@ -108,6 +108,36 @@ const sectionLabel = (key: string) => getSection(key)?.label[locale];
     </div>
   </section>
 
+  <!-- Getting around the island (transfers & excursions · Menorca Bus) -->
+  <section class="mt-24">
+    <div class="mx-auto max-w-6xl px-5 sm:px-8">
+      <div class="rounded-2xl border border-niebla bg-arena/50 p-8 sm:p-12">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">Getting around</p>
+        <h2 class="mt-3 font-display text-2xl text-tinta sm:text-3xl">Explore the island without driving</h2>
+        <p class="mt-3 max-w-prosa text-piedra-suave">
+          From the airport to your hotel, to the coves or on an excursion to lighthouses and
+          villages: private transfers and minibus with a driver, to enjoy Menorca calmly.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a
+            href="/en/article/menorca-transport-and-excursions"
+            class="rounded-md bg-arcilla px-5 py-2.5 text-sm font-semibold text-lino transition-colors hover:bg-tinta"
+          >
+            Mobility guide →
+          </a>
+          <a
+            href={SITE.partners.menorcaBus.url}
+            target="_blank"
+            rel="noopener"
+            class="rounded-md border border-arcilla px-5 py-2.5 text-sm font-semibold text-arcilla transition-colors hover:bg-arcilla hover:text-lino"
+          >
+            Book with Menorca Bus →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="mt-24 bg-arcilla">
     <div class="mx-auto max-w-3xl px-5 py-20 text-center sm:px-8">
       <p class="font-display text-2xl leading-relaxed text-lino sm:text-3xl">

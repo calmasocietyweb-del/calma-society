@@ -48,6 +48,11 @@ const jobs = [
   // Clúster de movilidad / transporte (Adobe Stock, licenciadas — jun 2026).
   { src: `${SRC}/_stock/crucero-menorca.jpg`, out: "crucero-menorca", cover: { w: 1600, h: 1000 } },
   { src: `${SRC}/_stock/transfer-menorca.jpg`, out: "transfer-menorca" },
+  // Fotos REALES de Menorca Bus (web propia, mismo grupo; crédito "Menorca Bus").
+  { src: `${SRC}/_stock/mb-movilidad.webp`, out: "mb-movilidad" },
+  { src: `${SRC}/_stock/mb-aeropuerto.webp`, out: "mb-aeropuerto" },
+  { src: `${SRC}/_stock/mb-excursiones.webp`, out: "mb-excursiones" },
+  { src: `${SRC}/_stock/mb-cruceros.webp`, out: "mb-cruceros" },
 ];
 
 mkdirSync(OUT, { recursive: true });
