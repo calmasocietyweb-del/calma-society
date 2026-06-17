@@ -1,0 +1,47 @@
+---
+/**
+ * Imagen intercalada en el cuerpo de un artículo (MDX), para complementar el
+ * texto con una foto, su pie y su crédito. `alt` es OBLIGATORIO (accesibilidad).
+ * Carga diferida (lazy) + srcset responsive: NO roba LCP al hero.
+ *
+ * Uso en MDX:
+ *   import Figure from "../../components/Figure.astro";
+ *   <Figure src="/uploads/cala-turqueta.webp" alt="..." caption="..." credit="Adobe Stock" lang="es" />
+ */
+import { srcset } from "../lib/img";
+
+interface Props {
+  src: string;
+  alt: string;
+  caption?: string;
+  credit?: string;
+  lang?: "es" | "en";
+}
+const { src, alt, caption, credit, lang = "es" } = Astro.props;
+const creditLabel = lang === "en" ? "Photo" : "Foto";
+---
+
+<figure class="article-figure">
+  <div class="aspect-[3/2] overflow-hidden rounded-xl">
+    <img
+      src={src}
+      srcset={srcset(src)}
+      sizes="(min-width: 700px) 672px, 100vw"
+      alt={alt}
+      width="1500"
+      height="1000"
+      loading="lazy"
+      decoding="async"
+      class="h-full w-full object-cover"
+    />
+  </div>
+  {
+    (caption || credit) && (
+      <figcaption>
+        {caption}
+        {caption && credit ? " · " : ""}
+        {credit && `${creditLabel}: ${credit}`}
+      </figcaption>
+    )
+  }
+</figure>

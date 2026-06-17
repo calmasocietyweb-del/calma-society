@@ -118,3 +118,14 @@
   font-style: italic;
   color: var(--color-piedra-suave);
 }
+
+/* Imágenes intercaladas (componente Figure) dentro del cuerpo del artículo. */
+.article-body .article-figure {
+  margin-block: 2.25rem;
+}
+.article-body .article-figure figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--color-piedra-suave);
+}
