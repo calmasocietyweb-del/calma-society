@@ -81,6 +81,8 @@ const jobs = [
   { src: `${SRC}/_stock/illa-del-rei.jpg`, out: "illa-del-rei" }, // Florent Pécassou, CC BY-SA 4.0
   { src: `${SRC}/_stock/cova-den-xoroi.jpg`, out: "cova-den-xoroi", cover: { w: 1600, h: 1000 } }, // Travelinho, CC BY-SA 3.0 (vertical → apaisado)
   { src: `${SRC}/_stock/la-mola.jpg`, out: "la-mola" }, // Alvaro Ortiz, CC BY-SA 3.0
+  // Cultura/gastronomía (Wave E, jun 2026).
+  { src: `${SRC}/_stock/caldereta-langosta.jpg`, out: "caldereta-langosta" }, // Adobe Stock
 ];
 
 mkdirSync(OUT, { recursive: true });
