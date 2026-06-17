@@ -9,6 +9,7 @@ import ArticleCard from "../../components/ArticleCard.astro";
 import EventCard from "../../components/EventCard.astro";
 import NewsletterSignup from "../../components/NewsletterSignup.astro";
 import { SITE } from "../../config/site";
+import { menorcaBusUrl } from "../../lib/links";
 import { getSection } from "../../config/sections";
 import { useTranslations } from "../../i18n/ui";
 import { getArticlesBySection, getFeaturedArticle, getEvents } from "../../lib/content";
@@ -103,7 +104,7 @@ const description =
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a
-            href={SITE.partners.menorcaBus.url}
+            href={menorcaBusUrl("home")}
             target="_blank"
             rel="noopener"
             data-umami-event="home-reserva-menorcabus"

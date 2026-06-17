@@ -1,6 +1,7 @@
 ---
 // Pie de página: marca, secciones, enlaces "más", redes y avisos legales.
 import { SITE } from "../config/site";
+import { menorcaBusUrl } from "../lib/links";
 import { SECTIONS } from "../config/sections";
 import { useTranslations } from "../i18n/ui";
 import { currentLocale } from "../i18n/utils";
@@ -86,7 +87,7 @@ const legalLinks =
             </li>
             <li>
               <a
-                href={SITE.partners.menorcaBus.url}
+                href={menorcaBusUrl("footer")}
                 rel="noopener"
                 target="_blank"
                 data-umami-event="footer-menorcabus"

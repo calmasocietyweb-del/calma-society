@@ -8,6 +8,7 @@
  *   <MenorcaBusCTA lang="en" title="..." text="..." cta="..." />
  */
 import { SITE } from "../config/site";
+import { menorcaBusUrl } from "../lib/links";
 
 interface Props {
   lang?: "es" | "en";
@@ -17,7 +18,8 @@ interface Props {
   cta?: string;
 }
 const { lang = "es", title, text, cta } = Astro.props;
-const url = SITE.partners.menorcaBus.url;
+// UTM con la ruta del artículo → en el panel de Menorca Bus se ve qué artículo convierte.
+const url = menorcaBusUrl("cta", Astro.url.pathname);
 
 const defaults =
   lang === "en"
