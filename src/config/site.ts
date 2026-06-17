@@ -50,6 +50,19 @@ export const SITE = {
   },
 
   /**
+   * Negocios propios / socios a los que dirigimos tráfico (ver
+   * docs/MARKETING-CRECIMIENTO-Y-NOMBRE.md: "tráfico a negocios propios").
+   * Menorca Bus es el servicio de transporte/transfers del mismo grupo titular
+   * (Menorca Bus, S.L.). Única fuente de la URL: cámbiala solo aquí.
+   */
+  partners: {
+    menorcaBus: {
+      name: 'Menorca Bus',
+      url: 'https://menorcabus.com',
+    },
+  },
+
+  /**
    * Newsletter (MailerLite). Pega aquí la URL "action" del formulario embebido
    * (MailerLite → Forms → Embedded form → versión HTML → copia el `action`).
    * Mientras esté vacío, el formulario se muestra pero no envía.

@@ -45,6 +45,9 @@ const jobs = [
   { src: `${SRC}/_stock/vino-menorca.jpg`, out: "vino-menorca" },
   { src: `${SRC}/_stock/embutidos-menorca.jpg`, out: "embutidos-menorca" },
   { src: `${SRC}/_stock/dulces-menorca.jpg`, out: "dulces-menorca" },
+  // Clúster de movilidad / transporte (Adobe Stock, licenciadas — jun 2026).
+  { src: `${SRC}/_stock/crucero-menorca.jpg`, out: "crucero-menorca", cover: { w: 1600, h: 1000 } },
+  { src: `${SRC}/_stock/transfer-menorca.jpg`, out: "transfer-menorca" },
 ];
 
 mkdirSync(OUT, { recursive: true });

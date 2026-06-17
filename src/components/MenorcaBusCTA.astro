@@ -1,0 +1,56 @@
+---
+/**
+ * CTA hacia Menorca Bus (negocio propio: transfers y excursiones en minibús).
+ * Caja sobria y de marca para insertar en artículos MDX y páginas de movilidad.
+ * Uso en MDX:
+ *   import MenorcaBusCTA from "../../components/MenorcaBusCTA.astro";
+ *   <MenorcaBusCTA lang="es" />
+ *   <MenorcaBusCTA lang="en" title="..." text="..." cta="..." />
+ */
+import { SITE } from "../config/site";
+
+interface Props {
+  lang?: "es" | "en";
+  /** Sobrescribe el texto por defecto para adaptarlo al contexto del artículo. */
+  title?: string;
+  text?: string;
+  cta?: string;
+}
+const { lang = "es", title, text, cta } = Astro.props;
+const url = SITE.partners.menorcaBus.url;
+
+const defaults =
+  lang === "en"
+    ? {
+        title: "Get around Menorca without a car",
+        text: "Private minibus transfers and tailor-made excursions to beaches, coves, towns and viewpoints — at your own pace, with a local driver.",
+        cta: "Book with Menorca Bus",
+      }
+    : {
+        title: "Muévete por Menorca sin coche",
+        text: "Transfers privados en minibús y excursiones a medida a playas, calas, pueblos y miradores — a tu ritmo y con conductor local.",
+        cta: "Reserva con Menorca Bus",
+      };
+
+const t = {
+  title: title ?? defaults.title,
+  text: text ?? defaults.text,
+  cta: cta ?? defaults.cta,
+};
+---
+
+<aside class="my-10 rounded-xl border border-niebla bg-arena/60 p-6 sm:p-7">
+  <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">
+    {SITE.partners.menorcaBus.name}
+  </p>
+  <p class="mt-2 font-display text-xl leading-snug text-tinta">{t.title}</p>
+  <p class="mt-2 max-w-prosa text-sm leading-relaxed text-piedra-suave">{t.text}</p>
+  <a
+    href={url}
+    target="_blank"
+    rel="noopener"
+    class="mt-4 inline-block rounded-md bg-arcilla px-5 py-2.5 text-sm font-semibold text-lino transition-colors hover:bg-tinta"
+  >
+    {t.cta} →
+  </a>
+</aside>
