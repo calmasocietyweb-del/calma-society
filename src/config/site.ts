@@ -63,6 +63,26 @@ export const SITE = {
   },
 
   /**
+   * Analítica web (Umami, sin cookies → respeta la privacidad, CLAUDE.md #7).
+   * Mide páginas vistas y clics en enlaces/CTAs (atributos data-umami-event).
+   *
+   * Para ACTIVAR la medición en la web pública:
+   *   1. Crea el sitio en Umami (cloud gratis: https://cloud.umami.is — o self-host).
+   *   2. Pega aquí su `websiteId` (público) y pon `enabled: true`.
+   *
+   * El DASHBOARD a medida (panel de Vercel, /panel/analitica) lee la API de Umami
+   * con variables de entorno SECRETAS en Vercel (NUNCA en el repo):
+   *   UMAMI_API_URL (p.ej. https://api.umami.is/v1), UMAMI_API_KEY, UMAMI_WEBSITE_ID,
+   *   PANEL_USER, PANEL_PASS (usuario/clave del panel).
+   */
+  analytics: {
+    provider: 'umami' as const,
+    enabled: false,
+    websiteId: '', // pega el ID público de Umami y pon enabled: true
+    scriptUrl: 'https://cloud.umami.is/script.js', // self-host: cambia la URL
+  },
+
+  /**
    * Newsletter (MailerLite). Pega aquí la URL "action" del formulario embebido
    * (MailerLite → Forms → Embedded form → versión HTML → copia el `action`).
    * Mientras esté vacío, el formulario se muestra pero no envía.

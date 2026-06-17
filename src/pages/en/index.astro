@@ -121,6 +121,7 @@ const sectionLabel = (key: string) => getSection(key)?.label[locale];
         <div class="mt-6 flex flex-wrap gap-3">
           <a
             href="/en/article/menorca-transport-and-excursions"
+            data-umami-event="home-guia-movilidad"
             class="rounded-md bg-arcilla px-5 py-2.5 text-sm font-semibold text-lino transition-colors hover:bg-tinta"
           >
             Mobility guide →
@@ -129,6 +130,7 @@ const sectionLabel = (key: string) => getSection(key)?.label[locale];
             href={SITE.partners.menorcaBus.url}
             target="_blank"
             rel="noopener"
+            data-umami-event="home-reserva-menorcabus"
             class="rounded-md border border-arcilla px-5 py-2.5 text-sm font-semibold text-arcilla transition-colors hover:bg-arcilla hover:text-lino"
           >
             Book with Menorca Bus →

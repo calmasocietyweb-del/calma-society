@@ -79,6 +79,18 @@ const rssHref = locale === "es" ? "/rss.xml" : "/en/rss.xml";
     <meta name="theme-color" content="#73402d" />
     <meta name="generator" content={Astro.generator} />
 
+    {/* Analítica Umami (sin cookies). Solo carga si está configurada en site.ts. */}
+    {
+      SITE.analytics.enabled && SITE.analytics.websiteId && (
+        <script
+          is:inline
+          defer
+          src={SITE.analytics.scriptUrl}
+          data-website-id={SITE.analytics.websiteId}
+        />
+      )
+    }
+
     <JsonLd schema={[organizationSchema(), websiteSchema()]} />
 
     {/* MailerLite Universal (carga la cuenta; el formulario se conecta en NewsletterSignup) */}

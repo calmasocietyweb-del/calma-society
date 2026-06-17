@@ -1,0 +1,189 @@
+---
+/**
+ * Panel de analítica a medida (Umami).
+ *
+ * - SSR SOLO en Vercel (panel de edición): `prerender = false` cuando hay VERCEL.
+ *   En Cloudflare/local se prerenderiza ESTÁTICO con un aviso (no llama a la API
+ *   ni expone secretos), para NO romper la web pública estática.
+ * - Protegido con auth básica (PANEL_USER / PANEL_PASS).
+ * - Lee la API de Umami con variables de entorno SECRETAS (solo en Vercel):
+ *     UMAMI_API_URL  (cloud: https://api.umami.is/v1 · self-host: https://tu-umami/api)
+ *     UMAMI_API_KEY  (cloud: cabecera x-umami-api-key)
+ *     UMAMI_WEBSITE_ID
+ *     PANEL_USER, PANEL_PASS
+ */
+export const prerender = !process.env.VERCEL;
+import "../../styles/global.css";
+
+const onVercel = !!process.env.VERCEL;
+
+const USER = process.env.PANEL_USER ?? "";
+const PASS = process.env.PANEL_PASS ?? "";
+
+// Auth básica (solo cuando hay servidor en Vercel y credenciales definidas).
+if (onVercel && USER && PASS) {
+  const auth = Astro.request.headers.get("authorization") ?? "";
+  const b64 = auth.startsWith("Basic ") ? auth.slice(6) : "";
+  let ok = false;
+  if (b64) {
+    const [u, p] = atob(b64).split(":");
+    ok = u === USER && p === PASS;
+  }
+  if (!ok) {
+    return new Response("Autenticación requerida", {
+      status: 401,
+      headers: { "WWW-Authenticate": 'Basic realm="Panel Calma Society"' },
+    });
+  }
+}
+
+const API_URL = (process.env.UMAMI_API_URL ?? "https://api.umami.is/v1").replace(/\/$/, "");
+const API_KEY = process.env.UMAMI_API_KEY ?? "";
+const WEBSITE_ID = process.env.UMAMI_WEBSITE_ID ?? "";
+
+const configured = onVercel && !!API_KEY && !!WEBSITE_ID && !!USER && !!PASS;
+const rangeLabel = "Últimos 30 días";
+
+let error: string | null = null;
+let stats: any = null;
+let topPages: any[] = [];
+let events: any[] = [];
+
+if (configured) {
+  try {
+    const end = Date.now();
+    const start = end - 30 * 24 * 60 * 60 * 1000;
+    const headers = { "x-umami-api-key": API_KEY, accept: "application/json" };
+    const qs = `startAt=${start}&endAt=${end}`;
+    const base = `${API_URL}/websites/${WEBSITE_ID}`;
+    const [s, urls, ev] = await Promise.all([
+      fetch(`${base}/stats?${qs}`, { headers }).then((r) => r.json()),
+      fetch(`${base}/metrics?type=url&${qs}&limit=15`, { headers }).then((r) => r.json()),
+      fetch(`${base}/metrics?type=event&${qs}&limit=25`, { headers }).then((r) => r.json()),
+    ]);
+    stats = s;
+    topPages = Array.isArray(urls) ? urls : [];
+    events = Array.isArray(ev) ? ev : [];
+  } catch (e) {
+    error = e instanceof Error ? e.message : String(e);
+  }
+}
+
+const num = (v: any) => (v && typeof v === "object" ? (v.value ?? 0) : (v ?? 0));
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Panel · Analítica — Calma Society</title>
+  </head>
+  <body class="bg-lino font-sans text-piedra antialiased">
+    <main class="mx-auto max-w-4xl px-5 py-12 sm:px-8">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">Calma Society · Panel</p>
+      <h1 class="mt-2 font-display text-3xl text-tinta">Analítica</h1>
+
+      {
+        !onVercel && (
+          <div class="mt-8 rounded-xl border border-niebla bg-arena/60 p-6">
+            <p class="font-medium text-tinta">Este panel funciona en el entorno de edición.</p>
+            <p class="mt-2 text-sm text-piedra-suave">
+              La web pública es estática y no muestra datos aquí. Abre el panel desde el
+              despliegue de edición (Vercel), donde está protegido con usuario y contraseña.
+            </p>
+          </div>
+        )
+      }
+
+      {
+        onVercel && !configured && (
+          <div class="mt-8 rounded-xl border border-niebla bg-arena/60 p-6">
+            <p class="font-medium text-tinta">Falta configurar la analítica.</p>
+            <p class="mt-2 text-sm text-piedra-suave">
+              Define en Vercel las variables de entorno <code>UMAMI_API_URL</code>,
+              <code>UMAMI_API_KEY</code>, <code>UMAMI_WEBSITE_ID</code>, <code>PANEL_USER</code> y
+              <code>PANEL_PASS</code>, y vuelve a desplegar.
+            </p>
+          </div>
+        )
+      }
+
+      {
+        onVercel && configured && (
+          <div class="mt-8 space-y-10">
+            {error && (
+              <p class="rounded-md bg-terracota/10 p-4 text-sm text-terracota">
+                No se pudo leer la API de Umami: {error}
+              </p>
+            )}
+
+            <section>
+              <h2 class="font-display text-xl text-tinta">
+                Resumen <span class="text-sm font-normal text-piedra-suave">· {rangeLabel}</span>
+              </h2>
+              <div class="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
+                <div class="rounded-xl border border-niebla p-4">
+                  <p class="text-2xl font-semibold text-tinta">{num(stats?.pageviews)}</p>
+                  <p class="text-xs uppercase tracking-wide text-piedra-suave">Páginas vistas</p>
+                </div>
+                <div class="rounded-xl border border-niebla p-4">
+                  <p class="text-2xl font-semibold text-tinta">{num(stats?.visitors)}</p>
+                  <p class="text-xs uppercase tracking-wide text-piedra-suave">Visitantes</p>
+                </div>
+                <div class="rounded-xl border border-niebla p-4">
+                  <p class="text-2xl font-semibold text-tinta">{num(stats?.visits)}</p>
+                  <p class="text-xs uppercase tracking-wide text-piedra-suave">Visitas</p>
+                </div>
+                <div class="rounded-xl border border-niebla p-4">
+                  <p class="text-2xl font-semibold text-tinta">{num(stats?.bounces)}</p>
+                  <p class="text-xs uppercase tracking-wide text-piedra-suave">Rebotes</p>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h2 class="font-display text-xl text-tinta">Páginas más vistas</h2>
+              <ul class="mt-4 divide-y divide-niebla">
+                {topPages.map((p) => (
+                  <li class="flex items-center justify-between gap-4 py-2 text-sm">
+                    <span class="truncate text-piedra">{p.x || "—"}</span>
+                    <span class="shrink-0 font-semibold text-tinta">{p.y}</span>
+                  </li>
+                ))}
+                {topPages.length === 0 && (
+                  <li class="py-2 text-sm text-piedra-suave">Sin datos todavía.</li>
+                )}
+              </ul>
+            </section>
+
+            <section>
+              <h2 class="font-display text-xl text-tinta">Clics en enlaces (eventos)</h2>
+              <p class="mt-1 text-sm text-piedra-suave">
+                Incluye los CTAs de Menorca Bus (<code>cta-menorcabus</code>,
+                <code>footer-menorcabus</code>, <code>home-…</code>).
+              </p>
+              <ul class="mt-4 divide-y divide-niebla">
+                {events.map((e) => (
+                  <li class="flex items-center justify-between gap-4 py-2 text-sm">
+                    <span class="truncate text-piedra">{e.x || "—"}</span>
+                    <span class="shrink-0 font-semibold text-tinta">{e.y}</span>
+                  </li>
+                ))}
+                {events.length === 0 && (
+                  <li class="py-2 text-sm text-piedra-suave">Sin clics registrados todavía.</li>
+                )}
+              </ul>
+            </section>
+
+            <p class="text-xs text-piedra-suave">
+              Datos de Umami · {rangeLabel}. Para el detalle completo (mapas, fuentes, tiempo real)
+              tienes también el panel de tu cuenta de Umami.
+            </p>
+          </div>
+        )
+      }
+    </main>
+  </body>
+</html>
