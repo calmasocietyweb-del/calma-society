@@ -76,6 +76,11 @@ const jobs = [
   { src: `${SRC}/_stock/alaior.jpg`, out: "alaior" }, // Mathewr1999, Wikimedia CC BY-SA 4.0
   { src: `${SRC}/_stock/cala-galdana.jpg`, out: "cala-galdana" }, // Adobe Stock
   { src: `${SRC}/_stock/binigaus.jpg`, out: "binigaus" }, // Adobe Stock
+  // Destinos emblemáticos (Wave C, jun 2026) — Wikimedia Commons, con crédito.
+  { src: `${SRC}/_stock/lithica.jpg`, out: "lithica" }, // Ben Salter, CC BY 2.0
+  { src: `${SRC}/_stock/illa-del-rei.jpg`, out: "illa-del-rei" }, // Florent Pécassou, CC BY-SA 4.0
+  { src: `${SRC}/_stock/cova-den-xoroi.jpg`, out: "cova-den-xoroi", cover: { w: 1600, h: 1000 } }, // Travelinho, CC BY-SA 3.0 (vertical → apaisado)
+  { src: `${SRC}/_stock/la-mola.jpg`, out: "la-mola" }, // Alvaro Ortiz, CC BY-SA 3.0
 ];
 
 mkdirSync(OUT, { recursive: true });
