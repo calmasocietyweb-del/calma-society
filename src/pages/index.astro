@@ -120,20 +120,20 @@ const sectionLabel = (key: string) => getSection(key)?.label[locale];
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a
-            href="/articulo/moverse-por-menorca"
-            data-umami-event="home-guia-movilidad"
-            class="rounded-md bg-arcilla px-5 py-2.5 text-sm font-semibold text-lino transition-colors hover:bg-tinta"
-          >
-            Guía de movilidad →
-          </a>
-          <a
             href={SITE.partners.menorcaBus.url}
             target="_blank"
             rel="noopener"
             data-umami-event="home-reserva-menorcabus"
+            class="rounded-md bg-arcilla px-5 py-2.5 text-sm font-semibold text-lino transition-colors hover:bg-tinta"
+          >
+            Reserva con Menorca Bus ↗
+          </a>
+          <a
+            href="/articulo/moverse-por-menorca"
+            data-umami-event="home-guia-movilidad"
             class="rounded-md border border-arcilla px-5 py-2.5 text-sm font-semibold text-arcilla transition-colors hover:bg-arcilla hover:text-lino"
           >
-            Reserva con Menorca Bus →
+            Guía de movilidad →
           </a>
         </div>
       </div>
@@ -147,7 +147,7 @@ const sectionLabel = (key: string) => getSection(key)?.label[locale];
       </p>
       <a
         href="/quienes-somos"
-        class="mt-8 inline-block rounded-full border border-lino/40 px-6 py-2.5 text-sm font-semibold uppercase tracking-widest text-lino transition-colors hover:bg-lino hover:text-arcilla"
+        class="mt-8 inline-block rounded-full bg-lino px-6 py-2.5 text-sm font-semibold uppercase tracking-widest text-arcilla transition-colors hover:bg-arena"
       >
         {t("home.manifesto.cta")}
       </a>
