@@ -66,6 +66,10 @@ const jobs = [
   // Fotos reales de Wikimedia Commons (CC, con crédito) — talayótico y s'Albufera.
   { src: `${SRC}/_stock/naveta-tudons.jpg`, out: "naveta-tudons" }, // Menorquino, CC BY-SA 3.0
   { src: `${SRC}/_stock/albufera-badia.jpg`, out: "albufera-badia" }, // Discasto, CC BY-SA 4.0
+  // Lote nuevo (jun 2026).
+  { src: `${SRC}/_stock/mahonesa.jpg`, out: "mahonesa" }, // Adobe Stock
+  { src: `${SRC}/_stock/sant-joan-jaleo.jpg`, out: "sant-joan-jaleo" }, // Strykess, Wikimedia CC BY-SA 4.0
+  { src: `${SRC}/_stock/sant-joan-caixer.jpg`, out: "sant-joan-caixer" }, // Orruza1983, Wikimedia CC BY-SA 4.0
 ];
 
 mkdirSync(OUT, { recursive: true });
