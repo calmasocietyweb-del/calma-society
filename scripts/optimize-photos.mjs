@@ -63,6 +63,9 @@ const jobs = [
   { src: `${SRC}/_stock/alta-cocina-plato.jpg`, out: "alta-cocina-plato" },
   { src: `${SRC}/_stock/binibeca-calle.jpg`, out: "binibeca-calle" },
   { src: `${SRC}/_stock/ciutadella-puerto.jpg`, out: "ciutadella-puerto" },
+  // Fotos reales de Wikimedia Commons (CC, con crédito) — talayótico y s'Albufera.
+  { src: `${SRC}/_stock/naveta-tudons.jpg`, out: "naveta-tudons" }, // Menorquino, CC BY-SA 3.0
+  { src: `${SRC}/_stock/albufera-badia.jpg`, out: "albufera-badia" }, // Discasto, CC BY-SA 4.0
 ];
 
 mkdirSync(OUT, { recursive: true });
