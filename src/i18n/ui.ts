@@ -35,7 +35,7 @@ export const ui = {
     "home.explore.eyebrow": "Secciones",
     "home.sections.intro": "Seis maneras de mirar Menorca, todas con criterio.",
     "home.manifesto":
-      "Calma Society no es una guía más: es una mirada de lujo tranquilo sobre Menorca y una sociedad de quienes la aman sin prisa. Criterio, fotografía propia y la isla los 365 días del año. Bienvenido a la Sociedad.",
+      "Calma Society no es una guía más: es una mirada de lujo tranquilo sobre Menorca y una sociedad de quienes la aman sin prisa. Criterio, experiencias elegidas con calma y la isla los 365 días del año. Bienvenido a la Sociedad.",
     "home.manifesto.cta": "Conoce la Sociedad",
 
     "article.by": "Por",
@@ -115,7 +115,7 @@ export const ui = {
     "home.explore.eyebrow": "Sections",
     "home.sections.intro": "Six ways of looking at Menorca, all with judgement.",
     "home.manifesto":
-      "Calma Society isn't just another guide: it's a quiet-luxury look at Menorca and a society of those who love it unhurried. Judgement, original photography and the island 365 days a year. Welcome to the Society.",
+      "Calma Society isn't just another guide: it's a quiet-luxury look at Menorca and a society of those who love it unhurried. Judgement, experiences chosen with calm and the island 365 days a year. Welcome to the Society.",
     "home.manifesto.cta": "Discover the Society",
 
     "article.by": "By",

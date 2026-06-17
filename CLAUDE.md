@@ -50,7 +50,7 @@
 Cada decisión de diseño y código debe respetar esto:
 
 1. **Audiencia-first.** La captación de suscriptores de newsletter es el KPI #1. Debe haber CTA de suscripción visible y elegante en home, en cada artículo y en una página propia, **desde el primer despliegue**.
-2. **GEO + primera mano > SEO de volumen.** El tráfico de buscadores cae año a año por las respuestas de IA. Nuestro contenido debe ser citable por IA (datos claros, autoría visible, experiencia local real) y aportar lo que la IA no tiene: criterio, fotos propias, datos locales y actuales.
+2. **GEO + primera mano > SEO de volumen.** El tráfico de buscadores cae año a año por las respuestas de IA. Nuestro contenido debe ser citable por IA (datos claros, autoría visible, experiencia local real) y aportar lo que la IA no tiene: criterio, experiencia local de primera mano, datos locales y actuales, y una mirada de lujo tranquilo. (No reclamamos "fotografía propia": no es nuestro foco; el valor es la experiencia, la calma y la guía premium.)
 3. **Calidad sobre cantidad.** Mejor 1 artículo excelente que 5 mediocres. Nunca generar relleno SEO.
 4. **Multilingüe de verdad.** Cada idioma activo, al mismo nivel de calidad. Traducción **asistida pero revisada** (glosario de marca, etiquetado), **nunca** automática chapucera ni páginas "huérfanas" sin su versión. La arquitectura soporta N idiomas; se despliegan por mercados. Ver `docs/ESTRATEGIA-MULTIIDIOMA.md`.
 5. **Rendimiento sagrado.** Sitio estático, mínimo JavaScript de cliente, imágenes optimizadas. Objetivo: **Lighthouse 95+ en las cuatro métricas** y Core Web Vitals en verde.
