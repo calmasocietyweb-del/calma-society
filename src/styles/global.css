@@ -97,12 +97,15 @@
 .article-body li + li {
   margin-top: 0.4rem;
 }
-.article-body a {
+/* `:where()` mantiene baja la especificidad para que los componentes con sus
+   propias clases (p. ej. botones MenorcaBusCTA) puedan sobrescribir color y
+   subrayado dentro del cuerpo del artículo. */
+:where(.article-body) a {
   color: var(--color-arcilla);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
-.article-body a:hover {
+:where(.article-body) a:hover {
   color: var(--color-terracota);
 }
 .article-body strong {
