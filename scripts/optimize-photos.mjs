@@ -83,6 +83,8 @@ const jobs = [
   { src: `${SRC}/_stock/la-mola.jpg`, out: "la-mola" }, // Alvaro Ortiz, CC BY-SA 3.0
   // Cultura/gastronomía (Wave E, jun 2026).
   { src: `${SRC}/_stock/caldereta-langosta.jpg`, out: "caldereta-langosta" }, // Adobe Stock
+  // Playas (Wave D, jun 2026).
+  { src: `${SRC}/_stock/son-bou.jpg`, out: "son-bou" }, // Wasquewhat, Wikimedia CC BY-SA 4.0
 ];
 
 mkdirSync(OUT, { recursive: true });
