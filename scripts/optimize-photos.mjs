@@ -70,6 +70,12 @@ const jobs = [
   { src: `${SRC}/_stock/mahonesa.jpg`, out: "mahonesa" }, // Adobe Stock
   { src: `${SRC}/_stock/sant-joan-jaleo.jpg`, out: "sant-joan-jaleo" }, // Strykess, Wikimedia CC BY-SA 4.0
   { src: `${SRC}/_stock/sant-joan-caixer.jpg`, out: "sant-joan-caixer" }, // Orruza1983, Wikimedia CC BY-SA 4.0
+  // Pueblos (Wave B, jun 2026).
+  { src: `${SRC}/_stock/cales-fonts.jpg`, out: "cales-fonts", cover: { w: 1600, h: 1000 } }, // Adobe Stock (vertical → apaisado)
+  { src: `${SRC}/_stock/monte-toro.jpg`, out: "monte-toro" }, // Ian Kirk, Wikimedia CC BY 2.0
+  { src: `${SRC}/_stock/alaior.jpg`, out: "alaior" }, // Mathewr1999, Wikimedia CC BY-SA 4.0
+  { src: `${SRC}/_stock/cala-galdana.jpg`, out: "cala-galdana" }, // Adobe Stock
+  { src: `${SRC}/_stock/binigaus.jpg`, out: "binigaus" }, // Adobe Stock
 ];
 
 mkdirSync(OUT, { recursive: true });
