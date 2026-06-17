@@ -3,11 +3,13 @@
 import { type CollectionEntry } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
 import JsonLd from "../components/JsonLd.astro";
+import ArticleCard from "../components/ArticleCard.astro";
 import { getSection } from "../config/sections";
 import { SITE, type Locale } from "../config/site";
 import { useTranslations } from "../i18n/ui";
 import { formatDate, placeUrl, articleUrl, authorUrl, homePath } from "../i18n/utils";
 import { abs, articleSchema, breadcrumbSchema } from "../lib/schema";
+import { getRelatedArticles } from "../lib/content";
 import { srcset } from "../lib/img";
 
 interface Props {
@@ -33,7 +35,12 @@ const articleLd = articleSchema({
   dateModified: data.updatedDate,
   authorName: author?.data.name,
   authorUrl: author ? abs(authorUrl(locale, author.id)) : undefined,
+  image: data.heroImage ? abs(data.seo?.ogImage ?? data.heroImage) : undefined,
 });
+
+// Artículos relacionados (misma sección + tags) para "Sigue leyendo".
+const related = await getRelatedArticles(locale, entry.id, data.section, data.tags, 3);
+const sectionLabel = (key: string) => getSection(key)?.label[locale];
 const breadcrumb = breadcrumbSchema([
   { name: SITE.name, url: abs(homePath(locale)) },
   ...(section ? [{ name: section.label[locale], url: abs(section.href[locale]) }] : []),
@@ -150,6 +157,28 @@ const breadcrumb = breadcrumbSchema([
       )
     }
   </article>
+
+  {
+    related.length > 0 && (
+      <section class="mx-auto mt-16 max-w-6xl border-t border-niebla px-5 pt-10 sm:px-8 sm:mt-20">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">
+          {t("article.keepreading")}
+        </p>
+        <div class="mt-8 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          {related.map((a) => (
+            <ArticleCard
+              kicker={sectionLabel(a.data.section)}
+              title={a.data.title}
+              excerpt={a.data.excerpt}
+              href={articleUrl(locale, a.id)}
+              image={a.data.heroImage}
+              imageAlt={a.data.heroImageAlt}
+            />
+          ))}
+        </div>
+      </section>
+    )
+  }
 
   <JsonLd schema={[articleLd, breadcrumb]} />
 </BaseLayout>

@@ -17,6 +17,18 @@ export function organizationSchema() {
     name: SITE.name,
     url: SITE.url,
     description: SITE.description,
+    logo: abs("/icon-512.png"),
+    image: abs("/og-default.png"),
+    email: SITE.email,
+    telephone: SITE.company.phone,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "C/ Bajolí 7, POIMA",
+      addressLocality: "Maó",
+      postalCode: "07714",
+      addressRegion: "Illes Balears",
+      addressCountry: "ES",
+    },
     sameAs: [SITE.social.instagram].filter(Boolean),
   };
 }
@@ -27,6 +39,9 @@ export function websiteSchema() {
     "@type": "WebSite",
     name: SITE.name,
     url: SITE.url,
+    description: SITE.description,
+    inLanguage: ["es-ES", "en-GB"],
+    publisher: { "@type": "Organization", name: SITE.name, url: SITE.url },
   };
 }
 

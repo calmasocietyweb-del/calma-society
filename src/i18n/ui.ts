@@ -42,6 +42,7 @@ export const ui = {
     "article.published": "Publicado el",
     "article.updated": "Actualizado el",
     "article.related": "Lugares relacionados",
+    "article.keepreading": "Sigue leyendo",
     "article.sponsored": "Contenido patrocinado",
     "article.insection": "En",
 
@@ -122,6 +123,7 @@ export const ui = {
     "article.published": "Published on",
     "article.updated": "Updated on",
     "article.related": "Related places",
+    "article.keepreading": "Keep reading",
     "article.sponsored": "Sponsored content",
     "article.insection": "In",
 

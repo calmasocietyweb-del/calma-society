@@ -26,6 +26,35 @@ export async function getArticlesBySection(locale: Locale, section: string) {
   return (await getArticles(locale)).filter((a) => a.data.section === section);
 }
 
+/**
+ * Artículos relacionados para "Sigue leyendo": misma sección, priorizando los
+ * que comparten más tags; si faltan, completa con los más recientes. Excluye
+ * el artículo actual. Reparte enlazado interno y evita finales sin salida.
+ */
+export async function getRelatedArticles(
+  locale: Locale,
+  currentId: string,
+  section: string,
+  tags: string[] = [],
+  limit = 3,
+): Promise<CollectionEntry<"articulos">[]> {
+  const all = await getArticles(locale); // ya viene del más reciente al más antiguo
+  const sameSection = all.filter(
+    (a) => a.id !== currentId && a.data.section === section,
+  );
+  const picked = sameSection
+    .map((a) => ({ a, score: a.data.tags.filter((t) => tags.includes(t)).length }))
+    .sort((x, y) => y.score - x.score) // estable: mantiene el orden por fecha dentro del mismo score
+    .slice(0, limit)
+    .map((s) => s.a);
+  if (picked.length < limit) {
+    const ids = new Set(picked.map((a) => a.id));
+    const fill = all.filter((a) => a.id !== currentId && !ids.has(a.id));
+    picked.push(...fill.slice(0, limit - picked.length));
+  }
+  return picked;
+}
+
 /** Artículo destacado (o el más reciente si no hay ninguno marcado). */
 export async function getFeaturedArticle(locale: Locale) {
   const arts = await getArticles(locale);

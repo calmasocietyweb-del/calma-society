@@ -40,6 +40,7 @@ const imageUrl = image
     : abs(image)
   : abs(DEFAULT_OG_IMAGE);
 const imageAltText = imageAlt ?? `${SITE.name} · ${SITE.edition}`;
+const isDefaultImage = !image; // la OG por defecto es /og-default.png (1200x630)
 
 const hreflangs = alternates
   ? SITE.locales
@@ -66,6 +67,9 @@ const xDefault = alternates?.[SITE.defaultLocale]
 <meta property="og:url" content={canonical} />
 {imageUrl && <meta property="og:image" content={imageUrl} />}
 {imageUrl && <meta property="og:image:alt" content={imageAltText} />}
+{isDefaultImage && <meta property="og:image:type" content="image/png" />}
+{isDefaultImage && <meta property="og:image:width" content="1200" />}
+{isDefaultImage && <meta property="og:image:height" content="630" />}
 {type === "article" && publishedTime && (
   <meta property="article:published_time" content={publishedTime} />
 )}
