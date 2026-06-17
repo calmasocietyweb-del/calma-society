@@ -136,17 +136,20 @@ Regla absoluta: **nada se publica sin aprobación humana** (principio §3.10). E
 **Tokens implementados (Fase 1)** — fuente real: `src/styles/global.css` (Tailwind v4 `@theme`). Paleta "lujo tranquilo":
 
 ```
-Color (paleta "Calma"):
+Color (paleta "Calma" — CÁLIDA / mediterránea, SIN azul; alineada con marca/, jun. 2026):
   --color-lino:         #F7F4EE   (fondo principal, blanco cálido / lino)
   --color-arena:        #ECE4D6   (fondos secundarios)
   --color-niebla:       #DED4C4   (bordes y separadores)
   --color-tinta:        #17150F   (titulares, negro cálido)
   --color-piedra:       #46423A   (texto principal, gris cálido)
   --color-piedra-suave: #6B6557   (texto secundario)
-  --color-mar:          #1E5566   (primario, azul mar profundo sobrio)
-  --color-mar-hondo:    #143C49   (primario oscuro, fondos)
-  --color-oro:          #A8895C   (acento de lujo, oro viejo / latón)
-  --color-terracota:    #B96A4B   (acento cálido secundario)
+  --color-terracota:    #B96A4B   (PRIMARIO cálido: olas del logo, acentos, bordes, hover)
+  --color-arcilla:      #73402D   (oscuro: fondos, botones y texto-enlace; contraste AA)
+  --color-crema:        #F4ECDC   (texto/olas sobre fondos oscuros)
+  --color-oro:          #8A6A3A   (dorado en TEXTO sobre claro; contraste AA)
+  --color-oro-vivo:     #A8895C   (dorado en GRÁFICOS/formas: sol del logo, filetes, botón dorado)
+  --color-champan:      #D9C293   (oro claro: etiquetas doradas sobre fondo oscuro; AA)
+  // El teal anterior (#1E5566 / #143C49) se ha RETIRADO de la marca.
 
 Tipografía (autoalojada con Fontsource, sin Google Fonts → privacidad + rendimiento):
   Titulares / editorial:  "Fraunces Variable"  (serif con carácter)

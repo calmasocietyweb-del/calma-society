@@ -6,17 +6,19 @@
 @import "tailwindcss";
 
 @theme {
-  /* ---- Color: paleta Calma ---- */
+  /* ---- Color: paleta "Calma" (cálida / mediterránea, SIN azul) ---- */
   --color-lino: #f7f4ee; /* fondo principal (blanco cálido, lino) */
   --color-arena: #ece4d6; /* fondo secundario (arena) */
   --color-niebla: #ded4c4; /* bordes y separadores sutiles */
   --color-tinta: #17150f; /* titulares (negro cálido) */
   --color-piedra: #46423a; /* texto principal (gris cálido) */
   --color-piedra-suave: #6b6557; /* texto secundario */
-  --color-mar: #1e5566; /* primario (azul mar profundo, sobrio) */
-  --color-mar-hondo: #143c49; /* primario oscuro (hover, fondos) */
-  --color-oro: #8a6a3a; /* acento de lujo (latón/bronce viejo) — contraste AA sobre fondo claro */
-  --color-terracota: #b96a4b; /* acento cálido secundario */
+  --color-terracota: #b96a4b; /* PRIMARIO cálido: olas del logo, acentos, bordes, hover */
+  --color-arcilla: #73402d; /* oscuro: fondos, botones y texto-enlace (contraste AA) */
+  --color-crema: #f4ecdc; /* texto/olas sobre fondos oscuros */
+  --color-oro: #8a6a3a; /* dorado en TEXTO sobre claro (contraste AA) */
+  --color-oro-vivo: #a8895c; /* dorado en GRÁFICOS/formas grandes: sol del logo, filetes, botón dorado */
+  --color-champan: #d9c293; /* oro claro (cima del degradado del sol): etiquetas doradas sobre fondo oscuro (AA) */
 
   /* ---- Tipografía ---- */
   --font-display: "Fraunces Variable", ui-serif, Georgia, "Times New Roman", serif;
@@ -53,7 +55,7 @@
 
   /* Foco visible y accesible en toda la navegación por teclado */
   :focus-visible {
-    outline: 2px solid var(--color-mar);
+    outline: 2px solid var(--color-terracota);
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -96,19 +98,19 @@
   margin-top: 0.4rem;
 }
 .article-body a {
-  color: var(--color-mar);
+  color: var(--color-arcilla);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 .article-body a:hover {
-  color: var(--color-mar-hondo);
+  color: var(--color-terracota);
 }
 .article-body strong {
   color: var(--color-tinta);
   font-weight: 600;
 }
 .article-body blockquote {
-  border-left: 3px solid var(--color-oro);
+  border-left: 3px solid var(--color-oro-vivo);
   padding-left: 1.1rem;
   font-style: italic;
   color: var(--color-piedra-suave);

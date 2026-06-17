@@ -24,9 +24,9 @@ const mode = action
 
 {
   SITE.newsletter.enabled && (
-    <section class="bg-mar-hondo text-lino">
+    <section class="bg-arcilla text-lino">
       <div class="mx-auto max-w-3xl px-5 py-16 text-center sm:px-8 sm:py-20">
-    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Newsletter</p>
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-champan">Newsletter</p>
     <h2 class="mt-3 font-display text-3xl text-lino sm:text-4xl">
       {t("newsletter.title")}
     </h2>
@@ -40,7 +40,7 @@ const mode = action
       ) : mode === "popup" ? (
         <button
           type="button"
-          class="mx-auto mt-8 block rounded-md bg-oro px-8 py-3.5 text-sm font-semibold text-mar-hondo transition-colors hover:bg-lino"
+          class="mx-auto mt-8 block rounded-md bg-oro-vivo px-8 py-3.5 text-sm font-semibold text-tinta transition-colors hover:bg-lino"
           onclick={`ml('show', '${popupFormId}', true)`}
         >
           {t("newsletter.cta")}
@@ -60,12 +60,12 @@ const mode = action
             required
             autocomplete="email"
             placeholder={t("newsletter.placeholder")}
-            class="w-full rounded-md border border-lino/20 bg-lino/10 px-4 py-3 text-sm text-lino placeholder:text-lino/50 focus-visible:outline-oro"
+            class="w-full rounded-md border border-lino/20 bg-lino/10 px-4 py-3 text-sm text-lino placeholder:text-lino/50 focus-visible:outline-champan"
           />
           <button
             type="submit"
             disabled={mode === "preview"}
-            class="shrink-0 rounded-md bg-oro px-6 py-3 text-sm font-semibold text-mar-hondo transition-colors hover:bg-lino disabled:cursor-not-allowed disabled:opacity-60"
+            class="shrink-0 rounded-md bg-oro-vivo px-6 py-3 text-sm font-semibold text-tinta transition-colors hover:bg-lino disabled:cursor-not-allowed disabled:opacity-60"
           >
             {t("newsletter.cta")}
           </button>

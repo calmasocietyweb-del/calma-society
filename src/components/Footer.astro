@@ -49,7 +49,7 @@ const legalLinks =
           {
             SECTIONS.map((s) => (
               <li>
-                <a href={s.href[locale]} class="text-piedra transition-colors hover:text-mar">
+                <a href={s.href[locale]} class="text-piedra transition-colors hover:text-terracota">
                   {s.label[locale]}
                 </a>
               </li>
@@ -66,21 +66,21 @@ const legalLinks =
           </h2>
           <ul class="mt-4 space-y-2 text-sm">
             <li>
-              <a href={aboutHref} class="text-piedra transition-colors hover:text-mar">
+              <a href={aboutHref} class="text-piedra transition-colors hover:text-terracota">
                 {t("nav.about")}
               </a>
             </li>
             {
               SITE.newsletter.enabled && (
                 <li>
-                  <a href={newsletterHref} class="text-piedra transition-colors hover:text-mar">
+                  <a href={newsletterHref} class="text-piedra transition-colors hover:text-terracota">
                     {t("nav.newsletter")}
                   </a>
                 </li>
               )
             }
             <li>
-              <a href={contactHref} class="text-piedra transition-colors hover:text-mar">
+              <a href={contactHref} class="text-piedra transition-colors hover:text-terracota">
                 {t("nav.contact")}
               </a>
             </li>
@@ -95,7 +95,7 @@ const legalLinks =
               </h2>
               <ul class="mt-4 space-y-2 text-sm">
                 <li>
-                  <a href={igUrl} rel="me noopener" target="_blank" class="text-piedra transition-colors hover:text-mar">
+                  <a href={igUrl} rel="me noopener" target="_blank" class="text-piedra transition-colors hover:text-terracota">
                     Instagram
                   </a>
                 </li>
@@ -113,7 +113,7 @@ const legalLinks =
       <nav aria-label="Legal" class="flex flex-wrap gap-x-4 gap-y-1">
         {
           legalLinks.map((l) => (
-            <a href={l.href} class="transition-colors hover:text-mar">
+            <a href={l.href} class="transition-colors hover:text-terracota">
               {l.label}
             </a>
           ))

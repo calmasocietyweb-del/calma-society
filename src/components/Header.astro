@@ -37,14 +37,14 @@ const contactHref = locale === "es" ? "/contacto" : "/en/contact";
         <nav aria-label="Principal" class="hidden items-center gap-6 text-sm lg:flex">
           {
             SECTIONS.map((s) => (
-              <a href={s.href[locale]} class="text-piedra transition-colors hover:text-mar">
+              <a href={s.href[locale]} class="text-piedra transition-colors hover:text-terracota">
                 {s.label[locale]}
               </a>
             ))
           }
           {
             SITE.newsletter.enabled && (
-              <a href={newsletterHref} class="font-medium text-mar transition-colors hover:text-mar-hondo">
+              <a href={newsletterHref} class="font-medium text-arcilla transition-colors hover:text-terracota">
                 {t("nav.newsletter")}
               </a>
             )
@@ -69,21 +69,21 @@ const contactHref = locale === "es" ? "/contacto" : "/en/contact";
           >
             {
               SECTIONS.map((s) => (
-                <a href={s.href[locale]} class="block rounded-md px-3 py-2 text-sm text-piedra transition-colors hover:bg-arena hover:text-mar">
+                <a href={s.href[locale]} class="block rounded-md px-3 py-2 text-sm text-piedra transition-colors hover:bg-arena hover:text-terracota">
                   {s.label[locale]}
                 </a>
               ))
             }
             <hr class="my-2 border-niebla" />
-            <a href={aboutHref} class="block rounded-md px-3 py-2 text-sm text-piedra transition-colors hover:bg-arena hover:text-mar">
+            <a href={aboutHref} class="block rounded-md px-3 py-2 text-sm text-piedra transition-colors hover:bg-arena hover:text-terracota">
               {t("nav.about")}
             </a>
-            <a href={contactHref} class="block rounded-md px-3 py-2 text-sm text-piedra transition-colors hover:bg-arena hover:text-mar">
+            <a href={contactHref} class="block rounded-md px-3 py-2 text-sm text-piedra transition-colors hover:bg-arena hover:text-terracota">
               {t("nav.contact")}
             </a>
             {
               SITE.newsletter.enabled && (
-                <a href={newsletterHref} class="block rounded-md px-3 py-2 text-sm font-medium text-mar transition-colors hover:bg-arena">
+                <a href={newsletterHref} class="block rounded-md px-3 py-2 text-sm font-medium text-arcilla transition-colors hover:bg-arena">
                   {t("nav.newsletter")}
                 </a>
               )

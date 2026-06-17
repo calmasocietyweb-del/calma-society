@@ -12,7 +12,7 @@ const connected = action.length > 0;
 const privacyHref = locale === "es" ? "/privacidad" : "/en/privacy";
 
 const field =
-  "mt-1 w-full rounded-md border border-niebla bg-white/60 px-4 py-3 text-sm text-piedra focus-visible:outline-mar";
+  "mt-1 w-full rounded-md border border-niebla bg-white/60 px-4 py-3 text-sm text-piedra focus-visible:outline-terracota";
 ---
 
 {
@@ -38,18 +38,18 @@ const field =
           name="consent"
           value="acepto"
           required
-          class="mt-1 h-4 w-4 shrink-0 accent-mar"
+          class="mt-1 h-4 w-4 shrink-0 accent-terracota"
         />
         <label for="consent" class="text-sm leading-relaxed text-piedra-suave">
           {t("contact.consent")}{" "}
-          <a href={privacyHref} class="font-medium text-mar underline hover:text-mar-hondo">
+          <a href={privacyHref} class="font-medium text-arcilla underline hover:text-terracota">
             {t("contact.consentLink")}
           </a>.
         </label>
       </div>
       <button
         type="submit"
-        class="rounded-md bg-mar px-6 py-3 text-sm font-semibold text-lino transition-colors hover:bg-mar-hondo"
+        class="rounded-md bg-arcilla px-6 py-3 text-sm font-semibold text-lino transition-colors hover:bg-tinta"
       >
         {t("contact.send")}
       </button>
@@ -59,7 +59,7 @@ const field =
 
 <p class:list={["text-sm text-piedra-suave", connected && "mt-8"]}>
   {t("contact.directemail")}{" "}
-  <a href={`mailto:${SITE.email}`} class="font-medium text-mar hover:text-mar-hondo">
+  <a href={`mailto:${SITE.email}`} class="font-medium text-arcilla hover:text-terracota">
     {SITE.email}
   </a>
 </p>

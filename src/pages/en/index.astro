@@ -95,11 +95,11 @@ const sectionLabel = (key: string) => getSection(key)?.label[locale];
       {
         SECTIONS.map((s) => (
           <a href={s.href[locale]} class="group block border-t border-niebla pt-5">
-            <h3 class="font-display text-xl text-tinta transition-colors group-hover:text-mar">
+            <h3 class="font-display text-xl text-tinta transition-colors group-hover:text-terracota">
               {s.label[locale]}
             </h3>
             <p class="mt-2 text-sm leading-relaxed text-piedra-suave">{s.intro[locale]}</p>
-            <span class="mt-3 inline-block text-xs font-semibold uppercase tracking-widest text-oro transition-colors group-hover:text-mar">
+            <span class="mt-3 inline-block text-xs font-semibold uppercase tracking-widest text-oro transition-colors group-hover:text-terracota">
               {t("common.viewall")} →
             </span>
           </a>
@@ -108,14 +108,14 @@ const sectionLabel = (key: string) => getSection(key)?.label[locale];
     </div>
   </section>
 
-  <section class="mt-24 bg-mar-hondo">
+  <section class="mt-24 bg-arcilla">
     <div class="mx-auto max-w-3xl px-5 py-20 text-center sm:px-8">
       <p class="font-display text-2xl leading-relaxed text-lino sm:text-3xl">
         {t("home.manifesto")}
       </p>
       <a
         href="/en/about"
-        class="mt-8 inline-block rounded-full border border-lino/40 px-6 py-2.5 text-sm font-semibold uppercase tracking-widest text-lino transition-colors hover:bg-lino hover:text-mar-hondo"
+        class="mt-8 inline-block rounded-full border border-lino/40 px-6 py-2.5 text-sm font-semibold uppercase tracking-widest text-lino transition-colors hover:bg-lino hover:text-arcilla"
       >
         {t("home.manifesto.cta")}
       </a>
