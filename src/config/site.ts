@@ -77,8 +77,8 @@ export const SITE = {
    */
   analytics: {
     provider: 'umami' as const,
-    enabled: false,
-    websiteId: '', // pega el ID público de Umami y pon enabled: true
+    enabled: true,
+    websiteId: '4d0dc279-733a-43b7-b0f7-861e16c6b688', // ID público de Umami (cloud)
     scriptUrl: 'https://cloud.umami.is/script.js', // self-host: cambia la URL
   },
 
