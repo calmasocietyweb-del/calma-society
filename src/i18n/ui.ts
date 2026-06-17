@@ -13,7 +13,7 @@ export const ui = {
     "nav.home": "Inicio",
     "nav.menu": "Menú",
     "nav.about": "Quiénes somos",
-    "nav.newsletter": "Newsletter",
+    "nav.newsletter": "La Sociedad",
     "lang.label": "Idioma",
     "a11y.skip": "Saltar al contenido",
 
@@ -35,8 +35,8 @@ export const ui = {
     "home.explore.eyebrow": "Secciones",
     "home.sections.intro": "Seis maneras de mirar Menorca, todas con criterio.",
     "home.manifesto":
-      "No somos una guía más. Somos criterio, fotografía propia y una mirada de lujo tranquilo sobre Menorca, los 365 días del año.",
-    "home.manifesto.cta": "Conoce Calma Society",
+      "Calma Society no es una guía más: es una mirada de lujo tranquilo sobre Menorca y una sociedad de quienes la aman sin prisa. Criterio, fotografía propia y la isla los 365 días del año. Bienvenido a la Sociedad.",
+    "home.manifesto.cta": "Conoce la Sociedad",
 
     "article.by": "Por",
     "article.published": "Publicado el",
@@ -63,11 +63,11 @@ export const ui = {
 
     "author.articlesby": "Artículos de",
 
-    "newsletter.title": "Únete a Calma Society",
+    "newsletter.title": "Forma parte de la Sociedad",
     "newsletter.text":
-      "Cada quince días, lo mejor de Menorca con mirada de lujo tranquilo. Sin ruido.",
+      "Mantente conectado a Calma Society: cada quince días, las noticias de la Sociedad y lo mejor de Menorca, con mirada de lujo tranquilo. Sin ruido.",
     "newsletter.placeholder": "Tu correo electrónico",
-    "newsletter.cta": "Suscribirme",
+    "newsletter.cta": "Unirme a la Sociedad",
     "newsletter.privacy": "Sin spam. Te das de baja cuando quieras.",
 
     "nav.contact": "Contacto",
@@ -93,7 +93,7 @@ export const ui = {
     "nav.home": "Home",
     "nav.menu": "Menu",
     "nav.about": "About",
-    "nav.newsletter": "Newsletter",
+    "nav.newsletter": "The Society",
     "lang.label": "Language",
     "a11y.skip": "Skip to content",
 
@@ -115,8 +115,8 @@ export const ui = {
     "home.explore.eyebrow": "Sections",
     "home.sections.intro": "Six ways of looking at Menorca, all with judgement.",
     "home.manifesto":
-      "Not just another guide. We're judgement, original photography and a quiet-luxury look at Menorca, 365 days a year.",
-    "home.manifesto.cta": "About Calma Society",
+      "Calma Society isn't just another guide: it's a quiet-luxury look at Menorca and a society of those who love it unhurried. Judgement, original photography and the island 365 days a year. Welcome to the Society.",
+    "home.manifesto.cta": "Discover the Society",
 
     "article.by": "By",
     "article.published": "Published on",
@@ -143,11 +143,11 @@ export const ui = {
 
     "author.articlesby": "Articles by",
 
-    "newsletter.title": "Join Calma Society",
+    "newsletter.title": "Become part of the Society",
     "newsletter.text":
-      "Every fortnight, the best of Menorca through a quiet-luxury lens. No noise.",
+      "Stay connected to Calma Society: every fortnight, the Society's news and the best of Menorca, through a quiet-luxury lens. No noise.",
     "newsletter.placeholder": "Your email address",
-    "newsletter.cta": "Subscribe",
+    "newsletter.cta": "Join the Society",
     "newsletter.privacy": "No spam. Unsubscribe anytime.",
 
     "nav.contact": "Contact",

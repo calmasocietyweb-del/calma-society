@@ -48,10 +48,11 @@ const jobs = [
   // Clúster de movilidad / transporte (Adobe Stock, licenciadas — jun 2026).
   { src: `${SRC}/_stock/crucero-menorca.jpg`, out: "crucero-menorca", cover: { w: 1600, h: 1000 } },
   { src: `${SRC}/_stock/transfer-menorca.jpg`, out: "transfer-menorca" },
-  // Fotos REALES de Menorca Bus (web propia, mismo grupo; crédito "Menorca Bus").
-  { src: `${SRC}/_stock/mb-movilidad.webp`, out: "mb-movilidad" },
-  { src: `${SRC}/_stock/mb-aeropuerto.webp`, out: "mb-aeropuerto" },
-  { src: `${SRC}/_stock/mb-excursiones.webp`, out: "mb-excursiones" },
+  // Flota de LUJO de Menorca Bus (Mercedes Clase S y Clase V negros, en Menorca;
+  // crédito "Menorca Bus"). Originales en "COCHES Videos y fotos/" (fuera del repo).
+  { src: "COCHES Videos y fotos/Fotos/Clase V/7E3A0998.jpg", out: "mb-movilidad" },
+  { src: "COCHES Videos y fotos/Fotos/Clase S/7E3A0235.jpg", out: "mb-aeropuerto" },
+  { src: "COCHES Videos y fotos/Fotos/Clase V/7E3A0917.jpg", out: "mb-excursiones" },
   { src: `${SRC}/_stock/mb-cruceros.webp`, out: "mb-cruceros" },
 ];
 

@@ -30,3 +30,9 @@ Thumbs.db
 # Material fuente de fotos y vídeos (NO va al repo; a la web solo van public/uploads)
 MATERIAL FOTOS RRSS/
 MATERIAL VIDEOS RRSS/
+COCHES Videos y fotos/
+
+# Operativa de redes sociales (sistema + assets pesados + node_modules propios).
+# NO va al repo de la web ni a su despliegue. Es un paquete aparte que vive en la
+# carpeta pero no afecta a calmasociety.com. Ver REDES-SOCIALES/README.md.
+REDES-SOCIALES/
