@@ -54,6 +54,15 @@ const jobs = [
   { src: "COCHES Videos y fotos/Fotos/Clase S/7E3A0235.jpg", out: "mb-aeropuerto" },
   { src: "COCHES Videos y fotos/Fotos/Clase V/7E3A0917.jpg", out: "mb-excursiones" },
   { src: `${SRC}/_stock/mb-cruceros.webp`, out: "mb-cruceros" },
+  // Fotos intercaladas en artículos (Adobe Stock, licenciadas — jun 2026).
+  { src: `${SRC}/_stock/queso-tabla.jpg`, out: "queso-tabla" },
+  { src: `${SRC}/_stock/gin-tonic.jpg`, out: "gin-tonic" },
+  { src: `${SRC}/_stock/vino-bodega.jpg`, out: "vino-bodega" },
+  { src: `${SRC}/_stock/embutidos-tabla.jpg`, out: "embutidos-tabla" },
+  { src: `${SRC}/_stock/dulces-amargos.jpg`, out: "dulces-amargos" },
+  { src: `${SRC}/_stock/alta-cocina-plato.jpg`, out: "alta-cocina-plato" },
+  { src: `${SRC}/_stock/binibeca-calle.jpg`, out: "binibeca-calle" },
+  { src: `${SRC}/_stock/ciutadella-puerto.jpg`, out: "ciutadella-puerto" },
 ];
 
 mkdirSync(OUT, { recursive: true });
