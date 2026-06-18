@@ -1,0 +1,25 @@
+{
+  "name": "Isabella Beach Club",
+  "lang": "es",
+  "translationKey": "isabella-beach-club",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Beach club en las Platges de Fornells, en la costa norte: zona chill-out, cócteles y cenas con uno de los mejores atardeceres del norte.",
+  "coordinates": {
+    "lat": 40.0503428,
+    "lng": 4.1083587
+  },
+  "area": "Norte (Es Mercadal)",
+  "practicalInfo": {
+    "horario": "Estacional; los horarios cambian cada temporada — consulta su web o Instagram."
+  },
+  "website": "https://www.isabellamenorca.com/en/",
+  "images": [],
+  "tags": [
+    "beach club",
+    "atardecer",
+    "fornells",
+    "norte"
+  ],
+  "status": "published"
+}

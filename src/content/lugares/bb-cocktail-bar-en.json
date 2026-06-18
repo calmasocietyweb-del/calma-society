@@ -1,0 +1,25 @@
+{
+  "name": "BB Cocktail Bar",
+  "lang": "en",
+  "translationKey": "bb-cocktail-bar",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "A Mediterranean cocktail bar with a terrace and sea views in Binibèquer Vell, with a second spot in Maó.",
+  "coordinates": {
+    "lat": 39.8231051,
+    "lng": 4.2301402
+  },
+  "area": "Southeast (Sant Lluís)",
+  "practicalInfo": {
+    "acceso": "Approximate location for the area; check the exact spot on the venue's website or Instagram.",
+    "horario": "Seasonal; opening hours change each season — check the venue's website or Instagram."
+  },
+  "website": "https://www.bbcocktailbar.com/",
+  "images": [],
+  "tags": [
+    "cocktails",
+    "binibèquer",
+    "sant lluís"
+  ],
+  "status": "published"
+}

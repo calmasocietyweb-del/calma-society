@@ -1,0 +1,25 @@
+{
+  "name": "Vida Una",
+  "lang": "es",
+  "translationKey": "vida-una",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Coctelería y vermutería con la música como pilar, en el Moll de Llevant de Maó, con una de las mejores vistas del puerto.",
+  "coordinates": {
+    "lat": 39.8904862,
+    "lng": 4.2725882
+  },
+  "area": "Este (Maó)",
+  "practicalInfo": {
+    "horario": "Estacional; los horarios cambian cada temporada — consulta su web o Instagram."
+  },
+  "website": "https://vidaunamenorca.com/",
+  "images": [],
+  "tags": [
+    "coctelería",
+    "vermut",
+    "puerto",
+    "maó"
+  ],
+  "status": "published"
+}

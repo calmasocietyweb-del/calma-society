@@ -1,0 +1,25 @@
+{
+  "name": "Kopas Club",
+  "lang": "en",
+  "translationKey": "kopas-club",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "A multi-floor club in Ciutadella's harbour, with terraces, cocktails and varied music into the small hours.",
+  "coordinates": {
+    "lat": 40.0026571,
+    "lng": 3.8361687
+  },
+  "area": "West (Ciutadella)",
+  "practicalInfo": {
+    "horario": "Seasonal; opening hours change each season — check the venue's website or Instagram."
+  },
+  "website": "https://www.kopasclub.com/",
+  "images": [],
+  "tags": [
+    "club",
+    "cocktails",
+    "harbour",
+    "ciutadella"
+  ],
+  "status": "published"
+}
