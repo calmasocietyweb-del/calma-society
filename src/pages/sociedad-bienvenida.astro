@@ -1,0 +1,35 @@
+---
+// Página de bienvenida tras unirse a la Sociedad (ES). Destino del `_next` de
+// Formspree al captar un correo. No se indexa (es una página de confirmación).
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { useTranslations } from "../i18n/ui";
+
+const t = useTranslations("es");
+const alternates = { es: "/sociedad-bienvenida", en: "/en/society-welcome" };
+---
+
+<BaseLayout
+  title={t("thanks.title")}
+  description={t("thanks.text")}
+  locale="es"
+  alternates={alternates}
+  noindex
+>
+  <section class="mx-auto max-w-prosa px-5 py-24 text-center sm:px-8 sm:py-32">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">
+      {t("newsletter.eyebrow")}
+    </p>
+    <h1 class="mt-4 font-display text-4xl text-tinta sm:text-5xl">
+      {t("thanks.title")}
+    </h1>
+    <p class="mx-auto mt-6 max-w-lg text-lg leading-relaxed text-piedra-suave">
+      {t("thanks.text")}
+    </p>
+    <a
+      href="/"
+      class="mt-10 inline-block rounded-md bg-arcilla px-6 py-3 text-sm font-semibold text-lino transition-colors hover:bg-tinta"
+    >
+      {t("thanks.back")}
+    </a>
+  </section>
+</BaseLayout>

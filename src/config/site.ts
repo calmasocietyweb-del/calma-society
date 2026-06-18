@@ -90,14 +90,40 @@ export const SITE = {
   newsletter: {
     // Interruptor general: false = newsletter EN PAUSA (no carga MailerLite,
     // no aparece el pop-up ni los botones). Ponlo en true cuando quieras lanzarla.
-    enabled: false,
+    // true = MailerLite ACTIVO (jun 2026): los correos entran en la lista de
+    // MailerLite vía el formulario embebido (formId abajo). El aspecto del
+    // formulario se edita en MailerLite. Con esto, el modo Formspree y nuestro
+    // popup propio quedan en pausa (los gestiona MailerLite).
+    enabled: true,
+    // CAPTACIÓN DE FUNDADORES (modo puente mientras MailerLite está en pausa).
+    // Con `enabled:false` pero `capture.enabled:true` mostramos el formulario de
+    // "la Sociedad" y recogemos los correos por Formspree (encargado ya declarado
+    // en privacidad), con consentimiento RGPD. NO se envían campañas: solo se crea
+    // la LISTA DE FUNDADORES. Al reactivar MailerLite (enabled:true) este modo se
+    // ignora y manda MailerLite. Es el KPI nº1 (CLAUDE.md §3.1).
+    capture: {
+      enabled: true,
+      // Endpoint Formspree que recibe los correos. Por defecto reutiliza el del
+      // formulario de contacto; crea uno DEDICADO en formspree.io y pégalo aquí
+      // para separar la lista de fundadores de los mensajes de contacto.
+      endpoint: 'https://formspree.io/f/xzdqwzrq',
+    },
+    // Ventana flotante (popup) de captación. NO salta al entrar (eso molesta):
+    // aparece cuando el lector ha bajado `scrollPercent`% de la página, UNA sola
+    // vez, y se puede cerrar (X / ESC / clic fuera). Si la cierra o se une, no
+    // vuelve a salir. Pon `enabled:false` para desactivarla del todo.
+    popup: {
+      enabled: true,
+      scrollPercent: 35, // % de scroll antes de aparecer (sube el número = más tarde)
+    },
     provider: 'mailerlite' as const,
     accountId: '2445939', // ID de cuenta MailerLite (script universal)
     // Formulario emergente (pop-up): nuestro botón abre el formulario de MailerLite.
     popupFormId: 'ETGJGK',
-    // Alternativas: URL "action" de la versión HTML, o "data-form" del embebido.
+    // Formulario EMBEBIDO de MailerLite (data-form). Su JS lo renderiza dentro de
+    // la web; el aspecto se edita en MailerLite (Forms → Embedded forms → GIibQ8).
     action: '',
-    formId: '',
+    formId: 'GIibQ8',
     emailField: 'fields[email]',
   },
 

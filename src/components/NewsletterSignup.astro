@@ -1,87 +1,134 @@
 ---
 // Captación de suscriptores — el KPI nº1 (CLAUDE.md §3.1).
-// Modos según la config de MailerLite (SITE.newsletter):
-//   - "custom":   nuestro formulario premium POST a la URL `action`.
-//   - "embedded": el formulario de MailerLite renderizado (`formId`).
-//   - "popup":    nuestro botón abre el formulario emergente (`popupFormId`).
-//   - "preview":  aún sin conectar.
+// Dos caminos según SITE.newsletter:
+//   1) MailerLite (enabled:true): custom / embedded / popup / preview.
+//   2) Captación de fundadores (enabled:false + capture.enabled): nuestro
+//      formulario premium recoge correos por Formspree con consentimiento RGPD,
+//      sin enviar campañas. Ver SocietyCaptureForm.astro.
+// Variantes: "section" = banda completa (home, página propia); "inline" =
+// tarjeta compacta para el final del artículo.
 import { SITE } from "../config/site";
 import { useTranslations } from "../i18n/ui";
 import { currentLocale } from "../i18n/utils";
+import SocietyCaptureForm from "./SocietyCaptureForm.astro";
+
+interface Props {
+  variant?: "section" | "inline";
+}
+const { variant = "section" } = Astro.props;
 
 const locale = currentLocale(Astro.url.pathname);
 const t = useTranslations(locale);
 const inputId = "newsletter-email";
-const { action, formId, popupFormId, emailField } = SITE.newsletter;
-const mode = action
+const { action, formId, popupFormId, emailField, enabled, capture } = SITE.newsletter;
+
+// Modo captación de fundadores: MailerLite en pausa pero recogemos correos.
+const captureMode = !enabled && capture.enabled && capture.endpoint.length > 0;
+const show = enabled || captureMode;
+
+// Modo MailerLite (solo cuando enabled).
+const mlMode = action
   ? "custom"
   : formId
     ? "embedded"
     : popupFormId
       ? "popup"
       : "preview";
+
+const newsletterHref = locale === "es" ? "/newsletter" : "/en/newsletter";
 ---
 
 {
-  SITE.newsletter.enabled && (
+  show && variant === "inline" && (
+    <aside class="mx-auto mt-16 max-w-prosa px-5 sm:mt-20 sm:px-8">
+      <div class="rounded-2xl border border-niebla bg-arena/50 px-6 py-10 text-center sm:px-10">
+        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">
+          {t("newsletter.eyebrow")}
+        </p>
+        <h2 class="mt-3 font-display text-2xl text-tinta sm:text-3xl">
+          {t("newsletter.title")}
+        </h2>
+        <p class="mx-auto mt-3 max-w-md text-sm leading-relaxed text-piedra-suave">
+          {t("newsletter.text")}
+        </p>
+        {captureMode ? (
+          <SocietyCaptureForm locale={locale} tone="light" idSuffix="-inline" />
+        ) : (
+          <a
+            href={newsletterHref}
+            class="mt-6 inline-block rounded-md bg-arcilla px-6 py-3 text-sm font-semibold text-lino transition-colors hover:bg-tinta"
+          >
+            {t("newsletter.cta")}
+          </a>
+        )}
+        <p class="mt-3 text-xs text-piedra-suave">{t("newsletter.privacy")}</p>
+      </div>
+    </aside>
+  )
+}
+
+{
+  show && variant === "section" && (
     <section class="bg-arcilla text-lino">
       <div class="mx-auto max-w-3xl px-5 py-16 text-center sm:px-8 sm:py-20">
-    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-champan">Newsletter</p>
-    <h2 class="mt-3 font-display text-3xl text-lino sm:text-4xl">
-      {t("newsletter.title")}
-    </h2>
-    <p class="mx-auto mt-4 max-w-xl text-base leading-relaxed text-lino/80">
-      {t("newsletter.text")}
-    </p>
+        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-champan">
+          {t("newsletter.eyebrow")}
+        </p>
+        <h2 class="mt-3 font-display text-3xl text-lino sm:text-4xl">
+          {t("newsletter.title")}
+        </h2>
+        <p class="mx-auto mt-4 max-w-xl text-base leading-relaxed text-lino/80">
+          {t("newsletter.text")}
+        </p>
 
-    {
-      mode === "embedded" ? (
-        <div class="ml-embedded mx-auto mt-8 max-w-md" data-form={formId} />
-      ) : mode === "popup" ? (
-        <button
-          type="button"
-          class="mx-auto mt-8 block rounded-md bg-oro-vivo px-8 py-3.5 text-sm font-semibold text-tinta transition-colors hover:bg-lino"
-          onclick={`ml('show', '${popupFormId}', true)`}
-        >
-          {t("newsletter.cta")}
-        </button>
-      ) : (
-        <form
-          action={mode === "custom" ? action : undefined}
-          method="post"
-          target="_blank"
-          class="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row"
-        >
-          <label for={inputId} class="sr-only">{t("newsletter.placeholder")}</label>
-          <input
-            id={inputId}
-            type="email"
-            name={emailField}
-            required
-            autocomplete="email"
-            placeholder={t("newsletter.placeholder")}
-            class="w-full rounded-md border border-lino/20 bg-lino/10 px-4 py-3 text-sm text-lino placeholder:text-lino/50 focus-visible:outline-champan"
-          />
+        {captureMode ? (
+          <SocietyCaptureForm locale={locale} tone="dark" />
+        ) : mlMode === "embedded" ? (
+          <div class="ml-embedded mx-auto mt-8 max-w-md" data-form={formId} />
+        ) : mlMode === "popup" ? (
           <button
-            type="submit"
-            disabled={mode === "preview"}
-            class="shrink-0 rounded-md bg-oro-vivo px-6 py-3 text-sm font-semibold text-tinta transition-colors hover:bg-lino disabled:cursor-not-allowed disabled:opacity-60"
+            type="button"
+            class="mx-auto mt-8 block rounded-md bg-oro-vivo px-8 py-3.5 text-sm font-semibold text-tinta transition-colors hover:bg-lino"
+            onclick={`ml('show', '${popupFormId}', true)`}
           >
             {t("newsletter.cta")}
           </button>
-        </form>
-      )
-    }
+        ) : (
+          <form
+            action={mlMode === "custom" ? action : undefined}
+            method="post"
+            target="_blank"
+            class="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row"
+          >
+            <label for={inputId} class="sr-only">
+              {t("newsletter.placeholder")}
+            </label>
+            <input
+              id={inputId}
+              type="email"
+              name={emailField}
+              required
+              autocomplete="email"
+              placeholder={t("newsletter.placeholder")}
+              class="w-full rounded-md border border-lino/20 bg-lino/10 px-4 py-3 text-sm text-lino placeholder:text-lino/50 focus-visible:outline-champan"
+            />
+            <button
+              type="submit"
+              disabled={mlMode === "preview"}
+              class="shrink-0 rounded-md bg-oro-vivo px-6 py-3 text-sm font-semibold text-tinta transition-colors hover:bg-lino disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              {t("newsletter.cta")}
+            </button>
+          </form>
+        )}
 
-    <p class="mt-4 text-xs text-lino/60">{t("newsletter.privacy")}</p>
-    {
-      mode === "preview" && (
-        <p class="mt-2 text-xs text-lino/40">
-          (Conexión con MailerLite pendiente del código del formulario.)
-        </p>
-      )
-    }
-  </div>
+        <p class="mt-4 text-xs text-lino/60">{t("newsletter.privacy")}</p>
+        {mlMode === "preview" && !captureMode && (
+          <p class="mt-2 text-xs text-lino/40">
+            (Conexión con MailerLite pendiente del código del formulario.)
+          </p>
+        )}
+      </div>
     </section>
   )
 }

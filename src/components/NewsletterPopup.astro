@@ -1,0 +1,182 @@
+---
+// Ventana flotante de captación de "la Sociedad" — KPI nº1.
+// NO salta al entrar: aparece tras bajar `scrollPercent`% de la página, UNA vez,
+// y se cierra con X / ESC / clic fuera. Si se cierra o se une, no vuelve a salir
+// (se recuerda en localStorage, dato NO crítico). Tarjeta discreta abajo, acorde
+// con el "anti-ruido" de la marca (CLAUDE.md §12). JS mínimo y justificado (§3.9).
+import { SITE } from "../config/site";
+import { useTranslations } from "../i18n/ui";
+import { currentLocale } from "../i18n/utils";
+import SocietyCaptureForm from "./SocietyCaptureForm.astro";
+
+const locale = currentLocale(Astro.url.pathname);
+const t = useTranslations(locale);
+const { enabled, capture, popup } = SITE.newsletter;
+
+// Este popup es la herramienta de la FASE FUNDADORES (Formspree). Cuando se
+// reactive MailerLite (enabled:true), MailerLite gestiona sus propios pop-ups
+// (configura allí el disparador "al hacer scroll" para que no salte al entrar).
+const captureMode = !enabled && capture.enabled && capture.endpoint.length > 0;
+const show = captureMode && popup.enabled;
+const scrollPercent = popup.scrollPercent;
+---
+
+{
+  show && (
+    <div
+      id="society-popup"
+      class="society-popup"
+      data-scroll-percent={scrollPercent}
+      hidden
+    >
+      <div
+        class="society-popup__card border border-niebla bg-lino shadow-xl"
+        role="dialog"
+        aria-modal="false"
+        aria-labelledby="society-popup-title"
+      >
+        <button
+          type="button"
+          class="society-popup__close text-piedra-suave transition-colors hover:text-tinta"
+          aria-label={t("a11y.close")}
+        >
+          <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M5 5l10 10M15 5L5 15" stroke-linecap="round" />
+          </svg>
+        </button>
+
+        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">
+          {t("newsletter.eyebrow")}
+        </p>
+        <h2 id="society-popup-title" class="mt-2 font-display text-2xl text-tinta">
+          {t("newsletter.title")}
+        </h2>
+        <p class="mt-2 text-sm leading-relaxed text-piedra-suave">
+          {t("newsletter.text")}
+        </p>
+
+        <SocietyCaptureForm locale={locale} tone="light" idSuffix="-popup" />
+
+        <p class="mt-3 text-xs text-piedra-suave">{t("newsletter.privacy")}</p>
+      </div>
+    </div>
+  )
+}
+
+<style>
+  .society-popup {
+    position: fixed;
+    inset: auto 0 0 0;
+    z-index: 60;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+    pointer-events: none;
+  }
+  .society-popup__card {
+    position: relative;
+    width: 100%;
+    max-width: 26rem;
+    border-radius: 1rem;
+    padding: 1.75rem;
+    pointer-events: auto;
+    /* Oculto por defecto: entra deslizando desde abajo. */
+    opacity: 0;
+    transform: translateY(1.25rem);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+  }
+  .society-popup.is-visible .society-popup__card {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .society-popup__close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    display: inline-flex;
+    padding: 0.25rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .society-popup__card {
+      transition: none;
+      transform: none;
+    }
+  }
+</style>
+
+<script>
+  // Muestra el popup de "la Sociedad" tras bajar un % de la página, una sola vez.
+  const STORAGE_KEY = "cs-society-popup"; // "1" = cerrado o ya unido (no mostrar más)
+  const el = document.getElementById("society-popup");
+
+  if (el) {
+    const path = location.pathname;
+    // No molestar donde ya hay formulario o no tiene sentido captar de nuevo.
+    const excluded = ["/newsletter", "/sociedad-bienvenida", "/society-welcome"];
+    const isExcluded = excluded.some((p) => path.includes(p));
+    let done = false;
+    try {
+      done = localStorage.getItem(STORAGE_KEY) === "1";
+    } catch (_) {
+      /* localStorage no disponible: tratamos como no mostrado */
+    }
+
+    if (!done && !isExcluded) {
+      const percent = Number(el.dataset.scrollPercent ?? "35");
+      let shown = false;
+
+      const remember = () => {
+        try {
+          localStorage.setItem(STORAGE_KEY, "1");
+        } catch (_) {
+          /* ignorar */
+        }
+      };
+
+      const open = () => {
+        if (shown) return;
+        shown = true;
+        el.hidden = false;
+        // Forzamos reflow para que la transición se aplique al añadir la clase.
+        void el.offsetWidth;
+        el.classList.add("is-visible");
+        window.removeEventListener("scroll", onScroll);
+        document.addEventListener("keydown", onKey);
+      };
+
+      const close = () => {
+        el.classList.remove("is-visible");
+        remember();
+        document.removeEventListener("keydown", onKey);
+        window.setTimeout(() => {
+          el.hidden = true;
+        }, 450);
+      };
+
+      const onScroll = () => {
+        const doc = document.documentElement;
+        const scrolled = doc.scrollTop + window.innerHeight;
+        const total = doc.scrollHeight;
+        if (total <= 0) return;
+        if ((scrolled / total) * 100 >= percent) open();
+      };
+
+      const onKey = (e: KeyboardEvent) => {
+        if (e.key === "Escape") close();
+      };
+
+      // Cerrar con la X.
+      el.querySelector(".society-popup__close")?.addEventListener("click", close);
+      // Cerrar al hacer clic fuera de la tarjeta.
+      el.addEventListener("click", (e) => {
+        if (e.target === el) close();
+      });
+      // Si envía el formulario, no volver a mostrarlo (aunque navegue a "gracias").
+      el.querySelector("form")?.addEventListener("submit", remember);
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+      // Por si la página es muy corta y ya está "bajada".
+      onScroll();
+    }
+  }
+</script>

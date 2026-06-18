@@ -4,6 +4,7 @@ import { type CollectionEntry } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
 import JsonLd from "../components/JsonLd.astro";
 import ArticleCard from "../components/ArticleCard.astro";
+import NewsletterSignup from "../components/NewsletterSignup.astro";
 import { getSection } from "../config/sections";
 import { SITE, type Locale } from "../config/site";
 import { useTranslations } from "../i18n/ui";
@@ -179,6 +180,9 @@ const breadcrumb = breadcrumbSchema([
       </section>
     )
   }
+
+  {/* Invitación a la Sociedad (captación = KPI nº1). Compacta, al cierre. */}
+  <NewsletterSignup variant="inline" />
 
   <JsonLd schema={[articleLd, breadcrumb]} />
 </BaseLayout>

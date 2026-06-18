@@ -53,6 +53,10 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
+      // Excluye las páginas de confirmación ("gracias"), que van con noindex.
+      filter: (page) =>
+        !page.includes("/sociedad-bienvenida") &&
+        !page.includes("/society-welcome"),
       // Añade enlaces hreflang entre idiomas en el sitemap.
       i18n: {
         defaultLocale: "es",
@@ -74,6 +78,10 @@ export default defineConfig({
         ignored: [
           "**/MATERIAL FOTOS RRSS/**",
           "**/MATERIAL VIDEOS RRSS/**",
+          // Operativa de redes sociales: assets pesados, Remotion y node_modules
+          // propios. Fuera del vigilante (igual que el material) para no romper
+          // el dev server en Windows con EBUSY/ENOENT.
+          "**/REDES-SOCIALES/**",
           "**/*.tmp.*",
         ],
       },

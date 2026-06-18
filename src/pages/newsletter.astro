@@ -42,7 +42,7 @@ const beneficios = [
   </section>
 
   {
-    SITE.newsletter.enabled ? (
+    SITE.newsletter.enabled || SITE.newsletter.capture.enabled ? (
       <div class="mt-14">
         <NewsletterSignup />
       </div>

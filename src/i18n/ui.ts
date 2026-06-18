@@ -16,6 +16,7 @@ export const ui = {
     "nav.newsletter": "La Sociedad",
     "lang.label": "Idioma",
     "a11y.skip": "Saltar al contenido",
+    "a11y.close": "Cerrar",
 
     "common.readmore": "Leer más",
     "common.viewall": "Ver todo",
@@ -64,12 +65,18 @@ export const ui = {
 
     "author.articlesby": "Artículos de",
 
+    "newsletter.eyebrow": "La Sociedad",
     "newsletter.title": "Forma parte de la Sociedad",
     "newsletter.text":
       "Mantente conectado a Calma Society: cada quince días, las noticias de la Sociedad y lo mejor de Menorca, con mirada de lujo tranquilo. Sin ruido.",
     "newsletter.placeholder": "Tu correo electrónico",
     "newsletter.cta": "Unirme a la Sociedad",
     "newsletter.privacy": "Sin spam. Te das de baja cuando quieras.",
+    "newsletter.consent": "Acepto recibir las noticias de la Sociedad y la",
+    "thanks.title": "Bienvenido a la Sociedad",
+    "thanks.text":
+      "Gracias por unirte. Ya formas parte de los fundadores de Calma Society: te escribiremos con calma, solo cuando tengamos algo que de verdad merezca tu tiempo.",
+    "thanks.back": "Volver a la portada",
 
     "nav.contact": "Contacto",
     "contact.lead": "¿Tienes una historia, una propuesta o una colaboración en mente? Escríbenos.",
@@ -97,6 +104,7 @@ export const ui = {
     "nav.newsletter": "The Society",
     "lang.label": "Language",
     "a11y.skip": "Skip to content",
+    "a11y.close": "Close",
 
     "common.readmore": "Read more",
     "common.viewall": "View all",
@@ -145,12 +153,18 @@ export const ui = {
 
     "author.articlesby": "Articles by",
 
+    "newsletter.eyebrow": "The Society",
     "newsletter.title": "Become part of the Society",
     "newsletter.text":
       "Stay connected to Calma Society: every fortnight, the Society's news and the best of Menorca, through a quiet-luxury lens. No noise.",
     "newsletter.placeholder": "Your email address",
     "newsletter.cta": "Join the Society",
     "newsletter.privacy": "No spam. Unsubscribe anytime.",
+    "newsletter.consent": "I agree to receive the Society's news and accept the",
+    "thanks.title": "Welcome to the Society",
+    "thanks.text":
+      "Thank you for joining. You're now among the founders of Calma Society: we'll write to you calmly, only when we have something truly worth your time.",
+    "thanks.back": "Back to home",
 
     "nav.contact": "Contact",
     "contact.lead": "Have a story, a pitch or a collaboration in mind? Get in touch.",

@@ -16,6 +16,7 @@ import Seo from "../components/Seo.astro";
 import JsonLd from "../components/JsonLd.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import NewsletterPopup from "../components/NewsletterPopup.astro";
 
 interface Props {
   title: string;
@@ -29,6 +30,8 @@ interface Props {
   publishedTime?: string;
   modifiedTime?: string;
   authorName?: string;
+  /** Excluir de buscadores (p. ej. páginas de "gracias"). */
+  noindex?: boolean;
 }
 
 const {
@@ -41,6 +44,7 @@ const {
   publishedTime,
   modifiedTime,
   authorName,
+  noindex = false,
 } = Astro.props;
 
 const locale = Astro.props.locale ?? currentLocale(Astro.url.pathname);
@@ -76,6 +80,7 @@ const rssHref = locale === "es" ? "/rss.xml" : "/en/rss.xml";
       publishedTime={publishedTime}
       modifiedTime={modifiedTime}
       authorName={authorName}
+      noindex={noindex}
     />
 
     <meta name="theme-color" content="#73402d" />
@@ -128,5 +133,6 @@ const rssHref = locale === "es" ? "/rss.xml" : "/en/rss.xml";
       <slot />
     </main>
     <Footer />
+    <NewsletterPopup />
   </body>
 </html>

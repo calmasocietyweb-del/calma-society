@@ -15,6 +15,8 @@ interface Props {
   publishedTime?: string;
   modifiedTime?: string;
   authorName?: string;
+  /** Excluir de buscadores (p. ej. páginas de "gracias"). */
+  noindex?: boolean;
 }
 const {
   title,
@@ -27,6 +29,7 @@ const {
   publishedTime,
   modifiedTime,
   authorName,
+  noindex = false,
 } = Astro.props;
 
 const fullTitle = `${title} · ${SITE.name}`;
@@ -54,6 +57,7 @@ const xDefault = alternates?.[SITE.defaultLocale]
 
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
+{noindex && <meta name="robots" content="noindex, follow" />}
 <link rel="canonical" href={canonical} />
 
 {hreflangs.map((h) => <link rel="alternate" hreflang={h.lang} href={h.href} />)}

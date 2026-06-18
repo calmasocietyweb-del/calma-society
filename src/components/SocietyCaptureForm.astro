@@ -1,0 +1,81 @@
+---
+// Formulario de captación de "la Sociedad" (lista de fundadores) — KPI nº1.
+// Recoge los correos por Formspree (SITE.newsletter.capture.endpoint) con
+// consentimiento RGPD, SIN reactivar MailerLite ni enviar campañas.
+// Tras enviar, Formspree redirige a la página de bienvenida (`_next`).
+import { SITE } from "../config/site";
+import { useTranslations } from "../i18n/ui";
+import type { Locale } from "../config/site";
+
+interface Props {
+  locale: Locale;
+  /** "dark" sobre fondo arcilla; "light" sobre fondo claro (fin de artículo). */
+  tone?: "dark" | "light";
+  /** Sufijo para IDs únicos cuando hay varios formularios en la misma página. */
+  idSuffix?: string;
+}
+const { locale, tone = "dark", idSuffix = "" } = Astro.props;
+const t = useTranslations(locale);
+
+const endpoint = SITE.newsletter.capture.endpoint;
+const emailId = `society-email${idSuffix}`;
+const consentId = `society-consent${idSuffix}`;
+const privacyHref = locale === "es" ? "/privacidad" : "/en/privacy";
+const thanksUrl =
+  locale === "es"
+    ? `${SITE.url}/sociedad-bienvenida`
+    : `${SITE.url}/en/society-welcome`;
+const subject =
+  locale === "es"
+    ? "Calma Society — nuevo miembro de la Sociedad"
+    : "Calma Society — new Society member";
+
+const dark = tone === "dark";
+const inputClass = dark
+  ? "w-full rounded-md border border-lino/20 bg-lino/10 px-4 py-3 text-sm text-lino placeholder:text-lino/50 focus-visible:outline-champan"
+  : "w-full rounded-md border border-niebla bg-lino/60 px-4 py-3 text-sm text-piedra placeholder:text-piedra-suave focus-visible:outline-terracota";
+const btnClass = dark
+  ? "shrink-0 rounded-md bg-oro-vivo px-6 py-3 text-sm font-semibold text-tinta transition-colors hover:bg-lino"
+  : "shrink-0 rounded-md bg-arcilla px-6 py-3 text-sm font-semibold text-lino transition-colors hover:bg-tinta";
+const consentClass = dark ? "text-lino/70" : "text-piedra-suave";
+const linkClass = dark
+  ? "font-medium text-champan underline hover:text-lino"
+  : "font-medium text-arcilla underline hover:text-terracota";
+const accent = dark ? "accent-oro-vivo" : "accent-terracota";
+---
+
+<form action={endpoint} method="POST" class="mx-auto mt-8 max-w-md text-left">
+  <div class="flex flex-col gap-3 sm:flex-row">
+    <label for={emailId} class="sr-only">{t("newsletter.placeholder")}</label>
+    <input
+      id={emailId}
+      type="email"
+      name="email"
+      required
+      autocomplete="email"
+      placeholder={t("newsletter.placeholder")}
+      class={inputClass}
+    />
+    <button type="submit" class={btnClass}>{t("newsletter.cta")}</button>
+  </div>
+
+  {/* Campos Formspree: asunto, redirección de "gracias" y origen de la captación. */}
+  <input type="hidden" name="_subject" value={subject} />
+  <input type="hidden" name="_next" value={thanksUrl} />
+  <input type="hidden" name="origen" value="captacion-sociedad" />
+
+  <div class="mt-3 flex items-start gap-2.5">
+    <input
+      id={consentId}
+      type="checkbox"
+      name="consent"
+      value="acepto"
+      required
+      class={`mt-0.5 h-4 w-4 shrink-0 ${accent}`}
+    />
+    <label for={consentId} class={`text-xs leading-relaxed ${consentClass}`}>
+      {t("newsletter.consent")}{" "}
+      <a href={privacyHref} class={linkClass}>{t("contact.consentLink")}</a>.
+    </label>
+  </div>
+</form>
