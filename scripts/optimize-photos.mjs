@@ -62,6 +62,9 @@ const jobs = [
   { src: "COCHES Videos y fotos/Fotos/Clase S/7E3A0288.jpg", out: "mb-velada-detalle" }, // piloto S (intercalada)
   { src: "COCHES Videos y fotos/Fotos/Clase V/7E3A0890.jpg", out: "mb-bodas" }, // Clase V frontal (hero bodas)
   { src: "COCHES Videos y fotos/Fotos/Clase V/7E3A0833.jpg", out: "mb-bodas-grupo" }, // Clase V trasera (intercalada)
+  // Interiores cuidados (variedad de composición): habitáculos en piel.
+  { src: "COCHES Videos y fotos/Fotos/Clase S/7E3A0671.jpg", out: "mb-clase-s-interior" }, // asientos traseros piel coñac
+  { src: "COCHES Videos y fotos/Fotos/Clase V/7E3A1140.jpg", out: "mb-clase-v-interior" }, // habitáculo trasero piel negra
   // Fotos intercaladas en artículos (Adobe Stock, licenciadas — jun 2026).
   { src: `${SRC}/_stock/queso-tabla.jpg`, out: "queso-tabla" },
   { src: `${SRC}/_stock/gin-tonic.jpg`, out: "gin-tonic" },
