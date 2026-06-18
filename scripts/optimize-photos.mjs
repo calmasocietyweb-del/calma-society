@@ -54,6 +54,10 @@ const jobs = [
   { src: "COCHES Videos y fotos/Fotos/Clase S/7E3A0235.jpg", out: "mb-aeropuerto" },
   { src: "COCHES Videos y fotos/Fotos/Clase V/7E3A0917.jpg", out: "mb-excursiones" },
   { src: `${SRC}/_stock/mb-cruceros.webp`, out: "mb-cruceros" },
+  // Movilidad de LUJO (Mercedes Clase S junto al puerto de Maó; crédito "Menorca Bus").
+  { src: "COCHES Videos y fotos/Fotos/Clase S/7E3A0304.jpg", out: "mb-lujo" }, // hero del hub
+  { src: "COCHES Videos y fotos/Fotos/Clase S/7E3A0362.jpg", out: "mb-clase-s-puerto" }, // intercalada Clase S
+  { src: "COCHES Videos y fotos/Fotos/Clase S/7E3A0274.jpg", out: "mb-lujo-detalle" }, // detalle cromado
   // Fotos intercaladas en artículos (Adobe Stock, licenciadas — jun 2026).
   { src: `${SRC}/_stock/queso-tabla.jpg`, out: "queso-tabla" },
   { src: `${SRC}/_stock/gin-tonic.jpg`, out: "gin-tonic" },
