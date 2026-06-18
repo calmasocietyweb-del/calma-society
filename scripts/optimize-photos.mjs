@@ -58,6 +58,10 @@ const jobs = [
   { src: "COCHES Videos y fotos/Fotos/Clase S/7E3A0304.jpg", out: "mb-lujo" }, // hero del hub
   { src: "COCHES Videos y fotos/Fotos/Clase S/7E3A0362.jpg", out: "mb-clase-s-puerto" }, // intercalada Clase S
   { src: "COCHES Videos y fotos/Fotos/Clase S/7E3A0274.jpg", out: "mb-lujo-detalle" }, // detalle cromado
+  { src: "COCHES Videos y fotos/Fotos/Clase S/7E3A0240.jpg", out: "mb-velada" }, // estrella S (hero velada)
+  { src: "COCHES Videos y fotos/Fotos/Clase S/7E3A0288.jpg", out: "mb-velada-detalle" }, // piloto S (intercalada)
+  { src: "COCHES Videos y fotos/Fotos/Clase V/7E3A0890.jpg", out: "mb-bodas" }, // Clase V frontal (hero bodas)
+  { src: "COCHES Videos y fotos/Fotos/Clase V/7E3A0833.jpg", out: "mb-bodas-grupo" }, // Clase V trasera (intercalada)
   // Fotos intercaladas en artículos (Adobe Stock, licenciadas — jun 2026).
   { src: `${SRC}/_stock/queso-tabla.jpg`, out: "queso-tabla" },
   { src: `${SRC}/_stock/gin-tonic.jpg`, out: "gin-tonic" },
