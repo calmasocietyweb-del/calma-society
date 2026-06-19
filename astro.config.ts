@@ -53,10 +53,12 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
-      // Excluye las páginas de confirmación ("gracias"), que van con noindex.
+      // Excluye las páginas de confirmación ("gracias"), que van con noindex,
+      // y el panel interno (/panel/), que no debe anunciarse a buscadores.
       filter: (page) =>
         !page.includes("/sociedad-bienvenida") &&
-        !page.includes("/society-welcome"),
+        !page.includes("/society-welcome") &&
+        !page.includes("/panel/"),
       // Añade enlaces hreflang entre idiomas en el sitemap.
       i18n: {
         defaultLocale: "es",
