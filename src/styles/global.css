@@ -129,3 +129,28 @@
   line-height: 1.5;
   color: var(--color-piedra-suave);
 }
+
+/* ============================================================
+   Presentación de imágenes — "Galería de Lino" (quiet luxury).
+   La foto como obra colgada, no como tarjeta de app: dominada en
+   saturación y velada hacia la paleta cálida. El VELO de color va
+   siempre en un <span> hermano con `mix-blend-multiply` dentro del
+   wrapper `relative` de la imagen (nunca tiñe titulares ni captions).
+   ============================================================ */
+.img-calma {
+  /* Doma las saturaciones chillonas del stock sin oscurecer la foto. */
+  filter: saturate(0.93) contrast(1.02);
+}
+
+/* Sombra cálida muy sutil bajo el titular del hero: red de seguridad de
+   contraste (AA) del texto claro sobre foto, sin el drop-shadow gris. */
+.hero-title-shadow {
+  text-shadow: 0 1px 24px rgba(23, 21, 15, 0.45);
+}
+
+/* Quien prefiere menos movimiento: sin aclarados de luz en hover. */
+@media (prefers-reduced-motion: reduce) {
+  [class*="group-hover:bg-lino"] {
+    transition: none !important;
+  }
+}

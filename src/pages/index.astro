@@ -23,7 +23,7 @@ const t = useTranslations(locale);
 const lead = await getFeaturedArticle(locale);
 const discover = (await getArticlesBySection(locale, "descubrir"))
   .filter((a) => a.id !== lead?.id)
-  .slice(0, 6);
+  .slice(0, 5);
 const events = (await getEvents(locale)).slice(0, 3);
 
 // Orden de secciones en portada: calas/práctica primero; gastronomía al final.
@@ -31,6 +31,30 @@ const HOME_SECTION_ORDER = ["descubrir", "practica", "agenda", "cultura", "vivir
 const homeSections = HOME_SECTION_ORDER.map((k) => getSection(k)).filter(Boolean);
 
 const sectionLabel = (key: string) => getSection(key)?.label[locale];
+
+// Ritmo editorial asimétrico de la banda Descubrir: 2 piezas grandes (media
+// columna; la primera más alta) + una fila de 3 medianas. Solo si hay piezas
+// suficientes; si no, rejilla uniforme (fallback). Toda la lógica vive aquí,
+// en el frontmatter → cero JavaScript de cliente.
+const asymDiscover = discover.length >= 5;
+const discoverGridClass = asymDiscover
+  ? "mt-10 grid gap-x-10 gap-y-16 sm:grid-cols-6"
+  : "mt-10 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3";
+const discoverCard = (i: number) =>
+  !asymDiscover
+    ? { col: "", aspect: "aspect-[4/5]", sizes: "(min-width: 640px) 45vw, 100vw" }
+    : i < 2
+      ? {
+          col: "sm:col-span-3",
+          aspect: i === 0 ? "aspect-[3/4]" : "aspect-[4/5]",
+          sizes: "(min-width: 640px) 50vw, 100vw",
+        }
+      : {
+          col: "sm:col-span-2",
+          aspect: "aspect-[4/5]",
+          sizes: "(min-width: 640px) 33vw, 100vw",
+        };
+
 const description =
   "Calma Society — la revista de Menorca con mirada de lujo tranquilo: calas y playas con criterio, naturaleza, cultura y cómo vivir la isla sin prisa.";
 ---
@@ -84,17 +108,24 @@ const description =
             {t("common.viewall")} →
           </a>
         </header>
-        <div class="mt-10 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-          {discover.map((a) => (
-            <ArticleCard
-              kicker={sectionLabel(a.data.section)}
-              title={a.data.title}
-              excerpt={a.data.excerpt}
-              href={articleUrl(locale, a.id)}
-              image={a.data.heroImage}
-              imageAlt={a.data.heroImageAlt}
-            />
-          ))}
+        <div class={discoverGridClass}>
+          {discover.map((a, i) => {
+            const c = discoverCard(i);
+            return (
+              <div class={c.col}>
+                <ArticleCard
+                  kicker={sectionLabel(a.data.section)}
+                  title={a.data.title}
+                  excerpt={a.data.excerpt}
+                  href={articleUrl(locale, a.id)}
+                  image={a.data.heroImage}
+                  imageAlt={a.data.heroImageAlt}
+                  aspectClass={c.aspect}
+                  sizes={c.sizes}
+                />
+              </div>
+            );
+          })}
         </div>
       </section>
     )
@@ -103,7 +134,7 @@ const description =
   {/* Cómo moverse por la isla (transfers y excursiones · Menorca Bus) */}
   <section class="mt-20 sm:mt-28">
     <div class="mx-auto max-w-6xl px-5 sm:px-8">
-      <div class="rounded-2xl border border-niebla bg-arena/50 p-8 sm:p-12">
+      <div class="border-l-2 border-oro-vivo/50 bg-arena/40 p-8 sm:p-12">
         <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">Cómo moverse</p>
         <h2 class="mt-3 font-display text-2xl text-tinta sm:text-3xl">Recorre la isla sin coche</h2>
         <p class="mt-3 max-w-prosa text-piedra-suave">
