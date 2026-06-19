@@ -45,13 +45,17 @@ const imageUrl = image
 const imageAltText = imageAlt ?? `${SITE.name} · ${SITE.edition}`;
 const isDefaultImage = !image; // la OG por defecto es /og-default.png (1200x630)
 
+// Astro emite las URLs en formato directorio (con barra final), igual que el
+// canonical (Astro.url.href) y el sitemap. Normalizamos los hreflang para que
+// terminen en "/" y coincidan EXACTAMENTE con esas dos referencias.
+const withSlash = (url: string) => (url.endsWith("/") ? url : `${url}/`);
 const hreflangs = alternates
   ? SITE.locales
       .filter((l) => alternates[l.code])
-      .map((l) => ({ lang: l.code, href: abs(alternates[l.code]!) }))
+      .map((l) => ({ lang: l.code, href: withSlash(abs(alternates[l.code]!)) }))
   : [];
 const xDefault = alternates?.[SITE.defaultLocale]
-  ? abs(alternates[SITE.defaultLocale]!)
+  ? withSlash(abs(alternates[SITE.defaultLocale]!))
   : undefined;
 ---
 
