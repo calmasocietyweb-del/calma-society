@@ -8,13 +8,15 @@ import { SITE } from "../config/site";
 interface Props {
   class?: string;
   markOnly?: boolean;
+  /** Versión grande para el masthead: nombre con corte display (opsz alto). */
+  large?: boolean;
 }
-const { class: className, markOnly = false } = Astro.props;
+const { class: className, markOnly = false, large = false } = Astro.props;
 ---
 
 <span class:list={["inline-flex items-center gap-2.5", className]}>
   <svg
-    class="h-8 w-8 shrink-0"
+    class:list={["shrink-0", large ? "h-9 w-9 sm:h-11 sm:w-11" : "h-8 w-8"]}
     viewBox="0 0 64 64"
     fill="none"
     aria-hidden="true"
@@ -47,7 +49,13 @@ const { class: className, markOnly = false } = Astro.props;
   </svg>
   {
     !markOnly && (
-      <span class="font-display text-xl leading-none tracking-tight text-tinta sm:text-2xl">
+      <span
+        class:list={[
+          "font-display leading-none text-tinta",
+          large ? "text-[1.9rem] sm:text-[2.4rem]" : "text-xl tracking-tight sm:text-2xl",
+        ]}
+        style={large ? "font-variation-settings:'opsz' 72,'wght' 420; letter-spacing:-0.02em" : undefined}
+      >
         {SITE.name}
       </span>
     )

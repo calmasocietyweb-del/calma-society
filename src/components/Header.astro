@@ -1,6 +1,7 @@
 ---
-// Cabecera: marca + edición, navegación de secciones y selector de idioma.
-// Menú móvil con <details> nativo: accesible y sin JavaScript de cliente.
+// Cabecera: MASTHEAD de revista — utilidad fina + marca centrada con tagline
+// (la "introducción elegante") + navegación de secciones. Menú móvil con
+// <details> nativo: accesible y sin JavaScript de cliente.
 import { SITE, type Locale } from "../config/site";
 import { SECTIONS } from "../config/sections";
 import { useTranslations } from "../i18n/ui";
@@ -23,74 +24,101 @@ const contactHref = locale === "es" ? "/contacto" : "/en/contact";
 
 <header class="sticky top-0 z-50 border-b border-niebla bg-lino/95 backdrop-blur-sm">
   <div class="mx-auto max-w-6xl px-5 sm:px-8">
-    <div class="flex items-center justify-between gap-4 py-4">
-      <!-- Marca -->
-      <a href={home} class="flex items-center gap-2.5" aria-label={`${SITE.name} — ${t("nav.home")}`}>
-        <Logo />
-        <span class="hidden text-[0.6rem] uppercase tracking-[0.25em] text-oro sm:inline">
-          {SITE.edition}
-        </span>
-      </a>
-
+    {/* NIVEL 1 — utilidad fina (solo desktop): edición · La Sociedad + idioma, con filete dorado */}
+    <div class="hidden items-center justify-between border-b border-oro-vivo/25 py-1.5 lg:flex">
+      <span class="text-[0.62rem] uppercase tracking-[0.26em] text-oro">{SITE.edition}</span>
       <div class="flex items-center gap-5">
-        <!-- Navegación de escritorio -->
-        <nav aria-label="Principal" class="hidden items-center gap-6 text-sm lg:flex">
-          {
-            SECTIONS.map((s) => (
-              <a href={s.href[locale]} class="text-piedra transition-colors hover:text-terracota">
-                {s.label[locale]}
-              </a>
-            ))
-          }
-          {
-            SITE.newsletter.enabled && (
-              <a href={newsletterHref} class="font-medium text-arcilla transition-colors hover:text-terracota">
-                {t("nav.newsletter")}
-              </a>
-            )
-          }
-        </nav>
-
+        {
+          SITE.newsletter.enabled && (
+            <a
+              href={newsletterHref}
+              class="text-[0.62rem] uppercase tracking-[0.22em] text-arcilla transition-colors hover:text-terracota"
+            >
+              {t("nav.newsletter")}
+            </a>
+          )
+        }
         <LanguageSwitcher alternates={alternates} />
-
-        <!-- Menú móvil (sin JS) -->
-        <details class="group relative lg:hidden">
-          <summary
-            class="flex cursor-pointer list-none items-center gap-1.5 text-sm text-piedra [&::-webkit-details-marker]:hidden"
-          >
-            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path stroke-linecap="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
-            </svg>
-            <span>{t("nav.menu")}</span>
-          </summary>
-          <nav
-            aria-label="Principal (móvil)"
-            class="absolute right-0 z-20 mt-3 w-60 rounded-lg border border-niebla bg-lino p-2 shadow-lg shadow-tinta/5"
-          >
-            {
-              SECTIONS.map((s) => (
-                <a href={s.href[locale]} class="block rounded-md px-3 py-2 text-sm text-piedra transition-colors hover:bg-arena hover:text-terracota">
-                  {s.label[locale]}
-                </a>
-              ))
-            }
-            <hr class="my-2 border-niebla" />
-            <a href={aboutHref} class="block rounded-md px-3 py-2 text-sm text-piedra transition-colors hover:bg-arena hover:text-terracota">
-              {t("nav.about")}
-            </a>
-            <a href={contactHref} class="block rounded-md px-3 py-2 text-sm text-piedra transition-colors hover:bg-arena hover:text-terracota">
-              {t("nav.contact")}
-            </a>
-            {
-              SITE.newsletter.enabled && (
-                <a href={newsletterHref} class="block rounded-md px-3 py-2 text-sm font-medium text-arcilla transition-colors hover:bg-arena">
-                  {t("nav.newsletter")}
-                </a>
-              )
-            }
-          </nav>
-        </details>
       </div>
     </div>
+
+    {/* NIVEL 2 — MASTHEAD: marca + introducción. Desktop centrado con filetes; móvil compacto. */}
+    <div class="py-4 lg:py-6">
+      <div class="flex items-center justify-between gap-4 lg:justify-center lg:gap-6">
+        <span aria-hidden="true" class="hidden h-px max-w-[9rem] flex-1 bg-niebla lg:block"></span>
+
+        <a href={home} class="flex items-center" aria-label={`${SITE.name} — ${t("nav.home")}`}>
+          <Logo large />
+        </a>
+
+        <span aria-hidden="true" class="hidden h-px max-w-[9rem] flex-1 bg-niebla lg:block"></span>
+
+        {/* Controles móvil: idioma + menú (ocultos en desktop) */}
+        <div class="flex items-center gap-4 lg:hidden">
+          <LanguageSwitcher alternates={alternates} />
+          <details class="group relative">
+            <summary
+              class="flex cursor-pointer list-none items-center text-piedra [&::-webkit-details-marker]:hidden"
+            >
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path stroke-linecap="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+              </svg>
+              <span class="sr-only">{t("nav.menu")}</span>
+            </summary>
+            <nav
+              aria-label="Principal (móvil)"
+              class="absolute right-0 z-20 mt-3 w-60 rounded-lg border border-niebla bg-lino p-2 shadow-lg shadow-tinta/5"
+            >
+              {
+                SECTIONS.map((s) => (
+                  <a href={s.href[locale]} class="block rounded-md px-3 py-2 text-sm text-piedra transition-colors hover:bg-arena hover:text-terracota">
+                    {s.label[locale]}
+                  </a>
+                ))
+              }
+              <hr class="my-2 border-niebla" />
+              <a href={aboutHref} class="block rounded-md px-3 py-2 text-sm text-piedra transition-colors hover:bg-arena hover:text-terracota">
+                {t("nav.about")}
+              </a>
+              <a href={contactHref} class="block rounded-md px-3 py-2 text-sm text-piedra transition-colors hover:bg-arena hover:text-terracota">
+                {t("nav.contact")}
+              </a>
+              {
+                SITE.newsletter.enabled && (
+                  <a href={newsletterHref} class="block rounded-md px-3 py-2 text-sm font-medium text-arcilla transition-colors hover:bg-arena">
+                    {t("nav.newsletter")}
+                  </a>
+                )
+              }
+            </nav>
+          </details>
+        </div>
+      </div>
+
+      {/* INTRODUCCIÓN elegante: tagline en itálica de Fraunces. Visible en móvil y desktop. */}
+      <p
+        class="mt-2.5 font-display text-[0.9rem] italic leading-snug text-piedra-suave lg:text-center lg:text-base"
+        style="font-variation-settings:'opsz' 30,'wght' 380"
+      >
+        {t("brand.tagline")}
+      </p>
+    </div>
+
+    {/* NIVEL 3 — navegación de secciones centrada (solo desktop) */}
+    <nav
+      aria-label="Principal"
+      class="hidden items-center justify-center gap-8 border-t border-niebla py-3 text-[0.8rem] lg:flex"
+    >
+      {
+        SECTIONS.map((s) => (
+          <a
+            href={s.href[locale]}
+            class="uppercase tracking-[0.12em] text-piedra transition-colors hover:text-terracota"
+          >
+            {s.label[locale]}
+          </a>
+        ))
+      }
+    </nav>
   </div>
 </header>

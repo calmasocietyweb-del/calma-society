@@ -10,6 +10,7 @@ import { SITE, type Locale } from "../config/site";
 export const ui = {
   es: {
     "site.tagline": "El arte de la calma en Menorca.",
+    "brand.tagline": "El Mediterráneo, sin prisa",
     "nav.home": "Inicio",
     "nav.menu": "Menú",
     "nav.about": "Quiénes somos",
@@ -98,6 +99,7 @@ export const ui = {
   },
   en: {
     "site.tagline": "The art of calm in Menorca.",
+    "brand.tagline": "The Mediterranean, at ease",
     "nav.home": "Home",
     "nav.menu": "Menu",
     "nav.about": "About",
