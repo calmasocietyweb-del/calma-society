@@ -47,7 +47,7 @@ const breadcrumb = breadcrumbSchema([
 ]);
 ---
 
-<BaseLayout title={data.name} description={data.description} locale={locale} alternates={alternates}>
+<BaseLayout title={data.name} description={data.seo?.description ?? data.description} locale={locale} alternates={alternates}>
   <article class="mx-auto max-w-prosa px-5 pb-8 pt-12 sm:px-8 sm:pt-16">
     <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">
       {placeTypeLabel(data.type, locale)} · {data.area}

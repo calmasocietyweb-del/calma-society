@@ -14,5 +14,8 @@
   },
   "images": ["/uploads/cala-macarella.webp"],
   "tags": ["sur", "turquesa", "arena blanca", "camí de cavalls", "ciutadella"],
-  "status": "published"
+  "status": "published",
+  "seo": {
+    "description": "La cala más icónica del sur de Menorca: herradura de arena blanca, agua turquesa y pinar hasta la orilla, con Cala Macarelleta al lado. Mejor temprano."
+  }
 }

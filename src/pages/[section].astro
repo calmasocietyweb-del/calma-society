@@ -18,7 +18,7 @@ const alternates = { es: section.href.es, en: section.href.en };
 
 <BaseLayout
   title={section.label.es}
-  description={section.intro.es}
+  description={section.seoDescription?.es ?? section.intro.es}
   locale="es"
   alternates={alternates}
 >

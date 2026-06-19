@@ -14,5 +14,8 @@
   },
   "images": ["/uploads/cala-turqueta.webp"],
   "tags": ["south", "turquoise", "family-friendly", "ciutadella"],
-  "status": "published"
+  "status": "published",
+  "seo": {
+    "description": "Cala Turqueta, in south-west Menorca: almost unreal turquoise water and fine sand sheltered by pines. A tucked-away, family-friendly cove. Best early."
+  }
 }

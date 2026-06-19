@@ -8,7 +8,14 @@ export interface Section {
   key: string;
   label: Record<Locale, string>;
   href: Record<Locale, string>;
+  /** Tagline corta, VISIBLE en la portada de sección y en la rejilla de la home. */
   intro: Record<Locale, string>;
+  /**
+   * Descripción para la <meta description> de la portada de sección (140-160).
+   * Solo cuando la `intro` es demasiado corta para SEO. No se muestra en pantalla;
+   * si falta, se usa `intro`. Ver [section].astro.
+   */
+  seoDescription?: Partial<Record<Locale, string>>;
 }
 
 export const SECTIONS: Section[] = [
@@ -29,6 +36,9 @@ export const SECTIONS: Section[] = [
       es: "Fiestas, conciertos y mercados. Qué pasa en Menorca, actualizado.",
       en: "Festivals, concerts and markets. What's happening in Menorca, kept current.",
     },
+    seoDescription: {
+      es: "Agenda de Menorca, actualizada: fiestas de Sant Joan, conciertos, mercados y cultura. Qué hacer cada mes en la isla, con criterio y a tu propio ritmo.",
+    },
   },
   {
     key: "comer-y-beber",
@@ -46,6 +56,10 @@ export const SECTIONS: Section[] = [
     intro: {
       es: "Lifestyle, propiedad e interiorismo. Vivir Menorca todo el año.",
       en: "Lifestyle, property and interiors. Living Menorca all year round.",
+    },
+    seoDescription: {
+      es: "Vivir Menorca todo el año: lifestyle, propiedad e interiorismo con mirada de lujo tranquilo. Comprar casa, reformar y habitar la isla sin prisa.",
+      en: "Living Menorca all year round: lifestyle, property and interiors with a quiet-luxury eye. Buying a home, renovating and inhabiting the island, unhurried.",
     },
   },
   {

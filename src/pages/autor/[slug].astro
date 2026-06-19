@@ -14,6 +14,6 @@ const { entry } = Astro.props;
 const alternates = { es: authorUrl("es", entry.id), en: authorUrl("en", entry.id) };
 ---
 
-<BaseLayout title={entry.data.name} description={entry.data.bio.es} locale="es" alternates={alternates}>
+<BaseLayout title={entry.data.name} description={entry.data.seoDescription?.es ?? entry.data.bio.es} locale="es" alternates={alternates}>
   <AuthorView entry={entry} locale="es" />
 </BaseLayout>

@@ -106,6 +106,10 @@ const lugares = defineCollection({
     website: z.url().optional(),
     tags: z.array(z.string()).default([]),
     status: STATUS,
+    // `description` es texto editorial visible en la ficha; si es muy largo para
+    // la etiqueta <meta description> (>160), `seo.description` la sustituye SOLO
+    // en el <head> (el texto en pantalla no cambia). Ver Seo.astro.
+    seo,
   }),
 });
 
@@ -145,6 +149,9 @@ const autores = defineCollection({
       name: z.string(),
       role: z.object({ es: z.string(), en: z.string() }),
       bio: z.object({ es: z.string(), en: z.string() }),
+      // `bio` es texto visible (corto). `seoDescription` la sustituye SOLO en la
+      // <meta description> de la página de autor cuando la bio es muy corta para SEO.
+      seoDescription: z.object({ es: z.string(), en: z.string() }).optional(),
       avatar: z.string().optional(),
       social: z
         .object({
