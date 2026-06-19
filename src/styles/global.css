@@ -205,3 +205,30 @@
     transition: none !important;
   }
 }
+
+/* ============================================================
+   Agenda — buscador por tipo de experiencia (filtro 100% CSS, sin JS).
+   El radio (sr-only) guarda el estado; el `label` adyacente es el chip; y
+   `:has()` oculta las tarjetas que no son del tipo elegido.
+   ============================================================ */
+/* Chip activo (el label justo después del radio marcado). */
+.agenda-radio:checked + .agenda-chip {
+  border-color: var(--color-arcilla);
+  background-color: var(--color-arcilla);
+  color: var(--color-lino);
+}
+/* Foco visible en el chip cuando el radio oculto recibe foco por teclado. */
+.agenda-radio:focus-visible + .agenda-chip {
+  outline: 2px solid var(--color-terracota);
+  outline-offset: 2px;
+}
+/* Filtrado: al marcar un tipo, oculta las tarjetas de los demás tipos. */
+.agenda-filterable:has(#agenda-fiesta:checked) [data-agenda]:not([data-agenda="fiesta"]),
+.agenda-filterable:has(#agenda-concierto:checked) [data-agenda]:not([data-agenda="concierto"]),
+.agenda-filterable:has(#agenda-cultura:checked) [data-agenda]:not([data-agenda="cultura"]),
+.agenda-filterable:has(#agenda-deporte:checked) [data-agenda]:not([data-agenda="deporte"]),
+.agenda-filterable:has(#agenda-mercado:checked) [data-agenda]:not([data-agenda="mercado"]),
+.agenda-filterable:has(#agenda-gastronomia:checked) [data-agenda]:not([data-agenda="gastronomia"]),
+.agenda-filterable:has(#agenda-otro:checked) [data-agenda]:not([data-agenda="otro"]) {
+  display: none;
+}

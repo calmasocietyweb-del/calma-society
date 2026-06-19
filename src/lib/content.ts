@@ -69,14 +69,28 @@ export async function getPlaces(locale: Locale) {
   );
 }
 
-/** Eventos publicados de un idioma, por fecha de inicio ascendente. */
+/**
+ * Eventos publicados de un idioma, ordenados por PROXIMIDAD: la próxima
+ * ocurrencia desde hoy primero, dando la vuelta al año (un evento de diciembre
+ * va antes que uno de enero si hoy es noviembre). No por mes natural. Como
+ * casi todos son fiestas anuales, se usa el mes-día de `startDate` y se calcula
+ * la siguiente ocurrencia respecto a la fecha de compilación.
+ */
 export async function getEvents(locale: Locale) {
   const all = await getCollection(
     "eventos",
     (e) => e.data.lang === locale && e.data.status === PUBLISHED,
   );
+  const now = new Date();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const daysUntilNext = (start: Date) => {
+    // Usa el mes-día (UTC, porque las fechas se guardan como AAAA-MM-DD).
+    const next = new Date(today.getFullYear(), start.getUTCMonth(), start.getUTCDate());
+    if (next.getTime() < today.getTime()) next.setFullYear(next.getFullYear() + 1);
+    return next.getTime() - today.getTime();
+  };
   return all.sort(
-    (a, b) => a.data.startDate.getTime() - b.data.startDate.getTime(),
+    (a, b) => daysUntilNext(a.data.startDate) - daysUntilNext(b.data.startDate),
   );
 }
 

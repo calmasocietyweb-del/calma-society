@@ -60,6 +60,8 @@ export const ui = {
     "place.viewmap": "Ver en el mapa",
 
     "agenda.upcoming": "Próximas citas",
+    "agenda.all": "Todas",
+    "agenda.filterlabel": "Filtrar por tipo de experiencia",
     "agenda.empty": "No hay eventos publicados ahora mismo.",
     "agenda.when": "Cuándo",
     "agenda.where": "Dónde",
@@ -149,6 +151,8 @@ export const ui = {
     "place.viewmap": "View on map",
 
     "agenda.upcoming": "What's coming up",
+    "agenda.all": "All",
+    "agenda.filterlabel": "Filter by type of experience",
     "agenda.empty": "No events published right now.",
     "agenda.when": "When",
     "agenda.where": "Where",
@@ -224,4 +228,22 @@ export function placeTypeLabel(type: string, locale: Locale): string {
 
 export function eventCategoryLabel(cat: string, locale: Locale): string {
   return EVENT_CATEGORIES[cat]?.[locale] ?? cat;
+}
+
+// ---- Tipos de EXPERIENCIA (agrupación de alto nivel para el buscador de la
+// agenda). Se derivan de la `category` del evento; la clave del tipo ES la
+// propia categoría, para poder filtrar por ella. El orden marca el de los chips.
+export const EXPERIENCE_TYPES = [
+  { key: "fiesta", label: { es: "Fiestas de pueblo", en: "Town festivals" } },
+  { key: "concierto", label: { es: "Música", en: "Music" } },
+  { key: "cultura", label: { es: "Cultura", en: "Culture" } },
+  { key: "deporte", label: { es: "Naturaleza y deporte", en: "Nature & sport" } },
+  { key: "mercado", label: { es: "Mercados y ferias", en: "Markets & fairs" } },
+  { key: "gastronomia", label: { es: "Gastronomía", en: "Food & drink" } },
+  { key: "otro", label: { es: "Otros", en: "Other" } },
+] as const;
+
+export function experienceTypeLabel(category: string, locale: Locale): string {
+  const exp = EXPERIENCE_TYPES.find((e) => e.key === category);
+  return exp?.label[locale] ?? eventCategoryLabel(category, locale);
 }

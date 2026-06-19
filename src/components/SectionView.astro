@@ -1,15 +1,14 @@
 ---
-// Vista de sección reutilizable: cabecera + listado de artículos (o eventos en
-// "agenda"). Solo contenido publicado. Se incrusta dentro de BaseLayout.
+// Vista de sección reutilizable: cabecera + listado de artículos (o la AGENDA
+// con su buscador en la sección "agenda"). Solo contenido publicado. Se incrusta
+// dentro de BaseLayout.
 import ArticleCard from "./ArticleCard.astro";
-import EventCard from "./EventCard.astro";
-import JsonLd from "./JsonLd.astro";
-import { getArticlesBySection, getEvents } from "../lib/content";
+import AgendaView from "./AgendaView.astro";
+import { getArticlesBySection } from "../lib/content";
 import { getSection } from "../config/sections";
 import { SITE, type Locale } from "../config/site";
 import { useTranslations } from "../i18n/ui";
 import { articleUrl } from "../i18n/utils";
-import { eventSchema } from "../lib/schema";
 
 interface Props {
   sectionKey: string;
@@ -21,17 +20,6 @@ const t = useTranslations(locale);
 
 const isAgenda = sectionKey === "agenda";
 const articles = isAgenda ? [] : await getArticlesBySection(locale, sectionKey);
-const events = isAgenda ? await getEvents(locale) : [];
-
-const eventsLd = events.map((e) =>
-  eventSchema({
-    title: e.data.title,
-    description: e.data.description,
-    startDate: e.data.startDate,
-    endDate: e.data.endDate,
-    location: e.data.location,
-  }),
-);
 ---
 
 <section class="mx-auto max-w-6xl px-5 pt-12 sm:px-8 sm:pt-16">
@@ -49,13 +37,7 @@ const eventsLd = events.map((e) =>
 
   {
     isAgenda ? (
-      <div class="mt-8 max-w-3xl">
-        {events.length > 0 ? (
-          events.map((e) => <EventCard event={e} locale={locale} />)
-        ) : (
-          <p class="text-piedra-suave">{t("agenda.empty")}</p>
-        )}
-      </div>
+      <AgendaView locale={locale} />
     ) : articles.length > 0 ? (
       <div class="mt-10 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
         {articles.map((a) => (
@@ -73,5 +55,3 @@ const eventsLd = events.map((e) =>
     )
   }
 </section>
-
-{eventsLd.length > 0 && <JsonLd schema={eventsLd} />}

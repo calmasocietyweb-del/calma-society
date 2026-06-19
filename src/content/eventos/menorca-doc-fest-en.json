@@ -7,7 +7,13 @@
   "location": "Menorca (Maó and other venues)",
   "category": "cultura",
   "description": "A documentary film and photography festival that fills October with screenings and exhibitions across the island. It awards the Premi Biosfera, tied to Menorca's status as a Biosphere Reserve. Auteur culture in the low season, in keeping with the island's DNA. Check the final programme on the official site.",
-  "tags": ["film", "documentary", "culture", "autumn"],
+  "tags": [
+    "film",
+    "documentary",
+    "culture",
+    "autumn"
+  ],
   "sourceUrl": "https://www.menorcadocfest.com/en/home-2",
-  "status": "published"
+  "status": "published",
+  "image": "/uploads/puerto-mao.webp"
 }

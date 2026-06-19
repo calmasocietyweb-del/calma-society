@@ -1,0 +1,72 @@
+---
+// Vista de la AGENDA: buscador por tipo de experiencia (filtro 100% CSS con
+// `:has()`, sin JavaScript) + rejilla de eventos con foto, ordenados por
+// PROXIMIDAD (próxima cita primero). Datos estructurados Event para GEO.
+import EventCard from "./EventCard.astro";
+import JsonLd from "./JsonLd.astro";
+import { getEvents } from "../lib/content";
+import { EXPERIENCE_TYPES, experienceTypeLabel, useTranslations } from "../i18n/ui";
+import { eventSchema } from "../lib/schema";
+import type { Locale } from "../config/site";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const events = await getEvents(locale); // ya ordenados por proximidad
+// Solo los tipos de experiencia que realmente tienen eventos (en orden).
+const present = EXPERIENCE_TYPES.map((e) => e.key).filter((key) =>
+  events.some((ev) => ev.data.category === key),
+);
+
+const eventsLd = events.map((e) =>
+  eventSchema({
+    title: e.data.title,
+    description: e.data.description,
+    startDate: e.data.startDate,
+    endDate: e.data.endDate,
+    location: e.data.location,
+  }),
+);
+---
+
+{
+  events.length === 0 ? (
+    <p class="mt-10 text-piedra-suave">{t("agenda.empty")}</p>
+  ) : (
+    <div class="agenda-filterable mt-8">
+      {/* BUSCADOR por tipo de experiencia — chips con radios (sin JS). El estado
+          activo y el filtrado se resuelven en global.css (input:checked + label
+          y .agenda-filterable:has(...)). La clase de chip es estática. */}
+      <fieldset class="flex flex-wrap items-center gap-2.5">
+        <legend class="sr-only">{t("agenda.filterlabel")}</legend>
+
+        <input type="radio" name="agenda-exp" id="agenda-all" class="agenda-radio sr-only" checked />
+        <label for="agenda-all" class="agenda-chip cursor-pointer border border-niebla px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-piedra-suave transition-colors hover:border-terracota hover:text-terracota">
+          {t("agenda.all")}
+        </label>
+
+        {present.map((key) => (
+          <>
+            <input type="radio" name="agenda-exp" id={`agenda-${key}`} class="agenda-radio sr-only" />
+            <label for={`agenda-${key}`} class="agenda-chip cursor-pointer border border-niebla px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-piedra-suave transition-colors hover:border-terracota hover:text-terracota">
+              {experienceTypeLabel(key, locale)}
+            </label>
+          </>
+        ))}
+      </fieldset>
+
+      {/* REJILLA de eventos (foto + datos), por proximidad. El filtro CSS oculta
+          las que no son del tipo elegido (ver global.css → .agenda-filterable). */}
+      <div class="mt-10 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+        {events.map((e) => (
+          <EventCard event={e} locale={locale} />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+{eventsLd.length > 0 && <JsonLd schema={eventsLd} />}

@@ -7,7 +7,13 @@
   "location": "Menorca (Maó y otros enclaves)",
   "category": "cultura",
   "description": "Festival de cine y fotografía documental que llena octubre de proyecciones y exposiciones por toda la isla. Entrega el Premi Biosfera, ligado a la condición de Menorca como Reserva de Biosfera. Cultura de autor en temporada baja, alineada con el ADN de la isla. Consulta el programa definitivo en la web oficial.",
-  "tags": ["cine", "documental", "cultura", "otoño"],
+  "tags": [
+    "cine",
+    "documental",
+    "cultura",
+    "otoño"
+  ],
   "sourceUrl": "https://www.menorcadocfest.com/en/home-2",
-  "status": "published"
+  "status": "published",
+  "image": "/uploads/puerto-mao.webp"
 }

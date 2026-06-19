@@ -7,6 +7,11 @@
   "location": "Ciutadella de Menorca",
   "category": "fiesta",
   "description": "La fiesta más emblemática de la isla. Los caballos y sus jinetes (els caixers) protagonizan el 'jaleo' por las calles de Ciutadella, entre música, gente y pomada. Tradición viva desde hace siglos.",
-  "tags": ["tradición", "caballos", "ciutadella"],
-  "status": "published"
+  "tags": [
+    "tradición",
+    "caballos",
+    "ciutadella"
+  ],
+  "status": "published",
+  "image": "/uploads/sant-joan-jaleo.webp"
 }

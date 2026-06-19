@@ -1,8 +1,10 @@
 ---
-// Tarjeta de evento (agenda). Presentacional.
+// Tarjeta de evento (agenda) — con foto (tratamiento Galería de Lino), badge de
+// fecha y tipo de experiencia. `data-agenda` permite el filtro CSS de la agenda.
 import type { CollectionEntry } from "astro:content";
-import { eventCategoryLabel } from "../i18n/ui";
+import { experienceTypeLabel } from "../i18n/ui";
 import { formatDate } from "../i18n/utils";
+import { srcset } from "../lib/img";
 import type { Locale } from "../config/site";
 
 interface Props {
@@ -13,8 +15,10 @@ const { event, locale } = Astro.props;
 const { data } = event;
 
 const intl = locale === "es" ? "es-ES" : "en-GB";
-const day = data.startDate.getDate();
-const month = data.startDate.toLocaleDateString(intl, { month: "short" });
+const day = data.startDate.getUTCDate();
+const month = data.startDate
+  .toLocaleDateString(intl, { month: "short", timeZone: "UTC" })
+  .replace(".", "");
 const sameDay =
   data.endDate && data.endDate.toDateString() === data.startDate.toDateString();
 const dateLabel =
@@ -23,20 +27,37 @@ const dateLabel =
     : `${formatDate(data.startDate, locale)} – ${formatDate(data.endDate, locale)}`;
 ---
 
-<article class="flex gap-5 border-b border-niebla py-6">
-  <div class="w-14 shrink-0 text-center">
-    <div class="font-display text-3xl leading-none text-tinta">{day}</div>
-    <div class="mt-1 text-xs uppercase tracking-wide text-piedra-suave">{month}</div>
+<article data-agenda={data.category} class="group flex flex-col">
+  <div class="relative aspect-[3/2] w-full overflow-hidden bg-arena">
+    {
+      data.image && (
+        <img
+          src={data.image}
+          srcset={srcset(data.image)}
+          sizes="(min-width: 1024px) 31vw, (min-width: 640px) 46vw, 100vw"
+          alt={data.title}
+          width="1600"
+          height="1067"
+          class="img-calma h-full w-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+      )
+    }
+    {/* Velo cálido (unifica el stock) + aclarado de luz lento en hover. */}
+    <span class="pointer-events-none absolute inset-0 bg-arcilla/8 mix-blend-multiply" aria-hidden="true" />
+    <span class="pointer-events-none absolute inset-0 bg-lino/0 transition-colors duration-700 ease-out group-hover:bg-lino/8" aria-hidden="true" />
+    {/* Badge de fecha (la proximidad de un vistazo) */}
+    <div class="absolute left-3 top-3 flex flex-col items-center bg-lino/95 px-2.5 py-1.5 text-center leading-none shadow-sm">
+      <span class="font-display text-xl text-tinta">{day}</span>
+      <span class="mt-0.5 text-[0.6rem] font-semibold uppercase tracking-wider text-oro">{month}</span>
+    </div>
   </div>
-  <div>
-    <p class="text-xs font-semibold uppercase tracking-widest text-oro">
-      {eventCategoryLabel(data.category, locale)}
-    </p>
-    <h3 class="mt-1 font-display text-xl text-tinta">{data.title}</h3>
-    <p class="mt-1 text-sm text-piedra-suave">{data.location}</p>
-    <p class="mt-1 text-sm text-piedra-suave">{dateLabel}</p>
-    <p class="mt-2 max-w-prosa text-sm leading-relaxed text-piedra-suave">
-      {data.description}
-    </p>
-  </div>
+
+  <p class="mt-4 border-t border-niebla/60 pt-3 text-xs font-semibold uppercase tracking-widest text-oro">
+    {experienceTypeLabel(data.category, locale)}
+  </p>
+  <h3 class="mt-2 font-display text-xl leading-snug text-tinta">{data.title}</h3>
+  <p class="mt-1 text-sm text-piedra-suave">{dateLabel} · {data.location}</p>
+  <p class="mt-2 text-sm leading-relaxed text-piedra-suave">{data.description}</p>
 </article>
