@@ -33,10 +33,12 @@ const { eyebrow, title, subtitle, image, imageAlt } = Astro.props;
         class="pointer-events-none absolute inset-0 bg-arcilla/15 mix-blend-multiply"
         aria-hidden="true"
       />
-      {/* Degradado de legibilidad anclado abajo (suelo conservador para AA;
-          medido empíricamente sobre la foto del hero: lino > 4.5:1). */}
+      {/* Degradado de legibilidad anclado abajo (calibrado para AA sobre la foto
+          turquesa del hero, medido con sharp: lino > 4.5:1 en titular y subtítulo).
+          La mitad superior del hero conserva el turquesa; el texto se asienta sobre
+          el tramo oscuro de abajo. */}
       <div
-        class="pointer-events-none absolute inset-0 bg-gradient-to-t from-tinta/65 via-tinta/20 to-transparent"
+        class="pointer-events-none absolute inset-0 bg-gradient-to-t from-tinta/75 via-tinta/45 to-transparent"
         aria-hidden="true"
       />
       <div class="relative z-10 mx-auto w-full max-w-6xl px-5 pb-12 text-left sm:px-8 sm:pb-16">
