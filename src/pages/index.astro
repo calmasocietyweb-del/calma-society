@@ -13,7 +13,7 @@ import { menorcaBusUrl } from "../lib/links";
 import { getSection } from "../config/sections";
 import { useTranslations } from "../i18n/ui";
 import { getArticlesBySection, getFeaturedArticle, getEvents } from "../lib/content";
-import { articleUrl } from "../i18n/utils";
+import { articleUrl, homePath } from "../i18n/utils";
 
 const locale = "es";
 const t = useTranslations(locale);
@@ -35,7 +35,12 @@ const description =
   "Calma Society — la revista de Menorca con mirada de lujo tranquilo: calas y playas con criterio, naturaleza, cultura y cómo vivir la isla sin prisa.";
 ---
 
-<BaseLayout title="Inicio" description={description} locale="es">
+<BaseLayout
+  title="Inicio"
+  description={description}
+  locale="es"
+  alternates={{ es: homePath("es"), en: homePath("en") }}
+>
   <Hero
     eyebrow={`${SITE.name} · ${SITE.edition}`}
     title={t("home.hero.title")}
