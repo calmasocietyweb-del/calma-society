@@ -17,6 +17,7 @@ import { recommendBase } from "./rules/base.ts";
 import { buildDaySkeleton, rankClusters } from "./rules/days.ts";
 import { sequenceDay } from "./rules/intraday.ts";
 import { arrivalDay, departureDay } from "./rules/arrival-departure.ts";
+import { filterAccessible, effectivePace, allowedEfforts } from "./rules/accessibility.ts";
 
 interface DayResult {
   blocks: IntradayBlock[];
@@ -30,9 +31,12 @@ export function planTrip(
   lang: "es" | "en" = "es",
 ): Plan {
   const survey = normalizeSurvey(rawSurvey);
+  // PASO 5: filtra el dataset por accesibilidad ANTES de componer (afecta a todos los pasos).
+  const usable = filterAccessible(dataset, survey.accessibility);
+  const pace = effectivePace(survey);
   const { base, baseReason, splitBase } = recommendBase(survey);
-  const skeleton = buildDaySkeleton(survey, base, dataset);
-  const clusters = new Map(rankClusters(survey, base, dataset).map((c) => [c.cluster, c]));
+  const skeleton = buildDaySkeleton(survey, base, usable);
+  const clusters = new Map(rankClusters(survey, base, usable).map((c) => [c.cluster, c]));
 
   const days: DayCard[] = [];
   const menorcaBusHooks: MenorcaBusHook[] = [];
@@ -41,9 +45,13 @@ export function planTrip(
     let result: DayResult;
 
     if (sk.dayTypeKey === "dia-llegada") {
-      result = arrivalDay(survey, base, dataset);
+      result = arrivalDay(survey, base, usable);
       if (isCarless(survey) || base !== "mao") {
         menorcaBusHooks.push({ type: "transfer-aeropuerto", context: `Transfer aeropuerto → ${base}`, dayIndex: sk.dayIndex });
+      }
+      // R7: accesibilidad + sin coche → transfer adaptado puerta a puerta a una playa A1.
+      if (survey.accessibility !== "ninguna" && isCarless(survey)) {
+        menorcaBusHooks.push({ type: "transfer-adaptado", context: `Transfer adaptado a una playa accesible desde ${base}`, dayIndex: sk.dayIndex });
       }
     } else if (sk.dayTypeKey === "dia-salida") {
       result = departureDay(survey, base);
@@ -54,7 +62,7 @@ export function planTrip(
       const info = clusters.get(sk.cluster)!;
       result = sequenceDay({
         base, cluster: sk.cluster, zone: info.zone, places: info.places,
-        travelFromBaseMin: info.travelFromBaseMin, pace: survey.pace, survey,
+        travelFromBaseMin: info.travelFromBaseMin, pace, survey,
       });
       // Monetización: sin coche + cala no conectada → excursión/transfer (no es un fallo, es la solución premium).
       if (isCarless(survey) && info.places.some((p) => p.carAccessClosedSummer || (p.plannerType === "cala" && !p.busServed))) {
@@ -95,6 +103,7 @@ function buildGlobalNotices(survey: Survey, base: string, splitBase?: string): N
     out.push({ kind: "logistica", text: "Sin coche: algunas calas top requieren bus + transfer o una excursión en barco. Lo marcamos en cada día." });
   }
   if (survey.accessibility !== "ninguna") {
+    out.push({ kind: "accesibilidad", text: `Plan filtrado por esfuerzo (${survey.accessibility}): solo lugares de nivel ${allowedEfforts(survey.accessibility).join("/")}. Las playas con baño asistido son A1 (Son Bou, Punta Prima, Es Grau).` });
     out.push({ kind: "accesibilidad", text: "Los servicios de baño asistido (silla anfibia, personal) operan del 1 de mayo al 31 de octubre. Fuera de esas fechas, confirma con el ayuntamiento." });
   }
   return out;
