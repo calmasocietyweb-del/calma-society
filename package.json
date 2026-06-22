@@ -13,7 +13,8 @@
     "astro": "astro",
     "check": "astro check",
     "import:agenda": "node scripts/import-agenda.mjs",
-    "drafts": "node scripts/list-drafts.mjs"
+    "drafts": "node scripts/list-drafts.mjs",
+    "test": "node --test \"src/lib/planner/**/*.test.ts\""
   },
   "dependencies": {
     "@astrojs/mdx": "^6.0.3",
