@@ -18,6 +18,7 @@ import { buildDaySkeleton, rankClusters } from "./rules/days.ts";
 import { sequenceDay } from "./rules/intraday.ts";
 import { arrivalDay, departureDay } from "./rules/arrival-departure.ts";
 import { filterAccessible, effectivePace, allowedEfforts } from "./rules/accessibility.ts";
+import { windAdvice } from "./rules/wind.ts";
 
 interface DayResult {
   blocks: IntradayBlock[];
@@ -37,6 +38,7 @@ export function planTrip(
   const { base, baseReason, splitBase } = recommendBase(survey);
   const skeleton = buildDaySkeleton(survey, base, usable);
   const clusters = new Map(rankClusters(survey, base, usable).map((c) => [c.cluster, c]));
+  const byId = new Map(usable.map((p) => [p.id, p]));
 
   const days: DayCard[] = [];
   const menorcaBusHooks: MenorcaBusHook[] = [];
@@ -64,6 +66,11 @@ export function planTrip(
         base, cluster: sk.cluster, zone: info.zone, places: info.places,
         travelFromBaseMin: info.travelFromBaseMin, pace, survey,
       });
+      // PASO 4: aviso de viento (FLEXIBLE) con alternativa resguardada en costa opuesta.
+      const anchors = result.blocks
+        .map((b) => (b.placeId ? byId.get(b.placeId) : undefined))
+        .filter((p): p is PlannerPlace => !!p);
+      result.notices.push(...windAdvice(info.zone, anchors, usable, survey));
       // Monetización: sin coche + cala no conectada → excursión/transfer (no es un fallo, es la solución premium).
       if (isCarless(survey) && info.places.some((p) => p.carAccessClosedSummer || (p.plannerType === "cala" && !p.busServed))) {
         menorcaBusHooks.push({ type: "excursion-cala", context: `Excursión o transfer a ${sk.cluster}`, dayIndex: sk.dayIndex });
