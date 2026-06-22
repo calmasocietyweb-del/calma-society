@@ -2,6 +2,7 @@
 // "Dónde el mar está en calma" (ES) — parte diario de abrigo por cala.
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ParteCalmaMap from "../components/ParteCalmaMap.astro";
+import NewsletterSignup from "../components/NewsletterSignup.astro";
 
 const alternates = {
   es: "/donde-el-mar-esta-en-calma",
@@ -28,9 +29,17 @@ const alternates = {
       de viento con la orientación de cada cala para estimar su <strong>abrigo</strong> de hoy.
       No medimos la seguridad del baño: la calma del mar, sí.
     </p>
+    <p class="mt-4 text-base leading-relaxed text-piedra-suave">
+      Cubrimos <strong>75 calas y zonas de baño</strong> de toda la isla, y puedes ver la
+      previsión para <strong>hoy y los próximos días</strong>. ¿Quieres saber cómo lo
+      calculamos? Lo explicamos en
+      <a class="text-arcilla underline decoration-niebla underline-offset-4 hover:decoration-terracota" href="/como-calculamos-la-calma">cómo calculamos la calma</a>.
+    </p>
   </div>
 
   <div class="mt-10">
     <ParteCalmaMap locale="es" />
   </div>
+
+  <NewsletterSignup variant="inline" />
 </BaseLayout>

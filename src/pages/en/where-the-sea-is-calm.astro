@@ -2,6 +2,7 @@
 // "Where the sea is calm" (EN) — daily shelter forecast per cove.
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ParteCalmaMap from "../../components/ParteCalmaMap.astro";
+import NewsletterSignup from "../../components/NewsletterSignup.astro";
 
 const alternates = {
   es: "/donde-el-mar-esta-en-calma",
@@ -28,9 +29,17 @@ const alternates = {
       forecast with each cove’s orientation to estimate its <strong>shelter</strong> today.
       We don’t measure how safe the swim is — only how calm the sea should be.
     </p>
+    <p class="mt-4 text-base leading-relaxed text-piedra-suave">
+      We cover <strong>75 coves and swimming spots</strong> across the island, with the
+      forecast for <strong>today and the coming days</strong>. Want to know how we work it
+      out? We explain it in
+      <a class="text-arcilla underline decoration-niebla underline-offset-4 hover:decoration-terracota" href="/en/how-we-calculate-calm">how we calculate calm</a>.
+    </p>
   </div>
 
   <div class="mt-10">
     <ParteCalmaMap locale="en" />
   </div>
+
+  <NewsletterSignup variant="inline" />
 </BaseLayout>
