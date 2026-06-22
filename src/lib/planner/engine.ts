@@ -16,7 +16,7 @@ import { normalizeSurvey, isCarless } from "./survey.ts";
 import { recommendBase } from "./rules/base.ts";
 import { buildDaySkeleton, rankClusters } from "./rules/days.ts";
 import { sequenceDay } from "./rules/intraday.ts";
-import { arrivalDay, departureDay } from "./rules/arrival-departure.ts";
+import { arrivalDay, departureDay, arrivalNotices, departureNotices } from "./rules/arrival-departure.ts";
 import { filterAccessible, effectivePace, allowedEfforts } from "./rules/accessibility.ts";
 import { windAdvice } from "./rules/wind.ts";
 import { buildPlanB, weekdayForDay } from "./rules/planb.ts";
@@ -82,6 +82,24 @@ export function planTrip(
       // Monetización: sin coche + cala no conectada → excursión/transfer (no es un fallo, es la solución premium).
       if (isCarless(survey) && info.places.some((p) => p.carAccessClosedSummer || (p.plannerType === "cala" && !p.busServed))) {
         menorcaBusHooks.push({ type: "excursion-cala", context: `Excursión o transfer a ${sk.cluster}`, dayIndex: sk.dayIndex });
+      }
+      // Viajes cortos (1-2 días): este día pleno también es el de llegada/salida →
+      // añade los avisos logísticos y los enganches de transfer al primer/último día.
+      if (survey.days <= 2) {
+        const isFirst = sk.dayIndex === 0;
+        const isLast = sk.dayIndex === skeleton.length - 1;
+        if (isFirst) {
+          result.notices.unshift(...arrivalNotices(survey, base));
+          if (isCarless(survey) || base !== "mao") {
+            menorcaBusHooks.push({ type: "transfer-aeropuerto", context: `Transfer aeropuerto → ${base}`, dayIndex: sk.dayIndex });
+          }
+        }
+        if (isLast && survey.days >= 1) {
+          result.notices.push(...departureNotices(survey, base));
+          if (isCarless(survey)) {
+            menorcaBusHooks.push({ type: "transfer-aeropuerto", context: `Transfer ${base} → aeropuerto`, dayIndex: sk.dayIndex });
+          }
+        }
       }
     } else {
       result = {

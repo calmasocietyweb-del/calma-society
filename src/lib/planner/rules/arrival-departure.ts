@@ -29,6 +29,38 @@ function arrivalBuffer(s: Survey): number {
   return s.base === "mao" ? 75 : 45; // sin coche: bus L10 (solo Maó) vs transfer
 }
 
+/** Avisos logísticos de llegada (reutilizables en viajes cortos sin día de llegada dedicado). */
+export function arrivalNotices(s: Survey, base: BaseZone): Notice[] {
+  const flight = toMin(s.arrivalFlightTime);
+  const usable = flight !== undefined ? flight + arrivalBuffer(s) : 13 * 60;
+  void base;
+  return [
+    { kind: "logistica", text: `Hora útil estimada al llegar a tu base: ${toHHMM(usable)} (incluye el buffer de aeropuerto/transfer).` },
+    { kind: "logistica", text: "De camino, para a por agua y algo de desayuno (super en Maó/Ciutadella/Alaior)." },
+  ];
+}
+
+/** Avisos logísticos de salida (reutilizables en viajes cortos sin día de salida dedicado). */
+export function departureNotices(s: Survey, base: BaseZone): Notice[] {
+  const flight = toMin(s.departureFlightTime);
+  const out: Notice[] = [];
+  if (flight !== undefined) {
+    let margin = 120;
+    if (s.transport === "coche-alquiler") margin += 30;
+    if (base === "ciutadella") margin += 45;
+    out.push({ kind: "logistica", text: `Hora límite de actividad el último día: ${toHHMM(Math.max(flight - margin, 7 * 60))}. Después, directo al aeropuerto con margen.` });
+  } else {
+    out.push({ kind: "logistica", text: "El último día, plan mínimo y cerca del aeropuerto: maleta y un café corto." });
+  }
+  if (base === "ciutadella" && flight !== undefined && flight < 12 * 60) {
+    out.push({ kind: "logistica", text: "Riesgo de cruce de isla: desde Ciutadella son 45 min por la Me-1. Sal con holgura o valora dormir la última noche más cerca de Maó." });
+  }
+  if (s.transport === "coche-alquiler") {
+    out.push({ kind: "logistica", text: "Reposta antes de devolver el coche (gasolineras en Maó y junto a la Me-1, no pegadas al aeropuerto)." });
+  }
+  return out;
+}
+
 /** PASO 7 — día de llegada: ligero y en el cluster de la base, nunca lejos. */
 export function arrivalDay(s: Survey, base: BaseZone, dataset: PlannerPlace[]): DayResult {
   const notices: Notice[] = [];
@@ -37,8 +69,8 @@ export function arrivalDay(s: Survey, base: BaseZone, dataset: PlannerPlace[]): 
   const usable = flight !== undefined ? flight + arrivalBuffer(s) : 13 * 60; // sin hora → mediodía
   const window = usable < 13 * 60 ? "manana" : usable < 17 * 60 ? "mediodia" : "tarde";
 
-  notices.push({ kind: "logistica", text: `Hora útil estimada en tu base: ${toHHMM(usable)}. El día 1 es ligero y cercano a la base; nada de calas lejanas.` });
-  notices.push({ kind: "logistica", text: "De camino, para a por agua y desayuno (super en Maó/Ciutadella/Alaior)." });
+  notices.push(...arrivalNotices(s, base));
+  notices.push({ kind: "logistica", text: "El día 1 va ligero y cercano a la base: nada de calas lejanas." });
 
   // Cala fácil cercana a la base (solo si llega por la mañana y la hay en el dataset).
   const easyNearby = dataset.find(
@@ -64,28 +96,8 @@ export function arrivalDay(s: Survey, base: BaseZone, dataset: PlannerPlace[]): 
 
 /** PASO 8 — día de salida: margen al vuelo, cerca del aeropuerto; sin calas de caminata. */
 export function departureDay(s: Survey, base: BaseZone): DayResult {
-  const notices: Notice[] = [];
+  const notices: Notice[] = departureNotices(s, base);
   const blocks: IntradayBlock[] = [];
-  const flight = toMin(s.departureFlightTime);
-
-  // Margen total = vuelo −2 h −(devolución coche 30) −(cruce desde Ciutadella 45).
-  let limit: number | undefined;
-  if (flight !== undefined) {
-    let margin = 120;
-    if (s.transport === "coche-alquiler") margin += 30;
-    if (base === "ciutadella") margin += 45;
-    limit = flight - margin;
-    notices.push({ kind: "logistica", text: `Hora límite de actividad: ${toHHMM(Math.max(limit, 7 * 60))}. Después, directo al aeropuerto con margen.` });
-  } else {
-    notices.push({ kind: "logistica", text: "Plan mínimo y cerca del aeropuerto: maleta y un café corto." });
-  }
-
-  if (base === "ciutadella" && flight !== undefined && flight < 12 * 60) {
-    notices.push({ kind: "logistica", text: "Riesgo de cruce de isla: desde Ciutadella son 45 min por la Me-1. Sal con holgura o valora dormir la última noche más cerca de Maó." });
-  }
-  if (s.transport === "coche-alquiler") {
-    notices.push({ kind: "logistica", text: "Reposta antes de devolver el coche (gasolineras en Maó y junto a la Me-1, no pegadas al aeropuerto)." });
-  }
 
   blocks.push({ slot: "desayuno", timeHint: "08:30", placeName: "Desayuno con calma y maleta", durationMin: 60, reason: "Sin prisas pero con margen." });
   blocks.push({ slot: "manana", timeHint: "10:00", placeName: "Paseo corto cerca de la base o del aeropuerto", durationMin: 60, reason: "Nada de calas de caminata ni Camí de Cavalls el día de salida." });

@@ -95,9 +95,23 @@ export function buildDaySkeleton(s: Survey, base: BaseZone, dataset: PlannerPlac
   const ranked = rankClusters(s, base, dataset);
   const days = Math.max(1, s.days);
 
-  // Estancia de 1 día: un único día pleno con el mejor cluster (sin cruzar isla).
-  if (days === 1) {
-    return ranked.length ? [fullDay(0, ranked[0])] : [{ dayIndex: 0, ...COLCHON }];
+  // Viajes muy cortos (1-2 días): cada día cuenta como día PLENO (no se gastan
+  // días en pura logística). La llegada/salida se añaden como AVISOS al primer y
+  // último día desde el motor, no como días vacíos.
+  if (days <= 2) {
+    const out: DaySkeleton[] = [];
+    const used = new Set<string>();
+    let prevZone: PlannerZone | undefined;
+    for (let d = 0; d < days; d++) {
+      const info =
+        ranked.find((c) => !used.has(c.cluster) && c.zone !== prevZone) ??
+        ranked.find((c) => !used.has(c.cluster));
+      if (!info) { out.push({ dayIndex: d, ...COLCHON }); continue; }
+      used.add(info.cluster);
+      prevZone = info.zone;
+      out.push(fullDay(d, info));
+    }
+    return out;
   }
 
   const out: DaySkeleton[] = [{ dayIndex: 0, ...ARRIVAL }];
