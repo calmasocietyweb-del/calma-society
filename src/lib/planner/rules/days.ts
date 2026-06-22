@@ -103,10 +103,10 @@ export function buildDaySkeleton(s: Survey, base: BaseZone, dataset: PlannerPlac
     const used = new Set<string>();
     let prevZone: PlannerZone | undefined;
     for (let d = 0; d < days; d++) {
-      const info =
-        ranked.find((c) => !used.has(c.cluster) && c.zone !== prevZone) ??
-        ranked.find((c) => !used.has(c.cluster));
-      if (!info) { out.push({ dayIndex: d, ...COLCHON }); continue; }
+      // Solo un cluster de OTRA zona (nunca repetir zona dos días seguidos). Si no
+      // queda ninguno de otra zona, día colchón (que además rompe la racha).
+      const info = ranked.find((c) => !used.has(c.cluster) && c.zone !== prevZone);
+      if (!info) { out.push({ dayIndex: d, ...COLCHON }); prevZone = undefined; continue; }
       used.add(info.cluster);
       prevZone = info.zone;
       out.push(fullDay(d, info));
@@ -121,11 +121,11 @@ export function buildDaySkeleton(s: Survey, base: BaseZone, dataset: PlannerPlac
 
   for (let d = 0; d < fullCount; d++) {
     const dayIndex = d + 1;
-    const info =
-      ranked.find((c) => !used.has(c.cluster) && c.zone !== prevZone) ??
-      ranked.find((c) => !used.has(c.cluster));
+    // Solo un cluster de OTRA zona; si no queda, día colchón (rompe la racha de zona).
+    const info = ranked.find((c) => !used.has(c.cluster) && c.zone !== prevZone);
     if (!info) {
       out.push({ dayIndex, ...COLCHON });
+      prevZone = undefined;
       continue;
     }
     used.add(info.cluster);

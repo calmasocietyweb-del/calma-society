@@ -93,7 +93,7 @@ export function recommendBase(s: Survey): BaseResult {
     };
   }
 
-  if ((has(s, "lujo-tranquilo") || has(s, "parejas" as Interest)) && !families) {
+  if (has(s, "lujo-tranquilo") && !families) {
     return {
       base: "ciutadella",
       baseReason:

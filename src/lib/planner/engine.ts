@@ -83,30 +83,30 @@ export function planTrip(
       if (isCarless(survey) && info.places.some((p) => p.carAccessClosedSummer || (p.plannerType === "cala" && !p.busServed))) {
         menorcaBusHooks.push({ type: "excursion-cala", context: `Excursión o transfer a ${sk.cluster}`, dayIndex: sk.dayIndex });
       }
-      // Viajes cortos (1-2 días): este día pleno también es el de llegada/salida →
-      // añade los avisos logísticos y los enganches de transfer al primer/último día.
-      if (survey.days <= 2) {
-        const isFirst = sk.dayIndex === 0;
-        const isLast = sk.dayIndex === skeleton.length - 1;
-        if (isFirst) {
-          result.notices.unshift(...arrivalNotices(survey, base));
-          if (isCarless(survey) || base !== "mao") {
-            menorcaBusHooks.push({ type: "transfer-aeropuerto", context: `Transfer aeropuerto → ${base}`, dayIndex: sk.dayIndex });
-          }
-        }
-        if (isLast && survey.days >= 1) {
-          result.notices.push(...departureNotices(survey, base));
-          if (isCarless(survey)) {
-            menorcaBusHooks.push({ type: "transfer-aeropuerto", context: `Transfer ${base} → aeropuerto`, dayIndex: sk.dayIndex });
-          }
-        }
-      }
     } else {
       result = {
         blocks: [{ slot: "manana", placeName: "Día libre: repite tu cala favorita o descansa", reason: "Margen para reordenar por viento o por cansancio." }],
         budgetHours: 3,
         notices: [],
       };
+    }
+
+    // Viajes cortos (1-2 días): no hay día de llegada/salida dedicado, así que los
+    // avisos logísticos y los enganches de transfer van al primer/último día SEA CUAL
+    // SEA su tipo (también si cayó en colchón). PASOS 7/8 condensados.
+    if (survey.days <= 2 && sk.dayTypeKey !== "dia-llegada" && sk.dayTypeKey !== "dia-salida") {
+      if (sk.dayIndex === 0) {
+        result.notices.unshift(...arrivalNotices(survey, base));
+        if (isCarless(survey) || base !== "mao") {
+          menorcaBusHooks.push({ type: "transfer-aeropuerto", context: `Transfer aeropuerto → ${base}`, dayIndex: sk.dayIndex });
+        }
+      }
+      if (sk.dayIndex === skeleton.length - 1) {
+        result.notices.push(...departureNotices(survey, base));
+        if (isCarless(survey)) {
+          menorcaBusHooks.push({ type: "transfer-aeropuerto", context: `Transfer ${base} → aeropuerto`, dayIndex: sk.dayIndex });
+        }
+      }
     }
 
     // PASO 2: cruce con la agenda de fiestas por fecha (si hay fechas y eventos).

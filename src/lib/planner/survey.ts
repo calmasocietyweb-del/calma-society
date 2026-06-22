@@ -77,12 +77,17 @@ export const DEFAULT_SURVEY: Survey = {
 };
 
 /** Normaliza una encuesta parcial (p. ej. desde querystring) a una válida. */
+const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
+
 export function normalizeSurvey(input: Partial<Survey>): Survey {
   const s: Survey = { ...DEFAULT_SURVEY, ...input };
   s.days = clampDays(s.days);
   if (!s.interests || s.interests.length === 0) s.interests = [...DEFAULT_SURVEY.interests];
   if (s.transport !== "coche-propio-ferry") delete s.ferryPort;
   if (!s.kids) s.kids = { has: false };
+  // Descarta fechas mal formadas (defensa en profundidad: evita cuelgues/cruces raros).
+  if (s.arrivalDate && !ISO_DATE.test(s.arrivalDate)) delete s.arrivalDate;
+  if (s.departureDate && !ISO_DATE.test(s.departureDate)) delete s.departureDate;
   return s;
 }
 

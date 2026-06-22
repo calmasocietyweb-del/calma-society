@@ -46,3 +46,15 @@ test("sin eventos no rompe nada", () => {
   const plan = planTrip({ days: 4, transport: "coche-alquiler", base: "ciutadella", arrivalDate: "2026-06-22" }, DATASET);
   assert.ok(plan.days.length === 4);
 });
+
+test("addDaysISO con fecha malformada NO cuelga y devuelve la entrada (bug crítico)", () => {
+  assert.equal(addDaysISO("2026-6-x", 3), "2026-6-x");
+  assert.equal(addDaysISO("not-a-date", 1), "not-a-date");
+  assert.equal(addDaysISO("2026-13-45", 1), "2026-13-45");
+  assert.equal(addDaysISO("2026-02-28", 1), "2026-03-01"); // válida sigue funcionando
+});
+
+test("planTrip NO se cuelga con arrivalDate malformada + eventos", () => {
+  const plan = planTrip({ days: 5, transport: "coche-alquiler", base: "ciutadella", arrivalDate: "2026-6-x", interests: ["calas"] }, DATASET, "es", EVENTS);
+  assert.equal(plan.days.length, 5); // termina y produce plan (no entra en bucle infinito)
+});

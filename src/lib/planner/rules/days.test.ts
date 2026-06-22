@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import { buildDaySkeleton, rankClusters } from "./days.ts";
 import { normalizeSurvey } from "../survey.ts";
 import type { Survey } from "../survey.ts";
-import { DATASET } from "./test-fixtures.ts";
+import { DATASET, place } from "./test-fixtures.ts";
 
 const s = (over: Partial<Survey>): Survey => normalizeSurvey(over);
 
@@ -44,6 +44,22 @@ test("rankClusters: desde Ciutadella, cultura prioriza el cluster de interior (e
   // más cerca de Ciutadella que cruzar al este → desempata por cercanía.
   const ranked = rankClusters(s({ interests: ["cultura"] }), "ciutadella", DATASET);
   assert.equal(ranked[0].cluster, "interior-cultura");
+});
+
+test("nunca repite zona en días plenos consecutivos aunque sobren clusters de la misma zona", () => {
+  // 3 clusters sur-oeste + 1 norte: el motor debe meter un colchón antes que
+  // poner dos días sur-oeste seguidos (bug del fallback que ignoraba la zona).
+  const ds = [
+    place({ id: "a", zone: "sur-oeste", cluster: "c1", plannerType: "cala", idealFor: ["naturaleza"] }),
+    place({ id: "b", zone: "sur-oeste", cluster: "c2", plannerType: "cala", idealFor: ["naturaleza"] }),
+    place({ id: "c", zone: "sur-oeste", cluster: "c3", plannerType: "cala", idealFor: ["naturaleza"] }),
+    place({ id: "d", zone: "norte", cluster: "c4", plannerType: "cala", idealFor: ["naturaleza"] }),
+  ];
+  const sk = buildDaySkeleton(s({ days: 6, interests: ["calas", "naturaleza"] }), "ciutadella", ds);
+  const full = sk.filter((x) => x.cluster);
+  for (let i = 1; i < full.length; i++) {
+    assert.notEqual(full[i].zone, full[i - 1].zone, `días plenos ${i - 1} y ${i} repiten zona`);
+  }
 });
 
 test("determinismo: mismo input → mismo esqueleto", () => {

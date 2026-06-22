@@ -2,7 +2,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { planTrip } from "./engine.ts";
-import { DATASET } from "./rules/test-fixtures.ts";
+import { DATASET, place } from "./rules/test-fixtures.ts";
 
 test("5 días con coche desde Ciutadella → plan completo y coherente", () => {
   const plan = planTrip({ days: 5, transport: "coche-alquiler", base: "ciutadella", interests: ["calas", "naturaleza"] }, DATASET);
@@ -37,6 +37,16 @@ test("salida desde Ciutadella con vuelo de mañana → aviso de cruce de isla", 
   const plan = planTrip({ days: 4, transport: "coche-alquiler", base: "ciutadella", departureFlightTime: "09:00" }, DATASET);
   const salida = plan.days[plan.days.length - 1];
   assert.ok(salida.notices.find((n) => n.text.includes("cruce de isla")));
+});
+
+test("viaje de 2 días: aunque un día caiga en colchón, conserva logística de llegada/salida y transfer", () => {
+  // El único lugar (esfuerzo D) se filtra por movilidad reducida → días colchón,
+  // pero los avisos de llegada/salida y los enganches de transfer deben seguir.
+  const onlyHard = [place({ id: "hard", zone: "norte", cluster: "x", plannerType: "cala", effortLevel: "D" })];
+  const plan = planTrip({ days: 2, transport: "sin-coche", base: "mao", accessibility: "movilidad-reducida", interests: ["calas"] }, onlyHard);
+  assert.ok(plan.days[0].notices.some((n) => n.text.includes("Hora útil")), "falta el aviso de llegada");
+  assert.ok(plan.days[plan.days.length - 1].notices.some((n) => n.text.toLowerCase().includes("aeropuerto")), "falta el aviso de salida");
+  assert.ok(plan.menorcaBusHooks.some((h) => h.type === "transfer-aeropuerto"), "falta el enganche de transfer");
 });
 
 test("determinismo: mismo input → mismo plan", () => {

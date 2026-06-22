@@ -23,11 +23,19 @@ const MD = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 /** Suma `n` días (≥0) a una fecha ISO. Puro, sin Date (determinista). */
 export function addDaysISO(iso: string, n: number): string {
-  const parts = iso.split("-").map(Number);
-  let y = parts[0];
-  let m = parts[1];
-  let d = parts[2] + n;
-  for (;;) {
+  // Validación ESTRICTA: una fecha malformada haría `d = NaN` y el bucle no
+  // terminaría nunca (NaN <= dim siempre false) → cuelgue. Ante entrada inválida,
+  // devolvemos la cadena tal cual (no-op seguro).
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+  if (!match) return iso;
+  const y0 = +match[1];
+  const m0 = +match[2];
+  const d0 = +match[3];
+  if (m0 < 1 || m0 > 12 || d0 < 1 || d0 > 31) return iso;
+  let y = y0;
+  let m = m0;
+  let d = d0 + Math.max(0, Math.floor(n));
+  for (let guard = 0; guard < 100000; guard++) {
     const dim = m === 2 && isLeap(y) ? 29 : MD[m - 1];
     if (d <= dim) break;
     d -= dim;
