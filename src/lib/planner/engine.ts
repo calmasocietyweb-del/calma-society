@@ -19,6 +19,7 @@ import { sequenceDay } from "./rules/intraday.ts";
 import { arrivalDay, departureDay } from "./rules/arrival-departure.ts";
 import { filterAccessible, effectivePace, allowedEfforts } from "./rules/accessibility.ts";
 import { windAdvice } from "./rules/wind.ts";
+import { buildPlanB, weekdayForDay } from "./rules/planb.ts";
 
 interface DayResult {
   blocks: IntradayBlock[];
@@ -45,6 +46,7 @@ export function planTrip(
 
   for (const sk of skeleton) {
     let result: DayResult;
+    let dayPlanB: DayCard["planB"];
 
     if (sk.dayTypeKey === "dia-llegada") {
       result = arrivalDay(survey, base, usable);
@@ -71,6 +73,8 @@ export function planTrip(
         .map((b) => (b.placeId ? byId.get(b.placeId) : undefined))
         .filter((p): p is PlannerPlace => !!p);
       result.notices.push(...windAdvice(info.zone, anchors, usable, survey));
+      // PASO 6: plan-B de mal tiempo (interiores de la zona, filtrado por día de la semana).
+      dayPlanB = buildPlanB(info.zone, usable, weekdayForDay(survey.arrivalDate, sk.dayIndex));
       // Monetización: sin coche + cala no conectada → excursión/transfer (no es un fallo, es la solución premium).
       if (isCarless(survey) && info.places.some((p) => p.carAccessClosedSummer || (p.plannerType === "cala" && !p.busServed))) {
         menorcaBusHooks.push({ type: "excursion-cala", context: `Excursión o transfer a ${sk.cluster}`, dayIndex: sk.dayIndex });
@@ -92,6 +96,7 @@ export function planTrip(
       blocks: result.blocks,
       notices: result.notices,
       budgetHours: result.budgetHours,
+      planB: dayPlanB,
     });
   }
 

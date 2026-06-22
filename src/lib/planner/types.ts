@@ -169,6 +169,8 @@ export interface DayCard {
   notices: Notice[];
   /** Estimación de horas útiles consumidas (regla no-saturar 8,5 h). */
   budgetHours: number;
+  /** Plan-B de mal tiempo (PASO 6): interiores de la zona como toggle "Si llueve". */
+  planB?: { blocks: IntradayBlock[]; notices: Notice[] };
 }
 
 /** Plan completo (salida del motor). */
