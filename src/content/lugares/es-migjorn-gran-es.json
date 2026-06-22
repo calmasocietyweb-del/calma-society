@@ -1,0 +1,37 @@
+{
+  "name": "Es Migjorn Gran",
+  "lang": "es",
+  "translationKey": "es-migjorn-gran",
+  "type": "otro",
+  "description": "El municipio mas pequeno y tranquilo, donde 'el tiempo parece haberse detenido': casas blancas unifamiliares y esencia de la Menorca antigua (curiosamente, pueblo joven como municipio pero de poblacion muy longeva). Puer",
+  "coordinates": {
+    "lat": 39.9469,
+    "lng": 4.0481
+  },
+  "area": "Sur-centro (Es Migjorn Gran)",
+  "tags": [
+    "sur-centro",
+    "pueblo",
+    "es-migjorn-gran"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "cultura"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Faro de Cavalleria",
+  "lang": "es",
+  "translationKey": "faro-de-cavalleria",
+  "type": "monumento",
+  "description": "Faro en el punto mas septentrional de Menorca, sobre acantilados de la costa norte agreste. Vistas de 360 grados y uno de los atardeceres mas celebrados. Cerca de playas rojizas (Cavalleria) y del yacimiento de Sanitja.",
+  "coordinates": {
+    "lat": 40.0889,
+    "lng": 4.0931
+  },
+  "area": "Norte (Es Mercadal)",
+  "tags": [
+    "norte",
+    "faro",
+    "es-mercadal"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "faro",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

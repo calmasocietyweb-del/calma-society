@@ -1,0 +1,44 @@
+{
+  "name": "Hort de Sant Patrici",
+  "lang": "es",
+  "translationKey": "hort-de-sant-patrici",
+  "type": "otro",
+  "description": "Conjunto en Ferreries que reúne quesería Mahón-Menorca DOP, museo etnológico del queso (desde 1999, en antiguo edificio ganadero), bodega propia y jardines con esculturas. Una de las tiendas gourmet mejor surtidas de la ",
+  "coordinates": {
+    "lat": 39.985,
+    "lng": 4.005
+  },
+  "area": "Centro (Ferreries)",
+  "tags": [
+    "centro",
+    "experiencia",
+    "ferreries"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "familias",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "interior-cultura",
+      "centro"
+    ]
+  }
+}

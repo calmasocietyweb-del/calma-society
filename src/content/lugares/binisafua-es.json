@@ -1,0 +1,37 @@
+{
+  "name": "Binisafua",
+  "lang": "es",
+  "translationKey": "binisafua",
+  "type": "cala",
+  "description": "Pequena cala de ambiente residencial y tranquilo, con casetas de barca y rocas, mas de bano local que de gran arenal. Apta para familias que buscan calma cerca de los nucleos del sureste.",
+  "coordinates": {
+    "lat": 39.817,
+    "lng": 4.255
+  },
+  "area": "Sur-este (Sant Lluis)",
+  "tags": [
+    "sur-este",
+    "cala",
+    "sant-lluis"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "baja",
+    "lastVerified": "2026-06-22"
+  }
+}

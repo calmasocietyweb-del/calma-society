@@ -1,0 +1,37 @@
+{
+  "name": "Es Calo Blanc",
+  "lang": "es",
+  "translationKey": "es-calo-blanc",
+  "type": "cala",
+  "description": "Diminuta cala (apenas unos metros de anchura) encajada entre rocas, descrita como una de las mas pequenas de la isla; un rincon curioso y poco conocido para una parada breve. NOTA: verificar acceso exacto in situ.",
+  "coordinates": {
+    "lat": 39.83,
+    "lng": 4.29
+  },
+  "area": "Sur-este (Sant Lluis)",
+  "tags": [
+    "sur-este",
+    "cala",
+    "sant-lluis"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "cala",
+    "idealFor": [
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "baja",
+    "lastVerified": "2026-06-22"
+  }
+}

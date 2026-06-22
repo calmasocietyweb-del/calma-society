@@ -1,0 +1,37 @@
+{
+  "name": "Sa Torreta",
+  "lang": "es",
+  "translationKey": "sa-torreta",
+  "type": "cala",
+  "description": "Cala remota y casi siempre desierta en pleno parque natural, presidida por la torre de defensa britanica de Sa Torreta frente a la Illa d'en Colom. Solo para senderistas: el premio salvaje de una larga etapa del Cami de ",
+  "coordinates": {
+    "lat": 39.975,
+    "lng": 4.27
+  },
+  "area": "Norte (Maó)",
+  "tags": [
+    "norte",
+    "cala",
+    "mao"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 300,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}

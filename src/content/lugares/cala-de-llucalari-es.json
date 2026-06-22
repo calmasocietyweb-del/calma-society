@@ -1,0 +1,36 @@
+{
+  "name": "Cala de Llucalari",
+  "lang": "es",
+  "translationKey": "cala-de-llucalari",
+  "type": "cala",
+  "description": "Pequena cala escondida cerca de Son Bou, recompensa de una caminata corta. Tranquila y poco frecuentada por su acceso a pie; sin servicios.",
+  "coordinates": {
+    "lat": 39.892,
+    "lng": 4.1
+  },
+  "area": "Sur-centro (Alaior)",
+  "tags": [
+    "sur-centro",
+    "cala",
+    "alaior"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}

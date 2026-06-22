@@ -1,0 +1,37 @@
+{
+  "name": "Cala de Biniancolla",
+  "lang": "es",
+  "translationKey": "cala-de-biniancolla",
+  "type": "cala",
+  "description": "Cala pequena y tradicional (~100 m) entre Punta Prima y Binibeca, con casetas de pescadores, fondo que profundiza poco a poco y acantilados rocosos que le dan intimidad. Tranquila y de ambiente local.",
+  "coordinates": {
+    "lat": 39.815,
+    "lng": 4.268
+  },
+  "area": "Sur-este (Sant Lluis)",
+  "tags": [
+    "sur-este",
+    "cala",
+    "sant-lluis"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}

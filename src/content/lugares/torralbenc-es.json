@@ -1,0 +1,39 @@
+{
+  "name": "Torralbenc",
+  "lang": "es",
+  "translationKey": "torralbenc",
+  "type": "otro",
+  "description": "Antigua finca rodeada de viñedos convertida en agroturismo de lujo. Restaurante mediterráneo de producto local a la brasa (asesorado por el chef con estrella Michelin Gorka Txapartegi), recomendado en Guía Michelin y Rep",
+  "coordinates": {
+    "lat": 39.91,
+    "lng": 4.16
+  },
+  "area": "Sur-centro (Alaior)",
+  "tags": [
+    "sur-centro",
+    "experiencia",
+    "alaior"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "gastronomia",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

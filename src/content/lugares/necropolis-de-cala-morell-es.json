@@ -1,0 +1,37 @@
+{
+  "name": "Necropolis de Cala Morell",
+  "lang": "es",
+  "translationKey": "necropolis-de-cala-morell",
+  "type": "monumento",
+  "description": "Necropolis de cuevas (14 hipogeos) excavadas en la roca, en uso desde el pre-talayotico hasta el s. II d.C. Algunas con columnas interiores, ventanas y una fachada decorada con columnas en relieve de influencia clasica. ",
+  "coordinates": {
+    "lat": 40.0556,
+    "lng": 3.8786
+  },
+  "area": "Norte (Ciutadella)",
+  "tags": [
+    "norte",
+    "yacimiento",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza"
+    ],
+    "durationMin": 38,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

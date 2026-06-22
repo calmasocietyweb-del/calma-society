@@ -1,0 +1,38 @@
+{
+  "name": "Castell de Sant Nicolau",
+  "lang": "es",
+  "translationKey": "castell-de-sant-nicolau",
+  "type": "monumento",
+  "description": "Torre de defensa del s. XVII en la bocana del puerto de Ciutadella, junto a un mirador con monumento a David Glasgow Farragut. Atardeceres hacia Mallorca y paseo costero. Visita corta que combina con el casco antiguo.",
+  "coordinates": {
+    "lat": 39.9956,
+    "lng": 3.8278
+  },
+  "area": "Oeste (Ciutadella)",
+  "tags": [
+    "oeste",
+    "monumento",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 38,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}

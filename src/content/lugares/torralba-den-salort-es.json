@@ -1,0 +1,37 @@
+{
+  "name": "Torralba d'en Salort",
+  "lang": "es",
+  "translationKey": "torralba-den-salort",
+  "type": "monumento",
+  "description": "Poblado talayotico (UNESCO) con la taula mas monumental y perfectamente conservada de Menorca (santuario de la Edad del Hierro), dos talayots, sala hipostila, cuevas excavadas y muralla ciclopea. Gestion privada con visi",
+  "coordinates": {
+    "lat": 39.9019,
+    "lng": 4.1389
+  },
+  "area": "Centro (Alaior)",
+  "tags": [
+    "centro",
+    "yacimiento",
+    "alaior"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

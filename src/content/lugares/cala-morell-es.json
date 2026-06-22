@@ -1,0 +1,39 @@
+{
+  "name": "Cala Morell",
+  "lang": "es",
+  "translationKey": "cala-morell",
+  "type": "cala",
+  "description": "Cala-puerto natural encajada entre acantilados rojizos en una urbanizacion de casas blancas tipo cicladico. Junto a ella, la necropolis prehistorica de Cala Morell (~14 cuevas), que une bano y cultura talayotica. La cala",
+  "coordinates": {
+    "lat": 40.056,
+    "lng": 3.883
+  },
+  "area": "Norte (Ciutadella)",
+  "tags": [
+    "norte",
+    "cala",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "familias",
+      "cultura",
+      "parejas"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Mercat Municipal de Ciutadella",
+  "lang": "es",
+  "translationKey": "mercat-municipal-de-ciutadella",
+  "type": "restaurante",
+  "description": "Mercado de pescado y marisco de Ciutadella, con verduras y frutas de payeses locales bañadas por el sol. El mercado vivo de la ciudad de poniente, parada para comprar producto fresco y empaparse de vida local.",
+  "coordinates": {
+    "lat": 40,
+    "lng": 3.84
+  },
+  "area": "Oeste (Ciutadella)",
+  "tags": [
+    "oeste",
+    "gastronomia",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "cena",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 60,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "ciutadella-ciudad",
+      "oeste"
+    ]
+  }
+}

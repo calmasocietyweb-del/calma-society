@@ -1,0 +1,38 @@
+{
+  "name": "Eolo Sunset Bar",
+  "lang": "es",
+  "translationKey": "eolo-sunset-bar",
+  "type": "otro",
+  "description": "Chiringuito con estilo sobre los acantilados de Cala'n Forcat, en la costa oeste cerca de Ciutadella. Ambiente relajado, buenos cócteles y una de las mejores vistas de puesta de sol de la isla. Atardecer con copa sin pre",
+  "coordinates": {
+    "lat": 40.01,
+    "lng": 3.79
+  },
+  "area": "Oeste (Ciutadella)",
+  "tags": [
+    "oeste",
+    "experiencia",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "parejas",
+      "naturaleza",
+      "lujo-tranquilo"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}

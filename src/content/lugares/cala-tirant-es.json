@@ -1,0 +1,37 @@
+{
+  "name": "Cala Tirant",
+  "lang": "es",
+  "translationKey": "cala-tirant",
+  "type": "cala",
+  "description": "Amplia playa de arena fina dorada entre Fornells y el cabo de Cavalleria, dividida en dos zonas por una colina con pasarela de madera. Mas accesible y familiar que las calas salvajes vecinas, con humedal detras.",
+  "coordinates": {
+    "lat": 40.057,
+    "lng": 4.117
+  },
+  "area": "Norte (Es Mercadal)",
+  "tags": [
+    "norte",
+    "playa",
+    "es-mercadal"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

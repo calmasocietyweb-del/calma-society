@@ -1,0 +1,43 @@
+{
+  "name": "Destilería Gin Xoriguer",
+  "lang": "es",
+  "translationKey": "destileria-gin-xoriguer",
+  "type": "otro",
+  "description": "Destilería histórica en el puerto de Mahón que produce el gin de Menorca con alambiques de cobre de más de 250 años, fuego de leña local, alcohol de vino, enebro y agua de pozo de Mahón. La visita guiada termina con cata",
+  "coordinates": {
+    "lat": 39.89,
+    "lng": 4.262
+  },
+  "area": "Este (Mao)",
+  "tags": [
+    "este",
+    "experiencia",
+    "mao"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 60,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "mao-puerto",
+      "este"
+    ]
+  }
+}

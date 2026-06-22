@@ -1,0 +1,42 @@
+{
+  "name": "Torre de Fornells",
+  "lang": "es",
+  "translationKey": "torre-de-fornells",
+  "type": "monumento",
+  "description": "Torre defensiva britanico-espanola (s. XVIII) de planta octogonal en mares, sobre la bocana de la bahia de Fornells. Centro de interpretacion en su interior y vistas a la bahia. Combina con el pueblo marinero de Fornells",
+  "coordinates": {
+    "lat": 40.0556,
+    "lng": 4.1372
+  },
+  "area": "Norte (Es Mercadal)",
+  "tags": [
+    "norte",
+    "monumento",
+    "es-mercadal"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "fornells-cavalleria",
+      "norte"
+    ]
+  }
+}

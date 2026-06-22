@@ -1,0 +1,38 @@
+{
+  "name": "Sant Lluis",
+  "lang": "es",
+  "translationKey": "sant-lluis",
+  "type": "otro",
+  "description": "Uno de los pueblos mas blancos de la isla, de origen frances: fundado en 1761 y bautizado en honor a Luis XV durante la breve dominacion francesa (1756-1763). Iglesia neoclasica, el Moli de Dalt (molino harinero del s. X",
+  "coordinates": {
+    "lat": 39.8425,
+    "lng": 4.2747
+  },
+  "area": "Sur-este (Sant Lluis)",
+  "tags": [
+    "sur-este",
+    "pueblo",
+    "sant-lluis"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "cultura",
+      "familias"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

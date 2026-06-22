@@ -1,0 +1,37 @@
+{
+  "name": "Cala del Pilar",
+  "lang": "es",
+  "translationKey": "cala-del-pilar",
+  "type": "cala",
+  "description": "Una de las playas mas salvajes y aisladas de Menorca: arena dorada bajo acantilados de arcilla roja, sin un solo servicio. La larga caminata y el control de accesos la mantienen casi virgen; recompensa solo a quien la tr",
+  "coordinates": {
+    "lat": 40.022,
+    "lng": 3.93
+  },
+  "area": "Norte (Ferreries)",
+  "tags": [
+    "norte",
+    "cala",
+    "ferreries"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 300,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

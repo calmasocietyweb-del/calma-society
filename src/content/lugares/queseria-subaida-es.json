@@ -1,0 +1,44 @@
+{
+  "name": "Quesería Subaida",
+  "lang": "es",
+  "translationKey": "queseria-subaida",
+  "type": "otro",
+  "description": "Finca ganadera de 350 ha que elabora unas 80 piezas diarias de queso Mahón-Menorca DOP artesano. La visita incluye demostración de elaboración, sala de maduración y cata de tres variedades con sobrasada, salchichón, dulc",
+  "coordinates": {
+    "lat": 39.96,
+    "lng": 4.16
+  },
+  "area": "Centro (Es Mercadal)",
+  "tags": [
+    "centro",
+    "experiencia",
+    "es-mercadal"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "familias",
+      "cultura",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "interior-cultura",
+      "centro"
+    ]
+  }
+}

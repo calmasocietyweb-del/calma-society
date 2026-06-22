@@ -1,0 +1,38 @@
+{
+  "name": "Ferreries",
+  "lang": "es",
+  "translationKey": "ferreries",
+  "type": "otro",
+  "description": "Pueblo blanco rural, el de mayor altitud de Menorca, con arraigada tradicion de calzado (incl. Pretty Ballerinas) y mueble. Rodeado de barrancos y colinas; es la puerta natural al Barranc d'Algendar, el barranco mas impo",
+  "coordinates": {
+    "lat": 39.9817,
+    "lng": 4.0103
+  },
+  "area": "Centro (Ferreries)",
+  "tags": [
+    "centro",
+    "pueblo",
+    "ferreries"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "cultura",
+      "familias"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

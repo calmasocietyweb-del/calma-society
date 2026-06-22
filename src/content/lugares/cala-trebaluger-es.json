@@ -1,0 +1,36 @@
+{
+  "name": "Cala Trebaluger",
+  "lang": "es",
+  "translationKey": "cala-trebaluger",
+  "type": "cala",
+  "description": "Una de las calas virgenes mas hermosas: arena blanca, acantilados calizos, pinos hasta la orilla y un pequeno torrente que desemboca en un lado. Su acceso solo a pie la mantiene tranquila; sin servicios, llevar agua y co",
+  "coordinates": {
+    "lat": 39.932,
+    "lng": 3.987
+  },
+  "area": "Sur-centro (Ferreries)",
+  "tags": [
+    "sur-centro",
+    "cala",
+    "ferreries"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

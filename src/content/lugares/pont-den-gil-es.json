@@ -1,0 +1,37 @@
+{
+  "name": "Pont d'en Gil",
+  "lang": "es",
+  "translationKey": "pont-den-gil",
+  "type": "monumento",
+  "description": "Gigantesco arco de roca natural sobre el mar en la costa oeste, junto a Ciutadella. Enmarca una de las puestas de sol más espectaculares de la isla, con un contraluz muy potente cuando el sol se alinea con el arco. Se pu",
+  "coordinates": {
+    "lat": 40,
+    "lng": 3.8
+  },
+  "area": "Oeste (Ciutadella)",
+  "tags": [
+    "oeste",
+    "mirador",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "mirador",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}

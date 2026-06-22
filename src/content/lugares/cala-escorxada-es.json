@@ -1,0 +1,36 @@
+{
+  "name": "Cala Escorxada",
+  "lang": "es",
+  "translationKey": "cala-escorxada",
+  "type": "cala",
+  "description": "Cala virgen aislada con ambiente de 'fin del mundo', arena fina y aguas limpias, recompensa de una buena caminata. Para viajeros que buscan soledad y paisaje; sin ningun servicio.",
+  "coordinates": {
+    "lat": 39.93,
+    "lng": 4.025
+  },
+  "area": "Sur-centro (Es Migjorn Gran)",
+  "tags": [
+    "sur-centro",
+    "cala",
+    "es-migjorn-gran"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "durationMin": 300,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}

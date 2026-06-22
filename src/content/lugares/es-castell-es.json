@@ -1,0 +1,39 @@
+{
+  "name": "Es Castell",
+  "lang": "es",
+  "translationKey": "es-castell",
+  "type": "otro",
+  "description": "Pueblo de trazado militar britanico, fundado en 1771 como Georgetown junto a la bocana del puerto de Mao. Plaza de la Esplanada con Ayuntamiento de fachada roja colonial y Museo Militar; iglesia del Roser. Su joya es Cal",
+  "coordinates": {
+    "lat": 39.8794,
+    "lng": 4.2906
+  },
+  "area": "Este (Es Castell)",
+  "tags": [
+    "este",
+    "pueblo",
+    "es-castell"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "naturaleza",
+      "cultura"
+    ],
+    "durationMin": 180,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

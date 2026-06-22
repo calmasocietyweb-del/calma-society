@@ -1,0 +1,37 @@
+{
+  "name": "Cala Tortuga",
+  "lang": "es",
+  "translationKey": "cala-tortuga",
+  "type": "cala",
+  "description": "Playa virgen de arena dorada bajo el lunar paisaje de pizarra negra de Favaritx, dentro del parque natural. El acceso restringido en coche y la caminata la mantienen serena: naturaleza pura sin un chiringuito a la vista.",
+  "coordinates": {
+    "lat": 39.998,
+    "lng": 4.27
+  },
+  "area": "Norte (Maó)",
+  "tags": [
+    "norte",
+    "cala",
+    "mao"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 180,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

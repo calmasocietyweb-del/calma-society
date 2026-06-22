@@ -1,0 +1,38 @@
+{
+  "name": "Faro de Artrutx",
+  "lang": "es",
+  "translationKey": "faro-de-artrutx",
+  "type": "monumento",
+  "description": "Faro de torre rayada blanca y negra en el extremo suroeste de la isla, con atardeceres hacia Mallorca. Acceso comodo (sin caminata ni restricciones), ideal para viajeros sin coche o con movilidad reducida que quieren un ",
+  "coordinates": {
+    "lat": 39.9281,
+    "lng": 3.8136
+  },
+  "area": "Sur-oeste (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "faro",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "faro",
+    "idealFor": [
+      "naturaleza",
+      "parejas",
+      "familias"
+    ],
+    "durationMin": 38,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Cala en Bosch",
+  "lang": "es",
+  "translationKey": "cala-en-bosch",
+  "type": "cala",
+  "description": "Playa urbanizada de tamano medio junto a un puerto deportivo y un lago interior (El Lago) rodeado de restaurantes y apartamentos. Comoda y con servicios, pensada para familias mas que para buscar calas virgenes.",
+  "coordinates": {
+    "lat": 39.927,
+    "lng": 3.812
+  },
+  "area": "Sur-oeste (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "playa",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Trepuco",
+  "lang": "es",
+  "translationKey": "trepuco",
+  "type": "monumento",
+  "description": "Poblado talayotico (UNESCO) con una de las taulas mas grandes y mejor conservadas de la isla (4,8 m de altura), dentro de un recinto fortificado decimononico. Muy cercano a Mao, ideal como primera toma de contacto con la",
+  "coordinates": {
+    "lat": 39.8703,
+    "lng": 4.2719
+  },
+  "area": "Este (Es Castell)",
+  "tags": [
+    "este",
+    "yacimiento",
+    "es-castell"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza"
+    ],
+    "durationMin": 38,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "Talati de Dalt",
+  "lang": "es",
+  "translationKey": "talati-de-dalt",
+  "type": "monumento",
+  "description": "Uno de los conjuntos talayoticos mas pintorescos y accesibles, parte de la UNESCO. Su taula con una columna apoyada (caida) rodeada de olivos centenarios es de las imagenes mas reconocibles de la prehistoria menorquina. ",
+  "coordinates": {
+    "lat": 39.8836,
+    "lng": 4.2058
+  },
+  "area": "Centro (Mao)",
+  "tags": [
+    "centro",
+    "yacimiento",
+    "mao"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "familias"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

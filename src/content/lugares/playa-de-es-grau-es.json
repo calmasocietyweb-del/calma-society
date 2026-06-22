@@ -1,0 +1,37 @@
+{
+  "name": "Playa de Es Grau",
+  "lang": "es",
+  "translationKey": "playa-de-es-grau",
+  "type": "cala",
+  "description": "Playa de arena dorada de aguas someras y tranquilas junto al pueblo pesquero de Es Grau, nucleo de la Reserva de la Biosfera. Combina bano facil con senderos por la albufera y vistas a la Illa d'en Colom. Muy accesible (",
+  "coordinates": {
+    "lat": 39.956,
+    "lng": 4.266
+  },
+  "area": "Norte (Maó)",
+  "tags": [
+    "norte",
+    "playa",
+    "mao"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

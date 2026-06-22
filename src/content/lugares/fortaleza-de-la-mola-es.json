@@ -1,0 +1,42 @@
+{
+  "name": "Fortaleza de La Mola",
+  "lang": "es",
+  "translationKey": "fortaleza-de-la-mola",
+  "type": "monumento",
+  "description": "Imponente fortaleza militar (1848-1875) que guarda la entrada al puerto de Mao. Baterias, tuneles, canones Vickers y vistas al mar. Recinto enorme que se puede recorrer por libre con mapa, con audioguia o en visita guiad",
+  "coordinates": {
+    "lat": 39.8819,
+    "lng": 4.3097
+  },
+  "area": "Este (Es Castell)",
+  "tags": [
+    "este",
+    "monumento",
+    "es-castell"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "mao-puerto",
+      "este"
+    ]
+  }
+}

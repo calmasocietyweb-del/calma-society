@@ -1,0 +1,37 @@
+{
+  "name": "Necropolis de Calescoves",
+  "lang": "es",
+  "translationKey": "necropolis-de-calescoves",
+  "type": "monumento",
+  "description": "Necropolis prehistorica de unas 90 cuevas funerarias excavadas en el acantilado de una cala virgen y aislada. Entorno natural espectacular que combina patrimonio y bano en cala sin servicios. Ideal para quien busca calma",
+  "coordinates": {
+    "lat": 39.8689,
+    "lng": 4.1217
+  },
+  "area": "Sur-centro (Alaior)",
+  "tags": [
+    "sur-centro",
+    "yacimiento",
+    "alaior"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}

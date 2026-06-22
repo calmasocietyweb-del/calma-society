@@ -1,0 +1,38 @@
+{
+  "name": "Alquiler de llaut tradicional / barco privado al atardecer",
+  "lang": "es",
+  "translationKey": "alquiler-de-llaut-tradicional-barco-privado-al-a",
+  "type": "otro",
+  "description": "Salida en llaut menorquín de madera (embarcación tradicional, elegante, con solárium) o barco privado con patrón desde Cala Galdana o Ciutadella hacia las joyas turquesa del sur: Cala Macarella, Macarelleta, Turqueta, Mi",
+  "coordinates": {
+    "lat": 39.93,
+    "lng": 3.96
+  },
+  "area": "Sur-oeste (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "experiencia",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}

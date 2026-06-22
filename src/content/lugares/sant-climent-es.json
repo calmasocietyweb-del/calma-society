@@ -1,0 +1,38 @@
+{
+  "name": "Sant Climent",
+  "lang": "es",
+  "translationKey": "sant-climent",
+  "type": "otro",
+  "description": "Pequeno nucleo tranquilo del termino de Mao, en la carretera hacia Cala en Porter, con servicios basicos. Su sello propio son los conciertos de jazz que se celebran en su casino/local a lo largo del ano, una cita cultura",
+  "coordinates": {
+    "lat": 39.8694,
+    "lng": 4.2419
+  },
+  "area": "Este (Mao)",
+  "tags": [
+    "este",
+    "nucleo",
+    "mao"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "gastronomia",
+      "cultura"
+    ],
+    "durationMin": 45,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}

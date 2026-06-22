@@ -1,0 +1,38 @@
+{
+  "name": "Cala Mesquida",
+  "lang": "es",
+  "translationKey": "cala-mesquida",
+  "type": "cala",
+  "description": "Playa de arena clara y aguas tranquilas cerca de Mao, con un pequeno nucleo de casas de pescadores, restaurantes y una torre de defensa. NOTA: pertenece a la costa noreste/este, no al sur turquesa; se incluye como aclara",
+  "coordinates": {
+    "lat": 39.902,
+    "lng": 4.31
+  },
+  "area": "Este (Mao)",
+  "tags": [
+    "este",
+    "playa",
+    "mao"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}

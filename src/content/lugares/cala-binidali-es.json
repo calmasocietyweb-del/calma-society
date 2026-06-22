@@ -1,0 +1,37 @@
+{
+  "name": "Cala Binidali",
+  "lang": "es",
+  "translationKey": "cala-binidali",
+  "type": "cala",
+  "description": "Cala pequena y natural de arena dorada fina y aguas turquesa muy transparentes, encajada entre acantilados; excelente para snorkel. Intima y de aparcamiento reducido, mejor llegar pronto.",
+  "coordinates": {
+    "lat": 39.858,
+    "lng": 4.185
+  },
+  "area": "Sur-este (Mao)",
+  "tags": [
+    "sur-este",
+    "cala",
+    "mao"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}

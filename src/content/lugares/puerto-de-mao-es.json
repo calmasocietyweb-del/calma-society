@@ -1,0 +1,40 @@
+{
+  "name": "Puerto de Mao",
+  "lang": "es",
+  "translationKey": "puerto-de-mao",
+  "type": "otro",
+  "description": "Uno de los puertos naturales mas grandes y profundos del mundo (5 km). Eje de la Menorca britanica: la bocana, Es Castell, La Mola, Illa del Rei y la Illa del Llatzeret. Paseo maritimo con gastronomia, ginebra Xoriguer y",
+  "coordinates": {
+    "lat": 39.8917,
+    "lng": 4.2658
+  },
+  "area": "Este (Mao)",
+  "tags": [
+    "este",
+    "nucleo",
+    "mao"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "cultura",
+      "gastronomia",
+      "parejas",
+      "naturaleza",
+      "lujo-tranquilo"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

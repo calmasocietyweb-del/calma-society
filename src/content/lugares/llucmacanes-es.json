@@ -1,0 +1,37 @@
+{
+  "name": "Llucmacanes",
+  "lang": "es",
+  "translationKey": "llucmacanes",
+  "type": "otro",
+  "description": "Pedania rural de Mao, pequeno caserio tradicional menorquin de casas blancas en el campo del sureste. No es un destino turistico en si, sino una estampa autentica de la Menorca de interior/agraria; util como pincelada de",
+  "coordinates": {
+    "lat": 39.8606,
+    "lng": 4.2622
+  },
+  "area": "Este (Mao)",
+  "tags": [
+    "este",
+    "nucleo",
+    "mao"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "cultura"
+    ],
+    "durationMin": 30,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "baja",
+    "lastVerified": "2026-06-22"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Faro de Punta Nati",
+  "lang": "es",
+  "translationKey": "faro-de-punta-nati",
+  "type": "monumento",
+  "description": "Faro en un paisaje petreo y aridos del noroeste, salpicado de barracas de piedra seca (ponts). Ambiente solitario y agreste, ideal para fotografia y atardeceres sin multitudes. Muy proximo a Ciutadella.",
+  "coordinates": {
+    "lat": 40.0578,
+    "lng": 3.8228
+  },
+  "area": "Oeste (Ciutadella)",
+  "tags": [
+    "oeste",
+    "faro",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "faro",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "durationMin": 300,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

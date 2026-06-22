@@ -1,0 +1,37 @@
+{
+  "name": "Cales Coves",
+  "lang": "es",
+  "translationKey": "cales-coves",
+  "type": "cala",
+  "description": "Doble cala rodeada de acantilados horadados por una necropolis prehistorica de cuevas (yacimiento talayotico-romano), de gran valor cultural y paisajistico. Sin servicios; combina bano tranquilo con arqueologia.",
+  "coordinates": {
+    "lat": 39.874,
+    "lng": 4.148
+  },
+  "area": "Sur-centro (Alaior)",
+  "tags": [
+    "sur-centro",
+    "cala",
+    "alaior"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "cultura"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

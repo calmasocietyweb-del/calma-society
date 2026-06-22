@@ -1,0 +1,43 @@
+{
+  "name": "Mercat des Peix",
+  "lang": "es",
+  "translationKey": "mercat-des-peix",
+  "type": "restaurante",
+  "description": "Antiguo mercado del pescado de Mahón reconvertido en espacio gastronómico con alma local: pescado y marisco fresco, tapas, bocadillos, cervezas y vinos de la isla. Institución de la capital cerca del puerto, ideal para s",
+  "coordinates": {
+    "lat": 39.888,
+    "lng": 4.264
+  },
+  "area": "Este (Mao)",
+  "tags": [
+    "este",
+    "gastronomia",
+    "mao"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "cena",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 60,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "mao-puerto",
+      "este"
+    ]
+  }
+}
