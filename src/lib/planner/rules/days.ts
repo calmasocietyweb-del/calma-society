@@ -26,6 +26,18 @@ export interface DaySkeleton {
   cluster?: string;
 }
 
+/** Zona del cluster por mayoría (determinista, independiente del orden). */
+function dominantZone(places: PlannerPlace[]): PlannerZone {
+  const count = new Map<PlannerZone, number>();
+  for (const p of places) count.set(p.zone, (count.get(p.zone) ?? 0) + 1);
+  let best = places[0].zone;
+  let bestN = -1;
+  for (const [z, n] of [...count].sort((a, b) => a[0].localeCompare(b[0]))) {
+    if (n > bestN) { best = z; bestN = n; }
+  }
+  return best;
+}
+
 /** Agrupa el dataset en clusters y los ordena por afinidad y cercanía a la base. */
 export function rankClusters(s: Survey, base: BaseZone, dataset: PlannerPlace[]): ClusterInfo[] {
   const byCluster = new Map<string, PlannerPlace[]>();
@@ -36,7 +48,7 @@ export function rankClusters(s: Survey, base: BaseZone, dataset: PlannerPlace[])
   }
   const infos: ClusterInfo[] = [];
   for (const [cluster, places] of byCluster) {
-    const zone = places[0].zone; // un cluster comparte ramal → zona única
+    const zone = dominantZone(places); // un cluster comparte ramal → zona dominante
     // Afinidad del cluster = suma de las 3 mejores afinidades de sus lugares.
     const top3 = places.map((p) => affinity(p, s)).sort((a, b) => b - a).slice(0, 3);
     const aff = top3.reduce((x, y) => x + y, 0);

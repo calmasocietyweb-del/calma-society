@@ -1,0 +1,212 @@
+[
+  {
+    "id": "artrutx-sea-club",
+    "name": "Artrutx Sea Club",
+    "slug": "artrutx-sea-club",
+    "coordinates": {
+      "lat": 39.9225937,
+      "lng": 3.824224
+    },
+    "zone": "sur-oeste",
+    "cluster": "artrutx-cap",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "parejas",
+      "lujo-tranquilo",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "shuttleInfo": "Drive from Ciutadella (~8-10 km south, 15-20 min). Restaurant's private car park and roadside parking (fills up early in summer: arrive ahead of time).",
+    "effortLevel": "A2",
+    "effortNote": "Flat terrace next to the Cap d'Artrutx lighthouse.",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-macarella",
+    "name": "Cala Macarella",
+    "slug": "cala-macarella",
+    "coordinates": {
+      "lat": 39.9356,
+      "lng": 3.9286
+    },
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "primera-vez",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 240,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "shuttleInfo": "1 Jun–30 Sep: private cars and motorbikes are banned. Shuttle bus from Ciutadella, licensed taxi, bike or on foot (Camí de Cavalls from Cala Galdana, ~45 min). Off-season: drive to the free car park, 15-20 min walk away.",
+    "effortLevel": "C",
+    "effortNote": "Reached on foot or by shuttle in summer, along the Camí de Cavalls. No reliable services: bring water and shade.",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-mitjana",
+    "name": "Cala Mitjana",
+    "slug": "cala-mitjana",
+    "coordinates": {
+      "lat": 39.9355,
+      "lng": 3.9686
+    },
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "shuttleInfo": "Large free dirt car park (~250 spaces) + 1.2 km signposted downhill path. Arrive before 10am in peak season. Bus L52 (Ciutadella) / L51 (Maó); also on foot from Cala Galdana along the Camí de Cavalls.",
+    "effortLevel": "B",
+    "effortNote": "1.2 km downhill path, mostly easy and family-friendly; not for wheelchairs.",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-pregonda",
+    "name": "Cala Pregonda",
+    "slug": "cala-pregonda",
+    "coordinates": {
+      "lat": 40.0489,
+      "lng": 4.0512
+    },
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "effortNote": "No road access to the cove: ~30 min walk (2 km) along the Camí de Cavalls from the Binimel·la car park. No services; sturdy footwear, water and shade are essential.",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "seasonalHours": "June or September; in July/August the Binimel·la car park fills up early. Best with little northerly wind.",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-turqueta",
+    "name": "Cala en Turqueta",
+    "slug": "cala-turqueta",
+    "coordinates": {
+      "lat": 39.9268,
+      "lng": 3.913
+    },
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 200,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "shuttleInfo": "Keeps car access in summer, but the car park fills up very early (arrive ~8:00). Seasonal shuttle bus from Ciutadella too. Common starting point for the walk to Macarella.",
+    "effortLevel": "C",
+    "effortNote": "10-15 min path through pines from the car park; firm but not suitable for wheelchairs or strollers.",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cova-den-xoroi",
+    "name": "Cova d'en Xoroi",
+    "slug": "cova-den-xoroi",
+    "coordinates": {
+      "lat": 39.8656878,
+      "lng": 4.1327226
+    },
+    "zone": "sur-centro",
+    "cluster": "calanporter-xoroi",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "parejas",
+      "lujo-tranquilo",
+      "vida-nocturna"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "effortNote": "You climb down to the cliff on carved steps; not suitable for wheelchairs or very limited mobility.",
+    "isIndoor": false,
+    "weatherProof": "semicubierto",
+    "indoorAlternativeOf": [],
+    "seasonalHours": "Jun-Aug from 11:30 until dusk; May/Oct from 15:00. Daytime viewpoint (~€8.5), afternoon lounge (~€12), nightclub after dark. Online booking recommended in summer.",
+    "needsReservation": true,
+    "officialUrl": "https://www.covadenxoroi.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "naveta-tudons",
+    "name": "Naveta des Tudons",
+    "slug": "naveta-tudons",
+    "coordinates": {
+      "lat": 39.9967,
+      "lng": 3.884
+    },
+    "zone": "eje-me1",
+    "cluster": "interior-cultura",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "primera-vez",
+      "familias"
+    ],
+    "durationMin": 40,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "effortNote": "Car park beside the Me-1 road (km ~40) + short 5-min walk on a firm dirt track. No shade: avoid midday in summer.",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "seasonalHours": "Morning or late afternoon; any season. Best light and least heat early or late in the day.",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+]

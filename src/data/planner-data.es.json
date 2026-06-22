@@ -1,0 +1,212 @@
+[
+  {
+    "id": "artrutx-sea-club",
+    "name": "Artrutx Sea Club",
+    "slug": "artrutx-sea-club",
+    "coordinates": {
+      "lat": 39.9225937,
+      "lng": 3.824224
+    },
+    "zone": "sur-oeste",
+    "cluster": "artrutx-cap",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "parejas",
+      "lujo-tranquilo",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "shuttleInfo": "Coche desde Ciutadella (~8-10 km al sur, 15-20 min). Parking privado del restaurante y en la carretera (se llena pronto en verano: llega con antelación).",
+    "effortLevel": "A2",
+    "effortNote": "Terraza llana junto al faro del Cap d'Artrutx.",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-macarella",
+    "name": "Cala Macarella",
+    "slug": "cala-macarella",
+    "coordinates": {
+      "lat": 39.9356,
+      "lng": 3.9286
+    },
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "primera-vez",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 240,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "shuttleInfo": "1 jun–30 sep: coche y moto privados prohibidos. Bus lanzadera desde Ciutadella, taxi autorizado, bici o a pie (Camí de Cavalls desde Cala Galdana, ~45 min). Fuera de temporada: coche hasta el parking gratuito a 15-20 min a pie.",
+    "effortLevel": "C",
+    "effortNote": "Acceso a pie o en lanzadera en verano; sendero del Camí de Cavalls. Sin servicios garantizados: lleva agua y sombra.",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-mitjana",
+    "name": "Cala Mitjana",
+    "slug": "cala-mitjana",
+    "coordinates": {
+      "lat": 39.9355,
+      "lng": 3.9686
+    },
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "shuttleInfo": "Gran parking de tierra gratuito (~250 plazas) + camino señalizado de 1,2 km en bajada. Llega antes de las 10h en temporada alta. Bus L52 (Ciutadella) / L51 (Maó); también a pie desde Cala Galdana por el Camí de Cavalls.",
+    "effortLevel": "B",
+    "effortNote": "Camino de 1,2 km en bajada, mayormente cómodo y apto para familias; no para silla de ruedas.",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-pregonda",
+    "name": "Cala Pregonda",
+    "slug": "cala-pregonda",
+    "coordinates": {
+      "lat": 40.0489,
+      "lng": 4.0512
+    },
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "effortNote": "Sin acceso rodado a la cala: ~30 min a pie (2 km) por el Camí de Cavalls desde el parking de Binimel·la. Sin servicios; calzado cómodo, agua y sombra imprescindibles.",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "seasonalHours": "Junio o septiembre; en julio/agosto el parking de Binimel·la se llena pronto. Mejor con poco viento del norte.",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-turqueta",
+    "name": "Cala en Turqueta",
+    "slug": "cala-turqueta",
+    "coordinates": {
+      "lat": 39.9268,
+      "lng": 3.913
+    },
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 200,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "shuttleInfo": "Mantiene acceso en coche en verano, pero el parking se llena muy pronto (llega ~8:00). También bus lanzadera desde Ciutadella en temporada. Punto de partida habitual para caminar a Macarella.",
+    "effortLevel": "C",
+    "effortNote": "Sendero de 10-15 min entre pinos desde el parking; firme pero no apto para silla de ruedas ni carrito.",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cova-den-xoroi",
+    "name": "Cova d'en Xoroi",
+    "slug": "cova-den-xoroi",
+    "coordinates": {
+      "lat": 39.8656878,
+      "lng": 4.1327226
+    },
+    "zone": "sur-centro",
+    "cluster": "calanporter-xoroi",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "parejas",
+      "lujo-tranquilo",
+      "vida-nocturna"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "effortNote": "Se baja al acantilado por escaleras talladas; no apto para silla de ruedas ni movilidad muy reducida.",
+    "isIndoor": false,
+    "weatherProof": "semicubierto",
+    "indoorAlternativeOf": [],
+    "seasonalHours": "Jun-ago desde 11:30 h hasta el anochecer; may/oct desde 15 h. De día mirador (~8,5 €), tarde lounge (~12 €), noche discoteca. Reserva online recomendable en verano.",
+    "needsReservation": true,
+    "officialUrl": "https://www.covadenxoroi.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "naveta-tudons",
+    "name": "Naveta des Tudons",
+    "slug": "naveta-tudons",
+    "coordinates": {
+      "lat": 39.9967,
+      "lng": 3.884
+    },
+    "zone": "eje-me1",
+    "cluster": "interior-cultura",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "primera-vez",
+      "familias"
+    ],
+    "durationMin": 40,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "effortNote": "Aparcamiento junto a la carretera Me-1 (km ~40) + paseo corto de 5 min por camino de tierra firme. Sin sombra: evita el mediodía en verano.",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "seasonalHours": "Mañana o última hora; cualquier época. La mejor luz y menos calor a primera o última hora del día.",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+]
