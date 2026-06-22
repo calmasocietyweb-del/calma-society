@@ -20,6 +20,8 @@ import { arrivalDay, departureDay } from "./rules/arrival-departure.ts";
 import { filterAccessible, effectivePace, allowedEfforts } from "./rules/accessibility.ts";
 import { windAdvice } from "./rules/wind.ts";
 import { buildPlanB, weekdayForDay } from "./rules/planb.ts";
+import { addDaysISO, agendaForDay } from "./rules/agenda.ts";
+import type { PlannerEvent } from "./rules/agenda.ts";
 
 interface DayResult {
   blocks: IntradayBlock[];
@@ -31,6 +33,7 @@ export function planTrip(
   rawSurvey: Partial<Survey>,
   dataset: PlannerPlace[],
   lang: "es" | "en" = "es",
+  events: PlannerEvent[] = [],
 ): Plan {
   const survey = normalizeSurvey(rawSurvey);
   // PASO 5: filtra el dataset por accesibilidad ANTES de componer (afecta a todos los pasos).
@@ -43,6 +46,7 @@ export function planTrip(
 
   const days: DayCard[] = [];
   const menorcaBusHooks: MenorcaBusHook[] = [];
+  const globalFiestas = new Map<string, Notice>(); // fiestas en otra zona, sin duplicar
 
   for (const sk of skeleton) {
     let result: DayResult;
@@ -87,6 +91,14 @@ export function planTrip(
       };
     }
 
+    // PASO 2: cruce con la agenda de fiestas por fecha (si hay fechas y eventos).
+    if (survey.arrivalDate && events.length) {
+      const date = addDaysISO(survey.arrivalDate, sk.dayIndex);
+      const { dayNotices, otherZone } = agendaForDay(sk.zone, date, events);
+      result.notices.push(...dayNotices);
+      for (const o of otherZone) if (!globalFiestas.has(o.key)) globalFiestas.set(o.key, o.notice);
+    }
+
     days.push({
       dayIndex: sk.dayIndex,
       dayTypeKey: sk.dayTypeKey,
@@ -100,7 +112,8 @@ export function planTrip(
     });
   }
 
-  return { base, baseReason, splitBase, days, globalNotices: buildGlobalNotices(survey, base, splitBase), menorcaBusHooks };
+  const globalNotices = [...buildGlobalNotices(survey, base, splitBase), ...globalFiestas.values()];
+  return { base, baseReason, splitBase, days, globalNotices, menorcaBusHooks };
 }
 
 function buildGlobalNotices(survey: Survey, base: string, splitBase?: string): Notice[] {
