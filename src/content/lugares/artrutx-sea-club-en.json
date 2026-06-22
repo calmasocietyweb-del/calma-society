@@ -21,5 +21,27 @@
     "lighthouse",
     "ciutadella"
   ],
-  "status": "published"
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "artrutx-cap",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "parejas",
+      "lujo-tranquilo",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "shuttleInfo": "Drive from Ciutadella (~8-10 km south, 15-20 min). Restaurant's private car park and roadside parking (fills up early in summer: arrive ahead of time).",
+    "effortNote": "Flat terrace next to the Cap d'Artrutx lighthouse."
+  }
 }

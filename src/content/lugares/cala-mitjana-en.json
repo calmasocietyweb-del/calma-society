@@ -14,5 +14,27 @@
   },
   "images": ["/uploads/cala-mitjana.webp"],
   "tags": ["south", "cliffs", "clear water", "ferreries"],
-  "status": "published"
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "galdana-macarella",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "shuttleInfo": "Large free dirt car park (~250 spaces) + 1.2 km signposted downhill path. Arrive before 10am in peak season. Bus L52 (Ciutadella) / L51 (Maó); also on foot from Cala Galdana along the Camí de Cavalls.",
+    "effortNote": "1.2 km downhill path, mostly easy and family-friendly; not for wheelchairs."
+  }
 }

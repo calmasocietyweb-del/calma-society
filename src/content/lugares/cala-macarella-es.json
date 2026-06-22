@@ -17,5 +17,27 @@
   "status": "published",
   "seo": {
     "description": "La cala más icónica del sur de Menorca: herradura de arena blanca, agua turquesa y pinar hasta la orilla, con Cala Macarelleta al lado. Mejor temprano."
+  },
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "galdana-macarella",
+    "plannerType": "cala",
+    "idealFor": [
+      "primera-vez",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 240,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "shuttleInfo": "1 jun–30 sep: coche y moto privados prohibidos. Bus lanzadera desde Ciutadella, taxi autorizado, bici o a pie (Camí de Cavalls desde Cala Galdana, ~45 min). Fuera de temporada: coche hasta el parking gratuito a 15-20 min a pie.",
+    "effortNote": "Acceso a pie o en lanzadera en verano; sendero del Camí de Cavalls. Sin servicios garantizados: lleva agua y sombra."
   }
 }

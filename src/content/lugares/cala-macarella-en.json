@@ -17,5 +17,27 @@
   "status": "published",
   "seo": {
     "description": "Southern Menorca's most iconic cove: a horseshoe of white sand, turquoise water and pines to the shore, with Cala Macarelleta beside it. Best early."
+  },
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "galdana-macarella",
+    "plannerType": "cala",
+    "idealFor": [
+      "primera-vez",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 240,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "shuttleInfo": "1 Jun–30 Sep: private cars and motorbikes are banned. Shuttle bus from Ciutadella, licensed taxi, bike or on foot (Camí de Cavalls from Cala Galdana, ~45 min). Off-season: drive to the free car park, 15-20 min walk away.",
+    "effortNote": "Reached on foot or by shuttle in summer, along the Camí de Cavalls. No reliable services: bring water and shade."
   }
 }

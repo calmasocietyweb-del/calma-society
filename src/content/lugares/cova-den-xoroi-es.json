@@ -21,5 +21,28 @@
     "acantilado",
     "cala'n porter"
   ],
-  "status": "published"
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "calanporter-xoroi",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "parejas",
+      "lujo-tranquilo",
+      "vida-nocturna"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "semicubierto",
+    "needsReservation": true,
+    "officialUrl": "https://www.covadenxoroi.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Se baja al acantilado por escaleras talladas; no apto para silla de ruedas ni movilidad muy reducida.",
+    "seasonalHours": "Jun-ago desde 11:30 h hasta el anochecer; may/oct desde 15 h. De día mirador (~8,5 €), tarde lounge (~12 €), noche discoteca. Reserva online recomendable en verano."
+  }
 }

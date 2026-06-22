@@ -14,5 +14,26 @@
   },
   "images": ["/uploads/cala-pregonda.webp"],
   "tags": ["norte", "arena rojiza", "camí de cavalls"],
-  "status": "published"
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Sin acceso rodado a la cala: ~30 min a pie (2 km) por el Camí de Cavalls desde el parking de Binimel·la. Sin servicios; calzado cómodo, agua y sombra imprescindibles.",
+    "seasonalHours": "Junio o septiembre; en julio/agosto el parking de Binimel·la se llena pronto. Mejor con poco viento del norte."
+  }
 }

@@ -21,5 +21,28 @@
     "clifftop",
     "cala'n porter"
   ],
-  "status": "published"
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "calanporter-xoroi",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "parejas",
+      "lujo-tranquilo",
+      "vida-nocturna"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "semicubierto",
+    "needsReservation": true,
+    "officialUrl": "https://www.covadenxoroi.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "You climb down to the cliff on carved steps; not suitable for wheelchairs or very limited mobility.",
+    "seasonalHours": "Jun-Aug from 11:30 until dusk; May/Oct from 15:00. Daytime viewpoint (~€8.5), afternoon lounge (~€12), nightclub after dark. Online booking recommended in summer."
+  }
 }

@@ -14,5 +14,27 @@
   },
   "images": ["/uploads/cala-turqueta.webp"],
   "tags": ["sur", "turquesa", "familiar", "ciutadella"],
-  "status": "published"
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 200,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "shuttleInfo": "Mantiene acceso en coche en verano, pero el parking se llena muy pronto (llega ~8:00). También bus lanzadera desde Ciutadella en temporada. Punto de partida habitual para caminar a Macarella.",
+    "effortNote": "Sendero de 10-15 min entre pinos desde el parking; firme pero no apto para silla de ruedas ni carrito."
+  }
 }

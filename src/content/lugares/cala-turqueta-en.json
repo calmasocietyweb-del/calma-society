@@ -17,5 +17,27 @@
   "status": "published",
   "seo": {
     "description": "Cala Turqueta, in south-west Menorca: almost unreal turquoise water and fine sand sheltered by pines. A tucked-away, family-friendly cove. Best early."
+  },
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 200,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "shuttleInfo": "Keeps car access in summer, but the car park fills up very early (arrive ~8:00). Seasonal shuttle bus from Ciutadella too. Common starting point for the walk to Macarella.",
+    "effortNote": "10-15 min path through pines from the car park; firm but not suitable for wheelchairs or strollers."
   }
 }

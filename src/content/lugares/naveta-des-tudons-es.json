@@ -12,5 +12,27 @@
     "mejorEpoca": "Todo el año; especialmente bello al atardecer"
   },
   "tags": ["talayótico", "patrimonio", "unesco"],
-  "status": "published"
+  "status": "published",
+  "planner": {
+    "zone": "eje-me1",
+    "cluster": "interior-cultura",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "primera-vez",
+      "familias"
+    ],
+    "durationMin": 40,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Aparcamiento junto a la carretera Me-1 (km ~40) + paseo corto de 5 min por camino de tierra firme. Sin sombra: evita el mediodía en verano.",
+    "seasonalHours": "Mañana o última hora; cualquier época. La mejor luz y menos calor a primera o última hora del día."
+  }
 }

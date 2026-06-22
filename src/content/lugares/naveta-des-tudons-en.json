@@ -12,5 +12,27 @@
     "mejorEpoca": "Year-round; especially beautiful at sunset"
   },
   "tags": ["talayotic", "heritage", "unesco"],
-  "status": "published"
+  "status": "published",
+  "planner": {
+    "zone": "eje-me1",
+    "cluster": "interior-cultura",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "primera-vez",
+      "familias"
+    ],
+    "durationMin": 40,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Car park beside the Me-1 road (km ~40) + short 5-min walk on a firm dirt track. No shade: avoid midday in summer.",
+    "seasonalHours": "Morning or late afternoon; any season. Best light and least heat early or late in the day."
+  }
 }
