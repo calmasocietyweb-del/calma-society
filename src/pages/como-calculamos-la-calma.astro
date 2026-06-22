@@ -1,0 +1,163 @@
+---
+// "Cómo calculamos la calma" (ES) — metodología abierta del parte de calas.
+// Clave para GEO (citabilidad por IA) y E-E-A-T: explica el modelo con honestidad,
+// con datos estructurados FAQPage + BreadcrumbList. Destino del enlace "Cómo
+// calculamos la calma" desde la herramienta /donde-el-mar-esta-en-calma.
+import BaseLayout from "../layouts/BaseLayout.astro";
+import JsonLd from "../components/JsonLd.astro";
+import { SITE } from "../config/site";
+
+const alternates = { es: "/como-calculamos-la-calma", en: "/en/how-we-calculate-calm" };
+const abs = (p: string) => new URL(p, SITE.url).href;
+const toolHref = "/donde-el-mar-esta-en-calma";
+
+// Una sola fuente para el FAQ visible Y el JSON-LD (sin duplicar texto).
+const faqs = [
+  {
+    q: "¿Qué significa “mar en calma” en este parte?",
+    a: "Que la cala está resguardada del viento previsto para hoy y, por tanto, el agua tiende a estar más serena. Mide el ABRIGO frente al viento, no la seguridad del baño: no tiene en cuenta las corrientes, el fondo ni otros peligros.",
+  },
+  {
+    q: "¿Por qué el norte y el sur cambian según el viento?",
+    a: "En Menorca manda el viento. Cuando sopla la Tramuntana del norte, la costa sur queda a resguardo y en calma; cuando aprieta el Migjorn del sur, conviene mirar al norte. Cada cala se abre al mar en una dirección distinta, así que el mismo viento deja unas serenas y otras movidas.",
+  },
+  {
+    q: "¿Me dice si es seguro bañarme?",
+    a: "No. Es una estimación editorial orientativa del estado del mar por el viento, no un aviso oficial de seguridad. No sustituye a las banderas ni al criterio de los socorristas. Muchas calas no tienen vigilancia: extrema la precaución y no te bañes solo.",
+  },
+  {
+    q: "¿De dónde salen los datos?",
+    a: "Del viento previsto por la AEMET (Agencia Estatal de Meteorología) para cada municipio, actualizado a diario y fechado. El contorno del mapa procede de OpenStreetMap. La orientación de cada cala es un dato editorial propio, curado a mano.",
+  },
+  {
+    q: "¿Por qué bandas (calma / algo de oleaje / mar revuelto) y no un porcentaje?",
+    a: "Porque un porcentaje exacto sería falsa precisión: el viento previsto tiene su margen y puede rolar. Comunicar en bandas es más honesto y más útil para decidir a qué cala ir.",
+  },
+  {
+    q: "¿Cada cuánto se actualiza?",
+    a: "Cada mañana, automáticamente, con la última previsión de la AEMET. Además puedes deslizar la línea de tiempo para ver la previsión de los próximos días por franjas (mañana y tarde).",
+  },
+  {
+    q: "¿Y las medusas?",
+    a: "De momento no lo publicamos. Tenemos un modelo de “empuje del viento” en estudio, pero solo lo activaremos cuando cerremos su validación y los permisos de las fuentes. Para avistamientos reales, consulta MedusApp.",
+  },
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Inicio", item: abs("/") },
+        { "@type": "ListItem", position: 2, name: "Dónde el mar está en calma", item: abs(toolHref) },
+        { "@type": "ListItem", position: 3, name: "Cómo calculamos la calma", item: abs("/como-calculamos-la-calma") },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Cómo calculamos la calma"
+  description="La metodología abierta del parte de calas de Menorca: cruzamos el viento de AEMET con la orientación de cada cala para estimar su abrigo. Qué mide y qué no, en claro."
+  locale="es"
+  alternates={alternates}
+>
+  <article class="mx-auto max-w-prosa px-5 pb-8 pt-12 sm:px-8 sm:pt-16">
+    <nav aria-label="Migas de pan" class="text-xs text-piedra-suave">
+      <a href="/" class="hover:text-terracota">Inicio</a>
+      <span aria-hidden="true"> · </span>
+      <a href={toolHref} class="hover:text-terracota">Dónde el mar está en calma</a>
+    </nav>
+
+    <p class="mt-4 text-xs font-semibold uppercase tracking-[0.25em] text-oro">Calma Society · Menorca</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Cómo calculamos la calma</h1>
+    <p class="lead mt-5">
+      Detrás del mapa diario hay un modelo sencillo y abierto. Aquí lo explicamos sin
+      letra pequeña: qué mide, cómo lo hace y, sobre todo, qué <em>no</em> mide.
+    </p>
+
+    <div class="article-body mt-10">
+      <h2>Qué medimos (y qué no)</h2>
+      <p>
+        Medimos el <strong>abrigo del mar frente al viento</strong>: cuánto resguarda
+        cada cala del viento previsto para hoy, comunicado en tres bandas —
+        <strong>mar en calma</strong>, <strong>algo de oleaje</strong> y
+        <strong>mar revuelto</strong>—. Es una estimación editorial orientativa para
+        decidir a qué cala ir buscando agua serena.
+      </p>
+      <p>
+        <strong>No medimos la seguridad del baño.</strong> Este parte no tiene en cuenta
+        las corrientes, el fondo, ni otros peligros, y no sustituye a las banderas ni al
+        criterio de los socorristas. Es una guía para encontrar calma, no un aviso oficial.
+      </p>
+
+      <h2>Cómo lo calculamos, paso a paso</h2>
+      <ol>
+        <li>
+          <strong>El viento de hoy.</strong> Tomamos la predicción de viento de la
+          <strong>AEMET</strong> para el municipio de cada cala: de dónde sopla y con qué fuerza.
+        </li>
+        <li>
+          <strong>La orientación de la cala.</strong> Cada cala se abre al mar en una
+          dirección concreta. Ese dato lo tenemos curado a mano para cada una.
+        </li>
+        <li>
+          <strong>El cruce.</strong> Si el viento entra de frente a la cala, el mar se mueve
+          y baja el abrigo; si la cala queda de espaldas al viento, el agua se serena. Según
+          ese cálculo, asignamos la banda del día.
+        </li>
+      </ol>
+      <p>
+        Comunicamos en bandas y no en un porcentaje exacto a propósito: la predicción del
+        viento tiene su margen y puede rolar por la tarde. Las bandas son más honestas.
+      </p>
+
+      <h2>La previsión de los próximos días</h2>
+      <p>
+        Además del parte de hoy, puedes deslizar la <strong>línea de tiempo</strong> para
+        ver cómo evoluciona el mar de cada cala en los próximos días, por franjas de mañana
+        y tarde. El viento general y el estado de las calas cambian contigo al mover la barra.
+      </p>
+
+      <h2>Fuentes y actualización</h2>
+      <p>
+        El viento procede de la <strong>AEMET</strong> (datos oficiales, actualizados a
+        diario y siempre fechados). El contorno del mapa es de <strong>OpenStreetMap</strong>.
+        Cuando un día no podemos actualizar, conservamos el último parte disponible y lo
+        avisamos: nunca mostramos un “hoy” falso.
+      </p>
+
+      <h2>Límites honestos</h2>
+      <ul>
+        <li>No mide corrientes, fondo ni peligros de baño.</li>
+        <li>No detecta medusas ni afirma que las haya.</li>
+        <li>No es un aviso de seguridad ni reemplaza a banderas y socorristas.</li>
+        <li>Muchas calas no tienen vigilancia: extrema la precaución.</li>
+      </ul>
+
+      <h2>Preguntas frecuentes</h2>
+      {faqs.map((f) => (
+        <div class="mt-6">
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
+
+      <p class="mt-10">
+        <a href={toolHref} class="font-medium">← Ver el parte de calas de hoy</a>
+      </p>
+    </div>
+
+    <JsonLd schema={jsonLd} />
+  </article>
+</BaseLayout>
