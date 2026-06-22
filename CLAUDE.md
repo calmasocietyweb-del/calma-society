@@ -42,6 +42,7 @@
 | 10 | **Aprobación de contenido** | **Bandeja de aprobación obligatoria.** Todo contenido nace en estado `draft`/`pending` y solo pasa a `published` con visto bueno humano (un campo `status` en el modelo de contenido) | — |
 | 11 | **Traducción (motor)** | `[PENDIENTE]` — definir proveedor (DeepL API / IA con revisión). Se decide en Fase 6. Hasta entonces, traducción manual/asistida en chat | Hay preferencia de proveedor |
 | 12 | **Ámbito futuro** | Diseñar **genérico y ampliable** (hoy Menorca; mañana otros temas/destinos) sin acoplar el código a "Menorca" | — |
+| 13 | **JS de cliente del planificador** | **Excepción razonada al principio §3.5 (mínimo JS).** El "Planificador de viajes" usa un **único island JS (~20-30 KB, `client:idle`)** que ejecuta un **motor de reglas determinista** (no IA) sobre un dataset JSON compilado en build. Es la **única** porción de JS de cliente del sitio y está justificada: sin él no hay planificador sin backend. El resto del sitio sigue siendo estático puro; el island absorbe ese JS y la página mantiene Lighthouse en verde. Ver `docs/PLANIFICADOR-BLUEPRINT.md` | Se decide usar backend/SSR para el planificador (entonces deja de ser island) |
 
 ---
 

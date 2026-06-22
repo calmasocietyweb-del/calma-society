@@ -73,6 +73,75 @@ const articulos = defineCollection({
       }),
 });
 
+// ─── PLANIFICADOR DE VIAJES — vocabulario del bloque `planner` ───────────────
+// Enums máquina-legibles que alimentan el motor de reglas determinista
+// (docs/PLANIFICADOR-BLUEPRINT.md). Mantener en sync con src/lib/planner/types.ts
+// y con src/data/{travelTimes,dayTypes}.ts.
+
+// Zona normalizada (regla "espina de pez": 1 lugar = 1 zona, unidad de agrupación
+// por día). `eje-me1` = de paso para cualquier base (interiores del eje Maó–Ciutadella).
+const PLANNER_ZONE = z.enum([
+  "este",
+  "sur-este",
+  "sur-centro",
+  "sur-oeste",
+  "oeste",
+  "norte",
+  "centro",
+  "eje-me1",
+]);
+
+// Papel del lugar en la secuencia del día (encaja en un hueco intradía).
+const PLANNER_TYPE = z.enum([
+  "cala",
+  "playa",
+  "pueblo",
+  "faro",
+  "yacimiento",
+  "mirador",
+  "atardecer",
+  "desayuno",
+  "comida",
+  "cena",
+  "actividad-acuatica",
+  "excursion",
+  "interior-cultural",
+]);
+
+// Perfiles/intereses de la encuesta con los que casa el lugar (ranking, no filtro).
+const PLANNER_IDEAL_FOR = z.enum([
+  "primera-vez",
+  "parejas",
+  "familias",
+  "ninos-pequenos",
+  "lujo-tranquilo",
+  "nautica",
+  "cultura",
+  "gastronomia",
+  "vida-nocturna",
+  "naturaleza",
+]);
+
+// Acceso en coche (el "moat": restricciones de verano y caminatas).
+const PLANNER_CAR_ACCESS = z.enum([
+  "coche-directo", // aparcas y estás
+  "coche-mas-caminata", // coche + sendero a pie
+  "solo-bus-lanzadera", // coche prohibido en verano → lanzadera/bus
+  "sin-coche-ok", // se llega bien sin coche (urbano o bus directo)
+]);
+
+// Escala de esfuerzo/accesibilidad (HUECO 3): A1 accesible-asistido … D duro.
+const PLANNER_EFFORT = z.enum(["A1", "A2", "B", "C", "D"]);
+
+// Resguardo frente a lluvia, para el plan-B (HUECO 1).
+const PLANNER_WEATHERPROOF = z.enum(["cubierto", "semicubierto", "exterior"]);
+
+// Nivel de certeza del dato (gobernanza / credibilidad ante la IA — GEO).
+const CERTAINTY = z.enum(["alta", "media", "baja"]);
+
+// Días de la semana que abre (filtro crítico del plan-B: museos cierran lunes…).
+const WEEKDAY = z.enum(["lun", "mar", "mie", "jue", "vie", "sab", "dom"]);
+
 /** Lugares reutilizables (calas, restaurantes, alojamientos…). Datos → JSON. */
 const lugares = defineCollection({
   loader: glob({ pattern: "**/*.json", base: "./src/content/lugares" }),
@@ -110,6 +179,61 @@ const lugares = defineCollection({
     // la etiqueta <meta description> (>160), `seo.description` la sustituye SOLO
     // en el <head> (el texto en pantalla no cambia). Ver Seo.astro.
     seo,
+    // ── PLANIFICADOR DE VIAJES — bloque máquina-legible para el motor de reglas.
+    // Todo OPCIONAL: las fichas existentes siguen validando. Se rellena por script
+    // en `status: draft` para visto bueno (§6 bis). NO duplica `windExposure`
+    // (la sensibilidad al viento vive en ese bloque, no aquí).
+    planner: z
+      .object({
+        // — Geografía / clustering (anti-zigzag "espina de pez") —
+        zone: PLANNER_ZONE,
+        cluster: z.string(), // micro-zona que comparte ramal/parking/base de día
+        plannerType: PLANNER_TYPE,
+        idealFor: z.array(PLANNER_IDEAL_FOR).default([]),
+
+        // — Ritmo (no-saturar: 8,5 h útiles/día) —
+        durationMin: z.number().int().positive().optional(), // minutos típicos de visita
+
+        // — Acceso coche / sin coche (el moat) —
+        carAccess: PLANNER_CAR_ACCESS,
+        busServed: z.boolean().default(false),
+        carAccessClosedSummer: z.boolean().default(false), // Macarella, Favàritx…
+        shuttleInfo: z.string().optional(), // lanzadera/transbordo (texto)
+
+        // — Esfuerzo / accesibilidad (HUECO 3) —
+        effortLevel: PLANNER_EFFORT,
+        effortNote: z.string().optional(),
+        // Solo en lugares A1: servicio de baño asistido (ventana 1 may–31 oct).
+        accessibleService: z
+          .object({
+            amphibiousChair: z.boolean().default(false), // silla anfibia
+            adaptedToilet: z.boolean().default(false), // baño adaptado
+            reservedParking: z.boolean().default(false), // parking reservado
+            staff: z.boolean().default(false), // personal de apoyo (Cruz Roja/monitor)
+            seasonWindow: z
+              .object({ from: z.string(), to: z.string() })
+              .default({ from: "05-01", to: "10-31" }),
+            certainty: CERTAINTY.default("media"),
+          })
+          .optional(),
+
+        // — Plan-B de mal tiempo (HUECO 1) —
+        isIndoor: z.boolean().default(false),
+        weatherProof: PLANNER_WEATHERPROOF.optional(),
+        // Clusters/zonas que este interior cubre cuando llueve o aprieta el calor.
+        indoorAlternativeOf: z.array(z.string()).default([]),
+
+        // — Operativos (estacionales y cambiantes → siempre con certeza y fuente) —
+        openDays: z.array(WEEKDAY).optional(), // si se omite, se asume abierto siempre
+        seasonalHours: z.string().optional(),
+        needsReservation: z.boolean().default(false),
+        officialUrl: z.url().optional(),
+
+        // — Gobernanza del dato (credibilidad / GEO) —
+        dataCertainty: CERTAINTY.default("media"),
+        lastVerified: z.string().optional(), // fecha ISO de la última verificación
+      })
+      .optional(),
   }),
 });
 
