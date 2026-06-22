@@ -29,10 +29,19 @@ const MUNI_ZONE = [
 ];
 
 function deriveZone(location) {
-  const loc = (location || "").toLowerCase();
-  const zones = new Set();
-  for (const [kw, zone] of MUNI_ZONE) if (loc.includes(kw)) zones.add(zone);
-  return zones.size === 1 ? [...zones][0] : "varios";
+  const full = (location || "").toLowerCase();
+  // El nombre real va antes del paréntesis ("Fornells (Es Mercadal)" → Fornells);
+  // el paréntesis suele ser el municipio. Probamos primero el lugar específico.
+  const main = full.split("(")[0];
+  const match = (txt) => {
+    const z = new Set();
+    for (const [kw, zone] of MUNI_ZONE) if (txt.includes(kw)) z.add(zone);
+    return z;
+  };
+  const m1 = match(main);
+  if (m1.size === 1) return [...m1][0];
+  const m2 = match(full);
+  return m2.size === 1 ? [...m2][0] : "varios";
 }
 
 const byLang = { es: [], en: [] };

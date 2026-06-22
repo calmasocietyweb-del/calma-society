@@ -47,7 +47,7 @@ const PLACES = {
       en: "Former sandstone quarries turned into a one-of-a-kind cultural space: stone labyrinths, gardens carved into the rock and an amphitheatre.",
     },
     planner: {
-      common: { zone: "oeste", cluster: "ciutadella-ciudad", plannerType: "interior-cultural", idealFor: ["cultura", "naturaleza", "parejas"], durationMin: 90, carAccess: "coche-directo", busServed: false, effortLevel: "B", isIndoor: false, weatherProof: "exterior", needsReservation: false, officialUrl: "https://lithica.es", indoorAlternativeOf: ["ciutadella-ciudad", "oeste"], dataCertainty: "alta", lastVerified: TODAY },
+      common: { zone: "oeste", cluster: "ciutadella-ciudad", plannerType: "interior-cultural", idealFor: ["cultura", "naturaleza", "parejas"], durationMin: 90, carAccess: "coche-directo", busServed: false, effortLevel: "B", isIndoor: false, weatherProof: "exterior", needsReservation: false, officialUrl: "https://lithica.es", dataCertainty: "alta", lastVerified: TODAY },
       es: { seasonalHours: "9:30-14:30; en temporada alta también por la tarde. Mejor para el calor que para la lluvia (es al aire libre)." },
       en: { seasonalHours: "9:30-14:30; also afternoons in high season. Better for heat than rain (it is open-air)." },
     },
@@ -63,8 +63,8 @@ const PLACES = {
       en: "A large horseshoe bay sheltered by cliffs, with fine sand, very calm turquoise water and pines to the shore. The base for the southern coves.",
     },
     planner: {
-      common: { zone: "sur-centro", cluster: "galdana-mitjana", plannerType: "playa", idealFor: ["familias", "primera-vez", "parejas"], durationMin: 240, carAccess: "coche-directo", busServed: true, effortLevel: "B", isIndoor: false, weatherProof: "exterior", needsReservation: false, dataCertainty: "alta", lastVerified: TODAY },
-      es: { effortNote: "Gran parking gratuito en lo alto; se baja andando 5-10 min por cuesta pronunciada. Urbanizada y con todos los servicios." },
+      common: { zone: "sur-centro", cluster: "galdana-mitjana", plannerType: "playa", idealFor: ["familias", "primera-vez", "parejas"], durationMin: 240, carAccess: "coche-directo", busServed: true, effortLevel: "A1", accessibleService: A1_SERVICE, isIndoor: false, weatherProof: "exterior", needsReservation: false, dataCertainty: "alta", lastVerified: TODAY },
+      es: { effortNote: "Pasarelas hasta el mar, silla anfibia y rampas (servicio accesible 1 may–31 oct). Gran parking gratuito en lo alto; bajada de 5-10 min." },
       en: { effortNote: "Large free car park up top; a steep 5-10 min walk down. Developed, with full services." },
     },
   },

@@ -28,7 +28,7 @@
     "durationMin": 240,
     "carAccess": "coche-directo",
     "busServed": true,
-    "effortLevel": "B",
+    "effortLevel": "A1",
     "isIndoor": false,
     "weatherProof": "exterior",
     "needsReservation": false,
@@ -39,6 +39,17 @@
       "el baño en aguas turquesa muy calmas",
       "caminar el Camí de Cavalls hasta Cala Mitjana",
       "kayak a las calas vírgenes vecinas"
-    ]
+    ],
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "seasonWindow": {
+        "from": "05-01",
+        "to": "10-31"
+      },
+      "certainty": "alta"
+    }
   }
 }

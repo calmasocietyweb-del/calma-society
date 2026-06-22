@@ -24,7 +24,7 @@
       "gastronomia"
     ],
     "durationMin": 90,
-    "carAccess": "coche-mas-caminata",
+    "carAccess": "coche-directo",
     "busServed": false,
     "carAccessClosedSummer": false,
     "effortLevel": "A1",
@@ -32,6 +32,17 @@
     "weatherProof": "exterior",
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "seasonWindow": {
+        "from": "05-01",
+        "to": "10-31"
+      },
+      "certainty": "alta"
+    }
   }
 }

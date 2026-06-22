@@ -21,7 +21,7 @@
       "queso y helado artesanos (DOP Mahón-Menorca)",
       "el yacimiento de Torre d'en Galmés muy cerca"
     ],
-    "blurb": "Pueblo blanco de interior, cuna del queso de Mahon-Menorca DOP y del helado y embutidos artesanos. Fundado por Jaume II en torno a la colina de Ihalor",
+    "blurb": "Pueblo blanco de interior, cuna del queso de Mahon-Menorca DOP y del helado y embutidos artesanos. Fundado por Jaume II en torno a la colina de…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -50,7 +50,7 @@
       "parejas",
       "naturaleza"
     ],
-    "blurb": "Salida en llaut menorquín de madera (embarcación tradicional, elegante, con solárium) o barco privado con patrón desde Cala Galdana o Ciutadella hacia",
+    "blurb": "Salida en llaut menorquín de madera (embarcación tradicional, elegante, con solárium) o barco privado con patrón desde Cala Galdana o Ciutadella…",
     "durationMin": 240,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -97,35 +97,6 @@
     "indoorAlternativeOf": [],
     "needsReservation": true,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
-  },
-  {
-    "id": "binibeca",
-    "name": "Binibeca",
-    "slug": "binibeca",
-    "coordinates": {
-      "lat": 39.82,
-      "lng": 4.235
-    },
-    "zone": "sur-este",
-    "cluster": "binibeca-sur-este",
-    "plannerType": "playa",
-    "idealFor": [
-      "familias",
-      "naturaleza",
-      "cultura"
-    ],
-    "blurb": "Pequena playa de arena fina junto al famoso pueblo blanco de Binibequer Vell, de calles laberinticas encaladas. Mas conocida por su estampa fotogenica",
-    "durationMin": 90,
-    "carAccess": "coche-directo",
-    "busServed": false,
-    "carAccessClosedSummer": false,
-    "effortLevel": "A1",
-    "isIndoor": false,
-    "weatherProof": "exterior",
-    "indoorAlternativeOf": [],
-    "needsReservation": false,
-    "dataCertainty": "media",
     "lastVerified": "2026-06-22"
   },
   {
@@ -178,7 +149,7 @@
       "familias",
       "naturaleza"
     ],
-    "blurb": "Pequena cala de ambiente residencial y tranquilo, con casetas de barca y rocas, mas de bano local que de gran arenal. Apta para familias que buscan ca",
+    "blurb": "Pequena cala de ambiente residencial y tranquilo, con casetas de barca y rocas, mas de bano local que de gran arenal. Apta para familias que buscan…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -208,7 +179,7 @@
       "lujo-tranquilo",
       "naturaleza"
     ],
-    "blurb": "La bodega más antigua y de mayor producción de Menorca (~100.000 botellas/año, la mitad de la isla; única que elabora espumosos). 12 ha en Sant Lluís ",
+    "blurb": "La bodega más antigua y de mayor producción de Menorca (~100.000 botellas/año, la mitad de la isla; única que elabora espumosos). 12 ha en Sant Lluís…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -239,7 +210,7 @@
       "familias",
       "naturaleza"
     ],
-    "blurb": "Dos playas hermanas (es Bot y es Tancats) de arena dorada-rojiza en un ANEI virgen rodeado de pinar y dunas, sin edificaciones. De las pocas playas sa",
+    "blurb": "Dos playas hermanas (es Bot y es Tancats) de arena dorada-rojiza en un ANEI virgen rodeado de pinar y dunas, sin edificaciones. De las pocas playas…",
     "durationMin": 180,
     "carAccess": "coche-directo",
     "busServed": true,
@@ -267,7 +238,7 @@
       "naturaleza",
       "parejas"
     ],
-    "blurb": "Cala pequena y natural de arena dorada fina y aguas turquesa muy transparentes, encajada entre acantilados; excelente para snorkel. Intima y de aparca",
+    "blurb": "Cala pequena y natural de arena dorada fina y aguas turquesa muy transparentes, encajada entre acantilados; excelente para snorkel. Intima y de…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -294,7 +265,7 @@
     "idealFor": [
       "familias"
     ],
-    "blurb": "Cala urbanizada de unos 50 m de arena muy blanca y fina, con todos los servicios y muy cercana a Ciutadella. Practica para alojarse y banarse sin desp",
+    "blurb": "Cala urbanizada de unos 50 m de arena muy blanca y fina, con todos los servicios y muy cercana a Ciutadella. Practica para alojarse y banarse sin…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -351,12 +322,12 @@
       "familias",
       "naturaleza"
     ],
-    "blurb": "Cala pequena y tradicional (~100 m) entre Punta Prima y Binibeca, con casetas de pescadores, fondo que profundiza poco a poco y acantilados rocosos qu",
+    "blurb": "Cala pequena y tradicional (~100 m) entre Punta Prima y Binibeca, con casetas de pescadores, fondo que profundiza poco a poco y acantilados rocosos…",
     "durationMin": 90,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
     "carAccessClosedSummer": false,
-    "effortLevel": "C",
+    "effortLevel": "B",
     "isIndoor": false,
     "weatherProof": "exterior",
     "indoorAlternativeOf": [],
@@ -406,12 +377,12 @@
       "naturaleza",
       "parejas"
     ],
-    "blurb": "Una de las playas mas salvajes y aisladas de Menorca: arena dorada bajo acantilados de arcilla roja, sin un solo servicio. La larga caminata y el cont",
+    "blurb": "Una de las playas mas salvajes y aisladas de Menorca: arena dorada bajo acantilados de arcilla roja, sin un solo servicio. La larga caminata y el…",
     "durationMin": 300,
     "carAccess": "solo-bus-lanzadera",
     "busServed": true,
     "carAccessClosedSummer": true,
-    "effortLevel": "C",
+    "effortLevel": "D",
     "isIndoor": false,
     "weatherProof": "exterior",
     "indoorAlternativeOf": [],
@@ -434,7 +405,7 @@
       "parejas",
       "naturaleza"
     ],
-    "blurb": "Cala pequena, recondita y resguardada, de arena clara y aguas tranquilas, con un islote frente a la orilla. Al exigir caminata queda menos masificada ",
+    "blurb": "Cala pequena, recondita y resguardada, de arena clara y aguas tranquilas, con un islote frente a la orilla. Al exigir caminata queda menos masificada…",
     "durationMin": 180,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -462,7 +433,7 @@
       "familias",
       "gastronomia"
     ],
-    "blurb": "Playa urbanizada de tamano medio junto a un puerto deportivo y un lago interior (El Lago) rodeado de restaurantes y apartamentos. Comoda y con servici",
+    "blurb": "Playa urbanizada de tamano medio junto a un puerto deportivo y un lago interior (El Lago) rodeado de restaurantes y apartamentos. Comoda y con…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -490,12 +461,23 @@
       "familias",
       "gastronomia"
     ],
-    "blurb": "Cala encajada entre altos acantilados con arena fina y aguas tranquilas, junto a una urbanizacion con servicios. Famosa por la Cova d'en Xoroi (bar-mi",
+    "blurb": "Cala encajada entre altos acantilados con arena fina y aguas tranquilas, junto a una urbanizacion con servicios. Famosa por la Cova d'en Xoroi…",
     "durationMin": 90,
-    "carAccess": "coche-mas-caminata",
+    "carAccess": "coche-directo",
     "busServed": false,
     "carAccessClosedSummer": false,
     "effortLevel": "A1",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "seasonWindow": {
+        "from": "05-01",
+        "to": "10-31"
+      },
+      "certainty": "alta"
+    },
     "isIndoor": false,
     "weatherProof": "exterior",
     "indoorAlternativeOf": [],
@@ -517,7 +499,7 @@
     "idealFor": [
       "naturaleza"
     ],
-    "blurb": "Cala virgen aislada con ambiente de 'fin del mundo', arena fina y aguas limpias, recompensa de una buena caminata. Para viajeros que buscan soledad y ",
+    "blurb": "Cala virgen aislada con ambiente de 'fin del mundo', arena fina y aguas limpias, recompensa de una buena caminata. Para viajeros que buscan soledad y…",
     "durationMin": 300,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -551,13 +533,24 @@
       "caminar el Camí de Cavalls hasta Cala Mitjana",
       "kayak a las calas vírgenes vecinas"
     ],
-    "blurb": "Gran ensenada en herradura, protegida por acantilados, con arena fina, aguas turquesa muy tranquilas y pinos hasta la orilla. Base de las calas del su",
+    "blurb": "Gran ensenada en herradura, protegida por acantilados, con arena fina, aguas turquesa muy tranquilas y pinos hasta la orilla. Base de las calas del…",
     "durationMin": 240,
     "carAccess": "coche-directo",
     "busServed": true,
     "carAccessClosedSummer": false,
-    "effortLevel": "B",
+    "effortLevel": "A1",
     "effortNote": "Gran parking gratuito en lo alto; se baja andando 5-10 min por cuesta pronunciada. Urbanizada y con todos los servicios.",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "seasonWindow": {
+        "from": "05-01",
+        "to": "10-31"
+      },
+      "certainty": "alta"
+    },
     "isIndoor": false,
     "weatherProof": "exterior",
     "indoorAlternativeOf": [],
@@ -581,7 +574,7 @@
       "parejas",
       "naturaleza"
     ],
-    "blurb": "La postal por excelencia del sur de Menorca: una herradura de arena blanca, agua turquesa y pinar hasta la orilla. Junto a ella, su hermana pequeña, C",
+    "blurb": "La postal por excelencia del sur de Menorca: una herradura de arena blanca, agua turquesa y pinar hasta la orilla. Junto a ella, su hermana pequeña…",
     "durationMin": 240,
     "carAccess": "solo-bus-lanzadera",
     "busServed": true,
@@ -611,7 +604,7 @@
       "parejas",
       "naturaleza"
     ],
-    "blurb": "La hermana pequena y mas intima de Macarella, separada por un istmo rocoso; agua turquesa intensa y ambiente naturista en parte. Mas recogida y fotoge",
+    "blurb": "La hermana pequena y mas intima de Macarella, separada por un istmo rocoso; agua turquesa intensa y ambiente naturista en parte. Mas recogida y…",
     "durationMin": 180,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -640,7 +633,7 @@
       "naturaleza",
       "gastronomia"
     ],
-    "blurb": "Playa de arena clara y aguas tranquilas cerca de Mao, con un pequeno nucleo de casas de pescadores, restaurantes y una torre de defensa. NOTA: pertene",
+    "blurb": "Playa de arena clara y aguas tranquilas cerca de Mao, con un pequeno nucleo de casas de pescadores, restaurantes y una torre de defensa. NOTA…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -668,7 +661,7 @@
       "naturaleza",
       "parejas"
     ],
-    "blurb": "Cala virgen poco conocida en forma de concha, arena media y guijarros, junto a una antigua casa de campo. Recompensa al caminante que prolonga el Cami",
+    "blurb": "Cala virgen poco conocida en forma de concha, arena media y guijarros, junto a una antigua casa de campo. Recompensa al caminante que prolonga el…",
     "durationMin": 180,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -697,7 +690,7 @@
       "naturaleza",
       "parejas"
     ],
-    "blurb": "Cala amplia de arena clara y agua transparente, flanqueada por acantilados de los que algunos se lanzan al mar. Cerca de Cala Galdana, combina belleza",
+    "blurb": "Cala amplia de arena clara y agua transparente, flanqueada por acantilados de los que algunos se lanzan al mar. Cerca de Cala Galdana, combina…",
     "durationMin": 180,
     "carAccess": "coche-mas-caminata",
     "busServed": true,
@@ -729,7 +722,7 @@
       "cultura",
       "parejas"
     ],
-    "blurb": "Cala-puerto natural encajada entre acantilados rojizos en una urbanizacion de casas blancas tipo cicladico. Junto a ella, la necropolis prehistorica d",
+    "blurb": "Cala-puerto natural encajada entre acantilados rojizos en una urbanizacion de casas blancas tipo cicladico. Junto a ella, la necropolis prehistorica…",
     "durationMin": 180,
     "carAccess": "coche-mas-caminata",
     "busServed": true,
@@ -757,7 +750,7 @@
       "naturaleza",
       "parejas"
     ],
-    "blurb": "Una de las calas más icónicas del norte: arena de tono rojizo, islotes frente a la orilla y un aire casi lunar. No tiene servicios, y ahí reside su en",
+    "blurb": "Una de las calas más icónicas del norte: arena de tono rojizo, islotes frente a la orilla y un aire casi lunar. No tiene servicios, y ahí reside su…",
     "durationMin": 240,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -787,7 +780,7 @@
       "naturaleza",
       "parejas"
     ],
-    "blurb": "Pequena cala virgen junto a Cala Tortuga, a los pies del faro de Favaritx, en pleno parque natural. Se suele combinar con Tortuga en la misma excursio",
+    "blurb": "Pequena cala virgen junto a Cala Tortuga, a los pies del faro de Favaritx, en pleno parque natural. Se suele combinar con Tortuga en la misma…",
     "durationMin": 180,
     "carAccess": "solo-bus-lanzadera",
     "busServed": true,
@@ -815,7 +808,7 @@
       "naturaleza",
       "parejas"
     ],
-    "blurb": "La hermana pequena y mas intima de Cavalleria: cala roja recoleta entre rocas, casi siempre vacia. Ideal para escapar de la masa sin alejarse del park",
+    "blurb": "La hermana pequena y mas intima de Cavalleria: cala roja recoleta entre rocas, casi siempre vacia. Ideal para escapar de la masa sin alejarse del…",
     "durationMin": 90,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -843,12 +836,23 @@
       "familias",
       "naturaleza"
     ],
-    "blurb": "Cala abrigada de arena blanca y aguas tranquilas y limpias, muy resguardada del viento, ideal para familias con ninos. Urbanizada y comoda, junto a Ci",
+    "blurb": "Cala abrigada de arena blanca y aguas tranquilas y limpias, muy resguardada del viento, ideal para familias con ninos. Urbanizada y comoda, junto a…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": false,
     "carAccessClosedSummer": false,
     "effortLevel": "A1",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "seasonWindow": {
+        "from": "05-01",
+        "to": "10-31"
+      },
+      "certainty": "alta"
+    },
     "isIndoor": false,
     "weatherProof": "exterior",
     "indoorAlternativeOf": [],
@@ -871,7 +875,7 @@
       "familias",
       "naturaleza"
     ],
-    "blurb": "Amplia playa de arena fina dorada entre Fornells y el cabo de Cavalleria, dividida en dos zonas por una colina con pasarela de madera. Mas accesible y",
+    "blurb": "Amplia playa de arena fina dorada entre Fornells y el cabo de Cavalleria, dividida en dos zonas por una colina con pasarela de madera. Mas accesible…",
     "durationMin": 180,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -899,7 +903,7 @@
       "naturaleza",
       "parejas"
     ],
-    "blurb": "Playa virgen de arena dorada bajo el lunar paisaje de pizarra negra de Favaritx, dentro del parque natural. El acceso restringido en coche y la camina",
+    "blurb": "Playa virgen de arena dorada bajo el lunar paisaje de pizarra negra de Favaritx, dentro del parque natural. El acceso restringido en coche y la…",
     "durationMin": 180,
     "carAccess": "solo-bus-lanzadera",
     "busServed": true,
@@ -926,7 +930,7 @@
     "idealFor": [
       "naturaleza"
     ],
-    "blurb": "Una de las calas virgenes mas hermosas: arena blanca, acantilados calizos, pinos hasta la orilla y un pequeno torrente que desemboca en un lado. Su ac",
+    "blurb": "Una de las calas virgenes mas hermosas: arena blanca, acantilados calizos, pinos hasta la orilla y un pequeno torrente que desemboca en un lado. Su…",
     "durationMin": 240,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -955,7 +959,7 @@
       "parejas",
       "naturaleza"
     ],
-    "blurb": "Aguas de un turquesa casi irreal y arena fina protegida por pinos. Más recogida y familiar, es de las calas más queridas del suroeste. Su nombre lo di",
+    "blurb": "Aguas de un turquesa casi irreal y arena fina protegida por pinos. Más recogida y familiar, es de las calas más queridas del suroeste. Su nombre lo…",
     "durationMin": 200,
     "carAccess": "coche-mas-caminata",
     "busServed": true,
@@ -985,7 +989,7 @@
       "naturaleza",
       "cultura"
     ],
-    "blurb": "Doble cala rodeada de acantilados horadados por una necropolis prehistorica de cuevas (yacimiento talayotico-romano), de gran valor cultural y paisaji",
+    "blurb": "Doble cala rodeada de acantilados horadados por una necropolis prehistorica de cuevas (yacimiento talayotico-romano), de gran valor cultural y…",
     "durationMin": 180,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -1014,7 +1018,7 @@
       "naturaleza",
       "parejas"
     ],
-    "blurb": "Torre de defensa del s. XVII en la bocana del puerto de Ciutadella, junto a un mirador con monumento a David Glasgow Farragut. Atardeceres hacia Mallo",
+    "blurb": "Torre de defensa del s. XVII en la bocana del puerto de Ciutadella, junto a un mirador con monumento a David Glasgow Farragut. Atardeceres hacia…",
     "durationMin": 38,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -1085,7 +1089,7 @@
       "una copa con el atardecer",
       "reservar online en verano"
     ],
-    "blurb": "Cueva natural abierta en el acantilado de Cala'n Porter: mirador y lounge al atardecer, y discoteca en las noches de verano. El venue más icónico de M",
+    "blurb": "Cueva natural abierta en el acantilado de Cala'n Porter: mirador y lounge al atardecer, y discoteca en las noches de verano. El venue más icónico de…",
     "durationMin": 120,
     "carAccess": "coche-directo",
     "busServed": true,
@@ -1123,7 +1127,7 @@
       "la cata de la ginebra de Menorca",
       "probar la pomada (gin con limonada)"
     ],
-    "blurb": "Destilería histórica en el puerto de Mahón que produce el gin de Menorca con alambiques de cobre de más de 250 años, fuego de leña local, alcohol de v",
+    "blurb": "Destilería histórica en el puerto de Mahón que produce el gin de Menorca con alambiques de cobre de más de 250 años, fuego de leña local, alcohol de…",
     "durationMin": 60,
     "carAccess": "sin-coche-ok",
     "busServed": false,
@@ -1155,7 +1159,7 @@
       "naturaleza",
       "lujo-tranquilo"
     ],
-    "blurb": "Chiringuito con estilo sobre los acantilados de Cala'n Forcat, en la costa oeste cerca de Ciutadella. Ambiente relajado, buenos cócteles y una de las ",
+    "blurb": "Chiringuito con estilo sobre los acantilados de Cala'n Forcat, en la costa oeste cerca de Ciutadella. Ambiente relajado, buenos cócteles y una de las…",
     "durationMin": 90,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -1183,7 +1187,7 @@
       "parejas",
       "naturaleza"
     ],
-    "blurb": "Diminuta cala (apenas unos metros de anchura) encajada entre rocas, descrita como una de las mas pequenas de la isla; un rincon curioso y poco conocid",
+    "blurb": "Diminuta cala (apenas unos metros de anchura) encajada entre rocas, descrita como una de las mas pequenas de la isla; un rincon curioso y poco…",
     "durationMin": 60,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -1211,7 +1215,7 @@
       "naturaleza",
       "familias"
     ],
-    "blurb": "Pequena cala resguardada entre Cales Coves y Binidali, de aguas tranquilas, poco frecuentada por turistas y mas por menorquines. Ambiente local y sose",
+    "blurb": "Pequena cala resguardada entre Cales Coves y Binidali, de aguas tranquilas, poco frecuentada por turistas y mas por menorquines. Ambiente local y…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -1246,7 +1250,7 @@
       "la Fortaleza de La Mola",
       "cenar pescado en una terraza sobre el agua"
     ],
-    "blurb": "Pueblo de trazado militar britanico, fundado en 1771 como Georgetown junto a la bocana del puerto de Mao. Plaza de la Esplanada con Ayuntamiento de fa",
+    "blurb": "Pueblo de trazado militar britanico, fundado en 1771 como Georgetown junto a la bocana del puerto de Mao. Plaza de la Esplanada con Ayuntamiento de…",
     "durationMin": 180,
     "carAccess": "sin-coche-ok",
     "busServed": false,
@@ -1322,7 +1326,7 @@
       "el casco tranquilo de pueblo de interior",
       "una quesería DOP cercana (Subaida)"
     ],
-    "blurb": "Pueblo blanco en el corazon geografico de Menorca, al pie del Monte Toro (el punto mas alto, 358 m). Su nombre viene del privilegio de mercado concedi",
+    "blurb": "Pueblo blanco en el corazon geografico de Menorca, al pie del Monte Toro (el punto mas alto, 358 m). Su nombre viene del privilegio de mercado…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -1355,7 +1359,7 @@
       "el barranc de Binigaus hacia la Cova des Coloms",
       "bajar a pie a la playa de Binigaus"
     ],
-    "blurb": "El municipio mas pequeno y tranquilo, donde 'el tiempo parece haberse detenido': casas blancas unifamiliares y esencia de la Menorca antigua (curiosam",
+    "blurb": "El municipio mas pequeno y tranquilo, donde 'el tiempo parece haberse detenido': casas blancas unifamiliares y esencia de la Menorca antigua…",
     "durationMin": 60,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -1417,8 +1421,8 @@
     "idealFor": [
       "naturaleza"
     ],
-    "blurb": "Faro en un paisaje petreo y aridos del noroeste, salpicado de barracas de piedra seca (ponts). Ambiente solitario y agreste, ideal para fotografia y a",
-    "durationMin": 300,
+    "blurb": "Faro en un paisaje petreo y aridos del noroeste, salpicado de barracas de piedra seca (ponts). Ambiente solitario y agreste, ideal para fotografia y…",
+    "durationMin": 90,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
     "carAccessClosedSummer": false,
@@ -1485,7 +1489,7 @@
       "el mercado artesanal (en temporada)",
       "la puerta de entrada a Cala Galdana"
     ],
-    "blurb": "Pueblo blanco rural, el de mayor altitud de Menorca, con arraigada tradicion de calzado (incl. Pretty Ballerinas) y mueble. Rodeado de barrancos y col",
+    "blurb": "Pueblo blanco rural, el de mayor altitud de Menorca, con arraigada tradicion de calzado (incl. Pretty Ballerinas) y mueble. Rodeado de barrancos y…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -1515,7 +1519,7 @@
       "naturaleza",
       "cultura"
     ],
-    "blurb": "Visita con taller de queso artesano y cata sensorial de productos locales en una finca ganadera, de la mano de los propios propietarios. Experiencia m",
+    "blurb": "Visita con taller de queso artesano y cata sensorial de productos locales en una finca ganadera, de la mano de los propios propietarios. Experiencia…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -1553,7 +1557,7 @@
       "una caldereta de langosta",
       "kayak o paddle por la bahía protegida"
     ],
-    "blurb": "Pueblo pesquero del norte, de casas blancas sobre una gran bahía natural de casi 3 km con llaüts. La referencia de la caldereta de langosta y base náu",
+    "blurb": "Pueblo pesquero del norte, de casas blancas sobre una gran bahía natural de casi 3 km con llaüts. La referencia de la caldereta de langosta y base…",
     "durationMin": 180,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -1588,7 +1592,7 @@
       "los túneles y baterías",
       "las vistas a Maó desde los miradores"
     ],
-    "blurb": "Imponente fortaleza militar (1848-1875) que guarda la entrada al puerto de Mao. Baterias, tuneles, canones Vickers y vistas al mar. Recinto enorme que",
+    "blurb": "Imponente fortaleza militar (1848-1875) que guarda la entrada al puerto de Mao. Baterias, tuneles, canones Vickers y vistas al mar. Recinto enorme…",
     "durationMin": 150,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -1627,7 +1631,7 @@
       "la bodega y la cata",
       "reservar la visita"
     ],
-    "blurb": "Conjunto en Ferreries que reúne quesería Mahón-Menorca DOP, museo etnológico del queso (desde 1999, en antiguo edificio ganadero), bodega propia y jar",
+    "blurb": "Conjunto en Ferreries que reúne quesería Mahón-Menorca DOP, museo etnológico del queso (desde 1999, en antiguo edificio ganadero), bodega propia y…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -1659,7 +1663,7 @@
       "naturaleza",
       "parejas"
     ],
-    "blurb": "Islote en el puerto de Mao con el antiguo hospital militar britanico (s. XVIII), magnificamente restaurado por voluntarios, y una sede de la galeria d",
+    "blurb": "Islote en el puerto de Mao con el antiguo hospital militar britanico (s. XVIII), magnificamente restaurado por voluntarios, y una sede de la galeria…",
     "durationMin": 150,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -1701,10 +1705,7 @@
     "effortLevel": "B",
     "isIndoor": false,
     "weatherProof": "exterior",
-    "indoorAlternativeOf": [
-      "ciutadella-ciudad",
-      "oeste"
-    ],
+    "indoorAlternativeOf": [],
     "seasonalHours": "9:30-14:30; en temporada alta también por la tarde. Mejor para el calor que para la lluvia (es al aire libre).",
     "needsReservation": false,
     "officialUrl": "https://lithica.es",
@@ -1726,7 +1727,7 @@
       "naturaleza",
       "cultura"
     ],
-    "blurb": "Pedania rural de Mao, pequeno caserio tradicional menorquin de casas blancas en el campo del sureste. No es un destino turistico en si, sino una estam",
+    "blurb": "Pedania rural de Mao, pequeno caserio tradicional menorquin de casas blancas en el campo del sureste. No es un destino turistico en si, sino una…",
     "durationMin": 30,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -1761,7 +1762,7 @@
       "la destilería de ginebra Xoriguer",
       "el Mercat des Claustre del Carme"
     ],
-    "blurb": "Capital cosmopolita con fuerte huella británica del s. XVIII, asomada al puerto natural más grande del Mediterráneo. Centro elegante y bodega de gineb",
+    "blurb": "Capital cosmopolita con fuerte huella británica del s. XVIII, asomada al puerto natural más grande del Mediterráneo. Centro elegante y bodega de…",
     "durationMin": 240,
     "carAccess": "sin-coche-ok",
     "busServed": true,
@@ -1838,7 +1839,7 @@
       "parejas",
       "naturaleza"
     ],
-    "blurb": "Antiguo mercado del pescado de Mahón reconvertido en espacio gastronómico con alma local: pescado y marisco fresco, tapas, bocadillos, cervezas y vino",
+    "blurb": "Antiguo mercado del pescado de Mahón reconvertido en espacio gastronómico con alma local: pescado y marisco fresco, tapas, bocadillos, cervezas y…",
     "durationMin": 60,
     "carAccess": "sin-coche-ok",
     "busServed": false,
@@ -1871,7 +1872,7 @@
       "familias",
       "naturaleza"
     ],
-    "blurb": "Mercado de pescado y marisco de Ciutadella, con verduras y frutas de payeses locales bañadas por el sol. El mercado vivo de la ciudad de poniente, par",
+    "blurb": "Mercado de pescado y marisco de Ciutadella, con verduras y frutas de payeses locales bañadas por el sol. El mercado vivo de la ciudad de poniente…",
     "durationMin": 60,
     "carAccess": "sin-coche-ok",
     "busServed": false,
@@ -1938,7 +1939,7 @@
       "primera-vez",
       "familias"
     ],
-    "blurb": "El monumento funerario talayótico mejor conservado de Menorca y símbolo de la isla. Forma parte de Menorca Talayótica, Patrimonio Mundial de la UNESCO",
+    "blurb": "El monumento funerario talayótico mejor conservado de Menorca y símbolo de la isla. Forma parte de Menorca Talayótica, Patrimonio Mundial de la…",
     "durationMin": 40,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -1968,7 +1969,7 @@
       "cultura",
       "naturaleza"
     ],
-    "blurb": "Necropolis de cuevas (14 hipogeos) excavadas en la roca, en uso desde el pre-talayotico hasta el s. II d.C. Algunas con columnas interiores, ventanas ",
+    "blurb": "Necropolis de cuevas (14 hipogeos) excavadas en la roca, en uso desde el pre-talayotico hasta el s. II d.C. Algunas con columnas interiores, ventanas…",
     "durationMin": 38,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -1996,7 +1997,7 @@
       "cultura",
       "naturaleza"
     ],
-    "blurb": "Necropolis prehistorica de unas 90 cuevas funerarias excavadas en el acantilado de una cala virgen y aislada. Entorno natural espectacular que combina",
+    "blurb": "Necropolis prehistorica de unas 90 cuevas funerarias excavadas en el acantilado de una cala virgen y aislada. Entorno natural espectacular que…",
     "durationMin": 90,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -2024,7 +2025,7 @@
       "naturaleza",
       "familias"
     ],
-    "blurb": "Nucleo de la Reserva de la Biosfera de Menorca: laguna costera, humedal y bosque mediterraneo con miradores e itinerarios de aves. La cara natural y s",
+    "blurb": "Nucleo de la Reserva de la Biosfera de Menorca: laguna costera, humedal y bosque mediterraneo con miradores e itinerarios de aves. La cara natural y…",
     "durationMin": 150,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -2051,7 +2052,7 @@
     "idealFor": [
       "naturaleza"
     ],
-    "blurb": "Larga playa virgen de arena dorada y aguas someras y cristalinas, prolongacion natural de Sant Tomas. Considerada una de las mejores playas nudistas d",
+    "blurb": "Larga playa virgen de arena dorada y aguas someras y cristalinas, prolongacion natural de Sant Tomas. Considerada una de las mejores playas nudistas…",
     "durationMin": 180,
     "carAccess": "coche-mas-caminata",
     "busServed": true,
@@ -2079,12 +2080,23 @@
       "familias",
       "gastronomia"
     ],
-    "blurb": "Amplia playa de arena dorada y aguas tranquilas con chiringuitos, hoteles y todos los servicios. Comoda y accesible; sirve de puerta de entrada a pie ",
+    "blurb": "Amplia playa de arena dorada y aguas tranquilas con chiringuitos, hoteles y todos los servicios. Comoda y accesible; sirve de puerta de entrada a pie…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": true,
     "carAccessClosedSummer": false,
     "effortLevel": "A1",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "seasonWindow": {
+        "from": "05-01",
+        "to": "10-31"
+      },
+      "certainty": "alta"
+    },
     "isIndoor": false,
     "weatherProof": "exterior",
     "indoorAlternativeOf": [],
@@ -2107,7 +2119,7 @@
       "naturaleza",
       "familias"
     ],
-    "blurb": "Pequena playa anexa a Cavalleria, separada por un espolon rocoso semisumergido. Suele estar menos concurrida que su vecina y sirve de paso natural hac",
+    "blurb": "Pequena playa anexa a Cavalleria, separada por un espolon rocoso semisumergido. Suele estar menos concurrida que su vecina y sirve de paso natural…",
     "durationMin": 90,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -2135,68 +2147,12 @@
       "familias",
       "naturaleza"
     ],
-    "blurb": "Amplia playa de arena rojiza con un islote y arcillas rojas (banos de barro populares). Punto de partida clasico hacia Cala Pregonda; accesible en coc",
+    "blurb": "Amplia playa de arena rojiza con un islote y arcillas rojas (banos de barro populares). Punto de partida clasico hacia Cala Pregonda; accesible en…",
     "durationMin": 180,
     "carAccess": "coche-directo",
     "busServed": false,
     "carAccessClosedSummer": false,
     "effortLevel": "B",
-    "isIndoor": false,
-    "weatherProof": "exterior",
-    "indoorAlternativeOf": [],
-    "needsReservation": false,
-    "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
-  },
-  {
-    "id": "playa-de-cavalleria",
-    "name": "Playa de Cavalleria",
-    "slug": "playa-de-cavalleria",
-    "coordinates": {
-      "lat": 40.056,
-      "lng": 4.093
-    },
-    "zone": "norte",
-    "cluster": "fornells-cavalleria",
-    "plannerType": "playa",
-    "idealFor": [
-      "naturaleza",
-      "familias"
-    ],
-    "blurb": "Gran playa virgen de arena rojiza enmarcada por acantilados ocres, una de las postales del norte. Comoda por su acceso en coche y aparcamiento a pie d",
-    "durationMin": 180,
-    "carAccess": "coche-mas-caminata",
-    "busServed": false,
-    "carAccessClosedSummer": false,
-    "effortLevel": "C",
-    "isIndoor": false,
-    "weatherProof": "exterior",
-    "indoorAlternativeOf": [],
-    "needsReservation": false,
-    "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
-  },
-  {
-    "id": "playa-de-es-grau",
-    "name": "Playa de Es Grau",
-    "slug": "playa-de-es-grau",
-    "coordinates": {
-      "lat": 39.956,
-      "lng": 4.266
-    },
-    "zone": "norte",
-    "cluster": "albufera-favaritx",
-    "plannerType": "playa",
-    "idealFor": [
-      "familias",
-      "naturaleza"
-    ],
-    "blurb": "Playa de arena dorada de aguas someras y tranquilas junto al pueblo pesquero de Es Grau, nucleo de la Reserva de la Biosfera. Combina bano facil con s",
-    "durationMin": 180,
-    "carAccess": "coche-mas-caminata",
-    "busServed": true,
-    "carAccessClosedSummer": false,
-    "effortLevel": "A1",
     "isIndoor": false,
     "weatherProof": "exterior",
     "indoorAlternativeOf": [],
@@ -2219,7 +2175,7 @@
       "naturaleza",
       "parejas"
     ],
-    "blurb": "Gigantesco arco de roca natural sobre el mar en la costa oeste, junto a Ciutadella. Enmarca una de las puestas de sol más espectaculares de la isla, c",
+    "blurb": "Gigantesco arco de roca natural sobre el mar en la costa oeste, junto a Ciutadella. Enmarca una de las puestas de sol más espectaculares de la isla…",
     "durationMin": 60,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -2252,7 +2208,7 @@
       "playa familiar con todos los servicios",
       "baño accesible (de mayo a octubre)"
     ],
-    "blurb": "Playa abierta de arena clara con todos los servicios, frente al islote de l'Aire y su faro. Cómoda y familiar; más expuesta al viento que las del sur-",
+    "blurb": "Playa abierta de arena clara con todos los servicios, frente al islote de l'Aire y su faro. Cómoda y familiar; más expuesta al viento que las del…",
     "durationMin": 180,
     "carAccess": "coche-directo",
     "busServed": true,
@@ -2296,7 +2252,7 @@
       "la cata de queso Mahón-Menorca DOP",
       "reservar antes de ir"
     ],
-    "blurb": "Finca ganadera de 350 ha que elabora unas 80 piezas diarias de queso Mahón-Menorca DOP artesano. La visita incluye demostración de elaboración, sala d",
+    "blurb": "Finca ganadera de 350 ha que elabora unas 80 piezas diarias de queso Mahón-Menorca DOP artesano. La visita incluye demostración de elaboración, sala…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -2328,7 +2284,7 @@
       "parejas",
       "lujo-tranquilo"
     ],
-    "blurb": "Referente en Fornells para caldereta de langosta menorquina. Versión de sabor más intenso y caldo más espeso que Es Cranc, según comparativas locales.",
+    "blurb": "Referente en Fornells para caldereta de langosta menorquina. Versión de sabor más intenso y caldo más espeso que Es Cranc, según comparativas…",
     "durationMin": 150,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -2358,7 +2314,7 @@
       "lujo-tranquilo",
       "familias"
     ],
-    "blurb": "Uno de los restaurantes más emblemáticos y tradicionales de Menorca para la caldereta de langosta en Fornells. Vivero propio de langostas locales que ",
+    "blurb": "Uno de los restaurantes más emblemáticos y tradicionales de Menorca para la caldereta de langosta en Fornells. Vivero propio de langostas locales que…",
     "durationMin": 150,
     "carAccess": "coche-directo",
     "busServed": true,
@@ -2388,7 +2344,7 @@
       "parejas",
       "naturaleza"
     ],
-    "blurb": "Acogedor hotel rural de 12 habitaciones con restaurante de cocina de mercado: pescado fresco, carne local y verduras de su propia huerta, actualizando",
+    "blurb": "Acogedor hotel rural de 12 habitaciones con restaurante de cocina de mercado: pescado fresco, carne local y verduras de su propia huerta…",
     "durationMin": 150,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -2421,7 +2377,7 @@
       "parejas",
       "cultura"
     ],
-    "blurb": "Único restaurante de Menorca con distinción Bib Gourmand de la Guía Michelin, en pleno centro de Ciutadella. Cocina mediterránea de producto local con",
+    "blurb": "Único restaurante de Menorca con distinción Bib Gourmand de la Guía Michelin, en pleno centro de Ciutadella. Cocina mediterránea de producto local…",
     "durationMin": 120,
     "carAccess": "sin-coche-ok",
     "busServed": false,
@@ -2449,7 +2405,7 @@
       "naturaleza",
       "parejas"
     ],
-    "blurb": "Cala remota y casi siempre desierta en pleno parque natural, presidida por la torre de defensa britanica de Sa Torreta frente a la Illa d'en Colom. So",
+    "blurb": "Cala remota y casi siempre desierta en pleno parque natural, presidida por la torre de defensa britanica de Sa Torreta frente a la Illa d'en Colom…",
     "durationMin": 300,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -2478,7 +2434,7 @@
       "gastronomia",
       "cultura"
     ],
-    "blurb": "Pequeno nucleo tranquilo del termino de Mao, en la carretera hacia Cala en Porter, con servicios basicos. Su sello propio son los conciertos de jazz q",
+    "blurb": "Pequeno nucleo tranquilo del termino de Mao, en la carretera hacia Cala en Porter, con servicios basicos. Su sello propio son los conciertos de jazz…",
     "durationMin": 45,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -2512,7 +2468,7 @@
       "los molinos restaurados",
       "base para Binibèquer y Punta Prima"
     ],
-    "blurb": "Uno de los pueblos mas blancos de la isla, de origen frances: fundado en 1761 y bautizado en honor a Luis XV durante la breve dominacion francesa (175",
+    "blurb": "Uno de los pueblos mas blancos de la isla, de origen frances: fundado en 1761 y bautizado en honor a Luis XV durante la breve dominacion francesa…",
     "durationMin": 60,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -2584,7 +2540,7 @@
       "parejas",
       "gastronomia"
     ],
-    "blurb": "Beach club a pie de la playa más larga de la isla (Son Bou), con hamacas, cabañas, palmeras y terrazas de madera, y una coctelería destacada (de sangr",
+    "blurb": "Beach club a pie de la playa más larga de la isla (Son Bou), con hamacas, cabañas, palmeras y terrazas de madera, y una coctelería destacada (de…",
     "durationMin": 180,
     "carAccess": "coche-directo",
     "busServed": true,
@@ -2612,7 +2568,7 @@
       "familias",
       "naturaleza"
     ],
-    "blurb": "Dos amplios semicirculos de arena fina (Bellavista y des Banyuls) separados por una punta, con pinar y aguas someras. Mas espacio que las calas vecina",
+    "blurb": "Dos amplios semicirculos de arena fina (Bellavista y des Banyuls) separados por una punta, con pinar y aguas someras. Mas espacio que las calas…",
     "durationMin": 180,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -2640,7 +2596,7 @@
       "familias",
       "naturaleza"
     ],
-    "blurb": "Amplia playa de arena a unos 10 km de Ciutadella, con margen derecho mas natural y rocas en el agua. Marca el limite entre la costa urbanizada del sur",
+    "blurb": "Amplia playa de arena a unos 10 km de Ciutadella, con margen derecho mas natural y rocas en el agua. Marca el limite entre la costa urbanizada del…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -2669,7 +2625,7 @@
       "naturaleza",
       "familias"
     ],
-    "blurb": "Uno de los conjuntos talayoticos mas pintorescos y accesibles, parte de la UNESCO. Su taula con una columna apoyada (caida) rodeada de olivos centenar",
+    "blurb": "Uno de los conjuntos talayoticos mas pintorescos y accesibles, parte de la UNESCO. Su taula con una columna apoyada (caida) rodeada de olivos…",
     "durationMin": 60,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -2697,7 +2653,7 @@
       "cultura",
       "naturaleza"
     ],
-    "blurb": "Poblado talayotico (UNESCO) con la taula mas monumental y perfectamente conservada de Menorca (santuario de la Edad del Hierro), dos talayots, sala hi",
+    "blurb": "Poblado talayotico (UNESCO) con la taula mas monumental y perfectamente conservada de Menorca (santuario de la Edad del Hierro), dos talayots, sala…",
     "durationMin": 60,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -2727,7 +2683,7 @@
       "parejas",
       "naturaleza"
     ],
-    "blurb": "Antigua finca rodeada de viñedos convertida en agroturismo de lujo. Restaurante mediterráneo de producto local a la brasa (asesorado por el chef con e",
+    "blurb": "Antigua finca rodeada de viñedos convertida en agroturismo de lujo. Restaurante mediterráneo de producto local a la brasa (asesorado por el chef con…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -2756,7 +2712,7 @@
       "naturaleza",
       "parejas"
     ],
-    "blurb": "Torre defensiva britanico-espanola (s. XVIII) de planta octogonal en mares, sobre la bocana de la bahia de Fornells. Centro de interpretacion en su in",
+    "blurb": "Torre defensiva britanico-espanola (s. XVIII) de planta octogonal en mares, sobre la bocana de la bahia de Fornells. Centro de interpretacion en su…",
     "durationMin": 60,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -2822,7 +2778,7 @@
       "cultura",
       "naturaleza"
     ],
-    "blurb": "Poblado talayotico (UNESCO) con una de las taulas mas grandes y mejor conservadas de la isla (4,8 m de altura), dentro de un recinto fortificado decim",
+    "blurb": "Poblado talayotico (UNESCO) con una de las taulas mas grandes y mejor conservadas de la isla (4,8 m de altura), dentro de un recinto fortificado…",
     "durationMin": 38,
     "carAccess": "coche-directo",
     "busServed": false,

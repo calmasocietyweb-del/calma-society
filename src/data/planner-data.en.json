@@ -110,8 +110,19 @@
     "carAccess": "coche-directo",
     "busServed": true,
     "carAccessClosedSummer": false,
-    "effortLevel": "B",
+    "effortLevel": "A1",
     "effortNote": "Large free car park up top; a steep 5-10 min walk down. Developed, with full services.",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "seasonWindow": {
+        "from": "05-01",
+        "to": "10-31"
+      },
+      "certainty": "alta"
+    },
     "isIndoor": false,
     "weatherProof": "exterior",
     "indoorAlternativeOf": [],
@@ -135,7 +146,7 @@
       "parejas",
       "naturaleza"
     ],
-    "blurb": "The definitive postcard of southern Menorca: a horseshoe of white sand, turquoise water and pines down to the shore. Beside it, its little sister, Cal",
+    "blurb": "The definitive postcard of southern Menorca: a horseshoe of white sand, turquoise water and pines down to the shore. Beside it, its little sister…",
     "durationMin": 240,
     "carAccess": "solo-bus-lanzadera",
     "busServed": true,
@@ -166,7 +177,7 @@
       "naturaleza",
       "parejas"
     ],
-    "blurb": "A wide cove of pale sand and clear water, framed by cliffs that some use to leap into the sea. Near Cala Galdana, it pairs beauty with reasonable acce",
+    "blurb": "A wide cove of pale sand and clear water, framed by cliffs that some use to leap into the sea. Near Cala Galdana, it pairs beauty with reasonable…",
     "durationMin": 180,
     "carAccess": "coche-mas-caminata",
     "busServed": true,
@@ -196,7 +207,7 @@
       "naturaleza",
       "parejas"
     ],
-    "blurb": "One of the north coast's most iconic coves: reddish sand, islets just offshore and an almost lunar feel. It has no facilities, and that is precisely i",
+    "blurb": "One of the north coast's most iconic coves: reddish sand, islets just offshore and an almost lunar feel. It has no facilities, and that is precisely…",
     "durationMin": 240,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -227,7 +238,7 @@
       "parejas",
       "naturaleza"
     ],
-    "blurb": "Almost unreal turquoise water and fine sand sheltered by pines. More tucked-away and family-friendly, it's one of the best-loved coves in the south-we",
+    "blurb": "Almost unreal turquoise water and fine sand sheltered by pines. More tucked-away and family-friendly, it's one of the best-loved coves in the…",
     "durationMin": 200,
     "carAccess": "coche-mas-caminata",
     "busServed": true,
@@ -481,7 +492,7 @@
       "gastronomia",
       "primera-vez"
     ],
-    "blurb": "A cosmopolitan capital with a strong 18th-century British imprint, overlooking the Mediterranean's largest natural harbour. Elegant centre and a gin d",
+    "blurb": "A cosmopolitan capital with a strong 18th-century British imprint, overlooking the Mediterranean's largest natural harbour. Elegant centre and a gin…",
     "durationMin": 240,
     "carAccess": "sin-coche-ok",
     "busServed": true,
@@ -582,7 +593,7 @@
       "primera-vez",
       "familias"
     ],
-    "blurb": "Menorca's best-preserved Talayotic funerary monument and a symbol of the island. It is part of Talayotic Menorca, a UNESCO World Heritage Site since 2",
+    "blurb": "Menorca's best-preserved Talayotic funerary monument and a symbol of the island. It is part of Talayotic Menorca, a UNESCO World Heritage Site since…",
     "durationMin": 40,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -612,7 +623,7 @@
       "familias",
       "primera-vez"
     ],
-    "blurb": "An open, light-sand beach with full services, facing the islet of l'Aire and its lighthouse. Easy and family-friendly; windier than the south-west cov",
+    "blurb": "An open, light-sand beach with full services, facing the islet of l'Aire and its lighthouse. Easy and family-friendly; windier than the south-west…",
     "durationMin": 180,
     "carAccess": "coche-directo",
     "busServed": true,

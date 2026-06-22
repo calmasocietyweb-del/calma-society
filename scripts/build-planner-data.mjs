@@ -29,8 +29,8 @@ function toPlannerPlace(f) {
     idealFor: p.idealFor ?? [],
     highlights: p.highlights,
     // Descripción corta (qué ver, fallback cuando no hay highlights): se recorta
-    // para no inflar el JSON (riesgo R3); la ficha completa va en /lugar/<slug>.
-    blurb: f.description ? f.description.slice(0, 150) : undefined,
+    // por palabra entera para no inflar el JSON (R3); la ficha completa va en /lugar/<slug>.
+    blurb: f.description ? blurbOf(f.description) : undefined,
     durationMin: p.durationMin,
     carAccess: p.carAccess,
     busServed: p.busServed ?? false,
@@ -53,6 +53,14 @@ function toPlannerPlace(f) {
 
 // Quita las claves undefined para no inflar el JSON.
 const prune = (o) => JSON.parse(JSON.stringify(o));
+
+// Recorta a ~150 caracteres por palabra entera (sin cortar a media palabra) + "…".
+function blurbOf(s) {
+  if (s.length <= 150) return s;
+  const cut = s.slice(0, 150);
+  const i = cut.lastIndexOf(" ");
+  return (i > 100 ? cut.slice(0, i) : cut).replace(/[\s,;:.]+$/, "") + "…";
+}
 
 const byLang = { es: [], en: [] };
 const statusCount = { published: 0, draft: 0, pending: 0 };

@@ -29,10 +29,13 @@ const normName = (s) => strip(baseName(s)).replace(/[^a-z0-9]/g, "");
 // ── Dedup: nombres y claves ya en el repo ──
 const existingNames = new Set();
 const existingKeys = new Set();
+const existingCoords = new Set(); // dedup también por coordenadas (mismo punto físico, otro nombre)
+const coordKey = (lat, lng) => `${(+lat).toFixed(3)},${(+lng).toFixed(3)}`;
 for (const f of readdirSync(DIR).filter((x) => x.endsWith(".json"))) {
   const j = JSON.parse(readFileSync(join(DIR, f), "utf8"));
   existingNames.add(normName(j.name));
   existingKeys.add(j.translationKey);
+  if (j.coordinates) existingCoords.add(coordKey(j.coordinates.lat, j.coordinates.lng));
 }
 
 // ── Derivadores ──
@@ -128,23 +131,24 @@ function deriveCar(carText) {
   if (/a pie en el centro|muy accesible sin coche|peaton|a pie en mao|a pie en mahon/.test(t)) {
     return { carAccess: "sin-coche-ok", busServed, carAccessClosedSummer: false };
   }
-  if (/a pie|caminata|sendero|cami de cavalls|min a pie|andando|escaleras|\bbajada\b/.test(t)) {
+  // OJO: "escaleras"/"bajada" NO implican caminata larga (muchas calas urbanizadas
+  // tienen parking y unas escaleras a la arena → siguen siendo coche-directo).
+  if (/a pie|caminata|sendero|cami de cavalls|min a pie|andando|\d+\s*km a pie/.test(t)) {
     return { carAccess: "coche-mas-caminata", busServed, carAccessClosedSummer: false };
   }
   return { carAccess: "coche-directo", busServed, carAccessClosedSummer: false };
 }
 
-const A1_NAMES = ["son bou", "cala galdana", "sant tomas", "santo tomas", "punta prima", "cala en porter", "es grau", "arenal d en castell", "arenal den castell", "binibequer", "binibeca", "santandria", "platja gran", "degollador"];
 function deriveEffort(name, type, carAccess, carText) {
-  const n = strip(name);
-  if ((type === "cala" || type === "playa") && A1_NAMES.some((a) => n.includes(a))) return "A1";
+  void name;
+  // A1 (accesible-asistido) NUNCA se auto-asigna por nombre: solo a mano en
+  // seed-imperdibles.mjs, donde hay un `accessibleService` real verificado.
   if (["pueblo", "mirador", "interior-cultural", "cena", "atardecer", "faro"].includes(type)) return "A2";
-  if (carAccess === "coche-mas-caminata") {
-    const t = strip(carText);
-    if (/cami de cavalls|4 h|dura|sin servicios|abrupto|2 km|30 min|40 min|45 min/.test(t)) return "D";
-    return "C";
-  }
-  if (carAccess === "solo-bus-lanzadera") return "C";
+  const t = strip(carText);
+  // Duro (D) solo si el texto describe caminata LARGA/exigente o cala virgen sin servicios.
+  const hard = /cami de cavalls|sin servicios|abrupto|exigente|tecnico|virgen|larga caminata|1 ?h a pie/.test(t);
+  if (carAccess === "coche-mas-caminata") return hard ? "D" : "C";
+  if (carAccess === "solo-bus-lanzadera") return hard ? "D" : "C";
   return "B";
 }
 
@@ -173,14 +177,18 @@ function deriveIndoor(plannerType, name, desc) {
 // ── Generación ──
 let created = 0, skipped = 0, noCoord = 0;
 const seenThisRun = new Set();
+const seenCoords = new Set();
 for (const r of research) {
   if (strip(r.type) === "alojamiento") { skipped++; continue; }
   const m = /(-?\d+\.\d+)\s*,\s*(-?\d+\.\d+)/.exec(r.coordsApprox || "");
   if (!m) { noCoord++; continue; }
+  const ck = coordKey(m[1], m[2]);
   const key = slug(r.name);
   if (!key || existingKeys.has(key) || existingNames.has(normName(r.name)) || seenThisRun.has(key)) { skipped++; continue; }
+  if (existingCoords.has(ck) || seenCoords.has(ck)) { skipped++; continue; } // mismo punto físico ya sembrado
   if (existsSync(join(DIR, `${key}-es.json`))) { skipped++; continue; }
   seenThisRun.add(key);
+  seenCoords.add(ck);
 
   const zone = deriveZone(r.zona, r.municipio);
   const plannerType = derivePlannerType(r.type, r.name, r.shortDesc);
