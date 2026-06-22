@@ -32,7 +32,7 @@ const DRY = process.argv.includes("--dry");
 const MAP = {
   "cala-macarella": {
     common: {
-      zone: "sur-oeste", cluster: "galdana-macarella", plannerType: "cala",
+      zone: "sur-oeste", cluster: "calas-virgenes-ciutadella", plannerType: "cala",
       idealFor: ["primera-vez", "parejas", "naturaleza"],
       durationMin: 240,
       carAccess: "solo-bus-lanzadera", busServed: true, carAccessClosedSummer: true,
@@ -68,7 +68,7 @@ const MAP = {
   },
   "cala-mitjana": {
     common: {
-      zone: "sur-centro", cluster: "galdana-macarella", plannerType: "cala",
+      zone: "sur-centro", cluster: "galdana-mitjana", plannerType: "cala",
       idealFor: ["familias", "naturaleza", "parejas"],
       durationMin: 180,
       carAccess: "coche-mas-caminata", busServed: true, carAccessClosedSummer: false,
