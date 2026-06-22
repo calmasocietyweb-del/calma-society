@@ -30,6 +30,92 @@
     "lastVerified": "2026-06-22"
   },
   {
+    "id": "binibeca-vell",
+    "name": "Binibeca Vell",
+    "slug": "binibeca-vell",
+    "coordinates": {
+      "lat": 39.8158,
+      "lng": 4.2253
+    },
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "parejas",
+      "cultura",
+      "primera-vez"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "seasonalHours": "Es propiedad privada con horarios de visita restringidos; respeta el silencio y los accesos. Ve fuera de la hora punta del mediodía.",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-cavalleria",
+    "name": "Platja de Cavalleria",
+    "slug": "cala-cavalleria",
+    "coordinates": {
+      "lat": 40.056,
+      "lng": 4.093
+    },
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "playa",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "effortNote": "Carretera estrecha asfaltada ~15 min hasta el parking gratuito; desde allí ~400 m a pie por escaleras de madera.",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-galdana",
+    "name": "Cala Galdana",
+    "slug": "cala-galdana",
+    "coordinates": {
+      "lat": 39.936,
+      "lng": 3.965
+    },
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "primera-vez",
+      "parejas"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "effortNote": "Gran parking gratuito en lo alto; se baja andando 5-10 min por cuesta pronunciada. Urbanizada y con todos los servicios.",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
     "id": "cala-macarella",
     "name": "Cala Macarella",
     "slug": "cala-macarella",
@@ -149,6 +235,36 @@
     "lastVerified": "2026-06-22"
   },
   {
+    "id": "ciutadella",
+    "name": "Ciutadella de Menorca",
+    "slug": "ciutadella",
+    "coordinates": {
+      "lat": 40.0014,
+      "lng": 3.8416
+    },
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "cultura",
+      "parejas",
+      "gastronomia",
+      "primera-vez"
+    ],
+    "durationMin": 240,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "effortNote": "Casco peatonal y llano; aparca fuera del centro (zonas reguladas y parkings perimetrales).",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
     "id": "cova-den-xoroi",
     "name": "Cova d'en Xoroi",
     "slug": "cova-den-xoroi",
@@ -180,6 +296,259 @@
     "lastVerified": "2026-06-22"
   },
   {
+    "id": "es-grau",
+    "name": "Es Grau",
+    "slug": "es-grau",
+    "coordinates": {
+      "lat": 39.956,
+      "lng": 4.266
+    },
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "effortNote": "Playa accesible (pasarelas, silla anfibia, baño adaptado; 1 may–31 oct), aguas someras ideales para niños. Combina con el sendero del parque.",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "certainty": "alta"
+    },
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "faro-cavalleria",
+    "name": "Cap de Cavalleria",
+    "slug": "faro-cavalleria",
+    "coordinates": {
+      "lat": 40.0915,
+      "lng": 4.092
+    },
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "parejas",
+      "naturaleza",
+      "lujo-tranquilo"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "effortNote": "Carretera estrecha pero asfaltada con parking junto al faro; apenas se camina. En verano se llena al atardecer.",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "faro-favaritx",
+    "name": "Faro de Favàritx",
+    "slug": "faro-favaritx",
+    "coordinates": {
+      "lat": 40.001,
+      "lng": 4.272
+    },
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "faro",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 90,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "shuttleInfo": "Acceso en coche restringido en verano (aprox. 1 jun–mediados oct): bus de temporada desde Maó (línea ~43, ~3,50 €/trayecto). Confirma el calendario del año.",
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "fornells",
+    "name": "Fornells",
+    "slug": "fornells",
+    "coordinates": {
+      "lat": 40.0539,
+      "lng": 4.1356
+    },
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "nautica"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "effortNote": "Pueblo peatonal pequeño; aparca a la entrada. Conexión de bus limitada (mejor con coche).",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "lithica",
+    "name": "Lithica – Pedreres de s'Hostal",
+    "slug": "lithica",
+    "coordinates": {
+      "lat": 39.9889,
+      "lng": 3.865
+    },
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [
+      "ciutadella-ciudad",
+      "oeste"
+    ],
+    "seasonalHours": "9:30-14:30; en temporada alta también por la tarde. Mejor para el calor que para la lluvia (es al aire libre).",
+    "needsReservation": false,
+    "officialUrl": "https://lithica.es",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "mao",
+    "name": "Maó",
+    "slug": "mao",
+    "coordinates": {
+      "lat": 39.8885,
+      "lng": 4.2658
+    },
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "cultura",
+      "gastronomia",
+      "primera-vez"
+    ],
+    "durationMin": 240,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "effortNote": "Capital peatonalizable y bien conectada (bus a toda la isla y al aeropuerto). Aparcamiento de pago en el centro.",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "mercat-claustre-carme",
+    "name": "Mercat des Claustre del Carme",
+    "slug": "mercat-claustre-carme",
+    "coordinates": {
+      "lat": 39.888,
+      "lng": 4.265
+    },
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "comida",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "familias"
+    ],
+    "durationMin": 90,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "indoorAlternativeOf": [
+      "mao-puerto",
+      "este"
+    ],
+    "openDays": [
+      "lun",
+      "mar",
+      "mie",
+      "jue",
+      "vie",
+      "sab"
+    ],
+    "seasonalHours": "Centro de Maó, a pie. El Mercat des Peix anexo abre mar-sáb 07:00-14:00.",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "monte-toro",
+    "name": "Monte Toro",
+    "slug": "monte-toro",
+    "coordinates": {
+      "lat": 39.9925,
+      "lng": 4.1108
+    },
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "mirador",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "primera-vez"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "effortNote": "Carretera asfaltada con curvas desde Es Mercadal (~10 min) hasta el parking de la cima.",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
     "id": "naveta-tudons",
     "name": "Naveta des Tudons",
     "slug": "naveta-tudons",
@@ -205,6 +574,106 @@
     "weatherProof": "exterior",
     "indoorAlternativeOf": [],
     "seasonalHours": "Mañana o última hora; cualquier época. La mejor luz y menos calor a primera o última hora del día.",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "punta-prima",
+    "name": "Punta Prima",
+    "slug": "punta-prima",
+    "coordinates": {
+      "lat": 39.812,
+      "lng": 4.275
+    },
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "primera-vez"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "effortNote": "Playa accesible con pasarela, silla anfibia y socorristas (1 may–31 oct). Aparcamiento y servicios completos.",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "certainty": "alta"
+    },
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "son-bou",
+    "name": "Playa de Son Bou",
+    "slug": "son-bou",
+    "coordinates": {
+      "lat": 39.895,
+      "lng": 4.078
+    },
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "effortNote": "Playa accesible: pasarelas, silla anfibia, baño adaptado y personal de apoyo (1 may–31 oct). Gran parking que se llena pronto en verano.",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "certainty": "alta"
+    },
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "torre-den-galmes",
+    "name": "Torre d'en Galmés",
+    "slug": "torre-den-galmes",
+    "coordinates": {
+      "lat": 39.9269,
+      "lng": 4.1283
+    },
+    "zone": "sur-centro",
+    "cluster": "talayotic-alaior",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "primera-vez",
+      "familias"
+    ],
+    "durationMin": 75,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "effortNote": "Camino de tierra de 2 km y recinto amplio sin apenas sombra: visítalo temprano o a última hora en verano.",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
     "lastVerified": "2026-06-22"

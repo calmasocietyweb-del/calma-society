@@ -1,0 +1,40 @@
+{
+  "name": "Ciutadella de Menorca",
+  "lang": "es",
+  "translationKey": "ciutadella",
+  "type": "otro",
+  "description": "Antigua capital señorial: el casco antiguo más monumental de la isla, con catedral gótica, palacios y un puerto vivo al atardecer.",
+  "coordinates": {
+    "lat": 40.0014,
+    "lng": 3.8416
+  },
+  "area": "Oeste (Ciutadella)",
+  "tags": [
+    "oeste",
+    "casco histórico",
+    "catedral",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "cultura",
+      "parejas",
+      "gastronomia",
+      "primera-vez"
+    ],
+    "durationMin": 240,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Casco peatonal y llano; aparca fuera del centro (zonas reguladas y parkings perimetrales)."
+  }
+}

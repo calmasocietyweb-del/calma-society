@@ -1,0 +1,45 @@
+{
+  "name": "Lithica – Pedreres de s'Hostal",
+  "lang": "es",
+  "translationKey": "lithica",
+  "type": "otro",
+  "description": "Antiguas canteras de marés convertidas en un espacio cultural único: laberintos de piedra, jardines esculpidos en la roca y un anfiteatro.",
+  "coordinates": {
+    "lat": 39.9889,
+    "lng": 3.865
+  },
+  "area": "Oeste (Ciutadella)",
+  "tags": [
+    "oeste",
+    "cantera",
+    "jardín",
+    "cultura",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "officialUrl": "https://lithica.es",
+    "indoorAlternativeOf": [
+      "ciutadella-ciudad",
+      "oeste"
+    ],
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "seasonalHours": "9:30-14:30; en temporada alta también por la tarde. Mejor para el calor que para la lluvia (es al aire libre)."
+  }
+}

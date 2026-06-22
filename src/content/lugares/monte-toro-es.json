@@ -1,0 +1,39 @@
+{
+  "name": "Monte Toro",
+  "lang": "es",
+  "translationKey": "monte-toro",
+  "type": "monumento",
+  "description": "El punto más alto de Menorca (358 m), con el santuario de la Mare de Déu del Toro y un mirador de 360° sobre toda la isla, de mar a mar.",
+  "coordinates": {
+    "lat": 39.9925,
+    "lng": 4.1108
+  },
+  "area": "Centro (Es Mercadal)",
+  "tags": [
+    "centro",
+    "mirador",
+    "santuario",
+    "es mercadal"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "mirador",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "primera-vez"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Carretera asfaltada con curvas desde Es Mercadal (~10 min) hasta el parking de la cima."
+  }
+}

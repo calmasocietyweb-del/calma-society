@@ -1,0 +1,45 @@
+{
+  "name": "Punta Prima",
+  "lang": "en",
+  "translationKey": "punta-prima",
+  "type": "cala",
+  "description": "An open, light-sand beach with full services, facing the islet of l'Aire and its lighthouse. Easy and family-friendly; windier than the south-west coves.",
+  "coordinates": {
+    "lat": 39.812,
+    "lng": 4.275
+  },
+  "area": "South-east (Sant Lluís)",
+  "tags": [
+    "sureste",
+    "accesible",
+    "familiar",
+    "sant lluís"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "primera-vez"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "effortLevel": "A1",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "certainty": "alta"
+    },
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Accessible beach with boardwalk, amphibious chair and lifeguards (1 May–31 Oct). Car park and full services."
+  }
+}

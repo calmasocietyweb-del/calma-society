@@ -1,0 +1,39 @@
+{
+  "name": "Maó",
+  "lang": "es",
+  "translationKey": "mao",
+  "type": "otro",
+  "description": "Capital cosmopolita con fuerte huella británica del s. XVIII, asomada al puerto natural más grande del Mediterráneo. Centro elegante y bodega de ginebra.",
+  "coordinates": {
+    "lat": 39.8885,
+    "lng": 4.2658
+  },
+  "area": "Este (Maó)",
+  "tags": [
+    "este",
+    "puerto",
+    "capital",
+    "maó"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "cultura",
+      "gastronomia",
+      "primera-vez"
+    ],
+    "durationMin": 240,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Capital peatonalizable y bien conectada (bus a toda la isla y al aeropuerto). Aparcamiento de pago en el centro."
+  }
+}

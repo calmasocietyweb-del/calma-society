@@ -1,0 +1,47 @@
+{
+  "name": "Playa de Son Bou",
+  "lang": "en",
+  "translationKey": "son-bou",
+  "type": "cala",
+  "description": "Menorca's longest beach (nearly 4 km), with fine sand and shallow water, beach bars and an extensive wetland and dune system behind.",
+  "coordinates": {
+    "lat": 39.895,
+    "lng": 4.078
+  },
+  "area": "South (Alaior)",
+  "tags": [
+    "sur",
+    "arena",
+    "accesible",
+    "alaior",
+    "familiar"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "effortLevel": "A1",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "certainty": "alta"
+    },
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Accessible beach: boardwalks, amphibious chair, adapted toilet and support staff (1 May–31 Oct). Large car park, fills early in summer."
+  }
+}

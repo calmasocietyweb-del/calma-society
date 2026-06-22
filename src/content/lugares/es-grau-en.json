@@ -1,0 +1,47 @@
+{
+  "name": "Es Grau",
+  "lang": "en",
+  "translationKey": "es-grau",
+  "type": "cala",
+  "description": "A golden-sand beach with shallow, calm water beside the fishing village of Es Grau, gateway to the s'Albufera des Grau Natural Park.",
+  "coordinates": {
+    "lat": 39.956,
+    "lng": 4.266
+  },
+  "area": "North (Maó)",
+  "tags": [
+    "norte",
+    "accesible",
+    "parc natural",
+    "biosfera",
+    "maó"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "effortLevel": "A1",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "certainty": "alta"
+    },
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Accessible beach (boardwalks, amphibious chair, adapted toilet; 1 May–31 Oct), shallow water ideal for children. Pairs with the park trail."
+  }
+}

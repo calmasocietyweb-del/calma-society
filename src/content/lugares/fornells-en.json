@@ -1,0 +1,39 @@
+{
+  "name": "Fornells",
+  "lang": "en",
+  "translationKey": "fornells",
+  "type": "otro",
+  "description": "A northern fishing village of white houses above a nearly 3 km natural bay dotted with llaüts. The home of lobster stew and a watersports base.",
+  "coordinates": {
+    "lat": 40.0539,
+    "lng": 4.1356
+  },
+  "area": "North (Es Mercadal)",
+  "tags": [
+    "norte",
+    "puerto",
+    "caldereta",
+    "náutica"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "nautica"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Small pedestrian village; park at the entrance. Limited bus service (better by car)."
+  }
+}

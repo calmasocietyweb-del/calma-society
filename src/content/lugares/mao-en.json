@@ -1,0 +1,39 @@
+{
+  "name": "Maó",
+  "lang": "en",
+  "translationKey": "mao",
+  "type": "otro",
+  "description": "A cosmopolitan capital with a strong 18th-century British imprint, overlooking the Mediterranean's largest natural harbour. Elegant centre and a gin distillery.",
+  "coordinates": {
+    "lat": 39.8885,
+    "lng": 4.2658
+  },
+  "area": "East (Maó)",
+  "tags": [
+    "este",
+    "puerto",
+    "capital",
+    "maó"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "cultura",
+      "gastronomia",
+      "primera-vez"
+    ],
+    "durationMin": 240,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "A walkable, well-connected capital (buses across the island and to the airport). Paid parking in the centre."
+  }
+}

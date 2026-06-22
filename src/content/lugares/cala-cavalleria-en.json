@@ -1,0 +1,38 @@
+{
+  "name": "Platja de Cavalleria",
+  "lang": "en",
+  "translationKey": "cala-cavalleria",
+  "type": "cala",
+  "description": "A large unspoilt beach of reddish sand framed by ochre cliffs, one of the north's icons. Convenient thanks to its car park near the cove.",
+  "coordinates": {
+    "lat": 40.056,
+    "lng": 4.093
+  },
+  "area": "North (Es Mercadal)",
+  "tags": [
+    "norte",
+    "arena rojiza",
+    "virgen",
+    "es mercadal"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "playa",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "A narrow paved road, ~15 min to the free car park; from there ~400 m on foot down wooden stairs."
+  }
+}

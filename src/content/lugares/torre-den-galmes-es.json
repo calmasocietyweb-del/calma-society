@@ -1,0 +1,39 @@
+{
+  "name": "Torre d'en Galmés",
+  "lang": "es",
+  "translationKey": "torre-den-galmes",
+  "type": "monumento",
+  "description": "El mayor poblado talayótico de Baleares (más de 6 ha), parte de la Menorca Talayótica UNESCO: talayots, recinto de taula y sistema hidráulico.",
+  "coordinates": {
+    "lat": 39.9269,
+    "lng": 4.1283
+  },
+  "area": "Sur (Alaior)",
+  "tags": [
+    "talayótico",
+    "unesco",
+    "alaior",
+    "cultura"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "talayotic-alaior",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "primera-vez",
+      "familias"
+    ],
+    "durationMin": 75,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Camino de tierra de 2 km y recinto amplio sin apenas sombra: visítalo temprano o a última hora en verano."
+  }
+}

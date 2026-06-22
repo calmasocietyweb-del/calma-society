@@ -51,14 +51,17 @@ function toPlannerPlace(f) {
 const prune = (o) => JSON.parse(JSON.stringify(o));
 
 const byLang = { es: [], en: [] };
-let total = 0;
+const statusCount = { published: 0, draft: 0, pending: 0 };
+// Pre-lanzamiento: el planificador NO es público todavía, así que el dataset de
+// desarrollo incluye también borradores (para ver el motor con datos ricos). En
+// P3, al publicar la página, gatear a `status === "published"` (visto bueno §6 bis).
 for (const file of readdirSync(DIR).filter((f) => f.endsWith(".json"))) {
   const f = JSON.parse(readFileSync(join(DIR, file), "utf8"));
-  if (!f.planner || f.status !== "published") continue;
-  if (!byLang[f.lang]) continue;
+  if (!f.planner || !byLang[f.lang]) continue;
+  statusCount[f.status] = (statusCount[f.status] ?? 0) + 1;
   byLang[f.lang].push(prune(toPlannerPlace(f)));
-  total++;
 }
+const total = byLang.es.length + byLang.en.length;
 
 for (const lang of Object.keys(byLang)) {
   byLang[lang].sort((a, b) => a.id.localeCompare(b.id)); // orden estable
@@ -66,4 +69,4 @@ for (const lang of Object.keys(byLang)) {
   writeFileSync(path, JSON.stringify(byLang[lang], null, 2) + "\n");
   console.log(`✓ ${path} — ${byLang[lang].length} lugares`);
 }
-console.log(`Hecho: ${total} fichas con planner (published) compiladas.`);
+console.log(`Hecho: ${total} fichas compiladas (published ${statusCount.published}, draft ${statusCount.draft}, pending ${statusCount.pending}). OJO: incluye borradores (pre-lanzamiento); gatear a published en P3.`);

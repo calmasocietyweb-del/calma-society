@@ -1,0 +1,39 @@
+{
+  "name": "Cala Galdana",
+  "lang": "en",
+  "translationKey": "cala-galdana",
+  "type": "cala",
+  "description": "A large horseshoe bay sheltered by cliffs, with fine sand, very calm turquoise water and pines to the shore. The base for the southern coves.",
+  "coordinates": {
+    "lat": 39.936,
+    "lng": 3.965
+  },
+  "area": "South (Ferreries)",
+  "tags": [
+    "sur",
+    "turquesa",
+    "familiar",
+    "ferreries"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "primera-vez",
+      "parejas"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Large free car park up top; a steep 5-10 min walk down. Developed, with full services."
+  }
+}

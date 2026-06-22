@@ -1,0 +1,39 @@
+{
+  "name": "Cala Galdana",
+  "lang": "es",
+  "translationKey": "cala-galdana",
+  "type": "cala",
+  "description": "Gran ensenada en herradura, protegida por acantilados, con arena fina, aguas turquesa muy tranquilas y pinos hasta la orilla. Base de las calas del sur.",
+  "coordinates": {
+    "lat": 39.936,
+    "lng": 3.965
+  },
+  "area": "Sur (Ferreries)",
+  "tags": [
+    "sur",
+    "turquesa",
+    "familiar",
+    "ferreries"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "primera-vez",
+      "parejas"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Gran parking gratuito en lo alto; se baja andando 5-10 min por cuesta pronunciada. Urbanizada y con todos los servicios."
+  }
+}

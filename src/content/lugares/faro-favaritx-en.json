@@ -1,0 +1,39 @@
+{
+  "name": "Faro de Favàritx",
+  "lang": "en",
+  "translationKey": "faro-favaritx",
+  "type": "monumento",
+  "description": "A lighthouse on a cape of striated black slate that looks like another planet, at the northern edge of the s'Albufera des Grau Natural Park.",
+  "coordinates": {
+    "lat": 40.001,
+    "lng": 4.272
+  },
+  "area": "North (Maó)",
+  "tags": [
+    "norte",
+    "faro",
+    "pizarra",
+    "parc natural"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "faro",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 90,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "shuttleInfo": "Car access restricted in summer (approx. 1 Jun–mid Oct): seasonal bus from Maó (line ~43, ~€3.50/trip). Confirm the year's calendar."
+  }
+}

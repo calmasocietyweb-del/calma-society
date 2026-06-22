@@ -1,0 +1,51 @@
+{
+  "name": "Mercat des Claustre del Carme",
+  "lang": "es",
+  "translationKey": "mercat-claustre-carme",
+  "type": "otro",
+  "description": "Mercado gastronómico en un claustro carmelita del s. XVIII en el corazón de Maó: producto de la tierra, elaboraciones caseras y artesanía.",
+  "coordinates": {
+    "lat": 39.888,
+    "lng": 4.265
+  },
+  "area": "Este (Maó)",
+  "tags": [
+    "este",
+    "mercado",
+    "gastronomía",
+    "maó"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "comida",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "familias"
+    ],
+    "durationMin": 90,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "effortLevel": "A1",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "indoorAlternativeOf": [
+      "mao-puerto",
+      "este"
+    ],
+    "openDays": [
+      "lun",
+      "mar",
+      "mie",
+      "jue",
+      "vie",
+      "sab"
+    ],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "seasonalHours": "Centro de Maó, a pie. El Mercat des Peix anexo abre mar-sáb 07:00-14:00."
+  }
+}

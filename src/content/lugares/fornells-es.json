@@ -1,0 +1,39 @@
+{
+  "name": "Fornells",
+  "lang": "es",
+  "translationKey": "fornells",
+  "type": "otro",
+  "description": "Pueblo pesquero del norte, de casas blancas sobre una gran bahía natural de casi 3 km con llaüts. La referencia de la caldereta de langosta y base náutica.",
+  "coordinates": {
+    "lat": 40.0539,
+    "lng": 4.1356
+  },
+  "area": "Norte (Es Mercadal)",
+  "tags": [
+    "norte",
+    "puerto",
+    "caldereta",
+    "náutica"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "nautica"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Pueblo peatonal pequeño; aparca a la entrada. Conexión de bus limitada (mejor con coche)."
+  }
+}

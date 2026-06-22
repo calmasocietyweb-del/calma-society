@@ -1,0 +1,45 @@
+{
+  "name": "Lithica – Pedreres de s'Hostal",
+  "lang": "en",
+  "translationKey": "lithica",
+  "type": "otro",
+  "description": "Former sandstone quarries turned into a one-of-a-kind cultural space: stone labyrinths, gardens carved into the rock and an amphitheatre.",
+  "coordinates": {
+    "lat": 39.9889,
+    "lng": 3.865
+  },
+  "area": "West (Ciutadella)",
+  "tags": [
+    "oeste",
+    "cantera",
+    "jardín",
+    "cultura",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "officialUrl": "https://lithica.es",
+    "indoorAlternativeOf": [
+      "ciutadella-ciudad",
+      "oeste"
+    ],
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "seasonalHours": "9:30-14:30; also afternoons in high season. Better for heat than rain (it is open-air)."
+  }
+}

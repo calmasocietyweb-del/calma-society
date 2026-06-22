@@ -1,0 +1,40 @@
+{
+  "name": "Ciutadella de Menorca",
+  "lang": "en",
+  "translationKey": "ciutadella",
+  "type": "otro",
+  "description": "The island's grand former capital: its most monumental old town, with a Gothic cathedral, palaces and a harbour that comes alive at dusk.",
+  "coordinates": {
+    "lat": 40.0014,
+    "lng": 3.8416
+  },
+  "area": "West (Ciutadella)",
+  "tags": [
+    "oeste",
+    "casco histórico",
+    "catedral",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "cultura",
+      "parejas",
+      "gastronomia",
+      "primera-vez"
+    ],
+    "durationMin": 240,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Flat, pedestrian old town; park outside the centre (regulated zones and perimeter car parks)."
+  }
+}

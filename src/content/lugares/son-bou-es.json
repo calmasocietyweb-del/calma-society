@@ -1,0 +1,47 @@
+{
+  "name": "Playa de Son Bou",
+  "lang": "es",
+  "translationKey": "son-bou",
+  "type": "cala",
+  "description": "El arenal más largo de Menorca (casi 4 km), de arena fina y aguas someras, con chiringuitos y un extenso humedal y sistema dunar detrás.",
+  "coordinates": {
+    "lat": 39.895,
+    "lng": 4.078
+  },
+  "area": "Sur (Alaior)",
+  "tags": [
+    "sur",
+    "arena",
+    "accesible",
+    "alaior",
+    "familiar"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "effortLevel": "A1",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "certainty": "alta"
+    },
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Playa accesible: pasarelas, silla anfibia, baño adaptado y personal de apoyo (1 may–31 oct). Gran parking que se llena pronto en verano."
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "name": "Es Grau",
+  "lang": "es",
+  "translationKey": "es-grau",
+  "type": "cala",
+  "description": "Playa de arena dorada de aguas someras y tranquilas junto al pueblo pesquero de Es Grau, puerta del Parc Natural de s'Albufera des Grau.",
+  "coordinates": {
+    "lat": 39.956,
+    "lng": 4.266
+  },
+  "area": "Norte (Maó)",
+  "tags": [
+    "norte",
+    "accesible",
+    "parc natural",
+    "biosfera",
+    "maó"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "effortLevel": "A1",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "certainty": "alta"
+    },
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Playa accesible (pasarelas, silla anfibia, baño adaptado; 1 may–31 oct), aguas someras ideales para niños. Combina con el sendero del parque."
+  }
+}

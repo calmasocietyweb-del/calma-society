@@ -1,0 +1,39 @@
+{
+  "name": "Faro de Favàritx",
+  "lang": "es",
+  "translationKey": "faro-favaritx",
+  "type": "monumento",
+  "description": "Faro sobre un cabo de pizarra negra estriada que parece otro planeta, en el extremo norte del Parc Natural de s'Albufera des Grau.",
+  "coordinates": {
+    "lat": 40.001,
+    "lng": 4.272
+  },
+  "area": "Norte (Maó)",
+  "tags": [
+    "norte",
+    "faro",
+    "pizarra",
+    "parc natural"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "faro",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 90,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "shuttleInfo": "Acceso en coche restringido en verano (aprox. 1 jun–mediados oct): bus de temporada desde Maó (línea ~43, ~3,50 €/trayecto). Confirma el calendario del año."
+  }
+}

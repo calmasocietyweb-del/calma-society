@@ -1,0 +1,39 @@
+{
+  "name": "Binibeca Vell",
+  "lang": "es",
+  "translationKey": "binibeca-vell",
+  "type": "otro",
+  "description": "Conjunto de casas blancas encaladas (1972) que imita un pueblo de pescadores, con callejones laberínticos y rincones de postal. Es propiedad privada.",
+  "coordinates": {
+    "lat": 39.8158,
+    "lng": 4.2253
+  },
+  "area": "Sureste (Sant Lluís)",
+  "tags": [
+    "sureste",
+    "pueblo blanco",
+    "fotogénico",
+    "sant lluís"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "parejas",
+      "cultura",
+      "primera-vez"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "seasonalHours": "Es propiedad privada con horarios de visita restringidos; respeta el silencio y los accesos. Ve fuera de la hora punta del mediodía."
+  }
+}
