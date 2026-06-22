@@ -179,6 +179,23 @@ const lugares = defineCollection({
     // la etiqueta <meta description> (>160), `seo.description` la sustituye SOLO
     // en el <head> (el texto en pantalla no cambia). Ver Seo.astro.
     seo,
+    // Exposición al viento por cala — IP de "Dónde el mar está en calma".
+    // Solo aplica a type: "cala". Dato editorial curado, separado del feed meteo
+    // (lo rellena/verifica una persona; nunca lo toca el cron diario).
+    windExposure: z
+      .object({
+        // Rumbo (0-360) hacia el que la cala ABRE al mar abierto: la dirección
+        // desde la que el viento entra de frente (peor abrigo).
+        openingBearingDeg: z.number().min(0).max(360),
+        embayment: z.enum(["abierta", "encajonada", "bahia-cerrada"]),
+        // Código INE del municipio: con él se pide el viento a AEMET.
+        municipioINE: z.string(),
+        shelteredFrom: z.array(z.string()).default([]),
+        exposedTo: z.array(z.string()).default([]),
+        tienePradera: z.boolean().default(false),
+        tieneVigilancia: z.boolean().default(false),
+      })
+      .optional(),
     // ── PLANIFICADOR DE VIAJES — bloque máquina-legible para el motor de reglas.
     // Todo OPCIONAL: las fichas existentes siguen validando. Se rellena por script
     // en `status: draft` para visto bueno (§6 bis). NO duplica `windExposure`

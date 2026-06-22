@@ -18,6 +18,15 @@
   "seo": {
     "description": "La cala más icónica del sur de Menorca: herradura de arena blanca, agua turquesa y pinar hasta la orilla, con Cala Macarelleta al lado. Mejor temprano."
   },
+  "windExposure": {
+    "openingBearingDeg": 195,
+    "embayment": "encajonada",
+    "municipioINE": "07015",
+    "shelteredFrom": ["Tramuntana (N)", "Gregal (NE)", "Mestral (NO)"],
+    "exposedTo": ["Migjorn (S)", "Llebeig (SO)", "Xaloc (SE)"],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
   "planner": {
     "zone": "sur-oeste",
     "cluster": "calas-virgenes-ciutadella",

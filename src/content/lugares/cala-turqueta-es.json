@@ -15,6 +15,15 @@
   "images": ["/uploads/cala-turqueta.webp"],
   "tags": ["sur", "turquesa", "familiar", "ciutadella"],
   "status": "published",
+  "windExposure": {
+    "openingBearingDeg": 200,
+    "embayment": "encajonada",
+    "municipioINE": "07015",
+    "shelteredFrom": ["Tramuntana (N)", "Gregal (NE)", "Mestral (NO)"],
+    "exposedTo": ["Migjorn (S)", "Llebeig (SO)", "Xaloc (SE)"],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
   "planner": {
     "zone": "sur-oeste",
     "cluster": "calas-virgenes-ciutadella",

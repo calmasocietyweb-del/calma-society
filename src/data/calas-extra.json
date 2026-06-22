@@ -1,0 +1,1568 @@
+[
+  {
+    "id": "cala-macarelleta",
+    "name": "Cala Macarelleta",
+    "area": "Sur (Ciutadella)",
+    "lat": 39.9362,
+    "lng": 3.9347,
+    "municipioINE": "07015",
+    "openingBearingDeg": 200,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Tramuntana (N)",
+      "Mestral (NO)",
+      "Gregal (NE)"
+    ],
+    "exposedTo": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-galdana",
+    "name": "Cala Galdana",
+    "area": "Sur (Ferreries)",
+    "lat": 39.9369,
+    "lng": 3.9631,
+    "municipioINE": "07021",
+    "openingBearingDeg": 185,
+    "embayment": "bahia-cerrada",
+    "shelteredFrom": [
+      "Tramuntana (N)",
+      "Mestral (NO)",
+      "Gregal (NE)",
+      "Ponent (O)",
+      "Llevant (E)"
+    ],
+    "exposedTo": [
+      "Migjorn (S)",
+      "Xaloc (SE)",
+      "Llebeig (SO)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
+  {
+    "id": "cala-trebaluger",
+    "name": "Cala Trebalúger",
+    "area": "Sur (Es Migjorn Gran)",
+    "lat": 39.9353,
+    "lng": 3.9947,
+    "municipioINE": "07064",
+    "openingBearingDeg": 190,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Tramuntana (N)",
+      "Mestral (NO)",
+      "Gregal (NE)"
+    ],
+    "exposedTo": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "son-saura",
+    "name": "Son Saura",
+    "area": "Sur (Ciutadella)",
+    "lat": 39.9271,
+    "lng": 3.8943,
+    "municipioINE": "07015",
+    "openingBearingDeg": 195,
+    "embayment": "abierta",
+    "shelteredFrom": [
+      "Tramuntana (N)",
+      "Mestral (NO)",
+      "Gregal (NE)"
+    ],
+    "exposedTo": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
+  {
+    "id": "es-talaier",
+    "name": "Es Talaier",
+    "area": "Sur (Ciutadella)",
+    "lat": 39.9268,
+    "lng": 3.9027,
+    "municipioINE": "07015",
+    "openingBearingDeg": 190,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Tramuntana (N)",
+      "Mestral (NO)",
+      "Gregal (NE)"
+    ],
+    "exposedTo": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-binigaus",
+    "name": "Cala Binigaus",
+    "area": "Sur (Es Migjorn Gran)",
+    "lat": 39.9206,
+    "lng": 4.0264,
+    "municipioINE": "07064",
+    "openingBearingDeg": 185,
+    "embayment": "abierta",
+    "shelteredFrom": [
+      "Tramuntana (N)",
+      "Mestral (NO)",
+      "Gregal (NE)"
+    ],
+    "exposedTo": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "son-bou",
+    "name": "Son Bou",
+    "area": "Sur (Alaior)",
+    "lat": 39.9002,
+    "lng": 4.0702,
+    "municipioINE": "07002",
+    "openingBearingDeg": 180,
+    "embayment": "abierta",
+    "shelteredFrom": [
+      "Tramuntana (N)",
+      "Mestral (NO)",
+      "Gregal (NE)"
+    ],
+    "exposedTo": [
+      "Migjorn (S)",
+      "Xaloc (SE)",
+      "Llebeig (SO)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
+  {
+    "id": "binimella",
+    "name": "Binimel·là",
+    "area": "Norte (Es Mercadal)",
+    "lat": 40.0517,
+    "lng": 4.0532,
+    "municipioINE": "07037",
+    "openingBearingDeg": 350,
+    "embayment": "abierta",
+    "shelteredFrom": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
+    "exposedTo": [
+      "Tramuntana (N)",
+      "Mestral (NO)",
+      "Gregal (NE)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-cavalleria",
+    "name": "Cala Cavalleria",
+    "area": "Norte (Es Mercadal)",
+    "lat": 40.0596,
+    "lng": 4.0751,
+    "municipioINE": "07037",
+    "openingBearingDeg": 0,
+    "embayment": "abierta",
+    "shelteredFrom": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
+    "exposedTo": [
+      "Tramuntana (N)",
+      "Gregal (NE)",
+      "Mestral (NO)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
+  {
+    "id": "cala-tortuga",
+    "name": "Cala Tortuga",
+    "area": "Norte (Maó)",
+    "lat": 39.988,
+    "lng": 4.2555,
+    "municipioINE": "07032",
+    "openingBearingDeg": 30,
+    "embayment": "abierta",
+    "shelteredFrom": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Ponent (O)"
+    ],
+    "exposedTo": [
+      "Gregal (NE)",
+      "Tramuntana (N)",
+      "Llevant (E)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-pilar",
+    "name": "Cala Pilar",
+    "area": "Norte (Ciutadella)",
+    "lat": 40.0519,
+    "lng": 3.9806,
+    "municipioINE": "07015",
+    "openingBearingDeg": 350,
+    "embayment": "abierta",
+    "shelteredFrom": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
+    "exposedTo": [
+      "Tramuntana (N)",
+      "Mestral (NO)",
+      "Gregal (NE)"
+    ],
+    "tienePradera": false,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-morell",
+    "name": "Cala Morell",
+    "area": "Norte (Ciutadella)",
+    "lat": 40.0511,
+    "lng": 3.8838,
+    "municipioINE": "07015",
+    "openingBearingDeg": 340,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Migjorn (S)",
+      "Xaloc (SE)",
+      "Llevant (E)"
+    ],
+    "exposedTo": [
+      "Tramuntana (N)",
+      "Mestral (NO)",
+      "Ponent (O)"
+    ],
+    "tienePradera": false,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "fornells",
+    "name": "Fornells",
+    "area": "Norte (Es Mercadal)",
+    "lat": 40.0535,
+    "lng": 4.1285,
+    "municipioINE": "07037",
+    "openingBearingDeg": 350,
+    "embayment": "bahia-cerrada",
+    "shelteredFrom": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)",
+      "Ponent (O)",
+      "Llevant (E)"
+    ],
+    "exposedTo": [
+      "Tramuntana (N)",
+      "Gregal (NE)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
+  {
+    "id": "arenal-den-castell",
+    "name": "Arenal d'en Castell",
+    "area": "Norte (Es Mercadal)",
+    "lat": 40.0217,
+    "lng": 4.1828,
+    "municipioINE": "07037",
+    "openingBearingDeg": 20,
+    "embayment": "bahia-cerrada",
+    "shelteredFrom": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Ponent (O)",
+      "Mestral (NO)"
+    ],
+    "exposedTo": [
+      "Gregal (NE)",
+      "Tramuntana (N)",
+      "Llevant (E)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
+  {
+    "id": "cala-en-bosc",
+    "name": "Cala en Bosc",
+    "area": "Sur (Ciutadella de Menorca)",
+    "lat": 39.9273,
+    "lng": 3.8309,
+    "municipioINE": "07015",
+    "openingBearingDeg": 190,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Tramuntana (N)",
+      "Gregal (NE)",
+      "Mestral (NO)"
+    ],
+    "exposedTo": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
+    "tienePradera": false,
+    "tieneVigilancia": true
+  },
+  {
+    "id": "son-xoriguer",
+    "name": "Son Xoriguer",
+    "area": "Sur (Ciutadella de Menorca)",
+    "lat": 39.9276,
+    "lng": 3.844,
+    "municipioINE": "07015",
+    "openingBearingDeg": 176,
+    "embayment": "abierta",
+    "shelteredFrom": [
+      "Tramuntana (N)",
+      "Mestral (NO)",
+      "Gregal (NE)"
+    ],
+    "exposedTo": [
+      "Migjorn (S)",
+      "Xaloc (SE)",
+      "Llebeig (SO)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
+  {
+    "id": "cala-blanca",
+    "name": "Cala Blanca",
+    "area": "Oeste (Ciutadella de Menorca)",
+    "lat": 39.9677,
+    "lng": 3.8359,
+    "municipioINE": "07015",
+    "openingBearingDeg": 276,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Llevant (E)",
+      "Xaloc (SE)",
+      "Gregal (NE)"
+    ],
+    "exposedTo": [
+      "Ponent (O)",
+      "Mestral (NO)",
+      "Llebeig (SO)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
+  {
+    "id": "cala-santandria",
+    "name": "Cala Santandría",
+    "area": "Oeste (Ciutadella de Menorca)",
+    "lat": 39.9778,
+    "lng": 3.8391,
+    "municipioINE": "07015",
+    "openingBearingDeg": 276,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Llevant (E)",
+      "Xaloc (SE)",
+      "Gregal (NE)"
+    ],
+    "exposedTo": [
+      "Ponent (O)",
+      "Mestral (NO)",
+      "Llebeig (SO)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
+  {
+    "id": "cala-en-blanes",
+    "name": "Cala en Blanes",
+    "area": "Oeste (Ciutadella de Menorca)",
+    "lat": 40.0007,
+    "lng": 3.8134,
+    "municipioINE": "07015",
+    "openingBearingDeg": 270,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Llevant (E)",
+      "Xaloc (SE)",
+      "Gregal (NE)"
+    ],
+    "exposedTo": [
+      "Ponent (O)",
+      "Llebeig (SO)",
+      "Mestral (NO)"
+    ],
+    "tienePradera": false,
+    "tieneVigilancia": true
+  },
+  {
+    "id": "cala-en-forcat",
+    "name": "Cala en Forcat",
+    "area": "Oeste (Ciutadella de Menorca)",
+    "lat": 39.9995,
+    "lng": 3.8011,
+    "municipioINE": "07015",
+    "openingBearingDeg": 270,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Llevant (E)",
+      "Xaloc (SE)",
+      "Gregal (NE)"
+    ],
+    "exposedTo": [
+      "Ponent (O)",
+      "Llebeig (SO)",
+      "Mestral (NO)"
+    ],
+    "tienePradera": false,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "sant-tomas",
+    "name": "Sant Tomàs",
+    "area": "Sur (Es Migjorn Gran)",
+    "lat": 39.9135,
+    "lng": 4.0419,
+    "municipioINE": "07064",
+    "openingBearingDeg": 212,
+    "embayment": "abierta",
+    "shelteredFrom": [
+      "Gregal (NE)",
+      "Tramuntana (N)",
+      "Llevant (E)"
+    ],
+    "exposedTo": [
+      "Llebeig (SO)",
+      "Migjorn (S)",
+      "Ponent (O)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
+  {
+    "id": "cala-en-porter",
+    "name": "Cala en Porter",
+    "area": "Sur (Alaior)",
+    "lat": 39.8687,
+    "lng": 4.1351,
+    "municipioINE": "07002",
+    "openingBearingDeg": 212,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Gregal (NE)",
+      "Tramuntana (N)",
+      "Llevant (E)"
+    ],
+    "exposedTo": [
+      "Llebeig (SO)",
+      "Migjorn (S)",
+      "Ponent (O)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
+  {
+    "id": "cales-coves",
+    "name": "Cales Coves",
+    "area": "Sur (Alaior)",
+    "lat": 39.865,
+    "lng": 4.1468,
+    "municipioINE": "07002",
+    "openingBearingDeg": 212,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Gregal (NE)",
+      "Tramuntana (N)",
+      "Llevant (E)"
+    ],
+    "exposedTo": [
+      "Llebeig (SO)",
+      "Migjorn (S)",
+      "Ponent (O)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-escorxada",
+    "name": "Cala Escorxada",
+    "area": "Sur (Es Migjorn Gran)",
+    "lat": 39.9253,
+    "lng": 4.0053,
+    "municipioINE": "07064",
+    "openingBearingDeg": 212,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Gregal (NE)",
+      "Tramuntana (N)",
+      "Llevant (E)"
+    ],
+    "exposedTo": [
+      "Llebeig (SO)",
+      "Migjorn (S)",
+      "Ponent (O)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-fustam",
+    "name": "Cala Fustam",
+    "area": "Sur (Es Migjorn Gran)",
+    "lat": 39.9262,
+    "lng": 4.0009,
+    "municipioINE": "07064",
+    "openingBearingDeg": 212,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Gregal (NE)",
+      "Tramuntana (N)",
+      "Llevant (E)"
+    ],
+    "exposedTo": [
+      "Llebeig (SO)",
+      "Migjorn (S)",
+      "Ponent (O)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "punta-prima",
+    "name": "Punta Prima",
+    "area": "Sur (Sant Lluís)",
+    "lat": 39.8135,
+    "lng": 4.2793,
+    "municipioINE": "07052",
+    "openingBearingDeg": 183,
+    "embayment": "abierta",
+    "shelteredFrom": [
+      "Tramuntana (N)",
+      "Gregal (NE)",
+      "Mestral (NO)"
+    ],
+    "exposedTo": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
+  {
+    "id": "cala-alcaufar",
+    "name": "Cala Alcaufar",
+    "area": "Este (Sant Lluís)",
+    "lat": 39.829,
+    "lng": 4.2925,
+    "municipioINE": "07052",
+    "openingBearingDeg": 120,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Mestral (NO)",
+      "Ponent (O)",
+      "Tramuntana (N)"
+    ],
+    "exposedTo": [
+      "Xaloc (SE)",
+      "Llevant (E)",
+      "Migjorn (S)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-binibequer",
+    "name": "Cala Binibèquer",
+    "area": "Sur (Sant Lluís)",
+    "lat": 39.8164,
+    "lng": 4.2399,
+    "municipioINE": "07052",
+    "openingBearingDeg": 212,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Gregal (NE)",
+      "Tramuntana (N)",
+      "Llevant (E)"
+    ],
+    "exposedTo": [
+      "Llebeig (SO)",
+      "Migjorn (S)",
+      "Ponent (O)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-binisafuller",
+    "name": "Cala Binisafúller",
+    "area": "Sur (Sant Lluís)",
+    "lat": 39.8291,
+    "lng": 4.2186,
+    "municipioINE": "07052",
+    "openingBearingDeg": 212,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Gregal (NE)",
+      "Tramuntana (N)",
+      "Llevant (E)"
+    ],
+    "exposedTo": [
+      "Llebeig (SO)",
+      "Migjorn (S)",
+      "Ponent (O)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "calo-den-rafalet",
+    "name": "Caló d'en Rafalet",
+    "area": "Este (Sant Lluís)",
+    "lat": 39.8411,
+    "lng": 4.2979,
+    "municipioINE": "07052",
+    "openingBearingDeg": 120,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Mestral (NO)",
+      "Ponent (O)",
+      "Tramuntana (N)"
+    ],
+    "exposedTo": [
+      "Xaloc (SE)",
+      "Llevant (E)",
+      "Migjorn (S)"
+    ],
+    "tienePradera": false,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-sant-esteve",
+    "name": "Cala de Sant Esteve",
+    "area": "Este (Es Castell)",
+    "lat": 39.8647,
+    "lng": 4.303,
+    "municipioINE": "07024",
+    "openingBearingDeg": 90,
+    "embayment": "bahia-cerrada",
+    "shelteredFrom": [
+      "Ponent (O)",
+      "Mestral (NO)",
+      "Llebeig (SO)"
+    ],
+    "exposedTo": [
+      "Llevant (E)",
+      "Gregal (NE)",
+      "Xaloc (SE)"
+    ],
+    "tienePradera": false,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-tirant",
+    "name": "Cala Tirant",
+    "area": "Norte (Es Mercadal)",
+    "lat": 40.0448,
+    "lng": 4.1026,
+    "municipioINE": "07037",
+    "openingBearingDeg": 347,
+    "embayment": "abierta",
+    "shelteredFrom": [
+      "Migjorn (S)",
+      "Xaloc (SE)",
+      "Llebeig (SO)"
+    ],
+    "exposedTo": [
+      "Tramuntana (N)",
+      "Mestral (NO)",
+      "Gregal (NE)"
+    ],
+    "tienePradera": false,
+    "tieneVigilancia": true
+  },
+  {
+    "id": "cala-mica",
+    "name": "Cala Mica",
+    "area": "Norte (Es Mercadal)",
+    "lat": 40.0564,
+    "lng": 4.0654,
+    "municipioINE": "07037",
+    "openingBearingDeg": 328,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Xaloc (SE)",
+      "Migjorn (S)",
+      "Llevant (E)"
+    ],
+    "exposedTo": [
+      "Mestral (NO)",
+      "Tramuntana (N)",
+      "Ponent (O)"
+    ],
+    "tienePradera": false,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "es-grau",
+    "name": "Es Grau",
+    "area": "Norte (Maó)",
+    "lat": 39.9504,
+    "lng": 4.2696,
+    "municipioINE": "07032",
+    "openingBearingDeg": 350,
+    "embayment": "bahia-cerrada",
+    "shelteredFrom": [
+      "Migjorn (S)",
+      "Xaloc (SE)",
+      "Llebeig (SO)"
+    ],
+    "exposedTo": [
+      "Tramuntana (N)",
+      "Mestral (NO)",
+      "Gregal (NE)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
+  {
+    "id": "sa-mesquida",
+    "name": "Sa Mesquida",
+    "area": "Norte (Maó)",
+    "lat": 39.9189,
+    "lng": 4.2895,
+    "municipioINE": "07032",
+    "openingBearingDeg": 350,
+    "embayment": "abierta",
+    "shelteredFrom": [
+      "Migjorn (S)",
+      "Xaloc (SE)",
+      "Llebeig (SO)"
+    ],
+    "exposedTo": [
+      "Tramuntana (N)",
+      "Mestral (NO)",
+      "Gregal (NE)"
+    ],
+    "tienePradera": false,
+    "tieneVigilancia": true
+  },
+  {
+    "id": "cala-presili",
+    "name": "Cala Presili",
+    "area": "Norte (Maó)",
+    "lat": 39.9828,
+    "lng": 4.2412,
+    "municipioINE": "07032",
+    "openingBearingDeg": 360,
+    "embayment": "abierta",
+    "shelteredFrom": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
+    "exposedTo": [
+      "Tramuntana (N)",
+      "Gregal (NE)",
+      "Mestral (NO)"
+    ],
+    "tienePradera": false,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-pudent",
+    "name": "Cala Pudent",
+    "area": "Norte (Es Mercadal)",
+    "lat": 40.0452,
+    "lng": 4.1585,
+    "municipioINE": "07037",
+    "openingBearingDeg": 350,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Migjorn (S)",
+      "Xaloc (SE)",
+      "Llebeig (SO)"
+    ],
+    "exposedTo": [
+      "Tramuntana (N)",
+      "Mestral (NO)",
+      "Gregal (NE)"
+    ],
+    "tienePradera": false,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "algaiarens-es-tancats",
+    "name": "Cala Algaiarens (Platja des Tancats / La Vall)",
+    "area": "Norte (Ciutadella de Menorca)",
+    "lat": 40.0461,
+    "lng": 3.9225,
+    "municipioINE": "07015",
+    "openingBearingDeg": 299,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Xaloc (SE)",
+      "Llevant (E)",
+      "Migjorn (S)"
+    ],
+    "exposedTo": [
+      "Mestral (NO)",
+      "Ponent (O)",
+      "Tramuntana (N)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "platja-des-bot",
+    "name": "Platja des Bot (Algaiarens)",
+    "area": "Norte (Ciutadella de Menorca)",
+    "lat": 40.0493,
+    "lng": 3.9245,
+    "municipioINE": "07015",
+    "openingBearingDeg": 299,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Xaloc (SE)",
+      "Llevant (E)",
+      "Migjorn (S)"
+    ],
+    "exposedTo": [
+      "Mestral (NO)",
+      "Ponent (O)",
+      "Tramuntana (N)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-carbo",
+    "name": "Cala Carbó",
+    "area": "Norte (Ciutadella de Menorca)",
+    "lat": 40.0588,
+    "lng": 3.9287,
+    "municipioINE": "07015",
+    "openingBearingDeg": 299,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Xaloc (SE)",
+      "Llevant (E)",
+      "Migjorn (S)"
+    ],
+    "exposedTo": [
+      "Mestral (NO)",
+      "Ponent (O)",
+      "Tramuntana (N)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-fontanelles",
+    "name": "Cala Fontanelles (ses Fontanelles)",
+    "area": "Norte (Ciutadella de Menorca)",
+    "lat": 40.0464,
+    "lng": 3.9147,
+    "municipioINE": "07015",
+    "openingBearingDeg": 40,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Llebeig (SO)",
+      "Migjorn (S)",
+      "Ponent (O)"
+    ],
+    "exposedTo": [
+      "Gregal (NE)",
+      "Tramuntana (N)",
+      "Llevant (E)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-pous",
+    "name": "Cala Pous (Cales Pous)",
+    "area": "Norte (Ciutadella de Menorca)",
+    "lat": 40.0518,
+    "lng": 3.8249,
+    "municipioINE": "07015",
+    "openingBearingDeg": 306,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Xaloc (SE)",
+      "Llevant (E)",
+      "Migjorn (S)"
+    ],
+    "exposedTo": [
+      "Mestral (NO)",
+      "Ponent (O)",
+      "Tramuntana (N)"
+    ],
+    "tienePradera": false,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-morts",
+    "name": "Cala Morts (Cales Morts)",
+    "area": "Norte (Ciutadella de Menorca)",
+    "lat": 40.0525,
+    "lng": 3.8283,
+    "municipioINE": "07015",
+    "openingBearingDeg": 353,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Migjorn (S)",
+      "Xaloc (SE)",
+      "Llebeig (SO)"
+    ],
+    "exposedTo": [
+      "Tramuntana (N)",
+      "Mestral (NO)",
+      "Gregal (NE)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-en-brut",
+    "name": "Cala en Brut",
+    "area": "Oeste (Ciutadella de Menorca)",
+    "lat": 40.0006,
+    "lng": 3.8067,
+    "municipioINE": "07015",
+    "openingBearingDeg": 270,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Llevant (E)",
+      "Xaloc (SE)",
+      "Gregal (NE)"
+    ],
+    "exposedTo": [
+      "Ponent (O)",
+      "Llebeig (SO)",
+      "Mestral (NO)"
+    ],
+    "tienePradera": false,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-des-frares",
+    "name": "Cala des Frares (Sa Farola)",
+    "area": "Oeste (Ciutadella de Menorca)",
+    "lat": 39.9972,
+    "lng": 3.8234,
+    "municipioINE": "07015",
+    "openingBearingDeg": 270,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Llevant (E)",
+      "Xaloc (SE)",
+      "Gregal (NE)"
+    ],
+    "exposedTo": [
+      "Ponent (O)",
+      "Llebeig (SO)",
+      "Mestral (NO)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "platja-gran-degollador",
+    "name": "Platja Gran (Es Degollador)",
+    "area": "Sur (Ciutadella de Menorca)",
+    "lat": 39.9943,
+    "lng": 3.8363,
+    "municipioINE": "07015",
+    "openingBearingDeg": 190,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Tramuntana (N)",
+      "Gregal (NE)",
+      "Mestral (NO)"
+    ],
+    "exposedTo": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
+  {
+    "id": "sa-caleta",
+    "name": "Sa Caleta (Cala d'en Gorries)",
+    "area": "Sur (Ciutadella de Menorca)",
+    "lat": 39.9815,
+    "lng": 3.8344,
+    "municipioINE": "07015",
+    "openingBearingDeg": 190,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Tramuntana (N)",
+      "Gregal (NE)",
+      "Mestral (NO)"
+    ],
+    "exposedTo": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
+  {
+    "id": "cala-mitjaneta",
+    "name": "Cala Mitjaneta",
+    "area": "Sur (Ferreries)",
+    "lat": 39.934,
+    "lng": 3.9737,
+    "municipioINE": "07021",
+    "openingBearingDeg": 176,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Tramuntana (N)",
+      "Mestral (NO)",
+      "Gregal (NE)"
+    ],
+    "exposedTo": [
+      "Migjorn (S)",
+      "Xaloc (SE)",
+      "Llebeig (SO)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "sant-adeodato",
+    "name": "Platja de Sant Adeodato (Binicodrell)",
+    "area": "Sur (Es Migjorn Gran)",
+    "lat": 39.9166,
+    "lng": 4.0345,
+    "municipioINE": "07064",
+    "openingBearingDeg": 212,
+    "embayment": "abierta",
+    "shelteredFrom": [
+      "Gregal (NE)",
+      "Tramuntana (N)",
+      "Llevant (E)"
+    ],
+    "exposedTo": [
+      "Llebeig (SO)",
+      "Migjorn (S)",
+      "Ponent (O)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
+  {
+    "id": "cala-atalis",
+    "name": "Cala Atalis (Talis)",
+    "area": "Sur (Alaior)",
+    "lat": 39.9071,
+    "lng": 4.0536,
+    "municipioINE": "07002",
+    "openingBearingDeg": 212,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Gregal (NE)",
+      "Tramuntana (N)",
+      "Llevant (E)"
+    ],
+    "exposedTo": [
+      "Llebeig (SO)",
+      "Migjorn (S)",
+      "Ponent (O)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-llucalari",
+    "name": "Cala Llucalari",
+    "area": "Sur (Alaior)",
+    "lat": 39.8913,
+    "lng": 4.082,
+    "municipioINE": "07002",
+    "openingBearingDeg": 212,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Gregal (NE)",
+      "Tramuntana (N)",
+      "Llevant (E)"
+    ],
+    "exposedTo": [
+      "Llebeig (SO)",
+      "Migjorn (S)",
+      "Ponent (O)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-de-sant-llorenc",
+    "name": "Cala de Sant Llorenç",
+    "area": "Sur (Alaior)",
+    "lat": 39.8831,
+    "lng": 4.0936,
+    "municipioINE": "07002",
+    "openingBearingDeg": 212,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Gregal (NE)",
+      "Tramuntana (N)",
+      "Llevant (E)"
+    ],
+    "exposedTo": [
+      "Llebeig (SO)",
+      "Migjorn (S)",
+      "Ponent (O)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "salgar",
+    "name": "S'Algar",
+    "area": "Este (Sant Lluís)",
+    "lat": 39.8357,
+    "lng": 4.2993,
+    "municipioINE": "07052",
+    "openingBearingDeg": 120,
+    "embayment": "abierta",
+    "shelteredFrom": [
+      "Mestral (NO)",
+      "Ponent (O)",
+      "Tramuntana (N)"
+    ],
+    "exposedTo": [
+      "Xaloc (SE)",
+      "Llevant (E)",
+      "Migjorn (S)"
+    ],
+    "tienePradera": false,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-torret",
+    "name": "Cala Torret",
+    "area": "Sur (Sant Lluís)",
+    "lat": 39.8171,
+    "lng": 4.2461,
+    "municipioINE": "07052",
+    "openingBearingDeg": 183,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Tramuntana (N)",
+      "Gregal (NE)",
+      "Mestral (NO)"
+    ],
+    "exposedTo": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
+    "tienePradera": false,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "binibequer-nou",
+    "name": "Binibèquer Nou",
+    "area": "Sur (Sant Lluís)",
+    "lat": 39.8177,
+    "lng": 4.2403,
+    "municipioINE": "07052",
+    "openingBearingDeg": 212,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Gregal (NE)",
+      "Tramuntana (N)",
+      "Llevant (E)"
+    ],
+    "exposedTo": [
+      "Llebeig (SO)",
+      "Migjorn (S)",
+      "Ponent (O)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
+  {
+    "id": "biniancolla",
+    "name": "Cala de Biniancolla",
+    "area": "Sur (Sant Lluís)",
+    "lat": 39.8131,
+    "lng": 4.2636,
+    "municipioINE": "07052",
+    "openingBearingDeg": 183,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Tramuntana (N)",
+      "Gregal (NE)",
+      "Mestral (NO)"
+    ],
+    "exposedTo": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
+    "tienePradera": false,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "calo-fondo-ses-olles",
+    "name": "Caló Fondo (Ses Olles de Binissafúller)",
+    "area": "Sur (Sant Lluís)",
+    "lat": 39.8244,
+    "lng": 4.2264,
+    "municipioINE": "07052",
+    "openingBearingDeg": 212,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Gregal (NE)",
+      "Tramuntana (N)",
+      "Llevant (E)"
+    ],
+    "exposedTo": [
+      "Llebeig (SO)",
+      "Migjorn (S)",
+      "Ponent (O)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "es-calo-blanc",
+    "name": "Es Caló Blanc",
+    "area": "Sur (Sant Lluís)",
+    "lat": 39.8307,
+    "lng": 4.2115,
+    "municipioINE": "07052",
+    "openingBearingDeg": 212,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Gregal (NE)",
+      "Tramuntana (N)",
+      "Llevant (E)"
+    ],
+    "exposedTo": [
+      "Llebeig (SO)",
+      "Migjorn (S)",
+      "Ponent (O)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "binidali",
+    "name": "Cala de Binidalí",
+    "area": "Sur (Sant Lluís)",
+    "lat": 39.8344,
+    "lng": 4.198,
+    "municipioINE": "07052",
+    "openingBearingDeg": 212,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Gregal (NE)",
+      "Tramuntana (N)",
+      "Llevant (E)"
+    ],
+    "exposedTo": [
+      "Llebeig (SO)",
+      "Migjorn (S)",
+      "Ponent (O)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-biniparratx",
+    "name": "Cala de Biniparratx",
+    "area": "Sur (Sant Lluís)",
+    "lat": 39.833,
+    "lng": 4.2055,
+    "municipioINE": "07052",
+    "openingBearingDeg": 212,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Gregal (NE)",
+      "Tramuntana (N)",
+      "Llevant (E)"
+    ],
+    "exposedTo": [
+      "Llebeig (SO)",
+      "Migjorn (S)",
+      "Ponent (O)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-pedrera-es-castell",
+    "name": "Cala Pedrera",
+    "area": "Este (Es Castell)",
+    "lat": 39.8763,
+    "lng": 4.2958,
+    "municipioINE": "07024",
+    "openingBearingDeg": 90,
+    "embayment": "bahia-cerrada",
+    "shelteredFrom": [
+      "Ponent (O)",
+      "Mestral (NO)",
+      "Llebeig (SO)"
+    ],
+    "exposedTo": [
+      "Llevant (E)",
+      "Gregal (NE)",
+      "Xaloc (SE)"
+    ],
+    "tienePradera": false,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-teulera",
+    "name": "Cala Teulera",
+    "area": "Este (Es Castell)",
+    "lat": 39.8801,
+    "lng": 4.3086,
+    "municipioINE": "07024",
+    "openingBearingDeg": 63,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Llebeig (SO)",
+      "Ponent (O)",
+      "Migjorn (S)"
+    ],
+    "exposedTo": [
+      "Gregal (NE)",
+      "Llevant (E)",
+      "Tramuntana (N)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "es-canutells",
+    "name": "Es Canutells",
+    "area": "Sur (Maó)",
+    "lat": 39.8511,
+    "lng": 4.169,
+    "municipioINE": "07032",
+    "openingBearingDeg": 190,
+    "embayment": "bahia-cerrada",
+    "shelteredFrom": [
+      "Tramuntana (N)",
+      "Gregal (NE)",
+      "Mestral (NO)"
+    ],
+    "exposedTo": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-llonga",
+    "name": "Cala Llonga",
+    "area": "Este (Maó)",
+    "lat": 39.8921,
+    "lng": 4.2969,
+    "municipioINE": "07032",
+    "openingBearingDeg": 90,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Ponent (O)",
+      "Mestral (NO)",
+      "Llebeig (SO)"
+    ],
+    "exposedTo": [
+      "Llevant (E)",
+      "Gregal (NE)",
+      "Xaloc (SE)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-rata",
+    "name": "Cala Rata",
+    "area": "Este (Maó)",
+    "lat": 39.8927,
+    "lng": 4.2778,
+    "municipioINE": "07032",
+    "openingBearingDeg": 90,
+    "embayment": "bahia-cerrada",
+    "shelteredFrom": [
+      "Ponent (O)",
+      "Mestral (NO)",
+      "Llebeig (SO)"
+    ],
+    "exposedTo": [
+      "Llevant (E)",
+      "Gregal (NE)",
+      "Xaloc (SE)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "macar-de-binillauti",
+    "name": "Macar de Binillautí",
+    "area": "Norte (Maó)",
+    "lat": 39.925,
+    "lng": 4.2829,
+    "municipioINE": "07032",
+    "openingBearingDeg": 350,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Migjorn (S)",
+      "Xaloc (SE)",
+      "Llebeig (SO)"
+    ],
+    "exposedTo": [
+      "Tramuntana (N)",
+      "Mestral (NO)",
+      "Gregal (NE)"
+    ],
+    "tienePradera": false,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-de-sa-torreta",
+    "name": "Cala de sa Torreta",
+    "area": "Norte (Maó)",
+    "lat": 39.9641,
+    "lng": 4.2543,
+    "municipioINE": "07032",
+    "openingBearingDeg": 350,
+    "embayment": "abierta",
+    "shelteredFrom": [
+      "Migjorn (S)",
+      "Xaloc (SE)",
+      "Llebeig (SO)"
+    ],
+    "exposedTo": [
+      "Tramuntana (N)",
+      "Mestral (NO)",
+      "Gregal (NE)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-des-tamarells",
+    "name": "Cala des Tamarells",
+    "area": "Norte (Maó)",
+    "lat": 39.9615,
+    "lng": 4.2644,
+    "municipioINE": "07032",
+    "openingBearingDeg": 35,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Llebeig (SO)",
+      "Migjorn (S)",
+      "Ponent (O)"
+    ],
+    "exposedTo": [
+      "Gregal (NE)",
+      "Tramuntana (N)",
+      "Llevant (E)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-en-tosqueta",
+    "name": "Cala en Tosqueta",
+    "area": "Norte (Es Mercadal)",
+    "lat": 40.0585,
+    "lng": 4.1663,
+    "municipioINE": "07037",
+    "openingBearingDeg": 350,
+    "embayment": "encajonada",
+    "shelteredFrom": [
+      "Migjorn (S)",
+      "Xaloc (SE)",
+      "Llebeig (SO)"
+    ],
+    "exposedTo": [
+      "Tramuntana (N)",
+      "Mestral (NO)",
+      "Gregal (NE)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-moli",
+    "name": "Cala Molí",
+    "area": "Este (Es Mercadal)",
+    "lat": 40.0106,
+    "lng": 4.1987,
+    "municipioINE": "07037",
+    "openingBearingDeg": 90,
+    "embayment": "bahia-cerrada",
+    "shelteredFrom": [
+      "Ponent (O)",
+      "Mestral (NO)",
+      "Llebeig (SO)"
+    ],
+    "exposedTo": [
+      "Llevant (E)",
+      "Gregal (NE)",
+      "Xaloc (SE)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  {
+    "id": "cala-pregondo",
+    "name": "Cala Pregondó",
+    "area": "Norte (Es Mercadal)",
+    "lat": 40.057,
+    "lng": 4.043,
+    "municipioINE": "07037",
+    "openingBearingDeg": 41,
+    "embayment": "abierta",
+    "shelteredFrom": [
+      "Llebeig (SO)",
+      "Migjorn (S)",
+      "Ponent (O)"
+    ],
+    "exposedTo": [
+      "Gregal (NE)",
+      "Tramuntana (N)",
+      "Llevant (E)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  }
+]

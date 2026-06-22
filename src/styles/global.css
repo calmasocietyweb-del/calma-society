@@ -232,6 +232,73 @@
 .agenda-filterable:has(#agenda-otro:checked) [data-agenda]:not([data-agenda="otro"]) {
   display: none;
 }
+
+/* ============================================================
+   Parte de calas ("Dónde el mar está en calma") — filtro por estado del
+   mar (mismo patrón 100% CSS que la Agenda). El radio (sr-only) guarda el
+   estado; el `label` adyacente es el chip; y `:has()` oculta a la vez las
+   filas de la lista Y los puntos del mapa que no son del estado elegido.
+   ============================================================ */
+/* Chip activo (el label justo después del radio marcado). */
+.calma-radio:checked + .calma-chip {
+  border-color: var(--color-arcilla);
+  background-color: var(--color-arcilla);
+  color: var(--color-lino);
+}
+/* Foco visible en el chip cuando el radio oculto recibe foco por teclado. */
+.calma-radio:focus-visible + .calma-chip {
+  outline: 2px solid var(--color-terracota);
+  outline-offset: 2px;
+}
+/* Estado sin calas hoy: chip desactivado (no se puede dejar la lista vacía). */
+.calma-radio:disabled + .calma-chip {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+/* Filtrado: al marcar un estado, oculta filas y marcadores de los demás estados. */
+.calma-filterable:has(#calma-alto:checked) [data-calma]:not([data-calma="alto"]),
+.calma-filterable:has(#calma-medio:checked) [data-calma]:not([data-calma="medio"]),
+.calma-filterable:has(#calma-bajo:checked) [data-calma]:not([data-calma="bajo"]) {
+  display: none;
+}
+
+/* Etiqueta con el nombre de la cala: oculta por defecto, aparece al pasar el ratón
+   o enfocar el punto del mapa. El trazo claro (paint-order) hace de halo para que
+   el nombre sea legible sobre mar, tierra o cualquier marcador. */
+.cala-nombre {
+  opacity: 0;
+  pointer-events: none;
+  fill: var(--color-tinta);
+  stroke: var(--color-lino);
+  stroke-width: 3px;
+  paint-order: stroke;
+  font-family: "Inter Variable", ui-sans-serif, sans-serif;
+  font-weight: 600;
+  transition: opacity 0.12s ease;
+}
+a:hover > .cala-nombre,
+a:focus > .cala-nombre,
+a:focus-visible > .cala-nombre {
+  opacity: 1;
+}
+/* Buscador de calas: oculta filas y marcadores que no coinciden (lo activa el JS;
+   sin JS, no se añade la clase y se ven todas → degradación elegante). */
+.cala-no-coincide {
+  display: none;
+}
+
+/* Cala resaltada al pulsar su fila/panel en la lista: muestra el nombre fijo y
+   agranda el punto en el mapa, para que se localice de un vistazo (lo activa el JS). */
+a.cala-activa > .cala-nombre {
+  opacity: 1;
+}
+a.cala-activa > circle {
+  stroke: var(--color-tinta);
+  transform: scale(1.7);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
 /* ============================================================
    PLANIFICADOR DE VIAJES — campos de la encuesta y "pills" de selección.
    ============================================================ */

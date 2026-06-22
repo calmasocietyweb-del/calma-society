@@ -15,6 +15,15 @@
   "images": ["/uploads/cala-pregonda.webp"],
   "tags": ["norte", "arena rojiza", "camí de cavalls"],
   "status": "published",
+  "windExposure": {
+    "openingBearingDeg": 340,
+    "embayment": "encajonada",
+    "municipioINE": "07037",
+    "shelteredFrom": ["Migjorn (S)", "Llebeig (SO)", "Xaloc (SE)"],
+    "exposedTo": ["Tramuntana (N)", "Mestral (NO)", "Gregal (NE)"],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
   "planner": {
     "zone": "norte",
     "cluster": "fornells-cavalleria",

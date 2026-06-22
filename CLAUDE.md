@@ -127,6 +127,7 @@ Regla absoluta: **nada se publica sin aprobación humana** (principio §3.10). E
 - La "máquina" (agenda automática, borradores de IA, traducciones) **siempre** deposita en `draft`/`pending`, nunca en `published`.
 - Habrá una **bandeja de aprobación** sencilla (primero por carpeta/listado de borradores y por el editor visual Keystatic; ver Fase 6) donde el dueño aprueba, edita o descarta con un clic, sin tocar código.
 - Detalle completo y diagrama en `docs/AUTOMATIZACION-Y-FLUJO-EDITORIAL.md`.
+- **Excepción registrada (datos meteo objetivos), 2026-06-22.** La herramienta "Dónde el mar está en calma" auto-publica a diario el **abrigo del viento** por cala (predicción de AEMET, fechada y atribuida) sin aprobación diaria: es un **dato meteo objetivo**, no contenido editorial. La aprobación humana se cumple **aprobando el modelo una vez** (fórmula, orientaciones, plantillas y descargos) y se reserva para lo subjetivo/reputacional (override manual de una cala y copy semanal). No afecta a artículos, traducciones ni branded content, que siguen la regla absoluta. Ver `docs/DONDE-EL-MAR-ESTA-EN-CALMA.md`.
 
 ---
 

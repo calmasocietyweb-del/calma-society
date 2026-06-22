@@ -1,0 +1,672 @@
+---
+/**
+ * "Dónde el mar está en calma" — widget del parte diario por cala.
+ * Lee src/data/parte-calma.json (lo genera scripts/parte-calma.mjs con AEMET).
+ *
+ * El mapa usa la línea de costa REAL de Menorca (OpenStreetMap, ver
+ * scripts/fetch-menorca-outline.mjs → src/data/menorca-outline.json) proyectada
+ * con la MISMA transformación que los marcadores; cada cala se FIJA sobre la
+ * costa (marcador de playa siempre pegado a la orilla). Cero JS de cliente: SVG +
+ * lista + filtro 100% estáticos; la lista es la versión accesible y citable por IA;
+ * el color NUNCA es el único indicador (siempre con su texto al lado).
+ */
+import parte from "../data/parte-calma.json";
+import outline from "../data/menorca-outline.json";
+import timeline from "../data/parte-timeline.json";
+import { placeUrl, formatDate } from "../i18n/utils";
+import type { Locale } from "../config/site";
+import { abs } from "../lib/schema";
+import JsonLd from "./JsonLd.astro";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const isEs = locale === "es";
+
+const MEDUSAPP = "https://www.medusapp.net/";
+// Empuje de medusas: APAGADO hasta cerrar pendientes legales (atribución exacta de
+// AEMET, atribución Open-Meteo y permiso de deep-link de MedusApp por escrito) y
+// recalibrar el modelo tras una temporada. Poner true para activarlo. Ver doc §legal.
+const MEDUSAS_ENABLED = false;
+
+// ---- Proyección equirectangular con corrección de meridiano (cos lat) y escala
+// UNIFORME → mantiene la proporción real de la isla. La costa (RING) define la
+// extensión; los marcadores usan la MISMA proyección. ----
+const RING: [number, number][] = outline.ring as [number, number][];
+const LAT_REF = (outline.bbox.latMin + outline.bbox.latMax) / 2;
+const KX = Math.cos((LAT_REF * Math.PI) / 180);
+const xsRaw = RING.map((p) => p[0] * KX);
+const ysRaw = RING.map((p) => p[1]);
+const minX = Math.min(...xsRaw);
+const maxX = Math.max(...xsRaw);
+const minY = Math.min(...ysRaw);
+const maxY = Math.max(...ysRaw);
+const spanX = maxX - minX;
+const spanY = maxY - minY;
+const DRAW_W = 860;
+const PAD_TOP = 96;
+const PAD_BOTTOM = 72;
+const SCALE = DRAW_W / spanX;
+const DRAW_H = spanY * SCALE;
+const VIEW_W = 1000;
+const VIEW_H = Math.round(PAD_TOP + DRAW_H + PAD_BOTTOM);
+const offX = (VIEW_W - DRAW_W) / 2;
+const offY = PAD_TOP;
+const baseY = offY + DRAW_H;
+const project = (lat: number, lng: number) => ({
+  x: offX + (lng * KX - minX) * SCALE,
+  y: offY + (maxY - lat) * SCALE,
+});
+
+// Silueta real (un único path con los ~600 vértices de la costa).
+const islandPath =
+  "M " +
+  RING.map((p, i) => {
+    const { x, y } = project(p[1], p[0]);
+    return (i ? "L " : "") + x.toFixed(1) + " " + y.toFixed(1);
+  }).join(" ") +
+  " Z";
+
+// Fija un punto al tramo de costa más cercano (en el plano proyectado), de modo
+// que el marcador de cada cala quede siempre exactamente sobre la orilla.
+const snapToCoast = (lat: number, lng: number) => {
+  const px = lng * KX;
+  const py = lat;
+  let bestX = px;
+  let bestY = py;
+  let bestD = Infinity;
+  for (let i = 0; i < RING.length - 1; i++) {
+    const ax = RING[i][0] * KX, ay = RING[i][1];
+    const bx = RING[i + 1][0] * KX, by = RING[i + 1][1];
+    const dx = bx - ax, dy = by - ay;
+    const len2 = dx * dx + dy * dy;
+    let t = len2 ? ((px - ax) * dx + (py - ay) * dy) / len2 : 0;
+    t = Math.max(0, Math.min(1, t));
+    const cx = ax + t * dx, cy = ay + t * dy;
+    const d = (px - cx) ** 2 + (py - cy) ** 2;
+    if (d < bestD) { bestD = d; bestX = cx; bestY = cy; }
+  }
+  return { x: offX + (bestX - minX) * SCALE, y: offY + (maxY - bestY) * SCALE };
+};
+const markers = parte.calas.map((c) => ({ ...c, ...snapToCoast(c.lat, c.lng) }));
+
+// Pueblos de referencia para orientarse (no son calas). Faint, decorativos.
+const TOWNS = [
+  { es: "Ciutadella", en: "Ciutadella", lat: 40.0006, lng: 3.8377 },
+  { es: "Ferreries", en: "Ferreries", lat: 39.9786, lng: 4.0103 },
+  { es: "Es Migjorn Gran", en: "Es Migjorn Gran", lat: 39.9476, lng: 4.0314 },
+  { es: "Es Mercadal", en: "Es Mercadal", lat: 39.9908, lng: 4.0922 },
+  { es: "Alaior", en: "Alaior", lat: 39.9357, lng: 4.1389 },
+  { es: "Maó", en: "Mahón", lat: 39.8885, lng: 4.2658 },
+  { es: "Es Castell", en: "Es Castell", lat: 39.8794, lng: 4.2914 },
+  { es: "Sant Lluís", en: "Sant Lluís", lat: 39.8475, lng: 4.2561 },
+].map((t) => ({ ...t, ...project(t.lat, t.lng) }));
+
+// Barra de escala (≈ px por km en la proyección; 1° ≈ 110,57 km).
+const pxPerKm = SCALE / 110.574;
+const SCALE_KM = 10;
+const scaleLen = SCALE_KM * pxPerKm;
+const scaleX = offX;
+const scaleY = baseY + 30;
+
+// Colores "semáforo elegante": verde salvia / ámbar cálido / rojo terracota.
+// Solo como punto/filete de acento; el texto va siempre en color oscuro.
+const FILL: Record<string, string> = { alto: "#4f7a52", medio: "#c08a2b", bajo: "#a8483a", "sin-dato": "#b3aa99" };
+
+// Recuento por estado para los chips del filtro (y para desactivar los vacíos).
+const BANDS = ["alto", "medio", "bajo"] as const;
+const total = parte.calas.length;
+
+// ---- Línea temporal de previsión (multi-día por franjas, src/data/parte-timeline.json).
+// El cliente recalcula la banda de cada cala al mover la barra; el servidor renderiza
+// el PRIMER frame. Misma fórmula de abrigo que el parte diario. ----
+const tl: any = timeline;
+const DIR_DEG: Record<string, number> = {
+  N: 0, NNE: 22.5, NE: 45, ENE: 67.5, E: 90, ESE: 112.5, SE: 135, SSE: 157.5,
+  S: 180, SSO: 202.5, SO: 225, OSO: 247.5, O: 270, ONO: 292.5, NO: 315, NNO: 337.5,
+};
+const VIENTOS: [number, string][] = [
+  [22.5, "Tramuntana (N)"], [67.5, "Gregal (NE)"], [112.5, "Llevant (E)"], [157.5, "Xaloc (SE)"],
+  [202.5, "Migjorn (S)"], [247.5, "Llebeig (SO)"], [292.5, "Ponent (O)"], [337.5, "Mestral (NO)"], [361, "Tramuntana (N)"],
+];
+const degDe = (d: string) => (!d || d === "C" ? null : DIR_DEG[d] ?? null);
+const nombreViento = (deg: number) => (VIENTOS.find(([m]) => deg < m) ?? VIENTOS[0])[1];
+const ABRIGO_VMAX = tl.abrigoVmax || 38;
+const bandaDe = (op: number, d: string | null, v: number) => {
+  if (d == null) return "sin-dato"; // sin dato de viento → NUNCA "calma" falsa
+  const deg = degDe(d);
+  const onshore = deg == null ? 0 : (1 + Math.cos(((deg - op) * Math.PI) / 180)) / 2;
+  const score = 1 - onshore * Math.min(v / ABRIGO_VMAX, 1);
+  return score >= 0.66 ? "alto" : score >= 0.4 ? "medio" : "bajo";
+};
+const calaMeta: Record<string, any> = Object.fromEntries((tl.calas || []).map((c: any) => [c.id, c]));
+const FRAMES: any[] = Array.isArray(tl.frames) ? tl.frames : [];
+const F0: any = FRAMES[0] || { day: "", period: "", rep: { name: "—", deg: 0, kmh: 0 }, winds: {} };
+const hayTimeline = FRAMES.length > 1 && (tl.calas || []).length > 0;
+const calaEnFrame = (id: string, frame: any) => {
+  const m = calaMeta[id];
+  const w = m ? frame.winds[m.ine] : null;
+  if (!m || !w || w.d == null) return { band: "sin-dato", windName: isEs ? "Sin previsión" : "No forecast", windKmh: 0 };
+  const deg = degDe(w.d);
+  return { band: bandaDe(m.op, w.d, w.v), windName: deg == null ? (isEs ? "Calma" : "Calm") : nombreViento(deg), windKmh: w.v };
+};
+// Banda inicial (render del servidor): del primer frame si hay previsión; si no,
+// del parte diario canónico (parte-calma.json). Nunca "alto" por ausencia de dato.
+const F0cala: Record<string, { band: string; windName: string; windKmh: number }> = Object.fromEntries(
+  parte.calas.map((c) => [c.id, hayTimeline
+    ? calaEnFrame(c.id, F0)
+    : { band: c.abrigo.band, windName: c.abrigo.viento.nombre, windKmh: c.abrigo.viento.kmh }])
+);
+const counts: Record<string, number> = { alto: 0, medio: 0, bajo: 0 };
+for (const c of parte.calas) { const b = F0cala[c.id].band; if (b === "alto" || b === "medio" || b === "bajo") counts[b]++; }
+const dayLabels: string[] = [...new Set(FRAMES.map((f) => f.day))];
+
+// Obsolescencia detectada YA en el servidor (cubre a quien navega sin JS): si el
+// generador degradó (stale) o la fecha del dato es anterior al día de build.
+const buildToday = new Date().toISOString().slice(0, 10);
+const isStaleServer = !!parte.stale || !!tl.stale || (typeof parte.forecastDate === "string" && parte.forecastDate < buildToday);
+
+const repName = F0.rep.name;
+const repKmh = F0.rep.kmh;
+const repDeg = F0.rep.deg;
+
+const T = {
+  es: {
+    parteDel: "Parte del",
+    stale: "No hemos podido actualizar hoy; mostramos el último parte disponible.",
+    staleAviso: "Esta previsión podría no estar actualizada. Consulta siempre las banderas y a los socorristas antes de bañarte.",
+    mapAria:
+      "Mapa de Menorca con el estado del mar previsto hoy en cada cala. El detalle está en la lista siguiente.",
+    costaNorte: "COSTA NORTE",
+    costaSur: "COSTA SUR",
+    mapCredit: "Contorno: © OpenStreetMap · Estado del mar: AEMET",
+    filterTitle: "Filtrar por el estado del mar",
+    windTitle: "Viento general",
+    timelineTitle: "Previsión · próximos días",
+    buscar: "Buscar una cala por su nombre…",
+    verEnMapa: "Ver en el mapa",
+    todas: "Todas",
+    abrigo: { alto: "Mar en calma", medio: "Algo de oleaje", bajo: "Mar revuelto", "sin-dato": "Sin previsión" } as Record<string, string>,
+    subAbrigo: {
+      alto: "resguardada del viento",
+      medio: "algo expuesta al viento",
+      bajo: "expuesta al viento",
+      "sin-dato": "sin datos de viento para este momento",
+    } as Record<string, string>,
+    viento: "Viento",
+    waterCond: "Ver condiciones del agua",
+    medusasSublabel: "Empuje del viento hacia la cala (orientativo)",
+    medusasBand: { baja: "Bajo", media: "Moderado", alta: "Alto" } as Record<string, string>,
+    medusasCopy: {
+      baja: "Esto NO significa que no haya medusas: pueden estar presentes por corrientes que no medimos. Hoy el viento no favorece su llegada a esta cala.",
+      media: "El viento lleva varias horas soplando hacia la cala; si hay medusas mar adentro, hay condiciones para que se acerquen. No es una observación.",
+      alta: "El viento entra de frente a esta cala desde hace más de medio día: condiciones favorables para que, si las hay, lleguen a la orilla. No detectamos medusas.",
+    } as Record<string, string>,
+    medusasNoData: "No tenemos datos de viento suficientes para estimarlo hoy.",
+    medusasDisclaimer:
+      "Estimamos condiciones de llegada a partir del viento de las últimas 48 h; no detectamos medusas ni afirmamos que las haya. No captura las corrientes marinas. Para avistamientos reales, consulta MedusApp y las banderas y socorristas.",
+    medusasCTA: "Ver avistamientos reales en MedusApp",
+    noLifeguard:
+      "Cala sin socorrismo: no hay banderas que consultar. Extrema la precaución y no te bañes solo.",
+    disclaimerTitle: "Cómo leer este parte",
+    disclaimer:
+      "Es una estimación editorial orientativa a partir de la predicción del viento. Mide solo el ABRIGO frente al viento, no las corrientes, el fondo ni otros peligros de baño. No es un aviso oficial de seguridad ni sustituye a las banderas ni al criterio de los socorristas.",
+    methodology: "Cómo calculamos la calma",
+    methodologyHref: "/quienes-somos",
+  },
+  en: {
+    parteDel: "Forecast for",
+    stale: "We couldn’t update today; showing the latest available forecast.",
+    staleAviso: "This forecast may be out of date. Always check the beach flags and lifeguards before swimming.",
+    mapAria:
+      "Map of Menorca with today’s forecast sea state for each cove. Full detail in the list below.",
+    costaNorte: "NORTH COAST",
+    costaSur: "SOUTH COAST",
+    mapCredit: "Outline: © OpenStreetMap · Sea state: AEMET",
+    filterTitle: "Filter by sea state",
+    windTitle: "General wind",
+    timelineTitle: "Forecast · next days",
+    buscar: "Search for a cove by name…",
+    verEnMapa: "Show on map",
+    todas: "All",
+    abrigo: { alto: "Calm sea", medio: "Some chop", bajo: "Rough sea", "sin-dato": "No forecast" } as Record<string, string>,
+    subAbrigo: {
+      alto: "sheltered from the wind",
+      medio: "somewhat wind-exposed",
+      bajo: "wind-exposed",
+      "sin-dato": "no wind data for this time",
+    } as Record<string, string>,
+    viento: "Wind",
+    waterCond: "See today’s water conditions",
+    medusasSublabel: "Wind push towards the cove (indicative)",
+    medusasBand: { baja: "Low", media: "Moderate", alta: "High" } as Record<string, string>,
+    medusasCopy: {
+      baja: "This does NOT mean there are no jellyfish: they may be present due to currents we don’t measure. Today the wind doesn’t favour their arrival at this cove.",
+      media: "The wind has been blowing towards the cove for several hours; if there are jellyfish offshore, conditions favour their approach. This is not an observation.",
+      alta: "The wind has been blowing straight into this cove for over half a day: favourable conditions for any jellyfish to reach the shore. We have not observed any.",
+    } as Record<string, string>,
+    medusasNoData: "We don’t have enough wind data to estimate it today.",
+    medusasDisclaimer:
+      "We estimate arrival conditions from the last 48 h of wind; we do not detect jellyfish or claim there are any. It does not capture sea currents. For real sightings, check MedusApp and the beach flags and lifeguards.",
+    medusasCTA: "See real sightings on MedusApp",
+    noLifeguard:
+      "Unguarded cove: there are no flags to check. Take extra care and never swim alone.",
+    disclaimerTitle: "How to read this forecast",
+    disclaimer:
+      "This is an orientative editorial estimate based on the wind forecast. It measures only SHELTER from the wind, not currents, the seabed or other bathing hazards. It is not an official safety notice and does not replace beach flags or lifeguards’ judgement.",
+    methodology: "How we calculate calm",
+    methodologyHref: "/en/about",
+  },
+}[locale];
+
+const fecha = formatDate(new Date(parte.forecastDate + "T00:00:00"), locale);
+
+// ---- JSON-LD: una Beach por cala con el estado del mar de hoy (observationDate honesto) ----
+const graph = [
+  ...parte.calas.map((c) => ({
+    "@type": "Beach",
+    name: c.name,
+    address: { "@type": "PostalAddress", addressLocality: c.area, addressRegion: "Menorca", addressCountry: "ES" },
+    geo: { "@type": "GeoCoordinates", latitude: c.lat, longitude: c.lng },
+    additionalProperty: {
+      "@type": "PropertyValue",
+      name: isEs ? "Estado del mar previsto" : "Forecast sea state",
+      value: T.abrigo[F0cala[c.id].band],
+      observationDate: parte.forecastDate,
+    },
+  })),
+];
+const jsonLd = { "@context": "https://schema.org", "@graph": graph };
+---
+
+<section class="mx-auto max-w-5xl px-5 pb-16 sm:px-8">
+  {/* Meta: fecha, validez, fuente */}
+  <p class="text-sm text-piedra-suave">
+    <span class="font-semibold text-piedra">{T.parteDel} {fecha}.</span>
+    {" "}{parte.validityNote}{" "}
+    <span class="text-piedra-suave">· {isEs ? "Datos" : "Data"}: {parte.sources.join(", ")}</span>
+  </p>
+  {parte.stale && (
+    <p class="mt-2 rounded-md border border-niebla bg-arena px-4 py-2 text-sm text-piedra">{T.stale}</p>
+  )}
+  {/* Aviso de datos obsoletos (oculto; el JS lo muestra si la previsión no es de hoy
+      o si el generador degradó: red de seguridad si el robot diario se parase). */}
+  <p id="calma-stale" class={`mt-2 rounded-md border border-terracota/50 bg-arena px-4 py-2 text-sm text-arcilla${isStaleServer ? "" : " hidden"}`}>⚠ {T.staleAviso}</p>
+
+  {/* `.calma-filterable` envuelve filtro + mapa + lista: al marcar un estado, `:has()`
+      oculta a la vez los puntos del mapa y las filas de la lista de los otros estados. */}
+  <div class="calma-filterable">
+    {/* Buscador de calas por nombre (JS progresivo: sin él se ven todas). */}
+    <div class="mt-6">
+      <input
+        type="search"
+        id="calma-buscar"
+        placeholder={T.buscar}
+        aria-label={T.buscar}
+        autocomplete="off"
+        class="w-full max-w-sm rounded-full border border-niebla bg-lino px-4 py-2 text-sm text-piedra placeholder:text-piedra-suave focus:border-arcilla focus:outline-none"
+      />
+    </div>
+    {/* Filtro 100% CSS (mismo patrón que la Agenda). Los chips son también la leyenda
+        de color: cada uno muestra su punto y el nº de calas; los vacíos van en gris. */}
+    <fieldset class="mt-4">
+      <legend class="text-xs font-semibold uppercase tracking-wider text-oro">{T.filterTitle}</legend>
+      <div class="mt-2 flex flex-wrap gap-2">
+        <input id="calma-todas" class="calma-radio sr-only" type="radio" name="calma-filtro" checked />
+        <label
+          for="calma-todas"
+          class="calma-chip cursor-pointer rounded-full border border-niebla bg-lino px-3.5 py-1.5 text-sm text-piedra transition-colors hover:border-arcilla"
+        >
+          {T.todas} ({total})
+        </label>
+        {BANDS.map((b) => (
+          <Fragment>
+            <input
+              id={`calma-${b}`}
+              class="calma-radio sr-only"
+              type="radio"
+              name="calma-filtro"
+              disabled={counts[b] === 0}
+            />
+            <label
+              for={`calma-${b}`}
+              class="calma-chip inline-flex cursor-pointer items-center gap-2 rounded-full border border-niebla bg-lino px-3.5 py-1.5 text-sm text-piedra transition-colors hover:border-arcilla"
+            >
+              <span class="inline-block h-2.5 w-2.5 rounded-full" style={`background:${FILL[b]}`}></span>
+              {T.abrigo[b]} <span id={`calma-count-${b}`}>({counts[b]})</span>
+            </label>
+          </Fragment>
+        ))}
+      </div>
+    </fieldset>
+
+    {/* Línea temporal de previsión: al deslizar, el JS recalcula mar + viento. */}
+    {hayTimeline && (
+      <div class="mt-6">
+        <div class="flex items-baseline justify-between gap-3">
+          <span class="text-xs font-semibold uppercase tracking-wider text-oro">{T.timelineTitle}</span>
+          <span id="calma-frame-label" class="font-display text-lg text-tinta">{F0.day} · {F0.period}</span>
+        </div>
+        <input
+          type="range"
+          id="calma-tiempo"
+          min="0"
+          max={FRAMES.length - 1}
+          value="0"
+          step="1"
+          class="mt-2 w-full accent-arcilla"
+          aria-label={T.timelineTitle}
+        />
+        <div class="mt-1 flex justify-between text-[0.7rem] text-piedra-suave">
+          {dayLabels.map((d) => <span>{d}</span>)}
+        </div>
+      </div>
+    )}
+
+    {/* Datos para el cliente (línea temporal): frames + meta de calas. No se ejecuta. */}
+    <script type="application/json" id="calma-tl-data" set:html={JSON.stringify({
+      frames: FRAMES,
+      calas: tl.calas,
+      vmax: ABRIGO_VMAX,
+      fill: FILL,
+      bandLabel: T.abrigo,
+      subLabel: T.subAbrigo,
+      dirDeg: DIR_DEG,
+      vientos: VIENTOS,
+      calma: isEs ? "Calma" : "Calm",
+      viento: T.viento,
+      stale: !!tl.stale,
+    }).replace(/</g, "\\u003c")} />
+
+    {/* Indicador grande del viento (encima del mapa). La flecha apunta hacia donde
+        sopla; cambia con la barra de tiempo. El detalle por cala está en la lista. */}
+    <div class="mt-5 flex items-center gap-4 rounded-2xl border border-niebla bg-arena/40 px-5 py-4">
+      <svg width="70" height="70" viewBox="0 0 68 68" role="img" aria-label={`${T.windTitle}: ${repName}, ${repKmh} km/h`} class="shrink-0">
+        <circle cx="34" cy="34" r="30" fill="#f7f4ee" stroke="#ded4c4" stroke-width="1.5" />
+        <g aria-hidden="true" fill="#8a6a3a" font-family="Inter Variable, sans-serif" font-size="9" font-weight="600">
+          <text x="34" y="13" text-anchor="middle">N</text>
+          <text x="34" y="62" text-anchor="middle">S</text>
+          <text x="61" y="37" text-anchor="middle">E</text>
+          <text x="7" y="37" text-anchor="middle">O</text>
+        </g>
+        <g id="calma-wind-dial" transform={`translate(34,34) rotate(${repDeg})`}>
+          <line x1="0" y1="-15" x2="0" y2="12" stroke="#b96a4b" stroke-width="2.5" />
+          <path d="M0,20 L7.5,7 L-7.5,7 Z" fill="#b96a4b" />
+        </g>
+      </svg>
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-wider text-oro">{T.windTitle}</p>
+        <p class="font-display text-2xl leading-tight text-tinta" id="calma-wind-name">{repName}</p>
+        <p class="text-sm text-piedra-suave"><span id="calma-wind-kmh">{repKmh}</span> km/h</p>
+      </div>
+    </div>
+
+    {/* Mapa SVG (contorno real de Menorca, OSM). La LISTA debajo es la versión canónica. */}
+    <figure class="calma-mapa mt-5 scroll-mt-20 overflow-hidden rounded-2xl border border-niebla">
+      <svg viewBox={`0 0 ${VIEW_W} ${VIEW_H}`} role="img" aria-label={T.mapAria} class="h-auto w-full">
+        <defs>
+          {/* Mar: azul mediterráneo desaturado (matices, no chillón) */}
+          <linearGradient id="calma-mar" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#d7e6e6" />
+            <stop offset="1" stop-color="#bdd4d6" />
+          </linearGradient>
+          {/* Tierra: verde sage cálido y suave */}
+          <linearGradient id="calma-tierra" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#dee4cc" />
+            <stop offset="1" stop-color="#ccd6b4" />
+          </linearGradient>
+          <filter id="calma-sombra" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="#33493b" flood-opacity="0.20" />
+          </filter>
+          {/* Sombra fina bajo cada punto para que destaque sobre mar y tierra */}
+          <filter id="calma-punto" x="-60%" y="-60%" width="220%" height="220%">
+            <feDropShadow dx="0" dy="1" stdDeviation="1.3" flood-color="#16241c" flood-opacity="0.45" />
+          </filter>
+        </defs>
+
+        {/* Mar */}
+        <rect x="0" y="0" width={VIEW_W} height={VIEW_H} fill="url(#calma-mar)" aria-hidden="true" />
+
+        {/* Agua somera: anillo más claro junto a la costa (matiz nautical) */}
+        <path d={islandPath} fill="none" stroke="#e8f1f1" stroke-width="22" stroke-linejoin="round" opacity="0.55" aria-hidden="true" />
+        <path d={islandPath} fill="none" stroke="#d4e5e5" stroke-width="11" stroke-linejoin="round" opacity="0.7" aria-hidden="true" />
+
+        {/* Isla (silueta real, con sombra suave y costa definida) */}
+        <g filter="url(#calma-sombra)" aria-hidden="true">
+          <path d={islandPath} fill="url(#calma-tierra)" stroke="#9fb189" stroke-width="1.4" stroke-linejoin="round" />
+        </g>
+
+        {/* Orientación de costas */}
+        <text x={VIEW_W / 2} y={offY - 30} fill="#5f7a72" font-size="15" text-anchor="middle" font-family="Inter Variable, sans-serif" letter-spacing="4" aria-hidden="true">{T.costaNorte}</text>
+        <text x={VIEW_W / 2} y={baseY + 46} fill="#5f7a72" font-size="15" text-anchor="middle" font-family="Inter Variable, sans-serif" letter-spacing="4" aria-hidden="true">{T.costaSur}</text>
+
+        {/* Pueblos de referencia (orientación, no son calas) */}
+        <g aria-hidden="true" font-family="Inter Variable, sans-serif">
+          {TOWNS.map((t) => (
+            <Fragment>
+              <circle cx={t.x} cy={t.y} r="2.6" fill="#4f5f4a" />
+              <text x={t.x} y={t.y - 8} fill="#4f5f4a" font-size="13" text-anchor="middle">{isEs ? t.es : t.en}</text>
+            </Fragment>
+          ))}
+        </g>
+
+        {/* Rosa de los vientos */}
+        <g aria-hidden="true" transform="translate(940,50)" font-family="Inter Variable, sans-serif">
+          <circle r="22" fill="#f7f4ee" stroke="#ded4c4" stroke-width="1" />
+          <path d="M0,-17 L4,0 L-4,0 Z" fill="#b96a4b" />
+          <path d="M0,17 L4,0 L-4,0 Z" fill="#a8895c" />
+          <text x="0" y="-25" text-anchor="middle" font-size="13" font-weight="600" fill="#46423a">N</text>
+        </g>
+
+        {/* Barra de escala */}
+        <g aria-hidden="true" stroke="#6b6557" fill="#6b6557" font-family="Inter Variable, sans-serif" font-size="12">
+          <line x1={scaleX} y1={scaleY} x2={scaleX + scaleLen} y2={scaleY} stroke-width="1.5" />
+          <line x1={scaleX} y1={scaleY - 5} x2={scaleX} y2={scaleY + 5} stroke-width="1.5" />
+          <line x1={scaleX + scaleLen / 2} y1={scaleY - 3} x2={scaleX + scaleLen / 2} y2={scaleY + 3} stroke-width="1" />
+          <line x1={scaleX + scaleLen} y1={scaleY - 5} x2={scaleX + scaleLen} y2={scaleY + 5} stroke-width="1.5" />
+          <text x={scaleX} y={scaleY + 18} text-anchor="middle" stroke="none">0</text>
+          <text x={scaleX + scaleLen / 2} y={scaleY + 18} text-anchor="middle" stroke="none">5</text>
+          <text x={scaleX + scaleLen} y={scaleY + 18} text-anchor="middle" stroke="none">10 km</text>
+        </g>
+
+        {/* Marcadores por cala (fijados a la costa). El nombre aparece al señalar
+            (hover/foco). Enlazan a su fila de la lista. */}
+        {markers.map((c) => {
+          const b0 = F0cala[c.id].band;
+          return (
+            <a href={`#cala-${c.id}`} data-calma={b0} data-nombre={c.name}>
+              <title>{c.name} — {T.abrigo[b0]}</title>
+              <circle cx={c.x} cy={c.y} r="6" fill={FILL[b0]} stroke="#ffffff" stroke-width="2.5" filter="url(#calma-punto)" />
+              <text class="cala-nombre" x={c.x} y={c.y - 11} text-anchor="middle" font-size="13">{c.name}</text>
+            </a>
+          );
+        })}
+      </svg>
+      <figcaption class="border-t border-niebla bg-lino px-4 py-2 text-[0.7rem] text-piedra-suave">{T.mapCredit}</figcaption>
+    </figure>
+
+    {/* Lista accesible — versión canónica del parte (la que cita la IA).
+        Pulsar una fila resalta esa cala en el mapa (lo gestiona el JS de abajo). */}
+    <ol class="calma-lista mt-8 space-y-4">
+      {parte.calas.map((c) => {
+        const f0 = F0cala[c.id];
+        const b0 = f0.band;
+        return (
+        <li
+          id={`cala-${c.id}`}
+          data-calma={b0}
+          data-nombre={c.name}
+          class="cursor-pointer rounded-xl border border-niebla bg-lino p-4 transition-colors hover:border-arcilla sm:p-5"
+          style={`border-left:4px solid ${FILL[b0]}`}
+        >
+          <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+            <h3 class="font-display text-xl text-tinta">
+              {c.lugarSlug ? (
+                <a class="underline decoration-niebla underline-offset-4 hover:decoration-terracota" href={placeUrl(locale, `${c.lugarSlug}-${locale}`)}>{c.name}</a>
+              ) : c.name}
+            </h3>
+            <span class="inline-flex items-center gap-2 text-sm font-semibold text-tinta">
+              <span class="cala-dot inline-block h-3 w-3 rounded-full" style={`background:${FILL[b0]}`}></span>
+              <span class="cala-band">{T.abrigo[b0]}</span>
+            </span>
+          </div>
+          <p class="mt-1 text-sm text-piedra-suave">
+            {c.area} · <span class="cala-sub">{T.subAbrigo[b0]}</span> · {T.viento}: <span class="cala-wind">{f0.windName} {f0.windKmh} km/h</span>
+          </p>
+          <button type="button" class="cala-ver mt-2 text-xs font-medium text-arcilla underline underline-offset-2 hover:text-terracota">{T.verEnMapa} ↑</button>
+          {MEDUSAS_ENABLED && c.medusas && (
+            <details class="mt-3 border-t border-niebla pt-3">
+              <summary class="cursor-pointer text-sm text-piedra-suave hover:text-piedra">{T.waterCond} →</summary>
+              <div class="mt-2 rounded-md bg-arena/50 p-3">
+                <p class="text-[0.7rem] font-semibold uppercase tracking-wider text-oro">{T.medusasSublabel}</p>
+                <p class="mt-1 text-sm text-piedra">
+                  {c.medusas.band === "sin-dato" ? (
+                    T.medusasNoData
+                  ) : (
+                    <Fragment><strong class="text-tinta">{T.medusasBand[c.medusas.band]}.</strong> {T.medusasCopy[c.medusas.band]}</Fragment>
+                  )}
+                </p>
+                <p class="mt-2 text-xs leading-relaxed text-piedra-suave">{T.medusasDisclaimer}</p>
+                <p class="mt-2 text-sm">
+                  <a class="font-medium text-arcilla underline underline-offset-2 hover:text-terracota" href={MEDUSAPP} target="_blank" rel="noopener">{T.medusasCTA} →</a>
+                </p>
+              </div>
+            </details>
+          )}
+          {!c.tieneVigilancia && (
+            <p class="mt-2 rounded-md bg-arena px-3 py-2 text-xs text-piedra">⚠ {T.noLifeguard}</p>
+          )}
+        </li>
+        );
+      })}
+    </ol>
+  </div>
+
+  {/* Descargo + nota de método */}
+  <div class="mt-10 rounded-xl border border-niebla bg-arena/60 p-5">
+    <h2 class="font-display text-lg text-tinta">{T.disclaimerTitle}</h2>
+    <p class="mt-2 text-sm leading-relaxed text-piedra">{T.disclaimer}</p>
+    <p class="mt-3 text-sm">
+      <a class="font-medium text-arcilla underline underline-offset-2 hover:text-terracota" href={T.methodologyHref}>{T.methodology} →</a>
+    </p>
+  </div>
+
+  <JsonLd schema={jsonLd} />
+</section>
+
+<script>
+  // Buscador de calas: filtra a la vez la lista y los marcadores del mapa por nombre.
+  // Único JS de cliente de esta página; sin él, se ven todas (degradación elegante).
+  const inp = document.getElementById("calma-buscar");
+  if (inp) {
+    const sinAcentos = new RegExp("[\\u0300-\\u036f]", "g");
+    const norm = (s) => (s || "").normalize("NFD").replace(sinAcentos, "").toLowerCase();
+    const els = Array.from(document.querySelectorAll("[data-nombre]"));
+    inp.addEventListener("input", () => {
+      const q = norm(inp.value.trim());
+      for (const el of els) {
+        const hit = !q || norm(el.getAttribute("data-nombre")).includes(q);
+        el.classList.toggle("cala-no-coincide", !hit);
+      }
+    });
+  }
+
+  // "Ver en el mapa": pulsar una fila (o su botón) resalta esa cala en el mapa y
+  // sube hasta él. Los enlaces internos (nombre → ficha) siguen navegando normal.
+  const lista = document.querySelector(".calma-lista");
+  const mapa = document.querySelector(".calma-mapa");
+  if (lista) {
+    lista.addEventListener("click", (e) => {
+      if (e.target.closest("a")) return;
+      const li = e.target.closest("li[id^='cala-']");
+      if (!li) return;
+      const id = li.id.slice(5);
+      for (const a of document.querySelectorAll("a.cala-activa")) a.classList.remove("cala-activa");
+      const mk = document.querySelector('a[href="#cala-' + id + '"]');
+      if (mk) mk.classList.add("cala-activa");
+      if (mapa) mapa.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  }
+
+  // Línea temporal: al deslizar la barra, recalcula el mar de cada cala (misma
+  // fórmula que el parte), la lista, el viento general y los contadores del filtro.
+  const dataEl = document.getElementById("calma-tl-data");
+  if (dataEl) {
+    const D = JSON.parse(dataEl.textContent || "{}");
+    const frames = D.frames || [];
+    const degDe = (d) => (!d || d === "C" ? null : (D.dirDeg[d] ?? null));
+    const nombreV = (deg) => { for (const [m, n] of D.vientos) if (deg < m) return n; return D.vientos[0][1]; };
+    const banda = (op, d, v) => {
+      const deg = degDe(d);
+      const on = deg == null ? 0 : (1 + Math.cos(((deg - op) * Math.PI) / 180)) / 2;
+      const s = 1 - on * Math.min(v / D.vmax, 1);
+      return s >= 0.66 ? "alto" : s >= 0.4 ? "medio" : "bajo";
+    };
+    const windName = document.getElementById("calma-wind-name");
+    const windKmh = document.getElementById("calma-wind-kmh");
+    const windDial = document.getElementById("calma-wind-dial");
+    const frameLabel = document.getElementById("calma-frame-label");
+
+    const applyFrame = (fr) => {
+      const counts = { alto: 0, medio: 0, bajo: 0 };
+      for (const c of D.calas) {
+        const w = fr.winds[c.ine];
+        const sinDato = !w || w.d == null; // sin dato del municipio → NUNCA calma falsa
+        const band = sinDato ? "sin-dato" : banda(c.op, w.d, w.v);
+        if (band === "alto" || band === "medio" || band === "bajo") counts[band]++;
+        const deg = sinDato ? null : degDe(w.d);
+        const li = document.getElementById("cala-" + c.id);
+        if (li) {
+          li.dataset.calma = band;
+          li.style.borderLeftColor = D.fill[band];
+          const dot = li.querySelector(".cala-dot"); if (dot) dot.style.background = D.fill[band];
+          const bl = li.querySelector(".cala-band"); if (bl) bl.textContent = D.bandLabel[band];
+          const sb = li.querySelector(".cala-sub"); if (sb) sb.textContent = D.subLabel[band];
+          const wd = li.querySelector(".cala-wind"); if (wd) wd.textContent = sinDato ? D.bandLabel["sin-dato"] : ((deg == null ? D.calma : nombreV(deg)) + " " + w.v + " km/h");
+        }
+        const mk = document.querySelector('a[href="#cala-' + c.id + '"]');
+        if (mk) {
+          mk.dataset.calma = band;
+          const ci = mk.querySelector("circle"); if (ci) ci.setAttribute("fill", D.fill[band]);
+        }
+      }
+      if (windName) windName.textContent = fr.rep.name;
+      if (windKmh) windKmh.textContent = fr.rep.kmh;
+      if (windDial) windDial.setAttribute("transform", "translate(34,34) rotate(" + fr.rep.deg + ")");
+      for (const b of ["alto", "medio", "bajo"]) {
+        const cs = document.getElementById("calma-count-" + b); if (cs) cs.textContent = "(" + counts[b] + ")";
+        const r = document.getElementById("calma-" + b);
+        if (r) { r.disabled = counts[b] === 0; if (counts[b] === 0 && r.checked) { r.checked = false; const t = document.getElementById("calma-todas"); if (t) t.checked = true; } }
+      }
+      if (frameLabel) frameLabel.textContent = fr.day + " · " + fr.period;
+    };
+
+    if (frames.length) {
+      // "Ahora" en hora de Menorca (Europe/Madrid), no la del visitante europeo.
+      const madrid = (dt) => {
+        const p = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Madrid", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", hourCycle: "h23" }).formatToParts(dt);
+        const g = (t) => (p.find((x) => x.type === t) || {}).value;
+        return { date: g("year") + "-" + g("month") + "-" + g("day"), hour: g("hour") };
+      };
+      const m = madrid(new Date());
+      const nowKey = m.date + "-" + m.hour;
+      let idx = 0;
+      for (let i = 0; i < frames.length; i++) {
+        const fk = frames[i].fecha + "-" + String(frames[i].startHour).padStart(2, "0");
+        if (fk <= nowKey) idx = i;
+      }
+      const slider = document.getElementById("calma-tiempo");
+      if (slider) {
+        slider.max = String(frames.length - 1);
+        slider.value = String(idx);
+        slider.addEventListener("input", () => applyFrame(frames[+slider.value]));
+      }
+      applyFrame(frames[idx]);
+
+      // Aviso de datos obsoletos: si la previsión degradó o su primer día ya pasó (hora Menorca).
+      const staleEl = document.getElementById("calma-stale");
+      if (staleEl && (D.stale || frames[0].fecha < m.date)) staleEl.classList.remove("hidden");
+    }
+  }
+</script>

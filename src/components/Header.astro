@@ -22,6 +22,8 @@ const newsletterHref = locale === "es" ? "/newsletter" : "/en/newsletter";
 const contactHref = locale === "es" ? "/contacto" : "/en/contact";
 const plannerHref = locale === "es" ? "/planificador" : "/en/trip-planner";
 const plannerLabel = locale === "es" ? "Planificador" : "Planner";
+const calmaHref = locale === "es" ? "/donde-el-mar-esta-en-calma" : "/en/where-the-sea-is-calm";
+const calmaNav = locale === "es" ? "Mar en calma" : "Calm sea";
 ---
 
 <header class="sticky top-0 z-50 border-b border-niebla bg-lino/95 backdrop-blur-sm">
@@ -79,6 +81,9 @@ const plannerLabel = locale === "es" ? "Planificador" : "Planner";
                 ))
               }
               <hr class="my-2 border-niebla" />
+              <a href={calmaHref} class="block rounded-md px-3 py-2 text-sm font-medium text-arcilla transition-colors hover:bg-arena hover:text-terracota">
+                {calmaNav}
+              </a>
               <a href={plannerHref} class="block rounded-md px-3 py-2 text-sm font-medium text-arcilla transition-colors hover:bg-arena hover:text-terracota">
                 {plannerLabel}
               </a>
@@ -125,6 +130,12 @@ const plannerLabel = locale === "es" ? "Planificador" : "Planner";
         ))
       }
       <span aria-hidden="true" class="h-3.5 w-px bg-niebla"></span>
+      <a
+        href={calmaHref}
+        class="uppercase tracking-[0.12em] text-arcilla transition-colors hover:text-terracota"
+      >
+        {calmaNav}
+      </a>
       <a
         href={plannerHref}
         class="uppercase tracking-[0.12em] text-arcilla transition-colors hover:text-terracota"

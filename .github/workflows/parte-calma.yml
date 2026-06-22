@@ -1,0 +1,44 @@
+# "Dónde el mar está en calma" — actualización diaria del parte de calas.
+# Genera src/data/parte-calma.json con el viento de AEMET y lo commitea; el push
+# dispara el rebuild estático de Cloudflare Pages. Ver docs/DONDE-EL-MAR-ESTA-EN-CALMA.md
+#
+# REQUISITO: añadir en GitHub → Settings → Secrets → Actions el secret AEMET_API_KEY.
+# AVISO: GitHub deshabilita los cron tras 60 días sin actividad del repo y puede
+# retrasarlos 1–2 h. Si la pieza diaria es crítica, valorar Cloudflare Cron Triggers.
+name: Parte de calma (diario)
+
+on:
+  schedule:
+    - cron: "0 5 * * *" # ~07:00 hora de Menorca en verano (UTC+2)
+  workflow_dispatch: {} # permite lanzarlo a mano desde la pestaña Actions
+
+permissions:
+  contents: write
+
+concurrency:
+  group: parte-calma
+  cancel-in-progress: false
+
+jobs:
+  generar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Generar el parte de hoy
+        run: node scripts/parte-calma.mjs
+        env:
+          AEMET_API_KEY: ${{ secrets.AEMET_API_KEY }}
+      - name: Generar la previsión multi-día (línea temporal)
+        run: node scripts/parte-timeline.mjs
+        env:
+          AEMET_API_KEY: ${{ secrets.AEMET_API_KEY }}
+      - name: Commit si cambió
+        run: |
+          git config user.name "calma-bot"
+          git config user.email "bot@calmasociety.com"
+          git add src/data/parte-calma.json src/data/parte-timeline.json src/data/viento-historia.json
+          git diff --staged --quiet || git commit -m "chore(parte-calma): actualización diaria"
+          git push

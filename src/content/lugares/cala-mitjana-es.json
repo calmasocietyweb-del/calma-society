@@ -18,6 +18,15 @@
   "seo": {
     "description": "Cala de arena clara y agua transparente entre acantilados, cerca de Cala Galdana. Belleza serena y acceso razonable. Mejor a primera hora, en el sur."
   },
+  "windExposure": {
+    "openingBearingDeg": 195,
+    "embayment": "encajonada",
+    "municipioINE": "07021",
+    "shelteredFrom": ["Tramuntana (N)", "Gregal (NE)", "Mestral (NO)"],
+    "exposedTo": ["Migjorn (S)", "Llebeig (SO)", "Xaloc (SE)"],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
   "planner": {
     "zone": "sur-centro",
     "cluster": "galdana-mitjana",
