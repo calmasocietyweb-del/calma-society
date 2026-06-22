@@ -27,6 +27,10 @@ function toPlannerPlace(f) {
     cluster: p.cluster,
     plannerType: p.plannerType,
     idealFor: p.idealFor ?? [],
+    highlights: p.highlights,
+    // Descripción corta (qué ver, fallback cuando no hay highlights): se recorta
+    // para no inflar el JSON (riesgo R3); la ficha completa va en /lugar/<slug>.
+    blurb: f.description ? f.description.slice(0, 150) : undefined,
     durationMin: p.durationMin,
     carAccess: p.carAccess,
     busServed: p.busServed ?? false,

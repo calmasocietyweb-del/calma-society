@@ -76,6 +76,10 @@ export interface PlannerPlace {
   cluster: string;
   plannerType: PlannerType;
   idealFor: IdealFor[];
+  /** Qué ver y hacer en el lugar (frases cortas accionables). */
+  highlights?: string[];
+  /** Descripción corta (fallback de "qué ver" cuando no hay highlights). */
+  blurb?: string;
   durationMin?: number;
 
   carAccess: CarAccess;

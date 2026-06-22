@@ -207,6 +207,9 @@ const lugares = defineCollection({
         cluster: z.string(), // micro-zona que comparte ramal/parking/base de día
         plannerType: PLANNER_TYPE,
         idealFor: z.array(PLANNER_IDEAL_FOR).default([]),
+        // Qué VER y HACER en el lugar: frases cortas accionables (localizadas).
+        // El motor las muestra en cada parada ("pasea por X, visita Y y Z").
+        highlights: z.array(z.string()).optional(),
 
         // — Ritmo (no-saturar: 8,5 h útiles/día) —
         durationMin: z.number().int().positive().optional(), // minutos típicos de visita

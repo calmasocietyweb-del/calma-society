@@ -40,6 +40,18 @@ function durOf(p: PlannerPlace): number {
   }
 }
 
+const BASE_TOWN: Record<BaseZone, string> = {
+  ciutadella: "Ciutadella", mao: "Maó", "cala-galdana": "Cala Galdana",
+  "son-bou": "Son Bou", "es-mercadal": "Es Mercadal", fornells: "Fornells",
+};
+
+/** "Qué ver y hacer" de un lugar: highlights si los hay, si no la descripción corta. */
+function whatToSee(p: PlannerPlace): string {
+  if (p.highlights && p.highlights.length) return `Qué ver y hacer: ${p.highlights.join(" · ")}.`;
+  if (p.blurb) return p.blurb;
+  return "";
+}
+
 export interface DayInput {
   base: BaseZone;
   cluster?: string;
@@ -81,6 +93,9 @@ export function sequenceDay(input: DayInput): DayResult {
   const morning = ranked.find((p) => DAYTIME.has(p.plannerType));
   const sunset = ranked.find((p) => SUNSET.has(p.plannerType));
   const tarde = ranked.find((p) => DAYTIME.has(p.plannerType) && p !== morning);
+  // Para anclar las comidas a sitios reales (no "cenar en la zona").
+  const pueblo = ranked.find((p) => p.plannerType === "pueblo");
+  const diner = ranked.find((p) => p.plannerType === "cena" || p.plannerType === "comida");
 
   // Orden de preferencia de las paradas OPCIONALES (la mañana es la esencial).
   const optional: Array<{ slot: IntradayBlock["slot"]; place: PlannerPlace }> = [];
@@ -109,28 +124,50 @@ export function sequenceDay(input: DayInput): DayResult {
   const anchorPlaces = chosen.map((c) => c.place);
   const budgetHours = budgetHoursOf(anchorPlaces, travelFromBaseMin);
 
-  // Construye la línea de tiempo en orden cronológico.
+  // Construye la línea de tiempo en orden cronológico, con instrucciones concretas.
   const has = (slot: IntradayBlock["slot"]) => chosen.find((c) => c.slot === slot);
   const blocks: IntradayBlock[] = [];
-  const meal = (slot: IntradayBlock["slot"], placeName: string, reason: string): IntradayBlock => ({
-    slot, timeHint: TIME_HINT[slot], placeName, durationMin: slot === "desayuno" ? 45 : 90, reason,
-  });
   const anchorBlock = (slot: IntradayBlock["slot"]): IntradayBlock | undefined => {
     const c = has(slot);
     if (!c) return undefined;
     return {
       slot, timeHint: TIME_HINT[slot], placeId: c.place.id, placeName: c.place.name,
       durationMin: durOf(c.place),
-      reason: `${c.place.name} encaja por afinidad con tu perfil y está en el cluster del día (sin cruzar la isla).`,
+      reason: whatToSee(c.place) || `${c.place.name}: encaja con tu perfil y está en el cluster del día.`,
     };
   };
+  const puebloIsAnchor = chosen.some((c) => c.place === pueblo);
 
-  blocks.push(meal("desayuno", "Desayuno en la base", "Empieza con calma cerca del alojamiento."));
+  // DESAYUNO — en la base.
+  blocks.push({ slot: "desayuno", timeHint: TIME_HINT.desayuno, placeName: `Desayuno con calma en ${BASE_TOWN[input.base]}`, durationMin: 45, reason: "Empieza sin prisas cerca del alojamiento (coge agua y, si toca cala, llega temprano)." });
+
   const m = anchorBlock("manana"); if (m) blocks.push(m);
-  blocks.push(meal("comida", "Comida en la zona", "Pausa de mediodía cerca de la mañana; evita conducir con el sol alto."));
+
+  // COMIDA — anclada a un restaurante/mercado o al pueblo del día.
+  if (diner) {
+    blocks.push({ slot: "comida", timeHint: TIME_HINT.comida, placeId: diner.id, placeName: `Comida en ${diner.name}`, durationMin: 90, reason: whatToSee(diner) || "Producto local con criterio." });
+  } else if (pueblo) {
+    blocks.push({ slot: "comida", timeHint: TIME_HINT.comida, placeName: `Comer en ${pueblo.name}`, durationMin: 90, reason: "Busca una terraza tranquila en el pueblo; producto local." });
+  } else {
+    blocks.push({ slot: "comida", timeHint: TIME_HINT.comida, placeName: "Comida con producto local en la zona", durationMin: 90, reason: "Pausa de mediodía; evita conducir con el sol alto." });
+  }
+
   const t = anchorBlock("tarde"); if (t) blocks.push(t);
   const a = anchorBlock("atardecer"); if (a) blocks.push(a);
-  blocks.push(meal("cena", "Cena en la zona", "Cierra el día sin desplazamientos largos."));
+
+  // CENA — pasea por el pueblo y cena allí; si no hay pueblo, a un restaurante.
+  if (pueblo) {
+    const reason = puebloIsAnchor
+      ? "Cena en el pueblo tras la jornada, sin desplazamientos."
+      : (pueblo.highlights && pueblo.highlights.length)
+        ? `De paso, no te pierdas: ${pueblo.highlights.join(" · ")}.`
+        : "Pasea sin prisa por el casco y elige una terraza para cenar.";
+    blocks.push({ slot: "cena", timeHint: TIME_HINT.cena, placeId: pueblo.id, placeName: `Pasea por ${pueblo.name} y cena allí`, durationMin: 90, reason });
+  } else if (diner) {
+    blocks.push({ slot: "cena", timeHint: TIME_HINT.cena, placeId: diner.id, placeName: `Cena en ${diner.name}`, durationMin: 90, reason: whatToSee(diner) || "Cena con criterio en la zona." });
+  } else {
+    blocks.push({ slot: "cena", timeHint: TIME_HINT.cena, placeName: "Cena tranquila en la zona", durationMin: 90, reason: "Cierra el día sin desplazamientos largos." });
+  }
 
   // ── Avisos por lugar (chips) ──────────────────────────────────────────────
   for (const { place } of chosen) {
