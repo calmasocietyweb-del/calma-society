@@ -33,6 +33,7 @@ const T = isEs
       formTitle: "Cuéntanos cómo viajas",
       b1: "Lo básico", b2: "Llegada y salida", b3: "Dónde duermes", b4: "Tu estilo", b5: "Contigo viaja", b6: "Extras",
       days: "¿Cuántos días?", dates: "Fechas (opcional)", arr: "Llegada", dep: "Salida",
+      dateHint: "Si pones llegada y salida, ellas definen la duración del viaje (y lo cruzamos con la agenda de fiestas).",
       transport: "¿Cómo te mueves?", t_coche: "Coche de alquiler", t_ferry: "Mi coche en ferry", t_sin: "Sin coche",
       ferryPort: "Si vienes en ferry, ¿por qué puerto?", flights: "Horas de vuelo (opcional, afinan el primer y último día)",
       base: "¿Dónde te alojas?", b_rec: "Recomiéndame una zona",
@@ -54,6 +55,7 @@ const T = isEs
       formTitle: "Tell us how you travel",
       b1: "The basics", b2: "Arrival & departure", b3: "Where you sleep", b4: "Your style", b5: "Travelling with", b6: "Extras",
       days: "How many days?", dates: "Dates (optional)", arr: "Arrival", dep: "Departure",
+      dateHint: "If you set arrival and departure, they define the trip length (and we cross-check the festival calendar).",
       transport: "How do you get around?", t_coche: "Rental car", t_ferry: "My car by ferry", t_sin: "Car-free",
       ferryPort: "If you come by ferry, which port?", flights: "Flight times (optional, fine-tune day 1 and the last day)",
       base: "Where do you stay?", b_rec: "Recommend me an area",
@@ -82,6 +84,11 @@ const CFG = {
   busCTA: T.busCTA,
   globalTitle: T.globalTitle,
   hours: T.hours,
+  // Mensajes de validación de fechas (los usa el island).
+  dateInvalid: isEs ? "Las fechas no son válidas. Revisa el formato (día, mes y año)." : "The dates are not valid. Check the format (day, month, year).",
+  dateOrder: isEs ? "La fecha de salida no puede ser anterior a la de llegada." : "The departure date can't be earlier than the arrival date.",
+  dateTooLong: isEs ? "El planificador llega hasta 21 días. Acorta las fechas o elige una estancia más corta." : "The planner covers up to 21 days. Shorten the dates or pick a shorter stay.",
+  dateNeedArrival: isEs ? "Indica también la fecha de llegada para calcular la duración del viaje." : "Add the arrival date too so we can work out the trip length.",
   menorcaBusUrl: SITE.partners.menorcaBus.url,
   noticeIcon: { reserva: "📌", madrugar: "⏰", "agua-sombra": "💧", parking: "🅿️", "confirma-horario": "🕒", esfuerzo: "🥾", viento: "🌬️", accesibilidad: "♿", fiesta: "🎉", logistica: "🧭" } as Record<string, string>,
 };
@@ -132,12 +139,13 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
     {/* Bloque 2 */}
     <fieldset class="space-y-4 border-t border-niebla pt-5">
       <legend class="font-display text-xl text-tinta">{T.b2}</legend>
+      <p class="text-xs text-piedra-suave">{T.dateHint}</p>
       <div class="grid grid-cols-2 gap-4">
         <label class="block text-sm font-medium text-piedra">{T.arr}
-          <input type="date" name="arrivalDate" class="planner-field" />
+          <input type="date" name="arrivalDate" class="planner-field" min="2024-01-01" max="2030-12-31" />
         </label>
         <label class="block text-sm font-medium text-piedra">{T.dep}
-          <input type="date" name="departureDate" class="planner-field" />
+          <input type="date" name="departureDate" class="planner-field" min="2024-01-01" max="2030-12-31" />
         </label>
       </div>
       <p class="text-xs text-piedra-suave">{T.flights}</p>
@@ -172,7 +180,7 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
         <div class="mt-2 flex flex-wrap gap-2">
           {interestList.map(([v, label]) => (
             <label class="planner-pill">
-              <input type="checkbox" name="interests" value={v} class="sr-only" />
+              <input type="checkbox" name="interests" value={v} class="sr-only" checked={v === "calas" || v === "gastronomia"} />
               <span>{label}</span>
             </label>
           ))}
@@ -253,11 +261,37 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
   const esc = (s: string) =>
     String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]!));
 
-  function surveyFromURL() {
+  const isISODate = (s: string) => /^\d{4}-\d{2}-\d{2}$/.test(s) && !Number.isNaN(Date.parse(s + "T00:00:00Z"));
+  const dayMs = 86400000;
+
+  // Lee la encuesta de la URL y VALIDA/RECONCILIA las fechas con la duración.
+  // Devuelve { survey, error }: si las fechas no son válidas, `error` (string) y
+  // no se genera plan. Si hay llegada Y salida, ellas mandan: días = días entre fechas.
+  function readSurvey(): { survey: any; error: string | null } | null {
     const p = new URLSearchParams(location.search);
     if (![...p.keys()].length) return null;
-    return {
-      days: Number(p.get("days")) || 5,
+
+    const arrivalDate = p.get("arrivalDate") || undefined;
+    const departureDate = p.get("departureDate") || undefined;
+    let days = Math.min(21, Math.max(1, Number(p.get("days")) || 5));
+    let error: string | null = null;
+
+    if (arrivalDate && !isISODate(arrivalDate)) error = CFG.dateInvalid;
+    else if (departureDate && !isISODate(departureDate)) error = CFG.dateInvalid;
+    else if (departureDate && !arrivalDate) error = CFG.dateNeedArrival;
+    else if (arrivalDate && departureDate) {
+      const a = Date.parse(arrivalDate + "T00:00:00Z");
+      const b = Date.parse(departureDate + "T00:00:00Z");
+      if (b < a) error = CFG.dateOrder;
+      else {
+        const diff = Math.round((b - a) / dayMs) + 1;
+        if (diff > 21) error = CFG.dateTooLong;
+        else days = diff; // las fechas definen la duración del viaje
+      }
+    }
+
+    const survey = {
+      days,
       transport: p.get("transport") || "coche-alquiler",
       ferryPort: p.get("ferryPort") || undefined,
       base: p.get("base") || "recomiendame",
@@ -265,21 +299,26 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
       interests: p.getAll("interests"),
       kids: { has: p.get("kids") === "si", ages: p.getAll("kidAges") },
       accessibility: p.get("accessibility") || "ninguna",
-      boatSunset: p.get("boatSunset") !== "no" && p.get("boatSunset") !== null ? p.get("boatSunset") === "si" : false,
+      boatSunset: p.get("boatSunset") === "si",
       budget: p.get("budget") || "medio",
-      arrivalDate: p.get("arrivalDate") || undefined,
-      departureDate: p.get("departureDate") || undefined,
+      arrivalDate,
+      departureDate,
       arrivalFlightTime: p.get("arrivalFlightTime") || undefined,
       departureFlightTime: p.get("departureFlightTime") || undefined,
     };
+    return { survey, error };
   }
 
   // Rellena la encuesta desde la URL (para que el plan sea editable y compartible).
   function prefill(p: URLSearchParams) {
     if (!form) return;
+    const hasInterests = p.has("interests");
     for (const el of Array.from(form.elements) as HTMLInputElement[]) {
       if (!el.name) continue;
       if (el.type === "checkbox") {
+        // Si la URL no trae intereses, conserva los marcados por defecto en el
+        // formulario (que coinciden con los que el motor usa por defecto).
+        if (el.name === "interests" && !hasInterests) continue;
         el.checked = p.getAll(el.name).includes(el.value);
       } else if (p.has(el.name)) {
         el.value = p.get(el.name)!;
@@ -347,9 +386,17 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
     out.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
-  const survey = surveyFromURL();
-  if (survey) {
+  const r = readSurvey();
+  if (r && out) {
     prefill(new URLSearchParams(location.search));
-    render(survey);
+    // Refleja en el selector la duración derivada de las fechas (si está disponible como opción).
+    const sel = form?.elements.namedItem("days") as HTMLSelectElement | null;
+    if (sel && [...sel.options].some((o) => o.value === String(r.survey.days))) sel.value = String(r.survey.days);
+    if (r.error) {
+      out.innerHTML = `<p class="rounded-lg border border-terracota/60 bg-arena px-4 py-3 text-sm text-arcilla" role="alert">⚠ ${esc(r.error)}</p>`;
+      out.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      render(r.survey);
+    }
   }
 </script>
