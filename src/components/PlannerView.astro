@@ -1,0 +1,355 @@
+---
+/**
+ * Planificador de viajes — encuesta + resultado.
+ *
+ * ARQUITECTURA (CLAUDE.md decisión #13): es el ÚNICO island JS del sitio. No se
+ * puede pre-generar un plan por combinación de encuesta, así que el formulario es
+ * nativo (estado en la querystring → plan COMPARTIBLE) y un script de cliente
+ * (client:idle de facto: se carga al final) ejecuta el motor PURO `planTrip`
+ * sobre el dataset compilado y renderiza las DayCards. Sin él, se ve la encuesta
+ * (degradación elegante). El dataset y la agenda se inyectan por idioma.
+ *
+ * NOTA i18n: los `reason`/avisos del motor están hoy en español (pendiente:
+ * localizarlos por clave, R7 del blueprint). El formulario y el chrome sí están
+ * traducidos. En la página EN se avisa de ello.
+ */
+import dataEs from "../data/planner-data.es.json";
+import dataEn from "../data/planner-data.en.json";
+import eventsEs from "../data/planner-events.es.json";
+import eventsEn from "../data/planner-events.en.json";
+import { SITE } from "../config/site";
+import type { Locale } from "../config/site";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const isEs = locale === "es";
+const dataset = isEs ? dataEs : dataEn;
+const events = isEs ? eventsEs : eventsEn;
+
+const T = isEs
+  ? {
+      formTitle: "Cuéntanos cómo viajas",
+      b1: "Lo básico", b2: "Llegada y salida", b3: "Dónde duermes", b4: "Tu estilo", b5: "Contigo viaja", b6: "Extras",
+      days: "¿Cuántos días?", dates: "Fechas (opcional)", arr: "Llegada", dep: "Salida",
+      transport: "¿Cómo te mueves?", t_coche: "Coche de alquiler", t_ferry: "Mi coche en ferry", t_sin: "Sin coche",
+      ferryPort: "Si vienes en ferry, ¿por qué puerto?", flights: "Horas de vuelo (opcional, afinan el primer y último día)",
+      base: "¿Dónde te alojas?", b_rec: "Recomiéndame una zona",
+      pace: "¿Qué ritmo buscas?", p_rel: "Relajado", p_eq: "Equilibrado", p_int: "Intenso",
+      interests: "¿Qué te mueve? (elige los que quieras)",
+      i_calas: "Calas y playas", i_gastro: "Gastronomía", i_cultura: "Cultura e historia", i_nat: "Naturaleza y senderismo", i_noche: "Vida nocturna", i_naut: "Náutica", i_lujo: "Lujo tranquilo",
+      kids: "¿Viajas con niños?", kidAges: "Edades", budget: "Presupuesto",
+      bud_a: "Ajustado", bud_m: "Medio", bud_alto: "Alto",
+      boat: "¿Te apetece barco y atardeceres?", acc: "¿Necesitas accesibilidad?",
+      acc_ning: "Ninguna", acc_carr: "Carrito de bebé", acc_mov: "Movilidad reducida", acc_may: "Personas mayores",
+      submit: "Crear mi plan", recompute: "Actualizar el plan",
+      base_z: { ciutadella: "Ciutadella", mao: "Maó", "cala-galdana": "Cala Galdana", "son-bou": "Son Bou", "es-mercadal": "Es Mercadal", fornells: "Fornells" } as Record<string, string>,
+      slot: { desayuno: "Desayuno", manana: "Mañana", comida: "Comida", tarde: "Tarde", atardecer: "Atardecer", cena: "Cena" } as Record<string, string>,
+      planBtitle: "Si llueve o hace mucho calor", whyTitle: "Por qué este día", busCTA: "Resuélvelo con Menorca Bus",
+      globalTitle: "Antes de salir", hours: "h útiles", empty: "Rellena la encuesta y crea tu plan.",
+      intro: "Una guía día a día, encadenada por cercanía y sin prisas: la isla, a tu ritmo.",
+    }
+  : {
+      formTitle: "Tell us how you travel",
+      b1: "The basics", b2: "Arrival & departure", b3: "Where you sleep", b4: "Your style", b5: "Travelling with", b6: "Extras",
+      days: "How many days?", dates: "Dates (optional)", arr: "Arrival", dep: "Departure",
+      transport: "How do you get around?", t_coche: "Rental car", t_ferry: "My car by ferry", t_sin: "Car-free",
+      ferryPort: "If you come by ferry, which port?", flights: "Flight times (optional, fine-tune day 1 and the last day)",
+      base: "Where do you stay?", b_rec: "Recommend me an area",
+      pace: "What pace do you want?", p_rel: "Relaxed", p_eq: "Balanced", p_int: "Intense",
+      interests: "What moves you? (pick any)",
+      i_calas: "Coves & beaches", i_gastro: "Food & drink", i_cultura: "Culture & history", i_nat: "Nature & hiking", i_noche: "Nightlife", i_naut: "Watersports", i_lujo: "Quiet luxury",
+      kids: "Travelling with kids?", kidAges: "Ages", budget: "Budget",
+      bud_a: "Tight", bud_m: "Medium", bud_alto: "High",
+      boat: "Fancy boat trips & sunsets?", acc: "Do you need accessibility?",
+      acc_ning: "None", acc_carr: "Baby stroller", acc_mov: "Reduced mobility", acc_may: "Older travellers",
+      submit: "Build my plan", recompute: "Update the plan",
+      base_z: { ciutadella: "Ciutadella", mao: "Maó", "cala-galdana": "Cala Galdana", "son-bou": "Son Bou", "es-mercadal": "Es Mercadal", fornells: "Fornells" } as Record<string, string>,
+      slot: { desayuno: "Breakfast", manana: "Morning", comida: "Lunch", tarde: "Afternoon", atardecer: "Sunset", cena: "Dinner" } as Record<string, string>,
+      planBtitle: "If it rains or gets too hot", whyTitle: "Why this day", busCTA: "Sort it with Menorca Bus",
+      globalTitle: "Before you go", hours: "useful h", empty: "Fill in the survey and build your plan.",
+      intro: "A day-by-day guide, chained by proximity and unhurried: the island, at your pace.",
+    };
+
+// Config para el cliente (etiquetas que el render del plan necesita + URL del partner).
+const CFG = {
+  lang: locale,
+  slot: T.slot,
+  baseZ: T.base_z,
+  planBtitle: T.planBtitle,
+  whyTitle: T.whyTitle,
+  busCTA: T.busCTA,
+  globalTitle: T.globalTitle,
+  hours: T.hours,
+  menorcaBusUrl: SITE.partners.menorcaBus.url,
+  noticeIcon: { reserva: "📌", madrugar: "⏰", "agua-sombra": "💧", parking: "🅿️", "confirma-horario": "🕒", esfuerzo: "🥾", viento: "🌬️", accesibilidad: "♿", fiesta: "🎉", logistica: "🧭" } as Record<string, string>,
+};
+
+const interestList = [
+  ["calas", T.i_calas], ["gastronomia", T.i_gastro], ["cultura", T.i_cultura],
+  ["naturaleza", T.i_nat], ["vida-nocturna", T.i_noche], ["nautica", T.i_naut], ["lujo-tranquilo", T.i_lujo],
+];
+const baseOptions = ["recomiendame", "ciutadella", "mao", "cala-galdana", "son-bou", "es-mercadal", "fornells"];
+const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "15+"]];
+---
+
+<section class="mx-auto max-w-3xl px-5 pb-20 sm:px-8">
+  {!isEs && (
+    <p class="mt-2 rounded-md border border-niebla bg-arena px-4 py-2 text-sm text-piedra">
+      Note: the survey is in English; the detailed plan text is shown in Spanish while we finish the engine's localisation.
+    </p>
+  )}
+
+  {/* ── ENCUESTA (formulario nativo; el estado va en la querystring) ── */}
+  <form id="planner-form" method="get" class="mt-8 space-y-8">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">{T.formTitle}</p>
+
+    {/* Bloque 1 */}
+    <fieldset class="space-y-4 border-t border-niebla pt-5">
+      <legend class="font-display text-xl text-tinta">{T.b1}</legend>
+      <label class="block text-sm font-medium text-piedra">{T.days}
+        <select name="days" class="planner-field">
+          {[3, 4, 5, 6, 7, 8, 10].map((d) => <option value={d} selected={d === 5}>{d}</option>)}
+        </select>
+      </label>
+      <label class="block text-sm font-medium text-piedra">{T.transport}
+        <select name="transport" class="planner-field">
+          <option value="coche-alquiler">{T.t_coche}</option>
+          <option value="coche-propio-ferry">{T.t_ferry}</option>
+          <option value="sin-coche">{T.t_sin}</option>
+        </select>
+      </label>
+      <label class="block text-sm font-medium text-piedra">{T.ferryPort}
+        <select name="ferryPort" class="planner-field">
+          <option value="">—</option>
+          <option value="mao">Maó</option>
+          <option value="ciutadella">Ciutadella</option>
+        </select>
+      </label>
+    </fieldset>
+
+    {/* Bloque 2 */}
+    <fieldset class="space-y-4 border-t border-niebla pt-5">
+      <legend class="font-display text-xl text-tinta">{T.b2}</legend>
+      <div class="grid grid-cols-2 gap-4">
+        <label class="block text-sm font-medium text-piedra">{T.arr}
+          <input type="date" name="arrivalDate" class="planner-field" />
+        </label>
+        <label class="block text-sm font-medium text-piedra">{T.dep}
+          <input type="date" name="departureDate" class="planner-field" />
+        </label>
+      </div>
+      <p class="text-xs text-piedra-suave">{T.flights}</p>
+      <div class="grid grid-cols-2 gap-4">
+        <input type="time" name="arrivalFlightTime" class="planner-field" aria-label={T.arr} />
+        <input type="time" name="departureFlightTime" class="planner-field" aria-label={T.dep} />
+      </div>
+    </fieldset>
+
+    {/* Bloque 3 */}
+    <fieldset class="space-y-4 border-t border-niebla pt-5">
+      <legend class="font-display text-xl text-tinta">{T.b3}</legend>
+      <label class="block text-sm font-medium text-piedra">{T.base}
+        <select name="base" class="planner-field">
+          {baseOptions.map((b) => <option value={b}>{b === "recomiendame" ? T.b_rec : T.base_z[b]}</option>)}
+        </select>
+      </label>
+    </fieldset>
+
+    {/* Bloque 4 */}
+    <fieldset class="space-y-4 border-t border-niebla pt-5">
+      <legend class="font-display text-xl text-tinta">{T.b4}</legend>
+      <label class="block text-sm font-medium text-piedra">{T.pace}
+        <select name="pace" class="planner-field">
+          <option value="relajado">{T.p_rel}</option>
+          <option value="equilibrado" selected>{T.p_eq}</option>
+          <option value="intenso">{T.p_int}</option>
+        </select>
+      </label>
+      <fieldset>
+        <legend class="text-sm font-medium text-piedra">{T.interests}</legend>
+        <div class="mt-2 flex flex-wrap gap-2">
+          {interestList.map(([v, label]) => (
+            <label class="planner-pill">
+              <input type="checkbox" name="interests" value={v} class="sr-only" />
+              <span>{label}</span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
+      <label class="block text-sm font-medium text-piedra">{T.budget}
+        <select name="budget" class="planner-field">
+          <option value="ajustado">{T.bud_a}</option>
+          <option value="medio" selected>{T.bud_m}</option>
+          <option value="alto">{T.bud_alto}</option>
+        </select>
+      </label>
+    </fieldset>
+
+    {/* Bloque 5 */}
+    <fieldset class="space-y-4 border-t border-niebla pt-5">
+      <legend class="font-display text-xl text-tinta">{T.b5}</legend>
+      <label class="planner-pill w-fit">
+        <input type="checkbox" name="kids" value="si" class="sr-only" />
+        <span>{T.kids}</span>
+      </label>
+      <fieldset>
+        <legend class="text-sm font-medium text-piedra">{T.kidAges}</legend>
+        <div class="mt-2 flex flex-wrap gap-2">
+          {kidAgeList.map(([v, label]) => (
+            <label class="planner-pill">
+              <input type="checkbox" name="kidAges" value={v} class="sr-only" />
+              <span>{label}</span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
+      <label class="block text-sm font-medium text-piedra">{T.acc}
+        <select name="accessibility" class="planner-field">
+          <option value="ninguna">{T.acc_ning}</option>
+          <option value="carrito">{T.acc_carr}</option>
+          <option value="movilidad-reducida">{T.acc_mov}</option>
+          <option value="mayores">{T.acc_may}</option>
+        </select>
+      </label>
+    </fieldset>
+
+    {/* Bloque 6 */}
+    <fieldset class="space-y-4 border-t border-niebla pt-5">
+      <legend class="font-display text-xl text-tinta">{T.b6}</legend>
+      <label class="planner-pill w-fit">
+        <input type="checkbox" name="boatSunset" value="si" checked class="sr-only" />
+        <span>{T.boat}</span>
+      </label>
+    </fieldset>
+
+    <button type="submit" class="rounded-full bg-arcilla px-7 py-3 font-medium text-crema transition-colors hover:bg-terracota">
+      {T.submit}
+    </button>
+  </form>
+
+  {/* ── RESULTADO (lo pinta el island desde la querystring) ── */}
+  <div id="planner-results" class="mt-12">
+    <p class="text-sm text-piedra-suave">{T.empty}</p>
+  </div>
+
+  {/* Datos para el cliente (no se ejecutan: los lee el island). */}
+  <script type="application/json" id="planner-dataset" set:html={JSON.stringify(dataset)} />
+  <script type="application/json" id="planner-events" set:html={JSON.stringify(events)} />
+  <script type="application/json" id="planner-cfg" set:html={JSON.stringify(CFG)} />
+</section>
+
+<script>
+  import { planTrip } from "../lib/planner/engine.ts";
+
+  const $ = (id: string) => document.getElementById(id);
+  const dataset = JSON.parse($("planner-dataset")!.textContent || "[]");
+  const events = JSON.parse($("planner-events")!.textContent || "[]");
+  const CFG = JSON.parse($("planner-cfg")!.textContent || "{}");
+  const form = $("planner-form") as HTMLFormElement | null;
+  const out = $("planner-results");
+
+  const esc = (s: string) =>
+    String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]!));
+
+  function surveyFromURL() {
+    const p = new URLSearchParams(location.search);
+    if (![...p.keys()].length) return null;
+    return {
+      days: Number(p.get("days")) || 5,
+      transport: p.get("transport") || "coche-alquiler",
+      ferryPort: p.get("ferryPort") || undefined,
+      base: p.get("base") || "recomiendame",
+      pace: p.get("pace") || "equilibrado",
+      interests: p.getAll("interests"),
+      kids: { has: p.get("kids") === "si", ages: p.getAll("kidAges") },
+      accessibility: p.get("accessibility") || "ninguna",
+      boatSunset: p.get("boatSunset") !== "no" && p.get("boatSunset") !== null ? p.get("boatSunset") === "si" : false,
+      budget: p.get("budget") || "medio",
+      arrivalDate: p.get("arrivalDate") || undefined,
+      departureDate: p.get("departureDate") || undefined,
+      arrivalFlightTime: p.get("arrivalFlightTime") || undefined,
+      departureFlightTime: p.get("departureFlightTime") || undefined,
+    };
+  }
+
+  // Rellena la encuesta desde la URL (para que el plan sea editable y compartible).
+  function prefill(p: URLSearchParams) {
+    if (!form) return;
+    for (const el of Array.from(form.elements) as HTMLInputElement[]) {
+      if (!el.name) continue;
+      if (el.type === "checkbox") {
+        el.checked = p.getAll(el.name).includes(el.value);
+      } else if (p.has(el.name)) {
+        el.value = p.get(el.name)!;
+      }
+    }
+  }
+
+  function notice(n: any) {
+    return `<li class="flex gap-2 text-sm text-piedra"><span aria-hidden="true">${CFG.noticeIcon[n.kind] || "•"}</span><span>${esc(n.text)}</span></li>`;
+  }
+
+  function block(b: any) {
+    const name = b.placeId
+      ? `<span class="font-medium text-tinta">${esc(b.placeName)}</span>`
+      : `<span class="text-piedra">${esc(b.placeName)}</span>`;
+    const dur = b.durationMin ? `<span class="text-xs text-piedra-suave"> · ${b.durationMin} min</span>` : "";
+    return `<li class="flex gap-3 py-1.5">
+      <span class="w-12 shrink-0 text-xs font-semibold text-oro">${b.timeHint || ""}</span>
+      <span class="w-20 shrink-0 text-xs uppercase tracking-wider text-piedra-suave">${CFG.slot[b.slot] || b.slot}</span>
+      <span>${name}${dur}${b.reason ? `<span class="block text-xs text-piedra-suave">${esc(b.reason)}</span>` : ""}</span>
+    </li>`;
+  }
+
+  function planB(pb: any) {
+    if (!pb || (!pb.blocks?.length && !pb.notices?.length)) return "";
+    const blocks = (pb.blocks || []).map(block).join("");
+    const notices = (pb.notices || []).map(notice).join("");
+    return `<details class="mt-3 rounded-lg bg-arena/50 p-3">
+      <summary class="cursor-pointer text-sm font-medium text-arcilla">${esc(CFG.planBtitle)} →</summary>
+      <ul class="mt-2 divide-y divide-niebla">${blocks}</ul>
+      ${notices ? `<ul class="mt-2 space-y-1">${notices}</ul>` : ""}
+    </details>`;
+  }
+
+  function dayCard(d: any) {
+    const anchors = d.blocks.map(block).join("");
+    const chips = (d.notices || []).map(notice).join("");
+    return `<article class="rounded-2xl border border-niebla bg-lino p-5 sm:p-6">
+      <header class="flex flex-wrap items-baseline justify-between gap-x-4">
+        <h3 class="font-display text-2xl text-tinta">${esc(d.label)}</h3>
+        <span class="text-xs text-piedra-suave">~${d.budgetHours} ${esc(CFG.hours)}</span>
+      </header>
+      <ul class="mt-4 divide-y divide-niebla">${anchors}</ul>
+      ${chips ? `<ul class="mt-4 space-y-1.5 border-t border-niebla pt-3">${chips}</ul>` : ""}
+      ${planB(d.planB)}
+    </article>`;
+  }
+
+  function render(survey: any) {
+    if (!out) return;
+    const plan = planTrip(survey, dataset, CFG.lang, events);
+    const baseName = CFG.baseZ[plan.base] || plan.base;
+    const globals = (plan.globalNotices || []).map(notice).join("");
+    const bus = (plan.menorcaBusHooks || []).length
+      ? `<a href="${CFG.menorcaBusUrl}" target="_blank" rel="noopener" data-umami-event="planner-menorcabus" class="mt-4 inline-block rounded-full border border-arcilla px-5 py-2 text-sm font-medium text-arcilla transition-colors hover:bg-arcilla hover:text-crema">${esc(CFG.busCTA)} →</a>`
+      : "";
+    out.innerHTML = `
+      <div class="rounded-2xl bg-arena/50 p-5 sm:p-6">
+        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">${esc(baseName)}</p>
+        <p class="lead mt-2">${esc(plan.baseReason)}</p>
+        ${globals ? `<div class="mt-4 border-t border-niebla pt-3"><p class="text-xs font-semibold uppercase tracking-wider text-oro">${esc(CFG.globalTitle)}</p><ul class="mt-2 space-y-1.5">${globals}</ul></div>` : ""}
+        ${bus}
+      </div>
+      <div class="mt-6 space-y-5">${plan.days.map(dayCard).join("")}</div>`;
+    out.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  const survey = surveyFromURL();
+  if (survey) {
+    prefill(new URLSearchParams(location.search));
+    render(survey);
+  }
+</script>

@@ -20,6 +20,8 @@ const home = homePath(locale);
 const aboutHref = locale === "es" ? "/quienes-somos" : "/en/about";
 const newsletterHref = locale === "es" ? "/newsletter" : "/en/newsletter";
 const contactHref = locale === "es" ? "/contacto" : "/en/contact";
+const plannerHref = locale === "es" ? "/planificador" : "/en/trip-planner";
+const plannerLabel = locale === "es" ? "Planificador" : "Planner";
 ---
 
 <header class="sticky top-0 z-50 border-b border-niebla bg-lino/95 backdrop-blur-sm">
@@ -77,6 +79,9 @@ const contactHref = locale === "es" ? "/contacto" : "/en/contact";
                 ))
               }
               <hr class="my-2 border-niebla" />
+              <a href={plannerHref} class="block rounded-md px-3 py-2 text-sm font-medium text-arcilla transition-colors hover:bg-arena hover:text-terracota">
+                {plannerLabel}
+              </a>
               <a href={aboutHref} class="block rounded-md px-3 py-2 text-sm text-piedra transition-colors hover:bg-arena hover:text-terracota">
                 {t("nav.about")}
               </a>
@@ -119,6 +124,13 @@ const contactHref = locale === "es" ? "/contacto" : "/en/contact";
           </a>
         ))
       }
+      <span aria-hidden="true" class="h-3.5 w-px bg-niebla"></span>
+      <a
+        href={plannerHref}
+        class="uppercase tracking-[0.12em] text-arcilla transition-colors hover:text-terracota"
+      >
+        {plannerLabel}
+      </a>
     </nav>
   </div>
 </header>

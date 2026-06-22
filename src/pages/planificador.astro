@@ -1,0 +1,36 @@
+---
+// "Organiza tu viaje a Menorca" (ES) — planificador de itinerarios.
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PlannerView from "../components/PlannerView.astro";
+
+const alternates = {
+  es: "/planificador",
+  en: "/en/trip-planner",
+};
+---
+
+<BaseLayout
+  title="Organiza tu viaje a Menorca"
+  description="Tu itinerario de Menorca día a día: dinos cómo viajas y te proponemos un plan encadenado por cercanía, sin prisas y con criterio de lujo tranquilo. Flexible al viento y al mal tiempo."
+  locale="es"
+  alternates={alternates}
+>
+  <div class="mx-auto max-w-3xl px-5 pt-12 sm:px-8 sm:pt-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Calma Society · Menorca</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Organiza tu viaje a Menorca</h1>
+    <p class="lead mt-5">
+      Una guía día a día, encadenada por cercanía y sin prisas: la isla a tu ritmo, con
+      criterio de lujo tranquilo.
+    </p>
+    <p class="mt-5 text-base leading-relaxed text-piedra-suave">
+      Menorca es una <strong>espina de pez</strong>: todo cuelga del eje Maó–Ciutadella y las
+      calas son ramales. El error es zigzaguear. Te proponemos un plan que agrupa por zonas,
+      madruga a las calas, deja margen para el viento y reserva un plan-B para el mal tiempo.
+      Tú lo ajustas; la decisión final siempre es tuya.
+    </p>
+  </div>
+
+  <div class="mt-8">
+    <PlannerView locale="es" />
+  </div>
+</BaseLayout>

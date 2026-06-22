@@ -232,3 +232,45 @@
 .agenda-filterable:has(#agenda-otro:checked) [data-agenda]:not([data-agenda="otro"]) {
   display: none;
 }
+/* ============================================================
+   PLANIFICADOR DE VIAJES — campos de la encuesta y "pills" de selección.
+   ============================================================ */
+.planner-field {
+  margin-top: 0.35rem;
+  width: 100%;
+  border-radius: 0.6rem;
+  border: 1px solid var(--color-niebla);
+  background-color: var(--color-lino);
+  padding: 0.55rem 0.75rem;
+  font-size: 1rem;
+  color: var(--color-piedra);
+}
+.planner-field:focus {
+  border-color: var(--color-arcilla);
+  outline: none;
+}
+/* "Pill" seleccionable: checkbox oculto (sr-only) + label que se ilumina al marcar. */
+.planner-pill {
+  display: inline-flex;
+  cursor: pointer;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid var(--color-niebla);
+  background-color: var(--color-lino);
+  padding: 0.375rem 0.875rem;
+  font-size: 0.875rem;
+  color: var(--color-piedra);
+  transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+.planner-pill:hover {
+  border-color: var(--color-arcilla);
+}
+.planner-pill:has(input:checked) {
+  border-color: var(--color-arcilla);
+  background-color: var(--color-arcilla);
+  color: var(--color-crema);
+}
+.planner-pill:has(input:focus-visible) {
+  outline: 2px solid var(--color-terracota);
+  outline-offset: 2px;
+}
