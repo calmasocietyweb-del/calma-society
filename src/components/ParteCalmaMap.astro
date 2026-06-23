@@ -13,7 +13,7 @@
 import parte from "../data/parte-calma.json";
 import outline from "../data/menorca-outline.json";
 import timeline from "../data/parte-timeline.json";
-import { placeUrl, formatDate } from "../i18n/utils";
+import { placeUrl } from "../i18n/utils";
 import type { Locale } from "../config/site";
 import { abs } from "../lib/schema";
 import JsonLd from "./JsonLd.astro";
@@ -179,7 +179,6 @@ const repDeg = F0.rep.deg;
 
 const T = {
   es: {
-    parteDel: "Parte del",
     stale: "No hemos podido actualizar hoy; mostramos el último parte disponible.",
     staleAviso: "Esta previsión podría no estar actualizada. Consulta siempre las banderas y a los socorristas antes de bañarte.",
     mapAria:
@@ -222,7 +221,6 @@ const T = {
     methodologyHref: "/como-calculamos-la-calma",
   },
   en: {
-    parteDel: "Forecast for",
     stale: "We couldn’t update today; showing the latest available forecast.",
     staleAviso: "This forecast may be out of date. Always check the beach flags and lifeguards before swimming.",
     mapAria:
@@ -296,8 +294,6 @@ const dayLabelOf = (f: string) =>
 const dateLabelOf = (f: string) => { const [, mm, dd] = f.split("-"); return Number(dd) + " " + monLoc[Number(mm) - 1]; };
 const periodLabelOf = (p: string) => PERIOD_LABELS[p] ?? p;
 
-const fecha = formatDate(new Date(parte.forecastDate + "T00:00:00"), locale);
-
 // ---- JSON-LD: una Beach por cala con el estado del mar de hoy (observationDate honesto) ----
 const graph = [
   ...parte.calas.map((c) => ({
@@ -317,10 +313,10 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
 ---
 
 <section class="mx-auto max-w-5xl px-5 pb-16 sm:px-8">
-  {/* Meta: fecha, validez, fuente */}
+  {/* Meta: validez y fuente. Sin fecha fija del parte: el día se ve (y se elige) en la
+      línea temporal; una fecha congelada aquí inducía a error al quedar obsoleta. */}
   <p class="text-sm text-piedra-suave">
-    <span class="font-semibold text-piedra">{T.parteDel} {fecha}.</span>
-    {" "}{parte.validityNote}{" "}
+    {parte.validityNote}{" "}
     <span class="text-piedra-suave">· {isEs ? "Datos" : "Data"}: {parte.sources.join(", ")}</span>
   </p>
   {parte.stale && (
