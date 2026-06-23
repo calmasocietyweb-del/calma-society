@@ -96,6 +96,12 @@ const jobs = [
   { src: `${SRC}/_stock/caldereta-langosta.jpg`, out: "caldereta-langosta" }, // Adobe Stock
   // Playas (Wave D, jun 2026).
   { src: `${SRC}/_stock/son-bou.jpg`, out: "son-bou" }, // Wasquewhat, Wikimedia CC BY-SA 4.0
+  // Fiestas para la Agenda (Adobe Stock, licenciadas — jun 2026). Variedad: una por fiesta.
+  { src: `${SRC}/_stock/cabalgata-reyes.jpg`, out: "cabalgata-reyes" }, // Adobe Stock #676011625 (Cabalgata de Reyes)
+  { src: `${SRC}/_stock/carnaval-menorca.jpg`, out: "carnaval-menorca" }, // Adobe Stock #573061026 (disfraces de carnaval)
+  { src: `${SRC}/_stock/fiesta-caballos.jpg`, out: "fiesta-caballos" }, // Adobe Stock #316855635 (jinete y caballo, fiesta tradicional)
+  { src: `${SRC}/_stock/caballos-jinetes.jpg`, out: "caballos-jinetes" }, // Adobe Stock #510706254 (caballos y jinetes)
+  { src: `${SRC}/_stock/jinetes-fiesta.jpg`, out: "jinetes-fiesta" }, // Adobe Stock #1239213075 (jinetes engalanados)
 ];
 
 mkdirSync(OUT, { recursive: true });
