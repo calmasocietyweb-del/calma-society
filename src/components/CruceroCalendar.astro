@@ -1,0 +1,150 @@
+---
+/**
+ * Calendario de escalas de cruceros en Maó (Menorca) 2026.
+ * Lee src/data/cruceros-menorca-2026.json (calendario consolidado y verificado,
+ * ver investigación en .tmp_research / NEGOCIO). HONESTIDAD ante todo:
+ *   - Es una previsión PARCIAL (~55% de la temporada) y ORIENTATIVA, no el calendario
+ *     oficial. Marzo-abril = confirmadas por consignatarios; resto = agregadores.
+ *   - Cada escala muestra su nivel de fiabilidad; los pasajeros son CAPACIDAD nominal.
+ *   - Descargo visible + enlace a la fuente oficial (Ports de Balears).
+ * Bilingüe por prop `lang`. Tabla accesible (thead/th scope) y responsive.
+ */
+import cruceros from "../data/cruceros-menorca-2026.json";
+
+interface Props {
+  lang?: "es" | "en";
+}
+const { lang = "es" } = Astro.props;
+const isEs = lang === "es";
+
+const MONTHS: Record<string, string[]> = {
+  es: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+  en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+};
+const DOW: Record<string, string[]> = {
+  es: ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"],
+  en: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+};
+const CONF: Record<string, { label: Record<string, string>; color: string }> = {
+  alta: { label: { es: "Confirmada", en: "Confirmed" }, color: "#4f7a52" },
+  media: { label: { es: "Prevista", en: "Scheduled" }, color: "#c08a2b" },
+  baja: { label: { es: "Por confirmar", en: "Unconfirmed" }, color: "#8a8170" },
+};
+
+const T = isEs
+  ? {
+      thFecha: "Fecha",
+      thBarco: "Barco",
+      thNaviera: "Naviera",
+      thPax: "Capacidad",
+      thEstado: "Fiabilidad",
+      caption: "Escalas de cruceros previstas en el puerto de Maó en 2026.",
+      disclaimer:
+        "Previsión orientativa y parcial: recoge unas 72 de las ~125-130 escalas previstas para 2026. Las de marzo y abril están confirmadas por los consignatarios del puerto; el resto procede de agregadores internacionales y puede cambiar. No es el calendario oficial.",
+      legendTitle: "Fiabilidad:",
+      paxNote: "“Capacidad” es el máximo del barco, no el pasaje real embarcado. Las horas, cuando constan, son orientativas.",
+      ciutadella:
+        "Ciutadella apenas recibe cruceros en 2026: unas 2 escalas del pequeño National Geographic Orion (Lindblad), sin fecha confirmada. El resto del tráfico atraca en Maó.",
+      official: "Consulta el calendario oficial y actualizado en Ports de Balears",
+    }
+  : {
+      thFecha: "Date",
+      thBarco: "Ship",
+      thNaviera: "Line",
+      thPax: "Capacity",
+      thEstado: "Reliability",
+      caption: "Cruise calls scheduled at the port of Maó in 2026.",
+      disclaimer:
+        "Indicative, partial forecast: it lists around 72 of the ~125-130 calls expected for 2026. March and April are confirmed by the port agents; the rest comes from international aggregators and may change. This is not the official schedule.",
+      legendTitle: "Reliability:",
+      paxNote: "“Capacity” is the ship's maximum, not actual passengers aboard. Times, where given, are indicative.",
+      ciutadella:
+        "Ciutadella barely receives cruise ships in 2026: around 2 calls of the small National Geographic Orion (Lindblad), with no confirmed date. All other traffic docks in Maó.",
+      official: "Check the official, up-to-date schedule at Ports de Balears",
+    };
+
+// Agrupa las escalas por mes, conservando el orden.
+type Call = { date: string; ship: string; line: string; pax: number | null; arrival: string | null; departure: string | null; confidence: string; source: string };
+const groups: { key: string; label: string; items: (Call & { d: number; dow: string; hours: string })[] }[] = [];
+for (const c of cruceros.calls as Call[]) {
+  const [y, m, d] = c.date.split("-").map(Number);
+  const key = `${y}-${m}`;
+  let g = groups.find((gr) => gr.key === key);
+  if (!g) {
+    g = { key, label: MONTHS[lang][m - 1], items: [] };
+    groups.push(g);
+  }
+  const dow = DOW[lang][new Date(Date.UTC(y, m - 1, d, 12)).getUTCDay()];
+  const hours = c.arrival && c.departure ? `${c.arrival}–${c.departure}` : c.arrival || "";
+  g.items.push({ ...c, d, dow, hours });
+}
+const fmtPax = (n: number | null) => (n == null ? "—" : "≈ " + n.toLocaleString(isEs ? "es-ES" : "en-US"));
+const officialUrl = cruceros.officialSource;
+const colCount = 5;
+---
+
+<div class="my-10">
+  {/* Descargo honesto, siempre visible antes del calendario. */}
+  <p class="rounded-xl border border-terracota/40 bg-arena/60 px-4 py-3 text-sm leading-relaxed text-piedra">
+    ⚓ {T.disclaimer}
+  </p>
+
+  {/* Leyenda de fiabilidad. */}
+  <div class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-piedra-suave">
+    <span class="font-semibold uppercase tracking-wider text-oro">{T.legendTitle}</span>
+    {(["alta", "media", "baja"] as const).map((k) => (
+      <span class="inline-flex items-center gap-1.5">
+        <span class="inline-block h-2.5 w-2.5 rounded-full" style={`background:${CONF[k].color}`}></span>
+        {CONF[k].label[lang]}
+      </span>
+    ))}
+  </div>
+
+  {/* Tabla del calendario (responsive: scroll horizontal en móvil). */}
+  <div class="mt-4 overflow-x-auto rounded-xl border border-niebla">
+    <table class="w-full min-w-[34rem] border-collapse text-sm">
+      <caption class="sr-only">{T.caption}</caption>
+      <thead>
+        <tr class="bg-arena text-left text-xs font-semibold uppercase tracking-wider text-piedra">
+          <th scope="col" class="px-3 py-2.5">{T.thFecha}</th>
+          <th scope="col" class="px-3 py-2.5">{T.thBarco}</th>
+          <th scope="col" class="px-3 py-2.5">{T.thNaviera}</th>
+          <th scope="col" class="px-3 py-2.5 text-right">{T.thPax}</th>
+          <th scope="col" class="px-3 py-2.5">{T.thEstado}</th>
+        </tr>
+      </thead>
+      {groups.map((g) => (
+        <tbody>
+          <tr>
+            <th scope="colgroup" colspan={colCount} class="border-t border-niebla bg-lino px-3 py-2 text-left font-display text-base text-tinta">
+              {g.label}
+            </th>
+          </tr>
+          {g.items.map((c) => (
+            <tr class="border-t border-niebla/70 align-baseline">
+              <td class="whitespace-nowrap px-3 py-2.5 text-piedra">
+                <span class="font-semibold text-tinta">{c.dow} {c.d}</span>
+                {c.hours && <span class="block text-xs text-piedra-suave">{c.hours}</span>}
+              </td>
+              <td class="px-3 py-2.5 font-medium text-tinta" title={c.source}>{c.ship}</td>
+              <td class="px-3 py-2.5 text-piedra-suave">{c.line}</td>
+              <td class="whitespace-nowrap px-3 py-2.5 text-right text-piedra-suave">{fmtPax(c.pax)}</td>
+              <td class="whitespace-nowrap px-3 py-2.5">
+                <span class="inline-flex items-center gap-1.5 text-piedra">
+                  <span class="inline-block h-2.5 w-2.5 shrink-0 rounded-full" style={`background:${CONF[c.confidence]?.color || "#8a8170"}`}></span>
+                  {CONF[c.confidence]?.label[lang] || c.confidence}
+                </span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      ))}
+    </table>
+  </div>
+
+  <p class="mt-2 text-xs leading-relaxed text-piedra-suave">{T.paxNote}</p>
+  <p class="mt-2 text-xs leading-relaxed text-piedra-suave">{T.ciutadella}</p>
+  <p class="mt-3 text-sm">
+    <a class="font-medium text-arcilla underline underline-offset-2 hover:text-terracota" href={officialUrl} target="_blank" rel="noopener">{T.official} ↗</a>
+  </p>
+</div>

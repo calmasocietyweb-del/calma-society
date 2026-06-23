@@ -72,12 +72,19 @@ export const SECTIONS: Section[] = [
     },
   },
   {
+    // Slug heredado `/practica` mantenido a propósito (SEO/enlaces); la etiqueta e
+    // intro se reenfocan a transporte + experiencias a medida (el núcleo real de la
+    // sección: chófer, traslados, excursiones, cruceros), CLAUDE.md §5.
     key: "practica",
-    label: { es: "Práctica", en: "Practical" },
+    label: { es: "Moverse", en: "Getting around" },
     href: { es: "/practica", en: "/en/practical" },
     intro: {
-      es: "Cómo llegar, moverse y cuándo ir. Lo que necesitas saber, sin rodeos.",
-      en: "How to get there, get around and when to go. What you need to know, plainly.",
+      es: "Traslados, chófer y experiencias a medida. Moverse por Menorca con calma y con clase.",
+      en: "Transfers, chauffeur and bespoke experiences. Getting around Menorca, calm and with class.",
+    },
+    seoDescription: {
+      es: "Moverse por Menorca con calma: traslados privados, chófer en Mercedes Clase S y V, excursiones a medida, transfers de crucero y cómo llegar. Operado por Menorca Bus.",
+      en: "Getting around Menorca with calm: private transfers, chauffeur-driven Mercedes S and V Class, bespoke excursions, cruise transfers and how to get there. By Menorca Bus.",
     },
   },
 ];
