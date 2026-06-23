@@ -280,6 +280,9 @@ const eventos = defineCollection({
     ]),
     description: z.string(),
     image: z.string().optional(),
+    // Crédito de la foto (autor + licencia). Obligatorio mostrarlo para fotos
+    // con licencia CC (Wikimedia Commons). Ej.: "MANovillo / Wikimedia (CC BY 2.0)".
+    imageCredit: z.string().optional(),
     sourceUrl: z.url().optional(),
     status: STATUS,
     source: z.enum(["humano", "auto-agenda"]).default("humano"),
