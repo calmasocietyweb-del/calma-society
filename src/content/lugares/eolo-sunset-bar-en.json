@@ -1,0 +1,38 @@
+{
+  "name": "Eolo Sunset Bar",
+  "lang": "en",
+  "translationKey": "eolo-sunset-bar",
+  "type": "otro",
+  "description": "A stylish beach bar perched on the cliffs of Cala'n Forcat, on the west coast near Ciutadella. Relaxed in mood, with good cocktails and one of the finest sunset views on the island; an evening drink as the day fades.",
+  "coordinates": {
+    "lat": 40.01,
+    "lng": 3.79
+  },
+  "area": "West (Ciutadella)",
+  "tags": [
+    "oeste",
+    "experiencia",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "parejas",
+      "naturaleza",
+      "lujo-tranquilo"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}

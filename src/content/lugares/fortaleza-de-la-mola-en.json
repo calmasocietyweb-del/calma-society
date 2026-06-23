@@ -1,0 +1,47 @@
+{
+  "name": "Fortaleza de La Mola",
+  "lang": "en",
+  "translationKey": "fortaleza-de-la-mola",
+  "type": "monumento",
+  "description": "An imposing military fortress (1848-1875) guarding the entrance to Maó's harbour, with batteries, tunnels, Vickers guns and sea views. The vast complex can be explored independently with a map, with an audio guide, or on a guided tour.",
+  "coordinates": {
+    "lat": 39.8819,
+    "lng": 4.3097
+  },
+  "area": "East (Es Castell)",
+  "tags": [
+    "este",
+    "monumento",
+    "es-castell"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "mao-puerto",
+      "este"
+    ],
+    "highlights": [
+      "The 19th-century fortress above the harbour mouth",
+      "The tunnels and gun batteries",
+      "The views over Maó from the viewpoints"
+    ]
+  }
+}

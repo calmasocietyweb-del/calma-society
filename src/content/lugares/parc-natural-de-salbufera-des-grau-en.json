@@ -1,0 +1,37 @@
+{
+  "name": "Parc Natural de s'Albufera des Grau",
+  "lang": "en",
+  "translationKey": "parc-natural-de-salbufera-des-grau",
+  "type": "otro",
+  "description": "The core of Menorca's Biosphere Reserve: a coastal lagoon, wetland, and Mediterranean woodland with viewpoints and birdwatching trails. The serene, natural face of the north, well suited to gentle family walks.",
+  "coordinates": {
+    "lat": 39.9461,
+    "lng": 4.2628
+  },
+  "area": "North (Maó)",
+  "tags": [
+    "norte",
+    "naturaleza",
+    "mao"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "familias"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

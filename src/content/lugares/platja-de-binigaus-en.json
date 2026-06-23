@@ -1,0 +1,36 @@
+{
+  "name": "Platja de Binigaus",
+  "lang": "en",
+  "translationKey": "platja-de-binigaus",
+  "type": "cala",
+  "description": "A long, unspoilt beach of golden sand and shallow, crystal-clear water, a natural extension of Sant Tomàs. Considered one of Menorca's finest naturist beaches, with the more sheltered western stretch tucked between vegetation and cliffs.",
+  "coordinates": {
+    "lat": 39.93,
+    "lng": 4.04
+  },
+  "area": "South-central (Es Migjorn Gran)",
+  "tags": [
+    "sur-centro",
+    "playa",
+    "es-migjorn-gran"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "playa",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

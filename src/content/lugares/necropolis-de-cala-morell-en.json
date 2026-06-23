@@ -1,0 +1,37 @@
+{
+  "name": "Cala Morell Necropolis",
+  "lang": "en",
+  "translationKey": "necropolis-de-cala-morell",
+  "type": "monumento",
+  "description": "A cave necropolis of fourteen hypogea carved into the rock, in use from pre-Talayotic times to the second century AD. Some chambers feature interior columns, windows, and a façade with relief columns of classical influence.",
+  "coordinates": {
+    "lat": 40.0556,
+    "lng": 3.8786
+  },
+  "area": "North (Ciutadella)",
+  "tags": [
+    "norte",
+    "yacimiento",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza"
+    ],
+    "durationMin": 38,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

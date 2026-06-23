@@ -1,0 +1,48 @@
+{
+  "name": "Gin Xoriguer Distillery",
+  "lang": "en",
+  "translationKey": "destileria-gin-xoriguer",
+  "type": "otro",
+  "description": "A historic distillery on Maó harbour that produces Menorca's gin in copper stills more than 250 years old, over a local wood fire, using wine alcohol, juniper and Maó well water. The guided visit ends with a tasting.",
+  "coordinates": {
+    "lat": 39.89,
+    "lng": 4.262
+  },
+  "area": "East (Maó)",
+  "tags": [
+    "este",
+    "experiencia",
+    "mao"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 60,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "mao-puerto",
+      "este"
+    ],
+    "highlights": [
+      "the shop beside Maó harbour",
+      "tasting Menorca's gin",
+      "trying pomada (gin with lemonade)"
+    ]
+  }
+}

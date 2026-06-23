@@ -1,0 +1,38 @@
+{
+  "name": "Traditional Llaüt Hire / Private Sunset Boat",
+  "lang": "en",
+  "translationKey": "alquiler-de-llaut-tradicional-barco-privado-al-a",
+  "type": "otro",
+  "description": "A trip aboard a wooden Menorcan llaüt — the island's elegant traditional craft, with a sun deck — or a private skippered boat from Cala Galdana or Ciutadella towards the turquoise gems of the south: Cala Macarella, Macarelleta and Turqueta.",
+  "coordinates": {
+    "lat": 39.93,
+    "lng": 3.96
+  },
+  "area": "South-west (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "experiencia",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}

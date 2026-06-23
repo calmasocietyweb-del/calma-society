@@ -1,0 +1,43 @@
+{
+  "name": "Ferreries",
+  "lang": "en",
+  "translationKey": "ferreries",
+  "type": "otro",
+  "description": "A rural white village, the highest in Menorca, with a deep-rooted tradition of footwear (including Pretty Ballerinas) and furniture making. Surrounded by ravines and hills, it is the natural gateway to the Barranc d'Algendar, the island's most significant ravine.",
+  "coordinates": {
+    "lat": 39.9817,
+    "lng": 4.0103
+  },
+  "area": "Centre (Ferreries)",
+  "tags": [
+    "centro",
+    "pueblo",
+    "ferreries"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "cultura",
+      "familias"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "The highest village on the island",
+      "The artisan market (in season)",
+      "The gateway to Cala Galdana"
+    ]
+  }
+}

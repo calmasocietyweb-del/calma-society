@@ -1,0 +1,37 @@
+{
+  "name": "Cala del Pilar",
+  "lang": "en",
+  "translationKey": "cala-del-pilar",
+  "type": "cala",
+  "description": "One of Menorca's wildest and most isolated beaches: golden sand beneath red clay cliffs, with not a single facility. The long walk and access controls keep it almost untouched, rewarding only those who make the trek.",
+  "coordinates": {
+    "lat": 40.022,
+    "lng": 3.93
+  },
+  "area": "North (Ferreries)",
+  "tags": [
+    "norte",
+    "cala",
+    "ferreries"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 300,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

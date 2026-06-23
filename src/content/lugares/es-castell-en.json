@@ -1,0 +1,44 @@
+{
+  "name": "Es Castell",
+  "lang": "en",
+  "translationKey": "es-castell",
+  "type": "otro",
+  "description": "A town of British military design, founded in 1771 as Georgetown beside the mouth of Maó harbour. Its Esplanada square has a town hall with a red colonial façade and a Military Museum, alongside the Roser church. Its jewel is the Cales Fonts harbour.",
+  "coordinates": {
+    "lat": 39.8794,
+    "lng": 4.2906
+  },
+  "area": "East (Es Castell)",
+  "tags": [
+    "este",
+    "pueblo",
+    "es-castell"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "naturaleza",
+      "cultura"
+    ],
+    "durationMin": 180,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "Cales Fonts harbour at sunset",
+      "La Mola Fortress",
+      "dining on fish at a terrace above the water"
+    ]
+  }
+}

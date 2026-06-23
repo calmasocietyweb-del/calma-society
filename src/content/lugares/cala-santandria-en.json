@@ -1,0 +1,48 @@
+{
+  "name": "Cala Santandría",
+  "lang": "en",
+  "translationKey": "cala-santandria",
+  "type": "cala",
+  "description": "A sheltered cove of white sand and calm, clear water, well protected from the wind and ideal for families with young children. Developed and convenient, just beside Ciutadella.",
+  "coordinates": {
+    "lat": 39.969,
+    "lng": 3.829
+  },
+  "area": "South-west (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "cala",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "seasonWindow": {
+        "from": "05-01",
+        "to": "10-31"
+      },
+      "certainty": "alta"
+    }
+  }
+}

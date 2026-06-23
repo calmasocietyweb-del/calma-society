@@ -1,0 +1,43 @@
+{
+  "name": "Bodegas Binifadet",
+  "lang": "en",
+  "translationKey": "bodegas-binifadet",
+  "type": "otro",
+  "description": "Menorca's oldest and largest winery (around 100,000 bottles a year, half the island's output, and the only producer of sparkling wines). Twelve hectares in Sant Lluís with white varieties (Chardonnay, Malvasía, Moscatel) and reds.",
+  "coordinates": {
+    "lat": 39.85,
+    "lng": 4.27
+  },
+  "area": "South-east (Sant Lluís)",
+  "tags": [
+    "sur-este",
+    "experiencia",
+    "sant-lluis"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "lujo-tranquilo",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "binibeca-sur-este",
+      "sur-este"
+    ]
+  }
+}

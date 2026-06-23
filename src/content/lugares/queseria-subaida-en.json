@@ -1,0 +1,49 @@
+{
+  "name": "Quesería Subaida",
+  "lang": "en",
+  "translationKey": "queseria-subaida",
+  "type": "otro",
+  "description": "A 350-hectare livestock estate producing some 80 wheels a day of artisan Mahón-Menorca DOP cheese. The visit includes a cheesemaking demonstration, the maturing room and a tasting of three varieties served with sobrassada, salchichón and preserves.",
+  "coordinates": {
+    "lat": 39.96,
+    "lng": 4.16
+  },
+  "area": "Central (Es Mercadal)",
+  "tags": [
+    "centro",
+    "experiencia",
+    "es-mercadal"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "familias",
+      "cultura",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "interior-cultura",
+      "centro"
+    ],
+    "highlights": [
+      "The guided tour of the estate",
+      "The Mahón-Menorca DOP cheese tasting",
+      "Book ahead before visiting"
+    ]
+  }
+}

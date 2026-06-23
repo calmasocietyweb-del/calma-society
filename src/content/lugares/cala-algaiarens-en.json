@@ -1,0 +1,37 @@
+{
+  "name": "Cala Algaiarens",
+  "lang": "en",
+  "translationKey": "cala-algaiarens",
+  "type": "cala",
+  "description": "Two sister beaches (es Bot and es Tancats) of golden-red sand within an unspoilt protected area framed by pine wood and dunes, free of buildings. One of the few wild beaches in the north reachable by car, which makes it much sought after.",
+  "coordinates": {
+    "lat": 40.047,
+    "lng": 3.88
+  },
+  "area": "North (Ciutadella)",
+  "tags": [
+    "norte",
+    "playa",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

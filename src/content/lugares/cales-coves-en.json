@@ -1,0 +1,37 @@
+{
+  "name": "Cales Coves",
+  "lang": "en",
+  "translationKey": "cales-coves",
+  "type": "cala",
+  "description": "A twin cove enclosed by cliffs honeycombed with a prehistoric necropolis of caves, a Talayotic-Roman site of considerable cultural and scenic value. There are no facilities; it pairs a quiet swim with archaeology.",
+  "coordinates": {
+    "lat": 39.874,
+    "lng": 4.148
+  },
+  "area": "South-central (Alaior)",
+  "tags": [
+    "sur-centro",
+    "cala",
+    "alaior"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "cultura"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

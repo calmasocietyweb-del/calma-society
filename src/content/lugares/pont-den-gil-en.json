@@ -1,0 +1,37 @@
+{
+  "name": "Pont d'en Gil",
+  "lang": "en",
+  "translationKey": "pont-den-gil",
+  "type": "monumento",
+  "description": "An immense natural rock arch over the sea on the west coast, near Ciutadella. It frames one of the island's most striking sunsets, with a powerful silhouette as the sun aligns with the arch.",
+  "coordinates": {
+    "lat": 40,
+    "lng": 3.8
+  },
+  "area": "West (Ciutadella)",
+  "tags": [
+    "oeste",
+    "mirador",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "mirador",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Calescoves Necropolis",
+  "lang": "en",
+  "translationKey": "necropolis-de-calescoves",
+  "type": "monumento",
+  "description": "A prehistoric necropolis of around ninety burial caves carved into the cliffs of a wild, secluded cove. A striking natural setting that pairs heritage with a swim at an unspoilt beach without services, ideal for those seeking calm.",
+  "coordinates": {
+    "lat": 39.8689,
+    "lng": 4.1217
+  },
+  "area": "South-central (Alaior)",
+  "tags": [
+    "sur-centro",
+    "yacimiento",
+    "alaior"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}

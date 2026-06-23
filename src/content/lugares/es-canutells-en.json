@@ -1,0 +1,37 @@
+{
+  "name": "Es Canutells",
+  "lang": "en",
+  "translationKey": "es-canutells",
+  "type": "cala",
+  "description": "A small sheltered cove between Cales Coves and Binidalí, with calm water, frequented more by locals than by visitors. A quiet spot with a local feel.",
+  "coordinates": {
+    "lat": 39.865,
+    "lng": 4.17
+  },
+  "area": "South-east (Maó)",
+  "tags": [
+    "sur-este",
+    "cala",
+    "mao"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "familias"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}

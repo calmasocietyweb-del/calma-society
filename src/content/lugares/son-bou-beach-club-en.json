@@ -1,0 +1,39 @@
+{
+  "name": "Son Bou Beach Club",
+  "lang": "en",
+  "translationKey": "son-bou-beach-club",
+  "type": "otro",
+  "description": "A beach club at the foot of the island's longest beach, Son Bou, with sunloungers, cabanas, palms and timber terraces, and a notable cocktail list ranging from classic sangrías to signature creations. Nearby, beach bars offer casual food.",
+  "coordinates": {
+    "lat": 39.9,
+    "lng": 4.08
+  },
+  "area": "South-central (Alaior)",
+  "tags": [
+    "sur-centro",
+    "experiencia",
+    "alaior"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "familias",
+      "parejas",
+      "gastronomia"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}

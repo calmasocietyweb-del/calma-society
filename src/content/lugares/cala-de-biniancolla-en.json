@@ -1,0 +1,37 @@
+{
+  "name": "Cala de Biniancolla",
+  "lang": "en",
+  "translationKey": "cala-de-biniancolla",
+  "type": "cala",
+  "description": "A small, traditional cove of around 100 metres between Punta Prima and Binibeca, with fishermen's huts, a gently shelving seabed and rocky cliffs that lend it privacy. Quiet, with a local feel.",
+  "coordinates": {
+    "lat": 39.815,
+    "lng": 4.268
+  },
+  "area": "South-east (Sant Lluís)",
+  "tags": [
+    "sur-este",
+    "cala",
+    "sant-lluis"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}

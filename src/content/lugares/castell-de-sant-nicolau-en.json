@@ -1,0 +1,38 @@
+{
+  "name": "Castell de Sant Nicolau",
+  "lang": "en",
+  "translationKey": "castell-de-sant-nicolau",
+  "type": "monumento",
+  "description": "A 17th-century defensive tower at the mouth of Ciutadella harbour, beside a viewpoint with a monument to David Glasgow Farragut. It offers sunsets towards Mallorca and a coastal walk, a short visit that pairs well with the old town.",
+  "coordinates": {
+    "lat": 39.9956,
+    "lng": 3.8278
+  },
+  "area": "West (Ciutadella)",
+  "tags": [
+    "oeste",
+    "monumento",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 38,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}

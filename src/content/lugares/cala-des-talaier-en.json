@@ -1,0 +1,37 @@
+{
+  "name": "Cala des Talaier",
+  "lang": "en",
+  "translationKey": "cala-des-talaier",
+  "type": "cala",
+  "description": "A small, secluded and sheltered cove of pale sand and calm water, with an islet just off the shore. The walk in keeps it less crowded than Son Saura; no facilities.",
+  "coordinates": {
+    "lat": 39.921,
+    "lng": 3.9
+  },
+  "area": "South-west (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "cala",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}

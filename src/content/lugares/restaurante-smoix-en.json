@@ -1,0 +1,39 @@
+{
+  "name": "Restaurante Smoix",
+  "lang": "en",
+  "translationKey": "restaurante-smoix",
+  "type": "restaurante",
+  "description": "The only restaurant in Menorca with a Bib Gourmand distinction from the Michelin Guide, in the heart of Ciutadella. Mediterranean cooking built on local produce, with refined technique and international touches, from chef Germán Blanch.",
+  "coordinates": {
+    "lat": 40,
+    "lng": 3.84
+  },
+  "area": "West (Ciutadella)",
+  "tags": [
+    "oeste",
+    "gastronomia",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "cena",
+    "idealFor": [
+      "gastronomia",
+      "lujo-tranquilo",
+      "parejas",
+      "cultura"
+    ],
+    "durationMin": 120,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

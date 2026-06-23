@@ -1,0 +1,37 @@
+{
+  "name": "Cala Macarelleta",
+  "lang": "en",
+  "translationKey": "cala-macarelleta",
+  "type": "cala",
+  "description": "Macarella's smaller, more intimate sister, separated by a rocky isthmus; intense turquoise water and a partly naturist atmosphere. More secluded and photogenic, with no facilities of its own.",
+  "coordinates": {
+    "lat": 39.9337,
+    "lng": 3.9278
+  },
+  "area": "South-west (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "cala",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

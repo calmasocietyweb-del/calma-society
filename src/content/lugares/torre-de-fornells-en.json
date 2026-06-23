@@ -1,0 +1,42 @@
+{
+  "name": "Torre de Fornells",
+  "lang": "en",
+  "translationKey": "torre-de-fornells",
+  "type": "monumento",
+  "description": "An octagonal British-Spanish defensive tower (18th century), built in sandstone above the mouth of Fornells bay. It houses an interpretation centre and offers views across the bay. Pairs well with a visit to the fishing village of Fornells.",
+  "coordinates": {
+    "lat": 40.0556,
+    "lng": 4.1372
+  },
+  "area": "North (Es Mercadal)",
+  "tags": [
+    "norte",
+    "monumento",
+    "es-mercadal"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "fornells-cavalleria",
+      "norte"
+    ]
+  }
+}

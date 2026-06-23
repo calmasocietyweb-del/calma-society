@@ -1,0 +1,42 @@
+{
+  "name": "Es Migjorn Gran",
+  "lang": "en",
+  "translationKey": "es-migjorn-gran",
+  "type": "otro",
+  "description": "The island's smallest, quietest municipality, where time seems to stand still: detached white houses and the essence of old Menorca. A young town as a municipality, yet home to a notably long-lived population.",
+  "coordinates": {
+    "lat": 39.9469,
+    "lng": 4.0481
+  },
+  "area": "South-central (Es Migjorn Gran)",
+  "tags": [
+    "sur-centro",
+    "pueblo",
+    "es-migjorn-gran"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "cultura"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "The most serene white village in the south",
+      "The Binigaus ravine leading to the Cova des Coloms",
+      "The walk down to Binigaus beach"
+    ]
+  }
+}

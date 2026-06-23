@@ -1,0 +1,38 @@
+{
+  "name": "Cala Mesquida",
+  "lang": "en",
+  "translationKey": "cala-mesquida",
+  "type": "cala",
+  "description": "A beach of pale sand and calm water near Maó, with a small cluster of fishermen's houses, restaurants and a defensive tower. Note: it sits on the north-east/east coast rather than the turquoise south, and is included here as a clarification.",
+  "coordinates": {
+    "lat": 39.902,
+    "lng": 4.31
+  },
+  "area": "East (Maó)",
+  "tags": [
+    "este",
+    "playa",
+    "mao"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}

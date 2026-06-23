@@ -1,0 +1,48 @@
+{
+  "name": "Cala en Porter",
+  "lang": "en",
+  "translationKey": "cala-en-porter",
+  "type": "cala",
+  "description": "A cove set between high cliffs, with fine sand and calm water, beside a resort with full amenities. Renowned for Cova d'en Xoroi, a clifftop bar, viewpoint and club carved into the rock. Easy to reach by car, though more built-up than the wilder coves.",
+  "coordinates": {
+    "lat": 39.872,
+    "lng": 4.13
+  },
+  "area": "South-central (Alaior)",
+  "tags": [
+    "sur-centro",
+    "cala",
+    "alaior"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "seasonWindow": {
+        "from": "05-01",
+        "to": "10-31"
+      },
+      "certainty": "alta"
+    }
+  }
+}

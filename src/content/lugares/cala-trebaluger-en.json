@@ -1,0 +1,36 @@
+{
+  "name": "Cala Trebalúger",
+  "lang": "en",
+  "translationKey": "cala-trebaluger",
+  "type": "cala",
+  "description": "One of the most beautiful virgin coves: white sand, limestone cliffs, pines down to the shore and a small stream meeting the sea at one end. Reachable only on foot, it stays peaceful; with no facilities, bring water and supplies.",
+  "coordinates": {
+    "lat": 39.932,
+    "lng": 3.987
+  },
+  "area": "South-central (Ferreries)",
+  "tags": [
+    "sur-centro",
+    "cala",
+    "ferreries"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

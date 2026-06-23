@@ -1,0 +1,39 @@
+{
+  "name": "Torralbenc",
+  "lang": "en",
+  "translationKey": "torralbenc",
+  "type": "otro",
+  "description": "A former estate surrounded by vineyards, now a luxury agritourism retreat. Its Mediterranean restaurant works with local produce over the grill, advised by Michelin-starred chef Gorka Txapartegi and recommended in the Michelin Guide.",
+  "coordinates": {
+    "lat": 39.91,
+    "lng": 4.16
+  },
+  "area": "South-central (Alaior)",
+  "tags": [
+    "sur-centro",
+    "experiencia",
+    "alaior"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "gastronomia",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

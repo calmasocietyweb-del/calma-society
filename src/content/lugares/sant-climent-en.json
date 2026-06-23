@@ -1,0 +1,38 @@
+{
+  "name": "Sant Climent",
+  "lang": "en",
+  "translationKey": "sant-climent",
+  "type": "otro",
+  "description": "A quiet hamlet within the municipality of Maó, on the road towards Cala en Porter, with basic amenities. Its hallmark is the jazz concerts held at its casino throughout the year, a cultural fixture.",
+  "coordinates": {
+    "lat": 39.8694,
+    "lng": 4.2419
+  },
+  "area": "East (Maó)",
+  "tags": [
+    "este",
+    "nucleo",
+    "mao"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "gastronomia",
+      "cultura"
+    ],
+    "durationMin": 45,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}

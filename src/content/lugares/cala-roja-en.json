@@ -1,0 +1,37 @@
+{
+  "name": "Cala Roja",
+  "lang": "en",
+  "translationKey": "cala-roja",
+  "type": "cala",
+  "description": "The smaller, more intimate sister of Cavalleria: a secluded red cove among the rocks, almost always empty. Ideal for escaping the crowds without straying far from the car park.",
+  "coordinates": {
+    "lat": 40.0575,
+    "lng": 4.0905
+  },
+  "area": "North (Es Mercadal)",
+  "tags": [
+    "norte",
+    "cala",
+    "es-mercadal"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}

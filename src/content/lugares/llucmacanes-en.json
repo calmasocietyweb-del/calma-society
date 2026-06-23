@@ -1,0 +1,37 @@
+{
+  "name": "Llucmaçanes",
+  "lang": "en",
+  "translationKey": "llucmacanes",
+  "type": "otro",
+  "description": "A rural hamlet near Maó, a small traditional Menorcan settlement of white houses in the south-eastern countryside. Not a destination in itself but an authentic glimpse of the island's inland, agricultural heart.",
+  "coordinates": {
+    "lat": 39.8606,
+    "lng": 4.2622
+  },
+  "area": "East (Maó)",
+  "tags": [
+    "este",
+    "nucleo",
+    "mao"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "cultura"
+    ],
+    "durationMin": 30,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "baja",
+    "lastVerified": "2026-06-22"
+  }
+}

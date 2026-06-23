@@ -1,0 +1,38 @@
+{
+  "name": "Talatí de Dalt",
+  "lang": "en",
+  "translationKey": "talati-de-dalt",
+  "type": "monumento",
+  "description": "One of the most picturesque and accessible Talayotic sites, part of the UNESCO listing. Its taula, with a leaning column resting against it and ringed by centuries-old olive trees, is among the most recognisable images of Menorcan prehistory.",
+  "coordinates": {
+    "lat": 39.8836,
+    "lng": 4.2058
+  },
+  "area": "Central (Maó)",
+  "tags": [
+    "centro",
+    "yacimiento",
+    "mao"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "familias"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "Alaior",
+  "lang": "en",
+  "translationKey": "alaior",
+  "type": "otro",
+  "description": "A whitewashed inland town, home of Mahón-Menorca DOP cheese and of artisan ice cream and cured meats. Founded by Jaume II around the hill of Ihalor, its medieval old town centres on the church of Santa Eulàlia.",
+  "coordinates": {
+    "lat": 39.9356,
+    "lng": 4.1392
+  },
+  "area": "Centre (Alaior)",
+  "tags": [
+    "centro",
+    "pueblo",
+    "alaior"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "naturaleza",
+      "familias"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "The white old town set upon the hill",
+      "Artisan cheese and ice cream (DOP Mahón-Menorca)",
+      "The Torre d'en Galmés site close by"
+    ]
+  }
+}

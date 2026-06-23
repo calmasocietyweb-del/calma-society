@@ -1,0 +1,37 @@
+{
+  "name": "Trepucó",
+  "lang": "en",
+  "translationKey": "trepuco",
+  "type": "monumento",
+  "description": "A Talayotic settlement (UNESCO) with one of the largest and best-preserved taulas on the island (4.8 m high), set within a nineteenth-century fortified enclosure. Close to Maó, it makes an ideal first encounter with the island's prehistory.",
+  "coordinates": {
+    "lat": 39.8703,
+    "lng": 4.2719
+  },
+  "area": "East (Es Castell)",
+  "tags": [
+    "este",
+    "yacimiento",
+    "es-castell"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza"
+    ],
+    "durationMin": 38,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}

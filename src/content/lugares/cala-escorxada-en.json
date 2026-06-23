@@ -1,0 +1,36 @@
+{
+  "name": "Cala Escorxada",
+  "lang": "en",
+  "translationKey": "cala-escorxada",
+  "type": "cala",
+  "description": "A remote, unspoilt cove with an end-of-the-world feel, fine sand and clear water, earned after a good walk. For travellers seeking solitude and landscape; no facilities whatsoever.",
+  "coordinates": {
+    "lat": 39.93,
+    "lng": 4.025
+  },
+  "area": "South-central (Es Migjorn Gran)",
+  "tags": [
+    "sur-centro",
+    "cala",
+    "es-migjorn-gran"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "durationMin": 300,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}

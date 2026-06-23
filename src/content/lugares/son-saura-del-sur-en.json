@@ -1,0 +1,37 @@
+{
+  "name": "Son Saura del Sur",
+  "lang": "en",
+  "translationKey": "son-saura-del-sur",
+  "type": "cala",
+  "description": "Two broad semicircles of fine sand, Bellavista and Des Banyuls, separated by a headland, backed by pine wood and lapped by shallow water. Roomier than its neighbouring coves and ideal for families; in summer it fills with anchored boats.",
+  "coordinates": {
+    "lat": 39.918,
+    "lng": 3.895
+  },
+  "area": "South-west (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "playa",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

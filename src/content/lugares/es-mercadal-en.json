@@ -1,0 +1,43 @@
+{
+  "name": "Es Mercadal",
+  "lang": "en",
+  "translationKey": "es-mercadal",
+  "type": "otro",
+  "description": "A whitewashed town at the geographic heart of Menorca, at the foot of Monte Toro (the island's highest point, 358 m). Its name comes from the market privilege granted by Jaume II. The great outing is the climb to the Mare de Déu sanctuary.",
+  "coordinates": {
+    "lat": 39.9889,
+    "lng": 4.0942
+  },
+  "area": "Central (Es Mercadal)",
+  "tags": [
+    "centro",
+    "pueblo",
+    "es-mercadal"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "climbing Monte Toro at sunset",
+      "the quiet inland-town centre",
+      "a nearby DOP cheese dairy (Subaida)"
+    ]
+  }
+}

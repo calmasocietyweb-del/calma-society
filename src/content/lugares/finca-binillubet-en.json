@@ -1,0 +1,43 @@
+{
+  "name": "Finca Binillubet",
+  "lang": "en",
+  "translationKey": "finca-binillubet",
+  "type": "otro",
+  "description": "A visit to a working livestock farm with an artisan cheese-making workshop and a sensory tasting of local produce, led by the owners themselves. A more intimate, hands-on experience, meeting the herd and following the whole process.",
+  "coordinates": {
+    "lat": 39.96,
+    "lng": 4.13
+  },
+  "area": "Centre (Es Mercadal)",
+  "tags": [
+    "centro",
+    "experiencia",
+    "es-mercadal"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "familias",
+      "naturaleza",
+      "cultura"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "interior-cultura",
+      "centro"
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Platja de Sant Tomàs",
+  "lang": "en",
+  "translationKey": "platja-de-sant-tomas",
+  "type": "cala",
+  "description": "A broad beach of golden sand and calm water, with beach bars, hotels, and full services. Comfortable and accessible, it serves as the walking gateway to Binigaus to the west and links to the Camí de Cavalls.",
+  "coordinates": {
+    "lat": 39.93,
+    "lng": 4.047
+  },
+  "area": "South-central (Es Migjorn Gran)",
+  "tags": [
+    "sur-centro",
+    "playa",
+    "es-migjorn-gran"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "seasonWindow": {
+        "from": "05-01",
+        "to": "10-31"
+      },
+      "certainty": "alta"
+    }
+  }
+}

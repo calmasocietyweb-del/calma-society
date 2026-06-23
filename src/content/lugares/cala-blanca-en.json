@@ -1,0 +1,36 @@
+{
+  "name": "Cala Blanca",
+  "lang": "en",
+  "translationKey": "cala-blanca",
+  "type": "cala",
+  "description": "A built-up cove of some 50 metres of very white, fine sand, with every amenity and close to Ciutadella. Practical for staying and bathing without long drives, though without the untouched nature of the eastern coves.",
+  "coordinates": {
+    "lat": 39.954,
+    "lng": 3.803
+  },
+  "area": "South-west (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "cala",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

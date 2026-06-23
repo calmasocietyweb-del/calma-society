@@ -1,0 +1,36 @@
+{
+  "name": "Punta Nati Lighthouse",
+  "lang": "en",
+  "translationKey": "faro-de-punta-nati",
+  "type": "monumento",
+  "description": "A lighthouse set in the stony, arid landscape of the north-west, dotted with dry-stone shelters (ponts). The solitary, rugged setting is ideal for photography and uncrowded sunsets, and lies very close to Ciutadella.",
+  "coordinates": {
+    "lat": 40.0578,
+    "lng": 3.8228
+  },
+  "area": "West (Ciutadella)",
+  "tags": [
+    "oeste",
+    "faro",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "faro",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

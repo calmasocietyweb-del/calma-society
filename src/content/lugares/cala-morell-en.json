@@ -1,0 +1,39 @@
+{
+  "name": "Cala Morell",
+  "lang": "en",
+  "translationKey": "cala-morell",
+  "type": "cala",
+  "description": "A natural harbour-cove tucked between reddish cliffs amid a development of whitewashed, Cycladic-style houses. Beside it lies the prehistoric Cala Morell necropolis (around 14 caves), pairing a swim with Talayotic culture.",
+  "coordinates": {
+    "lat": 40.056,
+    "lng": 3.883
+  },
+  "area": "North (Ciutadella)",
+  "tags": [
+    "norte",
+    "cala",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "familias",
+      "cultura",
+      "parejas"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

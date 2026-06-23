@@ -1,0 +1,37 @@
+{
+  "name": "Cala Presili",
+  "lang": "en",
+  "translationKey": "cala-presili",
+  "type": "cala",
+  "description": "A small virgin cove next to Cala Tortuga, at the foot of the Favàritx Lighthouse within the natural park. It is usually combined with Tortuga on the same walk, its quiet assured by controlled access.",
+  "coordinates": {
+    "lat": 39.995,
+    "lng": 4.272
+  },
+  "area": "North (Maó)",
+  "tags": [
+    "norte",
+    "cala",
+    "mao"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 180,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  }
+}

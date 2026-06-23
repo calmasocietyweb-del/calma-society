@@ -1,5 +1,69 @@
 [
   {
+    "id": "alaior",
+    "name": "Alaior",
+    "slug": "alaior",
+    "coordinates": {
+      "lat": 39.9356,
+      "lng": 4.1392
+    },
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "naturaleza",
+      "familias"
+    ],
+    "highlights": [
+      "The white old town set upon the hill",
+      "Artisan cheese and ice cream (DOP Mahón-Menorca)",
+      "The Torre d'en Galmés site close by"
+    ],
+    "blurb": "A whitewashed inland town, home of Mahón-Menorca DOP cheese and of artisan ice cream and cured meats. Founded by Jaume II around the hill of Ihalor…",
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "alquiler-de-llaut-tradicional-barco-privado-al-a",
+    "name": "Traditional Llaüt Hire / Private Sunset Boat",
+    "slug": "alquiler-de-llaut-tradicional-barco-privado-al-a",
+    "coordinates": {
+      "lat": 39.93,
+      "lng": 3.96
+    },
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza"
+    ],
+    "blurb": "A trip aboard a wooden Menorcan llaüt — the island's elegant traditional craft, with a sun deck — or a private skippered boat from Cala Galdana or…",
+    "durationMin": 240,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  },
+  {
     "id": "artrutx-sea-club",
     "name": "Artrutx Sea Club",
     "slug": "artrutx-sea-club",
@@ -61,6 +125,150 @@
     "lastVerified": "2026-06-22"
   },
   {
+    "id": "binisafua",
+    "name": "Binisafua",
+    "slug": "binisafua",
+    "coordinates": {
+      "lat": 39.817,
+      "lng": 4.255
+    },
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "blurb": "A small, quiet cove with a residential feel, marked by boathouses and rock rather than a broad expanse of sand — more a spot for a local dip. Well…",
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "baja",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "bodegas-binifadet",
+    "name": "Bodegas Binifadet",
+    "slug": "bodegas-binifadet",
+    "coordinates": {
+      "lat": 39.85,
+      "lng": 4.27
+    },
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "lujo-tranquilo",
+      "naturaleza"
+    ],
+    "blurb": "Menorca's oldest and largest winery (around 100,000 bottles a year, half the island's output, and the only producer of sparkling wines). Twelve…",
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "indoorAlternativeOf": [
+      "binibeca-sur-este",
+      "sur-este"
+    ],
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-algaiarens",
+    "name": "Cala Algaiarens",
+    "slug": "cala-algaiarens",
+    "coordinates": {
+      "lat": 40.047,
+      "lng": 3.88
+    },
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "blurb": "Two sister beaches (es Bot and es Tancats) of golden-red sand within an unspoilt protected area framed by pine wood and dunes, free of buildings. One…",
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-binidali",
+    "name": "Cala Binidali",
+    "slug": "cala-binidali",
+    "coordinates": {
+      "lat": 39.858,
+      "lng": 4.185
+    },
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "blurb": "A small, natural cove of fine golden sand and clear turquoise water, tucked between cliffs and excellent for snorkelling. Intimate, with limited…",
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-blanca",
+    "name": "Cala Blanca",
+    "slug": "cala-blanca",
+    "coordinates": {
+      "lat": 39.954,
+      "lng": 3.803
+    },
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias"
+    ],
+    "blurb": "A built-up cove of some 50 metres of very white, fine sand, with every amenity and close to Ciutadella. Practical for staying and bathing without…",
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
     "id": "cala-cavalleria",
     "name": "Platja de Cavalleria",
     "slug": "cala-cavalleria",
@@ -87,6 +295,211 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-de-biniancolla",
+    "name": "Cala de Biniancolla",
+    "slug": "cala-de-biniancolla",
+    "coordinates": {
+      "lat": 39.815,
+      "lng": 4.268
+    },
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "blurb": "A small, traditional cove of around 100 metres between Punta Prima and Binibeca, with fishermen's huts, a gently shelving seabed and rocky cliffs…",
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-de-llucalari",
+    "name": "Cala de Llucalari",
+    "slug": "cala-de-llucalari",
+    "coordinates": {
+      "lat": 39.892,
+      "lng": 4.1
+    },
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "blurb": "A small, hidden cove near Son Bou, reached by a short walk. Quiet and little frequented thanks to its foot access; no facilities.",
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-del-pilar",
+    "name": "Cala del Pilar",
+    "slug": "cala-del-pilar",
+    "coordinates": {
+      "lat": 40.022,
+      "lng": 3.93
+    },
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "blurb": "One of Menorca's wildest and most isolated beaches: golden sand beneath red clay cliffs, with not a single facility. The long walk and access…",
+    "durationMin": 300,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-des-talaier",
+    "name": "Cala des Talaier",
+    "slug": "cala-des-talaier",
+    "coordinates": {
+      "lat": 39.921,
+      "lng": 3.9
+    },
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "parejas",
+      "naturaleza"
+    ],
+    "blurb": "A small, secluded and sheltered cove of pale sand and calm water, with an islet just off the shore. The walk in keeps it less crowded than Son Saura…",
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-en-bosch",
+    "name": "Cala en Bosch",
+    "slug": "cala-en-bosch",
+    "coordinates": {
+      "lat": 39.927,
+      "lng": 3.812
+    },
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "gastronomia"
+    ],
+    "blurb": "A mid-sized developed beach beside a marina and an inland lake (El Lago) ringed by restaurants and apartments. Comfortable and well served, geared…",
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-en-porter",
+    "name": "Cala en Porter",
+    "slug": "cala-en-porter",
+    "coordinates": {
+      "lat": 39.872,
+      "lng": 4.13
+    },
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "gastronomia"
+    ],
+    "blurb": "A cove set between high cliffs, with fine sand and calm water, beside a resort with full amenities. Renowned for Cova d'en Xoroi, a clifftop bar…",
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "seasonWindow": {
+        "from": "05-01",
+        "to": "10-31"
+      },
+      "certainty": "alta"
+    },
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-escorxada",
+    "name": "Cala Escorxada",
+    "slug": "cala-escorxada",
+    "coordinates": {
+      "lat": 39.93,
+      "lng": 4.025
+    },
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "blurb": "A remote, unspoilt cove with an end-of-the-world feel, fine sand and clear water, earned after a good walk. For travellers seeking solitude and…",
+    "durationMin": 300,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "media",
     "lastVerified": "2026-06-22"
   },
   {
@@ -162,6 +575,91 @@
     "lastVerified": "2026-06-22"
   },
   {
+    "id": "cala-macarelleta",
+    "name": "Cala Macarelleta",
+    "slug": "cala-macarelleta",
+    "coordinates": {
+      "lat": 39.9337,
+      "lng": 3.9278
+    },
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "parejas",
+      "naturaleza"
+    ],
+    "blurb": "Macarella's smaller, more intimate sister, separated by a rocky isthmus; intense turquoise water and a partly naturist atmosphere. More secluded and…",
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-mesquida",
+    "name": "Cala Mesquida",
+    "slug": "cala-mesquida",
+    "coordinates": {
+      "lat": 39.902,
+      "lng": 4.31
+    },
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza",
+      "gastronomia"
+    ],
+    "blurb": "A beach of pale sand and calm water near Maó, with a small cluster of fishermen's houses, restaurants and a defensive tower. Note: it sits on the…",
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-mica",
+    "name": "Cala Mica",
+    "slug": "cala-mica",
+    "coordinates": {
+      "lat": 40.05,
+      "lng": 4.085
+    },
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "blurb": "A little-known, shell-shaped virgin cove with mixed sand and pebbles, set beside an old farmhouse. It rewards the walker who follows the Camí de…",
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  },
+  {
     "id": "cala-mitjana",
     "name": "Cala Mitjana",
     "slug": "cala-mitjana",
@@ -185,6 +683,36 @@
     "shuttleInfo": "Large free dirt car park (~250 spaces) + 1.2 km signposted downhill path. Arrive before 10am in peak season. Bus L52 (Ciutadella) / L51 (Maó); also on foot from Cala Galdana along the Camí de Cavalls.",
     "effortLevel": "B",
     "effortNote": "1.2 km downhill path, mostly easy and family-friendly; not for wheelchairs.",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-morell",
+    "name": "Cala Morell",
+    "slug": "cala-morell",
+    "coordinates": {
+      "lat": 40.056,
+      "lng": 3.883
+    },
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "familias",
+      "cultura",
+      "parejas"
+    ],
+    "blurb": "A natural harbour-cove tucked between reddish cliffs amid a development of whitewashed, Cycladic-style houses. Beside it lies the prehistoric Cala…",
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
     "isIndoor": false,
     "weatherProof": "exterior",
     "indoorAlternativeOf": [],
@@ -223,6 +751,184 @@
     "lastVerified": "2026-06-22"
   },
   {
+    "id": "cala-presili",
+    "name": "Cala Presili",
+    "slug": "cala-presili",
+    "coordinates": {
+      "lat": 39.995,
+      "lng": 4.272
+    },
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "blurb": "A small virgin cove next to Cala Tortuga, at the foot of the Favàritx Lighthouse within the natural park. It is usually combined with Tortuga on the…",
+    "durationMin": 180,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-roja",
+    "name": "Cala Roja",
+    "slug": "cala-roja",
+    "coordinates": {
+      "lat": 40.0575,
+      "lng": 4.0905
+    },
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "blurb": "The smaller, more intimate sister of Cavalleria: a secluded red cove among the rocks, almost always empty. Ideal for escaping the crowds without…",
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-santandria",
+    "name": "Cala Santandría",
+    "slug": "cala-santandria",
+    "coordinates": {
+      "lat": 39.969,
+      "lng": 3.829
+    },
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "blurb": "A sheltered cove of white sand and calm, clear water, well protected from the wind and ideal for families with young children. Developed and…",
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "seasonWindow": {
+        "from": "05-01",
+        "to": "10-31"
+      },
+      "certainty": "alta"
+    },
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-tirant",
+    "name": "Cala Tirant",
+    "slug": "cala-tirant",
+    "coordinates": {
+      "lat": 40.057,
+      "lng": 4.117
+    },
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "blurb": "A broad beach of fine golden sand between Fornells and Cap de Cavalleria, divided into two areas by a hill with a wooden walkway. More accessible and…",
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-tortuga",
+    "name": "Cala Tortuga",
+    "slug": "cala-tortuga",
+    "coordinates": {
+      "lat": 39.998,
+      "lng": 4.27
+    },
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "blurb": "A virgin beach of golden sand beneath the lunar black-slate landscape of Favàritx, within the natural park. Restricted vehicle access and the walk in…",
+    "durationMin": 180,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cala-trebaluger",
+    "name": "Cala Trebalúger",
+    "slug": "cala-trebaluger",
+    "coordinates": {
+      "lat": 39.932,
+      "lng": 3.987
+    },
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "blurb": "One of the most beautiful virgin coves: white sand, limestone cliffs, pines down to the shore and a small stream meeting the sea at one end…",
+    "durationMin": 240,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
     "id": "cala-turqueta",
     "name": "Cala en Turqueta",
     "slug": "cala-turqueta",
@@ -251,6 +957,63 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cales-coves",
+    "name": "Cales Coves",
+    "slug": "cales-coves",
+    "coordinates": {
+      "lat": 39.874,
+      "lng": 4.148
+    },
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "cultura"
+    ],
+    "blurb": "A twin cove enclosed by cliffs honeycombed with a prehistoric necropolis of caves, a Talayotic-Roman site of considerable cultural and scenic value…",
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "castell-de-sant-nicolau",
+    "name": "Castell de Sant Nicolau",
+    "slug": "castell-de-sant-nicolau",
+    "coordinates": {
+      "lat": 39.9956,
+      "lng": 3.8278
+    },
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "parejas"
+    ],
+    "blurb": "A 17th-century defensive tower at the mouth of Ciutadella harbour, beside a viewpoint with a monument to David Glasgow Farragut. It offers sunsets…",
+    "durationMin": 38,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "media",
     "lastVerified": "2026-06-22"
   },
   {
@@ -317,6 +1080,164 @@
     "lastVerified": "2026-06-22"
   },
   {
+    "id": "destileria-gin-xoriguer",
+    "name": "Gin Xoriguer Distillery",
+    "slug": "destileria-gin-xoriguer",
+    "coordinates": {
+      "lat": 39.89,
+      "lng": 4.262
+    },
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "parejas",
+      "naturaleza"
+    ],
+    "highlights": [
+      "the shop beside Maó harbour",
+      "tasting Menorca's gin",
+      "trying pomada (gin with lemonade)"
+    ],
+    "blurb": "A historic distillery on Maó harbour that produces Menorca's gin in copper stills more than 250 years old, over a local wood fire, using wine…",
+    "durationMin": 60,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "indoorAlternativeOf": [
+      "mao-puerto",
+      "este"
+    ],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "eolo-sunset-bar",
+    "name": "Eolo Sunset Bar",
+    "slug": "eolo-sunset-bar",
+    "coordinates": {
+      "lat": 40.01,
+      "lng": 3.79
+    },
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "parejas",
+      "naturaleza",
+      "lujo-tranquilo"
+    ],
+    "blurb": "A stylish beach bar perched on the cliffs of Cala'n Forcat, on the west coast near Ciutadella. Relaxed in mood, with good cocktails and one of the…",
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "es-calo-blanc",
+    "name": "Es Caló Blanc",
+    "slug": "es-calo-blanc",
+    "coordinates": {
+      "lat": 39.83,
+      "lng": 4.29
+    },
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "cala",
+    "idealFor": [
+      "parejas",
+      "naturaleza"
+    ],
+    "blurb": "A tiny cove, barely a few metres wide, tucked between the rocks and counted among the smallest on the island; a curious, little-known spot for a…",
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "baja",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "es-canutells",
+    "name": "Es Canutells",
+    "slug": "es-canutells",
+    "coordinates": {
+      "lat": 39.865,
+      "lng": 4.17
+    },
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "familias"
+    ],
+    "blurb": "A small sheltered cove between Cales Coves and Binidalí, with calm water, frequented more by locals than by visitors. A quiet spot with a local feel.",
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "es-castell",
+    "name": "Es Castell",
+    "slug": "es-castell",
+    "coordinates": {
+      "lat": 39.8794,
+      "lng": 4.2906
+    },
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "naturaleza",
+      "cultura"
+    ],
+    "highlights": [
+      "Cales Fonts harbour at sunset",
+      "La Mola Fortress",
+      "dining on fish at a terrace above the water"
+    ],
+    "blurb": "A town of British military design, founded in 1771 as Georgetown beside the mouth of Maó harbour. Its Esplanada square has a town hall with a red…",
+    "durationMin": 180,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
     "id": "es-grau",
     "name": "Es Grau",
     "slug": "es-grau",
@@ -346,6 +1267,73 @@
       "staff": true,
       "certainty": "alta"
     },
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "es-mercadal",
+    "name": "Es Mercadal",
+    "slug": "es-mercadal",
+    "coordinates": {
+      "lat": 39.9889,
+      "lng": 4.0942
+    },
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "gastronomia"
+    ],
+    "highlights": [
+      "climbing Monte Toro at sunset",
+      "the quiet inland-town centre",
+      "a nearby DOP cheese dairy (Subaida)"
+    ],
+    "blurb": "A whitewashed town at the geographic heart of Menorca, at the foot of Monte Toro (the island's highest point, 358 m). Its name comes from the market…",
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "es-migjorn-gran",
+    "name": "Es Migjorn Gran",
+    "slug": "es-migjorn-gran",
+    "coordinates": {
+      "lat": 39.9469,
+      "lng": 4.0481
+    },
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "cultura"
+    ],
+    "highlights": [
+      "The most serene white village in the south",
+      "The Binigaus ravine leading to the Cova des Coloms",
+      "The walk down to Binigaus beach"
+    ],
+    "blurb": "The island's smallest, quietest municipality, where time seems to stand still: detached white houses and the essence of old Menorca. A young town as…",
+    "durationMin": 60,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
     "isIndoor": false,
     "weatherProof": "exterior",
     "indoorAlternativeOf": [],
@@ -384,6 +1372,33 @@
     "lastVerified": "2026-06-22"
   },
   {
+    "id": "faro-de-punta-nati",
+    "name": "Punta Nati Lighthouse",
+    "slug": "faro-de-punta-nati",
+    "coordinates": {
+      "lat": 40.0578,
+      "lng": 3.8228
+    },
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "faro",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "blurb": "A lighthouse set in the stony, arid landscape of the north-west, dotted with dry-stone shelters (ponts). The solitary, rugged setting is ideal for…",
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
     "id": "faro-favaritx",
     "name": "Faro de Favàritx",
     "slug": "faro-favaritx",
@@ -413,6 +1428,73 @@
     "lastVerified": "2026-06-22"
   },
   {
+    "id": "ferreries",
+    "name": "Ferreries",
+    "slug": "ferreries",
+    "coordinates": {
+      "lat": 39.9817,
+      "lng": 4.0103
+    },
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "cultura",
+      "familias"
+    ],
+    "highlights": [
+      "The highest village on the island",
+      "The artisan market (in season)",
+      "The gateway to Cala Galdana"
+    ],
+    "blurb": "A rural white village, the highest in Menorca, with a deep-rooted tradition of footwear (including Pretty Ballerinas) and furniture making…",
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "finca-binillubet",
+    "name": "Finca Binillubet",
+    "slug": "finca-binillubet",
+    "coordinates": {
+      "lat": 39.96,
+      "lng": 4.13
+    },
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "familias",
+      "naturaleza",
+      "cultura"
+    ],
+    "blurb": "A visit to a working livestock farm with an artisan cheese-making workshop and a sensory tasting of local produce, led by the owners themselves. A…",
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "indoorAlternativeOf": [
+      "interior-cultura",
+      "centro"
+    ],
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  },
+  {
     "id": "fornells",
     "name": "Fornells",
     "slug": "fornells",
@@ -435,6 +1517,111 @@
     "carAccessClosedSummer": false,
     "effortLevel": "A2",
     "effortNote": "Small pedestrian village; park at the entrance. Limited bus service (better by car).",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "fortaleza-de-la-mola",
+    "name": "Fortaleza de La Mola",
+    "slug": "fortaleza-de-la-mola",
+    "coordinates": {
+      "lat": 39.8819,
+      "lng": 4.3097
+    },
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "familias",
+      "naturaleza"
+    ],
+    "highlights": [
+      "The 19th-century fortress above the harbour mouth",
+      "The tunnels and gun batteries",
+      "The views over Maó from the viewpoints"
+    ],
+    "blurb": "An imposing military fortress (1848-1875) guarding the entrance to Maó's harbour, with batteries, tunnels, Vickers guns and sea views. The vast…",
+    "durationMin": 150,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "indoorAlternativeOf": [
+      "mao-puerto",
+      "este"
+    ],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "hort-de-sant-patrici",
+    "name": "Hort de Sant Patrici",
+    "slug": "hort-de-sant-patrici",
+    "coordinates": {
+      "lat": 39.985,
+      "lng": 4.005
+    },
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "familias",
+      "parejas",
+      "naturaleza"
+    ],
+    "highlights": [
+      "The cheese museum and the gardens",
+      "The winery and the tasting",
+      "Booking the visit"
+    ],
+    "blurb": "An estate in Ferreries bringing together a Mahón-Menorca DOP cheese dairy, an ethnological cheese museum (housed in a former farm building since…",
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "indoorAlternativeOf": [
+      "interior-cultura",
+      "centro"
+    ],
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "illa-del-rei",
+    "name": "Illa del Rei",
+    "slug": "illa-del-rei",
+    "coordinates": {
+      "lat": 39.8772,
+      "lng": 4.2906
+    },
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "parejas"
+    ],
+    "blurb": "An islet in Maó harbour home to the former British military hospital (18th century), beautifully restored by volunteers, and a Hauser & Wirth art…",
+    "durationMin": 150,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
     "isIndoor": false,
     "weatherProof": "exterior",
     "indoorAlternativeOf": [],
@@ -474,6 +1661,34 @@
     "needsReservation": false,
     "officialUrl": "https://lithica.es",
     "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "llucmacanes",
+    "name": "Llucmaçanes",
+    "slug": "llucmacanes",
+    "coordinates": {
+      "lat": 39.8606,
+      "lng": 4.2622
+    },
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "cultura"
+    ],
+    "blurb": "A rural hamlet near Maó, a small traditional Menorcan settlement of white houses in the south-eastern countryside. Not a destination in itself but an…",
+    "durationMin": 30,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "baja",
     "lastVerified": "2026-06-22"
   },
   {
@@ -548,6 +1763,72 @@
     "lastVerified": "2026-06-22"
   },
   {
+    "id": "mercat-des-peix",
+    "name": "Mercat des Peix",
+    "slug": "mercat-des-peix",
+    "coordinates": {
+      "lat": 39.888,
+      "lng": 4.264
+    },
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "cena",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "parejas",
+      "naturaleza"
+    ],
+    "blurb": "Mahón's former fish market reborn as a food hall with local soul: fresh fish and seafood, tapas, sandwiches, and island beers and wines. A capital…",
+    "durationMin": 60,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "indoorAlternativeOf": [
+      "mao-puerto",
+      "este"
+    ],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "mercat-municipal-de-ciutadella",
+    "name": "Mercat Municipal de Ciutadella",
+    "slug": "mercat-municipal-de-ciutadella",
+    "coordinates": {
+      "lat": 40,
+      "lng": 3.84
+    },
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "cena",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "familias",
+      "naturaleza"
+    ],
+    "blurb": "Ciutadella's fish and seafood market, with sun-ripened fruit and vegetables from local growers. The living heart of the western city, a stop for…",
+    "durationMin": 60,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "indoorAlternativeOf": [
+      "ciutadella-ciudad",
+      "oeste"
+    ],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
     "id": "monte-toro",
     "name": "Monte Toro",
     "slug": "monte-toro",
@@ -609,6 +1890,240 @@
     "lastVerified": "2026-06-22"
   },
   {
+    "id": "necropolis-de-cala-morell",
+    "name": "Cala Morell Necropolis",
+    "slug": "necropolis-de-cala-morell",
+    "coordinates": {
+      "lat": 40.0556,
+      "lng": 3.8786
+    },
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza"
+    ],
+    "blurb": "A cave necropolis of fourteen hypogea carved into the rock, in use from pre-Talayotic times to the second century AD. Some chambers feature interior…",
+    "durationMin": 38,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "necropolis-de-calescoves",
+    "name": "Calescoves Necropolis",
+    "slug": "necropolis-de-calescoves",
+    "coordinates": {
+      "lat": 39.8689,
+      "lng": 4.1217
+    },
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza"
+    ],
+    "blurb": "A prehistoric necropolis of around ninety burial caves carved into the cliffs of a wild, secluded cove. A striking natural setting that pairs…",
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "parc-natural-de-salbufera-des-grau",
+    "name": "Parc Natural de s'Albufera des Grau",
+    "slug": "parc-natural-de-salbufera-des-grau",
+    "coordinates": {
+      "lat": 39.9461,
+      "lng": 4.2628
+    },
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "familias"
+    ],
+    "blurb": "The core of Menorca's Biosphere Reserve: a coastal lagoon, wetland, and Mediterranean woodland with viewpoints and birdwatching trails. The serene…",
+    "durationMin": 150,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "platja-de-binigaus",
+    "name": "Platja de Binigaus",
+    "slug": "platja-de-binigaus",
+    "coordinates": {
+      "lat": 39.93,
+      "lng": 4.04
+    },
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "playa",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "blurb": "A long, unspoilt beach of golden sand and shallow, crystal-clear water, a natural extension of Sant Tomàs. Considered one of Menorca's finest…",
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "platja-de-sant-tomas",
+    "name": "Platja de Sant Tomàs",
+    "slug": "platja-de-sant-tomas",
+    "coordinates": {
+      "lat": 39.93,
+      "lng": 4.047
+    },
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "gastronomia"
+    ],
+    "blurb": "A broad beach of golden sand and calm water, with beach bars, hotels, and full services. Comfortable and accessible, it serves as the walking gateway…",
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "seasonWindow": {
+        "from": "05-01",
+        "to": "10-31"
+      },
+      "certainty": "alta"
+    },
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "platja-den-ferragut",
+    "name": "Platja d'en Ferragut",
+    "slug": "platja-den-ferragut",
+    "coordinates": {
+      "lat": 40.055,
+      "lng": 4.089
+    },
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "playa",
+    "idealFor": [
+      "naturaleza",
+      "familias"
+    ],
+    "blurb": "A small beach adjoining Cavalleria, separated by a half-submerged rocky spur. Usually quieter than its neighbour, it forms a natural passage towards…",
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "playa-de-binimel-la",
+    "name": "Playa de Binimel·la",
+    "slug": "playa-de-binimel-la",
+    "coordinates": {
+      "lat": 40.049,
+      "lng": 4.098
+    },
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "blurb": "A broad beach of reddish sand with an islet and red clay (a popular spot for mud baths). The classic starting point for the walk to Cala Pregonda…",
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "pont-den-gil",
+    "name": "Pont d'en Gil",
+    "slug": "pont-den-gil",
+    "coordinates": {
+      "lat": 40,
+      "lng": 3.8
+    },
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "mirador",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "blurb": "An immense natural rock arch over the sea on the west coast, near Ciutadella. It frames one of the island's most striking sunsets, with a powerful…",
+    "durationMin": 60,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  },
+  {
     "id": "punta-prima",
     "name": "Punta Prima",
     "slug": "punta-prima",
@@ -637,6 +2152,258 @@
       "staff": true,
       "certainty": "alta"
     },
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "queseria-subaida",
+    "name": "Quesería Subaida",
+    "slug": "queseria-subaida",
+    "coordinates": {
+      "lat": 39.96,
+      "lng": 4.16
+    },
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "familias",
+      "cultura",
+      "parejas",
+      "naturaleza"
+    ],
+    "highlights": [
+      "The guided tour of the estate",
+      "The Mahón-Menorca DOP cheese tasting",
+      "Book ahead before visiting"
+    ],
+    "blurb": "A 350-hectare livestock estate producing some 80 wheels a day of artisan Mahón-Menorca DOP cheese. The visit includes a cheesemaking demonstration…",
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "indoorAlternativeOf": [
+      "interior-cultura",
+      "centro"
+    ],
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "restaurant-sa-llagosta",
+    "name": "Restaurant Sa Llagosta",
+    "slug": "restaurant-sa-llagosta",
+    "coordinates": {
+      "lat": 40.05,
+      "lng": 4.13
+    },
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "cena",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "lujo-tranquilo"
+    ],
+    "blurb": "A Fornells institution for Menorcan lobster stew (caldereta de langosta). According to local comparisons, a deeper-flavoured version with a thicker…",
+    "durationMin": 150,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "restaurante-es-cranc",
+    "name": "Restaurante Es Cranc",
+    "slug": "restaurante-es-cranc",
+    "coordinates": {
+      "lat": 40.05,
+      "lng": 4.13
+    },
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "cena",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "lujo-tranquilo",
+      "familias"
+    ],
+    "blurb": "One of Menorca's most emblematic and traditional restaurants for lobster stew in Fornells. It keeps its own tank of local lobsters, chosen on the…",
+    "durationMin": 150,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "restaurante-sant-joan-de-binissaida",
+    "name": "Restaurante Sant Joan de Binissaida",
+    "slug": "restaurante-sant-joan-de-binissaida",
+    "coordinates": {
+      "lat": 39.88,
+      "lng": 4.27
+    },
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "cena",
+    "idealFor": [
+      "gastronomia",
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza"
+    ],
+    "blurb": "A welcoming 12-room country hotel with a market-led kitchen: fresh fish, local meat and vegetables from its own garden, reworking the Menorcan…",
+    "durationMin": 150,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "indoorAlternativeOf": [
+      "mao-puerto",
+      "este"
+    ],
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "restaurante-smoix",
+    "name": "Restaurante Smoix",
+    "slug": "restaurante-smoix",
+    "coordinates": {
+      "lat": 40,
+      "lng": 3.84
+    },
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "cena",
+    "idealFor": [
+      "gastronomia",
+      "lujo-tranquilo",
+      "parejas",
+      "cultura"
+    ],
+    "blurb": "The only restaurant in Menorca with a Bib Gourmand distinction from the Michelin Guide, in the heart of Ciutadella. Mediterranean cooking built on…",
+    "durationMin": 120,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "sa-torreta",
+    "name": "Sa Torreta",
+    "slug": "sa-torreta",
+    "coordinates": {
+      "lat": 39.975,
+      "lng": 4.27
+    },
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "blurb": "A remote and almost always deserted cove deep within the natural park, watched over by the British defensive tower of Sa Torreta and facing the Illa…",
+    "durationMin": 300,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "sant-climent",
+    "name": "Sant Climent",
+    "slug": "sant-climent",
+    "coordinates": {
+      "lat": 39.8694,
+      "lng": 4.2419
+    },
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "gastronomia",
+      "cultura"
+    ],
+    "blurb": "A quiet hamlet within the municipality of Maó, on the road towards Cala en Porter, with basic amenities. Its hallmark is the jazz concerts held at…",
+    "durationMin": 45,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "sant-lluis",
+    "name": "Sant Lluís",
+    "slug": "sant-lluis",
+    "coordinates": {
+      "lat": 39.8425,
+      "lng": 4.2747
+    },
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "cultura",
+      "familias"
+    ],
+    "highlights": [
+      "the white village with its French street plan",
+      "the restored windmills",
+      "a base for Binibèquer and Punta Prima"
+    ],
+    "blurb": "One of the island's whitest villages, of French origin: founded in 1761 and named in honour of Louis XV during the brief French rule (1756-1763). It…",
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
     "isIndoor": false,
     "weatherProof": "exterior",
     "indoorAlternativeOf": [],
@@ -682,6 +2449,211 @@
     "lastVerified": "2026-06-22"
   },
   {
+    "id": "son-bou-beach-club",
+    "name": "Son Bou Beach Club",
+    "slug": "son-bou-beach-club",
+    "coordinates": {
+      "lat": 39.9,
+      "lng": 4.08
+    },
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "familias",
+      "parejas",
+      "gastronomia"
+    ],
+    "blurb": "A beach club at the foot of the island's longest beach, Son Bou, with sunloungers, cabanas, palms and timber terraces, and a notable cocktail list…",
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "son-saura-del-sur",
+    "name": "Son Saura del Sur",
+    "slug": "son-saura-del-sur",
+    "coordinates": {
+      "lat": 39.918,
+      "lng": 3.895
+    },
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "blurb": "Two broad semicircles of fine sand, Bellavista and Des Banyuls, separated by a headland, backed by pine wood and lapped by shallow water. Roomier…",
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "son-xoriguer",
+    "name": "Son Xoriguer",
+    "slug": "son-xoriguer",
+    "coordinates": {
+      "lat": 39.926,
+      "lng": 3.805
+    },
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "blurb": "A wide sandy beach some 10 km from Ciutadella, with a more natural right-hand side and rocks in the water. It marks the boundary between the…",
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "talati-de-dalt",
+    "name": "Talatí de Dalt",
+    "slug": "talati-de-dalt",
+    "coordinates": {
+      "lat": 39.8836,
+      "lng": 4.2058
+    },
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "familias"
+    ],
+    "blurb": "One of the most picturesque and accessible Talayotic sites, part of the UNESCO listing. Its taula, with a leaning column resting against it and…",
+    "durationMin": 60,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "torralba-den-salort",
+    "name": "Torralba d'en Salort",
+    "slug": "torralba-den-salort",
+    "coordinates": {
+      "lat": 39.9019,
+      "lng": 4.1389
+    },
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza"
+    ],
+    "blurb": "A Talayotic settlement (UNESCO) with the most monumental and perfectly preserved taula in Menorca, an Iron Age sanctuary, alongside two talayots, a…",
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "torralbenc",
+    "name": "Torralbenc",
+    "slug": "torralbenc",
+    "coordinates": {
+      "lat": 39.91,
+      "lng": 4.16
+    },
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "gastronomia",
+      "parejas",
+      "naturaleza"
+    ],
+    "blurb": "A former estate surrounded by vineyards, now a luxury agritourism retreat. Its Mediterranean restaurant works with local produce over the grill…",
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "torre-de-fornells",
+    "name": "Torre de Fornells",
+    "slug": "torre-de-fornells",
+    "coordinates": {
+      "lat": 40.0556,
+      "lng": 4.1372
+    },
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "parejas"
+    ],
+    "blurb": "An octagonal British-Spanish defensive tower (18th century), built in sandstone above the mouth of Fornells bay. It houses an interpretation centre…",
+    "durationMin": 60,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "indoorAlternativeOf": [
+      "fornells-cavalleria",
+      "norte"
+    ],
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  },
+  {
     "id": "torre-den-galmes",
     "name": "Torre d'en Galmés",
     "slug": "torre-den-galmes",
@@ -709,6 +2681,34 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
+    "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "trepuco",
+    "name": "Trepucó",
+    "slug": "trepuco",
+    "coordinates": {
+      "lat": 39.8703,
+      "lng": 4.2719
+    },
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza"
+    ],
+    "blurb": "A Talayotic settlement (UNESCO) with one of the largest and best-preserved taulas on the island (4.8 m high), set within a nineteenth-century…",
+    "durationMin": 38,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "dataCertainty": "media",
     "lastVerified": "2026-06-22"
   }
 ]

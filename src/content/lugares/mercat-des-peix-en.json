@@ -1,0 +1,43 @@
+{
+  "name": "Mercat des Peix",
+  "lang": "en",
+  "translationKey": "mercat-des-peix",
+  "type": "restaurante",
+  "description": "Mahón's former fish market reborn as a food hall with local soul: fresh fish and seafood, tapas, sandwiches, and island beers and wines. A capital institution near the harbour, ideal for a relaxed bite.",
+  "coordinates": {
+    "lat": 39.888,
+    "lng": 4.264
+  },
+  "area": "East (Maó)",
+  "tags": [
+    "este",
+    "gastronomia",
+    "mao"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "cena",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 60,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "mao-puerto",
+      "este"
+    ]
+  }
+}

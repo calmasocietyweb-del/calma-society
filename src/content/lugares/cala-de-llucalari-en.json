@@ -1,0 +1,36 @@
+{
+  "name": "Cala de Llucalari",
+  "lang": "en",
+  "translationKey": "cala-de-llucalari",
+  "type": "cala",
+  "description": "A small, hidden cove near Son Bou, reached by a short walk. Quiet and little frequented thanks to its foot access; no facilities.",
+  "coordinates": {
+    "lat": 39.892,
+    "lng": 4.1
+  },
+  "area": "South-central (Alaior)",
+  "tags": [
+    "sur-centro",
+    "cala",
+    "alaior"
+  ],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22"
+  }
+}
