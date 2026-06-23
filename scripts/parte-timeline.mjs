@@ -129,6 +129,66 @@ function repViento(winds) {
   return { name: nombreViento(deg), deg: Math.round(deg), kmh: Math.round(sv / n) };
 }
 
+// ---- Cielo y temperatura por franja (para el indicador "tiempo + temperatura") ----
+// AEMET da estadoCielo (código + descripción), temperatura (máx/mín + dato horario) y
+// probPrecipitacion por periodos, igual que el viento. Resumimos la ISLA (como "Viento
+// general"): categoría de cielo más frecuente (empate → la peor) y temperatura media.
+const CIELO_RANK = { sol: 0, poco: 1, nubes: 2, lluvia: 3, tormenta: 4 };
+// Códigos AEMET de estadoCielo → categoría simple. Quitamos el sufijo 'n' (noche).
+const cieloCat = (code) => {
+  const n = parseInt(String(code ?? "").replace(/n$/, ""), 10);
+  if (!n) return null;                                   // "" o no numérico → sin dato
+  if (n <= 11) return "sol";                             // 11 Despejado
+  if (n === 12 || n === 13 || n === 17) return "poco";   // poco nuboso / intervalos / nubes altas
+  if (n === 14 || n === 15 || n === 16) return "nubes";  // nuboso / muy nuboso / cubierto
+  if (n >= 51 && n <= 64) return "tormenta";             // con tormenta
+  if (n >= 23) return "lluvia";                          // 23–46 con lluvia (la nieve, irrelevante en verano)
+  return "nubes";
+};
+// Elige la entrada del periodo pedido con descenso de granularidad (como el viento).
+const pickPer = (arr, key) => {
+  const pref = key === "06-12" ? ["06-12", "00-12", "00-24"]
+    : key === "12-18" ? ["12-18", "12-24", "00-24"]
+    : key === "00-12" ? ["00-12", "00-24"]
+    : key === "12-24" ? ["12-24", "00-24"]
+    : ["00-24"];
+  for (const k of pref) {
+    const e = (arr || []).find((x) => (x.periodo || "") === k && x.value !== "" && x.value != null);
+    if (e) return e;
+  }
+  return null;
+};
+// Temperatura representativa del día/franja: el dato horario diurno si existe; si no,
+// la máxima (la herramienta es para el baño diurno). Para días futuros AEMET solo da máx/mín.
+const tempMun = (dia, key) => {
+  const t = dia.temperatura || {};
+  const hora = key.startsWith("12") ? 18 : 12;
+  const d = (t.dato || []).find((x) => Number(x.hora) === hora && Number(x.value) > 0);
+  if (d) return Number(d.value);
+  if (t.maxima != null && t.maxima !== "") return Number(t.maxima);
+  return null;
+};
+function repTiempo(dias, key) {
+  const cats = [], temps = [];
+  let pop = 0;
+  for (const dia of dias) {
+    const c = cieloCat((pickPer(dia.estadoCielo, key) || {}).value);
+    if (c) cats.push(c);
+    const t = tempMun(dia, key);
+    if (t != null) temps.push(t);
+    const p = pickPer(dia.probPrecipitacion, key);
+    if (p) pop = Math.max(pop, Number(p.value) || 0);
+  }
+  let cat = null;
+  if (cats.length) {
+    const freq = {};
+    for (const c of cats) freq[c] = (freq[c] || 0) + 1;
+    cat = Object.keys(freq).sort((a, b) => freq[b] - freq[a] || CIELO_RANK[b] - CIELO_RANK[a])[0];
+  }
+  const temp = temps.length ? Math.round(temps.reduce((a, b) => a + b, 0) / temps.length) : null;
+  return { sky: cat, temp, pop };
+}
+
 async function main() {
   if (!KEY) { console.error("Falta AEMET_API_KEY en .env"); process.exit(1); }
   const calas = cargarCalas();
@@ -170,10 +230,14 @@ async function main() {
   const frames = def.map((f) => {
     const winds = {};
     for (const ine of ok) winds[ine] = vientoMun(diasPorMun[ine], f.fecha, f.key);
+    // Cielo + temperatura de la isla para esta franja (a partir del día de cada municipio).
+    const diasFranja = ok.map((ine) => (diasPorMun[ine] || []).find((d) => (d.fecha || "").slice(0, 10) === f.fecha)).filter(Boolean);
+    const t = repTiempo(diasFranja, f.key);
     return {
       id: `${f.fecha}-${f.key}`,
       day: f.day, period: f.period, fecha: f.fecha, startHour: f.startHour,
       rep: repViento(winds),
+      sky: t.sky, temp: t.temp, pop: t.pop,
       winds,
     };
   });
