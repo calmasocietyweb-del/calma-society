@@ -141,7 +141,14 @@ const bandaDe = (op: number, d: string | null, v: number) => {
   return score >= 0.66 ? "alto" : score >= 0.4 ? "medio" : "bajo";
 };
 const calaMeta: Record<string, any> = Object.fromEntries((tl.calas || []).map((c: any) => [c.id, c]));
-const FRAMES: any[] = Array.isArray(tl.frames) ? tl.frames : [];
+// Día de hoy (UTC en build; el cliente lo reafina a hora de Menorca). El parte solo
+// mira hacia DELANTE: descartamos los frames de días YA pasados para que HOY sea
+// siempre la primera posición de la barra (mañana lo será el día siguiente). Si todo
+// el dato fuese pasado (robot caído varios días), conservamos lo que haya + aviso stale.
+const buildToday = new Date().toISOString().slice(0, 10);
+const ALL_FRAMES: any[] = Array.isArray(tl.frames) ? tl.frames : [];
+const futuras = ALL_FRAMES.filter((f) => f.fecha >= buildToday);
+const FRAMES: any[] = futuras.length ? futuras : ALL_FRAMES;
 const F0: any = FRAMES[0] || { day: "", period: "", rep: { name: "—", deg: 0, kmh: 0 }, winds: {} };
 const hayTimeline = FRAMES.length > 1 && (tl.calas || []).length > 0;
 const calaEnFrame = (id: string, frame: any) => {
@@ -164,7 +171,6 @@ const dayFechas: string[] = [...new Set(FRAMES.map((f) => f.fecha))];
 
 // Obsolescencia detectada YA en el servidor (cubre a quien navega sin JS): si el
 // generador degradó (stale) o la fecha del dato es anterior al día de build.
-const buildToday = new Date().toISOString().slice(0, 10);
 const isStaleServer = !!parte.stale || !!tl.stale || (typeof parte.forecastDate === "string" && parte.forecastDate < buildToday);
 
 const repName = F0.rep.name;
@@ -655,9 +661,23 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
     const dayLabelC = (f) => (f === mNow.date ? D.rel.hoy : f === tomM ? D.rel.manana : (D.dow || [])[new Date(f + "T12:00:00Z").getUTCDay()] || f);
     const dateLabelC = (f) => { const a = f.split("-"); return Number(a[2]) + " " + ((D.months || [])[Number(a[1]) - 1] || ""); };
     const periodLabelC = (p) => (D.periodo && D.periodo[p]) || p;
+    // Solo hacia delante: descarta los frames de días YA pasados (hora de Menorca), por si
+    // se abre la página un día después del último parte generado. Así HOY es siempre la
+    // primera posición de la barra. Si todo fuese pasado, conserva lo que haya.
+    const fut = frames.filter((f) => f.fecha >= mNow.date);
+    const visFrames = fut.length ? fut : frames;
+    // Reconstruye la fila de días bajo la barra con los días visibles y su fecha real.
     const dayRow = document.getElementById("calma-day-row");
-    // Reescribe la fila de días bajo la barra con la fecha real (corrige el día rotulado).
-    if (dayRow) for (const sp of dayRow.querySelectorAll(".calma-day")) sp.textContent = dayLabelC(sp.dataset.fecha);
+    if (dayRow) {
+      const fechas = [...new Set(visFrames.map((f) => f.fecha))];
+      dayRow.replaceChildren(...fechas.map((f) => {
+        const sp = document.createElement("span");
+        sp.className = "calma-day";
+        sp.dataset.fecha = f;
+        sp.textContent = dayLabelC(f);
+        return sp;
+      }));
+    }
 
     const applyFrame = (fr) => {
       const counts = { alto: 0, medio: 0, bajo: 0 };
@@ -695,24 +715,26 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
       if (dayRow) for (const sp of dayRow.querySelectorAll(".calma-day")) sp.classList.toggle("calma-day-activa", sp.dataset.fecha === fr.fecha);
     };
 
-    if (frames.length) {
+    if (visFrames.length) {
+      // Sitúa la barra en el frame de "ahora" dentro de los días visibles (= HOY o después).
       const nowKey = mNow.date + "-" + mNow.hour;
       let idx = 0;
-      for (let i = 0; i < frames.length; i++) {
-        const fk = frames[i].fecha + "-" + String(frames[i].startHour).padStart(2, "0");
+      for (let i = 0; i < visFrames.length; i++) {
+        const fk = visFrames[i].fecha + "-" + String(visFrames[i].startHour).padStart(2, "0");
         if (fk <= nowKey) idx = i;
       }
       const slider = document.getElementById("calma-tiempo");
       if (slider) {
-        slider.max = String(frames.length - 1);
+        slider.max = String(visFrames.length - 1);
         slider.value = String(idx);
-        slider.addEventListener("input", () => applyFrame(frames[+slider.value]));
+        slider.addEventListener("input", () => applyFrame(visFrames[+slider.value]));
       }
-      applyFrame(frames[idx]);
+      applyFrame(visFrames[idx]);
 
-      // Aviso de datos obsoletos: si la previsión degradó o su primer día ya pasó (hora Menorca).
+      // Aviso de datos obsoletos: si la previsión degradó o el dato ya no alcanza a hoy
+      // (el primer frame del parte quedó por detrás del día actual en hora de Menorca).
       const staleEl = document.getElementById("calma-stale");
-      if (staleEl && (D.stale || frames[0].fecha < mNow.date)) staleEl.classList.remove("hidden");
+      if (staleEl && (D.stale || (frames[0] && frames[0].fecha < mNow.date))) staleEl.classList.remove("hidden");
     }
   }
 </script>
