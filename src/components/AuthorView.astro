@@ -22,14 +22,14 @@ const social = entry.data.social;
 
 const canonical = abs(authorUrl(locale, entry.id));
 const personLd = personSchema({
-  name: entry.data.name,
+  name: entry.data.name[locale],
   description: entry.data.bio[locale],
   url: canonical,
   sameAs: social ? Object.values(social).filter(Boolean) : undefined,
 });
 const breadcrumb = breadcrumbSchema([
   { name: SITE.name, url: abs(homePath(locale)) },
-  { name: entry.data.name, url: canonical },
+  { name: entry.data.name[locale], url: canonical },
 ]);
 ---
 
@@ -37,7 +37,7 @@ const breadcrumb = breadcrumbSchema([
   <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">
     {entry.data.role[locale]}
   </p>
-  <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">{entry.data.name}</h1>
+  <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">{entry.data.name[locale]}</h1>
   <p class="mt-5 text-lg leading-relaxed text-piedra-suave">{entry.data.bio[locale]}</p>
   {
     social?.instagram && (
@@ -54,7 +54,7 @@ const breadcrumb = breadcrumbSchema([
   articles.length > 0 && (
     <section class="mx-auto mt-16 max-w-6xl px-5 sm:px-8">
       <h2 class="border-b border-niebla pb-3 font-display text-2xl text-tinta">
-        {t("author.articlesby")} {entry.data.name}
+        {t("author.articlesby")} {entry.data.name[locale]}
       </h2>
       <div class="mt-8 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
         {articles.map((a) => (

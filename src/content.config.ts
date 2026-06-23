@@ -289,11 +289,13 @@ const eventos = defineCollection({
   }),
 });
 
-/** Autores (E-E-A-T). Una entrada por persona; textos localizados. */
+/** Autores/firmas (E-E-A-T). Puede ser una persona o una firma editorial del medio;
+ * textos y nombre localizados (la firma puede diferir ES/EN, p. ej. "Redacción de
+ * Calma Society" / "Calma Society Editorial"). */
 const autores = defineCollection({
   loader: glob({ pattern: "**/*.json", base: "./src/content/autores" }),
   schema: z.object({
-      name: z.string(),
+      name: z.object({ es: z.string(), en: z.string() }),
       role: z.object({ es: z.string(), en: z.string() }),
       bio: z.object({ es: z.string(), en: z.string() }),
       // `bio` es texto visible (corto). `seoDescription` la sustituye SOLO en la

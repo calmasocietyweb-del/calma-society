@@ -34,7 +34,7 @@ const articleLd = articleSchema({
   locale,
   datePublished: data.publishDate,
   dateModified: data.updatedDate,
-  authorName: author?.data.name,
+  authorName: author?.data.name[locale],
   authorUrl: author ? abs(authorUrl(locale, author.id)) : undefined,
   image: data.heroImage ? abs(data.seo?.ogImage ?? data.heroImage) : undefined,
 });
@@ -59,7 +59,7 @@ const breadcrumb = breadcrumbSchema([
   imageAlt={data.heroImageAlt}
   publishedTime={data.publishDate.toISOString()}
   modifiedTime={data.updatedDate?.toISOString()}
-  authorName={author?.data.name}
+  authorName={author?.data.name[locale]}
 >
   <article class="mx-auto max-w-prosa px-5 pb-8 pt-12 sm:px-8 sm:pt-16">
     <header>
@@ -92,7 +92,7 @@ const breadcrumb = breadcrumbSchema([
             <span>
               {t("article.by")}{" "}
               <a href={authorUrl(locale, author.id)} class="font-medium text-piedra hover:text-terracota">
-                {author.data.name}
+                {author.data.name[locale]}
               </a>
             </span>
           )
