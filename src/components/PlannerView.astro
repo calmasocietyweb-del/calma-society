@@ -50,6 +50,9 @@ const T = isEs
       planBtitle: "Si llueve o hace mucho calor", whyTitle: "Por qué este día", busCTA: "Resuélvelo con Menorca Bus",
       globalTitle: "Antes de salir", hours: "h útiles", empty: "Rellena la encuesta y crea tu plan.",
       intro: "Una guía día a día, encadenada por cercanía y sin prisas: la isla, a tu ritmo.",
+      saveTitle: "Guarda tu plan",
+      saveText: "Llévatelo contigo: descárgalo en PDF, guarda el enlace para volver a él cuando quieras y únete a la Sociedad para recibir lo mejor de Menorca.",
+      savePdf: "Descargar PDF", joinSociety: "Únete a la Sociedad", copyLink: "Copiar enlace", copied: "¡Enlace copiado!",
     }
   : {
       formTitle: "Tell us how you travel",
@@ -72,6 +75,9 @@ const T = isEs
       planBtitle: "If it rains or gets too hot", whyTitle: "Why this day", busCTA: "Sort it with Menorca Bus",
       globalTitle: "Before you go", hours: "useful h", empty: "Fill in the survey and build your plan.",
       intro: "A day-by-day guide, chained by proximity and unhurried: the island, at your pace.",
+      saveTitle: "Save your plan",
+      saveText: "Take it with you: download it as a PDF, keep the link to come back to it anytime, and join the Society for the best of Menorca.",
+      savePdf: "Download PDF", joinSociety: "Join the Society", copyLink: "Copy link", copied: "Link copied!",
     };
 
 // Config para el cliente (etiquetas que el render del plan necesita + URL del partner).
@@ -90,6 +96,10 @@ const CFG = {
   dateTooLong: isEs ? "El planificador llega hasta 21 días. Acorta las fechas o elige una estancia más corta." : "The planner covers up to 21 days. Shorten the dates or pick a shorter stay.",
   dateNeedArrival: isEs ? "Indica también la fecha de llegada para calcular la duración del viaje." : "Add the arrival date too so we can work out the trip length.",
   menorcaBusUrl: SITE.partners.menorcaBus.url,
+  // "Guarda tu plan": el island abre el popup de MailerLite (captación = KPI nº1)
+  // y da feedback al copiar el enlace (el plan vive en la querystring → compartible).
+  popupFormId: SITE.newsletter.popupFormId,
+  copied: T.copied,
   noticeIcon: { reserva: "📌", madrugar: "⏰", "agua-sombra": "💧", parking: "🅿️", "confirma-horario": "🕒", esfuerzo: "🥾", viento: "🌬️", accesibilidad: "♿", fiesta: "🎉", logistica: "🧭" } as Record<string, string>,
 };
 
@@ -242,6 +252,23 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
     <p class="text-sm text-piedra-suave">{T.empty}</p>
   </div>
 
+  {/* ── GUARDA TU PLAN (PDF · newsletter · enlace) — el island lo revela cuando hay plan ── */}
+  <div id="planner-actions" hidden class="mt-8 rounded-2xl border border-niebla bg-arena/40 p-5 sm:p-6 print:hidden">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">{T.saveTitle}</p>
+    <p class="mt-2 max-w-prose text-sm leading-relaxed text-piedra-suave">{T.saveText}</p>
+    <div class="mt-4 flex flex-wrap gap-3">
+      <button id="planner-pdf" type="button" data-umami-event="planner-pdf" class="rounded-md bg-arcilla px-5 py-2.5 text-sm font-semibold text-lino transition-colors hover:bg-tinta">
+        {T.savePdf}
+      </button>
+      <button id="planner-join" type="button" data-umami-event="planner-newsletter" class="rounded-md bg-oro-vivo px-5 py-2.5 text-sm font-semibold text-tinta transition-colors hover:bg-lino">
+        {T.joinSociety}
+      </button>
+      <button id="planner-copy" type="button" data-umami-event="planner-copylink" class="rounded-md border border-arcilla px-5 py-2.5 text-sm font-semibold text-arcilla transition-colors hover:bg-arcilla hover:text-lino">
+        {T.copyLink}
+      </button>
+    </div>
+  </div>
+
   {/* Datos para el cliente (no se ejecutan: los lee el island). */}
   <script type="application/json" id="planner-dataset" set:html={JSON.stringify(dataset)} />
   <script type="application/json" id="planner-events" set:html={JSON.stringify(events)} />
@@ -384,7 +411,24 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
       </div>
       <div class="mt-6 space-y-5">${plan.days.map(dayCard).join("")}</div>`;
     out.scrollIntoView({ behavior: "smooth", block: "start" });
+    const actions = $("planner-actions"); // hay plan → ofrece guardarlo/compartirlo
+    if (actions) actions.hidden = false;
   }
+
+  // "Guarda tu plan": PDF por print-CSS, popup de MailerLite (captación = KPI nº1)
+  // y copiar el enlace (el plan vive en la querystring → compartible/recuperable).
+  $("planner-pdf")?.addEventListener("click", () => window.print());
+  $("planner-join")?.addEventListener("click", () => {
+    const ml = (window as any).ml;
+    if (typeof ml === "function" && CFG.popupFormId) ml("show", CFG.popupFormId, true);
+  });
+  $("planner-copy")?.addEventListener("click", async (e) => {
+    try { await navigator.clipboard.writeText(location.href); } catch {}
+    const b = e.currentTarget as HTMLButtonElement;
+    const prev = b.textContent;
+    b.textContent = CFG.copied;
+    setTimeout(() => { b.textContent = prev; }, 2000);
+  });
 
   const r = readSurvey();
   if (r && out) {
@@ -400,3 +444,14 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
     }
   }
 </script>
+
+{/* Impresión / "Descargar PDF": solo el plan en papel (sin nav, encuesta ni acciones). */}
+<style is:global>
+  @media print {
+    header, footer, nav, #planner-form, #planner-actions { display: none !important; }
+    body { background: #fff !important; }
+    #planner-results { margin-top: 0 !important; }
+    #planner-results .rounded-2xl, #planner-results article { box-shadow: none !important; break-inside: avoid; }
+    #planner-results a[href] { text-decoration: none !important; color: inherit !important; }
+  }
+</style>
