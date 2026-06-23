@@ -160,7 +160,7 @@ const F0cala: Record<string, { band: string; windName: string; windKmh: number }
 );
 const counts: Record<string, number> = { alto: 0, medio: 0, bajo: 0 };
 for (const c of parte.calas) { const b = F0cala[c.id].band; if (b === "alto" || b === "medio" || b === "bajo") counts[b]++; }
-const dayLabels: string[] = [...new Set(FRAMES.map((f) => f.day))];
+const dayFechas: string[] = [...new Set(FRAMES.map((f) => f.fecha))];
 
 // Obsolescencia detectada YA en el servidor (cubre a quien navega sin JS): si el
 // generador degradó (stale) o la fecha del dato es anterior al día de build.
@@ -260,6 +260,36 @@ const T = {
   },
 }[locale];
 
+// Etiqueta de día RELATIVA y LOCALIZADA derivada de la FECHA ABSOLUTA del frame.
+// El valor `day` del JSON ("Hoy"/"Mañana") se CONGELA al generarse y CADUCA: tras la
+// medianoche —o si el robot diario aún no ha corrido— "Hoy" señalaría a ayer. Por eso
+// el día se recalcula aquí (primer pintado / sin JS) y, ya correcto, en el cliente con
+// la fecha real de Menorca. De paso, traduce el día/periodo en la página EN (el JSON
+// solo trae español).
+const DOW_LABELS: Record<string, string[]> = {
+  es: ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"],
+  en: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+};
+const REL_LABELS = { es: { hoy: "Hoy", manana: "Mañana" }, en: { hoy: "Today", manana: "Tomorrow" } }[locale];
+const MONTH_LABELS: Record<string, string[]> = {
+  es: ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"],
+  en: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+};
+const PERIOD_LABELS = ({
+  es: { "Mañana": "Mañana", "Tarde": "Tarde", "Todo el día": "Todo el día" },
+  en: { "Mañana": "Morning", "Tarde": "Afternoon", "Todo el día": "All day" },
+}[locale] ?? {}) as Record<string, string>;
+const dowLoc = DOW_LABELS[locale];
+const monLoc = MONTH_LABELS[locale];
+const addDaysYmd = (ymd: string, n: number) =>
+  new Date(Date.parse(ymd + "T00:00:00Z") + n * 86400000).toISOString().slice(0, 10);
+const tomorrowServer = addDaysYmd(buildToday, 1);
+const dayLabelOf = (f: string) =>
+  f === buildToday ? REL_LABELS.hoy : f === tomorrowServer ? REL_LABELS.manana : dowLoc[new Date(f + "T12:00:00Z").getUTCDay()];
+// Fecha corta del día que se está mirando: "23 jun" / "23 Jun".
+const dateLabelOf = (f: string) => { const [, mm, dd] = f.split("-"); return Number(dd) + " " + monLoc[Number(mm) - 1]; };
+const periodLabelOf = (p: string) => PERIOD_LABELS[p] ?? p;
+
 const fecha = formatDate(new Date(parte.forecastDate + "T00:00:00"), locale);
 
 // ---- JSON-LD: una Beach por cala con el estado del mar de hoy (observationDate honesto) ----
@@ -344,9 +374,9 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
     {/* Línea temporal de previsión: al deslizar, el JS recalcula mar + viento. */}
     {hayTimeline && (
       <div class="mt-6">
-        <div class="flex items-baseline justify-between gap-3">
+        <div class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
           <span class="text-xs font-semibold uppercase tracking-wider text-oro">{T.timelineTitle}</span>
-          <span id="calma-frame-label" class="font-display text-lg text-tinta">{F0.day} · {F0.period}</span>
+          <span id="calma-frame-label" class="font-display text-lg text-tinta">{dayLabelOf(F0.fecha)}, {dateLabelOf(F0.fecha)} · {periodLabelOf(F0.period)}</span>
         </div>
         <input
           type="range"
@@ -358,8 +388,8 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
           class="mt-2 w-full accent-arcilla"
           aria-label={T.timelineTitle}
         />
-        <div class="mt-1 flex justify-between text-[0.7rem] text-piedra-suave">
-          {dayLabels.map((d) => <span>{d}</span>)}
+        <div id="calma-day-row" class="mt-1 flex justify-between text-[0.7rem] text-piedra-suave">
+          {dayFechas.map((fc) => <span class="calma-day" data-fecha={fc}>{dayLabelOf(fc)}</span>)}
         </div>
       </div>
     )}
@@ -376,6 +406,10 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
       vientos: VIENTOS,
       calma: isEs ? "Calma" : "Calm",
       viento: T.viento,
+      dow: dowLoc,
+      months: monLoc,
+      rel: REL_LABELS,
+      periodo: PERIOD_LABELS,
       stale: !!tl.stale,
     }).replace(/</g, "\\u003c")} />
 
@@ -608,6 +642,23 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
     const windDial = document.getElementById("calma-wind-dial");
     const frameLabel = document.getElementById("calma-frame-label");
 
+    // "Ahora" en hora de Menorca (Europe/Madrid), no la del visitante europeo.
+    const madrid = (dt) => {
+      const p = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Madrid", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", hourCycle: "h23" }).formatToParts(dt);
+      const g = (t) => (p.find((x) => x.type === t) || {}).value;
+      return { date: g("year") + "-" + g("month") + "-" + g("day"), hour: g("hour") };
+    };
+    const mNow = madrid(new Date());
+    const tomM = new Date(Date.parse(mNow.date + "T00:00:00Z") + 86400000).toISOString().slice(0, 10);
+    // Día RELATIVO recalculado con la fecha REAL de Menorca (no la congelada en el JSON):
+    // corrige el desfase cuando el dato es de ayer o se cruza la medianoche.
+    const dayLabelC = (f) => (f === mNow.date ? D.rel.hoy : f === tomM ? D.rel.manana : (D.dow || [])[new Date(f + "T12:00:00Z").getUTCDay()] || f);
+    const dateLabelC = (f) => { const a = f.split("-"); return Number(a[2]) + " " + ((D.months || [])[Number(a[1]) - 1] || ""); };
+    const periodLabelC = (p) => (D.periodo && D.periodo[p]) || p;
+    const dayRow = document.getElementById("calma-day-row");
+    // Reescribe la fila de días bajo la barra con la fecha real (corrige el día rotulado).
+    if (dayRow) for (const sp of dayRow.querySelectorAll(".calma-day")) sp.textContent = dayLabelC(sp.dataset.fecha);
+
     const applyFrame = (fr) => {
       const counts = { alto: 0, medio: 0, bajo: 0 };
       for (const c of D.calas) {
@@ -639,18 +690,13 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
         const r = document.getElementById("calma-" + b);
         if (r) { r.disabled = counts[b] === 0; if (counts[b] === 0 && r.checked) { r.checked = false; const t = document.getElementById("calma-todas"); if (t) t.checked = true; } }
       }
-      if (frameLabel) frameLabel.textContent = fr.day + " · " + fr.period;
+      if (frameLabel) frameLabel.textContent = dayLabelC(fr.fecha) + ", " + dateLabelC(fr.fecha) + " · " + periodLabelC(fr.period);
+      // Resalta en la fila de días el rótulo del frame seleccionado ("el día de la barra").
+      if (dayRow) for (const sp of dayRow.querySelectorAll(".calma-day")) sp.classList.toggle("calma-day-activa", sp.dataset.fecha === fr.fecha);
     };
 
     if (frames.length) {
-      // "Ahora" en hora de Menorca (Europe/Madrid), no la del visitante europeo.
-      const madrid = (dt) => {
-        const p = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Madrid", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", hourCycle: "h23" }).formatToParts(dt);
-        const g = (t) => (p.find((x) => x.type === t) || {}).value;
-        return { date: g("year") + "-" + g("month") + "-" + g("day"), hour: g("hour") };
-      };
-      const m = madrid(new Date());
-      const nowKey = m.date + "-" + m.hour;
+      const nowKey = mNow.date + "-" + mNow.hour;
       let idx = 0;
       for (let i = 0; i < frames.length; i++) {
         const fk = frames[i].fecha + "-" + String(frames[i].startHour).padStart(2, "0");
@@ -666,7 +712,7 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
 
       // Aviso de datos obsoletos: si la previsión degradó o su primer día ya pasó (hora Menorca).
       const staleEl = document.getElementById("calma-stale");
-      if (staleEl && (D.stale || frames[0].fecha < m.date)) staleEl.classList.remove("hidden");
+      if (staleEl && (D.stale || frames[0].fecha < mNow.date)) staleEl.classList.remove("hidden");
     }
   }
 </script>

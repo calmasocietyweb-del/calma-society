@@ -299,6 +299,13 @@ a.cala-activa > circle {
   transform-origin: center;
 }
 
+/* Día activo en la línea temporal: el rótulo bajo la barra que corresponde al frame
+   seleccionado (lo marca el JS al deslizar). Sin JS no se añade y la fila queda neutra. */
+.calma-day-activa {
+  color: var(--color-arcilla);
+  font-weight: 700;
+}
+
 /* ============================================================
    PLANIFICADOR DE VIAJES — campos de la encuesta y "pills" de selección.
    ============================================================ */
