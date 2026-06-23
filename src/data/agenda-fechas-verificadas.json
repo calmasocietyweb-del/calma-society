@@ -1,0 +1,250 @@
+{
+  "carnaval-darrers-dies-menorca": {
+    "startDate": "2026-02-12",
+    "endDate": "2026-02-17",
+    "dateType": "movible-religiosa",
+    "confidence": "confirmada",
+    "basis": "Fiesta movible ligada a la Pascua. El Miércoles de Ceniza 2026 cae el 18 de febrero (confirmado por múltiples fuentes), por lo que el Carnaval/Darrers Dies son los días previos: Dijous Llarder = jueves 12 feb (inicio) y Darrer Dimarts = martes 17 feb (cierre, víspera de Ceniza). Coincide con la ficha actual y con las guías locales (Festes Menorca y viajamenorca.com), que sitúan el Carnaval del 12 al 18 de febrero de 2026 con rúas el fin de semana en Ciutadella y Maó.",
+    "sourceName": "Festes Menorca (calendario oficial de fiestas) + cálculo del calendario litúrgico (Miércoles de Ceniza 18 feb 2026)",
+    "sourceUrl": "https://festesmenorca.com/carnaval/",
+    "verifiedFor": "2026"
+  },
+  "cova-den-xoroi-musica-atardecer": {
+    "startDate": "2026-04-02",
+    "endDate": "2026-10-25",
+    "dateType": "recurrente-temporada",
+    "confidence": "confirmada",
+    "basis": "No es un concierto puntual sino una sesión DIARIA durante toda la temporada estival. La web oficial (covadenxoroi.com) ofrece la \"Sunset Time Session + Live Music\" todos los días de la temporada. El calendario operativo está documentado y es consistente: reapertura 28 de marzo 2026 y servicio diario desde el 2 de abril; abril-mayo de 15:00 al atardecer; junio-agosto desde 11:30; septiembre hasta el 27 igual y desde el 28 de 15:00 al atardecer; octubre hasta el 25 de 15:00 al atardecer; cerrado desde el 26 de octubre y en noviembre. Por eso uso como inicio representativo el arranque del servicio diario (2 abril 2026) y como fin el cierre (25 octubre 2026). La existencia de la temporada 2026 está confirmada por su propio anuncio de entradas \"temporada 2026\". El programa y artistas concretos por fecha no se publican con antelación, pero el patrón de las sesiones al atardecer con música en vivo sí está confirmado.",
+    "sourceName": "Cova d'en Xoroi (web oficial) — Sunset Time Session + Live Music",
+    "sourceUrl": "https://www.covadenxoroi.com/en/sa-cova/sunset-time-session",
+    "verifiedFor": "2026"
+  },
+  "dimarts-as-migjorn": {
+    "startDate": "2026-07-07",
+    "endDate": "2026-09-08",
+    "dateType": "recurrente-temporada",
+    "confidence": "confirmada",
+    "basis": "Patron recurrente confirmado por la web oficial del Consell Insular de Menorca (menorca.es): el mercado nocturno \"Dimarts as Migjorn\" se celebra los MARTES por la noche (19:30-23:30 h) durante julio, agosto y las dos primeras semanas de septiembre (\"del 2 de julio al 9 de septiembre\" en su edicion de referencia). El calendario 2026 de viajamenorca.com tambien lo lista como martes, de julio a septiembre, en el centro del pueblo. En 2026 el primer martes dentro de la temporada documentada es el 7 de julio (el 1 de julio cae en miercoles) y el ultimo martes de la primera quincena de septiembre es el 8 de septiembre. Corrige la fecha orientativa de la ficha (30 jun - 25 ago): la temporada real es julio a primeras dos semanas de septiembre. Fechas dia-a-dia del programa 2026 aun no publicadas por el ayuntamiento, pero el patron semanal/temporada esta documentado.",
+    "sourceName": "Consell Insular de Menorca (menorca.es) y calendario de mercados 2026 de Viaja Menorca",
+    "sourceUrl": "https://www.menorca.es/en/Dimarts_as_Migjorn/9275",
+    "verifiedFor": "2026"
+  },
+  "festes-calan-porter-alaior": {
+    "startDate": "2026-09-19",
+    "endDate": "2026-09-20",
+    "dateType": "fija-anual",
+    "confidence": "confirmada",
+    "basis": "Las fiestas de Cala'n Porter (Alaior) se celebran el tercer fin de semana de septiembre, con días centrales sábado y domingo (qualcada de caixers y el singular jaleo en la propia playa). El patrón está documentado año a año: en 2025 los días centrales fueron sábado 20 y domingo 21 de septiembre. Para 2026, el tercer fin de semana es sábado 19 y domingo 20 de septiembre, fechas que coinciden con la ficha actual y que aparecen listadas como días destacados de 2026 en fiestasmenorca.es. (Nota: 19/09/2026 es sábado y 20/09/2026 domingo; el patrón fin de semana se mantiene.)",
+    "sourceName": "Fiestas Menorca (fiestasmenorca.es) y prensa local Menorca.info / Menorca al Día (edición 2025, patrón recurrente)",
+    "sourceUrl": "https://fiestasmenorca.es/calan-porter/",
+    "verifiedFor": "2026"
+  },
+  "festes-es-caixers-alaior": {
+    "startDate": "2026-09-26",
+    "endDate": "2026-09-27",
+    "dateType": "puntual-2026",
+    "confidence": "confirmada",
+    "basis": "Las Festes des Caixers de Alaior son la última cita ecuestre del verano menorquín, ligada al último fin de semana de septiembre (sábado \"Dissabte des Caixers\" + domingo \"Dia des Caixers\", con qualcada y jaleo en la Plaça de la Constitució). La página dedicada de Fiestas Menorca para la edición 2026 indica expresamente los días 26 y 27 de septiembre de 2026, que en 2026 caen en sábado y domingo (último fin de semana completo de septiembre). Coincide con la fecha orientativa de la ficha. Organiza el Grup d'Amics de sa Festa des Caixers junto al Ayuntamiento de Alaior.",
+    "sourceName": "Fiestas Menorca - Es Caixers (Alaior) 2026",
+    "sourceUrl": "https://fiestasmenorca.es/es-caixers/",
+    "verifiedFor": "2026"
+  },
+  "festes-sant-nicolau-es-mercadal": {
+    "startDate": "2026-09-12",
+    "endDate": "2026-09-13",
+    "dateType": "recurrente-temporada",
+    "confidence": "confirmada",
+    "basis": "Fiesta patronal ligada a Sant Nicolau de Tolentino (festividad 10 de septiembre); se celebra tradicionalmente el segundo fin de semana de septiembre y cierra el calendario de fiestas patronales de Menorca. Para 2026, fiestasmenorca.com (portal especializado en las fiestas de Menorca) confirma los días 12 y 13 de septiembre de 2026: sábado 12 (Vigília/Cercavila i Jaleo) y domingo 13 (Dia de Sant Nicolau, qualcada y subida al Monte Toro con misa de caixers y jaleo). Coincide con la fecha orientativa de la ficha. El sábado 12 y domingo 13 corresponden al segundo fin de semana de septiembre, consistente con el patrón habitual.",
+    "sourceName": "Fiestas Menorca (fiestasmenorca.com) — Sant Nicolau El Toro, Es Mercadal 2026",
+    "sourceUrl": "https://fiestasmenorca.com/sant-nicolau/",
+    "verifiedFor": "2026"
+  },
+  "festival-pedra-viva-lithica": {
+    "startDate": "2026-07-10",
+    "endDate": "2026-08-31",
+    "dateType": "puntual-2026",
+    "confidence": "confirmada",
+    "basis": "El programa de la 15a edición (2026) figura en la web oficial del festival (pedraviva.events) y coincide con la prensa local (apuntmenorca.com). El festival, de artes escénicas en espacios no escénicos, abre con 'The Weight of Water' (Panama Pictures) el 10-11 de julio de 2026 como espectáculo inaugural y se cierra con la muestra 'Pedra en Viu' el sábado 31 de agosto de 2026. Entre medias: AquaSonic (24-25 jul), Buika (4 ago) y Tancarville (21 ago). Es un festival estival concentrado en julio-agosto, confirmado también por illesbalears.travel. Uso como inicio el espectáculo inaugural verificado (10 jul) y como fin el cierre 'Pedra en Viu' (31 ago); esto ajusta el rango orientativo de la ficha (5 jul - 5 sep). Nota: algunas listas de la web mezclan conciertos de otro ciclo de Lithica (otoño) ajenos al núcleo escénico del festival.",
+    "sourceName": "Festival Pedra Viva (web oficial) y apuntmenorca.com",
+    "sourceUrl": "https://pedraviva.events/",
+    "verifiedFor": "2026"
+  },
+  "fira-formatge-mahon-menorca-mao": {
+    "startDate": "2026-10-16",
+    "endDate": "2026-10-18",
+    "dateType": "fija-anual",
+    "confidence": "aproximada",
+    "basis": "El Ajuntament de Maó (fuente oficial) documenta el patrón fijo: \"Cada tercer cap de setmana d'octubre\". La edición IV (2025) se celebró del 17 al 19 de octubre (viernes-domingo, tercer finde), abriendo el viernes con FormatJazz. Para 2026 el tercer fin de semana de octubre es viernes 16 a domingo 18 (octubre 2026 empieza en jueves: findes Fri-Sun = 2-4, 9-11, 16-18). El programa oficial 2026 aún no está publicado, por eso es aproximada, pero el patrón está confirmado por la fuente oficial y coincide con la fecha orientativa de la ficha.",
+    "sourceName": "Ajuntament de Maó (web oficial)",
+    "sourceUrl": "https://ajmao.org/ca/Fira_Formatge/35544",
+    "verifiedFor": "2026"
+  },
+  "fira-nadal-mao-gastronomia-hivern": {
+    "startDate": "2026-12-05",
+    "endDate": "2026-12-08",
+    "dateType": "recurrente-temporada",
+    "confidence": "aproximada",
+    "basis": "La Fira de Nadal de Maó está anclada al puente de diciembre: festivos de la Constitución (6 dic) y la Inmaculada (8 dic). En 2025 se celebró del 5 al 8 de diciembre (viernes a lunes) en el claustre del Carme, Plaza Constitució y c/ Ses Moreres, con apertura el día 5 por la tarde y jornada completa los días 6, 7 y 8. En 2026 el 6 de diciembre cae en domingo y el 8 en martes, formando de nuevo un puente (sáb 5 a mar 8). Por el patrón recurrente, la fira volverá a ocupar ese mismo arco 5-8 de diciembre. Programa oficial 2026 aún no publicado, por eso la fecha es aproximada (basada en el patrón del puente y la edición 2025).",
+    "sourceName": "menorca.info (Fira del Nadal 2025 en Maó) y Ajuntament de Maó",
+    "sourceUrl": "https://www.menorca.info/ocio/fiestas/fira-del-nadal-2025-mao.html",
+    "verifiedFor": "2026"
+  },
+  "fira-perdiu-es-mercadal": {
+    "startDate": "2026-02-07",
+    "endDate": "2026-02-08",
+    "dateType": "puntual-2026",
+    "confidence": "confirmada",
+    "basis": "El Ayuntamiento de Es Mercadal confirma en su comunicado oficial que el Recinte Firal des Mercadal acoge los días 7 y 8 de febrero de 2026 la XXXIX Fira de sa Perdiu de Menorca. Coincide con el patrón habitual (primer fin de semana completo de febrero, sábado y domingo) y con la fecha orientativa de la ficha (2026-02-08). Nota: en la edición 2026 la gripe aviar obligó a suprimir el concurso de caza con reclamo, pero la feria sí se celebró en esas fechas.",
+    "sourceName": "Ajuntament des Mercadal (web oficial)",
+    "sourceUrl": "https://www.aj-esmercadal.org/ca/xxxix_fira_de_sa_perdiu/27898",
+    "verifiedFor": "2026"
+  },
+  "fira-sant-antoni-mercat-taronges-datils-ciutadella": {
+    "startDate": "2026-01-17",
+    "endDate": "2026-01-17",
+    "dateType": "fija-anual",
+    "confidence": "confirmada",
+    "basis": "Sant Antoni se celebra cada 17 de enero en toda Menorca (festividad del patrón). El característico mercado tradicional de naranjas, dátiles y garbanzos en la plaça de Sant Antoni de Ciutadella se monta esa jornada; la web oficial del Ajuntament de Ciutadella confirma que la fira es en \"gener, coincidint amb el dia de Sant Antoni\" (10-22 h, plaça de Sant Antoni y av. Constitució). En 2026 el 17 de enero cae en sábado. Es fecha fija anual ligada al santo. La feria asociada se prolonga algunos días alrededor del 17, pero la duración exacta no está documentada con precisión; el mercado de taronges i dàtils es el día de Sant Antoni (17 ene), por lo que se fija endDate el mismo día.",
+    "sourceName": "Ajuntament de Ciutadella (web oficial) y COPE Menorca",
+    "sourceUrl": "https://www.ajciutadella.org/Contingut.aspx?IdPub=59890",
+    "verifiedFor": "2026"
+  },
+  "mercat-ambulant-es-castell": {
+    "startDate": "2026-06-01",
+    "dateType": "recurrente-semanal",
+    "confidence": "confirmada",
+    "basis": "El mercat ambulant (mercadillo de calle) de Es Castell se celebra TODO EL AÑO los lunes y miercoles por la manana, de 8:00 a 13:00/14:00 h, en la Placa de s'Esplanada. Patron documentado de forma coincidente en multiples fuentes: el calendario de mercados de Menorca 2026 del Govern de les Illes Balears (CAIB), la guia oficial de mercados de menorca.es, y los calendarios de viajamenorca/isoladiminorca. El 1 de junio de 2026 es lunes, dia de mercado, por lo que es una fecha representativa valida (coincide con la ficha). En verano (15 jun - 15 sep) se anaden ademas el mercat nocturno de Cales Fonts (diario) y el mercado creativo de Sa Font (lunes noche), pero el evento de la ficha es el mercadillo de manana lunes/miercoles. Nota: una fuente (descobreixmenorca) indica \"lunes y domingo\", dato minoritario que se descarta frente a la coincidencia mayoritaria y oficial de lunes/miercoles.",
+    "sourceName": "Calendario de mercados de Menorca 2026 (CAIB) / menorca.es / viajamenorca",
+    "sourceUrl": "https://www.caib.cat/webgoib/documents/81190/1747190/2.+Mercats+Menorca+2026.pdf",
+    "verifiedFor": "2026"
+  },
+  "mercat-nit-alaior": {
+    "startDate": "2026-06-03",
+    "endDate": "2026-09-09",
+    "dateType": "recurrente-temporada",
+    "confidence": "confirmada",
+    "basis": "Patrón recurrente bien documentado: el Mercat de Nit d'Alaior se celebra cada MIÉRCOLES de 19:00 a 23:00 h, de junio a mediados de septiembre, en el centro histórico (Carrer y Plaça des Ramal). Lo confirman el Ajuntament d'Alaior, la Agenda Cultural de Menorca (menorca.es) e illesbalears.travel. La edición 2025 (XXIV) fue del miércoles 4 de junio al 10 de septiembre. Para 2026 doy la fecha representativa = primer miércoles de la temporada: 3 de junio de 2026 (verificado: es miércoles), y cierre el 9 de septiembre de 2026 (verificado: miércoles, antes de mediados de septiembre). Coincide con la ficha orientativa. Las fechas exactas oficiales de 2026 se publicarán en primavera, pero el patrón semanal/de temporada es firme.",
+    "sourceName": "Ajuntament d'Alaior / Agenda Cultural de Menorca (menorca.es)",
+    "sourceUrl": "https://www.aj-alaior.org/Contingut.aspx?IdPub=20173",
+    "verifiedFor": "2026"
+  },
+  "mercat-nit-cales-fonts-es-castell": {
+    "startDate": "2026-06-15",
+    "endDate": "2026-09-15",
+    "dateType": "recurrente-temporada",
+    "confidence": "confirmada",
+    "basis": "El Mercat de Calesfonts es un mercado artesano DIARIO (lunes a domingo) durante la temporada de verano, en la rampa/calle Miranda del puerto de Cales Fonts. Confirmado por un artículo de menorca.info del 15/06/2026 (\"El Mercat de Calesfonts vuelve a animar las noches de verano en Es Castell\"): la edición 2026 abrió el lunes 15 de junio y se mantiene cada día hasta el 15 de septiembre, en horario de 19:30 a 1:00 h. Coincide exactamente con la ficha actual. (No confundir con el mercado artesano de los LUNES de julio-agosto, que es un evento distinto.)",
+    "sourceName": "Menorca.info (Diario Menorca) — \"El Mercat de Calesfonts vuelve a animar las noches de verano en Es Castell\" (15/06/2026)",
+    "sourceUrl": "https://www.menorca.info/menorca/vivir-menorca/2026/06/15/2650349/once-paradas-para-regreso-hoy-del-mercat-calesfonts.html",
+    "verifiedFor": "2026"
+  },
+  "mercat-nit-es-mercadal": {
+    "startDate": "2026-06-04",
+    "endDate": "2026-09-24",
+    "dateType": "recurrente-temporada",
+    "confidence": "confirmada",
+    "basis": "La Agenda Cultural de Menorca (menorca.es, Consell Insular) publica el \"Mercat d'estiu des Mercadal\" 2026: todos los jueves por la noche (de 19:00 a 23:30 h) del 4 de junio al 24 de septiembre de 2026, en el centro del pueblo, con más de 90 paradas y música en directo. El 4 de junio de 2026 es jueves (primer jueves del rango) y el 24 de septiembre de 2026 también es jueves (último jueves). Las fechas coinciden exactamente con la ficha orientativa.",
+    "sourceName": "Agenda Cultural de Menorca (Consell Insular de Menorca)",
+    "sourceUrl": "https://agenda.menorca.es/Contingut.aspx?IdPub=48936",
+    "verifiedFor": "2026"
+  },
+  "mercat-nit-ferreries": {
+    "startDate": "2026-06-05",
+    "endDate": "2026-09-11",
+    "dateType": "recurrente-temporada",
+    "confidence": "confirmada",
+    "basis": "El patrón está bien documentado y es consistente entre varias fuentes: el \"Mercat de Nit d'Estiu\" de Ferreries se celebra cada VIERNES por la noche en la Plaça d'Espanya (y plazas anexas) durante la temporada estival, aprox. de 19 a 22:30/23 h. En 2025 corrió de viernes 6 de junio a 29 de agosto; algunas agendas lo extienden hasta mediados de septiembre. Para 2026, startDate = primer viernes de la temporada (viernes 5 de junio de 2026); endDate = viernes representativo de cierre de temporada (11 de septiembre de 2026). El DÍA (viernes) y la temporada (verano) son fiables; las fechas exactas de inicio/fin las fija el Ayuntamiento de Ferreries cada año y conviene reconfirmar el programa oficial 2026 cuando se publique.",
+    "sourceName": "menorca.info (Mercat de Nit d'Estiu de Ferreries) y viajamenorca.com (Calendario de mercados de Menorca 2026)",
+    "sourceUrl": "https://www.menorca.info/ocio/mercados/mercat-nit-estiu-ferreries.html",
+    "verifiedFor": "2026"
+  },
+  "mercat-nit-fornells": {
+    "startDate": "2026-06-14",
+    "endDate": "2026-09-13",
+    "dateType": "recurrente-temporada",
+    "confidence": "confirmada",
+    "basis": "Varias guías de mercados de Menorca confirman el patrón: mercado nocturno en Es Pla / Pla de Fornells, noches de fin de semana, de 18 h a medianoche, de mediados de junio a mediados de septiembre. isoladiminorca y mymenorca lo fechan sábados y domingos del 14 jun al 14 sep; el calendario 2026 de viajamenorca lo da domingos y lunes del 15 jun al 15 sep (18-24h). Es un mercado distinto del agroalimentario de la Plaça de l'Església (lunes, 18-22h). Hay leve variación del día exacto entre fuentes (sáb/dom vs dom/lun), pero coinciden en ubicación (Es Pla, frente a la bahía), franja nocturna y temporada, que es justo lo que dice la ficha actual. startDate representativo = domingo 14 jun 2026 (primer día del rango más citado); endDate = domingo 13 sep 2026 (último fin de semana del rango). Recomiendo matizar en el texto que el día concreto del fin de semana puede ajustarse cuando el Ayuntamiento de Es Mercadal publique el calendario oficial 2026.",
+    "sourceName": "Isola di Minorca (guía de mercados de Menorca) y Viaja Menorca (calendario de mercados 2026)",
+    "sourceUrl": "https://www.isoladiminorca.com/en/fairs-markets-and-street-markets-of-menorca.html",
+    "verifiedFor": "2026"
+  },
+  "mercat-nit-port-mao": {
+    "startDate": "2026-06-27",
+    "endDate": "2026-08-29",
+    "dateType": "recurrente-temporada",
+    "confidence": "aproximada",
+    "basis": "El Ajuntament de Maó organiza el \"Mercat de Nit i Música al Port\" dentro del programa \"Estiu al Port\". En 2025 se trasladó a los SÁBADOS (antes jueves/viernes), de 20:00 a 23:30 h, del sábado 28 de junio hasta finales de agosto (con cierre el 9 de septiembre dentro de Festes de Gràcia). El patrón confirmado es: sábados por la noche, de finales de junio a finales de agosto. El programa 2026 aún no está publicado, así que las fechas exactas son aproximadas siguiendo el patrón. startDate = primer sábado de temporada en 2026 (27 jun 2026, ya que el 28 jun cae en domingo); endDate = último sábado de agosto (29 ago 2026), coherente con la ventana de la ficha actual.",
+    "sourceName": "Ajuntament de Maó — programa \"Estiu al Port\" 2025",
+    "sourceUrl": "https://www.ajmao.org/ca/LAjuntament_de_Mao_presenta_el_programa_dEstiu_al_Port_2025/36318",
+    "verifiedFor": "2026"
+  },
+  "moli-market-sant-lluis": {
+    "startDate": "2026-06-19",
+    "endDate": "2026-08-14",
+    "dateType": "recurrente-temporada",
+    "confidence": "confirmada",
+    "basis": "Menorca al Dia publica las fechas oficiales 2026 del Molí Market (citando el programa del Ajuntament/organización): se instala en la calle de Sant Lluís los viernes 19 jun, 3 jul, 17 jul, 31 jul y 14 ago, de 19:00 a 23:00 h. Patrón = viernes cada 15 días, de junio a agosto. Verificado: 19-jun-2026 es viernes y el resto sigue el ciclo de 14 días, todos viernes. startDate = primera edición de la temporada (19-jun-2026, que coincide con la fecha orientativa de la ficha); endDate = última edición (14-ago-2026). El otro candidato de fechas (27 jun, 11 jul...) provenía de un resumen automático que mezclaba años y queda descartado por el texto literal del artículo.",
+    "sourceName": "Menorca al Dia",
+    "sourceUrl": "https://menorcaaldia.com/articulo/sociedad/el-moli-market-regresa-a-sant-lluis-con-60-puestos-locales-1",
+    "verifiedFor": "2026"
+  },
+  "setmana-santa-menorca": {
+    "startDate": "2026-03-29",
+    "endDate": "2026-04-05",
+    "dateType": "movible-religiosa",
+    "confidence": "confirmada",
+    "basis": "Fiesta religiosa móvil calculada a partir de la Pascua de 2026 (domingo 5 abril): Domingo de Ramos = 29 marzo, Viernes Santo = 3 abril, Domingo de Resurrección = 5 abril. La Diócesis de Menorca confirma el día grande (Viernes Santo 3 abril) y los horarios del Sant Enterrament que coinciden con la ficha: Maó y Ciutadella 20:30 h, Ferreries y Es Mercadal 21:00 h. Múltiples fuentes (menorca.info, diócesis) confirman las procesiones en Maó, Ciutadella, Ferreries y Es Mercadal. Nota: una fuente cita \"Domingo de Ramos 30 marzo\" pero el cálculo litúrgico canónico (Pascua 5 abril) sitúa el Domingo de Ramos el 29 marzo; se mantiene el rango 29 marzo - 5 abril de la ficha, correcto.",
+    "sourceName": "Diòcesi de Menorca (Bisbat de Menorca) — Horaris Setmana Santa 2026",
+    "sourceUrl": "https://bisbatdemenorca.org/horaris-setmana-santa-2026/",
+    "verifiedFor": "2026"
+  },
+  "splendid-festival-mao": {
+    "startDate": "2026-07-02",
+    "endDate": "2026-08-27",
+    "dateType": "puntual-2026",
+    "confidence": "confirmada",
+    "basis": "Programación estival 2026 del Teatre Principal de Maó confirmada por prensa regional (menorca.info/Es Diari, 19 may. 2026) y la agenda cultural de Menorca (apuntmenorca.com). El festival va del 2 de julio al 27 de agosto de 2026: abre María Terremoto con 'Manifiesto' (2 jul), Compañía Marco Flores 'Rayuela' (16 jul), Maria del Mar Bonet 'L'aigua no cansa' (30 jul) y cierra Pica Pica 'Mundo Pica Pica' (27 ago). Las fechas coinciden exactamente con la ficha actual.",
+    "sourceName": "Menorca.info (Es Diari) / Teatre Principal de Maó",
+    "sourceUrl": "https://www.menorca.info/menorca/cultura/2026/05/19/2632247/maria-del-mar-bonet-estrella-del-verano-teatre-principal-mao.html",
+    "verifiedFor": "2026"
+  },
+  "swim-in-menorca-travesia-macarella-son-xoriguer": {
+    "startDate": "2026-09-27",
+    "dateType": "recurrente-temporada",
+    "confidence": "aproximada",
+    "basis": "La travesía a nado de 10 km Macarella–Son Xoriguer (XII edición) la organiza la Menorca Channel Swimming Association y se celebra tradicionalmente el último domingo de septiembre (2024: domingo 29-sep; 2025: domingo 28-sep). Dos calendarios de aguas abiertas (calendarioaguasabiertas.com y nadarbien.com) listan ya la edición 2026 con fecha 27/09/2026 (domingo), coherente con el patrón; ambos la marcan como \"pendiente confirmación\", por eso confianza aproximada y no confirmada. La web oficial menorcachannelswimming.com confirma el recorrido (Macarella, Turqueta, Es Talaier, Son Saura, Son Xoriguer) pero no fecha 2026.",
+    "sourceName": "Calendario Aguas Abiertas (ficha Swim in Menorca 10k 2026)",
+    "sourceUrl": "https://calendarioaguasabiertas.com/travesia/swim-in-menorca-10k-2026",
+    "verifiedFor": "2026"
+  },
+  "temporada-opera-mao": {
+    "startDate": "2026-05-29",
+    "endDate": "2026-05-31",
+    "dateType": "puntual-2026",
+    "confidence": "confirmada",
+    "basis": "La 55ª (LV) Temporada d'Òpera de Maó programa 'Un ballo in maschera' de Verdi en el Teatre Principal de Maó. Confirmado por varios medios de Menorca: dos funciones, viernes 29 de mayo a las 21:00 h y domingo 31 de mayo a las 20:00 h de 2026. Producción de la Fundació Menorquina de l'Òpera / Amics de s'Òpera de Maó, con la OSIB. La fecha de la ficha (29-31 mayo 2026) coincide exactamente con las fuentes.",
+    "sourceName": "Menorca.info (Diari Menorca) — cultura",
+    "sourceUrl": "https://www.menorca.info/menorca/cultura/2026/05/27/2637659/ballo-maschera-verdi-obra-pictorica-harmonica-amb-cantants-gran-nivell-teatre-principal.html",
+    "verifiedFor": "2026"
+  },
+  "ukalari-menorca-live": {
+    "startDate": "2026-08-12",
+    "endDate": "2026-08-22",
+    "dateType": "puntual-2026",
+    "confidence": "confirmada",
+    "basis": "La web oficial del festival confirma textualmente que el Ukalari Menorca Live 2026, primera edición, se celebra \"del 12 al 22 de agosto de 2026\" en el Estadi del Sporting Mahonès (Maó). Lo corrobora la prensa local (menorca.info / Es Diari, mayo 2026) y las entradas a la venta en baila.fm, que abren el 12 de agosto de 2026. Coincide con la fecha orientativa de la ficha.",
+    "sourceName": "Ukalari Menorca Live (web oficial) y menorca.info (Es Diari)",
+    "sourceUrl": "https://ukalarimenorcalive.com/noticias/",
+    "verifiedFor": "2026"
+  },
+  "volta-menorca-pati-de-vela-trofeu-lluis-gay": {
+    "startDate": "2026-07-01",
+    "endDate": "2026-07-07",
+    "dateType": "puntual-2026",
+    "confidence": "aproximada",
+    "basis": "Evento bienal (cada 2 años). Ediciones confirmadas: VIII edición del 27 jun al 2 jul de 2022 y IX edición del 1 al 7 de julio de 2024 (web oficial voltamenorca.org). El patrón 2022→2024 confirma cadencia bienal y ventana de finales de junio/primera semana de julio. La X edición corresponde por tanto a 2026, en esa misma ventana. El programa oficial 2026 aún no está publicado, por lo que se proyecta la fecha replicando la ventana de la IX edición (1-7 julio), coincidente con la fecha orientativa de la ficha. Marcar como aproximada hasta que la organización publique el calendario 2026.",
+    "sourceName": "Web oficial Volta a Menorca en Patí de Vela (voltamenorca.org) / UFEC",
+    "sourceUrl": "https://voltamenorca.org/",
+    "verifiedFor": "2026"
+  }
+}
