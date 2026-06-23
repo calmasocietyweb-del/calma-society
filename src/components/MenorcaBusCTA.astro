@@ -34,6 +34,14 @@ const defaults =
         cta: "Reserva con Menorca Bus",
       };
 
+// Transparencia (CLAUDE.md §8): Menorca Bus es el servicio de transporte de la
+// misma editora de Calma Society. Lo decimos abiertamente para no confundir
+// recomendación editorial con negocio propio.
+const disclosure =
+  lang === "en"
+    ? "Transparency: Menorca Bus is the transport service run by Calma Society's publisher."
+    : "Transparencia: Menorca Bus es el servicio de transporte de la propia editora de Calma Society.";
+
 const t = {
   title: title ?? defaults.title,
   text: text ?? defaults.text,
@@ -56,4 +64,5 @@ const t = {
   >
     {t.cta} ↗
   </a>
+  <p class="mt-3 text-[0.7rem] leading-relaxed text-piedra-suave/80">{disclosure}</p>
 </aside>
