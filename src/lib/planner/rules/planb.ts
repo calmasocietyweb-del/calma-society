@@ -6,6 +6,7 @@
  * la semana (el lunes cierran muchos museos/queserías) y añade la nota de calor.
  */
 import type { PlannerPlace, PlannerZone, IntradayBlock, Notice, Weekday } from "../types.ts";
+import { S, type Lang } from "../strings.ts";
 
 const WEEKDAYS: Weekday[] = ["lun", "mar", "mie", "jue", "vie", "sab", "dom"];
 
@@ -41,7 +42,9 @@ export function buildPlanB(
   zone: PlannerZone | "base" | "cercano-aeropuerto",
   dataset: PlannerPlace[],
   weekday?: Weekday,
+  lang: Lang = "es",
 ): PlanB {
+  const t = S(lang).planb;
   const opens = (p: PlannerPlace) => !p.openDays || !weekday || p.openDays.includes(weekday);
   const candidates = dataset
     .filter((p) => isCovered(p) && opens(p) && (p.zone === zone || p.zone === "eje-me1" || p.zone === "centro"))
@@ -50,22 +53,22 @@ export function buildPlanB(
   const picks = candidates.slice(0, 3);
 
   const blocks: IntradayBlock[] = [
-    { slot: "comida", timeHint: "13:30", placeName: "Comida larga con criterio (ancla del día)", durationMin: 120, reason: "En lluvia o calor, la comida ocupa el bloque central 13-15h." },
+    { slot: "comida", timeHint: "13:30", placeName: t.longLunch, durationMin: 120, reason: t.longLunchReason },
   ];
   for (const p of picks) {
     blocks.push({
       slot: "tarde", timeHint: "16:00", placeId: p.id, placeName: p.name, durationMin: p.durationMin ?? 90,
-      reason: `Interior o lugar cubierto en la zona${p.needsReservation ? " (requiere reserva)" : ""}.`,
+      reason: t.indoorReason(p.needsReservation),
     });
   }
 
   const notices: Notice[] = [];
   if (picks.length === 0) {
-    notices.push({ kind: "logistica", text: "Pocos interiores en esta zona para un día de lluvia: valora el eje Me-1 (museos de ciudad, quesería) o un día de ciudad (Ciutadella/Maó)." });
+    notices.push({ kind: "logistica", text: t.fewIndoors });
   }
   if (weekday === "lun") {
-    notices.push({ kind: "confirma-horario", text: "Es lunes: muchos museos y queserías cierran. Confirma horarios; abren catedral, mercados, miradores y cuevas-mirador." });
+    notices.push({ kind: "confirma-horario", text: t.mondayClosed });
   }
-  notices.push({ kind: "logistica", text: "Con calor extremo (>34°): cala muy temprano (antes de las 12h) y a partir de las 18h; el mediodía, a cubierto o de siesta." });
+  notices.push({ kind: "logistica", text: t.extremeHeat });
   return { blocks, notices };
 }

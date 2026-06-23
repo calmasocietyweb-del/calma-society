@@ -8,6 +8,7 @@
  * día para verla, o solo tenerla en cuenta"). Determinista.
  */
 import type { PlannerZone, Notice } from "../types.ts";
+import { S, type Lang } from "../strings.ts";
 
 export interface PlannerEvent {
   translationKey: string;
@@ -57,14 +58,16 @@ export function agendaForDay(
   dayZone: PlannerZone | "base" | "cercano-aeropuerto",
   date: string,
   events: PlannerEvent[],
+  lang: Lang = "es",
 ): { dayNotices: Notice[]; otherZone: Array<{ key: string; notice: Notice }> } {
+  const t = S(lang).agenda;
   const dayNotices: Notice[] = [];
   const otherZone: Array<{ key: string; notice: Notice }> = [];
   for (const ev of eventsOnDate(events, date)) {
     if (ev.zone === "varios" || ev.zone === dayZone) {
-      dayNotices.push({ kind: "fiesta", text: `Coincide con ${ev.title} en esta zona (${date}): reserva alojamiento y mesa con antelación y cuenta con mucha gente.` });
+      dayNotices.push({ kind: "fiesta", text: t.inZone(ev.title, date) });
     } else {
-      otherZone.push({ key: ev.translationKey, notice: { kind: "fiesta", text: `El ${date} hay ${ev.title} (${ev.zone}). Puedes reorganizar un día para verla, o solo tenerla en cuenta.` } });
+      otherZone.push({ key: ev.translationKey, notice: { kind: "fiesta", text: t.otherZone(ev.title, date, ev.zone) } });
     }
   }
   return { dayNotices, otherZone };

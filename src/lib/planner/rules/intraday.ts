@@ -10,6 +10,7 @@
 import type { PlannerPlace, PlannerZone, BaseZone, IntradayBlock, Notice } from "../types.ts";
 import type { Survey, Pace } from "../survey.ts";
 import { affinity } from "./interests.ts";
+import { S, type Lang } from "../strings.ts";
 
 const PACE: Record<Pace, { budget: number; maxAnchors: number }> = {
   relajado: { budget: 7, maxAnchors: 2 },
@@ -46,8 +47,8 @@ const BASE_TOWN: Record<BaseZone, string> = {
 };
 
 /** "Qué ver y hacer" de un lugar: highlights si los hay, si no la descripción corta. */
-function whatToSee(p: PlannerPlace): string {
-  if (p.highlights && p.highlights.length) return `Qué ver y hacer: ${p.highlights.join(" · ")}.`;
+function whatToSee(p: PlannerPlace, lang: Lang): string {
+  if (p.highlights && p.highlights.length) return S(lang).intraday.whatToSee(p.highlights.join(" · "));
   if (p.blurb) return p.blurb;
   return "";
 }
@@ -60,6 +61,8 @@ export interface DayInput {
   travelFromBaseMin: number;
   pace: Pace;
   survey: Survey;
+  /** Idioma del texto generado (default español para no romper llamadas existentes). */
+  lang?: Lang;
 }
 
 export interface DayResult {
@@ -84,6 +87,8 @@ const TIME_HINT: Record<IntradayBlock["slot"], string> = {
 /** Secuencia un día pleno respetando el presupuesto de horas del ritmo. */
 export function sequenceDay(input: DayInput): DayResult {
   const { places, travelFromBaseMin, pace, survey } = input;
+  const lang = input.lang ?? "es";
+  const t = S(lang).intraday;
   const cfg = PACE[pace];
   const notices: Notice[] = [];
 
@@ -133,62 +138,62 @@ export function sequenceDay(input: DayInput): DayResult {
     return {
       slot, timeHint: TIME_HINT[slot], placeId: c.place.id, placeName: c.place.name,
       durationMin: durOf(c.place),
-      reason: whatToSee(c.place) || `${c.place.name}: encaja con tu perfil y está en el cluster del día.`,
+      reason: whatToSee(c.place, lang) || t.anchorFallbackReason(c.place.name),
     };
   };
   const puebloIsAnchor = chosen.some((c) => c.place === pueblo);
 
   // DESAYUNO — en la base.
-  blocks.push({ slot: "desayuno", timeHint: TIME_HINT.desayuno, placeName: `Desayuno con calma en ${BASE_TOWN[input.base]}`, durationMin: 45, reason: "Empieza sin prisas cerca del alojamiento (coge agua y, si toca cala, llega temprano)." });
+  blocks.push({ slot: "desayuno", timeHint: TIME_HINT.desayuno, placeName: t.breakfast(BASE_TOWN[input.base]), durationMin: 45, reason: t.breakfastReason });
 
   const m = anchorBlock("manana"); if (m) blocks.push(m);
 
   // COMIDA — anclada a un restaurante/mercado o al pueblo del día.
   if (diner) {
-    blocks.push({ slot: "comida", timeHint: TIME_HINT.comida, placeId: diner.id, placeName: `Comida en ${diner.name}`, durationMin: 90, reason: whatToSee(diner) || "Producto local con criterio." });
+    blocks.push({ slot: "comida", timeHint: TIME_HINT.comida, placeId: diner.id, placeName: t.lunchAt(diner.name), durationMin: 90, reason: whatToSee(diner, lang) || t.lunchAtReason });
   } else if (pueblo) {
-    blocks.push({ slot: "comida", timeHint: TIME_HINT.comida, placeName: `Comer en ${pueblo.name}`, durationMin: 90, reason: "Busca una terraza tranquila en el pueblo; producto local." });
+    blocks.push({ slot: "comida", timeHint: TIME_HINT.comida, placeName: t.lunchInTown(pueblo.name), durationMin: 90, reason: t.lunchInTownReason });
   } else {
-    blocks.push({ slot: "comida", timeHint: TIME_HINT.comida, placeName: "Comida con producto local en la zona", durationMin: 90, reason: "Pausa de mediodía; evita conducir con el sol alto." });
+    blocks.push({ slot: "comida", timeHint: TIME_HINT.comida, placeName: t.lunchLocal, durationMin: 90, reason: t.lunchLocalReason });
   }
 
-  const t = anchorBlock("tarde"); if (t) blocks.push(t);
+  const tardeBlock = anchorBlock("tarde"); if (tardeBlock) blocks.push(tardeBlock);
   const a = anchorBlock("atardecer"); if (a) blocks.push(a);
 
   // CENA — pasea por el pueblo y cena allí; si no hay pueblo, a un restaurante.
   if (pueblo) {
     const reason = puebloIsAnchor
-      ? "Cena en el pueblo tras la jornada, sin desplazamientos."
+      ? t.dinnerStrollAnchorReason
       : (pueblo.highlights && pueblo.highlights.length)
-        ? `De paso, no te pierdas: ${pueblo.highlights.join(" · ")}.`
-        : "Pasea sin prisa por el casco y elige una terraza para cenar.";
-    blocks.push({ slot: "cena", timeHint: TIME_HINT.cena, placeId: pueblo.id, placeName: `Pasea por ${pueblo.name} y cena allí`, durationMin: 90, reason });
+        ? t.dinnerStrollHighlightsReason(pueblo.highlights.join(" · "))
+        : t.dinnerStrollDefaultReason;
+    blocks.push({ slot: "cena", timeHint: TIME_HINT.cena, placeId: pueblo.id, placeName: t.dinnerStroll(pueblo.name), durationMin: 90, reason });
   } else if (diner) {
-    blocks.push({ slot: "cena", timeHint: TIME_HINT.cena, placeId: diner.id, placeName: `Cena en ${diner.name}`, durationMin: 90, reason: whatToSee(diner) || "Cena con criterio en la zona." });
+    blocks.push({ slot: "cena", timeHint: TIME_HINT.cena, placeId: diner.id, placeName: t.dinnerAt(diner.name), durationMin: 90, reason: whatToSee(diner, lang) || t.dinnerAtReason });
   } else {
-    blocks.push({ slot: "cena", timeHint: TIME_HINT.cena, placeName: "Cena tranquila en la zona", durationMin: 90, reason: "Cierra el día sin desplazamientos largos." });
+    blocks.push({ slot: "cena", timeHint: TIME_HINT.cena, placeName: t.dinnerLocal, durationMin: 90, reason: t.dinnerLocalReason });
   }
 
   // ── Avisos por lugar (chips) ──────────────────────────────────────────────
   for (const { place } of chosen) {
-    if (place.needsReservation) notices.push({ kind: "reserva", text: `Reserva ${place.name} con antelación.`, placeId: place.id });
+    if (place.needsReservation) notices.push({ kind: "reserva", text: t.reservation(place.name), placeId: place.id });
     if (place.carAccessClosedSummer) {
-      notices.push({ kind: "parking", text: `${place.name}: coche restringido en verano. ${place.shuttleInfo ?? "Usa la lanzadera o ve a pie."}`, placeId: place.id });
+      notices.push({ kind: "parking", text: t.parkingClosed(place.name, place.shuttleInfo ?? t.parkingClosedFallback), placeId: place.id });
     } else if ((place.plannerType === "cala" || place.plannerType === "playa") && place.carAccess !== "coche-directo") {
-      notices.push({ kind: "madrugar", text: `Ve temprano a ${place.name}: el parking se llena pronto.`, placeId: place.id });
+      notices.push({ kind: "madrugar", text: t.goEarly(place.name), placeId: place.id });
     }
     if (place.effortLevel === "C" || place.effortLevel === "D") {
-      notices.push({ kind: "esfuerzo", text: `${place.name} requiere buena forma: ${place.effortNote ?? "caminata o terreno exigente"}.`, placeId: place.id });
-      notices.push({ kind: "agua-sombra", text: `Lleva agua, sombra y calzado cómodo para ${place.name}.`, placeId: place.id });
+      notices.push({ kind: "esfuerzo", text: t.effort(place.name, place.effortNote ?? t.effortFallbackNote), placeId: place.id });
+      notices.push({ kind: "agua-sombra", text: t.waterShade(place.name), placeId: place.id });
     }
-    if (place.officialUrl) notices.push({ kind: "confirma-horario", text: `Confirma el horario de ${place.name} el día de tu visita.`, placeId: place.id });
+    if (place.officialUrl) notices.push({ kind: "confirma-horario", text: t.confirmHours(place.name), placeId: place.id });
   }
 
   // Aviso de ritmo si se dejó fuera alguna parada disponible.
   if (dropped.length > 0) {
     notices.push({
       kind: "logistica",
-      text: `Para no saturar el día (ritmo ${pace}) dejé fuera: ${dropped.map((d) => d.place.name).join(", ")}. Puedes recuperarla otro día.`,
+      text: t.pace(pace, dropped.map((d) => d.place.name).join(", ")),
     });
   }
 

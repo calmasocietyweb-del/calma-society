@@ -10,6 +10,7 @@
 import type { PlannerPlace, PlannerZone, Notice } from "../types.ts";
 import type { Survey } from "../survey.ts";
 import { affinity } from "./interests.ts";
+import { S, type Lang } from "../strings.ts";
 
 export type Coast = "norte" | "sur" | "mixto";
 
@@ -37,7 +38,9 @@ export function windAdvice(
   anchors: PlannerPlace[],
   dataset: PlannerPlace[],
   s: Survey,
+  lang: Lang = "es",
 ): Notice[] {
+  const t = S(lang).wind;
   const isCoastDay = anchors.some(
     (p) => p.plannerType === "cala" || p.plannerType === "playa" || p.plannerType === "atardecer",
   );
@@ -48,14 +51,14 @@ export function windAdvice(
     const backup = bestBeachInCoast(dataset, "sur", s);
     return [{
       kind: "viento",
-      text: `Con Tramontana (viento del norte, el más frecuente en Menorca) esta costa estará movida. Mira el parte esa mañana${backup ? `; alternativa resguardada en el sur: ${backup.name}` : ""}.`,
+      text: t.tramontana(backup?.name),
     }];
   }
   if (coast === "sur") {
     const backup = bestBeachInCoast(dataset, "norte", s);
     return [{
       kind: "viento",
-      text: `El sur suele estar protegido de la Tramontana; pero con viento de Migjorn (del sur) busca el norte${backup ? `: ${backup.name}` : ""}. Mira el parte cada mañana.`,
+      text: t.migjorn(backup?.name),
     }];
   }
   return [];

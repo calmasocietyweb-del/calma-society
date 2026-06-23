@@ -9,6 +9,7 @@
 import type { BaseZone } from "../types.ts";
 import type { Survey, Interest } from "../survey.ts";
 import { isCarless, dayBand } from "../survey.ts";
+import { S, NICE, type Lang } from "../strings.ts";
 
 export interface BaseResult {
   base: BaseZone;
@@ -18,19 +19,13 @@ export interface BaseResult {
 }
 
 const has = (s: Survey, i: Interest): boolean => s.interests.includes(i);
-const NICE: Record<BaseZone, string> = {
-  ciutadella: "Ciutadella",
-  mao: "Maó",
-  "cala-galdana": "Cala Galdana",
-  "son-bou": "Son Bou",
-  "es-mercadal": "Es Mercadal",
-  fornells: "Fornells",
-};
 
-export function recommendBase(s: Survey): BaseResult {
+export function recommendBase(s: Survey, lang: Lang = "es"): BaseResult {
+  const t = S(lang).base;
+
   // (a) Base elegida explícitamente por la persona → se respeta.
   if (s.base !== "recomiendame") {
-    return { base: s.base, baseReason: reasonForChosen(s, s.base), splitBase: maybeSplit(s, s.base) };
+    return { base: s.base, baseReason: reasonForChosen(s, s.base, lang), splitBase: maybeSplit(s, s.base) };
   }
 
   // (b) Llega en ferry con su coche → base del lado del puerto (no cruzar isla).
@@ -38,7 +33,7 @@ export function recommendBase(s: Survey): BaseResult {
     const base: BaseZone = s.ferryPort === "ciutadella" ? "ciutadella" : "mao";
     return {
       base,
-      baseReason: `Entras por el puerto de ${NICE[base]}, así que te alojamos en ese lado para empezar sin cruzar la isla.`,
+      baseReason: t.ferry(NICE[base]),
       splitBase: maybeSplit(s, base),
     };
   }
@@ -48,14 +43,12 @@ export function recommendBase(s: Survey): BaseResult {
     if ((has(s, "cultura") || has(s, "gastronomia")) && !has(s, "vida-nocturna")) {
       return {
         base: "mao",
-        baseReason:
-          "Sin coche, Maó es el mejor hub: único núcleo con bus directo al aeropuerto y conexiones a toda la isla, ideal para cultura y gastronomía.",
+        baseReason: t.carlessCulture,
       };
     }
     return {
       base: "ciutadella",
-      baseReason:
-        "Sin coche, Ciutadella es la base más equilibrada: casco histórico, ambiente y buses a las calas del oeste.",
+      baseReason: t.carlessBalanced,
     };
   }
 
@@ -65,8 +58,7 @@ export function recommendBase(s: Survey): BaseResult {
   if (has(s, "nautica") && !families) {
     return {
       base: "fornells",
-      baseReason:
-        "Para vela, kayak y buceo, Fornells y su bahía protegida son la mejor base náutica (y un puerto marinero con encanto).",
+      baseReason: t.nautica,
     };
   }
 
@@ -74,30 +66,26 @@ export function recommendBase(s: Survey): BaseResult {
     if (s.budget === "ajustado") {
       return {
         base: "son-bou",
-        baseReason:
-          "En familia y con presupuesto ajustado, Son Bou ofrece la playa de arena más larga, aguas someras y apartamentos con cocina (mejor cenar self-catering).",
+        baseReason: t.familySonBou,
       };
     }
     return {
       base: "cala-galdana",
-      baseReason:
-        "En familia, Cala Galdana es la mejor base de playa: aguas calmas y poco profundas, posición central en la costa sur y a un paseo de Mitjana.",
+      baseReason: t.familyGaldana,
     };
   }
 
   if (has(s, "vida-nocturna")) {
     return {
       base: "ciutadella",
-      baseReason:
-        "Para ambiente y vida nocturna, Ciutadella es la primera opción: casco histórico vivo, puerto y gastronomía.",
+      baseReason: t.nightlife,
     };
   }
 
   if (has(s, "lujo-tranquilo") && !families) {
     return {
       base: "ciutadella",
-      baseReason:
-        "Para una pareja que busca calma con criterio, Ciutadella (casco o agroturismo de su entorno) combina belleza, gastronomía y acceso a las calas del suroeste.",
+      baseReason: t.quietLuxury,
       splitBase: maybeSplit(s, "ciutadella"),
     };
   }
@@ -106,8 +94,7 @@ export function recommendBase(s: Survey): BaseResult {
   if (broadInterests(s) && dayBand(s) !== "corta") {
     return {
       base: "es-mercadal",
-      baseReason:
-        "Si quieres recorrer toda la isla, Es Mercadal es la base central y equidistante (las mejores conexiones), perfecta para salir cada día a una costa distinta.",
+      baseReason: t.broad,
       splitBase: maybeSplit(s, "es-mercadal"),
     };
   }
@@ -115,8 +102,7 @@ export function recommendBase(s: Survey): BaseResult {
   // Primera vez / por defecto.
   return {
     base: "ciutadella",
-    baseReason:
-      "Para una primera vez equilibrada, Ciutadella es la recomendación segura: ciudad con alma, ambiente y a tiro de las calas más famosas del sur y oeste.",
+    baseReason: t.firstTime,
     splitBase: maybeSplit(s, "ciutadella"),
   };
 }
@@ -142,9 +128,10 @@ function maybeSplit(s: Survey, base: BaseZone): BaseZone | undefined {
   return undefined;
 }
 
-function reasonForChosen(s: Survey, base: BaseZone): string {
+function reasonForChosen(s: Survey, base: BaseZone, lang: Lang): string {
+  const t = S(lang).base;
   if (isCarless(s) && base !== "mao" && base !== "ciutadella") {
-    return `Te alojas en ${NICE[base]}. Aviso: sin coche, esta base tiene transporte público limitado; valora transfers/excursiones para moverte.`;
+    return t.chosenCarlessLimited(NICE[base]);
   }
-  return `Te alojas en ${NICE[base]}; el plan se organiza alrededor de esa base para minimizar el coche diario.`;
+  return t.chosenDefault(NICE[base]);
 }

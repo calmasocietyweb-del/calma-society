@@ -22,6 +22,7 @@ import { windAdvice } from "./rules/wind.ts";
 import { buildPlanB, weekdayForDay } from "./rules/planb.ts";
 import { addDaysISO, agendaForDay } from "./rules/agenda.ts";
 import type { PlannerEvent } from "./rules/agenda.ts";
+import { S } from "./strings.ts";
 
 interface DayResult {
   blocks: IntradayBlock[];
@@ -39,7 +40,7 @@ export function planTrip(
   // PASO 5: filtra el dataset por accesibilidad ANTES de componer (afecta a todos los pasos).
   const usable = filterAccessible(dataset, survey.accessibility);
   const pace = effectivePace(survey);
-  const { base, baseReason, splitBase } = recommendBase(survey);
+  const { base, baseReason, splitBase } = recommendBase(survey, lang);
   const skeleton = buildDaySkeleton(survey, base, usable);
   const clusters = new Map(rankClusters(survey, base, usable).map((c) => [c.cluster, c]));
   const byId = new Map(usable.map((p) => [p.id, p]));
@@ -53,7 +54,7 @@ export function planTrip(
     let dayPlanB: DayCard["planB"];
 
     if (sk.dayTypeKey === "dia-llegada") {
-      result = arrivalDay(survey, base, usable);
+      result = arrivalDay(survey, base, usable, lang);
       if (isCarless(survey) || base !== "mao") {
         menorcaBusHooks.push({ type: "transfer-aeropuerto", context: `Transfer aeropuerto → ${base}`, dayIndex: sk.dayIndex });
       }
@@ -62,7 +63,7 @@ export function planTrip(
         menorcaBusHooks.push({ type: "transfer-adaptado", context: `Transfer adaptado a una playa accesible desde ${base}`, dayIndex: sk.dayIndex });
       }
     } else if (sk.dayTypeKey === "dia-salida") {
-      result = departureDay(survey, base);
+      result = departureDay(survey, base, lang);
       if (isCarless(survey)) {
         menorcaBusHooks.push({ type: "transfer-aeropuerto", context: `Transfer ${base} → aeropuerto`, dayIndex: sk.dayIndex });
       }
@@ -70,22 +71,23 @@ export function planTrip(
       const info = clusters.get(sk.cluster)!;
       result = sequenceDay({
         base, cluster: sk.cluster, zone: info.zone, places: info.places,
-        travelFromBaseMin: info.travelFromBaseMin, pace, survey,
+        travelFromBaseMin: info.travelFromBaseMin, pace, survey, lang,
       });
       // PASO 4: aviso de viento (FLEXIBLE) con alternativa resguardada en costa opuesta.
       const anchors = result.blocks
         .map((b) => (b.placeId ? byId.get(b.placeId) : undefined))
         .filter((p): p is PlannerPlace => !!p);
-      result.notices.push(...windAdvice(info.zone, anchors, usable, survey));
+      result.notices.push(...windAdvice(info.zone, anchors, usable, survey, lang));
       // PASO 6: plan-B de mal tiempo (interiores de la zona, filtrado por día de la semana).
-      dayPlanB = buildPlanB(info.zone, usable, weekdayForDay(survey.arrivalDate, sk.dayIndex));
+      dayPlanB = buildPlanB(info.zone, usable, weekdayForDay(survey.arrivalDate, sk.dayIndex), lang);
       // Monetización: sin coche + cala no conectada → excursión/transfer (no es un fallo, es la solución premium).
       if (isCarless(survey) && info.places.some((p) => p.carAccessClosedSummer || (p.plannerType === "cala" && !p.busServed))) {
         menorcaBusHooks.push({ type: "excursion-cala", context: `Excursión o transfer a ${sk.cluster}`, dayIndex: sk.dayIndex });
       }
     } else {
+      const e = S(lang).engine;
       result = {
-        blocks: [{ slot: "manana", placeName: "Día libre: repite tu cala favorita o descansa", reason: "Margen para reordenar por viento o por cansancio." }],
+        blocks: [{ slot: "manana", placeName: e.freeDay, reason: e.freeDayReason }],
         budgetHours: 3,
         notices: [],
       };
@@ -96,13 +98,13 @@ export function planTrip(
     // SEA su tipo (también si cayó en colchón). PASOS 7/8 condensados.
     if (survey.days <= 2 && sk.dayTypeKey !== "dia-llegada" && sk.dayTypeKey !== "dia-salida") {
       if (sk.dayIndex === 0) {
-        result.notices.unshift(...arrivalNotices(survey, base));
+        result.notices.unshift(...arrivalNotices(survey, base, lang));
         if (isCarless(survey) || base !== "mao") {
           menorcaBusHooks.push({ type: "transfer-aeropuerto", context: `Transfer aeropuerto → ${base}`, dayIndex: sk.dayIndex });
         }
       }
       if (sk.dayIndex === skeleton.length - 1) {
-        result.notices.push(...departureNotices(survey, base));
+        result.notices.push(...departureNotices(survey, base, lang));
         if (isCarless(survey)) {
           menorcaBusHooks.push({ type: "transfer-aeropuerto", context: `Transfer ${base} → aeropuerto`, dayIndex: sk.dayIndex });
         }
@@ -112,7 +114,7 @@ export function planTrip(
     // PASO 2: cruce con la agenda de fiestas por fecha (si hay fechas y eventos).
     if (survey.arrivalDate && events.length) {
       const date = addDaysISO(survey.arrivalDate, sk.dayIndex);
-      const { dayNotices, otherZone } = agendaForDay(sk.zone, date, events);
+      const { dayNotices, otherZone } = agendaForDay(sk.zone, date, events, lang);
       result.notices.push(...dayNotices);
       for (const o of otherZone) if (!globalFiestas.has(o.key)) globalFiestas.set(o.key, o.notice);
     }
@@ -130,24 +132,25 @@ export function planTrip(
     });
   }
 
-  const globalNotices = [...buildGlobalNotices(survey, base, splitBase), ...globalFiestas.values()];
+  const globalNotices = [...buildGlobalNotices(survey, base, lang, splitBase), ...globalFiestas.values()];
   return { base, baseReason, splitBase, days, globalNotices, menorcaBusHooks };
 }
 
-function buildGlobalNotices(survey: Survey, base: string, splitBase?: string): Notice[] {
+function buildGlobalNotices(survey: Survey, base: string, lang: "es" | "en", splitBase?: string): Notice[] {
+  const t = S(lang).engine;
   const out: Notice[] = [];
   if (survey.transport === "coche-alquiler") {
-    out.push({ kind: "reserva", text: "Reserva el coche de alquiler con antelación: en verano la flota se agota y los precios se disparan." });
+    out.push({ kind: "reserva", text: t.rentalCar });
   }
   if (splitBase) {
-    out.push({ kind: "logistica", text: `Con ${survey.days} días e intereses en costas opuestas, valora dividir la estancia: mitad en ${base}, mitad en ${splitBase}.` });
+    out.push({ kind: "logistica", text: t.splitBase(survey.days, base, splitBase) });
   }
   if (isCarless(survey)) {
-    out.push({ kind: "logistica", text: "Sin coche: algunas calas top requieren bus + transfer o una excursión en barco. Lo marcamos en cada día." });
+    out.push({ kind: "logistica", text: t.carless });
   }
   if (survey.accessibility !== "ninguna") {
-    out.push({ kind: "accesibilidad", text: `Plan filtrado por esfuerzo (${survey.accessibility}): solo lugares de nivel ${allowedEfforts(survey.accessibility).join("/")}. Las playas con baño asistido son A1 (Son Bou, Punta Prima, Es Grau).` });
-    out.push({ kind: "accesibilidad", text: "Los servicios de baño asistido (silla anfibia, personal) operan del 1 de mayo al 31 de octubre. Fuera de esas fechas, confirma con el ayuntamiento." });
+    out.push({ kind: "accesibilidad", text: t.accessibilityFilter(survey.accessibility, allowedEfforts(survey.accessibility).join("/")) });
+    out.push({ kind: "accesibilidad", text: t.accessibilityWindow });
   }
   return out;
 }
