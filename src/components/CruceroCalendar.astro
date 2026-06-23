@@ -17,6 +17,10 @@ interface Props {
 const { lang = "es" } = Astro.props;
 const isEs = lang === "es";
 
+// Conteo dinámico: el descargo se actualiza solo en cada refresco del calendario.
+const nCalls = (cruceros as { totalListed?: number }).totalListed ?? cruceros.calls.length;
+const seasonEst = cruceros.seasonEstimate;
+
 const MONTHS: Record<string, string[]> = {
   es: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
   en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
@@ -40,7 +44,7 @@ const T = isEs
       thEstado: "Fiabilidad",
       caption: "Escalas de cruceros previstas en el puerto de Maó en 2026.",
       disclaimer:
-        "Previsión orientativa y parcial: recoge unas 72 de las ~125-130 escalas previstas para 2026. Las de marzo y abril están confirmadas por los consignatarios del puerto; el resto procede de agregadores internacionales y puede cambiar. No es el calendario oficial.",
+        `Calendario en actualización continua: recoge ${nCalls} de las ~${seasonEst} escalas previstas para 2026. Marzo y abril están confirmados por los consignatarios del puerto; el resto procede de agregadores internacionales y puede cambiar (mayo es el tramo más provisional). No es el calendario oficial.`,
       legendTitle: "Fiabilidad:",
       paxNote: "“Capacidad” es el máximo del barco, no el pasaje real embarcado. Las horas, cuando constan, son orientativas.",
       ciutadella:
@@ -55,7 +59,7 @@ const T = isEs
       thEstado: "Reliability",
       caption: "Cruise calls scheduled at the port of Maó in 2026.",
       disclaimer:
-        "Indicative, partial forecast: it lists around 72 of the ~125-130 calls expected for 2026. March and April are confirmed by the port agents; the rest comes from international aggregators and may change. This is not the official schedule.",
+        `Calendar under continuous update: it lists ${nCalls} of the ~${seasonEst} calls expected for 2026. March and April are confirmed by the port agents; the rest comes from international aggregators and may change (May is the most provisional stretch). This is not the official schedule.`,
       legendTitle: "Reliability:",
       paxNote: "“Capacity” is the ship's maximum, not actual passengers aboard. Times, where given, are indicative.",
       ciutadella:
