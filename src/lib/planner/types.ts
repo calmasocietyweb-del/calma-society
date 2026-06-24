@@ -141,6 +141,8 @@ export interface BaseFood {
   arrivalPaseo: string;
   departureCafe: string;
   departurePaseo: string;
+  /** Opciones de desayuno verificadas de la zona base, para ROTAR por día (variedad). */
+  breakfasts?: string[];
 }
 export interface FoodByZone {
   zones: Partial<Record<PlannerZone, ZoneFood>>;
@@ -172,6 +174,7 @@ export interface Notice {
     | "viento"
     | "accesibilidad"
     | "fiesta"
+    | "transfer"
     | "logistica";
   text: string;
   placeId?: string;

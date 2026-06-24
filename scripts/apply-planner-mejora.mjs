@@ -45,6 +45,15 @@ function sanitizeDeep(o) {
 const food = { zones: {}, bases: {} };
 let patched = 0, missing = [], hlTotal = 0;
 
+// Para dar VARIEDAD al desayuno (mismo cada día = aburrido): recogemos los
+// anclajes de desayuno verificados por zona y, por base, rotamos entre la guía
+// y esos anclajes. Mapa base → zonas que la alimentan.
+const breakfastAnchorsByZone = {};
+const BASE_ZONES = {
+  ciutadella: ["oeste", "sur-oeste"], mao: ["este", "sur-este"],
+  fornells: ["norte"], "son-bou": ["sur-centro"], "es-mercadal": ["centro"],
+};
+
 for (const zone of ZONES) {
   let st;
   try { st = JSON.parse(readFileSync(join(STAGING, `planner-mejora-${zone}.json`), "utf8")); }
@@ -60,6 +69,14 @@ for (const zone of ZONES) {
     dinner: g.dinner || "",
     signature: st.signature ? { title: st.signature.title, desc: st.signature.desc, idealFor: st.signature.idealFor || [] } : null,
   };
+
+  // Anclajes de desayuno verificados de la zona (para la rotación por base).
+  breakfastAnchorsByZone[st.zone || zone] = (st.foodAnchors || [])
+    .filter((a) => a.type === "desayuno")
+    .map((a) => ({
+      name: a.name.split(" (")[0], // "El Diamante (Ses Voltes)" → "El Diamante"
+      line: `${a.name}${a.name.includes("(") ? "" : ` (${a.area})`}: ${(a.highlights && a.highlights[0]) || a.blurb || ""}`.trim(),
+    }));
 
   // Anclas de base (días de llegada/salida) keyed por base real.
   const ba = st.baseAnchors;
@@ -86,8 +103,23 @@ for (const zone of ZONES) {
   }
 }
 
+// Variedad de desayuno por base: guía de la(s) zona(s) + anclajes verificados, sin repetir.
+let withVariety = 0;
+for (const [base, zones] of Object.entries(BASE_ZONES)) {
+  if (!food.bases[base]) continue;
+  const opts = [];
+  for (const z of zones) if (food.zones[z]?.breakfast) opts.push(food.zones[z].breakfast);
+  // Anclaje de desayuno SOLO si su nombre no sale ya en la guía (evita repetir el sitio).
+  for (const z of zones) for (const a of breakfastAnchorsByZone[z] || []) {
+    if (!opts.some((o) => o.includes(a.name))) opts.push(a.line);
+  }
+  const uniq = [...new Set(opts.filter(Boolean))].slice(0, 3);
+  if (uniq.length > 1) { food.bases[base].breakfasts = uniq; withVariety++; }
+}
+
 writeFileSync(OUT, JSON.stringify(food, null, 2) + "\n");
 
 console.log(`✓ ${OUT}: ${Object.keys(food.zones).length} zonas, ${Object.keys(food.bases).length} bases (${Object.keys(food.bases).join(", ")})`);
+console.log(`✓ desayuno con variedad (rotación) en ${withVariety} bases`);
 console.log(`✓ highlights parcheados: ${patched}/${hlTotal}`);
 if (missing.length) console.log(`⚠ ids no encontrados (${missing.length}): ${missing.join(", ")}`);

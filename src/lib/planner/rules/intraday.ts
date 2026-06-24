@@ -67,6 +67,10 @@ export interface DayInput {
   zoneFood?: ZoneFood;
   /** Guía de comida de la zona BASE (desayuno, que se hace en la base). Opcional. */
   baseFood?: ZoneFood;
+  /** Opciones de desayuno de la base para ROTAR por día (variedad). Opcional. */
+  baseBreakfasts?: string[];
+  /** Índice del día (0-based), para rotar el desayuno sin repetir. */
+  dayIndex?: number;
 }
 
 export interface DayResult {
@@ -147,8 +151,13 @@ export function sequenceDay(input: DayInput): DayResult {
   };
   const puebloIsAnchor = chosen.some((c) => c.place === pueblo);
 
-  // DESAYUNO — en la base (guía verificada de la zona base si la hay).
-  blocks.push({ slot: "desayuno", timeHint: TIME_HINT.desayuno, placeName: t.breakfast(BASE_TOWN[input.base]), durationMin: 45, reason: input.baseFood?.breakfast || t.breakfastReason });
+  // DESAYUNO — en la base. Rota entre opciones verificadas por día (variedad);
+  // si no hay varias, usa la guía de la zona base; si no, el texto genérico.
+  const bfOpts = input.baseBreakfasts;
+  const breakfastReason =
+    (bfOpts && bfOpts.length ? bfOpts[(input.dayIndex ?? 0) % bfOpts.length] : input.baseFood?.breakfast)
+    || t.breakfastReason;
+  blocks.push({ slot: "desayuno", timeHint: TIME_HINT.desayuno, placeName: t.breakfast(BASE_TOWN[input.base]), durationMin: 45, reason: breakfastReason });
 
   const m = anchorBlock("manana"); if (m) blocks.push(m);
 

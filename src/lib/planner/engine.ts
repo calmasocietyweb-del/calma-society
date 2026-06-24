@@ -77,6 +77,7 @@ export function planTrip(
         base, cluster: sk.cluster, zone: info.zone, places: info.places,
         travelFromBaseMin: info.travelFromBaseMin, pace, survey, lang,
         zoneFood: foodByZone?.zones[info.zone], baseFood,
+        baseBreakfasts: foodByZone?.bases[base]?.breakfasts, dayIndex: sk.dayIndex,
       });
       // PASO 4: aviso de viento (FLEXIBLE) con alternativa resguardada en costa opuesta.
       const anchors = result.blocks
@@ -85,9 +86,13 @@ export function planTrip(
       result.notices.push(...windAdvice(info.zone, anchors, usable, survey, lang));
       // PASO 6: plan-B de mal tiempo (interiores de la zona, filtrado por día de la semana).
       dayPlanB = buildPlanB(info.zone, usable, weekdayForDay(survey.arrivalDate, sk.dayIndex), lang);
-      // Monetización: sin coche + cala no conectada → excursión/transfer (no es un fallo, es la solución premium).
-      if (isCarless(survey) && info.places.some((p) => p.carAccessClosedSummer || (p.plannerType === "cala" && !p.busServed))) {
-        menorcaBusHooks.push({ type: "excursion-cala", context: `Excursión o transfer a ${sk.cluster}`, dayIndex: sk.dayIndex });
+      // Monetización + sin coche: ofrece el transfer de Menorca Bus para LLEGAR a
+      // la cala/zona del día (la solución premium, no un fallo). Chip visible por
+      // día + enganche, nombrando el lugar de la mañana para que sea concreto.
+      if (isCarless(survey) && info.places.some((p) => p.carAccessClosedSummer || ((p.plannerType === "cala" || p.plannerType === "playa") && !p.busServed))) {
+        const target = result.blocks.find((b) => b.slot === "manana")?.placeName || sk.cluster;
+        result.notices.push({ kind: "transfer", text: S(lang).engine.busTransferDay(target) });
+        menorcaBusHooks.push({ type: "excursion-cala", context: `Transfer a ${target}`, dayIndex: sk.dayIndex });
       }
     } else {
       const e = S(lang).engine;

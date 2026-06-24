@@ -121,19 +121,31 @@
       "arrivalDinner": "Primera cena tranquila en el casco antiguo: cocina mediterránea de temporada en Smoix (Bib Gourmand) o, si se quiere mar, caldereta y marisco en el puerto. Reservar el mismo día de llegada en verano.",
       "arrivalPaseo": "Paseo suave al atardecer por el Born y Ses Voltes hasta asomarse al puerto de Ciutadella; quien tenga energía, baja al Castell de Sant Nicolau para ver caer el sol sobre la bocana.",
       "departureCafe": "Café y ensaïmada sin prisa bajo los soportales del Mercat des Peix (abre a las 9:00); queda de camino hacia el aeropuerto de Maó (45-50 min en coche) con margen de sobra.",
-      "departurePaseo": "Última vuelta corta y llana por la Plaça des Born y la Catedral de Santa María antes de dejar la ciudad; nada de calas de caminata."
+      "departurePaseo": "Última vuelta corta y llana por la Plaça des Born y la Catedral de Santa María antes de dejar la ciudad; nada de calas de caminata.",
+      "breakfasts": [
+        "Desayunar bajo los soportales del Mercat des Peix (Plaça de la Llibertat), abierto a diario de 9:00 a 13:30: ensaïmada y café a primera hora, o ya tapas de marisco recién comprado en la pescadería. Es el desayuno con más verdad de la ciudad; sin nombres de bar concretos, basta sentarse en las barras del mercado.",
+        "Desayunar en Ciutadella antes de bajar a las calas (en el sur no hay nada abierto). Anclaje seguro: El Diamante, pastelería de Ses Voltes fundada en 1935 y hoy en su negocio familiar, con barra para café y ensaïmada o un llonguet de sobrasada; alternativa con más verdad, los soportales del Mercat des Peix (Plaça de la Llibertat, abre 9:00). Compra ahí mismo el picnic para la playa."
+      ]
     },
     "mao": {
       "arrivalDinner": "Primera cena en Cales Fonts (Es Castell), a 10 min de Maó: una terraza sobre el puerto para pescado fresco y el primer atardecer sin deshacer la maleta del todo. Reserva si es temporada alta.",
       "arrivalPaseo": "Paseo suave por el puerto de Maó al caer la tarde: bajar por Ses Voltes hasta el Moll de Llevant, ver la luz sobre el puerto natural más grande del Mediterráneo y tomar la primera pomada.",
       "departureCafe": "Café con margen en el centro de Maó antes de ir al aeropuerto (a solo ~6 km): un desayuno tranquilo en el patio de Café Es Jardí o un llonguet con café en una terraza del puerto.",
-      "departurePaseo": "Último paseo corto por el casco de Maó: las calles comerciales de Ses Voltes, el mirador sobre el puerto y una última compra de queso DOP en el Mercat des Claustre, sin alejarse del coche."
+      "departurePaseo": "Último paseo corto por el casco de Maó: las calles comerciales de Ses Voltes, el mirador sobre el puerto y una última compra de queso DOP en el Mercat des Claustre, sin alejarse del coche.",
+      "breakfasts": [
+        "Desayuno sin prisa en Maó: el patio de naranjos del Café Es Jardí (Hotel Jardí de Ses Bruixes, casa señorial de 1811) sirve desayunos y brunch con producto local; para algo más sencillo y auténtico, una ensaimada o un llonguet recién hechos en una panadería del centro acompañados de café mirando el puerto.",
+        "Desayuna en el pueblo blanco de Sant Lluís antes de bajar a las calas: en sus fornets y obradores (p. ej. Forn Can Paco, en la avenida de sa Pau) hay café, ensaimada y bollería del día; conviene ir pronto porque el pan se agota. En los núcleos costeros (Punta Prima, Binibèquer) el desayuno es de chiringuito de hotel, más funcional que memorable."
+      ]
     },
     "es-mercadal": {
       "arrivalDinner": "Primera noche tranquila en el casco de Es Mercadal: una terraza de pueblo o, si cae en jueves de verano, el mercado nocturno con gastronomía local y música. Para mantel, cocina menorquina en Es Molí des Racó (reservar; confirmar horario de cena).",
       "arrivalPaseo": "Paseo suave por las calles blancas de Es Mercadal y, con luz de tarde, subida en coche al Monte Toro (10 min) para ver toda la isla de mar a mar antes de cenar.",
       "departureCafe": "Café con calma en Es Mercadal y compra de carquinyols y amargos para el viaje; el pueblo está bien centrado respecto al aeropuerto de Maó por la Me-1 (deja margen).",
-      "departurePaseo": "Última vuelta corta por la Plaça de Es Mercadal o, si hay tiempo justo, parada de 15-20 min en la Naveta des Tudons junto a la Me-1 camino del aeropuerto."
+      "departurePaseo": "Última vuelta corta por la Plaça de Es Mercadal o, si hay tiempo justo, parada de 15-20 min en la Naveta des Tudons junto a la Me-1 camino del aeropuerto.",
+      "breakfasts": [
+        "Desayuno de pueblo de interior: un café con ensaimada o una bolsa de carquinyols y amargos en una pastelería tradicional de Es Mercadal (la repostería de almendra es originaria del pueblo y se vende a diario). Es el desayuno honesto y local de la zona; sin grandes cafeterías de diseño, su valor es la artesanía centenaria.",
+        "Pastelerías de Es Mercadal (carquinyols y amargos): llevarse una bolsa de carquinyols y amargos"
+      ]
     }
   }
 }

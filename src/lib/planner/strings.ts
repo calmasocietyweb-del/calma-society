@@ -156,6 +156,7 @@ interface Strings {
     accessibilityWindow: string;
     freeDay: string;
     freeDayReason: string;
+    busTransferDay: (place: string) => string;
   };
 }
 
@@ -288,6 +289,8 @@ const ES: Strings = {
       "Los servicios de baño asistido (silla anfibia, personal) operan del 1 de mayo al 31 de octubre. Fuera de esas fechas, confirma con el ayuntamiento.",
     freeDay: "Día libre: repite tu cala favorita o descansa",
     freeDayReason: "Margen para reordenar por viento o por cansancio.",
+    busTransferDay: (place: string) =>
+      `Sin coche: llega a ${place} con un transfer puerta a puerta de Menorca Bus (esta zona no tiene bus directo cómodo).`,
   },
 };
 
@@ -420,6 +423,8 @@ const EN: Strings = {
       "Assisted bathing services (amphibious chair, staff) run from 1 May to 31 October. Outside those dates, confirm with the town hall.",
     freeDay: "Free day: revisit your favourite cove or rest",
     freeDayReason: "Room to reorder for wind or for tiredness.",
+    busTransferDay: (place) =>
+      `Without a car: reach ${place} with a door-to-door Menorca Bus transfer (this area has no convenient direct bus).`,
   },
 };
 
