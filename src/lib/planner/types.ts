@@ -125,6 +125,28 @@ export type BaseZone =
   | "es-mercadal"
   | "fornells";
 
+// ── Guía de comida verificada por zona (enriquece la prosa del plan) ─────────
+// Datos curados/verificados (moat: sin inventar), compilados aparte del dataset
+// del motor en src/data/planner-food.{es,en}.json. El motor los teje en los
+// huecos de comida (desayuno/comida/cena) y en los días de llegada/salida.
+export interface ZoneFood {
+  whatToEat: string;
+  breakfast: string;
+  lunch: string;
+  dinner: string;
+  signature: { title: string; desc: string; idealFor: string[] } | null;
+}
+export interface BaseFood {
+  arrivalDinner: string;
+  arrivalPaseo: string;
+  departureCafe: string;
+  departurePaseo: string;
+}
+export interface FoodByZone {
+  zones: Partial<Record<PlannerZone, ZoneFood>>;
+  bases: Partial<Record<BaseZone, BaseFood>>;
+}
+
 // ── Salida del motor ─────────────────────────────────────────────────────────
 /** Un bloque de la línea de tiempo intradía (desayuno → cena). */
 export interface IntradayBlock {
@@ -185,4 +207,7 @@ export interface Plan {
   days: DayCard[];
   globalNotices: Notice[];
   menorcaBusHooks: MenorcaBusHook[];
+  /** Experiencia firma del viaje: 1 momento memorable, extraído de la guía de la
+   * zona base o de la más afín (el "wow" curado). Opcional (solo si hay guía). */
+  signature?: { title: string; desc: string };
 }

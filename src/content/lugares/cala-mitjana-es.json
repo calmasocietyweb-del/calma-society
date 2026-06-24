@@ -4,7 +4,10 @@
   "translationKey": "cala-mitjana",
   "type": "cala",
   "description": "Cala amplia de arena clara y agua transparente, flanqueada por acantilados de los que algunos se lanzan al mar. Cerca de Cala Galdana, combina belleza y accesibilidad razonable.",
-  "coordinates": { "lat": 39.9355, "lng": 3.9686 },
+  "coordinates": {
+    "lat": 39.9355,
+    "lng": 3.9686
+  },
   "area": "Sur (Ferreries)",
   "practicalInfo": {
     "acceso": "Caminata cómoda (~15 min) desde el aparcamiento por pinar",
@@ -12,8 +15,15 @@
     "servicios": "Sin servicios: lleva todo lo necesario",
     "mejorEpoca": "Junio y septiembre; en agosto, temprano"
   },
-  "images": ["/uploads/cala-mitjana.webp"],
-  "tags": ["sur", "acantilados", "transparente", "ferreries"],
+  "images": [
+    "/uploads/cala-mitjana.webp"
+  ],
+  "tags": [
+    "sur",
+    "acantilados",
+    "transparente",
+    "ferreries"
+  ],
   "status": "published",
   "seo": {
     "description": "Cala de arena clara y agua transparente entre acantilados, cerca de Cala Galdana. Belleza serena y acceso razonable. Mejor a primera hora, en el sur."
@@ -22,8 +32,16 @@
     "openingBearingDeg": 195,
     "embayment": "encajonada",
     "municipioINE": "07021",
-    "shelteredFrom": ["Tramuntana (N)", "Gregal (NE)", "Mestral (NO)"],
-    "exposedTo": ["Migjorn (S)", "Llebeig (SO)", "Xaloc (SE)"],
+    "shelteredFrom": [
+      "Tramuntana (N)",
+      "Gregal (NE)",
+      "Mestral (NO)"
+    ],
+    "exposedTo": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
     "tienePradera": true,
     "tieneVigilancia": false
   },
@@ -47,6 +65,11 @@
     "dataCertainty": "alta",
     "lastVerified": "2026-06-22",
     "shuttleInfo": "Gran parking de tierra gratuito (~250 plazas) + camino señalizado de 1,2 km en bajada. Llega antes de las 10h en temporada alta. Bus L52 (Ciutadella) / L51 (Maó); también a pie desde Cala Galdana por el Camí de Cavalls.",
-    "effortNote": "Camino de 1,2 km en bajada, mayormente cómodo y apto para familias; no para silla de ruedas."
+    "effortNote": "Camino de 1,2 km en bajada, mayormente cómodo y apto para familias; no para silla de ruedas.",
+    "highlights": [
+      "bajar el camino de 1,2 km desde el parking hasta la cala de arena clara",
+      "ver a algunos saltar al agua desde los acantilados (con prudencia)",
+      "llegar antes de las 10h en verano: el parking se llena pronto"
+    ]
   }
 }

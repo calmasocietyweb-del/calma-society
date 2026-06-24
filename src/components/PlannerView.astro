@@ -17,6 +17,8 @@ import dataEs from "../data/planner-data.es.json";
 import dataEn from "../data/planner-data.en.json";
 import eventsEs from "../data/planner-events.es.json";
 import eventsEn from "../data/planner-events.en.json";
+import foodEs from "../data/planner-food.es.json";
+import foodEn from "../data/planner-food.en.json";
 import { SITE } from "../config/site";
 import type { Locale } from "../config/site";
 
@@ -27,6 +29,7 @@ const { locale } = Astro.props;
 const isEs = locale === "es";
 const dataset = isEs ? dataEs : dataEn;
 const events = isEs ? eventsEs : eventsEn;
+const food = isEs ? foodEs : foodEn;
 
 const T = isEs
   ? {
@@ -89,6 +92,7 @@ const CFG = {
   whyTitle: T.whyTitle,
   busCTA: T.busCTA,
   globalTitle: T.globalTitle,
+  signatureTitle: isEs ? "La experiencia del viaje" : "The signature of your trip",
   hours: T.hours,
   // Mensajes de validación de fechas (los usa el island).
   dateInvalid: isEs ? "Las fechas no son válidas. Revisa el formato (día, mes y año)." : "The dates are not valid. Check the format (day, month, year).",
@@ -267,6 +271,7 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
   {/* Datos para el cliente (no se ejecutan: los lee el island). */}
   <script type="application/json" id="planner-dataset" set:html={JSON.stringify(dataset)} />
   <script type="application/json" id="planner-events" set:html={JSON.stringify(events)} />
+  <script type="application/json" id="planner-food" set:html={JSON.stringify(food)} />
   <script type="application/json" id="planner-cfg" set:html={JSON.stringify(CFG)} />
 </section>
 
@@ -276,6 +281,7 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
   const $ = (id: string) => document.getElementById(id);
   const dataset = JSON.parse($("planner-dataset")!.textContent || "[]");
   const events = JSON.parse($("planner-events")!.textContent || "[]");
+  const food = JSON.parse($("planner-food")!.textContent || "{}");
   const CFG = JSON.parse($("planner-cfg")!.textContent || "{}");
   const form = $("planner-form") as HTMLFormElement | null;
   const out = $("planner-results");
@@ -391,9 +397,12 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
 
   function render(survey: any) {
     if (!out) return;
-    const plan = planTrip(survey, dataset, CFG.lang, events);
+    const plan = planTrip(survey, dataset, CFG.lang, events, food);
     const baseName = CFG.baseZ[plan.base] || plan.base;
     const globals = (plan.globalNotices || []).map(notice).join("");
+    const sig = plan.signature
+      ? `<div class="mt-4 rounded-xl border border-oro-vivo/40 bg-crema/40 p-4"><p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">✦ ${esc(CFG.signatureTitle)}</p><p class="mt-1 font-display text-lg text-tinta">${esc(plan.signature.title)}</p><p class="mt-1 text-sm leading-relaxed text-piedra-suave">${esc(plan.signature.desc)}</p></div>`
+      : "";
     const bus = (plan.menorcaBusHooks || []).length
       ? `<a href="${CFG.menorcaBusUrl}" target="_blank" rel="sponsored noopener" data-umami-event="planner-menorcabus" class="mt-4 inline-block rounded-full border border-arcilla px-5 py-2 text-sm font-medium text-arcilla transition-colors hover:bg-arcilla hover:text-crema">${esc(CFG.busCTA)} →</a>`
       : "";
@@ -404,6 +413,7 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
         ${globals ? `<div class="mt-4 border-t border-niebla pt-3"><p class="text-xs font-semibold uppercase tracking-wider text-oro">${esc(CFG.globalTitle)}</p><ul class="mt-2 space-y-1.5">${globals}</ul></div>` : ""}
         ${bus}
       </div>
+      ${sig}
       <div class="mt-6 space-y-5">${plan.days.map(dayCard).join("")}</div>`;
     out.scrollIntoView({ behavior: "smooth", block: "start" });
     const actions = $("planner-actions"); // hay plan → ofrece guardarlo/compartirlo

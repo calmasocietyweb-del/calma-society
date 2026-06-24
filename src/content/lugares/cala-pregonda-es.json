@@ -4,7 +4,10 @@
   "translationKey": "cala-pregonda",
   "type": "cala",
   "description": "Una de las calas más icónicas del norte: arena de tono rojizo, islotes frente a la orilla y un aire casi lunar. No tiene servicios, y ahí reside su encanto.",
-  "coordinates": { "lat": 40.0489, "lng": 4.0512 },
+  "coordinates": {
+    "lat": 40.0489,
+    "lng": 4.0512
+  },
   "area": "Norte (Es Mercadal)",
   "practicalInfo": {
     "acceso": "A pie, unos 30 min desde el aparcamiento de Binimel·là",
@@ -12,15 +15,29 @@
     "servicios": "Ninguno: lleva agua, comida y sombra",
     "mejorEpoca": "Mayo–junio y septiembre; en agosto, a primera hora"
   },
-  "images": ["/uploads/cala-pregonda.webp"],
-  "tags": ["norte", "arena rojiza", "camí de cavalls"],
+  "images": [
+    "/uploads/cala-pregonda.webp"
+  ],
+  "tags": [
+    "norte",
+    "arena rojiza",
+    "camí de cavalls"
+  ],
   "status": "published",
   "windExposure": {
     "openingBearingDeg": 340,
     "embayment": "encajonada",
     "municipioINE": "07037",
-    "shelteredFrom": ["Migjorn (S)", "Llebeig (SO)", "Xaloc (SE)"],
-    "exposedTo": ["Tramuntana (N)", "Mestral (NO)", "Gregal (NE)"],
+    "shelteredFrom": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
+    "exposedTo": [
+      "Tramuntana (N)",
+      "Mestral (NO)",
+      "Gregal (NE)"
+    ],
     "tienePradera": true,
     "tieneVigilancia": true
   },
@@ -43,6 +60,11 @@
     "dataCertainty": "alta",
     "lastVerified": "2026-06-22",
     "effortNote": "Sin acceso rodado a la cala: ~30 min a pie (2 km) por el Camí de Cavalls desde el parking de Binimel·la. Sin servicios; calzado cómodo, agua y sombra imprescindibles.",
-    "seasonalHours": "Junio o septiembre; en julio/agosto el parking de Binimel·la se llena pronto. Mejor con poco viento del norte."
+    "seasonalHours": "Junio o septiembre; en julio/agosto el parking de Binimel·la se llena pronto. Mejor con poco viento del norte.",
+    "highlights": [
+      "la arena rojiza y los islotes de una de las calas más icónicas del norte",
+      "caminar ~30 min por el Camí de Cavalls desde Binimel·la",
+      "elegir un día de poco viento del norte; sin servicios"
+    ]
   }
 }

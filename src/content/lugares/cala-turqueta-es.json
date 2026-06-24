@@ -4,7 +4,10 @@
   "translationKey": "cala-turqueta",
   "type": "cala",
   "description": "Aguas de un turquesa casi irreal y arena fina protegida por pinos. Más recogida y familiar, es de las calas más queridas del suroeste. Su nombre lo dice todo.",
-  "coordinates": { "lat": 39.9268, "lng": 3.913 },
+  "coordinates": {
+    "lat": 39.9268,
+    "lng": 3.913
+  },
   "area": "Sur (Ciutadella)",
   "practicalInfo": {
     "acceso": "Corta caminata (~10-15 min) desde el aparcamiento por un sendero entre pinos",
@@ -12,15 +15,30 @@
     "servicios": "Sin chiringuito: lleva agua, comida y sombra",
     "mejorEpoca": "Mayo, junio y septiembre; en agosto, muy temprano"
   },
-  "images": ["/uploads/cala-turqueta.webp"],
-  "tags": ["sur", "turquesa", "familiar", "ciutadella"],
+  "images": [
+    "/uploads/cala-turqueta.webp"
+  ],
+  "tags": [
+    "sur",
+    "turquesa",
+    "familiar",
+    "ciutadella"
+  ],
   "status": "published",
   "windExposure": {
     "openingBearingDeg": 200,
     "embayment": "encajonada",
     "municipioINE": "07015",
-    "shelteredFrom": ["Tramuntana (N)", "Gregal (NE)", "Mestral (NO)"],
-    "exposedTo": ["Migjorn (S)", "Llebeig (SO)", "Xaloc (SE)"],
+    "shelteredFrom": [
+      "Tramuntana (N)",
+      "Gregal (NE)",
+      "Mestral (NO)"
+    ],
+    "exposedTo": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
     "tienePradera": true,
     "tieneVigilancia": true
   },
@@ -44,6 +62,11 @@
     "dataCertainty": "alta",
     "lastVerified": "2026-06-22",
     "shuttleInfo": "Mantiene acceso en coche en verano, pero el parking se llena muy pronto (llega ~8:00). También bus lanzadera desde Ciutadella en temporada. Punto de partida habitual para caminar a Macarella.",
-    "effortNote": "Sendero de 10-15 min entre pinos desde el parking; firme pero no apto para silla de ruedas ni carrito."
+    "effortNote": "Sendero de 10-15 min entre pinos desde el parking; firme pero no apto para silla de ruedas ni carrito.",
+    "highlights": [
+      "turquesa casi irreal y arena fina protegida por pinos",
+      "mantiene acceso en coche en verano, pero el parking se llena pronto (llega ~8:00)",
+      "punto de partida habitual para caminar a Macarella por el Camí de Cavalls"
+    ]
   }
 }

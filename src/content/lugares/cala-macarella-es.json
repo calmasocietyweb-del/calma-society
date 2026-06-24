@@ -4,7 +4,10 @@
   "translationKey": "cala-macarella",
   "type": "cala",
   "description": "La postal por excelencia del sur de Menorca: una herradura de arena blanca, agua turquesa y pinar hasta la orilla. Junto a ella, su hermana pequeña, Cala Macarelleta. Belleza serena que conviene disfrutar temprano.",
-  "coordinates": { "lat": 39.9356, "lng": 3.9286 },
+  "coordinates": {
+    "lat": 39.9356,
+    "lng": 3.9286
+  },
   "area": "Sur (Ciutadella)",
   "practicalInfo": {
     "acceso": "A pie desde Cala Galdana (~30 min por el Camí de Cavalls) o en autobús de temporada; en verano el acceso en coche está restringido",
@@ -12,8 +15,16 @@
     "servicios": "Chiringuito estacional; conviene llevar agua y sombra",
     "mejorEpoca": "Junio y septiembre; en julio-agosto, a primera hora de la mañana"
   },
-  "images": ["/uploads/cala-macarella.webp"],
-  "tags": ["sur", "turquesa", "arena blanca", "camí de cavalls", "ciutadella"],
+  "images": [
+    "/uploads/cala-macarella.webp"
+  ],
+  "tags": [
+    "sur",
+    "turquesa",
+    "arena blanca",
+    "camí de cavalls",
+    "ciutadella"
+  ],
   "status": "published",
   "seo": {
     "description": "La cala más icónica del sur de Menorca: herradura de arena blanca, agua turquesa y pinar hasta la orilla, con Cala Macarelleta al lado. Mejor temprano."
@@ -22,8 +33,16 @@
     "openingBearingDeg": 195,
     "embayment": "encajonada",
     "municipioINE": "07015",
-    "shelteredFrom": ["Tramuntana (N)", "Gregal (NE)", "Mestral (NO)"],
-    "exposedTo": ["Migjorn (S)", "Llebeig (SO)", "Xaloc (SE)"],
+    "shelteredFrom": [
+      "Tramuntana (N)",
+      "Gregal (NE)",
+      "Mestral (NO)"
+    ],
+    "exposedTo": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
     "tienePradera": true,
     "tieneVigilancia": true
   },
@@ -47,6 +66,11 @@
     "dataCertainty": "alta",
     "lastVerified": "2026-06-22",
     "shuttleInfo": "1 jun–30 sep: coche y moto privados prohibidos. Bus lanzadera desde Ciutadella, taxi autorizado, bici o a pie (Camí de Cavalls desde Cala Galdana, ~45 min). Fuera de temporada: coche hasta el parking gratuito a 15-20 min a pie.",
-    "effortNote": "Acceso a pie o en lanzadera en verano; sendero del Camí de Cavalls. Sin servicios garantizados: lleva agua y sombra."
+    "effortNote": "Acceso a pie o en lanzadera en verano; sendero del Camí de Cavalls. Sin servicios garantizados: lleva agua y sombra.",
+    "highlights": [
+      "la postal del sur: herradura de arena blanca, turquesa y pinar",
+      "en verano se llega en bus lanzadera desde Ciutadella o a pie por el Camí de Cavalls",
+      "sin servicios fiables: baja con picnic, agua y sombra"
+    ]
   }
 }

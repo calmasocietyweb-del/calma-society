@@ -7,7 +7,7 @@
  * Presupuesto de horas útiles por ritmo; si se pasa, cae la parada de MENOR
  * afinidad (nunca la de la mañana) y se avisa. Función pura y trazable.
  */
-import type { PlannerPlace, PlannerZone, BaseZone, IntradayBlock, Notice } from "../types.ts";
+import type { PlannerPlace, PlannerZone, BaseZone, IntradayBlock, Notice, ZoneFood } from "../types.ts";
 import type { Survey, Pace } from "../survey.ts";
 import { affinity } from "./interests.ts";
 import { S, type Lang } from "../strings.ts";
@@ -63,6 +63,10 @@ export interface DayInput {
   survey: Survey;
   /** Idioma del texto generado (default español para no romper llamadas existentes). */
   lang?: Lang;
+  /** Guía de comida VERIFICADA de la zona del día (comida/cena). Opcional. */
+  zoneFood?: ZoneFood;
+  /** Guía de comida de la zona BASE (desayuno, que se hace en la base). Opcional. */
+  baseFood?: ZoneFood;
 }
 
 export interface DayResult {
@@ -143,35 +147,39 @@ export function sequenceDay(input: DayInput): DayResult {
   };
   const puebloIsAnchor = chosen.some((c) => c.place === pueblo);
 
-  // DESAYUNO — en la base.
-  blocks.push({ slot: "desayuno", timeHint: TIME_HINT.desayuno, placeName: t.breakfast(BASE_TOWN[input.base]), durationMin: 45, reason: t.breakfastReason });
+  // DESAYUNO — en la base (guía verificada de la zona base si la hay).
+  blocks.push({ slot: "desayuno", timeHint: TIME_HINT.desayuno, placeName: t.breakfast(BASE_TOWN[input.base]), durationMin: 45, reason: input.baseFood?.breakfast || t.breakfastReason });
 
   const m = anchorBlock("manana"); if (m) blocks.push(m);
 
-  // COMIDA — anclada a un restaurante/mercado o al pueblo del día.
+  // COMIDA — anclada a un restaurante/mercado o al pueblo del día; la guía
+  // verificada de la zona enriquece el "por qué" cuando no hay ficha real.
   if (diner) {
-    blocks.push({ slot: "comida", timeHint: TIME_HINT.comida, placeId: diner.id, placeName: t.lunchAt(diner.name), durationMin: 90, reason: whatToSee(diner, lang) || t.lunchAtReason });
+    blocks.push({ slot: "comida", timeHint: TIME_HINT.comida, placeId: diner.id, placeName: t.lunchAt(diner.name), durationMin: 90, reason: whatToSee(diner, lang) || input.zoneFood?.lunch || t.lunchAtReason });
   } else if (pueblo) {
-    blocks.push({ slot: "comida", timeHint: TIME_HINT.comida, placeName: t.lunchInTown(pueblo.name), durationMin: 90, reason: t.lunchInTownReason });
+    blocks.push({ slot: "comida", timeHint: TIME_HINT.comida, placeName: t.lunchInTown(pueblo.name), durationMin: 90, reason: input.zoneFood?.lunch || t.lunchInTownReason });
   } else {
-    blocks.push({ slot: "comida", timeHint: TIME_HINT.comida, placeName: t.lunchLocal, durationMin: 90, reason: t.lunchLocalReason });
+    blocks.push({ slot: "comida", timeHint: TIME_HINT.comida, placeName: t.lunchLocal, durationMin: 90, reason: input.zoneFood?.lunch || t.lunchLocalReason });
   }
 
   const tardeBlock = anchorBlock("tarde"); if (tardeBlock) blocks.push(tardeBlock);
   const a = anchorBlock("atardecer"); if (a) blocks.push(a);
 
   // CENA — pasea por el pueblo y cena allí; si no hay pueblo, a un restaurante.
+  // La cena es el hueco donde la guía de comida verificada (que nombra mesas
+  // reales: caldereta, alta cocina…) aporta más, así que tiene prioridad.
   if (pueblo) {
-    const reason = puebloIsAnchor
-      ? t.dinnerStrollAnchorReason
-      : (pueblo.highlights && pueblo.highlights.length)
-        ? t.dinnerStrollHighlightsReason(pueblo.highlights.join(" · "))
-        : t.dinnerStrollDefaultReason;
+    const reason = input.zoneFood?.dinner
+      || (puebloIsAnchor
+        ? t.dinnerStrollAnchorReason
+        : (pueblo.highlights && pueblo.highlights.length)
+          ? t.dinnerStrollHighlightsReason(pueblo.highlights.join(" · "))
+          : t.dinnerStrollDefaultReason);
     blocks.push({ slot: "cena", timeHint: TIME_HINT.cena, placeId: pueblo.id, placeName: t.dinnerStroll(pueblo.name), durationMin: 90, reason });
   } else if (diner) {
-    blocks.push({ slot: "cena", timeHint: TIME_HINT.cena, placeId: diner.id, placeName: t.dinnerAt(diner.name), durationMin: 90, reason: whatToSee(diner, lang) || t.dinnerAtReason });
+    blocks.push({ slot: "cena", timeHint: TIME_HINT.cena, placeId: diner.id, placeName: t.dinnerAt(diner.name), durationMin: 90, reason: whatToSee(diner, lang) || input.zoneFood?.dinner || t.dinnerAtReason });
   } else {
-    blocks.push({ slot: "cena", timeHint: TIME_HINT.cena, placeName: t.dinnerLocal, durationMin: 90, reason: t.dinnerLocalReason });
+    blocks.push({ slot: "cena", timeHint: TIME_HINT.cena, placeName: t.dinnerLocal, durationMin: 90, reason: input.zoneFood?.dinner || t.dinnerLocalReason });
   }
 
   // ── Avisos por lugar (chips) ──────────────────────────────────────────────

@@ -5,7 +5,7 @@
  *
  * Las horas de vuelo son opcionales: si no se dan, se asume un plan de mediodía.
  */
-import type { PlannerPlace, BaseZone, IntradayBlock, Notice } from "../types.ts";
+import type { PlannerPlace, BaseZone, IntradayBlock, Notice, BaseFood } from "../types.ts";
 import type { Survey } from "../survey.ts";
 import { BASE_SIDE } from "./interests.ts";
 import { S, type Lang } from "../strings.ts";
@@ -65,7 +65,7 @@ export function departureNotices(s: Survey, base: BaseZone, lang: Lang = "es"): 
 }
 
 /** PASO 7 — día de llegada: ligero y en el cluster de la base, nunca lejos. */
-export function arrivalDay(s: Survey, base: BaseZone, dataset: PlannerPlace[], lang: Lang = "es"): DayResult {
+export function arrivalDay(s: Survey, base: BaseZone, dataset: PlannerPlace[], lang: Lang = "es", baseFood?: BaseFood): DayResult {
   const t = S(lang).arrival;
   const notices: Notice[] = [];
   const blocks: IntradayBlock[] = [];
@@ -84,28 +84,28 @@ export function arrivalDay(s: Survey, base: BaseZone, dataset: PlannerPlace[], l
 
   blocks.push({ slot: "desayuno", timeHint: toHHMM(Math.max(usable, 8 * 60)), placeName: t.settleIn, durationMin: 60, reason: t.settleInReason });
   if (window === "manana") {
-    blocks.push({ slot: "manana", timeHint: "12:00", placeName: t.townStroll, durationMin: 60, reason: t.townStrollReason });
+    blocks.push({ slot: "manana", timeHint: "12:00", placeName: t.townStroll, durationMin: 60, reason: baseFood?.arrivalPaseo || t.townStrollReason });
     blocks.push({ slot: "comida", timeHint: "14:00", placeName: t.lunchInBase, durationMin: 90, reason: t.lunchInBaseReason });
     if (easyNearby) blocks.push({ slot: "tarde", timeHint: "16:30", placeId: easyNearby.id, placeName: easyNearby.name, durationMin: 120, reason: t.easyNearbyReason });
   } else if (window === "mediodia") {
     blocks.push({ slot: "comida", timeHint: toHHMM(usable + 30), placeName: t.lunchNearBase, durationMin: 90, reason: t.lunchNearBaseReason });
-    blocks.push({ slot: "atardecer", timeHint: "20:00", placeName: t.sunsetNearBase, durationMin: 60, reason: t.sunsetNearBaseReason });
+    blocks.push({ slot: "atardecer", timeHint: "20:00", placeName: t.sunsetNearBase, durationMin: 60, reason: baseFood?.arrivalPaseo || t.sunsetNearBaseReason });
   } else {
     notices.push({ kind: "logistica", text: t.lateArrival });
   }
-  blocks.push({ slot: "cena", timeHint: "21:30", placeName: t.dinnerNearBase, durationMin: 90, reason: t.dinnerNearBaseReason });
+  blocks.push({ slot: "cena", timeHint: "21:30", placeName: t.dinnerNearBase, durationMin: 90, reason: baseFood?.arrivalDinner || t.dinnerNearBaseReason });
 
   return { blocks, budgetHours: window === "manana" ? 5 : window === "mediodia" ? 4 : 2.5, notices };
 }
 
 /** PASO 8 — día de salida: margen al vuelo, cerca del aeropuerto; sin calas de caminata. */
-export function departureDay(s: Survey, base: BaseZone, lang: Lang = "es"): DayResult {
+export function departureDay(s: Survey, base: BaseZone, lang: Lang = "es", baseFood?: BaseFood): DayResult {
   const t = S(lang).departure;
   const notices: Notice[] = departureNotices(s, base, lang);
   const blocks: IntradayBlock[] = [];
 
-  blocks.push({ slot: "desayuno", timeHint: "08:30", placeName: t.breakfastPacking, durationMin: 60, reason: t.breakfastPackingReason });
-  blocks.push({ slot: "manana", timeHint: "10:00", placeName: t.shortStroll, durationMin: 60, reason: t.shortStrollReason });
+  blocks.push({ slot: "desayuno", timeHint: "08:30", placeName: t.breakfastPacking, durationMin: 60, reason: baseFood?.departureCafe || t.breakfastPackingReason });
+  blocks.push({ slot: "manana", timeHint: "10:00", placeName: t.shortStroll, durationMin: 60, reason: baseFood?.departurePaseo || t.shortStrollReason });
 
   return { blocks, budgetHours: 2.5, notices };
 }

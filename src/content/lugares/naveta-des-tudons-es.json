@@ -4,14 +4,21 @@
   "translationKey": "naveta-tudons",
   "type": "monumento",
   "description": "El monumento funerario talayótico mejor conservado de Menorca y símbolo de la isla. Forma parte de Menorca Talayótica, Patrimonio Mundial de la UNESCO desde 2023.",
-  "coordinates": { "lat": 39.9967, "lng": 3.884 },
+  "coordinates": {
+    "lat": 39.9967,
+    "lng": 3.884
+  },
   "area": "Ciutadella (oeste)",
   "practicalInfo": {
     "acceso": "Junto a la carretera Me-1, con aparcamiento señalizado",
     "horario": "Recinto al aire libre; consultar horario de acceso",
     "mejorEpoca": "Todo el año; especialmente bello al atardecer"
   },
-  "tags": ["talayótico", "patrimonio", "unesco"],
+  "tags": [
+    "talayótico",
+    "patrimonio",
+    "unesco"
+  ],
   "status": "published",
   "planner": {
     "zone": "eje-me1",
@@ -33,6 +40,11 @@
     "dataCertainty": "alta",
     "lastVerified": "2026-06-22",
     "effortNote": "Aparcamiento junto a la carretera Me-1 (km ~40) + paseo corto de 5 min por camino de tierra firme. Sin sombra: evita el mediodía en verano.",
-    "seasonalHours": "Mañana o última hora; cualquier época. La mejor luz y menos calor a primera o última hora del día."
+    "seasonalHours": "Mañana o última hora; cualquier época. La mejor luz y menos calor a primera o última hora del día.",
+    "highlights": [
+      "el monumento funerario talayótico mejor conservado de la isla",
+      "parada corta junto a la Me-1, ideal de camino entre Ciutadella y el centro",
+      "ir a primera o última hora del día: no hay sombra"
+    ]
   }
 }

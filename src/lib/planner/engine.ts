@@ -10,11 +10,12 @@
  * Pendiente de capas posteriores: PASO 2 (agenda), 4 (viento), 5 (accesibilidad
  * como filtro), 6 (plan-B mal tiempo). Se acoplan sin cambiar esta interfaz.
  */
-import type { Plan, DayCard, PlannerPlace, IntradayBlock, Notice, MenorcaBusHook } from "./types.ts";
+import type { Plan, DayCard, PlannerPlace, PlannerZone, IntradayBlock, Notice, MenorcaBusHook, FoodByZone } from "./types.ts";
 import type { Survey, Interest } from "./survey.ts";
 import { normalizeSurvey, isCarless } from "./survey.ts";
 import { recommendBase } from "./rules/base.ts";
 import { buildDaySkeleton, rankClusters } from "./rules/days.ts";
+import { BASE_SIDE } from "./rules/interests.ts";
 import { sequenceDay } from "./rules/intraday.ts";
 import { arrivalDay, departureDay, arrivalNotices, departureNotices } from "./rules/arrival-departure.ts";
 import { filterAccessible, effectivePace, allowedEfforts } from "./rules/accessibility.ts";
@@ -35,6 +36,7 @@ export function planTrip(
   dataset: PlannerPlace[],
   lang: "es" | "en" = "es",
   events: PlannerEvent[] = [],
+  foodByZone?: FoodByZone,
 ): Plan {
   const survey = normalizeSurvey(rawSurvey);
   // PASO 5: filtra el dataset por accesibilidad ANTES de componer (afecta a todos los pasos).
@@ -44,6 +46,8 @@ export function planTrip(
   const skeleton = buildDaySkeleton(survey, base, usable);
   const clusters = new Map(rankClusters(survey, base, usable).map((c) => [c.cluster, c]));
   const byId = new Map(usable.map((p) => [p.id, p]));
+  // Guía de comida verificada de la zona BASE (desayuno) y anclas de base (llegada/salida).
+  const baseFood = foodByZone?.zones[BASE_SIDE[base]];
 
   const days: DayCard[] = [];
   const menorcaBusHooks: MenorcaBusHook[] = [];
@@ -54,7 +58,7 @@ export function planTrip(
     let dayPlanB: DayCard["planB"];
 
     if (sk.dayTypeKey === "dia-llegada") {
-      result = arrivalDay(survey, base, usable, lang);
+      result = arrivalDay(survey, base, usable, lang, foodByZone?.bases[base]);
       if (isCarless(survey) || base !== "mao") {
         menorcaBusHooks.push({ type: "transfer-aeropuerto", context: `Transfer aeropuerto → ${base}`, dayIndex: sk.dayIndex });
       }
@@ -63,7 +67,7 @@ export function planTrip(
         menorcaBusHooks.push({ type: "transfer-adaptado", context: `Transfer adaptado a una playa accesible desde ${base}`, dayIndex: sk.dayIndex });
       }
     } else if (sk.dayTypeKey === "dia-salida") {
-      result = departureDay(survey, base, lang);
+      result = departureDay(survey, base, lang, foodByZone?.bases[base]);
       if (isCarless(survey)) {
         menorcaBusHooks.push({ type: "transfer-aeropuerto", context: `Transfer ${base} → aeropuerto`, dayIndex: sk.dayIndex });
       }
@@ -72,6 +76,7 @@ export function planTrip(
       result = sequenceDay({
         base, cluster: sk.cluster, zone: info.zone, places: info.places,
         travelFromBaseMin: info.travelFromBaseMin, pace, survey, lang,
+        zoneFood: foodByZone?.zones[info.zone], baseFood,
       });
       // PASO 4: aviso de viento (FLEXIBLE) con alternativa resguardada en costa opuesta.
       const anchors = result.blocks
@@ -132,8 +137,32 @@ export function planTrip(
     });
   }
 
+  // Experiencia firma: 1 momento memorable extraído de la guía de la zona base o
+  // de la más afín al perfil (lujo → lujo-tranquilo; si no, gastronomía; si no, base).
+  let signature: Plan["signature"];
+  if (foodByZone) {
+    const baseZone = BASE_SIDE[base];
+    const visited: PlannerZone[] = [
+      baseZone,
+      ...skeleton
+        .map((sk) => sk.zone)
+        .filter((z): z is PlannerZone => z !== "base" && z !== "cercano-aeropuerto"),
+    ];
+    const cands = [...new Set(visited)]
+      .map((z) => foodByZone.zones[z]?.signature)
+      .filter((s): s is NonNullable<typeof s> => !!s);
+    const wantLux = survey.budget === "alto" || survey.interests.includes("lujo-tranquilo");
+    const wantGastro = survey.interests.includes("gastronomia");
+    const pick =
+      (wantLux ? cands.find((c) => c.idealFor.includes("lujo-tranquilo")) : undefined) ||
+      (wantGastro ? cands.find((c) => c.idealFor.includes("gastronomia")) : undefined) ||
+      foodByZone.zones[baseZone]?.signature ||
+      cands[0];
+    if (pick) signature = { title: pick.title, desc: pick.desc };
+  }
+
   const globalNotices = [...buildGlobalNotices(survey, base, lang, splitBase), ...globalFiestas.values()];
-  return { base, baseReason, splitBase, days, globalNotices, menorcaBusHooks };
+  return { base, baseReason, splitBase, days, globalNotices, menorcaBusHooks, signature };
 }
 
 function buildGlobalNotices(survey: Survey, base: string, lang: "es" | "en", splitBase?: string): Notice[] {
