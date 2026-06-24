@@ -4,6 +4,13 @@ import { getCollection, getEntry, render } from "astro:content";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
 import { articleSlugFor } from "../../lib/content";
 import { articleUrl, homePath } from "../../i18n/utils";
+// Componentes que el cuerpo MDX puede usar. Se inyectan aquí (NO se importan en
+// cada .mdx) para que el editor visual Keystatic pueda abrir los artículos.
+import Figure from "../../components/Figure.astro";
+import MenorcaBusCTA from "../../components/MenorcaBusCTA.astro";
+import CruceroCalendar from "../../components/CruceroCalendar.astro";
+
+const mdxComponents = { Figure, MenorcaBusCTA, CruceroCalendar };
 
 export async function getStaticPaths() {
   const arts = await getCollection(
@@ -29,5 +36,5 @@ const alternates = {
 ---
 
 <ArticleLayout entry={entry} author={author} relatedPlaces={relatedPlaces} alternates={alternates}>
-  <Content />
+  <Content components={mdxComponents} />
 </ArticleLayout>

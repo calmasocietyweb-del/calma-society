@@ -13,6 +13,59 @@
  * respetar el flujo de fotos optimizadas (ver docs/GUIA-EDITOR.md).
  */
 import { config, fields, collection } from "@keystatic/core";
+import { block } from "@keystatic/core/content-components";
+
+// Componentes que pueden aparecer DENTRO del cuerpo MDX de los artículos.
+// Hay que declararlos aquí para que el editor visual sepa leerlos y editarlos
+// (si no, al abrir un artículo que los use, Keystatic da error). Los props
+// coinciden con los de los componentes reales de Astro (src/components/*).
+// El idioma se elige con un desplegable (es/en).
+const LANG_FIELD = fields.select({
+  label: "Idioma",
+  options: [
+    { label: "Español", value: "es" },
+    { label: "English", value: "en" },
+  ],
+  defaultValue: "es",
+});
+
+const MDX_COMPONENTS = {
+  // Imagen con pie de foto y crédito (src/components/Figure.astro).
+  Figure: block({
+    label: "Figura (imagen con pie y crédito)",
+    schema: {
+      src: fields.text({
+        label: "Ruta de la imagen",
+        description: "Foto ya optimizada, p. ej. /uploads/foto.webp",
+      }),
+      alt: fields.text({
+        label: "Texto alternativo (obligatorio)",
+        description: "Describe la imagen en una frase (accesibilidad + Google).",
+      }),
+      caption: fields.text({ label: "Pie de foto", multiline: true }),
+      credit: fields.text({
+        label: "Crédito / fuente",
+        description: 'P. ej. "Adobe Stock" o "Autor / Wikimedia (CC BY-SA 4.0)".',
+      }),
+      lang: LANG_FIELD,
+    },
+  }),
+  // Llamada a la acción de Menorca Bus (src/components/MenorcaBusCTA.astro).
+  MenorcaBusCTA: block({
+    label: "CTA Menorca Bus",
+    schema: {
+      lang: LANG_FIELD,
+      title: fields.text({ label: "Título (opcional)" }),
+      text: fields.text({ label: "Texto (opcional)", multiline: true }),
+      cta: fields.text({ label: "Texto del botón (opcional)" }),
+    },
+  }),
+  // Calendario de cruceros (src/components/CruceroCalendar.astro).
+  CruceroCalendar: block({
+    label: "Calendario de cruceros",
+    schema: { lang: LANG_FIELD },
+  }),
+};
 
 /** Opciones de idioma (en sync con src/config/site.ts). */
 const IDIOMAS = [
@@ -208,6 +261,7 @@ export default config({
           label: "Contenido del artículo",
           description:
             "Usa encabezados (H2) que respondan preguntas reales. Da datos concretos (horarios, precios, accesos). Voz propia y experiencia local: es lo que las IA no tienen y lo que te hace citable.",
+          components: MDX_COMPONENTS,
         }),
       },
     }),
