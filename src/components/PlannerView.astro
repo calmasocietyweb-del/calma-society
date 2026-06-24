@@ -395,7 +395,7 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
     const baseName = CFG.baseZ[plan.base] || plan.base;
     const globals = (plan.globalNotices || []).map(notice).join("");
     const bus = (plan.menorcaBusHooks || []).length
-      ? `<a href="${CFG.menorcaBusUrl}" target="_blank" rel="noopener" data-umami-event="planner-menorcabus" class="mt-4 inline-block rounded-full border border-arcilla px-5 py-2 text-sm font-medium text-arcilla transition-colors hover:bg-arcilla hover:text-crema">${esc(CFG.busCTA)} →</a>`
+      ? `<a href="${CFG.menorcaBusUrl}" target="_blank" rel="sponsored noopener" data-umami-event="planner-menorcabus" class="mt-4 inline-block rounded-full border border-arcilla px-5 py-2 text-sm font-medium text-arcilla transition-colors hover:bg-arcilla hover:text-crema">${esc(CFG.busCTA)} →</a>`
       : "";
     out.innerHTML = `
       <div class="rounded-2xl bg-arena/50 p-5 sm:p-6">

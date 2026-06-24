@@ -29,7 +29,7 @@ export const SITE = {
   /** Edición/destino actual. Mañana: 'Mallorca', 'Cyclades'… */
   edition: 'Menorca',
   description:
-    'Calma Society — el arte del lujo tranquilo en el Mediterráneo. Primera edición: Menorca, sus experiencias elevadas.',
+    'Calma Society — el Mediterráneo, sin prisa: una mirada de lujo tranquilo. Primera edición: Menorca, sus experiencias elevadas.',
   url: 'https://calmasociety.com',
 
   /** Token de verificación de Google Search Console (método "etiqueta HTML"). */

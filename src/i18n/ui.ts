@@ -93,7 +93,7 @@ export const ui = {
     "contact.consentLink": "Política de privacidad",
 
     "footer.about":
-      "Calma Society — el arte del lujo tranquilo en el Mediterráneo. Primera edición: Menorca.",
+      "Calma Society — el Mediterráneo, sin prisa: una mirada de lujo tranquilo sobre Menorca. Primera edición.",
     "footer.sections": "Secciones",
     "footer.more": "Más",
     "footer.follow": "Síguenos",
@@ -184,7 +184,7 @@ export const ui = {
     "contact.consentLink": "Privacy policy",
 
     "footer.about":
-      "Calma Society — the art of quiet luxury in the Mediterranean. First edition: Menorca.",
+      "Calma Society — the Mediterranean, at ease: a quiet-luxury look at Menorca. Our first edition.",
     "footer.sections": "Sections",
     "footer.more": "More",
     "footer.follow": "Follow us",
