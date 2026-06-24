@@ -1,0 +1,43 @@
+{
+  "name": "Diving and try-dives in the Illa de l'Aire reserve (S'Algar Diving)",
+  "lang": "en",
+  "translationKey": "buceo-salgar-illa-de-laire",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Dive into the Illa de l'Aire Marine Reserve with a PADI centre that has spent more than thirty years on the south-east coast. From a beginner's try-dive to immersions at more than twenty sites, with its own pool and instructors.",
+  "coordinates": {
+    "lat": 39.843,
+    "lng": 4.282
+  },
+  "area": "Sant Lluís (s'Algar)",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "nautica",
+      "naturaleza",
+      "parejas",
+      "familias"
+    ],
+    "highlights": [
+      "a try-dive to get started, or dives in the Illa de l'Aire reserve",
+      "more than 20 dive sites and guided snorkelling outings",
+      "a PADI 5-star centre with a practice pool, classrooms and its own boats"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.salgardiving.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

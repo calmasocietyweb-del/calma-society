@@ -1,0 +1,43 @@
+{
+  "name": "Llaüt cruise along the north coast (Mar en Calma, Fornells)",
+  "lang": "en",
+  "translationKey": "excursion-llaut-mar-en-calma-fornells",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Sail the north coast aboard a wooden llaüt, the island's traditional Menorcan boat, with two swimming stops in crystal-clear water and a Menorcan aperitif. The wild north, unhurried and without the crowds.",
+  "coordinates": {
+    "lat": 40.0535,
+    "lng": 4.137
+  },
+  "area": "Es Mercadal (Fornells)",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza",
+      "nautica"
+    ],
+    "highlights": [
+      "set out from Fornells aboard a traditional Menorcan llaüt (Portobello / Don Pancho)",
+      "two stops to swim, snorkel and paddleboard in coves along the north coast",
+      "a Menorcan aperitif on board; around 3 h 30 min of calm sailing"
+    ],
+    "durationMin": 210,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.marencalmamenorca.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

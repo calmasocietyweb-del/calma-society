@@ -1,0 +1,42 @@
+{
+  "name": "Torre Vella – open-air yoga and massage (Fontenille)",
+  "lang": "en",
+  "translationKey": "torre-vella-yoga-naturaleza",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Across 200 hectares of nature among olive trees, vines and cliffs, Torre Vella offers yoga and meditation beneath the holm oaks and open-air massage tables facing the sea. Estate wellbeing, free of noise, with the Santa Ponsa spa ten minutes away.",
+  "coordinates": {
+    "lat": 39.9,
+    "lng": 4.1
+  },
+  "area": "Alaior",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "excursion",
+    "idealFor": [
+      "lujo-tranquilo",
+      "naturaleza",
+      "parejas"
+    ],
+    "highlights": [
+      "Daily yoga and meditation beneath holm oaks and olive trees",
+      "Open-air massage facing the cliffs, with natural products",
+      "A wellbeing programme: a yoga class plus a body treatment plus an aperitif on the cliff"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.torre-vella.fontenille-collection.com/en/yoga-wellness-spa-retreat-menorca/",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  }
+}

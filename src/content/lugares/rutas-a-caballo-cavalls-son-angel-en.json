@@ -1,0 +1,42 @@
+{
+  "name": "Horse riding along the north coast (Cavalls Son Àngel)",
+  "lang": "en",
+  "translationKey": "rutas-a-caballo-cavalls-son-angel",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "On horseback across a 300-hectare estate of woodland and unspoilt coast in the north of Ciutadella, out to hidden coves such as Codolar de Biniatram or Ses Fontanelles. Authentic Tramontana nature, far from the crowds, at the horse's pace.",
+  "coordinates": {
+    "lat": 40.022,
+    "lng": 3.86
+  },
+  "area": "Ciutadella (Camí d'Algaiarens)",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "parejas",
+      "familias"
+    ],
+    "highlights": [
+      "a circular ride through the Son Àngel woodland, visiting two unspoilt coves",
+      "a route of around 2.5 hours to Codolar de Biniatram with a stop at Cala Ses Fontanelles",
+      "options from 1 to 3 hours for beginners (children from age 6) and longer routes for experienced riders"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.cavallssonangel.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

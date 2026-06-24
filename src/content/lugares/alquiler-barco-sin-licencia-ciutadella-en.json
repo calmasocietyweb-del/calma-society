@@ -1,0 +1,43 @@
+{
+  "name": "Licence-free boat hire from Ciutadella",
+  "lang": "en",
+  "translationKey": "alquiler-barco-sin-licencia-ciutadella",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Skipper your own boat without a licence from the harbour of Ciutadella and discover the western coves at your own pace. Boats for up to five people with a 15 hp engine, for half a day or a full day.",
+  "coordinates": {
+    "lat": 39.9985,
+    "lng": 3.833
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "parejas",
+      "familias",
+      "nautica",
+      "naturaleza"
+    ],
+    "highlights": [
+      "sail without a licence (boats for up to 5 people, 15 hp engine) up to 5 miles out",
+      "drop anchor and swim freely in the coves and waters of the west",
+      "hire by the half-day or full day from the harbour of Ciutadella"
+    ],
+    "durationMin": 240,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://twinsboats.com",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  }
+}

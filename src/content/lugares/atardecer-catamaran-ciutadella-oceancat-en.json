@@ -1,0 +1,43 @@
+{
+  "name": "Sunset boat trip from Ciutadella",
+  "lang": "en",
+  "translationKey": "atardecer-catamaran-ciutadella-oceancat",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "A boat trip from the harbour of Ciutadella, on the western coast, to watch the sun set from the water — without a car and at a serene pace.",
+  "coordinates": {
+    "lat": 40.0006,
+    "lng": 3.8295
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "familias",
+      "nautica",
+      "naturaleza"
+    ],
+    "highlights": [
+      "boarding in the historic harbour of Ciutadella, without a car",
+      "watching the sun fall over the sea on the western coast",
+      "the golden hour with the light low over the water"
+    ],
+    "durationMin": 150,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  }
+}

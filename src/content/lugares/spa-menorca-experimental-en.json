@@ -1,0 +1,42 @@
+{
+  "name": "Spa Menorca Experimental",
+  "lang": "en",
+  "translationKey": "spa-menorca-experimental",
+  "type": "monumento",
+  "edition": "menorca",
+  "description": "On a 19th-century estate a short walk from Cala Llucalari, the Menorca Experimental spa pairs treatment rooms, a sauna and a hammam with Biologique Recherche skincare and a yoga space. Open to visitors, not only to guests.",
+  "coordinates": {
+    "lat": 39.8902,
+    "lng": 4.0899
+  },
+  "area": "Alaior",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza"
+    ],
+    "highlights": [
+      "Three treatment rooms, a sauna and a steam room (hammam)",
+      "Facials and body treatments with Biologique Recherche; also Nüssa and Alex Carro",
+      "Yoga and pilates classes; a wellbeing space open to visitors (10am-8pm)"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.menorcaexperimental.com/spa",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

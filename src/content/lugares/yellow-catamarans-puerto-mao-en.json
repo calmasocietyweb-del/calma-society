@@ -1,0 +1,44 @@
+{
+  "name": "Maó harbour cruise on a glass-bottomed catamaran (Yellow Catamarans)",
+  "lang": "en",
+  "translationKey": "yellow-catamarans-puerto-mao",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Take in one of the largest natural harbours in the Mediterranean aboard a glass-bottomed catamaran, with the story of Maó told on board. A gentle hour between Illa del Rei, the naval base and the fortress of La Mola.",
+  "coordinates": {
+    "lat": 39.891,
+    "lng": 4.268
+  },
+  "area": "Maó",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "primera-vez",
+      "cultura",
+      "nautica"
+    ],
+    "highlights": [
+      "a full loop of Maó harbour, passing Illa del Rei, Illa Plana and La Mola",
+      "cabins with windows below the waterline to see the seabed",
+      "historical commentary on board; ideal with children, effortless (around 60-70 min)"
+    ],
+    "durationMin": 70,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.yellowcatamarans.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

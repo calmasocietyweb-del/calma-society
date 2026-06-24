@@ -1,0 +1,42 @@
+{
+  "name": "Spa Santa Ponsa (Fontenille)",
+  "lang": "en",
+  "translationKey": "spa-santa-ponsa-fontenille",
+  "type": "monumento",
+  "edition": "menorca",
+  "description": "The Santa Ponsa estate's spa lives in the 18th-century cistern of a former palace, among listed gardens. Indoor pool, sauna and hammam, with Susanne Kaufmann skincare and yoga classes: high-end wellbeing with a spa day open to visitors.",
+  "coordinates": {
+    "lat": 39.902,
+    "lng": 4.093
+  },
+  "area": "Alaior",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza"
+    ],
+    "highlights": [
+      "A spa in the old 18th-century cistern: indoor pool with jets, sauna and hammam",
+      "Treatments with Susanne Kaufmann natural skincare",
+      "Yoga classes and a spa day pass open to non-guests"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.santa-ponsa.fontenille-collection.com/en/spa-minorca-yoga-retreat/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

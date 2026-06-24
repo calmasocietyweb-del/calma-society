@@ -1,0 +1,42 @@
+{
+  "name": "Museu Diocesà de Menorca",
+  "lang": "en",
+  "translationKey": "museu-diocesa-de-menorca",
+  "type": "monumento",
+  "edition": "menorca",
+  "description": "The diocesan museum of Ciutadella, in the former convent of Sant Agustí (el Socors): a cloister of silence, sacred art and archaeology, with work by the Menorcan painter Pere Daura. The ticket can be combined with the Cathedral, a pairing of calm and heritage in the stately heart of the west.",
+  "coordinates": {
+    "lat": 40.0008,
+    "lng": 3.8389
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "lujo-tranquilo",
+      "parejas"
+    ],
+    "highlights": [
+      "stroll the cloister of the convent of Sant Agustí",
+      "see 18th- and 19th-century painting and work by Pere Daura, alongside local archaeology",
+      "combine the visit with the Catedral de Santa Maria on a single ticket"
+    ],
+    "durationMin": 75,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://bisbatdemenorca.org/diocesi/la-catedral-i-el-seu-museu/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

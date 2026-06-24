@@ -1,0 +1,42 @@
+{
+  "name": "Cova des Coloms ('the Cathedral') via the Barranc de Binigaus",
+  "lang": "en",
+  "translationKey": "cova-des-coloms-barranc-binigaus",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "One of the most impressive caves in Menorca, nicknamed 'the Cathedral' for its temple-like proportions (a 50 m central chamber, 24 m high), at the end of a level path through a green ravine. An outing with a touch of magic, fit for the whole family.",
+  "coordinates": {
+    "lat": 39.9266,
+    "lng": 4.0492
+  },
+  "area": "Es Migjorn Gran",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "familias",
+      "cultura"
+    ],
+    "highlights": [
+      "walk the leafy Barranc de Binigaus from Es Migjorn Gran, with almost no climb",
+      "enter through a discreet opening into a great chamber with a soaring ceiling (a possible prehistoric sanctuary)",
+      "extend the walk to the unspoilt beach of Binigaus"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.ajmigjorngran.org",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

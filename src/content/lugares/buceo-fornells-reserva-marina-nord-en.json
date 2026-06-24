@@ -1,0 +1,42 @@
+{
+  "name": "Diving in the Northern Marine Reserve (Fornells Diving Center / Dune)",
+  "lang": "en",
+  "translationKey": "buceo-fornells-reserva-marina-nord",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Dive the seabed of the Northern Marine Reserve from Fornells, with exceptional visibility and dive sites fifteen minutes from the bay. A long-established PADI centre for try-dives, courses and daily outings.",
+  "coordinates": {
+    "lat": 40.0535,
+    "lng": 4.137
+  },
+  "area": "Es Mercadal (Fornells)",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "nautica",
+      "naturaleza",
+      "parejas"
+    ],
+    "highlights": [
+      "dives in the northern marine reserve with excellent visibility",
+      "try-dives for beginners, PADI courses and snorkelling outings",
+      "a PADI 5-star centre with its own boats moored opposite the base"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.divingfornells.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

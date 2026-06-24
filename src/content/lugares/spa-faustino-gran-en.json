@@ -1,0 +1,42 @@
+{
+  "name": "Spa Faustino Gran",
+  "lang": "en",
+  "translationKey": "spa-faustino-gran",
+  "type": "monumento",
+  "edition": "menorca",
+  "description": "The hammam and indoor pool at the Faustino Gran occupy the vault of an old grotto, at the heart of a 16th-century palace in Ciutadella's old town. Quiet luxury in its purest form: stone, water and silence.",
+  "coordinates": {
+    "lat": 39.9998,
+    "lng": 3.8378
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "cultura"
+    ],
+    "highlights": [
+      "A water circuit beneath the vault of a historic grotto (indoor pool, sauna, steam room)",
+      "Massages and facial and body rituals in two treatment rooms",
+      "A 16th-century Relais & Châteaux palace with an olive-tree courtyard in the heart of the old town"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://faustinogran.com/es/spa",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

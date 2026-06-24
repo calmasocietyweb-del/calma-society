@@ -1,0 +1,43 @@
+{
+  "name": "Boat trip to the unspoilt southern coves (Menorca Blava, Ciutadella)",
+  "lang": "en",
+  "translationKey": "excursion-barco-calas-sur-menorca-blava-ciutadella",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "A day at sea from the old harbour of Ciutadella to the most sought-after coves of the south-west, the ones with no road. A swimming platform, a sun deck and rice cooked on board: the comfortable way to see Son Saura, Turqueta and Macarella without a car.",
+  "coordinates": {
+    "lat": 39.9985,
+    "lng": 3.833
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "primera-vez",
+      "naturaleza",
+      "nautica"
+    ],
+    "highlights": [
+      "sail the unspoilt south-west: Son Saura, Es Talaier, Turqueta, Macarella and Macarelleta",
+      "two swimming stops with direct access from the boat's platform",
+      "mixed paella on board and sea caves with no land access; around 7 h"
+    ],
+    "durationMin": 420,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.menorcablava.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

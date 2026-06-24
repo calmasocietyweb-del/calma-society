@@ -1,0 +1,43 @@
+{
+  "name": "Horse riding on the Camí de Cavalls (Son Bou)",
+  "lang": "en",
+  "translationKey": "rutas-a-caballo-son-bou",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Ride a stretch of the Camí de Cavalls on horseback beside the great beach of Son Bou and its wetland, at the calm pace of the Menorcan horse. A serene, different way to feel the landscape, suited to families and beginner riders.",
+  "coordinates": {
+    "lat": 39.897,
+    "lng": 4.083
+  },
+  "area": "Alaior (Son Bou / Torre Solí Nou)",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "excursion",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza",
+      "parejas"
+    ],
+    "highlights": [
+      "a 1-hour family route across the meadow and wetland of Son Bou (from age 5)",
+      "a 2-hour route along the coast for all levels, adjusting the horse's pace",
+      "departure beside Torre Solí Nou, next to the Jardín de Menorca hotel"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.menorcahorseback.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

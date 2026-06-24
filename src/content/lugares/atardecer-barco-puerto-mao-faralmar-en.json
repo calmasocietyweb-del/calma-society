@@ -1,0 +1,43 @@
+{
+  "name": "Sunset boat trip across the harbour of Maó",
+  "lang": "en",
+  "translationKey": "atardecer-barco-puerto-mao-faralmar",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "A private sunset trip across the natural harbour of Maó, one of the largest in the Mediterranean, with a glass of cava and the city lighting up in the distance. A serene way to see the island from the water, a step from the centre.",
+  "coordinates": {
+    "lat": 39.8861,
+    "lng": 4.2906
+  },
+  "area": "Maó",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "gastronomia",
+      "nautica"
+    ],
+    "highlights": [
+      "taking in the great harbour of Maó in the warm light of dusk",
+      "a toast with cava and cold drinks on board",
+      "a central departure from Cala Figuera, with no need for a car"
+    ],
+    "durationMin": 120,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://faralmar.com/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

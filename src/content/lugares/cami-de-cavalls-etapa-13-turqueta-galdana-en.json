@@ -1,0 +1,43 @@
+{
+  "name": "Camí de Cavalls · Stage 13: Cala en Turqueta – Cala Galdana",
+  "lang": "en",
+  "translationKey": "cami-de-cavalls-etapa-13-turqueta-galdana",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "The most photographed stretch of the historic trail that rings the island: 6.4 km of waymarked path through pine woods and limestone ravines, linking three of the loveliest unspoilt coves of the south. Walking it at first light, before the crowds arrive, is a quiet luxury.",
+  "coordinates": {
+    "lat": 39.9268,
+    "lng": 3.913
+  },
+  "area": "Ciutadella / Ferreries",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "excursion",
+    "idealFor": [
+      "parejas",
+      "naturaleza",
+      "primera-vez",
+      "cultura"
+    ],
+    "highlights": [
+      "walk the Turqueta, Macarella and Macarelleta coves, linked on foot by the Camí de Cavalls",
+      "cross the shaded ravine of limestone walls with fig trees and cool greenery",
+      "set off at dawn from the Turqueta car park (it fills early in summer) and finish at Cala Galdana"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.camidecavalls.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Llaüt cruise to the southern coves (Mar en Calma, Cala Galdana)",
+  "lang": "en",
+  "translationKey": "excursion-llaut-mar-en-calma-galdana",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Discover the unspoilt southern coves from the water, setting out from Cala Galdana aboard a llaüt, the traditional Menorcan boat, with swimming stops off turquoise sands that are hard to reach by land. Quiet luxury at the water's edge.",
+  "coordinates": {
+    "lat": 39.936,
+    "lng": 3.965
+  },
+  "area": "Ferreries (Cala Galdana)",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "familias",
+      "nautica"
+    ],
+    "highlights": [
+      "sail the south coast between limestone cliffs and pine woods from Cala Galdana",
+      "two stops to swim, snorkel and paddleboard off unspoilt coves",
+      "a Menorcan aperitif on board; a traditional wooden boat"
+    ],
+    "durationMin": 210,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.marencalmamenorca.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

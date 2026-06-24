@@ -1,0 +1,42 @@
+{
+  "name": "Boat trip around the southern coves and caves (from Cala Galdana)",
+  "lang": "en",
+  "translationKey": "paseo-barco-calas-cuevas-cala-galdana",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "A short boat trip from Cala Galdana reveals the unspoilt south-western coves from the water —Mitjana, Trebalúger, Macarella— and caves you cannot see any other way, with a stop for a swim in turquoise water. Ideal for little ones: no walking and time aboard.",
+  "coordinates": {
+    "lat": 39.936,
+    "lng": 3.965
+  },
+  "area": "Ferreries (Cala Galdana)",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza",
+      "primera-vez"
+    ],
+    "highlights": [
+      "see Cala Mitjana, Trebalúger and Macarella from the sea, along with hidden caves",
+      "one or two swimming stops in crystal-clear water (snorkelling masks usually provided)",
+      "an easy outing of about 2 h with a toilet and café on board, suitable for all ages"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  }
+}

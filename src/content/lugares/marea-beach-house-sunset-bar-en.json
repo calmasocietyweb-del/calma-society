@@ -1,0 +1,42 @@
+{
+  "name": "Marea Beach House – Sunset Bar (Cala Blanca)",
+  "lang": "en",
+  "translationKey": "marea-beach-house-sunset-bar",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "A cocktail terrace facing the Mediterranean at Cala Blanca, on the western coast, made for the sunset drink with music in the background. West-facing, no booking: arrive with time to spare in summer.",
+  "coordinates": {
+    "lat": 39.969,
+    "lng": 3.834
+  },
+  "area": "Ciutadella (Cala Blanca)",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "gastronomia"
+    ],
+    "highlights": [
+      "a signature cocktail while you watch the sun set over the sea",
+      "an open terrace facing the water on the western coast",
+      "the relaxed feel of a beach house near Ciutadella"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://mareabeachhouse.com/sunset-bar/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

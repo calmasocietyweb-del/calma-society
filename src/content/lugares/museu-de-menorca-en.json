@@ -1,0 +1,43 @@
+{
+  "name": "Museu de Menorca",
+  "lang": "en",
+  "translationKey": "museu-de-menorca",
+  "type": "monumento",
+  "edition": "menorca",
+  "description": "The island's leading museum, set in the former Franciscan friary of Sant Francesc (18th c.), with a beautiful Baroque cloister. The best thread for understanding Menorca, from Talayotic prehistory to the British legacy, before heading out to explore it.",
+  "coordinates": {
+    "lat": 39.8911,
+    "lng": 4.2606
+  },
+  "area": "Maó",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "primera-vez",
+      "familias",
+      "lujo-tranquilo"
+    ],
+    "highlights": [
+      "walk through the largest archaeological collection on the island (more than 36,000 pieces), from the Talayotic culture to the Islamic period",
+      "stroll the Baroque cloister of the former friary of Sant Francesc",
+      "put the taulas and settlements in context before visiting them on the ground"
+    ],
+    "durationMin": 90,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.museudemenorca.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

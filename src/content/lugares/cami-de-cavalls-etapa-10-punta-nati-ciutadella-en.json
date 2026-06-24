@@ -1,0 +1,42 @@
+{
+  "name": "Camí de Cavalls · Stage 10: Punta Nati – Ciutadella",
+  "lang": "en",
+  "translationKey": "cami-de-cavalls-etapa-10-punta-nati-ciutadella",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "A short, easy stage (5 km) between the austere Punta Nati lighthouse, in a stony landscape of shepherds' huts, and the harbour of Ciutadella. Perfect for a first taste of the Camí de Cavalls in the late afternoon.",
+  "coordinates": {
+    "lat": 40.0578,
+    "lng": 3.8228
+  },
+  "area": "Ciutadella",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "primera-vez",
+      "parejas"
+    ],
+    "highlights": [
+      "set out from the solitary Punta Nati lighthouse and its dry-stone landscape",
+      "see the barraques, the old dry-stone shepherds' constructions",
+      "finish with a stroll along the mouth of Ciutadella harbour at sunset"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.camidecavalls.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Sunset by boat from Binibeca",
+  "lang": "en",
+  "translationKey": "atardecer-barco-binibeca-faralmar",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "A sunset boat trip from Cala Torret, next to Binibeca, with cava and cold drinks on board and the whitewashed fishermen's cottages set against the sea. A calm south-eastern coast, ideal for an anchorage and a last swim.",
+  "coordinates": {
+    "lat": 39.8147,
+    "lng": 4.2389
+  },
+  "area": "Sant Lluís (Binibeca / Cala Torret)",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "nautica",
+      "naturaleza"
+    ],
+    "highlights": [
+      "sailing the south-eastern coast of whitewashed cottages as evening falls",
+      "dropping anchor in a sheltered cove for a swim",
+      "a toast with cava and snacks on board"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://faralmar.com/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

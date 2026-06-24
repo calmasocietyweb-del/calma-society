@@ -1,0 +1,42 @@
+{
+  "name": "Lago Spa (Lago Resort)",
+  "lang": "en",
+  "translationKey": "lago-spa-cala-en-bosch",
+  "type": "monumento",
+  "edition": "menorca",
+  "description": "By the sea at Cala en Bosch, the Lago Resort spa offers a thermal circuit — heated pool, jacuzzi, sauna and Turkish bath — and bespoke treatments. Open to outside visitors for a calm day with a Mediterranean feel.",
+  "coordinates": {
+    "lat": 39.9265,
+    "lng": 3.8375
+  },
+  "area": "Ciutadella (Cala en Bosch)",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "familias"
+    ],
+    "highlights": [
+      "Thermal circuit: heated pool, jets, jacuzzi, sauna and Turkish bath",
+      "Body and facial rituals and treatments, therapeutic massages",
+      "A day spa open to outside visitors, by the sea"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.lagoresortmenorca.com/en/spa/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Lloc de Menorca (zoo and educational farm)",
+  "lang": "en",
+  "translationKey": "lloc-de-menorca-zoo-granja",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "A wildlife haven just off the Me-1 where little ones feed the pygmy goats, walk among free-roaming lemurs and, in summer, cool off in the water area. A full day of nature without leaving the centre of the island.",
+  "coordinates": {
+    "lat": 39.9072,
+    "lng": 4.2225
+  },
+  "area": "Alaior",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "centro",
+    "cluster": "talayotic-alaior",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza"
+    ],
+    "highlights": [
+      "feed the pygmy goats and see ring-tailed lemurs roaming semi-free",
+      "round off the visit with the 'Talaquàtic' water area and the playground (in summer)",
+      "have a picnic in the picnic area; buy your ticket online at a discount"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://llocdemenorca.com/en/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Catedral de Santa Maria de Ciutadella",
+  "lang": "en",
+  "translationKey": "catedral-de-santa-maria-ciutadella",
+  "type": "monumento",
+  "edition": "menorca",
+  "description": "The Gothic cathedral of Menorca, raised after the conquest by Alfonso III (1287) over the former main mosque. The monumental heart of Ciutadella's old town and a serene cultural stop, a step away from stately palaces and squares.",
+  "coordinates": {
+    "lat": 40.0018,
+    "lng": 3.8377
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "primera-vez",
+      "parejas",
+      "lujo-tranquilo"
+    ],
+    "highlights": [
+      "admire the Catalan Gothic nave and the Neoclassical portal",
+      "place the city's history: a cathedral over the Andalusi main mosque",
+      "link it with a walk through the old town, the Born and the palaces of Ciutadella"
+    ],
+    "durationMin": 45,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://bisbatdemenorca.org/diocesi/la-catedral-i-el-seu-museu/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

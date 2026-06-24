@@ -1,0 +1,42 @@
+{
+  "name": "Aquarock (water park, Cala'n Bosch)",
+  "lang": "en",
+  "translationKey": "aquarock-parque-acuatico-calan-bosch",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "The big water park of the west, next to Cala'n Bosch: the island's only wave pool, slides for every age and a children's area for the youngest. The refreshing day out par excellence with children.",
+  "coordinates": {
+    "lat": 39.929,
+    "lng": 3.818
+  },
+  "area": "Ciutadella",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "vida-nocturna"
+    ],
+    "highlights": [
+      "swim in the only wave pool in Menorca",
+      "slides for older children and a safe splash zone for the little ones",
+      "a full day with a restaurant, sun loungers and go-karting; tickets cheaper online"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://aquarock-menorca.com/en/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

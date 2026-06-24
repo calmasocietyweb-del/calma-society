@@ -1,0 +1,42 @@
+{
+  "name": "Easy Camí de Cavalls: Es Grau – Sa Mesquida (family stretch)",
+  "lang": "en",
+  "translationKey": "cami-de-cavalls-es-grau-sa-mesquida-familiar",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "A gentle stretch of the historic Camí de Cavalls (GR-223) between the fishing village of Es Grau and Sa Mesquida beach, deep in the Natural Park. The wooden boardwalk over the wetland takes a pushchair; the first coastal walk to enjoy with children, away from the climbs.",
+  "coordinates": {
+    "lat": 39.956,
+    "lng": 4.266
+  },
+  "area": "Maó (Es Grau)",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "excursion",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza"
+    ],
+    "highlights": [
+      "cross the wooden boardwalk over the Sa Mesquida wetland (pushchair-friendly along its level section)",
+      "walk the GR-223 through a protected coastal landscape, within the Biosphere Reserve",
+      "pair it with a calm swim at the shallow-water beach of Es Grau"
+    ],
+    "durationMin": 130,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.camidecavalls360.com/es/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Yellow Catamarans (glass-bottom catamaran, Maó harbour)",
+  "lang": "en",
+  "translationKey": "yellow-catamarans-fondo-cristal-mao",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "A serene cruise around the largest natural harbour in the Mediterranean aboard a glass-bottom catamaran: the story of Maó above the water and marine life below, with no effort and no seasickness. The first taste of the Menorcan sea for children.",
+  "coordinates": {
+    "lat": 39.8917,
+    "lng": 4.2747
+  },
+  "area": "Maó",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "primera-vez",
+      "cultura"
+    ],
+    "highlights": [
+      "watch fish and the seabed through the glass hull from the lower deck",
+      "cross the harbour mouth past the fortresses and the Illa del Rei",
+      "board on foot at the Moll de Llevant, no car needed and easy to reach"
+    ],
+    "durationMin": 75,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.yellowcatamarans.com/en/home",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

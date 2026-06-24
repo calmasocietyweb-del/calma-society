@@ -1,0 +1,43 @@
+{
+  "name": "Kayaking and snorkelling in the Northern Marine Reserve (Fornells)",
+  "lang": "en",
+  "translationKey": "kayak-snorkel-fornells-reserva-marina",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Set out by paddle from the bay of Fornells to reach coves and caves that can only be approached from the water, with a snorkelling stop in the northern marine reserve. Calm sea, an unhurried pace and clear water.",
+  "coordinates": {
+    "lat": 40.0535,
+    "lng": 4.137
+  },
+  "area": "Es Mercadal (Fornells)",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "naturaleza",
+      "parejas",
+      "nautica"
+    ],
+    "highlights": [
+      "paddle the sheltered bay of Fornells and the coastline of the marine reserve",
+      "slip into coves and caves with no land access and swim straight from the kayak",
+      "guided snorkelling with equipment included and a safety briefing beforehand"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://katayak.net",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

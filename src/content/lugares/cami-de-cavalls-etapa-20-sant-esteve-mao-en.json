@@ -1,0 +1,43 @@
+{
+  "name": "Camí de Cavalls · Stage 20: Cala de Sant Esteve – Maó",
+  "lang": "en",
+  "translationKey": "cami-de-cavalls-etapa-20-sant-esteve-mao",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "The stage that completes the loop around the island: 6 easy kilometres steeped in military history beside the great natural harbour of Maó, passing Fort Marlborough and skirting the La Mola fortress. Culture and coast in an accessible walk.",
+  "coordinates": {
+    "lat": 39.8736,
+    "lng": 4.2986
+  },
+  "area": "Es Castell / Maó",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "excursion",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "primera-vez",
+      "familias"
+    ],
+    "highlights": [
+      "start beside Fort Marlborough, an 18th-century British fort at Cala de Sant Esteve",
+      "skirt the mouth of the natural harbour of Maó, one of the largest in the Mediterranean",
+      "see the imposing Fortalesa de la Mola from the outside"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.camidecavalls.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

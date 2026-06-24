@@ -1,0 +1,42 @@
+{
+  "name": "Guided kayak to sea caves from Cala Galdana",
+  "lang": "en",
+  "translationKey": "kayak-galdana-rutas-cuevas-familia",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "From the sheltered calm of Cala Galdana, a kayak outing uncovers sea caves and coves reachable only from the water. With guided routes designed for beginners, it is one of the loveliest ways for the family to paddle together.",
+  "coordinates": {
+    "lat": 39.936,
+    "lng": 3.965
+  },
+  "area": "Ferreries (Cala Galdana)",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "naturaleza",
+      "nautica",
+      "parejas"
+    ],
+    "highlights": [
+      "paddle on calm water and slip into the sea caves of the unspoilt coast",
+      "choose a guided beginner route, suitable for families and first-timers",
+      "single or double kayak hire with equipment included; book ahead"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  }
+}

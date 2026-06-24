@@ -1,0 +1,43 @@
+{
+  "name": "Sunset sail by catamaran from Fornells",
+  "lang": "en",
+  "translationKey": "atardecer-catamaran-fornells",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "A catamaran sail from the harbour of Fornells to watch the sun set behind Cap de Cavalleria, with a quiet anchorage for a swim and drinks on board. Silent sailing along the north coast, far from the noise.",
+  "coordinates": {
+    "lat": 40.0536,
+    "lng": 4.1372
+  },
+  "area": "Es Mercadal (Fornells)",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza",
+      "nautica"
+    ],
+    "highlights": [
+      "sailing through the northern marine reserve at sunset",
+      "dropping anchor in a sheltered cove for a last swim",
+      "a toast with drinks and snacks as the sun goes down"
+    ],
+    "durationMin": 135,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.boatmenorca.es/catamaran-excursions-menorca/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

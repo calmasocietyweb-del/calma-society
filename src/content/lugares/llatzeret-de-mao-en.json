@@ -1,0 +1,43 @@
+{
+  "name": "Llatzeret de Maó",
+  "lang": "en",
+  "translationKey": "llatzeret-de-mao",
+  "type": "monumento",
+  "edition": "menorca",
+  "description": "A former quarantine lazaretto (18th-19th c.) on its own island within Maó harbour, ringed by walls. It is visited by crossing over by boat from Cales Fonts: one of the most singular and serene heritage experiences on the island.",
+  "coordinates": {
+    "lat": 39.8766,
+    "lng": 4.3039
+  },
+  "area": "Maó (isla del puerto)",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "lujo-tranquilo",
+      "naturaleza",
+      "parejas"
+    ],
+    "highlights": [
+      "cross by boat from Cales Fonts to the walled island of the lazaretto",
+      "tour the quarantine courtyards, the chapel and the isolation quarters with a guide",
+      "read the public-health history of the Mediterranean in one of the largest natural harbours in the world"
+    ],
+    "durationMin": 180,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.menorca.es/en/Visitas_guiadas_a_la_Illa_de_Llatzeret/14057",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

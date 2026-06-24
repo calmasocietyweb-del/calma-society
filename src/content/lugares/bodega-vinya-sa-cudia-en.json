@@ -1,0 +1,43 @@
+{
+  "name": "Vinya Sa Cúdia",
+  "lang": "en",
+  "translationKey": "bodega-vinya-sa-cudia",
+  "type": "monumento",
+  "edition": "menorca",
+  "description": "A family winery run by six siblings within the Parc Natural de s'Albufera des Grau, on one of the few slate soils in the Balearics. Unirrigated malvasía that withstands the tramontana, in a protected, silent corner of the east.",
+  "coordinates": {
+    "lat": 39.92,
+    "lng": 4.225
+  },
+  "area": "Maó (carretera des Grau, s'Albufera des Grau)",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "albufera-favaritx",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "naturaleza",
+      "parejas",
+      "lujo-tranquilo"
+    ],
+    "highlights": [
+      "discover an unirrigated malvasía vineyard inside the natural park",
+      "taste their whites (Favàritx, Sa Cudia) and the Favàritx red",
+      "arrange your visit in advance (by appointment only)"
+    ],
+    "durationMin": 75,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.illesbalears.travel/en/menorca/winery-vinya-sa-cudia",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Birdwatching at s'Albufera des Grau (park trails)",
+  "lang": "en",
+  "translationKey": "birdwatching-salbufera-des-grau",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "The only nature park in Menorca and the heart of the Biosphere Reserve: three short, level trails with hides over the lagoon to watch herons, cormorants, grebes and birds of prey. Serene nature, free of charge and within everyone's reach.",
+  "coordinates": {
+    "lat": 39.9508,
+    "lng": 4.2453
+  },
+  "area": "Maó",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "familias",
+      "parejas"
+    ],
+    "highlights": [
+      "walk the Santa Madrona trail (2.8 km, the best for water birds) with its hides over the lagoon",
+      "complete the Sa Gola (1.7 km, dunes and beach) and Cala Llimpa (1.7 km, Ses Puntes viewpoint) trails",
+      "start at the Centre de Recepció Rodríguez Femenias (Maó–Es Grau road, km 3.5) to get your bearings"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.caib.es/sites/xarxanatura/es/parc_natural_de_salbufera_des_grau-46059/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

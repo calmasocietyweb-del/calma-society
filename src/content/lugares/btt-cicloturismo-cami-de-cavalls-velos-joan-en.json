@@ -1,0 +1,42 @@
+{
+  "name": "Cycle touring and mountain biking on the Camí de Cavalls (Velos Joan hire)",
+  "lang": "en",
+  "translationKey": "btt-cicloturismo-cami-de-cavalls-velos-joan",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Discover the coast on two wheels: parts of the Camí de Cavalls are open to mountain bikes, and the island is made for cycling. Velos Joan, a leading workshop and hire shop in Ciutadella, offers mountain, gravel and electric bikes with delivery to hotels across the island.",
+  "coordinates": {
+    "lat": 40.0014,
+    "lng": 3.8416
+  },
+  "area": "Ciutadella",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "parejas",
+      "familias"
+    ],
+    "highlights": [
+      "hire a quality mountain, gravel or e-bike (hotel delivery available)",
+      "ride the cyclable sections of the Camí de Cavalls (mountain-bike routes in Basic, Standard or Plus versions)",
+      "choose the level to match your experience; the hardest sections are for expert riders only"
+    ],
+    "durationMin": 240,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://velosjoan.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

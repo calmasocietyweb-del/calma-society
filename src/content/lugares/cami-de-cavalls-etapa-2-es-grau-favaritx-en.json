@@ -1,0 +1,41 @@
+{
+  "name": "Camí de Cavalls · Stage 2: Es Grau – Cap de Favàritx",
+  "lang": "en",
+  "translationKey": "cami-de-cavalls-etapa-2-es-grau-favaritx",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "8.6 km through the heart of the Parc Natural de s'Albufera des Grau, a UNESCO Biosphere Reserve, out to the lighthouse and the lunar landscape of black slate at Favàritx. Protected nature at its purest, without a single building on the horizon.",
+  "coordinates": {
+    "lat": 39.956,
+    "lng": 4.266
+  },
+  "area": "Maó",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "highlights": [
+      "cross the only nature park in Menorca, the core of the Biosphere Reserve",
+      "finish among the black slate rocks and the Favàritx lighthouse",
+      "look out over the unspoilt coves of Tortuga and Presili halfway along"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.camidecavalls.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}
