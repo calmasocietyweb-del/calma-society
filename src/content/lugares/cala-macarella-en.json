@@ -4,7 +4,10 @@
   "translationKey": "cala-macarella",
   "type": "cala",
   "description": "The definitive postcard of southern Menorca: a horseshoe of white sand, turquoise water and pines down to the shore. Beside it, its little sister, Cala Macarelleta. Serene beauty, best enjoyed early.",
-  "coordinates": { "lat": 39.9356, "lng": 3.9286 },
+  "coordinates": {
+    "lat": 39.9356,
+    "lng": 3.9286
+  },
   "area": "South (Ciutadella)",
   "practicalInfo": {
     "acceso": "On foot from Cala Galdana (~30 min along the Camí de Cavalls) or by seasonal bus; car access is restricted in summer",
@@ -12,8 +15,16 @@
     "servicios": "Seasonal beach bar; bring water and shade",
     "mejorEpoca": "June and September; in July-August, first thing in the morning"
   },
-  "images": ["/uploads/cala-macarella.webp"],
-  "tags": ["south", "turquoise", "white sand", "camí de cavalls", "ciutadella"],
+  "images": [
+    "/uploads/cala-macarella.webp"
+  ],
+  "tags": [
+    "south",
+    "turquoise",
+    "white sand",
+    "camí de cavalls",
+    "ciutadella"
+  ],
   "status": "published",
   "seo": {
     "description": "Southern Menorca's most iconic cove: a horseshoe of white sand, turquoise water and pines to the shore, with Cala Macarelleta beside it. Best early."
@@ -38,6 +49,11 @@
     "dataCertainty": "alta",
     "lastVerified": "2026-06-22",
     "shuttleInfo": "1 Jun–30 Sep: private cars and motorbikes are banned. Shuttle bus from Ciutadella, licensed taxi, bike or on foot (Camí de Cavalls from Cala Galdana, ~45 min). Off-season: drive to the free car park, 15-20 min walk away.",
-    "effortNote": "Reached on foot or by shuttle in summer, along the Camí de Cavalls. No reliable services: bring water and shade."
+    "effortNote": "Reached on foot or by shuttle in summer, along the Camí de Cavalls. No reliable services: bring water and shade.",
+    "highlights": [
+      "the postcard of the south: a horseshoe of white sand, turquoise and pines",
+      "in summer reached by shuttle bus from Ciutadella or on foot along the Camí de Cavalls",
+      "no reliable services: head down with a picnic, water and shade"
+    ]
   }
 }

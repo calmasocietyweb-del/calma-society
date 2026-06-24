@@ -4,14 +4,21 @@
   "translationKey": "naveta-tudons",
   "type": "monumento",
   "description": "Menorca's best-preserved Talayotic funerary monument and a symbol of the island. It is part of Talayotic Menorca, a UNESCO World Heritage Site since 2023.",
-  "coordinates": { "lat": 39.9967, "lng": 3.884 },
+  "coordinates": {
+    "lat": 39.9967,
+    "lng": 3.884
+  },
   "area": "Ciutadella (west)",
   "practicalInfo": {
     "acceso": "Beside the Me-1 road, with signposted parking",
     "horario": "Open-air site; check access hours",
     "mejorEpoca": "Year-round; especially beautiful at sunset"
   },
-  "tags": ["talayotic", "heritage", "unesco"],
+  "tags": [
+    "talayotic",
+    "heritage",
+    "unesco"
+  ],
   "status": "published",
   "planner": {
     "zone": "eje-me1",
@@ -33,6 +40,11 @@
     "dataCertainty": "alta",
     "lastVerified": "2026-06-22",
     "effortNote": "Car park beside the Me-1 road (km ~40) + short 5-min walk on a firm dirt track. No shade: avoid midday in summer.",
-    "seasonalHours": "Morning or late afternoon; any season. Best light and least heat early or late in the day."
+    "seasonalHours": "Morning or late afternoon; any season. Best light and least heat early or late in the day.",
+    "highlights": [
+      "the best-preserved talayotic funerary monument on the island",
+      "a short stop beside the Me-1, ideal on the way between Ciutadella and the centre",
+      "go first or last thing in the day: there is no shade"
+    ]
   }
 }

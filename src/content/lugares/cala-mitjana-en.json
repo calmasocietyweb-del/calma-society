@@ -4,7 +4,10 @@
   "translationKey": "cala-mitjana",
   "type": "cala",
   "description": "A wide cove of pale sand and clear water, framed by cliffs that some use to leap into the sea. Near Cala Galdana, it pairs beauty with reasonable access.",
-  "coordinates": { "lat": 39.9355, "lng": 3.9686 },
+  "coordinates": {
+    "lat": 39.9355,
+    "lng": 3.9686
+  },
   "area": "South (Ferreries)",
   "practicalInfo": {
     "acceso": "Easy walk (~15 min) from the car park through pine woods",
@@ -12,8 +15,15 @@
     "servicios": "No facilities: bring everything you need",
     "mejorEpoca": "June and September; in August, early"
   },
-  "images": ["/uploads/cala-mitjana.webp"],
-  "tags": ["south", "cliffs", "clear water", "ferreries"],
+  "images": [
+    "/uploads/cala-mitjana.webp"
+  ],
+  "tags": [
+    "south",
+    "cliffs",
+    "clear water",
+    "ferreries"
+  ],
   "status": "published",
   "planner": {
     "zone": "sur-centro",
@@ -35,6 +45,11 @@
     "dataCertainty": "alta",
     "lastVerified": "2026-06-22",
     "shuttleInfo": "Large free dirt car park (~250 spaces) + 1.2 km signposted downhill path. Arrive before 10am in peak season. Bus L52 (Ciutadella) / L51 (Maó); also on foot from Cala Galdana along the Camí de Cavalls.",
-    "effortNote": "1.2 km downhill path, mostly easy and family-friendly; not for wheelchairs."
+    "effortNote": "1.2 km downhill path, mostly easy and family-friendly; not for wheelchairs.",
+    "highlights": [
+      "walk the 1.2 km path from the car park down to the pale-sand cove",
+      "watch some leap into the water from the cliffs (with care)",
+      "arrive before 10 am in summer: the car park fills up early"
+    ]
   }
 }

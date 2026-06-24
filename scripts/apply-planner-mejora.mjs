@@ -10,16 +10,20 @@
 import { readFileSync, writeFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 
+// Idioma: `node scripts/apply-planner-mejora.mjs [es|en]` (default es). Para EN lee
+// el staging traducido (planner-mejora-en-<zona>.json) y parchea las fichas EN.
+const LANG = process.argv[2] === "en" ? "en" : "es";
+const PREFIX = LANG === "en" ? "planner-mejora-en-" : "planner-mejora-";
 const STAGING = ".tmp_research";
 const LUG = "src/content/lugares";
-const OUT = "src/data/planner-food.es.json";
+const OUT = `src/data/planner-food.${LANG}.json`;
 const ZONES = ["norte", "sur-centro", "sur-oeste", "oeste", "este", "sur-este", "centro"];
 
-// Mapa translationKey(ES) → fichero, para parchear por id de forma robusta.
-const esByKey = new Map();
+// Mapa translationKey(idioma) → fichero, para parchear por id de forma robusta.
+const byKey = new Map();
 for (const file of readdirSync(LUG).filter((f) => f.endsWith(".json"))) {
   const f = JSON.parse(readFileSync(join(LUG, file), "utf8"));
-  if (f.lang === "es" && f.translationKey) esByKey.set(f.translationKey, file);
+  if (f.lang === LANG && f.translationKey) byKey.set(f.translationKey, file);
 }
 
 // Neutraliza datos no confirmados (de la verificación adversarial y del contraste
@@ -31,9 +35,14 @@ for (const file of readdirSync(LUG).filter((f) => f.endsWith(".json"))) {
 function sanitize(s) {
   if (typeof s !== "string") return s;
   return s
+    // El Diamante: "cuarta/4ª generación" no confirmado (ES y EN).
     .replace(/cuarta generaci[oó]n/gi, "negocio familiar")
     .replace(/cuatro generaciones/gi, "varias generaciones")
-    .replace(/Ca n'Aguedet \(templo de la cocina autóctona, premio a la mejor cocina local 2016, abre solo a mediodía mar-jue\) o Es Molí des Racó/g, "Es Molí des Racó");
+    .replace(/(?:in its |its )?fourth[- ]generation/gi, "family-run")
+    .replace(/four generations/gi, "several generations")
+    // Ca n'Aguedet: estado actual sin confirmar → se retira, queda Es Molí des Racó.
+    // Tolerante a la redacción ES y EN ("… o/or Es Molí des Racó").
+    .replace(/Ca n'Aguedet[^.;]*?\b(?:o|or)\s+Es Molí des Racó/gi, "Es Molí des Racó");
 }
 function sanitizeDeep(o) {
   if (typeof o === "string") return sanitize(o);
@@ -56,7 +65,7 @@ const BASE_ZONES = {
 
 for (const zone of ZONES) {
   let st;
-  try { st = JSON.parse(readFileSync(join(STAGING, `planner-mejora-${zone}.json`), "utf8")); }
+  try { st = JSON.parse(readFileSync(join(STAGING, `${PREFIX}${zone}.json`), "utf8")); }
   catch { console.log(`(falta staging de ${zone})`); continue; }
   sanitizeDeep(st);
 
@@ -92,7 +101,7 @@ for (const zone of ZONES) {
   // Parchea highlights en las fichas ES.
   for (const h of st.highlights || []) {
     hlTotal++;
-    const file = esByKey.get(h.id);
+    const file = byKey.get(h.id);
     if (!file) { missing.push(`${zone}:${h.id}`); continue; }
     const path = join(LUG, file);
     const f = JSON.parse(readFileSync(path, "utf8"));

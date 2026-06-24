@@ -4,7 +4,10 @@
   "translationKey": "cala-pregonda",
   "type": "cala",
   "description": "One of the north coast's most iconic coves: reddish sand, islets just offshore and an almost lunar feel. It has no facilities, and that is precisely its charm.",
-  "coordinates": { "lat": 40.0489, "lng": 4.0512 },
+  "coordinates": {
+    "lat": 40.0489,
+    "lng": 4.0512
+  },
   "area": "North (Es Mercadal)",
   "practicalInfo": {
     "acceso": "On foot, about 30 min from the Binimel·là car park",
@@ -12,8 +15,14 @@
     "servicios": "None: bring water, food and shade",
     "mejorEpoca": "May–June and September; in August, go early"
   },
-  "images": ["/uploads/cala-pregonda.webp"],
-  "tags": ["north", "red sand", "camí de cavalls"],
+  "images": [
+    "/uploads/cala-pregonda.webp"
+  ],
+  "tags": [
+    "north",
+    "red sand",
+    "camí de cavalls"
+  ],
   "status": "published",
   "planner": {
     "zone": "norte",
@@ -34,6 +43,11 @@
     "dataCertainty": "alta",
     "lastVerified": "2026-06-22",
     "effortNote": "No road access to the cove: ~30 min walk (2 km) along the Camí de Cavalls from the Binimel·la car park. No services; sturdy footwear, water and shade are essential.",
-    "seasonalHours": "June or September; in July/August the Binimel·la car park fills up early. Best with little northerly wind."
+    "seasonalHours": "June or September; in July/August the Binimel·la car park fills up early. Best with little northerly wind.",
+    "highlights": [
+      "the reddish sand and the islets of one of the north's most iconic coves",
+      "walking around 30 min along the Camí de Cavalls from Binimel·la",
+      "choosing a day with little north wind; no facilities"
+    ]
   }
 }

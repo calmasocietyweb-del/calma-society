@@ -1,4 +1,151 @@
 {
-  "zones": {},
-  "bases": {}
+  "zones": {
+    "norte": {
+      "whatToEat": "The north is the realm of Menorcan lobster and rockfish: Fornells, set on its sheltered bay, is the recognised birthplace of caldereta de langosta (Menorcan lobster stew), slow-cooked in an earthenware tià. Inland, Es Mercadal contributes the island's sweets (ensaïmadas, carquinyols, amargos, pastissets) from a century-old bakery, the perfect prelude on the way to the cape.",
+      "breakfast": "The wild north (Cavalleria, Pregonda) has no cafés by the cove: have breakfast before you set off. In Fornells, a quiet coffee facing the llaüts in the harbour; passing through Es Mercadal, an ensaïmada or freshly made carquinyols from a bakery with more than a century of history (Cas Sucrer, since 1884) make for the island's breakfast done with discernment.",
+      "lunch": "At midday, lobster and seafood rice by the water in Fornells, or a simple plate of fresh fish looking out over the bay. At the Cap de Cavalleria the facilities are basic and seasonal (the ecomuseu café by the lighthouse): for a proper meal, head back to Fornells.",
+      "dinner": "The great northern dinner is caldereta de langosta in Fornells, ideally with the bay calm at sunset. Tables of note: Sa Llagosta (chef's cooking built around the lobster), Es Cranc (a classic with its own lobster tank) and El Pescador (in the premises where, more than a century ago, the stew first began to be served). Always book in summer: the tables are few and much in demand.",
+      "signature": {
+        "title": "Caldereta de langosta in Fornells, with the bay calm",
+        "desc": "Dining on the authentic Menorcan lobster stew in its birthplace, at a table facing the harbour of Fornells (Sa Llagosta, chef-led, or the classic Es Cranc), with the llaüts swaying in the sheltered bay and the light falling over the water. The island dish par excellence, in the one place where it was born.",
+        "idealFor": [
+          "lujo-tranquilo",
+          "gastronomia",
+          "parejas"
+        ]
+      }
+    },
+    "sur-centro": {
+      "whatToEat": "The south-centre is Menorca's farming and livestock belt (Es Migjorn Gran was founded in the 18th century as a country community): here you eat produce from the land and the sea right by the ravines and the beaches. The identity is honest Menorcan cooking -cold oliaigua in summer with figs or melon, market fish over coals, salads with PDO Mahón-Menorca cheese, caldereta- plus a couple of village inns where you still feel like a guest rather than a customer.",
+      "breakfast": "This area is one of resorts (Son Bou, Sant Tomàs) and a farming village (Es Migjorn Gran), not of signature cafés: have an unhurried breakfast on your hotel terrace or at a café along the seafront in Son Bou or Sant Tomàs, or head up to Es Migjorn Gran for coffee in a quiet, whitewashed square. If you visit Alaior, there you do find historic cheese workshops and an artisan ice-cream maker to start the day. (No confirmed café by name; an honest guide by area.)",
+      "lunch": "Lunch with your feet almost in the sand: Es Bruc, on Sant Adeodato beach (Sant Tomàs), a beach restaurant open since 1950 with fresh fish of the day, Menorcan meat over coals and salads with PDO cheese -no bookings at lunchtime, so it pays to arrive early-. A village alternative: head up to Es Migjorn Gran for traditional cooking (oliaigua, stews) at an inn with character.",
+      "dinner": "Two considered dinners in Es Migjorn Gran, both in Menorcan houses more than 200 years old: Ca Na Pilar (listed in the Michelin Guide; chef Víctor Lidón, formerly of Racó de Can Fabes and Abac; around 60% local produce, grandmother's recipes reinterpreted) and S'Engolidor (an inn and restaurant since 1983, home cooking overlooking the ravine). For a quiet-luxury dining experience with its own vineyard, Torralbenc (Alaior, on the edge of the area).",
+      "signature": {
+        "title": "A Menorcan ravine-side dinner in Es Migjorn Gran",
+        "desc": "Head up to the farming village of Es Migjorn Gran at dusk and dine on cooking from the land, reinterpreted with craft, at Ca Na Pilar (Michelin Guide, around 60% local produce) or on home cooking at the S'Engolidor inn, looking over the ravine. Quiet luxury: local produce, a centuries-old country house and the feeling of being a guest, not a customer.",
+        "idealFor": [
+          "lujo-tranquilo",
+          "gastronomia",
+          "parejas"
+        ]
+      }
+    },
+    "sur-oeste": {
+      "whatToEat": "The south-west is Ciutadella's unspoilt coves (Macarella, Turqueta, Son Saura, Talaier): pine woods down to the shore and ZERO services, so the gastronomic identity of a beach day is a well-made picnic —bread, PDO Mahón-Menorca cheese, Menorcan sobrassada (softer and creamier than Mallorca's) and farm fruit—, bought beforehand in Ciutadella. The table with a tablecloth belongs to Ciutadella's harbour and the built-up corner of Cala en Bosc–Son Xoriguer, where seafood cooking rules: caldereta de langosta (Menorcan lobster stew), fish and shellfish of the day.",
+      "breakfast": "Have breakfast in Ciutadella before heading down to the coves (nothing is open in the south). A safe anchor: El Diamante, a Ses Voltes pastry shop founded in 1935 and now family-run, with a counter for coffee and an ensaïmada or a llonguet roll with sobrassada; for something more genuine, the arcades of the Mercat des Peix (Plaça de la Llibertat, opens 9:00). Buy your beach picnic right there.",
+      "lunch": "At midday there are two plans. At the unspoilt coves (Macarella, Turqueta, Son Saura), a picnic in the shade of the pines: there is no guaranteed beach bar, so bring water and food. For a proper table, the built-up south-western corner —Cala en Bosc and its lagoon/marina— gathers fish and rice restaurants by the water; with discernment, better to book a seafood table in Ciutadella's harbour (10-15 min away) than to improvise.",
+      "dinner": "For dinner, true quiet luxury: a drink or a table facing the Cap d'Artrutx lighthouse at sunset (Artrutx Sea Club, above the westernmost point), or caldereta and shellfish from the restaurant's own boat in Ciutadella's harbour —Cafè Balear, a seafaring house since 1970—. For a memorable, local dinner, Es Tast de na Sílvia, in the old town: the only Slow Food and Km 0 restaurant in the Balearics, tasting menu only and by reservation only.",
+      "signature": {
+        "title": "Sunset at the Cap d'Artrutx lighthouse, the western point",
+        "desc": "Watch the sun fall over the Mediterranean from the black-and-white-banded Cap d'Artrutx lighthouse (1858), the westernmost edge of Menorca, 7 km from Ciutadella. An unhurried drink at the Artrutx Sea Club, beside the lighthouse, or a flat stroll along the seafront towards Cala en Bosc: light, sea and time, the quiet luxury of the south-west.",
+        "idealFor": [
+          "lujo-tranquilo",
+          "parejas",
+          "naturaleza"
+        ]
+      }
+    },
+    "oeste": {
+      "whatToEat": "Ciutadella is the seafaring, patrician cooking of the west: caldereta de langosta (a humble fishermen's stew, Menorcan lobster stew, turned into the king of the island's table), the day's fish and shellfish, oliaigua and PDO Mahón-Menorca cheese. Eating at the harbour and grazing on tapas under the market arcades is the local gesture.",
+      "breakfast": "Breakfast under the arcades of the Mercat des Peix (Plaça de la Llibertat), open daily from 9:00 to 13:30: ensaïmada and coffee first thing, or shellfish tapas from the fishmonger you have just bought. It is the most honest breakfast in town; no particular bar names needed, just take a seat at the market counters.",
+      "lunch": "At midday, local produce chosen with care: the market for an informal bite, or a table of fish and caldereta at the harbour. As an established reference on Ciutadella's harbour, Cafè Balear works fish and lobster from its own boat (more than 50 years of history). Book in high season.",
+      "dinner": "For dinner, two registers of quiet luxury: seasonal, produce-led Mediterranean cooking at Smoix (the only Bib Gourmand in the Michelin Guide on Menorca, in the centre), or caldereta and shellfish by the water at the harbour at sunset. Book ahead in summer.",
+      "signature": {
+        "title": "Caldereta de langosta at Ciutadella's harbour, at sunset",
+        "desc": "Menorca's signature dish —a humble fishermen's stew raised to an icon— by the water of the western harbour, in the late-afternoon light. In seafaring houses of tradition such as Cafè Balear, with shellfish from their own boat, it is quiet luxury in its truest form: produce, time and the sea, without ostentation.",
+        "idealFor": [
+          "lujo-tranquilo",
+          "gastronomia",
+          "parejas"
+        ]
+      }
+    },
+    "este": {
+      "whatToEat": "The east is the Menorca of British and harbour influence: the finest table here is the water itself, whether you are grazing on local produce at the Mercat des Peix in Maó or having fresh fish on a terrace at Cales Fonts. This is the home of pomada (Xoriguer gin with lemonade, as it is known in the east of the island), and PDO Mahón-Menorca cheese runs through every tapas counter.",
+      "breakfast": "An unhurried breakfast in Maó: the orange-tree courtyard of Café Es Jardí (Hotel Jardí de Ses Bruixes, an 1811 manor house) serves breakfast and brunch with local produce; for something simpler and more authentic, a freshly made ensaïmada or llonguet from a bakery in the centre, with coffee and a view of the harbour.",
+      "lunch": "A market lunch: the Mercat des Peix, set in Maó's old fish market (1927), has stalls turned into counters where you choose fresh produce —fish, shellfish, cheese, cured meats— in tapas form and eat at the central terrace. It is the most honest, local way to eat in the centre.",
+      "dinner": "Dinner with the sea at your feet at Cales Fonts (Es Castell): a fishermen's quay lined with terraces over the water, where you have fresh fish and, with a booking, caldereta de langosta (Menorcan lobster stew). For an evening of quiet luxury, the restaurant of the rural hotel Sant Joan de Binissaida, with market cooking and vegetables from its own organic garden.",
+      "signature": {
+        "title": "Sunset and dinner at Cales Fonts, facing Maó harbour",
+        "desc": "Down to Es Castell's old fishermen's quay as the light gilds the harbour mouth, a pomada on a terrace over the water and fresh fish for dinner —or caldereta de langosta with a booking— watching the boats. The quiet luxury of the east: the Mediterranean, the sea at your feet and no hurry at all.",
+        "idealFor": [
+          "lujo-tranquilo",
+          "parejas"
+        ]
+      }
+    },
+    "sur-este": {
+      "whatToEat": "The south-east lives off sea and garden: fish and shellfish landed that day, arròs de senyoret (a clear-broth rice you eat with your hands tucked away) and Menorca's red prawn, washed down with the island's wine, which is born right here — this is the cradle of modern Menorcan winemaking — at Bodegas Binifadet, above Sant Lluís.",
+      "breakfast": "Have breakfast in the white village of Sant Lluís before heading down to the coves: its bakeries (for example Forn Can Paco, on Avinguda de sa Pau) have coffee, ensaïmada and the day's pastries; go early, as the bread sells out. In the coastal hamlets (Punta Prima, Binibèquer) breakfast is the hotel beach-bar kind, more functional than memorable.",
+      "lunch": "At midday, a table by the sea: En Caragol, 20 m from the water above Cala de Biniancolla (Solete Repsol), is the safe anchor for rice dishes and grilled fish facing the Mediterranean; open Tuesday to Sunday and full in summer, so book. For something casual, the beach bars of Punta Prima are right on the sand.",
+      "dinner": "Dinner is the high point of this area: the hamlet of Torret, on the edge of Sant Lluís, gathers two country houses with discernment — Sa Pedrera d'es Pujol (creative Menorcan cooking, a 2026 Michelin selection and a notable wine list) and Pan y Vino (French roots over Menorcan produce) — both by reservation. And to raise a glass among the vines, dinner on the terrace at Bodegas Binifadet.",
+      "signature": {
+        "title": "A Menorcan chef's dinner in a stone house in Torret",
+        "desc": "In the rural hamlet of Torret, above Sant Lluís, Sa Pedrera d'es Pujol serves creative Menorcan cooking in a century-old country house with a notable wine list — a 2026 Michelin selection. The essence of the south-east's quiet luxury: island produce, calm and discernment. By reservation.",
+        "idealFor": [
+          "lujo-tranquilo",
+          "gastronomia",
+          "parejas"
+        ]
+      }
+    },
+    "centro": {
+      "whatToEat": "The centre is Menorca's larder: the heart of PDO Mahón-Menorca cheese (Alaior, home of the Coinga cooperative, and the farm-dairies of Es Mercadal and Ferreries) and the birthplace of the island's almond pastry-making —carquinyols and amargos were born in Es Mercadal—. This is where you eat deep-rooted Menorcan cooking: arròs de la terra (a local baked rice dish), calderetas, and meat and vegetables from the kitchen's own farm.",
+      "breakfast": "An inland village breakfast: a coffee with an ensaïmada, or a bag of carquinyols and amargos from a traditional bakery in Es Mercadal (the almond pastries originate in the village and are sold daily). It is the honest, local breakfast of the area; no large design cafés, its value is the century-old craft.",
+      "lunch": "Midday is for genuine Menorcan cooking: in Es Mercadal, Es Molí des Racó, in a flour mill more than three centuries old with meat and vegetables from its own farm. Up on Monte Toro there is also a bar-restaurant with a terrace and 360° views.",
+      "dinner": "Dinner in the area is serene, village fare: terraces in Es Mercadal or Ferreries and, in summer, the Es Mercadal night market (Thursdays, Jun-Sep) with local food and live music. For a sit-down dinner, the same Menorcan-cooking names as at lunch; it is worth confirming dinner hours, which are seasonal. The great caldereta de langosta (Menorcan lobster stew) is in Fornells, outside this area.",
+      "signature": {
+        "title": "The PDO Mahón-Menorca cheese route in the heart of the island",
+        "desc": "An unhurried morning between Es Mercadal, Alaior and Ferreries visiting an artisan PDO cheese dairy —Subaida (350 ha, demonstration and tasting) or Hort de Sant Patrici with its cheese museum— to understand, smell and taste the flavour that defines Menorca, with Monte Toro as the backdrop.",
+        "idealFor": [
+          "lujo-tranquilo",
+          "gastronomia"
+        ]
+      }
+    }
+  },
+  "bases": {
+    "fornells": {
+      "arrivalDinner": "Caldereta de langosta or seafood rice on the Fornells seafront, facing the llaüts: Es Cranc (a classic with a tank), Sa Llagosta (chef-led) or El Pescador, depending on the table available. Book before you arrive in summer.",
+      "arrivalPaseo": "A gentle stroll around the harbour of Fornells, among llaüts and white houses, up to the defence tower, with the sheltered bay almost always calm and fine light at sunset.",
+      "departureCafe": "An unhurried coffee and ensaïmada in Fornells facing the water; or, once on the way to the airport, a sweet stop in Es Mercadal (a century-old bakery) before crossing the island.",
+      "departurePaseo": "One last short, flat walk along the Fornells waterfront, without straying from the car: no walk-in coves on departure day."
+    },
+    "son-bou": {
+      "arrivalDinner": "A quiet first dinner near the base: produce over coals among the vineyards at Torralbenc (Alaior, around 15 min by car) to begin the trip calmly; or, if you would rather stay by the beach, an informal dinner at a beach restaurant along the Son Bou seafront, watching the sun set over the island's longest beach.",
+      "arrivalPaseo": "A gentle stroll at sunset along the wooden boardwalk of Son Bou beach as far as the early-Christian basilica, with the sun dropping over the sands. Flat and effortless, ideal for arrival day.",
+      "departureCafe": "An unhurried coffee on a terrace along the Son Bou seafront or, on the way to Maó airport, a stop in Alaior for a coffee with cheese or artisan ice cream before returning the car.",
+      "departurePaseo": "A last short, flat stroll along the Son Bou front or a quick look at the early-Christian basilica beside the beach: no walk-in coves on departure day."
+    },
+    "ciutadella": {
+      "arrivalDinner": "A quiet first dinner in the old town: seasonal Mediterranean cooking at Smoix (Bib Gourmand) or, if you want the sea, caldereta and shellfish at the harbour. Book on your arrival day in summer.",
+      "arrivalPaseo": "A gentle stroll at sunset through the Born and Ses Voltes to look out over Ciutadella's harbour; if you have the energy, walk down to the Castell de Sant Nicolau to watch the sun set over the harbour mouth.",
+      "departureCafe": "Coffee and ensaïmada, unhurried, under the arcades of the Mercat des Peix (opens at 9:00); it is on the way to Maó airport (45-50 min by car) with time to spare.",
+      "departurePaseo": "A last short, flat loop around the Plaça des Born and the Cathedral of Santa María before leaving the city; nothing involving a walk to a cove.",
+      "breakfasts": [
+        "Breakfast under the arcades of the Mercat des Peix (Plaça de la Llibertat), open daily from 9:00 to 13:30: ensaïmada and coffee first thing, or shellfish tapas from the fishmonger you have just bought. It is the most honest breakfast in town; no particular bar names needed, just take a seat at the market counters.",
+        "Have breakfast in Ciutadella before heading down to the coves (nothing is open in the south). A safe anchor: El Diamante, a Ses Voltes pastry shop founded in 1935 and now family-run, with a counter for coffee and an ensaïmada or a llonguet roll with sobrassada; for something more genuine, the arcades of the Mercat des Peix (Plaça de la Llibertat, opens 9:00). Buy your beach picnic right there."
+      ]
+    },
+    "mao": {
+      "arrivalDinner": "A first dinner at Cales Fonts (Es Castell), 10 min from Maó: a terrace over the harbour for fresh fish and the first sunset, before you have fully unpacked. Book in high season.",
+      "arrivalPaseo": "A gentle stroll along Maó's harbour as the afternoon fades: down Ses Voltes to the Moll de Llevant, the light over the largest natural harbour in the Mediterranean and a first pomada.",
+      "departureCafe": "Coffee with time to spare in the centre of Maó before the airport (only ~6 km away): an unhurried breakfast in the courtyard of Café Es Jardí, or a llonguet and coffee on a terrace by the harbour.",
+      "departurePaseo": "A last short stroll through the centre of Maó: the shopping streets of Ses Voltes, the viewpoint over the harbour and a final purchase of PDO cheese at the Mercat des Claustre, without straying far from the car.",
+      "breakfasts": [
+        "An unhurried breakfast in Maó: the orange-tree courtyard of Café Es Jardí (Hotel Jardí de Ses Bruixes, an 1811 manor house) serves breakfast and brunch with local produce; for something simpler and more authentic, a freshly made ensaïmada or llonguet from a bakery in the centre, with coffee and a view of the harbour.",
+        "Have breakfast in the white village of Sant Lluís before heading down to the coves: its bakeries (for example Forn Can Paco, on Avinguda de sa Pau) have coffee, ensaïmada and the day's pastries; go early, as the bread sells out. In the coastal hamlets (Punta Prima, Binibèquer) breakfast is the hotel beach-bar kind, more functional than memorable."
+      ]
+    },
+    "es-mercadal": {
+      "arrivalDinner": "A quiet first night in the old quarter of Es Mercadal: a village terrace or, if it falls on a summer Thursday, the night market with local food and music. For a sit-down meal, Menorcan cooking at Es Molí des Racó (book; confirm dinner hours).",
+      "arrivalPaseo": "A gentle stroll through the white streets of Es Mercadal and, in the afternoon light, a drive up Monte Toro (10 min) to see the whole island from sea to sea before dinner.",
+      "departureCafe": "An unhurried coffee in Es Mercadal and a stock-up of carquinyols and amargos for the journey; the village is well centred for Maó airport along the Me-1 (leave a margin).",
+      "departurePaseo": "A last short loop around the Plaça de Es Mercadal or, if time is tight, a 15-20 min stop at the Naveta des Tudons beside the Me-1 on the way to the airport.",
+      "breakfasts": [
+        "An inland village breakfast: a coffee with an ensaïmada, or a bag of carquinyols and amargos from a traditional bakery in Es Mercadal (the almond pastries originate in the village and are sold daily). It is the honest, local breakfast of the area; no large design cafés, its value is the century-old craft.",
+        "Pastelerías de Es Mercadal (carquinyols y amargos): take away a bag of carquinyols and amargos"
+      ]
+    }
+  }
 }
