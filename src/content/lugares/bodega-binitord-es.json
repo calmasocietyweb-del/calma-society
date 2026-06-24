@@ -1,0 +1,43 @@
+{
+  "name": "Bodega Binitord",
+  "lang": "es",
+  "translationKey": "bodega-binitord",
+  "type": "monumento",
+  "edition": "menorca",
+  "description": "Bodega familiar levantada sobre una antigua cantera al sur de Ciutadella, con 7 ha de viña y unas 30.000 botellas al año de Vi de la Terra Illa de Menorca. Una visita íntima, sin prisa, entre cepas que pelean contra la tramontana.",
+  "coordinates": {
+    "lat": 39.96,
+    "lng": 3.855
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "lujo-tranquilo",
+      "cultura"
+    ],
+    "highlights": [
+      "pasear el viñedo y conocer la elaboración con el propio equipo",
+      "catar sus vinos (blanco, rosado, negro) y el primer vermut de Menorca",
+      "reservar online la visita guiada (ES/EN/FR), de ~1 h"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.binitord.com/tours",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

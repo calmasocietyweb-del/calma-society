@@ -1,0 +1,42 @@
+{
+  "name": "Paseo en barco por las calas y cuevas del sur (desde Cala Galdana)",
+  "lang": "es",
+  "translationKey": "paseo-barco-calas-cuevas-cala-galdana",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Una salida corta en barco desde Cala Galdana enseña por mar las calas vírgenes del suroeste —Mitjana, Trebalúger, Macarella— y cuevas que no se ven de otro modo, con parada para un baño en agua turquesa. Ideal para los pequeños: sin caminata y con tiempo a bordo.",
+  "coordinates": {
+    "lat": 39.936,
+    "lng": 3.965
+  },
+  "area": "Ferreries (Cala Galdana)",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza",
+      "primera-vez"
+    ],
+    "highlights": [
+      "ver desde el mar Cala Mitjana, Trebalúger y Macarella, y cuevas escondidas",
+      "una o dos paradas de baño en aguas cristalinas (suelen prestar gafas)",
+      "salida cómoda de ~2 h con aseo y cafetería a bordo, apta para todas las edades"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  }
+}

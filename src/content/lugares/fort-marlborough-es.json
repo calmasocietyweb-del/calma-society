@@ -1,0 +1,43 @@
+{
+  "name": "Fort Marlborough",
+  "lang": "es",
+  "translationKey": "fort-marlborough",
+  "type": "monumento",
+  "edition": "menorca",
+  "description": "Fortín británico (1710-1726) excavado en la roca sobre la idílica Cala de Sant Esteve, frente al Castell de Sant Felip. Una visita guiada teatralizada por galerías subterráneas y foso, con la bocana del puerto de Maó como telón de fondo.",
+  "coordinates": {
+    "lat": 39.8629,
+    "lng": 4.3015
+  },
+  "area": "Es Castell (Cala de Sant Esteve)",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "familias",
+      "primera-vez",
+      "lujo-tranquilo"
+    ],
+    "highlights": [
+      "bajar a las galerías subterráneas con montaje de luz y sonido",
+      "recorrer el foso excavado en la roca hasta la cota alta sobre la cala",
+      "asomarse a las vistas de la bocana del puerto de Maó y del Castell de Sant Felip enfrente"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.menorca.es/en/Visitas_guiadas_al_Fort_de_Marlborough/16037",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

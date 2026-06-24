@@ -1,0 +1,42 @@
+{
+  "name": "Kayak guiado a cuevas desde Cala Galdana",
+  "lang": "es",
+  "translationKey": "kayak-galdana-rutas-cuevas-familia",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Desde la calma resguardada de Cala Galdana, una salida en kayak descubre cuevas marinas y calas a las que solo se llega por mar. Con rutas guiadas pensadas para iniciarse, es de las maneras más bonitas de que la familia reme junta.",
+  "coordinates": {
+    "lat": 39.936,
+    "lng": 3.965
+  },
+  "area": "Ferreries (Cala Galdana)",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "naturaleza",
+      "nautica",
+      "parejas"
+    ],
+    "highlights": [
+      "remar en aguas tranquilas y entrar en cuevas marinas de la costa virgen",
+      "elegir ruta guiada de iniciación, apta para familias y primerizos",
+      "alquiler de kayak individual o doble con equipo incluido; reservar antes"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  }
+}

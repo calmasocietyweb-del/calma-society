@@ -1,0 +1,43 @@
+{
+  "name": "Rutas a caballo por el Camí de Cavalls (Son Bou)",
+  "lang": "es",
+  "translationKey": "rutas-a-caballo-son-bou",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Recorrer a caballo un tramo del Camí de Cavalls junto a la gran playa de Son Bou y su zona húmeda, al paso tranquilo del caballo menorquín. Una forma serena y diferente de sentir el paisaje, apta para familias y jinetes principiantes.",
+  "coordinates": {
+    "lat": 39.897,
+    "lng": 4.083
+  },
+  "area": "Alaior (Son Bou / Torre Solí Nou)",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "excursion",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza",
+      "parejas"
+    ],
+    "highlights": [
+      "ruta familiar de 1 h por la pradera y zona húmeda de Son Bou (desde 5 años)",
+      "ruta de 2 h por la costa para todos los niveles, adaptando el aire del caballo",
+      "salida junto a Torre Solí Nou, al lado del hotel Jardín de Menorca"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.menorcahorseback.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

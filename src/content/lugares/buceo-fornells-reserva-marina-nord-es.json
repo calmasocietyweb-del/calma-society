@@ -1,0 +1,42 @@
+{
+  "name": "Buceo en la Reserva Marina del Nord (Fornells Diving Center / Dune)",
+  "lang": "es",
+  "translationKey": "buceo-fornells-reserva-marina-nord",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Bucear los fondos de la Reserva Marina del Nord desde Fornells, con visibilidad excepcional y puntos de inmersion a quince minutos de la bahia. Un centro PADI veterano para bautismos, cursos y salidas diarias.",
+  "coordinates": {
+    "lat": 40.0535,
+    "lng": 4.137
+  },
+  "area": "Es Mercadal (Fornells)",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "nautica",
+      "naturaleza",
+      "parejas"
+    ],
+    "highlights": [
+      "inmersiones en la reserva marina del norte con gran visibilidad",
+      "bautismos para principiantes, cursos PADI y salidas de snorkel",
+      "centro PADI 5 estrellas con barcos propios amarrados frente a la base"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.divingfornells.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

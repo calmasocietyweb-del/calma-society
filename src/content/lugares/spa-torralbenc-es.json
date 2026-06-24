@@ -1,0 +1,42 @@
+{
+  "name": "Spa Torralbenc (rituales Natura Bissé)",
+  "lang": "es",
+  "translationKey": "spa-torralbenc",
+  "type": "monumento",
+  "edition": "menorca",
+  "description": "En una finca agrícola de 74 hectáreas entre viñedos, el spa de Torralbenc propone masajes y rituales con cosmética Natura Bissé. Abierto también a quien no se aloja: una pausa de lujo sereno frente al campo menorquín.",
+  "coordinates": {
+    "lat": 39.91,
+    "lng": 4.16
+  },
+  "area": "Alaior",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza"
+    ],
+    "highlights": [
+      "Masajes y rituales faciales y corporales con productos Natura Bissé",
+      "Masaje Torralbenc con aceites de romero y lavanda de la propia finca",
+      "Retiros de yoga y pilates en temporada, entre viñas y campo"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://torralbenc.com/es/wellness/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

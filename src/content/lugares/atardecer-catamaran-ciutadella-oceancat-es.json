@@ -1,0 +1,43 @@
+{
+  "name": "Atardecer en barco desde Ciutadella",
+  "lang": "es",
+  "translationKey": "atardecer-catamaran-ciutadella-oceancat",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Salida en barco desde el puerto de Ciutadella, en la costa de poniente, para ver la puesta de sol desde el mar — sin coche y a un ritmo sereno.",
+  "coordinates": {
+    "lat": 40.0006,
+    "lng": 3.8295
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "familias",
+      "nautica",
+      "naturaleza"
+    ],
+    "highlights": [
+      "embarcar en el puerto histórico de Ciutadella, sin coche",
+      "ver el sol caer sobre el mar en la costa de poniente",
+      "la hora dorada con la luz baja sobre el agua"
+    ],
+    "durationMin": 150,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  }
+}

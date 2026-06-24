@@ -1,0 +1,43 @@
+{
+  "name": "Son Martorellet (caballo de Pura Raza Menorquina)",
+  "lang": "es",
+  "translationKey": "son-martorellet-caballos-menorquines",
+  "type": "monumento",
+  "edition": "menorca",
+  "description": "Una ganadería de 14 hectáreas dedicada desde 1997 al caballo de Pura Raza Menorquina, el alma de las fiestas de la isla. Entre la visita a las cuadras y el espectáculo ecuestre 'Somni', los niños descubren la cultura menorquina de la forma más viva.",
+  "coordinates": {
+    "lat": 39.957,
+    "lng": 3.985
+  },
+  "area": "Ferreries",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "cultura",
+      "naturaleza"
+    ],
+    "highlights": [
+      "ver de cerca sementales y yeguas de Pura Raza Menorquina en sus prados",
+      "asistir al espectáculo ecuestre 'Somni' o a la visita guiada a las instalaciones",
+      "reservar plaza (entradas por Eventbrite); abierto de mayo a octubre"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.sonmartorellet.com/es/inicio/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

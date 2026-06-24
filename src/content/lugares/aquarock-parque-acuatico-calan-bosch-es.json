@@ -1,0 +1,42 @@
+{
+  "name": "Aquarock (parque acuático, Cala'n Bosch)",
+  "lang": "es",
+  "translationKey": "aquarock-parque-acuatico-calan-bosch",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "El gran parque acuático del oeste, junto a Cala'n Bosch: la única piscina de olas de la isla, toboganes para todas las edades y una zona infantil para los más pequeños. El plan de día refrescante por excelencia con niños.",
+  "coordinates": {
+    "lat": 39.929,
+    "lng": 3.818
+  },
+  "area": "Ciutadella",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "vida-nocturna"
+    ],
+    "highlights": [
+      "bañarse en la única piscina de olas de Menorca",
+      "toboganes para mayores y zona de chapoteo segura para los pequeños",
+      "jornada completa con restaurante, hamacas y kárting; entrada online más barata"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://aquarock-menorca.com/en/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Puesta de sol en barco desde Binibeca",
+  "lang": "es",
+  "translationKey": "atardecer-barco-binibeca-faralmar",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Salida en barco al atardecer desde Cala Torret, junto a Binibeca, con cava y bebidas frías a bordo y las casetas blancas de pescadores recortadas sobre el mar. Costa sureste tranquila, ideal para un fondeo y un último baño.",
+  "coordinates": {
+    "lat": 39.8147,
+    "lng": 4.2389
+  },
+  "area": "Sant Lluís (Binibeca / Cala Torret)",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "nautica",
+      "naturaleza"
+    ],
+    "highlights": [
+      "navegar la costa sureste de casetas blancas al caer la tarde",
+      "fondear en una cala resguardada para bañarse",
+      "brindis con cava y snacks a bordo"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://faralmar.com/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

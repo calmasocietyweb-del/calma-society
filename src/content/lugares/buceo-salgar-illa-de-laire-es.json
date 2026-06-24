@@ -1,0 +1,43 @@
+{
+  "name": "Buceo y bautismo de mar en la Reserva de la Illa de l'Aire (S'Algar Diving)",
+  "lang": "es",
+  "translationKey": "buceo-salgar-illa-de-laire",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Sumergirse en la Reserva Marina de la Illa de l'Aire con un centro PADI con mas de treinta anos en la costa sureste. Desde el bautismo para principiantes hasta inmersiones en mas de veinte puntos, con piscina propia y monitores.",
+  "coordinates": {
+    "lat": 39.843,
+    "lng": 4.282
+  },
+  "area": "Sant Lluís (s'Algar)",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "nautica",
+      "naturaleza",
+      "parejas",
+      "familias"
+    ],
+    "highlights": [
+      "bautismo de buceo para iniciarse o inmersiones en la reserva de la Illa de l'Aire",
+      "mas de 20 puntos de inmersion y salidas de snorkel guiado",
+      "centro PADI 5 estrellas con piscina de practicas, aulas y barcos propios"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.salgardiving.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

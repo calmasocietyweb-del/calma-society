@@ -1,0 +1,43 @@
+{
+  "name": "Camí de Cavalls · Etapa 20: Cala de Sant Esteve – Maó",
+  "lang": "es",
+  "translationKey": "cami-de-cavalls-etapa-20-sant-esteve-mao",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "La etapa que cierra la vuelta a la isla: 6 km fáciles y cargados de historia militar junto al gran puerto natural de Maó, pasando por el fuerte de Marlborough y bordeando la fortaleza de La Mola. Cultura y costa en un paseo asequible.",
+  "coordinates": {
+    "lat": 39.8736,
+    "lng": 4.2986
+  },
+  "area": "Es Castell / Maó",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "excursion",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "primera-vez",
+      "familias"
+    ],
+    "highlights": [
+      "arrancar junto al Fort Marlborough, fortín británico del s. XVIII en Cala de Sant Esteve",
+      "bordear la bocana del puerto natural de Maó, uno de los mayores del Mediterráneo",
+      "ver desde fuera la imponente Fortalesa de la Mola"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.camidecavalls.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

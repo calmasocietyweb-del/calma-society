@@ -1,0 +1,43 @@
+{
+  "name": "Son Felip — visita apícola de Algaiarens",
+  "lang": "es",
+  "translationKey": "son-felip-visita-apicola-algaiarens",
+  "type": "monumento",
+  "edition": "menorca",
+  "description": "Experiencia apícola en una finca de agricultura regenerativa de la costa norte, entre Algaiarens y Cala del Pilar. Su miel de zulla de Algaiarens ganó la medalla de platino en los International Honey Awards de Londres, entre las 50 mejores del mundo.",
+  "coordinates": {
+    "lat": 40.02,
+    "lng": 3.9
+  },
+  "area": "Ciutadella (Camí de Cala Pilar, fincas Son Felip y Algaiarens, costa norte)",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "naturaleza",
+      "familias",
+      "lujo-tranquilo",
+      "gastronomia"
+    ],
+    "highlights": [
+      "vestir el traje de apicultor y caminar entre las colmenas",
+      "recorrer el obrador y catar mieles premiadas maridadas con producto de la finca",
+      "reservar plaza online (fechas nuevas cada mes); calzado cómodo y gorra"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://sonfelip.com/visita_apicultura_algaiarens/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Cicloturismo y BTT por el Camí de Cavalls (alquiler Velos Joan)",
+  "lang": "es",
+  "translationKey": "btt-cicloturismo-cami-de-cavalls-velos-joan",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Descubrir la costa a pedales: el Camí de Cavalls admite tramos en BTT y la isla está hecha para la bici. Velos Joan, taller y alquiler de referencia en Ciutadella, ofrece bicicletas de montaña, gravel y eléctricas con entrega en hoteles por toda la isla.",
+  "coordinates": {
+    "lat": 40.0014,
+    "lng": 3.8416
+  },
+  "area": "Ciutadella",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "parejas",
+      "familias"
+    ],
+    "highlights": [
+      "alquilar BTT, gravel o e-bike de gama (entrega en hotel disponible)",
+      "rodar los tramos ciclables del Camí de Cavalls (modalidad BTT en versiones Basic, Standard o Plus)",
+      "elegir el nivel según experiencia; los tramos más duros solo para ciclistas expertos"
+    ],
+    "durationMin": 240,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://velosjoan.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Kayak y snorkel por la Reserva Marina del Nord (Fornells)",
+  "lang": "es",
+  "translationKey": "kayak-snorkel-fornells-reserva-marina",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Salir a remo desde la bahia de Fornells para descubrir calas y cuevas que solo se alcanzan por mar, con parada de snorkel en la reserva marina del norte. Mar sereno, ritmo pausado y agua transparente.",
+  "coordinates": {
+    "lat": 40.0535,
+    "lng": 4.137
+  },
+  "area": "Es Mercadal (Fornells)",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "naturaleza",
+      "parejas",
+      "nautica"
+    ],
+    "highlights": [
+      "remar la bahia abrigada de Fornells y la costa de la reserva marina",
+      "entrar a calas y cuevas inaccesibles por tierra y banarte desde el kayak",
+      "snorkel guiado con equipo incluido y briefing de seguridad previo"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://katayak.net",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

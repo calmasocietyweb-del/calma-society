@@ -1,0 +1,41 @@
+{
+  "name": "Camí de Cavalls · Etapa 2: Es Grau – Cap de Favàritx",
+  "lang": "es",
+  "translationKey": "cami-de-cavalls-etapa-2-es-grau-favaritx",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "8,6 km por el corazón del Parc Natural de s'Albufera des Grau, Reserva de Biosfera UNESCO, hasta el faro y el paisaje lunar de pizarra negra de Favàritx. Naturaleza protegida en estado puro, sin un solo edificio en el horizonte.",
+  "coordinates": {
+    "lat": 39.956,
+    "lng": 4.266
+  },
+  "area": "Maó",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "highlights": [
+      "atravesar el único parque natural de Menorca, núcleo de la Reserva de Biosfera",
+      "terminar entre las rocas de pizarra negra y el faro de Favàritx",
+      "asomarse a las calas vírgenes de Tortuga y Presili a mitad de camino"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.camidecavalls.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

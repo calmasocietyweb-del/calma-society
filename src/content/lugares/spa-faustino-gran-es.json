@@ -1,0 +1,42 @@
+{
+  "name": "Spa Faustino Gran",
+  "lang": "es",
+  "translationKey": "spa-faustino-gran",
+  "type": "monumento",
+  "edition": "menorca",
+  "description": "El hammam y la piscina cubierta del Faustino Gran ocupan la bóveda de una antigua gruta, en el corazón de un palacio del siglo XVI en el casco viejo de Ciutadella. Lujo tranquilo en estado puro: piedra, agua y silencio.",
+  "coordinates": {
+    "lat": 39.9998,
+    "lng": 3.8378
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "cultura"
+    ],
+    "highlights": [
+      "Circuito de agua en la bóveda de una gruta histórica (piscina cubierta, sauna, baño de vapor)",
+      "Masajes y rituales faciales y corporales en dos cabinas de tratamiento",
+      "Palacio Relais & Châteaux del XVI con patio de olivos en pleno casco antiguo"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://faustinogran.com/es/spa",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

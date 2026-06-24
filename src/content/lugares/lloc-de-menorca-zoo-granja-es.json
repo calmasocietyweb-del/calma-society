@@ -1,0 +1,42 @@
+{
+  "name": "Lloc de Menorca (centro zoológico y granja didáctica)",
+  "lang": "es",
+  "translationKey": "lloc-de-menorca-zoo-granja",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Un refugio de fauna a pie de la Me-1 donde los más pequeños dan de comer a las cabras enanas, pasean entre lémures en libertad y, en verano, se refrescan en la zona de agua. Un día completo de naturaleza sin alejarse del centro de la isla.",
+  "coordinates": {
+    "lat": 39.9072,
+    "lng": 4.2225
+  },
+  "area": "Alaior",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "centro",
+    "cluster": "talayotic-alaior",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza"
+    ],
+    "highlights": [
+      "dar de comer a cabras enanas y ver lémures de cola anillada en semilibertad",
+      "completar la visita con la zona de agua 'Talaquàtic' y el parque infantil (en verano)",
+      "merendar en la zona de pícnic; comprar la entrada online con descuento"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://llocdemenorca.com/en/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

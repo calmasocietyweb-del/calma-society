@@ -1,0 +1,43 @@
+{
+  "name": "Yellow Catamarans (catamarán con fondo de cristal, puerto de Maó)",
+  "lang": "es",
+  "translationKey": "yellow-catamarans-fondo-cristal-mao",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Un paseo sereno por el puerto natural más grande del Mediterráneo a bordo de un catamarán de fondo de cristal: la historia de Maó por arriba y la vida marina por debajo, sin esfuerzo y sin mareos. El primer mar de Menorca que ven los niños.",
+  "coordinates": {
+    "lat": 39.8917,
+    "lng": 4.2747
+  },
+  "area": "Maó",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "primera-vez",
+      "cultura"
+    ],
+    "highlights": [
+      "ver peces y fondos a través del casco de cristal desde la cubierta inferior",
+      "recorrer la bocana del puerto con las fortalezas y la Illa del Rei",
+      "embarcar a pie en el Moll de Llevant, sin coche y con acceso fácil"
+    ],
+    "durationMin": 75,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.yellowcatamarans.com/en/home",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

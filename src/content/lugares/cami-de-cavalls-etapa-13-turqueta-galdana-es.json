@@ -1,0 +1,43 @@
+{
+  "name": "Camí de Cavalls · Etapa 13: Cala en Turqueta – Cala Galdana",
+  "lang": "es",
+  "translationKey": "cami-de-cavalls-etapa-13-turqueta-galdana",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "El tramo más fotografiado del sendero histórico que rodea la isla: 6,4 km señalizados entre pinares y barrancos calizos que enlazan tres de las calas vírgenes más bellas del sur. Caminar a primera hora, antes de que llegue el mundo, es un lujo silencioso.",
+  "coordinates": {
+    "lat": 39.9268,
+    "lng": 3.913
+  },
+  "area": "Ciutadella / Ferreries",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "excursion",
+    "idealFor": [
+      "parejas",
+      "naturaleza",
+      "primera-vez",
+      "cultura"
+    ],
+    "highlights": [
+      "recorrer a pie las calas Turqueta, Macarella y Macarelleta enlazadas por el Camí de Cavalls",
+      "cruzar el barranco sombrío de paredes calizas con higueras y vegetación fresca",
+      "empezar al amanecer desde el parking de Turqueta (se llena pronto en verano) y terminar en Cala Galdana"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.camidecavalls.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

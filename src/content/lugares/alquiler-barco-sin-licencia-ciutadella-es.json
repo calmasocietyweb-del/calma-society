@@ -1,0 +1,43 @@
+{
+  "name": "Alquiler de barco sin licencia desde Ciutadella",
+  "lang": "es",
+  "translationKey": "alquiler-barco-sin-licencia-ciutadella",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Patronear tu propia barca sin titulacion desde el puerto de Ciutadella y descubrir las calas del oeste a tu aire. Embarcaciones de hasta cinco personas y motor de 15 CV, para medio dia o jornada completa.",
+  "coordinates": {
+    "lat": 39.9985,
+    "lng": 3.833
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "parejas",
+      "familias",
+      "nautica",
+      "naturaleza"
+    ],
+    "highlights": [
+      "navegar sin licencia (barcas de hasta 5 personas, motor 15 CV) hasta 5 millas",
+      "fondear y banarte por libre en las calas y aguas del oeste",
+      "alquiler por medio dia o dia completo desde el puerto de Ciutadella"
+    ],
+    "durationMin": 240,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://twinsboats.com",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  }
+}

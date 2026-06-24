@@ -1,0 +1,43 @@
+{
+  "name": "Excursión en barco a las calas vírgenes del sur (Menorca Blava, Ciutadella)",
+  "lang": "es",
+  "translationKey": "excursion-barco-calas-sur-menorca-blava-ciutadella",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Una jornada de mar desde el puerto antiguo de Ciutadella hasta las calas mas codiciadas del suroeste, las que no tienen carretera. Plataforma de bano, solarium y arroz a bordo: la forma comoda de ver Son Saura, Turqueta y Macarella sin coche.",
+  "coordinates": {
+    "lat": 39.9985,
+    "lng": 3.833
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "primera-vez",
+      "naturaleza",
+      "nautica"
+    ],
+    "highlights": [
+      "navegar el suroeste virgen: Son Saura, Es Talaier, Turqueta, Macarella y Macarelleta",
+      "dos paradas de bano con acceso directo desde la plataforma del barco",
+      "paella mixta a bordo y cuevas marinas inaccesibles por tierra; ~7 h"
+    ],
+    "durationMin": 420,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.menorcablava.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

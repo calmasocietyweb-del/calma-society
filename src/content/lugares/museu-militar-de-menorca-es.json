@@ -1,0 +1,41 @@
+{
+  "name": "Museu Militar de Menorca",
+  "lang": "es",
+  "translationKey": "museu-militar-de-menorca",
+  "type": "monumento",
+  "edition": "menorca",
+  "description": "El museo histórico-militar de la isla, en un cuartel del s. XVIII del antiguo Georgetown, frente a la Plaça de s'Esplanada de Es Castell. Recorre la defensa de Menorca de los talayots a la Guerra Civil en salas temáticas, junto al puerto británico por excelencia.",
+  "coordinates": {
+    "lat": 39.8795,
+    "lng": 4.2903
+  },
+  "area": "Es Castell",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "lujo-tranquilo"
+    ],
+    "highlights": [
+      "recorrer las salas temáticas (~1.270 m²) sobre la historia militar de la isla",
+      "entender el papel estratégico del puerto de Maó y la Fortaleza de Isabel II",
+      "completar la ruta británica de Es Castell con La Mola y los fuertes de la bocana"
+    ],
+    "durationMin": 75,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.menorca.es/en/Military_Museum_of_Menorca/9109",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  }
+}

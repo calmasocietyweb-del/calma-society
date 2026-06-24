@@ -1,0 +1,43 @@
+{
+  "name": "Museu de Menorca",
+  "lang": "es",
+  "translationKey": "museu-de-menorca",
+  "type": "monumento",
+  "edition": "menorca",
+  "description": "El museo de referencia de la isla, en el antiguo convento franciscano de Sant Francesc (s. XVIII), con un claustro barroco precioso. El mejor hilo para entender Menorca de la prehistoria talayótica a la huella británica, antes de salir a recorrerla.",
+  "coordinates": {
+    "lat": 39.8911,
+    "lng": 4.2606
+  },
+  "area": "Maó",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "primera-vez",
+      "familias",
+      "lujo-tranquilo"
+    ],
+    "highlights": [
+      "recorrer la mayor colección arqueológica de la isla (más de 36.000 piezas), de la cultura talayótica a la época islámica",
+      "pasear el claustro barroco del antiguo convento de Sant Francesc",
+      "ponerle contexto a las taulas y poblados antes de visitarlos sobre el terreno"
+    ],
+    "durationMin": 90,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.museudemenorca.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

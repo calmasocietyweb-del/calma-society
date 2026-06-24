@@ -1,0 +1,42 @@
+{
+  "name": "Camí de Cavalls fácil: Es Grau – Sa Mesquida (tramo familiar)",
+  "lang": "es",
+  "translationKey": "cami-de-cavalls-es-grau-sa-mesquida-familiar",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Un tramo suave del histórico Camí de Cavalls (GR-223) entre el pueblo pesquero de Es Grau y la playa de Sa Mesquida, en pleno Parque Natural. La pasarela de madera sobre el humedal admite carrito; el primer paseo costero ideal con niños, lejos de las cuestas.",
+  "coordinates": {
+    "lat": 39.956,
+    "lng": 4.266
+  },
+  "area": "Maó (Es Grau)",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "excursion",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza"
+    ],
+    "highlights": [
+      "cruzar la pasarela de madera sobre el humedal de Sa Mesquida (apta para carrito en su parte llana)",
+      "caminar el GR-223 por un paisaje costero protegido, dentro de la Reserva de Biosfera",
+      "combinarlo con un baño tranquilo en la playa de aguas someras de Es Grau"
+    ],
+    "durationMin": 130,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.camidecavalls360.com/es/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

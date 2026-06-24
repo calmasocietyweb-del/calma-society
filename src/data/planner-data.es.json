@@ -35,6 +35,41 @@
     "lastVerified": "2026-06-22"
   },
   {
+    "id": "alquiler-barco-sin-licencia-ciutadella",
+    "name": "Alquiler de barco sin licencia desde Ciutadella",
+    "slug": "alquiler-barco-sin-licencia-ciutadella",
+    "coordinates": {
+      "lat": 39.9985,
+      "lng": 3.833
+    },
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "parejas",
+      "familias",
+      "nautica",
+      "naturaleza"
+    ],
+    "highlights": [
+      "navegar sin licencia (barcas de hasta 5 personas, motor 15 CV) hasta 5 millas",
+      "fondear y banarte por libre en las calas y aguas del oeste",
+      "alquiler por medio dia o dia completo desde el puerto de Ciutadella"
+    ],
+    "blurb": "Patronear tu propia barca sin titulacion desde el puerto de Ciutadella y descubrir las calas del oeste a tu aire. Embarcaciones de hasta cinco…",
+    "durationMin": 240,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://twinsboats.com",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  },
+  {
     "id": "alquiler-de-llaut-tradicional-barco-privado-al-a",
     "name": "Alquiler de llaut tradicional / barco privado al atardecer",
     "slug": "alquiler-de-llaut-tradicional-barco-privado-al-a",
@@ -67,6 +102,40 @@
     "needsReservation": true,
     "dataCertainty": "media",
     "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "aquarock-parque-acuatico-calan-bosch",
+    "name": "Aquarock (parque acuático, Cala'n Bosch)",
+    "slug": "aquarock-parque-acuatico-calan-bosch",
+    "coordinates": {
+      "lat": 39.929,
+      "lng": 3.818
+    },
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "vida-nocturna"
+    ],
+    "highlights": [
+      "bañarse en la única piscina de olas de Menorca",
+      "toboganes para mayores y zona de chapoteo segura para los pequeños",
+      "jornada completa con restaurante, hamacas y kárting; entrada online más barata"
+    ],
+    "blurb": "El gran parque acuático del oeste, junto a Cala'n Bosch: la única piscina de olas de la isla, toboganes para todas las edades y una zona infantil…",
+    "durationMin": 240,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://aquarock-menorca.com/en/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
   },
   {
     "id": "artrutx-sea-club",
@@ -103,6 +172,146 @@
     "needsReservation": true,
     "dataCertainty": "alta",
     "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "atardecer-barco-binibeca-faralmar",
+    "name": "Puesta de sol en barco desde Binibeca",
+    "slug": "atardecer-barco-binibeca-faralmar",
+    "coordinates": {
+      "lat": 39.8147,
+      "lng": 4.2389
+    },
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "nautica",
+      "naturaleza"
+    ],
+    "highlights": [
+      "navegar la costa sureste de casetas blancas al caer la tarde",
+      "fondear en una cala resguardada para bañarse",
+      "brindis con cava y snacks a bordo"
+    ],
+    "blurb": "Salida en barco al atardecer desde Cala Torret, junto a Binibeca, con cava y bebidas frías a bordo y las casetas blancas de pescadores recortadas…",
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://faralmar.com/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "atardecer-barco-puerto-mao-faralmar",
+    "name": "Atardecer en barco por el puerto de Maó",
+    "slug": "atardecer-barco-puerto-mao-faralmar",
+    "coordinates": {
+      "lat": 39.8861,
+      "lng": 4.2906
+    },
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "gastronomia",
+      "nautica"
+    ],
+    "highlights": [
+      "recorrer el gran puerto de Maó con la luz cálida del ocaso",
+      "brindar con cava y bebidas frías a bordo",
+      "salida céntrica desde Cala Figuera, sin necesidad de coche"
+    ],
+    "blurb": "Paseo privado al atardecer por el puerto natural de Maó, uno de los mayores del Mediterráneo, con copa de cava y la ciudad iluminándose al fondo. Una…",
+    "durationMin": 120,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://faralmar.com/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "atardecer-catamaran-ciutadella-oceancat",
+    "name": "Atardecer en barco desde Ciutadella",
+    "slug": "atardecer-catamaran-ciutadella-oceancat",
+    "coordinates": {
+      "lat": 40.0006,
+      "lng": 3.8295
+    },
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "familias",
+      "nautica",
+      "naturaleza"
+    ],
+    "highlights": [
+      "embarcar en el puerto histórico de Ciutadella, sin coche",
+      "ver el sol caer sobre el mar en la costa de poniente",
+      "la hora dorada con la luz baja sobre el agua"
+    ],
+    "blurb": "Salida en barco desde el puerto de Ciutadella, en la costa de poniente, para ver la puesta de sol desde el mar — sin coche y a un ritmo sereno.",
+    "durationMin": 150,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "atardecer-catamaran-fornells",
+    "name": "Atardecer en catamarán desde Fornells",
+    "slug": "atardecer-catamaran-fornells",
+    "coordinates": {
+      "lat": 40.0536,
+      "lng": 4.1372
+    },
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza",
+      "nautica"
+    ],
+    "highlights": [
+      "navegar a vela por la reserva marina del norte al atardecer",
+      "fondear en una cala resguardada para un último baño",
+      "brindis con bebidas y snacks mientras se pone el sol"
+    ],
+    "blurb": "Salida en catamarán a vela desde el puerto de Fornells para ver caer el sol tras el Cap de Cavalleria, con un fondeo tranquilo para nadar y un…",
+    "durationMin": 135,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.boatmenorca.es/catamaran-excursions-menorca/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
   },
   {
     "id": "binibeca-vell",
@@ -173,6 +382,145 @@
     "lastVerified": "2026-06-22"
   },
   {
+    "id": "birdwatching-salbufera-des-grau",
+    "name": "Observación de aves en s'Albufera des Grau (itinerarios del parque)",
+    "slug": "birdwatching-salbufera-des-grau",
+    "coordinates": {
+      "lat": 39.9508,
+      "lng": 4.2453
+    },
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "familias",
+      "parejas"
+    ],
+    "highlights": [
+      "recorrer el itinerario de Santa Madrona (2,8 km, el mejor para aves acuáticas) con sus observatorios sobre la laguna",
+      "completar los senderos de Sa Gola (1,7 km, dunas y playa) y de Cala Llimpa (1,7 km, mirador de Ses Puntes)",
+      "empezar en el Centre de Recepció Rodríguez Femenias (ctra. Maó–Es Grau, km 3,5) para orientarte"
+    ],
+    "blurb": "El único parque natural de Menorca y corazón de la Reserva de Biosfera: tres senderos cortos y llanos con observatorios sobre la laguna para ver…",
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.caib.es/sites/xarxanatura/es/parc_natural_de_salbufera_des_grau-46059/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "bodega-binitord",
+    "name": "Bodega Binitord",
+    "slug": "bodega-binitord",
+    "coordinates": {
+      "lat": 39.96,
+      "lng": 3.855
+    },
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "lujo-tranquilo",
+      "cultura"
+    ],
+    "highlights": [
+      "pasear el viñedo y conocer la elaboración con el propio equipo",
+      "catar sus vinos (blanco, rosado, negro) y el primer vermut de Menorca",
+      "reservar online la visita guiada (ES/EN/FR), de ~1 h"
+    ],
+    "blurb": "Bodega familiar levantada sobre una antigua cantera al sur de Ciutadella, con 7 ha de viña y unas 30.000 botellas al año de Vi de la Terra Illa de…",
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.binitord.com/tours",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "bodega-son-cremat",
+    "name": "Sa Bodega de Son Cremat",
+    "slug": "bodega-son-cremat",
+    "coordinates": {
+      "lat": 39.875,
+      "lng": 4.24
+    },
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "naturaleza",
+      "familias"
+    ],
+    "highlights": [
+      "pasear entre viñas y catar sus blancos y rosado con los propietarios",
+      "vivir la vendimia a final de verano (experiencia por temporada)",
+      "llamar con antelación: visita solo con cita previa"
+    ],
+    "blurb": "Pequeña bodega familiar en el campo de Maó, camino del aeropuerto, que plantó su primera viña en 2010. Blancos jóvenes de chardonnay y moscatel…",
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://vimenorca.com/en/son-cremat/",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "bodega-vinya-sa-cudia",
+    "name": "Vinya Sa Cúdia",
+    "slug": "bodega-vinya-sa-cudia",
+    "coordinates": {
+      "lat": 39.92,
+      "lng": 4.225
+    },
+    "zone": "este",
+    "cluster": "albufera-favaritx",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "naturaleza",
+      "parejas",
+      "lujo-tranquilo"
+    ],
+    "highlights": [
+      "conocer una viña de malvasía en secano dentro del parque natural",
+      "catar sus blancos (Favàritx, Sa Cudia) y el tinto Favàritx",
+      "concertar la visita con antelación (solo con cita previa)"
+    ],
+    "blurb": "Bodega familiar de seis hermanos dentro del Parc Natural de s'Albufera des Grau, sobre uno de los pocos suelos de pizarra de Baleares. Malvasía en…",
+    "durationMin": 75,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.illesbalears.travel/en/menorca/winery-vinya-sa-cudia",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  },
+  {
     "id": "bodegas-binifadet",
     "name": "Bodegas Binifadet",
     "slug": "bodegas-binifadet",
@@ -209,6 +557,143 @@
     "needsReservation": true,
     "dataCertainty": "alta",
     "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "bodegas-menorquinas-ferrer-muntpalau",
+    "name": "Bodegas Menorquinas (Ferrer de Muntpalau)",
+    "slug": "bodegas-menorquinas-ferrer-muntpalau",
+    "coordinates": {
+      "lat": 39.982,
+      "lng": 4.008
+    },
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "parejas"
+    ],
+    "highlights": [
+      "conocer la bodega que inició el vino con sello propio de Menorca",
+      "catar sus blancos, tintos de guarda y el Fusió",
+      "concertar la visita por teléfono antes de ir"
+    ],
+    "blurb": "La bodega pionera del Vi de la Terra Illa de Menorca: nació en 1987 al amparo del histórico restaurante Ca n'Aguedet de Es Mercadal y comercializa…",
+    "durationMin": 75,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.descobreixmenorca.com/en/wines-of-menorca/bodegas-menorquinas/",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "btt-cicloturismo-cami-de-cavalls-velos-joan",
+    "name": "Cicloturismo y BTT por el Camí de Cavalls (alquiler Velos Joan)",
+    "slug": "btt-cicloturismo-cami-de-cavalls-velos-joan",
+    "coordinates": {
+      "lat": 40.0014,
+      "lng": 3.8416
+    },
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "parejas",
+      "familias"
+    ],
+    "highlights": [
+      "alquilar BTT, gravel o e-bike de gama (entrega en hotel disponible)",
+      "rodar los tramos ciclables del Camí de Cavalls (modalidad BTT en versiones Basic, Standard o Plus)",
+      "elegir el nivel según experiencia; los tramos más duros solo para ciclistas expertos"
+    ],
+    "blurb": "Descubrir la costa a pedales: el Camí de Cavalls admite tramos en BTT y la isla está hecha para la bici. Velos Joan, taller y alquiler de referencia…",
+    "durationMin": 240,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://velosjoan.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "buceo-fornells-reserva-marina-nord",
+    "name": "Buceo en la Reserva Marina del Nord (Fornells Diving Center / Dune)",
+    "slug": "buceo-fornells-reserva-marina-nord",
+    "coordinates": {
+      "lat": 40.0535,
+      "lng": 4.137
+    },
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "nautica",
+      "naturaleza",
+      "parejas"
+    ],
+    "highlights": [
+      "inmersiones en la reserva marina del norte con gran visibilidad",
+      "bautismos para principiantes, cursos PADI y salidas de snorkel",
+      "centro PADI 5 estrellas con barcos propios amarrados frente a la base"
+    ],
+    "blurb": "Bucear los fondos de la Reserva Marina del Nord desde Fornells, con visibilidad excepcional y puntos de inmersion a quince minutos de la bahia. Un…",
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.divingfornells.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "buceo-salgar-illa-de-laire",
+    "name": "Buceo y bautismo de mar en la Reserva de la Illa de l'Aire (S'Algar Diving)",
+    "slug": "buceo-salgar-illa-de-laire",
+    "coordinates": {
+      "lat": 39.843,
+      "lng": 4.282
+    },
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "nautica",
+      "naturaleza",
+      "parejas",
+      "familias"
+    ],
+    "highlights": [
+      "bautismo de buceo para iniciarse o inmersiones en la reserva de la Illa de l'Aire",
+      "mas de 20 puntos de inmersion y salidas de snorkel guiado",
+      "centro PADI 5 estrellas con piscina de practicas, aulas y barcos propios"
+    ],
+    "blurb": "Sumergirse en la Reserva Marina de la Illa de l'Aire con un centro PADI con mas de treinta anos en la costa sureste. Desde el bautismo para…",
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.salgardiving.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
   },
   {
     "id": "cala-algaiarens",
@@ -1148,6 +1633,243 @@
     "lastVerified": "2026-06-22"
   },
   {
+    "id": "cami-de-cavalls-es-grau-sa-mesquida-familiar",
+    "name": "Camí de Cavalls fácil: Es Grau – Sa Mesquida (tramo familiar)",
+    "slug": "cami-de-cavalls-es-grau-sa-mesquida-familiar",
+    "coordinates": {
+      "lat": 39.956,
+      "lng": 4.266
+    },
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "excursion",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza"
+    ],
+    "highlights": [
+      "cruzar la pasarela de madera sobre el humedal de Sa Mesquida (apta para carrito en su parte llana)",
+      "caminar el GR-223 por un paisaje costero protegido, dentro de la Reserva de Biosfera",
+      "combinarlo con un baño tranquilo en la playa de aguas someras de Es Grau"
+    ],
+    "blurb": "Un tramo suave del histórico Camí de Cavalls (GR-223) entre el pueblo pesquero de Es Grau y la playa de Sa Mesquida, en pleno Parque Natural. La…",
+    "durationMin": 130,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.camidecavalls360.com/es/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "cami-de-cavalls-etapa-10-punta-nati-ciutadella",
+    "name": "Camí de Cavalls · Etapa 10: Punta Nati – Ciutadella",
+    "slug": "cami-de-cavalls-etapa-10-punta-nati-ciutadella",
+    "coordinates": {
+      "lat": 40.0578,
+      "lng": 3.8228
+    },
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "primera-vez",
+      "parejas"
+    ],
+    "highlights": [
+      "salir del solitario faro de Punta Nati y su paisaje de piedra seca",
+      "ver las barraques, las antiguas construcciones de pastor en piedra",
+      "terminar paseando en la bocana del puerto de Ciutadella al atardecer"
+    ],
+    "blurb": "Una etapa breve y fácil (5 km) entre el austero faro de Punta Nati, en un paisaje pétreo de barracas de pastor, y el puerto de Ciutadella. Perfecta…",
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.camidecavalls.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "cami-de-cavalls-etapa-13-turqueta-galdana",
+    "name": "Camí de Cavalls · Etapa 13: Cala en Turqueta – Cala Galdana",
+    "slug": "cami-de-cavalls-etapa-13-turqueta-galdana",
+    "coordinates": {
+      "lat": 39.9268,
+      "lng": 3.913
+    },
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "excursion",
+    "idealFor": [
+      "parejas",
+      "naturaleza",
+      "primera-vez",
+      "cultura"
+    ],
+    "highlights": [
+      "recorrer a pie las calas Turqueta, Macarella y Macarelleta enlazadas por el Camí de Cavalls",
+      "cruzar el barranco sombrío de paredes calizas con higueras y vegetación fresca",
+      "empezar al amanecer desde el parking de Turqueta (se llena pronto en verano) y terminar en Cala Galdana"
+    ],
+    "blurb": "El tramo más fotografiado del sendero histórico que rodea la isla: 6,4 km señalizados entre pinares y barrancos calizos que enlazan tres de las calas…",
+    "durationMin": 150,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.camidecavalls.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "cami-de-cavalls-etapa-2-es-grau-favaritx",
+    "name": "Camí de Cavalls · Etapa 2: Es Grau – Cap de Favàritx",
+    "slug": "cami-de-cavalls-etapa-2-es-grau-favaritx",
+    "coordinates": {
+      "lat": 39.956,
+      "lng": 4.266
+    },
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "highlights": [
+      "atravesar el único parque natural de Menorca, núcleo de la Reserva de Biosfera",
+      "terminar entre las rocas de pizarra negra y el faro de Favàritx",
+      "asomarse a las calas vírgenes de Tortuga y Presili a mitad de camino"
+    ],
+    "blurb": "8,6 km por el corazón del Parc Natural de s'Albufera des Grau, Reserva de Biosfera UNESCO, hasta el faro y el paisaje lunar de pizarra negra de…",
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.camidecavalls.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "cami-de-cavalls-etapa-20-sant-esteve-mao",
+    "name": "Camí de Cavalls · Etapa 20: Cala de Sant Esteve – Maó",
+    "slug": "cami-de-cavalls-etapa-20-sant-esteve-mao",
+    "coordinates": {
+      "lat": 39.8736,
+      "lng": 4.2986
+    },
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "excursion",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "primera-vez",
+      "familias"
+    ],
+    "highlights": [
+      "arrancar junto al Fort Marlborough, fortín británico del s. XVIII en Cala de Sant Esteve",
+      "bordear la bocana del puerto natural de Maó, uno de los mayores del Mediterráneo",
+      "ver desde fuera la imponente Fortalesa de la Mola"
+    ],
+    "blurb": "La etapa que cierra la vuelta a la isla: 6 km fáciles y cargados de historia militar junto al gran puerto natural de Maó, pasando por el fuerte de…",
+    "durationMin": 120,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.camidecavalls.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "cami-de-cavalls-etapa-6-binimella-els-alocs",
+    "name": "Camí de Cavalls · Etapa 6: Binimel·là – Els Alocs",
+    "slug": "cami-de-cavalls-etapa-6-binimella-els-alocs",
+    "coordinates": {
+      "lat": 40.045,
+      "lng": 4.038
+    },
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "highlights": [
+      "alcanzar a pie Cala Pregonda, una de las postales más icónicas del norte",
+      "caminar la costa tramontana virgen, ocre y batida por el viento",
+      "ir autosuficiente: es la etapa más dura, sin servicios ni sombra"
+    ],
+    "blurb": "El tramo más salvaje y exigente del Camí de Cavalls: 8,9 km por la costa norte rojiza y agreste, con la mítica Cala Pregonda y sus islotes de aire…",
+    "durationMin": 240,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.camidecavalls.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "castell-de-sant-felip",
+    "name": "Castell de Sant Felip",
+    "slug": "castell-de-sant-felip",
+    "coordinates": {
+      "lat": 39.8675,
+      "lng": 4.3031
+    },
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "lujo-tranquilo",
+      "primera-vez"
+    ],
+    "highlights": [
+      "descender a las galerías y contraminas subterráneas con un guía especializado",
+      "entender el asedio de 1782 y la vida de la guarnición que defendía el puerto",
+      "completar el conjunto militar de la bocana junto a Fort Marlborough y La Mola"
+    ],
+    "blurb": "La gran fortaleza que guardó la bocana del puerto de Maó desde el s. XVI, con kilómetros de túneles subterráneos hoy ocultos bajo tierra. Solo se…",
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.consorciomilitarmenorca.com/es/visitas-guiadas-al-castillo-de-san-felipe/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
     "id": "castell-de-sant-nicolau",
     "name": "Castell de Sant Nicolau",
     "slug": "castell-de-sant-nicolau",
@@ -1180,6 +1902,41 @@
     "needsReservation": false,
     "dataCertainty": "media",
     "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "catedral-de-santa-maria-ciutadella",
+    "name": "Catedral de Santa Maria de Ciutadella",
+    "slug": "catedral-de-santa-maria-ciutadella",
+    "coordinates": {
+      "lat": 40.0018,
+      "lng": 3.8377
+    },
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "primera-vez",
+      "parejas",
+      "lujo-tranquilo"
+    ],
+    "highlights": [
+      "admirar la nave gótica catalana y la portada neoclásica",
+      "situar la historia de la ciudad: catedral sobre la mezquita mayor andalusí",
+      "enlazar con el paseo por el casco antiguo, el Born y los palacios de Ciutadella"
+    ],
+    "blurb": "La catedral gótica de Menorca, levantada tras la conquista de Alfonso III (1287) sobre la antigua mezquita mayor. Corazón monumental del casco…",
+    "durationMin": 45,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://bisbatdemenorca.org/diocesi/la-catedral-i-el-seu-museu/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
   },
   {
     "id": "ciutadella",
@@ -1254,6 +2011,40 @@
     "officialUrl": "https://www.covadenxoroi.com",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "cova-des-coloms-barranc-binigaus",
+    "name": "Cova des Coloms ('la Catedral') por el Barranc de Binigaus",
+    "slug": "cova-des-coloms-barranc-binigaus",
+    "coordinates": {
+      "lat": 39.9266,
+      "lng": 4.0492
+    },
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "familias",
+      "cultura"
+    ],
+    "highlights": [
+      "caminar el frondoso Barranc de Binigaus desde Es Migjorn Gran, casi sin desnivel",
+      "entrar por una boca discreta a una gran sala de techo altísimo (posible santuario prehistórico)",
+      "prolongar el paseo hasta la playa virgen de Binigaus"
+    ],
+    "blurb": "Una de las cuevas más impresionantes de Menorca, apodada 'la Catedral' por sus dimensiones de templo (50 m de sala central, 24 m de altura), al final…",
+    "durationMin": 150,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.ajmigjorngran.org",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
   },
   {
     "id": "destileria-gin-xoriguer",
@@ -1538,6 +2329,111 @@
     "lastVerified": "2026-06-22"
   },
   {
+    "id": "excursion-barco-calas-sur-menorca-blava-ciutadella",
+    "name": "Excursión en barco a las calas vírgenes del sur (Menorca Blava, Ciutadella)",
+    "slug": "excursion-barco-calas-sur-menorca-blava-ciutadella",
+    "coordinates": {
+      "lat": 39.9985,
+      "lng": 3.833
+    },
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "primera-vez",
+      "naturaleza",
+      "nautica"
+    ],
+    "highlights": [
+      "navegar el suroeste virgen: Son Saura, Es Talaier, Turqueta, Macarella y Macarelleta",
+      "dos paradas de bano con acceso directo desde la plataforma del barco",
+      "paella mixta a bordo y cuevas marinas inaccesibles por tierra; ~7 h"
+    ],
+    "blurb": "Una jornada de mar desde el puerto antiguo de Ciutadella hasta las calas mas codiciadas del suroeste, las que no tienen carretera. Plataforma de…",
+    "durationMin": 420,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.menorcablava.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "excursion-llaut-mar-en-calma-fornells",
+    "name": "Excursión en llaüt menorquín por la costa norte (Mar en Calma, Fornells)",
+    "slug": "excursion-llaut-mar-en-calma-fornells",
+    "coordinates": {
+      "lat": 40.0535,
+      "lng": 4.137
+    },
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza",
+      "nautica"
+    ],
+    "highlights": [
+      "salir de Fornells en un llaüt menorquin tradicional (Portobello / Don Pancho)",
+      "dos paradas para nadar, snorkel y paddle en calas de la costa norte",
+      "aperitivo menorquin a bordo; ~3 h 30 min de navegacion tranquila"
+    ],
+    "blurb": "Navegar la costa norte a bordo de un llaüt menorquin de madera, la embarcacion tradicional de la isla, con dos paradas de bano en aguas cristalinas y…",
+    "durationMin": 210,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.marencalmamenorca.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "excursion-llaut-mar-en-calma-galdana",
+    "name": "Excursión en llaüt por las calas del sur (Mar en Calma, Cala Galdana)",
+    "slug": "excursion-llaut-mar-en-calma-galdana",
+    "coordinates": {
+      "lat": 39.936,
+      "lng": 3.965
+    },
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "familias",
+      "nautica"
+    ],
+    "highlights": [
+      "navegar la costa sur entre acantilados calizos y pinares desde Cala Galdana",
+      "dos paradas de bano, snorkel y paddle frente a calas virgenes",
+      "aperitivo menorquin a bordo; embarcacion tradicional de madera"
+    ],
+    "blurb": "Descubrir por mar las calas virgenes del sur saliendo de Cala Galdana en un llaüt menorquin, con paradas de bano frente a arenales turquesa a los que…",
+    "durationMin": 210,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.marencalmamenorca.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
     "id": "faro-cavalleria",
     "name": "Cap de Cavalleria",
     "slug": "faro-cavalleria",
@@ -1747,6 +2643,41 @@
     "lastVerified": "2026-06-22"
   },
   {
+    "id": "fort-marlborough",
+    "name": "Fort Marlborough",
+    "slug": "fort-marlborough",
+    "coordinates": {
+      "lat": 39.8629,
+      "lng": 4.3015
+    },
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "familias",
+      "primera-vez",
+      "lujo-tranquilo"
+    ],
+    "highlights": [
+      "bajar a las galerías subterráneas con montaje de luz y sonido",
+      "recorrer el foso excavado en la roca hasta la cota alta sobre la cala",
+      "asomarse a las vistas de la bocana del puerto de Maó y del Castell de Sant Felip enfrente"
+    ],
+    "blurb": "Fortín británico (1710-1726) excavado en la roca sobre la idílica Cala de Sant Esteve, frente al Castell de Sant Felip. Una visita guiada…",
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.menorca.es/en/Visitas_guiadas_al_Fort_de_Marlborough/16037",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
     "id": "fortaleza-de-la-mola",
     "name": "Fortaleza de La Mola",
     "slug": "fortaleza-de-la-mola",
@@ -1857,6 +2788,109 @@
     "lastVerified": "2026-06-22"
   },
   {
+    "id": "kayak-galdana-rutas-cuevas-familia",
+    "name": "Kayak guiado a cuevas desde Cala Galdana",
+    "slug": "kayak-galdana-rutas-cuevas-familia",
+    "coordinates": {
+      "lat": 39.936,
+      "lng": 3.965
+    },
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "naturaleza",
+      "nautica",
+      "parejas"
+    ],
+    "highlights": [
+      "remar en aguas tranquilas y entrar en cuevas marinas de la costa virgen",
+      "elegir ruta guiada de iniciación, apta para familias y primerizos",
+      "alquiler de kayak individual o doble con equipo incluido; reservar antes"
+    ],
+    "blurb": "Desde la calma resguardada de Cala Galdana, una salida en kayak descubre cuevas marinas y calas a las que solo se llega por mar. Con rutas guiadas…",
+    "durationMin": 150,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "kayak-snorkel-fornells-reserva-marina",
+    "name": "Kayak y snorkel por la Reserva Marina del Nord (Fornells)",
+    "slug": "kayak-snorkel-fornells-reserva-marina",
+    "coordinates": {
+      "lat": 40.0535,
+      "lng": 4.137
+    },
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "naturaleza",
+      "parejas",
+      "nautica"
+    ],
+    "highlights": [
+      "remar la bahia abrigada de Fornells y la costa de la reserva marina",
+      "entrar a calas y cuevas inaccesibles por tierra y banarte desde el kayak",
+      "snorkel guiado con equipo incluido y briefing de seguridad previo"
+    ],
+    "blurb": "Salir a remo desde la bahia de Fornells para descubrir calas y cuevas que solo se alcanzan por mar, con parada de snorkel en la reserva marina del…",
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://katayak.net",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "lago-spa-cala-en-bosch",
+    "name": "Lago Spa (Lago Resort)",
+    "slug": "lago-spa-cala-en-bosch",
+    "coordinates": {
+      "lat": 39.9265,
+      "lng": 3.8375
+    },
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "familias"
+    ],
+    "highlights": [
+      "Circuito termal: piscina climatizada, chorros, jacuzzi, sauna y baño turco",
+      "Rituales y tratamientos corporales y faciales, masajes terapéuticos",
+      "Day spa abierto a visitantes externos, junto al mar"
+    ],
+    "blurb": "Junto al mar en Cala en Bosch, el spa del Lago Resort propone un circuito termal —piscina climatizada, jacuzzi, sauna y baño turco— y tratamientos a…",
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.lagoresortmenorca.com/en/spa/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
     "id": "lithica",
     "name": "Lithica – Pedreres de s'Hostal",
     "slug": "lithica",
@@ -1891,6 +2925,75 @@
     "officialUrl": "https://lithica.es",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "llatzeret-de-mao",
+    "name": "Llatzeret de Maó",
+    "slug": "llatzeret-de-mao",
+    "coordinates": {
+      "lat": 39.8766,
+      "lng": 4.3039
+    },
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "lujo-tranquilo",
+      "naturaleza",
+      "parejas"
+    ],
+    "highlights": [
+      "cruzar en barca desde Cales Fonts hasta la isla amurallada del lazareto",
+      "recorrer con guía los patios de cuarentena, la capilla y los recintos de aislamiento",
+      "leer la historia sanitaria del Mediterráneo en uno de los puertos naturales más grandes del mundo"
+    ],
+    "blurb": "Antiguo lazareto de cuarentena (s. XVIII-XIX) en una isla propia dentro del puerto de Maó, rodeado de murallas. Se visita cruzando en barca desde…",
+    "durationMin": 180,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.menorca.es/en/Visitas_guiadas_a_la_Illa_de_Llatzeret/14057",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "lloc-de-menorca-zoo-granja",
+    "name": "Lloc de Menorca (centro zoológico y granja didáctica)",
+    "slug": "lloc-de-menorca-zoo-granja",
+    "coordinates": {
+      "lat": 39.9072,
+      "lng": 4.2225
+    },
+    "zone": "centro",
+    "cluster": "talayotic-alaior",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza"
+    ],
+    "highlights": [
+      "dar de comer a cabras enanas y ver lémures de cola anillada en semilibertad",
+      "completar la visita con la zona de agua 'Talaquàtic' y el parque infantil (en verano)",
+      "merendar en la zona de pícnic; comprar la entrada online con descuento"
+    ],
+    "blurb": "Un refugio de fauna a pie de la Me-1 donde los más pequeños dan de comer a las cabras enanas, pasean entre lémures en libertad y, en verano, se…",
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://llocdemenorca.com/en/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
   },
   {
     "id": "llucmacanes",
@@ -1960,6 +3063,75 @@
     "needsReservation": false,
     "dataCertainty": "alta",
     "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "marea-beach-house-sunset-bar",
+    "name": "Marea Beach House – Sunset Bar (Cala Blanca)",
+    "slug": "marea-beach-house-sunset-bar",
+    "coordinates": {
+      "lat": 39.969,
+      "lng": 3.834
+    },
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "gastronomia"
+    ],
+    "highlights": [
+      "tomar un cóctel de autor mirando el ocaso sobre el mar",
+      "terraza abierta frente al agua en la costa oeste",
+      "ambiente relajado de beach house cerca de Ciutadella"
+    ],
+    "blurb": "Terraza-coctelería frente al Mediterráneo en Cala Blanca, en la costa de poniente, pensada para la copa del atardecer con música de ambiente…",
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://mareabeachhouse.com/sunset-bar/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "mel-i-reines-experiencia-apicola",
+    "name": "Mel i Reines — experiencia apícola (Finca Lluriach)",
+    "slug": "mel-i-reines-experiencia-apicola",
+    "coordinates": {
+      "lat": 39.99,
+      "lng": 4.09
+    },
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "naturaleza",
+      "familias",
+      "cultura",
+      "gastronomia"
+    ],
+    "highlights": [
+      "entender la vida de la colmena en la cocina de la finca de Lluriach",
+      "vestir el traje de apicultor y ver el trabajo de las abejas en el campo",
+      "catar la miel recién extraída; grupos reducidos (máx. 8 personas)"
+    ],
+    "blurb": "Proyecto apícola de Ana Marquès y Raúl Ameller que cría abejas reinas autóctonas y abre sus colmenas al visitante. La experiencia arranca en la…",
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.menorca.info/balears/economico/2025/09/19/2472611/abejas-experiencias-nueva-ruta-miel.html",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
   },
   {
     "id": "mercat-claustre-carme",
@@ -2119,6 +3291,177 @@
     "lastVerified": "2026-06-22"
   },
   {
+    "id": "museu-de-ciutadella-can-saura",
+    "name": "Can Saura. Museu de Ciutadella",
+    "slug": "museu-de-ciutadella-can-saura",
+    "coordinates": {
+      "lat": 40.0008,
+      "lng": 3.8385
+    },
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "familias",
+      "lujo-tranquilo"
+    ],
+    "highlights": [
+      "recorrer la casa noble de Can Saura, restaurada, en pleno casco antiguo",
+      "ver la colección arqueológica y etnológica de la mitad de poniente de la isla",
+      "descubrir la necrópolis islámica encontrada bajo el propio museo"
+    ],
+    "blurb": "El museo municipal de Ciutadella, instalado desde 2019 en la casa señorial de Can Saura (s. XVII-XVIII). Colección arqueológica y etnológica de…",
+    "durationMin": 75,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.menorca.es/en/Municipal_Museum_of_Ciutadella/9111",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "museu-de-menorca",
+    "name": "Museu de Menorca",
+    "slug": "museu-de-menorca",
+    "coordinates": {
+      "lat": 39.8911,
+      "lng": 4.2606
+    },
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "primera-vez",
+      "familias",
+      "lujo-tranquilo"
+    ],
+    "highlights": [
+      "recorrer la mayor colección arqueológica de la isla (más de 36.000 piezas), de la cultura talayótica a la época islámica",
+      "pasear el claustro barroco del antiguo convento de Sant Francesc",
+      "ponerle contexto a las taulas y poblados antes de visitarlos sobre el terreno"
+    ],
+    "blurb": "El museo de referencia de la isla, en el antiguo convento franciscano de Sant Francesc (s. XVIII), con un claustro barroco precioso. El mejor hilo…",
+    "durationMin": 90,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.museudemenorca.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "museu-de-menorca-pequeno-museo",
+    "name": "Museu de Menorca – El Pequeño Museo (Maó)",
+    "slug": "museu-de-menorca-pequeno-museo",
+    "coordinates": {
+      "lat": 39.8889,
+      "lng": 4.2636
+    },
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "cultura",
+      "primera-vez"
+    ],
+    "highlights": [
+      "jugar en 'El Pequeño Museo': excavación arqueológica simulada y juegos de historia",
+      "recorrer la colección de la Menorca prehistórica y talayótica (Patrimonio Mundial)",
+      "plan de interior a pie en el centro de Maó, ideal con mal tiempo"
+    ],
+    "blurb": "El museo de la isla, en un antiguo convento de Maó, con un espacio infantil ('El Pequeño Museo') donde se aprende jugando: una excavación…",
+    "durationMin": 90,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.museudemenorca.com/es/inicio",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "museu-diocesa-de-menorca",
+    "name": "Museu Diocesà de Menorca",
+    "slug": "museu-diocesa-de-menorca",
+    "coordinates": {
+      "lat": 40.0008,
+      "lng": 3.8389
+    },
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "lujo-tranquilo",
+      "parejas"
+    ],
+    "highlights": [
+      "pasear el claustro del convento de Sant Agustí",
+      "ver pintura de los s. XVIII-XIX y obra de Pere Daura, además de arqueología local",
+      "combinar la visita con la Catedral de Santa Maria en una sola entrada"
+    ],
+    "blurb": "El museo diocesano de Ciutadella, en el antiguo convento de Sant Agustí (el Socors): claustro de silencio, arte sacro y arqueología, con obra del…",
+    "durationMin": 75,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://bisbatdemenorca.org/diocesi/la-catedral-i-el-seu-museu/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "museu-militar-de-menorca",
+    "name": "Museu Militar de Menorca",
+    "slug": "museu-militar-de-menorca",
+    "coordinates": {
+      "lat": 39.8795,
+      "lng": 4.2903
+    },
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "lujo-tranquilo"
+    ],
+    "highlights": [
+      "recorrer las salas temáticas (~1.270 m²) sobre la historia militar de la isla",
+      "entender el papel estratégico del puerto de Maó y la Fortaleza de Isabel II",
+      "completar la ruta británica de Es Castell con La Mola y los fuertes de la bocana"
+    ],
+    "blurb": "El museo histórico-militar de la isla, en un cuartel del s. XVIII del antiguo Georgetown, frente a la Plaça de s'Esplanada de Es Castell. Recorre la…",
+    "durationMin": 75,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.menorca.es/en/Military_Museum_of_Menorca/9109",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  },
+  {
     "id": "naveta-tudons",
     "name": "Naveta des Tudons",
     "slug": "naveta-tudons",
@@ -2252,6 +3595,74 @@
     "needsReservation": false,
     "dataCertainty": "alta",
     "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "paseo-barco-calas-cuevas-cala-galdana",
+    "name": "Paseo en barco por las calas y cuevas del sur (desde Cala Galdana)",
+    "slug": "paseo-barco-calas-cuevas-cala-galdana",
+    "coordinates": {
+      "lat": 39.936,
+      "lng": 3.965
+    },
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza",
+      "primera-vez"
+    ],
+    "highlights": [
+      "ver desde el mar Cala Mitjana, Trebalúger y Macarella, y cuevas escondidas",
+      "una o dos paradas de baño en aguas cristalinas (suelen prestar gafas)",
+      "salida cómoda de ~2 h con aseo y cafetería a bordo, apta para todas las edades"
+    ],
+    "blurb": "Una salida corta en barco desde Cala Galdana enseña por mar las calas vírgenes del suroeste —Mitjana, Trebalúger, Macarella— y cuevas que no se ven…",
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "paseo-catamaran-bahia-fornells",
+    "name": "Paseo en catamarán por la bahía de Fornells y la costa norte",
+    "slug": "paseo-catamaran-bahia-fornells",
+    "coordinates": {
+      "lat": 40.0539,
+      "lng": 4.1356
+    },
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "naturaleza",
+      "nautica",
+      "lujo-tranquilo"
+    ],
+    "highlights": [
+      "navegar la bahía protegida de Fornells y la costa norte hacia Cala Pregonda",
+      "paradas para baño y snorkel en calas a las que cuesta llegar por tierra",
+      "salidas en grupo reducido, estables y cómodas para todas las edades"
+    ],
+    "blurb": "Desde el abrigo de la gran bahía de Fornells, una salida en catamarán recorre con calma la costa norte y sus calas más remotas, con paradas para…",
+    "durationMin": 210,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
   },
   {
     "id": "platja-de-binigaus",
@@ -2641,6 +4052,75 @@
     "lastVerified": "2026-06-22"
   },
   {
+    "id": "rutas-a-caballo-cavalls-son-angel",
+    "name": "Rutas a caballo por la costa norte (Cavalls Son Àngel)",
+    "slug": "rutas-a-caballo-cavalls-son-angel",
+    "coordinates": {
+      "lat": 40.022,
+      "lng": 3.86
+    },
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "parejas",
+      "familias"
+    ],
+    "highlights": [
+      "paseo circular por el bosque de Son Àngel visitando dos calas vírgenes",
+      "ruta de ~2,5 h hasta Codolar de Biniatram con parada en Cala Ses Fontanelles",
+      "opciones de 1 a 3 h para no iniciados (niños desde 6 años) y rutas largas para expertos"
+    ],
+    "blurb": "A caballo por una finca de 300 ha de bosque y costa virgen del norte de Ciutadella, hasta calas escondidas como Codolar de Biniatram o Ses…",
+    "durationMin": 150,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.cavallssonangel.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "rutas-a-caballo-son-bou",
+    "name": "Rutas a caballo por el Camí de Cavalls (Son Bou)",
+    "slug": "rutas-a-caballo-son-bou",
+    "coordinates": {
+      "lat": 39.897,
+      "lng": 4.083
+    },
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "excursion",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza",
+      "parejas"
+    ],
+    "highlights": [
+      "ruta familiar de 1 h por la pradera y zona húmeda de Son Bou (desde 5 años)",
+      "ruta de 2 h por la costa para todos los niveles, adaptando el aire del caballo",
+      "salida junto a Torre Solí Nou, al lado del hotel Jardín de Menorca"
+    ],
+    "blurb": "Recorrer a caballo un tramo del Camí de Cavalls junto a la gran playa de Son Bou y su zona húmeda, al paso tranquilo del caballo menorquín. Una forma…",
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.menorcahorseback.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
     "id": "sa-torreta",
     "name": "Sa Torreta",
     "slug": "sa-torreta",
@@ -2819,6 +4299,76 @@
     "lastVerified": "2026-06-22"
   },
   {
+    "id": "son-felip-visita-apicola-algaiarens",
+    "name": "Son Felip — visita apícola de Algaiarens",
+    "slug": "son-felip-visita-apicola-algaiarens",
+    "coordinates": {
+      "lat": 40.02,
+      "lng": 3.9
+    },
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "naturaleza",
+      "familias",
+      "lujo-tranquilo",
+      "gastronomia"
+    ],
+    "highlights": [
+      "vestir el traje de apicultor y caminar entre las colmenas",
+      "recorrer el obrador y catar mieles premiadas maridadas con producto de la finca",
+      "reservar plaza online (fechas nuevas cada mes); calzado cómodo y gorra"
+    ],
+    "blurb": "Experiencia apícola en una finca de agricultura regenerativa de la costa norte, entre Algaiarens y Cala del Pilar. Su miel de zulla de Algaiarens…",
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://sonfelip.com/visita_apicultura_algaiarens/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "son-martorellet-caballos-menorquines",
+    "name": "Son Martorellet (caballo de Pura Raza Menorquina)",
+    "slug": "son-martorellet-caballos-menorquines",
+    "coordinates": {
+      "lat": 39.957,
+      "lng": 3.985
+    },
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "cultura",
+      "naturaleza"
+    ],
+    "highlights": [
+      "ver de cerca sementales y yeguas de Pura Raza Menorquina en sus prados",
+      "asistir al espectáculo ecuestre 'Somni' o a la visita guiada a las instalaciones",
+      "reservar plaza (entradas por Eventbrite); abierto de mayo a octubre"
+    ],
+    "blurb": "Una ganadería de 14 hectáreas dedicada desde 1997 al caballo de Pura Raza Menorquina, el alma de las fiestas de la isla. Entre la visita a las…",
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.sonmartorellet.com/es/inicio/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
     "id": "son-saura-del-sur",
     "name": "Son Saura del Sur",
     "slug": "son-saura-del-sur",
@@ -2883,6 +4433,142 @@
     "needsReservation": false,
     "dataCertainty": "alta",
     "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "spa-faustino-gran",
+    "name": "Spa Faustino Gran",
+    "slug": "spa-faustino-gran",
+    "coordinates": {
+      "lat": 39.9998,
+      "lng": 3.8378
+    },
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "cultura"
+    ],
+    "highlights": [
+      "Circuito de agua en la bóveda de una gruta histórica (piscina cubierta, sauna, baño de vapor)",
+      "Masajes y rituales faciales y corporales en dos cabinas de tratamiento",
+      "Palacio Relais & Châteaux del XVI con patio de olivos en pleno casco antiguo"
+    ],
+    "blurb": "El hammam y la piscina cubierta del Faustino Gran ocupan la bóveda de una antigua gruta, en el corazón de un palacio del siglo XVI en el casco viejo…",
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://faustinogran.com/es/spa",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "spa-menorca-experimental",
+    "name": "Spa Menorca Experimental",
+    "slug": "spa-menorca-experimental",
+    "coordinates": {
+      "lat": 39.8902,
+      "lng": 4.0899
+    },
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza"
+    ],
+    "highlights": [
+      "Tres cabinas de tratamiento, sauna y baño de vapor (hammam)",
+      "Faciales y corporales con Biologique Recherche; también Nüssa y Alex Carro",
+      "Clases de yoga y pilates; espacio de bienestar abierto a visitantes (10–20h)"
+    ],
+    "blurb": "En una finca del siglo XIX a un paseo de Cala Llucalari, el spa de Menorca Experimental combina cabinas, sauna y hammam con cosmética Biologique…",
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.menorcaexperimental.com/spa",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "spa-santa-ponsa-fontenille",
+    "name": "Spa Santa Ponsa (Fontenille)",
+    "slug": "spa-santa-ponsa-fontenille",
+    "coordinates": {
+      "lat": 39.902,
+      "lng": 4.093
+    },
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza"
+    ],
+    "highlights": [
+      "Spa en la antigua cisterna del XVIII: piscina cubierta con chorros, sauna y hammam",
+      "Tratamientos con cosmética natural Susanne Kaufmann",
+      "Clases de yoga y day-pass de spa abierto a no alojados"
+    ],
+    "blurb": "El spa de la finca Santa Ponsa vive en el aljibe del siglo XVIII de un antiguo palacio, entre jardines catalogados. Piscina cubierta, sauna y hammam…",
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.santa-ponsa.fontenille-collection.com/en/spa-minorca-yoga-retreat/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "spa-torralbenc",
+    "name": "Spa Torralbenc (rituales Natura Bissé)",
+    "slug": "spa-torralbenc",
+    "coordinates": {
+      "lat": 39.91,
+      "lng": 4.16
+    },
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza"
+    ],
+    "highlights": [
+      "Masajes y rituales faciales y corporales con productos Natura Bissé",
+      "Masaje Torralbenc con aceites de romero y lavanda de la propia finca",
+      "Retiros de yoga y pilates en temporada, entre viñas y campo"
+    ],
+    "blurb": "En una finca agrícola de 74 hectáreas entre viñedos, el spa de Torralbenc propone masajes y rituales con cosmética Natura Bissé. Abierto también a…",
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://torralbenc.com/es/wellness/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
   },
   {
     "id": "talati-de-dalt",
@@ -3059,6 +4745,40 @@
     "lastVerified": "2026-06-22"
   },
   {
+    "id": "torre-vella-yoga-naturaleza",
+    "name": "Torre Vella – yoga y masaje al aire libre (Fontenille)",
+    "slug": "torre-vella-yoga-naturaleza",
+    "coordinates": {
+      "lat": 39.9,
+      "lng": 4.1
+    },
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "excursion",
+    "idealFor": [
+      "lujo-tranquilo",
+      "naturaleza",
+      "parejas"
+    ],
+    "highlights": [
+      "Yoga y meditación diarios bajo encinas y olivos",
+      "Masaje al aire libre frente a los acantilados, con productos naturales",
+      "Programa de bienestar: clase de yoga + tratamiento corporal + aperitivo en el acantilado"
+    ],
+    "blurb": "En 200 hectáreas de naturaleza entre olivos, viñas y acantilados, Torre Vella ofrece yoga y meditación bajo las encinas y mesas de masaje al aire…",
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.torre-vella.fontenille-collection.com/en/yoga-wellness-spa-retreat-menorca/",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  },
+  {
     "id": "trepuco",
     "name": "Trepuco",
     "slug": "trepuco",
@@ -3090,5 +4810,109 @@
     "needsReservation": false,
     "dataCertainty": "media",
     "lastVerified": "2026-06-22"
+  },
+  {
+    "id": "wellness-cugo-gran",
+    "name": "Wellness Cugó Gran",
+    "slug": "wellness-cugo-gran",
+    "coordinates": {
+      "lat": 39.8694,
+      "lng": 4.2419
+    },
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas"
+    ],
+    "highlights": [
+      "Centro de bienestar con terapeutas y tratamientos a medida",
+      "Jardines y zonas de relax en finca de 100 hectáreas",
+      "Cugó Gran Retreat: experiencia de bienestar de 4 días"
+    ],
+    "blurb": "En una finca de 100 hectáreas cerca de Sant Climent, el centro de bienestar de Cugó Gran reúne un equipo de terapeutas, jardines y zonas de relax…",
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://menorca.cugogran.com/en/",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "yellow-catamarans-fondo-cristal-mao",
+    "name": "Yellow Catamarans (catamarán con fondo de cristal, puerto de Maó)",
+    "slug": "yellow-catamarans-fondo-cristal-mao",
+    "coordinates": {
+      "lat": 39.8917,
+      "lng": 4.2747
+    },
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "primera-vez",
+      "cultura"
+    ],
+    "highlights": [
+      "ver peces y fondos a través del casco de cristal desde la cubierta inferior",
+      "recorrer la bocana del puerto con las fortalezas y la Illa del Rei",
+      "embarcar a pie en el Moll de Llevant, sin coche y con acceso fácil"
+    ],
+    "blurb": "Un paseo sereno por el puerto natural más grande del Mediterráneo a bordo de un catamarán de fondo de cristal: la historia de Maó por arriba y la…",
+    "durationMin": 75,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.yellowcatamarans.com/en/home",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  {
+    "id": "yellow-catamarans-puerto-mao",
+    "name": "Vuelta al Puerto de Maó en catamarán con visión submarina (Yellow Catamarans)",
+    "slug": "yellow-catamarans-puerto-mao",
+    "coordinates": {
+      "lat": 39.891,
+      "lng": 4.268
+    },
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "primera-vez",
+      "cultura",
+      "nautica"
+    ],
+    "highlights": [
+      "vuelta completa al puerto de Maó pasando por Illa del Rei, Illa Plana y La Mola",
+      "salas con ventanas bajo la linea de flotacion para ver el fondo marino",
+      "comentario historico a bordo; ideal con ninos, sin esfuerzo (~60-70 min)"
+    ],
+    "blurb": "Recorrer uno de los puertos naturales mas grandes del Mediterraneo en un catamaran de visión submarina, con la historia de Maó contada a bordo. Una…",
+    "durationMin": 70,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.yellowcatamarans.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
   }
 ]

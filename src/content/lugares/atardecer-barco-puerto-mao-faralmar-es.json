@@ -1,0 +1,43 @@
+{
+  "name": "Atardecer en barco por el puerto de Maó",
+  "lang": "es",
+  "translationKey": "atardecer-barco-puerto-mao-faralmar",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Paseo privado al atardecer por el puerto natural de Maó, uno de los mayores del Mediterráneo, con copa de cava y la ciudad iluminándose al fondo. Una forma serena de ver la isla desde el agua, a un paso del centro.",
+  "coordinates": {
+    "lat": 39.8861,
+    "lng": 4.2906
+  },
+  "area": "Maó",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "gastronomia",
+      "nautica"
+    ],
+    "highlights": [
+      "recorrer el gran puerto de Maó con la luz cálida del ocaso",
+      "brindar con cava y bebidas frías a bordo",
+      "salida céntrica desde Cala Figuera, sin necesidad de coche"
+    ],
+    "durationMin": 120,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://faralmar.com/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

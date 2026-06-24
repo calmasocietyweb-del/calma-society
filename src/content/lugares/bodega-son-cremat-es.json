@@ -1,0 +1,43 @@
+{
+  "name": "Sa Bodega de Son Cremat",
+  "lang": "es",
+  "translationKey": "bodega-son-cremat",
+  "type": "monumento",
+  "edition": "menorca",
+  "description": "Pequeña bodega familiar en el campo de Maó, camino del aeropuerto, que plantó su primera viña en 2010. Blancos jóvenes de chardonnay y moscatel, frescos y aromáticos, en una visita cercana de la mano de la familia.",
+  "coordinates": {
+    "lat": 39.875,
+    "lng": 4.24
+  },
+  "area": "Maó",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "naturaleza",
+      "familias"
+    ],
+    "highlights": [
+      "pasear entre viñas y catar sus blancos y rosado con los propietarios",
+      "vivir la vendimia a final de verano (experiencia por temporada)",
+      "llamar con antelación: visita solo con cita previa"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://vimenorca.com/en/son-cremat/",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  }
+}

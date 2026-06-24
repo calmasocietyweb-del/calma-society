@@ -1,0 +1,42 @@
+{
+  "name": "Observación de aves en s'Albufera des Grau (itinerarios del parque)",
+  "lang": "es",
+  "translationKey": "birdwatching-salbufera-des-grau",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "El único parque natural de Menorca y corazón de la Reserva de Biosfera: tres senderos cortos y llanos con observatorios sobre la laguna para ver garzas, cormoranes, somormujos y rapaces. Naturaleza serena, gratuita y al alcance de todos.",
+  "coordinates": {
+    "lat": 39.9508,
+    "lng": 4.2453
+  },
+  "area": "Maó",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "familias",
+      "parejas"
+    ],
+    "highlights": [
+      "recorrer el itinerario de Santa Madrona (2,8 km, el mejor para aves acuáticas) con sus observatorios sobre la laguna",
+      "completar los senderos de Sa Gola (1,7 km, dunas y playa) y de Cala Llimpa (1,7 km, mirador de Ses Puntes)",
+      "empezar en el Centre de Recepció Rodríguez Femenias (ctra. Maó–Es Grau, km 3,5) para orientarte"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.caib.es/sites/xarxanatura/es/parc_natural_de_salbufera_des_grau-46059/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}

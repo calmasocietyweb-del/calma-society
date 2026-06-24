@@ -93,6 +93,7 @@ const CFG = {
   busCTA: T.busCTA,
   globalTitle: T.globalTitle,
   signatureTitle: isEs ? "La experiencia del viaje" : "The signature of your trip",
+  reservar: isEs ? "Reservar" : "Book",
   hours: T.hours,
   // Mensajes de validación de fechas (los usa el island).
   dateInvalid: isEs ? "Las fechas no son válidas. Revisa el formato (día, mes y año)." : "The dates are not valid. Check the format (day, month, year).",
@@ -282,6 +283,9 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
   const dataset = JSON.parse($("planner-dataset")!.textContent || "[]");
   const events = JSON.parse($("planner-events")!.textContent || "[]");
   const food = JSON.parse($("planner-food")!.textContent || "{}");
+  // Índice id→ficha (para enlazar la reserva de una actividad a su web oficial = monetización).
+  const byId: Record<string, any> = {};
+  for (const p of dataset) byId[p.id] = p;
   const CFG = JSON.parse($("planner-cfg")!.textContent || "{}");
   const form = $("planner-form") as HTMLFormElement | null;
   const out = $("planner-results");
@@ -355,7 +359,13 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
   }
 
   function notice(n: any) {
-    return `<li class="flex gap-2 text-sm text-piedra"><span aria-hidden="true">${CFG.noticeIcon[n.kind] || "•"}</span><span>${esc(n.text)}</span></li>`;
+    // Monetización: si el aviso es de RESERVA y la actividad tiene web oficial,
+    // añade un CTA clicable (rel=sponsored + evento Umami; listo para afiliado).
+    let cta = "";
+    if (n.kind === "reserva" && n.placeId && byId[n.placeId]?.officialUrl) {
+      cta = ` <a href="${esc(byId[n.placeId].officialUrl)}" target="_blank" rel="sponsored noopener" data-umami-event="planner-reserva" class="whitespace-nowrap font-medium text-arcilla underline underline-offset-2 hover:text-terracota">${esc(CFG.reservar)} →</a>`;
+    }
+    return `<li class="flex gap-2 text-sm text-piedra"><span aria-hidden="true">${CFG.noticeIcon[n.kind] || "•"}</span><span>${esc(n.text)}${cta}</span></li>`;
   }
 
   function block(b: any) {

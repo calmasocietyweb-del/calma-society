@@ -1,0 +1,44 @@
+{
+  "name": "Vuelta al Puerto de Maó en catamarán con visión submarina (Yellow Catamarans)",
+  "lang": "es",
+  "translationKey": "yellow-catamarans-puerto-mao",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Recorrer uno de los puertos naturales mas grandes del Mediterraneo en un catamaran de visión submarina, con la historia de Maó contada a bordo. Una hora apacible entre la Illa del Rei, la base naval y la fortaleza de La Mola.",
+  "coordinates": {
+    "lat": 39.891,
+    "lng": 4.268
+  },
+  "area": "Maó",
+  "images": [],
+  "tags": [],
+  "status": "draft",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "primera-vez",
+      "cultura",
+      "nautica"
+    ],
+    "highlights": [
+      "vuelta completa al puerto de Maó pasando por Illa del Rei, Illa Plana y La Mola",
+      "salas con ventanas bajo la linea de flotacion para ver el fondo marino",
+      "comentario historico a bordo; ideal con ninos, sin esfuerzo (~60-70 min)"
+    ],
+    "durationMin": 70,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.yellowcatamarans.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  }
+}
