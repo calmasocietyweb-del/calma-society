@@ -92,13 +92,21 @@ export function placeSchema(opts: {
   lng: number;
   priceRange?: string;
   website?: string;
+  images?: string[];
 }) {
+  // Imágenes a URL absoluta (rich results las exigen). `abs` acepta rutas
+  // relativas (/uploads/…) y URLs completas por igual.
+  const image =
+    opts.images && opts.images.length > 0
+      ? opts.images.map(abs)
+      : undefined;
   return {
     "@context": "https://schema.org",
     "@type": PLACE_SCHEMA_TYPE[opts.type] ?? "Place",
     name: opts.name,
     description: opts.description,
     url: opts.url,
+    image,
     address: { "@type": "PostalAddress", addressLocality: opts.area, addressRegion: "Menorca", addressCountry: "ES" },
     geo: { "@type": "GeoCoordinates", latitude: opts.lat, longitude: opts.lng },
     priceRange: opts.priceRange,
@@ -113,6 +121,7 @@ export function eventSchema(opts: {
   endDate?: Date;
   location: string;
   url?: string;
+  image?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -122,7 +131,20 @@ export function eventSchema(opts: {
     startDate: opts.startDate.toISOString().slice(0, 10),
     endDate: (opts.endDate ?? opts.startDate).toISOString().slice(0, 10),
     eventStatus: "https://schema.org/EventScheduled",
-    location: { "@type": "Place", name: opts.location, address: `${opts.location}, Menorca, España` },
+    // Todos los eventos de la agenda son presenciales (sin streaming).
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    location: {
+      "@type": "Place",
+      name: opts.location,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: opts.location,
+        addressRegion: "Menorca",
+        addressCountry: "ES",
+      },
+    },
+    // Imagen del evento (rich results de Event la destacan). A URL absoluta.
+    image: opts.image ? [abs(opts.image)] : undefined,
     url: opts.url,
   };
 }

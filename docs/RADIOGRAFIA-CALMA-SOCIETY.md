@@ -73,7 +73,7 @@ Veredicto: cimientos muy sólidos (estrategia, web, marca, herramientas, todo co
 6. Arreglar la **i18n EN del planificador** (dataset EN a paridad + textos del motor en inglés).
 
 **Tier 3 — Profundidad y GEO:**
-7. Enriquecer schemas que ya tienen los datos (Place: openingHours/telephone/image; Event: offers/performer/organizer) para rich results.
+7. Enriquecer schemas que ya tienen los datos (Place: openingHours/telephone/image; Event: offers/performer/organizer) para rich results. **— PARCIAL HECHO (24 jun 2026):** se enchufó lo que el dato *ya* soporta — Event ahora emite `image` (148 eventos), `url` (sourceUrl, 124), `eventAttendanceMode` y `address` estructurada (`PostalAddress`); Place emite `image` (8 fichas publicadas con foto). **Lo demás NO se hizo por falta de dato (no se inventa):** `telephone` y horarios-máquina de Place (0 fichas con teléfono; solo 2 con `openDays` y sin horas), y `offers`/`performer`/`organizer`/geo-real de Event (0 datos: ningún evento usa `locationRef`). Para completarlo hace falta primero **añadir campos al schema y sembrar datos verificados** (tarea de `investigador-menorca`), no de ingeniería.
 8. Cerrar paridad EN de lugares y publicar los 96 draft revisados.
 9. Reequilibrar contenido hacia "vivir" (el segmento rentable, hoy solo 6 artículos).
 
