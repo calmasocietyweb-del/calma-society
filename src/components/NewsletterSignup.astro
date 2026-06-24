@@ -57,6 +57,7 @@ const newsletterHref = locale === "es" ? "/newsletter" : "/en/newsletter";
           <a
             href={newsletterHref}
             class="mt-6 inline-block rounded-md bg-arcilla px-6 py-3 text-sm font-semibold text-lino transition-colors hover:bg-tinta"
+            data-umami-event="newsletter-cta-inline"
           >
             {t("newsletter.cta")}
           </a>
@@ -82,14 +83,42 @@ const newsletterHref = locale === "es" ? "/newsletter" : "/en/newsletter";
         </p>
 
         {captureMode ? (
-          <SocietyCaptureForm locale={locale} tone="dark" />
+          <SocietyCaptureForm locale={locale} tone="dark" umamiEvent="newsletter-submit" />
         ) : mlMode === "embedded" ? (
-          <div class="ml-embedded mx-auto mt-8 max-w-md" data-form={formId} />
+          <div class="mx-auto mt-8 max-w-md">
+            {/* Captación principal: formulario embebido de MailerLite (su lista). */}
+            <div class="ml-embedded" data-form={formId} />
+            {/* Red de seguridad: si MailerLite no carga (sin JS o bloqueado por un
+                ad-blocker), se revela este formulario nativo. Sus correos van a
+                Formspree → importar a MailerLite. Oculto por defecto: solo aparece
+                cuando hace falta, sin parpadeo en el caso normal. */}
+            <div class="ml-fallback" hidden>
+              <p class="mb-1 text-xs text-lino/60">{t("newsletter.text")}</p>
+              <SocietyCaptureForm locale={locale} tone="dark" idSuffix="-mlfb" umamiEvent="newsletter-submit-fallback" />
+            </div>
+            <noscript>
+              <style>{`.ml-fallback{display:block!important}`}</style>
+            </noscript>
+            <script is:inline>{`
+              // Revela el respaldo nativo solo si MailerLite no rellenó su formulario
+              // (ad-blocker/CSP/red). Si ML aparece después, vuelve a ocultarlo.
+              document.querySelectorAll('.ml-embedded').forEach(function (box) {
+                var fb = box.parentElement && box.parentElement.querySelector('.ml-fallback');
+                if (!fb) return;
+                if (box.children.length > 0) { fb.hidden = true; return; }
+                var t = setTimeout(function () { if (box.children.length === 0) fb.hidden = false; }, 3000);
+                new MutationObserver(function (_m, obs) {
+                  if (box.children.length > 0) { fb.hidden = true; clearTimeout(t); obs.disconnect(); }
+                }).observe(box, { childList: true });
+              });
+            `}</script>
+          </div>
         ) : mlMode === "popup" ? (
           <button
             type="button"
             class="mx-auto mt-8 block rounded-md bg-oro-vivo px-8 py-3.5 text-sm font-semibold text-tinta transition-colors hover:bg-lino"
             onclick={`ml('show', '${popupFormId}', true)`}
+            data-umami-event="newsletter-popup-open"
           >
             {t("newsletter.cta")}
           </button>
@@ -116,6 +145,7 @@ const newsletterHref = locale === "es" ? "/newsletter" : "/en/newsletter";
               type="submit"
               disabled={mlMode === "preview"}
               class="shrink-0 rounded-md bg-oro-vivo px-6 py-3 text-sm font-semibold text-tinta transition-colors hover:bg-lino disabled:cursor-not-allowed disabled:opacity-60"
+              data-umami-event={mlMode === "custom" ? "newsletter-submit" : undefined}
             >
               {t("newsletter.cta")}
             </button>

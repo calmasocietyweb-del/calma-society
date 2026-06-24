@@ -13,8 +13,10 @@ interface Props {
   tone?: "dark" | "light";
   /** Sufijo para IDs únicos cuando hay varios formularios en la misma página. */
   idSuffix?: string;
+  /** Nombre de evento Umami para medir el envío (KPI nº1). Opcional. */
+  umamiEvent?: string;
 }
-const { locale, tone = "dark", idSuffix = "" } = Astro.props;
+const { locale, tone = "dark", idSuffix = "", umamiEvent } = Astro.props;
 const t = useTranslations(locale);
 
 const endpoint = SITE.newsletter.capture.endpoint;
@@ -56,7 +58,7 @@ const accent = dark ? "accent-oro-vivo" : "accent-terracota";
       placeholder={t("newsletter.placeholder")}
       class={inputClass}
     />
-    <button type="submit" class={btnClass}>{t("newsletter.cta")}</button>
+    <button type="submit" class={btnClass} data-umami-event={umamiEvent}>{t("newsletter.cta")}</button>
   </div>
 
   {/* Campos Formspree: asunto, redirección de "gracias" y origen de la captación. */}
