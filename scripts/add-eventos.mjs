@@ -42,9 +42,13 @@ const FIESTA_IMG = {
   "carnaval-darrers-dies-menorca": "carnaval-menorca", // Adobe Stock: disfraces de carnaval
   "mare-de-deu-del-toro": "monte-toro",                // Santuario del Monte Toro
   "sant-pere-pescadors-mao-fornells": "fornells",      // puerto pesquero de Fornells
-  "festes-sant-nicolau-es-mercadal": "fiesta-caballos", // Adobe Stock: jinete + caballo + fuego
-  "festes-calan-porter-alaior": "caballos-jinetes",     // Adobe Stock: caballos y jinetes
-  "festes-es-caixers-alaior": "jinetes-fiesta",         // Adobe Stock: jinetes engalanados (caixers)
+  // NOTA (jun 2026): se RETIRARON los mapeos de festes-sant-nicolau-es-mercadal,
+  // festes-calan-porter-alaior y festes-es-caixers-alaior a "fiesta-caballos" /
+  // "caballos-jinetes" / "jinetes-fiesta". Esas fotos NO eran de Menorca (eran
+  // Las Luminarias de Ávila —caballo saltando hogueras— y una feria andaluza) y
+  // chocaban con el moat de datos reales (CLAUDE.md §2). Estos eventos ya usan
+  // fotos AUTÉNTICAS de jaleo menorquín de Wikimedia (CC + crédito). No volver a
+  // mapearlos a esos handles.
   // Eventos con sede de foto exacta (encaje literal).
   "fosquets-de-lithica": "lithica",                     // pedreres de s'Hostal (Lithica)
   "festival-pedra-viva-lithica": "la-mola",             // otra cantera/piedra (Lithica ya usada)
