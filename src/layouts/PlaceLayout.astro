@@ -8,6 +8,7 @@ import { SITE, type Locale } from "../config/site";
 import { placeUrl, homePath } from "../i18n/utils";
 import { abs, placeSchema, breadcrumbSchema } from "../lib/schema";
 import { srcset } from "../lib/img";
+import { menorcaBusUrl } from "../lib/links";
 
 interface Props {
   entry: CollectionEntry<"lugares">;
@@ -17,6 +18,8 @@ const { entry, alternates } = Astro.props;
 const { data } = entry;
 const locale = data.lang as Locale;
 const t = useTranslations(locale);
+// Cuerpo editorial opcional: si está, la ficha se renderiza como ARTÍCULO.
+const ed = data.editorial;
 
 const pi = data.practicalInfo;
 const rows: { label: string; value?: string }[] = [
@@ -55,7 +58,18 @@ const breadcrumb = breadcrumbSchema([
       {data.priceRange && <span class="ml-1 text-piedra-suave">· {data.priceRange}</span>}
     </p>
     <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">{data.name}</h1>
-    <p class="mt-5 text-lg leading-relaxed text-piedra-suave">{data.description}</p>
+    <p class="mt-5 text-lg leading-relaxed text-piedra-suave">{ed?.lead ?? data.description}</p>
+
+    {
+      ed && ed.bestFor.length > 0 && (
+        <div class="mt-5 flex flex-wrap items-center gap-2">
+          <span class="text-xs font-semibold uppercase tracking-wider text-oro">{t("place.bestfor")}</span>
+          {ed.bestFor.map((b) => (
+            <span class="rounded-full border border-niebla bg-lino px-3 py-1 text-xs text-piedra-suave">{b}</span>
+          ))}
+        </div>
+      )
+    }
 
     {
       data.images && data.images.length > 0 && (
@@ -73,6 +87,61 @@ const breadcrumb = breadcrumbSchema([
             decoding="async"
           />
         </figure>
+      )
+    }
+
+    {/* Cuerpo de la ficha-artículo: secciones con criterio (.article-body =
+        misma prosa que los artículos: h2, párrafos, enlaces del sistema). */}
+    {
+      ed && (
+        <div class="article-body mt-10 [&>h2:first-child]:mt-0">
+          {ed.sections.map((s) => (
+            <Fragment>
+              <h2>{s.heading}</h2>
+              {s.body.map((p) => (
+                <p>{p}</p>
+              ))}
+            </Fragment>
+          ))}
+        </div>
+      )
+    }
+
+    {/* "Bueno saber": apuntes prácticos verificados, en breve. */}
+    {
+      ed && ed.goodToKnow.length > 0 && (
+        <section class="mt-10 rounded-xl border border-niebla bg-arena/30 p-6">
+          <h2 class="text-xs font-semibold uppercase tracking-widest text-oro">{t("place.goodtoknow")}</h2>
+          <ul class="mt-4 space-y-2.5 text-sm text-piedra">
+            {ed.goodToKnow.map((g) => (
+              <li class="flex gap-2.5">
+                <span aria-hidden="true" class="mt-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-oro-vivo" />
+                <span>{g}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    {/* Gesto-firma de movilidad (monetización): te llevamos con chófer →
+        Menorca Bus (negocio propio; rel=sponsored técnico). Solo si transfer. */}
+    {
+      ed?.transfer && (
+        <aside class="mt-10 overflow-hidden rounded-2xl bg-arcilla p-7 text-lino sm:p-8">
+          <p class="text-xs font-semibold uppercase tracking-[0.25em] text-champan">{t("place.transfer.eyebrow")}</p>
+          <p class="mt-3 font-display text-2xl leading-snug text-crema">{t("place.transfer.title")}</p>
+          <p class="mt-3 max-w-prosa text-sm leading-relaxed text-lino/85">{ed.transferText ?? t("place.transfer.text")}</p>
+          <a
+            href={menorcaBusUrl("noche", entry.id)}
+            target="_blank"
+            rel="sponsored noopener"
+            data-umami-event="cta-menorcabus-noche"
+            class="mt-5 inline-block rounded-md bg-crema px-5 py-2.5 text-sm font-semibold text-arcilla transition-colors hover:bg-lino"
+          >
+            {t("place.transfer.cta")} ↗
+          </a>
+        </aside>
       )
     }
 

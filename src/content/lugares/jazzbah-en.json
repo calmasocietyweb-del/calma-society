@@ -21,5 +21,38 @@
     "harbour",
     "ciutadella"
   ],
-  "status": "published"
+  "status": "published",
+  "editorial": {
+    "lead": "If Ciutadella has a cathedral of the night, it's Jazzbah. For more than two decades it has booked live music and DJ sets down by the harbour, and it's still the city's reference venue for a night out.",
+    "sections": [
+      {
+        "heading": "Ciutadella's room for the night",
+        "body": [
+          "Some places last because they know what they are. For over twenty years Jazzbah has been down on Ciutadella's harbour, the same and yet different every night: live gigs, DJ sets and themed parties, with several moods —from the stage to the terrace— under one roof.",
+          "It isn't a dancefloor and little else: it's a room with musical taste, the kind that programmes rather than just opens its doors."
+        ]
+      },
+      {
+        "heading": "Down by the harbour",
+        "body": [
+          "It sits below, on the Pla de Sant Joan, the harbour promenade where Ciutadella's nightlife gathers. You head down, pick a room and stay: it's the natural starting point for any night in the city."
+        ]
+      },
+      {
+        "heading": "How to do it, calmly",
+        "body": [
+          "Check the listings before you go —the bill changes constantly— and leave the logistics to us. Hours and programme are seasonal: confirm them on the website or Instagram."
+        ]
+      }
+    ],
+    "bestFor": ["Live music", "A night out", "Ciutadella harbour"],
+    "goodToKnow": [
+      "More than two decades as a landmark of Ciutadella's nightlife.",
+      "Live gigs, DJ sets and themed nights, with several moods.",
+      "It's on Ciutadella's harbour (Passeig es Pla de Sant Joan).",
+      "Line-up, hours and season change: check the website or Instagram."
+    ],
+    "transfer": true,
+    "transferText": "Parking by Ciutadella's harbour is hard at night and in summer. Forget the car: we'll take you there and bring you back with a private chauffeur, no circling for a space."
+  }
 }

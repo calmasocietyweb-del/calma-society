@@ -22,5 +22,39 @@
     "s'algar",
     "luxury"
   ],
-  "status": "published"
+  "status": "published",
+  "editorial": {
+    "lead": "Menorca is the island of calm —but it also knows how to do an international-brand beach club. Purobeach —the Puro group's first on the island, opened in 2023— brings its formula of a pool above the sea, a restaurant and its own music label to S'Algar, with the restraint the Mediterranean asks for.",
+    "sections": [
+      {
+        "heading": "The Puro label comes to Menorca",
+        "body": [
+          "Purobeach is an international family of beach clubs with something uncommon: its own music label. In 2023 it opened its first home in Menorca and planted its idea of a Mediterranean day here —pool, sea access, restaurant and wellness— with a polished design that keeps it well clear of the beach shack and closer to a high-end beach club.",
+          "It isn't a shack at the water's edge but an integrated space that works as an oasis: you come to spend the day, not just to grab a drink."
+        ]
+      },
+      {
+        "heading": "A day that stretches into a drink",
+        "body": [
+          "The charm of a place like this is the rhythm. By day the pool and the sea run the show; as the afternoon drops, the Puro label's music and the cocktails rise, and the swim turns, unhurried, into an evening. It's the calm version of going out: a long day of sun that ends in a well-made drink.",
+          "For a couple or a group after luxury without the noise, it's one of the easiest plans on the southeast coast."
+        ]
+      },
+      {
+        "heading": "Where it is",
+        "body": [
+          "Purobeach is in S'Algar, a quiet resort on the southeast coast, in the municipality of Sant Lluís, set within the Aluasoul Menorca complex. It's an area of hotels and small coves, away from the bustle."
+        ]
+      }
+    ],
+    "bestFor": ["Couples", "Quiet luxury", "Pool & sea day"],
+    "goodToKnow": [
+      "The Puro group's first beach club in Menorca, opened in 2023.",
+      "Set within the Aluasoul Menorca complex, in the resort of S'Algar (Sant Lluís).",
+      "Pool, sea access, restaurant and the Puro label's music.",
+      "Hours, menu and bookings are seasonal: check the official site before you go."
+    ],
+    "transfer": true,
+    "transferText": "S'Algar is a southeastern resort and the evening ends in a cocktail: the comfortable —and sensible— choice is not to drive back. We'll take you there and pick you up with a private chauffeur, in a Mercedes S-Class or V-Class."
+  }
 }

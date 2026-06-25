@@ -21,5 +21,38 @@
     "harbour",
     "ciutadella"
   ],
-  "status": "published"
+  "status": "published",
+  "editorial": {
+    "lead": "Kopas Club is for those who want to choose the pace of their night without changing venue. Right on Ciutadella's harbour, it spreads a quiet cocktail, a proper bar and the dance floor across several floors and terraces, with views over the water.",
+    "sections": [
+      {
+        "heading": "Several nights in one place",
+        "body": [
+          "Kopas is built on variety under one roof: several floors, terraces and bars that let you go from conversation over a drink to the dance floor without leaving the building. Up top, the open-air terrace looks over the harbour; downstairs the music tightens.",
+          "It's a place for a long night you don't want to plan in detail: you go up, you come down, and each floor has its own tone."
+        ]
+      },
+      {
+        "heading": "On Ciutadella's harbour",
+        "body": [
+          "It's on the Pla de Sant Joan, the harbour promenade where Ciutadella's nightlife beats, in a space locals will remember as the old Esfera. It's in good company: other rooms sit a few steps away, so it's easy to make a night of it around here."
+        ]
+      },
+      {
+        "heading": "How to do it, calmly",
+        "body": [
+          "Hours, programme and season change every year, so check the website before you go. And to keep the car out of your mind, let us drive you."
+        ]
+      }
+    ],
+    "bestFor": ["A night out", "Cocktails", "Ciutadella harbour"],
+    "goodToKnow": [
+      "Several floors and terraces with harbour views, from a quiet cocktail to the dance floor.",
+      "Cocktails and varied music, with several moods in one venue.",
+      "It's on Ciutadella's harbour (Passeig es Pla de Sant Joan).",
+      "Hours, programme and season change: check the official site."
+    ],
+    "transfer": true,
+    "transferText": "Parking by Ciutadella's harbour is hard at night and in summer. Leave the car: we'll take you there and bring you back with a private chauffeur."
+  }
 }

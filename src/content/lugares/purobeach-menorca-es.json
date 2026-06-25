@@ -22,5 +22,39 @@
     "s'algar",
     "lujo"
   ],
-  "status": "published"
+  "status": "published",
+  "editorial": {
+    "lead": "Menorca es la isla de la calma, pero también sabe montar un beach club de marca internacional. Purobeach —el primero del grupo Puro en la isla, abierto en 2023— trae a S'Algar su fórmula de piscina sobre el mar, restaurante y la música de su propio sello, con la mesura que pide el Mediterráneo.",
+    "sections": [
+      {
+        "heading": "El sello Puro llega a Menorca",
+        "body": [
+          "Purobeach es una familia internacional de beach clubs con algo poco común: su propio sello de música. En 2023 abrió su primera casa en Menorca y plantó aquí su idea de día mediterráneo —piscina, acceso al mar, restaurante y bienestar— con un diseño cuidado que lo aleja del chiringuito y lo acerca al club de playa de gama alta.",
+          "No es un local a pie de cala, sino un espacio integrado que funciona como oasis: vienes a pasar el día, no solo a tomar algo."
+        ]
+      },
+      {
+        "heading": "Un día que se estira hasta la copa",
+        "body": [
+          "La gracia de un sitio así es el ritmo. De día manda la piscina y el mar; según baja la tarde, suben la música del sello Puro y la coctelería, y el plan de baño se convierte, sin prisa, en velada. Es la versión tranquila de salir: una jornada larga de sol que acaba en una copa bien servida.",
+          "Para una pareja o un grupo que busca lujo sin estridencias, es de los planes más cómodos del sureste."
+        ]
+      },
+      {
+        "heading": "Dónde está",
+        "body": [
+          "Purobeach está en S'Algar, una urbanización tranquila de la costa sureste, en el término de Sant Lluís, integrado en el complejo Aluasoul Menorca. Es zona de hoteles y calas pequeñas, lejos del bullicio."
+        ]
+      }
+    ],
+    "bestFor": ["Parejas", "Lujo tranquilo", "Día de piscina y mar"],
+    "goodToKnow": [
+      "El primer beach club del grupo Puro en Menorca, abierto en 2023.",
+      "Está integrado en el complejo Aluasoul Menorca, en la urbanización de S'Algar (Sant Lluís).",
+      "Piscina, acceso al mar, restaurante y la música del sello Puro.",
+      "Horarios, carta y reservas son estacionales: confírmalos en su web antes de ir."
+    ],
+    "transfer": true,
+    "transferText": "S'Algar es una urbanización del sureste y la velada acaba en cóctel: lo cómodo —y lo sensato— es no conducir de vuelta. Te llevamos y te recogemos con chófer privado, en Mercedes Clase S o Clase V."
+  }
 }

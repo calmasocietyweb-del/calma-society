@@ -21,5 +21,38 @@
     "cala blanca",
     "ciutadella"
   ],
-  "status": "published"
+  "status": "published",
+  "editorial": {
+    "lead": "Jigger se mueve entre dos mundos: la cocina y la barra. Es una coctelería de autor con cocina propia en Cala Blanca, donde el día puede empezar con brunch y la noche se alarga entre cócteles de firma y una carta larga de destilados.",
+    "sections": [
+      {
+        "heading": "Coctelería con cocina",
+        "body": [
+          "El nombre lo dice a medias: un jigger es la medida del barman, y aquí la coctelería va en serio. Pero Jigger añade algo poco habitual —cocina propia bajo el mismo techo—, así que funciona de día como sitio de comer y de noche como coctelería de autor, sin cambiar de mesa.",
+          "La carta de destilados es amplia, con debilidad por las ginebras; es de esos sitios donde puedes pedir consejo y dejarte llevar."
+        ]
+      },
+      {
+        "heading": "En Cala Blanca",
+        "body": [
+          "No está en el centro ni en el puerto, sino en la urbanización de Cala Blanca, en la costa oeste, a unos cinco kilómetros al sur de Ciutadella, junto a la cala del mismo nombre. Es una zona tranquila y residencial: el plan de copa relajada, no el de salir de marcha por el puerto."
+        ]
+      },
+      {
+        "heading": "Cómo vivirlo con calma",
+        "body": [
+          "Ve sin prisa, empieza por la cocina si llegas pronto y deja que la noche derive hacia los cócteles. Y como la temporada y la carta cambian, confírmalo en su web o Instagram antes de ir."
+        ]
+      }
+    ],
+    "bestFor": ["Parejas", "Coctelería de autor", "Cala Blanca"],
+    "goodToKnow": [
+      "Concepto «cooking cocktail»: coctelería de autor con cocina, de brunch de día a cócteles de noche.",
+      "Amplia carta de destilados, con especialidad en ginebras.",
+      "Está en la urbanización de Cala Blanca, a unos 5 km al sur de Ciutadella.",
+      "Carta, horarios y temporada cambian: confírmalos en su web o Instagram."
+    ],
+    "transfer": true,
+    "transferText": "Cala Blanca queda a unos 5 km de Ciutadella y, entre cócteles, lo razonable es no coger el coche de vuelta. Te llevamos y te recogemos con chófer privado —tú solo eliges la copa."
+  }
 }

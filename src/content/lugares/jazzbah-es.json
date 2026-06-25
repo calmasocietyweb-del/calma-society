@@ -21,5 +21,38 @@
     "puerto",
     "ciutadella"
   ],
-  "status": "published"
+  "status": "published",
+  "editorial": {
+    "lead": "Si Ciutadella tiene una catedral de la noche, es Jazzbah. Lleva más de dos décadas programando música en directo y sesiones de DJ a pie del puerto, y sigue siendo la sala de referencia para salir en la ciudad.",
+    "sections": [
+      {
+        "heading": "La sala de la noche de Ciutadella",
+        "body": [
+          "Hay sitios que aguantan porque saben lo que son. Jazzbah lleva más de veinte años en el puerto de Ciutadella siendo lo mismo y siendo distinto cada noche: conciertos en directo, sesiones de DJ y fiestas temáticas, con varios ambientes —del escenario a la terraza— en un mismo local.",
+          "No es una discoteca de pista y poco más: es una sala con criterio musical, de las que programan y no solo abren."
+        ]
+      },
+      {
+        "heading": "A pie del puerto",
+        "body": [
+          "Está abajo, en el Pla de Sant Joan, el paseo del puerto de Ciutadella donde se concentra la noche de la ciudad. Bajas, eliges sala y te quedas: es el punto de partida natural de cualquier noche ciutadellenca."
+        ]
+      },
+      {
+        "heading": "Cómo vivirlo con calma",
+        "body": [
+          "Mira su agenda antes de ir —el cartel cambia constantemente— y deja la logística para nosotros. Horarios y programación son estacionales: confírmalos en su web o Instagram."
+        ]
+      }
+    ],
+    "bestFor": ["Música en directo", "Salir de noche", "Puerto de Ciutadella"],
+    "goodToKnow": [
+      "Más de dos décadas como sala de referencia de la noche de Ciutadella.",
+      "Conciertos en directo, sesiones de DJ y fiestas temáticas, con varios ambientes.",
+      "Está en el puerto de Ciutadella (Passeig es Pla de Sant Joan).",
+      "Cartel, horarios y temporada cambian: confírmalos en su web o Instagram."
+    ],
+    "transfer": true,
+    "transferText": "En el puerto de Ciutadella aparcar de noche y en verano es difícil. Olvídate del coche: te llevamos y te recogemos con chófer privado, sin dar vueltas buscando sitio."
+  }
 }

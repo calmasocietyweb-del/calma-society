@@ -21,5 +21,39 @@
     "fornells",
     "north"
   ],
-  "status": "published"
+  "status": "published",
+  "editorial": {
+    "lead": "The south has its much-photographed sunsets, but the north keeps the wildest ones. Isabella Beach Club sits on a rocky promontory at the water's edge on the Platges de Fornells, and there —over sushi, grilled plates and a drink— the sun goes down over the northern sea.",
+    "sections": [
+      {
+        "heading": "The northern sunset",
+        "body": [
+          "Menorca's north coast is its most rugged: wind, rock and a sea that isn't always calm. Isabella makes the most of exactly that. It's perched on a rocky promontory level with the water, on the Platges de Fornells, and it has made a name for its sunsets —wilder and quieter than the south's.",
+          "It's a place to arrive with time, order something and let the sky do its work."
+        ]
+      },
+      {
+        "heading": "Sushi, grill and cocktails",
+        "body": [
+          "The kitchen looks east and to the Mediterranean at once: Asian-Spanish fusion, with sushi and the grill as specialities, local produce and a good cocktail list. Some nights there's a DJ, and the mix —a good table, a drink and soft music facing the sea— is its signature.",
+          "Dinners run by reservation, so it pays to plan ahead: this isn't a place to improvise at the last minute in summer."
+        ]
+      },
+      {
+        "heading": "How to do it, calmly",
+        "body": [
+          "Book dinner in advance through the website, choose a table facing west and let the evening run from sunset to the last drink. It's one of those plans that make the trip up north worth it."
+        ]
+      }
+    ],
+    "bestFor": ["Couples", "Sunset", "Dinner & drinks"],
+    "goodToKnow": [
+      "On a rocky promontory at the water's edge on the Platges de Fornells (north coast).",
+      "Asian-Mediterranean fusion: sushi, grill, local produce and cocktails.",
+      "Dinners are by reservation (their own online system).",
+      "DJ music on some nights; programme and hours are seasonal → check the official site."
+    ],
+    "transfer": true,
+    "transferText": "The way back runs along the north's dark, winding secondary roads, and after a drink, driving is the last thing you want. We'll take you there and bring you back with a private chauffeur."
+  }
 }

@@ -58,6 +58,13 @@ export const ui = {
     "place.hours": "Horario",
     "place.area": "Zona",
     "place.viewmap": "Ver en el mapa",
+    "place.bestfor": "Ideal para",
+    "place.goodtoknow": "Bueno saber",
+    "place.transfer.eyebrow": "Llega con chófer",
+    "place.transfer.title": "Te llevamos y te recogemos",
+    "place.transfer.text":
+      "En los acantilados del atardecer y en los puertos casi nunca hay dónde aparcar —y de noche conducir es lo último que apetece—. Te recogemos en un Mercedes Clase S o Clase V con chófer privado, del primer atardecer al último cóctel.",
+    "place.transfer.cta": "Reserva con Menorca Bus",
 
     "agenda.upcoming": "Próximas citas",
     "agenda.all": "Todas",
@@ -149,6 +156,13 @@ export const ui = {
     "place.hours": "Opening hours",
     "place.area": "Area",
     "place.viewmap": "View on map",
+    "place.bestfor": "Good for",
+    "place.goodtoknow": "Good to know",
+    "place.transfer.eyebrow": "Arrive with a chauffeur",
+    "place.transfer.title": "We'll drive you there and back",
+    "place.transfer.text":
+      "On the sunset cliffs and around the harbours there's almost nowhere to park —and at night, driving is the last thing you want. We pick you up in a Mercedes S-Class or V-Class with a private chauffeur, from the first sunset to the last cocktail.",
+    "place.transfer.cta": "Book with Menorca Bus",
 
     "agenda.upcoming": "What's coming up",
     "agenda.all": "All",

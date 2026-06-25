@@ -21,5 +21,38 @@
     "cala blanca",
     "ciutadella"
   ],
-  "status": "published"
+  "status": "published",
+  "editorial": {
+    "lead": "Jigger moves between two worlds: the kitchen and the bar. It's an author cocktail bar with its own kitchen in Cala Blanca, where the day can start with brunch and the night stretches on through signature cocktails and a long list of spirits.",
+    "sections": [
+      {
+        "heading": "Cocktails with a kitchen",
+        "body": [
+          "The name half-says it: a jigger is the bartender's measure, and the cocktails here are taken seriously. But Jigger adds something less common —its own kitchen under the same roof— so it works by day as a place to eat and by night as an author cocktail bar, without changing tables.",
+          "The spirits list is broad, with a soft spot for gin; it's one of those places where you can ask for a steer and let yourself be led."
+        ]
+      },
+      {
+        "heading": "In Cala Blanca",
+        "body": [
+          "It isn't in the centre or the harbour but in the Cala Blanca resort, on the west coast, some five kilometres south of Ciutadella, beside the cove of the same name. It's a quiet, residential area: the relaxed-drink plan, not the harbour night-out."
+        ]
+      },
+      {
+        "heading": "How to do it, calmly",
+        "body": [
+          "Go unhurried, start with the kitchen if you arrive early and let the night drift toward the cocktails. And since the season and the menu change, check the website or Instagram before you go."
+        ]
+      }
+    ],
+    "bestFor": ["Couples", "Craft cocktails", "Cala Blanca"],
+    "goodToKnow": [
+      "A «cooking cocktail» concept: an author cocktail bar with a kitchen, from brunch by day to cocktails by night.",
+      "A broad spirits list, with a speciality in gin.",
+      "It's in the Cala Blanca resort, about 5 km south of Ciutadella.",
+      "Menu, hours and season change: check the website or Instagram."
+    ],
+    "transfer": true,
+    "transferText": "Cala Blanca is some 5 km from Ciutadella and, over cocktails, the sensible thing is to leave the car. We'll take you there and bring you back with a private chauffeur —you just choose the drink."
+  }
 }

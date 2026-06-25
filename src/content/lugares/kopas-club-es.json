@@ -21,5 +21,38 @@
     "puerto",
     "ciutadella"
   ],
-  "status": "published"
+  "status": "published",
+  "editorial": {
+    "lead": "Kopas Club es el plan de quienes quieren elegir el ritmo de su noche sin cambiar de sitio. En pleno puerto de Ciutadella, reparte en varias plantas y terrazas la copa tranquila, la coctelería y la pista, con vistas al agua.",
+    "sections": [
+      {
+        "heading": "Varias noches en un mismo sitio",
+        "body": [
+          "La idea de Kopas es la variedad bajo un mismo techo: varias plantas, terrazas y barras que te dejan pasar de la conversación con una copa a la pista sin salir del local. Arriba, la terraza al aire libre mira al puerto; abajo aprieta la música.",
+          "Es un sitio para una noche larga que no quieres planificar al detalle: subes, bajas y cada planta tiene su tono."
+        ]
+      },
+      {
+        "heading": "En el puerto de Ciutadella",
+        "body": [
+          "Está en el Pla de Sant Joan, el paseo del puerto donde late la noche de Ciutadella, en un local que los de aquí recordarán como la antigua Esfera. Compañía no le falta: a pocos metros tiene otras salas, así que es fácil hacer noche por la zona."
+        ]
+      },
+      {
+        "heading": "Cómo vivirlo con calma",
+        "body": [
+          "Horarios, programación y temporada cambian cada año, así que confírmalo en su web antes de ir. Y para no pensar en el coche, deja que te llevemos."
+        ]
+      }
+    ],
+    "bestFor": ["Salir de noche", "Coctelería", "Puerto de Ciutadella"],
+    "goodToKnow": [
+      "Varias plantas y terrazas con vistas al puerto, de la copa tranquila a la pista.",
+      "Coctelería y música variada, con varios ambientes en un mismo local.",
+      "Está en el puerto de Ciutadella (Passeig es Pla de Sant Joan).",
+      "Horarios, programación y temporada cambian: confírmalos en su web."
+    ],
+    "transfer": true,
+    "transferText": "En el puerto de Ciutadella aparcar de noche y en verano es difícil. Deja el coche: te llevamos y te recogemos con chófer privado."
+  }
 }

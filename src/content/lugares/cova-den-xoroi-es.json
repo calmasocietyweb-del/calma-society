@@ -22,6 +22,47 @@
     "cala'n porter"
   ],
   "status": "published",
+  "editorial": {
+    "lead": "Hay un sitio en Menorca donde el atardecer se mira desde dentro del acantilado. La Cova d'en Xoroi es una sucesión de cuevas y terrazas excavadas en la roca sobre el mar de Cala'n Porter: de día, un mirador; al caer la tarde, un lounge con la copa frente al sol; y en las noches de verano, el club más icónico de la isla.",
+    "sections": [
+      {
+        "heading": "Una cueva abierta al mar",
+        "body": [
+          "Lo primero es el vértigo agradable de asomarse. Las terrazas de la Cova d'en Xoroi cuelgan de un acantilado del sur, en Cala'n Porter, y se descuelgan hacia el Mediterráneo en una sucesión de balcones de piedra, recovecos y miradores naturales. No es una discoteca con vistas: es la roca misma, ganada al mar, con una copa en la mano.",
+          "Ese es su secreto y su fama. Pocos lugares de Menorca condensan tanto la isla en un gesto —piedra, luz y mar— y por eso es, probablemente, el espacio de ocio más reconocible de toda la isla."
+        ]
+      },
+      {
+        "heading": "El atardecer, el momento",
+        "body": [
+          "Si solo vas a ir una vez, ve al atardecer. Cuando el sol empieza a bajar, las terrazas se convierten en un lounge tranquilo: música suave, una copa bien servida y el cielo cambiando de color sobre el agua. Es el rato de calma de la Cova, antes de que la noche apriete.",
+          "Más tarde, en verano, el mismo espacio se transforma en club y sube de revoluciones. Las dos caras conviven; tú eliges a cuál vienes. Para una velada de lujo tranquilo, el lounge del atardecer es el plan."
+        ]
+      },
+      {
+        "heading": "La leyenda de Xoroi",
+        "body": [
+          "El nombre viene de una vieja leyenda menorquina. Cuenta la tradición que un náufrago de origen incierto, Xoroi, se refugió en estas cuevas y vivió escondido en el acantilado durante años. La historia tiene tantas versiones como quien la cuenta, y ahí está su encanto: forma parte del folclore de la isla, no de su historia documentada.",
+          "Conviene saberlo antes de bajar: le añade una capa de relato a un sitio que, de por sí, ya parece de otro tiempo."
+        ]
+      },
+      {
+        "heading": "Cómo vivirlo con calma",
+        "body": [
+          "La Cova tiene tres vidas según la hora: mirador de día, lounge al atardecer y discoteca de noche. Elige la tuya con tiempo. En verano conviene reservar online, sobre todo para el atardecer, que es cuando más se llena.",
+          "Se baja al acantilado por escaleras talladas en la roca, así que no es un sitio apto para sillas de ruedas ni movilidad muy reducida. Y como todo en Menorca de cara al verano, los horarios y los precios son muy estacionales: confirma siempre en su web antes de ir."
+        ]
+      }
+    ],
+    "bestFor": ["Parejas", "Lujo tranquilo", "Atardecer", "Vida nocturna"],
+    "goodToKnow": [
+      "Tres ambientes según la hora: mirador de día (~8,5 €), lounge al atardecer (~12 €) y discoteca por la noche. Precios orientativos.",
+      "En verano conviene reservar online, sobre todo para el atardecer.",
+      "Se baja por escaleras talladas en el acantilado: no apto para sillas de ruedas ni movilidad muy reducida.",
+      "Horarios muy estacionales (jun–ago desde media mañana hasta el anochecer; may y oct desde la tarde). Confirma en su web antes de ir."
+    ],
+    "transfer": true
+  },
   "planner": {
     "zone": "sur-centro",
     "cluster": "calanporter-xoroi",

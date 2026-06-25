@@ -119,40 +119,49 @@ const nocheNav = locale === "es" ? "Atardeceres y copas" : "Sunsets & drinks";
       </p>
     </div>
 
-    {/* NIVEL 3 — navegación de secciones centrada (solo desktop) */}
+    {/* NIVEL 3 — navegación (solo desktop). Dos filas para que nunca se descuadre:
+        arriba las SECCIONES editoriales; debajo, las HERRAMIENTAS interactivas
+        (color arcilla, con filetes y algo menores) — visibles, sin competir con
+        las secciones. `whitespace-nowrap` evita que una etiqueta se parta en dos
+        líneas; `flex-wrap` es la red de seguridad en anchos justos. */}
     <nav
       aria-label="Principal"
-      class="hidden items-center justify-center gap-8 border-t border-niebla py-3 text-[0.8rem] lg:flex"
+      class="hidden flex-col items-center gap-y-2.5 border-t border-niebla py-3 lg:flex"
     >
-      {
-        SECTIONS.map((s) => (
-          <a
-            href={s.href[locale]}
-            class="uppercase tracking-[0.12em] text-piedra transition-colors hover:text-terracota"
-          >
-            {s.label[locale]}
-          </a>
-        ))
-      }
-      <span aria-hidden="true" class="h-3.5 w-px bg-niebla"></span>
-      <a
-        href={calmaHref}
-        class="uppercase tracking-[0.12em] text-arcilla transition-colors hover:text-terracota"
-      >
-        {calmaNav}
-      </a>
-      <a
-        href={plannerHref}
-        class="uppercase tracking-[0.12em] text-arcilla transition-colors hover:text-terracota"
-      >
-        {plannerLabel}
-      </a>
-      <a
-        href={nocheHref}
-        class="uppercase tracking-[0.12em] text-arcilla transition-colors hover:text-terracota"
-      >
-        {nocheNav}
-      </a>
+      <div class="flex flex-wrap items-center justify-center gap-x-7 gap-y-1.5 text-[0.8rem]">
+        {
+          SECTIONS.map((s) => (
+            <a
+              href={s.href[locale]}
+              class="whitespace-nowrap uppercase tracking-[0.12em] text-piedra transition-colors hover:text-terracota"
+            >
+              {s.label[locale]}
+            </a>
+          ))
+        }
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 text-[0.72rem]">
+        <a
+          href={calmaHref}
+          class="whitespace-nowrap uppercase tracking-[0.16em] text-arcilla transition-colors hover:text-terracota"
+        >
+          {calmaNav}
+        </a>
+        <span aria-hidden="true" class="h-3 w-px bg-niebla"></span>
+        <a
+          href={plannerHref}
+          class="whitespace-nowrap uppercase tracking-[0.16em] text-arcilla transition-colors hover:text-terracota"
+        >
+          {plannerLabel}
+        </a>
+        <span aria-hidden="true" class="h-3 w-px bg-niebla"></span>
+        <a
+          href={nocheHref}
+          class="whitespace-nowrap uppercase tracking-[0.16em] text-arcilla transition-colors hover:text-terracota"
+        >
+          {nocheNav}
+        </a>
+      </div>
     </nav>
   </div>
 </header>

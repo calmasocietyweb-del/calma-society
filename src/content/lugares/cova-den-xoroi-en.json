@@ -22,6 +22,47 @@
     "cala'n porter"
   ],
   "status": "published",
+  "editorial": {
+    "lead": "There's a place in Menorca where you watch the sunset from inside the cliff. Cova d'en Xoroi is a run of caves and terraces carved into the rock above the sea at Cala'n Porter: a lookout by day, a lounge with a drink facing the sun in the late afternoon, and the island's most iconic club on summer nights.",
+    "sections": [
+      {
+        "heading": "A cave open to the sea",
+        "body": [
+          "The first thing is the pleasant vertigo of leaning out. The terraces of Cova d'en Xoroi hang from a cliff on the south coast, at Cala'n Porter, dropping toward the Mediterranean in a succession of stone balconies, nooks and natural viewpoints. This isn't a club with a view: it's the rock itself, won from the sea, with a drink in hand.",
+          "That is its secret and its fame. Few places in Menorca distil the island into a single gesture —stone, light and sea— quite like this, which is why it's probably the most recognisable venue on the whole island."
+        ]
+      },
+      {
+        "heading": "Sunset is the moment",
+        "body": [
+          "If you only go once, go at sunset. As the sun begins to drop, the terraces become a quiet lounge: soft music, a well-made drink and the sky turning colour over the water. This is the Cova's calm hour, before the night picks up.",
+          "Later, in summer, the same space turns into a club and shifts up a gear. The two faces coexist; you choose which one you come for. For a quiet-luxury evening, the sunset lounge is the plan."
+        ]
+      },
+      {
+        "heading": "The legend of Xoroi",
+        "body": [
+          "The name comes from an old Menorcan legend. Tradition tells of a castaway of uncertain origin, Xoroi, who took shelter in these caves and lived hidden in the cliff for years. The story has as many versions as people who tell it, and that's its charm: it belongs to the island's folklore, not its documented history.",
+          "Worth knowing before you head down: it adds a layer of myth to a place that already feels like it belongs to another time."
+        ]
+      },
+      {
+        "heading": "How to do it, calmly",
+        "body": [
+          "The Cova has three lives depending on the hour: a lookout by day, a lounge at sunset and a club at night. Choose yours with time to spare. In summer it's wise to book online, especially for sunset, when it fills up most.",
+          "You go down into the cliff by steps carved into the rock, so it isn't suitable for wheelchairs or very reduced mobility. And, as with everything in Menorca heading into summer, hours and prices are highly seasonal: always check the official site before you go."
+        ]
+      }
+    ],
+    "bestFor": ["Couples", "Quiet luxury", "Sunset", "Nightlife"],
+    "goodToKnow": [
+      "Three moods by the hour: lookout by day (~€8.5), sunset lounge (~€12) and club at night. Prices are indicative.",
+      "In summer it's wise to book online, especially for sunset.",
+      "Access is down steps carved into the cliff: not suitable for wheelchairs or very reduced mobility.",
+      "Hours are highly seasonal (Jun–Aug from mid-morning to dusk; May and Oct from the afternoon). Check the official site before you go."
+    ],
+    "transfer": true
+  },
   "planner": {
     "zone": "sur-centro",
     "cluster": "calanporter-xoroi",

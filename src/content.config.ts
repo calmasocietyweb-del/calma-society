@@ -179,6 +179,40 @@ const lugares = defineCollection({
     // la etiqueta <meta description> (>160), `seo.description` la sustituye SOLO
     // en el <head> (el texto en pantalla no cambia). Ver Seo.astro.
     seo,
+    // ── FICHA-ARTÍCULO ───────────────────────────────────────────────────────
+    // Cuando un lugar trae `editorial`, su página se renderiza como un ARTÍCULO
+    // real (lead + secciones con criterio), no como una tarjeta de datos. Nace
+    // para "Atardeceres y copas" (cada local, su artículo, encontrable vía el
+    // hub sin saturar el menú), pero sirve a cualquier lugar. Texto con voz de
+    // marca y SIEMPRE sobre datos verificables: sin inventar, sin prometer
+    // fechas concretas de temporada. Todo opcional → las fichas actuales validan.
+    editorial: z
+      .object({
+        // Gancho de apertura (2-3 frases), más rico y con voz que `description`.
+        lead: z.string(),
+        // Cuerpo en secciones: el `heading` se renderiza como <h2>; cada `body`
+        // es una lista de párrafos (evita markdown dentro del JSON).
+        sections: z
+          .array(
+            z.object({
+              heading: z.string(),
+              body: z.array(z.string()).min(1),
+            }),
+          )
+          .min(1),
+        // "Ideal para…": a quién le encaja el sitio (chips). Corto y honesto.
+        bestFor: z.array(z.string()).default([]),
+        // "Bueno saber": apuntes prácticos verificados (reserva, código, acceso…).
+        goodToKnow: z.array(z.string()).default([]),
+        // Gesto-firma de movilidad: si true, la ficha muestra el CTA "te llevamos
+        // con chófer" → Menorca Bus (locales de noche / sitios sin aparcamiento).
+        transfer: z.boolean().default(false),
+        // Razón HONESTA y específica del transfer (sustituye al texto genérico):
+        // aparcamiento difícil en el puerto, distancia, carretera de noche… Solo
+        // lo VERIFICABLE de ese local; nunca una restricción inventada.
+        transferText: z.string().optional(),
+      })
+      .optional(),
     // Exposición al viento por cala — IP de "Dónde el mar está en calma".
     // Solo aplica a type: "cala". Dato editorial curado, separado del feed meteo
     // (lo rellena/verifica una persona; nunca lo toca el cron diario).

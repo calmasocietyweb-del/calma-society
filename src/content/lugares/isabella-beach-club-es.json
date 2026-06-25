@@ -21,5 +21,39 @@
     "fornells",
     "norte"
   ],
-  "status": "published"
+  "status": "published",
+  "editorial": {
+    "lead": "Hay atardeceres del sur muy fotografiados, pero el norte guarda los más bravos. Isabella Beach Club se asienta sobre un promontorio de roca a pie de agua en las Platges de Fornells, y ahí —entre sushi, brasa y una copa— el sol se pone sobre el mar del norte.",
+    "sections": [
+      {
+        "heading": "El atardecer del norte",
+        "body": [
+          "La costa norte de Menorca es la más agreste: viento, roca y un mar que no siempre está en calma. Isabella aprovecha justo eso. Está encaramado a un promontorio rocoso a ras de agua, en las Platges de Fornells, y se ha hecho un nombre por sus puestas de sol, más salvajes y silenciosas que las del sur.",
+          "Es un sitio para llegar con tiempo, pedir algo y dejar que el cielo haga su función."
+        ]
+      },
+      {
+        "heading": "Sushi, brasa y coctelería",
+        "body": [
+          "La cocina mira a Oriente y al Mediterráneo a la vez: fusión asiática y española, con el sushi y la brasa como especialidades, producto local y una buena carta de cócteles. Algunas noches hay DJ, y la mezcla —buena mesa, copa y música suave frente al mar— es su sello.",
+          "Las cenas funcionan con reserva, así que conviene organizarse: no es un sitio de improvisar a última hora en verano."
+        ]
+      },
+      {
+        "heading": "Cómo vivirlo con calma",
+        "body": [
+          "Reserva la cena con antelación por su web, elige una mesa de cara al oeste y deja que la velada vaya de la puesta de sol a la última copa. Es uno de esos planes que justifican subir hasta el norte."
+        ]
+      }
+    ],
+    "bestFor": ["Parejas", "Atardecer", "Cena con copa"],
+    "goodToKnow": [
+      "Sobre un promontorio de roca a pie de agua en las Platges de Fornells (costa norte).",
+      "Cocina de fusión asiática-mediterránea: sushi, brasa, producto local y coctelería.",
+      "Las cenas son con reserva (sistema online propio).",
+      "Música con DJ algunas noches; programación y horarios estacionales → confírmalos en su web."
+    ],
+    "transfer": true,
+    "transferText": "Se vuelve de noche por carreteras secundarias del norte, poco iluminadas y con curvas, y después de la copa conducir es lo último que apetece. Te llevamos y te recogemos con chófer privado."
+  }
 }
