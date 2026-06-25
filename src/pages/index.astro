@@ -11,6 +11,7 @@ import SectionHeading from "../components/SectionHeading.astro";
 import NewsletterSignup from "../components/NewsletterSignup.astro";
 import { SITE } from "../config/site";
 import { menorcaBusUrl } from "../lib/links";
+import MenorcaBusPromo from "../components/MenorcaBusPromo.astro";
 import { getSection } from "../config/sections";
 import { useTranslations } from "../i18n/ui";
 import { getArticlesBySection, getFeaturedArticle, getEvents } from "../lib/content";
@@ -155,6 +156,7 @@ const description =
             Guía de movilidad <span class="cta-arrow" aria-hidden="true">→</span>
           </a>
         </div>
+        <MenorcaBusPromo locale="es" tone="light" class="mt-4" />
       </div>
     </div>
   </section>

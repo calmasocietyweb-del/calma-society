@@ -10,6 +10,7 @@ import EventCard from "../../components/EventCard.astro";
 import NewsletterSignup from "../../components/NewsletterSignup.astro";
 import { SITE } from "../../config/site";
 import { menorcaBusUrl } from "../../lib/links";
+import MenorcaBusPromo from "../../components/MenorcaBusPromo.astro";
 import { getSection } from "../../config/sections";
 import { useTranslations } from "../../i18n/ui";
 import { getArticlesBySection, getFeaturedArticle, getEvents } from "../../lib/content";
@@ -112,7 +113,7 @@ const description =
           <a
             href={menorcaBusUrl("home")}
             target="_blank"
-            rel="noopener"
+            rel="sponsored noopener"
             data-umami-event="home-reserva-menorcabus"
             class="rounded-md bg-arcilla px-5 py-2.5 text-sm font-semibold text-lino no-underline transition-colors hover:bg-tinta"
           >
@@ -126,6 +127,7 @@ const description =
             Mobility guide →
           </a>
         </div>
+        <MenorcaBusPromo locale="en" tone="light" class="mt-4" />
       </div>
     </div>
   </section>

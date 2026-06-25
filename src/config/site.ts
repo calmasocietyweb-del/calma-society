@@ -59,6 +59,14 @@ export const SITE = {
     menorcaBus: {
       name: 'Menorca Bus',
       url: 'https://menorcabus.com',
+      // Código promocional del lector (Capa 2) — se canjea en el checkout de
+      // menorcabus.com. Única fuente: cámbialo o cadúcalo solo aquí. Cuando pasa
+      // `until`, el componente MenorcaBusPromo deja de mostrarlo en toda la web.
+      promo: {
+        code: 'CALMASOCIETY',
+        amount: '10 €',
+        until: '2026-12-31',
+      },
     },
   },
 

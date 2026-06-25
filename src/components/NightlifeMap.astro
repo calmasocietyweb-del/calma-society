@@ -21,6 +21,7 @@ import { placeUrl, articleUrl } from "../i18n/utils";
 import { menorcaBusUrl } from "../lib/links";
 import type { Locale } from "../config/site";
 import JsonLd from "./JsonLd.astro";
+import MenorcaBusPromo from "./MenorcaBusPromo.astro";
 
 interface Props {
   locale: Locale;
@@ -447,6 +448,7 @@ const jsonLd = {
         {T.banner.velada} →
       </a>
     </div>
+    <MenorcaBusPromo locale={locale} tone="dark" class="mt-4" />
     <p class="mt-5 flex flex-wrap gap-x-5 gap-y-1 border-t border-lino/15 pt-4 text-xs text-lino/70">
       <a href={articleUrl(locale, CH.claseS)} class="text-champan/90 hover:underline">{T.banner.claseS} →</a>
       <a href={articleUrl(locale, CH.claseV)} class="text-champan/90 hover:underline">{T.banner.claseV} →</a>

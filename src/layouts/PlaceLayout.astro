@@ -9,6 +9,7 @@ import { placeUrl, homePath } from "../i18n/utils";
 import { abs, placeSchema, breadcrumbSchema } from "../lib/schema";
 import { srcset } from "../lib/img";
 import { menorcaBusUrl } from "../lib/links";
+import MenorcaBusPromo from "../components/MenorcaBusPromo.astro";
 
 interface Props {
   entry: CollectionEntry<"lugares">;
@@ -141,6 +142,7 @@ const breadcrumb = breadcrumbSchema([
           >
             {t("place.transfer.cta")} ↗
           </a>
+          <MenorcaBusPromo locale={locale} tone="dark" class="mt-4" />
         </aside>
       )
     }

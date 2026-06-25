@@ -1,0 +1,45 @@
+---
+/**
+ * Línea discreta del código promocional del lector para Menorca Bus (Capa 2 de
+ * la estrategia del código CALMASOCIETY). Se coloca junto a los CTAs de reserva
+ * que YA existen: banner del mapa de la noche, bloque "te llevamos" de las
+ * fichas, CTA de movilidad de la home y la caja de artículo (MenorcaBusCTA).
+ *
+ * Única fuente del código: SITE.partners.menorcaBus.promo. Se AUTOCADUCA cuando
+ * pasa `until` → deja de mostrarse en toda la web sin tocar nada.
+ *
+ * `tone`: "dark" sobre fondos oscuros (arcilla → texto champán); "light" sobre
+ * fondos claros (lino/arena → texto piedra/arcilla).
+ */
+import { SITE, type Locale } from "../config/site";
+
+interface Props {
+  locale: Locale;
+  tone?: "light" | "dark";
+  class?: string;
+}
+const { locale, tone = "light", class: className } = Astro.props;
+const promo = SITE.partners.menorcaBus.promo;
+const isEs = locale === "es";
+
+// Autocaducidad (hora de build): cuando pasa `until`, no se renderiza.
+const active = !!promo && new Date() <= new Date(`${promo.until}T23:59:59`);
+---
+
+{
+  active && (
+    <p
+      class:list={[
+        "text-xs leading-relaxed",
+        tone === "dark" ? "text-champan/85" : "text-piedra-suave",
+        className,
+      ]}
+    >
+      {isEs ? "Con el código " : "Use code "}
+      <span class:list={["font-semibold", tone === "dark" ? "text-champan" : "text-arcilla"]}>
+        {promo.code}
+      </span>
+      {isEs ? `, ${promo.amount} de descuento en tu reserva.` : ` for ${promo.amount} off your booking.`}
+    </p>
+  )
+}
