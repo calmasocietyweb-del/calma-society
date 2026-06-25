@@ -24,6 +24,8 @@ const plannerHref = locale === "es" ? "/planificador" : "/en/trip-planner";
 const plannerLabel = locale === "es" ? "Planificador" : "Planner";
 const calmaHref = locale === "es" ? "/donde-el-mar-esta-en-calma" : "/en/where-the-sea-is-calm";
 const calmaNav = locale === "es" ? "Mar en calma" : "Calm sea";
+const nocheHref = locale === "es" ? "/atardeceres-y-copas" : "/en/sunsets-and-drinks";
+const nocheNav = locale === "es" ? "Atardeceres y copas" : "Sunsets & drinks";
 ---
 
 <header class="sticky top-0 z-50 border-b border-niebla bg-lino/95 backdrop-blur-sm">
@@ -87,6 +89,9 @@ const calmaNav = locale === "es" ? "Mar en calma" : "Calm sea";
               <a href={plannerHref} class="block rounded-md px-3 py-2 text-sm font-medium text-arcilla transition-colors hover:bg-arena hover:text-terracota">
                 {plannerLabel}
               </a>
+              <a href={nocheHref} class="block rounded-md px-3 py-2 text-sm font-medium text-arcilla transition-colors hover:bg-arena hover:text-terracota">
+                {nocheNav}
+              </a>
               <a href={aboutHref} class="block rounded-md px-3 py-2 text-sm text-piedra transition-colors hover:bg-arena hover:text-terracota">
                 {t("nav.about")}
               </a>
@@ -141,6 +146,12 @@ const calmaNav = locale === "es" ? "Mar en calma" : "Calm sea";
         class="uppercase tracking-[0.12em] text-arcilla transition-colors hover:text-terracota"
       >
         {plannerLabel}
+      </a>
+      <a
+        href={nocheHref}
+        class="uppercase tracking-[0.12em] text-arcilla transition-colors hover:text-terracota"
+      >
+        {nocheNav}
       </a>
     </nav>
   </div>

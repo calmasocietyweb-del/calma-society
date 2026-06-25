@@ -16,7 +16,12 @@ const { kicker, title, excerpt, href, cta, image, imageAlt } = Astro.props;
 ---
 
 <article class="group relative grid items-center gap-8 md:grid-cols-2 md:gap-12">
-  <a href={href} class="relative block overflow-hidden" tabindex="-1" aria-hidden="true">
+  <a
+    href={href}
+    class="relative block aspect-[4/5] overflow-hidden md:aspect-[5/6]"
+    tabindex="-1"
+    aria-hidden="true"
+  >
     {
       image ? (
         <img
@@ -26,12 +31,12 @@ const { kicker, title, excerpt, href, cta, image, imageAlt } = Astro.props;
           alt={imageAlt ?? ""}
           width="1600"
           height="2000"
-          class="img-calma aspect-[4/5] w-full object-cover md:aspect-[5/6]"
+          class="img-calma parallax-img h-full w-full object-cover"
           loading="lazy"
           decoding="async"
         />
       ) : (
-        <div class="aspect-[4/5] w-full bg-gradient-to-br from-niebla via-arena to-niebla md:aspect-[5/6]" />
+        <div class="h-full w-full bg-gradient-to-br from-niebla via-arena to-niebla" />
       )
     }
     {/* Velo cálido (unifica el stock) + aclarado de luz lento en hover. */}
@@ -40,7 +45,7 @@ const { kicker, title, excerpt, href, cta, image, imageAlt } = Astro.props;
       aria-hidden="true"
     />
     <span
-      class="pointer-events-none absolute inset-0 bg-lino/0 transition-colors duration-700 ease-out group-hover:bg-lino/8"
+      class="pointer-events-none absolute inset-0 bg-lino/0 transition-colors duration-700 ease-calma group-hover:bg-lino/8"
       aria-hidden="true"
     />
   </a>
@@ -54,7 +59,7 @@ const { kicker, title, excerpt, href, cta, image, imageAlt } = Astro.props;
       )
     }
     <h2 class="mt-3 font-display text-3xl leading-tight text-tinta sm:text-4xl md:text-5xl">
-      <a href={href} class="transition-colors after:absolute after:inset-0 group-hover:text-terracota">
+      <a href={href} class="card-title after:absolute after:inset-0">
         {title}
       </a>
     </h2>
@@ -68,7 +73,7 @@ const { kicker, title, excerpt, href, cta, image, imageAlt } = Astro.props;
     {
       cta && (
         <span class="mt-6 inline-block border-b border-terracota pb-0.5 text-sm font-medium text-arcilla">
-          {cta} →
+          {cta} <span class="cta-arrow" aria-hidden="true">→</span>
         </span>
       )
     }

@@ -26,6 +26,13 @@
 
   /* ---- Anchura de lectura cómoda (~70 caracteres) ---- */
   --container-prosa: 42rem;
+
+  /* ---- Curvas de easing de marca (ease-out FUERTE; las nativas de Tailwind son
+     flojas y restan intención al movimiento). Generan las utilidades
+     `ease-calma` (entradas/salidas y feedback de UI) y `ease-calma-inout`
+     (desplazamientos en pantalla). ---- */
+  --ease-calma: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-calma-inout: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 @layer base {
@@ -160,6 +167,7 @@
   font-weight: 600;
 }
 .article-body blockquote {
+  /* impeccable-disable-next-line side-tab: cita editorial (pull-quote) con filete a la izquierda, convención tipográfica — no es una tarjeta */
   border-left: 3px solid var(--color-oro-vivo);
   padding-left: 1.2rem;
   font-family: var(--font-display);
@@ -203,6 +211,64 @@
 @media (prefers-reduced-motion: reduce) {
   [class*="group-hover:bg-lino"] {
     transition: none !important;
+  }
+}
+
+/* ============================================================
+   Micro-interacciones de marca (CSS puro, sin JS). Primitivas reutilizables
+   en el mismo patrón que `.planner-pill` / `.agenda-chip` (sin capa → ganan a
+   las utilidades de Tailwind). Pensadas para el "lujo tranquilo": gestos
+   mínimos, nunca llamativos. Respetan `prefers-reduced-motion` y el puntero
+   fino (sin estados "pegados" en táctil).
+   ============================================================ */
+
+/* Feedback al pulsar: todo lo accionable (botón/CTA) responde al tacto con un
+   leve scale-down. La clase ASUME el control de la transición (color +
+   transform) para no chocar con utilidades `transition-*`; combínala con las
+   utilidades hover:bg-* / hover:text-* del propio elemento. */
+.press {
+  transition:
+    transform 140ms var(--ease-calma),
+    background-color 200ms var(--ease-calma),
+    border-color 200ms var(--ease-calma),
+    color 200ms var(--ease-calma);
+}
+.press:active {
+  transform: scale(0.97);
+}
+
+/* La flecha de un CTA ("Reserva ↗", "Ver todo →") avanza 0.18em en hover —
+   señal de avance editorial, sutil. Se dispara tanto si la flecha va dentro del
+   propio enlace/botón como si es hermana del título dentro de una tarjeta
+   `.group` (la foto y el titular cubren toda la tarjeta). */
+.cta-arrow {
+  display: inline-block;
+}
+/* El nudge solo existe con puntero fino Y sin preferencia de movimiento
+   reducido: así, para quien pide menos movimiento, la flecha ni se desplaza
+   ni "salta" (no es solo que no se anime). */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .cta-arrow {
+    transition: transform 200ms var(--ease-calma);
+  }
+  a:hover > .cta-arrow,
+  button:hover > .cta-arrow,
+  .group:hover .cta-arrow {
+    transform: translateX(0.18em);
+  }
+}
+
+/* Sin movimiento para quien lo pide: el feedback al pulsar se reduce a color
+   (mantiene la comprensión), nunca posición ni escala. */
+@media (prefers-reduced-motion: reduce) {
+  .press {
+    transition:
+      background-color 200ms,
+      border-color 200ms,
+      color 200ms;
+  }
+  .press:active {
+    transform: none;
   }
 }
 
@@ -307,6 +373,54 @@ a.cala-activa > circle {
 }
 
 /* ============================================================
+   El mapa de la noche (NightlifeMap) — se incrusta DENTRO del cuerpo del
+   artículo (.article-body). Neutraliza la prosa heredada en los enlaces del
+   componente (con `:where()`, especificidad cero, para no pisar las utilidades
+   de subrayado/color) y replica el filtro 100% CSS del parte de calas: el radio
+   (sr-only) guarda la categoría y `:has()` oculta a la vez sus marcadores del
+   mapa Y sus fichas de la lista.
+   ============================================================ */
+:where(.nightmap) a {
+  color: inherit;
+  text-decoration: none;
+}
+/* Chip activo (el label justo después del radio marcado). */
+.nightmap-radio:checked + .nightmap-chip {
+  border-color: var(--color-arcilla);
+  background-color: var(--color-arcilla);
+  color: var(--color-lino);
+}
+.nightmap-radio:focus-visible + .nightmap-chip {
+  outline: 2px solid var(--color-terracota);
+  outline-offset: 2px;
+}
+/* Filtrado por categoría: oculta marcadores y fichas de las demás categorías. */
+.nightmap-filterable:has(#nf-atardecer:checked) [data-cat]:not([data-cat="atardecer"]),
+.nightmap-filterable:has(#nf-beach:checked) [data-cat]:not([data-cat="beach"]),
+.nightmap-filterable:has(#nf-cocteleria:checked) [data-cat]:not([data-cat="cocteleria"]),
+.nightmap-filterable:has(#nf-club:checked) [data-cat]:not([data-cat="club"]) {
+  display: none;
+}
+/* Nombre del local: oculto, aparece al señalar/enfocar su punto. Halo claro
+   (paint-order) para que se lea sobre mar, tierra o cualquier marcador. */
+.night-nombre {
+  opacity: 0;
+  pointer-events: none;
+  fill: var(--color-tinta);
+  stroke: var(--color-lino);
+  stroke-width: 3px;
+  paint-order: stroke;
+  font-family: "Inter Variable", ui-sans-serif, sans-serif;
+  font-weight: 600;
+  transition: opacity 0.12s ease;
+}
+.nightmap a:hover > .night-nombre,
+.nightmap a:focus > .night-nombre,
+.nightmap a:focus-visible > .night-nombre {
+  opacity: 1;
+}
+
+/* ============================================================
    PLANIFICADOR DE VIAJES — campos de la encuesta y "pills" de selección.
    ============================================================ */
 .planner-field {
@@ -347,4 +461,186 @@ a.cala-activa > circle {
 .planner-pill:has(input:focus-visible) {
   outline: 2px solid var(--color-terracota);
   outline-offset: 2px;
+}
+
+/* ============================================================
+   CAPA EDITORIAL — presencia de revista con calma (CSS puro, sin JS).
+   Entrada del hero, revelado al hacer scroll y subrayado dibujado. Todo
+   respeta `prefers-reduced-motion` y degrada con elegancia donde no haya
+   soporte (el contenido nunca queda oculto).
+   ============================================================ */
+
+/* --- Entrada del hero al cargar: el contenido se asienta de abajo a arriba en
+   cascada y el filete dorado se DIBUJA de izquierda a derecha. Solo si no se
+   pide menos movimiento (si se pide, todo aparece ya colocado y visible). --- */
+/* Bajo `prefers-reduced-motion: reduce`, el bloque del final del archivo
+   neutraliza estas animaciones y deja el contenido ya colocado y visible
+   (accesibilidad, WCAG AA). */
+.hero-enter {
+  opacity: 0;
+  animation: hero-rise 1000ms var(--ease-calma) both;
+}
+.hero-enter-1 {
+  animation-delay: 80ms;
+}
+.hero-enter-2 {
+  animation-delay: 260ms;
+}
+.hero-enter-3 {
+  animation-delay: 440ms;
+}
+.hero-filete {
+  transform-origin: left center;
+  animation: filete-draw 900ms var(--ease-calma) 200ms both;
+}
+/* Hero: zoom de entrada al cargar (visible al instante, sin hacer scroll). */
+.hero-zoom {
+  animation: hero-zoom 1600ms var(--ease-calma) both;
+}
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes hero-zoom {
+  from {
+    transform: scale(1.12);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes filete-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* --- Revelado al entrar en pantalla (scroll-driven, CERO JS). Solo donde el
+   navegador soporta timelines de scroll Y no se pide menos movimiento; en el
+   resto, `.reveal` no hace nada y el contenido se ve normal (sin opacity:0 que
+   lo oculte). --- */
+@supports (animation-timeline: view()) {
+  /* Bloques y tarjetas: ascienden y "enfocan" al entrar (cascada, cada uno según
+     su propia entrada en pantalla). Bajo `prefers-reduced-motion: reduce` se
+     neutralizan en el bloque del final del archivo (contenido visible y quieto). */
+  .reveal {
+    opacity: 0;
+    animation: reveal-rise linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 45%;
+  }
+  /* Titular de sección: se descubre con una cortina hacia arriba (clip). */
+  .reveal-wipe {
+    animation: reveal-wipe linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 58%;
+  }
+  /* Filete dorado de la cabecera: se dibuja de izquierda a derecha al entrar. */
+  .draw {
+    transform-origin: left center;
+    animation: draw-x linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 50%;
+  }
+  /* Fotos: PARALLAX vertical MARCADO mientras cruzan la pantalla. La imagen se
+     sobredimensiona (top/height) para tener margen y no dejar huecos. */
+  .parallax-img {
+    position: absolute;
+    top: -20%;
+    left: 0;
+    right: 0;
+    height: 140%;
+    animation: parallax-y linear both;
+    animation-timeline: view();
+  }
+}
+@keyframes reveal-rise {
+  from {
+    opacity: 0;
+    transform: translateY(64px) scale(0.94);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+@keyframes reveal-wipe {
+  from {
+    clip-path: inset(0 0 105% 0);
+  }
+  to {
+    clip-path: inset(0 0 -5% 0);
+  }
+}
+@keyframes draw-x {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes parallax-y {
+  from {
+    transform: translateY(-12%);
+  }
+  to {
+    transform: translateY(12%);
+  }
+}
+
+/* --- Subrayado editorial que se DIBUJA bajo el título de una tarjeta al pasar
+   el ratón (degradado lineal como "tinta" que crece de izquierda a derecha).
+   Reemplaza el cambio de color por un gesto más cuidado; en táctil no estorba
+   (sin hover, el subrayado no aparece). --- */
+.card-title {
+  background-image: linear-gradient(var(--color-terracota), var(--color-terracota));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1.5px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .card-title {
+    transition: background-size 360ms var(--ease-calma);
+  }
+  .group:hover .card-title {
+    background-size: 100% 1.5px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-title {
+    transition: none;
+  }
+  /* Candado de accesibilidad: si se pide menos movimiento, ninguna animación de
+     la capa editorial se reproduce; todo queda en su estado final, visible y
+     colocado (nunca opacity:0 ni desplazado/parallax). */
+  .hero-enter,
+  .hero-filete,
+  .hero-zoom,
+  .reveal,
+  .reveal-wipe,
+  .draw,
+  .parallax-img {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    filter: none !important;
+  }
+  .parallax-img {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+  }
 }

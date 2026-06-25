@@ -84,6 +84,7 @@ const description =
         <div class="mt-10 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
           {discover.map((a) => (
             <ArticleCard
+              animate
               kicker={sectionLabel(a.data.section)}
               title={a.data.title}
               excerpt={a.data.excerpt}
@@ -140,7 +141,7 @@ const description =
         </h2>
         <div class="mt-10 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
           {events.map((e) => (
-            <EventCard event={e} locale={locale} />
+            <EventCard event={e} locale={locale} animate />
           ))}
         </div>
       </section>

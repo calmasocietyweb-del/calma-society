@@ -34,11 +34,11 @@ const subject =
 
 const dark = tone === "dark";
 const inputClass = dark
-  ? "w-full rounded-md border border-lino/20 bg-lino/10 px-4 py-3 text-sm text-lino placeholder:text-lino/50 focus-visible:outline-champan"
-  : "w-full rounded-md border border-niebla bg-lino/60 px-4 py-3 text-sm text-piedra placeholder:text-piedra-suave focus-visible:outline-terracota";
+  ? "w-full rounded-md border border-lino/20 bg-lino/10 px-4 py-3 text-sm text-lino placeholder:text-lino/50 transition-colors duration-150 ease-calma focus:border-champan/40 focus:bg-lino/[0.16] focus-visible:outline-champan"
+  : "w-full rounded-md border border-niebla bg-lino/60 px-4 py-3 text-sm text-piedra placeholder:text-piedra-suave transition-colors duration-150 ease-calma focus:border-terracota/50 focus-visible:outline-terracota";
 const btnClass = dark
-  ? "shrink-0 rounded-md bg-oro-vivo px-6 py-3 text-sm font-semibold text-tinta transition-colors hover:bg-lino"
-  : "shrink-0 rounded-md bg-arcilla px-6 py-3 text-sm font-semibold text-lino transition-colors hover:bg-tinta";
+  ? "press shrink-0 rounded-md bg-oro-vivo px-6 py-3 text-sm font-semibold text-tinta hover:bg-lino"
+  : "press shrink-0 rounded-md bg-arcilla px-6 py-3 text-sm font-semibold text-lino hover:bg-tinta";
 const consentClass = dark ? "text-lino/70" : "text-piedra-suave";
 const linkClass = dark
   ? "font-medium text-champan underline hover:text-lino"

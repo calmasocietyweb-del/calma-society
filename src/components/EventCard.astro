@@ -10,8 +10,11 @@ import type { Locale } from "../config/site";
 interface Props {
   event: CollectionEntry<"eventos">;
   locale: Locale;
+  /** Activa el movimiento editorial (revelado + parallax). Solo la portada lo
+      pasa; en la agenda y otros listados la tarjeta va estática (por defecto). */
+  animate?: boolean;
 }
-const { event, locale } = Astro.props;
+const { event, locale, animate = false } = Astro.props;
 const { data } = event;
 
 const intl = locale === "es" ? "es-ES" : "en-GB";
@@ -27,7 +30,7 @@ const dateLabel =
     : `${formatDate(data.startDate, locale)} – ${formatDate(data.endDate, locale)}`;
 ---
 
-<article data-agenda={data.category} class="group flex flex-col">
+<article data-agenda={data.category} class={animate ? "reveal group flex flex-col" : "group flex flex-col"}>
   <div class="relative aspect-[3/2] w-full overflow-hidden bg-arena">
     {
       data.image && (
@@ -38,7 +41,7 @@ const dateLabel =
           alt={data.title}
           width="1600"
           height="1067"
-          class="img-calma h-full w-full object-cover"
+          class={animate ? "img-calma parallax-img h-full w-full object-cover" : "img-calma h-full w-full object-cover"}
           loading="lazy"
           decoding="async"
         />
@@ -46,7 +49,7 @@ const dateLabel =
     }
     {/* Velo cálido (unifica el stock) + aclarado de luz lento en hover. */}
     <span class="pointer-events-none absolute inset-0 bg-arcilla/8 mix-blend-multiply" aria-hidden="true" />
-    <span class="pointer-events-none absolute inset-0 bg-lino/0 transition-colors duration-700 ease-out group-hover:bg-lino/8" aria-hidden="true" />
+    <span class="pointer-events-none absolute inset-0 bg-lino/0 transition-colors duration-700 ease-calma group-hover:bg-lino/8" aria-hidden="true" />
     {/* Crédito de foto (obligatorio en licencias CC): sutil, abajo a la derecha. */}
     {
       data.imageCredit && (

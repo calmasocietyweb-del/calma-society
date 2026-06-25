@@ -1,0 +1,619 @@
+---
+/**
+ * "El mapa de la noche" — mapa de los locales de ocio nocturno de Menorca
+ * (atardeceres, beach clubs, coctelerías y clubs) sobre la silueta real de la
+ * isla, con la lista accesible debajo y, en CADA local, el discurso de lujo de
+ * "te llevamos con chófer" enlazado a Menorca Bus (negocio propio).
+ *
+ * Reutiliza la MISMA proyección equirectangular que ParteCalmaMap (contorno OSM
+ * de src/data/menorca-outline.json). CERO JS de cliente: SVG + lista + filtro
+ * 100% CSS (mismo patrón `:has()` que el parte de calas y la agenda). La lista
+ * es la versión accesible y citable por IA; el color NUNCA va solo (lleva glifo
+ * y texto al lado).
+ *
+ * Pensado para incrustarse DENTRO del cuerpo de un artículo (.article-body): por
+ * eso NO usa h2/h3/ul/ol (evita heredar la prosa); los estilos propios y el
+ * filtro viven en global.css bajo `.nightmap`.
+ */
+import outline from "../data/menorca-outline.json";
+import { getPlaces } from "../lib/content";
+import { placeUrl, articleUrl } from "../i18n/utils";
+import { menorcaBusUrl } from "../lib/links";
+import type { Locale } from "../config/site";
+import JsonLd from "./JsonLd.astro";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const isEs = locale === "es";
+
+// ── Selección editorial: qué locales entran y en qué categoría (glifo/color) ──
+// El orden define el orden de la lista (agrupada por categoría).
+type Cat = "atardecer" | "beach" | "cocteleria" | "club";
+const VENUES: { key: string; cat: Cat }[] = [
+  { key: "cova-den-xoroi", cat: "atardecer" },
+  { key: "coral-menorca", cat: "atardecer" },
+  { key: "artrutx-sea-club", cat: "beach" },
+  { key: "isabella-beach-club", cat: "beach" },
+  { key: "purobeach-menorca", cat: "beach" },
+  { key: "vida-una", cat: "cocteleria" },
+  { key: "contrabandu", cat: "cocteleria" },
+  { key: "jigger", cat: "cocteleria" },
+  { key: "bb-cocktail-bar", cat: "cocteleria" },
+  { key: "jazzbah", cat: "club" },
+  { key: "kopas-club", cat: "club" },
+  { key: "akelarre", cat: "club" },
+];
+
+const CAT_ORDER: Cat[] = ["atardecer", "beach", "cocteleria", "club"];
+// Por categoría: color/glifo, etiqueta y la NOTA DE APARCAMIENTO (honesta) que
+// justifica el transfer. Son patrones reales (acantilados que se llenan al
+// atardecer, puertos sin sitio de noche), no afirmaciones absolutas por local.
+const CATS: Record<
+  Cat,
+  { color: string; es: string; en: string; schema: string; parkEs: string; parkEn: string }
+> = {
+  atardecer: {
+    color: "#A8895C", es: "Atardecer", en: "Sunset", schema: "BarOrPub",
+    parkEs: "En los acantilados del atardecer aparcar se complica y se llena en verano.",
+    parkEn: "Parking on the sunset cliffs is tricky and fills up in summer.",
+  },
+  beach: {
+    color: "#4F7A52", es: "Beach club", en: "Beach club", schema: "BarOrPub",
+    parkEs: "Aparcamiento limitado junto a la playa en temporada alta.",
+    parkEn: "Limited parking by the beach in high season.",
+  },
+  cocteleria: {
+    color: "#B96A4B", es: "Coctelería", en: "Cocktail bar", schema: "BarOrPub",
+    parkEs: "En el puerto, aparcar de noche es difícil.",
+    parkEn: "Parking by the harbour at night is hard.",
+  },
+  club: {
+    color: "#73402D", es: "Club / fiesta", en: "Club", schema: "NightClub",
+    parkEs: "Zona de puerto, sin aparcamiento fácil de madrugada.",
+    parkEn: "Harbour area, no easy parking in the small hours.",
+  },
+};
+const catLabel = (cat: Cat) => (isEs ? CATS[cat].es : CATS[cat].en);
+const catPark = (cat: Cat) => (isEs ? CATS[cat].parkEs : CATS[cat].parkEn);
+
+// Glifo blanco centrado en (0,0), ~12 px, para distinguir la categoría sin
+// depender del color (accesibilidad).
+const GLYPH: Record<Cat, string> = {
+  atardecer:
+    '<path d="M-4 2.4 A4 4 0 0 1 4 2.4" fill="#fff"/><path d="M-6 2.4 H6 M0 -5.2 V-3.6 M-4.3 -1.7 L-3.2 -0.6 M4.3 -1.7 L3.2 -0.6" stroke="#fff" stroke-width="1.2" stroke-linecap="round" fill="none"/>',
+  beach:
+    '<path d="M-5.5 -1 Q-2.75 -4 0 -1 T5.5 -1 M-5.5 2.6 Q-2.75 -0.4 0 2.6 T5.5 2.6" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>',
+  cocteleria:
+    '<path d="M-4.2 -3.6 L4.2 -3.6 L0 0.6 Z" fill="#fff"/><path d="M0 0.6 V4.2 M-2.8 4.2 H2.8" stroke="#fff" stroke-width="1.3" stroke-linecap="round" fill="none"/>',
+  club:
+    '<path d="M-0.5 -5 L4 -3.5 V-1.6 L-0.5 -3.1 Z" fill="#fff"/><path d="M-0.5 -5 V3" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/><ellipse cx="-2.4" cy="3.2" rx="2.3" ry="1.9" fill="#fff"/>',
+};
+
+// ── Carga de fichas (solo `published`): el cortafuegos de aprobación se respeta
+// solo con que getPlaces ya filtra por status. Eolo/Marea (draft) no aparecen. ──
+const places = await getPlaces(locale);
+const byKey = new Map(places.map((p) => [p.data.translationKey, p]));
+
+// Modelo unificado de "punto del mapa": vale para los que tienen ficha publicada
+// (enlazan a su ficha) y para los puntos añadidos en línea (beach clubs y
+// miradores de atardecer verificados; enlazan a la guía de atardeceres).
+type V = {
+  id: string;
+  name: string;
+  cat: Cat;
+  lat: number;
+  lng: number;
+  area: string;
+  description: string;
+  website?: string;
+  href?: string;
+  note?: string; // override de la nota de aparcamiento (si no, la de su categoría)
+  schemaType: string;
+};
+
+// 1) Locales con ficha (los 12 originales). `monumento` → atracción turística.
+const fromFichas: V[] = VENUES.flatMap((def) => {
+  const e = byKey.get(def.key);
+  if (!e) return [];
+  return [
+    {
+      id: e.id,
+      name: e.data.name,
+      cat: def.cat,
+      lat: e.data.coordinates.lat,
+      lng: e.data.coordinates.lng,
+      area: e.data.area,
+      description: e.data.description,
+      website: e.data.website,
+      href: placeUrl(locale, e.id),
+      schemaType: e.data.type === "monumento" ? "TouristAttraction" : CATS[def.cat].schema,
+    },
+  ];
+});
+
+// 2) Puntos añadidos en línea — datos VERIFICADOS (investigador, jun 2026). Beach
+// clubs y miradores de atardecer, sin ficha propia (de momento). Las notas de
+// acceso son reales y SIN fechas exactas (las restricciones se confirman cada
+// temporada con el Consell/ayuntamientos; no se promete una fecha concreta).
+type Extra = {
+  id: string;
+  name: string;
+  cat: Cat;
+  lat: number;
+  lng: number;
+  areaEs: string;
+  areaEn: string;
+  descEs: string;
+  descEn: string;
+  schemaType: string;
+  toArticle?: boolean; // enlaza a la guía de atardeceres
+  noteEs?: string;
+  noteEn?: string;
+};
+const EXTRA: Extra[] = [
+  // — Beach clubs —
+  {
+    id: "bambu-menorca", name: "Bambú Menorca", cat: "beach", lat: 39.8203, lng: 4.2326,
+    areaEs: "Sureste (Sant Lluís)", areaEn: "Southeast (Sant Lluís)",
+    descEs: "Beach club frente al mar en el paseo marítimo de Binibèquer Vell, para el día que se alarga hasta la copa del atardecer.",
+    descEn: "Seafront beach club on the promenade of Binibèquer Vell, for the day that stretches into a sunset drink.",
+    schemaType: "BarOrPub",
+  },
+  {
+    id: "arena-beach", name: "Arena Beach", cat: "beach", lat: 39.9263, lng: 3.8392,
+    areaEs: "Suroeste (Ciutadella, Cala'n Bosch)", areaEn: "Southwest (Ciutadella, Cala'n Bosch)",
+    descEs: "Beach club solo para adultos en Cala'n Bosch, con piscina y un ambiente de día relajado junto al mar.",
+    descEn: "Adults-only beach club in Cala'n Bosch, with a pool and a relaxed daytime feel by the sea.",
+    schemaType: "BarOrPub",
+  },
+  {
+    id: "cape-nao", name: "Cape Nao", cat: "beach", lat: 39.9371, lng: 3.961,
+    areaEs: "Sur (Ferreries, Cala Galdana)", areaEn: "South (Ferreries, Cala Galdana)",
+    descEs: "Beach club sobre Cala Galdana, una de las mejores terrazas del sur para la puesta de sol con copa en mano.",
+    descEn: "Beach club above Cala Galdana, one of the south's best terraces for a sunset with a drink in hand.",
+    schemaType: "BarOrPub",
+  },
+  // — Miradores de atardecer (acceso verificado: el mejor argumento del chófer) —
+  {
+    id: "favaritx", name: "Faro de Favàritx", cat: "atardecer", lat: 39.9972, lng: 4.2667,
+    areaEs: "Noreste (Maó)", areaEn: "Northeast (Maó)",
+    descEs: "Faro sobre un paisaje lunar de pizarra negra, dentro del Parc de s'Albufera des Grau. Atardeceres agrestes y dramáticos.",
+    descEn: "A lighthouse over a lunar landscape of black slate, inside the s'Albufera des Grau park. Wild, dramatic sunsets.",
+    schemaType: "TouristAttraction", toArticle: true,
+    noteEs: "En verano el coche está restringido: se llega en bus lanzadera, en bici o a pie.",
+    noteEn: "In summer cars are restricted: you reach it by shuttle bus, by bike or on foot.",
+  },
+  {
+    id: "punta-nati", name: "Punta Nati", cat: "atardecer", lat: 40.0502, lng: 3.8236,
+    areaEs: "Oeste (Ciutadella)", areaEn: "West (Ciutadella)",
+    descEs: "Faro austero entre piedra desnuda al noroeste de Ciutadella: el atardecer en su versión más pura y silenciosa.",
+    descEn: "An austere lighthouse amid bare stone northwest of Ciutadella: the sunset at its purest and most silent.",
+    schemaType: "TouristAttraction", toArticle: true,
+    noteEs: "En pleno verano hay bus lanzadera y el acceso en coche se limita.",
+    noteEn: "In high summer there's a shuttle bus and car access is limited.",
+  },
+  {
+    id: "cap-de-cavalleria", name: "Cap de Cavalleria", cat: "atardecer", lat: 40.0889, lng: 4.0924,
+    areaEs: "Norte (Es Mercadal)", areaEn: "North (Es Mercadal)",
+    descEs: "El punto más septentrional de la isla: acantilados, viento y un atardecer salvaje sobre el mar del norte.",
+    descEn: "The island's northernmost point: cliffs, wind and a wild sunset over the northern sea.",
+    schemaType: "TouristAttraction", toArticle: true,
+    noteEs: "Al atardecer controlan el tráfico por saturación y el aparcamiento es pequeño.",
+    noteEn: "At dusk traffic is controlled due to overcrowding and parking is small.",
+  },
+  {
+    id: "pont-den-gil", name: "Pont d'en Gil", cat: "atardecer", lat: 40.011, lng: 3.7956,
+    areaEs: "Oeste (Ciutadella)", areaEn: "West (Ciutadella)",
+    descEs: "Gigantesco arco de roca natural sobre el mar al noroeste de Ciutadella, que enmarca una de las puestas de sol más espectaculares de la isla.",
+    descEn: "A giant natural rock arch over the sea northwest of Ciutadella, framing one of the island's most spectacular sunsets.",
+    schemaType: "TouristAttraction", toArticle: true,
+    noteEs: "Sin aparcamiento en el arco: se llega a pie por el Camí de Cavalls.",
+    noteEn: "No parking at the arch: you reach it on foot along the Camí de Cavalls.",
+  },
+];
+
+// Enlace de los puntos en línea: a la guía de atardeceres (ES/EN).
+const sunsetArticle = isEs ? "atardeceres-menorca" : "menorca-sunsets";
+const fromExtra: V[] = EXTRA.map((x) => ({
+  id: x.id,
+  name: x.name,
+  cat: x.cat,
+  lat: x.lat,
+  lng: x.lng,
+  area: isEs ? x.areaEs : x.areaEn,
+  description: isEs ? x.descEs : x.descEn,
+  href: x.toArticle ? articleUrl(locale, sunsetArticle) : undefined,
+  note: isEs ? x.noteEs : x.noteEn,
+  schemaType: x.schemaType,
+}));
+
+// Lista ordenada por categoría (atardecer, beach, coctelería, club); el sort es
+// estable, así que dentro de cada grupo van primero los de ficha y luego los nuevos.
+const catIdx = (c: Cat) => CAT_ORDER.indexOf(c);
+const venues: V[] = [...fromFichas, ...fromExtra].sort((a, b) => catIdx(a.cat) - catIdx(b.cat));
+const catCount = (cat: Cat) => venues.filter((v) => v.cat === cat).length;
+
+// ── Proyección equirectangular (idéntica a ParteCalmaMap): cos(lat) corrige el
+// meridiano y la escala es uniforme → la isla mantiene su proporción real. ──
+const RING = outline.ring as [number, number][];
+const LAT_REF = (outline.bbox.latMin + outline.bbox.latMax) / 2;
+const KX = Math.cos((LAT_REF * Math.PI) / 180);
+const xsRaw = RING.map((p) => p[0] * KX);
+const ysRaw = RING.map((p) => p[1]);
+const minX = Math.min(...xsRaw);
+const maxX = Math.max(...xsRaw);
+const minY = Math.min(...ysRaw);
+const maxY = Math.max(...ysRaw);
+const spanX = maxX - minX;
+const spanY = maxY - minY;
+const DRAW_W = 860;
+const PAD_TOP = 96;
+const PAD_BOTTOM = 72;
+const SCALE = DRAW_W / spanX;
+const DRAW_H = spanY * SCALE;
+const VIEW_W = 1000;
+const VIEW_H = Math.round(PAD_TOP + DRAW_H + PAD_BOTTOM);
+const offX = (VIEW_W - DRAW_W) / 2;
+const offY = PAD_TOP;
+const baseY = offY + DRAW_H;
+const project = (lat: number, lng: number) => ({
+  x: offX + (lng * KX - minX) * SCALE,
+  y: offY + (maxY - lat) * SCALE,
+});
+
+const islandPath =
+  "M " +
+  RING.map((p, i) => {
+    const { x, y } = project(p[1], p[0]);
+    return (i ? "L " : "") + x.toFixed(1) + " " + y.toFixed(1);
+  }).join(" ") +
+  " Z";
+
+// Pueblos de referencia para orientarse (faint, decorativos).
+const TOWNS = [
+  { es: "Ciutadella", en: "Ciutadella", lat: 40.0006, lng: 3.8377 },
+  { es: "Ferreries", en: "Ferreries", lat: 39.9786, lng: 4.0103 },
+  { es: "Es Mercadal", en: "Es Mercadal", lat: 39.9908, lng: 4.0922 },
+  { es: "Alaior", en: "Alaior", lat: 39.9357, lng: 4.1389 },
+  { es: "Maó", en: "Mahón", lat: 39.8885, lng: 4.2658 },
+  { es: "Sant Lluís", en: "Sant Lluís", lat: 39.8475, lng: 4.2561 },
+].map((t) => ({ ...t, ...project(t.lat, t.lng) }));
+
+// Posiciones de los marcadores + des-solape determinista: varios locales caen
+// casi en el mismo punto (puerto de Maó: Contrabandu/Akelarre/Vida Una; puerto
+// de Ciutadella: Jazzbah/Kopas). Un pequeño empuje mutuo los separa para que se
+// vean los dos; la lista de abajo es la versión canónica si aún se rozan.
+const pts = venues.map((v) => {
+  const { x, y } = project(v.lat, v.lng);
+  return { v, x, y };
+});
+const MIN_SEP = 22;
+for (let pass = 0; pass < 12; pass++) {
+  for (let i = 0; i < pts.length; i++) {
+    for (let j = 0; j < i; j++) {
+      let dx = pts[i].x - pts[j].x;
+      let dy = pts[i].y - pts[j].y;
+      let d = Math.hypot(dx, dy);
+      if (d < MIN_SEP) {
+        if (d < 0.01) {
+          // Coincidentes: separa en un ángulo determinista (sin Math.random).
+          const a = i * 2.3999632;
+          dx = Math.cos(a);
+          dy = Math.sin(a);
+          d = 1;
+        }
+        const push = (MIN_SEP - d) / 2;
+        const ux = dx / d;
+        const uy = dy / d;
+        pts[i].x += ux * push;
+        pts[i].y += uy * push;
+        pts[j].x -= ux * push;
+        pts[j].y -= uy * push;
+      }
+    }
+  }
+}
+
+// Barra de escala (≈ px por km; 1° ≈ 110,57 km).
+const pxPerKm = SCALE / 110.574;
+const scaleLen = 10 * pxPerKm;
+const scaleX = offX;
+const scaleY = baseY + 30;
+
+// Direcciones (cómo llegar por tu cuenta): deep-link generado SOLO con las
+// coordenadas verificadas de la ficha. Sin inventar nada.
+const mapsUrl = (lat: number, lng: number) =>
+  `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+
+// Slugs del clúster de chófer de lujo (artículos ya publicados), por idioma.
+const CH = isEs
+  ? {
+      lujo: "moverse-con-lujo-menorca",
+      velada: "una-velada-con-chofer-menorca",
+      claseS: "mercedes-clase-s-menorca",
+      claseV: "mercedes-clase-v-menorca",
+    }
+  : {
+      lujo: "getting-around-menorca-in-style",
+      velada: "chauffeured-dinners-menorca",
+      claseS: "mercedes-s-class-menorca",
+      claseV: "mercedes-v-class-menorca",
+    };
+
+const T = isEs
+  ? {
+      eyebrow: "El mapa de la noche",
+      intro:
+        "Atardeceres de acantilado, beach clubs, coctelerías de puerto y clubs con solera: dónde está cada uno —y cómo llegar sin tener que conducir—.",
+      filterTitle: "Filtra por tipo de plan",
+      todas: "Todos",
+      mapAria:
+        "Mapa de Menorca con la ubicación de los locales de ocio nocturno. El detalle está en la lista siguiente.",
+      costaNorte: "COSTA NORTE",
+      costaSur: "COSTA SUR",
+      mapCredit: "Contorno: © OpenStreetMap",
+      teLlevamos: "Te llevamos",
+      teLlevamosSub: "Clase S o Clase V con chófer",
+      reserva: "Reserva con Menorca Bus",
+      ubicacion: "Cómo llegar",
+      web: "Web oficial",
+      seasonal:
+        "Horarios, temporada y aforos cambian cada año y casi todo es estacional (verano). Consulta la web o el Instagram oficial de cada local antes de ir.",
+      banner: {
+        eyebrow: "Llega con chófer",
+        title: "Llega como manda la noche",
+        text: "En los acantilados del atardecer y en los puertos no hay dónde aparcar —y en verano se llena al amanecer—. Por eso la mejor decisión de la noche es no traer coche: te recogemos en un Mercedes Clase S —el lujo silencioso— o en una Clase V para el grupo. Chófer privado, trato de limusina y máximo confort, del primer atardecer al último cóctel.",
+        cta: "Reserva con Menorca Bus",
+        lujo: "Moverse con lujo",
+        velada: "Velada con chófer",
+        claseS: "Mercedes Clase S",
+        claseV: "Mercedes Clase V",
+      },
+    }
+  : {
+      eyebrow: "The map of the night",
+      intro:
+        "Clifftop sunsets, beach clubs, harbour cocktail bars and long-standing clubs: where each one is —and how to get there without having to drive—.",
+      filterTitle: "Filter by kind of plan",
+      todas: "All",
+      mapAria:
+        "Map of Menorca with the location of the nightlife venues. Full detail in the list below.",
+      costaNorte: "NORTH COAST",
+      costaSur: "SOUTH COAST",
+      mapCredit: "Outline: © OpenStreetMap",
+      teLlevamos: "We'll drive you",
+      teLlevamosSub: "S-Class or V-Class with chauffeur",
+      reserva: "Book with Menorca Bus",
+      ubicacion: "Get directions",
+      web: "Official site",
+      seasonal:
+        "Opening hours, season and capacity change every year, and almost everything is seasonal (summer). Check each venue's official website or Instagram before you go.",
+      banner: {
+        eyebrow: "Arrive with a chauffeur",
+        title: "Arrive the way the night deserves",
+        text: "On the sunset cliffs and around the harbours there's nowhere to park —and in summer it fills up at dawn—. So the best decision of the night is to leave the car behind: we pick you up in a Mercedes S-Class —quiet luxury— or a V-Class for the group. Private chauffeur, limousine treatment and maximum comfort, from the first sunset to the last cocktail.",
+        cta: "Book with Menorca Bus",
+        lujo: "Getting around in style",
+        velada: "Chauffeured evenings",
+        claseS: "Mercedes S-Class",
+        claseV: "Mercedes V-Class",
+      },
+    };
+
+// ── JSON-LD: cada local como negocio con su geo (GEO/citabilidad por IA) ──
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": venues.map((v) => ({
+    "@type": v.schemaType,
+    name: v.name,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: v.area,
+      addressRegion: "Menorca",
+      addressCountry: "ES",
+    },
+    geo: { "@type": "GeoCoordinates", latitude: v.lat, longitude: v.lng },
+    ...(v.website ? { url: v.website } : {}),
+  })),
+};
+---
+
+<section class="nightmap my-10">
+  <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">{T.eyebrow}</p>
+  <p class="mt-2 text-base leading-relaxed text-piedra-suave">{T.intro}</p>
+
+  {/* Discurso de lujo: el gesto-firma "te llevamos con chófer", enlazado a
+      Menorca Bus y al clúster de artículos de movilidad de lujo. */}
+  <aside class="my-7 overflow-hidden rounded-2xl bg-arcilla p-7 text-lino sm:p-9">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-champan">{T.banner.eyebrow}</p>
+    <p class="mt-3 font-display text-2xl leading-snug text-crema sm:text-[1.9rem]">{T.banner.title}</p>
+    <p class="mt-3 max-w-prosa text-sm leading-relaxed text-lino/85 sm:text-base">{T.banner.text}</p>
+    <div class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3">
+      <a
+        href={menorcaBusUrl("noche", "mapa")}
+        target="_blank"
+        rel="sponsored noopener"
+        data-umami-event="cta-menorcabus-noche"
+        class="rounded-md bg-crema px-5 py-2.5 text-sm font-semibold text-arcilla transition-colors hover:bg-lino"
+      >
+        {T.banner.cta} ↗
+      </a>
+      <a href={articleUrl(locale, CH.lujo)} class="text-sm font-semibold text-champan hover:underline">
+        {T.banner.lujo} →
+      </a>
+      <a href={articleUrl(locale, CH.velada)} class="text-sm font-semibold text-champan hover:underline">
+        {T.banner.velada} →
+      </a>
+    </div>
+    <p class="mt-5 flex flex-wrap gap-x-5 gap-y-1 border-t border-lino/15 pt-4 text-xs text-lino/70">
+      <a href={articleUrl(locale, CH.claseS)} class="text-champan/90 hover:underline">{T.banner.claseS} →</a>
+      <a href={articleUrl(locale, CH.claseV)} class="text-champan/90 hover:underline">{T.banner.claseV} →</a>
+    </p>
+  </aside>
+
+  {/* `.nightmap-filterable` envuelve filtro + mapa + lista: al marcar una
+      categoría, `:has()` oculta a la vez sus marcadores y sus filas. */}
+  <div class="nightmap-filterable">
+    <fieldset class="mt-2">
+      <legend class="text-xs font-semibold uppercase tracking-wider text-oro">{T.filterTitle}</legend>
+      <div class="mt-2 flex flex-wrap gap-2">
+        <input id="nf-todas" class="nightmap-radio sr-only" type="radio" name="nf-cat" checked />
+        <label
+          for="nf-todas"
+          class="nightmap-chip cursor-pointer rounded-full border border-niebla bg-lino px-3.5 py-1.5 text-sm text-piedra transition-colors hover:border-arcilla"
+        >
+          {T.todas} ({venues.length})
+        </label>
+        {
+          CAT_ORDER.map((cat) => (
+            <Fragment>
+              <input id={`nf-${cat}`} class="nightmap-radio sr-only" type="radio" name="nf-cat" />
+              <label
+                for={`nf-${cat}`}
+                class="nightmap-chip inline-flex cursor-pointer items-center gap-2 rounded-full border border-niebla bg-lino px-3.5 py-1.5 text-sm text-piedra transition-colors hover:border-arcilla"
+              >
+                <span class="inline-block h-2.5 w-2.5 rounded-full" style={`background:${CATS[cat].color}`} />
+                {catLabel(cat)} ({catCount(cat)})
+              </label>
+            </Fragment>
+          ))
+        }
+      </div>
+    </fieldset>
+
+    {/* Mapa SVG (contorno real de Menorca, OSM). La lista debajo es canónica. */}
+    <figure class="nightmap-figure mt-6 overflow-hidden rounded-2xl border border-niebla">
+      <svg viewBox={`0 0 ${VIEW_W} ${VIEW_H}`} role="img" aria-label={T.mapAria} class="h-auto w-full">
+        <defs>
+          <linearGradient id="night-mar" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#d7e6e6" />
+            <stop offset="1" stop-color="#bdd4d6" />
+          </linearGradient>
+          <linearGradient id="night-tierra" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#dee4cc" />
+            <stop offset="1" stop-color="#ccd6b4" />
+          </linearGradient>
+          <filter id="night-sombra" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="#33493b" flood-opacity="0.20" />
+          </filter>
+          <filter id="night-punto" x="-60%" y="-60%" width="220%" height="220%">
+            <feDropShadow dx="0" dy="1" stdDeviation="1.3" flood-color="#16241c" flood-opacity="0.45" />
+          </filter>
+        </defs>
+
+        <rect x="0" y="0" width={VIEW_W} height={VIEW_H} fill="url(#night-mar)" aria-hidden="true" />
+        <path d={islandPath} fill="none" stroke="#e8f1f1" stroke-width="22" stroke-linejoin="round" opacity="0.55" aria-hidden="true" />
+        <path d={islandPath} fill="none" stroke="#d4e5e5" stroke-width="11" stroke-linejoin="round" opacity="0.7" aria-hidden="true" />
+        <g filter="url(#night-sombra)" aria-hidden="true">
+          <path d={islandPath} fill="url(#night-tierra)" stroke="#9fb189" stroke-width="1.4" stroke-linejoin="round" />
+        </g>
+
+        <text x={VIEW_W / 2} y={offY - 30} fill="#5f7a72" font-size="15" text-anchor="middle" font-family="Inter Variable, sans-serif" letter-spacing="4" aria-hidden="true">{T.costaNorte}</text>
+        <text x={VIEW_W / 2} y={baseY + 46} fill="#5f7a72" font-size="15" text-anchor="middle" font-family="Inter Variable, sans-serif" letter-spacing="4" aria-hidden="true">{T.costaSur}</text>
+
+        <g aria-hidden="true" font-family="Inter Variable, sans-serif">
+          {
+            TOWNS.map((t) => (
+              <Fragment>
+                <circle cx={t.x} cy={t.y} r="2.6" fill="#4f5f4a" />
+                <text x={t.x} y={t.y - 8} fill="#4f5f4a" font-size="13" text-anchor="middle">{isEs ? t.es : t.en}</text>
+              </Fragment>
+            ))
+          }
+        </g>
+
+        <g aria-hidden="true" transform="translate(940,50)" font-family="Inter Variable, sans-serif">
+          <circle r="22" fill="#f7f4ee" stroke="#ded4c4" stroke-width="1" />
+          <path d="M0,-17 L4,0 L-4,0 Z" fill="#b96a4b" />
+          <path d="M0,17 L4,0 L-4,0 Z" fill="#a8895c" />
+          <text x="0" y="-25" text-anchor="middle" font-size="13" font-weight="600" fill="#46423a">N</text>
+        </g>
+
+        <g aria-hidden="true" stroke="#6b6557" fill="#6b6557" font-family="Inter Variable, sans-serif" font-size="12">
+          <line x1={scaleX} y1={scaleY} x2={scaleX + scaleLen} y2={scaleY} stroke-width="1.5" />
+          <line x1={scaleX} y1={scaleY - 5} x2={scaleX} y2={scaleY + 5} stroke-width="1.5" />
+          <line x1={scaleX + scaleLen / 2} y1={scaleY - 3} x2={scaleX + scaleLen / 2} y2={scaleY + 3} stroke-width="1" />
+          <line x1={scaleX + scaleLen} y1={scaleY - 5} x2={scaleX + scaleLen} y2={scaleY + 5} stroke-width="1.5" />
+          <text x={scaleX} y={scaleY + 18} text-anchor="middle" stroke="none">0</text>
+          <text x={scaleX + scaleLen / 2} y={scaleY + 18} text-anchor="middle" stroke="none">5</text>
+          <text x={scaleX + scaleLen} y={scaleY + 18} text-anchor="middle" stroke="none">10 km</text>
+        </g>
+
+        {/* Marcadores por local: punto de color + glifo de categoría + nombre al
+            señalar (hover/foco). Enlazan a su ficha de la lista. */}
+        {
+          pts.map((p) => (
+            <a href={`#night-${p.v.id}`} data-cat={p.v.cat}>
+              <title>{p.v.name} — {catLabel(p.v.cat)}</title>
+              <circle cx={p.x.toFixed(1)} cy={p.y.toFixed(1)} r="9" fill={CATS[p.v.cat].color} stroke="#ffffff" stroke-width="2.5" filter="url(#night-punto)" />
+              <g transform={`translate(${p.x.toFixed(1)},${p.y.toFixed(1)})`} aria-hidden="true" set:html={GLYPH[p.v.cat]} />
+              <text class="night-nombre" x={p.x.toFixed(1)} y={(p.y - 15).toFixed(1)} text-anchor="middle" font-size="13">{p.v.name}</text>
+            </a>
+          ))
+        }
+      </svg>
+      <figcaption class="border-t border-niebla bg-lino px-4 py-2 text-[0.7rem] text-piedra-suave">{T.mapCredit}</figcaption>
+    </figure>
+
+    {/* Lista accesible (canónica). Cada local: ficha + el plan de "te llevamos"
+        enlazado a Menorca Bus + cómo llegar por tu cuenta + web oficial. */}
+    <div class="nightmap-list mt-7 grid gap-3" role="list">
+      {
+        venues.map((v) => {
+          const color = CATS[v.cat].color;
+          return (
+            <article
+              id={`night-${v.id}`}
+              data-cat={v.cat}
+              role="listitem"
+              class="rounded-xl border border-niebla bg-lino p-4 sm:p-5"
+            >
+              <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                <p class="font-display text-xl text-tinta">
+                  {v.href ? (
+                    <a class="underline decoration-niebla underline-offset-4 hover:decoration-terracota" href={v.href}>{v.name}</a>
+                  ) : (
+                    v.name
+                  )}
+                </p>
+                <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-oro">
+                  <span class="inline-block h-2.5 w-2.5 rounded-full" style={`background:${color}`} />
+                  {catLabel(v.cat)}
+                </span>
+              </div>
+              <p class="mt-1 text-sm leading-relaxed text-piedra-suave">{v.area} · {v.description}</p>
+              <p class="mt-3 border-t border-niebla/60 pt-3 text-sm text-piedra-suave">
+                <span class="text-piedra-suave/90">{v.note ?? catPark(v.cat)}</span>{" "}
+                <span class="font-semibold text-tinta">{T.teLlevamos}</span> · {T.teLlevamosSub}.{" "}
+                <a
+                  class="font-semibold text-arcilla underline decoration-arcilla/40 underline-offset-2 hover:text-terracota hover:decoration-terracota"
+                  href={menorcaBusUrl("noche", v.id)}
+                  target="_blank"
+                  rel="sponsored noopener"
+                  data-umami-event="cta-menorcabus-noche"
+                >
+                  {T.reserva} ↗
+                </a>
+              </p>
+              <p class="mt-1 text-xs text-piedra-suave/80">
+                <a class="underline decoration-niebla underline-offset-2 hover:text-arcilla" href={mapsUrl(v.lat, v.lng)} target="_blank" rel="noopener">{T.ubicacion} ↗</a>
+                {v.website && (
+                  <Fragment>
+                    {" · "}
+                    <a class="underline decoration-niebla underline-offset-2 hover:text-arcilla" href={v.website} target="_blank" rel="noopener">{T.web} ↗</a>
+                  </Fragment>
+                )}
+              </p>
+            </article>
+          );
+        })
+      }
+    </div>
+
+    <p class="mt-5 text-xs leading-relaxed text-piedra-suave">{T.seasonal}</p>
+  </div>
+
+  <JsonLd schema={jsonLd} />
+</section>

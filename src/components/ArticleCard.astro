@@ -14,6 +14,9 @@ interface Props {
   aspectClass?: string;
   /** `sizes` responsivo según el ancho de columna donde se coloque la tarjeta. */
   sizes?: string;
+  /** Activa el movimiento editorial (revelado + parallax + subrayado). Solo la
+      portada lo pasa; en listados/secciones la tarjeta va estática (por defecto). */
+  animate?: boolean;
 }
 const {
   kicker,
@@ -24,10 +27,11 @@ const {
   imageAlt,
   aspectClass = "aspect-[4/5]",
   sizes = "(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw",
+  animate = false,
 } = Astro.props;
 ---
 
-<article class="group relative flex flex-col">
+<article class={animate ? "reveal group relative flex flex-col" : "group relative flex flex-col"}>
   <div class={`relative ${aspectClass} w-full overflow-hidden bg-arena`}>
     {
       image && (
@@ -38,7 +42,7 @@ const {
           alt={imageAlt ?? ""}
           width="1600"
           height="2000"
-          class="img-calma h-full w-full object-cover"
+          class={animate ? "img-calma parallax-img h-full w-full object-cover" : "img-calma h-full w-full object-cover"}
           loading="lazy"
           decoding="async"
         />
@@ -50,7 +54,7 @@ const {
       aria-hidden="true"
     />
     <span
-      class="pointer-events-none absolute inset-0 bg-lino/0 transition-colors duration-700 ease-out group-hover:bg-lino/8"
+      class="pointer-events-none absolute inset-0 bg-lino/0 transition-colors duration-700 ease-calma group-hover:bg-lino/8"
       aria-hidden="true"
     />
   </div>
@@ -66,7 +70,9 @@ const {
   <h3 class="mt-2 font-display text-xl leading-snug text-tinta">
     <a
       href={href}
-      class="transition-colors after:absolute after:inset-0 group-hover:text-terracota"
+      class={animate
+        ? "card-title after:absolute after:inset-0"
+        : "transition-colors after:absolute after:inset-0 group-hover:text-terracota"}
     >
       {title}
     </a>

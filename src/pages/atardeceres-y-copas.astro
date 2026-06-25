@@ -1,0 +1,41 @@
+---
+// "Atardeceres y copas" (ES) — página-hub de la noche de Menorca: atardeceres,
+// beach clubs, coctelerías y clubs, con el mapa de cada sitio y el transfer de
+// lujo (no conduzcas). Misma familia que el Planificador y "Mar en calma".
+import BaseLayout from "../layouts/BaseLayout.astro";
+import NightlifeMap from "../components/NightlifeMap.astro";
+import NewsletterSignup from "../components/NewsletterSignup.astro";
+
+const alternates = {
+  es: "/atardeceres-y-copas",
+  en: "/en/sunsets-and-drinks",
+};
+---
+
+<BaseLayout
+  title="Atardeceres y copas"
+  description="La noche de Menorca con criterio: los mejores atardeceres, beach clubs, coctelerías de puerto y dónde salir, con un mapa de cada sitio y cómo llegar sin conducir."
+  locale="es"
+  alternates={alternates}
+>
+  <div class="mx-auto max-w-prosa px-5 pt-12 sm:px-8 sm:pt-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Calma Society · Menorca</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Atardeceres y copas</h1>
+    <p class="lead mt-5">
+      La isla cuando baja el sol: los mejores atardeceres, los beach clubs, las coctelerías de
+      puerto y dónde salir. Con un mapa de cada sitio —y cómo llegar a cada uno sin conducir.
+    </p>
+    <p class="mt-5 text-base leading-relaxed text-piedra-suave">
+      En los acantilados del atardecer y en los puertos casi nunca hay dónde aparcar, y en verano
+      se llena al amanecer. Por eso lo más cómodo —y lo más sensato de noche— es no traer coche:
+      te llevamos y te recogemos con chófer privado, del primer atardecer al último cóctel. Esta es
+      nuestra selección, con criterio y sin masificación.
+    </p>
+  </div>
+
+  <div class="mx-auto mt-6 max-w-5xl px-5 sm:px-8">
+    <NightlifeMap locale="es" />
+  </div>
+
+  <NewsletterSignup variant="inline" />
+</BaseLayout>

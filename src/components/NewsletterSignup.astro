@@ -56,7 +56,7 @@ const newsletterHref = locale === "es" ? "/newsletter" : "/en/newsletter";
         ) : (
           <a
             href={newsletterHref}
-            class="mt-6 inline-block rounded-md bg-arcilla px-6 py-3 text-sm font-semibold text-lino transition-colors hover:bg-tinta"
+            class="press mt-6 inline-block rounded-md bg-arcilla px-6 py-3 text-sm font-semibold text-lino hover:bg-tinta"
             data-umami-event="newsletter-cta-inline"
           >
             {t("newsletter.cta")}
@@ -116,7 +116,7 @@ const newsletterHref = locale === "es" ? "/newsletter" : "/en/newsletter";
         ) : mlMode === "popup" ? (
           <button
             type="button"
-            class="mx-auto mt-8 block rounded-md bg-oro-vivo px-8 py-3.5 text-sm font-semibold text-tinta transition-colors hover:bg-lino"
+            class="press mx-auto mt-8 block rounded-md bg-oro-vivo px-8 py-3.5 text-sm font-semibold text-tinta hover:bg-lino"
             onclick={`ml('show', '${popupFormId}', true)`}
             data-umami-event="newsletter-popup-open"
           >
@@ -139,12 +139,12 @@ const newsletterHref = locale === "es" ? "/newsletter" : "/en/newsletter";
               required
               autocomplete="email"
               placeholder={t("newsletter.placeholder")}
-              class="w-full rounded-md border border-lino/20 bg-lino/10 px-4 py-3 text-sm text-lino placeholder:text-lino/50 focus-visible:outline-champan"
+              class="w-full rounded-md border border-lino/20 bg-lino/10 px-4 py-3 text-sm text-lino placeholder:text-lino/50 transition-colors duration-150 ease-calma focus:border-champan/40 focus:bg-lino/[0.16] focus-visible:outline-champan"
             />
             <button
               type="submit"
               disabled={mlMode === "preview"}
-              class="shrink-0 rounded-md bg-oro-vivo px-6 py-3 text-sm font-semibold text-tinta transition-colors hover:bg-lino disabled:cursor-not-allowed disabled:opacity-60"
+              class="press shrink-0 rounded-md bg-oro-vivo px-6 py-3 text-sm font-semibold text-tinta hover:bg-lino disabled:cursor-not-allowed disabled:opacity-60"
               data-umami-event={mlMode === "custom" ? "newsletter-submit" : undefined}
             >
               {t("newsletter.cta")}

@@ -1,0 +1,47 @@
+---
+// Cabecera de sección editorial — el "índice de revista": numeral opcional
+// (01·02·03), filete dorado (gesto-firma de la marca), antetítulo en
+// versalitas y un titular Fraunces con presencia. Se revela al hacer scroll
+// (clase `.reveal`, 100% CSS). Opcionalmente un enlace "ver todo".
+interface Props {
+  /** Numeral editorial, p. ej. "01". Omitir para secciones sin numerar. */
+  number?: string;
+  eyebrow: string;
+  title: string;
+  /** Enlace "ver todo" (opcional). */
+  href?: string;
+  viewAll?: string;
+}
+const { number, eyebrow, title, href, viewAll } = Astro.props;
+---
+
+<header class="flex flex-wrap items-end justify-between gap-x-6 gap-y-3 border-b border-niebla pb-4">
+  <div>
+    <div class="flex items-center gap-3">
+      {
+        number && (
+          <span
+            class="font-display text-base leading-none text-oro-vivo"
+            style="font-variation-settings:'opsz' 24,'wght' 480"
+            aria-hidden="true"
+          >
+            {number}
+          </span>
+        )
+      }
+      <span class="draw h-px w-8 bg-oro-vivo/50" aria-hidden="true"></span>
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">{eyebrow}</p>
+    </div>
+    <h2 class="reveal-wipe mt-3 font-display text-3xl text-tinta sm:text-4xl">{title}</h2>
+  </div>
+  {
+    href && viewAll && (
+      <a
+        href={href}
+        class="group shrink-0 text-xs font-semibold uppercase tracking-widest text-arcilla transition-colors hover:text-terracota"
+      >
+        {viewAll} <span class="cta-arrow" aria-hidden="true">→</span>
+      </a>
+    )
+  }
+</header>
