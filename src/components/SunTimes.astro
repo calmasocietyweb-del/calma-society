@@ -16,7 +16,6 @@ interface Props {
   locale: Locale;
 }
 const { locale } = Astro.props;
-const isEs = locale === "es";
 
 // Año de referencia = año de build. Las horas apenas cambian de un año a otro;
 // usar el año en curso mantiene la tabla "actual" sin caducar (es por meses).
@@ -26,7 +25,8 @@ const thisMonth = now.getMonth(); // 0-11, para resaltar el mes en curso
 
 const MONTHS_ES = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 const MONTHS_EN = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-const months = isEs ? MONTHS_ES : MONTHS_EN;
+const MONTHS_FR = ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+const months = locale === "es" ? MONTHS_ES : locale === "fr" ? MONTHS_FR : MONTHS_EN;
 
 // Una fila por mes, calculada para el día 15 (representativo del mes).
 const rows = months.map((label, i) => {
@@ -46,29 +46,42 @@ const sets = rows.map((r) => r.set);
 const earliestSet = sets.reduce((a, b) => (a < b ? a : b));
 const latestSet = sets.reduce((a, b) => (a > b ? a : b));
 
-const T = isEs
-  ? {
-      eyebrow: "A qué hora cae el sol",
-      title: "Amanecer y atardecer en Menorca, mes a mes",
-      lead: `Casi todo en esta página gira en torno a una hora: la del atardecer. En Menorca el sol se pone alrededor de las ${latestSet} en pleno verano y tan pronto como las ${earliestSet} en lo más hondo del invierno. La hora dorada —esa luz cálida que lo vuelve todo más bonito— llega en los 30-40 minutos previos a la puesta: ese es el momento para tener ya la copa en la mano.`,
-      colMonth: "Mes",
-      colRise: "Amanece",
-      colSet: "Atardece",
-      colLen: "Luz",
-      note: "Horas calculadas para el centro de Menorca, en hora local (CET/CEST, con su cambio de hora). La costa oeste (Ciutadella, Punta Nati) ve la puesta unos minutos más tarde; el este (Maó, Favàritx) ve el amanecer unos minutos antes. Llega siempre con margen: lo bueno empieza antes de que el sol toque el mar.",
-      thisMonth: "Mes actual",
-    }
-  : {
-      eyebrow: "When the sun goes down",
-      title: "Sunrise and sunset in Menorca, month by month",
-      lead: `Almost everything on this page revolves around one time: sunset. In Menorca the sun sets around ${latestSet} at the height of summer and as early as ${earliestSet} in the depths of winter. The golden hour —that warm light that makes everything more beautiful— arrives in the 30-40 minutes before sundown: that's the moment to already have a drink in hand.`,
-      colMonth: "Month",
-      colRise: "Sunrise",
-      colSet: "Sunset",
-      colLen: "Daylight",
-      note: "Times calculated for the centre of Menorca, in local time (CET/CEST, daylight saving included). The west coast (Ciutadella, Punta Nati) sees the sunset a few minutes later; the east (Maó, Favàritx) sees the sunrise a few minutes earlier. Always arrive with time to spare: the good part starts before the sun touches the sea.",
-      thisMonth: "Current month",
-    };
+const TT = {
+  es: {
+    eyebrow: "A qué hora cae el sol",
+    title: "Amanecer y atardecer en Menorca, mes a mes",
+    lead: `Casi todo en esta página gira en torno a una hora: la del atardecer. En Menorca el sol se pone alrededor de las ${latestSet} en pleno verano y tan pronto como las ${earliestSet} en lo más hondo del invierno. La hora dorada —esa luz cálida que lo vuelve todo más bonito— llega en los 30-40 minutos previos a la puesta: ese es el momento para tener ya la copa en la mano.`,
+    colMonth: "Mes",
+    colRise: "Amanece",
+    colSet: "Atardece",
+    colLen: "Luz",
+    note: "Horas calculadas para el centro de Menorca, en hora local (CET/CEST, con su cambio de hora). La costa oeste (Ciutadella, Punta Nati) ve la puesta unos minutos más tarde; el este (Maó, Favàritx) ve el amanecer unos minutos antes. Llega siempre con margen: lo bueno empieza antes de que el sol toque el mar.",
+    thisMonth: "Mes actual",
+  },
+  en: {
+    eyebrow: "When the sun goes down",
+    title: "Sunrise and sunset in Menorca, month by month",
+    lead: `Almost everything on this page revolves around one time: sunset. In Menorca the sun sets around ${latestSet} at the height of summer and as early as ${earliestSet} in the depths of winter. The golden hour —that warm light that makes everything more beautiful— arrives in the 30-40 minutes before sundown: that's the moment to already have a drink in hand.`,
+    colMonth: "Month",
+    colRise: "Sunrise",
+    colSet: "Sunset",
+    colLen: "Daylight",
+    note: "Times calculated for the centre of Menorca, in local time (CET/CEST, daylight saving included). The west coast (Ciutadella, Punta Nati) sees the sunset a few minutes later; the east (Maó, Favàritx) sees the sunrise a few minutes earlier. Always arrive with time to spare: the good part starts before the sun touches the sea.",
+    thisMonth: "Current month",
+  },
+  fr: {
+    eyebrow: "À quelle heure se couche le soleil",
+    title: "Lever et coucher du soleil à Minorque, mois par mois",
+    lead: `Presque tout sur cette page tourne autour d'une heure : celle du coucher de soleil. À Minorque, le soleil se couche vers ${latestSet} au plus fort de l'été et dès ${earliestSet} au plus profond de l'hiver. L'heure dorée —cette lumière chaude qui embellit tout— arrive dans les 30 à 40 minutes qui précèdent le coucher : c'est le moment où il faut déjà avoir le verre en main.`,
+    colMonth: "Mois",
+    colRise: "Lever",
+    colSet: "Coucher",
+    colLen: "Lumière",
+    note: "Heures calculées pour le centre de Minorque, en heure locale (CET/CEST, changement d'heure inclus). La côte ouest (Ciutadella, Punta Nati) voit le coucher quelques minutes plus tard ; l'est (Maó, Favàritx) voit le lever quelques minutes plus tôt. Arrivez toujours avec de la marge : le meilleur commence avant que le soleil ne touche la mer.",
+    thisMonth: "Mois en cours",
+  },
+};
+const T = TT[locale];
 ---
 
 <section class="mx-auto max-w-prosa px-5 sm:px-8">

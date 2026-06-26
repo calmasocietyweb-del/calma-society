@@ -83,7 +83,7 @@ const breadcrumb = breadcrumbSchema([
           <span aria-hidden="true" class="text-oro-vivo">★</span>
           <span class="font-semibold text-tinta">{fmtScore(rating.score, locale)}</span>
           <span>
-            · {fmtReviews(rating.reviews, locale)} {locale === "es" ? "reseñas en Google" : "Google reviews"}
+            · {fmtReviews(rating.reviews, locale)} {locale === "es" ? "reseñas en Google" : locale === "fr" ? "avis Google" : "Google reviews"}
           </span>
         </p>
       )

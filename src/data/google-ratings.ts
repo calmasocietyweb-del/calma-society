@@ -14,6 +14,9 @@
  *
  * Único origen: cámbialas solo aquí. Lo usan NightlifeMap y PlaceLayout.
  */
+import type { Locale } from "../config/site";
+import { INTL_LOCALE } from "../i18n/utils";
+
 export interface GoogleRating {
   /** Nota media (0-5). */
   score: number;
@@ -56,15 +59,15 @@ export const googleRatings: Record<string, GoogleRating> = {
   "bar-es-cau": { score: 4.4, reviews: 511 },
 };
 
-/** Nota media formateada por idioma ("4,1" en ES; "4.1" en EN). */
-export function fmtScore(score: number, locale: "es" | "en"): string {
-  return score.toLocaleString(locale === "es" ? "es-ES" : "en-GB", {
+/** Nota media formateada por idioma ("4,1" en ES/FR; "4.1" en EN). */
+export function fmtScore(score: number, locale: Locale): string {
+  return score.toLocaleString(INTL_LOCALE[locale], {
     minimumFractionDigits: 1,
     maximumFractionDigits: 1,
   });
 }
 
-/** Nº de reseñas formateado por idioma ("16.499" en ES; "16,499" en EN). */
-export function fmtReviews(reviews: number, locale: "es" | "en"): string {
-  return reviews.toLocaleString(locale === "es" ? "es-ES" : "en-GB");
+/** Nº de reseñas formateado por idioma ("16.499" ES; "16,499" EN; "16 499" FR). */
+export function fmtReviews(reviews: number, locale: Locale): string {
+  return reviews.toLocaleString(INTL_LOCALE[locale]);
 }

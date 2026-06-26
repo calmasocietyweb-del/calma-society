@@ -17,7 +17,6 @@ interface Props {
   locale: Locale;
 }
 const { locale } = Astro.props;
-const isEs = locale === "es";
 
 // Una sola lista alimenta el FAQ visible y el FAQPage (schema.org).
 const faqsEs = [
@@ -90,7 +89,42 @@ const faqsEn = [
   },
 ];
 
-const faqs = isEs ? faqsEs : faqsEn;
+const faqsFr = [
+  {
+    q: "À quelle heure le soleil se couche-t-il à Minorque ?",
+    a: "Cela dépend de la saison. En plein été (juin-juillet), le soleil se couche vers 21:15–21:20 ; au printemps et en automne, entre 18:30 et 20:30 ; et au cœur de l'hiver, autour de 17:20. L'heure dorée arrive dans les 30 à 40 minutes qui précèdent. Plus haut sur cette page, vous trouverez le tableau mois par mois avec les heures exactes du lever et du coucher du soleil.",
+  },
+  {
+    q: "Où voir les plus beaux couchers de soleil à Minorque ?",
+    a: "Les classiques de l'ouest et du nord : la Cova d'en Xoroi, sur la falaise de Cala'n Porter, où l'on contemple le coucher de soleil depuis l'intérieur de la roche ; le Cap de Cavalleria et le phare de Favàritx, sauvages et spectaculaires ; Punta Nati et le Pont d'en Gil, au nord-ouest de Ciutadella, dans leur version la plus pure ; et, au-dessus de la mer du nord, l'Isabella Beach Club, sur les Platges de Fornells. Presque tous n'ont quasiment pas de stationnement : d'où le confort de venir avec un chauffeur.",
+  },
+  {
+    q: "Où voir le lever de soleil à Minorque ?",
+    a: "Vers l'est. Es Castell et Cales Fonts revendiquent d'être parmi les premiers endroits d'Espagne à voir le soleil se lever ; le phare de Favàritx, sur son paysage lunaire, vaut aussi bien pour le lever que pour le coucher du soleil ; et la zone de Punta Prima, face à l'Illa de l'Aire, offre un lever de soleil limpide sur la mer. Ce sont des sorties de petit matin, parfaites si quelqu'un conduit pour vous.",
+  },
+  {
+    q: "Quels sont les meilleurs beach clubs de Minorque ?",
+    a: "Parmi les plus réputés : le Purobeach Menorca, l'Isabella Beach Club (Fornells), l'Artrutx Sea Club (Cala en Bosc), le Cape Nao au-dessus de Cala Galdana, le Bambú à Binibèquer et l'Arena Beach Club. Ce sont des adresses de journée qui se prolongent jusqu'au verre du coucher de soleil ; en été, mieux vaut réserver, surtout pour dîner.",
+  },
+  {
+    q: "Où prendre un bon verre ou un cocktail à Minorque ?",
+    a: "Les ports de Maó et de Ciutadella réunissent les meilleurs bars. À Maó, Vida Una (vermouth et cocktails) et Contrabandu ; sur la côte ouest, le Jigger, à Cala Blanca, avec ses cocktails d'auteur ; et le BB Cocktail Bar, très bien noté. Ce sont des adresses pour un verre tranquille, pas pour faire la fête.",
+  },
+  {
+    q: "Y a-t-il de la vie nocturne ou des discothèques à Minorque ?",
+    a: "Il y en a, mais avec la signature paisible de l'île : pas de méga-clubs. La Cova d'en Xoroi passe de lounge au coucher du soleil à club lors des nuits d'été ; et dans le port de Ciutadella se trouvent le Jazzbah et la discothèque Kopas. C'est une nuit de verres et de musique avec discernement, plutôt qu'une fête débridée.",
+  },
+  {
+    q: "Peut-on s'y rendre sans voiture ? Pourquoi recommandez-vous un chauffeur ?",
+    a: "Parce que c'est le plus confortable et le plus raisonnable. Sur les falaises du coucher de soleil et autour des ports, il n'y a presque jamais où se garer —et en été, c'est complet dès le lever du jour—, et après un verre, conduire est la dernière chose dont on a envie. C'est pourquoi nous proposons un transfert avec chauffeur privé (Mercedes Classe S ou Classe V) du premier coucher de soleil au dernier cocktail : nous vous emmenons et nous venons vous chercher.",
+  },
+  {
+    q: "Quand ces endroits sont-ils ouverts ?",
+    a: "Presque tout est saisonnier : la haute saison va de mai-juin à septembre-octobre, et de nombreux beach clubs et adresses de coucher de soleil ferment en hiver. Les horaires et les jauges changent chaque année ; mieux vaut donc vérifier sur le site web ou l'Instagram de chaque endroit avant de s'y rendre.",
+  },
+];
+
+const faqs = locale === "es" ? faqsEs : locale === "fr" ? faqsFr : faqsEn;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -102,8 +136,14 @@ const jsonLd = {
   })),
 };
 
-const heading = isEs ? "Preguntas frecuentes" : "Frequently asked questions";
-const eyebrow = isEs ? "Todo sobre la noche de Menorca" : "All about Menorca after dark";
+const heading =
+  locale === "es" ? "Preguntas frecuentes" : locale === "fr" ? "Questions fréquentes" : "Frequently asked questions";
+const eyebrow =
+  locale === "es"
+    ? "Todo sobre la noche de Menorca"
+    : locale === "fr"
+      ? "Tout sur les nuits de Minorque"
+      : "All about Menorca after dark";
 ---
 
 <section class="mx-auto mt-14 max-w-prosa px-5 sm:px-8">

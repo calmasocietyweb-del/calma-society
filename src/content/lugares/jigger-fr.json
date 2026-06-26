@@ -1,0 +1,58 @@
+{
+  "name": "Jigger Cooking Cocktail",
+  "lang": "fr",
+  "translationKey": "jigger",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Bar à cocktails d'auteur avec cuisine à Cala Blanca (Ciutadella) : cocktails signature et une vaste carte de spiritueux.",
+  "coordinates": {
+    "lat": 39.9726926,
+    "lng": 3.8331929
+  },
+  "area": "Ouest (Ciutadella)",
+  "practicalInfo": {
+    "acceso": "Emplacement indicatif de la zone ; confirmez le point exact sur leur site web ou Instagram.",
+    "horario": "Saisonnier ; les horaires changent chaque saison — consultez leur site web ou Instagram."
+  },
+  "website": "https://www.jiggermenorca.com/",
+  "images": [],
+  "tags": [
+    "coctelería",
+    "cala blanca",
+    "ciutadella"
+  ],
+  "status": "published",
+  "editorial": {
+    "lead": "Jigger évolue entre deux mondes : la cuisine et le bar. C'est un bar à cocktails d'auteur avec sa propre cuisine à Cala Blanca, où la journée peut commencer par un brunch et la nuit s'étirer entre cocktails signature et une longue carte de spiritueux.",
+    "sections": [
+      {
+        "heading": "Bar à cocktails avec cuisine",
+        "body": [
+          "Le nom le dit à demi-mot : un jigger est la mesure du barman, et ici les cocktails sont pris au sérieux. Mais Jigger ajoute quelque chose de peu courant — une cuisine maison sous le même toit —, si bien qu'il fonctionne le jour comme adresse où manger et la nuit comme bar à cocktails d'auteur, sans changer de table.",
+          "La carte de spiritueux est vaste, avec un faible pour les gins ; c'est l'un de ces endroits où vous pouvez demander conseil et vous laisser porter."
+        ]
+      },
+      {
+        "heading": "À Cala Blanca",
+        "body": [
+          "Il ne se trouve ni au centre ni au port, mais dans la résidence de Cala Blanca, sur la côte ouest, à environ cinq kilomètres au sud de Ciutadella, en bordure de la crique du même nom. C'est une zone tranquille et résidentielle : le plan d'un verre détendu, pas celui d'une virée sur le port."
+        ]
+      },
+      {
+        "heading": "Comment en profiter avec calme",
+        "body": [
+          "Allez-y sans hâte, commencez par la cuisine si vous arrivez tôt et laissez la nuit dériver vers les cocktails. Et comme la saison et la carte changent, vérifiez-le sur leur site web ou Instagram avant de vous y rendre."
+        ]
+      }
+    ],
+    "bestFor": ["Couples", "Cocktails d'auteur", "Cala Blanca"],
+    "goodToKnow": [
+      "Concept « cooking cocktail » : bar à cocktails d'auteur avec cuisine, du brunch en journée aux cocktails du soir.",
+      "Vaste carte de spiritueux, avec une spécialité de gins.",
+      "Situé dans la résidence de Cala Blanca, à environ 5 km au sud de Ciutadella.",
+      "La carte, les horaires et la saison changent : vérifiez-les sur leur site web ou Instagram."
+    ],
+    "transfer": true,
+    "transferText": "Cala Blanca se trouve à environ 5 km de Ciutadella et, entre deux cocktails, le plus raisonnable est de ne pas reprendre la voiture au retour. Nous vous emmenons et venons vous chercher avec un chauffeur privé — vous n'avez qu'à choisir votre verre."
+  }
+}

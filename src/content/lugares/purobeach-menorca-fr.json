@@ -1,0 +1,60 @@
+{
+  "name": "Purobeach Menorca",
+  "lang": "fr",
+  "translationKey": "purobeach-menorca",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Beach club premium à S'Algar : piscine, accès à la mer, restaurant et la musique de marque du groupe Puro. Le plus exclusif de l'île.",
+  "coordinates": {
+    "lat": 39.8328797,
+    "lng": 4.2976315
+  },
+  "area": "Sud-est (Sant Lluís)",
+  "practicalInfo": {
+    "acceso": "Emplacement indicatif de la zone ; confirmez le point exact sur leur site web ou leur Instagram.",
+    "horario": "Saisonnier ; les horaires changent à chaque saison — consultez leur site web ou leur Instagram."
+  },
+  "website": "https://www.purobeach.com/en/beach-club-menorca/",
+  "images": [],
+  "tags": [
+    "beach club",
+    "piscina",
+    "s'algar",
+    "lujo"
+  ],
+  "status": "published",
+  "editorial": {
+    "lead": "Minorque est l'île du calme, mais elle sait aussi monter un beach club de marque internationale. Purobeach — le premier du groupe Puro sur l'île, ouvert en 2023 — apporte à S'Algar sa formule de piscine sur la mer, restaurant et la musique de son propre label, avec la mesure qu'exige la Méditerranée.",
+    "sections": [
+      {
+        "heading": "Le label Puro arrive à Minorque",
+        "body": [
+          "Purobeach est une famille internationale de beach clubs avec une singularité peu commune : son propre label de musique. En 2023, il a ouvert sa première maison à Minorque et y a planté son idée de journée méditerranéenne — piscine, accès à la mer, restaurant et bien-être — avec un design soigné qui l'éloigne de la paillote et le rapproche du club de plage haut de gamme.",
+          "Ce n'est pas un établissement au bord de la crique, mais un espace intégré qui fonctionne comme une oasis : on vient y passer la journée, pas seulement prendre un verre."
+        ]
+      },
+      {
+        "heading": "Une journée qui s'étire jusqu'au cocktail",
+        "body": [
+          "Le charme d'un endroit comme celui-ci, c'est le rythme. Le jour, la piscine et la mer dominent ; à mesure que l'après-midi décline, montent la musique du label Puro et le bar à cocktails, et le programme baignade se transforme, sans hâte, en soirée. C'est la version tranquille de la sortie : une longue journée de soleil qui s'achève sur un verre bien servi.",
+          "Pour un couple ou un groupe en quête de luxe sans tapage, c'est l'un des programmes les plus agréables du Sud-est."
+        ]
+      },
+      {
+        "heading": "Où le trouver",
+        "body": [
+          "Purobeach se trouve à S'Algar, un lotissement tranquille de la côte sud-est, sur la commune de Sant Lluís, intégré au complexe Aluasoul Menorca. C'est une zone d'hôtels et de petites criques, loin de l'agitation."
+        ]
+      }
+    ],
+    "bestFor": ["Couples", "Luxe tranquille", "Journée piscine et mer"],
+    "goodToKnow": [
+      "Le premier beach club du groupe Puro à Minorque, ouvert en 2023.",
+      "Il est intégré au complexe Aluasoul Menorca, dans le lotissement de S'Algar (Sant Lluís).",
+      "Piscine, accès à la mer, restaurant et la musique du label Puro.",
+      "Horaires, carte et réservations sont saisonniers : confirmez-les sur leur site web avant de vous y rendre."
+    ],
+    "transfer": true,
+    "transferText": "S'Algar est un lotissement du Sud-est et la soirée s'achève en cocktail : le plus confortable — et le plus sensé — est de ne pas reprendre le volant au retour. Nous vous emmenons et venons vous chercher avec chauffeur privé, en Mercedes Classe S ou Classe V."
+  }
+}

@@ -14,7 +14,7 @@ import { z } from "astro:schema";
 import { glob } from "astro/loaders";
 
 // Mantener en sync con los locales activos de src/config/site.ts
-const LOCALE = z.enum(["es", "en"]);
+const LOCALE = z.enum(["es", "en", "fr"]);
 
 // Ciclo de vida del contenido (ver docs/AUTOMATIZACION-Y-FLUJO-EDITORIAL.md)
 const STATUS = z.enum(["draft", "pending", "published"]).default("draft");
@@ -329,12 +329,14 @@ const eventos = defineCollection({
 const autores = defineCollection({
   loader: glob({ pattern: "**/*.json", base: "./src/content/autores" }),
   schema: z.object({
-      name: z.object({ es: z.string(), en: z.string() }),
-      role: z.object({ es: z.string(), en: z.string() }),
-      bio: z.object({ es: z.string(), en: z.string() }),
+      // `fr` opcional: despliegue por mercados. Si falta, se cae a en/es (ver
+      // el helper `pick()` en i18n/ui.ts).
+      name: z.object({ es: z.string(), en: z.string(), fr: z.string().optional() }),
+      role: z.object({ es: z.string(), en: z.string(), fr: z.string().optional() }),
+      bio: z.object({ es: z.string(), en: z.string(), fr: z.string().optional() }),
       // `bio` es texto visible (corto). `seoDescription` la sustituye SOLO en la
       // <meta description> de la página de autor cuando la bio es muy corta para SEO.
-      seoDescription: z.object({ es: z.string(), en: z.string() }).optional(),
+      seoDescription: z.object({ es: z.string(), en: z.string(), fr: z.string().optional() }).optional(),
       avatar: z.string().optional(),
       social: z
         .object({

@@ -15,11 +15,18 @@ const active = currentLocale(path);
 const t = useTranslations(active);
 
 const hrefFor = (code: Locale) => alternates?.[code] ?? localizedPath(path, code);
+
+// Despliegue por mercados: un idioma 'partial' (fr) solo se ofrece donde la
+// página declara su `alternate` (o si es el idioma actual). Así nunca enlazamos
+// a una página que aún no existe en ese idioma → cero "huérfanas".
+const visibleLocales = SITE.locales.filter(
+  (l) => l.rollout !== "partial" || l.code === active || !!alternates?.[l.code],
+);
 ---
 
 <nav aria-label={t("lang.label")} class="flex items-center gap-1.5 text-xs font-medium">
   {
-    SITE.locales.map(({ code, label }, i) => (
+    visibleLocales.map(({ code, label }, i) => (
       <>
         {i > 0 && <span aria-hidden="true" class="text-niebla">·</span>}
         <a

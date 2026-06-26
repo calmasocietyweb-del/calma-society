@@ -9,16 +9,17 @@
  *   <Figure src="/uploads/cala-turqueta.webp" alt="..." caption="..." credit="Adobe Stock" lang="es" />
  */
 import { srcset } from "../lib/img";
+import type { Locale } from "../config/site";
 
 interface Props {
   src: string;
   alt: string;
   caption?: string;
   credit?: string;
-  lang?: "es" | "en";
+  lang?: Locale;
 }
 const { src, alt, caption, credit, lang = "es" } = Astro.props;
-const creditLabel = lang === "en" ? "Photo" : "Foto";
+const creditLabel = lang === "es" ? "Foto" : "Photo";
 ---
 
 <figure class="article-figure">

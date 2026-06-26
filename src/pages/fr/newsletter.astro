@@ -1,0 +1,55 @@
+---
+// Page newsletter dédiée (FR). La captation = KPI nº1 (CLAUDE.md §3.1).
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import NewsletterSignup from "../../components/NewsletterSignup.astro";
+import { SITE } from "../../config/site";
+
+const alternates = { es: "/newsletter", en: "/en/newsletter", fr: "/fr/newsletter" };
+
+const benefits = [
+  "Une sélection du meilleur de Minorque — avec discernement, sans remplissage.",
+  "Des recommandations de première main : criques tranquilles, belles tables, un vrai agenda.",
+  "Des histoires de l'île 365 jours par an, hors-saison comprise.",
+];
+---
+
+<BaseLayout
+  title="Newsletter"
+  description="Abonnez-vous à Calma Society : tous les quinze jours, le meilleur de Minorque dans un regard de luxe tranquille."
+  locale="fr"
+  alternates={alternates}
+>
+  <section class="mx-auto max-w-prosa px-5 pt-12 text-center sm:px-8 sm:pt-20">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Newsletter</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">
+      L'île, dans votre boîte mail
+    </h1>
+    <p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-piedra-suave">
+      L'atout de Calma Society n'est pas le bruit, c'est la confiance. Rejoignez une communauté
+      qui préfère la qualité à la quantité.
+    </p>
+
+    <ul class="mx-auto mt-8 max-w-md space-y-3 text-left">
+      {
+        benefits.map((b) => (
+          <li class="flex gap-3 text-sm leading-relaxed text-piedra">
+            <span aria-hidden="true" class="text-oro">—</span>
+            <span>{b}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  {
+    SITE.newsletter.enabled || SITE.newsletter.capture.enabled ? (
+      <div class="mt-14">
+        <NewsletterSignup />
+      </div>
+    ) : (
+      <p class="mx-auto mt-12 max-w-prosa px-5 text-center text-piedra-suave sm:px-8">
+        Nous le préparons, sans hâte. <strong class="text-piedra">Très bientôt</strong>, vous pourrez vous abonner.
+      </p>
+    )
+  }
+</BaseLayout>

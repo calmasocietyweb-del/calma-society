@@ -11,7 +11,7 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const alternates = { es: authorUrl("es", entry.id), en: authorUrl("en", entry.id) };
+const alternates = { es: authorUrl("es", entry.id), en: authorUrl("en", entry.id), fr: authorUrl("fr", entry.id) };
 ---
 
 <BaseLayout title={entry.data.name.es} description={entry.data.seoDescription?.es ?? entry.data.bio.es} locale="es" alternates={alternates}>

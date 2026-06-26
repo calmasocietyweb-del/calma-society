@@ -17,15 +17,35 @@ const { alternates } = Astro.props;
 const locale = currentLocale(Astro.url.pathname);
 const t = useTranslations(locale);
 const home = homePath(locale);
-const aboutHref = locale === "es" ? "/quienes-somos" : "/en/about";
-const newsletterHref = locale === "es" ? "/newsletter" : "/en/newsletter";
-const contactHref = locale === "es" ? "/contacto" : "/en/contact";
-const plannerHref = locale === "es" ? "/planificador" : "/en/trip-planner";
-const plannerLabel = locale === "es" ? "Planificador" : "Planner";
-const calmaHref = locale === "es" ? "/donde-el-mar-esta-en-calma" : "/en/where-the-sea-is-calm";
-const calmaNav = locale === "es" ? "Mar en calma" : "Calm sea";
-const nocheHref = locale === "es" ? "/atardeceres-y-copas" : "/en/sunsets-and-drinks";
-const nocheNav = locale === "es" ? "Atardeceres y copas" : "Sunsets & drinks";
+
+// Páginas fijas (about/newsletter/contacto) por idioma.
+const PAGES: Record<Locale, { about: string; newsletter: string; contact: string }> = {
+  es: { about: "/quienes-somos", newsletter: "/newsletter", contact: "/contacto" },
+  en: { about: "/en/about", newsletter: "/en/newsletter", contact: "/en/contact" },
+  fr: { about: "/fr/qui-sommes-nous", newsletter: "/fr/newsletter", contact: "/fr/contact" },
+};
+const pages = PAGES[locale];
+
+// Herramientas interactivas por idioma. En FR (despliegue por mercados) solo van
+// las traducidas: Mar en calma + Atardeceres (el Planificador se añadirá después).
+const TOOLS: Record<Locale, { href: string; label: string }[]> = {
+  es: [
+    { href: "/donde-el-mar-esta-en-calma", label: "Mar en calma" },
+    { href: "/planificador", label: "Planificador" },
+    { href: "/atardeceres-y-copas", label: "Atardeceres y copas" },
+  ],
+  en: [
+    { href: "/en/where-the-sea-is-calm", label: "Calm sea" },
+    { href: "/en/trip-planner", label: "Planner" },
+    { href: "/en/sunsets-and-drinks", label: "Sunsets & drinks" },
+  ],
+  // FR (despliegue por mercados): de momento solo "Atardeceres" está traducido.
+  // Mer calme y Planificateur se añadirán cuando se localicen.
+  fr: [
+    { href: "/fr/couchers-et-cocktails", label: "Couchers & cocktails" },
+  ],
+};
+const tools = TOOLS[locale];
 ---
 
 <header class="sticky top-0 z-50 border-b border-niebla bg-lino/95 backdrop-blur-sm">
@@ -37,7 +57,7 @@ const nocheNav = locale === "es" ? "Atardeceres y copas" : "Sunsets & drinks";
         {
           SITE.newsletter.enabled && (
             <a
-              href={newsletterHref}
+              href={pages.newsletter}
               class="text-[0.62rem] uppercase tracking-[0.22em] text-arcilla transition-colors hover:text-terracota"
             >
               {t("nav.newsletter")}
@@ -83,24 +103,22 @@ const nocheNav = locale === "es" ? "Atardeceres y copas" : "Sunsets & drinks";
                 ))
               }
               <hr class="my-2 border-niebla" />
-              <a href={calmaHref} class="block rounded-md px-3 py-2 text-sm font-medium text-arcilla transition-colors hover:bg-arena hover:text-terracota">
-                {calmaNav}
-              </a>
-              <a href={plannerHref} class="block rounded-md px-3 py-2 text-sm font-medium text-arcilla transition-colors hover:bg-arena hover:text-terracota">
-                {plannerLabel}
-              </a>
-              <a href={nocheHref} class="block rounded-md px-3 py-2 text-sm font-medium text-arcilla transition-colors hover:bg-arena hover:text-terracota">
-                {nocheNav}
-              </a>
-              <a href={aboutHref} class="block rounded-md px-3 py-2 text-sm text-piedra transition-colors hover:bg-arena hover:text-terracota">
+              {
+                tools.map((tool) => (
+                  <a href={tool.href} class="block rounded-md px-3 py-2 text-sm font-medium text-arcilla transition-colors hover:bg-arena hover:text-terracota">
+                    {tool.label}
+                  </a>
+                ))
+              }
+              <a href={pages.about} class="block rounded-md px-3 py-2 text-sm text-piedra transition-colors hover:bg-arena hover:text-terracota">
                 {t("nav.about")}
               </a>
-              <a href={contactHref} class="block rounded-md px-3 py-2 text-sm text-piedra transition-colors hover:bg-arena hover:text-terracota">
+              <a href={pages.contact} class="block rounded-md px-3 py-2 text-sm text-piedra transition-colors hover:bg-arena hover:text-terracota">
                 {t("nav.contact")}
               </a>
               {
                 SITE.newsletter.enabled && (
-                  <a href={newsletterHref} class="block rounded-md px-3 py-2 text-sm font-medium text-arcilla transition-colors hover:bg-arena">
+                  <a href={pages.newsletter} class="block rounded-md px-3 py-2 text-sm font-medium text-arcilla transition-colors hover:bg-arena">
                     {t("nav.newsletter")}
                   </a>
                 )
@@ -141,26 +159,19 @@ const nocheNav = locale === "es" ? "Atardeceres y copas" : "Sunsets & drinks";
         }
       </div>
       <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 text-[0.72rem]">
-        <a
-          href={calmaHref}
-          class="whitespace-nowrap uppercase tracking-[0.16em] text-arcilla transition-colors hover:text-terracota"
-        >
-          {calmaNav}
-        </a>
-        <span aria-hidden="true" class="h-3 w-px bg-niebla"></span>
-        <a
-          href={plannerHref}
-          class="whitespace-nowrap uppercase tracking-[0.16em] text-arcilla transition-colors hover:text-terracota"
-        >
-          {plannerLabel}
-        </a>
-        <span aria-hidden="true" class="h-3 w-px bg-niebla"></span>
-        <a
-          href={nocheHref}
-          class="whitespace-nowrap uppercase tracking-[0.16em] text-arcilla transition-colors hover:text-terracota"
-        >
-          {nocheNav}
-        </a>
+        {
+          tools.map((tool, i) => (
+            <Fragment>
+              {i > 0 && <span aria-hidden="true" class="h-3 w-px bg-niebla" />}
+              <a
+                href={tool.href}
+                class="whitespace-nowrap uppercase tracking-[0.16em] text-arcilla transition-colors hover:text-terracota"
+              >
+                {tool.label}
+              </a>
+            </Fragment>
+          ))
+        }
       </div>
     </nav>
   </div>

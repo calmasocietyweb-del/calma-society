@@ -204,6 +204,104 @@ export const ui = {
     "footer.follow": "Follow us",
     "footer.rights": "All rights reserved.",
   },
+  fr: {
+    "site.tagline": "La Méditerranée, sans hâte",
+    "brand.tagline": "La Méditerranée, sans hâte",
+    "nav.home": "Accueil",
+    "nav.menu": "Menu",
+    "nav.about": "À propos",
+    "nav.newsletter": "La Société",
+    "lang.label": "Langue",
+    "a11y.skip": "Aller au contenu",
+    "a11y.close": "Fermer",
+
+    "common.readmore": "Lire la suite",
+    "common.viewall": "Tout voir",
+    "common.backhome": "Retour à l'accueil",
+
+    "home.preview": "Aperçu du design",
+    "home.hero.title": "Minorque, sans hâte.",
+    "home.hero.subtitle":
+      "Les expériences, le goût et la beauté de l'île — sublimés. Une publication de Calma Society.",
+    "home.featured": "La sélection de la rédaction",
+    "home.readmore": "Lire l'histoire",
+    "home.discover.eyebrow": "L'essentiel de l'île",
+    "home.discover.title": "Criques, plages et nature",
+    "home.agenda": "À ne pas manquer",
+    "home.agenda.eyebrow": "Agenda",
+    "home.explore": "Explorer l'île",
+    "home.explore.eyebrow": "Rubriques",
+    "home.sections.intro": "Six façons de regarder Minorque, toutes avec discernement.",
+    "home.manifesto":
+      "Calma Society n'est pas un guide de plus : c'est un regard de luxe tranquille sur Minorque et une société de ceux qui l'aiment sans hâte. Du discernement, des expériences choisies avec calme et l'île 365 jours par an. Bienvenue dans la Société.",
+    "home.manifesto.cta": "Découvrir la Société",
+
+    "article.by": "Par",
+    "article.published": "Publié le",
+    "article.updated": "Mis à jour le",
+    "article.related": "Lieux associés",
+    "article.keepreading": "À lire aussi",
+    "article.sponsored": "Contenu sponsorisé",
+    "article.insection": "Dans",
+
+    "section.empty": "Bientôt, d'autres histoires dans cette rubrique.",
+
+    "place.practical": "Informations pratiques",
+    "place.access": "Accès",
+    "place.parking": "Stationnement",
+    "place.services": "Services",
+    "place.besttime": "Meilleure période",
+    "place.hours": "Horaires",
+    "place.area": "Zone",
+    "place.viewmap": "Voir sur la carte",
+    "place.bestfor": "Idéal pour",
+    "place.goodtoknow": "Bon à savoir",
+    "place.transfer.eyebrow": "Arrivez avec chauffeur",
+    "place.transfer.title": "On vous emmène et on vous ramène",
+    "place.transfer.text":
+      "Sur les falaises du coucher de soleil et autour des ports, il n'y a presque jamais où se garer —et le soir, conduire est bien la dernière chose dont on a envie—. On vient vous chercher en Mercedes Classe S ou Classe V avec chauffeur privé, du premier coucher de soleil au dernier cocktail.",
+    "place.transfer.cta": "Réservez avec Menorca Bus",
+
+    "agenda.upcoming": "À venir",
+    "agenda.all": "Tout",
+    "agenda.filterlabel": "Filtrer par type d'expérience",
+    "agenda.empty": "Aucun événement publié pour le moment.",
+    "agenda.when": "Quand",
+    "agenda.where": "Où",
+
+    "author.articlesby": "Articles de",
+
+    "newsletter.eyebrow": "La Société",
+    "newsletter.title": "Rejoignez la Société",
+    "newsletter.text":
+      "Restez connecté à Calma Society : tous les quinze jours, les nouvelles de la Société et le meilleur de Minorque, dans un regard de luxe tranquille. Sans bruit.",
+    "newsletter.placeholder": "Votre adresse e-mail",
+    "newsletter.cta": "Rejoindre la Société",
+    "newsletter.privacy": "Pas de spam. Désabonnement quand vous voulez.",
+    "newsletter.consent": "J'accepte de recevoir les nouvelles de la Société et la",
+    "thanks.title": "Bienvenue dans la Société",
+    "thanks.text":
+      "Merci de nous avoir rejoints. Vous faites désormais partie des fondateurs de Calma Society : nous vous écrirons avec calme, seulement quand nous aurons quelque chose qui mérite vraiment votre temps.",
+    "thanks.back": "Retour à l'accueil",
+
+    "nav.contact": "Contact",
+    "contact.lead": "Une histoire, une proposition ou une collaboration en tête ? Écrivez-nous.",
+    "contact.name": "Nom",
+    "contact.email": "E-mail",
+    "contact.message": "Message",
+    "contact.send": "Envoyer le message",
+    "contact.directemail": "Ou écrivez-nous directement à",
+    "contact.sent": "Merci ! Nous vous répondrons bientôt.",
+    "contact.consent": "J'ai lu et j'accepte la",
+    "contact.consentLink": "Politique de confidentialité",
+
+    "footer.about":
+      "Calma Society — la Méditerranée, sans hâte : un regard de luxe tranquille sur Minorque. Notre première édition.",
+    "footer.sections": "Rubriques",
+    "footer.more": "Plus",
+    "footer.follow": "Suivez-nous",
+    "footer.rights": "Tous droits réservés.",
+  },
 } satisfies Record<Locale, Record<string, string>>;
 
 export type UIKey = keyof (typeof ui)["es"];
@@ -211,29 +309,38 @@ export type UIKey = keyof (typeof ui)["es"];
 /** Devuelve una función de traducción `t('clave')` para el idioma dado. */
 export function useTranslations(locale: Locale) {
   return function t(key: UIKey): string {
-    return ui[locale][key] ?? ui[SITE.defaultLocale][key];
+    return (ui[locale] as Record<string, string>)[key] ?? ui[SITE.defaultLocale][key];
   };
+}
+
+/**
+ * Devuelve `obj[locale]` con fallback en cascada fr→en→es. Para datos
+ * localizados en un solo registro `{ es, en, fr? }` (p. ej. autores), donde el
+ * francés es de despliegue por mercados y puede faltar todavía.
+ */
+export function pick<T>(obj: Partial<Record<Locale, T>>, locale: Locale): T {
+  return (obj[locale] ?? obj.en ?? obj.es) as T;
 }
 
 // ---- Etiquetas de datos (tipos de lugar y categorías de evento) ----
 
 const PLACE_TYPES: Record<string, Record<Locale, string>> = {
-  cala: { es: "Cala", en: "Cove" },
-  restaurante: { es: "Restaurante", en: "Restaurant" },
-  alojamiento: { es: "Alojamiento", en: "Stay" },
-  monumento: { es: "Monumento", en: "Monument" },
-  comercio: { es: "Comercio", en: "Shop" },
-  otro: { es: "Lugar", en: "Place" },
+  cala: { es: "Cala", en: "Cove", fr: "Crique" },
+  restaurante: { es: "Restaurante", en: "Restaurant", fr: "Restaurant" },
+  alojamiento: { es: "Alojamiento", en: "Stay", fr: "Hébergement" },
+  monumento: { es: "Monumento", en: "Monument", fr: "Monument" },
+  comercio: { es: "Comercio", en: "Shop", fr: "Boutique" },
+  otro: { es: "Lugar", en: "Place", fr: "Lieu" },
 };
 
 const EVENT_CATEGORIES: Record<string, Record<Locale, string>> = {
-  fiesta: { es: "Fiesta", en: "Festival" },
-  concierto: { es: "Concierto", en: "Concert" },
-  mercado: { es: "Mercado", en: "Market" },
-  deporte: { es: "Deporte", en: "Sport" },
-  cultura: { es: "Cultura", en: "Culture" },
-  gastronomia: { es: "Gastronomía", en: "Gastronomy" },
-  otro: { es: "Evento", en: "Event" },
+  fiesta: { es: "Fiesta", en: "Festival", fr: "Fête" },
+  concierto: { es: "Concierto", en: "Concert", fr: "Concert" },
+  mercado: { es: "Mercado", en: "Market", fr: "Marché" },
+  deporte: { es: "Deporte", en: "Sport", fr: "Sport" },
+  cultura: { es: "Cultura", en: "Culture", fr: "Culture" },
+  gastronomia: { es: "Gastronomía", en: "Gastronomy", fr: "Gastronomie" },
+  otro: { es: "Evento", en: "Event", fr: "Événement" },
 };
 
 export function placeTypeLabel(type: string, locale: Locale): string {
@@ -248,13 +355,13 @@ export function eventCategoryLabel(cat: string, locale: Locale): string {
 // agenda). Se derivan de la `category` del evento; la clave del tipo ES la
 // propia categoría, para poder filtrar por ella. El orden marca el de los chips.
 export const EXPERIENCE_TYPES = [
-  { key: "fiesta", label: { es: "Fiestas de pueblo", en: "Town festivals" } },
-  { key: "concierto", label: { es: "Música", en: "Music" } },
-  { key: "cultura", label: { es: "Cultura", en: "Culture" } },
-  { key: "deporte", label: { es: "Naturaleza y deporte", en: "Nature & sport" } },
-  { key: "mercado", label: { es: "Mercados y ferias", en: "Markets & fairs" } },
-  { key: "gastronomia", label: { es: "Gastronomía", en: "Food & drink" } },
-  { key: "otro", label: { es: "Otros", en: "Other" } },
+  { key: "fiesta", label: { es: "Fiestas de pueblo", en: "Town festivals", fr: "Fêtes de village" } },
+  { key: "concierto", label: { es: "Música", en: "Music", fr: "Musique" } },
+  { key: "cultura", label: { es: "Cultura", en: "Culture", fr: "Culture" } },
+  { key: "deporte", label: { es: "Naturaleza y deporte", en: "Nature & sport", fr: "Nature et sport" } },
+  { key: "mercado", label: { es: "Mercados y ferias", en: "Markets & fairs", fr: "Marchés et foires" } },
+  { key: "gastronomia", label: { es: "Gastronomía", en: "Food & drink", fr: "Gastronomie" } },
+  { key: "otro", label: { es: "Otros", en: "Other", fr: "Autres" } },
 ] as const;
 
 export function experienceTypeLabel(category: string, locale: Locale): string {

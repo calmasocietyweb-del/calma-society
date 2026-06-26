@@ -7,12 +7,12 @@
  *   <MenorcaBusCTA lang="es" />
  *   <MenorcaBusCTA lang="en" title="..." text="..." cta="..." />
  */
-import { SITE } from "../config/site";
+import { SITE, type Locale } from "../config/site";
 import { menorcaBusUrl } from "../lib/links";
 import MenorcaBusPromo from "./MenorcaBusPromo.astro";
 
 interface Props {
-  lang?: "es" | "en";
+  lang?: Locale;
   /** Sobrescribe el texto por defecto para adaptarlo al contexto del artículo. */
   title?: string;
   text?: string;
@@ -22,26 +22,34 @@ const { lang = "es", title, text, cta } = Astro.props;
 // UTM con la ruta del artículo → en el panel de Menorca Bus se ve qué artículo convierte.
 const url = menorcaBusUrl("cta", Astro.url.pathname);
 
-const defaults =
-  lang === "en"
-    ? {
-        title: "Get around Menorca without a car",
-        text: "Private minibus transfers and tailor-made excursions to beaches, coves, towns and viewpoints — at your own pace, with a local driver.",
-        cta: "Book with Menorca Bus",
-      }
-    : {
-        title: "Muévete por Menorca sin coche",
-        text: "Transfers privados en minibús y excursiones a medida a playas, calas, pueblos y miradores — a tu ritmo y con conductor local.",
-        cta: "Reserva con Menorca Bus",
-      };
+const DEFAULTS: Record<Locale, { title: string; text: string; cta: string }> = {
+  es: {
+    title: "Muévete por Menorca sin coche",
+    text: "Transfers privados en minibús y excursiones a medida a playas, calas, pueblos y miradores — a tu ritmo y con conductor local.",
+    cta: "Reserva con Menorca Bus",
+  },
+  en: {
+    title: "Get around Menorca without a car",
+    text: "Private minibus transfers and tailor-made excursions to beaches, coves, towns and viewpoints — at your own pace, with a local driver.",
+    cta: "Book with Menorca Bus",
+  },
+  fr: {
+    title: "Déplacez-vous à Minorque sans voiture",
+    text: "Transferts privés en minibus et excursions sur mesure vers plages, criques, villages et belvédères — à votre rythme, avec un chauffeur local.",
+    cta: "Réservez avec Menorca Bus",
+  },
+};
+const defaults = DEFAULTS[lang];
 
 // Transparencia (CLAUDE.md §8): Menorca Bus es el servicio de transporte de la
 // misma editora de Calma Society. Lo decimos abiertamente para no confundir
 // recomendación editorial con negocio propio.
-const disclosure =
-  lang === "en"
-    ? "Transparency: Menorca Bus is the transport service run by Calma Society's publisher."
-    : "Transparencia: Menorca Bus es el servicio de transporte de la propia editora de Calma Society.";
+const DISCLOSURE: Record<Locale, string> = {
+  es: "Transparencia: Menorca Bus es el servicio de transporte de la propia editora de Calma Society.",
+  en: "Transparency: Menorca Bus is the transport service run by Calma Society's publisher.",
+  fr: "Transparence : Menorca Bus est le service de transport de l'éditeur de Calma Society.",
+};
+const disclosure = DISCLOSURE[lang];
 
 const t = {
   title: title ?? defaults.title,

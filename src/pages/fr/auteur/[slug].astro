@@ -1,0 +1,29 @@
+---
+// Auteur en français: /fr/auteur/[slug]
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import AuthorView from "../../../components/AuthorView.astro";
+import { authorUrl } from "../../../i18n/utils";
+import { pick } from "../../../i18n/ui";
+
+export async function getStaticPaths() {
+  const authors = await getCollection("autores");
+  return authors.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const alternates = {
+  es: authorUrl("es", entry.id),
+  en: authorUrl("en", entry.id),
+  fr: authorUrl("fr", entry.id),
+};
+---
+
+<BaseLayout
+  title={pick(entry.data.name, "fr")}
+  description={entry.data.seoDescription ? pick(entry.data.seoDescription, "fr") : pick(entry.data.bio, "fr")}
+  locale="fr"
+  alternates={alternates}
+>
+  <AuthorView entry={entry} locale="fr" />
+</BaseLayout>

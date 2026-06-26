@@ -35,11 +35,17 @@ const active = !!promo && new Date() <= new Date(`${promo.until}T23:59:59`);
         className,
       ]}
     >
-      {isEs ? "Con el código " : "Use code "}
+      {isEs ? "Con el código " : locale === "fr" ? "Avec le code " : "Use code "}
       <span class:list={["font-semibold", tone === "dark" ? "text-champan" : "text-arcilla"]}>
         {promo.code}
       </span>
-      {isEs ? `, ${promo.amount} de descuento en tu reserva.` : ` for ${promo.amount} off your booking.`}
+      {
+        isEs
+          ? `, ${promo.amount} de descuento en tu reserva.`
+          : locale === "fr"
+            ? ` : ${promo.amount} de réduction sur votre réservation.`
+            : ` for ${promo.amount} off your booking.`
+      }
     </p>
   )
 }

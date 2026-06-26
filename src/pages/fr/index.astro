@@ -1,0 +1,190 @@
+---
+// Accueil en français (/fr/). Contenu réel des collections (publié uniquement).
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Hero from "../../components/Hero.astro";
+import LeadStory from "../../components/LeadStory.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
+import EventCard from "../../components/EventCard.astro";
+import NewsletterSignup from "../../components/NewsletterSignup.astro";
+import { SITE } from "../../config/site";
+import { menorcaBusUrl } from "../../lib/links";
+import MenorcaBusPromo from "../../components/MenorcaBusPromo.astro";
+import { getSection } from "../../config/sections";
+import { useTranslations } from "../../i18n/ui";
+import { getArticlesBySection, getFeaturedArticle, getEvents } from "../../lib/content";
+import { articleUrl, homePath } from "../../i18n/utils";
+
+const locale = "fr";
+const t = useTranslations(locale);
+
+const lead = await getFeaturedArticle(locale);
+const discover = (await getArticlesBySection(locale, "descubrir"))
+  .filter((a) => a.id !== lead?.id)
+  .slice(0, 6);
+const events = (await getEvents(locale)).slice(0, 3);
+
+const HOME_SECTION_ORDER = ["descubrir", "practica", "agenda", "cultura", "vivir", "comer-y-beber"];
+const homeSections = HOME_SECTION_ORDER.map((k) => getSection(k)).filter(Boolean);
+
+const sectionLabel = (key: string) => getSection(key)?.label[locale];
+const description =
+  "Calma Society — le magazine de Minorque dans un regard de luxe tranquille : criques et plages avec discernement, nature, culture et comment vivre l'île sans hâte.";
+---
+
+<BaseLayout
+  title="Accueil"
+  description={description}
+  locale="fr"
+  alternates={{ es: homePath("es"), en: homePath("en"), fr: homePath("fr") }}
+>
+  <Hero
+    eyebrow={`${SITE.name} · ${SITE.edition}`}
+    title={t("home.hero.title")}
+    subtitle={t("home.hero.subtitle")}
+    image="/uploads/navegar-menorca.webp"
+    imageAlt="Un voilier au mouillage dans une crique turquoise au pied de falaises dorées à Minorque."
+  />
+
+  {
+    lead && (
+      <section class="mx-auto max-w-6xl px-5 pt-16 pb-4 sm:px-8 sm:pt-24">
+        <LeadStory
+          kicker={sectionLabel(lead.data.section)}
+          title={lead.data.title}
+          excerpt={lead.data.excerpt}
+          href={articleUrl(locale, lead.id)}
+          cta={t("home.readmore")}
+          image={lead.data.heroImage}
+          imageAlt={lead.data.heroImageAlt}
+        />
+      </section>
+    )
+  }
+
+  {
+    discover.length > 0 && (
+      <section class="mx-auto mt-20 max-w-6xl px-5 sm:mt-28 sm:px-8">
+        <header class="flex flex-wrap items-end justify-between gap-4 border-b border-niebla pb-4">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">
+              {t("home.discover.eyebrow")}
+            </p>
+            <h2 class="mt-2 font-display text-3xl text-tinta sm:text-4xl">
+              {t("home.discover.title")}
+            </h2>
+          </div>
+          <a
+            href="/fr/decouvrir"
+            class="text-xs font-semibold uppercase tracking-widest text-arcilla transition-colors hover:text-terracota"
+          >
+            {t("common.viewall")} →
+          </a>
+        </header>
+        <div class="mt-10 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          {discover.map((a) => (
+            <ArticleCard
+              animate
+              kicker={sectionLabel(a.data.section)}
+              title={a.data.title}
+              excerpt={a.data.excerpt}
+              href={articleUrl(locale, a.id)}
+              image={a.data.heroImage}
+              imageAlt={a.data.heroImageAlt}
+            />
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  {/* Se déplacer dans l'île (transferts & excursions · Menorca Bus) */}
+  <section class="mt-20 sm:mt-28">
+    <div class="mx-auto max-w-6xl px-5 sm:px-8">
+      <div class="rounded-2xl border border-niebla bg-arena/50 p-8 sm:p-12">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">Se déplacer</p>
+        <h2 class="mt-3 font-display text-2xl text-tinta sm:text-3xl">Explorez l'île sans voiture</h2>
+        <p class="mt-3 max-w-prosa text-piedra-suave">
+          De l'aéroport à votre hôtel, jusqu'aux criques ou en excursion vers les phares et les
+          villages : transferts privés et minibus avec chauffeur, pour profiter de Minorque en
+          toute quiétude.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a
+            href={menorcaBusUrl("home")}
+            target="_blank"
+            rel="sponsored noopener"
+            data-umami-event="home-reserva-menorcabus"
+            class="rounded-md bg-arcilla px-5 py-2.5 text-sm font-semibold text-lino no-underline transition-colors hover:bg-tinta"
+          >
+            Réservez avec Menorca Bus ↗
+          </a>
+          <a
+            href="/fr/se-deplacer"
+            class="rounded-md border border-arcilla px-5 py-2.5 text-sm font-semibold text-arcilla no-underline transition-colors hover:bg-arcilla hover:text-lino"
+          >
+            Se déplacer à Minorque →
+          </a>
+        </div>
+        <MenorcaBusPromo locale="fr" tone="light" class="mt-4" />
+      </div>
+    </div>
+  </section>
+
+  {
+    events.length > 0 && (
+      <section class="mx-auto mt-20 max-w-6xl px-5 sm:mt-28 sm:px-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">
+          {t("home.agenda.eyebrow")}
+        </p>
+        <h2 class="mt-2 border-b border-niebla pb-4 font-display text-3xl text-tinta sm:text-4xl">
+          {t("home.agenda")}
+        </h2>
+        <div class="mt-10 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          {events.map((e) => (
+            <EventCard event={e} locale={locale} animate />
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <section class="mx-auto mt-20 max-w-6xl px-5 sm:mt-28 sm:px-8">
+    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">
+      {t("home.explore.eyebrow")}
+    </p>
+    <h2 class="mt-2 font-display text-3xl text-tinta sm:text-4xl">{t("home.explore")}</h2>
+    <p class="mt-3 max-w-prosa text-piedra-suave">{t("home.sections.intro")}</p>
+    <div class="mt-10 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        homeSections.map((s) => (
+          <a href={s.href[locale]} class="group block border-t border-niebla pt-5">
+            <h3 class="font-display text-xl text-tinta transition-colors group-hover:text-terracota">
+              {s.label[locale]}
+            </h3>
+            <p class="mt-2 text-sm leading-relaxed text-piedra-suave">{s.intro[locale]}</p>
+            <span class="mt-3 inline-block text-xs font-semibold uppercase tracking-widest text-oro transition-colors group-hover:text-terracota">
+              {t("common.viewall")} →
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="mt-24 bg-arcilla sm:mt-28">
+    <div class="mx-auto max-w-3xl px-5 py-20 text-center sm:px-8 sm:py-24">
+      <p class="text-xs font-semibold uppercase tracking-[0.25em] text-champan">{SITE.name}</p>
+      <p class="mt-5 font-display text-2xl leading-relaxed text-lino sm:text-3xl">
+        {t("home.manifesto")}
+      </p>
+      <a
+        href="/fr/qui-sommes-nous"
+        class="mt-8 inline-block rounded-full bg-lino px-6 py-2.5 text-sm font-semibold uppercase tracking-widest text-arcilla transition-colors hover:bg-arena"
+      >
+        {t("home.manifesto.cta")}
+      </a>
+    </div>
+  </section>
+
+  <NewsletterSignup />
+</BaseLayout>

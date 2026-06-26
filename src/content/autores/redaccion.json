@@ -1,12 +1,14 @@
 {
-  "name": { "es": "Redacción de Calma Society", "en": "Calma Society Editorial" },
-  "role": { "es": "Equipo editorial", "en": "Editorial team" },
+  "name": { "es": "Redacción de Calma Society", "en": "Calma Society Editorial", "fr": "La rédaction de Calma Society" },
+  "role": { "es": "Equipo editorial", "en": "Editorial team", "fr": "Équipe éditoriale" },
   "bio": {
     "es": "La redacción de Calma Society. Cubrimos Menorca con criterio y de primera mano: cada cala, restaurante, ruta o evento se elige y se verifica antes de recomendarlo. Datos comprobados, voz propia y mirada de lujo tranquilo, los 365 días del año.",
-    "en": "The Calma Society editorial team. We cover Menorca with judgement and first-hand: every cove, restaurant, route or event is chosen and checked before we recommend it. Verified facts, our own voice and a quiet-luxury eye, 365 days a year."
+    "en": "The Calma Society editorial team. We cover Menorca with judgement and first-hand: every cove, restaurant, route or event is chosen and checked before we recommend it. Verified facts, our own voice and a quiet-luxury eye, 365 days a year.",
+    "fr": "La rédaction de Calma Society. Nous couvrons Minorque avec discernement et de première main : chaque crique, restaurant, itinéraire ou événement est choisi et vérifié avant d'être recommandé. Des faits contrôlés, une voix qui nous est propre et un regard de luxe tranquille, 365 jours par an."
   },
   "seoDescription": {
     "es": "La redacción de Calma Society, revista independiente sobre Menorca con mirada de lujo tranquilo: criterio editorial, datos verificados de primera mano y voz propia.",
-    "en": "The Calma Society editorial team, an independent magazine about Menorca with a quiet-luxury lens: editorial judgement, first-hand verified facts and a voice of its own."
+    "en": "The Calma Society editorial team, an independent magazine about Menorca with a quiet-luxury lens: editorial judgement, first-hand verified facts and a voice of its own.",
+    "fr": "La rédaction de Calma Society, magazine indépendant sur Minorque avec un regard de luxe tranquille : discernement éditorial, faits vérifiés de première main et voix qui lui est propre."
   }
 }

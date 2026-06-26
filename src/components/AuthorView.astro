@@ -4,7 +4,7 @@ import type { CollectionEntry } from "astro:content";
 import ArticleCard from "./ArticleCard.astro";
 import JsonLd from "./JsonLd.astro";
 import { getArticles } from "../lib/content";
-import { useTranslations } from "../i18n/ui";
+import { useTranslations, pick } from "../i18n/ui";
 import { articleUrl, authorUrl, homePath } from "../i18n/utils";
 import { SITE, type Locale } from "../config/site";
 import { abs, personSchema, breadcrumbSchema } from "../lib/schema";
@@ -22,23 +22,23 @@ const social = entry.data.social;
 
 const canonical = abs(authorUrl(locale, entry.id));
 const personLd = personSchema({
-  name: entry.data.name[locale],
-  description: entry.data.bio[locale],
+  name: pick(entry.data.name, locale),
+  description: pick(entry.data.bio, locale),
   url: canonical,
   sameAs: social ? Object.values(social).filter(Boolean) : undefined,
 });
 const breadcrumb = breadcrumbSchema([
   { name: SITE.name, url: abs(homePath(locale)) },
-  { name: entry.data.name[locale], url: canonical },
+  { name: pick(entry.data.name, locale), url: canonical },
 ]);
 ---
 
 <section class="mx-auto max-w-prosa px-5 pt-12 sm:px-8 sm:pt-16">
   <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">
-    {entry.data.role[locale]}
+    {pick(entry.data.role, locale)}
   </p>
-  <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">{entry.data.name[locale]}</h1>
-  <p class="mt-5 text-lg leading-relaxed text-piedra-suave">{entry.data.bio[locale]}</p>
+  <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">{pick(entry.data.name, locale)}</h1>
+  <p class="mt-5 text-lg leading-relaxed text-piedra-suave">{pick(entry.data.bio, locale)}</p>
   {
     social?.instagram && (
       <p class="mt-4">
@@ -54,7 +54,7 @@ const breadcrumb = breadcrumbSchema([
   articles.length > 0 && (
     <section class="mx-auto mt-16 max-w-6xl px-5 sm:px-8">
       <h2 class="border-b border-niebla pb-3 font-display text-2xl text-tinta">
-        {t("author.articlesby")} {entry.data.name[locale]}
+        {t("author.articlesby")} {pick(entry.data.name, locale)}
       </h2>
       <div class="mt-8 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
         {articles.map((a) => (

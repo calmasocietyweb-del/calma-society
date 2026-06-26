@@ -14,6 +14,9 @@
  * puesta algo más tarde; el este, Maó, ve el amanecer algo antes): irrelevante
  * para la tabla, y se avisa en el pie.
  */
+import type { Locale } from "../config/site";
+import { INTL_LOCALE } from "../i18n/utils";
+
 export const MENORCA = { lat: 39.95, lng: 4.0 } as const;
 
 const J2000 = 2451545.0;
@@ -58,9 +61,9 @@ export function sunTimes(
 }
 
 /** Hora local de Menorca (Europe/Madrid → CET/CEST con su cambio de hora). */
-export function fmtMenorcaTime(d: Date | null, locale: "es" | "en"): string {
+export function fmtMenorcaTime(d: Date | null, locale: Locale): string {
   if (!d) return "—";
-  return d.toLocaleTimeString(locale === "es" ? "es-ES" : "en-GB", {
+  return d.toLocaleTimeString(INTL_LOCALE[locale], {
     timeZone: "Europe/Madrid",
     hour: "2-digit",
     minute: "2-digit",
@@ -69,10 +72,11 @@ export function fmtMenorcaTime(d: Date | null, locale: "es" | "en"): string {
 }
 
 /** Duración del día (sunset − sunrise) en "Xh Ym", localizada. */
-export function dayLength(ev: SunEvents, locale: "es" | "en"): string {
+export function dayLength(ev: SunEvents, locale: Locale): string {
   if (!ev.sunrise || !ev.sunset) return "—";
   const mins = Math.round((ev.sunset.getTime() - ev.sunrise.getTime()) / 60000);
   const h = Math.floor(mins / 60);
   const m = mins % 60;
-  return locale === "es" ? `${h} h ${m} min` : `${h}h ${m}m`;
+  // EN: "9h 39m"; ES y FR: "9 h 39 min".
+  return locale === "en" ? `${h}h ${m}m` : `${h} h ${m} min`;
 }

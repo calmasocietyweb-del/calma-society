@@ -55,48 +55,58 @@ const CAT_ORDER: Cat[] = ["atardecer", "amanecer", "beach", "cocteleria", "club"
 // atardecer, puertos sin sitio de noche), no afirmaciones absolutas por local.
 const CATS: Record<
   Cat,
-  { color: string; es: string; en: string; schema: string; parkEs: string; parkEn: string }
+  { color: string; es: string; en: string; fr: string; schema: string; parkEs: string; parkEn: string; parkFr: string }
 > = {
   atardecer: {
-    color: "#A8895C", es: "Atardecer", en: "Sunset", schema: "BarOrPub",
+    color: "#A8895C", es: "Atardecer", en: "Sunset", fr: "Coucher de soleil", schema: "BarOrPub",
     parkEs: "En los acantilados del atardecer aparcar se complica y se llena en verano.",
     parkEn: "Parking on the sunset cliffs is tricky and fills up in summer.",
+    parkFr: "Sur les falaises du coucher de soleil, se garer devient compliqué et c'est complet en été.",
   },
   amanecer: {
-    color: "#D9A05B", es: "Amanecer", en: "Sunrise", schema: "TouristAttraction",
+    color: "#D9A05B", es: "Amanecer", en: "Sunrise", fr: "Lever de soleil", schema: "TouristAttraction",
     parkEs: "Plan de madrugada: madrugar y, mejor aún, no tener que conducir de vuelta.",
     parkEn: "An early-morning plan: get up early and, better still, not have to drive back.",
+    parkFr: "Un plan de petit matin : se lever tôt et, mieux encore, ne pas avoir à conduire au retour.",
   },
   beach: {
-    color: "#4F7A52", es: "Beach club", en: "Beach club", schema: "BarOrPub",
+    color: "#4F7A52", es: "Beach club", en: "Beach club", fr: "Beach club", schema: "BarOrPub",
     parkEs: "Aparcamiento limitado junto a la playa en temporada alta.",
     parkEn: "Limited parking by the beach in high season.",
+    parkFr: "Stationnement limité au bord de la plage en haute saison.",
   },
   cocteleria: {
-    color: "#B96A4B", es: "Coctelería", en: "Cocktail bar", schema: "BarOrPub",
+    color: "#B96A4B", es: "Coctelería", en: "Cocktail bar", fr: "Bar à cocktails", schema: "BarOrPub",
     parkEs: "En el puerto, aparcar de noche es difícil.",
     parkEn: "Parking by the harbour at night is hard.",
+    parkFr: "Dans le port, se garer la nuit est difficile.",
   },
   club: {
-    color: "#73402D", es: "Club / fiesta", en: "Club", schema: "NightClub",
+    color: "#73402D", es: "Club / fiesta", en: "Club", fr: "Club / fête", schema: "NightClub",
     parkEs: "Zona de puerto, sin aparcamiento fácil de madrugada.",
     parkEn: "Harbour area, no easy parking in the small hours.",
+    parkFr: "Zone portuaire, pas de stationnement facile au petit matin.",
   },
 };
-const catLabel = (cat: Cat) => (isEs ? CATS[cat].es : CATS[cat].en);
-const catPark = (cat: Cat) => (isEs ? CATS[cat].parkEs : CATS[cat].parkEn);
+const catLabel = (cat: Cat) =>
+  locale === "es" ? CATS[cat].es : locale === "fr" ? CATS[cat].fr : CATS[cat].en;
+const catPark = (cat: Cat) =>
+  locale === "es" ? CATS[cat].parkEs : locale === "fr" ? CATS[cat].parkFr : CATS[cat].parkEn;
 
 // ── Zona (filtro extra): tres franjas por longitud, como mentalmente se divide
 // la isla (extremo Ciutadella / centro / extremo Maó). Determinista, sin datos
 // nuevos por local. ──
 type Zone = "oeste" | "centro" | "este";
-const ZONES: { key: Zone; es: string; en: string }[] = [
-  { key: "oeste", es: "Oeste · Ciutadella", en: "West · Ciutadella" },
-  { key: "centro", es: "Centro", en: "Centre" },
-  { key: "este", es: "Este · Maó", en: "East · Maó" },
+const ZONES: { key: Zone; es: string; en: string; fr: string }[] = [
+  { key: "oeste", es: "Oeste · Ciutadella", en: "West · Ciutadella", fr: "Ouest · Ciutadella" },
+  { key: "centro", es: "Centro", en: "Centre", fr: "Centre" },
+  { key: "este", es: "Este · Maó", en: "East · Maó", fr: "Est · Maó" },
 ];
 const zoneOf = (lng: number): Zone => (lng <= 3.92 ? "oeste" : lng >= 4.2 ? "este" : "centro");
-const zoneLabel = (z: Zone) => (isEs ? ZONES.find((x) => x.key === z)!.es : ZONES.find((x) => x.key === z)!.en);
+const zoneLabel = (z: Zone) => {
+  const zz = ZONES.find((x) => x.key === z)!;
+  return locale === "es" ? zz.es : locale === "fr" ? zz.fr : zz.en;
+};
 
 // Glifo blanco centrado en (0,0), ~12 px, para distinguir la categoría sin
 // depender del color (accesibilidad).
@@ -173,213 +183,257 @@ type Extra = {
   lng: number;
   areaEs: string;
   areaEn: string;
+  areaFr: string;
   descEs: string;
   descEn: string;
+  descFr: string;
   schemaType: string;
   website?: string; // web oficial (locales comerciales sin ficha)
   toArticle?: boolean; // enlaza a la guía de atardeceres
   noteEs?: string;
   noteEn?: string;
+  noteFr?: string;
 };
 const EXTRA: Extra[] = [
   // ───────────── ATARDECER — miradores y puntos de puesta de sol (oeste) ─────────────
   {
     id: "punta-nati", name: "Punta Nati", cat: "atardecer", lat: 40.0502, lng: 3.8236,
-    areaEs: "Oeste (Ciutadella)", areaEn: "West (Ciutadella)",
+    areaEs: "Oeste (Ciutadella)", areaEn: "West (Ciutadella)", areaFr: "Ouest (Ciutadella)",
     descEs: "Faro austero entre piedra desnuda al noroeste de Ciutadella: el atardecer en su versión más pura y silenciosa.",
     descEn: "An austere lighthouse amid bare stone northwest of Ciutadella: the sunset at its purest and most silent.",
+    descFr: "Phare austère parmi la pierre nue, au nord-ouest de Ciutadella : le coucher de soleil dans sa version la plus pure et la plus silencieuse.",
     schemaType: "TouristAttraction", toArticle: true,
     noteEs: "En pleno verano hay bus lanzadera y el acceso en coche se limita.",
     noteEn: "In high summer there's a shuttle bus and car access is limited.",
+    noteFr: "En plein été, une navette circule et l'accès en voiture est restreint.",
   },
   {
     id: "cap-de-cavalleria", name: "Cap de Cavalleria", cat: "atardecer", lat: 40.0889, lng: 4.0924,
-    areaEs: "Norte (Es Mercadal)", areaEn: "North (Es Mercadal)",
+    areaEs: "Norte (Es Mercadal)", areaEn: "North (Es Mercadal)", areaFr: "Nord (Es Mercadal)",
     descEs: "El punto más septentrional de la isla: acantilados, viento y un atardecer salvaje sobre el mar del norte.",
     descEn: "The island's northernmost point: cliffs, wind and a wild sunset over the northern sea.",
+    descFr: "Le point le plus septentrional de l'île : falaises, vent et un coucher de soleil sauvage sur la mer du nord.",
     schemaType: "TouristAttraction", toArticle: true,
     noteEs: "Al atardecer controlan el tráfico por saturación y el aparcamiento es pequeño.",
     noteEn: "At dusk traffic is controlled due to overcrowding and parking is small.",
+    noteFr: "Au coucher du soleil, la circulation est régulée en raison de l'affluence et le stationnement est réduit.",
   },
   {
     id: "pont-den-gil", name: "Pont d'en Gil", cat: "atardecer", lat: 40.011, lng: 3.7956,
-    areaEs: "Oeste (Ciutadella)", areaEn: "West (Ciutadella)",
+    areaEs: "Oeste (Ciutadella)", areaEn: "West (Ciutadella)", areaFr: "Ouest (Ciutadella)",
     descEs: "Gigantesco arco de roca natural sobre el mar al noroeste de Ciutadella, que enmarca una de las puestas de sol más espectaculares de la isla.",
     descEn: "A giant natural rock arch over the sea northwest of Ciutadella, framing one of the island's most spectacular sunsets.",
+    descFr: "Gigantesque arche de roche naturelle au-dessus de la mer, au nord-ouest de Ciutadella, qui encadre l'un des couchers de soleil les plus spectaculaires de l'île.",
     schemaType: "TouristAttraction", toArticle: true,
     noteEs: "Sin aparcamiento en el arco: se llega a pie por el Camí de Cavalls.",
     noteEn: "No parking at the arch: you reach it on foot along the Camí de Cavalls.",
+    noteFr: "Pas de stationnement à l'arche : on y accède à pied par le Camí de Cavalls.",
   },
   {
     id: "faro-artrutx", name: "Faro de Artrutx", cat: "atardecer", lat: 39.922561, lng: 3.824235,
-    areaEs: "Suroeste (Ciutadella)", areaEn: "Southwest (Ciutadella)",
+    areaEs: "Suroeste (Ciutadella)", areaEn: "Southwest (Ciutadella)", areaFr: "Sud-ouest (Ciutadella)",
     descEs: "El extremo suroccidental de la isla, coronado por un faro decimonónico de franjas blancas y negras. Horizonte abierto hacia Mallorca: uno de los sitios más serenos para despedir el día.",
     descEn: "The island's southwestern tip, crowned by a 19th-century black-and-white striped lighthouse. An open horizon toward Mallorca — one of the most serene places to see the day off.",
+    descFr: "L'extrémité sud-ouest de l'île, couronnée par un phare du XIXe siècle aux bandes blanches et noires. Horizon ouvert vers Majorque : l'un des endroits les plus sereins pour saluer la fin du jour.",
     schemaType: "TouristAttraction", toArticle: true,
     noteEs: "Se llega en coche desde Ciutadella (~7 km) y suele ser fácil aparcar cerca; el faro no se visita por dentro, pero el mirador exterior es libre.",
     noteEn: "Reachable by car from Ciutadella (~7 km); parking nearby is usually easy. The lighthouse interior isn't open, but the outer viewpoint is free.",
+    noteFr: "On y accède en voiture depuis Ciutadella (~7 km) et il est généralement facile de se garer à proximité ; l'intérieur du phare ne se visite pas, mais le belvédère extérieur est en accès libre.",
   },
   {
     id: "castell-sant-nicolau", name: "Castell de Sant Nicolau", cat: "atardecer", lat: 39.995682, lng: 3.825781,
-    areaEs: "Oeste (Ciutadella)", areaEn: "West (Ciutadella)",
+    areaEs: "Oeste (Ciutadella)", areaEn: "West (Ciutadella)", areaFr: "Ouest (Ciutadella)",
     descEs: "Torre de vigilancia octogonal del siglo XVII a la boca del puerto de Ciutadella, recuperada como mirador. Desde su explanada el sol se pone sobre el mar con el faro de Sa Farola enfrente.",
     descEn: "A 17th-century octagonal watchtower at the mouth of Ciutadella's harbour, reopened as a viewpoint. From its esplanade the sun drops into the sea with the Sa Farola lighthouse opposite.",
+    descFr: "Tour de guet octogonale du XVIIe siècle à l'entrée du port de Ciutadella, reconvertie en belvédère. Depuis son esplanade, le soleil se couche sur la mer, avec le phare de Sa Farola en face.",
     schemaType: "TouristAttraction", toArticle: true,
     noteEs: "A 10-15 min a pie del centro de Ciutadella; la explanada y el parque son de acceso libre para ver la puesta.",
     noteEn: "A 10-15 min walk from central Ciutadella; the esplanade and park are freely accessible for the sunset.",
+    noteFr: "À 10-15 min à pied du centre de Ciutadella ; l'esplanade et le parc sont en accès libre pour admirer le coucher de soleil.",
   },
   {
     id: "cala-morell-mirador", name: "Cala Morell", cat: "atardecer", lat: 40.0531, lng: 3.8824,
-    areaEs: "Norte (Ciutadella)", areaEn: "North (Ciutadella)",
+    areaEs: "Norte (Ciutadella)", areaEn: "North (Ciutadella)", areaFr: "Nord (Ciutadella)",
     descEs: "Pequeña cala del norte resguardada entre acantilados labrados por el viento, con casas blancas y una necrópolis prehistórica excavada en la roca. Atardeceres recogidos, lejos del bullicio.",
     descEn: "A small northern cove sheltered between wind-carved cliffs, with white houses and a prehistoric necropolis cut into the rock. Intimate sunsets, away from the crowds.",
+    descFr: "Petite crique du nord, abritée entre des falaises sculptées par le vent, avec des maisons blanches et une nécropole préhistorique creusée dans la roche. Des couchers de soleil intimes, loin de l'agitation.",
     schemaType: "TouristAttraction", toArticle: true,
     noteEs: "El aparcamiento son calles estrechas de la urbanización y se satura en agosto; mejor ir a última hora.",
     noteEn: "Parking is the urbanisation's narrow streets and fills up in August; best at the end of the day.",
+    noteFr: "Le stationnement se fait dans les rues étroites du lotissement et sature en août ; mieux vaut y aller en fin de journée.",
   },
   {
     id: "cala-blanca-mirador", name: "Cala Blanca", cat: "atardecer", lat: 39.9676504, lng: 3.8359042,
-    areaEs: "Suroeste (Ciutadella)", areaEn: "Southwest (Ciutadella)",
+    areaEs: "Suroeste (Ciutadella)", areaEn: "Southwest (Ciutadella)", areaFr: "Sud-ouest (Ciutadella)",
     descEs: "Playa de arena clara abierta al oeste, a pocos minutos de Ciutadella. El sol cae sobre el mar con la silueta de Mallorca al fondo: un atardecer fácil y mediterráneo, a pie de orilla.",
     descEn: "A pale-sand beach facing west, minutes from Ciutadella. The sun sets over the sea with Mallorca's silhouette on the horizon — an easy, Mediterranean sunset from the shoreline.",
+    descFr: "Plage de sable clair ouverte à l'ouest, à quelques minutes de Ciutadella. Le soleil tombe sur la mer avec la silhouette de Majorque à l'horizon : un coucher de soleil simple et méditerranéen, au bord de l'eau.",
     schemaType: "TouristAttraction", toArticle: true,
     noteEs: "Zona urbanizada a ~4 km de Ciutadella; el aparcamiento es en calles y se llena en temporada.",
     noteEn: "A built-up area ~4 km from Ciutadella; parking is on the streets and fills in season.",
+    noteFr: "Zone urbanisée à ~4 km de Ciutadella ; le stationnement se fait dans les rues et se remplit en saison.",
   },
 
   // ───────────── AMANECER — puntos para ver salir el sol (este) ─────────────
   {
     id: "favaritx", name: "Faro de Favàritx", cat: "amanecer", lat: 39.9972, lng: 4.2667,
-    areaEs: "Noreste (Maó)", areaEn: "Northeast (Maó)",
+    areaEs: "Noreste (Maó)", areaEn: "Northeast (Maó)", areaFr: "Nord-est (Maó)",
     descEs: "El faro más cinematográfico de Menorca, sobre un cabo de pizarra negra que parece de otro planeta. Al alba la luz entra limpia por el levante y baña la roca: uno de los amaneceres más recogidos de la isla.",
     descEn: "Menorca's most cinematic lighthouse, on a cape of black slate that feels almost lunar. At first light the sun rises clean over the eastern sea and washes the rock — one of the island's most contemplative sunrises.",
+    descFr: "Le phare le plus cinématographique de Minorque, sur un cap d'ardoise noire qui semble venu d'une autre planète. À l'aube, la lumière entre, limpide, par le levant et baigne la roche : l'un des levers de soleil les plus recueillis de l'île.",
     schemaType: "TouristAttraction",
     noteEs: "Del 1 de junio al 30 de septiembre el coche está prohibido (parque de s'Albufera des Grau): se llega en bus lanzadera desde Maó, en bici o a pie.",
     noteEn: "From 1 June to 30 September cars are banned (s'Albufera des Grau park): reach it by shuttle bus from Maó, by bike or on foot.",
+    noteFr: "Du 1er juin au 30 septembre, la voiture est interdite (parc de s'Albufera des Grau) : on y accède en navette depuis Maó, à vélo ou à pied.",
   },
   {
     id: "cala-sa-mesquida", name: "Cala de Sa Mesquida", cat: "amanecer", lat: 39.91698, lng: 4.2873,
-    areaEs: "Este (Maó)", areaEn: "East (Maó)",
+    areaEs: "Este (Maó)", areaEn: "East (Maó)", areaFr: "Est (Maó)",
     descEs: "Arenal abierto al levante a pocos minutos de Maó, presidido por una vieja torre de defensa inglesa. Llegar al amanecer, antes que nadie, es tener toda la bahía y la primera luz para uno mismo.",
     descEn: "An east-facing stretch of sand minutes from Maó, watched over by an old English defence tower. Arrive at sunrise, before anyone else, and the whole bay and its first light are yours.",
+    descFr: "Vaste plage de sable ouverte au levant à quelques minutes de Maó, dominée par une ancienne tour de défense anglaise. Arriver au lever du soleil, avant tout le monde, c'est avoir toute la baie et la première lumière pour soi.",
     schemaType: "TouristAttraction",
     noteEs: "Aparcamiento gratuito a 200-500 m; sin transporte público. En agosto se llena pronto, así que el amanecer es el mejor momento.",
     noteEn: "Free parking 200-500 m away; no public transport. In August it fills early, so sunrise is the best time.",
+    noteFr: "Stationnement gratuit à 200-500 m ; sans transport public. En août, c'est complet tôt, le lever du soleil est donc le meilleur moment.",
   },
   {
     id: "cales-fonts-amanecer", name: "Cales Fonts (Es Castell)", cat: "amanecer", lat: 39.87837, lng: 4.29331,
-    areaEs: "Este (Es Castell)", areaEn: "East (Es Castell)",
+    areaEs: "Este (Es Castell)", areaEn: "East (Es Castell)", areaFr: "Est (Es Castell)",
     descEs: "El antiguo muelle de pescadores de Es Castell, el primer pueblo de España donde se ve salir el sol. Al alba, las barcas y las terrazas dormidas se tiñen de luz antes de que despierte la isla.",
     descEn: "The old fishermen's quay of Es Castell — the first town in Spain to see the sun. At dawn the moored boats and shuttered terraces catch the light before the rest of the island wakes.",
+    descFr: "L'ancien quai des pêcheurs d'Es Castell, le premier village d'Espagne où l'on voit le soleil se lever. À l'aube, les barques et les terrasses endormies se teintent de lumière avant que l'île ne s'éveille.",
     schemaType: "TouristAttraction",
     noteEs: "Acceso fácil a pie por el puerto. Al amanecer los bares están cerrados: es un paseo y un café temprano.",
     noteEn: "Easy access on foot along the harbour. At sunrise the bars are closed: it's a stroll and an early coffee.",
+    noteFr: "Accès facile à pied par le port. Au lever du soleil, les bars sont fermés : c'est une promenade et un café matinal.",
   },
   {
     id: "punta-prima-amanecer", name: "Platja de Punta Prima", cat: "amanecer", lat: 39.81464, lng: 4.27757,
-    areaEs: "Sureste (Sant Lluís)", areaEn: "Southeast (Sant Lluís)",
+    areaEs: "Sureste (Sant Lluís)", areaEn: "Southeast (Sant Lluís)", areaFr: "Sud-est (Sant Lluís)",
     descEs: "En la punta sureste de la isla, con el islote y el faro de l'Aire recortados en el horizonte. La primera luz llega limpia sobre el mar y las aguas turquesa, en uno de los rincones más serenos del levante.",
     descEn: "On the island's southeastern tip, with the islet and lighthouse of l'Aire cut against the horizon. First light arrives clean over the sea and turquoise shallows — one of the calmest corners of the east coast.",
+    descFr: "À la pointe sud-est de l'île, avec l'îlot et le phare de l'Aire se découpant à l'horizon. La première lumière arrive, limpide, sur la mer et les eaux turquoise, dans l'un des coins les plus sereins du levant.",
     schemaType: "TouristAttraction",
     noteEs: "Aparcamiento gratuito junto a la playa; orientada al sureste, al amanecer la cala está casi vacía.",
     noteEn: "Free parking by the beach; south-east facing, at sunrise the cove is almost empty.",
+    noteFr: "Stationnement gratuit au bord de la plage ; orientée au sud-est, la crique est presque vide au lever du soleil.",
   },
 
   // ───────────── BEACH CLUBS ─────────────
   {
     id: "bambu-menorca", name: "Bambú Menorca", cat: "beach", lat: 39.8203, lng: 4.2326,
-    areaEs: "Sureste (Sant Lluís)", areaEn: "Southeast (Sant Lluís)",
+    areaEs: "Sureste (Sant Lluís)", areaEn: "Southeast (Sant Lluís)", areaFr: "Sud-est (Sant Lluís)",
     descEs: "Beach club frente al mar en el paseo marítimo de Binibèquer Vell, para el día que se alarga hasta la copa del atardecer.",
     descEn: "Seafront beach club on the promenade of Binibèquer Vell, for the day that stretches into a sunset drink.",
+    descFr: "Beach club face à la mer, sur la promenade de Binibèquer Vell, pour la journée qui se prolonge jusqu'au verre du coucher de soleil.",
     schemaType: "BarOrPub",
   },
   {
     id: "arena-beach", name: "Arena Beach Club", cat: "beach", lat: 39.9263, lng: 3.8392,
-    areaEs: "Suroeste (Ciutadella, Cala'n Bosch)", areaEn: "Southwest (Ciutadella, Cala'n Bosch)",
+    areaEs: "Suroeste (Ciutadella, Cala'n Bosch)", areaEn: "Southwest (Ciutadella, Cala'n Bosch)", areaFr: "Sud-ouest (Ciutadella, Cala'n Bosch)",
     descEs: "Beach club en Cala'n Bosch, con piscina y un ambiente de día relajado junto al mar que se alarga hasta el aperitivo de la tarde.",
     descEn: "Beach club in Cala'n Bosch, with a pool and a relaxed daytime feel by the sea that lingers into an evening aperitif.",
+    descFr: "Beach club à Cala'n Bosch, avec piscine et une ambiance de journée détendue au bord de la mer, qui se prolonge jusqu'à l'apéritif du soir.",
     schemaType: "BarOrPub",
   },
   {
     id: "cape-nao", name: "Cape Nao", cat: "beach", lat: 39.9371, lng: 3.961,
-    areaEs: "Sur (Ferreries, Cala Galdana)", areaEn: "South (Ferreries, Cala Galdana)",
+    areaEs: "Sur (Ferreries, Cala Galdana)", areaEn: "South (Ferreries, Cala Galdana)", areaFr: "Sud (Ferreries, Cala Galdana)",
     descEs: "Beach club sobre Cala Galdana, una de las mejores terrazas del sur para la puesta de sol con copa en mano.",
     descEn: "Beach club above Cala Galdana, one of the south's best terraces for a sunset with a drink in hand.",
+    descFr: "Beach club surplombant Cala Galdana, l'une des plus belles terrasses du sud pour le coucher de soleil, un verre à la main.",
     schemaType: "BarOrPub",
   },
   {
     id: "ivette-beach-club", name: "Ivette Beach Club", cat: "beach", lat: 40.05259, lng: 3.88315,
-    areaEs: "Norte (Ciutadella, Cala Morell)", areaEn: "North (Ciutadella, Cala Morell)",
+    areaEs: "Norte (Ciutadella, Cala Morell)", areaEn: "North (Ciutadella, Cala Morell)", areaFr: "Nord (Ciutadella, Cala Morell)",
     descEs: "Beach club sobre la cala de arquitectura singular de Cala Morell: cocina mediterránea abajo y un bar de cócteles arriba, con la cala y el atardecer de fondo. De los pocos sitios verdaderamente de gama alta del norte.",
     descEn: "A beach club above the striking cove of Cala Morell: Mediterranean cooking downstairs and a cocktail bar upstairs, the inlet and the sunset as backdrop. One of the few genuinely upscale spots on the north coast.",
+    descFr: "Beach club surplombant la crique à l'architecture singulière de Cala Morell : cuisine méditerranéenne en bas et un bar à cocktails en haut, avec la crique et le coucher de soleil en toile de fond. L'une des rares adresses véritablement haut de gamme du nord.",
     schemaType: "BarOrPub", website: "https://ivettemenorca.com",
     noteEs: "Cala Morell es un núcleo pequeño y aislado al final de una carretera sinuosa; el aparcamiento escasea en temporada, así que conviene reservar mesa y, si se puede, evitar el coche.",
     noteEn: "Cala Morell is a small, isolated community at the end of a winding road; parking is scarce in season, so booking a table — and avoiding the car if you can — is wise.",
+    noteFr: "Cala Morell est un noyau petit et isolé au bout d'une route sinueuse ; le stationnement se fait rare en saison, mieux vaut donc réserver une table et, si possible, éviter la voiture.",
   },
   {
     id: "hola-ola", name: "Hola Ola Beach Bar", cat: "beach", lat: 39.96683, lng: 3.83489,
-    areaEs: "Suroeste (Ciutadella, Cala Blanca)", areaEn: "Southwest (Ciutadella, Cala Blanca)",
+    areaEs: "Suroeste (Ciutadella, Cala Blanca)", areaEn: "Southwest (Ciutadella, Cala Blanca)", areaFr: "Sud-ouest (Ciutadella, Cala Blanca)",
     descEs: "Bar de playa sobre la roca de Cala Blanca, familiar y sin estridencias, pensado para el aperitivo al atardecer con el Mediterráneo de frente y la música a volumen amable.",
     descEn: "A clifftop beach bar at Cala Blanca, family-run and unhurried, made for a sunset aperitif with the Mediterranean in front and music kept at an easy volume.",
+    descFr: "Bar de plage sur la roche de Cala Blanca, familial et sans tapage, pensé pour l'apéritif au coucher du soleil, la Méditerranée en face et la musique à un volume agréable.",
     schemaType: "BarOrPub", website: "https://www.holaolabeachbar.com",
     noteEs: "Cala Blanca es una zona residencial donde aparcar en la calle se complica en verano; el bar queda a pocos minutos a pie de la cala.",
     noteEn: "Cala Blanca is a residential resort where street parking gets tight in summer; the bar sits a few minutes' walk from the cove.",
+    noteFr: "Cala Blanca est une zone résidentielle où se garer dans la rue devient compliqué en été ; le bar se trouve à quelques minutes à pied de la crique.",
   },
   {
     id: "es-corb-mari", name: "Xiringuito Es Corb Marí", cat: "beach", lat: 39.89743, lng: 4.0769,
-    areaEs: "Sur (Alaior, Son Bou)", areaEn: "South (Alaior, Son Bou)",
+    areaEs: "Sur (Alaior, Son Bou)", areaEn: "South (Alaior, Son Bou)", areaFr: "Sud (Alaior, Son Bou)",
     descEs: "Chiringuito a pie de la larga playa de Son Bou, de los más queridos de la isla. A media tarde la cocina mediterránea deja paso a una copa con música suave y el sol cayendo sobre la arena.",
     descEn: "A beach shack right on the long sands of Son Bou, among the island's best loved. As the afternoon fades, Mediterranean plates give way to a drink, soft music and the sun settling over the beach.",
+    descFr: "Paillote au pied de la longue plage de Son Bou, l'une des plus appréciées de l'île. En milieu d'après-midi, la cuisine méditerranéenne laisse place à un verre, une musique douce et le soleil qui descend sur le sable.",
     schemaType: "BarOrPub",
     noteEs: "El aparcamiento de Son Bou se llena pronto en julio y agosto y la carretera de bajada se congestiona; ir temprano o sin coche evita la pelea por sitio al mediodía.",
     noteEn: "Son Bou's car parks fill early in July and August and the access road gets congested; arriving early or coming without a car avoids the midday hunt for a space.",
+    noteFr: "Le parking de Son Bou se remplit tôt en juillet et août et la route de descente se congestionne ; arriver tôt ou sans voiture évite la bataille pour une place à midi.",
   },
   {
     id: "es-bruc", name: "Chiringuito Es Bruc", cat: "beach", lat: 39.91739, lng: 4.03327,
-    areaEs: "Sur (Es Migjorn Gran, Santo Tomás)", areaEn: "South (Es Migjorn Gran, Santo Tomás)",
+    areaEs: "Sur (Es Migjorn Gran, Santo Tomás)", areaEn: "South (Es Migjorn Gran, Santo Tomás)", areaFr: "Sud (Es Migjorn Gran, Santo Tomás)",
     descEs: "Chiringuito de toda la vida sobre la arena de Sant Adeodato, en Santo Tomás, abierto desde los años cincuenta. Pescado fresco a mediodía y, al caer la tarde, una copa con el mar de frente.",
     descEn: "A long-standing beach restaurant on the sands of Sant Adeodato, in Santo Tomás, open since the 1950s. Fresh fish at midday and, as evening falls, a drink with the sea right in front of you.",
+    descFr: "Paillote de toujours sur le sable de Sant Adeodato, à Santo Tomás, ouverte depuis les années cinquante. Poisson frais à midi et, à la tombée du soir, un verre face à la mer.",
     schemaType: "BarOrPub", website: "https://www.esbruc.restaurant/es-bruc-sant-tomas/",
     noteEs: "El aparcamiento de Santo Tomás es limitado y se satura en verano, y se llega por una única carretera; conviene ir temprano o sin coche.",
     noteEn: "Parking at Santo Tomás is limited and fills up in summer, and the resort is reached by a single road; arriving early or without a car helps.",
+    noteFr: "Le stationnement à Santo Tomás est limité et sature en été, et l'on y accède par une seule route ; mieux vaut y aller tôt ou sans voiture.",
   },
   {
     id: "chiringuito-aire", name: "Chiringuito Aire", cat: "beach", lat: 39.81323, lng: 4.27932,
-    areaEs: "Sureste (Sant Lluís, Punta Prima)", areaEn: "Southeast (Sant Lluís, Punta Prima)",
+    areaEs: "Sureste (Sant Lluís, Punta Prima)", areaEn: "Southeast (Sant Lluís, Punta Prima)", areaFr: "Sud-est (Sant Lluís, Punta Prima)",
     descEs: "Chiringuito en primera línea de la playa de Punta Prima, frente a la isla del Aire y su faro, del que toma el nombre. Ambiente tranquilo y mediterráneo; en verano, música en directo con la puesta de sol.",
     descEn: "A beachfront chiringuito on Punta Prima, facing the islet of Illa de l'Aire and its lighthouse, from which it takes its name. A calm, Mediterranean mood; in summer, live music at sunset.",
+    descFr: "Paillote en première ligne sur la plage de Punta Prima, face à l'Illa de l'Aire et à son phare, dont elle tire son nom. Ambiance tranquille et méditerranéenne ; en été, de la musique en direct au coucher du soleil.",
     schemaType: "BarOrPub", website: "https://airepuntaprimarestaurant.com/",
     noteEs: "El aparcamiento de Punta Prima se llena pronto en verano; está bien conectada en autobús desde Maó y Sant Lluís.",
     noteEn: "Punta Prima's parking fills quickly in summer; it is well served by bus from Maó and Sant Lluís.",
+    noteFr: "Le stationnement de Punta Prima se remplit tôt en été ; le site est bien desservi par le bus depuis Maó et Sant Lluís.",
   },
 
   // ───────────── COCTELERÍAS ─────────────
   {
     id: "can-vermut", name: "Can Vermut", cat: "cocteleria", lat: 39.890833, lng: 4.273333,
-    areaEs: "Puerto de Maó, Moll de Llevant (Maó)", areaEn: "Maó harbour, Moll de Llevant (Maó)",
+    areaEs: "Puerto de Maó, Moll de Llevant (Maó)", areaEn: "Maó harbour, Moll de Llevant (Maó)", areaFr: "Port de Maó, Moll de Llevant (Maó)",
     descEs: "Vermutería y bar de vinos naturales en el Moll de Llevant, con terraza a ras del agua frente al puerto de Maó. Pocas mesas, producto menorquín y la liturgia pausada del vermut al caer la tarde.",
     descEn: "A vermouth and natural-wine bar on the Moll de Llevant, with a waterside terrace facing Maó's harbour. A handful of tables, Menorcan produce and the unhurried ritual of vermouth as the afternoon fades.",
+    descFr: "Bar à vermouth et à vins naturels sur le Moll de Llevant, avec une terrasse au ras de l'eau face au port de Maó. Quelques tables, des produits minorquins et la liturgie tranquille du vermouth à la tombée du soir.",
     schemaType: "BarOrPub", website: "https://canvermut.com/",
     noteEs: "El Moll de Llevant es la franja de bares del puerto de Maó: aparcar a pie de muelle es muy difícil en verano y de noche. Mejor bajar a pie o llegar sin coche.",
     noteEn: "The Moll de Llevant is Maó harbour's strip of bars: parking on the quayside is very hard in summer and at night. Better to walk down or arrive without a car.",
+    noteFr: "Le Moll de Llevant est la bande de bars du port de Maó : se garer au bord du quai est très difficile en été et la nuit. Mieux vaut descendre à pied ou venir sans voiture.",
   },
   {
     id: "sacardiu", name: "Sacardiu", cat: "cocteleria", lat: 39.8792517, lng: 4.2953161,
-    areaEs: "Cales Fonts (Es Castell)", areaEn: "Cales Fonts (Es Castell)",
+    areaEs: "Cales Fonts (Es Castell)", areaEn: "Cales Fonts (Es Castell)", areaFr: "Cales Fonts (Es Castell)",
     descEs: "Coctelería de autor instalada en una antigua cueva del puerto de Cales Fonts, con una pequeña terraza sobre el agua. Cócteles cuidados y producto local, para ver caer el sol sin prisa.",
     descEn: "A craft cocktail bar set inside a former cave on the Cales Fonts harbour, with a small terrace over the water. Considered cocktails and local produce, for an unhurried sunset.",
+    descFr: "Bar à cocktails d'auteur installé dans une ancienne grotte du port de Cales Fonts, avec une petite terrasse au-dessus de l'eau. Des cocktails soignés et des produits locaux, pour voir le soleil descendre sans hâte.",
     schemaType: "BarOrPub", website: "https://sacardiu.com/",
     noteEs: "Cales Fonts es un puerto peatonal de escaleras: se aparca arriba, en el pueblo de Es Castell, y se baja andando. En temporada alta el muelle se llena al atardecer.",
     noteEn: "Cales Fonts is a pedestrian harbour reached by steps: you park up in the town of Es Castell and walk down. In high season the quay fills up at dusk.",
+    noteFr: "Cales Fonts est un port piétonnier en escaliers : on se gare en haut, dans le village d'Es Castell, et on descend à pied. En haute saison, le quai se remplit au coucher du soleil.",
   },
   {
     id: "bar-es-cau", name: "Bar Es Cau", cat: "cocteleria", lat: 39.8813, lng: 4.2893,
-    areaEs: "Cala Corb (Es Castell)", areaEn: "Cala Corb (Es Castell)",
+    areaEs: "Cala Corb (Es Castell)", areaEn: "Cala Corb (Es Castell)", areaFr: "Cala Corb (Es Castell)",
     descEs: "Taberna en una cueva de Cala Corb donde, desde 1962, vecinos y músicos cantan habaneras y canción menorquina a la luz de las velas. No es una coctelería al uso, sino una de las copas con más alma de la isla.",
     descEn: "A cave tavern on Cala Corb where, since 1962, locals and musicians have sung habaneras and Menorcan songs by candlelight. Not a cocktail bar in the usual sense, but one of the island's most soulful places for a drink.",
+    descFr: "Taverne dans une grotte de Cala Corb où, depuis 1962, habitants et musiciens chantent des habaneras et des chansons minorquines à la lueur des bougies. Ce n'est pas un bar à cocktails au sens classique, mais l'un des endroits où boire un verre avec le plus d'âme de l'île.",
     schemaType: "BarOrPub",
     noteEs: "Abre tarde y solo algunas noches (sobre todo viernes y sábado en temporada). Está en una cala peatonal de Es Castell, con aparcamiento limitado en el pueblo; mejor ir sin coche.",
     noteEn: "It opens late and only some nights (mainly Fri–Sat in season). It sits on a pedestrian inlet of Es Castell with limited parking in the town; better to come without a car.",
+    noteFr: "Il ouvre tard et seulement certains soirs (surtout vendredi et samedi en saison). Il se trouve dans une crique piétonne d'Es Castell, avec un stationnement limité dans le village ; mieux vaut venir sans voiture.",
   },
 
   // Nota: los clubs/discoteca de la noche de Menorca son pocos y reales —Jazzbah,
@@ -389,7 +443,8 @@ const EXTRA: Extra[] = [
 ];
 
 // Enlace de los puntos en línea: a la guía de atardeceres (ES/EN).
-const sunsetArticle = isEs ? "atardeceres-menorca" : "menorca-sunsets";
+const sunsetArticle =
+  locale === "es" ? "atardeceres-menorca" : locale === "fr" ? "couchers-de-soleil-minorque" : "menorca-sunsets";
 const fromExtra: V[] = EXTRA.map((x) => ({
   id: x.id,
   name: x.name,
@@ -397,11 +452,11 @@ const fromExtra: V[] = EXTRA.map((x) => ({
   zone: zoneOf(x.lng),
   lat: x.lat,
   lng: x.lng,
-  area: isEs ? x.areaEs : x.areaEn,
-  description: isEs ? x.descEs : x.descEn,
+  area: locale === "es" ? x.areaEs : locale === "fr" ? x.areaFr : x.areaEn,
+  description: locale === "es" ? x.descEs : locale === "fr" ? x.descFr : x.descEn,
   website: x.website,
   href: x.toArticle ? articleUrl(locale, sunsetArticle) : undefined,
-  note: isEs ? x.noteEs : x.noteEn,
+  note: locale === "es" ? x.noteEs : locale === "fr" ? x.noteFr : x.noteEn,
   schemaType: x.schemaType,
   rating: googleRatings[x.id],
 }));
@@ -485,12 +540,12 @@ const islandPath =
 
 // Pueblos de referencia para orientarse (faint, decorativos).
 const TOWNS = [
-  { es: "Ciutadella", en: "Ciutadella", lat: 40.0006, lng: 3.8377 },
-  { es: "Ferreries", en: "Ferreries", lat: 39.9786, lng: 4.0103 },
-  { es: "Es Mercadal", en: "Es Mercadal", lat: 39.9908, lng: 4.0922 },
-  { es: "Alaior", en: "Alaior", lat: 39.9357, lng: 4.1389 },
-  { es: "Maó", en: "Mahón", lat: 39.8885, lng: 4.2658 },
-  { es: "Sant Lluís", en: "Sant Lluís", lat: 39.8475, lng: 4.2561 },
+  { es: "Ciutadella", en: "Ciutadella", fr: "Ciutadella", lat: 40.0006, lng: 3.8377 },
+  { es: "Ferreries", en: "Ferreries", fr: "Ferreries", lat: 39.9786, lng: 4.0103 },
+  { es: "Es Mercadal", en: "Es Mercadal", fr: "Es Mercadal", lat: 39.9908, lng: 4.0922 },
+  { es: "Alaior", en: "Alaior", fr: "Alaior", lat: 39.9357, lng: 4.1389 },
+  { es: "Maó", en: "Mahón", fr: "Maó", lat: 39.8885, lng: 4.2658 },
+  { es: "Sant Lluís", en: "Sant Lluís", fr: "Sant Lluís", lat: 39.8475, lng: 4.2561 },
 ].map((t) => ({ ...t, ...project(t.lat, t.lng) }));
 
 // Posiciones de los marcadores + des-solape determinista: varios locales caen
@@ -556,12 +611,12 @@ const CH = isEs
 
 // Mes de la última verificación de valoraciones (para el descargo honesto).
 const ratingsMonth = new Date(`${GOOGLE_RATINGS_AS_OF}T12:00:00`).toLocaleDateString(
-  isEs ? "es-ES" : "en-GB",
+  locale === "es" ? "es-ES" : locale === "fr" ? "fr-FR" : "en-GB",
   { month: "long", year: "numeric" },
 );
 
-const T = isEs
-  ? {
+const TT = {
+  es: {
       eyebrow: "El mapa de la noche",
       intro:
         "De los acantilados del atardecer a los amaneceres del levante, pasando por beach clubs, coctelerías de puerto y los clubs con más solera: nuestra selección con criterio de la noche de Menorca, con la valoración de cada negocio en Google, dónde está cada uno —y cómo llegar sin tener que conducir—.",
@@ -607,8 +662,8 @@ const T = isEs
         claseS: "Mercedes Clase S",
         claseV: "Mercedes Clase V",
       },
-    }
-  : {
+  },
+  en: {
       eyebrow: "The map of the night",
       intro:
         "From the sunset cliffs to the eastern sunrises, by way of beach clubs, harbour cocktail bars and the island's longest-standing clubs: our considered selection of Menorca after dark, with each venue's Google rating, where every spot is —and how to get there without having to drive—.",
@@ -654,7 +709,56 @@ const T = isEs
         claseS: "Mercedes S-Class",
         claseV: "Mercedes V-Class",
       },
-    };
+  },
+  fr: {
+    eyebrow: "La carte de la nuit",
+    intro:
+      "Des falaises du coucher de soleil aux levers de soleil du levant, en passant par les beach clubs, les bars à cocktails des ports et les clubs les plus emblématiques : notre sélection éclairée de la nuit minorquine, avec la note Google de chaque établissement, où se trouve chacun —et comment y arriver sans avoir à conduire—.",
+    filterTitle: "Filtrez par type de plan",
+    todas: "Tous",
+    mapAria:
+      "Carte de Minorque avec l'emplacement des établissements de vie nocturne. Le détail figure dans la liste ci-dessous.",
+    costaNorte: "CÔTE NORD",
+    costaSur: "CÔTE SUD",
+    mapCredit: "Contour : © OpenStreetMap",
+    teLlevamos: "Nous vous emmenons",
+    teLlevamosSub: "Classe S ou Classe V avec chauffeur",
+    reserva: "Réservez avec Menorca Bus",
+    ubicacion: "Comment s'y rendre",
+    web: "Site officiel",
+    seasonal:
+      "Les horaires, la saison et les jauges changent chaque année et presque tout est saisonnier (été). Vérifiez le site web ou l'Instagram officiel de chaque établissement avant de vous y rendre.",
+    reviewsWord: "avis",
+    onGoogle: "sur Google",
+    ratingsNote: `Avis Google relevés à la main en ${ratingsMonth} ; ils évoluent avec le temps. Les belvédères, les phares et les criques sont des lieux naturels d'accès public, sans note d'établissement.`,
+    sortTitle: "Trier",
+    sortRec: "Recommandé",
+    sortRating: "Les mieux notés",
+    zoneTitle: "Côté de l'île",
+    zonaTodas: "Toute l'île",
+    naturalTag: "Lieu public",
+    transferShort: "Arriver avec un chauffeur",
+    resultsNone: "Aucun établissement ne correspond à ces filtres. Essayez d'en retirer un.",
+    banner: {
+      eyebrow: "Arrivez avec un chauffeur",
+      title: "Arrivez comme la nuit le mérite",
+      lead: "La meilleure décision de la soirée, c'est de laisser la voiture. Nous venons vous chercher dans une Mercedes avec chauffeur privé, du premier coucher de soleil au dernier cocktail —et vous rentrez sans penser au volant—.",
+      photoAlt: "Mercedes Classe S noire de Menorca Bus au bord de la mer, sur la côte de Minorque.",
+      benefits: [
+        "Chauffeur privé en Mercedes Classe S, ou Classe V pour le groupe.",
+        "Il vous emmène, vous attend et vient vous chercher à l'heure que vous voulez.",
+        "Il se gare pour vous et conduit au retour : vous, vous trinquez.",
+        "Des chauffeurs locaux qui connaissent chaque crique et chaque port.",
+      ],
+      cta: "Réservez avec Menorca Bus",
+      lujo: "Se déplacer avec style",
+      velada: "Soirée avec chauffeur",
+      claseS: "Mercedes Classe S",
+      claseV: "Mercedes Classe V",
+    },
+  },
+};
+const T = TT[locale];
 
 // Carrusel del panel de Menorca Bus: fotos REALES del Clase S de noche con luces
 // LED (sesión nocturna de la flota; crédito Menorca Bus). Alt bilingüe.
@@ -663,24 +767,29 @@ const busSlides = [
     src: "/uploads/mb-noche-plazas.webp",
     altEs: "Plazas traseras del Clase S en piel coñac, con la iluminación ambiental LED al anochecer.",
     altEn: "The S-Class rear seats in cognac leather, with ambient LED lighting at dusk.",
+    altFr: "Sièges arrière de la Classe S en cuir cognac, avec l'éclairage d'ambiance LED à la tombée du jour.",
   },
   {
     src: "/uploads/mb-noche-volante.webp",
     altEs: "Interior del Clase S de noche, con la iluminación ambiental LED y la estrella iluminada en el volante.",
     altEn: "The S-Class cabin at night, with ambient LED lighting and the lit star on the steering wheel.",
+    altFr: "Habitacle de la Classe S la nuit, avec l'éclairage d'ambiance LED et l'étoile éclairée sur le volant.",
   },
   {
     src: "/uploads/mb-noche-piloto.webp",
     altEs: "Piloto trasero LED del Mercedes Clase S encendido en la oscuridad de la noche.",
     altEn: "The Mercedes S-Class LED tail light glowing in the dark of night.",
+    altFr: "Feu arrière LED de la Mercedes Classe S allumé dans l'obscurité de la nuit.",
   },
   {
     src: "/uploads/mb-noche-faros.webp",
     altEs: "Frontal del Mercedes Clase S con los faros LED encendidos al anochecer.",
     altEn: "The front of the Mercedes S-Class with its LED headlights on at dusk.",
+    altFr: "Avant de la Mercedes Classe S avec ses phares LED allumés à la tombée du jour.",
   },
 ];
-const busAlt = (s: (typeof busSlides)[number]) => (isEs ? s.altEs : s.altEn);
+const busAlt = (s: (typeof busSlides)[number]) =>
+  locale === "es" ? s.altEs : locale === "fr" ? s.altFr : s.altEn;
 
 // ── JSON-LD: cada local como negocio con su geo (GEO/citabilidad por IA) ──
 const jsonLd = {
@@ -726,8 +835,14 @@ const jsonLd = {
       <div
         class="cs-noche relative min-h-64 overflow-hidden bg-arcilla md:min-h-full"
         role="group"
-        aria-roledescription={isEs ? "carrusel" : "carousel"}
-        aria-label={isEs ? "Fotos del Mercedes Clase S de noche" : "Photos of the Mercedes S-Class at night"}
+        aria-roledescription={locale === "es" ? "carrusel" : locale === "fr" ? "carrousel" : "carousel"}
+        aria-label={
+          locale === "es"
+            ? "Fotos del Mercedes Clase S de noche"
+            : locale === "fr"
+              ? "Photos de la Mercedes Classe S la nuit"
+              : "Photos of the Mercedes S-Class at night"
+        }
       >
         {
           busSlides.map((s, i) => (
@@ -818,16 +933,22 @@ const jsonLd = {
           >
             {T.banner.cta} ↗
           </a>
-          <a href={articleUrl(locale, CH.velada)} class="text-sm font-semibold text-champan hover:underline">
-            {T.banner.velada} →
-          </a>
+          {/* Enlaces al clúster de artículos de chófer: aún sin traducir a FR
+              (despliegue por mercados) → se ocultan en FR para no dejar huérfanas. */}
+          {locale !== "fr" && (
+            <a href={articleUrl(locale, CH.velada)} class="text-sm font-semibold text-champan hover:underline">
+              {T.banner.velada} →
+            </a>
+          )}
         </div>
         <MenorcaBusPromo locale={locale} tone="dark" class="mt-4" />
-        <p class="mt-5 flex flex-wrap gap-x-5 gap-y-1 border-t border-lino/15 pt-4 text-xs text-lino/70">
-          <a href={articleUrl(locale, CH.lujo)} class="text-champan/90 hover:underline">{T.banner.lujo} →</a>
-          <a href={articleUrl(locale, CH.claseS)} class="text-champan/90 hover:underline">{T.banner.claseS} →</a>
-          <a href={articleUrl(locale, CH.claseV)} class="text-champan/90 hover:underline">{T.banner.claseV} →</a>
-        </p>
+        {locale !== "fr" && (
+          <p class="mt-5 flex flex-wrap gap-x-5 gap-y-1 border-t border-lino/15 pt-4 text-xs text-lino/70">
+            <a href={articleUrl(locale, CH.lujo)} class="text-champan/90 hover:underline">{T.banner.lujo} →</a>
+            <a href={articleUrl(locale, CH.claseS)} class="text-champan/90 hover:underline">{T.banner.claseS} →</a>
+            <a href={articleUrl(locale, CH.claseV)} class="text-champan/90 hover:underline">{T.banner.claseV} →</a>
+          </p>
+        )}
       </div>
     </div>
   </aside>
@@ -951,7 +1072,7 @@ const jsonLd = {
             TOWNS.map((t) => (
               <Fragment>
                 <circle cx={t.x} cy={t.y} r="2.6" fill="#7c6a4c" />
-                <text x={t.x} y={t.y - 8} fill="#7c6a4c" font-size="13" text-anchor="middle">{isEs ? t.es : t.en}</text>
+                <text x={t.x} y={t.y - 8} fill="#7c6a4c" font-size="13" text-anchor="middle">{locale === "es" ? t.es : locale === "fr" ? t.fr : t.en}</text>
               </Fragment>
             ))
           }

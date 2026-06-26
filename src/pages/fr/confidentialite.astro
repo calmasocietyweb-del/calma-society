@@ -1,0 +1,75 @@
+---
+// Politique de confidentialité (FR) — RGPD. Base révisable.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { SITE } from "../../config/site";
+
+const c = SITE.company;
+const cif = c.cif || "[NIF en attente]";
+const address = c.address || "[adresse du siège en attente]";
+const alternates = { es: "/privacidad", en: "/en/privacy", fr: "/fr/confidentialite" };
+---
+
+<BaseLayout title="Politique de confidentialité" description="Comment Calma Society traite vos données personnelles." locale="fr" alternates={alternates}>
+  <article class="mx-auto max-w-prosa px-5 pb-8 pt-12 sm:px-8 sm:pt-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Légal</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Politique de confidentialité</h1>
+    <p class="mt-2 text-sm text-piedra-suave">Dernière mise à jour : juin 2026</p>
+
+    <div class="article-body mt-8">
+      <h2>1. Responsable du traitement</h2>
+      <ul>
+        <li><strong>Responsable :</strong> {c.legalName} (NIF {cif})</li>
+        <li><strong>Adresse :</strong> {address}</li>
+        <li><strong>E-mail :</strong> {c.email} · <strong>Téléphone :</strong> {c.phone}</li>
+      </ul>
+
+      <h2>2. Quelles données nous traitons et pourquoi</h2>
+      <ul>
+        <li><strong>Inscription à la newsletter :</strong> votre adresse e-mail, pour vous envoyer nos contenus. Base juridique : votre consentement.</li>
+        <li><strong>Formulaire de contact :</strong> votre nom, votre e-mail et votre message, pour répondre à votre demande. Base juridique : votre consentement.</li>
+        <li><strong>Données d'usage :</strong> des données techniques et d'usage, sous forme agrégée et anonyme, pour faire fonctionner et améliorer le site. Base juridique : intérêt légitime.</li>
+      </ul>
+
+      <h2>3. Conservation</h2>
+      <p>Nous conservons vos données tant que vous restez abonné(e) ou jusqu'à ce que vous en demandiez la suppression, ainsi que pendant les durées légalement requises.</p>
+
+      <h2>4. Destinataires et sous-traitants</h2>
+      <p>Nous ne vendons pas vos données. Nous travaillons avec des prestataires agissant en qualité de sous-traitants :</p>
+      <ul>
+        <li><strong>Formspree</strong> (traitement des envois du formulaire de contact).</li>
+        <li><strong>MailerLite</strong> (gestion de la newsletter, lorsqu'elle est active).</li>
+        <li><strong>Cloudflare</strong> (hébergement et diffusion des contenus).</li>
+      </ul>
+      <p>
+        Certains prestataires peuvent traiter des données en dehors de l'Espace économique européen ;
+        le cas échéant, des garanties appropriées au titre du RGPD s'appliquent (par exemple, les clauses contractuelles types).
+      </p>
+
+      <h2>5. Vos droits</h2>
+      <p>
+        Vous pouvez exercer vos droits d'accès, de rectification, d'effacement, d'opposition,
+        de limitation et de portabilité en écrivant à <strong>{c.email}</strong>. Vous pouvez
+        retirer votre consentement à tout moment (par exemple via le lien de désinscription présent
+        dans chaque newsletter) et introduire une réclamation auprès de l'Agence espagnole de
+        protection des données (<a href="https://www.aepd.es" rel="noopener" target="_blank">aepd.es</a>).
+      </p>
+
+      <h2>6. Sécurité</h2>
+      <p>Nous appliquons des mesures techniques et organisationnelles raisonnables, et le site est toujours servi via une connexion chiffrée (HTTPS).</p>
+
+      <h2>7. Mineurs</h2>
+      <p>
+        Ce site ne s'adresse pas aux enfants de moins de 14 ans. Nous ne collectons pas sciemment
+        de données de mineurs sans le consentement d'un parent ou d'un représentant légal.
+      </p>
+
+      <h2>8. Modifications de la présente politique</h2>
+      <p>
+        Nous pouvons mettre à jour la présente politique afin de refléter des évolutions légales ou
+        de service. La date de la dernière mise à jour figure en haut de page.
+      </p>
+
+      <p>Voir aussi les <a href="/fr/mentions-legales">Mentions légales</a> et la <a href="/fr/cookies">Politique de cookies</a>.</p>
+    </div>
+  </article>
+</BaseLayout>

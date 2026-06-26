@@ -1,0 +1,58 @@
+{
+  "name": "Kopas Club",
+  "lang": "fr",
+  "translationKey": "kopas-club",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Club sur plusieurs étages dans le port de Ciutadella, avec terrasses, bar à cocktails et musique variée jusqu'au petit matin.",
+  "coordinates": {
+    "lat": 40.0026571,
+    "lng": 3.8361687
+  },
+  "area": "Ouest (Ciutadella)",
+  "practicalInfo": {
+    "horario": "Saisonnier ; les horaires changent à chaque saison — consultez leur site web ou Instagram."
+  },
+  "website": "https://www.kopasclub.com/",
+  "images": [],
+  "tags": [
+    "discoteca",
+    "coctelería",
+    "puerto",
+    "ciutadella"
+  ],
+  "status": "published",
+  "editorial": {
+    "lead": "Kopas Club est le plan de ceux qui veulent choisir le rythme de leur nuit sans changer d'endroit. En plein port de Ciutadella, il répartit sur plusieurs étages et terrasses le verre tranquille, le bar à cocktails et la piste, avec vue sur l'eau.",
+    "sections": [
+      {
+        "heading": "Plusieurs nuits dans un même lieu",
+        "body": [
+          "L'idée de Kopas, c'est la variété sous un même toit : plusieurs étages, terrasses et bars qui vous permettent de passer de la conversation autour d'un verre à la piste sans quitter l'établissement. En haut, la terrasse à ciel ouvert donne sur le port ; en bas, la musique se fait plus dense.",
+          "C'est un lieu pour une longue nuit que l'on ne veut pas planifier dans le détail : on monte, on descend, et chaque étage a sa propre tonalité."
+        ]
+      },
+      {
+        "heading": "Dans le port de Ciutadella",
+        "body": [
+          "Il se trouve sur le Pla de Sant Joan, la promenade du port où bat la nuit de Ciutadella, dans un local que les gens d'ici se rappelleront comme l'ancien Esfera. La compagnie ne lui manque pas : à quelques mètres se trouvent d'autres salles, il est donc facile de prolonger la nuit dans le secteur."
+        ]
+      },
+      {
+        "heading": "Comment en profiter sans hâte",
+        "body": [
+          "Horaires, programmation et saison changent chaque année, alors confirmez-les sur leur site web avant d'y aller. Et pour ne pas penser à la voiture, laissez-nous vous y conduire."
+        ]
+      }
+    ],
+    "bestFor": ["Sortir le soir", "Bar à cocktails", "Port de Ciutadella"],
+    "goodToKnow": [
+      "Plusieurs étages et terrasses avec vue sur le port, du verre tranquille à la piste.",
+      "Bar à cocktails et musique variée, avec plusieurs ambiances dans un même établissement.",
+      "Situé dans le port de Ciutadella (Passeig es Pla de Sant Joan).",
+      "Horaires, programmation et saison changent : confirmez-les sur leur site web."
+    ],
+    "transfer": true,
+    "transferText": "Dans le port de Ciutadella, se garer la nuit et en été est difficile. Laissez la voiture : nous vous emmenons et venons vous chercher avec chauffeur privé."
+  }
+}

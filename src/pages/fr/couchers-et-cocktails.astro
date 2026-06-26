@@ -1,0 +1,64 @@
+---
+// "Couchers de soleil & cocktails" (FR) — page-hub de la nuit de Minorque :
+// couchers de soleil, beach clubs, bars à cocktails et clubs, avec la carte de
+// chaque lieu et le transfert de luxe (ne conduisez pas).
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import NightlifeMap from "../../components/NightlifeMap.astro";
+import SunTimes from "../../components/SunTimes.astro";
+import SunsetDrinksFaq from "../../components/SunsetDrinksFaq.astro";
+import NewsletterSignup from "../../components/NewsletterSignup.astro";
+
+const alternates = {
+  es: "/atardeceres-y-copas",
+  en: "/en/sunsets-and-drinks",
+  fr: "/fr/couchers-et-cocktails",
+};
+---
+
+<BaseLayout
+  title="Couchers de soleil & cocktails"
+  description="La nuit de Minorque avec discernement : les plus beaux couchers de soleil, les beach clubs, les bars à cocktails du port et où sortir, avec une carte de chaque lieu et comment y aller sans conduire."
+  locale="fr"
+  alternates={alternates}
+>
+  <div class="mx-auto max-w-prosa px-5 pt-12 sm:px-8 sm:pt-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Calma Society · Minorque</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Couchers de soleil & cocktails</h1>
+    <p class="lead mt-5">
+      L'île quand la lumière change : les plus beaux couchers de soleil —et aussi les levers de
+      soleil du levant—, les beach clubs, les bars à cocktails du port et où sortir danser. Avec
+      une carte de chaque lieu, sa note sur Google et, plus bas, à quelle heure le soleil se lève
+      et se couche mois par mois —et comment rejoindre chacun sans conduire.
+    </p>
+    <p class="mt-5 text-base leading-relaxed text-piedra-suave">
+      Sur les falaises du coucher de soleil et autour des ports, il n'y a presque jamais où se
+      garer, et en été c'est plein dès l'aube. La décision la plus confortable —et la plus sensée
+      le soir— est de laisser la voiture : on vous emmène et on vient vous chercher avec un
+      chauffeur privé, du premier coucher de soleil au dernier cocktail. Voici notre sélection,
+      avec discernement et sans la foule : uniquement des lieux que nous avons vérifiés un à un,
+      avec leur vraie note Google et la raison honnête pour laquelle mieux vaut venir sans voiture.
+    </p>
+  </div>
+
+  <nav aria-label="Sections de la page" class="mx-auto mt-8 max-w-prosa px-5 sm:px-8">
+    <ul class="flex flex-wrap gap-2 text-sm">
+      <li><a href="#mapa" class="inline-block rounded-full border border-niebla bg-arena/40 px-3.5 py-1.5 text-piedra transition-colors hover:border-arcilla hover:text-arcilla">La carte de la nuit</a></li>
+      <li><a href="#horas-del-sol" class="inline-block rounded-full border border-niebla bg-arena/40 px-3.5 py-1.5 text-piedra transition-colors hover:border-arcilla hover:text-arcilla">Heures du soleil</a></li>
+      <li><a href="#preguntas" class="inline-block rounded-full border border-niebla bg-arena/40 px-3.5 py-1.5 text-piedra transition-colors hover:border-arcilla hover:text-arcilla">Questions fréquentes</a></li>
+    </ul>
+  </nav>
+
+  <div id="mapa" class="mx-auto mt-6 max-w-5xl scroll-mt-32 px-5 sm:px-8">
+    <NightlifeMap locale="fr" />
+  </div>
+
+  <div id="horas-del-sol" class="mt-14 scroll-mt-32">
+    <SunTimes locale="fr" />
+  </div>
+
+  <div id="preguntas" class="scroll-mt-32">
+    <SunsetDrinksFaq locale="fr" />
+  </div>
+
+  <NewsletterSignup variant="inline" />
+</BaseLayout>

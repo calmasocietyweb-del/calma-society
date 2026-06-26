@@ -1,0 +1,56 @@
+---
+// Qui sommes-nous / Exigence éditoriale (FR). Clé pour l'E-E-A-T et les citations d'IA.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const alternates = { es: "/quienes-somos", en: "/en/about", fr: "/fr/qui-sommes-nous" };
+---
+
+<BaseLayout
+  title="Qui sommes-nous"
+  description="Calma Society : un magazine indépendant de luxe tranquille consacré à la Méditerranée. Notre exigence éditoriale, notre indépendance et notre regard sur l'île."
+  locale="fr"
+  alternates={alternates}
+>
+  <article class="mx-auto max-w-prosa px-5 pb-8 pt-12 sm:px-8 sm:pt-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Calma Society</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Qui sommes-nous</h1>
+    <p class="mt-5 text-lg leading-relaxed text-piedra-suave">
+      Calma Society est un magazine indépendant de <strong>luxe tranquille</strong> consacré à la
+      Méditerranée. Nous commençons par Minorque : ses expériences, ses habitants et sa beauté,
+      racontés avec discernement et sans hâte.
+    </p>
+
+    <div class="article-body mt-10">
+      <h2>Ce que nous faisons</h2>
+      <p>
+        Nous couvrons les mêmes sujets que les autres guides —criques, gastronomie, agenda, lieux
+        où séjourner— mais <strong>sublimés</strong> : avec un regard éditorial, des expériences
+        choisies avec soin et un œil serein et luxueux. Nous ne croyons ni au bruit ni à
+        l'ostentation ; nous croyons à l'espace, au temps, au produit honnête et à l'authenticité.
+      </p>
+
+      <h2>Nos principes éditoriaux</h2>
+      <ul>
+        <li><strong>Indépendance.</strong> Nous recommandons par conviction, jamais par commission.</li>
+        <li><strong>De première main.</strong> Nous écrivons sur ce que nous connaissons et avons parcouru.</li>
+        <li><strong>La qualité avant la quantité.</strong> Un excellent récit vaut mieux que cinq articles de remplissage.</li>
+        <li><strong>Des informations claires.</strong> Horaires, accès, dates et prix lorsqu'ils sont utiles.</li>
+      </ul>
+
+      <h2>Indépendance et transparence</h2>
+      <p>
+        Lorsqu'un contenu est sponsorisé, <strong>nous l'indiquons toujours</strong>, clairement. La
+        confiance du lecteur est notre principal atout, et elle n'est pas à vendre. Les liens
+        d'affiliation, lorsqu'il y en a, n'influencent jamais notre discernement.
+      </p>
+
+      <h2>Pourquoi Minorque, et la suite</h2>
+      <p>
+        Minorque —réserve de biosphère de l'UNESCO et, depuis 2023, site du patrimoine mondial pour
+        son héritage talayotique— est l'opposé du tourisme de masse : calme, naturelle, authentique.
+        C'est notre première édition. Avec le temps, Calma Society gagnera d'autres destinations
+        méditerranéennes dans le même esprit.
+      </p>
+    </div>
+  </article>
+</BaseLayout>

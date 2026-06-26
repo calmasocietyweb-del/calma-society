@@ -1,6 +1,6 @@
 ---
 // Pie de página: marca, secciones, enlaces "más", redes y avisos legales.
-import { SITE } from "../config/site";
+import { SITE, type Locale } from "../config/site";
 import { menorcaBusUrl } from "../lib/links";
 import { SECTIONS } from "../config/sections";
 import { useTranslations } from "../i18n/ui";
@@ -12,24 +12,53 @@ const t = useTranslations(locale);
 const year = new Date().getFullYear();
 const igUrl = SITE.social.instagram;
 
-const aboutHref = locale === "es" ? "/quienes-somos" : "/en/about";
-const newsletterHref = locale === "es" ? "/newsletter" : "/en/newsletter";
-const contactHref = locale === "es" ? "/contacto" : "/en/contact";
-const calmaHref = locale === "es" ? "/donde-el-mar-esta-en-calma" : "/en/where-the-sea-is-calm";
-const calmaLabel = locale === "es" ? "Dónde el mar está en calma" : "Where the sea is calm";
-
-const legalLinks =
-  locale === "es"
-    ? [
-        { label: "Aviso legal", href: "/aviso-legal" },
-        { label: "Privacidad", href: "/privacidad" },
-        { label: "Cookies", href: "/cookies" },
-      ]
-    : [
-        { label: "Legal notice", href: "/en/legal-notice" },
-        { label: "Privacy", href: "/en/privacy" },
-        { label: "Cookies", href: "/en/cookies" },
-      ];
+// Enlaces del pie por idioma (mismas claves para los 3 locales).
+const FOOTER: Record<
+  Locale,
+  {
+    about: string;
+    newsletter: string;
+    contact: string;
+    calma: string;
+    calmaLabel: string;
+    transfers: string;
+    legal: { label: string; href: string }[];
+  }
+> = {
+  es: {
+    about: "/quienes-somos", newsletter: "/newsletter", contact: "/contacto",
+    calma: "/donde-el-mar-esta-en-calma", calmaLabel: "Dónde el mar está en calma",
+    transfers: "Transfers y excursiones ↗",
+    legal: [
+      { label: "Aviso legal", href: "/aviso-legal" },
+      { label: "Privacidad", href: "/privacidad" },
+      { label: "Cookies", href: "/cookies" },
+    ],
+  },
+  en: {
+    about: "/en/about", newsletter: "/en/newsletter", contact: "/en/contact",
+    calma: "/en/where-the-sea-is-calm", calmaLabel: "Where the sea is calm",
+    transfers: "Transfers & excursions ↗",
+    legal: [
+      { label: "Legal notice", href: "/en/legal-notice" },
+      { label: "Privacy", href: "/en/privacy" },
+      { label: "Cookies", href: "/en/cookies" },
+    ],
+  },
+  fr: {
+    about: "/fr/qui-sommes-nous", newsletter: "/fr/newsletter", contact: "/fr/contact",
+    // Mer calme aún sin traducir (despliegue por mercados) → no se enlaza en FR.
+    calma: "", calmaLabel: "",
+    transfers: "Transferts & excursions ↗",
+    legal: [
+      { label: "Mentions légales", href: "/fr/mentions-legales" },
+      { label: "Confidentialité", href: "/fr/confidentialite" },
+      { label: "Cookies", href: "/fr/cookies" },
+    ],
+  },
+};
+const f = FOOTER[locale];
+const legalLinks = f.legal;
 ---
 
 <footer class="mt-24 border-t border-niebla bg-arena/40">
@@ -68,27 +97,31 @@ const legalLinks =
             {t("footer.more")}
           </h2>
           <ul class="mt-4 space-y-2 text-sm">
+            {
+              f.calma && (
+                <li>
+                  <a href={f.calma} class="text-piedra transition-colors hover:text-terracota">
+                    {f.calmaLabel}
+                  </a>
+                </li>
+              )
+            }
             <li>
-              <a href={calmaHref} class="text-piedra transition-colors hover:text-terracota">
-                {calmaLabel}
-              </a>
-            </li>
-            <li>
-              <a href={aboutHref} class="text-piedra transition-colors hover:text-terracota">
+              <a href={f.about} class="text-piedra transition-colors hover:text-terracota">
                 {t("nav.about")}
               </a>
             </li>
             {
               SITE.newsletter.enabled && (
                 <li>
-                  <a href={newsletterHref} class="text-piedra transition-colors hover:text-terracota">
+                  <a href={f.newsletter} class="text-piedra transition-colors hover:text-terracota">
                     {t("nav.newsletter")}
                   </a>
                 </li>
               )
             }
             <li>
-              <a href={contactHref} class="text-piedra transition-colors hover:text-terracota">
+              <a href={f.contact} class="text-piedra transition-colors hover:text-terracota">
                 {t("nav.contact")}
               </a>
             </li>
@@ -100,7 +133,7 @@ const legalLinks =
                 data-umami-event="footer-menorcabus"
                 class="text-piedra transition-colors hover:text-terracota"
               >
-                {locale === "es" ? "Transfers y excursiones ↗" : "Transfers & excursions ↗"}
+                {f.transfers}
               </a>
             </li>
           </ul>

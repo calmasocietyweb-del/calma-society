@@ -1,0 +1,94 @@
+{
+  "name": "Cova d'en Xoroi",
+  "lang": "fr",
+  "translationKey": "cova-den-xoroi",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Grotte naturelle ouverte dans la falaise de Cala'n Porter : belvédère et lounge au coucher de soleil, et club les nuits d'été. Le lieu le plus emblématique de Minorque.",
+  "coordinates": {
+    "lat": 39.8656878,
+    "lng": 4.1327226
+  },
+  "area": "Sud (Alaior)",
+  "practicalInfo": {
+    "horario": "Saisonnier ; les horaires changent à chaque saison — consultez leur site web ou Instagram."
+  },
+  "website": "https://www.covadenxoroi.com",
+  "images": [],
+  "tags": [
+    "atardecer",
+    "discoteca",
+    "acantilado",
+    "cala'n porter"
+  ],
+  "status": "published",
+  "editorial": {
+    "lead": "Il existe un endroit à Minorque où l'on regarde le coucher de soleil depuis l'intérieur de la falaise. La Cova d'en Xoroi est une succession de grottes et de terrasses creusées dans la roche au-dessus de la mer de Cala'n Porter : le jour, un belvédère ; à la tombée du soir, un lounge où l'on sirote un verre face au soleil ; et les nuits d'été, le club le plus emblématique de l'île.",
+    "sections": [
+      {
+        "heading": "Une grotte ouverte sur la mer",
+        "body": [
+          "La première sensation, c'est le vertige agréable que l'on éprouve en se penchant. Les terrasses de la Cova d'en Xoroi sont suspendues à une falaise du sud, à Cala'n Porter, et descendent vers la Méditerranée en une succession de balcons de pierre, de recoins et de belvédères naturels. Ce n'est pas un club avec vue : c'est la roche elle-même, gagnée sur la mer, un verre à la main.",
+          "C'est là son secret et sa renommée. Peu de lieux à Minorque condensent autant l'île en un seul geste — pierre, lumière et mer — et c'est pourquoi il s'agit, sans doute, de l'espace de loisirs le plus reconnaissable de toute l'île."
+        ]
+      },
+      {
+        "heading": "Le coucher de soleil, le moment",
+        "body": [
+          "Si vous ne devez y aller qu'une seule fois, allez-y au coucher de soleil. Lorsque le soleil commence à descendre, les terrasses se transforment en un lounge paisible : musique douce, un verre bien servi et le ciel qui change de couleur au-dessus de l'eau. C'est l'instant de calme de la Cova, avant que la nuit ne s'intensifie.",
+          "Plus tard, en été, le même espace devient un club et monte en intensité. Les deux visages coexistent ; à vous de choisir celui pour lequel vous venez. Pour une soirée de luxe tranquille, le lounge du coucher de soleil est le choix idéal."
+        ]
+      },
+      {
+        "heading": "La légende de Xoroi",
+        "body": [
+          "Le nom vient d'une vieille légende minorquine. La tradition raconte qu'un naufragé d'origine incertaine, Xoroi, se réfugia dans ces grottes et vécut caché dans la falaise pendant des années. L'histoire a autant de versions que de personnes qui la racontent, et c'est là tout son charme : elle fait partie du folklore de l'île, non de son histoire documentée.",
+          "Il est bon de le savoir avant de descendre : cela ajoute une couche de récit à un lieu qui, en lui-même, semble déjà venir d'une autre époque."
+        ]
+      },
+      {
+        "heading": "Comment en profiter sans hâte",
+        "body": [
+          "La Cova a trois vies selon l'heure : belvédère le jour, lounge au coucher de soleil et club la nuit. Choisissez la vôtre à l'avance. En été, mieux vaut réserver en ligne, surtout pour le coucher de soleil, qui est le moment où l'affluence est la plus forte.",
+          "On descend dans la falaise par des escaliers taillés dans la roche : ce n'est donc pas un lieu adapté aux fauteuils roulants ni à une mobilité très réduite. Et comme tout à Minorque à l'approche de l'été, les horaires et les prix sont très saisonniers : confirmez toujours sur leur site web avant de venir."
+        ]
+      }
+    ],
+    "bestFor": ["Couples", "Luxe tranquille", "Coucher de soleil", "Vie nocturne"],
+    "goodToKnow": [
+      "Trois ambiances selon l'heure : belvédère le jour (~8,5 €), lounge au coucher de soleil (~12 €) et club la nuit. Prix indicatifs.",
+      "En été, mieux vaut réserver en ligne, surtout pour le coucher de soleil.",
+      "On descend par des escaliers taillés dans la falaise : non adapté aux fauteuils roulants ni à une mobilité très réduite.",
+      "Horaires très saisonniers (juin-août de la fin de matinée jusqu'à la tombée de la nuit ; mai et oct à partir de l'après-midi). Confirmez sur leur site web avant de venir."
+    ],
+    "transfer": true
+  },
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "calanporter-xoroi",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "parejas",
+      "lujo-tranquilo",
+      "vida-nocturna"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "semicubierto",
+    "needsReservation": true,
+    "officialUrl": "https://www.covadenxoroi.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Se baja al acantilado por escaleras talladas; no apto para silla de ruedas ni movilidad muy reducida.",
+    "seasonalHours": "Jun-ago desde 11:30 h hasta el anochecer; may/oct desde 15 h. De día mirador (~8,5 €), tarde lounge (~12 €), noche discoteca. Reserva online recomendable en verano.",
+    "highlights": [
+      "las terrazas excavadas en el acantilado",
+      "una copa con el atardecer",
+      "reservar online en verano"
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "name": "Isabella Beach Club",
+  "lang": "fr",
+  "translationKey": "isabella-beach-club",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Beach club sur les Platges de Fornells, sur la côte nord : espace chill-out, cocktails et dîners avec l'un des plus beaux couchers de soleil du Nord.",
+  "coordinates": {
+    "lat": 40.0503428,
+    "lng": 4.1083587
+  },
+  "area": "Nord (Es Mercadal)",
+  "practicalInfo": {
+    "horario": "Saisonnier ; les horaires changent à chaque saison — consultez leur site web ou leur Instagram."
+  },
+  "website": "https://www.isabellamenorca.com/en/",
+  "images": [],
+  "tags": [
+    "beach club",
+    "atardecer",
+    "fornells",
+    "norte"
+  ],
+  "status": "published",
+  "editorial": {
+    "lead": "Il y a des couchers de soleil du Sud très photographiés, mais le Nord garde les plus sauvages. L'Isabella Beach Club s'installe sur un promontoire rocheux au ras de l'eau, sur les Platges de Fornells, et là — entre sushis, grillades et un verre — le soleil se couche sur la mer du Nord.",
+    "sections": [
+      {
+        "heading": "Le coucher de soleil du Nord",
+        "body": [
+          "La côte nord de Minorque est la plus sauvage : du vent, de la roche et une mer qui n'est pas toujours calme. L'Isabella tire justement parti de cela. Il est perché sur un promontoire rocheux au ras de l'eau, sur les Platges de Fornells, et il s'est fait un nom grâce à ses couchers de soleil, plus sauvages et plus silencieux que ceux du Sud.",
+          "C'est un endroit où arriver sans hâte, commander quelque chose et laisser le ciel jouer son rôle."
+        ]
+      },
+      {
+        "heading": "Sushis, grillades et bar à cocktails",
+        "body": [
+          "La cuisine regarde à la fois vers l'Orient et la Méditerranée : fusion asiatique et espagnole, avec les sushis et les grillades comme spécialités, des produits locaux et une belle carte de cocktails. Certains soirs, il y a un DJ, et ce mélange — bonne table, verre et musique douce face à la mer — est sa signature.",
+          "Les dîners se font sur réservation, il vaut donc mieux s'organiser : ce n'est pas un endroit où improviser à la dernière minute en été."
+        ]
+      },
+      {
+        "heading": "Comment en profiter sereinement",
+        "body": [
+          "Réservez le dîner à l'avance sur leur site web, choisissez une table orientée à l'ouest et laissez la soirée glisser du coucher de soleil au dernier verre. C'est l'une de ces escapades qui justifient de monter jusqu'au Nord."
+        ]
+      }
+    ],
+    "bestFor": ["Couples", "Coucher de soleil", "Dîner avec un verre"],
+    "goodToKnow": [
+      "Sur un promontoire rocheux au ras de l'eau, sur les Platges de Fornells (côte nord).",
+      "Cuisine de fusion asiatique-méditerranéenne : sushis, grillades, produits locaux et bar à cocktails.",
+      "Les dîners se font sur réservation (via leur propre système en ligne).",
+      "Musique avec DJ certains soirs ; programmation et horaires saisonniers → confirmez-les sur leur site web."
+    ],
+    "transfer": true,
+    "transferText": "On rentre de nuit par les routes secondaires du Nord, peu éclairées et sinueuses, et après un verre, conduire est bien la dernière chose dont on a envie. Nous vous emmenons et venons vous chercher avec un chauffeur privé."
+  }
+}

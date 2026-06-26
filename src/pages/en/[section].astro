@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 
 const { key } = Astro.props;
 const section = getSection(key)!;
-const alternates = { es: section.href.es, en: section.href.en };
+const alternates = { es: section.href.es, en: section.href.en, fr: section.href.fr };
 ---
 
 <BaseLayout

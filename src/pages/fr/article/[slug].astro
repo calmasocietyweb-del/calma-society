@@ -1,0 +1,42 @@
+---
+// Article en français: /fr/article/[slug]
+import { getCollection, getEntry, render } from "astro:content";
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import { articleSlugFor } from "../../../lib/content";
+import { articleUrl, homePath } from "../../../i18n/utils";
+// Composants que el cuerpo MDX puede usar (inyectados, como en es/en).
+import Figure from "../../../components/Figure.astro";
+import MenorcaBusCTA from "../../../components/MenorcaBusCTA.astro";
+import CruceroCalendar from "../../../components/CruceroCalendar.astro";
+import NightlifeMap from "../../../components/NightlifeMap.astro";
+
+const mdxComponents = { Figure, MenorcaBusCTA, CruceroCalendar, NightlifeMap };
+
+export async function getStaticPaths() {
+  const arts = await getCollection(
+    "articulos",
+    (e) => e.data.lang === "fr" && e.data.status === "published",
+  );
+  return arts.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const author = await getEntry(entry.data.author);
+const relatedPlaces = entry.data.relatedPlaces
+  ? await Promise.all(entry.data.relatedPlaces.map((ref) => getEntry(ref)))
+  : [];
+
+const esSlug = await articleSlugFor(entry.data.translationKey, "es");
+const enSlug = await articleSlugFor(entry.data.translationKey, "en");
+const alternates = {
+  fr: articleUrl("fr", entry.id),
+  es: esSlug ? articleUrl("es", esSlug) : homePath("es"),
+  en: enSlug ? articleUrl("en", enSlug) : homePath("en"),
+};
+---
+
+<ArticleLayout entry={entry} author={author} relatedPlaces={relatedPlaces} alternates={alternates}>
+  <Content components={mdxComponents} />
+</ArticleLayout>

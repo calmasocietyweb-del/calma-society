@@ -58,11 +58,12 @@ export default defineConfig({
       filter: (page) =>
         !page.includes("/sociedad-bienvenida") &&
         !page.includes("/society-welcome") &&
+        !page.includes("/societe-bienvenue") &&
         !page.includes("/panel/"),
       // Añade enlaces hreflang entre idiomas en el sitemap.
       i18n: {
         defaultLocale: "es",
-        locales: { es: "es-ES", en: "en-GB" },
+        locales: { es: "es-ES", en: "en-GB", fr: "fr-FR" },
       },
     }),
     // React + Keystatic solo en desarrollo y en Vercel (NUNCA en Cloudflare).

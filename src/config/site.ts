@@ -10,7 +10,7 @@
  */
 
 /** Códigos de idioma soportados. Amplía la unión al activar más idiomas. */
-export type Locale = 'es' | 'en';
+export type Locale = 'es' | 'en' | 'fr';
 
 export interface LocaleConfig {
   /** Código corto (prefijo de URL para los no-por-defecto). */
@@ -19,6 +19,13 @@ export interface LocaleConfig {
   label: string;
   /** Valor del atributo `lang` de <html> (incluye región). */
   htmlLang: string;
+  /**
+   * Despliegue del idioma. 'full' = traducido en todo el sitio (es, en).
+   * 'partial' = desplegado POR MERCADOS, solo en algunas páginas (fr): el selector
+   * solo ofrece este idioma donde la página declara su `alternate` (evita enlazar
+   * a páginas que aún no existen → cero "huérfanas"). Ver docs/ESTRATEGIA-MULTIIDIOMA.md.
+   */
+  rollout?: 'full' | 'partial';
 }
 
 export const SITE = {
@@ -40,8 +47,11 @@ export const SITE = {
 
   /** Idiomas ACTIVOS. Despliegue por mercados (ver docs/ESTRATEGIA-MULTIIDIOMA.md). */
   locales: [
-    { code: 'es', label: 'Español', htmlLang: 'es-ES' },
-    { code: 'en', label: 'English', htmlLang: 'en-GB' },
+    { code: 'es', label: 'Español', htmlLang: 'es-ES', rollout: 'full' },
+    { code: 'en', label: 'English', htmlLang: 'en-GB', rollout: 'full' },
+    // Francés: arranque POR MERCADOS (jun 2026) — solo en las páginas perennes
+    // traducidas (herramientas + faro). El selector solo lo muestra donde existe.
+    { code: 'fr', label: 'Français', htmlLang: 'fr-FR', rollout: 'partial' },
   ] as LocaleConfig[],
 
   /** Redes sociales. */

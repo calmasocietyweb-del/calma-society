@@ -41,9 +41,9 @@ export function homePath(locale: Locale): string {
 // ---- URLs de los tipos de contenido (prefijos traducidos por idioma) ----
 
 const PREFIX = {
-  article: { es: "/articulo", en: "/en/article" },
-  place: { es: "/lugar", en: "/en/place" },
-  author: { es: "/autor", en: "/en/author" },
+  article: { es: "/articulo", en: "/en/article", fr: "/fr/article" },
+  place: { es: "/lugar", en: "/en/place", fr: "/fr/lieu" },
+  author: { es: "/autor", en: "/en/author", fr: "/fr/auteur" },
 } satisfies Record<string, Record<Locale, string>>;
 
 export function articleUrl(locale: Locale, slug: string): string {
@@ -58,9 +58,16 @@ export function authorUrl(locale: Locale, slug: string): string {
   return `${PREFIX.author[locale]}/${slug}`;
 }
 
+/** Locale BCP-47 por idioma (para Intl: fechas, números…). */
+export const INTL_LOCALE: Record<Locale, string> = {
+  es: "es-ES",
+  en: "en-GB",
+  fr: "fr-FR",
+};
+
 /** Formatea una fecha según el idioma. */
 export function formatDate(date: Date, locale: Locale): string {
-  return date.toLocaleDateString(locale === "es" ? "es-ES" : "en-GB", {
+  return date.toLocaleDateString(INTL_LOCALE[locale], {
     day: "numeric",
     month: "long",
     year: "numeric",

@@ -1,0 +1,52 @@
+{
+  "name": "Artrutx Sea Club",
+  "lang": "fr",
+  "translationKey": "artrutx-sea-club",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Sea club au pied du phare du Cap d'Artrutx : restaurant et bar à cocktails face à la mer, avec l'un des plus beaux couchers de soleil de l'Ouest.",
+  "coordinates": {
+    "lat": 39.9225937,
+    "lng": 3.824224
+  },
+  "area": "Ouest (Ciutadella)",
+  "practicalInfo": {
+    "horario": "Saisonnier ; les horaires changent à chaque saison — consultez leur site web ou Instagram."
+  },
+  "website": "https://www.artrutx.com/en/sea-club/",
+  "images": [],
+  "tags": [
+    "beach club",
+    "atardecer",
+    "faro",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "artrutx-cap",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "parejas",
+      "lujo-tranquilo",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "shuttleInfo": "Coche desde Ciutadella (~8-10 km al sur, 15-20 min). Parking privado del restaurante y en la carretera (se llena pronto en verano: llega con antelación).",
+    "effortNote": "Terraza llana junto al faro del Cap d'Artrutx.",
+    "highlights": [
+      "la terraza junto al faro del Cap d'Artrutx",
+      "una copa o cena con el atardecer",
+      "reservar con antelación en verano"
+    ]
+  }
+}
