@@ -65,6 +65,12 @@ const jobs = [
   // Interiores cuidados (variedad de composición): habitáculos en piel.
   { src: "COCHES Videos y fotos/Fotos/Clase S/7E3A0671.jpg", out: "mb-clase-s-interior" }, // asientos traseros piel coñac
   { src: "COCHES Videos y fotos/Fotos/Clase V/7E3A1140.jpg", out: "mb-clase-v-interior" }, // habitáculo trasero piel negra
+  // Sesión NOCTURNA del Clase S (faros/pilotos LED, ambiente LED interior) — para
+  // el carrusel de "Atardeceres y copas". Fotos reales de la flota (Menorca Bus).
+  { src: "COCHES Videos y fotos/Fotos/Clase S/7E3A1419.jpg", out: "mb-noche-exterior" }, // coche de noche, faros LED + estrella proyectada
+  { src: "COCHES Videos y fotos/Fotos/Clase S/7E3A1321.jpg", out: "mb-noche-piloto" }, // piloto trasero LED rojo de noche
+  { src: "COCHES Videos y fotos/Fotos/Clase S/7E3A1333.jpg", out: "mb-noche-volante" }, // interior nocturno, LED ambiental + estrella en el volante
+  { src: "COCHES Videos y fotos/Fotos/Clase S/7E3A1356.jpg", out: "mb-noche-plazas" }, // plazas traseras piel coñac con LED ambiental
   // Fotos intercaladas en artículos (Adobe Stock, licenciadas — jun 2026).
   { src: `${SRC}/_stock/queso-tabla.jpg`, out: "queso-tabla" },
   { src: `${SRC}/_stock/gin-tonic.jpg`, out: "gin-tonic" },

@@ -656,6 +656,32 @@ const T = isEs
       },
     };
 
+// Carrusel del panel de Menorca Bus: fotos REALES del Clase S de noche con luces
+// LED (sesión nocturna de la flota; crédito Menorca Bus). Alt bilingüe.
+const busSlides = [
+  {
+    src: "/uploads/mb-noche-exterior.webp",
+    altEs: "Mercedes Clase S negro de Menorca Bus de noche, con los faros LED encendidos y la estrella proyectada en el suelo.",
+    altEn: "Black Mercedes S-Class from Menorca Bus at night, LED headlights on and the star projected on the ground.",
+  },
+  {
+    src: "/uploads/mb-noche-piloto.webp",
+    altEs: "Piloto trasero LED del Mercedes Clase S encendido en la oscuridad de la noche.",
+    altEn: "The Mercedes S-Class LED tail light glowing in the dark of night.",
+  },
+  {
+    src: "/uploads/mb-noche-volante.webp",
+    altEs: "Interior del Clase S de noche, con la iluminación ambiental LED y la estrella iluminada en el volante.",
+    altEn: "The S-Class cabin at night, with ambient LED lighting and the lit star on the steering wheel.",
+  },
+  {
+    src: "/uploads/mb-noche-plazas.webp",
+    altEs: "Plazas traseras del Clase S en piel coñac, con la iluminación ambiental LED al anochecer.",
+    altEn: "The S-Class rear seats in cognac leather, with ambient LED lighting at dusk.",
+  },
+];
+const busAlt = (s: (typeof busSlides)[number]) => (isEs ? s.altEs : s.altEn);
+
 // ── JSON-LD: cada local como negocio con su geo (GEO/citabilidad por IA) ──
 const jsonLd = {
   "@context": "https://schema.org",
@@ -694,23 +720,50 @@ const jsonLd = {
       Negocio propio del grupo titular → rel=sponsored técnico. */}
   <aside class="nightmap-bus my-8 overflow-hidden rounded-2xl bg-arcilla text-lino shadow-[0_18px_40px_-24px_rgba(23,21,15,0.5)]">
     <div class="grid md:grid-cols-[1.05fr_1fr]">
-      {/* Foto real de la flota: Clase S junto a la costa de Menorca */}
-      <div class="relative min-h-60 md:min-h-full">
-        <img
-          src="/uploads/mb-clase-s-puerto.webp"
-          srcset={srcset("/uploads/mb-clase-s-puerto.webp")}
-          sizes="(min-width: 768px) 48vw, 100vw"
-          alt={T.banner.photoAlt}
-          width="1600"
-          height="1067"
-          loading="lazy"
-          decoding="async"
-          class="absolute inset-0 h-full w-full object-cover"
-        />
-        <div
-          class="absolute inset-0 bg-gradient-to-t from-arcilla/55 to-transparent md:bg-gradient-to-r md:from-transparent md:to-arcilla/30"
-          aria-hidden="true"
-        ></div>
+      {/* Carrusel (sin JS de cliente): fotos REALES del Clase S de noche con
+          luces LED. Radios sr-only + `:has()` trasladan la pista; los puntos son
+          labels. El grupo de radios es navegable por teclado (flechas). */}
+      <div class="cs-noche relative min-h-64 overflow-hidden bg-arcilla md:min-h-full">
+        {
+          busSlides.map((s, i) => (
+            <input
+              id={`cs-noche-${i}`}
+              class="cs-radio sr-only"
+              type="radio"
+              name="cs-noche"
+              aria-label={`${i + 1}/${busSlides.length} — ${busAlt(s)}`}
+              checked={i === 0}
+            />
+          ))
+        }
+
+        <div class="cs-track flex h-full">
+          {
+            busSlides.map((s) => (
+              <figure class="cs-slide relative h-full w-full shrink-0">
+                <img
+                  src={s.src}
+                  srcset={srcset(s.src)}
+                  sizes="(min-width: 768px) 48vw, 100vw"
+                  alt={busAlt(s)}
+                  width="1600"
+                  height="1067"
+                  loading="lazy"
+                  decoding="async"
+                  class="absolute inset-0 h-full w-full object-cover"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-arcilla/60 to-transparent md:bg-gradient-to-r md:from-transparent md:to-arcilla/30"
+                  aria-hidden="true"
+                />
+              </figure>
+            ))
+          }
+        </div>
+
+        <div class="cs-dots absolute inset-x-0 bottom-3 z-10 flex justify-center gap-2">
+          {busSlides.map((_, i) => <label class="cs-dot" for={`cs-noche-${i}`} aria-hidden="true" />)}
+        </div>
       </div>
 
       {/* Contenido */}

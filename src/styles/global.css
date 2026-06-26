@@ -498,6 +498,61 @@ a.cala-activa > circle {
 }
 
 /* ============================================================
+   Carrusel del panel de Menorca Bus (Clase S de noche con luces LED).
+   Sin JS: radios sr-only + `:has()` trasladan la pista; los puntos son labels.
+   ============================================================ */
+.cs-slide {
+  flex: 0 0 100%;
+}
+.cs-track {
+  transition: transform 0.55s var(--ease-calma-inout);
+}
+.cs-noche:has(#cs-noche-0:checked) .cs-track {
+  transform: translateX(0);
+}
+.cs-noche:has(#cs-noche-1:checked) .cs-track {
+  transform: translateX(-100%);
+}
+.cs-noche:has(#cs-noche-2:checked) .cs-track {
+  transform: translateX(-200%);
+}
+.cs-noche:has(#cs-noche-3:checked) .cs-track {
+  transform: translateX(-300%);
+}
+.cs-dot {
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  background-color: color-mix(in srgb, var(--color-crema) 55%, transparent);
+  filter: drop-shadow(0 1px 2px rgba(23, 21, 15, 0.5));
+  transition:
+    width 0.3s var(--ease-calma),
+    background-color 0.3s var(--ease-calma);
+}
+.cs-dot:hover {
+  background-color: var(--color-crema);
+}
+/* Punto activo: se ensancha a "píldora" crema (mapea cada radio a su punto). */
+.cs-noche:has(#cs-noche-0:checked) [for="cs-noche-0"],
+.cs-noche:has(#cs-noche-1:checked) [for="cs-noche-1"],
+.cs-noche:has(#cs-noche-2:checked) [for="cs-noche-2"],
+.cs-noche:has(#cs-noche-3:checked) [for="cs-noche-3"] {
+  width: 1.4rem;
+  background-color: var(--color-crema);
+}
+.cs-noche:has(.cs-radio:focus-visible) {
+  outline: 2px solid var(--color-terracota);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cs-track,
+  .cs-dot {
+    transition: none;
+  }
+}
+
+/* ============================================================
    PLANIFICADOR DE VIAJES — campos de la encuesta y "pills" de selección.
    ============================================================ */
 .planner-field {
