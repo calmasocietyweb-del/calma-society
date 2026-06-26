@@ -428,6 +428,75 @@ a.cala-activa > circle {
   opacity: 1;
 }
 
+/* Filtrado por zona de la isla (mismo patrón `:has()` que las categorías). */
+.nightmap-filterable:has(#nf-zona-oeste:checked) [data-zone]:not([data-zone="oeste"]),
+.nightmap-filterable:has(#nf-zona-centro:checked) [data-zone]:not([data-zone="centro"]),
+.nightmap-filterable:has(#nf-zona-este:checked) [data-zone]:not([data-zone="este"]) {
+  display: none;
+}
+
+/* Segmentado de orden (Recomendado / Mejor valorados). */
+.nightmap-seg {
+  white-space: nowrap;
+}
+.nightmap-radio:checked + .nightmap-seg {
+  background-color: var(--color-arcilla);
+  color: var(--color-lino);
+}
+.nightmap-radio:checked + .nightmap-seg > span[aria-hidden="true"] {
+  color: var(--color-champan);
+}
+.nightmap-radio:focus-visible + .nightmap-seg {
+  outline: 2px solid var(--color-terracota);
+  outline-offset: 2px;
+}
+
+/* Orden de la lista 100% CSS: por defecto "Recomendado" (--rec, agrupado por
+   categoría); al marcar "Mejor valorados", cada ficha usa su rango por nota
+   de Google (--rate). El grid respeta `order`. */
+.nightmap-list > .nightmap-card {
+  order: var(--rec);
+}
+.nightmap-filterable:has(#nf-sort-rating:checked) .nightmap-list > .nightmap-card {
+  order: var(--rate);
+}
+
+/* Mensaje "sin resultados": oculto salvo en las combinaciones tipo×zona vacías
+   (las muestra el <style> en línea generado en build). */
+.nightmap-noresults {
+  display: none;
+}
+
+/* Ficha de la lista: hover sutil y resalte al llegar desde un marcador (:target). */
+.nightmap-card {
+  transition:
+    border-color 0.2s var(--ease-calma),
+    box-shadow 0.2s var(--ease-calma);
+}
+.nightmap-card:hover {
+  border-color: var(--color-arcilla);
+}
+.nightmap-card:target {
+  border-color: var(--color-terracota);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-terracota) 35%, transparent);
+}
+
+/* Marcador del mapa: cursor y resplandor cálido al señalar/enfocar. */
+.night-pin {
+  cursor: pointer;
+}
+.night-pin:hover .night-pin-circle,
+.night-pin:focus-visible .night-pin-circle {
+  filter: url(#night-glow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nightmap-card,
+  .night-nombre {
+    transition: none;
+  }
+}
+
 /* ============================================================
    PLANIFICADOR DE VIAJES — campos de la encuesta y "pills" de selección.
    ============================================================ */

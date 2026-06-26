@@ -38,15 +38,25 @@ const alternates = {
     </p>
   </div>
 
-  <div class="mx-auto mt-6 max-w-5xl px-5 sm:px-8">
+  <nav aria-label="Secciones de la página" class="mx-auto mt-8 max-w-prosa px-5 sm:px-8">
+    <ul class="flex flex-wrap gap-2 text-sm">
+      <li><a href="#mapa" class="inline-block rounded-full border border-niebla bg-arena/40 px-3.5 py-1.5 text-piedra transition-colors hover:border-arcilla hover:text-arcilla">El mapa de la noche</a></li>
+      <li><a href="#horas-del-sol" class="inline-block rounded-full border border-niebla bg-arena/40 px-3.5 py-1.5 text-piedra transition-colors hover:border-arcilla hover:text-arcilla">Horas del sol</a></li>
+      <li><a href="#preguntas" class="inline-block rounded-full border border-niebla bg-arena/40 px-3.5 py-1.5 text-piedra transition-colors hover:border-arcilla hover:text-arcilla">Preguntas frecuentes</a></li>
+    </ul>
+  </nav>
+
+  <div id="mapa" class="mx-auto mt-6 max-w-5xl scroll-mt-32 px-5 sm:px-8">
     <NightlifeMap locale="es" />
   </div>
 
-  <div class="mt-14">
+  <div id="horas-del-sol" class="mt-14 scroll-mt-32">
     <SunTimes locale="es" />
   </div>
 
-  <SunsetDrinksFaq locale="es" />
+  <div id="preguntas" class="scroll-mt-32">
+    <SunsetDrinksFaq locale="es" />
+  </div>
 
   <NewsletterSignup variant="inline" />
 </BaseLayout>

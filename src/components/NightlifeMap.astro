@@ -19,6 +19,7 @@ import outline from "../data/menorca-outline.json";
 import { getPlaces } from "../lib/content";
 import { placeUrl, articleUrl } from "../i18n/utils";
 import { menorcaBusUrl } from "../lib/links";
+import { srcset } from "../lib/img";
 import type { Locale } from "../config/site";
 import { googleRatings, fmtScore, fmtReviews, GOOGLE_RATINGS_AS_OF, type GoogleRating } from "../data/google-ratings";
 import JsonLd from "./JsonLd.astro";
@@ -85,6 +86,18 @@ const CATS: Record<
 const catLabel = (cat: Cat) => (isEs ? CATS[cat].es : CATS[cat].en);
 const catPark = (cat: Cat) => (isEs ? CATS[cat].parkEs : CATS[cat].parkEn);
 
+// ── Zona (filtro extra): tres franjas por longitud, como mentalmente se divide
+// la isla (extremo Ciutadella / centro / extremo Maó). Determinista, sin datos
+// nuevos por local. ──
+type Zone = "oeste" | "centro" | "este";
+const ZONES: { key: Zone; es: string; en: string }[] = [
+  { key: "oeste", es: "Oeste · Ciutadella", en: "West · Ciutadella" },
+  { key: "centro", es: "Centro", en: "Centre" },
+  { key: "este", es: "Este · Maó", en: "East · Maó" },
+];
+const zoneOf = (lng: number): Zone => (lng <= 3.92 ? "oeste" : lng >= 4.2 ? "este" : "centro");
+const zoneLabel = (z: Zone) => (isEs ? ZONES.find((x) => x.key === z)!.es : ZONES.find((x) => x.key === z)!.en);
+
 // Glifo blanco centrado en (0,0), ~12 px, para distinguir la categoría sin
 // depender del color (accesibilidad).
 const GLYPH: Record<Cat, string> = {
@@ -114,6 +127,7 @@ type V = {
   id: string;
   name: string;
   cat: Cat;
+  zone: Zone;
   lat: number;
   lng: number;
   area: string;
@@ -134,6 +148,7 @@ const fromFichas: V[] = VENUES.flatMap((def) => {
       id: e.id,
       name: e.data.name,
       cat: def.cat,
+      zone: zoneOf(e.data.coordinates.lng),
       lat: e.data.coordinates.lat,
       lng: e.data.coordinates.lng,
       area: e.data.area,
@@ -379,6 +394,7 @@ const fromExtra: V[] = EXTRA.map((x) => ({
   id: x.id,
   name: x.name,
   cat: x.cat,
+  zone: zoneOf(x.lng),
   lat: x.lat,
   lng: x.lng,
   area: isEs ? x.areaEs : x.areaEn,
@@ -395,6 +411,41 @@ const fromExtra: V[] = EXTRA.map((x) => ({
 const catIdx = (c: Cat) => CAT_ORDER.indexOf(c);
 const venues: V[] = [...fromFichas, ...fromExtra].sort((a, b) => catIdx(a.cat) - catIdx(b.cat));
 const catCount = (cat: Cat) => venues.filter((v) => v.cat === cat).length;
+const zoneCount = (z: Zone) => venues.filter((v) => v.zone === z).length;
+
+// ── Orden de la lista 100% CSS (sin JS) ──
+// "Recomendado" agrupa por categoría (cabecera + locales); "Mejor valorados"
+// ordena por nota de Google desc (los puntos naturales sin nota van al final).
+// Cada tarjeta lleva su `--rec` y `--rate`; un radio decide cuál se aplica.
+const RATED = [...venues].sort((a, b) => {
+  const ra = a.rating?.score ?? -1;
+  const rb = b.rating?.score ?? -1;
+  if (rb !== ra) return rb - ra;
+  return (b.rating?.reviews ?? -1) - (a.rating?.reviews ?? -1);
+});
+const rateRank = new Map(RATED.map((v, i) => [v.id, i + 1]));
+const recCounter: Partial<Record<Cat, number>> = {};
+const recOrder = new Map<string, number>();
+for (const v of venues) {
+  recCounter[v.cat] = (recCounter[v.cat] ?? 0) + 1;
+  recOrder.set(v.id, catIdx(v.cat) * 1000 + (recCounter[v.cat] ?? 0));
+}
+
+// Combinaciones tipo×zona SIN resultados (p. ej. "Club" + "Centro"): se calculan
+// en build y se emite el CSS exacto para mostrar el mensaje "sin resultados" solo
+// en esos estados de los radios. 100% CSS, sin JS de cliente.
+const emptyCombos: { cat: Cat; zone: Zone }[] = [];
+for (const cat of CAT_ORDER) {
+  for (const z of ZONES) {
+    if (!venues.some((v) => v.cat === cat && v.zone === z.key)) emptyCombos.push({ cat, zone: z.key });
+  }
+}
+const emptyCss = emptyCombos
+  .map(
+    (c) =>
+      `.nightmap-filterable:has(#nf-${c.cat}:checked):has(#nf-zona-${c.zone}:checked) .nightmap-noresults{display:block}`,
+  )
+  .join("");
 
 // ── Proyección equirectangular (idéntica a ParteCalmaMap): cos(lat) corrige el
 // meridiano y la escala es uniforme → la isla mantiene su proporción real. ──
@@ -450,8 +501,8 @@ const pts = venues.map((v) => {
   const { x, y } = project(v.lat, v.lng);
   return { v, x, y };
 });
-const MIN_SEP = 22;
-for (let pass = 0; pass < 12; pass++) {
+const MIN_SEP = 31; // separación mínima entre marcadores (iconos grandes r≈13 + anillo)
+for (let pass = 0; pass < 18; pass++) {
   for (let i = 0; i < pts.length; i++) {
     for (let j = 0; j < i; j++) {
       let dx = pts[i].x - pts[j].x;
@@ -531,10 +582,25 @@ const T = isEs
       reviewsWord: "reseñas",
       onGoogle: "en Google",
       ratingsNote: `Valoraciones de Google recogidas a mano en ${ratingsMonth}; cambian con el tiempo. Los miradores, faros y calas son puntos naturales de acceso público, sin valoración de negocio.`,
+      sortTitle: "Ordenar",
+      sortRec: "Recomendado",
+      sortRating: "Mejor valorados",
+      zoneTitle: "Zona de la isla",
+      zonaTodas: "Toda la isla",
+      naturalTag: "Punto público",
+      transferShort: "Llegar con chófer",
+      resultsNone: "No hay locales con estos filtros. Prueba a quitar alguno.",
       banner: {
         eyebrow: "Llega con chófer",
         title: "Llega como manda la noche",
-        text: "En los acantilados del atardecer y en los puertos no hay dónde aparcar —y en verano se llena al amanecer—. Por eso la mejor decisión de la noche es no traer coche: te recogemos en un Mercedes Clase S —el lujo silencioso— o en una Clase V para el grupo. Chófer privado, trato de limusina y máximo confort, del primer atardecer al último cóctel.",
+        lead: "La mejor decisión de la noche es no traer coche. Te recogemos en un Mercedes con chófer privado, del primer atardecer al último cóctel —y vuelves sin pensar en el volante—.",
+        photoAlt: "Mercedes Clase S negro de Menorca Bus junto al mar, en la costa de Menorca.",
+        benefits: [
+          "Chófer privado en Mercedes Clase S, o Clase V para el grupo.",
+          "Te lleva, te espera y te recoge a la hora que digas.",
+          "Aparca por ti y conduce de vuelta: vosotros brindáis.",
+          "Conductores locales que conocen cada cala y cada puerto.",
+        ],
         cta: "Reserva con Menorca Bus",
         lujo: "Moverse con lujo",
         velada: "Velada con chófer",
@@ -563,10 +629,25 @@ const T = isEs
       reviewsWord: "reviews",
       onGoogle: "on Google",
       ratingsNote: `Google ratings gathered by hand in ${ratingsMonth}; they change over time. Viewpoints, lighthouses and beaches are natural, publicly accessible spots, with no business rating.`,
+      sortTitle: "Sort",
+      sortRec: "Recommended",
+      sortRating: "Top rated",
+      zoneTitle: "Side of the island",
+      zonaTodas: "Whole island",
+      naturalTag: "Public spot",
+      transferShort: "Arrive with a chauffeur",
+      resultsNone: "No venues match these filters. Try removing one.",
       banner: {
         eyebrow: "Arrive with a chauffeur",
         title: "Arrive the way the night deserves",
-        text: "On the sunset cliffs and around the harbours there's nowhere to park —and in summer it fills up at dawn—. So the best decision of the night is to leave the car behind: we pick you up in a Mercedes S-Class —quiet luxury— or a V-Class for the group. Private chauffeur, limousine treatment and maximum comfort, from the first sunset to the last cocktail.",
+        lead: "The best decision of the night is to leave the car behind. We pick you up in a Mercedes with a private chauffeur, from the first sunset to the last cocktail —and you head home without a thought for the wheel.",
+        photoAlt: "Black Mercedes S-Class from Menorca Bus by the sea on the Menorcan coast.",
+        benefits: [
+          "A private chauffeur in a Mercedes S-Class, or a V-Class for the group.",
+          "We take you, wait for you and pick you up whenever you say.",
+          "We park and drive back for you: you both get to toast.",
+          "Local drivers who know every cove and every harbour.",
+        ],
         cta: "Book with Menorca Bus",
         lujo: "Getting around in style",
         velada: "Chauffeured evenings",
@@ -608,102 +689,193 @@ const jsonLd = {
   <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">{T.eyebrow}</p>
   <p class="mt-2 text-base leading-relaxed text-piedra-suave">{T.intro}</p>
 
-  {/* Discurso de lujo: el gesto-firma "te llevamos con chófer", enlazado a
-      Menorca Bus y al clúster de artículos de movilidad de lujo. */}
-  <aside class="my-7 overflow-hidden rounded-2xl bg-arcilla p-7 text-lino sm:p-9">
-    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-champan">{T.banner.eyebrow}</p>
-    <p class="mt-3 font-display text-2xl leading-snug text-crema sm:text-[1.9rem]">{T.banner.title}</p>
-    <p class="mt-3 max-w-prosa text-sm leading-relaxed text-lino/85 sm:text-base">{T.banner.text}</p>
-    <div class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3">
-      <a
-        href={menorcaBusUrl("noche", "mapa")}
-        target="_blank"
-        rel="sponsored noopener"
-        data-umami-event="cta-menorcabus-noche"
-        class="rounded-md bg-crema px-5 py-2.5 text-sm font-semibold text-arcilla transition-colors hover:bg-lino"
-      >
-        {T.banner.cta} ↗
-      </a>
-      <a href={articleUrl(locale, CH.lujo)} class="text-sm font-semibold text-champan hover:underline">
-        {T.banner.lujo} →
-      </a>
-      <a href={articleUrl(locale, CH.velada)} class="text-sm font-semibold text-champan hover:underline">
-        {T.banner.velada} →
-      </a>
+  {/* Valor añadido / conversión: el gesto-firma "te llevamos con chófer" con la
+      foto de la flota REAL de Menorca Bus y los beneficios concretos (honestos).
+      Negocio propio del grupo titular → rel=sponsored técnico. */}
+  <aside class="nightmap-bus my-8 overflow-hidden rounded-2xl bg-arcilla text-lino shadow-[0_18px_40px_-24px_rgba(23,21,15,0.5)]">
+    <div class="grid md:grid-cols-[1.05fr_1fr]">
+      {/* Foto real de la flota: Clase S junto a la costa de Menorca */}
+      <div class="relative min-h-60 md:min-h-full">
+        <img
+          src="/uploads/mb-clase-s-puerto.webp"
+          srcset={srcset("/uploads/mb-clase-s-puerto.webp")}
+          sizes="(min-width: 768px) 48vw, 100vw"
+          alt={T.banner.photoAlt}
+          width="1600"
+          height="1067"
+          loading="lazy"
+          decoding="async"
+          class="absolute inset-0 h-full w-full object-cover"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-arcilla/55 to-transparent md:bg-gradient-to-r md:from-transparent md:to-arcilla/30"
+          aria-hidden="true"
+        ></div>
+      </div>
+
+      {/* Contenido */}
+      <div class="p-7 sm:p-9">
+        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-champan">{T.banner.eyebrow}</p>
+        <p class="mt-3 font-display text-2xl leading-snug text-crema sm:text-[1.9rem]">{T.banner.title}</p>
+        <p class="mt-3 text-sm leading-relaxed text-lino/85 sm:text-base">{T.banner.lead}</p>
+
+        <ul class="mt-5 space-y-2.5">
+          {
+            T.banner.benefits.map((b) => (
+              <li class="flex gap-2.5 text-sm leading-relaxed text-lino/90">
+                <svg viewBox="0 0 20 20" class="mt-0.5 h-4 w-4 shrink-0 text-champan" fill="none" aria-hidden="true">
+                  <path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span>{b}</span>
+              </li>
+            ))
+          }
+        </ul>
+
+        <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
+          <a
+            href={menorcaBusUrl("noche", "mapa")}
+            target="_blank"
+            rel="sponsored noopener"
+            data-umami-event="cta-menorcabus-noche"
+            class="rounded-md bg-crema px-5 py-2.5 text-sm font-semibold text-arcilla transition-colors hover:bg-lino"
+          >
+            {T.banner.cta} ↗
+          </a>
+          <a href={articleUrl(locale, CH.velada)} class="text-sm font-semibold text-champan hover:underline">
+            {T.banner.velada} →
+          </a>
+        </div>
+        <MenorcaBusPromo locale={locale} tone="dark" class="mt-4" />
+        <p class="mt-5 flex flex-wrap gap-x-5 gap-y-1 border-t border-lino/15 pt-4 text-xs text-lino/70">
+          <a href={articleUrl(locale, CH.lujo)} class="text-champan/90 hover:underline">{T.banner.lujo} →</a>
+          <a href={articleUrl(locale, CH.claseS)} class="text-champan/90 hover:underline">{T.banner.claseS} →</a>
+          <a href={articleUrl(locale, CH.claseV)} class="text-champan/90 hover:underline">{T.banner.claseV} →</a>
+        </p>
+      </div>
     </div>
-    <MenorcaBusPromo locale={locale} tone="dark" class="mt-4" />
-    <p class="mt-5 flex flex-wrap gap-x-5 gap-y-1 border-t border-lino/15 pt-4 text-xs text-lino/70">
-      <a href={articleUrl(locale, CH.claseS)} class="text-champan/90 hover:underline">{T.banner.claseS} →</a>
-      <a href={articleUrl(locale, CH.claseV)} class="text-champan/90 hover:underline">{T.banner.claseV} →</a>
-    </p>
   </aside>
 
   {/* `.nightmap-filterable` envuelve filtro + mapa + lista: al marcar una
       categoría, `:has()` oculta a la vez sus marcadores y sus filas. */}
   <div class="nightmap-filterable">
-    <fieldset class="mt-2">
-      <legend class="text-xs font-semibold uppercase tracking-wider text-oro">{T.filterTitle}</legend>
-      <div class="mt-2 flex flex-wrap gap-2">
-        <input id="nf-todas" class="nightmap-radio sr-only" type="radio" name="nf-cat" checked />
-        <label
-          for="nf-todas"
-          class="nightmap-chip cursor-pointer rounded-full border border-niebla bg-lino px-3.5 py-1.5 text-sm text-piedra transition-colors hover:border-arcilla"
-        >
-          {T.todas} ({venues.length})
-        </label>
-        {
-          CAT_ORDER.map((cat) => (
-            <Fragment>
-              <input id={`nf-${cat}`} class="nightmap-radio sr-only" type="radio" name="nf-cat" />
-              <label
-                for={`nf-${cat}`}
-                class="nightmap-chip inline-flex cursor-pointer items-center gap-2 rounded-full border border-niebla bg-lino px-3.5 py-1.5 text-sm text-piedra transition-colors hover:border-arcilla"
-              >
-                <span class="inline-block h-2.5 w-2.5 rounded-full" style={`background:${CATS[cat].color}`} />
-                {catLabel(cat)} ({catCount(cat)})
-              </label>
-            </Fragment>
-          ))
-        }
-      </div>
-    </fieldset>
+    {/* Barra de control: ordenar (recomendado / mejor valorados) + filtrar por
+        tipo + filtrar por zona. Todo con radios sr-only + CSS (cero JS). */}
+    <div class="nightmap-toolbar mt-2 grid gap-x-7 gap-y-4 rounded-2xl border border-niebla bg-arena/30 p-4 sm:grid-cols-[auto_1fr] sm:p-5">
+      <fieldset class="sm:col-start-1 sm:row-start-1">
+        <legend class="text-[0.7rem] font-semibold uppercase tracking-wider text-oro">{T.sortTitle}</legend>
+        <div class="mt-2 inline-flex rounded-full border border-niebla bg-lino p-0.5">
+          <input id="nf-sort-rec" class="nightmap-radio sr-only" type="radio" name="nf-sort" checked />
+          <label for="nf-sort-rec" class="nightmap-seg cursor-pointer rounded-full px-4 py-1.5 text-sm text-piedra-suave transition-colors">{T.sortRec}</label>
+          <input id="nf-sort-rating" class="nightmap-radio sr-only" type="radio" name="nf-sort" />
+          <label for="nf-sort-rating" class="nightmap-seg inline-flex cursor-pointer items-center gap-1 rounded-full px-4 py-1.5 text-sm text-piedra-suave transition-colors">
+            <span aria-hidden="true" class="text-oro-vivo">★</span>{T.sortRating}
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="sm:col-start-2 sm:row-start-1">
+        <legend class="text-[0.7rem] font-semibold uppercase tracking-wider text-oro">{T.filterTitle}</legend>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <input id="nf-todas" class="nightmap-radio sr-only" type="radio" name="nf-cat" checked />
+          <label
+            for="nf-todas"
+            class="nightmap-chip cursor-pointer rounded-full border border-niebla bg-lino px-3.5 py-1.5 text-sm text-piedra transition-colors hover:border-arcilla"
+          >
+            {T.todas} ({venues.length})
+          </label>
+          {
+            CAT_ORDER.map((cat) => (
+              <Fragment>
+                <input id={`nf-${cat}`} class="nightmap-radio sr-only" type="radio" name="nf-cat" />
+                <label
+                  for={`nf-${cat}`}
+                  class="nightmap-chip inline-flex cursor-pointer items-center gap-2 rounded-full border border-niebla bg-lino px-3.5 py-1.5 text-sm text-piedra transition-colors hover:border-arcilla"
+                >
+                  <span class="inline-block h-2.5 w-2.5 rounded-full" style={`background:${CATS[cat].color}`} />
+                  {catLabel(cat)} ({catCount(cat)})
+                </label>
+              </Fragment>
+            ))
+          }
+        </div>
+      </fieldset>
+
+      <fieldset class="sm:col-start-2 sm:row-start-2">
+        <legend class="text-[0.7rem] font-semibold uppercase tracking-wider text-oro">{T.zoneTitle}</legend>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <input id="nf-zona-todas" class="nightmap-radio sr-only" type="radio" name="nf-zona" checked />
+          <label
+            for="nf-zona-todas"
+            class="nightmap-chip cursor-pointer rounded-full border border-niebla bg-lino px-3.5 py-1.5 text-sm text-piedra transition-colors hover:border-arcilla"
+          >
+            {T.zonaTodas}
+          </label>
+          {
+            ZONES.map((z) => (
+              <Fragment>
+                <input id={`nf-zona-${z.key}`} class="nightmap-radio sr-only" type="radio" name="nf-zona" />
+                <label
+                  for={`nf-zona-${z.key}`}
+                  class="nightmap-chip cursor-pointer rounded-full border border-niebla bg-lino px-3.5 py-1.5 text-sm text-piedra transition-colors hover:border-arcilla"
+                >
+                  {zoneLabel(z.key)} ({zoneCount(z.key)})
+                </label>
+              </Fragment>
+            ))
+          }
+        </div>
+      </fieldset>
+    </div>
 
     {/* Mapa SVG (contorno real de Menorca, OSM). La lista debajo es canónica. */}
     <figure class="nightmap-figure mt-6 overflow-hidden rounded-2xl border border-niebla">
       <svg viewBox={`0 0 ${VIEW_W} ${VIEW_H}`} role="img" aria-label={T.mapAria} class="h-auto w-full">
         <defs>
+          {/* Mar al atardecer: degradado cálido dorado (≠ el azul del parte de calas). */}
           <linearGradient id="night-mar" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#d7e6e6" />
-            <stop offset="1" stop-color="#bdd4d6" />
+            <stop offset="0" stop-color="#f3e5cd" />
+            <stop offset="0.55" stop-color="#eedabd" />
+            <stop offset="1" stop-color="#e4cda8" />
           </linearGradient>
+          {/* Resplandor del sol poniente, desde lo alto del cielo. */}
+          <radialGradient id="night-sol" cx="0.5" cy="0.02" r="0.85">
+            <stop offset="0" stop-color="#fdf0cf" stop-opacity="0.95" />
+            <stop offset="0.45" stop-color="#f6dfac" stop-opacity="0.4" />
+            <stop offset="1" stop-color="#f6dfac" stop-opacity="0" />
+          </radialGradient>
           <linearGradient id="night-tierra" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#dee4cc" />
-            <stop offset="1" stop-color="#ccd6b4" />
+            <stop offset="0" stop-color="#d8c49d" />
+            <stop offset="1" stop-color="#c7b085" />
           </linearGradient>
           <filter id="night-sombra" x="-20%" y="-20%" width="140%" height="140%">
-            <feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="#33493b" flood-opacity="0.20" />
+            <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#5a3a22" flood-opacity="0.22" />
           </filter>
-          <filter id="night-punto" x="-60%" y="-60%" width="220%" height="220%">
-            <feDropShadow dx="0" dy="1" stdDeviation="1.3" flood-color="#16241c" flood-opacity="0.45" />
+          <filter id="night-punto" x="-80%" y="-80%" width="260%" height="260%">
+            <feDropShadow dx="0" dy="1.5" stdDeviation="1.6" flood-color="#3a2414" flood-opacity="0.5" />
+          </filter>
+          <filter id="night-glow" x="-150%" y="-150%" width="400%" height="400%">
+            <feDropShadow dx="0" dy="0" stdDeviation="5.5" flood-color="#fff3da" flood-opacity="0.95" />
           </filter>
         </defs>
 
         <rect x="0" y="0" width={VIEW_W} height={VIEW_H} fill="url(#night-mar)" aria-hidden="true" />
-        <path d={islandPath} fill="none" stroke="#e8f1f1" stroke-width="22" stroke-linejoin="round" opacity="0.55" aria-hidden="true" />
-        <path d={islandPath} fill="none" stroke="#d4e5e5" stroke-width="11" stroke-linejoin="round" opacity="0.7" aria-hidden="true" />
+        <rect x="0" y="0" width={VIEW_W} height={VIEW_H} fill="url(#night-sol)" aria-hidden="true" />
+        <path d={islandPath} fill="none" stroke="#f4e9d4" stroke-width="22" stroke-linejoin="round" opacity="0.6" aria-hidden="true" />
+        <path d={islandPath} fill="none" stroke="#ecdabc" stroke-width="11" stroke-linejoin="round" opacity="0.75" aria-hidden="true" />
         <g filter="url(#night-sombra)" aria-hidden="true">
-          <path d={islandPath} fill="url(#night-tierra)" stroke="#9fb189" stroke-width="1.4" stroke-linejoin="round" />
+          <path d={islandPath} fill="url(#night-tierra)" stroke="#b1936a" stroke-width="1.4" stroke-linejoin="round" />
         </g>
 
-        <text x={VIEW_W / 2} y={offY - 30} fill="#5f7a72" font-size="15" text-anchor="middle" font-family="Inter Variable, sans-serif" letter-spacing="4" aria-hidden="true">{T.costaNorte}</text>
-        <text x={VIEW_W / 2} y={baseY + 46} fill="#5f7a72" font-size="15" text-anchor="middle" font-family="Inter Variable, sans-serif" letter-spacing="4" aria-hidden="true">{T.costaSur}</text>
+        <text x={VIEW_W / 2} y={offY - 30} fill="#9a8458" font-size="15" text-anchor="middle" font-family="Inter Variable, sans-serif" letter-spacing="4" aria-hidden="true">{T.costaNorte}</text>
+        <text x={VIEW_W / 2} y={baseY + 46} fill="#9a8458" font-size="15" text-anchor="middle" font-family="Inter Variable, sans-serif" letter-spacing="4" aria-hidden="true">{T.costaSur}</text>
 
         <g aria-hidden="true" font-family="Inter Variable, sans-serif">
           {
             TOWNS.map((t) => (
               <Fragment>
-                <circle cx={t.x} cy={t.y} r="2.6" fill="#4f5f4a" />
-                <text x={t.x} y={t.y - 8} fill="#4f5f4a" font-size="13" text-anchor="middle">{isEs ? t.es : t.en}</text>
+                <circle cx={t.x} cy={t.y} r="2.6" fill="#7c6a4c" />
+                <text x={t.x} y={t.y - 8} fill="#7c6a4c" font-size="13" text-anchor="middle">{isEs ? t.es : t.en}</text>
               </Fragment>
             ))
           }
@@ -730,11 +902,11 @@ const jsonLd = {
             señalar (hover/foco). Enlazan a su ficha de la lista. */}
         {
           pts.map((p) => (
-            <a href={`#night-${p.v.id}`} data-cat={p.v.cat}>
+            <a class="night-pin" href={`#night-${p.v.id}`} data-cat={p.v.cat} data-zone={p.v.zone}>
               <title>{p.v.name} — {catLabel(p.v.cat)}</title>
-              <circle cx={p.x.toFixed(1)} cy={p.y.toFixed(1)} r="9" fill={CATS[p.v.cat].color} stroke="#ffffff" stroke-width="2.5" filter="url(#night-punto)" />
-              <g transform={`translate(${p.x.toFixed(1)},${p.y.toFixed(1)})`} aria-hidden="true" set:html={GLYPH[p.v.cat]} />
-              <text class="night-nombre" x={p.x.toFixed(1)} y={(p.y - 15).toFixed(1)} text-anchor="middle" font-size="13">{p.v.name}</text>
+              <circle class="night-pin-circle" cx={p.x.toFixed(1)} cy={p.y.toFixed(1)} r="13" fill={CATS[p.v.cat].color} stroke="#fff8ec" stroke-width="3" filter="url(#night-punto)" />
+              <g class="night-pin-glyph" transform={`translate(${p.x.toFixed(1)},${p.y.toFixed(1)}) scale(1.3)`} aria-hidden="true" set:html={GLYPH[p.v.cat]} />
+              <text class="night-nombre" x={p.x.toFixed(1)} y={(p.y - 20).toFixed(1)} text-anchor="middle" font-size="14">{p.v.name}</text>
             </a>
           ))
         }
@@ -742,71 +914,90 @@ const jsonLd = {
       <figcaption class="border-t border-niebla bg-lino px-4 py-2 text-[0.7rem] text-piedra-suave">{T.mapCredit}</figcaption>
     </figure>
 
-    {/* Lista accesible (canónica). Cada local: ficha + el plan de "te llevamos"
-        enlazado a Menorca Bus + cómo llegar por tu cuenta + web oficial. */}
-    <div class="nightmap-list mt-7 grid gap-3" role="list">
+    {/* Lista accesible (canónica). Orden y filtros 100% CSS vía `--rec`/`--rate`
+        y los radios. Cada ficha: nombre + nota Google + plan "llegar con chófer"
+        (Menorca Bus) + cómo llegar + web. */}
+    <div class="nightmap-list mt-6 grid gap-3 md:grid-cols-2" role="list">
       {
-        venues.map((v) => {
-          const color = CATS[v.cat].color;
-          return (
-            <article
-              id={`night-${v.id}`}
-              data-cat={v.cat}
-              role="listitem"
-              class="rounded-xl border border-niebla bg-lino p-4 sm:p-5"
-            >
-              <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                <p class="font-display text-xl text-tinta">
+        venues.map((v) => (
+          <article
+            id={`night-${v.id}`}
+            data-cat={v.cat}
+            data-zone={v.zone}
+            role="listitem"
+            style={`--rec:${recOrder.get(v.id)};--rate:${rateRank.get(v.id)}`}
+            class="nightmap-card flex scroll-mt-28 flex-col rounded-xl border border-niebla bg-lino p-4 transition-colors sm:p-5"
+          >
+            <div class="flex items-start justify-between gap-x-3">
+              <div class="min-w-0">
+                <p class="font-display text-lg text-tinta sm:text-xl">
                   {v.href ? (
                     <a class="underline decoration-niebla underline-offset-4 hover:decoration-terracota" href={v.href}>{v.name}</a>
                   ) : (
                     v.name
                   )}
                 </p>
-                <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-oro">
-                  <span class="inline-block h-2.5 w-2.5 rounded-full" style={`background:${color}`} />
+                <span class="mt-1 inline-flex items-center gap-1.5 text-[0.68rem] font-semibold uppercase tracking-wider text-oro">
+                  <span class="inline-block h-2 w-2 rounded-full" style={`background:${CATS[v.cat].color}`} />
                   {catLabel(v.cat)}
                 </span>
               </div>
-              <p class="mt-1 text-sm leading-relaxed text-piedra-suave">{v.area} · {v.description}</p>
-              {v.rating && (
-                <p class="mt-2 flex flex-wrap items-center gap-x-1.5 text-xs text-piedra-suave">
-                  <span aria-hidden="true" class="text-oro-vivo">★</span>
-                  <span class="font-semibold text-tinta">{fmtScore(v.rating.score, locale)}</span>
-                  <span>· {fmtReviews(v.rating.reviews, locale)} {T.reviewsWord} {T.onGoogle}</span>
-                </p>
-              )}
-              <p class="mt-3 border-t border-niebla/60 pt-3 text-sm text-piedra-suave">
-                <span class="text-piedra-suave/90">{v.note ?? catPark(v.cat)}</span>{" "}
-                <span class="font-semibold text-tinta">{T.teLlevamos}</span> · {T.teLlevamosSub}.{" "}
-                <a
-                  class="font-semibold text-arcilla underline decoration-arcilla/40 underline-offset-2 hover:text-terracota hover:decoration-terracota"
-                  href={menorcaBusUrl("noche", v.id)}
-                  target="_blank"
-                  rel="sponsored noopener"
-                  data-umami-event="cta-menorcabus-noche"
+              {v.rating ? (
+                <span
+                  class="inline-flex shrink-0 items-baseline gap-1 rounded-full border border-niebla bg-arena/40 px-2.5 py-1"
+                  title={`${fmtScore(v.rating.score, locale)} · ${fmtReviews(v.rating.reviews, locale)} ${T.reviewsWord} ${T.onGoogle}`}
                 >
-                  {T.reserva} ↗
-                </a>
-              </p>
-              <p class="mt-1 text-xs text-piedra-suave/80">
-                <a class="underline decoration-niebla underline-offset-2 hover:text-arcilla" href={mapsUrl(v.lat, v.lng)} target="_blank" rel="noopener">{T.ubicacion} ↗</a>
-                {v.website && (
-                  <Fragment>
-                    {" · "}
-                    <a class="underline decoration-niebla underline-offset-2 hover:text-arcilla" href={v.website} target="_blank" rel="noopener">{T.web} ↗</a>
-                  </Fragment>
-                )}
-              </p>
-            </article>
-          );
-        })
+                  <span aria-hidden="true" class="text-oro-vivo">★</span>
+                  <span class="text-sm font-semibold text-tinta">{fmtScore(v.rating.score, locale)}</span>
+                  <span class="text-xs text-piedra-suave">{fmtReviews(v.rating.reviews, locale)}</span>
+                </span>
+              ) : (
+                <span class="shrink-0 rounded-full border border-niebla px-2.5 py-1 text-[0.68rem] font-medium text-piedra-suave">
+                  {T.naturalTag}
+                </span>
+              )}
+            </div>
+
+            <p class="mt-2 text-sm leading-relaxed text-piedra-suave">{v.area} · {v.description}</p>
+
+            <p class="mt-3 border-t border-niebla/60 pt-3 text-sm text-piedra-suave">
+              <span>{v.note ?? catPark(v.cat)}</span>{" "}
+              <a
+                class="whitespace-nowrap font-semibold text-arcilla underline decoration-arcilla/40 underline-offset-2 hover:text-terracota hover:decoration-terracota"
+                href={menorcaBusUrl("noche", v.id)}
+                target="_blank"
+                rel="sponsored noopener"
+                data-umami-event="cta-menorcabus-noche"
+              >
+                {T.transferShort} ↗
+              </a>
+            </p>
+
+            <p class="mt-2 text-xs text-piedra-suave/80">
+              <a class="underline decoration-niebla underline-offset-2 hover:text-arcilla" href={mapsUrl(v.lat, v.lng)} target="_blank" rel="noopener">{T.ubicacion} ↗</a>
+              {v.website && (
+                <Fragment>
+                  {" · "}
+                  <a class="underline decoration-niebla underline-offset-2 hover:text-arcilla" href={v.website} target="_blank" rel="noopener">{T.web} ↗</a>
+                </Fragment>
+              )}
+            </p>
+          </article>
+        ))
       }
     </div>
+
+    <p class="nightmap-noresults mt-6 rounded-xl border border-dashed border-niebla bg-arena/20 px-4 py-8 text-center text-sm text-piedra-suave">
+      {T.resultsNone}
+    </p>
 
     <p class="mt-5 text-xs leading-relaxed text-piedra-suave">{T.seasonal}</p>
     <p class="mt-2 text-xs leading-relaxed text-piedra-suave">{T.ratingsNote}</p>
   </div>
+
+  {/* CSS dinámico: muestra "sin resultados" SOLO en las combinaciones tipo×zona
+      que quedan vacías (calculadas en build). Cero JS. */}
+  {emptyCss && <style is:inline set:html={emptyCss} />}
 
   <JsonLd schema={jsonLd} />
 </section>
