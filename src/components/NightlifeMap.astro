@@ -660,14 +660,9 @@ const T = isEs
 // LED (sesión nocturna de la flota; crédito Menorca Bus). Alt bilingüe.
 const busSlides = [
   {
-    src: "/uploads/mb-noche-exterior.webp",
-    altEs: "Mercedes Clase S negro de Menorca Bus de noche, con los faros LED encendidos y la estrella proyectada en el suelo.",
-    altEn: "Black Mercedes S-Class from Menorca Bus at night, LED headlights on and the star projected on the ground.",
-  },
-  {
-    src: "/uploads/mb-noche-piloto.webp",
-    altEs: "Piloto trasero LED del Mercedes Clase S encendido en la oscuridad de la noche.",
-    altEn: "The Mercedes S-Class LED tail light glowing in the dark of night.",
+    src: "/uploads/mb-noche-plazas.webp",
+    altEs: "Plazas traseras del Clase S en piel coñac, con la iluminación ambiental LED al anochecer.",
+    altEn: "The S-Class rear seats in cognac leather, with ambient LED lighting at dusk.",
   },
   {
     src: "/uploads/mb-noche-volante.webp",
@@ -675,9 +670,14 @@ const busSlides = [
     altEn: "The S-Class cabin at night, with ambient LED lighting and the lit star on the steering wheel.",
   },
   {
-    src: "/uploads/mb-noche-plazas.webp",
-    altEs: "Plazas traseras del Clase S en piel coñac, con la iluminación ambiental LED al anochecer.",
-    altEn: "The S-Class rear seats in cognac leather, with ambient LED lighting at dusk.",
+    src: "/uploads/mb-noche-piloto.webp",
+    altEs: "Piloto trasero LED del Mercedes Clase S encendido en la oscuridad de la noche.",
+    altEn: "The Mercedes S-Class LED tail light glowing in the dark of night.",
+  },
+  {
+    src: "/uploads/mb-noche-faros.webp",
+    altEs: "Frontal del Mercedes Clase S con los faros LED encendidos al anochecer.",
+    altEn: "The front of the Mercedes S-Class with its LED headlights on at dusk.",
   },
 ];
 const busAlt = (s: (typeof busSlides)[number]) => (isEs ? s.altEs : s.altEn);
@@ -723,7 +723,12 @@ const jsonLd = {
       {/* Carrusel (sin JS de cliente): fotos REALES del Clase S de noche con
           luces LED. Radios sr-only + `:has()` trasladan la pista; los puntos son
           labels. El grupo de radios es navegable por teclado (flechas). */}
-      <div class="cs-noche relative min-h-64 overflow-hidden bg-arcilla md:min-h-full">
+      <div
+        class="cs-noche relative min-h-64 overflow-hidden bg-arcilla md:min-h-full"
+        role="group"
+        aria-roledescription={isEs ? "carrusel" : "carousel"}
+        aria-label={isEs ? "Fotos del Mercedes Clase S de noche" : "Photos of the Mercedes S-Class at night"}
+      >
         {
           busSlides.map((s, i) => (
             <input
@@ -732,7 +737,6 @@ const jsonLd = {
               type="radio"
               name="cs-noche"
               aria-label={`${i + 1}/${busSlides.length} — ${busAlt(s)}`}
-              checked={i === 0}
             />
           ))
         }
@@ -759,6 +763,25 @@ const jsonLd = {
               </figure>
             ))
           }
+          {/* Duplicado de la 1ª: el autoplay llega a esta y vuelve al inicio sin
+              salto visible (bucle continuo, sin JS). */}
+          <figure class="cs-slide relative h-full w-full shrink-0" aria-hidden="true">
+            <img
+              src={busSlides[0].src}
+              srcset={srcset(busSlides[0].src)}
+              sizes="(min-width: 768px) 48vw, 100vw"
+              alt=""
+              width="1600"
+              height="1067"
+              loading="lazy"
+              decoding="async"
+              class="absolute inset-0 h-full w-full object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-arcilla/60 to-transparent md:bg-gradient-to-r md:from-transparent md:to-arcilla/30"
+              aria-hidden="true"
+            />
+          </figure>
         </div>
 
         <div class="cs-dots absolute inset-x-0 bottom-3 z-10 flex justify-center gap-2">

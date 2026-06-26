@@ -68,6 +68,7 @@ const jobs = [
   // Sesión NOCTURNA del Clase S (faros/pilotos LED, ambiente LED interior) — para
   // el carrusel de "Atardeceres y copas". Fotos reales de la flota (Menorca Bus).
   { src: "COCHES Videos y fotos/Fotos/Clase S/7E3A1419.jpg", out: "mb-noche-exterior" }, // coche de noche, faros LED + estrella proyectada
+  { src: "COCHES Videos y fotos/Fotos/Clase S/7E3A1314.jpg", out: "mb-noche-faros" }, // frontal con faros LED encendidos
   { src: "COCHES Videos y fotos/Fotos/Clase S/7E3A1321.jpg", out: "mb-noche-piloto" }, // piloto trasero LED rojo de noche
   { src: "COCHES Videos y fotos/Fotos/Clase S/7E3A1333.jpg", out: "mb-noche-volante" }, // interior nocturno, LED ambiental + estrella en el volante
   { src: "COCHES Videos y fotos/Fotos/Clase S/7E3A1356.jpg", out: "mb-noche-plazas" }, // plazas traseras piel coñac con LED ambiental

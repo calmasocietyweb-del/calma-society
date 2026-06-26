@@ -504,19 +504,54 @@ a.cala-activa > circle {
 .cs-slide {
   flex: 0 0 100%;
 }
+/* Autoplay en bucle (sin JS): la animación recorre las 4 fotos y la 5ª (duplicado
+   de la 1ª); al volver a 0% el salto es invisible porque muestra la misma foto. */
+@keyframes cs-auto {
+  0%,
+  16% {
+    transform: translateX(0%);
+  }
+  20%,
+  36% {
+    transform: translateX(-100%);
+  }
+  40%,
+  56% {
+    transform: translateX(-200%);
+  }
+  60%,
+  76% {
+    transform: translateX(-300%);
+  }
+  80%,
+  100% {
+    transform: translateX(-400%);
+  }
+}
 .cs-track {
   transition: transform 0.55s var(--ease-calma-inout);
+  animation: cs-auto 22s infinite;
 }
+/* Pausa el autoplay al pasar el ratón o enfocar (mecanismo de parada — WCAG 2.2.2). */
+.cs-noche:hover .cs-track,
+.cs-noche:focus-within .cs-track {
+  animation-play-state: paused;
+}
+/* Control manual: al marcar un punto, se detiene el autoplay y manda esa foto. */
 .cs-noche:has(#cs-noche-0:checked) .cs-track {
+  animation: none;
   transform: translateX(0);
 }
 .cs-noche:has(#cs-noche-1:checked) .cs-track {
+  animation: none;
   transform: translateX(-100%);
 }
 .cs-noche:has(#cs-noche-2:checked) .cs-track {
+  animation: none;
   transform: translateX(-200%);
 }
 .cs-noche:has(#cs-noche-3:checked) .cs-track {
+  animation: none;
   transform: translateX(-300%);
 }
 .cs-dot {
@@ -545,8 +580,13 @@ a.cala-activa > circle {
   outline: 2px solid var(--color-terracota);
   outline-offset: 2px;
 }
+/* Sin autoplay para quien prefiere menos movimiento: se queda en la 1ª foto y los
+   puntos siguen permitiendo cambiarla (sin transición). */
 @media (prefers-reduced-motion: reduce) {
-  .cs-track,
+  .cs-track {
+    animation: none;
+    transition: none;
+  }
   .cs-dot {
     transition: none;
   }
