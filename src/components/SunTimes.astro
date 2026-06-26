@@ -1,0 +1,117 @@
+---
+/**
+ * "A qué hora cae el sol" — tabla mes a mes de amanecer y atardecer en Menorca.
+ *
+ * Responde una pregunta real y muy buscada ("¿a qué hora se pone el sol en
+ * Menorca en julio?") con un dato concreto, fechado y autocontenido: justo lo
+ * que cita la IA (GEO, CLAUDE.md §8). Se calcula en build con `src/lib/sun.ts`
+ * (cero JS de cliente) y NO caduca: es una tabla por meses, no un "hoy".
+ *
+ * Pensado para incrustarse en "Atardeceres y copas". El color nunca va solo.
+ */
+import { sunTimes, fmtMenorcaTime, dayLength, MENORCA } from "../lib/sun";
+import type { Locale } from "../config/site";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const isEs = locale === "es";
+
+// Año de referencia = año de build. Las horas apenas cambian de un año a otro;
+// usar el año en curso mantiene la tabla "actual" sin caducar (es por meses).
+const now = new Date();
+const YEAR = now.getFullYear();
+const thisMonth = now.getMonth(); // 0-11, para resaltar el mes en curso
+
+const MONTHS_ES = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+const MONTHS_EN = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const months = isEs ? MONTHS_ES : MONTHS_EN;
+
+// Una fila por mes, calculada para el día 15 (representativo del mes).
+const rows = months.map((label, i) => {
+  const ev = sunTimes(MENORCA.lat, MENORCA.lng, YEAR, i + 1, 15);
+  return {
+    i,
+    label,
+    rise: fmtMenorcaTime(ev.sunrise, locale),
+    set: fmtMenorcaTime(ev.sunset, locale),
+    len: dayLength(ev, locale),
+  };
+});
+
+// "Key facts" calculados (sin hardcodear): el atardecer más temprano y el más
+// tardío del año, para el resumen citable de cabecera.
+const sets = rows.map((r) => r.set);
+const earliestSet = sets.reduce((a, b) => (a < b ? a : b));
+const latestSet = sets.reduce((a, b) => (a > b ? a : b));
+
+const T = isEs
+  ? {
+      eyebrow: "A qué hora cae el sol",
+      title: "Amanecer y atardecer en Menorca, mes a mes",
+      lead: `Casi todo en esta página gira en torno a una hora: la del atardecer. En Menorca el sol se pone alrededor de las ${latestSet} en pleno verano y tan pronto como las ${earliestSet} en lo más hondo del invierno. La hora dorada —esa luz cálida que lo vuelve todo más bonito— llega en los 30-40 minutos previos a la puesta: ese es el momento para tener ya la copa en la mano.`,
+      colMonth: "Mes",
+      colRise: "Amanece",
+      colSet: "Atardece",
+      colLen: "Luz",
+      note: "Horas calculadas para el centro de Menorca, en hora local (CET/CEST, con su cambio de hora). La costa oeste (Ciutadella, Punta Nati) ve la puesta unos minutos más tarde; el este (Maó, Favàritx) ve el amanecer unos minutos antes. Llega siempre con margen: lo bueno empieza antes de que el sol toque el mar.",
+      thisMonth: "Mes actual",
+    }
+  : {
+      eyebrow: "When the sun goes down",
+      title: "Sunrise and sunset in Menorca, month by month",
+      lead: `Almost everything on this page revolves around one time: sunset. In Menorca the sun sets around ${latestSet} at the height of summer and as early as ${earliestSet} in the depths of winter. The golden hour —that warm light that makes everything more beautiful— arrives in the 30-40 minutes before sundown: that's the moment to already have a drink in hand.`,
+      colMonth: "Month",
+      colRise: "Sunrise",
+      colSet: "Sunset",
+      colLen: "Daylight",
+      note: "Times calculated for the centre of Menorca, in local time (CET/CEST, daylight saving included). The west coast (Ciutadella, Punta Nati) sees the sunset a few minutes later; the east (Maó, Favàritx) sees the sunrise a few minutes earlier. Always arrive with time to spare: the good part starts before the sun touches the sea.",
+      thisMonth: "Current month",
+    };
+---
+
+<section class="mx-auto max-w-prosa px-5 sm:px-8">
+  <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">{T.eyebrow}</p>
+  <h2 class="mt-2 font-display text-2xl text-tinta sm:text-[1.7rem]">{T.title}</h2>
+  <p class="mt-4 text-base leading-relaxed text-piedra-suave">{T.lead}</p>
+
+  <div class="mt-6 overflow-hidden rounded-2xl border border-niebla">
+    <table class="w-full border-collapse text-sm">
+      <thead>
+        <tr class="bg-arena/50 text-left">
+          <th scope="col" class="px-3 py-2.5 font-semibold text-piedra sm:px-4">{T.colMonth}</th>
+          <th scope="col" class="px-3 py-2.5 text-right font-semibold text-piedra sm:px-4">{T.colRise}</th>
+          <th scope="col" class="px-3 py-2.5 text-right font-semibold text-piedra sm:px-4">{T.colSet}</th>
+          <th scope="col" class="hidden px-3 py-2.5 text-right font-semibold text-piedra sm:table-cell sm:px-4">{T.colLen}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          rows.map((r) => (
+            <tr
+              class:list={[
+                "border-t border-niebla/70",
+                r.i === thisMonth ? "bg-oro-vivo/10" : "odd:bg-lino even:bg-arena/20",
+              ]}
+            >
+              <th scope="row" class="px-3 py-2 text-left font-normal text-tinta sm:px-4">
+                {r.label}
+                {r.i === thisMonth && (
+                  <span class="ml-2 rounded-full bg-oro-vivo/20 px-2 py-0.5 align-middle text-[0.62rem] font-semibold uppercase tracking-wide text-oro">
+                    {T.thisMonth}
+                  </span>
+                )}
+              </th>
+              <td class="px-3 py-2 text-right tabular-nums text-piedra-suave sm:px-4">↑ {r.rise}</td>
+              <td class="px-3 py-2 text-right tabular-nums font-semibold text-arcilla sm:px-4">↓ {r.set}</td>
+              <td class="hidden px-3 py-2 text-right tabular-nums text-piedra-suave sm:table-cell sm:px-4">{r.len}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <p class="mt-3 text-xs leading-relaxed text-piedra-suave">{T.note}</p>
+</section>

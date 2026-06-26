@@ -151,16 +151,21 @@
 .article-body li + li {
   margin-top: 0.4rem;
 }
-/* `:where()` mantiene baja la especificidad para que los componentes con sus
-   propias clases (p. ej. botones MenorcaBusCTA) puedan sobrescribir color y
-   subrayado dentro del cuerpo del artículo. */
-:where(.article-body) a {
-  color: var(--color-arcilla);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-:where(.article-body) a:hover {
-  color: var(--color-terracota);
+/* `:where()` mantiene baja la especificidad Y van en `@layer base` para que los
+   componentes con sus propias clases-utilidad (p. ej. botones MenorcaBusCTA, el
+   CTA "Reserva" del mapa de la noche) puedan sobrescribir color y subrayado
+   dentro del cuerpo del artículo. Sin la capa, estas reglas (sin capa) ganarían
+   a las utilidades de Tailwind (que SÍ están en @layer utilities) y dejarían
+   texto claro sobre botón claro. */
+@layer base {
+  :where(.article-body) a {
+    color: var(--color-arcilla);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  :where(.article-body) a:hover {
+    color: var(--color-terracota);
+  }
 }
 .article-body strong {
   color: var(--color-tinta);
@@ -380,9 +385,11 @@ a.cala-activa > circle {
    (sr-only) guarda la categoría y `:has()` oculta a la vez sus marcadores del
    mapa Y sus fichas de la lista.
    ============================================================ */
-:where(.nightmap) a {
-  color: inherit;
-  text-decoration: none;
+@layer base {
+  :where(.nightmap) a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 /* Chip activo (el label justo después del radio marcado). */
 .nightmap-radio:checked + .nightmap-chip {
@@ -396,6 +403,7 @@ a.cala-activa > circle {
 }
 /* Filtrado por categoría: oculta marcadores y fichas de las demás categorías. */
 .nightmap-filterable:has(#nf-atardecer:checked) [data-cat]:not([data-cat="atardecer"]),
+.nightmap-filterable:has(#nf-amanecer:checked) [data-cat]:not([data-cat="amanecer"]),
 .nightmap-filterable:has(#nf-beach:checked) [data-cat]:not([data-cat="beach"]),
 .nightmap-filterable:has(#nf-cocteleria:checked) [data-cat]:not([data-cat="cocteleria"]),
 .nightmap-filterable:has(#nf-club:checked) [data-cat]:not([data-cat="club"]) {

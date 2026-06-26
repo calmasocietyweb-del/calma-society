@@ -1,0 +1,125 @@
+---
+/**
+ * Preguntas frecuentes de "Atardeceres y copas" (ES/EN).
+ *
+ * Una sola fuente para el FAQ VISIBLE y el JSON-LD `FAQPage` (sin duplicar
+ * texto), igual que en "Cómo calculamos la calma". Respuestas concretas,
+ * autocontenidas y con datos reales (incluidas valoraciones de Google) → es lo
+ * que la IA cita (GEO, CLAUDE.md §8) y lo que posiciona la página.
+ *
+ * Las valoraciones se citan como referencia honesta y fechada; cambian con el
+ * tiempo (ver la nota al pie de la herramienta).
+ */
+import JsonLd from "./JsonLd.astro";
+import type { Locale } from "../config/site";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const isEs = locale === "es";
+
+// Una sola lista alimenta el FAQ visible y el FAQPage (schema.org).
+const faqsEs = [
+  {
+    q: "¿A qué hora se pone el sol en Menorca?",
+    a: "Depende de la época. En pleno verano (junio–julio) el sol se pone hacia las 21:15–21:20; en primavera y otoño, entre las 18:30 y las 20:30; y en lo más hondo del invierno, sobre las 17:20. La hora dorada llega en los 30-40 minutos previos. Arriba en esta página tienes la tabla mes a mes con el amanecer y el atardecer exactos.",
+  },
+  {
+    q: "¿Dónde se ven los mejores atardeceres de Menorca?",
+    a: "Los clásicos del oeste y el norte: la Cova d'en Xoroi, en el acantilado de Cala'n Porter, donde el atardecer se mira desde dentro de la roca; el Cap de Cavalleria y el Faro de Favàritx, agrestes y dramáticos; Punta Nati y el Pont d'en Gil, al noroeste de Ciutadella, en su versión más pura; y, sobre el mar del norte, el Isabella Beach Club en las Platges de Fornells. Casi todos sin apenas aparcamiento, de ahí que lo cómodo sea ir con chófer.",
+  },
+  {
+    q: "¿Dónde ver el amanecer en Menorca?",
+    a: "Mirando al este. Es Castell y Cales Fonts presumen de ser de los primeros puntos de España en ver salir el sol; el Faro de Favàritx, sobre su paisaje lunar, vale tanto para el amanecer como para el atardecer; y la zona de Punta Prima, frente a la Illa de l'Aire, regala una salida de sol limpia sobre el mar. Son planes de madrugada: ideales con alguien que conduzca por ti.",
+  },
+  {
+    q: "¿Cuáles son los mejores beach clubs de Menorca?",
+    a: "Entre los más reconocidos: Purobeach Menorca, el Isabella Beach Club (Fornells), el Artrutx Sea Club (Cala en Bosc), Cape Nao sobre Cala Galdana, Bambú en Binibèquer y el Arena Beach Club. Son sitios de día que se alargan hasta la copa del atardecer; en verano conviene reservar, sobre todo para cenar.",
+  },
+  {
+    q: "¿Dónde tomar una buena copa o coctelería en Menorca?",
+    a: "El puerto de Maó y el de Ciutadella concentran las mejores barras. En Maó, Vida Una (vermut y cócteles) y Contrabandu; en la costa oeste, Jigger, en Cala Blanca, con coctelería de autor; y BB Cocktail Bar, muy bien valorado. Son planes de copa tranquila, no de discoteca.",
+  },
+  {
+    q: "¿Hay vida nocturna o discotecas en Menorca?",
+    a: "La hay, aunque con el sello tranquilo de la isla: nada de macrodiscotecas. La Cova d'en Xoroi pasa de lounge de atardecer a club en las noches de verano; y en el puerto de Ciutadella están Jazzbah y la discoteca Kopas. Es una noche de copas y música con criterio, más que de fiesta desatada.",
+  },
+  {
+    q: "¿Se puede llegar sin coche? ¿Por qué recomendáis chófer?",
+    a: "Porque es lo más cómodo y lo más sensato. En los acantilados del atardecer y en los puertos casi nunca hay dónde aparcar —y en verano se llena al amanecer—, y después de la copa conducir es lo último que apetece. Por eso ofrecemos transfer con chófer privado (Mercedes Clase S o Clase V) del primer atardecer al último cóctel: te llevamos y te recogemos.",
+  },
+  {
+    q: "¿Cuándo abren estos sitios?",
+    a: "Casi todo es estacional: la temporada fuerte va de mayo–junio a septiembre–octubre, y muchos beach clubs y locales de atardecer cierran en invierno. Los horarios y los aforos cambian cada año, así que conviene confirmar en la web o el Instagram de cada sitio antes de ir.",
+  },
+];
+
+const faqsEn = [
+  {
+    q: "What time does the sun set in Menorca?",
+    a: "It depends on the season. At the height of summer (June–July) the sun sets around 21:15–21:20; in spring and autumn, between 18:30 and 20:30; and in the depths of winter, around 17:20. The golden hour arrives in the 30-40 minutes beforehand. Higher up on this page you'll find the month-by-month table with exact sunrise and sunset times.",
+  },
+  {
+    q: "Where are the best sunsets in Menorca?",
+    a: "The classics of the west and north: Cova d'en Xoroi, on the cliff at Cala'n Porter, where you watch the sunset from inside the rock; Cap de Cavalleria and the Favàritx lighthouse, wild and dramatic; Punta Nati and Pont d'en Gil, northwest of Ciutadella, at their purest; and, over the northern sea, the Isabella Beach Club on the Platges de Fornells. Almost all of them have barely any parking, which is why going with a chauffeur is the easy choice.",
+  },
+  {
+    q: "Where can you watch the sunrise in Menorca?",
+    a: "Facing east. Es Castell and Cales Fonts claim to be among the first spots in Spain to see the sun rise; the Favàritx lighthouse, over its lunar landscape, works for both sunrise and sunset; and the Punta Prima area, facing the Illa de l'Aire, offers a clean sunrise over the sea. These are early-morning plans: ideal with someone driving for you.",
+  },
+  {
+    q: "What are the best beach clubs in Menorca?",
+    a: "Among the best known: Purobeach Menorca, the Isabella Beach Club (Fornells), the Artrutx Sea Club (Cala en Bosc), Cape Nao above Cala Galdana, Bambú in Binibèquer and the Arena Beach Club. They're daytime spots that stretch into a sunset drink; in summer it's worth booking, especially for dinner.",
+  },
+  {
+    q: "Where can you have a good cocktail in Menorca?",
+    a: "The harbours of Maó and Ciutadella have the best bars. In Maó, Vida Una (vermouth and cocktails) and Contrabandu; on the west coast, Jigger, in Cala Blanca, with signature cocktails; and BB Cocktail Bar, very highly rated. These are quiet-drink plans, not clubbing.",
+  },
+  {
+    q: "Is there nightlife or are there clubs in Menorca?",
+    a: "There is, though with the island's calm signature: no mega-clubs. Cova d'en Xoroi turns from a sunset lounge into a club on summer nights; and in Ciutadella harbour you'll find Jazzbah and the Kopas club. It's a night of drinks and music with judgement, more than wild partying.",
+  },
+  {
+    q: "Can you get there without a car? Why do you recommend a chauffeur?",
+    a: "Because it's the most comfortable and the most sensible option. On the sunset cliffs and around the harbours there's almost nowhere to park —and in summer it fills up at dawn—, and after a drink, driving is the last thing you want. That's why we offer a private-chauffeur transfer (Mercedes S-Class or V-Class) from the first sunset to the last cocktail: we take you there and pick you up.",
+  },
+  {
+    q: "When are these places open?",
+    a: "Almost everything is seasonal: the main season runs from May–June to September–October, and many beach clubs and sunset spots close in winter. Opening hours and capacity change every year, so it's worth checking each place's website or Instagram before you go.",
+  },
+];
+
+const faqs = isEs ? faqsEs : faqsEn;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
+const heading = isEs ? "Preguntas frecuentes" : "Frequently asked questions";
+const eyebrow = isEs ? "Todo sobre la noche de Menorca" : "All about Menorca after dark";
+---
+
+<section class="mx-auto mt-14 max-w-prosa px-5 sm:px-8">
+  <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">{eyebrow}</p>
+  <h2 class="mt-2 font-display text-2xl text-tinta sm:text-[1.7rem]">{heading}</h2>
+
+  <dl class="mt-6 divide-y divide-niebla border-t border-niebla">
+    {
+      faqs.map((f) => (
+        <div class="py-5">
+          <dt class="font-display text-lg text-tinta">{f.q}</dt>
+          <dd class="mt-2 text-base leading-relaxed text-piedra-suave">{f.a}</dd>
+        </div>
+      ))
+    }
+  </dl>
+
+  <JsonLd schema={jsonLd} />
+</section>

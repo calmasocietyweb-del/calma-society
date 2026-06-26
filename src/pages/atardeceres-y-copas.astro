@@ -4,6 +4,8 @@
 // lujo (no conduzcas). Misma familia que el Planificador y "Mar en calma".
 import BaseLayout from "../layouts/BaseLayout.astro";
 import NightlifeMap from "../components/NightlifeMap.astro";
+import SunTimes from "../components/SunTimes.astro";
+import SunsetDrinksFaq from "../components/SunsetDrinksFaq.astro";
 import NewsletterSignup from "../components/NewsletterSignup.astro";
 
 const alternates = {
@@ -22,20 +24,29 @@ const alternates = {
     <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Calma Society · Menorca</p>
     <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Atardeceres y copas</h1>
     <p class="lead mt-5">
-      La isla cuando baja el sol: los mejores atardeceres, los beach clubs, las coctelerías de
-      puerto y dónde salir. Con un mapa de cada sitio —y cómo llegar a cada uno sin conducir.
+      La isla cuando cambia la luz: los mejores atardeceres —y también los amaneceres del
+      levante—, los beach clubs, las coctelerías de puerto y dónde salir a bailar. Con un mapa de
+      cada sitio, su valoración en Google y, más abajo, a qué hora sale y se pone el sol mes a
+      mes —y cómo llegar a cada uno sin conducir.
     </p>
     <p class="mt-5 text-base leading-relaxed text-piedra-suave">
       En los acantilados del atardecer y en los puertos casi nunca hay dónde aparcar, y en verano
       se llena al amanecer. Por eso lo más cómodo —y lo más sensato de noche— es no traer coche:
       te llevamos y te recogemos con chófer privado, del primer atardecer al último cóctel. Esta es
-      nuestra selección, con criterio y sin masificación.
+      nuestra selección, con criterio y sin masificación: solo sitios que hemos verificado uno a
+      uno, con su nota real de Google y la razón honesta por la que conviene ir sin coche.
     </p>
   </div>
 
   <div class="mx-auto mt-6 max-w-5xl px-5 sm:px-8">
     <NightlifeMap locale="es" />
   </div>
+
+  <div class="mt-14">
+    <SunTimes locale="es" />
+  </div>
+
+  <SunsetDrinksFaq locale="es" />
 
   <NewsletterSignup variant="inline" />
 </BaseLayout>

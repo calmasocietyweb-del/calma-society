@@ -4,6 +4,8 @@
 // (don't drive). Same family as the Planner and "Calm sea".
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import NightlifeMap from "../../components/NightlifeMap.astro";
+import SunTimes from "../../components/SunTimes.astro";
+import SunsetDrinksFaq from "../../components/SunsetDrinksFaq.astro";
 import NewsletterSignup from "../../components/NewsletterSignup.astro";
 
 const alternates = {
@@ -22,20 +24,30 @@ const alternates = {
     <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Calma Society · Menorca</p>
     <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Sunsets &amp; drinks</h1>
     <p class="lead mt-5">
-      The island when the sun goes down: the best sunsets, the beach clubs, the harbour cocktail
-      bars and where to go out. With a map of every spot —and how to reach each one without driving.
+      The island as the light turns: the best sunsets —and the eastern sunrises too—, the beach
+      clubs, the harbour cocktail bars and where to go dancing. With a map of every spot, its Google
+      rating and, further down, what time the sun rises and sets month by month —and how to reach
+      each one without driving.
     </p>
     <p class="mt-5 text-base leading-relaxed text-piedra-suave">
       On the sunset cliffs and around the harbours there's almost nowhere to park, and in summer it
       fills up at dawn. So the easiest —and safest at night— choice is to leave the car behind: we
       drive you there and pick you up with a private chauffeur, from the first sunset to the last
-      cocktail. This is our selection, with judgement and without the crowds.
+      cocktail. This is our selection, with judgement and without the crowds: only places we've
+      checked one by one, with their real Google rating and the honest reason it's better to come
+      without a car.
     </p>
   </div>
 
   <div class="mx-auto mt-6 max-w-5xl px-5 sm:px-8">
     <NightlifeMap locale="en" />
   </div>
+
+  <div class="mt-14">
+    <SunTimes locale="en" />
+  </div>
+
+  <SunsetDrinksFaq locale="en" />
 
   <NewsletterSignup variant="inline" />
 </BaseLayout>

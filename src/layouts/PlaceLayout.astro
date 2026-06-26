@@ -9,6 +9,7 @@ import { placeUrl, homePath } from "../i18n/utils";
 import { abs, placeSchema, breadcrumbSchema } from "../lib/schema";
 import { srcset } from "../lib/img";
 import { menorcaBusUrl } from "../lib/links";
+import { googleRatings, fmtScore, fmtReviews } from "../data/google-ratings";
 import MenorcaBusPromo from "../components/MenorcaBusPromo.astro";
 
 interface Props {
@@ -21,6 +22,8 @@ const locale = data.lang as Locale;
 const t = useTranslations(locale);
 // Cuerpo editorial opcional: si está, la ficha se renderiza como ARTÍCULO.
 const ed = data.editorial;
+// Valoración de Google (solo locales de la noche con dato verificado; ver google-ratings.ts).
+const rating = googleRatings[data.translationKey];
 
 const pi = data.practicalInfo;
 const rows: { label: string; value?: string }[] = [
@@ -34,18 +37,31 @@ const rows: { label: string; value?: string }[] = [
 const mapUrl = `https://www.google.com/maps/search/?api=1&query=${data.coordinates.lat},${data.coordinates.lng}`;
 
 const canonical = abs(placeUrl(locale, entry.id));
-const placeLd = placeSchema({
-  name: data.name,
-  description: data.description,
-  url: canonical,
-  type: data.type,
-  area: data.area,
-  lat: data.coordinates.lat,
-  lng: data.coordinates.lng,
-  priceRange: data.priceRange,
-  website: data.website,
-  images: data.images,
-});
+const placeLd = {
+  ...placeSchema({
+    name: data.name,
+    description: data.description,
+    url: canonical,
+    type: data.type,
+    area: data.area,
+    lat: data.coordinates.lat,
+    lng: data.coordinates.lng,
+    priceRange: data.priceRange,
+    website: data.website,
+    images: data.images,
+  }),
+  ...(rating
+    ? {
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: rating.score,
+          reviewCount: rating.reviews,
+          bestRating: 5,
+          worstRating: 1,
+        },
+      }
+    : {}),
+};
 const breadcrumb = breadcrumbSchema([
   { name: SITE.name, url: abs(homePath(locale)) },
   { name: data.name, url: canonical },
@@ -60,6 +76,18 @@ const breadcrumb = breadcrumbSchema([
     </p>
     <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">{data.name}</h1>
     <p class="mt-5 text-lg leading-relaxed text-piedra-suave">{ed?.lead ?? data.description}</p>
+
+    {
+      rating && (
+        <p class="mt-3 flex flex-wrap items-center gap-x-1.5 text-sm text-piedra-suave">
+          <span aria-hidden="true" class="text-oro-vivo">★</span>
+          <span class="font-semibold text-tinta">{fmtScore(rating.score, locale)}</span>
+          <span>
+            · {fmtReviews(rating.reviews, locale)} {locale === "es" ? "reseñas en Google" : "Google reviews"}
+          </span>
+        </p>
+      )
+    }
 
     {
       ed && ed.bestFor.length > 0 && (
