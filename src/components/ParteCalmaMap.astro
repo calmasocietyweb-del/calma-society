@@ -22,7 +22,9 @@ interface Props {
   locale: Locale;
 }
 const { locale } = Astro.props;
-const isEs = locale === "es";
+// Selector trilingüe para los pocos textos sueltos fuera del diccionario `T`.
+const tri = (es: string, en: string, fr: string): string =>
+  locale === "fr" ? fr : locale === "en" ? en : es;
 
 const MEDUSAPP = "https://www.medusapp.net/";
 // Empuje de medusas: APAGADO hasta cerrar pendientes legales (atribución exacta de
@@ -93,14 +95,14 @@ const markers = parte.calas.map((c) => ({ ...c, ...snapToCoast(c.lat, c.lng) }))
 
 // Pueblos de referencia para orientarse (no son calas). Faint, decorativos.
 const TOWNS = [
-  { es: "Ciutadella", en: "Ciutadella", lat: 40.0006, lng: 3.8377 },
-  { es: "Ferreries", en: "Ferreries", lat: 39.9786, lng: 4.0103 },
-  { es: "Es Migjorn Gran", en: "Es Migjorn Gran", lat: 39.9476, lng: 4.0314 },
-  { es: "Es Mercadal", en: "Es Mercadal", lat: 39.9908, lng: 4.0922 },
-  { es: "Alaior", en: "Alaior", lat: 39.9357, lng: 4.1389 },
-  { es: "Maó", en: "Mahón", lat: 39.8885, lng: 4.2658 },
-  { es: "Es Castell", en: "Es Castell", lat: 39.8794, lng: 4.2914 },
-  { es: "Sant Lluís", en: "Sant Lluís", lat: 39.8475, lng: 4.2561 },
+  { es: "Ciutadella", en: "Ciutadella", fr: "Ciutadella", lat: 40.0006, lng: 3.8377 },
+  { es: "Ferreries", en: "Ferreries", fr: "Ferreries", lat: 39.9786, lng: 4.0103 },
+  { es: "Es Migjorn Gran", en: "Es Migjorn Gran", fr: "Es Migjorn Gran", lat: 39.9476, lng: 4.0314 },
+  { es: "Es Mercadal", en: "Es Mercadal", fr: "Es Mercadal", lat: 39.9908, lng: 4.0922 },
+  { es: "Alaior", en: "Alaior", fr: "Alaior", lat: 39.9357, lng: 4.1389 },
+  { es: "Maó", en: "Mahón", fr: "Maó", lat: 39.8885, lng: 4.2658 },
+  { es: "Es Castell", en: "Es Castell", fr: "Es Castell", lat: 39.8794, lng: 4.2914 },
+  { es: "Sant Lluís", en: "Sant Lluís", fr: "Sant Lluís", lat: 39.8475, lng: 4.2561 },
 ].map((t) => ({ ...t, ...project(t.lat, t.lng) }));
 
 // Barra de escala (≈ px por km en la proyección; 1° ≈ 110,57 km).
@@ -154,9 +156,9 @@ const hayTimeline = FRAMES.length > 1 && (tl.calas || []).length > 0;
 const calaEnFrame = (id: string, frame: any) => {
   const m = calaMeta[id];
   const w = m ? frame.winds[m.ine] : null;
-  if (!m || !w || w.d == null) return { band: "sin-dato", windName: isEs ? "Sin previsión" : "No forecast", windKmh: 0 };
+  if (!m || !w || w.d == null) return { band: "sin-dato", windName: tri("Sin previsión", "No forecast", "Sans prévision"), windKmh: 0 };
   const deg = degDe(w.d);
-  return { band: bandaDe(m.op, w.d, w.v), windName: deg == null ? (isEs ? "Calma" : "Calm") : nombreViento(deg), windKmh: w.v };
+  return { band: bandaDe(m.op, w.d, w.v), windName: deg == null ? tri("Calma", "Calm", "Calme") : nombreViento(deg), windKmh: w.v };
 };
 // Banda inicial (render del servidor): del primer frame si hay previsión; si no,
 // del parte diario canónico (parte-calma.json). Nunca "alto" por ausencia de dato.
@@ -270,6 +272,49 @@ const T = {
     methodology: "How we calculate calm",
     methodologyHref: "/en/how-we-calculate-calm",
   },
+  fr: {
+    stale: "Nous n'avons pas pu mettre à jour aujourd'hui ; nous affichons le dernier bulletin disponible.",
+    staleAviso: "Cette prévision peut ne pas être à jour. Consultez toujours les drapeaux et les sauveteurs avant de vous baigner.",
+    mapAria:
+      "Carte de Minorque avec l'état de la mer prévu aujourd'hui dans chaque crique. Le détail figure dans la liste ci-dessous.",
+    costaNorte: "CÔTE NORD",
+    costaSur: "CÔTE SUD",
+    mapCredit: "Contour : © OpenStreetMap · État de la mer : AEMET",
+    filterTitle: "Filtrer par état de la mer",
+    windTitle: "Vent général",
+    skyTitle: "Ciel et température",
+    timelineTitle: "Prévision · prochains jours",
+    buscar: "Rechercher une crique par son nom…",
+    verEnMapa: "Voir sur la carte",
+    todas: "Toutes",
+    abrigo: { alto: "Mer calme", medio: "Un peu de houle", bajo: "Mer agitée", "sin-dato": "Sans prévision" } as Record<string, string>,
+    subAbrigo: {
+      alto: "abritée du vent",
+      medio: "un peu exposée au vent",
+      bajo: "exposée au vent",
+      "sin-dato": "pas de données de vent pour ce moment",
+    } as Record<string, string>,
+    viento: "Vent",
+    waterCond: "Voir les conditions de l'eau",
+    medusasSublabel: "Poussée du vent vers la crique (indicatif)",
+    medusasBand: { baja: "Faible", media: "Modéré", alta: "Élevé" } as Record<string, string>,
+    medusasCopy: {
+      baja: "Cela ne signifie PAS qu'il n'y a pas de méduses : elles peuvent être présentes à cause de courants que nous ne mesurons pas. Aujourd'hui, le vent ne favorise pas leur arrivée dans cette crique.",
+      media: "Le vent souffle vers la crique depuis plusieurs heures ; s'il y a des méduses au large, les conditions favorisent leur approche. Ce n'est pas une observation.",
+      alta: "Le vent entre de face dans cette crique depuis plus d'une demi-journée : conditions favorables pour que, s'il y en a, elles atteignent le rivage. Nous n'en détectons aucune.",
+    } as Record<string, string>,
+    medusasNoData: "Nous n'avons pas assez de données de vent pour l'estimer aujourd'hui.",
+    medusasDisclaimer:
+      "Nous estimons les conditions d'arrivée à partir du vent des dernières 48 h ; nous ne détectons pas de méduses et n'affirmons pas qu'il y en a. Cela ne tient pas compte des courants marins. Pour des observations réelles, consultez MedusApp ainsi que les drapeaux et les sauveteurs.",
+    medusasCTA: "Voir les observations réelles sur MedusApp",
+    noLifeguard:
+      "Crique sans surveillance : pas de drapeaux à consulter. Redoublez de prudence et ne vous baignez jamais seul.",
+    disclaimerTitle: "Comment lire ce bulletin",
+    disclaimer:
+      "C'est une estimation éditoriale indicative à partir de la prévision du vent. Elle mesure uniquement l'ABRI face au vent, pas les courants, les fonds ni les autres dangers de la baignade. Ce n'est pas un avis de sécurité officiel et cela ne remplace pas les drapeaux ni le jugement des sauveteurs.",
+    methodology: "Comment on calcule le calme",
+    methodologyHref: "/fr/comment-on-calcule-le-calme",
+  },
 }[locale];
 
 // Etiqueta de día RELATIVA y LOCALIZADA derivada de la FECHA ABSOLUTA del frame.
@@ -281,15 +326,22 @@ const T = {
 const DOW_LABELS: Record<string, string[]> = {
   es: ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"],
   en: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+  fr: ["dim", "lun", "mar", "mer", "jeu", "ven", "sam"],
 };
-const REL_LABELS = { es: { hoy: "Hoy", manana: "Mañana" }, en: { hoy: "Today", manana: "Tomorrow" } }[locale];
+const REL_LABELS = {
+  es: { hoy: "Hoy", manana: "Mañana" },
+  en: { hoy: "Today", manana: "Tomorrow" },
+  fr: { hoy: "Aujourd'hui", manana: "Demain" },
+}[locale];
 const MONTH_LABELS: Record<string, string[]> = {
   es: ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"],
   en: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+  fr: ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."],
 };
 const PERIOD_LABELS = ({
   es: { "Mañana": "Mañana", "Tarde": "Tarde", "Todo el día": "Todo el día" },
   en: { "Mañana": "Morning", "Tarde": "Afternoon", "Todo el día": "All day" },
+  fr: { "Mañana": "Matin", "Tarde": "Après-midi", "Todo el día": "Toute la journée" },
 }[locale] ?? {}) as Record<string, string>;
 const dowLoc = DOW_LABELS[locale];
 const monLoc = MONTH_LABELS[locale];
@@ -309,6 +361,7 @@ const periodLabelOf = (p: string) => PERIOD_LABELS[p] ?? p;
 const SKY_LABELS = ({
   es: { sol: "Despejado", poco: "Poco nuboso", nubes: "Nuboso", lluvia: "Lluvia", tormenta: "Tormenta" },
   en: { sol: "Clear", poco: "Partly cloudy", nubes: "Cloudy", lluvia: "Rain", tormenta: "Storm" },
+  fr: { sol: "Dégagé", poco: "Peu nuageux", nubes: "Nuageux", lluvia: "Pluie", tormenta: "Orage" },
 }[locale] ?? {}) as Record<string, string>;
 const sunIcon =
   '<g fill="none" stroke="#A8895C" stroke-width="2" stroke-linecap="round"><line x1="16" y1="2.5" x2="16" y2="6"/><line x1="16" y1="26" x2="16" y2="29.5"/><line x1="2.5" y1="16" x2="6" y2="16"/><line x1="26" y1="16" x2="29.5" y2="16"/><line x1="6.7" y1="6.7" x2="9.2" y2="9.2"/><line x1="22.8" y1="22.8" x2="25.3" y2="25.3"/><line x1="6.7" y1="25.3" x2="9.2" y2="22.8"/><line x1="22.8" y1="9.2" x2="25.3" y2="6.7"/></g><circle cx="16" cy="16" r="6.5" fill="#A8895C"/>';
@@ -339,7 +392,7 @@ const graph = [
     geo: { "@type": "GeoCoordinates", latitude: c.lat, longitude: c.lng },
     additionalProperty: {
       "@type": "PropertyValue",
-      name: isEs ? "Estado del mar previsto" : "Forecast sea state",
+      name: tri("Estado del mar previsto", "Forecast sea state", "État de la mer prévu"),
       value: T.abrigo[F0cala[c.id].band],
       observationDate: parte.forecastDate,
     },
@@ -353,7 +406,7 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
       línea temporal; una fecha congelada aquí inducía a error al quedar obsoleta. */}
   <p class="text-sm text-piedra-suave">
     {parte.validityNote}{" "}
-    <span class="text-piedra-suave">· {isEs ? "Datos" : "Data"}: {parte.sources.join(", ")}</span>
+    <span class="text-piedra-suave">· {tri("Datos", "Data", "Données")}: {parte.sources.join(", ")}</span>
   </p>
   {parte.stale && (
     <p class="mt-2 rounded-md border border-niebla bg-arena px-4 py-2 text-sm text-piedra">{T.stale}</p>
@@ -442,7 +495,7 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
       subLabel: T.subAbrigo,
       dirDeg: DIR_DEG,
       vientos: VIENTOS,
-      calma: isEs ? "Calma" : "Calm",
+      calma: tri("Calma", "Calm", "Calme"),
       viento: T.viento,
       dow: dowLoc,
       months: monLoc,
@@ -534,7 +587,7 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
           {TOWNS.map((t) => (
             <Fragment>
               <circle cx={t.x} cy={t.y} r="2.6" fill="#4f5f4a" />
-              <text x={t.x} y={t.y - 8} fill="#4f5f4a" font-size="13" text-anchor="middle">{isEs ? t.es : t.en}</text>
+              <text x={t.x} y={t.y - 8} fill="#4f5f4a" font-size="13" text-anchor="middle">{t[locale]}</text>
             </Fragment>
           ))}
         </g>

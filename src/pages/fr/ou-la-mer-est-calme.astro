@@ -1,0 +1,47 @@
+---
+// « Où la mer est calme » (FR) — bulletin quotidien de l'abri par crique.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ParteCalmaMap from "../../components/ParteCalmaMap.astro";
+import NewsletterSignup from "../../components/NewsletterSignup.astro";
+
+const alternates = {
+  es: "/donde-el-mar-esta-en-calma",
+  en: "/en/where-the-sea-is-calm",
+  fr: "/fr/ou-la-mer-est-calme",
+};
+---
+
+<BaseLayout
+  title="Où la mer est calme"
+  description="La prévision quotidienne pour les criques de Minorque : là où le vent du jour laisse la mer la plus calme pour une baignade sans hâte. Une estimation éditoriale, pas un avis de sécurité."
+  locale="fr"
+  alternates={alternates}
+>
+  <div class="mx-auto max-w-prosa px-5 pt-12 sm:px-8 sm:pt-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Calma Society · Minorque</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Où la mer est calme</h1>
+    <p class="lead mt-5">
+      La prévision quotidienne pour les criques de Minorque : là où le vent du jour laisse
+      l'eau sereine pour une baignade sans hâte.
+    </p>
+    <p class="mt-5 text-base leading-relaxed text-piedra-suave">
+      À Minorque, c'est le vent qui commande. Quand la <strong>Tramontane</strong> souffle du
+      nord, la côte sud reste calme ; quand le vent du sud se lève, regardez au nord. Nous
+      croisons la prévision du vent avec l'orientation de chaque crique pour estimer son
+      <strong>abri</strong> aujourd'hui. Nous ne mesurons pas la sécurité de la baignade — seulement
+      le calme attendu de la mer.
+    </p>
+    <p class="mt-4 text-base leading-relaxed text-piedra-suave">
+      Nous couvrons <strong>75 criques et points de baignade</strong> sur toute l'île, avec la
+      prévision pour <strong>aujourd'hui et les jours à venir</strong>. Vous voulez savoir comment
+      nous procédons ? Nous l'expliquons dans
+      <a class="text-arcilla underline decoration-niebla underline-offset-4 hover:decoration-terracota" href="/fr/comment-on-calcule-le-calme">comment on calcule le calme</a>.
+    </p>
+  </div>
+
+  <div class="mt-10">
+    <ParteCalmaMap locale="fr" />
+  </div>
+
+  <NewsletterSignup variant="inline" />
+</BaseLayout>

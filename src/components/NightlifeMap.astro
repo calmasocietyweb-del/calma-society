@@ -595,19 +595,26 @@ const mapsUrl = (lat: number, lng: number) =>
   `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
 
 // Slugs del clúster de chófer de lujo (artículos ya publicados), por idioma.
-const CH = isEs
-  ? {
-      lujo: "moverse-con-lujo-menorca",
-      velada: "una-velada-con-chofer-menorca",
-      claseS: "mercedes-clase-s-menorca",
-      claseV: "mercedes-clase-v-menorca",
-    }
-  : {
-      lujo: "getting-around-menorca-in-style",
-      velada: "chauffeured-dinners-menorca",
-      claseS: "mercedes-s-class-menorca",
-      claseV: "mercedes-v-class-menorca",
-    };
+const CH = {
+  es: {
+    lujo: "moverse-con-lujo-menorca",
+    velada: "una-velada-con-chofer-menorca",
+    claseS: "mercedes-clase-s-menorca",
+    claseV: "mercedes-clase-v-menorca",
+  },
+  en: {
+    lujo: "getting-around-menorca-in-style",
+    velada: "chauffeured-dinners-menorca",
+    claseS: "mercedes-s-class-menorca",
+    claseV: "mercedes-v-class-menorca",
+  },
+  fr: {
+    lujo: "se-deplacer-avec-style-minorque",
+    velada: "soiree-avec-chauffeur-minorque",
+    claseS: "mercedes-classe-s-minorque",
+    claseV: "mercedes-classe-v-minorque",
+  },
+}[locale];
 
 // Mes de la última verificación de valoraciones (para el descargo honesto).
 const ratingsMonth = new Date(`${GOOGLE_RATINGS_AS_OF}T12:00:00`).toLocaleDateString(
@@ -933,22 +940,17 @@ const jsonLd = {
           >
             {T.banner.cta} ↗
           </a>
-          {/* Enlaces al clúster de artículos de chófer: aún sin traducir a FR
-              (despliegue por mercados) → se ocultan en FR para no dejar huérfanas. */}
-          {locale !== "fr" && (
-            <a href={articleUrl(locale, CH.velada)} class="text-sm font-semibold text-champan hover:underline">
-              {T.banner.velada} →
-            </a>
-          )}
+          {/* Enlaces al clúster de artículos de chófer (ya traducidos en es/en/fr). */}
+          <a href={articleUrl(locale, CH.velada)} class="text-sm font-semibold text-champan hover:underline">
+            {T.banner.velada} →
+          </a>
         </div>
         <MenorcaBusPromo locale={locale} tone="dark" class="mt-4" />
-        {locale !== "fr" && (
-          <p class="mt-5 flex flex-wrap gap-x-5 gap-y-1 border-t border-lino/15 pt-4 text-xs text-lino/70">
-            <a href={articleUrl(locale, CH.lujo)} class="text-champan/90 hover:underline">{T.banner.lujo} →</a>
-            <a href={articleUrl(locale, CH.claseS)} class="text-champan/90 hover:underline">{T.banner.claseS} →</a>
-            <a href={articleUrl(locale, CH.claseV)} class="text-champan/90 hover:underline">{T.banner.claseV} →</a>
-          </p>
-        )}
+        <p class="mt-5 flex flex-wrap gap-x-5 gap-y-1 border-t border-lino/15 pt-4 text-xs text-lino/70">
+          <a href={articleUrl(locale, CH.lujo)} class="text-champan/90 hover:underline">{T.banner.lujo} →</a>
+          <a href={articleUrl(locale, CH.claseS)} class="text-champan/90 hover:underline">{T.banner.claseS} →</a>
+          <a href={articleUrl(locale, CH.claseV)} class="text-champan/90 hover:underline">{T.banner.claseV} →</a>
+        </p>
       </div>
     </div>
   </aside>

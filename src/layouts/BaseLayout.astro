@@ -55,7 +55,7 @@ const {
 const locale = Astro.props.locale ?? currentLocale(Astro.url.pathname);
 const localeConfig = getLocaleConfig(locale);
 const t = useTranslations(locale);
-const rssHref = locale === "es" ? "/rss.xml" : "/en/rss.xml";
+const rssHref = locale === "es" ? "/rss.xml" : `/${locale}/rss.xml`;
 ---
 
 <!doctype html>

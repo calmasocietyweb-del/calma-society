@@ -1,0 +1,167 @@
+---
+// « Comment on calcule le calme » (FR) — méthodologie ouverte de la prévision de mer calme.
+// Clé pour le GEO (citabilité par l'IA) et l'E-E-A-T, avec JSON-LD FAQPage + BreadcrumbList.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import JsonLd from "../../components/JsonLd.astro";
+import { SITE } from "../../config/site";
+
+const alternates = {
+  es: "/como-calculamos-la-calma",
+  en: "/en/how-we-calculate-calm",
+  fr: "/fr/comment-on-calcule-le-calme",
+};
+const abs = (p: string) => new URL(p, SITE.url).href;
+const toolHref = "/fr/ou-la-mer-est-calme";
+
+const faqs = [
+  {
+    q: "Que signifie « mer calme » dans cette prévision ?",
+    a: "Que la crique est à l'abri du vent prévu aujourd'hui, donc l'eau y est généralement plus calme. Cela mesure l'ABRI face au vent, pas la sécurité de la baignade : cela ne tient pas compte des courants, des fonds ni des autres dangers.",
+  },
+  {
+    q: "Pourquoi le nord et le sud changent-ils avec le vent ?",
+    a: "À Minorque, c'est le vent qui commande. Quand la Tramontane souffle du nord, la côte sud est abritée et calme ; quand le Migjorn du sud se lève, regardez au nord. Chaque crique s'ouvre sur la mer dans une direction différente, si bien qu'un même vent en laisse certaines calmes et d'autres agitées.",
+  },
+  {
+    q: "Cela me dit-il s'il est sûr de se baigner ?",
+    a: "Non. C'est une estimation éditoriale indicative de l'état de la mer à partir du vent, pas un avis de sécurité officiel. Cela ne remplace pas les drapeaux des plages ni le jugement des sauveteurs. Beaucoup de criques sont sans surveillance : redoublez de prudence et ne vous baignez jamais seul.",
+  },
+  {
+    q: "D'où viennent les données ?",
+    a: "De la prévision du vent d'AEMET (l'agence météorologique nationale espagnole) pour chaque commune, mise à jour chaque jour et toujours datée. Le contour de la carte provient d'OpenStreetMap. L'orientation de chaque crique est notre propre donnée éditoriale, établie à la main.",
+  },
+  {
+    q: "Pourquoi des paliers (mer calme / un peu de houle / mer agitée) plutôt qu'un pourcentage ?",
+    a: "Parce qu'un pourcentage exact serait une fausse précision : le vent prévu a une marge et peut tourner. Communiquer par paliers est plus honnête et plus utile au moment de choisir vers quelle crique se diriger.",
+  },
+  {
+    q: "À quelle fréquence est-ce mis à jour ?",
+    a: "Chaque matin, automatiquement, avec la dernière prévision d'AEMET. Vous pouvez aussi faire glisser la frise chronologique pour voir la prévision des jours à venir, partagée entre matin et après-midi.",
+  },
+  {
+    q: "Et les méduses ?",
+    a: "Nous ne le publions pas encore. Nous avons un modèle de « poussée du vent » à l'étude, et nous ne l'activerons qu'une fois sa validation et les autorisations de source réglées. Pour des observations réelles, consultez MedusApp.",
+  },
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Accueil", item: abs("/fr/") },
+        { "@type": "ListItem", position: 2, name: "Où la mer est calme", item: abs(toolHref) },
+        { "@type": "ListItem", position: 3, name: "Comment on calcule le calme", item: abs("/fr/comment-on-calcule-le-calme") },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Comment on calcule le calme"
+  description="La méthodologie ouverte derrière la prévision quotidienne des criques de Minorque : nous croisons le vent d'AEMET avec l'orientation de chaque crique pour estimer son abri. Ce que cela mesure et ce que cela ne mesure pas, en clair."
+  locale="fr"
+  alternates={alternates}
+>
+  <article class="mx-auto max-w-prosa px-5 pb-8 pt-12 sm:px-8 sm:pt-16">
+    <nav aria-label="Fil d'Ariane" class="text-xs text-piedra-suave">
+      <a href="/fr/" class="hover:text-terracota">Accueil</a>
+      <span aria-hidden="true"> · </span>
+      <a href={toolHref} class="hover:text-terracota">Où la mer est calme</a>
+    </nav>
+
+    <p class="mt-4 text-xs font-semibold uppercase tracking-[0.25em] text-oro">Calma Society · Minorque</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Comment on calcule le calme</h1>
+    <p class="lead mt-5">
+      Derrière la carte quotidienne, il y a un modèle simple et ouvert. Nous l'expliquons ici sans
+      petites lignes : ce qu'il mesure, comment il fonctionne et, surtout, ce qu'il ne mesure
+      <em>pas</em>.
+    </p>
+
+    <div class="article-body mt-10">
+      <h2>Ce que nous mesurons (et ce que nous ne mesurons pas)</h2>
+      <p>
+        Nous mesurons l'<strong>abri de la mer face au vent</strong> : à quel point chaque crique
+        est protégée du vent prévu aujourd'hui, communiqué en trois paliers —
+        <strong>mer calme</strong>, <strong>un peu de houle</strong> et <strong>mer agitée</strong>.
+        C'est une estimation éditoriale indicative pour vous aider à choisir une crique à l'eau
+        sereine.
+      </p>
+      <p>
+        <strong>Nous ne mesurons pas la sécurité de la baignade.</strong> Cette prévision ne tient
+        pas compte des courants, des fonds ni des autres dangers, et ne remplace pas les drapeaux
+        des plages ni le jugement des sauveteurs. C'est un guide pour trouver le calme, pas un avis
+        officiel.
+      </p>
+
+      <h2>Comment nous le calculons, étape par étape</h2>
+      <ol>
+        <li>
+          <strong>Le vent du jour.</strong> Nous prenons la prévision de vent d'<strong>AEMET</strong>
+          pour la commune de chaque crique : d'où il souffle et avec quelle force.
+        </li>
+        <li>
+          <strong>L'orientation de la crique.</strong> Chaque crique s'ouvre sur la mer dans une
+          direction précise. Nous gardons cette donnée établie à la main pour chacune d'elles.
+        </li>
+        <li>
+          <strong>Le croisement.</strong> Si le vent entre droit dans la crique, la mer s'agite et
+          l'abri baisse ; si la crique tourne le dos au vent, l'eau se calme. De ce calcul, nous
+          déduisons le palier du jour.
+        </li>
+      </ol>
+      <p>
+        Nous utilisons des paliers plutôt qu'un pourcentage exact, et c'est volontaire : la prévision
+        du vent a une marge et peut tourner l'après-midi. Les paliers sont plus honnêtes.
+      </p>
+
+      <h2>La prévision des jours à venir</h2>
+      <p>
+        Au-delà du bulletin du jour, vous pouvez faire glisser la <strong>frise chronologique</strong>
+        pour voir comment la mer de chaque crique évolue dans les jours à venir, partagée entre matin
+        et après-midi. Le vent général et l'état des criques changent avec vous à mesure que vous
+        déplacez le curseur.
+      </p>
+
+      <h2>Sources et mises à jour</h2>
+      <p>
+        Le vent vient d'<strong>AEMET</strong> (données officielles, mises à jour chaque jour et
+        toujours datées). Le contour de la carte provient d'<strong>OpenStreetMap</strong>. Quand
+        nous ne pouvons pas mettre à jour un jour donné, nous conservons le dernier bulletin
+        disponible et le signalons : nous n'affichons jamais un faux « aujourd'hui ».
+      </p>
+
+      <h2>Limites honnêtes</h2>
+      <ul>
+        <li>Cela ne mesure pas les courants, les fonds ni les dangers de la baignade.</li>
+        <li>Cela ne détecte pas les méduses et n'affirme pas qu'il y en a.</li>
+        <li>Ce n'est pas un avis de sécurité et cela ne remplace pas les drapeaux ni les sauveteurs.</li>
+        <li>Beaucoup de criques sont sans surveillance : redoublez de prudence.</li>
+      </ul>
+
+      <h2>Foire aux questions</h2>
+      {faqs.map((f) => (
+        <div class="mt-6">
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
+
+      <p class="mt-10">
+        <a href={toolHref} class="font-medium">← Voir la prévision des criques d'aujourd'hui</a>
+      </p>
+    </div>
+
+    <JsonLd schema={jsonLd} />
+  </article>
+</BaseLayout>
