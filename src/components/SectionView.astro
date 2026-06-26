@@ -4,6 +4,7 @@
 // dentro de BaseLayout.
 import ArticleCard from "./ArticleCard.astro";
 import AgendaView from "./AgendaView.astro";
+import NewsletterSignup from "./NewsletterSignup.astro";
 import { getArticlesBySection } from "../lib/content";
 import { getSection } from "../config/sections";
 import { SITE, type Locale } from "../config/site";
@@ -55,3 +56,8 @@ const articles = isAgenda ? [] : await getArticlesBySection(locale, sectionKey);
     )
   }
 </section>
+
+{/* Punto de captación al pie de la portada de sección: el visitante orgánico
+    (buscador/IA) que no entra en ningún artículo también ve la invitación a la
+    Society. Variante "inline" = la versión sobria, una sola por pantalla. */}
+<NewsletterSignup variant="inline" />

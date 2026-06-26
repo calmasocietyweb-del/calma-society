@@ -11,6 +11,7 @@ import { srcset } from "../lib/img";
 import { menorcaBusUrl } from "../lib/links";
 import { googleRatings, fmtScore, fmtReviews } from "../data/google-ratings";
 import MenorcaBusPromo from "../components/MenorcaBusPromo.astro";
+import NewsletterSignup from "../components/NewsletterSignup.astro";
 
 interface Props {
   entry: CollectionEntry<"lugares">;
@@ -216,6 +217,10 @@ const breadcrumb = breadcrumbSchema([
       }
     </p>
   </article>
+
+  {/* Captación al pie de la ficha de lugar: páginas de entrada de tráfico
+      orgánico/IA que no deben ser un callejón sin salida sin invitación a la Society. */}
+  <NewsletterSignup variant="inline" />
 
   <JsonLd schema={[placeLd, breadcrumb]} />
 </BaseLayout>
