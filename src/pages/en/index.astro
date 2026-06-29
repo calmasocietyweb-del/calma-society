@@ -22,6 +22,9 @@ const lm = SITE.newsletter.leadMagnet;
 
 // LCP hero image (single source): used in <Hero> and PRELOADED in BaseLayout.
 const heroImage = "/uploads/navegar-menorca.webp";
+// Cap the hero to 960w on mobile (it sits behind a veil → no visible loss) to lower
+// LCP; must match between <Hero sizes> and <BaseLayout heroImageSizes>.
+const heroSizes = "(max-width: 768px) 300px, 100vw";
 
 const lead = await getFeaturedArticle(locale);
 const discover = (await getArticlesBySection(locale, "descubrir"))
@@ -44,6 +47,7 @@ const description =
   alternates={{ es: homePath("es"), en: homePath("en"), fr: homePath("fr") }}
   heroImage={heroImage}
   heroImageAvif
+  heroImageSizes={heroSizes}
 >
   <Hero
     eyebrow={`${SITE.name} · ${SITE.edition}`}
@@ -51,6 +55,7 @@ const description =
     subtitle={t("home.hero.subtitle")}
     image={heroImage}
     avif
+    sizes={heroSizes}
     imageAlt="A sailboat anchored in a turquoise cove beneath golden cliffs in Menorca."
   />
 

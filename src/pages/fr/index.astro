@@ -19,6 +19,9 @@ const t = useTranslations(locale);
 
 // Image LCP du hero (source unique) : utilisée dans <Hero> et PRÉCHARGÉE dans BaseLayout.
 const heroImage = "/uploads/navegar-menorca.webp";
+// On plafonne le hero à 960w sur mobile (il est derrière un voile → sans perte visible)
+// pour baisser le LCP ; doit être IDENTIQUE entre <Hero sizes> et <BaseLayout heroImageSizes>.
+const heroSizes = "(max-width: 768px) 300px, 100vw";
 
 const lead = await getFeaturedArticle(locale);
 const discover = (await getArticlesBySection(locale, "descubrir"))
@@ -41,6 +44,7 @@ const description =
   alternates={{ es: homePath("es"), en: homePath("en"), fr: homePath("fr") }}
   heroImage={heroImage}
   heroImageAvif
+  heroImageSizes={heroSizes}
 >
   <Hero
     eyebrow={`${SITE.name} · ${SITE.edition}`}
@@ -48,6 +52,7 @@ const description =
     subtitle={t("home.hero.subtitle")}
     image={heroImage}
     avif
+    sizes={heroSizes}
     imageAlt="Un voilier au mouillage dans une crique turquoise au pied de falaises dorées à Minorque."
   />
 

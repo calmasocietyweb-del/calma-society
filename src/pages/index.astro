@@ -23,6 +23,9 @@ const lm = SITE.newsletter.leadMagnet;
 
 // Imagen LCP del hero (única fuente): se usa en <Hero> y se PRECARGA en BaseLayout.
 const heroImage = "/uploads/navegar-menorca.webp";
+// Capamos el hero a 960w en móvil (va detrás de un velo → sin pérdida visible) para
+// bajar el LCP; debe ir IGUAL en <Hero sizes> y en <BaseLayout heroImageSizes>.
+const heroSizes = "(max-width: 768px) 300px, 100vw";
 
 // Lead = artículo destacado (hoy, "Las mejores calas"). Banda Descubrir =
 // el resto de calas/playas/naturaleza.
@@ -72,6 +75,7 @@ const description =
   alternates={{ es: homePath("es"), en: homePath("en"), fr: homePath("fr") }}
   heroImage={heroImage}
   heroImageAvif
+  heroImageSizes={heroSizes}
 >
   <Hero
     eyebrow={`${SITE.name} · ${SITE.edition}`}
@@ -79,6 +83,7 @@ const description =
     subtitle={t("home.hero.subtitle")}
     image={heroImage}
     avif
+    sizes={heroSizes}
     imageAlt="Velero fondeado en una cala de aguas turquesa bajo acantilados dorados en Menorca."
   />
 

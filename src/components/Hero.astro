@@ -15,19 +15,27 @@ interface Props {
    * imágenes que tengan sus `.avif` generados (hoy el hero de la home). Mejora el LCP.
    */
   avif?: boolean;
+  /**
+   * `sizes` de la imagen. Por defecto "100vw" (hero a pantalla completa). En la home
+   * lo capamos en móvil (p. ej. "(max-width: 768px) 300px, 100vw") para que el teléfono
+   * sirva la variante de 960w (más ligera) en vez de la de 1600w: el hero va detrás de
+   * un velo, así que esos píxeles de más no se notan, pero pesan 3×. Debe coincidir con
+   * el `heroImageSizes` del BaseLayout (preload).
+   */
+  sizes?: string;
 }
-const { eyebrow, title, subtitle, image, imageAlt, avif = false } = Astro.props;
+const { eyebrow, title, subtitle, image, imageAlt, avif = false, sizes = "100vw" } = Astro.props;
 ---
 
 {
   image ? (
     <section class="relative flex min-h-[80svh] items-end overflow-hidden">
       <picture>
-        {avif && <source type="image/avif" srcset={avifSrcset(image)} sizes="100vw" />}
+        {avif && <source type="image/avif" srcset={avifSrcset(image)} sizes={sizes} />}
         <img
           src={image}
           srcset={srcset(image)}
-          sizes="100vw"
+          sizes={sizes}
           alt={imageAlt ?? ""}
           width="1600"
           height="1000"
