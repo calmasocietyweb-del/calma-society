@@ -17,6 +17,22 @@
 > "Bitácora de cambios de la web". No es opcional. Un cambio en la web sin su reflejo en
 > ese registro es trabajo a medias.
 
+> 🚨 **MANTENIMIENTO OBLIGATORIO DEL TABLERO JIRA.** El proyecto **CALMA WEB** (key `KAN`,
+> sitio `calmasocietyweb.atlassian.net`, conector MCP de Atlassian) es el **registro
+> compartido y legible del proyecto para un relevo**: lo que un humano que NO sea Cristian
+> abriría para entender, de un vistazo, qué es la web, qué se ha hecho, qué falta y qué está
+> roto (git es para programadores; Obsidian es el vault PERSONAL de Cristian y otra persona
+> no lo tendrá — por eso Jira es la fuente compartible). Estructura: **épicas = áreas
+> estables** de la web; lo HECHO a nivel de hito (1 ficha por feature real, no por commit) en
+> **Finalizado** — no se mantiene; lo PENDIENTE en **Por hacer**; lo empezado en **En curso**;
+> lo que espera visto bueno humano en **En revisión** (= cortafuegos de aprobación §6bis);
+> ideas sin compromiso en **Ideas**. NO se vuelca histórico granular (ruido); se curan hitos.
+> **Cada vez que cambies algo de la web, refleja la ficha en Jira el mismo día**: crea la
+> ficha, muévela de columna y, al terminar, pásala a **Finalizado**. Referencia la clave del
+> ticket en el commit cuando aplique (`KAN-12 …`). **Lo mantiene Claude, no Cristian** (él solo
+> mira/aprueba). Si Jira NO está conectado en la sesión, anota el cambio pendiente y vuélcalo
+> al reconectar — nunca lo dejes desfasado en silencio. No es opcional.
+
 ---
 
 ## 1. Qué estamos construyendo
