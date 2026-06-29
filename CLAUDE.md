@@ -8,6 +8,15 @@
 > - `docs/AUTOMATIZACION-Y-FLUJO-EDITORIAL.md` — qué corre solo, qué aprueba el dueño, y la **bandeja de aprobación** (nada se publica sin visto bueno).
 > - `docs/MARKETING-CRECIMIENTO-Y-NOMBRE.md` — captación de audiencia, monetización, tráfico a negocios propios y metodología de nombre/dominio.
 
+> 🚨 **MANTENIMIENTO OBLIGATORIO DEL REGISTRO PARA INFORMÁTICOS.** Existe un registro
+> técnico de la web en el vault de Cristian (Obsidian):
+> `C:\Users\Cristian\Desktop\Cerebro\02-Areas\Calma Society\Documentación Página Web Calma.md`.
+> **Cada vez que cambies algo de la web** (stack, despliegue, una integración o clave, el
+> modelo de contenido, una ruta/página nueva, una herramienta o el plan a futuro)
+> **DEBES actualizar ese documento el mismo día**, con la fecha, y añadir una línea en su
+> "Bitácora de cambios de la web". No es opcional. Un cambio en la web sin su reflejo en
+> ese registro es trabajo a medias.
+
 ---
 
 ## 1. Qué estamos construyendo
