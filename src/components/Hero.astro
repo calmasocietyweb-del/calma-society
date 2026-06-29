@@ -3,31 +3,39 @@
 //  - Con `image`: hero a pantalla completa, foto VELADA hacia la paleta cálida
 //    (Galería de Lino) y texto anclado abajo-izquierda, como pie de portada.
 //  - Sin `image`: hero de texto sobrio.
-import { srcset } from "../lib/img";
+import { srcset, avifSrcset } from "../lib/img";
 interface Props {
   eyebrow?: string;
   title: string;
   subtitle?: string;
   image?: string;
   imageAlt?: string;
+  /**
+   * Servir además la variante AVIF (más ligera) vía <picture>. Solo activar en
+   * imágenes que tengan sus `.avif` generados (hoy el hero de la home). Mejora el LCP.
+   */
+  avif?: boolean;
 }
-const { eyebrow, title, subtitle, image, imageAlt } = Astro.props;
+const { eyebrow, title, subtitle, image, imageAlt, avif = false } = Astro.props;
 ---
 
 {
   image ? (
     <section class="relative flex min-h-[80svh] items-end overflow-hidden">
-      <img
-        src={image}
-        srcset={srcset(image)}
-        sizes="100vw"
-        alt={imageAlt ?? ""}
-        width="1600"
-        height="1000"
-        class="img-calma hero-zoom absolute inset-0 h-full w-full object-cover"
-        loading="eager"
-        fetchpriority="high"
-      />
+      <picture>
+        {avif && <source type="image/avif" srcset={avifSrcset(image)} sizes="100vw" />}
+        <img
+          src={image}
+          srcset={srcset(image)}
+          sizes="100vw"
+          alt={imageAlt ?? ""}
+          width="1600"
+          height="1000"
+          class="img-calma hero-zoom absolute inset-0 h-full w-full object-cover"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </picture>
       {/* Velo cálido: une el tono de la foto con la paleta (sin azul). */}
       <div
         class="pointer-events-none absolute inset-0 bg-arcilla/15 mix-blend-multiply"

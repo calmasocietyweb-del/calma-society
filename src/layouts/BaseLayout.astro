@@ -17,7 +17,7 @@ import { SITE, getLocaleConfig, type Locale } from "../config/site";
 import { currentLocale } from "../i18n/utils";
 import { useTranslations } from "../i18n/ui";
 import { organizationSchema, websiteSchema } from "../lib/schema";
-import { srcset } from "../lib/img";
+import { srcset, avifSrcset } from "../lib/img";
 import Seo from "../components/Seo.astro";
 import JsonLd from "../components/JsonLd.astro";
 import Header from "../components/Header.astro";
@@ -49,6 +49,12 @@ interface Props {
   heroImage?: string;
   /** `sizes` de la imagen del hero (debe coincidir con el del <Hero>, por defecto "100vw"). */
   heroImageSizes?: string;
+  /**
+   * El hero tiene variantes AVIF generadas (más ligeras) → precargar el AVIF en
+   * vez del WebP. Activar solo junto a `<Hero avif>`. Con `type="image/avif"`, los
+   * navegadores sin soporte ignoran el preload y cargan la imagen WebP de respaldo.
+   */
+  heroImageAvif?: boolean;
 }
 
 const {
@@ -64,7 +70,19 @@ const {
   noindex = false,
   heroImage,
   heroImageSizes = "100vw",
+  heroImageAvif = false,
 } = Astro.props;
+
+// Preload de la imagen LCP del hero. Si hay variantes AVIF, precargamos el AVIF
+// (más ligero) con su type, para que el navegador descargue cuanto antes la misma
+// imagen que usará el <picture>; los que no soportan AVIF ignoran este preload.
+const heroPreloadSrcset = heroImage
+  ? heroImageAvif
+    ? avifSrcset(heroImage)
+    : srcset(heroImage)
+  : undefined;
+const heroPreloadHref =
+  heroImage && heroImageAvif ? heroImage.replace(/\.webp$/, ".avif") : heroImage;
 
 const locale = Astro.props.locale ?? currentLocale(Astro.url.pathname);
 const localeConfig = getLocaleConfig(locale);
@@ -95,10 +113,11 @@ const rssHref = locale === "es" ? "/rss.xml" : `/${locale}/rss.xml`;
         <link
           rel="preload"
           as="image"
-          href={heroImage}
-          imagesrcset={srcset(heroImage)}
+          href={heroPreloadHref}
+          imagesrcset={heroPreloadSrcset}
           imagesizes={heroImageSizes}
           fetchpriority="high"
+          type={heroImageAvif ? "image/avif" : undefined}
         />
       )
     }
