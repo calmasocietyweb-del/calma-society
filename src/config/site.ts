@@ -143,6 +143,26 @@ export const SITE = {
     action: '',
     formId: 'GIibQ8',
     emailField: 'fields[email]',
+    /**
+     * Imán de captación "Las calas con menos gente" (lead magnet · KPI nº1).
+     * Con `enabled: true` la landing /calas-tranquilas (+ /en/quiet-coves) se
+     * INDEXA y se ENLAZA, y aparecen sus colocaciones (home, /newsletter). Mientras
+     * sea `false`, la landing existe pero queda en `noindex` y sin enlazar (modo
+     * previsualización): así no PROMETEMOS una guía que todavía no se entrega.
+     *
+     * Enciéndelo SOLO cuando estén listas las dos patas de la ENTREGA:
+     *   1. El PDF maquetado (marca) con su URL de descarga.
+     *   2. En MailerLite: grupo `calas-en-calma` + automatización de bienvenida
+     *      (3 correos) que entrega el PDF + su formulario embebido (formId abajo).
+     */
+    leadMagnet: {
+      enabled: false,
+      // formId del formulario EMBEBIDO de MailerLite ligado al grupo
+      // `calas-en-calma` (Forms → Embedded). Vacío = usa el formulario general.
+      formId: '',
+      // Rutas de la landing por idioma (para enlazarla desde las colocaciones).
+      paths: { es: '/calas-tranquilas', en: '/en/quiet-coves' },
+    },
   },
 
   /**

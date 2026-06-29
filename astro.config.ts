@@ -32,6 +32,10 @@ const cmsEnabled =
   process.env.KEYSTATIC === 'true' ||
   ['dev', 'start', 'cms'].includes(process.env.npm_lifecycle_event ?? '');
 
+// Imán de captación "las calas con menos gente": mientras el flag está apagado,
+// la landing va en noindex y NO debe anunciarse en el sitemap (ver site.ts).
+const lmLive = SITE.newsletter.leadMagnet.enabled;
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.url,
@@ -59,7 +63,10 @@ export default defineConfig({
         !page.includes("/sociedad-bienvenida") &&
         !page.includes("/society-welcome") &&
         !page.includes("/societe-bienvenue") &&
-        !page.includes("/panel/"),
+        !page.includes("/panel/") &&
+        // El imán entra en el sitemap solo cuando está vivo (si no, va noindex).
+        (lmLive ||
+          (!page.includes("/calas-tranquilas") && !page.includes("/quiet-coves"))),
       // Añade enlaces hreflang entre idiomas en el sitemap.
       i18n: {
         defaultLocale: "es",

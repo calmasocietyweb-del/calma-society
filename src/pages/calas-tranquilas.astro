@@ -1,0 +1,90 @@
+---
+// Landing del imán de captación "Las calas con menos gente" (ES) — KPI nº1.
+// Vive en noindex y sin enlazar hasta que SITE.newsletter.leadMagnet.enabled sea
+// true (PDF maquetado + automatización de MailerLite que entrega la guía).
+import BaseLayout from "../layouts/BaseLayout.astro";
+import NewsletterSignup from "../components/NewsletterSignup.astro";
+import { SITE } from "../config/site";
+
+const lm = SITE.newsletter.leadMagnet;
+const alternates = { es: lm.paths.es, en: lm.paths.en };
+
+const recibes = [
+  {
+    title: "Calas tranquilas con su mejor hora",
+    text: "Cuándo va vacía cada una —primera hora, media tarde— y cuándo conviene no aparecer.",
+  },
+  {
+    title: "Cómo llegar a pie, en bus o sin coche",
+    text: "Sendero, distancia real, dónde aparcar de verdad y qué calas evitan el coche por completo.",
+  },
+  {
+    title: "El calendario de la calma, mes a mes",
+    text: "Qué orillas resguardan del viento de tramuntana y cuáles brillan en cada época del año.",
+  },
+  {
+    title: "Lo práctico que importa",
+    text: "Sombra, servicios, si hay chiringuito o no, y los pequeños detalles que cambian el día.",
+  },
+];
+---
+
+<BaseLayout
+  title="Las calas con menos gente de Menorca"
+  description="Una guía gratuita y serena para encontrar el mar en calma en Menorca: qué calas siguen tranquilas, a qué hora, cómo llegar sin coche y con qué viento están a resguardo."
+  locale="es"
+  alternates={alternates}
+  noindex={!lm.enabled}
+>
+  <section class="mx-auto max-w-prosa px-5 pt-12 text-center sm:px-8 sm:pt-20">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">
+      Guía gratuita · Calma Society
+    </p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">
+      Las calas con menos gente de Menorca
+    </h1>
+    <p class="lead mx-auto mt-5 max-w-xl">
+      Una guía serena para encontrar el mar en calma: dónde, cuándo y cómo llegar sin gentío.
+    </p>
+  </section>
+
+  <section class="mx-auto mt-14 max-w-3xl px-5 sm:mt-20 sm:px-8">
+    <p class="text-center text-xs font-semibold uppercase tracking-[0.25em] text-oro">
+      Lo que recibes
+    </p>
+    <div class="mt-8 grid gap-x-12 gap-y-9 sm:grid-cols-2">
+      {
+        recibes.map((it) => (
+          <div class="border-t border-niebla pt-5">
+            <h2 class="font-display text-xl text-tinta">{it.title}</h2>
+            <p class="mt-2 text-sm leading-relaxed text-piedra-suave">{it.text}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <div class="mt-16 sm:mt-24">
+    <NewsletterSignup
+      variant="section"
+      formId={lm.formId}
+      eyebrow="La guía, de bienvenida"
+      title="Recibe las calas con menos gente"
+      text="Déjanos tu correo y te enviamos la guía. Después, una carta serena de vez en cuando — criterio, no ruido."
+      cta="Recibir la guía"
+    />
+  </div>
+
+  <section class="mx-auto max-w-prosa px-5 py-14 text-center sm:px-8">
+    <p class="text-sm leading-relaxed text-piedra-suave">
+      Detrás de esta guía está la redacción de Calma Society, que recorre la isla los
+      365 días del año, con criterio y de primera mano.{" "}
+      <a
+        class="text-arcilla underline decoration-niebla underline-offset-4 hover:decoration-terracota"
+        href="/quienes-somos"
+      >
+        Quiénes somos y nuestro criterio editorial</a
+      >.
+    </p>
+  </section>
+</BaseLayout>

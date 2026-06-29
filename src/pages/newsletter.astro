@@ -5,6 +5,7 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
 import { SITE } from "../config/site";
 
 const alternates = { es: "/newsletter", en: "/en/newsletter", fr: "/fr/newsletter" };
+const lm = SITE.newsletter.leadMagnet;
 
 const beneficios = [
   "Una selección de lo mejor de Menorca, con criterio y sin relleno.",
@@ -40,6 +41,32 @@ const beneficios = [
       }
     </ul>
   </section>
+
+  {
+    lm.enabled && (
+      <section class="mx-auto mt-10 max-w-prosa px-5 sm:px-8">
+        <div class="rounded-2xl border border-niebla bg-arena/50 px-6 py-8 text-center sm:px-10">
+          <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">
+            Regalo de bienvenida
+          </p>
+          <h2 class="mt-2 font-display text-2xl text-tinta">
+            La guía de las calas con menos gente
+          </h2>
+          <p class="mx-auto mt-3 max-w-md text-sm leading-relaxed text-piedra-suave">
+            Al unirte la recibes de bienvenida: a qué hora siguen tranquilas, dónde dejar el
+            coche, con qué viento están a resguardo y qué servicios esperar.
+          </p>
+          <a
+            href={lm.paths.es}
+            data-umami-event="leadmagnet-newsletter"
+            class="mt-5 inline-block text-sm font-semibold text-arcilla underline decoration-niebla underline-offset-4 hover:decoration-terracota"
+          >
+            Ver qué incluye la guía →
+          </a>
+        </div>
+      </section>
+    )
+  }
 
   {
     SITE.newsletter.enabled || SITE.newsletter.capture.enabled ? (

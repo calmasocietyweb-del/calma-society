@@ -18,6 +18,7 @@ import { articleUrl, homePath } from "../../i18n/utils";
 
 const locale = "en";
 const t = useTranslations(locale);
+const lm = SITE.newsletter.leadMagnet;
 
 const lead = await getFeaturedArticle(locale);
 const discover = (await getArticlesBySection(locale, "descubrir"))
@@ -94,6 +95,35 @@ const description =
               imageAlt={a.data.heroImageAlt}
             />
           ))}
+        </div>
+      </section>
+    )
+  }
+
+  {/* Lead magnet: the guide to the quiet coves (only when it's live) */}
+  {
+    lm.enabled && (
+      <section class="mt-20 sm:mt-28">
+        <div class="mx-auto max-w-6xl px-5 sm:px-8">
+          <div class="rounded-2xl border border-niebla bg-arena/50 p-8 sm:p-12">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">Free guide</p>
+            <h2 class="mt-3 font-display text-2xl text-tinta sm:text-3xl">
+              The guide to Menorca's quiet coves
+            </h2>
+            <p class="mt-3 max-w-prosa text-piedra-suave">
+              Some coves are still yours — if you go at the right hour. We'll tell you which,
+              when and how to get there, and write now and then, never noise.
+            </p>
+            <div class="mt-6">
+              <a
+                href={lm.paths.en}
+                data-umami-event="leadmagnet-home"
+                class="rounded-md bg-arcilla px-5 py-2.5 text-sm font-semibold text-lino no-underline transition-colors hover:bg-tinta"
+              >
+                Join the Society →
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     )

@@ -5,6 +5,7 @@ import NewsletterSignup from "../../components/NewsletterSignup.astro";
 import { SITE } from "../../config/site";
 
 const alternates = { es: "/newsletter", en: "/en/newsletter", fr: "/fr/newsletter" };
+const lm = SITE.newsletter.leadMagnet;
 
 const benefits = [
   "A curated pick of the best of Menorca — with judgement, no filler.",
@@ -40,6 +41,32 @@ const benefits = [
       }
     </ul>
   </section>
+
+  {
+    lm.enabled && (
+      <section class="mx-auto mt-10 max-w-prosa px-5 sm:px-8">
+        <div class="rounded-2xl border border-niebla bg-arena/50 px-6 py-8 text-center sm:px-10">
+          <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">
+            Welcome gift
+          </p>
+          <h2 class="mt-2 font-display text-2xl text-tinta">
+            The guide to Menorca's quietest coves
+          </h2>
+          <p class="mx-auto mt-3 max-w-md text-sm leading-relaxed text-piedra-suave">
+            Join and you'll receive it as a welcome: the hour each cove stays calm, where to
+            leave the car, which winds leave them sheltered and what to expect on arrival.
+          </p>
+          <a
+            href={lm.paths.en}
+            data-umami-event="leadmagnet-newsletter"
+            class="mt-5 inline-block text-sm font-semibold text-arcilla underline decoration-niebla underline-offset-4 hover:decoration-terracota"
+          >
+            See what's in the guide →
+          </a>
+        </div>
+      </section>
+    )
+  }
 
   {
     SITE.newsletter.enabled || SITE.newsletter.capture.enabled ? (

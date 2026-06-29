@@ -7,6 +7,9 @@
 //      sin enviar campañas. Ver SocietyCaptureForm.astro.
 // Variantes: "section" = banda completa (home, página propia); "inline" =
 // tarjeta compacta para el final del artículo.
+// El `formId` y el copy son opcionales: la landing del imán "Las calas con menos
+// gente" pasa su propio formulario (grupo `calas-en-calma`) y su propio texto,
+// reutilizando toda esta fontanería (embebido + red de seguridad + medición).
 import { SITE } from "../config/site";
 import { useTranslations } from "../i18n/ui";
 import { currentLocale } from "../i18n/utils";
@@ -14,13 +17,37 @@ import SocietyCaptureForm from "./SocietyCaptureForm.astro";
 
 interface Props {
   variant?: "section" | "inline";
+  /** formId de un formulario embebido concreto (p. ej. el del imán). Vacío → el general. */
+  formId?: string;
+  /** Copy opcional que sobrescribe el del diccionario (eyebrow/title/text/cta). */
+  eyebrow?: string;
+  title?: string;
+  text?: string;
+  cta?: string;
 }
-const { variant = "section" } = Astro.props;
+const {
+  variant = "section",
+  formId: formIdProp,
+  eyebrow,
+  title,
+  text,
+  cta,
+} = Astro.props;
 
 const locale = currentLocale(Astro.url.pathname);
 const t = useTranslations(locale);
 const inputId = "newsletter-email";
-const { action, formId, popupFormId, emailField, enabled, capture } = SITE.newsletter;
+const { action, formId: formIdDefault, popupFormId, emailField, enabled, capture } =
+  SITE.newsletter;
+const formId = formIdProp || formIdDefault;
+
+// Copy efectivo: props > diccionario (la landing del imán habla de "la guía").
+const copy = {
+  eyebrow: eyebrow ?? t("newsletter.eyebrow"),
+  title: title ?? t("newsletter.title"),
+  text: text ?? t("newsletter.text"),
+  cta: cta ?? t("newsletter.cta"),
+};
 
 // Modo captación de fundadores: MailerLite en pausa pero recogemos correos.
 const captureMode = !enabled && capture.enabled && capture.endpoint.length > 0;
@@ -43,13 +70,13 @@ const newsletterHref = locale === "es" ? "/newsletter" : `/${locale}/newsletter`
     <aside class="mx-auto mt-16 max-w-prosa px-5 sm:mt-20 sm:px-8">
       <div class="rounded-2xl border border-niebla bg-arena/50 px-6 py-10 text-center sm:px-10">
         <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">
-          {t("newsletter.eyebrow")}
+          {copy.eyebrow}
         </p>
         <h2 class="mt-3 font-display text-2xl text-tinta sm:text-3xl">
-          {t("newsletter.title")}
+          {copy.title}
         </h2>
         <p class="mx-auto mt-3 max-w-md text-sm leading-relaxed text-piedra-suave">
-          {t("newsletter.text")}
+          {copy.text}
         </p>
         {captureMode ? (
           <SocietyCaptureForm locale={locale} tone="light" idSuffix="-inline" />
@@ -59,7 +86,7 @@ const newsletterHref = locale === "es" ? "/newsletter" : `/${locale}/newsletter`
             class="press mt-6 inline-block rounded-md bg-arcilla px-6 py-3 text-sm font-semibold text-lino hover:bg-tinta"
             data-umami-event="newsletter-cta-inline"
           >
-            {t("newsletter.cta")}
+            {copy.cta}
           </a>
         )}
         <p class="mt-3 text-xs text-piedra-suave">{t("newsletter.privacy")}</p>
@@ -73,13 +100,13 @@ const newsletterHref = locale === "es" ? "/newsletter" : `/${locale}/newsletter`
     <section class="bg-arcilla text-lino">
       <div class="mx-auto max-w-3xl px-5 py-16 text-center sm:px-8 sm:py-20">
         <p class="text-xs font-semibold uppercase tracking-[0.25em] text-champan">
-          {t("newsletter.eyebrow")}
+          {copy.eyebrow}
         </p>
         <h2 class="mt-3 font-display text-3xl text-lino sm:text-4xl">
-          {t("newsletter.title")}
+          {copy.title}
         </h2>
         <p class="mx-auto mt-4 max-w-xl text-base leading-relaxed text-lino/80">
-          {t("newsletter.text")}
+          {copy.text}
         </p>
 
         {captureMode ? (
@@ -93,7 +120,7 @@ const newsletterHref = locale === "es" ? "/newsletter" : `/${locale}/newsletter`
                 Formspree → importar a MailerLite. Oculto por defecto: solo aparece
                 cuando hace falta, sin parpadeo en el caso normal. */}
             <div class="ml-fallback" hidden>
-              <p class="mb-1 text-xs text-lino/60">{t("newsletter.text")}</p>
+              <p class="mb-1 text-xs text-lino/60">{copy.text}</p>
               <SocietyCaptureForm locale={locale} tone="dark" idSuffix="-mlfb" umamiEvent="newsletter-submit-fallback" />
             </div>
             <noscript>
@@ -120,7 +147,7 @@ const newsletterHref = locale === "es" ? "/newsletter" : `/${locale}/newsletter`
             onclick={`ml('show', '${popupFormId}', true)`}
             data-umami-event="newsletter-popup-open"
           >
-            {t("newsletter.cta")}
+            {copy.cta}
           </button>
         ) : (
           <form
@@ -147,7 +174,7 @@ const newsletterHref = locale === "es" ? "/newsletter" : `/${locale}/newsletter`
               class="press shrink-0 rounded-md bg-oro-vivo px-6 py-3 text-sm font-semibold text-tinta hover:bg-lino disabled:cursor-not-allowed disabled:opacity-60"
               data-umami-event={mlMode === "custom" ? "newsletter-submit" : undefined}
             >
-              {t("newsletter.cta")}
+              {copy.cta}
             </button>
           </form>
         )}
