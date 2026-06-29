@@ -21,6 +21,9 @@ const locale = "es";
 const t = useTranslations(locale);
 const lm = SITE.newsletter.leadMagnet;
 
+// Imagen LCP del hero (única fuente): se usa en <Hero> y se PRECARGA en BaseLayout.
+const heroImage = "/uploads/navegar-menorca.webp";
+
 // Lead = artículo destacado (hoy, "Las mejores calas"). Banda Descubrir =
 // el resto de calas/playas/naturaleza.
 const lead = await getFeaturedArticle(locale);
@@ -67,12 +70,13 @@ const description =
   description={description}
   locale="es"
   alternates={{ es: homePath("es"), en: homePath("en"), fr: homePath("fr") }}
+  heroImage={heroImage}
 >
   <Hero
     eyebrow={`${SITE.name} · ${SITE.edition}`}
     title={t("home.hero.title")}
     subtitle={t("home.hero.subtitle")}
-    image="/uploads/navegar-menorca.webp"
+    image={heroImage}
     imageAlt="Velero fondeado en una cala de aguas turquesa bajo acantilados dorados en Menorca."
   />
 

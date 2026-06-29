@@ -17,6 +17,9 @@ import { articleUrl, homePath } from "../../i18n/utils";
 const locale = "fr";
 const t = useTranslations(locale);
 
+// Image LCP du hero (source unique) : utilisée dans <Hero> et PRÉCHARGÉE dans BaseLayout.
+const heroImage = "/uploads/navegar-menorca.webp";
+
 const lead = await getFeaturedArticle(locale);
 const discover = (await getArticlesBySection(locale, "descubrir"))
   .filter((a) => a.id !== lead?.id)
@@ -36,12 +39,13 @@ const description =
   description={description}
   locale="fr"
   alternates={{ es: homePath("es"), en: homePath("en"), fr: homePath("fr") }}
+  heroImage={heroImage}
 >
   <Hero
     eyebrow={`${SITE.name} · ${SITE.edition}`}
     title={t("home.hero.title")}
     subtitle={t("home.hero.subtitle")}
-    image="/uploads/navegar-menorca.webp"
+    image={heroImage}
     imageAlt="Un voilier au mouillage dans une crique turquoise au pied de falaises dorées à Minorque."
   />
 

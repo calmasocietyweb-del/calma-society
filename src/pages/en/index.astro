@@ -20,6 +20,9 @@ const locale = "en";
 const t = useTranslations(locale);
 const lm = SITE.newsletter.leadMagnet;
 
+// LCP hero image (single source): used in <Hero> and PRELOADED in BaseLayout.
+const heroImage = "/uploads/navegar-menorca.webp";
+
 const lead = await getFeaturedArticle(locale);
 const discover = (await getArticlesBySection(locale, "descubrir"))
   .filter((a) => a.id !== lead?.id)
@@ -39,12 +42,13 @@ const description =
   description={description}
   locale="en"
   alternates={{ es: homePath("es"), en: homePath("en"), fr: homePath("fr") }}
+  heroImage={heroImage}
 >
   <Hero
     eyebrow={`${SITE.name} · ${SITE.edition}`}
     title={t("home.hero.title")}
     subtitle={t("home.hero.subtitle")}
-    image="/uploads/navegar-menorca.webp"
+    image={heroImage}
     imageAlt="A sailboat anchored in a turquoise cove beneath golden cliffs in Menorca."
   />
 
