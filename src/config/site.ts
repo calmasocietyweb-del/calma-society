@@ -150,16 +150,19 @@ export const SITE = {
      * sea `false`, la landing existe pero queda en `noindex` y sin enlazar (modo
      * previsualización): así no PROMETEMOS una guía que todavía no se entrega.
      *
-     * Enciéndelo SOLO cuando estén listas las dos patas de la ENTREGA:
-     *   1. El PDF maquetado (marca) con su URL de descarga.
-     *   2. En MailerLite: grupo `calas-en-calma` + automatización de bienvenida
-     *      (3 correos) que entrega el PDF + su formulario embebido (formId abajo).
+     * Enciéndelo SOLO cuando estén listas las dos patas de la ENTREGA, en ES y EN:
+     *   1. Los PDF maquetados (marca) con su URL de descarga (uno por idioma).
+     *   2. En MailerLite: grupos `calas-en-calma` (ES) y `calas-en-calma-en` (EN)
+     *      + una automatización de bienvenida por idioma (3 correos) que entrega
+     *      el PDF + su formulario embebido por idioma (formIds abajo).
      */
     leadMagnet: {
-      enabled: false,
-      // formId del formulario EMBEBIDO de MailerLite ligado al grupo
-      // `calas-en-calma` (Forms → Embedded). Vacío = usa el formulario general.
-      formId: '',
+      enabled: true,
+      // formId del formulario EMBEBIDO de MailerLite POR IDIOMA, cada uno ligado a
+      // su grupo (`calas-en-calma` ES / `calas-en-calma-en` EN) — Forms → Embedded.
+      // Vacío = la landing de ese idioma usa el formulario general.
+      // Montados el 2026-06-30 (doble opt-in + automatización de bienvenida de 3 correos).
+      formIds: { es: '0vOXXn', en: '7HCJAQ' },
       // Rutas de la landing por idioma (para enlazarla desde las colocaciones).
       paths: { es: '/calas-tranquilas', en: '/en/quiet-coves' },
     },
