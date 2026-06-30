@@ -1,0 +1,53 @@
+# Keepalive — evita que GitHub apague los cron del repo.
+#
+# POR QUÉ: este repo es PÚBLICO y GitHub deshabilita automáticamente los workflows
+# programados (schedule) cuando no hay actividad del repositorio en 60 días. Los
+# commits que hace `parte-calma.yml` (el robot del mar) los firma el bot y se pushean
+# con el GITHUB_TOKEN, y ESOS no cuentan de forma fiable como "actividad". Si el repo
+# pasara 60 días sin un commit humano, el parte del mar dejaría de actualizarse en
+# silencio (KAN-56).
+#
+# CÓMO: cada ~15 días registramos actividad de forma fiable actualizando un archivo
+# marcador (.github/keepalive.txt) mediante la API REST de GitHub (`gh api`, ya
+# preinstalado en los runners). Los commits creados vía la API REST SÍ cuentan como
+# actividad y reinician el contador de 60 días. Sin dependencias de terceros.
+#
+# Para probarlo a mano: pestaña Actions → "Keepalive (mantener vivos los cron)" → Run workflow.
+name: Keepalive (mantener vivos los cron)
+
+on:
+  schedule:
+    - cron: "0 6 1,15 * *" # días 1 y 15 de cada mes (~15 días entre ejecuciones, muy por debajo de 60)
+  workflow_dispatch: {} # permite lanzarlo a mano desde la pestaña Actions
+
+permissions:
+  contents: write
+
+concurrency:
+  group: keepalive
+  cancel-in-progress: false
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Registrar señal de vida vía la API REST (cuenta como actividad del repo)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          FILE=".github/keepalive.txt"
+          NOW="$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          CONTENT="$(printf 'Última señal de vida del CI: %s\n' "$NOW" | base64 -w0)"
+          # SHA del archivo actual (vacío si aún no existe → se crea)
+          SHA="$(gh api "repos/${GITHUB_REPOSITORY}/contents/${FILE}" --jq '.sha' 2>/dev/null || true)"
+          if [ -n "${SHA}" ]; then
+            gh api "repos/${GITHUB_REPOSITORY}/contents/${FILE}" -X PUT \
+              -f message="chore(ci): keepalive de los cron (${NOW})" \
+              -f content="${CONTENT}" \
+              -f sha="${SHA}"
+          else
+            gh api "repos/${GITHUB_REPOSITORY}/contents/${FILE}" -X PUT \
+              -f message="chore(ci): keepalive de los cron (${NOW})" \
+              -f content="${CONTENT}"
+          fi
