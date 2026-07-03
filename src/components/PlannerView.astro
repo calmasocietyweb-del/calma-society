@@ -59,11 +59,14 @@ const T = isEs
       planBtitle: "Si llueve o hace mucho calor", whyTitle: "Por qué este día", busCTA: "Resuélvelo con Menorca Bus",
       globalTitle: "Antes de salir", hours: "h útiles", empty: "Rellena la encuesta y crea tu plan.",
       intro: "Una guía día a día, encadenada por cercanía y sin prisas: la isla, a tu ritmo.",
-      saveTitle: "Guarda tu plan",
-      saveText: "Déjanos tu correo y te enviamos el enlace de tu plan, con lo mejor de Menorca de regalo (la Sociedad). O descárgalo en PDF y guarda el enlace.",
-      savePdf: "Descargar PDF", copyLink: "Copiar enlace", copied: "¡Enlace copiado!",
-      emailPlaceholder: "Tu correo", emailBtn: "Recibe tu plan por email",
-      consentPrefix: "Acepto la", consentLink: "política de privacidad", consentSuffix: "para recibir mi plan y la newsletter de Calma Society.",
+      saveTitle: "Tu dossier de viaje, en PDF",
+      saveText: "Déjanos tu correo y desbloqueamos tu dossier: el plan con portada, un día por página y el plan-B de mal tiempo. Entras además en la Sociedad, con lo mejor de Menorca.",
+      savePdf: "Descargar el dossier (PDF)", copyLink: "Copiar enlace", copied: "¡Enlace copiado!",
+      emailPlaceholder: "Tu correo", emailBtn: "Desbloquear mi dossier",
+      consentPrefix: "Acepto la", consentLink: "política de privacidad", consentSuffix: "para recibir la newsletter de Calma Society.",
+      gateHint: "El dossier se desbloquea con tu correo — es un momento.",
+      gateThanks: "Hecho: dossier desbloqueado. Guarda también el enlace para volver a tu plan.",
+      gateSending: "Un segundo…",
     }
   : {
       formTitle: "Tell us how you travel",
@@ -86,11 +89,14 @@ const T = isEs
       planBtitle: "If it rains or gets too hot", whyTitle: "Why this day", busCTA: "Sort it with Menorca Bus",
       globalTitle: "Before you go", hours: "useful h", empty: "Fill in the survey and build your plan.",
       intro: "A day-by-day guide, chained by proximity and unhurried: the island, at your pace.",
-      saveTitle: "Save your plan",
-      saveText: "Leave us your email and we'll send you your plan's link, with the best of Menorca as a welcome (the Society). Or download it as a PDF and keep the link.",
-      savePdf: "Download PDF", copyLink: "Copy link", copied: "Link copied!",
-      emailPlaceholder: "Your email", emailBtn: "Email me my plan",
-      consentPrefix: "I accept the", consentLink: "privacy policy", consentSuffix: "to receive my plan and the Calma Society newsletter.",
+      saveTitle: "Your trip dossier, as a PDF",
+      saveText: "Leave us your email and we'll unlock your dossier: the plan with a cover, one page per day and the bad-weather plan-B. You also join the Society, with the best of Menorca.",
+      savePdf: "Download the dossier (PDF)", copyLink: "Copy link", copied: "Link copied!",
+      emailPlaceholder: "Your email", emailBtn: "Unlock my dossier",
+      consentPrefix: "I accept the", consentLink: "privacy policy", consentSuffix: "to receive the Calma Society newsletter.",
+      gateHint: "The dossier unlocks with your email — it takes a moment.",
+      gateThanks: "Done: dossier unlocked. Keep the link too, to come back to your plan.",
+      gateSending: "One second…",
     };
 
 // Config para el cliente (etiquetas que el render del plan necesita + URL del partner).
@@ -132,6 +138,11 @@ const CFG = {
   printTitleTpl: isEs ? "Tu Menorca en {N} días" : "Your Menorca in {N} days",
   printTitleOne: isEs ? "Tu Menorca en 1 día" : "Your Menorca in 1 day",
   printGenerated: isEs ? "plan generado el" : "plan generated on",
+  // Gate del dossier (decisión del dueño, 3-jul): el PDF se desbloquea con el correo.
+  gateHint: T.gateHint,
+  gateThanks: T.gateThanks,
+  gateSending: T.gateSending,
+  emailBtn: T.emailBtn,
   noticeIcon: { reserva: "📌", madrugar: "⏰", "agua-sombra": "💧", parking: "🅿️", "confirma-horario": "🕒", esfuerzo: "🥾", viento: "🌬️", accesibilidad: "♿", fiesta: "🎉", transfer: "🚌", logistica: "🧭" } as Record<string, string>,
 };
 
@@ -323,12 +334,14 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
     <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">{T.saveTitle}</p>
     <p class="mt-2 max-w-prose text-sm leading-relaxed text-piedra-suave">{T.saveText}</p>
 
-    {/* Captación (KPI nº1): el correo entra en la Sociedad y recibe el enlace del plan. */}
-    <form action={captureEndpoint} method="POST" class="mt-4 max-w-md">
+    {/* Captación (KPI nº1) con GATE del dossier: sin correo no hay PDF (decisión
+        del dueño, 3-jul). El island envía por fetch (sin salir del plan) y
+        desbloquea la descarga; si la red falla, cae al envío clásico. */}
+    <form id="planner-email-form" action={captureEndpoint} method="POST" class="mt-4 max-w-md">
       <input type="hidden" name="_subject" value={captureSubject} />
       <input type="hidden" name="_next" value={captureThanks} />
       <input type="hidden" name="plan_url" id="planner-plan-url" value="" />
-      <input type="hidden" name="origen" value="planificador" />
+      <input type="hidden" name="origen" value="planificador-gate-pdf" />
       <div class="flex flex-col gap-3 sm:flex-row">
         <label for="planner-email" class="sr-only">{T.emailPlaceholder}</label>
         <input
@@ -340,7 +353,7 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
           placeholder={T.emailPlaceholder}
           class="w-full rounded-md border border-niebla bg-lino/60 px-4 py-2.5 text-sm text-piedra placeholder:text-piedra-suave transition-colors duration-150 focus:border-terracota/50 focus-visible:outline-terracota"
         />
-        <button type="submit" data-umami-event="planner-email" class="press shrink-0 rounded-md bg-arcilla px-5 py-2.5 text-sm font-semibold text-lino transition-colors hover:bg-tinta">
+        <button type="submit" id="planner-email-btn" data-umami-event="planner-email" class="press shrink-0 rounded-md bg-arcilla px-5 py-2.5 text-sm font-semibold text-lino transition-colors hover:bg-tinta">
           {T.emailBtn}
         </button>
       </div>
@@ -354,9 +367,12 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
       </label>
     </form>
 
+    {/* Estado del gate: pista si intentan el PDF sin correo · gracias al desbloquear. */}
+    <p id="planner-gate-status" hidden role="status" class="mt-3 rounded-lg bg-crema/60 px-4 py-2.5 text-sm text-arcilla"></p>
+
     <div class="mt-4 flex flex-wrap gap-3 border-t border-niebla pt-4">
-      <button id="planner-pdf" type="button" data-umami-event="planner-pdf" class="rounded-md border border-arcilla px-5 py-2.5 text-sm font-semibold text-arcilla transition-colors hover:bg-arcilla hover:text-lino">
-        {T.savePdf}
+      <button id="planner-pdf" type="button" data-locked="1" data-umami-event="planner-pdf" class="rounded-md border border-arcilla px-5 py-2.5 text-sm font-semibold text-arcilla transition-colors hover:bg-arcilla hover:text-lino data-[locked]:opacity-60">
+        <span aria-hidden="true">🔒</span> {T.savePdf}
       </button>
       <button id="planner-copy" type="button" data-umami-event="planner-copylink" class="rounded-md border border-arcilla px-5 py-2.5 text-sm font-semibold text-arcilla transition-colors hover:bg-arcilla hover:text-lino">
         {T.copyLink}
@@ -611,8 +627,55 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
     }
   }
 
-  // "Guarda tu plan": PDF por print-CSS y copiar el enlace (compartible/recuperable).
-  $("planner-pdf")?.addEventListener("click", () => window.print());
+  // ── GATE del dossier (decisión del dueño, 3-jul): el PDF se desbloquea con el
+  // correo. El form va por fetch para NO salir del plan; si falla, envío clásico.
+  const pdfBtn = $("planner-pdf") as HTMLButtonElement | null;
+  const gateStatus = $("planner-gate-status");
+  const emailForm = $("planner-email-form") as HTMLFormElement | null;
+
+  const gateMsg = (text: string) => {
+    if (!gateStatus) return;
+    gateStatus.textContent = text;
+    gateStatus.hidden = false;
+  };
+  const unlockPdf = () => {
+    if (!pdfBtn) return;
+    pdfBtn.removeAttribute("data-locked");
+    pdfBtn.querySelector("span[aria-hidden]")?.remove(); // fuera el candado
+    gateMsg(CFG.gateThanks);
+  };
+
+  pdfBtn?.addEventListener("click", () => {
+    if (pdfBtn.dataset.locked) {
+      // Bloqueado: pista serena + foco al correo (sin frustrar: es un momento).
+      gateMsg(CFG.gateHint);
+      ($("planner-email") as HTMLInputElement | null)?.focus();
+      return;
+    }
+    window.print();
+  });
+
+  emailForm?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const btn = $("planner-email-btn") as HTMLButtonElement | null;
+    if (btn) { btn.disabled = true; btn.textContent = CFG.gateSending; }
+    try {
+      const res = await fetch(emailForm.action, {
+        method: "POST",
+        body: new FormData(emailForm),
+        headers: { Accept: "application/json" },
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      unlockPdf();
+      // Desbloqueado → directo al dossier (el gesto ya es suyo).
+      setTimeout(() => window.print(), 350);
+    } catch {
+      // Red/endpoint caído: no perder el alta — envío clásico con redirección.
+      emailForm.submit();
+    } finally {
+      if (btn) { btn.disabled = false; btn.textContent = CFG.emailBtn; }
+    }
+  });
   // Al imprimir, el plan-B de cada día se abre (en papel no hay toggle) y se
   // restaura después. También cubre Ctrl+P.
   let autoOpened: HTMLDetailsElement[] = [];
