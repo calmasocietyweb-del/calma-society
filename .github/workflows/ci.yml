@@ -1,0 +1,36 @@
+# CI de calidad (KAN-52): en cada push/PR — tipos, tests del motor, QA de
+# fichas y build completa. Si algo se rompe, se ve AQUÍ y no en producción.
+# Nota: los commits diarios del bot del parte del mar también pasan por aquí
+# a propósito (validan que el dato nuevo no rompe la build).
+name: CI de calidad
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  calidad:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24 # node --test con type-stripping (tests .ts del planner)
+          cache: npm
+
+      - name: Dependencias
+        run: npm ci
+
+      - name: Tipos (astro check)
+        run: npx astro check
+
+      - name: Tests del motor del planificador
+        run: npm test
+
+      - name: QA de las fichas de lugares
+        run: node scripts/qa-lugares.mjs
+
+      - name: Build
+        run: npm run build

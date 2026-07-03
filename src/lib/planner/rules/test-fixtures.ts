@@ -7,8 +7,8 @@ import type { PlannerPlace, PlannerZone, PlannerType } from "../types.ts";
 type Req = Pick<PlannerPlace, "id" | "zone" | "cluster" | "plannerType">;
 
 export function place(p: Partial<PlannerPlace> & Req): PlannerPlace {
+  // `id` llega SIEMPRE en `p` (Req) y el spread final lo aporta: no se repite aquí.
   return {
-    id: p.id,
     name: p.id,
     slug: p.id,
     coordinates: { lat: 0, lng: 0 },

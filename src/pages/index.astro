@@ -37,7 +37,9 @@ const events = (await getEvents(locale)).slice(0, 3);
 
 // Orden de secciones en portada: calas/práctica primero; gastronomía al final.
 const HOME_SECTION_ORDER = ["descubrir", "practica", "agenda", "cultura", "vivir", "comer-y-beber"];
-const homeSections = HOME_SECTION_ORDER.map((k) => getSection(k)).filter(Boolean);
+const homeSections = HOME_SECTION_ORDER.map((k) => getSection(k)).filter(
+  (s): s is NonNullable<ReturnType<typeof getSection>> => Boolean(s),
+);
 
 const sectionLabel = (key: string) => getSection(key)?.label[locale];
 

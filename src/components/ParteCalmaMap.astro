@@ -699,10 +699,10 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
 <script>
   // Buscador de calas: filtra a la vez la lista y los marcadores del mapa por nombre.
   // Único JS de cliente de esta página; sin él, se ven todas (degradación elegante).
-  const inp = document.getElementById("calma-buscar");
+  const inp = document.getElementById("calma-buscar") as HTMLInputElement | null;
   if (inp) {
     const sinAcentos = new RegExp("[\\u0300-\\u036f]", "g");
-    const norm = (s) => (s || "").normalize("NFD").replace(sinAcentos, "").toLowerCase();
+    const norm = (s: string | null) => (s || "").normalize("NFD").replace(sinAcentos, "").toLowerCase();
     const els = Array.from(document.querySelectorAll("[data-nombre]"));
     inp.addEventListener("input", () => {
       const q = norm(inp.value.trim());
@@ -719,8 +719,9 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
   const mapa = document.querySelector(".calma-mapa");
   if (lista) {
     lista.addEventListener("click", (e) => {
-      if (e.target.closest("a")) return;
-      const li = e.target.closest("li[id^='cala-']");
+      const target = e.target as HTMLElement | null;
+      if (!target || target.closest("a")) return;
+      const li = target.closest("li[id^='cala-']");
       if (!li) return;
       const id = li.id.slice(5);
       for (const a of document.querySelectorAll("a.cala-activa")) a.classList.remove("cala-activa");
@@ -734,11 +735,12 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
   // fórmula que el parte), la lista, el viento general y los contadores del filtro.
   const dataEl = document.getElementById("calma-tl-data");
   if (dataEl) {
-    const D = JSON.parse(dataEl.textContent || "{}");
-    const frames = D.frames || [];
-    const degDe = (d) => (!d || d === "C" ? null : (D.dirDeg[d] ?? null));
-    const nombreV = (deg) => { for (const [m, n] of D.vientos) if (deg < m) return n; return D.vientos[0][1]; };
-    const banda = (op, d, v) => {
+    // Tipado laxo a propósito: D es el JSON del parte (estructura del build).
+    const D: any = JSON.parse(dataEl.textContent || "{}");
+    const frames: any[] = D.frames || [];
+    const degDe = (d: string | null | undefined) => (!d || d === "C" ? null : (D.dirDeg[d] ?? null));
+    const nombreV = (deg: number) => { for (const [m, n] of D.vientos) if (deg < m) return n; return D.vientos[0][1]; };
+    const banda = (op: number, d: string | null | undefined, v: number) => {
       const deg = degDe(d);
       const on = deg == null ? 0 : (1 + Math.cos(((deg - op) * Math.PI) / 180)) / 2;
       const s = 1 - on * Math.min(v / D.vmax, 1);
@@ -753,27 +755,27 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
     const tempEl = document.getElementById("calma-temp");
 
     // "Ahora" en hora de Menorca (Europe/Madrid), no la del visitante europeo.
-    const madrid = (dt) => {
+    const madrid = (dt: Date) => {
       const p = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Madrid", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", hourCycle: "h23" }).formatToParts(dt);
-      const g = (t) => (p.find((x) => x.type === t) || {}).value;
+      const g = (t: string) => (p.find((x) => x.type === t) || ({} as Intl.DateTimeFormatPart)).value;
       return { date: g("year") + "-" + g("month") + "-" + g("day"), hour: g("hour") };
     };
     const mNow = madrid(new Date());
     const tomM = new Date(Date.parse(mNow.date + "T00:00:00Z") + 86400000).toISOString().slice(0, 10);
     // Día RELATIVO recalculado con la fecha REAL de Menorca (no la congelada en el JSON):
     // corrige el desfase cuando el dato es de ayer o se cruza la medianoche.
-    const dayLabelC = (f) => (f === mNow.date ? D.rel.hoy : f === tomM ? D.rel.manana : (D.dow || [])[new Date(f + "T12:00:00Z").getUTCDay()] || f);
-    const dateLabelC = (f) => { const a = f.split("-"); return Number(a[2]) + " " + ((D.months || [])[Number(a[1]) - 1] || ""); };
-    const periodLabelC = (p) => (D.periodo && D.periodo[p]) || p;
+    const dayLabelC = (f: string) => (f === mNow.date ? D.rel.hoy : f === tomM ? D.rel.manana : (D.dow || [])[new Date(f + "T12:00:00Z").getUTCDay()] || f);
+    const dateLabelC = (f: string) => { const a = f.split("-"); return Number(a[2]) + " " + ((D.months || [])[Number(a[1]) - 1] || ""); };
+    const periodLabelC = (p: string) => (D.periodo && D.periodo[p]) || p;
     // Solo hacia delante: descarta los frames de días YA pasados (hora de Menorca), por si
     // se abre la página un día después del último parte generado. Así HOY es siempre la
     // primera posición de la barra. Si todo fuese pasado, conserva lo que haya.
-    const fut = frames.filter((f) => f.fecha >= mNow.date);
+    const fut = frames.filter((f: any) => f.fecha >= mNow.date);
     const visFrames = fut.length ? fut : frames;
     // Reconstruye la fila de días bajo la barra con los días visibles y su fecha real.
     const dayRow = document.getElementById("calma-day-row");
     if (dayRow) {
-      const fechas = [...new Set(visFrames.map((f) => f.fecha))];
+      const fechas = [...new Set<string>(visFrames.map((f: any) => f.fecha))];
       dayRow.replaceChildren(...fechas.map((f) => {
         const sp = document.createElement("span");
         sp.className = "calma-day";
@@ -783,8 +785,8 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
       }));
     }
 
-    const applyFrame = (fr) => {
-      const counts = { alto: 0, medio: 0, bajo: 0 };
+    const applyFrame = (fr: any) => {
+      const counts: Record<string, number> = { alto: 0, medio: 0, bajo: 0 };
       for (const c of D.calas) {
         const w = fr.winds[c.ine];
         const sinDato = !w || w.d == null; // sin dato del municipio → NUNCA calma falsa
@@ -795,12 +797,12 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
         if (li) {
           li.dataset.calma = band;
           li.style.borderLeftColor = D.fill[band];
-          const dot = li.querySelector(".cala-dot"); if (dot) dot.style.background = D.fill[band];
+          const dot = li.querySelector<HTMLElement>(".cala-dot"); if (dot) dot.style.background = D.fill[band];
           const bl = li.querySelector(".cala-band"); if (bl) bl.textContent = D.bandLabel[band];
           const sb = li.querySelector(".cala-sub"); if (sb) sb.textContent = D.subLabel[band];
           const wd = li.querySelector(".cala-wind"); if (wd) wd.textContent = sinDato ? D.bandLabel["sin-dato"] : ((deg == null ? D.calma : nombreV(deg)) + " " + w.v + " km/h");
         }
-        const mk = document.querySelector('a[href="#cala-' + c.id + '"]');
+        const mk = document.querySelector<HTMLElement>('a[href="#cala-' + c.id + '"]');
         if (mk) {
           mk.dataset.calma = band;
           const ci = mk.querySelector("circle"); if (ci) ci.setAttribute("fill", D.fill[band]);
@@ -818,12 +820,12 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
       }
       for (const b of ["alto", "medio", "bajo"]) {
         const cs = document.getElementById("calma-count-" + b); if (cs) cs.textContent = "(" + counts[b] + ")";
-        const r = document.getElementById("calma-" + b);
-        if (r) { r.disabled = counts[b] === 0; if (counts[b] === 0 && r.checked) { r.checked = false; const t = document.getElementById("calma-todas"); if (t) t.checked = true; } }
+        const r = document.getElementById("calma-" + b) as HTMLInputElement | null;
+        if (r) { r.disabled = counts[b] === 0; if (counts[b] === 0 && r.checked) { r.checked = false; const t = document.getElementById("calma-todas") as HTMLInputElement | null; if (t) t.checked = true; } }
       }
       if (frameLabel) frameLabel.textContent = dayLabelC(fr.fecha) + ", " + dateLabelC(fr.fecha) + " · " + periodLabelC(fr.period);
       // Resalta en la fila de días el rótulo del frame seleccionado ("el día de la barra").
-      if (dayRow) for (const sp of dayRow.querySelectorAll(".calma-day")) sp.classList.toggle("calma-day-activa", sp.dataset.fecha === fr.fecha);
+      if (dayRow) for (const sp of dayRow.querySelectorAll<HTMLElement>(".calma-day")) sp.classList.toggle("calma-day-activa", sp.dataset.fecha === fr.fecha);
     };
 
     if (visFrames.length) {
@@ -834,7 +836,7 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
         const fk = visFrames[i].fecha + "-" + String(visFrames[i].startHour).padStart(2, "0");
         if (fk <= nowKey) idx = i;
       }
-      const slider = document.getElementById("calma-tiempo");
+      const slider = document.getElementById("calma-tiempo") as HTMLInputElement | null;
       if (slider) {
         slider.max = String(visFrames.length - 1);
         slider.value = String(idx);

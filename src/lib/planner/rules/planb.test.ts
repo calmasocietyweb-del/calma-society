@@ -40,5 +40,5 @@ test("integración: los días plenos llevan plan-B", () => {
   const plan = planTrip({ days: 5, arrivalDate: "2026-06-22", transport: "coche-alquiler", base: "ciutadella", interests: ["calas", "naturaleza"] }, DATASET);
   const full = plan.days.filter((d) => d.cluster);
   assert.ok(full.length > 0 && full.every((d) => d.planB), "cada día pleno debe tener plan-B");
-  assert.ok(full[0].planB.notices.find((n) => n.text.includes("calor extremo")));
+  assert.ok(full[0]!.planB!.notices.find((n) => n.text.includes("calor extremo")));
 });

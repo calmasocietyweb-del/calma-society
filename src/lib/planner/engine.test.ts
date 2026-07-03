@@ -2,6 +2,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { planTrip } from "./engine.ts";
+import type { Survey } from "./engine.ts";
 import { DATASET, place } from "./rules/test-fixtures.ts";
 
 test("5 días con coche desde Ciutadella → plan completo y coherente", () => {
@@ -50,6 +51,6 @@ test("viaje de 2 días: aunque un día caiga en colchón, conserva logística de
 });
 
 test("determinismo: mismo input → mismo plan", () => {
-  const input = { days: 5, transport: "coche-alquiler" as const, base: "ciutadella" as const, interests: ["calas", "naturaleza" as const] };
+  const input: Partial<Survey> = { days: 5, transport: "coche-alquiler", base: "ciutadella", interests: ["calas", "naturaleza"] };
   assert.deepEqual(planTrip({ ...input }, DATASET), planTrip({ ...input }, DATASET));
 });
