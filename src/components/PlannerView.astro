@@ -26,6 +26,7 @@ import foodEs from "../data/planner-food.es.json";
 import foodEn from "../data/planner-food.en.json";
 import { SITE } from "../config/site";
 import type { Locale } from "../config/site";
+import Logo from "./Logo.astro";
 
 interface Props {
   locale: Locale;
@@ -127,6 +128,10 @@ const CFG = {
     href: isEs ? "/donde-el-mar-esta-en-calma" : "/en/where-the-sea-is-calm",
     text: isEs ? "El día antes, mira dónde está el mar en calma" : "The day before, check where the sea is calm",
   },
+  // Portada del dossier de impresión (PDF): el island la rellena al renderizar.
+  printTitleTpl: isEs ? "Tu Menorca en {N} días" : "Your Menorca in {N} days",
+  printTitleOne: isEs ? "Tu Menorca en 1 día" : "Your Menorca in 1 day",
+  printGenerated: isEs ? "plan generado el" : "plan generated on",
   noticeIcon: { reserva: "📌", madrugar: "⏰", "agua-sombra": "💧", parking: "🅿️", "confirma-horario": "🕒", esfuerzo: "🥾", viento: "🌬️", accesibilidad: "♿", fiesta: "🎉", transfer: "🚌", logistica: "🧭" } as Record<string, string>,
 };
 
@@ -278,9 +283,39 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
     </button>
   </form>
 
+  {/* ── PORTADA DEL DOSSIER (solo se ve al imprimir/PDF; el island la rellena) ── */}
+  <div id="planner-print-cover" class="hidden" aria-hidden="true">
+    <Logo large />
+    <p class="cover-tagline">{isEs ? "El Mediterráneo, sin prisa" : "The Mediterranean, at ease"}</p>
+    <hr class="cover-rule" />
+    <p id="planner-print-title" class="cover-title"></p>
+    <p id="planner-print-sub" class="cover-sub"></p>
+    <p class="cover-claim">
+      {isEs
+        ? "Un itinerario encadenado por cercanía, sin prisas y con criterio de lujo tranquilo. Las horas son orientativas; la isla manda."
+        : "An itinerary chained by proximity, unhurried and with a quiet-luxury eye. Times are indicative; the island leads."}
+    </p>
+    <hr class="cover-rule" />
+    <p class="cover-foot">
+      calmasociety.com/{isEs ? "planificador" : "en/trip-planner"} · <span id="planner-print-date"></span>
+    </p>
+  </div>
+
   {/* ── RESULTADO (lo pinta el island desde la querystring) ── */}
   <div id="planner-results" class="mt-12">
     <p class="text-sm text-piedra-suave">{T.empty}</p>
+  </div>
+
+  {/* ── CIERRE DEL DOSSIER (solo impresión): la Sociedad, sin ruido ── */}
+  <div id="planner-print-end" class="hidden" aria-hidden="true">
+    <hr class="cover-rule" />
+    <p class="cover-tagline">Calma Society</p>
+    <p class="cover-claim">
+      {isEs
+        ? "Este plan es tuyo: ajústalo, táchalo, vuelve a él. Cuando quieras más isla —el parte del mar en calma, la agenda, las mesas con criterio—, estamos en calmasociety.com."
+        : "This plan is yours: adjust it, cross things out, come back to it. Whenever you want more island —the calm-sea report, the agenda, tables chosen with care— we are at calmasociety.com."}
+    </p>
+    <p class="cover-foot">calmasociety.com · @calma.society</p>
   </div>
 
   {/* ── GUARDA TU PLAN (email con el plan · PDF · enlace) — el island lo revela cuando hay plan ── */}
@@ -559,10 +594,36 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
     // La URL del plan viaja oculta en el form de email (el plan vive en la querystring).
     const planUrl = $("planner-plan-url") as HTMLInputElement | null;
     if (planUrl) planUrl.value = location.href;
+    // Portada del dossier de impresión: título, base+fechas y fecha de generación.
+    const title = $("planner-print-title");
+    if (title) {
+      const n = plan.days.length;
+      title.textContent = n === 1 ? CFG.printTitleOne : CFG.printTitleTpl.replace("{N}", String(n));
+      const sub = $("planner-print-sub");
+      if (sub) {
+        const fechas = plan.days[0]?.date && plan.days[n - 1]?.date
+          ? `${fmtDate(plan.days[0].date)} — ${fmtDate(plan.days[n - 1].date)}`
+          : "";
+        sub.textContent = [baseName, fechas].filter(Boolean).join(" · ");
+      }
+      const gen = $("planner-print-date");
+      if (gen) gen.textContent = `${CFG.printGenerated} ${new Intl.DateTimeFormat(CFG.dateLocale, { day: "numeric", month: "long", year: "numeric" }).format(new Date())}`;
+    }
   }
 
   // "Guarda tu plan": PDF por print-CSS y copiar el enlace (compartible/recuperable).
   $("planner-pdf")?.addEventListener("click", () => window.print());
+  // Al imprimir, el plan-B de cada día se abre (en papel no hay toggle) y se
+  // restaura después. También cubre Ctrl+P.
+  let autoOpened: HTMLDetailsElement[] = [];
+  window.addEventListener("beforeprint", () => {
+    autoOpened = Array.from(document.querySelectorAll<HTMLDetailsElement>("#planner-results details:not([open])"));
+    for (const d of autoOpened) d.open = true;
+  });
+  window.addEventListener("afterprint", () => {
+    for (const d of autoOpened) d.open = false;
+    autoOpened = [];
+  });
   $("planner-copy")?.addEventListener("click", async (e) => {
     try { await navigator.clipboard.writeText(location.href); } catch {}
     const b = e.currentTarget as HTMLButtonElement;
@@ -586,13 +647,58 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
   }
 </script>
 
-{/* Impresión / "Descargar PDF": solo el plan en papel (sin nav, encuesta ni acciones). */}
+{/* Impresión / "Descargar PDF": DOSSIER editorial (KAN-30) — portada de marca,
+    una página por día (plan-B abierto vía beforeprint) y cierre de la Sociedad.
+    Sin librerías ni backend: print-CSS puro sobre el render del island. */}
 <style is:global>
   @media print {
+    @page { size: A4; margin: 15mm 14mm; }
     header, footer, nav, #planner-form, #planner-actions { display: none !important; }
     body { background: #fff !important; }
+
+    /* ── Portada y cierre (ocultos en pantalla con .hidden) ── */
+    #planner-print-cover, #planner-print-end {
+      display: flex !important;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 4mm;
+    }
+    #planner-print-cover { min-height: 85vh; break-after: page; }
+    #planner-print-end { break-before: page; min-height: 60vh; }
+    .cover-tagline { font-size: 11pt; letter-spacing: 0.2em; text-transform: uppercase; color: #8a6a3a; }
+    .cover-rule { width: 28mm; border: 0; border-top: 1px solid #ded4c4; margin: 2mm 0; }
+    .cover-title { font-family: "Fraunces Variable", Georgia, serif; font-size: 30pt; line-height: 1.15; color: #17150f; max-width: 140mm; }
+    .cover-sub { font-size: 12pt; color: #46423a; }
+    .cover-claim { font-size: 10.5pt; line-height: 1.6; color: #6b6557; max-width: 118mm; }
+    .cover-foot { font-size: 8.5pt; color: #6b6557; margin-top: 6mm; }
+
+    /* ── Cuerpo del plan ── */
     #planner-results { margin-top: 0 !important; }
-    #planner-results .rounded-2xl, #planner-results article { box-shadow: none !important; break-inside: avoid; }
+    /* Resumen de base + firma en la primera página; cada DÍA arranca página nueva. */
+    #planner-results article {
+      break-before: page;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 0 !important;
+      overflow: visible !important;
+    }
+    /* La foto de cabecera del día, contenida y con sus colores reales. */
+    #planner-results article > figure { margin: 0 0 5mm !important; }
+    #planner-results article > figure img {
+      height: 52mm !important;
+      width: 100% !important;
+      object-fit: cover;
+      border-radius: 2mm;
+    }
+    #planner-results img { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    /* Bloques y avisos: aire de dossier, nada de UI. */
+    #planner-results li { break-inside: avoid; }
     #planner-results a[href] { text-decoration: none !important; color: inherit !important; }
+    /* Plan-B: se imprime ABIERTO (beforeprint) como apunte sobrio, sin flecha. */
+    #planner-results details { break-inside: avoid; background: transparent !important; border-top: 1px solid #ded4c4; border-radius: 0 !important; padding: 3mm 0 0 !important; }
+    #planner-results details summary { list-style: none; cursor: default; }
+    #planner-results details summary::-webkit-details-marker { display: none; }
   }
 </style>
