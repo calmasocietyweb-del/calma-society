@@ -27,15 +27,52 @@ const ed = data.editorial;
 const rating = googleRatings[data.translationKey];
 
 const pi = data.practicalInfo;
+
+// ── Datos del PLANIFICADOR en la ficha (KAN-54) ──────────────────────────────
+// Las fichas sembradas para el motor traen datos verificados (acceso, esfuerzo,
+// temporada, reserva…) que antes no se mostraban: la página quedaba en 2 líneas.
+// Se humanizan los enums y se funden en la misma caja de "Información práctica".
+const pl = data.planner;
+const L = locale as "es" | "en" | "fr";
+const CAR_ACCESS: Record<string, Record<"es" | "en" | "fr", string>> = {
+  "coche-directo": { es: "En coche hasta el lugar", en: "Drive-up by car", fr: "Accès direct en voiture" },
+  "coche-mas-caminata": { es: "Coche + caminata", en: "Car + a walk", fr: "Voiture + marche" },
+  "solo-bus-lanzadera": { es: "Solo bus lanzadera en verano", en: "Summer shuttle bus only", fr: "Navette estivale uniquement" },
+  "sin-coche-ok": { es: "Fácil sin coche", en: "Easy without a car", fr: "Facile sans voiture" },
+};
+const EFFORT: Record<string, Record<"es" | "en" | "fr", string>> = {
+  A1: { es: "Accesible, con baño asistido en temporada", en: "Accessible, assisted bathing in season", fr: "Accessible, baignade assistée en saison" },
+  A2: { es: "Fácil: apto para carrito y mayores", en: "Easy: stroller-friendly", fr: "Facile : poussette ok" },
+  B: { es: "Moderado: tramo a pie o escaleras", en: "Moderate: a short walk or steps", fr: "Modéré : marche courte ou escaliers" },
+  C: { es: "Exigente: sendero (15-40 min)", en: "Demanding: a 15-40 min trail", fr: "Exigeant : sentier (15-40 min)" },
+  D: { es: "Duro: caminata larga sin servicios", en: "Tough: a long hike, no services", fr: "Difficile : longue marche, sans services" },
+};
+const fmtDur = (min: number) => {
+  const h = Math.floor(min / 60);
+  const m = min % 60;
+  if (!h) return `~${m} min`;
+  return m ? `~${h} h ${m} min` : `~${h} h`;
+};
+const busNote = pl?.busServed ? { es: " · con bus en temporada", en: " · seasonal bus service", fr: " · bus en saison" }[L] : "";
+
 const rows: { label: string; value?: string }[] = [
-  { label: t("place.access"), value: pi?.acceso },
+  { label: t("place.access"), value: pi?.acceso ?? (pl?.carAccess ? `${CAR_ACCESS[pl.carAccess]?.[L] ?? pl.carAccess}${busNote}` : undefined) },
   { label: t("place.parking"), value: pi?.aparcamiento },
   { label: t("place.services"), value: pi?.servicios },
   { label: t("place.besttime"), value: pi?.mejorEpoca },
-  { label: t("place.hours"), value: pi?.horario },
+  { label: t("place.hours"), value: pi?.horario ?? pl?.seasonalHours },
+  { label: t("place.effort"), value: pl?.effortLevel ? (pl.effortNote ?? EFFORT[pl.effortLevel]?.[L]) : undefined },
+  { label: t("place.duration"), value: pl?.durationMin ? fmtDur(pl.durationMin) : undefined },
+  { label: t("place.reserve"), value: pl?.needsReservation ? t("place.reserve.yes") : undefined },
 ].filter((r) => r.value);
 
+// Aviso de cierre estival al coche (Macarella, Favàritx…): va aparte, destacado.
+const shuttle = pl?.carAccessClosedSummer ? pl.shuttleInfo : undefined;
+// Página del planificador por idioma (FR aún no tiene: KAN-24).
+const plannerHref = L === "es" ? "/planificador" : L === "en" ? "/en/trip-planner" : null;
+
 const mapUrl = `https://www.google.com/maps/search/?api=1&query=${data.coordinates.lat},${data.coordinates.lng}`;
+const officialUrl = data.website ?? pl?.officialUrl;
 
 const canonical = abs(placeUrl(locale, entry.id));
 const placeLd = {
@@ -137,6 +174,24 @@ const breadcrumb = breadcrumbSchema([
       )
     }
 
+    {/* "Qué ver y hacer": los highlights verificados del planificador (solo si
+        la ficha no es artículo — el cuerpo editorial ya cuenta esa historia). */}
+    {
+      !ed && pl?.highlights && pl.highlights.length > 0 && (
+        <section class="mt-10 rounded-xl border border-niebla bg-arena/30 p-6">
+          <h2 class="text-xs font-semibold uppercase tracking-widest text-oro">{t("place.what")}</h2>
+          <ul class="mt-4 space-y-2.5 text-sm text-piedra">
+            {pl.highlights.map((h) => (
+              <li class="flex gap-2.5">
+                <span aria-hidden="true" class="mt-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-oro-vivo" />
+                <span>{h}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
     {/* "Bueno saber": apuntes prácticos verificados, en breve. */}
     {
       ed && ed.goodToKnow.length > 0 && (
@@ -190,7 +245,34 @@ const breadcrumb = breadcrumbSchema([
               </div>
             ))}
           </dl>
+          {shuttle && (
+            <p class="mt-4 rounded-lg border border-terracota/40 bg-lino px-4 py-3 text-sm text-arcilla">
+              🚌 {shuttle}
+            </p>
+          )}
+          {pl?.lastVerified && (
+            <p class="mt-4 border-t border-niebla pt-3 text-xs text-piedra-suave">
+              {t("place.verified")} <time datetime={pl.lastVerified}>{pl.lastVerified}</time> — {t("place.verified.note")}.
+            </p>
+          )}
         </section>
+      )
+    }
+
+    {/* Encájalo en tu viaje → planificador (malla interna; FR aún sin planner). */}
+    {
+      pl && plannerHref && (
+        <aside class="mt-10 rounded-xl border border-oro-vivo/40 bg-crema/40 p-6">
+          <p class="text-xs font-semibold uppercase tracking-widest text-oro">{t("place.planit.title")}</p>
+          <p class="mt-2 text-sm leading-relaxed text-piedra">{t("place.planit.text")}</p>
+          <a
+            href={plannerHref}
+            data-umami-event="place-to-planner"
+            class="mt-4 inline-block rounded-md bg-arcilla px-5 py-2.5 text-sm font-semibold text-lino transition-colors hover:bg-tinta"
+          >
+            {t("place.planit.cta")} →
+          </a>
+        </aside>
       )
     }
 
@@ -204,14 +286,14 @@ const breadcrumb = breadcrumbSchema([
         {t("place.viewmap")} →
       </a>
       {
-        data.website && (
+        officialUrl && (
           <a
-            href={data.website}
+            href={officialUrl}
             rel="noopener"
             target="_blank"
             class="ml-6 inline-block border-b border-terracota pb-0.5 text-sm font-medium text-arcilla hover:text-terracota"
           >
-            Web →
+            {t("place.official")} →
           </a>
         )
       }
