@@ -2,6 +2,7 @@
   {
     "id": "alaior",
     "name": "Alaior",
+    "slug": "alaior-es",
     "image": "/uploads/alaior-480.webp",
     "imageCredit": "Mathewr1999 · Wikimedia Commons, CC BY-SA 4.0",
     "coordinates": {
@@ -38,6 +39,7 @@
   {
     "id": "alquiler-barco-sin-licencia-ciutadella",
     "name": "Alquiler de barco sin licencia desde Ciutadella",
+    "slug": "alquiler-barco-sin-licencia-ciutadella-es",
     "coordinates": {
       "lat": 39.9985,
       "lng": 3.833
@@ -54,9 +56,9 @@
     "highlights": [
       "navegar sin licencia (barcas de hasta 5 personas, motor 15 CV) hasta 5 millas",
       "fondear y banarte por libre en las calas y aguas del oeste",
-      "alquiler por medio dia o dia completo desde el puerto de Ciutadella"
+      "alquiler por medio día o día completo desde el puerto de Ciutadella"
     ],
-    "blurb": "Patronear tu propia barca sin titulacion desde el puerto de Ciutadella y descubrir las calas del oeste a tu aire. Embarcaciones de hasta cinco…",
+    "blurb": "Patronear tu propia barca sin titulación desde el puerto de Ciutadella y descubrir las calas del oeste a tu aire. Embarcaciones de hasta cinco…",
     "durationMin": 240,
     "carAccess": "sin-coche-ok",
     "busServed": true,
@@ -72,6 +74,7 @@
   {
     "id": "alquiler-de-llaut-tradicional-barco-privado-al-a",
     "name": "Alquiler de llaut tradicional / barco privado al atardecer",
+    "slug": "alquiler-de-llaut-tradicional-barco-privado-al-a-es",
     "coordinates": {
       "lat": 39.93,
       "lng": 3.96
@@ -105,6 +108,7 @@
   {
     "id": "aquarock-parque-acuatico-calan-bosch",
     "name": "Aquarock (parque acuático, Cala'n Bosch)",
+    "slug": "aquarock-parque-acuatico-calan-bosch-es",
     "coordinates": {
       "lat": 39.929,
       "lng": 3.818
@@ -174,6 +178,7 @@
   {
     "id": "atardecer-barco-binibeca-faralmar",
     "name": "Puesta de sol en barco desde Binibeca",
+    "slug": "atardecer-barco-binibeca-faralmar-es",
     "coordinates": {
       "lat": 39.8147,
       "lng": 4.2389
@@ -208,6 +213,7 @@
   {
     "id": "atardecer-barco-puerto-mao-faralmar",
     "name": "Atardecer en barco por el puerto de Maó",
+    "slug": "atardecer-barco-puerto-mao-faralmar-es",
     "coordinates": {
       "lat": 39.8861,
       "lng": 4.2906
@@ -242,6 +248,7 @@
   {
     "id": "atardecer-catamaran-ciutadella-oceancat",
     "name": "Atardecer en barco desde Ciutadella",
+    "slug": "atardecer-catamaran-ciutadella-oceancat-es",
     "coordinates": {
       "lat": 40.0006,
       "lng": 3.8295
@@ -276,6 +283,7 @@
   {
     "id": "atardecer-catamaran-fornells",
     "name": "Atardecer en catamarán desde Fornells",
+    "slug": "atardecer-catamaran-fornells-es",
     "coordinates": {
       "lat": 40.0536,
       "lng": 4.1372
@@ -310,6 +318,7 @@
   {
     "id": "binibeca-vell",
     "name": "Binibeca Vell",
+    "slug": "binibeca-vell-es",
     "image": "/uploads/binibeca-480.webp",
     "coordinates": {
       "lat": 39.8158,
@@ -361,7 +370,7 @@
       "ver de cerca las casetas de barca tradicionales",
       "snorkel suave entre las rocas (lleva escarpines)"
     ],
-    "blurb": "Pequena cala de ambiente residencial y tranquilo, con casetas de barca y rocas, mas de bano local que de gran arenal. Apta para familias que buscan…",
+    "blurb": "Pequeña cala de ambiente residencial y tranquilo, con casetas de barca y rocas, más de baño local que de gran arenal. Apta para familias que buscan…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -377,6 +386,7 @@
   {
     "id": "birdwatching-salbufera-des-grau",
     "name": "Observación de aves en s'Albufera des Grau (itinerarios del parque)",
+    "slug": "birdwatching-salbufera-des-grau-es",
     "image": "/uploads/albufera-badia-480.webp",
     "imageCredit": "Discasto · Wikimedia Commons, CC BY-SA 4.0",
     "coordinates": {
@@ -412,6 +422,7 @@
   {
     "id": "bodega-binitord",
     "name": "Bodega Binitord",
+    "slug": "bodega-binitord-es",
     "coordinates": {
       "lat": 39.96,
       "lng": 3.855
@@ -446,6 +457,7 @@
   {
     "id": "bodega-son-cremat",
     "name": "Sa Bodega de Son Cremat",
+    "slug": "bodega-son-cremat-es",
     "coordinates": {
       "lat": 39.875,
       "lng": 4.24
@@ -480,6 +492,7 @@
   {
     "id": "bodega-vinya-sa-cudia",
     "name": "Vinya Sa Cúdia",
+    "slug": "bodega-vinya-sa-cudia-es",
     "coordinates": {
       "lat": 39.92,
       "lng": 4.225
@@ -514,6 +527,7 @@
   {
     "id": "bodegas-binifadet",
     "name": "Bodegas Binifadet",
+    "slug": "bodegas-binifadet-es",
     "coordinates": {
       "lat": 39.85,
       "lng": 4.27
@@ -551,6 +565,7 @@
   {
     "id": "bodegas-menorquinas-ferrer-muntpalau",
     "name": "Bodegas Menorquinas (Ferrer de Muntpalau)",
+    "slug": "bodegas-menorquinas-ferrer-muntpalau-es",
     "coordinates": {
       "lat": 39.982,
       "lng": 4.008
@@ -584,6 +599,7 @@
   {
     "id": "btt-cicloturismo-cami-de-cavalls-velos-joan",
     "name": "Cicloturismo y BTT por el Camí de Cavalls (alquiler Velos Joan)",
+    "slug": "btt-cicloturismo-cami-de-cavalls-velos-joan-es",
     "coordinates": {
       "lat": 40.0014,
       "lng": 3.8416
@@ -617,6 +633,7 @@
   {
     "id": "buceo-fornells-reserva-marina-nord",
     "name": "Buceo en la Reserva Marina del Nord (Fornells Diving Center / Dune)",
+    "slug": "buceo-fornells-reserva-marina-nord-es",
     "coordinates": {
       "lat": 40.0535,
       "lng": 4.137
@@ -634,7 +651,7 @@
       "bautismos para principiantes, cursos PADI y salidas de snorkel",
       "centro PADI 5 estrellas con barcos propios amarrados frente a la base"
     ],
-    "blurb": "Bucear los fondos de la Reserva Marina del Nord desde Fornells, con visibilidad excepcional y puntos de inmersion a quince minutos de la bahia. Un…",
+    "blurb": "Bucear los fondos de la Reserva Marina del Nord desde Fornells, con visibilidad excepcional y puntos de inmersión a quince minutos de la bahía. Un…",
     "durationMin": 180,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -650,6 +667,7 @@
   {
     "id": "buceo-salgar-illa-de-laire",
     "name": "Buceo y bautismo de mar en la Reserva de la Illa de l'Aire (S'Algar Diving)",
+    "slug": "buceo-salgar-illa-de-laire-es",
     "coordinates": {
       "lat": 39.843,
       "lng": 4.282
@@ -665,10 +683,10 @@
     ],
     "highlights": [
       "bautismo de buceo para iniciarse o inmersiones en la reserva de la Illa de l'Aire",
-      "mas de 20 puntos de inmersion y salidas de snorkel guiado",
+      "más de 20 puntos de inmersión y salidas de snorkel guiado",
       "centro PADI 5 estrellas con piscina de practicas, aulas y barcos propios"
     ],
-    "blurb": "Sumergirse en la Reserva Marina de la Illa de l'Aire con un centro PADI con mas de treinta anos en la costa sureste. Desde el bautismo para…",
+    "blurb": "Sumergirse en la Reserva Marina de la Illa de l'Aire con un centro PADI con más de treinta años en la costa sureste. Desde el bautismo para…",
     "durationMin": 180,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -684,6 +702,7 @@
   {
     "id": "cala-algaiarens",
     "name": "Cala Algaiarens",
+    "slug": "cala-algaiarens-es",
     "coordinates": {
       "lat": 40.047,
       "lng": 3.88
@@ -716,6 +735,7 @@
   {
     "id": "cala-binidali",
     "name": "Cala Binidali",
+    "slug": "cala-binidali-es",
     "coordinates": {
       "lat": 39.858,
       "lng": 4.185
@@ -732,7 +752,7 @@
       "snorkel entre los acantilados que la encajonan",
       "llegar pronto: es pequeña e íntima y se llena"
     ],
-    "blurb": "Cala pequena y natural de arena dorada fina y aguas turquesa muy transparentes, encajada entre acantilados; excelente para snorkel. Intima y de…",
+    "blurb": "Cala pequeña y natural de arena dorada fina y aguas turquesa muy transparentes, encajada entre acantilados; excelente para snorkel. Intima y de…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -748,6 +768,7 @@
   {
     "id": "cala-blanca",
     "name": "Cala Blanca",
+    "slug": "cala-blanca-es",
     "coordinates": {
       "lat": 39.954,
       "lng": 3.803
@@ -763,7 +784,7 @@
       "aguas someras y tranquilas, cómoda para familias",
       "acceso directo en coche: buena base para alojarse cerca del agua"
     ],
-    "blurb": "Cala urbanizada de unos 50 m de arena muy blanca y fina, con todos los servicios y muy cercana a Ciutadella. Practica para alojarse y banarse sin…",
+    "blurb": "Cala urbanizada de unos 50 m de arena muy blanca y fina, con todos los servicios y muy cercana a Ciutadella. Practica para alojarse y bañarse sin…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -779,6 +800,7 @@
   {
     "id": "cala-cavalleria",
     "name": "Platja de Cavalleria",
+    "slug": "cala-cavalleria-es",
     "coordinates": {
       "lat": 40.056,
       "lng": 4.093
@@ -812,6 +834,7 @@
   {
     "id": "cala-de-biniancolla",
     "name": "Cala de Biniancolla",
+    "slug": "cala-de-biniancolla-es",
     "coordinates": {
       "lat": 39.815,
       "lng": 4.268
@@ -828,7 +851,7 @@
       "las casetas de pescadores del entorno",
       "comer arroz y pescado a pie de cala en En Caragol"
     ],
-    "blurb": "Cala pequena y tradicional (~100 m) entre Punta Prima y Binibeca, con casetas de pescadores, fondo que profundiza poco a poco y acantilados rocosos…",
+    "blurb": "Cala pequeña y tradicional (~100 m) entre Punta Prima y Binibeca, con casetas de pescadores, fondo que profundiza poco a poco y acantilados rocosos…",
     "durationMin": 90,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -844,6 +867,7 @@
   {
     "id": "cala-de-llucalari",
     "name": "Cala de Llucalari",
+    "slug": "cala-de-llucalari-es",
     "coordinates": {
       "lat": 39.892,
       "lng": 4.1
@@ -859,7 +883,7 @@
       "disfrutar una cala tranquila y poco frecuentada, sin servicios",
       "llevar agua y sombra: no hay chiringuito ni nada en la cala"
     ],
-    "blurb": "Pequena cala escondida cerca de Son Bou, recompensa de una caminata corta. Tranquila y poco frecuentada por su acceso a pie; sin servicios.",
+    "blurb": "Pequeña cala escondida cerca de Son Bou, recompensa de una caminata corta. Tranquila y poco frecuentada por su acceso a pie; sin servicios.",
     "durationMin": 180,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -875,6 +899,7 @@
   {
     "id": "cala-del-pilar",
     "name": "Cala del Pilar",
+    "slug": "cala-del-pilar-es",
     "coordinates": {
       "lat": 40.022,
       "lng": 3.93
@@ -891,7 +916,7 @@
       "la caminata por pinar y maquia hasta la arena dorada bajo arcillas rojas",
       "ir sin nada y volver sin nada: no hay un solo servicio"
     ],
-    "blurb": "Una de las playas mas salvajes y aisladas de Menorca: arena dorada bajo acantilados de arcilla roja, sin un solo servicio. La larga caminata y el…",
+    "blurb": "Una de las playas más salvajes y aisladas de Menorca: arena dorada bajo acantilados de arcilla roja, sin un solo servicio. La larga caminata y el…",
     "durationMin": 300,
     "carAccess": "solo-bus-lanzadera",
     "busServed": true,
@@ -907,6 +932,7 @@
   {
     "id": "cala-des-talaier",
     "name": "Cala des Talaier",
+    "slug": "cala-des-talaier-es",
     "coordinates": {
       "lat": 39.921,
       "lng": 3.9
@@ -923,7 +949,7 @@
       "menos masificada por exigir caminata: lleva picnic, agua y sombra",
       "arena clara y aguas tranquilas, ideal para desconectar en pareja"
     ],
-    "blurb": "Cala pequena, recondita y resguardada, de arena clara y aguas tranquilas, con un islote frente a la orilla. Al exigir caminata queda menos masificada…",
+    "blurb": "Cala pequeña, recondita y resguardada, de arena clara y aguas tranquilas, con un islote frente a la orilla. Al exigir caminata queda menos masificada…",
     "durationMin": 180,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -939,6 +965,7 @@
   {
     "id": "cala-en-bosch",
     "name": "Cala en Bosch",
+    "slug": "cala-en-bosch-es",
     "coordinates": {
       "lat": 39.927,
       "lng": 3.812
@@ -971,6 +998,7 @@
   {
     "id": "cala-en-porter",
     "name": "Cala en Porter",
+    "slug": "cala-en-porter-es",
     "coordinates": {
       "lat": 39.872,
       "lng": 4.13
@@ -983,11 +1011,11 @@
       "gastronomia"
     ],
     "highlights": [
-      "banarse en una cala de arena fina encajada entre altos acantilados",
+      "bañarse en una cala de arena fina encajada entre altos acantilados",
       "subir a la Cova d'en Xoroi, en el acantilado, para una copa al atardecer",
-      "aparcar arriba en la urbanizacion y bajar a la playa por las escaleras"
+      "aparcar arriba en la urbanización y bajar a la playa por las escaleras"
     ],
-    "blurb": "Cala encajada entre altos acantilados con arena fina y aguas tranquilas, junto a una urbanizacion con servicios. Famosa por la Cova d'en Xoroi…",
+    "blurb": "Cala encajada entre altos acantilados con arena fina y aguas tranquilas, junto a una urbanización con servicios. Famosa por la Cova d'en Xoroi…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -1014,6 +1042,7 @@
   {
     "id": "cala-escorxada",
     "name": "Cala Escorxada",
+    "slug": "cala-escorxada-es",
     "coordinates": {
       "lat": 39.93,
       "lng": 4.025
@@ -1025,7 +1054,7 @@
       "naturaleza"
     ],
     "highlights": [
-      "caminar por el Cami de Cavalls hasta una cala virgen de 'fin del mundo'",
+      "caminar por el Camí de Cavalls hasta una cala virgen de 'fin del mundo'",
       "nadar en aguas limpias en una playa casi siempre solitaria",
       "ir autosuficiente: sin servicios, sin sombra y con caminata larga"
     ],
@@ -1045,6 +1074,7 @@
   {
     "id": "cala-galdana",
     "name": "Cala Galdana",
+    "slug": "cala-galdana-es",
     "image": "/uploads/cala-galdana-480.webp",
     "coordinates": {
       "lat": 39.936,
@@ -1128,6 +1158,7 @@
   {
     "id": "cala-macarelleta",
     "name": "Cala Macarelleta",
+    "slug": "cala-macarelleta-es",
     "image": "/uploads/cala-macarelleta-480.webp",
     "imageCredit": "Pelayo Arbués · Unsplash",
     "coordinates": {
@@ -1146,7 +1177,7 @@
       "turquesa intenso y ambiente recogido (en parte naturista)",
       "se accede a pie desde Macarella; nada de servicios, lleva lo tuyo"
     ],
-    "blurb": "La hermana pequena y mas intima de Macarella, separada por un istmo rocoso; agua turquesa intensa y ambiente naturista en parte. Mas recogida y…",
+    "blurb": "La hermana pequeña y más intima de Macarella, separada por un istmo rocoso; agua turquesa intensa y ambiente naturista en parte. Más recogida y…",
     "durationMin": 180,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -1162,6 +1193,7 @@
   {
     "id": "cala-mesquida",
     "name": "Cala Mesquida",
+    "slug": "cala-mesquida-es",
     "coordinates": {
       "lat": 39.902,
       "lng": 4.31
@@ -1179,7 +1211,7 @@
       "la torre de defensa sobre la cala",
       "comer en uno de sus restaurantes de pescado a pie de playa"
     ],
-    "blurb": "Playa de arena clara y aguas tranquilas cerca de Mao, con un pequeno nucleo de casas de pescadores, restaurantes y una torre de defensa. NOTA…",
+    "blurb": "Playa de arena clara y aguas tranquilas muy cerca de Maó, con un pequeño núcleo de casas de pescadores, restaurantes y una torre de defensa. Está en…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -1195,6 +1227,7 @@
   {
     "id": "cala-mica",
     "name": "Cala Mica",
+    "slug": "cala-mica-es",
     "coordinates": {
       "lat": 40.05,
       "lng": 4.085
@@ -1264,6 +1297,7 @@
   {
     "id": "cala-morell",
     "name": "Cala Morell",
+    "slug": "cala-morell-es",
     "coordinates": {
       "lat": 40.056,
       "lng": 3.883
@@ -1282,7 +1316,7 @@
       "visitar la necrópolis prehistórica junto a la urbanización",
       "el snorkel en aguas resguardadas"
     ],
-    "blurb": "Cala-puerto natural encajada entre acantilados rojizos en una urbanizacion de casas blancas tipo cicladico. Junto a ella, la necropolis prehistorica…",
+    "blurb": "Cala-puerto natural encajada entre acantilados rojizos en una urbanización de casas blancas tipo cicladico. Junto a ella, la necropolis prehistorica…",
     "durationMin": 180,
     "carAccess": "coche-mas-caminata",
     "busServed": true,
@@ -1334,6 +1368,7 @@
   {
     "id": "cala-presili",
     "name": "Cala Presili",
+    "slug": "cala-presili-es",
     "coordinates": {
       "lat": 39.995,
       "lng": 4.272
@@ -1350,7 +1385,7 @@
       "combinarla con Cala Tortuga, su vecina, en la misma jornada",
       "en verano se accede en bus de temporada, no en coche"
     ],
-    "blurb": "Pequena cala virgen junto a Cala Tortuga, a los pies del faro de Favaritx, en pleno parque natural. Se suele combinar con Tortuga en la misma…",
+    "blurb": "Pequeña cala virgen junto a Cala Tortuga, a los pies del faro de Favaritx, en pleno parque natural. Se suele combinar con Tortuga en la misma…",
     "durationMin": 180,
     "carAccess": "solo-bus-lanzadera",
     "busServed": true,
@@ -1366,6 +1401,7 @@
   {
     "id": "cala-roja",
     "name": "Cala Roja",
+    "slug": "cala-roja-es",
     "coordinates": {
       "lat": 40.0575,
       "lng": 4.0905
@@ -1382,7 +1418,7 @@
       "escapar de la masa sin alejarte de Cavalleria",
       "rincón íntimo entre rocas para snorkel"
     ],
-    "blurb": "La hermana pequena y mas intima de Cavalleria: cala roja recoleta entre rocas, casi siempre vacia. Ideal para escapar de la masa sin alejarse del…",
+    "blurb": "La hermana pequeña y más intima de Cavalleria: cala roja recoleta entre rocas, casi siempre vacía. Ideal para escapar de la masa sin alejarse del…",
     "durationMin": 90,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -1398,6 +1434,7 @@
   {
     "id": "cala-santandria",
     "name": "Cala Santandria",
+    "slug": "cala-santandria-es",
     "coordinates": {
       "lat": 39.969,
       "lng": 3.829
@@ -1414,7 +1451,7 @@
       "urbanizada y cómoda, con servicio de baño adaptado en temporada (mayo-octubre)",
       "ideal para familias con niños, muy cerca de Ciutadella"
     ],
-    "blurb": "Cala abrigada de arena blanca y aguas tranquilas y limpias, muy resguardada del viento, ideal para familias con ninos. Urbanizada y comoda, junto a…",
+    "blurb": "Cala abrigada de arena blanca y aguas tranquilas y limpias, muy resguardada del viento, ideal para familias con niños. Urbanizada y comoda, junto a…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -1441,6 +1478,7 @@
   {
     "id": "cala-tirant",
     "name": "Cala Tirant",
+    "slug": "cala-tirant-es",
     "coordinates": {
       "lat": 40.057,
       "lng": 4.117
@@ -1457,7 +1495,7 @@
       "cruzar la pasarela de madera entre sus dos zonas",
       "la opción de playa más accesible y familiar cerca de Fornells"
     ],
-    "blurb": "Amplia playa de arena fina dorada entre Fornells y el cabo de Cavalleria, dividida en dos zonas por una colina con pasarela de madera. Mas accesible…",
+    "blurb": "Amplia playa de arena fina dorada entre Fornells y el cabo de Cavalleria, dividida en dos zonas por una colina con pasarela de madera. Más accesible…",
     "durationMin": 180,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -1473,6 +1511,7 @@
   {
     "id": "cala-tortuga",
     "name": "Cala Tortuga",
+    "slug": "cala-tortuga-es",
     "coordinates": {
       "lat": 39.998,
       "lng": 4.27
@@ -1505,6 +1544,7 @@
   {
     "id": "cala-trebaluger",
     "name": "Cala Trebaluger",
+    "slug": "cala-trebaluger-es",
     "coordinates": {
       "lat": 39.932,
       "lng": 3.987
@@ -1516,11 +1556,11 @@
       "naturaleza"
     ],
     "highlights": [
-      "alcanzar a pie o en barco una de las calas virgenes mas bellas de la isla",
+      "alcanzar a pie o en barco una de las calas virgenes más bellas de la isla",
       "disfrutar arena blanca, pinos hasta la orilla y un torrente a un lado",
-      "planificar el regreso: caminata exigente y sin ningun servicio"
+      "planificar el regreso: caminata exigente y sin ningún servicio"
     ],
-    "blurb": "Una de las calas virgenes mas hermosas: arena blanca, acantilados calizos, pinos hasta la orilla y un pequeno torrente que desemboca en un lado. Su…",
+    "blurb": "Una de las calas virgenes más hermosas: arena blanca, acantilados calizos, pinos hasta la orilla y un pequeño torrente que desemboca en un lado. Su…",
     "durationMin": 240,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -1573,6 +1613,7 @@
   {
     "id": "cales-coves",
     "name": "Cales Coves",
+    "slug": "cales-coves-es",
     "coordinates": {
       "lat": 39.874,
       "lng": 4.148
@@ -1585,11 +1626,11 @@
       "cultura"
     ],
     "highlights": [
-      "banarse en una doble cala rodeada de acantilados horadados",
+      "bañarse en una doble cala rodeada de acantilados horadados",
       "ver desde el agua la necropolis de cuevas prehistoricas excavadas en la roca",
-      "respetar el yacimiento: es un sitio arqueologico protegido"
+      "respetar el yacimiento: es un sitio arqueológico protegido"
     ],
-    "blurb": "Doble cala rodeada de acantilados horadados por una necropolis prehistorica de cuevas (yacimiento talayotico-romano), de gran valor cultural y…",
+    "blurb": "Doble cala rodeada de acantilados horadados por una necropolis prehistorica de cuevas (yacimiento talayótico-romano), de gran valor cultural y…",
     "durationMin": 180,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -1605,6 +1646,7 @@
   {
     "id": "cami-de-cavalls-es-grau-sa-mesquida-familiar",
     "name": "Camí de Cavalls fácil: Es Grau – Sa Mesquida (tramo familiar)",
+    "slug": "cami-de-cavalls-es-grau-sa-mesquida-familiar-es",
     "image": "/uploads/cami-de-cavalls-480.webp",
     "imageCredit": "Pelayo Arbués · Unsplash",
     "coordinates": {
@@ -1640,6 +1682,7 @@
   {
     "id": "cami-de-cavalls-etapa-10-punta-nati-ciutadella",
     "name": "Camí de Cavalls · Etapa 10: Punta Nati – Ciutadella",
+    "slug": "cami-de-cavalls-etapa-10-punta-nati-ciutadella-es",
     "image": "/uploads/cami-de-cavalls-480.webp",
     "imageCredit": "Pelayo Arbués · Unsplash",
     "coordinates": {
@@ -1675,6 +1718,7 @@
   {
     "id": "cami-de-cavalls-etapa-13-turqueta-galdana",
     "name": "Camí de Cavalls · Etapa 13: Cala en Turqueta – Cala Galdana",
+    "slug": "cami-de-cavalls-etapa-13-turqueta-galdana-es",
     "image": "/uploads/cami-de-cavalls-480.webp",
     "imageCredit": "Pelayo Arbués · Unsplash",
     "coordinates": {
@@ -1711,6 +1755,7 @@
   {
     "id": "cami-de-cavalls-etapa-2-es-grau-favaritx",
     "name": "Camí de Cavalls · Etapa 2: Es Grau – Cap de Favàritx",
+    "slug": "cami-de-cavalls-etapa-2-es-grau-favaritx-es",
     "image": "/uploads/cami-de-cavalls-480.webp",
     "imageCredit": "Pelayo Arbués · Unsplash",
     "coordinates": {
@@ -1745,6 +1790,7 @@
   {
     "id": "cami-de-cavalls-etapa-20-sant-esteve-mao",
     "name": "Camí de Cavalls · Etapa 20: Cala de Sant Esteve – Maó",
+    "slug": "cami-de-cavalls-etapa-20-sant-esteve-mao-es",
     "image": "/uploads/cami-de-cavalls-480.webp",
     "imageCredit": "Pelayo Arbués · Unsplash",
     "coordinates": {
@@ -1781,6 +1827,7 @@
   {
     "id": "cami-de-cavalls-etapa-6-binimella-els-alocs",
     "name": "Camí de Cavalls · Etapa 6: Binimel·là – Els Alocs",
+    "slug": "cami-de-cavalls-etapa-6-binimella-els-alocs-es",
     "image": "/uploads/cami-de-cavalls-480.webp",
     "imageCredit": "Pelayo Arbués · Unsplash",
     "coordinates": {
@@ -1814,6 +1861,7 @@
   {
     "id": "castell-de-sant-felip",
     "name": "Castell de Sant Felip",
+    "slug": "castell-de-sant-felip-es",
     "coordinates": {
       "lat": 39.8675,
       "lng": 4.3031
@@ -1847,6 +1895,7 @@
   {
     "id": "castell-de-sant-nicolau",
     "name": "Castell de Sant Nicolau",
+    "slug": "castell-de-sant-nicolau-es",
     "coordinates": {
       "lat": 39.9956,
       "lng": 3.8278
@@ -1880,6 +1929,7 @@
   {
     "id": "catedral-de-santa-maria-ciutadella",
     "name": "Catedral de Santa Maria de Ciutadella",
+    "slug": "catedral-de-santa-maria-ciutadella-es",
     "coordinates": {
       "lat": 40.0018,
       "lng": 3.8377
@@ -1914,6 +1964,7 @@
   {
     "id": "ciutadella",
     "name": "Ciutadella de Menorca",
+    "slug": "ciutadella-es",
     "image": "/uploads/ciutadella-480.webp",
     "coordinates": {
       "lat": 40.0014,
@@ -1990,6 +2041,7 @@
   {
     "id": "cova-des-coloms-barranc-binigaus",
     "name": "Cova des Coloms ('la Catedral') por el Barranc de Binigaus",
+    "slug": "cova-des-coloms-barranc-binigaus-es",
     "coordinates": {
       "lat": 39.9266,
       "lng": 4.0492
@@ -2023,6 +2075,7 @@
   {
     "id": "destileria-gin-xoriguer",
     "name": "Destilería Gin Xoriguer",
+    "slug": "destileria-gin-xoriguer-es",
     "image": "/uploads/gin-menorca-480.webp",
     "coordinates": {
       "lat": 39.89,
@@ -2061,6 +2114,7 @@
   {
     "id": "eolo-sunset-bar",
     "name": "Eolo Sunset Bar",
+    "slug": "eolo-sunset-bar-es",
     "coordinates": {
       "lat": 40.01,
       "lng": 3.79
@@ -2110,7 +2164,7 @@
       "un chapuzón rápido entre rocas en un rincón curioso",
       "combinarla con Punta Prima o Binibeca, que quedan al lado"
     ],
-    "blurb": "Diminuta cala (apenas unos metros de anchura) encajada entre rocas, descrita como una de las mas pequenas de la isla; un rincon curioso y poco…",
+    "blurb": "Diminuta cala (apenas unos metros de anchura) encajada entre rocas, de las más pequeñas de la isla; un rincón curioso y poco conocido para una parada…",
     "durationMin": 60,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -2126,6 +2180,7 @@
   {
     "id": "es-canutells",
     "name": "Es Canutells",
+    "slug": "es-canutells-es",
     "coordinates": {
       "lat": 39.865,
       "lng": 4.17
@@ -2142,7 +2197,7 @@
       "el fondeadero de barcas y casetas tradicionales",
       "snorkel tranquilo en aguas calmas poco frecuentadas"
     ],
-    "blurb": "Pequena cala resguardada entre Cales Coves y Binidali, de aguas tranquilas, poco frecuentada por turistas y mas por menorquines. Ambiente local y…",
+    "blurb": "Pequeña cala resguardada entre Cales Coves y Binidali, de aguas tranquilas, poco frecuentada por turistas y más por menorquines. Ambiente local y…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -2158,6 +2213,7 @@
   {
     "id": "es-castell",
     "name": "Es Castell",
+    "slug": "es-castell-es",
     "image": "/uploads/cales-fonts-480.webp",
     "coordinates": {
       "lat": 39.8794,
@@ -2177,7 +2233,7 @@
       "la Fortaleza de La Mola",
       "cenar pescado en una terraza sobre el agua"
     ],
-    "blurb": "Pueblo de trazado militar britanico, fundado en 1771 como Georgetown junto a la bocana del puerto de Mao. Plaza de la Esplanada con Ayuntamiento de…",
+    "blurb": "Pueblo de trazado militar britanico, fundado en 1771 como Georgetown junto a la bocana del puerto de Maó. Plaza de la Esplanada con Ayuntamiento de…",
     "durationMin": 180,
     "carAccess": "sin-coche-ok",
     "busServed": false,
@@ -2193,6 +2249,7 @@
   {
     "id": "es-grau",
     "name": "Es Grau",
+    "slug": "es-grau-es",
     "coordinates": {
       "lat": 39.956,
       "lng": 4.266
@@ -2234,6 +2291,7 @@
   {
     "id": "es-mercadal",
     "name": "Es Mercadal",
+    "slug": "es-mercadal-es",
     "coordinates": {
       "lat": 39.9889,
       "lng": 4.0942
@@ -2251,7 +2309,7 @@
       "el casco tranquilo de pueblo de interior",
       "una quesería DOP cercana (Subaida)"
     ],
-    "blurb": "Pueblo blanco en el corazon geografico de Menorca, al pie del Monte Toro (el punto mas alto, 358 m). Su nombre viene del privilegio de mercado…",
+    "blurb": "Pueblo blanco en el corazon geografico de Menorca, al pie del Monte Toro (el punto más alto, 358 m). Su nombre viene del privilegio de mercado…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -2267,6 +2325,7 @@
   {
     "id": "es-migjorn-gran",
     "name": "Es Migjorn Gran",
+    "slug": "es-migjorn-gran-es",
     "coordinates": {
       "lat": 39.9469,
       "lng": 4.0481
@@ -2283,7 +2342,7 @@
       "el barranc de Binigaus hacia la Cova des Coloms",
       "bajar a pie a la playa de Binigaus"
     ],
-    "blurb": "El municipio mas pequeno y tranquilo, donde 'el tiempo parece haberse detenido': casas blancas unifamiliares y esencia de la Menorca antigua…",
+    "blurb": "El municipio más pequeño y tranquilo, donde 'el tiempo parece haberse detenido': casas blancas unifamiliares y esencia de la Menorca antigua…",
     "durationMin": 60,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -2299,6 +2358,7 @@
   {
     "id": "excursion-barco-calas-sur-menorca-blava-ciutadella",
     "name": "Excursión en barco a las calas vírgenes del sur (Menorca Blava, Ciutadella)",
+    "slug": "excursion-barco-calas-sur-menorca-blava-ciutadella-es",
     "coordinates": {
       "lat": 39.9985,
       "lng": 3.833
@@ -2314,10 +2374,10 @@
     ],
     "highlights": [
       "navegar el suroeste virgen: Son Saura, Es Talaier, Turqueta, Macarella y Macarelleta",
-      "dos paradas de bano con acceso directo desde la plataforma del barco",
+      "dos paradas de baño con acceso directo desde la plataforma del barco",
       "paella mixta a bordo y cuevas marinas inaccesibles por tierra; ~7 h"
     ],
-    "blurb": "Una jornada de mar desde el puerto antiguo de Ciutadella hasta las calas mas codiciadas del suroeste, las que no tienen carretera. Plataforma de…",
+    "blurb": "Una jornada de mar desde el puerto antiguo de Ciutadella hasta las calas más codiciadas del suroeste, las que no tienen carretera. Plataforma de…",
     "durationMin": 420,
     "carAccess": "sin-coche-ok",
     "busServed": true,
@@ -2333,6 +2393,7 @@
   {
     "id": "excursion-llaut-mar-en-calma-fornells",
     "name": "Excursión en llaüt menorquín por la costa norte (Mar en Calma, Fornells)",
+    "slug": "excursion-llaut-mar-en-calma-fornells-es",
     "coordinates": {
       "lat": 40.0535,
       "lng": 4.137
@@ -2349,9 +2410,9 @@
     "highlights": [
       "salir de Fornells en un llaüt menorquin tradicional (Portobello / Don Pancho)",
       "dos paradas para nadar, snorkel y paddle en calas de la costa norte",
-      "aperitivo menorquin a bordo; ~3 h 30 min de navegacion tranquila"
+      "aperitivo menorquin a bordo; ~3 h 30 min de navegación tranquila"
     ],
-    "blurb": "Navegar la costa norte a bordo de un llaüt menorquin de madera, la embarcacion tradicional de la isla, con dos paradas de bano en aguas cristalinas y…",
+    "blurb": "Navegar la costa norte a bordo de un llaüt menorquin de madera, la embarcación tradicional de la isla, con dos paradas de baño en aguas cristalinas y…",
     "durationMin": 210,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -2367,6 +2428,7 @@
   {
     "id": "excursion-llaut-mar-en-calma-galdana",
     "name": "Excursión en llaüt por las calas del sur (Mar en Calma, Cala Galdana)",
+    "slug": "excursion-llaut-mar-en-calma-galdana-es",
     "coordinates": {
       "lat": 39.936,
       "lng": 3.965
@@ -2382,10 +2444,10 @@
     ],
     "highlights": [
       "navegar la costa sur entre acantilados calizos y pinares desde Cala Galdana",
-      "dos paradas de bano, snorkel y paddle frente a calas virgenes",
-      "aperitivo menorquin a bordo; embarcacion tradicional de madera"
+      "dos paradas de baño, snorkel y paddle frente a calas virgenes",
+      "aperitivo menorquin a bordo; embarcación tradicional de madera"
     ],
-    "blurb": "Descubrir por mar las calas virgenes del sur saliendo de Cala Galdana en un llaüt menorquin, con paradas de bano frente a arenales turquesa a los que…",
+    "blurb": "Descubrir por mar las calas virgenes del sur saliendo de Cala Galdana en un llaüt menorquin, con paradas de baño frente a arenales turquesa a los que…",
     "durationMin": 210,
     "carAccess": "coche-directo",
     "busServed": true,
@@ -2401,6 +2463,7 @@
   {
     "id": "faro-cavalleria",
     "name": "Cap de Cavalleria",
+    "slug": "faro-cavalleria-es",
     "coordinates": {
       "lat": 40.0915,
       "lng": 4.092
@@ -2435,6 +2498,7 @@
   {
     "id": "faro-de-punta-nati",
     "name": "Faro de Punta Nati",
+    "slug": "faro-de-punta-nati-es",
     "image": "/uploads/menorca-punta-nati-480.webp",
     "coordinates": {
       "lat": 40.0578,
@@ -2451,7 +2515,7 @@
       "el faro solitario a 6 km de Ciutadella, sobre el acantilado",
       "uno de los mejores atardeceres de la isla, fuera de las multitudes"
     ],
-    "blurb": "Faro en un paisaje petreo y aridos del noroeste, salpicado de barracas de piedra seca (ponts). Ambiente solitario y agreste, ideal para fotografia y…",
+    "blurb": "Faro en un paisaje petreo y aridos del noroeste, salpicado de barracas de piedra seca (ponts). Ambiente solitario y agreste, ideal para fotografía y…",
     "durationMin": 90,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -2467,6 +2531,7 @@
   {
     "id": "faro-favaritx",
     "name": "Faro de Favàritx",
+    "slug": "faro-favaritx-es",
     "coordinates": {
       "lat": 40.001,
       "lng": 4.272
@@ -2500,6 +2565,7 @@
   {
     "id": "ferreries",
     "name": "Ferreries",
+    "slug": "ferreries-es",
     "coordinates": {
       "lat": 39.9817,
       "lng": 4.0103
@@ -2517,7 +2583,7 @@
       "el mercado artesanal (en temporada)",
       "la puerta de entrada a Cala Galdana"
     ],
-    "blurb": "Pueblo blanco rural, el de mayor altitud de Menorca, con arraigada tradicion de calzado (incl. Pretty Ballerinas) y mueble. Rodeado de barrancos y…",
+    "blurb": "Pueblo blanco rural, el de mayor altitud de Menorca, con arraigada tradición de calzado (incl. Pretty Ballerinas) y mueble. Rodeado de barrancos y…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -2533,6 +2599,7 @@
   {
     "id": "finca-binillubet",
     "name": "Finca Binillubet",
+    "slug": "finca-binillubet-es",
     "coordinates": {
       "lat": 39.96,
       "lng": 4.13
@@ -2570,6 +2637,7 @@
   {
     "id": "fornells",
     "name": "Fornells",
+    "slug": "fornells-es",
     "image": "/uploads/fornells-480.webp",
     "coordinates": {
       "lat": 40.0539,
@@ -2606,6 +2674,7 @@
   {
     "id": "fort-marlborough",
     "name": "Fort Marlborough",
+    "slug": "fort-marlborough-es",
     "coordinates": {
       "lat": 39.8629,
       "lng": 4.3015
@@ -2640,6 +2709,7 @@
   {
     "id": "fortaleza-de-la-mola",
     "name": "Fortaleza de La Mola",
+    "slug": "fortaleza-de-la-mola-es",
     "image": "/uploads/la-mola-480.webp",
     "imageCredit": "Alvaro Ortiz · Wikimedia Commons, CC BY-SA 3.0",
     "coordinates": {
@@ -2659,7 +2729,7 @@
       "los túneles y baterías",
       "las vistas a Maó desde los miradores"
     ],
-    "blurb": "Imponente fortaleza militar (1848-1875) que guarda la entrada al puerto de Mao. Baterias, tuneles, canones Vickers y vistas al mar. Recinto enorme…",
+    "blurb": "Imponente fortaleza militar (1848-1875) que guarda la entrada al puerto de Maó. Baterias, tuneles, canones Vickers y vistas al mar. Recinto enorme…",
     "durationMin": 150,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -2678,6 +2748,7 @@
   {
     "id": "hort-de-sant-patrici",
     "name": "Hort de Sant Patrici",
+    "slug": "hort-de-sant-patrici-es",
     "coordinates": {
       "lat": 39.985,
       "lng": 4.005
@@ -2710,12 +2781,14 @@
       "centro"
     ],
     "needsReservation": true,
+    "officialUrl": "https://www.santpatrici.com",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-22"
   },
   {
     "id": "illa-del-rei",
     "name": "Illa del Rei",
+    "slug": "illa-del-rei-es",
     "image": "/uploads/illa-del-rei-480.webp",
     "imageCredit": "Florent Pécassou · Wikimedia Commons, CC BY-SA 4.0",
     "coordinates": {
@@ -2735,7 +2808,7 @@
       "la galería de arte Hauser & Wirth y el jardín de Piet Oudolf (entrada gratuita)",
       "cruzar en la barca lanzadera desde el puerto de Maó"
     ],
-    "blurb": "Islote en el puerto de Mao con el antiguo hospital militar britanico (s. XVIII), magnificamente restaurado por voluntarios, y una sede de la galeria…",
+    "blurb": "Islote en el puerto de Maó con el antiguo hospital militar britanico (s. XVIII), magnificamente restaurado por voluntarios, y una sede de la galería…",
     "durationMin": 150,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -2751,6 +2824,7 @@
   {
     "id": "kayak-galdana-rutas-cuevas-familia",
     "name": "Kayak guiado a cuevas desde Cala Galdana",
+    "slug": "kayak-galdana-rutas-cuevas-familia-es",
     "coordinates": {
       "lat": 39.936,
       "lng": 3.965
@@ -2784,6 +2858,7 @@
   {
     "id": "kayak-snorkel-fornells-reserva-marina",
     "name": "Kayak y snorkel por la Reserva Marina del Nord (Fornells)",
+    "slug": "kayak-snorkel-fornells-reserva-marina-es",
     "coordinates": {
       "lat": 40.0535,
       "lng": 4.137
@@ -2798,11 +2873,11 @@
       "nautica"
     ],
     "highlights": [
-      "remar la bahia abrigada de Fornells y la costa de la reserva marina",
+      "remar la bahía abrigada de Fornells y la costa de la reserva marina",
       "entrar a calas y cuevas inaccesibles por tierra y banarte desde el kayak",
       "snorkel guiado con equipo incluido y briefing de seguridad previo"
     ],
-    "blurb": "Salir a remo desde la bahia de Fornells para descubrir calas y cuevas que solo se alcanzan por mar, con parada de snorkel en la reserva marina del…",
+    "blurb": "Salir a remo desde la bahía de Fornells para descubrir calas y cuevas que solo se alcanzan por mar, con parada de snorkel en la reserva marina del…",
     "durationMin": 180,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -2818,6 +2893,7 @@
   {
     "id": "lago-spa-cala-en-bosch",
     "name": "Lago Spa (Lago Resort)",
+    "slug": "lago-spa-cala-en-bosch-es",
     "coordinates": {
       "lat": 39.9265,
       "lng": 3.8375
@@ -2851,6 +2927,7 @@
   {
     "id": "lithica",
     "name": "Lithica – Pedreres de s'Hostal",
+    "slug": "lithica-es",
     "image": "/uploads/lithica-480.webp",
     "imageCredit": "Ben Salter · Wikimedia Commons, CC BY 2.0",
     "coordinates": {
@@ -2888,6 +2965,7 @@
   {
     "id": "llatzeret-de-mao",
     "name": "Llatzeret de Maó",
+    "slug": "llatzeret-de-mao-es",
     "coordinates": {
       "lat": 39.8766,
       "lng": 4.3039
@@ -2922,6 +3000,7 @@
   {
     "id": "lloc-de-menorca-zoo-granja",
     "name": "Lloc de Menorca (centro zoológico y granja didáctica)",
+    "slug": "lloc-de-menorca-zoo-granja-es",
     "coordinates": {
       "lat": 39.9072,
       "lng": 4.2225
@@ -2971,7 +3050,7 @@
       "el campo del sureste y sus casas de payés tradicionales",
       "una parada breve y tranquila de camino entre Maó y la costa sur"
     ],
-    "blurb": "Pedania rural de Mao, pequeno caserio tradicional menorquin de casas blancas en el campo del sureste. No es un destino turistico en si, sino una…",
+    "blurb": "Pedanía rural de Maó, pequeño caserio tradicional menorquin de casas blancas en el campo del sureste. No es un destino turistico en si, sino una…",
     "durationMin": 30,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -2987,6 +3066,7 @@
   {
     "id": "mao",
     "name": "Maó",
+    "slug": "mao-es",
     "image": "/uploads/puerto-mao-480.webp",
     "coordinates": {
       "lat": 39.8885,
@@ -3023,6 +3103,7 @@
   {
     "id": "marea-beach-house-sunset-bar",
     "name": "Marea Beach House – Sunset Bar (Cala Blanca)",
+    "slug": "marea-beach-house-sunset-bar-es",
     "coordinates": {
       "lat": 39.969,
       "lng": 3.834
@@ -3056,6 +3137,7 @@
   {
     "id": "mel-i-reines-experiencia-apicola",
     "name": "Mel i Reines — experiencia apícola (Finca Lluriach)",
+    "slug": "mel-i-reines-experiencia-apicola-es",
     "coordinates": {
       "lat": 39.99,
       "lng": 4.09
@@ -3090,6 +3172,7 @@
   {
     "id": "mercat-claustre-carme",
     "name": "Mercat des Claustre del Carme",
+    "slug": "mercat-claustre-carme-es",
     "coordinates": {
       "lat": 39.888,
       "lng": 4.265
@@ -3135,6 +3218,7 @@
   {
     "id": "mercat-des-peix",
     "name": "Mercat des Peix",
+    "slug": "mercat-des-peix-es",
     "coordinates": {
       "lat": 39.888,
       "lng": 4.264
@@ -3172,6 +3256,7 @@
   {
     "id": "mercat-municipal-de-ciutadella",
     "name": "Mercat Municipal de Ciutadella",
+    "slug": "mercat-municipal-de-ciutadella-es",
     "coordinates": {
       "lat": 40,
       "lng": 3.84
@@ -3209,6 +3294,7 @@
   {
     "id": "monte-toro",
     "name": "Monte Toro",
+    "slug": "monte-toro-es",
     "image": "/uploads/monte-toro-480.webp",
     "imageCredit": "Ian Kirk · Wikimedia Commons, CC BY 2.0",
     "coordinates": {
@@ -3245,6 +3331,7 @@
   {
     "id": "museu-de-ciutadella-can-saura",
     "name": "Can Saura. Museu de Ciutadella",
+    "slug": "museu-de-ciutadella-can-saura-es",
     "coordinates": {
       "lat": 40.0008,
       "lng": 3.8385
@@ -3278,6 +3365,7 @@
   {
     "id": "museu-de-menorca",
     "name": "Museu de Menorca",
+    "slug": "museu-de-menorca-es",
     "coordinates": {
       "lat": 39.8911,
       "lng": 4.2606
@@ -3312,6 +3400,7 @@
   {
     "id": "museu-de-menorca-pequeno-museo",
     "name": "Museu de Menorca – El Pequeño Museo (Maó)",
+    "slug": "museu-de-menorca-pequeno-museo-es",
     "coordinates": {
       "lat": 39.8889,
       "lng": 4.2636
@@ -3346,6 +3435,7 @@
   {
     "id": "museu-diocesa-de-menorca",
     "name": "Museu Diocesà de Menorca",
+    "slug": "museu-diocesa-de-menorca-es",
     "coordinates": {
       "lat": 40.0008,
       "lng": 3.8389
@@ -3379,6 +3469,7 @@
   {
     "id": "museu-militar-de-menorca",
     "name": "Museu Militar de Menorca",
+    "slug": "museu-militar-de-menorca-es",
     "coordinates": {
       "lat": 39.8795,
       "lng": 4.2903
@@ -3449,6 +3540,7 @@
   {
     "id": "necropolis-de-cala-morell",
     "name": "Necropolis de Cala Morell",
+    "slug": "necropolis-de-cala-morell-es",
     "coordinates": {
       "lat": 40.0556,
       "lng": 3.8786
@@ -3465,7 +3557,7 @@
       "los detalles interiores: columnas, ventanas y relieves",
       "combinarla con un baño en la cala de Cala Morell"
     ],
-    "blurb": "Necropolis de cuevas (14 hipogeos) excavadas en la roca, en uso desde el pre-talayotico hasta el s. II d.C. Algunas con columnas interiores, ventanas…",
+    "blurb": "Necropolis de cuevas (14 hipogeos) excavadas en la roca, en uso desde el pre-talayótico hasta el s. II d.C. Algunas con columnas interiores, ventanas…",
     "durationMin": 38,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -3481,6 +3573,7 @@
   {
     "id": "necropolis-de-calescoves",
     "name": "Necropolis de Calescoves",
+    "slug": "necropolis-de-calescoves-es",
     "coordinates": {
       "lat": 39.8689,
       "lng": 4.1217
@@ -3494,7 +3587,7 @@
     ],
     "highlights": [
       "recorrer una necropolis prehistorica de unas 90 cuevas funerarias en el acantilado",
-      "combinar la visita con un bano en la cala virgen de Cales Coves",
+      "combinar la visita con un baño en la cala virgen de Cales Coves",
       "visitar con respeto y sin tocar nada: yacimiento protegido"
     ],
     "blurb": "Necropolis prehistorica de unas 90 cuevas funerarias excavadas en el acantilado de una cala virgen y aislada. Entorno natural espectacular que…",
@@ -3513,6 +3606,7 @@
   {
     "id": "parc-natural-de-salbufera-des-grau",
     "name": "Parc Natural de s'Albufera des Grau",
+    "slug": "parc-natural-de-salbufera-des-grau-es",
     "image": "/uploads/albufera-des-grau-480.webp",
     "imageCredit": "Nicolas G. Mertens · Wikimedia Commons, CC BY-SA 4.0",
     "coordinates": {
@@ -3531,7 +3625,7 @@
       "los miradores para observar aves",
       "el corazón de la Reserva de Biosfera de Menorca"
     ],
-    "blurb": "Nucleo de la Reserva de la Biosfera de Menorca: laguna costera, humedal y bosque mediterraneo con miradores e itinerarios de aves. La cara natural y…",
+    "blurb": "Núcleo de la Reserva de la Biosfera de Menorca: laguna costera, humedal y bosque mediterráneo con miradores e itinerarios de aves. La cara natural y…",
     "durationMin": 150,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -3547,6 +3641,7 @@
   {
     "id": "paseo-barco-calas-cuevas-cala-galdana",
     "name": "Paseo en barco por las calas y cuevas del sur (desde Cala Galdana)",
+    "slug": "paseo-barco-calas-cuevas-cala-galdana-es",
     "coordinates": {
       "lat": 39.936,
       "lng": 3.965
@@ -3580,6 +3675,7 @@
   {
     "id": "paseo-catamaran-bahia-fornells",
     "name": "Paseo en catamarán por la bahía de Fornells y la costa norte",
+    "slug": "paseo-catamaran-bahia-fornells-es",
     "coordinates": {
       "lat": 40.0539,
       "lng": 4.1356
@@ -3613,6 +3709,7 @@
   {
     "id": "platja-de-binigaus",
     "name": "Platja de Binigaus",
+    "slug": "platja-de-binigaus-es",
     "image": "/uploads/binigaus-480.webp",
     "coordinates": {
       "lat": 39.93,
@@ -3626,10 +3723,10 @@
     ],
     "highlights": [
       "caminar desde Sant Tomas hasta esta larga playa virgen de arena dorada",
-      "banarse en aguas someras y cristalinas, con tramo nudista",
+      "bañarse en aguas someras y cristalinas, con tramo nudista",
       "acercarse al barranc de Binigaus y la Cova des Coloms desde la playa"
     ],
-    "blurb": "Larga playa virgen de arena dorada y aguas someras y cristalinas, prolongacion natural de Sant Tomas. Considerada una de las mejores playas nudistas…",
+    "blurb": "Larga playa virgen de arena dorada y aguas someras y cristalinas, prolongación natural de Sant Tomas. Considerada una de las mejores playas nudistas…",
     "durationMin": 180,
     "carAccess": "coche-mas-caminata",
     "busServed": true,
@@ -3645,6 +3742,7 @@
   {
     "id": "platja-de-sant-tomas",
     "name": "Platja de Sant Tomas",
+    "slug": "platja-de-sant-tomas-es",
     "coordinates": {
       "lat": 39.93,
       "lng": 4.047
@@ -3657,7 +3755,7 @@
       "gastronomia"
     ],
     "highlights": [
-      "darse un bano comodo en una amplia playa de arena dorada con todos los servicios",
+      "darse un baño comodo en una amplia playa de arena dorada con todos los servicios",
       "comer pescado a la brasa en el chiringuito Es Bruc, a pie de arena",
       "usarla de puerta de entrada a pie hacia la virgen Binigaus"
     ],
@@ -3688,6 +3786,7 @@
   {
     "id": "platja-den-ferragut",
     "name": "Platja d'en Ferragut",
+    "slug": "platja-den-ferragut-es",
     "coordinates": {
       "lat": 40.055,
       "lng": 4.089
@@ -3704,7 +3803,7 @@
       "cruzar el espolón rocoso desde la playa vecina",
       "un baño virgen sin servicios"
     ],
-    "blurb": "Pequena playa anexa a Cavalleria, separada por un espolon rocoso semisumergido. Suele estar menos concurrida que su vecina y sirve de paso natural…",
+    "blurb": "Pequeña playa anexa a Cavalleria, separada por un espolon rocoso semisumergido. Suele estar menos concurrida que su vecina y sirve de paso natural…",
     "durationMin": 90,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -3720,6 +3819,7 @@
   {
     "id": "playa-de-binimel-la",
     "name": "Playa de Binimel·la",
+    "slug": "playa-de-binimel-la-es",
     "coordinates": {
       "lat": 40.049,
       "lng": 4.098
@@ -3736,7 +3836,7 @@
       "el punto de partida clásico para caminar a Cala Pregonda",
       "acceso cómodo en coche y parking a pie de playa"
     ],
-    "blurb": "Amplia playa de arena rojiza con un islote y arcillas rojas (banos de barro populares). Punto de partida clasico hacia Cala Pregonda; accesible en…",
+    "blurb": "Amplia playa de arena rojiza con un islote y arcillas rojas (baños de barro populares). Punto de partida clasico hacia Cala Pregonda; accesible en…",
     "durationMin": 180,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -3752,6 +3852,7 @@
   {
     "id": "pont-den-gil",
     "name": "Pont d'en Gil",
+    "slug": "pont-den-gil-es",
     "coordinates": {
       "lat": 40,
       "lng": 3.8
@@ -3784,6 +3885,7 @@
   {
     "id": "punta-prima",
     "name": "Punta Prima",
+    "slug": "punta-prima-es",
     "coordinates": {
       "lat": 39.812,
       "lng": 4.275
@@ -3824,6 +3926,7 @@
   {
     "id": "queseria-subaida",
     "name": "Quesería Subaida",
+    "slug": "queseria-subaida-es",
     "coordinates": {
       "lat": 39.96,
       "lng": 4.16
@@ -3862,6 +3965,7 @@
   {
     "id": "restaurant-sa-llagosta",
     "name": "Restaurant Sa Llagosta",
+    "slug": "restaurant-sa-llagosta-es",
     "coordinates": {
       "lat": 40.05,
       "lng": 4.13
@@ -3890,6 +3994,7 @@
   {
     "id": "restaurante-es-cranc",
     "name": "Restaurante Es Cranc",
+    "slug": "restaurante-es-cranc-es",
     "coordinates": {
       "lat": 40.05,
       "lng": 4.13
@@ -3919,6 +4024,7 @@
   {
     "id": "restaurante-sant-joan-de-binissaida",
     "name": "Restaurante Sant Joan de Binissaida",
+    "slug": "restaurante-sant-joan-de-binissaida-es",
     "coordinates": {
       "lat": 39.88,
       "lng": 4.27
@@ -3956,6 +4062,7 @@
   {
     "id": "restaurante-smoix",
     "name": "Restaurante Smoix",
+    "slug": "restaurante-smoix-es",
     "coordinates": {
       "lat": 40,
       "lng": 3.84
@@ -3990,6 +4097,7 @@
   {
     "id": "rutas-a-caballo-cavalls-son-angel",
     "name": "Rutas a caballo por la costa norte (Cavalls Son Àngel)",
+    "slug": "rutas-a-caballo-cavalls-son-angel-es",
     "coordinates": {
       "lat": 40.022,
       "lng": 3.86
@@ -4023,6 +4131,7 @@
   {
     "id": "rutas-a-caballo-son-bou",
     "name": "Rutas a caballo por el Camí de Cavalls (Son Bou)",
+    "slug": "rutas-a-caballo-son-bou-es",
     "coordinates": {
       "lat": 39.897,
       "lng": 4.083
@@ -4057,6 +4166,7 @@
   {
     "id": "sa-torreta",
     "name": "Sa Torreta",
+    "slug": "sa-torreta-es",
     "coordinates": {
       "lat": 39.975,
       "lng": 4.27
@@ -4089,6 +4199,7 @@
   {
     "id": "sant-climent",
     "name": "Sant Climent",
+    "slug": "sant-climent-es",
     "coordinates": {
       "lat": 39.8694,
       "lng": 4.2419
@@ -4106,7 +4217,7 @@
       "el Casino de Sant Climent, bar-restaurante con sesiones de jazz",
       "parada de camino hacia Cala en Porter y la costa sur"
     ],
-    "blurb": "Pequeno nucleo tranquilo del termino de Mao, en la carretera hacia Cala en Porter, con servicios basicos. Su sello propio son los conciertos de jazz…",
+    "blurb": "Pequeño núcleo tranquilo del termino de Maó, en la carretera hacia Cala en Porter, con servicios basicos. Su sello propio son los conciertos de jazz…",
     "durationMin": 45,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -4122,6 +4233,7 @@
   {
     "id": "sant-lluis",
     "name": "Sant Lluis",
+    "slug": "sant-lluis-es",
     "coordinates": {
       "lat": 39.8425,
       "lng": 4.2747
@@ -4139,7 +4251,7 @@
       "los molinos restaurados",
       "base para Binibèquer y Punta Prima"
     ],
-    "blurb": "Uno de los pueblos mas blancos de la isla, de origen frances: fundado en 1761 y bautizado en honor a Luis XV durante la breve dominacion francesa…",
+    "blurb": "Uno de los pueblos más blancos de la isla, de origen frances: fundado en 1761 y bautizado en honor a Luis XV durante la breve dominación francesa…",
     "durationMin": 60,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -4155,6 +4267,7 @@
   {
     "id": "son-bou",
     "name": "Playa de Son Bou",
+    "slug": "son-bou-es",
     "image": "/uploads/son-bou-480.webp",
     "imageCredit": "Wasquewhat · Wikimedia Commons, CC BY-SA 4.0",
     "coordinates": {
@@ -4198,6 +4311,7 @@
   {
     "id": "son-bou-beach-club",
     "name": "Son Bou Beach Club",
+    "slug": "son-bou-beach-club-es",
     "coordinates": {
       "lat": 39.9,
       "lng": 4.08
@@ -4212,7 +4326,7 @@
       "gastronomia"
     ],
     "highlights": [
-      "reservar hamaca o cabana frente a la playa mas larga de la isla",
+      "reservar hamaca o cabaña frente a la playa más larga de la isla",
       "tomar una copa de coctel en la terraza de madera al atardecer",
       "reservar en verano: la zona de Son Bou se llena pronto"
     ],
@@ -4232,6 +4346,7 @@
   {
     "id": "son-felip-visita-apicola-algaiarens",
     "name": "Son Felip — visita apícola de Algaiarens",
+    "slug": "son-felip-visita-apicola-algaiarens-es",
     "coordinates": {
       "lat": 40.02,
       "lng": 3.9
@@ -4266,6 +4381,7 @@
   {
     "id": "son-martorellet-caballos-menorquines",
     "name": "Son Martorellet (caballo de Pura Raza Menorquina)",
+    "slug": "son-martorellet-caballos-menorquines-es",
     "coordinates": {
       "lat": 39.957,
       "lng": 3.985
@@ -4300,6 +4416,7 @@
   {
     "id": "son-saura-del-sur",
     "name": "Son Saura del Sur",
+    "slug": "son-saura-del-sur-es",
     "coordinates": {
       "lat": 39.918,
       "lng": 3.895
@@ -4316,7 +4433,7 @@
       "más espacio y aguas someras que las calas pequeñas, con pinar detrás",
       "acceso a pie desde el parking: lleva picnic, agua y sombra (sin servicios)"
     ],
-    "blurb": "Dos amplios semicirculos de arena fina (Bellavista y des Banyuls) separados por una punta, con pinar y aguas someras. Mas espacio que las calas…",
+    "blurb": "Dos amplios semicirculos de arena fina (Bellavista y des Banyuls) separados por una punta, con pinar y aguas someras. Más espacio que las calas…",
     "durationMin": 180,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -4332,6 +4449,7 @@
   {
     "id": "son-xoriguer",
     "name": "Son Xoriguer",
+    "slug": "son-xoriguer-es",
     "coordinates": {
       "lat": 39.926,
       "lng": 3.805
@@ -4348,7 +4466,7 @@
       "marca el límite entre la costa urbanizada y las calas vírgenes del sur",
       "salida de excursiones en barco y deportes náuticos; acceso directo en coche"
     ],
-    "blurb": "Amplia playa de arena a unos 10 km de Ciutadella, con margen derecho mas natural y rocas en el agua. Marca el limite entre la costa urbanizada del…",
+    "blurb": "Amplia playa de arena a unos 10 km de Ciutadella, con margen derecho más natural y rocas en el agua. Marca el limite entre la costa urbanizada del…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -4364,6 +4482,7 @@
   {
     "id": "spa-faustino-gran",
     "name": "Spa Faustino Gran",
+    "slug": "spa-faustino-gran-es",
     "coordinates": {
       "lat": 39.9998,
       "lng": 3.8378
@@ -4397,6 +4516,7 @@
   {
     "id": "spa-menorca-experimental",
     "name": "Spa Menorca Experimental",
+    "slug": "spa-menorca-experimental-es",
     "coordinates": {
       "lat": 39.8902,
       "lng": 4.0899
@@ -4430,6 +4550,7 @@
   {
     "id": "spa-santa-ponsa-fontenille",
     "name": "Spa Santa Ponsa (Fontenille)",
+    "slug": "spa-santa-ponsa-fontenille-es",
     "coordinates": {
       "lat": 39.902,
       "lng": 4.093
@@ -4463,6 +4584,7 @@
   {
     "id": "spa-torralbenc",
     "name": "Spa Torralbenc (rituales Natura Bissé)",
+    "slug": "spa-torralbenc-es",
     "coordinates": {
       "lat": 39.91,
       "lng": 4.16
@@ -4496,6 +4618,7 @@
   {
     "id": "talati-de-dalt",
     "name": "Talati de Dalt",
+    "slug": "talati-de-dalt-es",
     "coordinates": {
       "lat": 39.8836,
       "lng": 4.2058
@@ -4513,7 +4636,7 @@
       "entrar en las cuevas y recovecos del poblado talayótico (UNESCO)",
       "ir a primera o última hora: hay poca sombra"
     ],
-    "blurb": "Uno de los conjuntos talayoticos mas pintorescos y accesibles, parte de la UNESCO. Su taula con una columna apoyada (caida) rodeada de olivos…",
+    "blurb": "Uno de los conjuntos talayóticos más pintorescos y accesibles, parte de la UNESCO. Su taula con una columna apoyada (caida) rodeada de olivos…",
     "durationMin": 60,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -4529,6 +4652,7 @@
   {
     "id": "torralba-den-salort",
     "name": "Torralba d'en Salort",
+    "slug": "torralba-den-salort-es",
     "coordinates": {
       "lat": 39.9019,
       "lng": 4.1389
@@ -4545,7 +4669,7 @@
       "recorrer los talayots y la sala hipóstila del poblado (UNESCO)",
       "combinarlo con una quesería del centro el mismo día"
     ],
-    "blurb": "Poblado talayotico (UNESCO) con la taula mas monumental y perfectamente conservada de Menorca (santuario de la Edad del Hierro), dos talayots, sala…",
+    "blurb": "Poblado talayótico (UNESCO) con la taula más monumental y perfectamente conservada de Menorca (santuario de la Edad del Hierro), dos talayots, sala…",
     "durationMin": 60,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -4561,6 +4685,7 @@
   {
     "id": "torralbenc",
     "name": "Torralbenc",
+    "slug": "torralbenc-es",
     "coordinates": {
       "lat": 39.91,
       "lng": 4.16
@@ -4576,8 +4701,8 @@
     ],
     "highlights": [
       "cenar producto local a la brasa entre vinedos al atardecer",
-      "catar el vino de elaboracion propia de la finca-agroturismo",
-      "reservar con antelacion: aforo limitado y muy demandado en verano"
+      "catar el vino de elaboración propia de la finca-agroturismo",
+      "reservar con antelación: aforo limitado y muy demandado en verano"
     ],
     "blurb": "Antigua finca rodeada de viñedos convertida en agroturismo de lujo. Restaurante mediterráneo de producto local a la brasa (asesorado por el chef con…",
     "durationMin": 90,
@@ -4595,6 +4720,7 @@
   {
     "id": "torre-de-fornells",
     "name": "Torre de Fornells",
+    "slug": "torre-de-fornells-es",
     "coordinates": {
       "lat": 40.0556,
       "lng": 4.1372
@@ -4612,7 +4738,7 @@
       "el centro de interpretación en su interior",
       "las vistas de la bahía de Fornells y el mar abierto"
     ],
-    "blurb": "Torre defensiva britanico-espanola (s. XVIII) de planta octogonal en mares, sobre la bocana de la bahia de Fornells. Centro de interpretacion en su…",
+    "blurb": "Torre defensiva britanico-española (s. XVIII) de planta octogonal en mares, sobre la bocana de la bahía de Fornells. Centro de interpretación en su…",
     "durationMin": 60,
     "carAccess": "coche-mas-caminata",
     "busServed": false,
@@ -4631,6 +4757,7 @@
   {
     "id": "torre-den-galmes",
     "name": "Torre d'en Galmés",
+    "slug": "torre-den-galmes-es",
     "coordinates": {
       "lat": 39.9269,
       "lng": 4.1283
@@ -4665,6 +4792,7 @@
   {
     "id": "torre-vella-yoga-naturaleza",
     "name": "Torre Vella – yoga y masaje al aire libre (Fontenille)",
+    "slug": "torre-vella-yoga-naturaleza-es",
     "coordinates": {
       "lat": 39.9,
       "lng": 4.1
@@ -4698,6 +4826,7 @@
   {
     "id": "trepuco",
     "name": "Trepuco",
+    "slug": "trepuco-es",
     "coordinates": {
       "lat": 39.8703,
       "lng": 4.2719
@@ -4714,7 +4843,7 @@
       "el recinto talayótico fortificado (Patrimonio Mundial UNESCO)",
       "una visita corta de cultura talayótica sin alejarse de la capital"
     ],
-    "blurb": "Poblado talayotico (UNESCO) con una de las taulas mas grandes y mejor conservadas de la isla (4,8 m de altura), dentro de un recinto fortificado…",
+    "blurb": "Poblado talayótico (UNESCO) con una de las taulas más grandes y mejor conservadas de la isla (4,8 m de altura), dentro de un recinto fortificado…",
     "durationMin": 38,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -4730,6 +4859,7 @@
   {
     "id": "wellness-cugo-gran",
     "name": "Wellness Cugó Gran",
+    "slug": "wellness-cugo-gran-es",
     "coordinates": {
       "lat": 39.8694,
       "lng": 4.2419
@@ -4762,6 +4892,7 @@
   {
     "id": "yellow-catamarans-fondo-cristal-mao",
     "name": "Yellow Catamarans (catamarán con fondo de cristal, puerto de Maó)",
+    "slug": "yellow-catamarans-fondo-cristal-mao-es",
     "coordinates": {
       "lat": 39.8917,
       "lng": 4.2747
@@ -4796,6 +4927,7 @@
   {
     "id": "yellow-catamarans-puerto-mao",
     "name": "Vuelta al Puerto de Maó en catamarán con visión submarina (Yellow Catamarans)",
+    "slug": "yellow-catamarans-puerto-mao-es",
     "coordinates": {
       "lat": 39.891,
       "lng": 4.268
@@ -4812,10 +4944,10 @@
     ],
     "highlights": [
       "vuelta completa al puerto de Maó pasando por Illa del Rei, Illa Plana y La Mola",
-      "salas con ventanas bajo la linea de flotacion para ver el fondo marino",
-      "comentario historico a bordo; ideal con ninos, sin esfuerzo (~60-70 min)"
+      "salas con ventanas bajo la línea de flotación para ver el fondo marino",
+      "comentario histórico a bordo; ideal con niños, sin esfuerzo (~60-70 min)"
     ],
-    "blurb": "Recorrer uno de los puertos naturales mas grandes del Mediterraneo en un catamaran de visión submarina, con la historia de Maó contada a bordo. Una…",
+    "blurb": "Recorrer uno de los puertos naturales más grandes del Mediterráneo en un catamaran de visión submarina, con la historia de Maó contada a bordo. Una…",
     "durationMin": 70,
     "carAccess": "sin-coche-ok",
     "busServed": true,

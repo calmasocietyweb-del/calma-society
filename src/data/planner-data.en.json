@@ -2,6 +2,7 @@
   {
     "id": "alaior",
     "name": "Alaior",
+    "slug": "alaior-en",
     "image": "/uploads/alaior-480.webp",
     "imageCredit": "Mathewr1999 · Wikimedia Commons, CC BY-SA 4.0",
     "coordinates": {
@@ -38,6 +39,7 @@
   {
     "id": "alquiler-barco-sin-licencia-ciutadella",
     "name": "Licence-free boat hire from Ciutadella",
+    "slug": "alquiler-barco-sin-licencia-ciutadella-en",
     "coordinates": {
       "lat": 39.9985,
       "lng": 3.833
@@ -72,6 +74,7 @@
   {
     "id": "alquiler-de-llaut-tradicional-barco-privado-al-a",
     "name": "Traditional Llaüt Hire / Private Sunset Boat",
+    "slug": "alquiler-de-llaut-tradicional-barco-privado-al-a-en",
     "coordinates": {
       "lat": 39.93,
       "lng": 3.96
@@ -105,6 +108,7 @@
   {
     "id": "aquarock-parque-acuatico-calan-bosch",
     "name": "Aquarock (water park, Cala'n Bosch)",
+    "slug": "aquarock-parque-acuatico-calan-bosch-en",
     "coordinates": {
       "lat": 39.929,
       "lng": 3.818
@@ -169,6 +173,7 @@
   {
     "id": "atardecer-barco-binibeca-faralmar",
     "name": "Sunset by boat from Binibeca",
+    "slug": "atardecer-barco-binibeca-faralmar-en",
     "coordinates": {
       "lat": 39.8147,
       "lng": 4.2389
@@ -203,6 +208,7 @@
   {
     "id": "atardecer-barco-puerto-mao-faralmar",
     "name": "Sunset boat trip across the harbour of Maó",
+    "slug": "atardecer-barco-puerto-mao-faralmar-en",
     "coordinates": {
       "lat": 39.8861,
       "lng": 4.2906
@@ -237,6 +243,7 @@
   {
     "id": "atardecer-catamaran-ciutadella-oceancat",
     "name": "Sunset boat trip from Ciutadella",
+    "slug": "atardecer-catamaran-ciutadella-oceancat-en",
     "coordinates": {
       "lat": 40.0006,
       "lng": 3.8295
@@ -271,6 +278,7 @@
   {
     "id": "atardecer-catamaran-fornells",
     "name": "Sunset sail by catamaran from Fornells",
+    "slug": "atardecer-catamaran-fornells-en",
     "coordinates": {
       "lat": 40.0536,
       "lng": 4.1372
@@ -305,6 +313,7 @@
   {
     "id": "binibeca-vell",
     "name": "Binibeca Vell",
+    "slug": "binibeca-vell-en",
     "image": "/uploads/binibeca-480.webp",
     "coordinates": {
       "lat": 39.8158,
@@ -367,6 +376,7 @@
   {
     "id": "birdwatching-salbufera-des-grau",
     "name": "Birdwatching at s'Albufera des Grau (park trails)",
+    "slug": "birdwatching-salbufera-des-grau-en",
     "image": "/uploads/albufera-badia-480.webp",
     "imageCredit": "Discasto · Wikimedia Commons, CC BY-SA 4.0",
     "coordinates": {
@@ -402,6 +412,7 @@
   {
     "id": "bodega-binitord",
     "name": "Bodega Binitord",
+    "slug": "bodega-binitord-en",
     "coordinates": {
       "lat": 39.96,
       "lng": 3.855
@@ -436,6 +447,7 @@
   {
     "id": "bodega-son-cremat",
     "name": "Sa Bodega de Son Cremat",
+    "slug": "bodega-son-cremat-en",
     "coordinates": {
       "lat": 39.875,
       "lng": 4.24
@@ -470,6 +482,7 @@
   {
     "id": "bodega-vinya-sa-cudia",
     "name": "Vinya Sa Cúdia",
+    "slug": "bodega-vinya-sa-cudia-en",
     "coordinates": {
       "lat": 39.92,
       "lng": 4.225
@@ -504,6 +517,7 @@
   {
     "id": "bodegas-binifadet",
     "name": "Bodegas Binifadet",
+    "slug": "bodegas-binifadet-en",
     "coordinates": {
       "lat": 39.85,
       "lng": 4.27
@@ -541,6 +555,7 @@
   {
     "id": "bodegas-menorquinas-ferrer-muntpalau",
     "name": "Bodegas Menorquinas (Ferrer de Muntpalau)",
+    "slug": "bodegas-menorquinas-ferrer-muntpalau-en",
     "coordinates": {
       "lat": 39.982,
       "lng": 4.008
@@ -574,6 +589,7 @@
   {
     "id": "btt-cicloturismo-cami-de-cavalls-velos-joan",
     "name": "Cycle touring and mountain biking on the Camí de Cavalls (Velos Joan hire)",
+    "slug": "btt-cicloturismo-cami-de-cavalls-velos-joan-en",
     "coordinates": {
       "lat": 40.0014,
       "lng": 3.8416
@@ -607,6 +623,7 @@
   {
     "id": "buceo-fornells-reserva-marina-nord",
     "name": "Diving in the Northern Marine Reserve (Fornells Diving Center / Dune)",
+    "slug": "buceo-fornells-reserva-marina-nord-en",
     "coordinates": {
       "lat": 40.0535,
       "lng": 4.137
@@ -640,6 +657,7 @@
   {
     "id": "buceo-salgar-illa-de-laire",
     "name": "Diving and try-dives in the Illa de l'Aire reserve (S'Algar Diving)",
+    "slug": "buceo-salgar-illa-de-laire-en",
     "coordinates": {
       "lat": 39.843,
       "lng": 4.282
@@ -674,6 +692,7 @@
   {
     "id": "cala-algaiarens",
     "name": "Cala Algaiarens",
+    "slug": "cala-algaiarens-en",
     "coordinates": {
       "lat": 40.047,
       "lng": 3.88
@@ -706,6 +725,7 @@
   {
     "id": "cala-binidali",
     "name": "Cala Binidali",
+    "slug": "cala-binidali-en",
     "coordinates": {
       "lat": 39.858,
       "lng": 4.185
@@ -738,6 +758,7 @@
   {
     "id": "cala-blanca",
     "name": "Cala Blanca",
+    "slug": "cala-blanca-en",
     "coordinates": {
       "lat": 39.954,
       "lng": 3.803
@@ -769,6 +790,7 @@
   {
     "id": "cala-cavalleria",
     "name": "Platja de Cavalleria",
+    "slug": "cala-cavalleria-en",
     "coordinates": {
       "lat": 40.056,
       "lng": 4.093
@@ -802,6 +824,7 @@
   {
     "id": "cala-de-biniancolla",
     "name": "Cala de Biniancolla",
+    "slug": "cala-de-biniancolla-en",
     "coordinates": {
       "lat": 39.815,
       "lng": 4.268
@@ -834,6 +857,7 @@
   {
     "id": "cala-de-llucalari",
     "name": "Cala de Llucalari",
+    "slug": "cala-de-llucalari-en",
     "coordinates": {
       "lat": 39.892,
       "lng": 4.1
@@ -865,6 +889,7 @@
   {
     "id": "cala-del-pilar",
     "name": "Cala del Pilar",
+    "slug": "cala-del-pilar-en",
     "coordinates": {
       "lat": 40.022,
       "lng": 3.93
@@ -897,6 +922,7 @@
   {
     "id": "cala-des-talaier",
     "name": "Cala des Talaier",
+    "slug": "cala-des-talaier-en",
     "coordinates": {
       "lat": 39.921,
       "lng": 3.9
@@ -929,6 +955,7 @@
   {
     "id": "cala-en-bosch",
     "name": "Cala en Bosch",
+    "slug": "cala-en-bosch-en",
     "coordinates": {
       "lat": 39.927,
       "lng": 3.812
@@ -961,6 +988,7 @@
   {
     "id": "cala-en-porter",
     "name": "Cala en Porter",
+    "slug": "cala-en-porter-en",
     "coordinates": {
       "lat": 39.872,
       "lng": 4.13
@@ -1004,6 +1032,7 @@
   {
     "id": "cala-escorxada",
     "name": "Cala Escorxada",
+    "slug": "cala-escorxada-en",
     "coordinates": {
       "lat": 39.93,
       "lng": 4.025
@@ -1035,6 +1064,7 @@
   {
     "id": "cala-galdana",
     "name": "Cala Galdana",
+    "slug": "cala-galdana-en",
     "image": "/uploads/cala-galdana-480.webp",
     "coordinates": {
       "lat": 39.936,
@@ -1113,6 +1143,7 @@
   {
     "id": "cala-macarelleta",
     "name": "Cala Macarelleta",
+    "slug": "cala-macarelleta-en",
     "image": "/uploads/cala-macarelleta-480.webp",
     "imageCredit": "Pelayo Arbués · Unsplash",
     "coordinates": {
@@ -1147,6 +1178,7 @@
   {
     "id": "cala-mesquida",
     "name": "Cala Mesquida",
+    "slug": "cala-mesquida-en",
     "coordinates": {
       "lat": 39.902,
       "lng": 4.31
@@ -1164,7 +1196,7 @@
       "the defence tower above the cove",
       "eating at one of its beachside fish restaurants"
     ],
-    "blurb": "A beach of pale sand and calm water near Maó, with a small cluster of fishermen's houses, restaurants and a defensive tower. Note: it sits on the…",
+    "blurb": "A beach of pale sand and calm water just outside Maó, with a small cluster of fishermen's houses, restaurants and a defensive tower. It sits on the…",
     "durationMin": 90,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -1180,6 +1212,7 @@
   {
     "id": "cala-mica",
     "name": "Cala Mica",
+    "slug": "cala-mica-en",
     "coordinates": {
       "lat": 40.05,
       "lng": 4.085
@@ -1249,6 +1282,7 @@
   {
     "id": "cala-morell",
     "name": "Cala Morell",
+    "slug": "cala-morell-en",
     "coordinates": {
       "lat": 40.056,
       "lng": 3.883
@@ -1319,6 +1353,7 @@
   {
     "id": "cala-presili",
     "name": "Cala Presili",
+    "slug": "cala-presili-en",
     "coordinates": {
       "lat": 39.995,
       "lng": 4.272
@@ -1351,6 +1386,7 @@
   {
     "id": "cala-roja",
     "name": "Cala Roja",
+    "slug": "cala-roja-en",
     "coordinates": {
       "lat": 40.0575,
       "lng": 4.0905
@@ -1383,6 +1419,7 @@
   {
     "id": "cala-santandria",
     "name": "Cala Santandría",
+    "slug": "cala-santandria-en",
     "coordinates": {
       "lat": 39.969,
       "lng": 3.829
@@ -1426,6 +1463,7 @@
   {
     "id": "cala-tirant",
     "name": "Cala Tirant",
+    "slug": "cala-tirant-en",
     "coordinates": {
       "lat": 40.057,
       "lng": 4.117
@@ -1458,6 +1496,7 @@
   {
     "id": "cala-tortuga",
     "name": "Cala Tortuga",
+    "slug": "cala-tortuga-en",
     "coordinates": {
       "lat": 39.998,
       "lng": 4.27
@@ -1490,6 +1529,7 @@
   {
     "id": "cala-trebaluger",
     "name": "Cala Trebalúger",
+    "slug": "cala-trebaluger-en",
     "coordinates": {
       "lat": 39.932,
       "lng": 3.987
@@ -1558,6 +1598,7 @@
   {
     "id": "cales-coves",
     "name": "Cales Coves",
+    "slug": "cales-coves-en",
     "coordinates": {
       "lat": 39.874,
       "lng": 4.148
@@ -1590,6 +1631,7 @@
   {
     "id": "cami-de-cavalls-es-grau-sa-mesquida-familiar",
     "name": "Easy Camí de Cavalls: Es Grau – Sa Mesquida (family stretch)",
+    "slug": "cami-de-cavalls-es-grau-sa-mesquida-familiar-en",
     "image": "/uploads/cami-de-cavalls-480.webp",
     "imageCredit": "Pelayo Arbués · Unsplash",
     "coordinates": {
@@ -1625,6 +1667,7 @@
   {
     "id": "cami-de-cavalls-etapa-10-punta-nati-ciutadella",
     "name": "Camí de Cavalls · Stage 10: Punta Nati – Ciutadella",
+    "slug": "cami-de-cavalls-etapa-10-punta-nati-ciutadella-en",
     "image": "/uploads/cami-de-cavalls-480.webp",
     "imageCredit": "Pelayo Arbués · Unsplash",
     "coordinates": {
@@ -1660,6 +1703,7 @@
   {
     "id": "cami-de-cavalls-etapa-13-turqueta-galdana",
     "name": "Camí de Cavalls · Stage 13: Cala en Turqueta – Cala Galdana",
+    "slug": "cami-de-cavalls-etapa-13-turqueta-galdana-en",
     "image": "/uploads/cami-de-cavalls-480.webp",
     "imageCredit": "Pelayo Arbués · Unsplash",
     "coordinates": {
@@ -1696,6 +1740,7 @@
   {
     "id": "cami-de-cavalls-etapa-2-es-grau-favaritx",
     "name": "Camí de Cavalls · Stage 2: Es Grau – Cap de Favàritx",
+    "slug": "cami-de-cavalls-etapa-2-es-grau-favaritx-en",
     "image": "/uploads/cami-de-cavalls-480.webp",
     "imageCredit": "Pelayo Arbués · Unsplash",
     "coordinates": {
@@ -1730,6 +1775,7 @@
   {
     "id": "cami-de-cavalls-etapa-20-sant-esteve-mao",
     "name": "Camí de Cavalls · Stage 20: Cala de Sant Esteve – Maó",
+    "slug": "cami-de-cavalls-etapa-20-sant-esteve-mao-en",
     "image": "/uploads/cami-de-cavalls-480.webp",
     "imageCredit": "Pelayo Arbués · Unsplash",
     "coordinates": {
@@ -1766,6 +1812,7 @@
   {
     "id": "cami-de-cavalls-etapa-6-binimella-els-alocs",
     "name": "Camí de Cavalls · Stage 6: Binimel·là – Els Alocs",
+    "slug": "cami-de-cavalls-etapa-6-binimella-els-alocs-en",
     "image": "/uploads/cami-de-cavalls-480.webp",
     "imageCredit": "Pelayo Arbués · Unsplash",
     "coordinates": {
@@ -1799,6 +1846,7 @@
   {
     "id": "castell-de-sant-felip",
     "name": "Castell de Sant Felip",
+    "slug": "castell-de-sant-felip-en",
     "coordinates": {
       "lat": 39.8675,
       "lng": 4.3031
@@ -1832,6 +1880,7 @@
   {
     "id": "castell-de-sant-nicolau",
     "name": "Castell de Sant Nicolau",
+    "slug": "castell-de-sant-nicolau-en",
     "coordinates": {
       "lat": 39.9956,
       "lng": 3.8278
@@ -1865,6 +1914,7 @@
   {
     "id": "catedral-de-santa-maria-ciutadella",
     "name": "Catedral de Santa Maria de Ciutadella",
+    "slug": "catedral-de-santa-maria-ciutadella-en",
     "coordinates": {
       "lat": 40.0018,
       "lng": 3.8377
@@ -1899,6 +1949,7 @@
   {
     "id": "ciutadella",
     "name": "Ciutadella de Menorca",
+    "slug": "ciutadella-en",
     "image": "/uploads/ciutadella-480.webp",
     "coordinates": {
       "lat": 40.0014,
@@ -1964,6 +2015,7 @@
   {
     "id": "cova-des-coloms-barranc-binigaus",
     "name": "Cova des Coloms ('the Cathedral') via the Barranc de Binigaus",
+    "slug": "cova-des-coloms-barranc-binigaus-en",
     "coordinates": {
       "lat": 39.9266,
       "lng": 4.0492
@@ -1997,6 +2049,7 @@
   {
     "id": "destileria-gin-xoriguer",
     "name": "Gin Xoriguer Distillery",
+    "slug": "destileria-gin-xoriguer-en",
     "image": "/uploads/gin-menorca-480.webp",
     "coordinates": {
       "lat": 39.89,
@@ -2035,6 +2088,7 @@
   {
     "id": "eolo-sunset-bar",
     "name": "Eolo Sunset Bar",
+    "slug": "eolo-sunset-bar-en",
     "coordinates": {
       "lat": 40.01,
       "lng": 3.79
@@ -2100,6 +2154,7 @@
   {
     "id": "es-canutells",
     "name": "Es Canutells",
+    "slug": "es-canutells-en",
     "coordinates": {
       "lat": 39.865,
       "lng": 4.17
@@ -2132,6 +2187,7 @@
   {
     "id": "es-castell",
     "name": "Es Castell",
+    "slug": "es-castell-en",
     "image": "/uploads/cales-fonts-480.webp",
     "coordinates": {
       "lat": 39.8794,
@@ -2167,6 +2223,7 @@
   {
     "id": "es-grau",
     "name": "Es Grau",
+    "slug": "es-grau-en",
     "coordinates": {
       "lat": 39.956,
       "lng": 4.266
@@ -2203,6 +2260,7 @@
   {
     "id": "es-mercadal",
     "name": "Es Mercadal",
+    "slug": "es-mercadal-en",
     "coordinates": {
       "lat": 39.9889,
       "lng": 4.0942
@@ -2236,6 +2294,7 @@
   {
     "id": "es-migjorn-gran",
     "name": "Es Migjorn Gran",
+    "slug": "es-migjorn-gran-en",
     "coordinates": {
       "lat": 39.9469,
       "lng": 4.0481
@@ -2268,6 +2327,7 @@
   {
     "id": "excursion-barco-calas-sur-menorca-blava-ciutadella",
     "name": "Boat trip to the unspoilt southern coves (Menorca Blava, Ciutadella)",
+    "slug": "excursion-barco-calas-sur-menorca-blava-ciutadella-en",
     "coordinates": {
       "lat": 39.9985,
       "lng": 3.833
@@ -2302,6 +2362,7 @@
   {
     "id": "excursion-llaut-mar-en-calma-fornells",
     "name": "Llaüt cruise along the north coast (Mar en Calma, Fornells)",
+    "slug": "excursion-llaut-mar-en-calma-fornells-en",
     "coordinates": {
       "lat": 40.0535,
       "lng": 4.137
@@ -2336,6 +2397,7 @@
   {
     "id": "excursion-llaut-mar-en-calma-galdana",
     "name": "Llaüt cruise to the southern coves (Mar en Calma, Cala Galdana)",
+    "slug": "excursion-llaut-mar-en-calma-galdana-en",
     "coordinates": {
       "lat": 39.936,
       "lng": 3.965
@@ -2370,6 +2432,7 @@
   {
     "id": "faro-cavalleria",
     "name": "Cap de Cavalleria",
+    "slug": "faro-cavalleria-en",
     "coordinates": {
       "lat": 40.0915,
       "lng": 4.092
@@ -2399,6 +2462,7 @@
   {
     "id": "faro-de-punta-nati",
     "name": "Punta Nati Lighthouse",
+    "slug": "faro-de-punta-nati-en",
     "image": "/uploads/menorca-punta-nati-480.webp",
     "coordinates": {
       "lat": 40.0578,
@@ -2431,6 +2495,7 @@
   {
     "id": "faro-favaritx",
     "name": "Faro de Favàritx",
+    "slug": "faro-favaritx-en",
     "coordinates": {
       "lat": 40.001,
       "lng": 4.272
@@ -2459,6 +2524,7 @@
   {
     "id": "ferreries",
     "name": "Ferreries",
+    "slug": "ferreries-en",
     "coordinates": {
       "lat": 39.9817,
       "lng": 4.0103
@@ -2492,6 +2558,7 @@
   {
     "id": "finca-binillubet",
     "name": "Finca Binillubet",
+    "slug": "finca-binillubet-en",
     "coordinates": {
       "lat": 39.96,
       "lng": 4.13
@@ -2529,6 +2596,7 @@
   {
     "id": "fornells",
     "name": "Fornells",
+    "slug": "fornells-en",
     "image": "/uploads/fornells-480.webp",
     "coordinates": {
       "lat": 40.0539,
@@ -2559,6 +2627,7 @@
   {
     "id": "fort-marlborough",
     "name": "Fort Marlborough",
+    "slug": "fort-marlborough-en",
     "coordinates": {
       "lat": 39.8629,
       "lng": 4.3015
@@ -2593,6 +2662,7 @@
   {
     "id": "fortaleza-de-la-mola",
     "name": "Fortaleza de La Mola",
+    "slug": "fortaleza-de-la-mola-en",
     "image": "/uploads/la-mola-480.webp",
     "imageCredit": "Alvaro Ortiz · Wikimedia Commons, CC BY-SA 3.0",
     "coordinates": {
@@ -2631,6 +2701,7 @@
   {
     "id": "hort-de-sant-patrici",
     "name": "Hort de Sant Patrici",
+    "slug": "hort-de-sant-patrici-en",
     "coordinates": {
       "lat": 39.985,
       "lng": 4.005
@@ -2663,12 +2734,14 @@
       "centro"
     ],
     "needsReservation": true,
+    "officialUrl": "https://www.santpatrici.com",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-22"
   },
   {
     "id": "illa-del-rei",
     "name": "Illa del Rei",
+    "slug": "illa-del-rei-en",
     "image": "/uploads/illa-del-rei-480.webp",
     "imageCredit": "Florent Pécassou · Wikimedia Commons, CC BY-SA 4.0",
     "coordinates": {
@@ -2704,6 +2777,7 @@
   {
     "id": "kayak-galdana-rutas-cuevas-familia",
     "name": "Guided kayak to sea caves from Cala Galdana",
+    "slug": "kayak-galdana-rutas-cuevas-familia-en",
     "coordinates": {
       "lat": 39.936,
       "lng": 3.965
@@ -2737,6 +2811,7 @@
   {
     "id": "kayak-snorkel-fornells-reserva-marina",
     "name": "Kayaking and snorkelling in the Northern Marine Reserve (Fornells)",
+    "slug": "kayak-snorkel-fornells-reserva-marina-en",
     "coordinates": {
       "lat": 40.0535,
       "lng": 4.137
@@ -2771,6 +2846,7 @@
   {
     "id": "lago-spa-cala-en-bosch",
     "name": "Lago Spa (Lago Resort)",
+    "slug": "lago-spa-cala-en-bosch-en",
     "coordinates": {
       "lat": 39.9265,
       "lng": 3.8375
@@ -2804,6 +2880,7 @@
   {
     "id": "lithica",
     "name": "Lithica – Pedreres de s'Hostal",
+    "slug": "lithica-en",
     "image": "/uploads/lithica-480.webp",
     "imageCredit": "Ben Salter · Wikimedia Commons, CC BY 2.0",
     "coordinates": {
@@ -2839,6 +2916,7 @@
   {
     "id": "llatzeret-de-mao",
     "name": "Llatzeret de Maó",
+    "slug": "llatzeret-de-mao-en",
     "coordinates": {
       "lat": 39.8766,
       "lng": 4.3039
@@ -2873,6 +2951,7 @@
   {
     "id": "lloc-de-menorca-zoo-granja",
     "name": "Lloc de Menorca (zoo and educational farm)",
+    "slug": "lloc-de-menorca-zoo-granja-en",
     "coordinates": {
       "lat": 39.9072,
       "lng": 4.2225
@@ -2938,6 +3017,7 @@
   {
     "id": "mao",
     "name": "Maó",
+    "slug": "mao-en",
     "image": "/uploads/puerto-mao-480.webp",
     "coordinates": {
       "lat": 39.8885,
@@ -2968,6 +3048,7 @@
   {
     "id": "marea-beach-house-sunset-bar",
     "name": "Marea Beach House – Sunset Bar (Cala Blanca)",
+    "slug": "marea-beach-house-sunset-bar-en",
     "coordinates": {
       "lat": 39.969,
       "lng": 3.834
@@ -3001,6 +3082,7 @@
   {
     "id": "mel-i-reines-experiencia-apicola",
     "name": "Mel i Reines — beekeeping experience (Finca Lluriach)",
+    "slug": "mel-i-reines-experiencia-apicola-en",
     "coordinates": {
       "lat": 39.99,
       "lng": 4.09
@@ -3035,6 +3117,7 @@
   {
     "id": "mercat-claustre-carme",
     "name": "Mercat des Claustre del Carme",
+    "slug": "mercat-claustre-carme-en",
     "coordinates": {
       "lat": 39.888,
       "lng": 4.265
@@ -3075,6 +3158,7 @@
   {
     "id": "mercat-des-peix",
     "name": "Mercat des Peix",
+    "slug": "mercat-des-peix-en",
     "coordinates": {
       "lat": 39.888,
       "lng": 4.264
@@ -3112,6 +3196,7 @@
   {
     "id": "mercat-municipal-de-ciutadella",
     "name": "Mercat Municipal de Ciutadella",
+    "slug": "mercat-municipal-de-ciutadella-en",
     "coordinates": {
       "lat": 40,
       "lng": 3.84
@@ -3149,6 +3234,7 @@
   {
     "id": "monte-toro",
     "name": "Monte Toro",
+    "slug": "monte-toro-en",
     "image": "/uploads/monte-toro-480.webp",
     "imageCredit": "Ian Kirk · Wikimedia Commons, CC BY 2.0",
     "coordinates": {
@@ -3180,6 +3266,7 @@
   {
     "id": "museu-de-ciutadella-can-saura",
     "name": "Can Saura. Museu de Ciutadella",
+    "slug": "museu-de-ciutadella-can-saura-en",
     "coordinates": {
       "lat": 40.0008,
       "lng": 3.8385
@@ -3213,6 +3300,7 @@
   {
     "id": "museu-de-menorca",
     "name": "Museu de Menorca",
+    "slug": "museu-de-menorca-en",
     "coordinates": {
       "lat": 39.8911,
       "lng": 4.2606
@@ -3247,6 +3335,7 @@
   {
     "id": "museu-de-menorca-pequeno-museo",
     "name": "Museu de Menorca – El Pequeño Museo (Maó)",
+    "slug": "museu-de-menorca-pequeno-museo-en",
     "coordinates": {
       "lat": 39.8889,
       "lng": 4.2636
@@ -3281,6 +3370,7 @@
   {
     "id": "museu-diocesa-de-menorca",
     "name": "Museu Diocesà de Menorca",
+    "slug": "museu-diocesa-de-menorca-en",
     "coordinates": {
       "lat": 40.0008,
       "lng": 3.8389
@@ -3314,6 +3404,7 @@
   {
     "id": "museu-militar-de-menorca",
     "name": "Museu Militar de Menorca",
+    "slug": "museu-militar-de-menorca-en",
     "coordinates": {
       "lat": 39.8795,
       "lng": 4.2903
@@ -3384,6 +3475,7 @@
   {
     "id": "necropolis-de-cala-morell",
     "name": "Cala Morell Necropolis",
+    "slug": "necropolis-de-cala-morell-en",
     "coordinates": {
       "lat": 40.0556,
       "lng": 3.8786
@@ -3416,6 +3508,7 @@
   {
     "id": "necropolis-de-calescoves",
     "name": "Calescoves Necropolis",
+    "slug": "necropolis-de-calescoves-en",
     "coordinates": {
       "lat": 39.8689,
       "lng": 4.1217
@@ -3448,6 +3541,7 @@
   {
     "id": "parc-natural-de-salbufera-des-grau",
     "name": "Parc Natural de s'Albufera des Grau",
+    "slug": "parc-natural-de-salbufera-des-grau-en",
     "image": "/uploads/albufera-des-grau-480.webp",
     "imageCredit": "Nicolas G. Mertens · Wikimedia Commons, CC BY-SA 4.0",
     "coordinates": {
@@ -3482,6 +3576,7 @@
   {
     "id": "paseo-barco-calas-cuevas-cala-galdana",
     "name": "Boat trip around the southern coves and caves (from Cala Galdana)",
+    "slug": "paseo-barco-calas-cuevas-cala-galdana-en",
     "coordinates": {
       "lat": 39.936,
       "lng": 3.965
@@ -3515,6 +3610,7 @@
   {
     "id": "paseo-catamaran-bahia-fornells",
     "name": "Catamaran trip around the bay of Fornells and the north coast",
+    "slug": "paseo-catamaran-bahia-fornells-en",
     "coordinates": {
       "lat": 40.0539,
       "lng": 4.1356
@@ -3548,6 +3644,7 @@
   {
     "id": "platja-de-binigaus",
     "name": "Platja de Binigaus",
+    "slug": "platja-de-binigaus-en",
     "image": "/uploads/binigaus-480.webp",
     "coordinates": {
       "lat": 39.93,
@@ -3580,6 +3677,7 @@
   {
     "id": "platja-de-sant-tomas",
     "name": "Platja de Sant Tomàs",
+    "slug": "platja-de-sant-tomas-en",
     "coordinates": {
       "lat": 39.93,
       "lng": 4.047
@@ -3623,6 +3721,7 @@
   {
     "id": "platja-den-ferragut",
     "name": "Platja d'en Ferragut",
+    "slug": "platja-den-ferragut-en",
     "coordinates": {
       "lat": 40.055,
       "lng": 4.089
@@ -3655,6 +3754,7 @@
   {
     "id": "playa-de-binimel-la",
     "name": "Playa de Binimel·la",
+    "slug": "playa-de-binimel-la-en",
     "coordinates": {
       "lat": 40.049,
       "lng": 4.098
@@ -3687,6 +3787,7 @@
   {
     "id": "pont-den-gil",
     "name": "Pont d'en Gil",
+    "slug": "pont-den-gil-en",
     "coordinates": {
       "lat": 40,
       "lng": 3.8
@@ -3719,6 +3820,7 @@
   {
     "id": "punta-prima",
     "name": "Punta Prima",
+    "slug": "punta-prima-en",
     "coordinates": {
       "lat": 39.812,
       "lng": 4.275
@@ -3754,6 +3856,7 @@
   {
     "id": "queseria-subaida",
     "name": "Quesería Subaida",
+    "slug": "queseria-subaida-en",
     "coordinates": {
       "lat": 39.96,
       "lng": 4.16
@@ -3792,6 +3895,7 @@
   {
     "id": "restaurant-sa-llagosta",
     "name": "Restaurant Sa Llagosta",
+    "slug": "restaurant-sa-llagosta-en",
     "coordinates": {
       "lat": 40.05,
       "lng": 4.13
@@ -3820,6 +3924,7 @@
   {
     "id": "restaurante-es-cranc",
     "name": "Restaurante Es Cranc",
+    "slug": "restaurante-es-cranc-en",
     "coordinates": {
       "lat": 40.05,
       "lng": 4.13
@@ -3849,6 +3954,7 @@
   {
     "id": "restaurante-sant-joan-de-binissaida",
     "name": "Restaurante Sant Joan de Binissaida",
+    "slug": "restaurante-sant-joan-de-binissaida-en",
     "coordinates": {
       "lat": 39.88,
       "lng": 4.27
@@ -3886,6 +3992,7 @@
   {
     "id": "restaurante-smoix",
     "name": "Restaurante Smoix",
+    "slug": "restaurante-smoix-en",
     "coordinates": {
       "lat": 40,
       "lng": 3.84
@@ -3920,6 +4027,7 @@
   {
     "id": "rutas-a-caballo-cavalls-son-angel",
     "name": "Horse riding along the north coast (Cavalls Son Àngel)",
+    "slug": "rutas-a-caballo-cavalls-son-angel-en",
     "coordinates": {
       "lat": 40.022,
       "lng": 3.86
@@ -3953,6 +4061,7 @@
   {
     "id": "rutas-a-caballo-son-bou",
     "name": "Horse riding on the Camí de Cavalls (Son Bou)",
+    "slug": "rutas-a-caballo-son-bou-en",
     "coordinates": {
       "lat": 39.897,
       "lng": 4.083
@@ -3987,6 +4096,7 @@
   {
     "id": "sa-torreta",
     "name": "Sa Torreta",
+    "slug": "sa-torreta-en",
     "coordinates": {
       "lat": 39.975,
       "lng": 4.27
@@ -4019,6 +4129,7 @@
   {
     "id": "sant-climent",
     "name": "Sant Climent",
+    "slug": "sant-climent-en",
     "coordinates": {
       "lat": 39.8694,
       "lng": 4.2419
@@ -4052,6 +4163,7 @@
   {
     "id": "sant-lluis",
     "name": "Sant Lluís",
+    "slug": "sant-lluis-en",
     "coordinates": {
       "lat": 39.8425,
       "lng": 4.2747
@@ -4085,6 +4197,7 @@
   {
     "id": "son-bou",
     "name": "Playa de Son Bou",
+    "slug": "son-bou-en",
     "image": "/uploads/son-bou-480.webp",
     "imageCredit": "Wasquewhat · Wikimedia Commons, CC BY-SA 4.0",
     "coordinates": {
@@ -4123,6 +4236,7 @@
   {
     "id": "son-bou-beach-club",
     "name": "Son Bou Beach Club",
+    "slug": "son-bou-beach-club-en",
     "coordinates": {
       "lat": 39.9,
       "lng": 4.08
@@ -4157,6 +4271,7 @@
   {
     "id": "son-felip-visita-apicola-algaiarens",
     "name": "Son Felip — Algaiarens beekeeping visit",
+    "slug": "son-felip-visita-apicola-algaiarens-en",
     "coordinates": {
       "lat": 40.02,
       "lng": 3.9
@@ -4191,6 +4306,7 @@
   {
     "id": "son-martorellet-caballos-menorquines",
     "name": "Son Martorellet (the pure Menorcan horse breed)",
+    "slug": "son-martorellet-caballos-menorquines-en",
     "coordinates": {
       "lat": 39.957,
       "lng": 3.985
@@ -4225,6 +4341,7 @@
   {
     "id": "son-saura-del-sur",
     "name": "Son Saura del Sur",
+    "slug": "son-saura-del-sur-en",
     "coordinates": {
       "lat": 39.918,
       "lng": 3.895
@@ -4257,6 +4374,7 @@
   {
     "id": "son-xoriguer",
     "name": "Son Xoriguer",
+    "slug": "son-xoriguer-en",
     "coordinates": {
       "lat": 39.926,
       "lng": 3.805
@@ -4289,6 +4407,7 @@
   {
     "id": "spa-faustino-gran",
     "name": "Spa Faustino Gran",
+    "slug": "spa-faustino-gran-en",
     "coordinates": {
       "lat": 39.9998,
       "lng": 3.8378
@@ -4322,6 +4441,7 @@
   {
     "id": "spa-menorca-experimental",
     "name": "Spa Menorca Experimental",
+    "slug": "spa-menorca-experimental-en",
     "coordinates": {
       "lat": 39.8902,
       "lng": 4.0899
@@ -4355,6 +4475,7 @@
   {
     "id": "spa-santa-ponsa-fontenille",
     "name": "Spa Santa Ponsa (Fontenille)",
+    "slug": "spa-santa-ponsa-fontenille-en",
     "coordinates": {
       "lat": 39.902,
       "lng": 4.093
@@ -4388,6 +4509,7 @@
   {
     "id": "spa-torralbenc",
     "name": "Spa Torralbenc (Natura Bissé rituals)",
+    "slug": "spa-torralbenc-en",
     "coordinates": {
       "lat": 39.91,
       "lng": 4.16
@@ -4421,6 +4543,7 @@
   {
     "id": "talati-de-dalt",
     "name": "Talatí de Dalt",
+    "slug": "talati-de-dalt-en",
     "coordinates": {
       "lat": 39.8836,
       "lng": 4.2058
@@ -4454,6 +4577,7 @@
   {
     "id": "torralba-den-salort",
     "name": "Torralba d'en Salort",
+    "slug": "torralba-den-salort-en",
     "coordinates": {
       "lat": 39.9019,
       "lng": 4.1389
@@ -4486,6 +4610,7 @@
   {
     "id": "torralbenc",
     "name": "Torralbenc",
+    "slug": "torralbenc-en",
     "coordinates": {
       "lat": 39.91,
       "lng": 4.16
@@ -4520,6 +4645,7 @@
   {
     "id": "torre-de-fornells",
     "name": "Torre de Fornells",
+    "slug": "torre-de-fornells-en",
     "coordinates": {
       "lat": 40.0556,
       "lng": 4.1372
@@ -4556,6 +4682,7 @@
   {
     "id": "torre-den-galmes",
     "name": "Torre d'en Galmés",
+    "slug": "torre-den-galmes-en",
     "coordinates": {
       "lat": 39.9269,
       "lng": 4.1283
@@ -4585,6 +4712,7 @@
   {
     "id": "torre-vella-yoga-naturaleza",
     "name": "Torre Vella – open-air yoga and massage (Fontenille)",
+    "slug": "torre-vella-yoga-naturaleza-en",
     "coordinates": {
       "lat": 39.9,
       "lng": 4.1
@@ -4618,6 +4746,7 @@
   {
     "id": "trepuco",
     "name": "Trepucó",
+    "slug": "trepuco-en",
     "coordinates": {
       "lat": 39.8703,
       "lng": 4.2719
@@ -4650,6 +4779,7 @@
   {
     "id": "wellness-cugo-gran",
     "name": "Wellness Cugó Gran",
+    "slug": "wellness-cugo-gran-en",
     "coordinates": {
       "lat": 39.8694,
       "lng": 4.2419
@@ -4682,6 +4812,7 @@
   {
     "id": "yellow-catamarans-fondo-cristal-mao",
     "name": "Yellow Catamarans (glass-bottom catamaran, Maó harbour)",
+    "slug": "yellow-catamarans-fondo-cristal-mao-en",
     "coordinates": {
       "lat": 39.8917,
       "lng": 4.2747
@@ -4716,6 +4847,7 @@
   {
     "id": "yellow-catamarans-puerto-mao",
     "name": "Maó harbour cruise on a glass-bottomed catamaran (Yellow Catamarans)",
+    "slug": "yellow-catamarans-puerto-mao-en",
     "coordinates": {
       "lat": 39.891,
       "lng": 4.268
