@@ -617,9 +617,9 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
       title.textContent = n === 1 ? CFG.printTitleOne : CFG.printTitleTpl.replace("{N}", String(n));
       const sub = $("planner-print-sub");
       if (sub) {
-        const fechas = plan.days[0]?.date && plan.days[n - 1]?.date
-          ? `${fmtDate(plan.days[0].date)} — ${fmtDate(plan.days[n - 1].date)}`
-          : "";
+        const d0 = plan.days[0]?.date;
+        const dN = plan.days[n - 1]?.date;
+        const fechas = d0 && dN ? `${fmtDate(d0)} — ${fmtDate(dN)}` : "";
         sub.textContent = [baseName, fechas].filter(Boolean).join(" · ");
       }
       const gen = $("planner-print-date");
