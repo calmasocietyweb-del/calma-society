@@ -16,7 +16,7 @@
  * Los NOMBRES PROPIOS (Ciutadella, Maó, Son Bou…) no se traducen: viven en un
  * único mapa compartido por ambos idiomas.
  */
-import type { BaseZone } from "./types.ts";
+import type { BaseZone, Weekday } from "./types.ts";
 
 export type Lang = "es" | "en";
 
@@ -32,6 +32,11 @@ export const NICE: Record<BaseZone, string> = {
 
 /** Forma del diccionario (la comparte `es` y `en`; el compilador exige paridad). */
 interface Strings {
+  /** Nombres localizados del ritmo (nunca fugar el enum crudo al texto). */
+  paceName: Record<"relajado" | "equilibrado" | "intenso", string>;
+  /** Nombres localizados del día de la semana (avisos de cierre). */
+  weekdayName: Record<Weekday, string>;
+
   // ── base.ts ──────────────────────────────────────────────────────────────
   base: {
     /** (a) base elegida + sin coche en zona con transporte limitado. */
@@ -123,6 +128,8 @@ interface Strings {
     waterShade: (name: string) => string;
     confirmHours: (name: string) => string;
     pace: (pace: string, dropped: string) => string;
+    /** El lugar cierra el día de la semana que toca → se deja fuera con aviso. */
+    closedThatDay: (name: string, weekday: string) => string;
   };
 
   // ── planb.ts ─────────────────────────────────────────────────────────────
@@ -162,6 +169,11 @@ interface Strings {
 
 // ── Español (fuente de verdad, byte-idéntico al motor original) ──────────────
 const ES: Strings = {
+  paceName: { relajado: "relajado", equilibrado: "equilibrado", intenso: "intenso" },
+  weekdayName: {
+    lun: "lunes", mar: "martes", mie: "miércoles", jue: "jueves",
+    vie: "viernes", sab: "sábado", dom: "domingo",
+  },
   base: {
     chosenCarlessLimited: (place) =>
       `Te alojas en ${place}. Aviso: sin coche, esta base tiene transporte público limitado; valora transfers/excursiones para moverte.`,
@@ -251,6 +263,8 @@ const ES: Strings = {
     confirmHours: (name) => `Confirma el horario de ${name} el día de tu visita.`,
     pace: (pace, dropped) =>
       `Para no saturar el día (ritmo ${pace}) dejé fuera: ${dropped}. Puedes recuperarla otro día.`,
+    closedThatDay: (name, weekday) =>
+      `${name} cierra ese día (${weekday}): lo dejamos fuera y elegimos alternativa abierta.`,
   },
   planb: {
     longLunch: "Comida larga con criterio (ancla del día)",
@@ -296,6 +310,11 @@ const ES: Strings = {
 
 // ── Inglés (voz "lujo tranquilo": sobrio, con criterio, sin exclamaciones) ───
 const EN: Strings = {
+  paceName: { relajado: "relaxed", equilibrado: "balanced", intenso: "intense" },
+  weekdayName: {
+    lun: "Monday", mar: "Tuesday", mie: "Wednesday", jue: "Thursday",
+    vie: "Friday", sab: "Saturday", dom: "Sunday",
+  },
   base: {
     chosenCarlessLimited: (place) =>
       `You are staying in ${place}. Note: without a car, this base has limited public transport; consider transfers or excursions to get around.`,
@@ -385,6 +404,8 @@ const EN: Strings = {
     confirmHours: (name) => `Confirm the opening hours of ${name} on the day of your visit.`,
     pace: (pace, dropped) =>
       `To keep the day unhurried (${pace} pace) I left out: ${dropped}. You can pick it up another day.`,
+    closedThatDay: (name, weekday) =>
+      `${name} is closed that day (${weekday}), so we left it out and picked an open alternative.`,
   },
   planb: {
     longLunch: "A long lunch with care (the anchor of the day)",

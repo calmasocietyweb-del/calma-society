@@ -9,19 +9,47 @@
  * Riesgo R3 (tamaño): se incluyen solo campos del motor y se sirve un JSON por
  * idioma. Reejecutar cuando cambien las fichas:  node scripts/build-planner-data.mjs
  */
-import { readFileSync, writeFileSync, readdirSync } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
+import { PHOTO_MAP } from "./planner-photo-map.mjs";
 
 const DIR = "src/content/lugares";
 const OUT = "src/data";
 
+/**
+ * Foto del lugar (cascada HONESTA, veredicto del council jul-2026):
+ * 1) la imagen de la propia ficha; 2) la tabla curada a mano (planner-photo-map);
+ * 3) sin foto. Se sirve la variante -480 (ligera) si existe.
+ */
+function photoOf(f) {
+  const fromFicha = f.images && f.images[0];
+  if (fromFicha) return { image: lightVariant(fromFicha), imageCredit: undefined };
+  const curated = PHOTO_MAP[f.translationKey];
+  if (curated) {
+    return { image: lightVariant(`/uploads/${curated.img}.webp`), imageCredit: curated.credit };
+  }
+  return { image: undefined, imageCredit: undefined };
+}
+
+/** "/uploads/x.webp" → "/uploads/x-480.webp" si la variante ligera existe. */
+function lightVariant(path) {
+  const light = path.replace(/\.(webp|jpg|jpeg|png)$/i, "-480.$1");
+  return existsSync(join("public", light.replace(/^\//, ""))) ? light : path;
+}
+
 // Defaults espejo de los del schema Zod (los JSON solo guardan lo no-default).
-function toPlannerPlace(f) {
+// `slugByFile` = nombre de archivo sin extensión = id de la entry en Astro = slug
+// real de /lugar/<slug> (SOLO si la ficha está `published`: las draft no generan
+// página, así que no se enlaza a un 404).
+function toPlannerPlace(f, slugByFile) {
   const p = f.planner;
+  const photo = photoOf(f);
   return {
     id: f.translationKey,
     name: f.name,
-    slug: f.translationKey, // TODO: slug real por idioma cuando exista la página /lugar
+    slug: f.status === "published" ? slugByFile : undefined,
+    image: photo.image,
+    imageCredit: photo.imageCredit,
     coordinates: f.coordinates,
     zone: p.zone,
     cluster: p.cluster,
@@ -64,14 +92,17 @@ function blurbOf(s) {
 
 const byLang = { es: [], en: [] };
 const statusCount = { published: 0, draft: 0, pending: 0 };
-// Pre-lanzamiento: el planificador NO es público todavía, así que el dataset de
-// desarrollo incluye también borradores (para ver el motor con datos ricos). En
-// P3, al publicar la página, gatear a `status === "published"` (visto bueno §6 bis).
+// NOTA (decisión registrada, jul 2026): el dataset del MOTOR incluye fichas en
+// draft a propósito. No son contenido editorial publicado: son DATOS verificados
+// (dataCertainty/lastVerified) que alimentan el plan, aprobados como MODELO al
+// publicar el planificador (analogía §6 bis con el parte del mar). Lo que sí se
+// gatea por `published` es el ENLACE a la página /lugar (slug): una ficha draft
+// no genera página y no se enlaza.
 for (const file of readdirSync(DIR).filter((f) => f.endsWith(".json"))) {
   const f = JSON.parse(readFileSync(join(DIR, file), "utf8"));
   if (!f.planner || !byLang[f.lang]) continue;
   statusCount[f.status] = (statusCount[f.status] ?? 0) + 1;
-  byLang[f.lang].push(prune(toPlannerPlace(f)));
+  byLang[f.lang].push(prune(toPlannerPlace(f, file.replace(/\.json$/, ""))));
 }
 const total = byLang.es.length + byLang.en.length;
 
@@ -81,4 +112,4 @@ for (const lang of Object.keys(byLang)) {
   writeFileSync(path, JSON.stringify(byLang[lang], null, 2) + "\n");
   console.log(`✓ ${path} — ${byLang[lang].length} lugares`);
 }
-console.log(`Hecho: ${total} fichas compiladas (published ${statusCount.published}, draft ${statusCount.draft}, pending ${statusCount.pending}). OJO: incluye borradores (pre-lanzamiento); gatear a published en P3.`);
+console.log(`Hecho: ${total} fichas compiladas (published ${statusCount.published}, draft ${statusCount.draft}, pending ${statusCount.pending}). El dataset incluye draft (son datos del motor, no páginas); el slug/enlace a /lugar solo se emite para published.`);

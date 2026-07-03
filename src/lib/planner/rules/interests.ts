@@ -4,8 +4,9 @@
  *
  * Todo determinista: el cruce encuesta↔dataset es una TABLA, no IA.
  */
-import type { IdealFor, PlannerPlace, PlannerZone, BaseZone } from "../types.ts";
+import type { IdealFor, PlannerPlace, PlannerType, PlannerZone, BaseZone } from "../types.ts";
 import type { Survey, Interest } from "../survey.ts";
+import { isCarless } from "../survey.ts";
 
 /** Cada interés de la encuesta apunta a uno o varios `idealFor` del dataset. */
 const INTEREST_TO_IDEALFOR: Record<Interest, IdealFor[]> = {
@@ -17,6 +18,28 @@ const INTEREST_TO_IDEALFOR: Record<Interest, IdealFor[]> = {
   nautica: ["nautica"],
   "lujo-tranquilo": ["lujo-tranquilo"],
 };
+
+/**
+ * Cada interés apunta además a TIPOS de lugar: el "qué" literal que pide el
+ * viajero. Sin esto, pedir "calas" podía dar un plan sin una sola cala (una
+ * visita apícola etiquetada `naturaleza` puntuaba igual que Macarella).
+ */
+const INTEREST_TO_TYPES: Record<Interest, PlannerType[]> = {
+  calas: ["cala", "playa"],
+  gastronomia: ["comida", "cena", "desayuno"],
+  cultura: ["yacimiento", "interior-cultural"],
+  naturaleza: ["excursion", "mirador", "faro"],
+  "vida-nocturna": ["atardecer"],
+  nautica: ["actividad-acuatica"],
+  "lujo-tranquilo": [], // es un "cómo", no un tipo: lo cubre `idealFor`
+};
+
+/** Tipos de lugar que pide literalmente esta encuesta. */
+export function targetTypes(s: Survey): Set<PlannerType> {
+  const out = new Set<PlannerType>();
+  for (const i of s.interests) for (const t of INTEREST_TO_TYPES[i]) out.add(t);
+  return out;
+}
 
 /** Perfiles `idealFor` que busca esta encuesta (intereses + niños). */
 export function targetIdealFor(s: Survey): Set<IdealFor> {
@@ -32,14 +55,23 @@ export function targetIdealFor(s: Survey): Set<IdealFor> {
 
 /**
  * Afinidad de un lugar con la encuesta (mayor = más relevante). Ranking, no filtro.
- * Suma solapes de `idealFor` + bonus por niños + bonus por certeza alta.
+ * Manda el TIPO pedido (pides calas → las calas dominan el ranking); después,
+ * solapes de `idealFor` + bonus por niños + bonus por certeza alta. Sin coche,
+ * lo alcanzable en bus/lanzadera sube y lo solo-coche baja (no se bloquea:
+ * el aviso/transfer lo resuelve el motor, pero no debe ser el plan por defecto).
  */
 export function affinity(place: PlannerPlace, s: Survey): number {
   const target = targetIdealFor(s);
   let score = 0;
+  if (targetTypes(s).has(place.plannerType)) score += 2.5;
   for (const tag of place.idealFor) if (target.has(tag)) score += 1;
   if (s.kids.has && place.idealFor.includes("familias")) score += 1;
   if (place.dataCertainty === "alta") score += 0.5;
+  if (isCarless(s)) {
+    const reachable =
+      place.busServed || place.carAccess === "sin-coche-ok" || place.carAccessClosedSummer;
+    score += reachable ? 0.5 : -1.5;
+  }
   return score;
 }
 

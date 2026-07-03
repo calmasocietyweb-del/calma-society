@@ -69,13 +69,23 @@ export interface PlannerPlace {
   /** translationKey: une las versiones de idioma; identidad estable del lugar. */
   id: string;
   name: string;
-  slug: string;
+  /** Slug REAL de la página /lugar/<slug> — solo si la ficha está `published`
+   * (las draft no generan página: sin slug no se enlaza). */
+  slug?: string;
   coordinates: { lat: number; lng: number };
 
   zone: PlannerZone;
   cluster: string;
   plannerType: PlannerType;
   idealFor: IdealFor[];
+  /**
+   * Foto del lugar (ruta en /uploads, variante ligera). Cascada HONESTA en el
+   * build: imagen de la ficha → tabla curada a mano → sin foto. Nunca una foto
+   * de otro sitio fingiendo ser este (credibilidad, principio §3.8).
+   */
+  image?: string;
+  /** Atribución de la foto cuando la licencia la exige (Wikimedia CC BY/BY-SA). */
+  imageCredit?: string;
   /** Qué ver y hacer en el lugar (frases cortas accionables). */
   highlights?: string[];
   /** Descripción corta (fallback de "qué ver" cuando no hay highlights). */
@@ -150,9 +160,9 @@ export interface FoodByZone {
 }
 
 // ── Salida del motor ─────────────────────────────────────────────────────────
-/** Un bloque de la línea de tiempo intradía (desayuno → cena). */
+/** Un bloque de la línea de tiempo intradía (llegada/desayuno → cena). */
 export interface IntradayBlock {
-  slot: "desayuno" | "manana" | "comida" | "tarde" | "atardecer" | "cena";
+  slot: "llegada" | "desayuno" | "manana" | "comida" | "tarde" | "atardecer" | "cena";
   /** Hora orientativa "HH:MM" (nunca presentada como inmutable). */
   timeHint?: string;
   placeId?: string;
@@ -192,6 +202,9 @@ export interface DayCard {
   dayIndex: number;
   dayTypeKey: string;
   label: string;
+  /** Fecha ISO del día (solo si la encuesta trae fechas): permite mostrar
+   * "martes, 21 de julio", cruzar openDays y calcular el atardecer real. */
+  date?: string;
   zone: PlannerZone | "base" | "variable" | "cercano-aeropuerto";
   cluster?: string;
   blocks: IntradayBlock[];

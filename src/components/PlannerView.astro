@@ -9,9 +9,14 @@
  * sobre el dataset compilado y renderiza las DayCards. Sin él, se ve la encuesta
  * (degradación elegante). El dataset y la agenda se inyectan por idioma.
  *
- * NOTA i18n: los `reason`/avisos del motor están hoy en español (pendiente:
- * localizarlos por clave, R7 del blueprint). El formulario y el chrome sí están
- * traducidos. En la página EN se avisa de ello.
+ * i18n: el motor genera TODA su prosa localizada por clave (src/lib/planner/
+ * strings.ts, ES y EN con paridad de forma); el formulario y el chrome también.
+ *
+ * La respuesta renderiza, por parada: foto verificada (cascada honesta del
+ * build, con crédito CC cuando toca), enlace a la ficha /lugar (solo fichas
+ * published), "Cómo llegar" (Google Maps por coordenadas), web oficial, y por
+ * día: fecha real, ruta del día en Maps y enlace al parte del mar en días de
+ * playa. Captación (KPI nº1): "Recibe tu plan por email" con la URL del plan.
  */
 import dataEs from "../data/planner-data.es.json";
 import dataEn from "../data/planner-data.en.json";
@@ -49,13 +54,15 @@ const T = isEs
       acc_ning: "Ninguna", acc_carr: "Carrito de bebé", acc_mov: "Movilidad reducida", acc_may: "Personas mayores",
       submit: "Crear mi plan", recompute: "Actualizar el plan",
       base_z: { ciutadella: "Ciutadella", mao: "Maó", "cala-galdana": "Cala Galdana", "son-bou": "Son Bou", "es-mercadal": "Es Mercadal", fornells: "Fornells" } as Record<string, string>,
-      slot: { desayuno: "Desayuno", manana: "Mañana", comida: "Comida", tarde: "Tarde", atardecer: "Atardecer", cena: "Cena" } as Record<string, string>,
+      slot: { llegada: "Llegada", desayuno: "Desayuno", manana: "Mañana", comida: "Comida", tarde: "Tarde", atardecer: "Atardecer", cena: "Cena" } as Record<string, string>,
       planBtitle: "Si llueve o hace mucho calor", whyTitle: "Por qué este día", busCTA: "Resuélvelo con Menorca Bus",
       globalTitle: "Antes de salir", hours: "h útiles", empty: "Rellena la encuesta y crea tu plan.",
       intro: "Una guía día a día, encadenada por cercanía y sin prisas: la isla, a tu ritmo.",
       saveTitle: "Guarda tu plan",
-      saveText: "Llévatelo contigo: descárgalo en PDF, guarda el enlace para volver a él cuando quieras y únete a la Sociedad para recibir lo mejor de Menorca.",
-      savePdf: "Descargar PDF", joinSociety: "Únete a la Sociedad", copyLink: "Copiar enlace", copied: "¡Enlace copiado!",
+      saveText: "Déjanos tu correo y te enviamos el enlace de tu plan, con lo mejor de Menorca de regalo (la Sociedad). O descárgalo en PDF y guarda el enlace.",
+      savePdf: "Descargar PDF", copyLink: "Copiar enlace", copied: "¡Enlace copiado!",
+      emailPlaceholder: "Tu correo", emailBtn: "Recibe tu plan por email",
+      consentPrefix: "Acepto la", consentLink: "política de privacidad", consentSuffix: "para recibir mi plan y la newsletter de Calma Society.",
     }
   : {
       formTitle: "Tell us how you travel",
@@ -74,13 +81,15 @@ const T = isEs
       acc_ning: "None", acc_carr: "Baby stroller", acc_mov: "Reduced mobility", acc_may: "Older travellers",
       submit: "Build my plan", recompute: "Update the plan",
       base_z: { ciutadella: "Ciutadella", mao: "Maó", "cala-galdana": "Cala Galdana", "son-bou": "Son Bou", "es-mercadal": "Es Mercadal", fornells: "Fornells" } as Record<string, string>,
-      slot: { desayuno: "Breakfast", manana: "Morning", comida: "Lunch", tarde: "Afternoon", atardecer: "Sunset", cena: "Dinner" } as Record<string, string>,
+      slot: { llegada: "Arrival", desayuno: "Breakfast", manana: "Morning", comida: "Lunch", tarde: "Afternoon", atardecer: "Sunset", cena: "Dinner" } as Record<string, string>,
       planBtitle: "If it rains or gets too hot", whyTitle: "Why this day", busCTA: "Sort it with Menorca Bus",
       globalTitle: "Before you go", hours: "useful h", empty: "Fill in the survey and build your plan.",
       intro: "A day-by-day guide, chained by proximity and unhurried: the island, at your pace.",
       saveTitle: "Save your plan",
-      saveText: "Take it with you: download it as a PDF, keep the link to come back to it anytime, and join the Society for the best of Menorca.",
-      savePdf: "Download PDF", joinSociety: "Join the Society", copyLink: "Copy link", copied: "Link copied!",
+      saveText: "Leave us your email and we'll send you your plan's link, with the best of Menorca as a welcome (the Society). Or download it as a PDF and keep the link.",
+      savePdf: "Download PDF", copyLink: "Copy link", copied: "Link copied!",
+      emailPlaceholder: "Your email", emailBtn: "Email me my plan",
+      consentPrefix: "I accept the", consentLink: "privacy policy", consentSuffix: "to receive my plan and the Calma Society newsletter.",
     };
 
 // Config para el cliente (etiquetas que el render del plan necesita + URL del partner).
@@ -101,12 +110,31 @@ const CFG = {
   dateTooLong: isEs ? "El planificador llega hasta 21 días. Acorta las fechas o elige una estancia más corta." : "The planner covers up to 21 days. Shorten the dates or pick a shorter stay.",
   dateNeedArrival: isEs ? "Indica también la fecha de llegada para calcular la duración del viaje." : "Add the arrival date too so we can work out the trip length.",
   menorcaBusUrl: SITE.partners.menorcaBus.url,
-  // "Guarda tu plan": el island abre el popup de MailerLite (captación = KPI nº1)
-  // y da feedback al copiar el enlace (el plan vive en la querystring → compartible).
-  popupFormId: SITE.newsletter.popupFormId,
   copied: T.copied,
+  // Enlaces de la respuesta: ficha /lugar (solo published), Google Maps por
+  // coordenadas (sin API ni JS externo: solo una URL) y web oficial.
+  placePrefix: isEs ? "/lugar" : "/en/place",
+  gmapsLabel: isEs ? "Cómo llegar" : "Directions",
+  routeLabel: isEs ? "La ruta del día, en Google Maps" : "The day's route, in Google Maps",
+  officialLabel: isEs ? "Web oficial" : "Official site",
+  photoBy: isEs ? "Foto:" : "Photo:",
+  dateLocale: isEs ? "es-ES" : "en-GB",
+  // Herramienta propia: el parte del mar, enlazado en los días de playa.
+  seaCalm: {
+    href: isEs ? "/donde-el-mar-esta-en-calma" : "/en/where-the-sea-is-calm",
+    text: isEs ? "El día antes, mira dónde está el mar en calma" : "The day before, check where the sea is calm",
+  },
   noticeIcon: { reserva: "📌", madrugar: "⏰", "agua-sombra": "💧", parking: "🅿️", "confirma-horario": "🕒", esfuerzo: "🥾", viento: "🌬️", accesibilidad: "♿", fiesta: "🎉", transfer: "🚌", logistica: "🧭" } as Record<string, string>,
 };
+
+// "Recibe tu plan por email" (KPI nº1): Formspree ya declarado en privacidad; la
+// URL del plan viaja en un campo oculto (el island la rellena al renderizar).
+const captureEndpoint = SITE.newsletter.capture.endpoint;
+const captureThanks = isEs ? `${SITE.url}/sociedad-bienvenida` : `${SITE.url}/en/society-welcome`;
+const captureSubject = isEs
+  ? "Calma Society — plan del planificador (enviar por email)"
+  : "Calma Society — trip-planner plan (send by email)";
+const privacyHref = isEs ? "/privacidad" : "/en/privacy";
 
 const interestList = [
   ["calas", T.i_calas], ["gastronomia", T.i_gastro], ["cultura", T.i_cultura],
@@ -252,16 +280,45 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
     <p class="text-sm text-piedra-suave">{T.empty}</p>
   </div>
 
-  {/* ── GUARDA TU PLAN (PDF · newsletter · enlace) — el island lo revela cuando hay plan ── */}
+  {/* ── GUARDA TU PLAN (email con el plan · PDF · enlace) — el island lo revela cuando hay plan ── */}
   <div id="planner-actions" hidden class="mt-8 rounded-2xl border border-niebla bg-arena/40 p-5 sm:p-6 print:hidden">
     <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">{T.saveTitle}</p>
     <p class="mt-2 max-w-prose text-sm leading-relaxed text-piedra-suave">{T.saveText}</p>
-    <div class="mt-4 flex flex-wrap gap-3">
-      <button id="planner-pdf" type="button" data-umami-event="planner-pdf" class="rounded-md bg-arcilla px-5 py-2.5 text-sm font-semibold text-lino transition-colors hover:bg-tinta">
+
+    {/* Captación (KPI nº1): el correo entra en la Sociedad y recibe el enlace del plan. */}
+    <form action={captureEndpoint} method="POST" class="mt-4 max-w-md">
+      <input type="hidden" name="_subject" value={captureSubject} />
+      <input type="hidden" name="_next" value={captureThanks} />
+      <input type="hidden" name="plan_url" id="planner-plan-url" value="" />
+      <input type="hidden" name="origen" value="planificador" />
+      <div class="flex flex-col gap-3 sm:flex-row">
+        <label for="planner-email" class="sr-only">{T.emailPlaceholder}</label>
+        <input
+          id="planner-email"
+          type="email"
+          name="email"
+          required
+          autocomplete="email"
+          placeholder={T.emailPlaceholder}
+          class="w-full rounded-md border border-niebla bg-lino/60 px-4 py-2.5 text-sm text-piedra placeholder:text-piedra-suave transition-colors duration-150 focus:border-terracota/50 focus-visible:outline-terracota"
+        />
+        <button type="submit" data-umami-event="planner-email" class="press shrink-0 rounded-md bg-arcilla px-5 py-2.5 text-sm font-semibold text-lino transition-colors hover:bg-tinta">
+          {T.emailBtn}
+        </button>
+      </div>
+      <label class="mt-2 flex items-start gap-2 text-xs leading-relaxed text-piedra-suave">
+        <input type="checkbox" name="consentimiento" required class="mt-0.5 accent-terracota" />
+        <span>
+          {T.consentPrefix}
+          <a href={privacyHref} class="font-medium text-arcilla underline hover:text-terracota">{T.consentLink}</a>
+          {" "}{T.consentSuffix}
+        </span>
+      </label>
+    </form>
+
+    <div class="mt-4 flex flex-wrap gap-3 border-t border-niebla pt-4">
+      <button id="planner-pdf" type="button" data-umami-event="planner-pdf" class="rounded-md border border-arcilla px-5 py-2.5 text-sm font-semibold text-arcilla transition-colors hover:bg-arcilla hover:text-lino">
         {T.savePdf}
-      </button>
-      <button id="planner-join" type="button" data-umami-event="planner-newsletter" class="rounded-md bg-oro-vivo px-5 py-2.5 text-sm font-semibold text-tinta transition-colors hover:bg-lino">
-        {T.joinSociety}
       </button>
       <button id="planner-copy" type="button" data-umami-event="planner-copylink" class="rounded-md border border-arcilla px-5 py-2.5 text-sm font-semibold text-arcilla transition-colors hover:bg-arcilla hover:text-lino">
         {T.copyLink}
@@ -359,24 +416,44 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
   }
 
   function notice(n: any) {
-    // Monetización: si el aviso es de RESERVA y la actividad tiene web oficial,
-    // añade un CTA clicable (rel=sponsored + evento Umami; listo para afiliado).
+    // CTA contextual: RESERVA (rel=sponsored, listo para afiliado) o CONFIRMA
+    // HORARIO (informativo) enlazan a la web oficial del lugar si la hay.
     let cta = "";
-    if (n.kind === "reserva" && n.placeId && byId[n.placeId]?.officialUrl) {
-      cta = ` <a href="${esc(byId[n.placeId].officialUrl)}" target="_blank" rel="sponsored noopener" data-umami-event="planner-reserva" class="whitespace-nowrap font-medium text-arcilla underline underline-offset-2 hover:text-terracota">${esc(CFG.reservar)} →</a>`;
+    const url = n.placeId && byId[n.placeId]?.officialUrl;
+    if (n.kind === "reserva" && url) {
+      cta = ` <a href="${esc(url)}" target="_blank" rel="sponsored noopener" data-umami-event="planner-reserva" class="whitespace-nowrap font-medium text-arcilla underline underline-offset-2 hover:text-terracota">${esc(CFG.reservar)} →</a>`;
+    } else if (n.kind === "confirma-horario" && url) {
+      cta = ` <a href="${esc(url)}" target="_blank" rel="noopener" data-umami-event="planner-web-oficial" class="whitespace-nowrap font-medium text-arcilla underline underline-offset-2 hover:text-terracota">${esc(CFG.officialLabel)} →</a>`;
     }
     return `<li class="flex gap-2 text-sm text-piedra"><span aria-hidden="true">${CFG.noticeIcon[n.kind] || "•"}</span><span>${esc(n.text)}${cta}</span></li>`;
   }
 
-  function block(b: any) {
-    const name = b.placeId
-      ? `<span class="font-medium text-tinta">${esc(b.placeName)}</span>`
-      : `<span class="text-piedra">${esc(b.placeName)}</span>`;
+  // Enlace "Cómo llegar" (Google Maps por coordenadas: solo una URL, sin API ni JS).
+  const gmapsUrl = (p: any) =>
+    `https://www.google.com/maps/dir/?api=1&destination=${p.coordinates.lat},${p.coordinates.lng}`;
+
+  function block(b: any, heroId?: string) {
+    const p = b.placeId ? byId[b.placeId] : undefined;
+    // Nombre → enlace a la ficha /lugar SOLO si está publicada (las draft no tienen página).
+    const name = p?.slug
+      ? `<a href="${CFG.placePrefix}/${esc(p.slug)}" class="font-medium text-arcilla underline decoration-niebla underline-offset-2 hover:text-terracota">${esc(b.placeName)}</a>`
+      : b.placeId
+        ? `<span class="font-medium text-tinta">${esc(b.placeName)}</span>`
+        : `<span class="text-piedra">${esc(b.placeName)}</span>`;
     const dur = b.durationMin ? `<span class="text-xs text-piedra-suave"> · ${b.durationMin} min</span>` : "";
-    return `<li class="flex gap-3 py-1.5">
+    // Miniatura (foto verificada; decorativa → alt vacío, el nombre va al lado).
+    const thumb = p?.image && p.id !== heroId
+      ? `<img src="${esc(p.image)}" alt="" loading="lazy" decoding="async" width="112" height="84"${p.imageCredit ? ` title="${esc(CFG.photoBy + " " + p.imageCredit)}"` : ""} class="mt-0.5 hidden h-14 w-[4.5rem] shrink-0 rounded-lg object-cover sm:block">`
+      : "";
+    const links: string[] = [];
+    if (p?.coordinates) {
+      links.push(`<a href="${gmapsUrl(p)}" target="_blank" rel="noopener" data-umami-event="planner-gmaps" class="text-xs font-medium text-piedra-suave underline decoration-niebla underline-offset-2 hover:text-terracota print:hidden">${esc(CFG.gmapsLabel)} ↗</a>`);
+    }
+    return `<li class="flex gap-3 py-2">
       <span class="w-12 shrink-0 text-xs font-semibold text-oro">${b.timeHint || ""}</span>
       <span class="w-20 shrink-0 text-xs uppercase tracking-wider text-piedra-suave">${CFG.slot[b.slot] || b.slot}</span>
-      <span>${name}${dur}${b.reason ? `<span class="block text-xs text-piedra-suave">${esc(b.reason)}</span>` : ""}</span>
+      <span class="min-w-0 flex-1">${name}${dur}${b.reason ? `<span class="block text-xs text-piedra-suave">${esc(b.reason)}</span>` : ""}${links.length ? `<span class="mt-1 flex flex-wrap gap-3">${links.join("")}</span>` : ""}</span>
+      ${thumb}
     </li>`;
   }
 
@@ -391,16 +468,54 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
     </details>`;
   }
 
+  // "Martes, 21 de julio" desde la fecha ISO del día (determinista: fecha del plan).
+  function fmtDate(iso: string): string {
+    const [y, m, dd] = iso.split("-").map(Number);
+    const s = new Intl.DateTimeFormat(CFG.dateLocale, { weekday: "long", day: "numeric", month: "long", timeZone: "UTC" })
+      .format(new Date(Date.UTC(y, m - 1, dd)));
+    return s.charAt(0).toUpperCase() + s.slice(1); // solo la inicial (no "De Julio")
+  }
+
+  // Ruta del día en Google Maps: las paradas con coordenadas, en orden, como waypoints.
+  function dayRoute(d: any): string {
+    const pts: string[] = [];
+    for (const b of d.blocks) {
+      const p = b.placeId ? byId[b.placeId] : undefined;
+      if (!p?.coordinates) continue;
+      const pt = `${p.coordinates.lat},${p.coordinates.lng}`;
+      if (pts[pts.length - 1] !== pt) pts.push(pt);
+    }
+    if (pts.length < 2) return "";
+    return `<a href="https://www.google.com/maps/dir/${pts.join("/")}" target="_blank" rel="noopener" data-umami-event="planner-ruta-dia" class="text-sm font-medium text-arcilla underline decoration-niebla underline-offset-2 hover:text-terracota print:hidden">${esc(CFG.routeLabel)} ↗</a>`;
+  }
+
   function dayCard(d: any) {
-    const anchors = d.blocks.map(block).join("");
+    // Foto de cabecera del día: la primera parada con foto verificada (con su crédito CC si toca).
+    const heroP = d.blocks.map((b: any) => (b.placeId ? byId[b.placeId] : undefined)).find((p: any) => p?.image);
+    const hero = heroP
+      ? `<figure class="relative -mx-5 -mt-5 mb-4 sm:-mx-6 sm:-mt-6"><img src="${esc(heroP.image.replace("-480.", "-960."))}" alt="${esc(heroP.name)}" loading="lazy" decoding="async" width="960" height="640" class="h-44 w-full rounded-t-2xl object-cover sm:h-56">${heroP.imageCredit ? `<figcaption class="absolute bottom-1.5 right-2 rounded bg-tinta/60 px-1.5 py-0.5 text-[10px] leading-none text-crema/90">${esc(CFG.photoBy)} ${esc(heroP.imageCredit)}</figcaption>` : ""}</figure>`
+      : "";
+    const anchors = d.blocks.map((b: any) => block(b, heroP?.id)).join("");
     const chips = (d.notices || []).map(notice).join("");
-    return `<article class="rounded-2xl border border-niebla bg-lino p-5 sm:p-6">
-      <header class="flex flex-wrap items-baseline justify-between gap-x-4">
+    // Día de playa → enlace al parte del mar (herramienta propia, interno).
+    const hasBeach = d.blocks.some((b: any) => {
+      const p = b.placeId ? byId[b.placeId] : undefined;
+      return p && (p.plannerType === "cala" || p.plannerType === "playa");
+    });
+    const footerLinks = [
+      dayRoute(d),
+      hasBeach ? `<a href="${CFG.seaCalm.href}" data-umami-event="planner-mar-en-calma" class="text-sm font-medium text-arcilla underline decoration-niebla underline-offset-2 hover:text-terracota">${esc(CFG.seaCalm.text)} →</a>` : "",
+    ].filter(Boolean).join("");
+    const dateChip = d.date ? `<time datetime="${esc(d.date)}" class="text-xs text-piedra-suave">${esc(fmtDate(d.date))}</time>` : "";
+    return `<article class="overflow-hidden rounded-2xl border border-niebla bg-lino p-5 sm:p-6">
+      ${hero}
+      <header class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
         <h3 class="font-display text-2xl text-tinta">${esc(d.label)}</h3>
-        <span class="text-xs text-piedra-suave">~${d.budgetHours} ${esc(CFG.hours)}</span>
+        <span class="flex items-baseline gap-3">${dateChip}<span class="text-xs text-piedra-suave">~${d.budgetHours} ${esc(CFG.hours)}</span></span>
       </header>
       <ul class="mt-4 divide-y divide-niebla">${anchors}</ul>
       ${chips ? `<ul class="mt-4 space-y-1.5 border-t border-niebla pt-3">${chips}</ul>` : ""}
+      ${footerLinks ? `<div class="mt-4 flex flex-wrap gap-x-6 gap-y-2 border-t border-niebla pt-3">${footerLinks}</div>` : ""}
       ${planB(d.planB)}
     </article>`;
   }
@@ -428,15 +543,13 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
     out.scrollIntoView({ behavior: "smooth", block: "start" });
     const actions = $("planner-actions"); // hay plan → ofrece guardarlo/compartirlo
     if (actions) actions.hidden = false;
+    // La URL del plan viaja oculta en el form de email (el plan vive en la querystring).
+    const planUrl = $("planner-plan-url") as HTMLInputElement | null;
+    if (planUrl) planUrl.value = location.href;
   }
 
-  // "Guarda tu plan": PDF por print-CSS, popup de MailerLite (captación = KPI nº1)
-  // y copiar el enlace (el plan vive en la querystring → compartible/recuperable).
+  // "Guarda tu plan": PDF por print-CSS y copiar el enlace (compartible/recuperable).
   $("planner-pdf")?.addEventListener("click", () => window.print());
-  $("planner-join")?.addEventListener("click", () => {
-    const ml = (window as any).ml;
-    if (typeof ml === "function" && CFG.popupFormId) ml("show", CFG.popupFormId, true);
-  });
   $("planner-copy")?.addEventListener("click", async (e) => {
     try { await navigator.clipboard.writeText(location.href); } catch {}
     const b = e.currentTarget as HTMLButtonElement;

@@ -24,6 +24,19 @@ import { buildPlanB, weekdayForDay } from "./rules/planb.ts";
 import { addDaysISO, agendaForDay } from "./rules/agenda.ts";
 import type { PlannerEvent } from "./rules/agenda.ts";
 import { S } from "./strings.ts";
+import { sunTimes, MENORCA } from "../sun-core.ts";
+
+/** Atardecer real "HH:MM" (hora de Menorca) para una fecha ISO; undefined si no hay fecha. */
+function sunsetHintFor(date?: string): string | undefined {
+  if (!date) return undefined;
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(date);
+  if (!m) return undefined;
+  const ev = sunTimes(MENORCA.lat, MENORCA.lng, +m[1], +m[2], +m[3]);
+  if (!ev.sunset) return undefined;
+  return ev.sunset.toLocaleTimeString("en-GB", {
+    timeZone: "Europe/Madrid", hour: "2-digit", minute: "2-digit", hour12: false,
+  });
+}
 
 interface DayResult {
   blocks: IntradayBlock[];
@@ -56,9 +69,14 @@ export function planTrip(
   for (const sk of skeleton) {
     let result: DayResult;
     let dayPlanB: DayCard["planB"];
+    // Fecha real del día (si la encuesta trae fechas): día de semana para cruzar
+    // openDays y atardecer real para las horas orientativas. Una sola vez por día.
+    const date = survey.arrivalDate ? addDaysISO(survey.arrivalDate, sk.dayIndex) : undefined;
+    const weekday = weekdayForDay(survey.arrivalDate, sk.dayIndex);
+    const sunsetHint = sunsetHintFor(date);
 
     if (sk.dayTypeKey === "dia-llegada") {
-      result = arrivalDay(survey, base, usable, lang, foodByZone?.bases[base]);
+      result = arrivalDay(survey, base, usable, lang, foodByZone?.bases[base], sunsetHint);
       if (isCarless(survey) || base !== "mao") {
         menorcaBusHooks.push({ type: "transfer-aeropuerto", context: `Transfer aeropuerto → ${base}`, dayIndex: sk.dayIndex });
       }
@@ -78,6 +96,7 @@ export function planTrip(
         travelFromBaseMin: info.travelFromBaseMin, pace, survey, lang,
         zoneFood: foodByZone?.zones[info.zone], baseFood,
         baseBreakfasts: foodByZone?.bases[base]?.breakfasts, dayIndex: sk.dayIndex,
+        weekday, sunsetHint,
       });
       // PASO 4: aviso de viento (FLEXIBLE) con alternativa resguardada en costa opuesta.
       const anchors = result.blocks
@@ -85,7 +104,7 @@ export function planTrip(
         .filter((p): p is PlannerPlace => !!p);
       result.notices.push(...windAdvice(info.zone, anchors, usable, survey, lang));
       // PASO 6: plan-B de mal tiempo (interiores de la zona, filtrado por día de la semana).
-      dayPlanB = buildPlanB(info.zone, usable, weekdayForDay(survey.arrivalDate, sk.dayIndex), lang);
+      dayPlanB = buildPlanB(info.zone, usable, weekday, lang);
       // Monetización + sin coche: ofrece el transfer de Menorca Bus para LLEGAR a
       // la cala/zona del día (la solución premium, no un fallo). Chip visible por
       // día + enganche, nombrando el lugar de la mañana para que sea concreto.
@@ -122,8 +141,7 @@ export function planTrip(
     }
 
     // PASO 2: cruce con la agenda de fiestas por fecha (si hay fechas y eventos).
-    if (survey.arrivalDate && events.length) {
-      const date = addDaysISO(survey.arrivalDate, sk.dayIndex);
+    if (date && events.length) {
       const { dayNotices, otherZone } = agendaForDay(sk.zone, date, events, lang);
       result.notices.push(...dayNotices);
       for (const o of otherZone) if (!globalFiestas.has(o.key)) globalFiestas.set(o.key, o.notice);
@@ -133,6 +151,7 @@ export function planTrip(
       dayIndex: sk.dayIndex,
       dayTypeKey: sk.dayTypeKey,
       label: sk.label[lang],
+      date,
       zone: sk.zone,
       cluster: sk.cluster,
       blocks: result.blocks,

@@ -65,7 +65,7 @@ export function departureNotices(s: Survey, base: BaseZone, lang: Lang = "es"): 
 }
 
 /** PASO 7 — día de llegada: ligero y en el cluster de la base, nunca lejos. */
-export function arrivalDay(s: Survey, base: BaseZone, dataset: PlannerPlace[], lang: Lang = "es", baseFood?: BaseFood): DayResult {
+export function arrivalDay(s: Survey, base: BaseZone, dataset: PlannerPlace[], lang: Lang = "es", baseFood?: BaseFood, sunsetHint?: string): DayResult {
   const t = S(lang).arrival;
   const notices: Notice[] = [];
   const blocks: IntradayBlock[] = [];
@@ -82,14 +82,17 @@ export function arrivalDay(s: Survey, base: BaseZone, dataset: PlannerPlace[], l
       (p.effortLevel === "A1" || p.effortLevel === "A2") && p.carAccess !== "solo-bus-lanzadera",
   );
 
-  blocks.push({ slot: "desayuno", timeHint: toHHMM(Math.max(usable, 8 * 60)), placeName: t.settleIn, durationMin: 60, reason: t.settleInReason });
+  // Atardecer real del día si hay fechas (en verano el sol cae ~21:25, no a las 20:00).
+  const sunsetAt = sunsetHint ? toHHMM(Math.max((toMin(sunsetHint) ?? 20 * 60) - 30, 18 * 60)) : "20:00";
+
+  blocks.push({ slot: "llegada", timeHint: toHHMM(Math.max(usable, 8 * 60)), placeName: t.settleIn, durationMin: 60, reason: t.settleInReason });
   if (window === "manana") {
     blocks.push({ slot: "manana", timeHint: "12:00", placeName: t.townStroll, durationMin: 60, reason: baseFood?.arrivalPaseo || t.townStrollReason });
     blocks.push({ slot: "comida", timeHint: "14:00", placeName: t.lunchInBase, durationMin: 90, reason: t.lunchInBaseReason });
     if (easyNearby) blocks.push({ slot: "tarde", timeHint: "16:30", placeId: easyNearby.id, placeName: easyNearby.name, durationMin: 120, reason: t.easyNearbyReason });
   } else if (window === "mediodia") {
     blocks.push({ slot: "comida", timeHint: toHHMM(usable + 30), placeName: t.lunchNearBase, durationMin: 90, reason: t.lunchNearBaseReason });
-    blocks.push({ slot: "atardecer", timeHint: "20:00", placeName: t.sunsetNearBase, durationMin: 60, reason: baseFood?.arrivalPaseo || t.sunsetNearBaseReason });
+    blocks.push({ slot: "atardecer", timeHint: sunsetAt, placeName: t.sunsetNearBase, durationMin: 60, reason: baseFood?.arrivalPaseo || t.sunsetNearBaseReason });
   } else {
     notices.push({ kind: "logistica", text: t.lateArrival });
   }
