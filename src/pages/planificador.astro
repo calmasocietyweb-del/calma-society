@@ -1,7 +1,11 @@
 ---
 // "Organiza tu viaje a Menorca" (ES) — planificador de itinerarios.
+// SEO: además del plan interactivo (render en cliente, invisible a crawlers),
+// la página publica itinerarios ESTÁTICOS de ejemplo y FAQ (PlannerSeoContent)
+// apuntando a "qué hacer en Menorca", "itinerario Menorca", "Menorca en 5 días".
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PlannerView from "../components/PlannerView.astro";
+import PlannerSeoContent from "../components/PlannerSeoContent.astro";
 
 const alternates = {
   es: "/planificador",
@@ -10,8 +14,8 @@ const alternates = {
 ---
 
 <BaseLayout
-  title="Organiza tu viaje a Menorca"
-  description="Tu itinerario de Menorca día a día: dinos cómo viajas y te proponemos un plan encadenado por cercanía, sin prisas y con criterio de lujo tranquilo. Flexible al viento y al mal tiempo."
+  title="Organiza tu viaje a Menorca: itinerarios de 3, 5 y 7 días"
+  description="Qué hacer en Menorca, día a día: el planificador arma tu itinerario por cercanía y sin prisas — calas, mesas con criterio y plan-B si el tiempo se tuerce."
   locale="es"
   alternates={alternates}
 >
@@ -33,4 +37,7 @@ const alternates = {
   <div class="mt-8">
     <PlannerView locale="es" />
   </div>
+
+  {/* Itinerarios estáticos de ejemplo + FAQ (SEO/GEO: contenido real crawleable). */}
+  <PlannerSeoContent locale="es" />
 </BaseLayout>

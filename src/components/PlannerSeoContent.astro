@@ -1,0 +1,234 @@
+---
+/**
+ * Contenido ESTÁTICO y crawleable del planificador (SEO/GEO) — KAN-54/KAN-30.
+ *
+ * El plan interactivo se renderiza en cliente (invisible para los crawlers),
+ * así que esta sección ejecuta el MISMO motor en BUILD y publica tres
+ * itinerarios de ejemplo reales (3, 5 y 7 días) + preguntas frecuentes con
+ * respuestas verificadas. Nada de relleno: es la salida genuina del motor con
+ * marco editorial, apuntando a las búsquedas reales ("qué hacer en Menorca",
+ * "itinerario Menorca", "Menorca en 5 días") y citable por IA (GEO).
+ *
+ * Sin fechas a propósito: el contenido estático no debe caducar (las horas de
+ * sol y los cierres por día de semana solo aplican al plan personalizado).
+ */
+import { planTrip } from "../lib/planner/engine.ts";
+import type { Survey } from "../lib/planner/survey.ts";
+import dataEs from "../data/planner-data.es.json";
+import dataEn from "../data/planner-data.en.json";
+import foodEs from "../data/planner-food.es.json";
+import foodEn from "../data/planner-food.en.json";
+import JsonLd from "./JsonLd.astro";
+import { SITE, type Locale } from "../config/site";
+
+interface Props {
+  locale: Extract<Locale, "es" | "en">;
+}
+const { locale } = Astro.props;
+const isEs = locale === "es";
+const dataset = (isEs ? dataEs : dataEn) as any;
+const food = (isEs ? foodEs : foodEn) as any;
+const plannerPath = isEs ? "/planificador" : "/en/trip-planner";
+const placePrefix = isEs ? "/lugar" : "/en/place";
+const byId = new Map<string, any>(dataset.map((p: any) => [p.id, p]));
+
+// ── Tres perfiles canónicos (mismo motor, cero invención) ───────────────────
+const PROFILES: Array<{ survey: Partial<Survey>; qs: string; title: string; intro: string }> = [
+  {
+    survey: { days: 3, interests: ["calas", "gastronomia"], pace: "equilibrado" },
+    qs: "days=3&interests=calas&interests=gastronomia",
+    title: isEs ? "Menorca en 3 días: lo esencial" : "Menorca in 3 days: the essentials",
+    intro: isEs
+      ? "Una escapada corta con base única: las calas más famosas del suroeste, una ciudad con alma y el primer contacto con la mesa menorquina."
+      : "A short break from a single base: the best-known south-western coves, a city with soul and a first taste of the Menorcan table.",
+  },
+  {
+    survey: { days: 5, interests: ["calas", "gastronomia"], pace: "equilibrado" },
+    qs: "days=5&interests=calas&interests=gastronomia",
+    title: isEs ? "Menorca en 5 días: calas y gastronomía" : "Menorca in 5 days: coves & gastronomy",
+    intro: isEs
+      ? "El formato que recomendamos: un día por zona, sin cruzar la isla dos veces, con las calas por la mañana y la mesa como ancla de cada tarde."
+      : "The format we recommend: one area per day, never crossing the island twice, with coves in the morning and the table anchoring each evening.",
+  },
+  {
+    survey: { days: 7, interests: ["calas", "cultura", "gastronomia"], pace: "relajado" },
+    qs: "days=7&interests=calas&interests=cultura&interests=gastronomia&pace=relajado",
+    title: isEs ? "Menorca en 7 días: la isla entera, sin prisa" : "Menorca in 7 days: the whole island, unhurried",
+    intro: isEs
+      ? "Una semana a ritmo relajado suma el interior talayótico y el norte agreste a las calas del sur: la isla completa como la entendemos en Calma Society."
+      : "A week at a relaxed pace adds the Talayotic interior and the wild north to the southern coves: the whole island as we understand it at Calma Society.",
+  },
+];
+
+// Resumen compacto y honesto de cada día: etiqueta + anclas con lugar real.
+const SLOT_ORDER = ["manana", "tarde", "atardecer"] as const;
+const itinerarios = PROFILES.map((p) => {
+  const plan = planTrip(p.survey, dataset, locale, [], food);
+  const days = plan.days.map((d) => ({
+    label: d.label,
+    stops: d.blocks
+      .filter((b) => (SLOT_ORDER as readonly string[]).includes(b.slot) && b.placeId)
+      .map((b) => {
+        const place = byId.get(b.placeId!);
+        return { name: b.placeName, slug: place?.slug as string | undefined };
+      }),
+  }));
+  return { ...p, days, base: plan.baseReason };
+});
+
+// ── Preguntas frecuentes (respuestas VERIFICADAS, voz de marca) ──────────────
+const FAQS: Array<{ q: string; a: string }> = isEs
+  ? [
+      {
+        q: "¿Cuántos días necesito para ver Menorca?",
+        a: "Con 3 días se toca lo esencial de una zona; 5 días es el formato que recomendamos (un día por zona, sin zigzaguear); con 7 entran también el interior talayótico y el norte agreste. La isla es pequeña, pero se disfruta despacio.",
+      },
+      {
+        q: "¿Qué hacer en Menorca si llueve?",
+        a: "Cada día del planificador lleva un plan-B de interior en la misma zona: museos de Maó y Ciutadella, la destilería Xoriguer, queserías con visita (reserva antes), una comida larga o un spa. En verano, si lo que aprieta es el calor, la cala se va a primera hora y el mediodía se pasa a cubierto.",
+      },
+      {
+        q: "¿Se puede visitar Menorca sin coche?",
+        a: "Sí, eligiendo bien la base: Maó (único núcleo con bus directo del aeropuerto) o Ciutadella. Las calas conectadas en temporada se alcanzan en bus o lanzadera y, para el resto, un transfer privado resuelve el día. El planificador marca cada caso.",
+      },
+      {
+        q: "¿Cuál es la mejor zona para alojarse en Menorca?",
+        a: "Depende del viaje: Ciutadella para una primera vez con ambiente; Cala Galdana o Son Bou en familia; Fornells para la vela y la caldereta; Es Mercadal como base central para recorrerlo todo; Maó para cultura, puerto y logística fácil. El planificador te recomienda zona (nunca hoteles) según tu perfil.",
+      },
+      {
+        q: "¿Qué hacer en Menorca con niños pequeños?",
+        a: "Playas de arena y aguas someras con servicios: Son Bou, Cala Galdana, Punta Prima o Es Grau (varias con baño asistido de mayo a octubre). El planificador evita las calas de caminata cuando viajas con carrito y acorta las jornadas.",
+      },
+    ]
+  : [
+      {
+        q: "How many days do you need in Menorca?",
+        a: "Three days cover the essentials of one area; five is the format we recommend (one area per day, no zigzagging); with seven you also take in the Talayotic interior and the wild north. The island is small, but it rewards a slow pace.",
+      },
+      {
+        q: "What to do in Menorca when it rains?",
+        a: "Every day in the planner carries an indoor plan-B within the same area: the museums of Maó and Ciutadella, the Xoriguer gin distillery, cheese farms with guided visits (book ahead), a long lunch or a spa. In summer, if heat is the issue, the cove moves to first thing and midday goes under cover.",
+      },
+      {
+        q: "Can you visit Menorca without a car?",
+        a: "Yes, if you choose your base well: Maó (the only town with a direct airport bus) or Ciutadella. In season, connected coves are reachable by bus or shuttle, and a private transfer solves the rest. The planner flags each case.",
+      },
+      {
+        q: "Where is the best area to stay in Menorca?",
+        a: "It depends on the trip: Ciutadella for a first visit with atmosphere; Cala Galdana or Son Bou with family; Fornells for sailing and lobster stew; Es Mercadal as a central base to roam; Maó for culture, the harbour and easy logistics. The planner recommends an area (never hotels) to match your profile.",
+      },
+      {
+        q: "What to do in Menorca with small children?",
+        a: "Sandy beaches with shallow water and services: Son Bou, Cala Galdana, Punta Prima or Es Grau (several with assisted bathing from May to October). The planner avoids walk-in coves when you travel with a stroller and keeps the days short.",
+      },
+    ];
+
+// ── JSON-LD: FAQPage + un TouristTrip por itinerario estático ────────────────
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+const tripLds = itinerarios.map((it) => ({
+  "@context": "https://schema.org",
+  "@type": "TouristTrip",
+  name: it.title,
+  description: it.intro,
+  touristType: isEs ? "lujo tranquilo" : "quiet luxury",
+  provider: { "@type": "Organization", name: SITE.name, url: SITE.url },
+  itinerary: {
+    "@type": "ItemList",
+    itemListElement: it.days.map((d, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: `${d.label}${d.stops.length ? ` — ${d.stops.map((s) => s.name).join(" · ")}` : ""}`,
+    })),
+  },
+}));
+
+const T = isEs
+  ? {
+      heading: "Qué hacer en Menorca, según tus días",
+      lead: "Tres itinerarios reales generados por nuestro motor —los mismos criterios que usará contigo—, para leer de un vistazo qué da de sí la isla. Personalízalos y serán tuyos.",
+      customize: "Personalizar este itinerario",
+      faqHeading: "Preguntas frecuentes al organizar un viaje a Menorca",
+      day: "Día",
+    }
+  : {
+      heading: "What to do in Menorca, by trip length",
+      lead: "Three real itineraries generated by our engine —the same criteria it will use with you—, to see at a glance what the island offers. Customise them and they become yours.",
+      customize: "Customise this itinerary",
+      faqHeading: "Frequently asked questions when planning Menorca",
+      day: "Day",
+    };
+---
+
+<section class="mx-auto max-w-3xl px-5 pb-4 sm:px-8">
+  <h2 class="border-t border-niebla pt-10 font-display text-3xl text-tinta">{T.heading}</h2>
+  <p class="mt-3 max-w-prose text-base leading-relaxed text-piedra-suave">{T.lead}</p>
+
+  <div class="mt-8 space-y-8">
+    {
+      itinerarios.map((it) => (
+        <article class="rounded-2xl border border-niebla bg-lino p-6 sm:p-7">
+          <h3 class="font-display text-2xl text-tinta">{it.title}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-piedra-suave">{it.intro}</p>
+          <ol class="mt-4 space-y-1.5">
+            {it.days.map((d, i) => (
+              <li class="text-sm leading-relaxed text-piedra">
+                <span class="font-semibold text-tinta">
+                  {T.day} {i + 1} · {d.label}
+                </span>
+                {d.stops.length > 0 && (
+                  <span class="text-piedra-suave">
+                    {" — "}
+                    {d.stops.map((s, j) => (
+                      <Fragment>
+                        {j > 0 && " · "}
+                        {s.slug ? (
+                          <a href={`${placePrefix}/${s.slug}`} class="text-arcilla underline decoration-niebla underline-offset-2 hover:text-terracota">
+                            {s.name}
+                          </a>
+                        ) : (
+                          s.name
+                        )}
+                      </Fragment>
+                    ))}
+                  </span>
+                )}
+              </li>
+            ))}
+          </ol>
+          <a
+            href={`${plannerPath}?${it.qs}`}
+            data-umami-event="planner-seo-personalizar"
+            class="mt-5 inline-block rounded-md border border-arcilla px-5 py-2.5 text-sm font-semibold text-arcilla transition-colors hover:bg-arcilla hover:text-lino"
+          >
+            {T.customize} →
+          </a>
+        </article>
+      ))
+    }
+  </div>
+
+  <h2 class="mt-14 font-display text-3xl text-tinta">{T.faqHeading}</h2>
+  <div class="mt-6 divide-y divide-niebla border-y border-niebla">
+    {
+      FAQS.map((f) => (
+        <details class="group py-4">
+          <summary class="flex cursor-pointer items-baseline justify-between gap-4 text-base font-medium text-tinta [&::-webkit-details-marker]:hidden">
+            {f.q}
+            <span aria-hidden="true" class="text-oro transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="mt-3 max-w-prose text-sm leading-relaxed text-piedra-suave">{f.a}</p>
+        </details>
+      ))
+    }
+  </div>
+</section>
+
+<JsonLd schema={[faqLd, ...tripLds]} />
