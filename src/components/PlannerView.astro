@@ -109,6 +109,9 @@ const CFG = {
   dateOrder: isEs ? "La fecha de salida no puede ser anterior a la de llegada." : "The departure date can't be earlier than the arrival date.",
   dateTooLong: isEs ? "El planificador llega hasta 21 días. Acorta las fechas o elige una estancia más corta." : "The planner covers up to 21 days. Shorten the dates or pick a shorter stay.",
   dateNeedArrival: isEs ? "Indica también la fecha de llegada para calcular la duración del viaje." : "Add the arrival date too so we can work out the trip length.",
+  renderError: isEs
+    ? "No hemos podido generar el plan con esos datos. Revisa la encuesta y vuelve a crearlo."
+    : "We couldn't build the plan with that input. Check the survey and create it again.",
   menorcaBusUrl: SITE.partners.menorcaBus.url,
   copied: T.copied,
   // Enlaces de la respuesta: ficha /lugar (solo published), Google Maps por
@@ -522,7 +525,17 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
 
   function render(survey: any) {
     if (!out) return;
-    const plan = planTrip(survey, dataset, CFG.lang, events, food);
+    // La querystring es manipulable y compartible: si algo revienta el motor,
+    // degradamos con un mensaje en vez de dejar la pantalla rota en silencio.
+    let plan;
+    try {
+      plan = planTrip(survey, dataset, CFG.lang, events, food);
+    } catch {
+      out.innerHTML = `<p class="rounded-lg border border-terracota/60 bg-arena px-4 py-3 text-sm text-arcilla" role="alert">⚠ ${esc(CFG.renderError)}</p>`;
+      return;
+    }
+    // Denominador del embudo (auditoría 30-jun AHORA-2): cuántos planes se generan.
+    (window as any).umami?.track?.("planner-generado");
     const baseName = CFG.baseZ[plan.base] || plan.base;
     const globals = (plan.globalNotices || []).map(notice).join("");
     const sig = plan.signature

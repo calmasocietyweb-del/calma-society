@@ -114,3 +114,18 @@ test("determinismo: mismo input (con fechas) → mismo plan", () => {
   const input = s({ days: 5, interests: ["calas"], arrivalDate: "2026-07-20" });
   assert.deepEqual(planTrip(input, DATASET, "es"), planTrip(input, DATASET, "es"));
 });
+
+test("querystring hostil: intereses/enums desconocidos no revientan el motor (AHORA-1)", () => {
+  const hostil = {
+    days: 5,
+    interests: ["<script>", "calas", "no-existe"] as any,
+    transport: "teletransporte" as any,
+    pace: "yolo" as any,
+    budget: "infinito" as any,
+    accessibility: "x" as any,
+    base: "atlantis" as any,
+    ferryPort: "gibraltar" as any,
+  };
+  const plan = planTrip(hostil as any, DATASET, "es");
+  assert.ok(plan.days.length === 5, "debe generar un plan de 5 días con la encuesta saneada");
+});

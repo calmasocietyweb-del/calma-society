@@ -79,11 +79,32 @@ export const DEFAULT_SURVEY: Survey = {
 /** Normaliza una encuesta parcial (p. ej. desde querystring) a una válida. */
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
 
+// Valores válidos de cada enum de la encuesta. La querystring es MANIPULABLE y
+// COMPARTIBLE: un valor desconocido no debe romper el motor (auditoría 30-jun,
+// AHORA-1), se descarta o cae al valor por defecto en silencio.
+const INTERESTS: readonly Interest[] = ["calas", "gastronomia", "cultura", "naturaleza", "vida-nocturna", "nautica", "lujo-tranquilo"];
+const TRANSPORTS: readonly Transport[] = ["coche-alquiler", "coche-propio-ferry", "sin-coche"];
+const PACES: readonly Pace[] = ["relajado", "equilibrado", "intenso"];
+const BUDGETS: readonly Budget[] = ["ajustado", "medio", "alto"];
+const ACCESSIBILITIES: readonly Accessibility[] = ["ninguna", "carrito", "movilidad-reducida", "mayores"];
+const BASES: readonly BaseChoice[] = ["recomiendame", "ciutadella", "mao", "cala-galdana", "son-bou", "es-mercadal", "fornells"];
+
+const oneOf = <T extends string>(valid: readonly T[], v: unknown, fallback: T): T =>
+  valid.includes(v as T) ? (v as T) : fallback;
+
 export function normalizeSurvey(input: Partial<Survey>): Survey {
   const s: Survey = { ...DEFAULT_SURVEY, ...input };
   s.days = clampDays(s.days);
-  if (!s.interests || s.interests.length === 0) s.interests = [...DEFAULT_SURVEY.interests];
+  // Enums saneados: lo desconocido cae al defecto, nunca revienta el motor.
+  s.transport = oneOf(TRANSPORTS, s.transport, DEFAULT_SURVEY.transport);
+  s.pace = oneOf(PACES, s.pace, DEFAULT_SURVEY.pace);
+  s.budget = oneOf(BUDGETS, s.budget, DEFAULT_SURVEY.budget);
+  s.accessibility = oneOf(ACCESSIBILITIES, s.accessibility, DEFAULT_SURVEY.accessibility);
+  s.base = oneOf(BASES, s.base, DEFAULT_SURVEY.base);
+  s.interests = (s.interests ?? []).filter((i): i is Interest => INTERESTS.includes(i));
+  if (s.interests.length === 0) s.interests = [...DEFAULT_SURVEY.interests];
   if (s.transport !== "coche-propio-ferry") delete s.ferryPort;
+  if (s.ferryPort && s.ferryPort !== "mao" && s.ferryPort !== "ciutadella") delete s.ferryPort;
   if (!s.kids) s.kids = { has: false };
   // Descarta fechas mal formadas (defensa en profundidad: evita cuelgues/cruces raros).
   if (s.arrivalDate && !ISO_DATE.test(s.arrivalDate)) delete s.arrivalDate;

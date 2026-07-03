@@ -2,13 +2,13 @@
  * Motor del Planificador — función PURA (Survey, dataset) → Plan.
  * docs/PLANIFICADOR-BLUEPRINT.md (PASO 9: ensamblaje).
  *
- * Orquesta los pasos ya implementados: PASO 0 (base) · PASO 1 (esqueleto de
- * días) · PASO 3 (secuencia intradía + no-saturar) · PASOS 7/8 (llegada/salida).
+ * Orquesta los 9 PASOS, todos implementados: 0 (base) · 1 (esqueleto de días) ·
+ * 2 (agenda de fiestas) · 3 (secuencia intradía + no-saturar) · 4 (viento) ·
+ * 5 (accesibilidad como filtro) · 6 (plan-B mal tiempo) · 7/8 (llegada/salida).
  * Cada decisión deja un `reason`/`notice` trazable (E-E-A-T + GEO) y, donde
  * encaja sin romper el lujo tranquilo, un enganche a Menorca Bus (monetización).
- *
- * Pendiente de capas posteriores: PASO 2 (agenda), 4 (viento), 5 (accesibilidad
- * como filtro), 6 (plan-B mal tiempo). Se acoplan sin cambiar esta interfaz.
+ * Con fechas, cada día conoce su fecha real: día de la semana (openDays) y
+ * atardecer NOAA (sun-core) para horas orientativas honestas.
  */
 import type { Plan, DayCard, PlannerPlace, PlannerZone, IntradayBlock, Notice, MenorcaBusHook, FoodByZone } from "./types.ts";
 import type { Survey, Interest } from "./survey.ts";
