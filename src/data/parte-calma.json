@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-03T12:24:01.421Z",
-  "forecastDate": "2026-07-03",
+  "generatedAt": "2026-07-04T11:05:22.404Z",
+  "forecastDate": "2026-07-04",
   "validityNote": "Previsión para la franja diurna (10–18 h). El viento puede rolar por la tarde.",
   "sources": [
     "AEMET"
@@ -9,6 +9,104 @@
   "formulaVersion": "abrigo-1.0 / empuje-medusas-1.0",
   "stale": false,
   "calas": [
+    {
+      "id": "cala-mitjana",
+      "name": "Cala Mitjana",
+      "area": "Sur (Ferreries)",
+      "costa": "sur",
+      "lat": 39.9355,
+      "lng": 3.9686,
+      "lugarSlug": "cala-mitjana",
+      "tieneVigilancia": false,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 1,
+        "viento": {
+          "nombre": "Tramuntana (N)",
+          "kmh": 6
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.07,
+        "horasAfavor": 0,
+        "coverage": 0.65
+      }
+    },
+    {
+      "id": "cala-galdana",
+      "name": "Cala Galdana",
+      "area": "Sur (Ferreries)",
+      "costa": "sur",
+      "lat": 39.9369,
+      "lng": 3.9631,
+      "lugarSlug": null,
+      "tieneVigilancia": true,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 1,
+        "viento": {
+          "nombre": "Tramuntana (N)",
+          "kmh": 6
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.07,
+        "horasAfavor": 0,
+        "coverage": 0.65
+      }
+    },
+    {
+      "id": "cala-trebaluger",
+      "name": "Cala Trebalúger",
+      "area": "Sur (Es Migjorn Gran)",
+      "costa": "sur",
+      "lat": 39.9353,
+      "lng": 3.9947,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 1,
+        "viento": {
+          "nombre": "Tramuntana (N)",
+          "kmh": 23
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0,
+        "horasAfavor": 0,
+        "coverage": 0.65
+      }
+    },
+    {
+      "id": "es-talaier",
+      "name": "Es Talaier",
+      "area": "Sur (Ciutadella)",
+      "costa": "sur",
+      "lat": 39.9268,
+      "lng": 3.9027,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 1,
+        "viento": {
+          "nombre": "Tramuntana (N)",
+          "kmh": 21
+        }
+      },
+      "medusas": {
+        "band": "sin-dato",
+        "coverage": 0.35
+      }
+    },
     {
       "id": "cala-binigaus",
       "name": "Cala Binigaus",
@@ -24,14 +122,14 @@
         "score": 1,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 35
+          "kmh": 23
         }
       },
       "medusas": {
         "band": "baja",
         "score": 0,
         "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -49,14 +147,37 @@
         "score": 1,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 31
+          "kmh": 20
         }
       },
       "medusas": {
         "band": "baja",
         "score": 0,
         "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.65
+      }
+    },
+    {
+      "id": "cala-en-bosc",
+      "name": "Cala en Bosc",
+      "area": "Sur (Ciutadella de Menorca)",
+      "costa": "sur",
+      "lat": 39.9273,
+      "lng": 3.8309,
+      "lugarSlug": null,
+      "tieneVigilancia": true,
+      "tienePradera": false,
+      "abrigo": {
+        "band": "alto",
+        "score": 1,
+        "viento": {
+          "nombre": "Tramuntana (N)",
+          "kmh": 21
+        }
+      },
+      "medusas": {
+        "band": "sin-dato",
+        "coverage": 0.35
       }
     },
     {
@@ -74,12 +195,12 @@
         "score": 1,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 32
+          "kmh": 21
         }
       },
       "medusas": {
         "band": "sin-dato",
-        "coverage": 0.28
+        "coverage": 0.35
       }
     },
     {
@@ -97,14 +218,85 @@
         "score": 1,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 40
+          "kmh": 26
         }
       },
       "medusas": {
         "band": "baja",
         "score": 0,
         "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.65
+      }
+    },
+    {
+      "id": "platja-gran-degollador",
+      "name": "Platja Gran (Es Degollador)",
+      "area": "Sur (Ciutadella de Menorca)",
+      "costa": "sur",
+      "lat": 39.9943,
+      "lng": 3.8363,
+      "lugarSlug": null,
+      "tieneVigilancia": true,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 1,
+        "viento": {
+          "nombre": "Tramuntana (N)",
+          "kmh": 21
+        }
+      },
+      "medusas": {
+        "band": "sin-dato",
+        "coverage": 0.35
+      }
+    },
+    {
+      "id": "sa-caleta",
+      "name": "Sa Caleta (Cala d'en Gorries)",
+      "area": "Sur (Ciutadella de Menorca)",
+      "costa": "sur",
+      "lat": 39.9815,
+      "lng": 3.8344,
+      "lugarSlug": null,
+      "tieneVigilancia": true,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 1,
+        "viento": {
+          "nombre": "Tramuntana (N)",
+          "kmh": 21
+        }
+      },
+      "medusas": {
+        "band": "sin-dato",
+        "coverage": 0.35
+      }
+    },
+    {
+      "id": "cala-mitjaneta",
+      "name": "Cala Mitjaneta",
+      "area": "Sur (Ferreries)",
+      "costa": "sur",
+      "lat": 39.934,
+      "lng": 3.9737,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 1,
+        "viento": {
+          "nombre": "Tramuntana (N)",
+          "kmh": 6
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.07,
+        "horasAfavor": 0,
+        "coverage": 0.65
       }
     },
     {
@@ -122,14 +314,14 @@
         "score": 1,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 40
+          "kmh": 26
         }
       },
       "medusas": {
         "band": "baja",
         "score": 0,
         "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -147,14 +339,39 @@
         "score": 1,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 40
+          "kmh": 26
         }
       },
       "medusas": {
         "band": "baja",
         "score": 0,
         "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.65
+      }
+    },
+    {
+      "id": "es-canutells",
+      "name": "Es Canutells",
+      "area": "Sur (Maó)",
+      "costa": "sur",
+      "lat": 39.8511,
+      "lng": 4.169,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 1,
+        "viento": {
+          "nombre": "Tramuntana (N)",
+          "kmh": 23
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0,
+        "horasAfavor": 0,
+        "coverage": 0.65
       }
     },
     {
@@ -172,37 +389,12 @@
         "score": 0.99,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 32
+          "kmh": 21
         }
       },
       "medusas": {
         "band": "sin-dato",
-        "coverage": 0.28
-      }
-    },
-    {
-      "id": "cala-trebaluger",
-      "name": "Cala Trebalúger",
-      "area": "Sur (Es Migjorn Gran)",
-      "costa": "sur",
-      "lat": 39.9353,
-      "lng": 3.9947,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.99,
-        "viento": {
-          "nombre": "Tramuntana (N)",
-          "kmh": 35
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0,
-        "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.35
       }
     },
     {
@@ -220,154 +412,12 @@
         "score": 0.99,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 32
+          "kmh": 21
         }
       },
       "medusas": {
         "band": "sin-dato",
-        "coverage": 0.28
-      }
-    },
-    {
-      "id": "es-talaier",
-      "name": "Es Talaier",
-      "area": "Sur (Ciutadella)",
-      "costa": "sur",
-      "lat": 39.9268,
-      "lng": 3.9027,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.99,
-        "viento": {
-          "nombre": "Tramuntana (N)",
-          "kmh": 32
-        }
-      },
-      "medusas": {
-        "band": "sin-dato",
-        "coverage": 0.28
-      }
-    },
-    {
-      "id": "cala-en-bosc",
-      "name": "Cala en Bosc",
-      "area": "Sur (Ciutadella de Menorca)",
-      "costa": "sur",
-      "lat": 39.9273,
-      "lng": 3.8309,
-      "lugarSlug": null,
-      "tieneVigilancia": true,
-      "tienePradera": false,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.99,
-        "viento": {
-          "nombre": "Tramuntana (N)",
-          "kmh": 32
-        }
-      },
-      "medusas": {
-        "band": "sin-dato",
-        "coverage": 0.28
-      }
-    },
-    {
-      "id": "platja-gran-degollador",
-      "name": "Platja Gran (Es Degollador)",
-      "area": "Sur (Ciutadella de Menorca)",
-      "costa": "sur",
-      "lat": 39.9943,
-      "lng": 3.8363,
-      "lugarSlug": null,
-      "tieneVigilancia": true,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.99,
-        "viento": {
-          "nombre": "Tramuntana (N)",
-          "kmh": 32
-        }
-      },
-      "medusas": {
-        "band": "sin-dato",
-        "coverage": 0.28
-      }
-    },
-    {
-      "id": "sa-caleta",
-      "name": "Sa Caleta (Cala d'en Gorries)",
-      "area": "Sur (Ciutadella de Menorca)",
-      "costa": "sur",
-      "lat": 39.9815,
-      "lng": 3.8344,
-      "lugarSlug": null,
-      "tieneVigilancia": true,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.99,
-        "viento": {
-          "nombre": "Tramuntana (N)",
-          "kmh": 32
-        }
-      },
-      "medusas": {
-        "band": "sin-dato",
-        "coverage": 0.28
-      }
-    },
-    {
-      "id": "es-canutells",
-      "name": "Es Canutells",
-      "area": "Sur (Maó)",
-      "costa": "sur",
-      "lat": 39.8511,
-      "lng": 4.169,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.99,
-        "viento": {
-          "nombre": "Tramuntana (N)",
-          "kmh": 35
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0,
-        "horasAfavor": 0,
-        "coverage": 0.63
-      }
-    },
-    {
-      "id": "cala-mitjana",
-      "name": "Cala Mitjana",
-      "area": "Sur (Ferreries)",
-      "costa": "sur",
-      "lat": 39.9355,
-      "lng": 3.9686,
-      "lugarSlug": "cala-mitjana",
-      "tieneVigilancia": false,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.98,
-        "viento": {
-          "nombre": "Gregal (NE)",
-          "kmh": 11
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.07,
-        "horasAfavor": 1,
-        "coverage": 0.63
+        "coverage": 0.35
       }
     },
     {
@@ -382,15 +432,15 @@
       "tienePradera": true,
       "abrigo": {
         "band": "alto",
-        "score": 0.97,
+        "score": 0.98,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 32
+          "kmh": 21
         }
       },
       "medusas": {
         "band": "sin-dato",
-        "coverage": 0.28
+        "coverage": 0.35
       }
     },
     {
@@ -405,65 +455,15 @@
       "tienePradera": true,
       "abrigo": {
         "band": "alto",
-        "score": 0.97,
+        "score": 0.98,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 32
+          "kmh": 21
         }
       },
       "medusas": {
         "band": "sin-dato",
-        "coverage": 0.28
-      }
-    },
-    {
-      "id": "cala-galdana",
-      "name": "Cala Galdana",
-      "area": "Sur (Ferreries)",
-      "costa": "sur",
-      "lat": 39.9369,
-      "lng": 3.9631,
-      "lugarSlug": null,
-      "tieneVigilancia": true,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.97,
-        "viento": {
-          "nombre": "Gregal (NE)",
-          "kmh": 11
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.07,
-        "horasAfavor": 1,
-        "coverage": 0.63
-      }
-    },
-    {
-      "id": "cala-mitjaneta",
-      "name": "Cala Mitjaneta",
-      "area": "Sur (Ferreries)",
-      "costa": "sur",
-      "lat": 39.934,
-      "lng": 3.9737,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.96,
-        "viento": {
-          "nombre": "Gregal (NE)",
-          "kmh": 11
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.07,
-        "horasAfavor": 1,
-        "coverage": 0.63
+        "coverage": 0.35
       }
     },
     {
@@ -478,17 +478,17 @@
       "tienePradera": true,
       "abrigo": {
         "band": "alto",
-        "score": 0.94,
+        "score": 0.96,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 31
+          "kmh": 20
         }
       },
       "medusas": {
         "band": "baja",
         "score": 0,
         "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -503,17 +503,17 @@
       "tienePradera": true,
       "abrigo": {
         "band": "alto",
-        "score": 0.94,
+        "score": 0.96,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 31
+          "kmh": 20
         }
       },
       "medusas": {
         "band": "baja",
         "score": 0,
         "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -528,17 +528,17 @@
       "tienePradera": true,
       "abrigo": {
         "band": "alto",
-        "score": 0.94,
+        "score": 0.96,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 31
+          "kmh": 20
         }
       },
       "medusas": {
         "band": "baja",
         "score": 0,
         "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -553,17 +553,17 @@
       "tienePradera": true,
       "abrigo": {
         "band": "alto",
-        "score": 0.94,
+        "score": 0.96,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 31
+          "kmh": 20
         }
       },
       "medusas": {
         "band": "baja",
         "score": 0,
         "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -578,17 +578,17 @@
       "tienePradera": true,
       "abrigo": {
         "band": "alto",
-        "score": 0.94,
+        "score": 0.96,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 31
+          "kmh": 20
         }
       },
       "medusas": {
         "band": "baja",
         "score": 0,
         "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -603,17 +603,17 @@
       "tienePradera": true,
       "abrigo": {
         "band": "alto",
-        "score": 0.93,
+        "score": 0.95,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 35
+          "kmh": 23
         }
       },
       "medusas": {
         "band": "baja",
         "score": 0,
         "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -628,17 +628,17 @@
       "tienePradera": true,
       "abrigo": {
         "band": "alto",
-        "score": 0.93,
+        "score": 0.95,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 35
+          "kmh": 23
         }
       },
       "medusas": {
         "band": "baja",
         "score": 0,
         "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -653,17 +653,17 @@
       "tienePradera": true,
       "abrigo": {
         "band": "alto",
-        "score": 0.93,
+        "score": 0.95,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 35
+          "kmh": 23
         }
       },
       "medusas": {
         "band": "baja",
         "score": 0,
         "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -678,17 +678,17 @@
       "tienePradera": true,
       "abrigo": {
         "band": "alto",
-        "score": 0.93,
+        "score": 0.95,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 40
+          "kmh": 26
         }
       },
       "medusas": {
         "band": "baja",
         "score": 0,
         "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -703,17 +703,17 @@
       "tienePradera": true,
       "abrigo": {
         "band": "alto",
-        "score": 0.93,
+        "score": 0.95,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 40
+          "kmh": 26
         }
       },
       "medusas": {
         "band": "baja",
         "score": 0,
         "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -728,17 +728,17 @@
       "tienePradera": true,
       "abrigo": {
         "band": "alto",
-        "score": 0.93,
+        "score": 0.95,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 35
+          "kmh": 23
         }
       },
       "medusas": {
         "band": "baja",
         "score": 0,
         "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -753,17 +753,17 @@
       "tienePradera": true,
       "abrigo": {
         "band": "alto",
-        "score": 0.93,
+        "score": 0.95,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 40
+          "kmh": 26
         }
       },
       "medusas": {
         "band": "baja",
         "score": 0,
         "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -778,17 +778,17 @@
       "tienePradera": true,
       "abrigo": {
         "band": "alto",
-        "score": 0.93,
+        "score": 0.95,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 40
+          "kmh": 26
         }
       },
       "medusas": {
         "band": "baja",
         "score": 0,
         "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -803,17 +803,17 @@
       "tienePradera": true,
       "abrigo": {
         "band": "alto",
-        "score": 0.93,
+        "score": 0.95,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 40
+          "kmh": 26
         }
       },
       "medusas": {
         "band": "baja",
         "score": 0,
         "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -828,17 +828,17 @@
       "tienePradera": true,
       "abrigo": {
         "band": "alto",
-        "score": 0.93,
+        "score": 0.95,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 40
+          "kmh": 26
         }
       },
       "medusas": {
         "band": "baja",
         "score": 0,
         "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -853,17 +853,17 @@
       "tienePradera": true,
       "abrigo": {
         "band": "alto",
-        "score": 0.93,
+        "score": 0.95,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 40
+          "kmh": 26
         }
       },
       "medusas": {
         "band": "baja",
         "score": 0,
         "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -878,17 +878,17 @@
       "tienePradera": true,
       "abrigo": {
         "band": "alto",
-        "score": 0.81,
+        "score": 0.89,
         "viento": {
-          "nombre": "Xaloc (SE)",
-          "kmh": 12
+          "nombre": "Migjorn (S)",
+          "kmh": 11
         }
       },
       "medusas": {
         "band": "media",
-        "score": 0.38,
-        "horasAfavor": 18,
-        "coverage": 0.63
+        "score": 0.16,
+        "horasAfavor": 15,
+        "coverage": 0.65
       }
     },
     {
@@ -903,17 +903,17 @@
       "tienePradera": false,
       "abrigo": {
         "band": "alto",
-        "score": 0.78,
+        "score": 0.84,
         "viento": {
-          "nombre": "Xaloc (SE)",
-          "kmh": 12
+          "nombre": "Migjorn (S)",
+          "kmh": 11
         }
       },
       "medusas": {
-        "band": "alta",
-        "score": 0.56,
-        "horasAfavor": 18,
-        "coverage": 0.63
+        "band": "media",
+        "score": 0.29,
+        "horasAfavor": 15,
+        "coverage": 0.65
       }
     },
     {
@@ -928,17 +928,17 @@
       "tienePradera": false,
       "abrigo": {
         "band": "alto",
-        "score": 0.78,
+        "score": 0.84,
         "viento": {
-          "nombre": "Xaloc (SE)",
-          "kmh": 12
+          "nombre": "Migjorn (S)",
+          "kmh": 11
         }
       },
       "medusas": {
-        "band": "alta",
-        "score": 0.56,
-        "horasAfavor": 18,
-        "coverage": 0.63
+        "band": "media",
+        "score": 0.29,
+        "horasAfavor": 15,
+        "coverage": 0.65
       }
     },
     {
@@ -953,17 +953,17 @@
       "tienePradera": true,
       "abrigo": {
         "band": "alto",
-        "score": 0.76,
+        "score": 0.83,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 40
+          "kmh": 26
         }
       },
       "medusas": {
         "band": "baja",
         "score": 0,
         "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -978,17 +978,17 @@
       "tienePradera": false,
       "abrigo": {
         "band": "alto",
-        "score": 0.76,
+        "score": 0.83,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 40
+          "kmh": 26
         }
       },
       "medusas": {
         "band": "baja",
         "score": 0,
         "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -1003,17 +1003,17 @@
       "tienePradera": false,
       "abrigo": {
         "band": "alto",
-        "score": 0.76,
+        "score": 0.83,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 40
+          "kmh": 26
         }
       },
       "medusas": {
         "band": "baja",
         "score": 0,
         "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -1027,18 +1027,18 @@
       "tieneVigilancia": false,
       "tienePradera": true,
       "abrigo": {
-        "band": "medio",
-        "score": 0.61,
+        "band": "alto",
+        "score": 0.74,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 29
+          "kmh": 20
         }
       },
       "medusas": {
         "band": "baja",
         "score": 0,
         "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -1052,16 +1052,16 @@
       "tieneVigilancia": true,
       "tienePradera": false,
       "abrigo": {
-        "band": "medio",
-        "score": 0.58,
+        "band": "alto",
+        "score": 0.72,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 32
+          "kmh": 21
         }
       },
       "medusas": {
         "band": "sin-dato",
-        "coverage": 0.28
+        "coverage": 0.35
       }
     },
     {
@@ -1075,16 +1075,16 @@
       "tieneVigilancia": false,
       "tienePradera": false,
       "abrigo": {
-        "band": "medio",
-        "score": 0.58,
+        "band": "alto",
+        "score": 0.72,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 32
+          "kmh": 21
         }
       },
       "medusas": {
         "band": "sin-dato",
-        "coverage": 0.28
+        "coverage": 0.35
       }
     },
     {
@@ -1098,16 +1098,16 @@
       "tieneVigilancia": false,
       "tienePradera": false,
       "abrigo": {
-        "band": "medio",
-        "score": 0.58,
+        "band": "alto",
+        "score": 0.72,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 32
+          "kmh": 21
         }
       },
       "medusas": {
         "band": "sin-dato",
-        "coverage": 0.28
+        "coverage": 0.35
       }
     },
     {
@@ -1121,62 +1121,16 @@
       "tieneVigilancia": false,
       "tienePradera": true,
       "abrigo": {
-        "band": "medio",
-        "score": 0.58,
+        "band": "alto",
+        "score": 0.72,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 32
+          "kmh": 21
         }
       },
       "medusas": {
         "band": "sin-dato",
-        "coverage": 0.28
-      }
-    },
-    {
-      "id": "cala-blanca",
-      "name": "Cala Blanca",
-      "area": "Oeste (Ciutadella de Menorca)",
-      "costa": "oeste",
-      "lat": 39.9677,
-      "lng": 3.8359,
-      "lugarSlug": null,
-      "tieneVigilancia": true,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "medio",
-        "score": 0.54,
-        "viento": {
-          "nombre": "Tramuntana (N)",
-          "kmh": 32
-        }
-      },
-      "medusas": {
-        "band": "sin-dato",
-        "coverage": 0.28
-      }
-    },
-    {
-      "id": "cala-santandria",
-      "name": "Cala Santandría",
-      "area": "Oeste (Ciutadella de Menorca)",
-      "costa": "oeste",
-      "lat": 39.9778,
-      "lng": 3.8391,
-      "lugarSlug": null,
-      "tieneVigilancia": true,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "medio",
-        "score": 0.54,
-        "viento": {
-          "nombre": "Tramuntana (N)",
-          "kmh": 32
-        }
-      },
-      "medusas": {
-        "band": "sin-dato",
-        "coverage": 0.28
+        "coverage": 0.35
       }
     },
     {
@@ -1190,18 +1144,18 @@
       "tieneVigilancia": false,
       "tienePradera": true,
       "abrigo": {
-        "band": "medio",
-        "score": 0.54,
+        "band": "alto",
+        "score": 0.7,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 35
+          "kmh": 23
         }
       },
       "medusas": {
         "band": "baja",
         "score": 0,
         "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -1215,18 +1169,64 @@
       "tieneVigilancia": false,
       "tienePradera": true,
       "abrigo": {
-        "band": "medio",
-        "score": 0.54,
+        "band": "alto",
+        "score": 0.7,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 35
+          "kmh": 23
         }
       },
       "medusas": {
         "band": "baja",
         "score": 0,
         "horasAfavor": 0,
-        "coverage": 0.63
+        "coverage": 0.65
+      }
+    },
+    {
+      "id": "cala-blanca",
+      "name": "Cala Blanca",
+      "area": "Oeste (Ciutadella de Menorca)",
+      "costa": "oeste",
+      "lat": 39.9677,
+      "lng": 3.8359,
+      "lugarSlug": null,
+      "tieneVigilancia": true,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.69,
+        "viento": {
+          "nombre": "Tramuntana (N)",
+          "kmh": 21
+        }
+      },
+      "medusas": {
+        "band": "sin-dato",
+        "coverage": 0.35
+      }
+    },
+    {
+      "id": "cala-santandria",
+      "name": "Cala Santandría",
+      "area": "Oeste (Ciutadella de Menorca)",
+      "costa": "oeste",
+      "lat": 39.9778,
+      "lng": 3.8391,
+      "lugarSlug": null,
+      "tieneVigilancia": true,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.69,
+        "viento": {
+          "nombre": "Tramuntana (N)",
+          "kmh": 21
+        }
+      },
+      "medusas": {
+        "band": "sin-dato",
+        "coverage": 0.35
       }
     },
     {
@@ -1240,16 +1240,16 @@
       "tieneVigilancia": false,
       "tienePradera": true,
       "abrigo": {
-        "band": "bajo",
-        "score": 0.38,
+        "band": "medio",
+        "score": 0.59,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 32
+          "kmh": 21
         }
       },
       "medusas": {
         "band": "sin-dato",
-        "coverage": 0.28
+        "coverage": 0.35
       }
     },
     {
@@ -1263,16 +1263,16 @@
       "tieneVigilancia": false,
       "tienePradera": true,
       "abrigo": {
-        "band": "bajo",
-        "score": 0.38,
+        "band": "medio",
+        "score": 0.59,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 32
+          "kmh": 21
         }
       },
       "medusas": {
         "band": "sin-dato",
-        "coverage": 0.28
+        "coverage": 0.35
       }
     },
     {
@@ -1286,16 +1286,16 @@
       "tieneVigilancia": false,
       "tienePradera": true,
       "abrigo": {
-        "band": "bajo",
-        "score": 0.38,
+        "band": "medio",
+        "score": 0.59,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 32
+          "kmh": 21
         }
       },
       "medusas": {
         "band": "sin-dato",
-        "coverage": 0.28
+        "coverage": 0.35
       }
     },
     {
@@ -1309,16 +1309,16 @@
       "tieneVigilancia": false,
       "tienePradera": false,
       "abrigo": {
-        "band": "bajo",
-        "score": 0.33,
+        "band": "medio",
+        "score": 0.56,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 32
+          "kmh": 21
         }
       },
       "medusas": {
         "band": "sin-dato",
-        "coverage": 0.28
+        "coverage": 0.35
       }
     },
     {
@@ -1332,18 +1332,18 @@
       "tieneVigilancia": false,
       "tienePradera": true,
       "abrigo": {
-        "band": "bajo",
-        "score": 0.32,
+        "band": "medio",
+        "score": 0.54,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 29
+          "kmh": 20
         }
       },
       "medusas": {
         "band": "media",
-        "score": 0.25,
-        "horasAfavor": 25,
-        "coverage": 0.63
+        "score": 0.29,
+        "horasAfavor": 24,
+        "coverage": 0.65
       }
     },
     {
@@ -1357,18 +1357,18 @@
       "tieneVigilancia": false,
       "tienePradera": false,
       "abrigo": {
-        "band": "bajo",
-        "score": 0.28,
+        "band": "medio",
+        "score": 0.51,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 29
+          "kmh": 20
         }
       },
       "medusas": {
         "band": "media",
-        "score": 0.35,
+        "score": 0.43,
         "horasAfavor": 27,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -1382,16 +1382,16 @@
       "tieneVigilancia": false,
       "tienePradera": true,
       "abrigo": {
-        "band": "bajo",
-        "score": 0.26,
+        "band": "medio",
+        "score": 0.51,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 32
+          "kmh": 21
         }
       },
       "medusas": {
         "band": "sin-dato",
-        "coverage": 0.28
+        "coverage": 0.35
       }
     },
     {
@@ -1405,18 +1405,18 @@
       "tieneVigilancia": true,
       "tienePradera": true,
       "abrigo": {
-        "band": "bajo",
-        "score": 0.25,
+        "band": "medio",
+        "score": 0.49,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 29
+          "kmh": 20
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.37,
+        "band": "alta",
+        "score": 0.45,
         "horasAfavor": 27,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -1430,18 +1430,18 @@
       "tieneVigilancia": true,
       "tienePradera": true,
       "abrigo": {
-        "band": "bajo",
-        "score": 0.25,
+        "band": "medio",
+        "score": 0.49,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 29
+          "kmh": 20
         }
       },
       "medusas": {
         "band": "media",
-        "score": 0.34,
+        "score": 0.4,
         "horasAfavor": 27,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -1455,18 +1455,18 @@
       "tieneVigilancia": true,
       "tienePradera": false,
       "abrigo": {
-        "band": "bajo",
-        "score": 0.24,
+        "band": "medio",
+        "score": 0.48,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 29
+          "kmh": 20
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.38,
+        "band": "alta",
+        "score": 0.46,
         "horasAfavor": 27,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -1480,18 +1480,18 @@
       "tieneVigilancia": false,
       "tienePradera": true,
       "abrigo": {
-        "band": "bajo",
-        "score": 0.23,
+        "band": "medio",
+        "score": 0.47,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 29
+          "kmh": 20
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.38,
+        "band": "alta",
+        "score": 0.46,
         "horasAfavor": 27,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -1505,18 +1505,18 @@
       "tieneVigilancia": true,
       "tienePradera": true,
       "abrigo": {
-        "band": "bajo",
-        "score": 0.23,
+        "band": "medio",
+        "score": 0.47,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 29
+          "kmh": 20
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.38,
+        "band": "alta",
+        "score": 0.46,
         "horasAfavor": 27,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -1530,18 +1530,18 @@
       "tieneVigilancia": true,
       "tienePradera": true,
       "abrigo": {
-        "band": "bajo",
-        "score": 0.23,
+        "band": "medio",
+        "score": 0.47,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 29
+          "kmh": 20
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.38,
+        "band": "alta",
+        "score": 0.46,
         "horasAfavor": 27,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -1555,18 +1555,18 @@
       "tieneVigilancia": false,
       "tienePradera": false,
       "abrigo": {
-        "band": "bajo",
-        "score": 0.23,
+        "band": "medio",
+        "score": 0.47,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 29
+          "kmh": 20
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.38,
+        "band": "alta",
+        "score": 0.46,
         "horasAfavor": 27,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -1580,18 +1580,18 @@
       "tieneVigilancia": false,
       "tienePradera": true,
       "abrigo": {
-        "band": "bajo",
-        "score": 0.23,
+        "band": "medio",
+        "score": 0.47,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 29
+          "kmh": 20
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.38,
+        "band": "alta",
+        "score": 0.46,
         "horasAfavor": 27,
-        "coverage": 0.63
+        "coverage": 0.65
       }
     },
     {
@@ -1605,16 +1605,16 @@
       "tieneVigilancia": false,
       "tienePradera": false,
       "abrigo": {
-        "band": "bajo",
-        "score": 0.19,
+        "band": "medio",
+        "score": 0.46,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 32
+          "kmh": 21
         }
       },
       "medusas": {
         "band": "sin-dato",
-        "coverage": 0.28
+        "coverage": 0.35
       }
     },
     {
@@ -1628,41 +1628,16 @@
       "tieneVigilancia": false,
       "tienePradera": false,
       "abrigo": {
-        "band": "bajo",
-        "score": 0.17,
+        "band": "medio",
+        "score": 0.45,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 32
+          "kmh": 21
         }
       },
       "medusas": {
         "band": "sin-dato",
-        "coverage": 0.28
-      }
-    },
-    {
-      "id": "cala-des-tamarells",
-      "name": "Cala des Tamarells",
-      "area": "Norte (Maó)",
-      "costa": "norte",
-      "lat": 39.9615,
-      "lng": 4.2644,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "bajo",
-        "score": 0.17,
-        "viento": {
-          "nombre": "Tramuntana (N)",
-          "kmh": 35
-        }
-      },
-      "medusas": {
-        "band": "media",
-        "score": 0.28,
-        "horasAfavor": 26,
-        "coverage": 0.63
+        "coverage": 0.35
       }
     },
     {
@@ -1676,16 +1651,41 @@
       "tieneVigilancia": false,
       "tienePradera": true,
       "abrigo": {
-        "band": "bajo",
-        "score": 0.16,
+        "band": "medio",
+        "score": 0.45,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 32
+          "kmh": 21
         }
       },
       "medusas": {
         "band": "sin-dato",
-        "coverage": 0.28
+        "coverage": 0.35
+      }
+    },
+    {
+      "id": "cala-des-tamarells",
+      "name": "Cala des Tamarells",
+      "area": "Norte (Maó)",
+      "costa": "norte",
+      "lat": 39.9615,
+      "lng": 4.2644,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "medio",
+        "score": 0.45,
+        "viento": {
+          "nombre": "Tramuntana (N)",
+          "kmh": 23
+        }
+      },
+      "medusas": {
+        "band": "media",
+        "score": 0.32,
+        "horasAfavor": 27,
+        "coverage": 0.65
       }
     },
     {
@@ -1699,18 +1699,18 @@
       "tieneVigilancia": false,
       "tienePradera": true,
       "abrigo": {
-        "band": "bajo",
-        "score": 0.15,
+        "band": "medio",
+        "score": 0.44,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 35
+          "kmh": 23
         }
       },
       "medusas": {
         "band": "media",
-        "score": 0.3,
-        "horasAfavor": 26,
-        "coverage": 0.63
+        "score": 0.34,
+        "horasAfavor": 27,
+        "coverage": 0.65
       }
     },
     {
@@ -1724,18 +1724,18 @@
       "tieneVigilancia": true,
       "tienePradera": true,
       "abrigo": {
-        "band": "bajo",
-        "score": 0.09,
+        "band": "medio",
+        "score": 0.4,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 35
+          "kmh": 23
         }
       },
       "medusas": {
         "band": "media",
-        "score": 0.36,
-        "horasAfavor": 27,
-        "coverage": 0.63
+        "score": 0.4,
+        "horasAfavor": 28,
+        "coverage": 0.65
       }
     },
     {
@@ -1749,18 +1749,18 @@
       "tieneVigilancia": true,
       "tienePradera": false,
       "abrigo": {
-        "band": "bajo",
-        "score": 0.09,
+        "band": "medio",
+        "score": 0.4,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 35
+          "kmh": 23
         }
       },
       "medusas": {
         "band": "media",
-        "score": 0.36,
-        "horasAfavor": 27,
-        "coverage": 0.63
+        "score": 0.4,
+        "horasAfavor": 28,
+        "coverage": 0.65
       }
     },
     {
@@ -1775,17 +1775,17 @@
       "tienePradera": false,
       "abrigo": {
         "band": "bajo",
-        "score": 0.09,
+        "score": 0.4,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 35
+          "kmh": 23
         }
       },
       "medusas": {
         "band": "media",
-        "score": 0.36,
-        "horasAfavor": 27,
-        "coverage": 0.63
+        "score": 0.41,
+        "horasAfavor": 28,
+        "coverage": 0.65
       }
     },
     {
@@ -1799,18 +1799,18 @@
       "tieneVigilancia": false,
       "tienePradera": false,
       "abrigo": {
-        "band": "bajo",
-        "score": 0.09,
+        "band": "medio",
+        "score": 0.4,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 35
+          "kmh": 23
         }
       },
       "medusas": {
         "band": "media",
-        "score": 0.36,
-        "horasAfavor": 27,
-        "coverage": 0.63
+        "score": 0.4,
+        "horasAfavor": 28,
+        "coverage": 0.65
       }
     },
     {
@@ -1824,18 +1824,18 @@
       "tieneVigilancia": false,
       "tienePradera": true,
       "abrigo": {
-        "band": "bajo",
-        "score": 0.09,
+        "band": "medio",
+        "score": 0.4,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 35
+          "kmh": 23
         }
       },
       "medusas": {
         "band": "media",
-        "score": 0.36,
-        "horasAfavor": 27,
-        "coverage": 0.63
+        "score": 0.4,
+        "horasAfavor": 28,
+        "coverage": 0.65
       }
     }
   ]
