@@ -1213,7 +1213,7 @@ git commit -m "feat(reservas): pagina de reserva ES/EN en 3 secciones-paso (noin
 **Interfaces:**
 - Consumes: `GET /api/reservas?status=` y `PATCH /api/reservas` (Task 5) con cabecera `x-admin-key` = `process.env.RESERVAS_ADMIN_KEY`; `SITE.url` como base de la API.
 
-- [ ] **Step 1: Implementar `src/pages/panel/reservas.astro`**
+- [x] **Step 1: Implementar `src/pages/panel/reservas.astro`**
 
 ```astro
 ---
@@ -1298,12 +1298,12 @@ const ESTADOS = ["", "solicitada", "confirmada", "rechazada", "cancelada"];
  "rechazada" («Rechazar») / "cancelada" («Cancelar»).]
 ```
 
-- [ ] **Step 2: Verificar build y check**
+- [x] **Step 2: Verificar build y check**
 
 Run: `npx astro check && npm run build`
 Expected: 0 errores; en el build estático la página queda como aviso (sin datos ni secretos).
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add src/pages/panel/reservas.astro
