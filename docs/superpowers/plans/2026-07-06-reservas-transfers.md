@@ -1317,7 +1317,7 @@ git commit -m "feat(reservas): panel del dueno en Vercel (/panel/reservas) sobre
 **Files:**
 - Create: `docs/RESERVAS-TRANSFERS.md`
 
-- [ ] **Step 1: Escribir `docs/RESERVAS-TRANSFERS.md`** con estas secciones (contenido completo, no esqueleto):
+- [x] **Step 1: Escribir `docs/RESERVAS-TRANSFERS.md`** con estas secciones (contenido completo, no esqueleto):
 
 1. **Qué es** — resumen de la v1 y enlace a la spec.
 2. **Mapa de piezas** — tabla: página ES/EN, API (`functions/api/reservas.ts`), librería (`src/lib/bookings/`), panel (`/panel/reservas` en Vercel), esquema (`db/reservas-schema.sql`).
@@ -1332,12 +1332,12 @@ git commit -m "feat(reservas): panel del dueno en Vercel (/panel/reservas) sobre
 5. **Puntos de enchufe de la API de Menorca Bus** — los 4 (cotización de precios en las tarjetas del paso 2, lista de vuelos reales en el paso 1, validación del cupón, pago al confirmar) y dónde tocaría cada uno (`catalog.ts` / página / `functions/api/reservas.ts` con `provider: "menorcabus"`).
 6. **Modelo de datos** — referencia a `db/reservas-schema.sql` y estados (`solicitada → confirmada | rechazada | cancelada`).
 
-- [ ] **Step 2: Verificación final completa**
+- [x] **Step 2: Verificación final completa**
 
 Run: `npm test && npx astro check && npx tsc --noEmit -p functions/tsconfig.json && npm run build`
 Expected: todo a 0 errores.
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add docs/RESERVAS-TRANSFERS.md
