@@ -1,0 +1,29 @@
+{
+  "name": "El Romero",
+  "lang": "es",
+  "translationKey": "restaurante-el-romero",
+  "type": "restaurante",
+  "description": "Proyecto íntimo de los italianos Fabio Tullini y Francesca Baroni en un edificio histórico de la plaça de la Conquesta de Maó, con pocas mesas que en buen tiempo salen a la plaza. Menús degustación de mar y de huerta, carta íntegramente sin gluten y una convicción sostenible que la casa presenta como pionera: primer restaurante con la marca Menorca Reserva de Biosfera, según el propio local, y miembro de la Alianza de Cocineros de Slow Food. Un Sol de la Guía Repsol desde la edición 2024 y recomendado por la Guía Michelin 2026.",
+  "coordinates": {
+    "lat": 39.89,
+    "lng": 4.26
+  },
+  "area": "Este (Maó)",
+  "practicalInfo": {
+    "acceso": "Plaça de la Conquesta, Maó (casco antiguo).",
+    "horario": "Estacional; confirma días y horario en la web oficial antes de ir.",
+    "servicios": "Reserva a través de la web oficial (teléfono en la propia web)."
+  },
+  "priceRange": "€€€",
+  "website": "https://www.elromero.bio/",
+  "images": [],
+  "tags": [
+    "este",
+    "gastronomia",
+    "mao"
+  ],
+  "status": "draft",
+  "seo": {
+    "description": "El Romero (Maó): la mesa sostenible de Fabio Tullini y Francesca Baroni, con Sol Repsol desde 2024, carta sin gluten y menús de mar y de huerta."
+  }
+}

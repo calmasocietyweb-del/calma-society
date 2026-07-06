@@ -1,0 +1,29 @@
+{
+  "name": "El Rais",
+  "lang": "es",
+  "translationKey": "restaurante-el-rais",
+  "type": "restaurante",
+  "description": "Los arroces del puerto de Maó: senyoret, arroz negro y arroces de temporada, con crudos y cocina de brasa y horno de leña, en primera línea del Moll de Llevant. Es la casa marinera del grupo Ses Forquilles —los chefs propietarios Marco Antonio Collado y Oriol Castel, con la sumiller Raquel Yagüe—, que lee el recetario menorquín en clave contemporánea. Recomendado por la Guía Michelin en 2025 y 2026, y presente en la Guía Repsol.",
+  "coordinates": {
+    "lat": 39.89,
+    "lng": 4.27
+  },
+  "area": "Este (Maó)",
+  "practicalInfo": {
+    "acceso": "Moll de Llevant 314, puerto de Maó (sobre el Club Marítimo).",
+    "horario": "Orientativo: martes a domingo, 13:00–15:15 y 19:30–22:45; lunes cerrado. Horario estacional: confírmalo antes de ir.",
+    "servicios": "Reservas: +34 971 362 345"
+  },
+  "priceRange": "€€€",
+  "website": "https://www.sesforquilles.com/",
+  "images": [],
+  "tags": [
+    "este",
+    "gastronomia",
+    "mao"
+  ],
+  "status": "draft",
+  "seo": {
+    "description": "El Rais (puerto de Maó): los arroces y la cocina marinera del grupo Ses Forquilles en el Moll de Llevant, recomendado por la Guía Michelin 2026."
+  }
+}

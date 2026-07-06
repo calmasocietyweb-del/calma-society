@@ -1,0 +1,29 @@
+{
+  "name": "Cafè Balear",
+  "lang": "en",
+  "translationKey": "restaurante-cafe-balear",
+  "type": "restaurante",
+  "description": "The iconic seafood house of Ciutadella harbour, with more than fifty years of history and one of the island's longest-standing Repsol Guide Sols. It began in the 1970s as a sailors' tavern —the grandfather, 'Bep Fitora', fished from his own boat while his wife Juanita cooked the catch— and today it still serves the fish and shellfish landed by its own vessel, the Rosa Santa Primera: grilled Ciutadella red prawns and Menorcan red lobster in season.",
+  "coordinates": {
+    "lat": 40,
+    "lng": 3.83
+  },
+  "area": "West (Ciutadella)",
+  "practicalInfo": {
+    "acceso": "Passeig des Moll 15, Ciutadella harbour.",
+    "horario": "Indicative: Tuesday to Saturday, 1.00–3.30 pm and 8.00–11.00 pm; Mondays dinner only; closed Sundays. Seasonal hours: confirm before going.",
+    "servicios": "Bookings: +34 971 38 00 05"
+  },
+  "priceRange": "€€€",
+  "website": "https://www.baleargrup.com/",
+  "images": [],
+  "tags": [
+    "oeste",
+    "gastronomia",
+    "ciutadella"
+  ],
+  "status": "draft",
+  "seo": {
+    "description": "Cafè Balear (Ciutadella harbour): half a century of seafood with its own boat, the Rosa Santa Primera, grilled red prawns and a Repsol Guide Sol."
+  }
+}

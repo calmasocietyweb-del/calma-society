@@ -1,0 +1,29 @@
+{
+  "name": "Ca na Pilar",
+  "lang": "es",
+  "translationKey": "restaurante-ca-na-pilar",
+  "type": "restaurante",
+  "description": "Casa menorquina de unos doscientos años a la entrada de Es Migjorn Gran, con pocas mesas y una cocina de mercado que trabaja el producto local de temporada con toques franceses, entre la tradición y la creatividad. Al frente está Víctor Lidón, cocinero formado en casas con estrella como ABaC, Zafferano (Londres) o el Racó de Can Fabes, que volvió a Menorca para levantar su propio proyecto. Recomendado por la Guía Michelin en 2025 y 2026.",
+  "coordinates": {
+    "lat": 39.94,
+    "lng": 4.05
+  },
+  "area": "Sur-centro (Es Migjorn Gran)",
+  "practicalInfo": {
+    "acceso": "A la entrada del pueblo de Es Migjorn Gran.",
+    "horario": "Estacional; confirma días y horario en la web oficial antes de ir.",
+    "servicios": "Reserva a través de la web oficial (teléfono en la propia web)."
+  },
+  "priceRange": "€€€",
+  "website": "https://www.canapilar.com/",
+  "images": [],
+  "tags": [
+    "sur-centro",
+    "gastronomia",
+    "es-migjorn-gran"
+  ],
+  "status": "draft",
+  "seo": {
+    "description": "Ca na Pilar (Es Migjorn Gran): cocina de mercado con toques franceses del chef Víctor Lidón en una casa menorquina bicentenaria, recomendada por la Guía Michelin 2026."
+  }
+}
