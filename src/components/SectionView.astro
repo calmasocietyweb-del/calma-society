@@ -5,11 +5,11 @@
 import ArticleCard from "./ArticleCard.astro";
 import AgendaView from "./AgendaView.astro";
 import NewsletterSignup from "./NewsletterSignup.astro";
-import { getArticlesBySection } from "../lib/content";
+import { getArticlesBySection, getPlaces } from "../lib/content";
 import { getSection } from "../config/sections";
 import { SITE, type Locale } from "../config/site";
 import { useTranslations } from "../i18n/ui";
-import { articleUrl } from "../i18n/utils";
+import { articleUrl, placeUrl } from "../i18n/utils";
 
 interface Props {
   sectionKey: string;
@@ -21,6 +21,36 @@ const t = useTranslations(locale);
 
 const isAgenda = sectionKey === "agenda";
 const articles = isAgenda ? [] : await getArticlesBySection(locale, sectionKey);
+
+// Fichas de `lugares` que COMPLEMENTAN la portada de una sección (petición del
+// dueño, 2026-07-06: la portada de gastronomía se veía vacía porque solo
+// listaba artículos y los restaurantes viven como fichas). Genérico y
+// ampliable (CLAUDE.md §2.12): para cruzar otra sección con sus lugares,
+// añadir una entrada aquí — sin tocar plantillas.
+const PLACES_FOR_SECTION: Record<
+  string,
+  { types: string[]; heading: Record<Locale, string> }
+> = {
+  "comer-y-beber": {
+    types: ["restaurante"],
+    heading: {
+      es: "Mesas con criterio",
+      en: "Tables chosen with care",
+      fr: "Tables choisies avec soin",
+    },
+  },
+};
+
+const placesBlock = PLACES_FOR_SECTION[sectionKey];
+const places = placesBlock
+  ? (await getPlaces(locale))
+      .filter((p) => placesBlock.types.includes(p.data.type))
+      .sort((a, b) => a.data.name.localeCompare(b.data.name, locale))
+  : [];
+
+// La descripción de ficha puede ser larga; en tarjeta se corta con elegancia.
+const brief = (text: string) =>
+  text.length > 170 ? `${text.slice(0, 167).trimEnd()}…` : text;
 ---
 
 <section class="mx-auto max-w-6xl px-5 pt-12 sm:px-8 sm:pt-16">
@@ -53,6 +83,28 @@ const articles = isAgenda ? [] : await getArticlesBySection(locale, sectionKey);
       </div>
     ) : (
       <p class="mt-10 text-piedra-suave">{t("section.empty")}</p>
+    )
+  }
+
+  {
+    places.length > 0 && (
+      <section class="mt-16 border-t border-niebla pt-10">
+        <h2 class="font-display text-2xl text-tinta sm:text-3xl">
+          {placesBlock!.heading[locale]}
+        </h2>
+        <div class="mt-8 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          {places.map((p) => (
+            <ArticleCard
+              kicker={p.data.area}
+              title={p.data.name}
+              excerpt={brief(p.data.description)}
+              href={placeUrl(locale, p.id)}
+              image={p.data.images[0]}
+              imageAlt={p.data.name}
+            />
+          ))}
+        </div>
+      </section>
     )
   }
 </section>
