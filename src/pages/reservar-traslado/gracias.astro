@@ -1,0 +1,25 @@
+---
+// Confirmación de la solicitud de traslado (ES). El localizador llega por
+// ?ref= y se comunica en el texto sin leer el parámetro (página estática,
+// sin JS de cliente): el correo de confirmación del dueño lo repetirá.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Solicitud recibida"
+  description="Tu solicitud de traslado está registrada."
+  locale="es"
+  alternates={{ es: "/reservar-traslado/gracias", en: "/en/book-transfer/thanks" }}
+  noindex
+>
+  <section class="mx-auto max-w-prosa px-5 py-16 text-center sm:px-8">
+    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">Reserva de traslado</p>
+    <h1 class="mt-2 font-display text-4xl text-tinta">Solicitud recibida</h1>
+    <p class="mt-4 text-piedra-suave">
+      Menorca Bus revisará tu trayecto y te confirmará la reserva y el precio
+      cerrado por correo. Guarda tu localizador: aparece en la dirección de esta
+      página (ref=…) y te lo repetiremos en la confirmación.
+    </p>
+    <a href="/" class="mt-8 inline-block rounded-full bg-arcilla px-8 py-3 font-semibold text-crema hover:bg-terracota">Volver a la revista</a>
+  </section>
+</BaseLayout>

@@ -1,0 +1,250 @@
+---
+/**
+ * Reserva de transfer (v1, APAGADA tras SITE.bookings.enabled — spec
+ * docs/superpowers/specs/2026-07-06-reservas-transfers-design.md).
+ * Calca la fórmula del panel de menorcabus.com en 3 secciones-paso
+ * (la web es estática: un solo envío al final, sin JS de cliente).
+ */
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { SITE } from "../../config/site";
+import { VEHICLE_CATEGORIES, EXTRAS } from "../../lib/bookings/catalog";
+
+const enabled = SITE.bookings.enabled;
+const alternates = { es: "/reservar-traslado", en: "/en/book-transfer" };
+
+// Clase común de los campos de texto (misma casa que ContactForm).
+const field =
+  "mt-1 w-full rounded-md border border-niebla bg-lino/60 px-4 py-3 text-sm text-piedra focus-visible:outline-terracota";
+const labelCls = "text-sm font-medium text-piedra";
+
+// Sellos de confianza (fórmula de menorcabus.com).
+const seals = [
+  "Reservas gestionadas por Menorca Bus",
+  "Atención 24/7",
+  "Cancelación flexible",
+  "Conductores profesionales",
+];
+---
+
+<BaseLayout
+  title="Reserva tu traslado en Menorca"
+  description="Traslado privado o compartido en Menorca: aeropuerto, puerto y hotel, puerta a puerta y con precio cerrado."
+  locale="es"
+  alternates={alternates}
+  noindex={!enabled}
+>
+  <section class="mx-auto max-w-prosa px-5 py-12 sm:px-8">
+    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">Menorca, puerta a puerta</p>
+    <h1 class="mt-2 font-display text-4xl text-tinta">Reserva tu traslado</h1>
+    <p class="mt-4 text-piedra-suave">
+      Cuéntanos el trayecto, elige el vehículo y deja tus datos: Menorca Bus te
+      confirma la reserva y el precio cerrado por correo. Sin esperas y a tu hora.
+    </p>
+
+    <form method="POST" action="/api/reservas" class="mt-10 space-y-12">
+      <input type="hidden" name="locale" value="es" />
+      {/* Honeypot anti-spam: oculto para humanos, tentador para robots. */}
+      <p class="hidden" aria-hidden="true">
+        <label>No rellenes este campo <input type="text" name="web" tabindex="-1" autocomplete="off" /></label>
+      </p>
+
+      <!-- PASO 1 · El trayecto -->
+      <fieldset class="space-y-4">
+        <legend class="font-display text-2xl text-tinta">1 · El trayecto</legend>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label for="origin" class={labelCls}>Origen *</label>
+            <input
+              id="origin"
+              type="text"
+              name="origin"
+              required
+              placeholder="Aeropuerto de Menorca (MAH), puerto, hotel…"
+              class={field}
+            />
+          </div>
+          <div>
+            <label for="destination" class={labelCls}>Destino *</label>
+            <input
+              id="destination"
+              type="text"
+              name="destination"
+              required
+              placeholder="Zona, hotel o dirección"
+              class={field}
+            />
+          </div>
+        </div>
+
+        <fieldset>
+          <legend class={labelCls}>Trayecto</legend>
+          <div class="mt-1 flex flex-wrap gap-x-6 gap-y-2">
+            <label class="flex items-center gap-2 text-sm text-piedra">
+              <input type="radio" name="tripType" value="ida" checked class="accent-terracota" />
+              Solo ida
+            </label>
+            <label class="flex items-center gap-2 text-sm text-piedra">
+              <input type="radio" name="tripType" value="ida-vuelta" class="accent-terracota" />
+              Ida y vuelta
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label for="pickup-date" class={labelCls}>Fecha de salida (o de llegada del vuelo) *</label>
+            <input id="pickup-date" type="date" name="pickupDate" required class={field} />
+          </div>
+          <div>
+            <label for="pickup-time" class={labelCls}>Hora de salida (o de llegada del vuelo) *</label>
+            <input id="pickup-time" type="time" name="pickupTime" required class={field} />
+          </div>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label for="return-date" class={labelCls}>Fecha de regreso — solo ida y vuelta</label>
+            <input id="return-date" type="date" name="returnDate" class={field} />
+          </div>
+          <div>
+            <label for="return-time" class={labelCls}>Hora de regreso — solo ida y vuelta</label>
+            <input id="return-time" type="time" name="returnTime" class={field} />
+          </div>
+        </div>
+
+        <div>
+          <label for="flight-number" class={labelCls}>Número de vuelo (si llegas en avión)</label>
+          <input id="flight-number" type="text" name="flightNumber" placeholder="VY3715" class={field} />
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-3">
+          <div>
+            <label for="adults" class={labelCls}>Adultos *</label>
+            <input id="adults" type="number" name="adults" min="1" max="50" value="1" required class={field} />
+          </div>
+          <div>
+            <label for="children" class={labelCls}>Niños (2-11 años)</label>
+            <input id="children" type="number" name="children" min="0" max="50" value="0" class={field} />
+          </div>
+          <div>
+            <label for="infants" class={labelCls}>Bebés (0-2 años)</label>
+            <input id="infants" type="number" name="infants" min="0" max="50" value="0" class={field} />
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- PASO 2 · El vehículo (tarjetas radio, sin precios: llegarán con la API) -->
+      <fieldset class="space-y-4">
+        <legend class="font-display text-2xl text-tinta">2 · El vehículo</legend>
+        <p class="text-sm text-piedra-suave">Precio cerrado: te lo confirma Menorca Bus al validar la reserva, sin sorpresas.</p>
+        {VEHICLE_CATEGORIES.map((c, i) => (
+          <label class="flex cursor-pointer gap-4 rounded-xl border border-niebla bg-white p-5 has-[:checked]:border-terracota has-[:checked]:bg-arena/40">
+            <input type="radio" name="vehicleCategory" value={c.id} required checked={i === 0} class="mt-1 accent-terracota" />
+            <span>
+              <span class="flex items-center gap-2">
+                <span class="font-display text-lg text-tinta">{c.name.es}</span>
+                <span class="rounded-full bg-arena px-2 py-0.5 text-xs font-semibold uppercase tracking-wider text-piedra">{c.badge.es}</span>
+              </span>
+              <span class="mt-1 block text-sm text-piedra-suave">{c.tagline.es}</span>
+              <ul class="mt-2 list-disc pl-5 text-sm text-piedra-suave">
+                {c.points.es.map((p) => <li>{p}</li>)}
+              </ul>
+            </span>
+          </label>
+        ))}
+      </fieldset>
+
+      <!-- PASO 3 · Tus datos -->
+      <fieldset class="space-y-4">
+        <legend class="font-display text-2xl text-tinta">3 · Tus datos</legend>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label for="name" class={labelCls}>Nombre y apellidos *</label>
+            <input id="name" type="text" name="name" required autocomplete="name" class={field} />
+          </div>
+          <div>
+            <label for="company" class={labelCls}>Empresa</label>
+            <input id="company" type="text" name="company" autocomplete="organization" class={field} />
+          </div>
+          <div>
+            <label for="id-document" class={labelCls}>DNI/NIF o pasaporte *</label>
+            <input id="id-document" type="text" name="idDocument" required class={field} />
+          </div>
+          <div>
+            <label for="email" class={labelCls}>Correo electrónico *</label>
+            <input id="email" type="email" name="email" required autocomplete="email" class={field} />
+          </div>
+          <div>
+            <label for="phone" class={labelCls}>Teléfono móvil *</label>
+            <input id="phone" type="tel" name="phone" required autocomplete="tel" class={field} />
+          </div>
+          <div>
+            <label for="address" class={labelCls}>Dirección *</label>
+            <input id="address" type="text" name="address" required autocomplete="street-address" class={field} />
+          </div>
+          <div>
+            <label for="postal-code" class={labelCls}>Código postal *</label>
+            <input id="postal-code" type="text" name="postalCode" required autocomplete="postal-code" class={field} />
+          </div>
+          <div>
+            <label for="city" class={labelCls}>Ciudad *</label>
+            <input id="city" type="text" name="city" required autocomplete="address-level2" class={field} />
+          </div>
+          <div>
+            <label for="country" class={labelCls}>País *</label>
+            <input id="country" type="text" name="country" required autocomplete="country-name" class={field} />
+          </div>
+          <div>
+            <label for="coupon" class={labelCls}>Cupón — p. ej. CALMASOCIETY</label>
+            <input id="coupon" type="text" name="coupon" class={field} />
+          </div>
+          <div>
+            <label for="pickup-time-requested" class={labelCls}>Hora deseada de recogida</label>
+            <input id="pickup-time-requested" type="time" name="pickupTimeRequested" class={field} />
+          </div>
+        </div>
+
+        <div>
+          <label for="comments" class={labelCls}>Comentarios al conductor</label>
+          <textarea
+            id="comments"
+            name="comments"
+            rows="4"
+            placeholder="Indicaciones para el conductor: equipaje, horarios, necesidades especiales…"
+            class={field}></textarea>
+        </div>
+
+        <p class={labelCls}>Extras (unidades)</p>
+        <div class="grid gap-3 sm:grid-cols-2">
+          {EXTRAS.map((e) => (
+            <label class="flex items-center justify-between rounded-lg border border-niebla bg-white px-4 py-3">
+              <span class="text-sm text-piedra">{e.name.es}</span>
+              <input type="number" name={`extra-${e.id}`} min="0" max="9" value="0" class="w-16 rounded border border-niebla px-2 py-1 text-center" />
+            </label>
+          ))}
+        </div>
+
+        <label class="flex items-start gap-3 text-sm text-piedra-suave">
+          <input type="checkbox" name="marketingOptin" class="mt-0.5 accent-terracota" />
+          Quiero recibir novedades y ofertas de Menorca Bus.
+        </label>
+        <label class="flex items-start gap-3 text-sm text-piedra">
+          <input type="checkbox" name="terms" required class="mt-0.5 accent-terracota" />
+          Acepto los términos y condiciones del servicio. *
+        </label>
+        <p class="text-xs text-piedra-suave">Cancelación gratuita hasta 24 horas antes de la hora prevista. La categoría del vehículo es orientativa: puede variar según disponibilidad manteniendo el nivel reservado.</p>
+      </fieldset>
+
+      <button type="submit" class="rounded-full bg-arcilla px-8 py-3 font-semibold text-crema hover:bg-terracota">
+        Solicitar reserva
+      </button>
+    </form>
+
+    <!-- Sellos de confianza -->
+    <ul class="mt-12 grid gap-3 border-t border-niebla pt-8 text-center text-sm text-piedra-suave sm:grid-cols-4">
+      {seals.map((s) => <li class="rounded-lg bg-arena/60 px-3 py-2">{s}</li>)}
+    </ul>
+  </section>
+</BaseLayout>

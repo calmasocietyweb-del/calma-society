@@ -1040,7 +1040,7 @@ git commit -m "feat(reservas): API en Cloudflare Pages Functions sobre D1 (alta,
 - Consumes: `VEHICLE_CATEGORIES`, `EXTRAS` (Task 1), `SITE.bookings.enabled` (Task 4), `BaseLayout` (prop `noindex`, patrón de `src/pages/calas-tranquilas.astro`).
 - Produces: formulario que hace `POST /api/reservas` con EXACTAMENTE los nombres de campo que espera `validateBookingInput` (Task 2): `locale, origin, destination, tripType, pickupDate, pickupTime, returnDate, returnTime, flightNumber, pickupTimeRequested, adults, children, infants, vehicleCategory, name, company, idDocument, email, phone, address, postalCode, city, country, coupon, comments, extra-silla-nino, extra-maxicosi, extra-booster, extra-maleta-extra, terms, marketingOptin, web` (honeypot).
 
-- [ ] **Step 1: Crear `src/pages/reservar-traslado/index.astro`**
+- [x] **Step 1: Crear `src/pages/reservar-traslado/index.astro`**
 
 Estructura obligatoria (los textos exactos pueden pulirse manteniendo la voz):
 
@@ -1157,7 +1157,7 @@ Los bloques `[campos: …]` se escriben como inputs reales con `label` visible c
 (accesibilidad: `for`/`id`, obligatorios con `required` y asterisco). Nombres de campo
 EXACTOS a los de la interfaz de Task 2.
 
-- [ ] **Step 2: Crear `src/pages/reservar-traslado/gracias.astro`**
+- [x] **Step 2: Crear `src/pages/reservar-traslado/gracias.astro`**
 
 ```astro
 ---
@@ -1188,15 +1188,15 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 sin leer el parámetro — el correo de confirmación del dueño lo repetirá. NO añadir
 JS para pintarlo.)
 
-- [ ] **Step 3: Crear las versiones EN** (`en/book-transfer/index.astro`, `en/book-transfer/thanks.astro`): misma estructura y mismos `name` de campo, `locale="en"` en el hidden y en el layout, textos EN nativos usando `c.name.en`, `c.points.en`, `e.name.en` (título «Book your transfer in Menorca», botón «Request booking», gracias «Request received»). `alternates` iguales a los de ES.
+- [x] **Step 3: Crear las versiones EN** (`en/book-transfer/index.astro`, `en/book-transfer/thanks.astro`): misma estructura y mismos `name` de campo, `locale="en"` en el hidden y en el layout, textos EN nativos usando `c.name.en`, `c.points.en`, `e.name.en` (título «Book your transfer in Menorca», botón «Request booking», gracias «Request received»). `alternates` iguales a los de ES.
 
-- [ ] **Step 4: Verificar build, check y vista local**
+- [x] **Step 4: Verificar build, check y vista local**
 
 Run: `npx astro check && npm run build`
 Expected: 0 errores; el build incluye `/reservar-traslado/` y `/en/book-transfer/` y el sitemap NO los lista (interruptor apagado).
 Run (manual, para la demo al dueño): `npm run dev` → abrir `http://localhost:4321/reservar-traslado`.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/pages/reservar-traslado src/pages/en/book-transfer

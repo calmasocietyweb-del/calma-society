@@ -1,0 +1,25 @@
+---
+// Confirmación de la solicitud de traslado (EN). El localizador llega por
+// ?ref= y se comunica en el texto sin leer el parámetro (página estática,
+// sin JS de cliente): el correo de confirmación del dueño lo repetirá.
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Request received"
+  description="Your transfer request has been registered."
+  locale="en"
+  alternates={{ es: "/reservar-traslado/gracias", en: "/en/book-transfer/thanks" }}
+  noindex
+>
+  <section class="mx-auto max-w-prosa px-5 py-16 text-center sm:px-8">
+    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">Transfer booking</p>
+    <h1 class="mt-2 font-display text-4xl text-tinta">Request received</h1>
+    <p class="mt-4 text-piedra-suave">
+      Menorca Bus will review your journey and confirm the booking and the fixed
+      price by email. Keep your reference: it appears in this page's address
+      (ref=…) and we will repeat it in the confirmation.
+    </p>
+    <a href="/en/" class="mt-8 inline-block rounded-full bg-arcilla px-8 py-3 font-semibold text-crema hover:bg-terracota">Back to the magazine</a>
+  </section>
+</BaseLayout>
