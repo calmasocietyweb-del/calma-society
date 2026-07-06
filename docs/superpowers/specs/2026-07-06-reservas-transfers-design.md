@@ -56,7 +56,7 @@ Dos casas, como el resto del proyecto:
 
 | Pieza | Dónde vive | Detalle |
 |---|---|---|
-| Formulario (3 pasos) | Web pública (Cloudflare Pages) | Páginas Astro ES/EN, **HTML puro sin JS de cliente**: cada paso es una página; el estado viaja por parámetros/campos ocultos. Ocultas tras `bookings.enabled`. |
+| Formulario (3 pasos) | Web pública (Cloudflare Pages) | Página Astro ES/EN, **HTML puro sin JS de cliente**: los 3 pasos de la fórmula son SECCIONES numeradas de una misma página (la web estática no puede pasar estado entre páginas sin JS) y hay UN solo envío al final. Oculta tras `bookings.enabled` (noindex + fuera del sitemap + sin enlazar). |
 | API de reservas | **Cloudflare Pages Functions** (`functions/api/reservas/…`) | `POST` crea (validación + honeypot anti-spam; devuelve localizador), `GET`/`PATCH` solo con clave de administración (cabecera `X-Admin-Key` = secreto `RESERVAS_ADMIN_KEY`). Con `enabled: false`, el POST responde deshabilitado. |
 | Base de datos | **Cloudflare D1** (SQLite gestionado, gratis) | Tabla `bookings` (ver §4). Vínculo (binding) que se crea al encender. |
 | Panel del dueño | **Vercel existente** (`…vercel.app/panel/reservas`) | Junto a Keystatic y `/panel/analitica`, con el mismo `PANEL_USER`/`PANEL_PASS`. Lee y actualiza vía la API de Cloudflare con `RESERVAS_ADMIN_KEY` (variable en Vercel). Lista con filtros por estado y botones confirmar/rechazar. |
