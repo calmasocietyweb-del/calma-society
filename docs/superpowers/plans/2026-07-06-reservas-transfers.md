@@ -258,7 +258,7 @@ git commit -m "feat(reservas): catalogo de categorias de vehiculo y extras (form
 - Consumes: `categoryById`, `EXTRA_IDS`, `ExtraId`, `VehicleCategoryId` de `./catalog`.
 - Produces: `BookingInput` (interfaz) y `validateBookingInput(raw: Record<string, string | undefined>): { ok: true; value: BookingInput } | { ok: false; errors: string[] }`.
 
-- [ ] **Step 1: Escribir el test que falla**
+- [x] **Step 1: Escribir el test que falla**
 
 `src/lib/bookings/validate.test.ts`:
 
@@ -356,12 +356,12 @@ test("honeypot relleno = spam", () => {
 });
 ```
 
-- [ ] **Step 2: Ejecutar y ver que falla**
+- [x] **Step 2: Ejecutar y ver que falla**
 
 Run: `npm test`
 Expected: FAIL (`Cannot find module './validate'`).
 
-- [ ] **Step 3: Implementar `src/lib/bookings/validate.ts`**
+- [x] **Step 3: Implementar `src/lib/bookings/validate.ts`**
 
 ```ts
 /**
@@ -537,12 +537,12 @@ export function validateBookingInput(
 }
 ```
 
-- [ ] **Step 4: Ejecutar los tests y ver que pasan**
+- [x] **Step 4: Ejecutar los tests y ver que pasan**
 
 Run: `npm test`
 Expected: PASS.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/lib/bookings/validate.ts src/lib/bookings/validate.test.ts
