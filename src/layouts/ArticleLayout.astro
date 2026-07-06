@@ -39,6 +39,29 @@ const articleLd = articleSchema({
   image: data.heroImage ? abs(data.seo?.ogImage ?? data.heroImage) : undefined,
 });
 
+// FAQ del artículo (frontmatter `faq`): una sola fuente para el bloque visible
+// y el JSON-LD `FAQPage` (GEO). El texto del schema va SIN etiquetas HTML.
+const faqs = data.faq ?? [];
+const stripHtml = (s: string) => s.replace(/<[^>]+>/g, "");
+const faqLd =
+  faqs.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: stripHtml(f.a) },
+        })),
+      }
+    : null;
+const faqHeading =
+  locale === "es"
+    ? "Preguntas frecuentes"
+    : locale === "fr"
+      ? "Questions fréquentes"
+      : "Frequently asked questions";
+
 // Artículos relacionados (misma sección + tags) para "Sigue leyendo".
 const related = await getRelatedArticles(locale, entry.id, data.section, data.tags, 3);
 const sectionLabel = (key: string) => getSection(key)?.label[locale];
@@ -140,6 +163,24 @@ const breadcrumb = breadcrumbSchema([
     </div>
 
     {
+      faqs.length > 0 && (
+        <section class="mt-14">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">
+            {faqHeading}
+          </p>
+          <dl class="mt-4 divide-y divide-niebla border-t border-niebla">
+            {faqs.map((f) => (
+              <div class="py-5">
+                <dt class="font-display text-lg text-tinta">{f.q}</dt>
+                <dd class="mt-2 text-base leading-relaxed text-piedra-suave" set:html={f.a} />
+              </div>
+            ))}
+          </dl>
+        </section>
+      )
+    }
+
+    {
       relatedPlaces.length > 0 && (
         <aside class="mt-14 border-t border-niebla pt-8">
           <h2 class="text-xs font-semibold uppercase tracking-widest text-oro">
@@ -184,5 +225,5 @@ const breadcrumb = breadcrumbSchema([
   {/* Invitación a la Sociedad (captación = KPI nº1). Compacta, al cierre. */}
   <NewsletterSignup variant="inline" />
 
-  <JsonLd schema={[articleLd, breadcrumb]} />
+  <JsonLd schema={faqLd ? [articleLd, breadcrumb, faqLd] : [articleLd, breadcrumb]} />
 </BaseLayout>

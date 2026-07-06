@@ -65,6 +65,15 @@ const articulos = defineCollection({
           .default("original"),
         seo,
         relatedPlaces: z.array(reference("lugares")).optional(),
+        // ── FAQ del artículo (GEO, CLAUDE.md §8) ─────────────────────────────
+        // Una sola fuente para el bloque visible y el JSON-LD `FAQPage` que
+        // emite ArticleLayout (mismo patrón que SunsetDrinksFaq). Respuestas
+        // autocontenidas, con datos VERIFICADOS y en voz de marca. `a` admite
+        // HTML mínimo (enlaces con rel="sponsored" donde toque); el JSON-LD
+        // recibe el texto sin etiquetas.
+        faq: z
+          .array(z.object({ q: z.string(), a: z.string() }))
+          .optional(),
       })
       // El alt es OBLIGATORIO si hay imagen (accesibilidad, CLAUDE.md §6).
       .refine((d) => !d.heroImage || !!d.heroImageAlt, {
