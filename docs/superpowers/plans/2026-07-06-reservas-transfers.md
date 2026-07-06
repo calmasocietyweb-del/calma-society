@@ -564,7 +564,7 @@ git commit -m "feat(reservas): validacion de la solicitud de transfer (sin depen
 - Consumes: `BookingInput` de `./validate`.
 - Produces: `makeBookingRef(date: Date, rand?: () => number): string` · `SCHEMA_SQL: string` · `BOOKING_STATUSES: readonly string[]` · `insertStatement(value: BookingInput, ref: string, createdAt: string): { sql: string; params: (string | number | null)[] }` · `LIST_SQL: string` · `UPDATE_STATUS_SQL: string`.
 
-- [ ] **Step 1: Escribir los tests que fallan**
+- [x] **Step 1: Escribir los tests que fallan**
 
 `src/lib/bookings/ref.test.ts`:
 
@@ -645,12 +645,12 @@ test("el esquema crea la tabla y las consultas usan estados válidos", () => {
 });
 ```
 
-- [ ] **Step 2: Ejecutar y ver que fallan**
+- [x] **Step 2: Ejecutar y ver que fallan**
 
 Run: `npm test`
 Expected: FAIL (módulos `./ref` y `./sql` no existen).
 
-- [ ] **Step 3: Implementar `src/lib/bookings/ref.ts`**
+- [x] **Step 3: Implementar `src/lib/bookings/ref.ts`**
 
 ```ts
 /** Localizador corto y legible por teléfono: CS-2026-XXXXXX (sin 0/O/1/I/L). */
@@ -665,7 +665,7 @@ export function makeBookingRef(date: Date, rand: () => number = Math.random): st
 }
 ```
 
-- [ ] **Step 4: Implementar `src/lib/bookings/sql.ts`**
+- [x] **Step 4: Implementar `src/lib/bookings/sql.ts`**
 
 ```ts
 /**
@@ -772,7 +772,7 @@ export const LIST_SQL =
 export const UPDATE_STATUS_SQL = "UPDATE bookings SET status = ?1 WHERE ref = ?2";
 ```
 
-- [ ] **Step 5: Crear `db/reservas-schema.sql`** con EXACTAMENTE la misma sentencia `CREATE TABLE` de `SCHEMA_SQL` (copiar el bloque) precedida del comentario:
+- [x] **Step 5: Crear `db/reservas-schema.sql`** con EXACTAMENTE la misma sentencia `CREATE TABLE` de `SCHEMA_SQL` (copiar el bloque) precedida del comentario:
 
 ```sql
 -- Esquema de la tabla de reservas (D1). Fuente de verdad en código:
@@ -781,12 +781,12 @@ export const UPDATE_STATUS_SQL = "UPDATE bookings SET status = ?1 WHERE ref = ?2
 --   npx wrangler d1 execute calma-reservas --file=db/reservas-schema.sql
 ```
 
-- [ ] **Step 6: Ejecutar los tests y ver que pasan**
+- [x] **Step 6: Ejecutar los tests y ver que pasan**
 
 Run: `npm test`
 Expected: PASS.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add src/lib/bookings/ref.ts src/lib/bookings/ref.test.ts src/lib/bookings/sql.ts src/lib/bookings/sql.test.ts db/reservas-schema.sql

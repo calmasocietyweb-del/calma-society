@@ -1,0 +1,42 @@
+-- Esquema de la tabla de reservas (D1). Fuente de verdad en código:
+-- src/lib/bookings/sql.ts (SCHEMA_SQL). Este archivo documenta el encendido:
+--   npx wrangler d1 create calma-reservas
+--   npx wrangler d1 execute calma-reservas --file=db/reservas-schema.sql
+CREATE TABLE IF NOT EXISTS bookings (
+  ref TEXT PRIMARY KEY,
+  created_at TEXT NOT NULL,
+  status TEXT NOT NULL DEFAULT 'solicitada',
+  type TEXT NOT NULL DEFAULT 'transfer',
+  provider TEXT NOT NULL DEFAULT 'manual',
+  provider_ref TEXT,
+  provider_status TEXT,
+  quoted_price TEXT,
+  locale TEXT NOT NULL,
+  origin TEXT NOT NULL,
+  destination TEXT NOT NULL,
+  trip_type TEXT NOT NULL,
+  pickup_date TEXT NOT NULL,
+  pickup_time TEXT NOT NULL,
+  return_date TEXT,
+  return_time TEXT,
+  flight_number TEXT,
+  pickup_time_requested TEXT,
+  adults INTEGER NOT NULL,
+  children INTEGER NOT NULL,
+  infants INTEGER NOT NULL,
+  vehicle_category TEXT NOT NULL,
+  name TEXT NOT NULL,
+  company TEXT,
+  id_document TEXT NOT NULL,
+  email TEXT NOT NULL,
+  phone TEXT NOT NULL,
+  address TEXT NOT NULL,
+  postal_code TEXT NOT NULL,
+  city TEXT NOT NULL,
+  country TEXT NOT NULL,
+  coupon TEXT,
+  comments TEXT,
+  extras TEXT NOT NULL,
+  marketing_optin INTEGER NOT NULL,
+  terms_accepted_at TEXT NOT NULL
+);
