@@ -860,7 +860,7 @@ git commit -m "feat(reservas): interruptor bookings.enabled (apagado) y exclusio
 - Consumes: `validateBookingInput` (Task 2), `makeBookingRef` (Task 3), `SCHEMA_SQL`/`insertStatement`/`LIST_SQL`/`UPDATE_STATUS_SQL`/`BOOKING_STATUSES` (Task 3).
 - Produces: `POST /api/reservas` (form-data → 303 a la página de gracias con `?ref=`) · `GET /api/reservas?status=` (JSON, cabecera `x-admin-key`) · `PATCH /api/reservas` (JSON `{ref, status}`, cabecera `x-admin-key`). Lo consume el panel de Task 7.
 
-- [ ] **Step 1: Crear `functions/tsconfig.json`** (typecheck propio; las Functions no pasan por `astro check`):
+- [x] **Step 1: Crear `functions/tsconfig.json`** (typecheck propio; las Functions no pasan por `astro check`):
 
 ```json
 {
@@ -880,7 +880,7 @@ git commit -m "feat(reservas): interruptor bookings.enabled (apagado) y exclusio
 }
 ```
 
-- [ ] **Step 2: Implementar `functions/api/reservas.ts`**
+- [x] **Step 2: Implementar `functions/api/reservas.ts`**
 
 ```ts
 /**
@@ -1009,17 +1009,17 @@ export async function onRequestPatch({ request, env }: Ctx): Promise<Response> {
 }
 ```
 
-- [ ] **Step 3: Typecheck de las Functions**
+- [x] **Step 3: Typecheck de las Functions**
 
 Run: `npx tsc --noEmit -p functions/tsconfig.json`
 Expected: sin errores.
 
-- [ ] **Step 4: Verificar que la web no se ve afectada**
+- [x] **Step 4: Verificar que la web no se ve afectada**
 
 Run: `npm test && npm run build`
 Expected: tests PASS; build igual que antes (la carpeta `functions/` no entra en el build de Astro; Cloudflare Pages la recoge sola al desplegar).
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add functions/api/reservas.ts functions/tsconfig.json
