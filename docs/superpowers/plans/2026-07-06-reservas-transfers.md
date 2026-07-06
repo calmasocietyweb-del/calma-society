@@ -30,7 +30,7 @@
 **Interfaces:**
 - Produces: `VehicleCategoryId`, `VehicleCategory`, `VEHICLE_CATEGORIES`, `categoryById(id)`, `ExtraId`, `EXTRAS`, `EXTRA_IDS`.
 
-- [ ] **Step 1: Ampliar el glob del script de test en `package.json`**
+- [x] **Step 1: Ampliar el glob del script de test en `package.json`**
 
 Cambiar la línea del script `test`:
 
@@ -38,7 +38,7 @@ Cambiar la línea del script `test`:
 "test": "node --test \"src/lib/planner/**/*.test.ts\" \"src/lib/bookings/**/*.test.ts\""
 ```
 
-- [ ] **Step 2: Escribir el test que falla**
+- [x] **Step 2: Escribir el test que falla**
 
 `src/lib/bookings/catalog.test.ts`:
 
@@ -76,12 +76,12 @@ test("hay 4 extras (fórmula de menorcabus.com) y EXTRA_IDS los lista", () => {
 });
 ```
 
-- [ ] **Step 3: Ejecutar y ver que falla**
+- [x] **Step 3: Ejecutar y ver que falla**
 
 Run: `npm test`
 Expected: FAIL (`Cannot find module './catalog'`).
 
-- [ ] **Step 4: Implementar `src/lib/bookings/catalog.ts`**
+- [x] **Step 4: Implementar `src/lib/bookings/catalog.ts`**
 
 ```ts
 /**
@@ -234,12 +234,12 @@ export const EXTRAS: readonly Extra[] = [
 export const EXTRA_IDS: readonly ExtraId[] = EXTRAS.map((e) => e.id);
 ```
 
-- [ ] **Step 5: Ejecutar los tests y ver que pasan**
+- [x] **Step 5: Ejecutar los tests y ver que pasan**
 
 Run: `npm test`
 Expected: PASS (los 69 del planner + 4 nuevos).
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add src/lib/bookings/catalog.ts src/lib/bookings/catalog.test.ts package.json
