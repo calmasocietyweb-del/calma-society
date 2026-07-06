@@ -804,7 +804,7 @@ git commit -m "feat(reservas): localizador CS-AAAA-XXXXXX y SQL de la tabla book
 **Interfaces:**
 - Produces: `SITE.bookings: { enabled: boolean }` (lo consumen las páginas de Task 5/6 y el filtro del sitemap).
 
-- [ ] **Step 1: Añadir el bloque en `src/config/site.ts`** (al mismo nivel que `newsletter`, con este comentario):
+- [x] **Step 1: Añadir el bloque en `src/config/site.ts`** (al mismo nivel que `newsletter`, con este comentario):
 
 ```ts
   /**
@@ -819,7 +819,7 @@ git commit -m "feat(reservas): localizador CS-AAAA-XXXXXX y SQL de la tabla book
   },
 ```
 
-- [ ] **Step 2: Excluir del sitemap en `astro.config.ts`** — junto a `const lmLive` añadir:
+- [x] **Step 2: Excluir del sitemap en `astro.config.ts`** — junto a `const lmLive` añadir:
 
 ```ts
 // Reservas de transfers: misma mecánica que el imán (noindex + fuera del
@@ -836,12 +836,12 @@ y dentro del `filter` del sitemap, tras la condición del imán, añadir:
 
 (colocada de forma que el `filter` siga devolviendo un único booleano con `&&`).
 
-- [ ] **Step 3: Verificar que compila**
+- [x] **Step 3: Verificar que compila**
 
 Run: `npx astro check && npm run build`
 Expected: 0 errores; build de 491+ páginas.
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add src/config/site.ts astro.config.ts

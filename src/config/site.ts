@@ -169,6 +169,17 @@ export const SITE = {
   },
 
   /**
+   * Reservas de transfers (v1 APAGADA — spec docs/superpowers/specs/
+   * 2026-07-06-reservas-transfers-design.md). Mientras `enabled` sea false:
+   * la página existe pero va en noindex, fuera del sitemap y sin enlazar;
+   * la API de Cloudflare responde 503 (variable BOOKINGS_ENABLED aparte).
+   * Encendido completo: docs/RESERVAS-TRANSFERS.md.
+   */
+  bookings: {
+    enabled: false,
+  },
+
+  /**
    * Formulario de contacto. Endpoint que recibe el envío (p. ej. Formspree).
    * Mientras esté vacío, se muestra el correo de contacto en su lugar.
    */

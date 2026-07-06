@@ -36,6 +36,10 @@ const cmsEnabled =
 // la landing va en noindex y NO debe anunciarse en el sitemap (ver site.ts).
 const lmLive = SITE.newsletter.leadMagnet.enabled;
 
+// Reservas de transfers: misma mecánica que el imán (noindex + fuera del
+// sitemap mientras el interruptor esté apagado).
+const bookingsLive = SITE.bookings.enabled;
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.url,
@@ -66,7 +70,10 @@ export default defineConfig({
         !page.includes("/panel/") &&
         // El imán entra en el sitemap solo cuando está vivo (si no, va noindex).
         (lmLive ||
-          (!page.includes("/calas-tranquilas") && !page.includes("/quiet-coves"))),
+          (!page.includes("/calas-tranquilas") && !page.includes("/quiet-coves"))) &&
+        // Reservas de transfers: en el sitemap solo con el interruptor encendido.
+        (bookingsLive ||
+          (!page.includes("/reservar-traslado") && !page.includes("/book-transfer"))),
       // Añade enlaces hreflang entre idiomas en el sitemap.
       i18n: {
         defaultLocale: "es",
