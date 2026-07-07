@@ -108,6 +108,10 @@ const jobs = [
   { src: `${SRC}/_stock/talati-de-dalt.jpg`, out: "talati-de-dalt" }, // Paul Stephenson, CC BY 2.0
   { src: `${SRC}/_stock/trepuco.jpg`, out: "trepuco" }, // Josefito123, CC BY-SA 4.0
   { src: `${SRC}/_stock/torre-den-galmes.jpg`, out: "torre-den-galmes" }, // Evelyne Bazalgette, CC BY-SA 3.0
+  // Gastronomía de producto (jul 2026) — Wikimedia Commons, CC con crédito.
+  { src: `${SRC}/_stock/miel-menorca.jpg`, out: "miel-menorca" }, // Marcobeltrametti, CC BY-SA 4.0
+  { src: `${SRC}/_stock/tomatiga-ramellet.jpg`, out: "tomatiga-ramellet" }, // Rotget, CC BY-SA 4.0 (tomàtiga de ramellet)
+  { src: `${SRC}/_stock/rubiols-menorca.jpg`, out: "rubiols-menorca" }, // Chixoy, CC BY-SA 3.0 (rubiols)
   // Fiestas para la Agenda (Adobe Stock, licenciadas — jun 2026). Variedad: una por fiesta.
   { src: `${SRC}/_stock/cabalgata-reyes.jpg`, out: "cabalgata-reyes" }, // Adobe Stock #676011625 (Cabalgata de Reyes)
   { src: `${SRC}/_stock/carnaval-menorca.jpg`, out: "carnaval-menorca" }, // Adobe Stock #573061026 (disfraces de carnaval)
