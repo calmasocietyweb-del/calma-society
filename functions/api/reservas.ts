@@ -54,6 +54,14 @@ const THANKS_PATH: Record<string, string> = {
   en: "/en/book-transfer/thanks",
 };
 
+// Página de error de marca (sin JS): la API redirige aquí en vez de devolver
+// texto pelado. `?motivo=` queda en la URL/logs; la página muestra un mensaje
+// general con salida (no puede leer el parámetro sin JS de cliente).
+const ERROR_PATH: Record<string, string> = {
+  es: "/reservar-traslado/error",
+  en: "/en/book-transfer/error",
+};
+
 function adminOk(request: Request, env: Env): boolean {
   const key = env.RESERVAS_ADMIN_KEY ?? "";
   return key !== "" && request.headers.get("x-admin-key") === key;
@@ -68,18 +76,23 @@ function json(data: unknown, status = 200): Response {
 
 /** Alta de una solicitud (el formulario de la web envía form-data clásico). */
 export async function onRequestPost({ request, env }: Ctx): Promise<Response> {
-  if (env.BOOKINGS_ENABLED !== "true") {
-    return new Response("Las reservas no están disponibles todavía.", { status: 503 });
-  }
+  // Leemos el formulario primero para conocer el idioma y redirigir errores a la
+  // página de error del idioma correcto (sin JS de cliente): mejor que texto pelado.
   const form = await request.formData();
   const raw: Record<string, string> = {};
   for (const [k, v] of form.entries()) {
     if (typeof v === "string") raw[k] = v;
   }
+  const locale = raw.locale === "en" ? "en" : "es";
+  const redirectTo = (path: string, query: string): Response =>
+    Response.redirect(new URL(`${path}?${query}`, request.url).toString(), 303);
+  const errorTo = (motivo: string): Response => redirectTo(ERROR_PATH[locale], `motivo=${motivo}`);
+
+  if (env.BOOKINGS_ENABLED !== "true") return errorTo("no-disponible");
+
   const result = validateBookingInput(raw);
-  if (!result.ok) {
-    return new Response(`Revisa estos campos: ${result.errors.join(", ")}`, { status: 400 });
-  }
+  if (!result.ok) return errorTo("datos");
+
   await ensureSchema(env.DB);
   const createdAt = new Date().toISOString();
   let lastError: unknown = null;
@@ -88,15 +101,13 @@ export async function onRequestPost({ request, env }: Ctx): Promise<Response> {
     const { sql, params } = insertStatement(result.value, ref, createdAt);
     try {
       await env.DB.prepare(sql).bind(...params).run();
-      const path = THANKS_PATH[result.value.locale] ?? THANKS_PATH.es;
-      const to = new URL(`${path}?ref=${encodeURIComponent(ref)}`, request.url);
-      return Response.redirect(to.toString(), 303);
+      return redirectTo(THANKS_PATH[result.value.locale] ?? THANKS_PATH.es, `ref=${encodeURIComponent(ref)}`);
     } catch (e) {
       lastError = e; // choque de localizador (PRIMARY KEY): reintenta una vez
     }
   }
   console.error("reservas: insert fallido", lastError);
-  return new Response("No se pudo registrar la reserva. Inténtalo de nuevo.", { status: 500 });
+  return errorTo("servidor");
 }
 
 /** Listado para el panel (Vercel) — cabecera x-admin-key obligatoria. */

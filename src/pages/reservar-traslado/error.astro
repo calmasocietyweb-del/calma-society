@@ -1,0 +1,29 @@
+---
+// Error de la solicitud de traslado (ES). La API redirige aquí (303) cuando algo
+// falla — falta un dato, el servicio está apagado o hubo un problema al guardar —
+// en vez de devolver texto pelado. Página estática (sin JS): mensaje general y
+// una salida clara. El `?motivo=` queda en la URL para el registro.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="No se pudo completar la solicitud"
+  description="No hemos podido registrar tu solicitud de traslado."
+  locale="es"
+  alternates={{ es: "/reservar-traslado/error", en: "/en/book-transfer/error" }}
+  noindex
+>
+  <section class="mx-auto max-w-prosa px-5 py-16 text-center sm:px-8">
+    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">Reserva de traslado</p>
+    <h1 class="mt-2 font-display text-4xl text-tinta">No hemos podido completar tu solicitud</h1>
+    <p class="mt-4 text-piedra-suave">
+      Puede que falte algún dato obligatorio o que el servicio no esté disponible
+      en este momento. Vuelve al formulario y revísalo con calma; si el problema
+      continúa, escríbenos a <a href="mailto:hola@calmasociety.com" class="text-arcilla underline underline-offset-2 hover:text-terracota">hola@calmasociety.com</a> y lo gestionamos a mano.
+    </p>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a href="/reservar-traslado" class="press inline-block rounded-full bg-arcilla px-8 py-3 font-semibold text-crema hover:bg-terracota">Volver al formulario</a>
+      <a href="/" class="press inline-block rounded-full border border-niebla px-8 py-3 font-semibold text-piedra hover:border-arcilla">Ir a la revista</a>
+    </div>
+  </section>
+</BaseLayout>

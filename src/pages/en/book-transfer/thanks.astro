@@ -3,6 +3,12 @@
 // ?ref= y se comunica en el texto sin leer el parámetro (página estática,
 // sin JS de cliente): el correo de confirmación del dueño lo repetirá.
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const steps = [
+  "We review your journey and availability.",
+  "You receive an email confirmation with the fixed price (usually within a few hours).",
+  "You confirm and that's it: we pick you up on time, door to door.",
+];
 ---
 
 <BaseLayout
@@ -12,14 +18,33 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
   alternates={{ es: "/reservar-traslado/gracias", en: "/en/book-transfer/thanks" }}
   noindex
 >
-  <section class="mx-auto max-w-prosa px-5 py-16 text-center sm:px-8">
-    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">Transfer booking</p>
-    <h1 class="mt-2 font-display text-4xl text-tinta">Request received</h1>
-    <p class="mt-4 text-piedra-suave">
-      Menorca Bus will review your journey and confirm the booking and the fixed
-      price by email. Keep your reference: it appears in this page's address
-      (ref=…) and we will repeat it in the confirmation.
-    </p>
-    <a href="/en/" class="mt-8 inline-block rounded-full bg-arcilla px-8 py-3 font-semibold text-crema hover:bg-terracota">Back to the magazine</a>
+  <section class="mx-auto max-w-prosa px-5 py-16 sm:px-8">
+    <div class="text-center">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">Transfer booking</p>
+      <h1 class="mt-2 font-display text-4xl text-tinta">Request received</h1>
+      <p class="mt-4 text-piedra-suave">
+        Thank you. Menorca Bus now has your request and will confirm availability
+        and the fixed price by email. <strong class="font-semibold text-piedra">You haven't paid anything</strong>: this is only a request.
+      </p>
+    </div>
+
+    <div class="mt-8 rounded-2xl border border-niebla bg-white p-6 shadow-sm sm:p-8">
+      <h2 class="font-display text-xl text-tinta">What happens now</h2>
+      <ol class="mt-4 space-y-4">
+        {steps.map((s, i) => (
+          <li class="flex items-start gap-3">
+            <span class="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-arcilla font-display text-sm text-crema">{i + 1}</span>
+            <span class="text-piedra">{s}</span>
+          </li>
+        ))}
+      </ol>
+      <p class="mt-6 border-t border-niebla pt-4 text-sm text-piedra-suave">
+        Keep your <strong class="font-semibold text-piedra">reference</strong>: it appears in this page's address (ref=…) and we'll repeat it in the email. Any questions? Write to us at <a href="mailto:hola@calmasociety.com" class="text-arcilla underline underline-offset-2 hover:text-terracota">hola@calmasociety.com</a>.
+      </p>
+    </div>
+
+    <div class="mt-8 text-center">
+      <a href="/en/" class="press inline-block rounded-full bg-arcilla px-8 py-3 font-semibold text-crema hover:bg-terracota">Back to the magazine</a>
+    </div>
   </section>
 </BaseLayout>

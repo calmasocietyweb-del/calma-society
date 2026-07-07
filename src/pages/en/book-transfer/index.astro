@@ -1,9 +1,9 @@
 ---
 /**
- * Reserva de transfer (EN, v1 APAGADA tras SITE.bookings.enabled — spec
+ * Transfer booking (v1, OFF behind SITE.bookings.enabled — spec
  * docs/superpowers/specs/2026-07-06-reservas-transfers-design.md).
- * Misma estructura y mismos `name` de campo que la versión ES: 3 secciones-paso
- * de la fórmula de menorcabus.com, un solo envío, sin JS de cliente.
+ * Mirrors the menorcabus.com panel in 3 step-sections (the site is static:
+ * one submit at the end, no client JS). Redesign 2026-07-07 (KAN-63).
  */
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { SITE } from "../../../config/site";
@@ -12,73 +12,91 @@ import { VEHICLE_CATEGORIES, EXTRAS } from "../../../lib/bookings/catalog";
 const enabled = SITE.bookings.enabled;
 const alternates = { es: "/reservar-traslado", en: "/en/book-transfer" };
 
-// Clase común de los campos de texto (misma casa que ContactForm).
 const field =
-  "mt-1 w-full rounded-md border border-niebla bg-lino/60 px-4 py-3 text-sm text-piedra focus-visible:outline-terracota";
+  "mt-1 w-full rounded-lg border border-niebla bg-lino px-3.5 py-2.5 text-sm text-piedra placeholder:text-piedra-suave focus:border-terracota focus:outline-none";
 const labelCls = "text-sm font-medium text-piedra";
 
-// Sellos de confianza (fórmula de menorcabus.com).
 const seals = [
-  "Bookings handled by Menorca Bus",
+  "Handled by Menorca Bus",
   "24/7 support",
   "Flexible cancellation",
-  "Professional drivers",
+  "No payment upfront",
+];
+
+const puntos = [
+  "Menorca Airport (MAH)",
+  "Port of Maó",
+  "Port of Ciutadella",
+  "Maó",
+  "Ciutadella",
+  "Alaior",
+  "Es Mercadal",
+  "Es Castell",
+  "Sant Lluís",
+  "Ferreries",
+  "Fornells",
+  "Cala en Porter",
+  "Son Bou",
+  "Cala Galdana",
+  "Punta Prima",
+  "Binibeca",
+  "Arenal d'en Castell",
+  "Son Parc",
 ];
 ---
 
 <BaseLayout
   title="Book your transfer in Menorca"
-  description="Private or shared transfers in Menorca: airport, port and hotel, door to door and with a fixed price."
+  description="Private or shared transfer in Menorca: airport, harbour and hotel, door to door and at a closed price."
   locale="en"
   alternates={alternates}
   noindex={!enabled}
 >
-  <section class="mx-auto max-w-prosa px-5 py-12 sm:px-8">
+  <section class="mx-auto max-w-3xl px-5 py-12 sm:px-8">
     <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">Menorca, door to door</p>
     <h1 class="mt-2 font-display text-4xl text-tinta">Book your transfer</h1>
-    <p class="mt-4 text-piedra-suave">
-      Tell us the journey, choose your vehicle and leave your details: Menorca Bus
-      will confirm the booking and the fixed price by email. No waiting, on your schedule.
+    <p class="mt-4 max-w-prosa text-piedra-suave">
+      Tell us the journey, choose the vehicle and leave your details. Menorca Bus
+      confirms availability and the closed price by email: <strong class="font-semibold text-piedra">you pay nothing now</strong>.
     </p>
 
-    <form method="POST" action="/api/reservas" class="mt-10 space-y-12">
+    <ul class="mt-6 flex flex-wrap gap-2 text-xs text-piedra">
+      {seals.map((s) => (
+        <li class="rounded-full bg-arena/70 px-3 py-1">{s}</li>
+      ))}
+    </ul>
+
+    <datalist id="puntos-menorca">
+      {puntos.map((p) => <option value={p} />)}
+    </datalist>
+
+    <form method="POST" action="/api/reservas" class="mt-8 space-y-8 rounded-2xl border border-niebla bg-white p-6 shadow-sm sm:p-8">
       <input type="hidden" name="locale" value="en" />
-      {/* Honeypot anti-spam: oculto para humanos, tentador para robots. */}
+      {/* Anti-spam honeypot: hidden to humans, tempting to bots. */}
       <p class="hidden" aria-hidden="true">
-        <label>Leave this field empty <input type="text" name="web" tabindex="-1" autocomplete="off" /></label>
+        <label>Do not fill in this field <input type="text" name="web" tabindex="-1" autocomplete="off" /></label>
       </p>
 
       <!-- STEP 1 · The journey -->
       <fieldset class="space-y-4">
-        <legend class="font-display text-2xl text-tinta">1 · The journey</legend>
+        <legend class="mb-1 flex items-center gap-3">
+          <span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-arcilla font-display text-base text-crema">1</span>
+          <span class="font-display text-xl text-tinta">The journey</span>
+        </legend>
 
         <div class="grid gap-4 sm:grid-cols-2">
           <div>
-            <label for="origin" class={labelCls}>Pick-up point *</label>
-            <input
-              id="origin"
-              type="text"
-              name="origin"
-              required
-              placeholder="Menorca Airport (MAH), port, hotel…"
-              class={field}
-            />
+            <label for="origin" class={labelCls}>Origin *</label>
+            <input id="origin" type="text" name="origin" required list="puntos-menorca" placeholder="Airport (MAH), harbour, hotel…" class={field} />
           </div>
           <div>
             <label for="destination" class={labelCls}>Destination *</label>
-            <input
-              id="destination"
-              type="text"
-              name="destination"
-              required
-              placeholder="Area, hotel or address"
-              class={field}
-            />
+            <input id="destination" type="text" name="destination" required list="puntos-menorca" placeholder="Area, hotel or address" class={field} />
           </div>
         </div>
 
         <fieldset>
-          <legend class={labelCls}>Journey type</legend>
+          <legend class={labelCls}>Journey</legend>
           <div class="mt-1 flex flex-wrap gap-x-6 gap-y-2">
             <label class="flex items-center gap-2 text-sm text-piedra">
               <input type="radio" name="tripType" value="ida" checked class="accent-terracota" />
@@ -86,78 +104,94 @@ const seals = [
             </label>
             <label class="flex items-center gap-2 text-sm text-piedra">
               <input type="radio" name="tripType" value="ida-vuelta" class="accent-terracota" />
-              Return trip
+              Return
             </label>
           </div>
         </fieldset>
 
         <div class="grid gap-4 sm:grid-cols-2">
           <div>
-            <label for="pickup-date" class={labelCls}>Departure date (or flight arrival date) *</label>
+            <label for="pickup-date" class={labelCls}>Departure date (or flight arrival) *</label>
             <input id="pickup-date" type="date" name="pickupDate" required class={field} />
           </div>
           <div>
-            <label for="pickup-time" class={labelCls}>Departure time (or flight arrival time) *</label>
+            <label for="pickup-time" class={labelCls}>Departure time (or flight arrival) *</label>
             <input id="pickup-time" type="time" name="pickupTime" required class={field} />
           </div>
         </div>
 
         <div class="grid gap-4 sm:grid-cols-2">
           <div>
-            <label for="return-date" class={labelCls}>Return date — return trips only</label>
+            <label for="return-date" class={labelCls}>Return date <span class="text-piedra-suave">— return trips only</span></label>
             <input id="return-date" type="date" name="returnDate" class={field} />
           </div>
           <div>
-            <label for="return-time" class={labelCls}>Return time — return trips only</label>
+            <label for="return-time" class={labelCls}>Return time <span class="text-piedra-suave">— return trips only</span></label>
             <input id="return-time" type="time" name="returnTime" class={field} />
           </div>
         </div>
 
-        <div>
-          <label for="flight-number" class={labelCls}>Flight number (if you arrive by plane)</label>
-          <input id="flight-number" type="text" name="flightNumber" placeholder="VY3715" class={field} />
-        </div>
-
-        <div class="grid gap-4 sm:grid-cols-3">
+        <div class="grid gap-4 sm:grid-cols-4">
+          <div class="sm:col-span-1">
+            <label for="flight-number" class={labelCls}>Flight no.</label>
+            <input id="flight-number" type="text" name="flightNumber" placeholder="VY3715" class={field} />
+          </div>
           <div>
             <label for="adults" class={labelCls}>Adults *</label>
             <input id="adults" type="number" name="adults" min="1" max="50" value="1" required class={field} />
           </div>
           <div>
-            <label for="children" class={labelCls}>Children (ages 2-11)</label>
+            <label for="children" class={labelCls}>Children (2-11)</label>
             <input id="children" type="number" name="children" min="0" max="50" value="0" class={field} />
           </div>
           <div>
-            <label for="infants" class={labelCls}>Infants (ages 0-2)</label>
+            <label for="infants" class={labelCls}>Infants (0-2)</label>
             <input id="infants" type="number" name="infants" min="0" max="50" value="0" class={field} />
           </div>
         </div>
       </fieldset>
 
-      <!-- STEP 2 · The vehicle (radio cards, no prices: they arrive with the API) -->
-      <fieldset class="space-y-4">
-        <legend class="font-display text-2xl text-tinta">2 · The vehicle</legend>
-        <p class="text-sm text-piedra-suave">Fixed price: Menorca Bus confirms it when validating your booking — no surprises.</p>
-        {VEHICLE_CATEGORIES.map((c, i) => (
-          <label class="flex cursor-pointer gap-4 rounded-xl border border-niebla bg-white p-5 has-[:checked]:border-terracota has-[:checked]:bg-arena/40">
-            <input type="radio" name="vehicleCategory" value={c.id} required checked={i === 0} class="mt-1 accent-terracota" />
-            <span>
-              <span class="flex items-center gap-2">
-                <span class="font-display text-lg text-tinta">{c.name.en}</span>
-                <span class="rounded-full bg-arena px-2 py-0.5 text-xs font-semibold uppercase tracking-wider text-piedra">{c.badge.en}</span>
+      <!-- STEP 2 · The vehicle (radio cards, with a price slot: set by the API) -->
+      <fieldset class="space-y-4 border-t border-niebla pt-8">
+        <legend class="mb-1 flex items-center gap-3">
+          <span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-arcilla font-display text-base text-crema">2</span>
+          <span class="font-display text-xl text-tinta">The vehicle</span>
+        </legend>
+        <p class="text-sm text-piedra-suave">No surprises: Menorca Bus confirms the <strong class="font-semibold text-piedra">closed price</strong> by email before anything.</p>
+        <div class="space-y-3">
+          {VEHICLE_CATEGORIES.map((c, i) => (
+            <label class="press flex cursor-pointer gap-4 rounded-xl border border-niebla bg-lino/60 p-4 has-[:checked]:border-terracota has-[:checked]:bg-arena/50 has-[:checked]:ring-1 has-[:checked]:ring-terracota">
+              <input type="radio" name="vehicleCategory" value={c.id} required checked={i === 0} class="mt-1 accent-terracota" />
+              <span class="flex-1">
+                <span class="flex items-start justify-between gap-3">
+                  <span class="flex flex-wrap items-center gap-2">
+                    <span class="font-display text-lg text-tinta">{c.name.en}</span>
+                    <span class="rounded-full bg-arena px-2 py-0.5 text-xs font-semibold uppercase tracking-wider text-piedra">{c.badge.en}</span>
+                  </span>
+                  <span class="shrink-0 whitespace-nowrap text-right text-sm">
+                    {c.price ? (
+                      <span class="font-semibold text-arcilla">{c.price.en}</span>
+                    ) : (
+                      <span class="text-piedra-suave">Price to confirm</span>
+                    )}
+                  </span>
+                </span>
+                <span class="mt-1 block text-sm text-piedra-suave">{c.tagline.en}</span>
+                <ul class="mt-2 list-disc pl-5 text-sm text-piedra-suave">
+                  {c.points.en.map((p) => <li>{p}</li>)}
+                </ul>
               </span>
-              <span class="mt-1 block text-sm text-piedra-suave">{c.tagline.en}</span>
-              <ul class="mt-2 list-disc pl-5 text-sm text-piedra-suave">
-                {c.points.en.map((p) => <li>{p}</li>)}
-              </ul>
-            </span>
-          </label>
-        ))}
+            </label>
+          ))}
+        </div>
       </fieldset>
 
       <!-- STEP 3 · Your details -->
-      <fieldset class="space-y-4">
-        <legend class="font-display text-2xl text-tinta">3 · Your details</legend>
+      <fieldset class="space-y-4 border-t border-niebla pt-8">
+        <legend class="mb-1 flex items-center gap-3">
+          <span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-arcilla font-display text-base text-crema">3</span>
+          <span class="font-display text-xl text-tinta">Your details</span>
+        </legend>
 
         <div class="grid gap-4 sm:grid-cols-2">
           <div>
@@ -169,7 +203,7 @@ const seals = [
             <input id="company" type="text" name="company" autocomplete="organization" class={field} />
           </div>
           <div>
-            <label for="id-document" class={labelCls}>ID card or passport *</label>
+            <label for="id-document" class={labelCls}>ID or passport *</label>
             <input id="id-document" type="text" name="idDocument" required class={field} />
           </div>
           <div>
@@ -197,54 +231,47 @@ const seals = [
             <input id="country" type="text" name="country" required autocomplete="country-name" class={field} />
           </div>
           <div>
-            <label for="coupon" class={labelCls}>Coupon — e.g. CALMASOCIETY</label>
+            <label for="coupon" class={labelCls}>Coupon <span class="text-piedra-suave">— e.g. CALMASOCIETY</span></label>
             <input id="coupon" type="text" name="coupon" class={field} />
-          </div>
-          <div>
-            <label for="pickup-time-requested" class={labelCls}>Preferred pick-up time</label>
-            <input id="pickup-time-requested" type="time" name="pickupTimeRequested" class={field} />
           </div>
         </div>
 
         <div>
-          <label for="comments" class={labelCls}>Notes for the driver</label>
-          <textarea
-            id="comments"
-            name="comments"
-            rows="4"
-            placeholder="Anything the driver should know: luggage, timings, special needs…"
-            class={field}></textarea>
+          <label for="comments" class={labelCls}>Comments to the driver</label>
+          <textarea id="comments" name="comments" rows="3" placeholder="Luggage, timings, special needs…" class={field}></textarea>
         </div>
 
-        <p class={labelCls}>Extras (units)</p>
-        <div class="grid gap-3 sm:grid-cols-2">
-          {EXTRAS.map((e) => (
-            <label class="flex items-center justify-between rounded-lg border border-niebla bg-white px-4 py-3">
-              <span class="text-sm text-piedra">{e.name.en}</span>
-              <input type="number" name={`extra-${e.id}`} min="0" max="9" value="0" class="w-16 rounded border border-niebla px-2 py-1 text-center" />
-            </label>
-          ))}
+        <div>
+          <p class={labelCls}>Extras (units)</p>
+          <div class="mt-1 grid gap-3 sm:grid-cols-2">
+            {EXTRAS.map((e) => (
+              <label class="flex items-center justify-between rounded-lg border border-niebla bg-lino/60 px-4 py-2.5">
+                <span class="text-sm text-piedra">{e.name.en}</span>
+                <input type="number" name={`extra-${e.id}`} min="0" max="9" value="0" class="w-16 rounded border border-niebla bg-white px-2 py-1 text-center text-sm" />
+              </label>
+            ))}
+          </div>
         </div>
 
         <label class="flex items-start gap-3 text-sm text-piedra-suave">
           <input type="checkbox" name="marketingOptin" class="mt-0.5 accent-terracota" />
-          I would like to receive news and offers from Menorca Bus.
+          I'd like to receive news and offers from Menorca Bus.
         </label>
         <label class="flex items-start gap-3 text-sm text-piedra">
           <input type="checkbox" name="terms" required class="mt-0.5 accent-terracota" />
-          I accept the terms and conditions of the service. *
+          I accept the service terms and conditions. *
         </label>
-        <p class="text-xs text-piedra-suave">Free cancellation up to 24 hours before the scheduled time. The vehicle category is indicative: it may vary subject to availability while keeping the level you booked.</p>
       </fieldset>
 
-      <button type="submit" class="rounded-full bg-arcilla px-8 py-3 font-semibold text-crema hover:bg-terracota">
-        Request booking
-      </button>
+      <!-- CTA + reassurance -->
+      <div class="border-t border-niebla pt-6">
+        <button type="submit" class="press w-full rounded-full bg-arcilla px-8 py-3.5 font-semibold text-crema hover:bg-terracota sm:w-auto">
+          Request booking
+        </button>
+        <p class="mt-3 text-xs text-piedra-suave">
+          This is a <strong class="font-semibold text-piedra">no-obligation request</strong>: you don't pay now. Menorca Bus confirms availability and the price by email. Free cancellation up to 24 h before. The vehicle category is indicative and may vary with availability, keeping the class you booked.
+        </p>
+      </div>
     </form>
-
-    <!-- Trust seals -->
-    <ul class="mt-12 grid gap-3 border-t border-niebla pt-8 text-center text-sm text-piedra-suave sm:grid-cols-4">
-      {seals.map((s) => <li class="rounded-lg bg-arena/60 px-3 py-2">{s}</li>)}
-    </ul>
   </section>
 </BaseLayout>

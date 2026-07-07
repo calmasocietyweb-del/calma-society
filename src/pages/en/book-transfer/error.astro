@@ -1,0 +1,28 @@
+---
+// Error de la solicitud de traslado (EN). La API redirige aquí (303) cuando algo
+// falla, en vez de devolver texto pelado. Página estática (sin JS): mensaje
+// general y una salida clara. El `?motivo=` queda en la URL para el registro.
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="We couldn't complete your request"
+  description="We couldn't register your transfer request."
+  locale="en"
+  alternates={{ es: "/reservar-traslado/error", en: "/en/book-transfer/error" }}
+  noindex
+>
+  <section class="mx-auto max-w-prosa px-5 py-16 text-center sm:px-8">
+    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">Transfer booking</p>
+    <h1 class="mt-2 font-display text-4xl text-tinta">We couldn't complete your request</h1>
+    <p class="mt-4 text-piedra-suave">
+      A required field may be missing, or the service may be unavailable right now.
+      Go back to the form and check it over; if the problem continues, write to us
+      at <a href="mailto:hola@calmasociety.com" class="text-arcilla underline underline-offset-2 hover:text-terracota">hola@calmasociety.com</a> and we'll handle it by hand.
+    </p>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a href="/en/book-transfer" class="press inline-block rounded-full bg-arcilla px-8 py-3 font-semibold text-crema hover:bg-terracota">Back to the form</a>
+      <a href="/en/" class="press inline-block rounded-full border border-niebla px-8 py-3 font-semibold text-piedra hover:border-arcilla">Go to the magazine</a>
+    </div>
+  </section>
+</BaseLayout>

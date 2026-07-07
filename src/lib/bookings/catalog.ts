@@ -25,6 +25,13 @@ export interface VehicleCategory {
   tagline: Localized;
   /** Puntos de la tarjeta, mismo orden ES/EN. */
   points: { es: string[]; en: string[] };
+  /**
+   * Precio orientativo de la categoría (enchufe nº1 de la API de Menorca Bus).
+   * VACÍO en la v1 a propósito: la tarjeta muestra «Precio a confirmar» hasta
+   * que exista la API o el dueño fije una cifra aquí; entonces se muestra sola,
+   * sin tocar la plantilla. Ej.: `price: { es: "desde 35 €", en: "from €35" }`.
+   */
+  price?: Localized;
 }
 
 export const VEHICLE_CATEGORIES: readonly VehicleCategory[] = [

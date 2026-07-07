@@ -3,6 +3,12 @@
 // ?ref= y se comunica en el texto sin leer el parámetro (página estática,
 // sin JS de cliente): el correo de confirmación del dueño lo repetirá.
 import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const pasos = [
+  "Revisamos tu trayecto y la disponibilidad.",
+  "Recibes por correo la confirmación con el precio cerrado (normalmente en unas horas).",
+  "Confirmas y listo: te recogemos a tu hora, puerta a puerta.",
+];
 ---
 
 <BaseLayout
@@ -12,14 +18,33 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   alternates={{ es: "/reservar-traslado/gracias", en: "/en/book-transfer/thanks" }}
   noindex
 >
-  <section class="mx-auto max-w-prosa px-5 py-16 text-center sm:px-8">
-    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">Reserva de traslado</p>
-    <h1 class="mt-2 font-display text-4xl text-tinta">Solicitud recibida</h1>
-    <p class="mt-4 text-piedra-suave">
-      Menorca Bus revisará tu trayecto y te confirmará la reserva y el precio
-      cerrado por correo. Guarda tu localizador: aparece en la dirección de esta
-      página (ref=…) y te lo repetiremos en la confirmación.
-    </p>
-    <a href="/" class="mt-8 inline-block rounded-full bg-arcilla px-8 py-3 font-semibold text-crema hover:bg-terracota">Volver a la revista</a>
+  <section class="mx-auto max-w-prosa px-5 py-16 sm:px-8">
+    <div class="text-center">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">Reserva de traslado</p>
+      <h1 class="mt-2 font-display text-4xl text-tinta">Solicitud recibida</h1>
+      <p class="mt-4 text-piedra-suave">
+        Gracias. Menorca Bus ya tiene tu solicitud y te confirmará disponibilidad
+        y precio cerrado por correo. <strong class="font-semibold text-piedra">No has pagado nada</strong>: esto es solo una solicitud.
+      </p>
+    </div>
+
+    <div class="mt-8 rounded-2xl border border-niebla bg-white p-6 shadow-sm sm:p-8">
+      <h2 class="font-display text-xl text-tinta">Qué pasa ahora</h2>
+      <ol class="mt-4 space-y-4">
+        {pasos.map((p, i) => (
+          <li class="flex items-start gap-3">
+            <span class="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-arcilla font-display text-sm text-crema">{i + 1}</span>
+            <span class="text-piedra">{p}</span>
+          </li>
+        ))}
+      </ol>
+      <p class="mt-6 border-t border-niebla pt-4 text-sm text-piedra-suave">
+        Guarda tu <strong class="font-semibold text-piedra">localizador</strong>: aparece en la dirección de esta página (ref=…) y lo repetiremos en el correo. ¿Alguna duda? Escríbenos a <a href="mailto:hola@calmasociety.com" class="text-arcilla underline underline-offset-2 hover:text-terracota">hola@calmasociety.com</a>.
+      </p>
+    </div>
+
+    <div class="mt-8 text-center">
+      <a href="/" class="press inline-block rounded-full bg-arcilla px-8 py-3 font-semibold text-crema hover:bg-terracota">Volver a la revista</a>
+    </div>
   </section>
 </BaseLayout>
