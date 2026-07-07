@@ -145,7 +145,8 @@ export function validateSubscribeInput(
   if (!EMAIL_RE.test(email)) return { ok: false, error: "email" };
 
   // El gate heredó el nombre "consentimiento"; el resto usa "consent".
-  const consent = (raw.consent ?? raw.consentimiento ?? "").trim();
+  // Usamos `||` (no `??`) para que un "consent" vacío caiga al heredado.
+  const consent = (raw.consent || raw.consentimiento || "").trim();
   if (consent === "") return { ok: false, error: "consent" };
 
   const locale = raw.locale === "en" ? "en" : "es";
