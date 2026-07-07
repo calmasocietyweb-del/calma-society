@@ -96,6 +96,9 @@ export const ui = {
     "newsletter.placeholder": "Tu correo electrónico",
     "newsletter.cta": "Unirme a la Sociedad",
     "newsletter.privacy": "Sin spam. Te das de baja cuando quieras.",
+    "newsletter.doubleOptin": "Te llegará un correo para confirmar tu suscripción (revisa también spam).",
+    "newsletter.optinDone": "Casi listo: te hemos enviado un correo para confirmar. Ábrelo y confirma (mira en spam).",
+    "newsletter.optinError": "No hemos podido completar el alta. Inténtalo de nuevo en un momento.",
     "newsletter.consent": "Acepto recibir las noticias de la Sociedad y la",
     "thanks.title": "Bienvenido a la Sociedad",
     "thanks.text":
@@ -208,6 +211,9 @@ export const ui = {
     "newsletter.placeholder": "Your email address",
     "newsletter.cta": "Join the Society",
     "newsletter.privacy": "No spam. Unsubscribe anytime.",
+    "newsletter.doubleOptin": "You'll get an email to confirm your subscription (check spam too).",
+    "newsletter.optinDone": "Almost there: we've sent you an email to confirm. Open it and confirm (check spam).",
+    "newsletter.optinError": "We couldn't complete your sign-up. Please try again in a moment.",
     "newsletter.consent": "I agree to receive the Society's news and accept the",
     "thanks.title": "Welcome to the Society",
     "thanks.text":
@@ -320,6 +326,9 @@ export const ui = {
     "newsletter.placeholder": "Votre adresse e-mail",
     "newsletter.cta": "Rejoindre la Société",
     "newsletter.privacy": "Pas de spam. Désabonnement quand vous voulez.",
+    "newsletter.doubleOptin": "Vous recevrez un e-mail pour confirmer votre abonnement (vérifiez aussi les spams).",
+    "newsletter.optinDone": "Presque terminé : nous vous avons envoyé un e-mail de confirmation. Ouvrez-le et confirmez (regardez dans les spams).",
+    "newsletter.optinError": "Nous n'avons pas pu finaliser votre inscription. Réessayez dans un instant.",
     "newsletter.consent": "J'accepte de recevoir les nouvelles de la Société et la",
     "thanks.title": "Bienvenue dans la Société",
     "thanks.text":

@@ -1,0 +1,88 @@
+---
+// Formulario de alta de newsletter → /api/suscribir (grupo general de la
+// Sociedad). Progresivamente mejorado: sin JS hace POST clásico con redirect;
+// con JS envía por fetch y muestra el estado sin salir de página. KPI nº1.
+import { useTranslations } from "../i18n/ui";
+import { currentLocale } from "../i18n/utils";
+
+interface Props {
+  origen: string;
+  tone?: "dark" | "light";
+  idSuffix?: string;
+  umamiEvent?: string;
+}
+const { origen, tone = "dark", idSuffix = "", umamiEvent } = Astro.props;
+const locale = currentLocale(Astro.url.pathname);
+const t = useTranslations(locale);
+const dark = tone === "dark";
+const emailId = `sub-email${idSuffix}`;
+const consentId = `sub-consent${idSuffix}`;
+const privacyHref = locale === "es" ? "/privacidad" : `/${locale}/privacy`;
+
+const inputClass = dark
+  ? "w-full rounded-md border border-lino/20 bg-lino/10 px-4 py-3 text-sm text-lino placeholder:text-lino/50 transition-colors duration-150 ease-calma focus:border-champan/40 focus:bg-lino/[0.16] focus-visible:outline-champan"
+  : "w-full rounded-md border border-niebla bg-lino/60 px-4 py-3 text-sm text-piedra placeholder:text-piedra-suave transition-colors duration-150 ease-calma focus:border-terracota/50 focus-visible:outline-terracota";
+const btnClass = dark
+  ? "press shrink-0 rounded-md bg-oro-vivo px-6 py-3 text-sm font-semibold text-tinta hover:bg-lino"
+  : "press shrink-0 rounded-md bg-arcilla px-6 py-3 text-sm font-semibold text-lino hover:bg-tinta";
+const subtle = dark ? "text-lino/70" : "text-piedra-suave";
+const linkClass = dark
+  ? "font-medium text-champan underline hover:text-lino"
+  : "font-medium text-arcilla underline hover:text-terracota";
+const accent = dark ? "accent-oro-vivo" : "accent-terracota";
+---
+
+<form class="cs-subscribe mx-auto mt-8 max-w-md text-left" action="/api/suscribir" method="POST">
+  <input type="hidden" name="locale" value={locale} />
+  <input type="hidden" name="origen" value={origen} />
+  {/* Honeypot: oculto a personas y a lectores de pantalla. Un bot lo rellena. */}
+  <input type="text" name="web" tabindex="-1" autocomplete="off" aria-hidden="true" class="absolute left-[-9999px] h-0 w-0 opacity-0" />
+
+  <div class="cs-subscribe-row flex flex-col gap-3 sm:flex-row">
+    <label for={emailId} class="sr-only">{t("newsletter.placeholder")}</label>
+    <input id={emailId} type="email" name="email" required autocomplete="email" placeholder={t("newsletter.placeholder")} class={inputClass} />
+    <button type="submit" class={btnClass} data-umami-event={umamiEvent}>{t("newsletter.cta")}</button>
+  </div>
+
+  <label class="cs-subscribe-consent mt-3 flex items-start gap-2.5 text-xs leading-relaxed" for={consentId}>
+    <input id={consentId} type="checkbox" name="consent" value="acepto" required class={`mt-0.5 h-4 w-4 shrink-0 ${accent}`} />
+    <span class={subtle}>{t("newsletter.consent")} <a href={privacyHref} class={linkClass}>{t("contact.consentLink")}</a>.</span>
+  </label>
+
+  {/* Aviso de doble opt-in + estado del envío (role=status para a11y).
+      data-done/data-error los usa el script para el mensaje tras enviar. */}
+  <p class={`cs-subscribe-note mt-3 text-xs ${subtle}`} role="status"
+     data-done={t("newsletter.optinDone")} data-error={t("newsletter.optinError")}>{t("newsletter.doubleOptin")}</p>
+</form>
+
+<script>
+  // Envío por fetch: no salir de página y avisar del doble opt-in. Sin JS, el
+  // form hace POST clásico con redirect (el action ya apunta a /api/suscribir).
+  document.querySelectorAll<HTMLFormElement>("form.cs-subscribe").forEach((form) => {
+    const note = form.querySelector<HTMLElement>(".cs-subscribe-note");
+    const btn = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (btn) btn.disabled = true;
+      try {
+        const res = await fetch("/api/suscribir", {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: new FormData(form),
+        });
+        const data = (await res.json().catch(() => ({ ok: res.ok }))) as { ok?: boolean };
+        if (data.ok) {
+          if (note && note.dataset.done) note.textContent = note.dataset.done;
+          form.querySelector<HTMLElement>(".cs-subscribe-consent")?.setAttribute("hidden", "");
+          form.querySelector<HTMLElement>(".cs-subscribe-row")?.setAttribute("hidden", "");
+        } else {
+          if (note && note.dataset.error) note.textContent = note.dataset.error;
+          if (btn) btn.disabled = false;
+        }
+      } catch {
+        // Red caída: envío clásico como último recurso (no perder el alta).
+        form.submit();
+      }
+    });
+  });
+</script>
