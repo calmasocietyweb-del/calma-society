@@ -103,6 +103,11 @@ const jobs = [
   { src: `${SRC}/_stock/caldereta-langosta.jpg`, out: "caldereta-langosta" }, // Adobe Stock
   // Playas (Wave D, jun 2026).
   { src: `${SRC}/_stock/son-bou.jpg`, out: "son-bou" }, // Wasquewhat, Wikimedia CC BY-SA 4.0
+  // Yacimientos talayóticos (jul 2026) — Wikimedia Commons, CC con crédito. Las
+  // fichas de estos monumentos salían sin foto; la web crea el hero (3:2, object-cover).
+  { src: `${SRC}/_stock/talati-de-dalt.jpg`, out: "talati-de-dalt" }, // Paul Stephenson, CC BY 2.0
+  { src: `${SRC}/_stock/trepuco.jpg`, out: "trepuco" }, // Josefito123, CC BY-SA 4.0
+  { src: `${SRC}/_stock/torre-den-galmes.jpg`, out: "torre-den-galmes" }, // Evelyne Bazalgette, CC BY-SA 3.0
   // Fiestas para la Agenda (Adobe Stock, licenciadas — jun 2026). Variedad: una por fiesta.
   { src: `${SRC}/_stock/cabalgata-reyes.jpg`, out: "cabalgata-reyes" }, // Adobe Stock #676011625 (Cabalgata de Reyes)
   { src: `${SRC}/_stock/carnaval-menorca.jpg`, out: "carnaval-menorca" }, // Adobe Stock #573061026 (disfraces de carnaval)
@@ -113,7 +118,12 @@ const jobs = [
 
 mkdirSync(OUT, { recursive: true });
 
-for (const j of jobs) {
+// Filtro opcional: `node scripts/optimize-photos.mjs talati-de-dalt trepuco` procesa
+// solo esos `out` (regenerar en incremental sin re-encodear el resto). Sin args = todo.
+const only = process.argv.slice(2);
+const selected = only.length ? jobs.filter((j) => only.includes(j.out)) : jobs;
+
+for (const j of selected) {
   for (const w of WIDTHS) {
     // base = "nombre.webp"; variantes = "nombre-960.webp", "nombre-480.webp"
     const name = w === 1600 ? `${j.out}.webp` : `${j.out}-${w}.webp`;

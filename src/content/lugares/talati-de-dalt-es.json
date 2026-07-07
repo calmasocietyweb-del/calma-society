@@ -4,6 +4,11 @@
   "translationKey": "talati-de-dalt",
   "type": "monumento",
   "description": "Uno de los conjuntos talayóticos más pintorescos y accesibles, parte de la UNESCO. Su taula con una columna apoyada (caida) rodeada de olivos centenarios es de las imagenes más reconocibles de la prehistoria menorquina. ",
+  "images": [
+    "/uploads/talati-de-dalt.webp"
+  ],
+  "imageAlt": "La taula de Talatí de Dalt con su columna caída apoyada, rodeada de olivos, en el poblado talayótico de Menorca.",
+  "imageCredit": "Paul Stephenson · Wikimedia (CC BY 2.0)",
   "coordinates": {
     "lat": 39.8836,
     "lng": 4.2058

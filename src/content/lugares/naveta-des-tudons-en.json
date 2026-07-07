@@ -4,6 +4,11 @@
   "translationKey": "naveta-tudons",
   "type": "monumento",
   "description": "Menorca's best-preserved Talayotic funerary monument and a symbol of the island. It is part of Talayotic Menorca, a UNESCO World Heritage Site since 2023.",
+  "images": [
+    "/uploads/naveta-tudons.webp"
+  ],
+  "imageAlt": "The Naveta des Tudons, a prehistoric collective tomb shaped like an inverted ship's hull, near Ciutadella (Menorca).",
+  "imageCredit": "Menorquino · Wikimedia (CC BY-SA 3.0)",
   "coordinates": {
     "lat": 39.9967,
     "lng": 3.884

@@ -4,6 +4,11 @@
   "translationKey": "trepuco",
   "type": "monumento",
   "description": "Poblado talayótico (UNESCO) con una de las taulas más grandes y mejor conservadas de la isla (4,8 m de altura), dentro de un recinto fortificado decimononico. Muy cercano a Maó, ideal como primera toma de contacto con la cultura talayótica.",
+  "images": [
+    "/uploads/trepuco.webp"
+  ],
+  "imageAlt": "La gran taula del poblado talayótico de Trepucó a última hora del día, cerca de Maó (Menorca).",
+  "imageCredit": "Josefito123 · Wikimedia (CC BY-SA 4.0)",
   "coordinates": {
     "lat": 39.8703,
     "lng": 4.2719

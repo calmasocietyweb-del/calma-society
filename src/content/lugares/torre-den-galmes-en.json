@@ -4,6 +4,11 @@
   "translationKey": "torre-den-galmes",
   "type": "monumento",
   "description": "The largest Talayotic settlement in the Balearics (over 6 ha), part of UNESCO's Talayotic Menorca: talayots, a taula enclosure and a water system.",
+  "images": [
+    "/uploads/torre-den-galmes.webp"
+  ],
+  "imageAlt": "Taula precinct of the Torre d'en Galmés talayotic settlement, the largest in the Balearics, in Alaior (Menorca).",
+  "imageCredit": "Evelyne Bazalgette · Wikimedia (CC BY-SA 3.0)",
   "coordinates": {
     "lat": 39.9269,
     "lng": 4.1283

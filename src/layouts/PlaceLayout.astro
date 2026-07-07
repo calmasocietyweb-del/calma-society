@@ -140,19 +140,26 @@ const breadcrumb = breadcrumbSchema([
 
     {
       data.images && data.images.length > 0 && (
-        <figure class="mt-8 aspect-[3/2] overflow-hidden rounded-xl">
-          <img
-            src={data.images[0]}
-            srcset={srcset(data.images[0])}
-            sizes="(min-width: 700px) 672px, 100vw"
-            alt={data.name}
-            width="1500"
-            height="1000"
-            class="h-full w-full object-cover"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-          />
+        <figure class="mt-8">
+          <div class="aspect-[3/2] overflow-hidden rounded-xl">
+            <img
+              src={data.images[0]}
+              srcset={srcset(data.images[0])}
+              sizes="(min-width: 700px) 672px, 100vw"
+              alt={data.imageAlt ?? data.name}
+              width="1500"
+              height="1000"
+              class="h-full w-full object-cover"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </div>
+          {data.imageCredit && (
+            <figcaption class="mt-2 text-xs text-piedra-suave">
+              {data.lang === "es" ? "Foto" : "Photo"}: {data.imageCredit}
+            </figcaption>
+          )}
         </figure>
       )
     }

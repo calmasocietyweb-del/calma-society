@@ -4,6 +4,11 @@
   "translationKey": "talati-de-dalt",
   "type": "monumento",
   "description": "One of the most picturesque and accessible Talayotic sites, part of the UNESCO listing. Its taula, with a leaning column resting against it and ringed by centuries-old olive trees, is among the most recognisable images of Menorcan prehistory.",
+  "images": [
+    "/uploads/talati-de-dalt.webp"
+  ],
+  "imageAlt": "The taula of Talatí de Dalt with its fallen pillar leaning against it, among olive trees at the Talayotic settlement in Menorca.",
+  "imageCredit": "Paul Stephenson · Wikimedia (CC BY 2.0)",
   "coordinates": {
     "lat": 39.8836,
     "lng": 4.2058

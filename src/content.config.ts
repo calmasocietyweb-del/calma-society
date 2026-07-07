@@ -180,6 +180,11 @@ const lugares = defineCollection({
         horario: z.string().optional(),
       })
       .optional(),
+    // Pie honesto de la imagen principal de la ficha: alt descriptivo propio
+    // (si falta, se usa `name`) y crédito impreso — OBLIGATORIO mostrarlo para
+    // fotos con licencia CC (mismo criterio que `eventos.imageCredit`).
+    imageAlt: z.string().optional(),
+    imageCredit: z.string().optional(),
     priceRange: z.enum(["€", "€€", "€€€", "€€€€"]).optional(),
     website: z.url().optional(),
     tags: z.array(z.string()).default([]),

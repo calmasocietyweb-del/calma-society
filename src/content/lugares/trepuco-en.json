@@ -4,6 +4,11 @@
   "translationKey": "trepuco",
   "type": "monumento",
   "description": "A Talayotic settlement (UNESCO) with one of the largest and best-preserved taulas on the island (4.8 m high), set within a nineteenth-century fortified enclosure. Close to Maó, it makes an ideal first encounter with the island's prehistory.",
+  "images": [
+    "/uploads/trepuco.webp"
+  ],
+  "imageAlt": "The great taula of the Trepucó talayotic settlement at dusk, near Maó (Menorca).",
+  "imageCredit": "Josefito123 · Wikimedia (CC BY-SA 4.0)",
   "coordinates": {
     "lat": 39.8703,
     "lng": 4.2719
