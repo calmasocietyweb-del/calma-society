@@ -16,7 +16,8 @@
  * build, con crédito CC cuando toca), enlace a la ficha /lugar (solo fichas
  * published), "Cómo llegar" (Google Maps por coordenadas), web oficial, y por
  * día: fecha real, ruta del día en Maps y enlace al parte del mar en días de
- * playa. Captación (KPI nº1): "Recibe tu plan por email" con la URL del plan.
+ * playa. Captación (KPI nº1): el correo desbloquea el dossier y da de alta en la
+ * Sociedad vía /api/suscribir (MailerLite, grupo general, doble opt-in).
  */
 import dataEs from "../data/planner-data.es.json";
 import dataEn from "../data/planner-data.en.json";
@@ -61,9 +62,11 @@ const T = isEs
       intro: "Una guía día a día, encadenada por cercanía y sin prisas: la isla, a tu ritmo.",
       saveTitle: "Tu dossier de viaje, en PDF",
       saveText: "Déjanos tu correo y desbloqueamos tu dossier: el plan con portada, un día por página y el plan-B de mal tiempo. Entras además en la Sociedad, con lo mejor de Menorca.",
-      savePdf: "Descargar el dossier (PDF)", copyLink: "Copiar enlace", copied: "¡Enlace copiado!",
+      savePdf: "Abrir el dossier (guardar/imprimir)", copyLink: "Copiar enlace", copied: "¡Enlace copiado!",
       emailPlaceholder: "Tu correo", emailBtn: "Desbloquear mi dossier",
       consentPrefix: "Acepto la", consentLink: "política de privacidad", consentSuffix: "para recibir la newsletter de Calma Society.",
+      doubleOptin: "Te llegará un correo para confirmar tu suscripción (revisa spam).",
+      privacy: "Sin spam · te das de baja cuando quieras.",
       gateHint: "El dossier se desbloquea con tu correo — es un momento.",
       gateThanks: "Hecho: dossier desbloqueado. Guarda también el enlace para volver a tu plan.",
       gateSending: "Un segundo…",
@@ -91,9 +94,11 @@ const T = isEs
       intro: "A day-by-day guide, chained by proximity and unhurried: the island, at your pace.",
       saveTitle: "Your trip dossier, as a PDF",
       saveText: "Leave us your email and we'll unlock your dossier: the plan with a cover, one page per day and the bad-weather plan-B. You also join the Society, with the best of Menorca.",
-      savePdf: "Download the dossier (PDF)", copyLink: "Copy link", copied: "Link copied!",
+      savePdf: "Open the dossier (save/print)", copyLink: "Copy link", copied: "Link copied!",
       emailPlaceholder: "Your email", emailBtn: "Unlock my dossier",
       consentPrefix: "I accept the", consentLink: "privacy policy", consentSuffix: "to receive the Calma Society newsletter.",
+      doubleOptin: "You'll get an email to confirm your subscription (check spam).",
+      privacy: "No spam · unsubscribe anytime.",
       gateHint: "The dossier unlocks with your email — it takes a moment.",
       gateThanks: "Done: dossier unlocked. Keep the link too, to come back to your plan.",
       gateSending: "One second…",
@@ -146,13 +151,8 @@ const CFG = {
   noticeIcon: { reserva: "📌", madrugar: "⏰", "agua-sombra": "💧", parking: "🅿️", "confirma-horario": "🕒", esfuerzo: "🥾", viento: "🌬️", accesibilidad: "♿", fiesta: "🎉", transfer: "🚌", logistica: "🧭" } as Record<string, string>,
 };
 
-// "Recibe tu plan por email" (KPI nº1): Formspree ya declarado en privacidad; la
-// URL del plan viaja en un campo oculto (el island la rellena al renderizar).
-const captureEndpoint = SITE.newsletter.capture.endpoint;
-const captureThanks = isEs ? `${SITE.url}/sociedad-bienvenida` : `${SITE.url}/en/society-welcome`;
-const captureSubject = isEs
-  ? "Calma Society — plan del planificador (enviar por email)"
-  : "Calma Society — trip-planner plan (send by email)";
+// Alta en la Sociedad (KPI nº1) por nuestra función /api/suscribir → MailerLite
+// (grupo general, doble opt-in). La URL del plan viaja en un campo oculto.
 const privacyHref = isEs ? "/privacidad" : "/en/privacy";
 
 const interestList = [
@@ -337,11 +337,12 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
     {/* Captación (KPI nº1) con GATE del dossier: sin correo no hay PDF (decisión
         del dueño, 3-jul). El island envía por fetch (sin salir del plan) y
         desbloquea la descarga; si la red falla, cae al envío clásico. */}
-    <form id="planner-email-form" action={captureEndpoint} method="POST" class="mt-4 max-w-md">
-      <input type="hidden" name="_subject" value={captureSubject} />
-      <input type="hidden" name="_next" value={captureThanks} />
+    <form id="planner-email-form" action="/api/suscribir" method="POST" class="mt-4 max-w-md">
+      <input type="hidden" name="locale" value={locale} />
+      <input type="hidden" name="origen" value="planificador" />
       <input type="hidden" name="plan_url" id="planner-plan-url" value="" />
-      <input type="hidden" name="origen" value="planificador-gate-pdf" />
+      {/* Honeypot: oculto a personas y a lectores de pantalla. Un bot lo rellena. */}
+      <input type="text" name="web" tabindex="-1" autocomplete="off" aria-hidden="true" class="absolute left-[-9999px] h-0 w-0 opacity-0" />
       <div class="flex flex-col gap-3 sm:flex-row">
         <label for="planner-email" class="sr-only">{T.emailPlaceholder}</label>
         <input
@@ -358,13 +359,14 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
         </button>
       </div>
       <label class="mt-2 flex items-start gap-2 text-xs leading-relaxed text-piedra-suave">
-        <input type="checkbox" name="consentimiento" required class="mt-0.5 accent-terracota" />
+        <input type="checkbox" name="consent" required class="mt-0.5 accent-terracota" />
         <span>
           {T.consentPrefix}
           <a href={privacyHref} class="font-medium text-arcilla underline hover:text-terracota">{T.consentLink}</a>
           {" "}{T.consentSuffix}
         </span>
       </label>
+      <p class="mt-2 text-xs text-piedra-suave">{T.doubleOptin} · {T.privacy}</p>
     </form>
 
     {/* Estado del gate: pista si intentan el PDF sin correo · gracias al desbloquear. */}
@@ -670,8 +672,10 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
       // Desbloqueado → directo al dossier (el gesto ya es suyo).
       setTimeout(() => window.print(), 350);
     } catch {
-      // Red/endpoint caído: no perder el alta — envío clásico con redirección.
-      emailForm.submit();
+      // La función/red falló: no penalizamos al usuario (su gesto ya es suyo).
+      // Desbloqueamos el dossier y lo abrimos; el alta se reintenta si vuelve.
+      unlockPdf();
+      setTimeout(() => window.print(), 350);
     } finally {
       if (btn) { btn.disabled = false; btn.textContent = CFG.emailBtn; }
     }
