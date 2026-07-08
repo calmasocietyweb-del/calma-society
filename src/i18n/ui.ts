@@ -100,9 +100,9 @@ export const ui = {
     "newsletter.optinDone": "Casi listo: te hemos enviado un correo para confirmar. Ábrelo y confirma (mira en spam).",
     "newsletter.optinError": "No hemos podido completar el alta. Inténtalo de nuevo en un momento.",
     "newsletter.consent": "Acepto recibir las noticias de la Sociedad y la",
-    "thanks.title": "Bienvenido a la Sociedad",
+    "thanks.title": "Confirma tu correo",
     "thanks.text":
-      "Gracias por unirte. Ya formas parte de los fundadores de Calma Society: te escribiremos con calma, solo cuando tengamos algo que de verdad merezca tu tiempo.",
+      "Casi listo. Te hemos enviado un correo para confirmar tu suscripción — ábrelo y confírmala (mira también en spam). En cuanto lo hagas, entrarás en la Sociedad.",
     "thanks.back": "Volver a la portada",
 
     "nav.contact": "Contacto",
@@ -215,9 +215,9 @@ export const ui = {
     "newsletter.optinDone": "Almost there: we've sent you an email to confirm. Open it and confirm (check spam).",
     "newsletter.optinError": "We couldn't complete your sign-up. Please try again in a moment.",
     "newsletter.consent": "I agree to receive the Society's news and accept the",
-    "thanks.title": "Welcome to the Society",
+    "thanks.title": "Confirm your email",
     "thanks.text":
-      "Thank you for joining. You're now among the founders of Calma Society: we'll write to you calmly, only when we have something truly worth your time.",
+      "Almost there. We've sent you an email to confirm your subscription — open it and confirm (check spam too). As soon as you do, you're in the Society.",
     "thanks.back": "Back to home",
 
     "nav.contact": "Contact",
@@ -330,9 +330,9 @@ export const ui = {
     "newsletter.optinDone": "Presque terminé : nous vous avons envoyé un e-mail de confirmation. Ouvrez-le et confirmez (regardez dans les spams).",
     "newsletter.optinError": "Nous n'avons pas pu finaliser votre inscription. Réessayez dans un instant.",
     "newsletter.consent": "J'accepte de recevoir les nouvelles de la Société et la",
-    "thanks.title": "Bienvenue dans la Société",
+    "thanks.title": "Confirmez votre e-mail",
     "thanks.text":
-      "Merci de nous avoir rejoints. Vous faites désormais partie des fondateurs de Calma Society : nous vous écrirons avec calme, seulement quand nous aurons quelque chose qui mérite vraiment votre temps.",
+      "Presque terminé. Nous vous avons envoyé un e-mail pour confirmer votre abonnement — ouvrez-le et confirmez (vérifiez aussi les spams). Dès que c'est fait, vous entrez dans la Société.",
     "thanks.back": "Retour à l'accueil",
 
     "nav.contact": "Contact",
