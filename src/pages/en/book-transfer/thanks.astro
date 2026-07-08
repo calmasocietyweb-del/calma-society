@@ -6,7 +6,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 
 const steps = [
   "We review your journey and availability.",
-  "You receive an email confirmation with the fixed price (usually within a few hours).",
+  "We'll email you with the confirmation and the fixed price.",
   "You confirm and that's it: we pick you up on time, door to door.",
 ];
 ---
@@ -28,6 +28,13 @@ const steps = [
       </p>
     </div>
 
+    {/* Highlighted reference, filled by a tiny script from ?ref= (progressive
+        enhancement: no-JS, the card note says it's in the URL). */}
+    <div id="ref-box" hidden class="mx-auto mt-8 max-w-sm rounded-2xl border border-oro-vivo/40 bg-crema/50 p-5 text-center">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">Your reference</p>
+      <p id="ref-code" class="mt-1 font-display text-3xl tracking-wider text-tinta"></p>
+    </div>
+
     <div class="mt-8 rounded-2xl border border-niebla bg-white p-6 shadow-sm sm:p-8">
       <h2 class="font-display text-xl text-tinta">What happens now</h2>
       <ol class="mt-4 space-y-4">
@@ -46,5 +53,18 @@ const steps = [
     <div class="mt-8 text-center">
       <a href="/en/" class="press inline-block rounded-full bg-arcilla px-8 py-3 font-semibold text-crema hover:bg-terracota">Back to the magazine</a>
     </div>
+
+    <script is:inline>
+      // Shows the ?ref= locator in large type (progressive enhancement: with no
+      // JS, the card note points to the page address).
+      (function () {
+        var ref = new URLSearchParams(location.search).get("ref") || "";
+        if (/^CS-\d{4}-[A-Z0-9]{6}$/.test(ref)) {
+          var code = document.getElementById("ref-code");
+          var box = document.getElementById("ref-box");
+          if (code && box) { code.textContent = ref; box.hidden = false; }
+        }
+      })();
+    </script>
   </section>
 </BaseLayout>

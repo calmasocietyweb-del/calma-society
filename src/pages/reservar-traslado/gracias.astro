@@ -6,7 +6,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const pasos = [
   "Revisamos tu trayecto y la disponibilidad.",
-  "Recibes por correo la confirmación con el precio cerrado (normalmente en unas horas).",
+  "Te escribimos por correo con la confirmación y el precio cerrado.",
   "Confirmas y listo: te recogemos a tu hora, puerta a puerta.",
 ];
 ---
@@ -28,6 +28,13 @@ const pasos = [
       </p>
     </div>
 
+    {/* Localizador destacado: lo rellena un script mínimo desde ?ref= (mejora
+        progresiva: sin JS, el aviso de la tarjeta indica que va en la URL). */}
+    <div id="ref-box" hidden class="mx-auto mt-8 max-w-sm rounded-2xl border border-oro-vivo/40 bg-crema/50 p-5 text-center">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">Tu localizador</p>
+      <p id="ref-code" class="mt-1 font-display text-3xl tracking-wider text-tinta"></p>
+    </div>
+
     <div class="mt-8 rounded-2xl border border-niebla bg-white p-6 shadow-sm sm:p-8">
       <h2 class="font-display text-xl text-tinta">Qué pasa ahora</h2>
       <ol class="mt-4 space-y-4">
@@ -46,5 +53,18 @@ const pasos = [
     <div class="mt-8 text-center">
       <a href="/" class="press inline-block rounded-full bg-arcilla px-8 py-3 font-semibold text-crema hover:bg-terracota">Volver a la revista</a>
     </div>
+
+    <script is:inline>
+      // Muestra el localizador del ?ref= en grande (mejora progresiva: sin JS,
+      // el aviso de la tarjeta indica que está en la dirección de la página).
+      (function () {
+        var ref = new URLSearchParams(location.search).get("ref") || "";
+        if (/^CS-\d{4}-[A-Z0-9]{6}$/.test(ref)) {
+          var code = document.getElementById("ref-code");
+          var box = document.getElementById("ref-box");
+          if (code && box) { code.textContent = ref; box.hidden = false; }
+        }
+      })();
+    </script>
   </section>
 </BaseLayout>
