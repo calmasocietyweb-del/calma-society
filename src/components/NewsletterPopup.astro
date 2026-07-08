@@ -7,17 +7,16 @@
 import { SITE } from "../config/site";
 import { useTranslations } from "../i18n/ui";
 import { currentLocale } from "../i18n/utils";
-import SocietyCaptureForm from "./SocietyCaptureForm.astro";
+import SubscribeForm from "./SubscribeForm.astro";
 
 const locale = currentLocale(Astro.url.pathname);
 const t = useTranslations(locale);
-const { enabled, capture, popup } = SITE.newsletter;
+const { enabled, popup } = SITE.newsletter;
 
-// Este popup es la herramienta de la FASE FUNDADORES (Formspree). Cuando se
-// reactive MailerLite (enabled:true), MailerLite gestiona sus propios pop-ups
-// (configura allí el disparador "al hacer scroll" para que no salte al entrar).
-const captureMode = !enabled && capture.enabled && capture.endpoint.length > 0;
-const show = captureMode && popup.enabled;
+// El popup aparece cuando la newsletter está activa y el popup habilitado. Usa
+// nuestro SubscribeForm → /api/suscribir (grupo general de la Sociedad, doble
+// opt-in). Anti-ruido: el script lo muestra tras scroll, UNA vez, y es cerrable.
+const show = enabled && popup.enabled;
 const scrollPercent = popup.scrollPercent;
 ---
 
@@ -55,7 +54,7 @@ const scrollPercent = popup.scrollPercent;
           {t("newsletter.text")}
         </p>
 
-        <SocietyCaptureForm locale={locale} tone="light" idSuffix="-popup" />
+        <SubscribeForm origen="popup" tone="light" idSuffix="-popup" umamiEvent="newsletter-popup-submit" />
 
         <p class="mt-3 text-xs text-piedra-suave">{t("newsletter.privacy")}</p>
       </div>
