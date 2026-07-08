@@ -76,18 +76,27 @@ export async function onRequestPost({ request, env }: Ctx): Promise<Response> {
       headers: {
         "content-type": "application/json",
         accept: "application/json",
-        authorization: `Bearer ${env.MAILERLITE_API_KEY}`,
+        // .trim() por robustez: al pegar la key en el panel de Cloudflare puede
+        // colarse un salto de línea o espacio que invalidaría la cabecera.
+        authorization: `Bearer ${env.MAILERLITE_API_KEY.trim()}`,
       },
-      body: JSON.stringify(buildSubscriberPayload(result.value, env.MAILERLITE_GROUP_ID)),
+      body: JSON.stringify(buildSubscriberPayload(result.value, env.MAILERLITE_GROUP_ID.trim())),
     });
     // 200/201 = creado; 422 suele ser "ya existe" → idempotente, lo damos por bueno.
     if (!r.ok && r.status !== 422) {
-      console.error("suscribir: MailerLite respondió", r.status, await r.text().catch(() => ""));
-      return respondErr("servidor", 502);
+      const detail = await r.text().catch(() => "");
+      console.error("suscribir: MailerLite respondió", r.status, detail);
+      // El detalle de MailerLite (status + mensaje, NO el token) ayuda a diagnosticar
+      // desde el cliente cuando algo falla; se puede retirar cuando esté estable.
+      return asJson
+        ? json({ ok: false, error: "servidor", mlStatus: r.status, mlBody: detail.slice(0, 300) }, 502)
+        : respondErr("servidor", 502);
     }
     return respondOk();
   } catch (e) {
     console.error("suscribir: error de red con MailerLite", e);
-    return respondErr("servidor", 502);
+    return asJson
+      ? json({ ok: false, error: "servidor", detail: String(e).slice(0, 200) }, 502)
+      : respondErr("servidor", 502);
   }
 }
