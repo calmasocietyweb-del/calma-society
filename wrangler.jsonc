@@ -1,6 +1,7 @@
 {
   // Despliegue del sitio ESTÁTICO en Cloudflare (sin SSR ni KV → sin el fallo recurrente).
-  // El Worker solo sirve los archivos estáticos generados por Astro en ./dist.
+  // El Worker sirve los archivos estáticos generados por Astro en ./dist y enruta
+  // la función de servidor /api/suscribir (alta de newsletter) — ver worker.js.
   "name": "calma-society",
   "compatibility_date": "2025-06-15",
   "main": "worker.js",
@@ -8,5 +9,12 @@
     "directory": "./dist",
     "binding": "ASSETS",
     "not_found_handling": "404-page"
+  },
+  // Variable PÚBLICA: ID del grupo general "Suscriptores Web" de MailerLite (destino
+  // del embudo). No es secreta (es un identificador, como los formIds de
+  // src/config/site.ts). La API key SÍ es secreta y vive solo en Cloudflare
+  // (secret MAILERLITE_API_KEY).
+  "vars": {
+    "MAILERLITE_GROUP_ID": "190338204448065520"
   }
 }
