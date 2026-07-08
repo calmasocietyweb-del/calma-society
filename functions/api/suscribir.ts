@@ -84,19 +84,14 @@ export async function onRequestPost({ request, env }: Ctx): Promise<Response> {
     });
     // 200/201 = creado; 422 suele ser "ya existe" → idempotente, lo damos por bueno.
     if (!r.ok && r.status !== 422) {
-      const detail = await r.text().catch(() => "");
-      console.error("suscribir: MailerLite respondió", r.status, detail);
-      // El detalle de MailerLite (status + mensaje, NO el token) ayuda a diagnosticar
-      // desde el cliente cuando algo falla; se puede retirar cuando esté estable.
-      return asJson
-        ? json({ ok: false, error: "servidor", mlStatus: r.status, mlBody: detail.slice(0, 300) }, 502)
-        : respondErr("servidor", 502);
+      // El status queda en los logs del Worker (observability) para diagnóstico;
+      // al cliente solo le devolvemos un error genérico, sin filtrar detalles.
+      console.error("suscribir: MailerLite respondió", r.status, await r.text().catch(() => ""));
+      return respondErr("servidor", 502);
     }
     return respondOk();
   } catch (e) {
     console.error("suscribir: error de red con MailerLite", e);
-    return asJson
-      ? json({ ok: false, error: "servidor", detail: String(e).slice(0, 200) }, 502)
-      : respondErr("servidor", 502);
+    return respondErr("servidor", 502);
   }
 }
