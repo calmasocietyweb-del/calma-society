@@ -11,6 +11,13 @@ export interface Section {
   /** Tagline corta, VISIBLE en la portada de sección y en la rejilla de la home. */
   intro: Record<Locale, string>;
   /**
+   * Título para la etiqueta <title> de la portada de sección. Solo cuando la
+   * `label` (que se usa en el menú) es demasiado genérica para SEO y conviene
+   * anclar a "Menorca" la consulta. No cambia el menú ni el H1; si falta, se usa
+   * `label`. Ver [section].astro.
+   */
+  seoTitle?: Partial<Record<Locale, string>>;
+  /**
    * Descripción para la <meta description> de la portada de sección (140-160).
    * Solo cuando la `intro` es demasiado corta para SEO. No se muestra en pantalla;
    * si falta, se usa `intro`. Ver [section].astro.
@@ -38,8 +45,15 @@ export const SECTIONS: Section[] = [
       en: "Festivals, concerts and markets. What's happening in Menorca, kept current.",
       fr: "Fêtes, concerts et marchés. Ce qui se passe à Minorque, tenu à jour.",
     },
+    seoTitle: {
+      es: "Agenda de Menorca: fiestas, conciertos y mercados",
+      en: "What's on in Menorca: festivals, concerts and markets",
+      fr: "Agenda de Minorque : fêtes, concerts et marchés",
+    },
     seoDescription: {
       es: "Agenda de Menorca, actualizada: fiestas de Sant Joan, conciertos, mercados y cultura. Qué hacer cada mes en la isla, con criterio y a tu propio ritmo.",
+      en: "What's on in Menorca, kept current: Sant Joan and the summer town festivals, concerts, markets and culture. What to do each month on the island, at your own pace.",
+      fr: "L'agenda de Minorque, tenu à jour : Sant Joan et les fêtes des villages, concerts, marchés et culture. Que faire chaque mois sur l'île, à votre rythme.",
     },
   },
   {

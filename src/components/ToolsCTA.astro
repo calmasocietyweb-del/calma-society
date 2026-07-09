@@ -1,0 +1,104 @@
+---
+/**
+ * Enlaces a las HERRAMIENTAS propias de Calma Society: el planificador de viaje
+ * y el mapa "Dónde el mar está en calma". Caja compacta, sobria y SIN JS, para
+ * insertar en artículos MDX. Cumple dos fines a la vez:
+ *   1. Enlazado interno con anchor descriptivo (SEO: distribuye autoridad hacia
+ *      las herramientas y reparte PageRank interno).
+ *   2. Retención: lleva al lector del artículo a las herramientas interactivas
+ *      (el motor de audiencia). Es el análogo "hacia dentro" de MenorcaBusCTA.
+ *
+ * Uso en MDX (el componente se inyecta en las páginas de artículo, no se importa
+ * en cada .mdx):
+ *   <ToolsCTA lang="es" />
+ *   <ToolsCTA lang="en" tools={["calm-sea"]} />
+ *
+ * El planificador aún no existe en francés: en `fr` ese enlace se omite solo
+ * (nunca se genera un enlace roto).
+ */
+import { type Locale } from "../config/site";
+
+interface Props {
+  lang?: Locale;
+  /** Qué herramientas enlazar y en qué orden. Por defecto: mapa del mar + planificador. */
+  tools?: ("calm-sea" | "planner")[];
+}
+const { lang = "es", tools = ["calm-sea", "planner"] } = Astro.props;
+
+type Tool = {
+  href: Partial<Record<Locale, string>>;
+  label: Record<Locale, string>;
+  text: Record<Locale, string>;
+};
+
+const TOOLS: Record<"calm-sea" | "planner", Tool> = {
+  "calm-sea": {
+    href: {
+      es: "/donde-el-mar-esta-en-calma",
+      en: "/en/where-the-sea-is-calm",
+      fr: "/fr/ou-la-mer-est-calme",
+    },
+    label: {
+      es: "¿Dónde está el mar en calma hoy?",
+      en: "Where is the sea calm today?",
+      fr: "Où la mer est-elle calme aujourd'hui ?",
+    },
+    text: {
+      es: "El viento manda: mira qué calas quedan resguardadas cada día antes de decidir dónde bañarte.",
+      en: "The wind decides: see which coves are sheltered each day before choosing where to swim.",
+      fr: "Le vent décide : voyez quelles criques sont abritées chaque jour avant de choisir où vous baigner.",
+    },
+  },
+  planner: {
+    href: {
+      es: "/planificador",
+      en: "/en/trip-planner",
+      // El planificador en francés aún no está lanzado → sin enlace en `fr`.
+    },
+    label: {
+      es: "Planifica tu viaje a Menorca",
+      en: "Plan your Menorca trip",
+      fr: "Planifiez votre voyage à Minorque",
+    },
+    text: {
+      es: "Un itinerario a tu medida, día a día, según lo que te gusta y cuántos días tengas.",
+      en: "A tailor-made itinerary, day by day, around what you love and how long you stay.",
+      fr: "Un itinéraire sur mesure, jour après jour, selon vos envies.",
+    },
+  },
+};
+
+const HEADING: Record<Locale, string> = {
+  es: "Herramientas de Calma Society",
+  en: "Calma Society tools",
+  fr: "Outils de Calma Society",
+};
+
+// Solo las herramientas con enlace en este idioma (evita enlaces rotos, p. ej. el
+// planificador en francés, que todavía no existe).
+const items = tools
+  .map((key) => ({ key, label: TOOLS[key].label[lang], text: TOOLS[key].text[lang], href: TOOLS[key].href[lang] }))
+  .filter((i): i is { key: "calm-sea" | "planner"; label: string; text: string; href: string } => Boolean(i.href));
+---
+
+{
+  items.length > 0 && (
+    <aside class="my-10 rounded-xl border border-niebla bg-arena/40 p-6 sm:p-7">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">{HEADING[lang]}</p>
+      <ul class="mt-4 space-y-5">
+        {items.map((i) => (
+          <li>
+            <a
+              href={i.href}
+              data-umami-event={`cta-tool-${i.key}`}
+              class="font-display text-lg leading-snug text-arcilla no-underline! transition-colors hover:text-terracota"
+            >
+              {i.label} →
+            </a>
+            <p class="mt-1 max-w-prosa text-sm leading-relaxed text-piedra-suave">{i.text}</p>
+          </li>
+        ))}
+      </ul>
+    </aside>
+  )
+}
