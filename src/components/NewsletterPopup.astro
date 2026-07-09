@@ -111,7 +111,7 @@ const scrollPercent = popup.scrollPercent;
   if (el) {
     const path = location.pathname;
     // No molestar donde ya hay formulario o no tiene sentido captar de nuevo.
-    const excluded = ["/newsletter", "/sociedad-bienvenida", "/society-welcome", "/reservar-traslado", "/en/book-transfer"];
+    const excluded = ["/newsletter", "/sociedad-bienvenida", "/society-welcome", "/reservar-traslado", "/en/book-transfer", "/enlaces", "/en/links"];
     const isExcluded = excluded.some((p) => path.includes(p));
     let done = false;
     try {

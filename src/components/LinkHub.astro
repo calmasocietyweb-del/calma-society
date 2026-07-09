@@ -1,0 +1,136 @@
+---
+/**
+ * Hub de "link in bio" (Instagram / Pinterest → web). Reúne TODAS las
+ * herramientas de Calma Society en una página sobria y mobile-first, para poner
+ * su URL en la bio de las redes. Sin JS: enlaces estáticos de marca.
+ *
+ * MEDICIÓN: el enlace que se pega en la bio lleva el UTM
+ * (`?utm_source=instagram|pinterest&utm_medium=bio`); DENTRO del hub los clics se
+ * miden con Umami (`data-umami-event`), porque poner UTM en enlaces internos
+ * ensucia la analítica (self-referral). Cada tarjeta lleva su evento `bio-*`.
+ */
+import { SITE, type Locale } from "../config/site";
+
+interface Props {
+  locale: "es" | "en";
+}
+const { locale } = Astro.props;
+
+// Iconos de línea (inner-SVG); el <svg> pone fill:none + stroke:currentColor.
+const ICONS: Record<string, string> = {
+  planner: '<circle cx="12" cy="12" r="9"></circle><polygon points="14.6 9.4 12.7 12.7 9.4 14.6 11.3 11.3"></polygon>',
+  calm: '<path d="M3 9q3 -3 6 0t6 0 6 0"></path><path d="M3 15q3 -3 6 0t6 0 6 0"></path>',
+  agenda: '<rect x="3" y="4" width="18" height="17" rx="2"></rect><line x1="8" y1="2" x2="8" y2="6"></line><line x1="16" y1="2" x2="16" y2="6"></line><line x1="3" y1="9" x2="21" y2="9"></line>',
+  sunset: '<circle cx="12" cy="11" r="4"></circle><line x1="3" y1="19" x2="21" y2="19"></line><line x1="12" y1="3" x2="12" y2="4.5"></line><line x1="18.5" y1="6.5" x2="17.6" y2="7.4"></line><line x1="5.5" y1="6.5" x2="6.4" y2="7.4"></line>',
+  guide: '<rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path>',
+  magazine: '<path d="M4 4h8a1 1 0 0 1 1 1v15a2 2 0 0 0-2-1.6H4z"></path><path d="M20 4h-7a1 1 0 0 0-1 1v14a2 2 0 0 1 2-1.6h6z"></path>',
+};
+
+type Item = {
+  icon: keyof typeof ICONS;
+  href: string;
+  event: string;
+  label: string;
+  text: string;
+  featured?: boolean;
+};
+
+const LINKS: Record<"es" | "en", Item[]> = {
+  es: [
+    { icon: "planner", href: "/planificador", event: "bio-planificador", label: "Planificador de viaje", text: "Tu itinerario a medida, día a día, según lo que te gusta." },
+    { icon: "calm", href: "/donde-el-mar-esta-en-calma", event: "bio-mar-en-calma", label: "Dónde el mar está en calma", text: "Qué calas quedan resguardadas hoy, según el viento." },
+    { icon: "sunset", href: "/atardeceres-y-copas", event: "bio-atardeceres", label: "Atardeceres y copas", text: "Los mejores atardeceres y dónde tomar algo, con criterio." },
+    { icon: "agenda", href: "/agenda", event: "bio-agenda", label: "Agenda de Menorca", text: "Fiestas, conciertos y mercados. Qué pasa en la isla, actualizado." },
+    { icon: "guide", href: "/calas-tranquilas", event: "bio-guia-calas", label: "La guía de las calas tranquilas", text: "Únete a la Society y recíbela gratis por correo.", featured: true },
+    { icon: "magazine", href: "/", event: "bio-revista", label: "La revista", text: "Todo Calma Society: Menorca, sin prisa y con una mirada de lujo tranquilo." },
+  ],
+  en: [
+    { icon: "planner", href: "/en/trip-planner", event: "bio-planner", label: "Trip planner", text: "Your tailor-made itinerary, day by day, around what you love." },
+    { icon: "calm", href: "/en/where-the-sea-is-calm", event: "bio-calm-sea", label: "Where the sea is calm", text: "Which coves are sheltered today, depending on the wind." },
+    { icon: "sunset", href: "/en/sunsets-and-drinks", event: "bio-sunsets", label: "Sunsets & drinks", text: "The best sunsets and where to have a drink, with judgement." },
+    { icon: "agenda", href: "/en/whats-on", event: "bio-whats-on", label: "What's on in Menorca", text: "Festivals, concerts and markets. What's happening, kept current." },
+    { icon: "guide", href: "/en/quiet-coves", event: "bio-coves-guide", label: "The quiet coves guide", text: "Join the Society and get it free by email.", featured: true },
+    { icon: "magazine", href: "/en/", event: "bio-magazine", label: "The magazine", text: "All of Calma Society: Menorca, unhurried, with a quiet-luxury eye." },
+  ],
+};
+
+const COPY: Record<"es" | "en", { eyebrow: string; heading: string; sub: string; follow: string }> = {
+  es: {
+    eyebrow: `${SITE.name} · ${SITE.edition}`,
+    heading: "Todo, en un sitio",
+    sub: "Nuestras herramientas y guías para vivir Menorca con calma. Elige por dónde empezar.",
+    follow: "Síguenos en Instagram",
+  },
+  en: {
+    eyebrow: `${SITE.name} · ${SITE.edition}`,
+    heading: "Everything, in one place",
+    sub: "Our tools and guides for a calm Menorca. Choose where to begin.",
+    follow: "Follow us on Instagram",
+  },
+};
+
+const items = LINKS[locale];
+const t = COPY[locale];
+---
+
+<section class="mx-auto max-w-md px-5 py-12 sm:py-16">
+  <header class="text-center">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">{t.eyebrow}</p>
+    <h1 class="mt-3 font-display text-3xl text-tinta sm:text-4xl">{t.heading}</h1>
+    <p class="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-piedra-suave">{t.sub}</p>
+  </header>
+
+  <ul class="mt-8 space-y-3">
+    {
+      items.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            data-umami-event={item.event}
+            class:list={[
+              "flex items-center gap-4 rounded-xl border p-4 no-underline! transition-colors",
+              item.featured
+                ? "border-arcilla bg-arcilla hover:bg-tinta"
+                : "border-niebla bg-arena/40 hover:border-arcilla hover:bg-arena/70",
+            ]}
+          >
+            <span class:list={["shrink-0", item.featured ? "text-crema" : "text-arcilla"]}>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="h-6 w-6"
+                aria-hidden="true"
+                set:html={ICONS[item.icon]}
+              />
+            </span>
+            <span class="min-w-0">
+              <span class:list={["block font-display text-lg leading-snug", item.featured ? "text-crema" : "text-tinta"]}>
+                {item.label}
+              </span>
+              <span class:list={["mt-0.5 block text-sm leading-relaxed", item.featured ? "text-crema/85" : "text-piedra-suave"]}>
+                {item.text}
+              </span>
+            </span>
+            <span class:list={["ml-auto shrink-0", item.featured ? "text-crema/80" : "text-piedra-suave"]} aria-hidden="true">→</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <footer class="mt-10 text-center">
+    <a
+      href={SITE.social.instagram}
+      target="_blank"
+      rel="noopener"
+      data-umami-event="bio-instagram"
+      class="text-sm font-semibold text-arcilla no-underline! transition-colors hover:text-terracota"
+    >
+      {t.follow} ↗
+    </a>
+  </footer>
+</section>

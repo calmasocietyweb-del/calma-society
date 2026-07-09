@@ -1,0 +1,18 @@
+---
+// Hub de "link in bio" (ES): /enlaces — destino del enlace de la bio en redes.
+// Reúne todas las herramientas y guías. Su URL se pega en Instagram/Pinterest
+// con UTM (`?utm_source=instagram|pinterest&utm_medium=bio`); dentro, Umami.
+import BaseLayout from "../layouts/BaseLayout.astro";
+import LinkHub from "../components/LinkHub.astro";
+
+const alternates = { es: "/enlaces", en: "/en/links" };
+---
+
+<BaseLayout
+  title="Enlaces"
+  description="Todas las herramientas de Calma Society en un sitio: el planificador de viaje, el mapa del mar en calma, la agenda, los atardeceres y la guía de las calas tranquilas de Menorca."
+  locale="es"
+  alternates={alternates}
+>
+  <LinkHub locale="es" />
+</BaseLayout>
