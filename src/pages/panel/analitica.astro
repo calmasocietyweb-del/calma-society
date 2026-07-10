@@ -58,8 +58,8 @@ if (configured) {
     const base = `${API_URL}/websites/${WEBSITE_ID}`;
     const [s, urls, ev] = await Promise.all([
       fetch(`${base}/stats?${qs}`, { headers }).then((r) => r.json()),
-      fetch(`${base}/metrics?type=url&${qs}&limit=15`, { headers }).then((r) => r.json()),
-      fetch(`${base}/metrics?type=event&${qs}&limit=25`, { headers }).then((r) => r.json()),
+      fetch(`${base}/metrics?type=url&${qs}&limit=50`, { headers }).then((r) => r.json()),
+      fetch(`${base}/metrics?type=event&${qs}&limit=100`, { headers }).then((r) => r.json()),
     ]);
     stats = s;
     topPages = Array.isArray(urls) ? urls : [];
@@ -70,6 +70,66 @@ if (configured) {
 }
 
 const num = (v: any) => (v && typeof v === "object" ? (v.value ?? 0) : (v ?? 0));
+
+// Herramientas interactivas: agrupamos VISITAS (por ruta, sumando idiomas) y sus
+// EVENTOS clave, para ver de un vistazo si la gente las USA, no solo si las abre.
+// Los nombres de evento coinciden con los data-umami-event puestos en cada componente.
+const TOOLS: { label: string; paths: string[]; events: [string, string][] }[] = [
+  {
+    label: "Planificador de viajes",
+    paths: ["/planificador", "/en/trip-planner"],
+    events: [
+      ["planner-ruta-dia", "Ver ruta del día"],
+      ["planner-pdf", "Descargar PDF"],
+      ["planner-email", "Enviar por email"],
+      ["planner-copylink", "Copiar enlace"],
+      ["planner-gmaps", "Abrir en Maps"],
+      ["planner-reserva", "Clic a reservar"],
+      ["planner-menorcabus", "Clic a Menorca Bus"],
+      ["planner-mar-en-calma", "Saltar a Mar en calma"],
+      ["planner-web-oficial", "Web oficial"],
+    ],
+  },
+  {
+    label: "Dónde el mar está en calma",
+    paths: ["/donde-el-mar-esta-en-calma", "/en/where-the-sea-is-calm", "/fr/ou-la-mer-est-calme"],
+    events: [
+      ["calma-dia", "Mover la línea de días"],
+      ["calma-cala-ficha", "Abrir ficha de cala"],
+      ["calma-ver-mapa", "Ver cala en el mapa"],
+      ["calma-metodologia", "Abrir metodología"],
+      ["calma-condiciones", "Ver condiciones (medusas)"],
+      ["calma-medusas-app", "Clic a la app de medusas"],
+    ],
+  },
+  {
+    label: "Atardeceres y copas",
+    paths: ["/atardeceres-y-copas", "/en/sunsets-and-drinks", "/fr/couchers-et-cocktails"],
+    events: [
+      ["sunset-pin", "Clic en un punto del mapa"],
+      ["sunset-punto", "Abrir un lugar"],
+      ["sunset-maps", "Abrir en Maps"],
+      ["cta-menorcabus-noche", "Clic a Menorca Bus"],
+    ],
+  },
+];
+
+const cleanPath = (u: any) => String(u ?? "").split("?")[0].split("#")[0].replace(/\/+$/, "") || "/";
+const pageviewsFor = (paths: string[]) =>
+  topPages.filter((p) => paths.includes(cleanPath(p.x))).reduce((n, p) => n + (Number(p.y) || 0), 0);
+const eventCount = (name: string) => {
+  const e = events.find((ev) => ev.x === name);
+  return e ? Number(e.y) || 0 : 0;
+};
+const toolRows = TOOLS.map((t) => {
+  const evs = t.events.map(([name, label]) => ({ name, label, count: eventCount(name) }));
+  return {
+    label: t.label,
+    visitas: pageviewsFor(t.paths),
+    interacciones: evs.reduce((n, e) => n + e.count, 0),
+    evs,
+  };
+});
 ---
 
 <!doctype html>
@@ -140,6 +200,40 @@ const num = (v: any) => (v && typeof v === "object" ? (v.value ?? 0) : (v ?? 0))
                   <p class="text-2xl font-semibold text-tinta">{num(stats?.bounces)}</p>
                   <p class="text-xs uppercase tracking-wide text-piedra-suave">Rebotes</p>
                 </div>
+              </div>
+            </section>
+
+            <section>
+              <h2 class="font-display text-xl text-tinta">Herramientas interactivas</h2>
+              <p class="mt-1 text-sm text-piedra-suave">
+                Por herramienta: cuántos la <strong class="text-piedra">abren</strong> (visitas) y
+                cuántas veces la <strong class="text-piedra">usan</strong> por dentro (acciones). Con
+                poco tráfico, fíjate en la proporción (p. ej. de 40 visitas, 6 descargas), no en el
+                número absoluto. Un 0 en gris = esa acción aún no se ha registrado.
+              </p>
+              <div class="mt-4 space-y-4">
+                {toolRows.map((t) => (
+                  <div class="rounded-xl border border-niebla p-4">
+                    <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                      <h3 class="font-display text-lg text-tinta">{t.label}</h3>
+                      <p class="text-sm text-piedra-suave">
+                        <span class="font-semibold text-tinta">{t.visitas}</span> visitas
+                        {" · "}
+                        <span class="font-semibold text-tinta">{t.interacciones}</span> acciones
+                      </p>
+                    </div>
+                    <ul class="mt-3 grid gap-x-6 gap-y-1 sm:grid-cols-2">
+                      {t.evs.map((e) => (
+                        <li class="flex items-center justify-between gap-3 text-sm">
+                          <span class="text-piedra-suave">{e.label}</span>
+                          <span class={e.count > 0 ? "font-semibold text-tinta" : "font-semibold text-niebla"}>
+                            {e.count}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
             </section>
 

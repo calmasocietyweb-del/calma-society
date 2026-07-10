@@ -1101,7 +1101,7 @@ const jsonLd = {
             señalar (hover/foco). Enlazan a su ficha de la lista. */}
         {
           pts.map((p) => (
-            <a class="night-pin" href={`#night-${p.v.id}`} data-cat={p.v.cat} data-zone={p.v.zone}>
+            <a class="night-pin" href={`#night-${p.v.id}`} data-cat={p.v.cat} data-zone={p.v.zone} data-umami-event="sunset-pin">
               <title>{p.v.name} — {catLabel(p.v.cat)}</title>
               <circle class="night-pin-circle" cx={p.x.toFixed(1)} cy={p.y.toFixed(1)} r="13" fill={CATS[p.v.cat].color} stroke="#fff8ec" stroke-width="3" filter="url(#night-punto)" />
               <g class="night-pin-glyph" transform={`translate(${p.x.toFixed(1)},${p.y.toFixed(1)}) scale(1.3)`} aria-hidden="true" set:html={GLYPH[p.v.cat]} />
@@ -1131,7 +1131,7 @@ const jsonLd = {
               <div class="min-w-0">
                 <p class="font-display text-lg text-tinta sm:text-xl">
                   {v.href ? (
-                    <a class="underline decoration-niebla underline-offset-4 hover:decoration-terracota" href={v.href}>{v.name}</a>
+                    <a class="underline decoration-niebla underline-offset-4 hover:decoration-terracota" href={v.href} data-umami-event="sunset-punto">{v.name}</a>
                   ) : (
                     v.name
                   )}
@@ -1173,7 +1173,7 @@ const jsonLd = {
             </p>
 
             <p class="mt-2 text-xs text-piedra-suave/80">
-              <a class="underline decoration-niebla underline-offset-2 hover:text-arcilla" href={mapsUrl(v.lat, v.lng)} target="_blank" rel="noopener">{T.ubicacion} ↗</a>
+              <a class="underline decoration-niebla underline-offset-2 hover:text-arcilla" href={mapsUrl(v.lat, v.lng)} target="_blank" rel="noopener" data-umami-event="sunset-maps">{T.ubicacion} ↗</a>
               {v.website && (
                 <Fragment>
                   {" · "}

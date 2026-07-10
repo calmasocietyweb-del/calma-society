@@ -644,7 +644,7 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
           <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
             <h3 class="font-display text-xl text-tinta">
               {c.lugarSlug ? (
-                <a class="underline decoration-niebla underline-offset-4 hover:decoration-terracota" href={placeUrl(locale, `${c.lugarSlug}-${locale}`)}>{c.name}</a>
+                <a class="underline decoration-niebla underline-offset-4 hover:decoration-terracota" href={placeUrl(locale, `${c.lugarSlug}-${locale}`)} data-umami-event="calma-cala-ficha">{c.name}</a>
               ) : c.name}
             </h3>
             <span class="inline-flex items-center gap-2 text-sm font-semibold text-tinta">
@@ -655,10 +655,10 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
           <p class="mt-1 text-sm text-piedra-suave">
             {c.area} · <span class="cala-sub">{T.subAbrigo[b0]}</span> · {T.viento}: <span class="cala-wind">{f0.windName} {f0.windKmh} km/h</span>
           </p>
-          <button type="button" class="cala-ver mt-2 text-xs font-medium text-arcilla underline underline-offset-2 hover:text-terracota">{T.verEnMapa} ↑</button>
+          <button type="button" class="cala-ver mt-2 text-xs font-medium text-arcilla underline underline-offset-2 hover:text-terracota" data-umami-event="calma-ver-mapa">{T.verEnMapa} ↑</button>
           {MEDUSAS_ENABLED && c.medusas && (
             <details class="mt-3 border-t border-niebla pt-3">
-              <summary class="cursor-pointer text-sm text-piedra-suave hover:text-piedra">{T.waterCond} →</summary>
+              <summary class="cursor-pointer text-sm text-piedra-suave hover:text-piedra" data-umami-event="calma-condiciones">{T.waterCond} →</summary>
               <div class="mt-2 rounded-md bg-arena/50 p-3">
                 <p class="text-[0.7rem] font-semibold uppercase tracking-wider text-oro">{T.medusasSublabel}</p>
                 <p class="mt-1 text-sm text-piedra">
@@ -670,7 +670,7 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
                 </p>
                 <p class="mt-2 text-xs leading-relaxed text-piedra-suave">{T.medusasDisclaimer}</p>
                 <p class="mt-2 text-sm">
-                  <a class="font-medium text-arcilla underline underline-offset-2 hover:text-terracota" href={MEDUSAPP} target="_blank" rel="noopener">{T.medusasCTA} →</a>
+                  <a class="font-medium text-arcilla underline underline-offset-2 hover:text-terracota" href={MEDUSAPP} target="_blank" rel="noopener" data-umami-event="calma-medusas-app">{T.medusasCTA} →</a>
                 </p>
               </div>
             </details>
@@ -689,7 +689,7 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
     <h2 class="font-display text-lg text-tinta">{T.disclaimerTitle}</h2>
     <p class="mt-2 text-sm leading-relaxed text-piedra">{T.disclaimer}</p>
     <p class="mt-3 text-sm">
-      <a class="font-medium text-arcilla underline underline-offset-2 hover:text-terracota" href={T.methodologyHref}>{T.methodology} →</a>
+      <a class="font-medium text-arcilla underline underline-offset-2 hover:text-terracota" href={T.methodologyHref} data-umami-event="calma-metodologia">{T.methodology} →</a>
     </p>
   </div>
 
@@ -840,7 +840,16 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
       if (slider) {
         slider.max = String(visFrames.length - 1);
         slider.value = String(idx);
-        slider.addEventListener("input", () => applyFrame(visFrames[+slider.value]));
+        // Medición: un único evento la primera vez que el visitante mueve la línea de
+        // días (señal de "está usando de verdad la herramienta", sin spam por cada input).
+        let diaTrackeado = false;
+        slider.addEventListener("input", () => {
+          applyFrame(visFrames[+slider.value]);
+          if (!diaTrackeado) {
+            diaTrackeado = true;
+            (window as any).umami?.track?.("calma-dia");
+          }
+        });
       }
       applyFrame(visFrames[idx]);
 
