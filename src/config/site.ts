@@ -42,6 +42,14 @@ export const SITE = {
   /** Token de verificación de Google Search Console (método "etiqueta HTML"). */
   googleSiteVerification: 'lRhppI_bkJUfmIJUuXg6D15p7A2eJV1CMEpzb-a1djk', // Google Search Console (etiqueta HTML)
 
+  /**
+   * Token de verificación de dominio de Pinterest (método "etiqueta HTML"), para
+   * RECLAMAR calmasociety.com y activar los Rich Pins. Es SOLO el valor del atributo
+   * `content` de la etiqueta <meta name="p:domain_verify" …> que da Pinterest
+   * (Ajustes → Reclamar → Añadir etiqueta HTML). Vacío = no se renderiza.
+   */
+  pinterestDomainVerify: '293b5dd109b5cb3c4535448ce1f9a74b', // Pinterest — reclamar dominio (Rich Pins), 2026-07-10
+
   /** Idioma por defecto (va en la raíz, sin prefijo). */
   defaultLocale: 'es' as Locale,
 
