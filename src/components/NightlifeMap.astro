@@ -587,6 +587,127 @@ const EXTRA: Extra[] = [
     noteEn: "It is a country hotel: you get there by car along the Camí de Llucalari. We could not confirm whether the bar admits non-residents — call or book before going.",
     noteFr: "C'est un hôtel de campagne : on y accède en voiture par le Camí de Llucalari. Nous n'avons pas pu confirmer si le bar accepte les non-résidents — appelez ou réservez avant de venir.",
   },
+  /* ═══ LA FIESTA, 13-jul-2026 ═══════════════════════════════════════════════
+     Cristian: «no has añadido discotecas/club/fiesta, deberías añadir los que
+     encuentres». Investigación verificada (.tmp_research/2026-07-13-clubs-*).
+
+     EL DATO QUE NADIE CUENTA: las cinco discotecas de la mitad oeste de la isla
+     caben en 60 metros de muelle (Pla de Sant Joan, Ciutadella) — Jaleo, IguanaPort,
+     Jazzbah, Kopas y Lateral, hombro con hombro. Fuera de ese muelle y del casco
+     antiguo NO HAY NI UNA en activo. Y en el este, fuera del puerto de Maó y la Cova
+     d'en Xoroi, tampoco: en Cala en Porter la música al aire libre debe acabar a las
+     23:30 por normativa, y en Cales Fonts los restaurantes no ponen música alta.
+
+     TONO: ninguno de estos clubs es lujo tranquilo — son reggaetón, colas y las 5:30.
+     Se cuentan con la verdad por delante. Venderlos como quiet luxury sería la única
+     forma de perder autoridad; describirlos con honestidad es lo que la da.
+
+     NO ENTRAN (y por qué): Sa Clau (CERRADO: su dominio ni resuelve) · Sakova (ya no
+     existe: es Jaleo) · Blue Shamrock (cerrado) · Tiffany's (cerrado: es La Terraza) ·
+     Sabinas Club, Moon Club, Musikbox, People's Manhattan, Cafè des Museu (sin
+     coordenadas verificadas o sin confirmar que existan hoy — el patrón Contrabandú
+     no se repite).  ═══════════════════════════════════════════════════════════ */
+  {
+    id: "jaleo", name: "Jaleo", cat: "club", lat: 40.002685, lng: 3.835659,
+    areaEs: "Puerto de Ciutadella", areaEn: "Ciutadella harbour", areaFr: "Port de Ciutadella",
+    descEs: "La sala grande del oeste, dentro de una cueva natural del puerto: latino y reggaetón hasta las cinco y media. Abrió en 2025 sobre la antigua Sakova. No es un sitio tranquilo, y no pretende serlo.",
+    descEn: "The big room of the west, inside a natural cave in the harbour: Latin and reggaeton until half past five. It opened in 2025 on the site of the old Sakova. It isn't a quiet place, and doesn't pretend to be.",
+    descFr: "La grande salle de l'ouest, dans une grotte naturelle du port : latino et reggaeton jusqu'à cinq heures et demie. Ouverte en 2025 à la place de l'ancienne Sakova. Ce n'est pas un endroit tranquille, et cela ne cherche pas à l'être.",
+    schemaType: "NightClub",
+    noteEs: "En agosto se hacen colas largas. Está en el mismo muelle que Jazzbah, Kopas, IguanaPort y Lateral: las cinco discotecas del oeste de la isla caben en sesenta metros.",
+    noteEn: "In August the queues are long. It sits on the same quay as Jazzbah, Kopas, IguanaPort and Lateral: the five clubs of the island's west fit into sixty metres.",
+    noteFr: "En août, les files d'attente sont longues. Il se trouve sur le même quai que Jazzbah, Kopas, IguanaPort et Lateral : les cinq discothèques de l'ouest de l'île tiennent en soixante mètres.",
+  },
+  {
+    id: "iguanaport", name: "IguanaPort", cat: "club", lat: 40.002575, lng: 3.8356867,
+    areaEs: "Puerto de Ciutadella", areaEn: "Ciutadella harbour", areaFr: "Port de Ciutadella",
+    descEs: "Reggaetón y música latina con tres DJ residentes y dos terrazas sobre el muelle. Público joven; la isla que sale a bailar, sin más pretensión.",
+    descEn: "Reggaeton and Latin music with three resident DJs and two terraces over the quay. A young crowd; the island out dancing, with no further pretension.",
+    descFr: "Reggaeton et musique latine avec trois DJ résidents et deux terrasses sur le quai. Public jeune ; l'île qui sort danser, sans autre prétention.",
+    schemaType: "NightClub",
+    noteEs: "Vende entradas y reservados por internet: en las noches fuertes conviene mirarlo antes de bajar al puerto.",
+    noteEn: "It sells tickets and VIP tables online: on big nights it's worth checking before heading down to the harbour.",
+    noteFr: "Il vend des billets et des tables VIP en ligne : les grands soirs, mieux vaut vérifier avant de descendre au port.",
+  },
+  {
+    id: "lateral", name: "Lateral", cat: "club", lat: 40.003007, lng: 3.8358247,
+    areaEs: "Puerto de Ciutadella", areaEn: "Ciutadella harbour", areaFr: "Port de Ciutadella",
+    descEs: "Reggaetón y hits urbanos en el muelle de Ciutadella. Es el más de fin de semana de los cinco: no abre entre semana.",
+    descEn: "Reggaeton and urban hits on Ciutadella's quay. The most weekend-only of the five: it doesn't open midweek.",
+    descFr: "Reggaeton et hits urbains sur le quai de Ciutadella. Le plus « week-end » des cinq : il n'ouvre pas en semaine.",
+    schemaType: "NightClub",
+    noteEs: "Solo abre viernes, sábado y domingo. Si vienes un martes, esta puerta estará cerrada.",
+    noteEn: "Open Friday, Saturday and Sunday only. If you come on a Tuesday, this door will be shut.",
+    noteFr: "Ouvert seulement vendredi, samedi et dimanche. Si vous venez un mardi, cette porte sera fermée.",
+  },
+  {
+    id: "ama-gi", name: "Ama-Gi", cat: "club", lat: 39.890501, lng: 4.263549,
+    areaEs: "Puerto de Maó", areaEn: "Port of Maó", areaFr: "Port de Maó",
+    descEs: "La discoteca de puerto de toda la vida en Maó: dos plantas, terrazas, billar y futbolín, y un DJ pinchando éxitos. Los domingos, salsa y bachata.",
+    descEn: "Maó's old-school harbour club: two floors, terraces, pool and table football, and a DJ playing hits. Sundays are for salsa and bachata.",
+    descFr: "La discothèque de port de toujours à Maó : deux étages, terrasses, billard et baby-foot, et un DJ qui passe des tubes. Le dimanche, salsa et bachata.",
+    schemaType: "NightClub",
+    noteEs: "Está en la cuesta que sube desde el muelle, pared con pared con Akelarre: la esquina de la noche de Maó.",
+    noteEn: "It's on the slope up from the quay, wall to wall with Akelarre: the corner where Maó's night happens.",
+    noteFr: "Il se trouve sur la côte qui monte du quai, mur à mur avec Akelarre : le coin où se joue la nuit de Maó.",
+  },
+  {
+    id: "mambo-deluxe", name: "Mambo Deluxe", cat: "club", lat: 39.890482, lng: 4.263875,
+    areaEs: "Puerto de Maó", areaEn: "Port of Maó", areaFr: "Port de Maó",
+    descEs: "Discoteca latina en la misma cuesta del puerto, a unos metros de Ama-Gi y Akelarre. Música comercial y baile hasta tarde.",
+    descEn: "A Latin club on the same harbour slope, metres from Ama-Gi and Akelarre. Commercial music and dancing until late.",
+    descFr: "Discothèque latine sur la même côte du port, à quelques mètres d'Ama-Gi et d'Akelarre. Musique commerciale et danse jusqu'à tard.",
+    schemaType: "NightClub",
+    noteEs: "Los tres locales de la cuesta se encadenan en una misma noche: se sube andando desde el Moll de Llevant.",
+    noteEn: "The three venues on the slope chain together in a single night: you walk up from the Moll de Llevant.",
+    noteFr: "Les trois établissements de la côte s'enchaînent dans une même soirée : on monte à pied depuis le Moll de Llevant.",
+  },
+  {
+    id: "es-claustre", name: "Es Claustre", cat: "club", lat: 39.888797, lng: 4.266153,
+    areaEs: "Claustre del Carme (Maó)", areaEn: "Claustre del Carme (Maó)", areaFr: "Claustre del Carme (Maó)",
+    descEs: "Conciertos al aire libre en el claustro del Carmen, de mayo a septiembre: flamenco, jazz, cantautores y bandas de verdad bajo las arcadas de un convento del XVIII. Los domingos, jazz. Es lo contrario de una discoteca, y es la mejor noche de Maó.",
+    descEn: "Open-air concerts in the cloister of El Carme, from May to September: flamenco, jazz, songwriters and real bands under the arches of an 18th-century convent. Sundays are jazz. It is the opposite of a nightclub, and it is Maó's finest night out.",
+    descFr: "Concerts en plein air dans le cloître du Carme, de mai à septembre : flamenco, jazz, auteurs-compositeurs et vrais groupes sous les arcades d'un couvent du XVIIIe. Le dimanche, jazz. C'est l'inverse d'une discothèque, et c'est la plus belle soirée de Maó.",
+    schemaType: "MusicVenue",
+    noteEs: "Temporada de mayo a septiembre y programación por noches: mira su cartel antes de ir. Está en pleno centro de Maó, así que se llega andando.",
+    noteEn: "Season runs May to September with a night-by-night programme: check the line-up before you go. It's in the centre of Maó, so you can walk there.",
+    noteFr: "Saison de mai à septembre avec une programmation soir par soir : consultez l'affiche avant d'y aller. En plein centre de Maó, on y va à pied.",
+  },
+  {
+    id: "la-terraza", name: "La Terraza", cat: "club", lat: 39.867299, lng: 4.226443,
+    areaEs: "Carretera del aeropuerto (Maó)", areaEn: "Airport road (Maó)", areaFr: "Route de l'aéroport (Maó)",
+    descEs: "La discoteca al aire libre más grande del este, en la carretera del aeropuerto. Abre de madrugada y va la isla joven: aquí no se viene a hablar.",
+    descEn: "The biggest open-air club in the east, on the airport road. It opens in the small hours and the island's young crowd goes: you don't come here to talk.",
+    descFr: "La plus grande discothèque en plein air de l'est, sur la route de l'aéroport. Elle ouvre au milieu de la nuit et la jeunesse de l'île s'y retrouve : on ne vient pas ici pour discuter.",
+    schemaType: "NightClub",
+    noteEs: "Abre de 23:30 a 5:00 y está fuera de la ciudad, en la carretera: sin coche, ni de ida ni de vuelta. Reabrió en 2023 en lo que fue Tiffany's.",
+    noteEn: "Open 23:30 to 5:00 and out of town, on the main road: no walking there or back. It reopened in 2023 in what was Tiffany's.",
+    noteFr: "Ouvert de 23h30 à 5h00 et hors de la ville, sur la route : impossible d'y aller ou d'en revenir à pied. Rouvert en 2023 dans l'ancien Tiffany's.",
+  },
+
+  // ── Dos hallazgos que NO son club, pero sí del mapa ──
+  {
+    id: "paput", name: "Paput", cat: "atardecer", lat: 39.893102, lng: 4.258369,
+    areaEs: "Bocana del puerto (Maó)", areaEn: "Harbour mouth (Maó)", areaFr: "Entrée du port (Maó)",
+    descEs: "Una terraza en la bocana del puerto de Maó, donde la última luz entra por la boca del canal. Cierra pronto: es copa de atardecer, no de madrugada.",
+    descEn: "A terrace at the mouth of Maó's harbour, where the last light comes in through the channel. It closes early: this is a sunset drink, not a late one.",
+    descFr: "Une terrasse à l'entrée du port de Maó, où la dernière lumière entre par le chenal. Il ferme tôt : c'est un verre au coucher du soleil, pas une nuit blanche.",
+    schemaType: "BarOrPub",
+    noteEs: "Cierra sobre las 23:30, así que es para el atardecer y la primera copa. Después, la noche está en la cuesta del puerto.",
+    noteEn: "It closes around 23:30, so it's for sunset and the first drink. After that, the night is up the harbour slope.",
+    noteFr: "Il ferme vers 23h30 : c'est pour le coucher du soleil et le premier verre. Ensuite, la nuit se joue sur la côte du port.",
+  },
+  {
+    id: "paupa", name: "Paupa", cat: "beach", lat: 39.816784, lng: 4.242938,
+    areaEs: "Binibèquer (Sant Lluís)", areaEn: "Binibèquer (Sant Lluís)", areaFr: "Binibèquer (Sant Lluís)",
+    descEs: "Bar de playa en el sureste, con fiestas de luna llena en verano: copas con los pies casi en la arena y música que no obliga a gritar.",
+    descEn: "A beach bar in the southeast, with full-moon parties in summer: drinks almost on the sand and music that doesn't make you shout.",
+    descFr: "Bar de plage au sud-est, avec des fêtes de pleine lune en été : des verres presque les pieds dans le sable et une musique qui n'oblige pas à crier.",
+    schemaType: "BarOrPub",
+    noteEs: "De temporada, como todos los chiringuitos: fuera del verano, confirma antes de ir.",
+    noteEn: "Seasonal, like every beach bar: outside summer, check before going.",
+    noteFr: "Saisonnier, comme tous les bars de plage : hors saison, vérifiez avant d'y aller.",
+  },
   {
     id: "es-casino-sant-climent", name: "Es Casino de Sant Climent", cat: "club", lat: 39.872104, lng: 4.208207,
     areaEs: "Sant Climent (Maó)", areaEn: "Sant Climent (Maó)", areaFr: "Sant Climent (Maó)",
