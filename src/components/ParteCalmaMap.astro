@@ -165,19 +165,22 @@ const puntoEnArco = (s: number) => {
 
    Así que se separan de verdad, con dos grados de libertad:
      · se deslizan a lo largo de la orilla (s), que es lo que menos falsea;
-     · y solo si eso no basta, el punto se despega hacia el mar (h), con un hilo
-       finísimo que lo ata a su sitio en la costa.
+     · y solo si eso no basta, el punto se aparta HACIA DENTRO DE LA ISLA (h), con un
+       hilo finísimo que lo ata a su sitio en la costa.
+   Hacia dentro, y NUNCA hacia el mar: un punto flotando en el agua se lee como un error
+   (feedback de Cristian) y encima obliga a moverlo más. Apartándolo tierra adentro no
+   queda ninguno en el agua, ninguno tapa a otro, y se mueven menos.
    Es el recurso clásico de la cartografía de infografía (point displacement): se cede
    algo de exactitud posicional a cambio de que las 75 calas se vean y se puedan tocar.
    La ubicación exacta sigue estando en Google Maps, desde la ficha de cada cala. */
-// Afinado en banco de pruebas: con estos valores NINGÚN punto tapa a otro (el más
-// apretado queda a 13,2 u y el punto mide 10), los puntos se mueven 277 m de media
-// y solo 17 de 75 necesitan despegarse de la orilla.
-const SEPARACION = 14;  // lo que debe haber entre centros
-const MAR_MAX = 30;     // lo más que un punto puede despegarse hacia el mar
-const MUELLE = 0.02;    // tira de cada punto hacia su sitio real (miente lo menos posible)
+// Afinado en banco de pruebas: NINGÚN punto tapa a otro (el más apretado queda a 12,3 u
+// y el punto mide 10), NINGUNO cae en el mar, se mueven 171 m de media (máx. 1,1 km) y
+// solo 13 de 75 se apartan de la orilla.
+const SEPARACION = 13;   // lo que debe haber entre centros (el punto mide 10)
+const TIERRA_MAX = 30;   // lo más que un punto puede meterse tierra adentro (≈1,6 km)
+const MUELLE = 0.02;     // tira de cada punto hacia su sitio real (miente lo menos posible)
 const PASO = 0.04;
-const ITERACIONES = 4000;
+const ITERACIONES = 5000;
 
 const normalEnArco = (s: number) => normales[idxDeArco(s).i];
 const sFinal = parte.calas.map((c) => snapS(c.lat, c.lng));
@@ -215,14 +218,15 @@ for (let paso = 0; paso < ITERACIONES; paso++) {
     ds[i] -= (sFinal[i] - sOriginal[i]) * MUELLE; // muelle: vuelve a su sitio si puede
     dh[i] -= hFinal[i] * MUELLE;
     sFinal[i] += ds[i] * PASO;
-    hFinal[i] = Math.max(0, Math.min(MAR_MAX, hFinal[i] + dh[i] * PASO)); // hacia el mar, nunca tierra adentro
+    // h negativo = tierra adentro. Nunca positivo: ningún punto acaba flotando en el mar.
+    hFinal[i] = Math.max(-TIERRA_MAX, Math.min(0, hFinal[i] + dh[i] * PASO));
   }
 }
 
 const markers = parte.calas.map((c, i) => {
   const anclaje = puntoEnArco(sFinal[i]); // su sitio en la orilla
   const p = posDe(i);                     // donde se dibuja el punto
-  return { ...c, ...p, ax: anclaje.x, ay: anclaje.y, despegado: hFinal[i] > 4 };
+  return { ...c, ...p, ax: anclaje.x, ay: anclaje.y, despegado: Math.abs(hFinal[i]) > 4 };
 });
 
 // Pueblos de referencia para orientarse (no son calas). Faint, decorativos.
