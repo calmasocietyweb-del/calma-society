@@ -140,6 +140,7 @@ type V = {
   id: string;
   name: string;
   cat: Cat;
+  cat2?: Cat; // el sitio que es dos cosas a la vez (El Toro: amanecer y atardecer)
   zone: Zone;
   lat: number;
   lng: number;
@@ -182,6 +183,11 @@ type Extra = {
   id: string;
   name: string;
   cat: Cat;
+  /** Segunda categoría, para el sitio que de verdad es dos cosas. Hoy solo El Toro:
+   *  desde sus 358 m se ve SALIR y PONERSE el sol el mismo día, y esa doble vida es
+   *  justo lo que lo hace único. El punto se pinta con la categoría principal, pero
+   *  aparece en los dos filtros. */
+  cat2?: Cat;
   lat: number;
   lng: number;
   areaEs: string;
@@ -443,6 +449,155 @@ const EXTRA: Extra[] = [
   // Kopas y Akelarre (fichas), más la Cova d'en Xoroi, que de noche es club—. Se
   // descartaron candidatos por cierre permanente (Sa Clau, Space) o por ubicación
   // dudosa/identidad sin confirmar (Sakova): el moat manda sobre el "más".
+
+  /* ═══ AMPLIACIÓN DEL 13-jul-2026 ════════════════════════════════════════════
+     Investigación verificada (briefs en .tmp_research/2026-07-13-*). Solo entra lo
+     que se pudo comprobar: coordenadas de OSM, apertura contrastada en web oficial
+     y notas de acceso REALES. Lo que no se pudo verificar se quedó fuera y está
+     anotado (Son Bou Beach Club, sin coordenada fiable; Ama-Gi, sin pin).
+     Descartados a propósito: Sa Clau (cerrado, su dominio ni resuelve), Torre d'en
+     Galmés y Torre de Fornells (CIERRAN antes de la puesta de sol: venderlos como
+     mirador de atardecer sería mentir). ══════════════════════════════════════ */
+
+  // ───────────── EL TORO — el único que es amanecer Y atardecer ─────────────
+  {
+    id: "el-toro", name: "El Toro", cat: "atardecer", cat2: "amanecer", lat: 39.98508, lng: 4.11309,
+    areaEs: "Es Mercadal (centro de la isla)", areaEn: "Es Mercadal (centre of the island)", areaFr: "Es Mercadal (centre de l'île)",
+    descEs: "Los 358 metros del punto más alto de Menorca, en mitad de la isla. Es el único sitio donde el sol no se pone sobre el agua, sino sobre Menorca entera: se ve caer la luz sobre los campos, los pueblos y las dos costas a la vez. Y al alba, desde la misma explanada, el sol sale por el otro lado. En días muy claros se recorta Mallorca en el horizonte.",
+    descEn: "The 358 metres of Menorca's highest point, in the middle of the island. It is the only place where the sun doesn't set over water but over the whole of Menorca: you watch the light fall across the fields, the villages and both coasts at once. And at dawn, from the same esplanade, the sun rises on the other side. On very clear days Mallorca appears on the horizon.",
+    descFr: "Les 358 mètres du point culminant de Minorque, au centre de l'île. C'est le seul endroit où le soleil ne se couche pas sur l'eau, mais sur Minorque tout entière : on voit la lumière tomber sur les champs, les villages et les deux côtes à la fois. Et à l'aube, depuis la même esplanade, le soleil se lève de l'autre côté. Par temps très clair, Majorque se découpe à l'horizon.",
+    schemaType: "TouristAttraction",
+    noteEs: "Se sube en coche desde Es Mercadal por una carretera asfaltada de menos de 3 km, estrecha, de curvas y compartida con ciclistas; hay aparcamiento gratuito arriba. El santuario y su tienda cierran sobre las 19:00 (20:00 en verano): a la salida y a la puesta del sol la explanada queda para uno, sin bar ni servicios. El amanecer aquí es panorámico, no marino: en verano el sol sale por el noreste, no de frente sobre el mar.",
+    noteEn: "You drive up from Es Mercadal on a paved road of under 3 km — narrow, winding and shared with cyclists; there is free parking at the top. The sanctuary and its shop close around 19:00 (20:00 in summer): at sunrise and sunset the esplanade is yours, with no bar and no services. The sunrise here is panoramic, not maritime: in summer the sun comes up to the northeast, not straight out of the sea.",
+    noteFr: "On y monte en voiture depuis Es Mercadal par une route goudronnée de moins de 3 km, étroite, sinueuse et partagée avec les cyclistes ; stationnement gratuit en haut. Le sanctuaire et sa boutique ferment vers 19h00 (20h00 en été) : au lever et au coucher du soleil, l'esplanade est à vous, sans bar ni services. Le lever de soleil y est panoramique, pas maritime : en été, le soleil se lève au nord-est, pas face à la mer.",
+  },
+
+  // ───────────── ATARDECER ─────────────
+  {
+    id: "cantina-illa-del-rei", name: "Cantina · Illa del Rei", cat: "atardecer", lat: 39.8869472, lng: 4.2880422,
+    areaEs: "Illa del Rei (puerto de Maó)", areaEn: "Illa del Rei (port of Maó)", areaFr: "Illa del Rei (port de Maó)",
+    descEs: "Una isla en mitad del puerto de Maó, con la galería de Hauser & Wirth al lado y un jardín de olivos por techo. No es una terraza con vistas: es un desplazamiento en barco para ver la última luz sobre el puerto desde el agua, y volver de noche.",
+    descEn: "An island in the middle of Maó's harbour, with the Hauser & Wirth gallery beside it and a garden of olive trees overhead. Not a terrace with a view: a boat trip to watch the last light fall on the harbour from the water, and come back in the dark.",
+    descFr: "Une île au milieu du port de Maó, avec la galerie Hauser & Wirth à côté et un jardin d'oliviers pour toit. Ce n'est pas une terrasse avec vue : c'est une traversée en bateau pour voir la dernière lumière sur le port depuis l'eau, et rentrer de nuit.",
+    schemaType: "Restaurant", website: "https://cantinamenorca.com/",
+    noteEs: "Solo se llega en barco: lanzadera desde el Moll de Llevant, 15 minutos. En pleno verano el último barco de vuelta sale de la isla sobre las 23:30, así que da tiempo al atardecer; fuera de temporada alta el último es a media tarde y NO hay atardecer posible. Confirma horarios y reserva en su web antes de ir.",
+    noteEn: "Reachable only by boat: a shuttle from Moll de Llevant, 15 minutes. In high summer the last boat back leaves the island around 23:30, so sunset is possible; outside the high season the last one is mid-afternoon and sunset is NOT possible. Check times and book on their website before you go.",
+    noteFr: "On n'y accède qu'en bateau : navette depuis le Moll de Llevant, 15 minutes. En plein été, le dernier bateau quitte l'île vers 23h30, le coucher de soleil est donc possible ; hors haute saison, le dernier part en milieu d'après-midi et le coucher de soleil n'est PAS possible. Vérifiez les horaires et réservez sur leur site.",
+  },
+  {
+    id: "fortalesa-la-mola", name: "Fortalesa de La Mola", cat: "atardecer", lat: 39.8759135, lng: 4.3105783,
+    areaEs: "La Mola (Maó)", areaEn: "La Mola (Maó)", areaFr: "La Mola (Maó)",
+    descEs: "La fortaleza militar del XIX que cierra la bocana del puerto de Maó, sobre acantilados. Programa visitas guiadas al atardecer y observación astronómica: es el atardecer con relato, no con cóctel.",
+    descEn: "The 19th-century fortress that guards the mouth of Maó's harbour, high on the cliffs. It runs guided sunset visits and astronomy nights: this is sunset with a story, not with a cocktail.",
+    descFr: "La forteresse militaire du XIXe siècle qui ferme l'entrée du port de Maó, sur les falaises. Elle propose des visites guidées au coucher du soleil et des soirées astronomiques : le coucher de soleil avec un récit, pas avec un cocktail.",
+    schemaType: "TouristAttraction", website: "https://www.fortalesalamola.com/",
+    noteEs: "Recinto de pago y con horario (de abril a septiembre suele abrir hasta las 20:00; en enero cierra). Las visitas al atardecer son actividades puntuales con reserva: consulta su calendario antes de contar con ellas.",
+    noteEn: "Paid site with opening hours (April to September it usually opens until 20:00; closed in January). The sunset visits are scheduled activities with booking: check their calendar before counting on one.",
+    noteFr: "Site payant et avec horaires (d'avril à septembre, ouvert en général jusqu'à 20h00 ; fermé en janvier). Les visites au coucher du soleil sont des activités ponctuelles sur réservation : consultez leur calendrier avant d'y compter.",
+  },
+  {
+    id: "far-sa-farola", name: "Far de sa Farola", cat: "atardecer", lat: 39.9961778, lng: 3.8227675,
+    areaEs: "Bocana del puerto (Ciutadella)", areaEn: "Harbour mouth (Ciutadella)", areaFr: "Entrée du port (Ciutadella)",
+    descEs: "El faro que guarda la boca del puerto de Ciutadella, al final del paseo. Aquí el sol se pone mar adentro, sin nada delante; el Castell de Sant Nicolau, a unos metros, ofrece el mismo cielo desde la torre y con la ciudad detrás.",
+    descEn: "The lighthouse guarding the mouth of Ciutadella's harbour, at the end of the promenade. Here the sun sets straight out to sea with nothing in the way; the Castell de Sant Nicolau, a few metres away, offers the same sky from the tower, with the town behind.",
+    descFr: "Le phare qui garde l'entrée du port de Ciutadella, au bout de la promenade. Ici, le soleil se couche au large, sans rien devant ; le Castell de Sant Nicolau, à quelques mètres, offre le même ciel depuis la tour, avec la ville derrière.",
+    schemaType: "TouristAttraction", toArticle: true,
+    noteEs: "A un kilómetro del centro; hay aparcamiento en Sa Farola y unos minutos a pie. Libre y siempre abierto.",
+    noteEn: "A kilometre from the centre; there is parking at Sa Farola and a few minutes on foot. Free and always open.",
+    noteFr: "À un kilomètre du centre ; parking à Sa Farola et quelques minutes à pied. Libre et toujours ouvert.",
+  },
+  {
+    id: "castell-santa-agueda", name: "Castell de Santa Àgueda", cat: "atardecer", lat: 40.02755, lng: 4.00764,
+    areaEs: "Ferreries (norte)", areaEn: "Ferreries (north)", areaFr: "Ferreries (nord)",
+    descEs: "Las ruinas del castillo andalusí, a 264 metros, se ganan subiendo un camino empedrado de origen romano. Es el contrapunto de esfuerzo del mapa: aquí el atardecer no se aparca al lado, se camina.",
+    descEn: "The ruins of the Andalusi castle, at 264 metres, are earned by climbing a cobbled path of Roman origin. This is the map's counterweight of effort: here you don't park beside the sunset, you walk to it.",
+    descFr: "Les ruines du château andalou, à 264 mètres, se méritent en gravissant un chemin pavé d'origine romaine. C'est le contrepoint de l'effort sur la carte : ici, on ne se gare pas à côté du coucher de soleil, on y monte à pied.",
+    schemaType: "TouristAttraction",
+    noteEs: "Se aparca al final del Camí de Santa Àgueda y se suben 1,5 km a pie (25-40 minutos, +172 m). Libre y sin horario, pero si te quedas al atardecer BAJARÁS DE NOCHE por piedra resbaladiza: frontal imprescindible y calzado que agarre.",
+    noteEn: "Park at the end of the Camí de Santa Àgueda and walk 1.5 km up (25-40 minutes, +172 m). Free and with no closing time, but if you stay for sunset you will COME DOWN IN THE DARK on slippery stone: a head torch and proper footwear are essential.",
+    noteFr: "On se gare au bout du Camí de Santa Àgueda et on monte 1,5 km à pied (25-40 minutes, +172 m). Libre et sans horaire, mais si vous restez pour le coucher du soleil, vous DESCENDREZ DE NUIT sur des pierres glissantes : lampe frontale et bonnes chaussures indispensables.",
+  },
+
+  // ───────────── AMANECER ─────────────
+  {
+    id: "punta-espero", name: "Punta de s'Esperó", cat: "amanecer", lat: 39.8768054, lng: 4.3275411,
+    areaEs: "La Mola (Maó)", areaEn: "La Mola (Maó)", areaFr: "La Mola (Maó)",
+    descEs: "El punto más oriental de España, en un acantilado de 80 metros al final de La Mola. Ocho meses al año, aquí el sol sale antes que en ningún otro sitio del país; en verano, el Cap de Creus se adelanta unos minutos.",
+    descEn: "The easternmost point of Spain, on an 80-metre cliff at the far end of La Mola. For eight months of the year the sun rises here before anywhere else in the country; in summer, Cap de Creus beats it by a few minutes.",
+    descFr: "Le point le plus oriental d'Espagne, sur une falaise de 80 mètres au bout de La Mola. Huit mois par an, le soleil s'y lève avant partout ailleurs dans le pays ; en été, le Cap de Creus le devance de quelques minutes.",
+    schemaType: "TouristAttraction", website: "https://www.fortalesalamola.com/",
+    noteEs: "No es de acceso libre: está dentro de la Fortalesa de La Mola y solo se llega con su actividad guiada de amanecer, que exige reserva y un mínimo de plazas. Consulta fechas en su web; no aparezcas de madrugada por tu cuenta.",
+    noteEn: "Not freely accessible: it lies inside the Fortalesa de La Mola and can only be reached on their guided sunrise activity, which requires booking and a minimum number of places. Check dates on their website; don't just turn up at dawn.",
+    noteFr: "Accès non libre : il se trouve à l'intérieur de la Fortalesa de La Mola et n'est accessible que lors de leur activité guidée du lever du soleil, sur réservation et avec un minimum de participants. Vérifiez les dates sur leur site ; ne venez pas à l'aube sans réserver.",
+  },
+  {
+    id: "es-grau-amanecer", name: "Es Grau", cat: "amanecer", lat: 39.95039, lng: 4.26964,
+    areaEs: "Noreste (Maó)", areaEn: "Northeast (Maó)", areaFr: "Nord-est (Maó)",
+    descEs: "El amanecer sin sacrificio, en el corazón de la Reserva de Biosfera: arena abierta al este, la albufera detrás y las barcas quietas. A quince minutos de Maó y, al alba, para uno solo.",
+    descEn: "Sunrise without sacrifice, in the heart of the Biosphere Reserve: sand open to the east, the lagoon behind and the boats still. Fifteen minutes from Maó and, at first light, all yours.",
+    descFr: "Le lever de soleil sans sacrifice, au cœur de la Réserve de biosphère : du sable ouvert à l'est, l'étang derrière et les barques immobiles. À quinze minutes de Maó et, à l'aube, rien que pour vous.",
+    schemaType: "TouristAttraction",
+    noteEs: "Se llega en coche y hay dos aparcamientos. En julio y agosto se llena a media mañana, pero al amanecer está vacío. Es espacio natural protegido: senderos marcados y la basura, de vuelta a casa.",
+    noteEn: "Reachable by car, with two car parks. In July and August it fills up by mid-morning, but at sunrise it is empty. This is a protected natural area: keep to the marked paths and take your rubbish home.",
+    noteFr: "Accessible en voiture, avec deux parkings. En juillet et août, il se remplit en milieu de matinée, mais à l'aube il est vide. C'est un espace naturel protégé : sentiers balisés et déchets à rapporter chez soi.",
+  },
+  {
+    id: "cala-sant-esteve-amanecer", name: "Cala Sant Esteve", cat: "amanecer", lat: 39.86337, lng: 4.30393,
+    areaEs: "Este (Es Castell)", areaEn: "East (Es Castell)", areaFr: "Est (Es Castell)",
+    descEs: "Una ensenada estrecha en la boca del puerto de Maó, entre el Fort Marlborough y las ruinas del castillo de Sant Felip. El sol sale del mar de levante entre dos fortalezas, y sin la multitud de Cales Fonts.",
+    descEn: "A narrow inlet at the mouth of Maó's harbour, between Fort Marlborough and the ruins of Sant Felip castle. The sun rises out of the eastern sea between two fortresses, and without the crowd of Cales Fonts.",
+    descFr: "Une crique étroite à l'entrée du port de Maó, entre le fort Marlborough et les ruines du château de Sant Felip. Le soleil sort de la mer du levant entre deux forteresses, et sans la foule de Cales Fonts.",
+    schemaType: "TouristAttraction",
+    noteEs: "Se llega en coche hasta la cala; se aparca en la calle y hay pocas plazas. El acceso es llano y fácil, aunque los fuertes están cerrados a esa hora.",
+    noteEn: "You can drive right to the inlet; parking is on the street and spaces are few. Access is flat and easy, though the forts are closed at that hour.",
+    noteFr: "On accède en voiture jusqu'à la crique ; le stationnement se fait dans la rue et les places sont rares. L'accès est plat et facile, mais les forts sont fermés à cette heure.",
+  },
+
+  // ───────────── COPAS Y MÚSICA ─────────────
+  {
+    id: "eolo-sunset-bar", name: "Eolo Sunset Bar", cat: "cocteleria", lat: 40.0073979, lng: 3.7959313,
+    areaEs: "Cala en Blanes (Ciutadella)", areaEn: "Cala en Blanes (Ciutadella)", areaFr: "Cala en Blanes (Ciutadella)",
+    descEs: "Un bar de atardecer de verdad en el acantilado del oeste, a un paso del Pont d'en Gil. Abre solo para las horas que importan, con el sol de frente y el mar debajo.",
+    descEn: "A genuine sunset bar on the western cliff, a step from the Pont d'en Gil. It opens only for the hours that matter, with the sun ahead and the sea below.",
+    descFr: "Un vrai bar de coucher de soleil sur la falaise ouest, à deux pas du Pont d'en Gil. Il n'ouvre que pour les heures qui comptent, le soleil en face et la mer en dessous.",
+    schemaType: "BarOrPub", website: "https://www.seaclubmenorca.com/eolo-sunsetbar/",
+    noteEs: "Abre solo por la tarde-noche (sobre las 19:00 a 23:00) y cierra los martes. Es público: no hace falta alojarse en el hotel ni reservar. De temporada: confirma en su web fuera del verano.",
+    noteEn: "Open only in the evening (roughly 19:00 to 23:00) and closed on Tuesdays. It is open to everyone: you don't need to be a hotel guest or book. Seasonal: check their website outside summer.",
+    noteFr: "Ouvert seulement en soirée (environ 19h00-23h00) et fermé le mardi. Il est ouvert à tous : inutile d'être client de l'hôtel ou de réserver. Saisonnier : vérifiez leur site hors saison.",
+  },
+  {
+    id: "ulisses", name: "Ulisses", cat: "cocteleria", lat: 40.0013490, lng: 3.8398124,
+    areaEs: "Casco antiguo (Ciutadella)", areaEn: "Old town (Ciutadella)", areaFr: "Vieille ville (Ciutadella)",
+    descEs: "Coctelería con cocina en una plaza del casco antiguo de Ciutadella, lejos del ruido del puerto. Una copa de ciudad, con calma y con criterio.",
+    descEn: "A cocktail bar with a kitchen on a square in Ciutadella's old town, away from the noise of the harbour. A city drink, unhurried and with judgement.",
+    descFr: "Bar à cocktails avec cuisine sur une place de la vieille ville de Ciutadella, loin du bruit du port. Un verre en ville, tranquille et choisi.",
+    schemaType: "BarOrPub", website: "https://ulissesbar.com/",
+    noteEs: "Cierra los domingos. Está en zona peatonal: se aparca fuera del centro y se entra andando.",
+    noteEn: "Closed on Sundays. It sits in a pedestrian area: park outside the centre and walk in.",
+    noteFr: "Fermé le dimanche. Il se trouve en zone piétonne : garez-vous hors du centre et entrez à pied.",
+  },
+  {
+    id: "menorca-experimental", name: "Menorca Experimental", cat: "cocteleria", lat: 39.890157, lng: 4.089456,
+    areaEs: "Llucalari (Alaior)", areaEn: "Llucalari (Alaior)", areaFr: "Llucalari (Alaior)",
+    descEs: "El bar de una finca del campo menorquín, en manos del grupo del Experimental Cocktail Club de París: coctelería de autor con producto de la isla, lejos de cualquier paseo marítimo. Lujo tranquilo, literalmente en mitad del campo.",
+    descEn: "The bar of a Menorcan country estate, run by the group behind Paris's Experimental Cocktail Club: signature cocktails with island produce, far from any seafront promenade. Quiet luxury, literally out in the fields.",
+    descFr: "Le bar d'une finca de la campagne minorquine, tenu par le groupe de l'Experimental Cocktail Club de Paris : cocktails d'auteur avec des produits de l'île, loin de tout front de mer. Luxe tranquille, littéralement en pleine campagne.",
+    schemaType: "BarOrPub", website: "https://www.experimentalhotels.com/menorca-experimental",
+    noteEs: "Es un hotel de campo: se llega en coche por el Camí de Llucalari. No hemos podido confirmar si el bar admite a quien no se aloja allí — llama o reserva antes de ir.",
+    noteEn: "It is a country hotel: you get there by car along the Camí de Llucalari. We could not confirm whether the bar admits non-residents — call or book before going.",
+    noteFr: "C'est un hôtel de campagne : on y accède en voiture par le Camí de Llucalari. Nous n'avons pas pu confirmer si le bar accepte les non-résidents — appelez ou réservez avant de venir.",
+  },
+  {
+    id: "es-casino-sant-climent", name: "Es Casino de Sant Climent", cat: "club", lat: 39.872104, lng: 4.208207,
+    areaEs: "Sant Climent (Maó)", areaEn: "Sant Climent (Maó)", areaFr: "Sant Climent (Maó)",
+    descEs: "Un casino de pueblo donde suena jazz en vivo desde hace décadas, en un local pequeño y sin pretensiones. Es la única noche de música de la isla que no depende del verano: abre todo el año.",
+    descEn: "A village social club where live jazz has been played for decades, in a small room with no airs. It is the island's only music night that doesn't depend on summer: it opens all year round.",
+    descFr: "Un casino de village où le jazz live résonne depuis des décennies, dans une petite salle sans prétention. C'est la seule soirée musicale de l'île qui ne dépend pas de l'été : ouvert toute l'année.",
+    schemaType: "BarOrPub",
+    noteEs: "El jazz en vivo es los martes en temporada (de mayo a octubre). Cierra los miércoles. Es un local pequeño y se llena: llega pronto. Se aparca en el pueblo.",
+    noteEn: "Live jazz is on Tuesdays in season (May to October). Closed on Wednesdays. It's a small room and it fills up: arrive early. Park in the village.",
+    noteFr: "Le jazz live a lieu le mardi en saison (de mai à octobre). Fermé le mercredi. La salle est petite et se remplit : arrivez tôt. Stationnement dans le village.",
+  },
 ];
 
 // Enlace de los puntos en línea: a la guía de atardeceres (ES/EN).
@@ -452,6 +607,7 @@ const fromExtra: V[] = EXTRA.map((x) => ({
   id: x.id,
   name: x.name,
   cat: x.cat,
+  cat2: x.cat2,
   zone: zoneOf(x.lng),
   lat: x.lat,
   lng: x.lng,
@@ -468,7 +624,11 @@ const fromExtra: V[] = EXTRA.map((x) => ({
 // estable, así que dentro de cada grupo van primero los de ficha y luego los nuevos.
 const catIdx = (c: Cat) => CAT_ORDER.indexOf(c);
 const venues: V[] = [...fromFichas, ...fromExtra].sort((a, b) => catIdx(a.cat) - catIdx(b.cat));
-const catCount = (cat: Cat) => venues.filter((v) => v.cat === cat).length;
+/** Las categorías de un sitio, como lista separada por espacios: es lo que leen el
+ *  filtro (con `~=`) y los contadores. Casi todos tienen una; El Toro, dos. */
+const catsDe = (v: V) => [v.cat, v.cat2].filter(Boolean).join(" ");
+const esDeCat = (v: V, cat: Cat) => v.cat === cat || v.cat2 === cat;
+const catCount = (cat: Cat) => venues.filter((v) => esDeCat(v, cat)).length;
 const zoneCount = (z: Zone) => venues.filter((v) => v.zone === z).length;
 
 // ── Orden de la lista 100% CSS (sin JS) ──
@@ -495,7 +655,7 @@ for (const v of venues) {
 const emptyCombos: { cat: Cat; zone: Zone }[] = [];
 for (const cat of CAT_ORDER) {
   for (const z of ZONES) {
-    if (!venues.some((v) => v.cat === cat && v.zone === z.key)) emptyCombos.push({ cat, zone: z.key });
+    if (!venues.some((v) => esDeCat(v, cat) && v.zone === z.key)) emptyCombos.push({ cat, zone: z.key });
   }
 }
 const emptyCss = emptyCombos
@@ -1104,7 +1264,7 @@ const jsonLd = {
             señalar (hover/foco). Enlazan a su ficha de la lista. */}
         {
           pts.map((p) => (
-            <a class="night-pin" href={`#night-${p.v.id}`} data-cat={p.v.cat} data-zone={p.v.zone} data-umami-event="sunset-pin">
+            <a class="night-pin" href={`#night-${p.v.id}`} data-cat={catsDe(p.v)} data-zone={p.v.zone} data-umami-event="sunset-pin">
               <title>{p.v.name} — {catLabel(p.v.cat)}</title>
               <circle class="night-pin-circle" cx={p.x.toFixed(1)} cy={p.y.toFixed(1)} r="13" fill={CATS[p.v.cat].color} stroke="#fff8ec" stroke-width="3" filter="url(#night-punto)" />
               <g class="night-pin-glyph" transform={`translate(${p.x.toFixed(1)},${p.y.toFixed(1)}) scale(1.3)`} aria-hidden="true" set:html={GLYPH[p.v.cat]} />
@@ -1124,7 +1284,7 @@ const jsonLd = {
         venues.map((v) => (
           <article
             id={`night-${v.id}`}
-            data-cat={v.cat}
+            data-cat={catsDe(v)}
             data-zone={v.zone}
             role="listitem"
             style={`--rec:${recOrder.get(v.id)};--rate:${rateRank.get(v.id)}`}

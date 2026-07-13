@@ -528,11 +528,11 @@ a.cala-activa > .cala-punto {
   outline-offset: 2px;
 }
 /* Filtrado por categoría: oculta marcadores y fichas de las demás categorías. */
-.nightmap-filterable:has(#nf-atardecer:checked) [data-cat]:not([data-cat="atardecer"]),
-.nightmap-filterable:has(#nf-amanecer:checked) [data-cat]:not([data-cat="amanecer"]),
-.nightmap-filterable:has(#nf-beach:checked) [data-cat]:not([data-cat="beach"]),
-.nightmap-filterable:has(#nf-cocteleria:checked) [data-cat]:not([data-cat="cocteleria"]),
-.nightmap-filterable:has(#nf-club:checked) [data-cat]:not([data-cat="club"]) {
+.nightmap-filterable:has(#nf-atardecer:checked) [data-cat]:not([data-cat~="atardecer"]),
+.nightmap-filterable:has(#nf-amanecer:checked) [data-cat]:not([data-cat~="amanecer"]),
+.nightmap-filterable:has(#nf-beach:checked) [data-cat]:not([data-cat~="beach"]),
+.nightmap-filterable:has(#nf-cocteleria:checked) [data-cat]:not([data-cat~="cocteleria"]),
+.nightmap-filterable:has(#nf-club:checked) [data-cat]:not([data-cat~="club"]) {
   display: none;
 }
 /* Nombre del local: oculto, aparece al señalar/enfocar su punto. Halo claro
