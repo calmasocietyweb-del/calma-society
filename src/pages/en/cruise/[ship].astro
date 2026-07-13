@@ -1,0 +1,70 @@
+---
+/**
+ * Cruise ship page (EN): /en/cruise/<ship>
+ * Same as the Spanish one: only ships that call MORE THAN ONCE and have verified
+ * times. No page-per-call: that would be 97 near-identical pages, i.e. filler.
+ */
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import CruiseShipPage from "../../../components/CruiseShipPage.astro";
+import JsonLd from "../../../components/JsonLd.astro";
+import cruceros from "../../../data/cruceros-menorca-2026.json";
+import { barcosConPagina, enHoras, type Call } from "../../../lib/cruises";
+
+export async function getStaticPaths() {
+  const barcos = barcosConPagina((cruceros as { calls: Call[] }).calls);
+  return barcos.map((barco) => ({ params: { ship: barco.slug }, props: { barco } }));
+}
+
+const { barco } = Astro.props;
+const fuente = {
+  updated: (cruceros as any).updated as string,
+  coveragePct: (cruceros as any).coveragePct as number,
+  officialSource: (cruceros as any).officialSource as string,
+};
+
+const alternates = {
+  es: `/crucero/${barco.slug}`,
+  en: `/en/cruise/${barco.slug}`,
+};
+
+const title = `${barco.ship} in Menorca: what to do on your Maó call`;
+const description = `The ${barco.ship} berths in Maó at ${barco.arrival} and sails at ${barco.departure}: that leaves you around ${enHoras(barco.utilesMin, "en")} ashore. What you have time for, what you don't, and how to get around without missing the ship.`;
+
+const faq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: `How long do I have ashore on the ${barco.ship} call in Maó?`,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: `The ${barco.ship} berths at ${barco.arrival} and sails at ${barco.departure} (${enHoras(barco.escalaMin, "en")} in port). Taking off about 30 minutes to disembark and 60 minutes of margin to get back on board, you have roughly ${enHoras(barco.utilesMin, "en")} truly ashore.`,
+      },
+    },
+    {
+      "@type": "Question",
+      name: `Is there time to visit Ciutadella from the ${barco.ship}?`,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: barco.caben.some((p) => p.id === "ciutadella" || p.id === "ciutadella-y-cala")
+          ? `Yes. Ciutadella is 45 minutes by car from the port of Maó, so 90 minutes there and back: with around ${enHoras(barco.utilesMin, "en")} ashore, it fits with room to spare.${barco.noCaben.some((p) => p.id === "ciutadella-y-cala") ? " What does not fit is chaining Ciutadella and a southern cove on the same day." : ""}`
+          : `Not comfortably. Ciutadella is 45 minutes by car (90 there and back) and with around ${enHoras(barco.utilesMin, "en")} ashore you would be watching the clock.`,
+      },
+    },
+    {
+      "@type": "Question",
+      name: `How do I get around Menorca during the call?`,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: `With a private driver by the hour you are picked up at the quay, taken wherever you like, waited for and returned to the ship with time to spare; there are also direct port ↔ destination transfers.${barco.desembarcoMasivo ? " This ship lands more than 1,500 people at once and the port's taxis run out fast: having a car booked saves you the first hour." : ""}`,
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description} locale="en" alternates={alternates}>
+  <JsonLd schema={faq} />
+  <CruiseShipPage barco={barco} locale="en" fuente={fuente} />
+</BaseLayout>

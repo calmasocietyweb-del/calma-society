@@ -10,12 +10,24 @@
  * Bilingüe por prop `lang`. Tabla accesible (thead/th scope) y responsive.
  */
 import cruceros from "../data/cruceros-menorca-2026.json";
+import { barcosConPagina, type Call } from "../lib/cruises";
 
 interface Props {
   lang?: "es" | "en";
 }
 const { lang = "es" } = Astro.props;
 const isEs = lang === "es";
+
+/* Los barcos que TIENEN página propia (repiten escala y tienen horas): desde la tabla
+   se entra en la suya, donde se le dice al crucerista cuánto tiempo tiene de verdad y
+   qué le da tiempo a hacer. Los demás se quedan en texto: no hay nada útil que contarles. */
+const conPagina = new Map(
+  barcosConPagina((cruceros as { calls: Call[] }).calls).map((b) => [b.ship, b.slug]),
+);
+const paginaDe = (ship: string) => {
+  const slug = conPagina.get(ship);
+  return slug ? (isEs ? `/crucero/${slug}` : `/en/cruise/${slug}`) : null;
+};
 
 // Conteo dinámico: el descargo se actualiza solo en cada refresco del calendario.
 const nCalls = (cruceros as { totalListed?: number }).totalListed ?? cruceros.calls.length;
@@ -130,7 +142,19 @@ const colCount = 5;
                 <span class="font-semibold text-tinta">{c.dow} {c.d}</span>
                 {c.hours && <span class="block text-xs text-piedra-suave">{c.hours}</span>}
               </td>
-              <td class="px-3 py-2.5 font-medium text-tinta" title={c.source}>{c.ship}</td>
+              <td class="px-3 py-2.5 font-medium text-tinta" title={c.source}>
+                {paginaDe(c.ship) ? (
+                  <a
+                    href={paginaDe(c.ship)}
+                    class="underline decoration-niebla underline-offset-4 hover:text-arcilla hover:decoration-terracota"
+                    data-umami-event="crucero-barco"
+                  >
+                    {c.ship}
+                  </a>
+                ) : (
+                  c.ship
+                )}
+              </td>
               <td class="px-3 py-2.5 text-piedra-suave">{c.line}</td>
               <td class="whitespace-nowrap px-3 py-2.5 text-right text-piedra-suave">{fmtPax(c.pax)}</td>
               <td class="whitespace-nowrap px-3 py-2.5">

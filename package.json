@@ -14,7 +14,7 @@
     "check": "astro check",
     "import:agenda": "node scripts/import-agenda.mjs",
     "drafts": "node scripts/list-drafts.mjs",
-    "test": "node --test \"src/lib/planner/**/*.test.ts\" \"src/lib/bookings/**/*.test.ts\" \"src/lib/newsletter/**/*.test.ts\""
+    "test": "node --test \"src/lib/planner/**/*.test.ts\" \"src/lib/bookings/**/*.test.ts\" \"src/lib/newsletter/**/*.test.ts\" \"src/lib/cruises.test.ts\""
   },
   "dependencies": {
     "@astrojs/mdx": "^6.0.3",

@@ -1,0 +1,74 @@
+---
+/**
+ * Página de un barco de crucero (ES): /crucero/<barco>
+ *
+ * Se genera una por cada barco que REPITE escala en Maó y tiene horas verificadas
+ * (15 hoy). Nada de una página por escala: serían 97 páginas calcadas con la fecha
+ * cambiada, o sea relleno — y eso lo prohíbe CLAUDE.md §12.
+ */
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CruiseShipPage from "../../components/CruiseShipPage.astro";
+import JsonLd from "../../components/JsonLd.astro";
+import cruceros from "../../data/cruceros-menorca-2026.json";
+import { barcosConPagina, enHoras, type Call } from "../../lib/cruises";
+import { SITE } from "../../config/site";
+
+export async function getStaticPaths() {
+  const barcos = barcosConPagina((cruceros as { calls: Call[] }).calls);
+  return barcos.map((barco) => ({ params: { ship: barco.slug }, props: { barco } }));
+}
+
+const { barco } = Astro.props;
+const fuente = {
+  updated: (cruceros as any).updated as string,
+  coveragePct: (cruceros as any).coveragePct as number,
+  officialSource: (cruceros as any).officialSource as string,
+};
+
+const alternates = {
+  es: `/crucero/${barco.slug}`,
+  en: `/en/cruise/${barco.slug}`,
+};
+
+const title = `${barco.ship} en Menorca: qué hacer en tu escala en Maó`;
+const description = `El ${barco.ship} atraca en Maó a las ${barco.arrival} y zarpa a las ${barco.departure}: te quedan unas ${enHoras(barco.utilesMin, "es")} en tierra. Qué te da tiempo a hacer, qué no, y cómo moverte sin perder el barco.`;
+
+// FAQ con las preguntas que se hace de verdad un crucerista: es lo que cita la IA.
+const faq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: `¿Cuánto tiempo tengo en tierra en la escala del ${barco.ship} en Maó?`,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: `El ${barco.ship} atraca a las ${barco.arrival} y zarpa a las ${barco.departure} (${enHoras(barco.escalaMin, "es")} de escala). Descontando unos 30 minutos para desembarcar y 60 de margen para volver a bordo, quedan alrededor de ${enHoras(barco.utilesMin, "es")} reales en tierra.`,
+      },
+    },
+    {
+      "@type": "Question",
+      name: `¿Da tiempo a ir a Ciutadella desde el ${barco.ship}?`,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: barco.caben.some((p) => p.id === "ciutadella" || p.id === "ciutadella-y-cala")
+          ? `Sí. Ciutadella está a 45 minutos en coche del puerto de Maó, así que ida y vuelta son 90 minutos: con unas ${enHoras(barco.utilesMin, "es")} en tierra, cabe con margen.${barco.noCaben.some((p) => p.id === "ciutadella-y-cala") ? " Lo que no cabe es encadenar Ciutadella y una cala del sur el mismo día." : ""}`
+          : `No con margen. Ciutadella está a 45 minutos en coche (90 de ida y vuelta) y con unas ${enHoras(barco.utilesMin, "es")} en tierra sería ir mirando el reloj.`,
+      },
+    },
+    {
+      "@type": "Question",
+      name: `¿Cómo me muevo por Menorca durante la escala?`,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: `Con chófer privado por horas te recogen en el muelle, te llevan donde quieras, te esperan y te devuelven al barco con margen; también hay traslado directo puerto ↔ destino.${barco.desembarcoMasivo ? " Este barco desembarca a más de 1.500 personas a la vez y los taxis del puerto se agotan enseguida: llevarlo reservado ahorra la primera hora." : ""}`,
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description} locale="es" alternates={alternates}>
+  <JsonLd schema={faq} />
+  <CruiseShipPage barco={barco} locale="es" fuente={fuente} />
+</BaseLayout>
