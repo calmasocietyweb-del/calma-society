@@ -724,8 +724,19 @@ form.is-wizard .planner-progress {
 form.is-wizard .planner-step-label {
   display: block;
 }
+/* La navegación se queda PEGADA ABAJO mientras dura el asistente. Sin esto, los
+   pasos altos (p. ej. «Tu estilo», con intereses y presupuesto) empujan los
+   botones fuera de la pantalla en móvil: el usuario pulsa a ciegas, cree que no
+   responde y acaba saltándose pasos. Bug real reportado el 13-jul. */
 form.is-wizard .planner-nav {
   display: flex;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  margin-top: 1.25rem;
+  padding: 0.75rem 0 1rem;
+  border-top: 1px solid var(--color-niebla);
+  background-color: var(--color-lino);
 }
 form.is-wizard fieldset[data-step]:not(.is-active) {
   display: none;
