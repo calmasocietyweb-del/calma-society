@@ -450,6 +450,15 @@
 .cala-aviso svg {
   flex: none;
 }
+/* Nombres de los pueblos: van encima de la costa pintada, con halo claro (paint-order)
+   para que se lean sobre el color, sobre el relieve o sobre lo que caiga. */
+.calma-pueblos text {
+  fill: #3f4a3b;
+  stroke: #f7f4ee;
+  stroke-width: 3.2px;
+  paint-order: stroke;
+  font-weight: 600;
+}
 /* Etiqueta con el nombre de la cala: oculta por defecto, aparece al pasar el ratón
    o enfocar el punto del mapa. El trazo claro (paint-order) hace de halo para que
    el nombre sea legible sobre mar, tierra o cualquier marcador. */

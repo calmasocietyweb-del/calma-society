@@ -868,15 +868,6 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
         <text x={VIEW_W / 2} y={offY - 30} fill="#5f7a72" font-size="15" text-anchor="middle" font-family="Inter Variable, sans-serif" letter-spacing="4" aria-hidden="true">{T.costaNorte}</text>
         <text x={VIEW_W / 2} y={baseY + 46} fill="#5f7a72" font-size="15" text-anchor="middle" font-family="Inter Variable, sans-serif" letter-spacing="4" aria-hidden="true">{T.costaSur}</text>
 
-        {/* Pueblos de referencia (orientación, no son calas) */}
-        <g aria-hidden="true" font-family="Inter Variable, sans-serif">
-          {TOWNS.map((t) => (
-            <Fragment>
-              <circle cx={t.x} cy={t.y} r="2.6" fill="#4f5f4a" />
-              <text x={t.x} y={t.y - 8} fill="#4f5f4a" font-size="13" text-anchor="middle">{t[locale]}</text>
-            </Fragment>
-          ))}
-        </g>
 
         {/* Rosa de los vientos */}
         <g aria-hidden="true" transform="translate(940,50)" font-family="Inter Variable, sans-serif">
@@ -899,13 +890,30 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
 
         {/* Marcadores por cala (fijados a la costa). El nombre aparece al señalar
             (hover/foco). Enlazan a su fila de la lista. */}
-        {/* ZONAS: el litoral pintado por tramos, según hacia dónde mira la costa. */}
+        {/* ZONAS: el litoral pintado por tramos, según hacia dónde mira la costa.
+            OJO AL ORDEN: en un SVG no hay z-index, manda quién se pinta después. Los
+            trazos de color van aquí, y ENCIMA los pueblos y los puntos; si no, la costa
+            pintada se come los nombres de los pueblos. */}
         {MODO_MAPA === "zonas" && (
           <g class="calma-zonas" fill="none" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
             {tramos.map((t) => <path d={t.d} stroke={FILL[t.band]} />)}
           </g>
         )}
 
+        {/* Pueblos de referencia (orientación, no son calas). Encima del color, y con
+            halo claro para que se lean sobre la costa pintada o sobre el relieve. */}
+        <g class="calma-pueblos" aria-hidden="true" font-family="Inter Variable, sans-serif">
+          {TOWNS.map((t) => (
+            <Fragment>
+              <circle cx={t.x} cy={t.y} r="2.6" fill="#3f4a3b" stroke="#f7f4ee" stroke-width="1.6" />
+              <text x={t.x} y={t.y - 8} font-size="13" text-anchor="middle">{t[locale]}</text>
+            </Fragment>
+          ))}
+        </g>
+
+        {/* Los marcadores, en su propia capa (la de arriba). El island sube al final del
+            grupo el que se señala: si no, su nombre queda debajo de los puntos vecinos. */}
+        <g class="calma-marcadores">
         {markers.map((c) => {
           const b0 = F0cala[c.id].band;
           return (
@@ -923,6 +931,7 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
             </a>
           );
         })}
+        </g>
       </svg>
       </div>
       {/* Ampliar / reducir: solo donde hace falta (móvil y tablet). El estado vive
@@ -1075,9 +1084,22 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
       const id = li.id.slice(5);
       for (const a of document.querySelectorAll("a.cala-activa")) a.classList.remove("cala-activa");
       const mk = document.querySelector('a[href="#cala-' + id + '"]');
-      if (mk) mk.classList.add("cala-activa");
+      if (mk) { mk.classList.add("cala-activa"); elevar(mk); }
       if (mapa) mapa.scrollIntoView({ behavior: "smooth", block: "center" });
     });
+  }
+
+  /* En un SVG no hay z-index: manda quién se pinta el último. Así que el marcador que
+     se señala (ratón, teclado o "ver en el mapa") se sube al final de su grupo — si no,
+     su nombre y su punto quedan debajo de las calas vecinas. */
+  const gMarcadores = document.querySelector(".calma-marcadores");
+  const elevar = (a: Element | null) => {
+    if (a && gMarcadores && a.parentElement === gMarcadores && a !== gMarcadores.lastElementChild) {
+      gMarcadores.appendChild(a);
+    }
+  };
+  for (const ev of ["mouseover", "focusin"]) {
+    gMarcadores?.addEventListener(ev, (e) => elevar((e.target as Element)?.closest("a")));
   }
 
   // Línea temporal: al deslizar la barra, recalcula el mar de cada cala (misma
