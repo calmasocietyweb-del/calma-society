@@ -405,6 +405,35 @@
     r: 8;
   }
 }
+/* Cada ficha de cala va TEÑIDA con su estado: de un vistazo se ve el bloque de las que
+   están en calma frente a las revueltas, sin leer una palabra. Tinte muy suave (lujo
+   tranquilo: el color informa, no grita). El color lo lleva `data-calma`, que el island
+   actualiza al cambiar el día → el tinte se actualiza solo, sin JS extra. */
+.cala-ficha {
+  background-color: var(--color-lino);
+}
+.cala-ficha[data-calma="alto"] {
+  background-color: color-mix(in srgb, #4f7a52 7%, var(--color-lino));
+}
+.cala-ficha[data-calma="medio"] {
+  background-color: color-mix(in srgb, #c08a2b 8%, var(--color-lino));
+}
+.cala-ficha[data-calma="bajo"] {
+  background-color: color-mix(in srgb, #a8483a 7%, var(--color-lino));
+}
+.cala-ficha[data-calma="sin-dato"] {
+  background-color: var(--color-arena);
+}
+/* El estado, en su color (sobre el tinte claro cumple contraste AA). */
+.cala-ficha[data-calma="alto"] .cala-band {
+  color: #3d5f3f;
+}
+.cala-ficha[data-calma="medio"] .cala-band {
+  color: #8a6119;
+}
+.cala-ficha[data-calma="bajo"] .cala-band {
+  color: #8c3a2e;
+}
 /* Aviso de "sin socorrismo", comprimido a etiqueta para que la lista de calas no se
    alargue. El texto completo sigue en el HTML (title + .sr-only). */
 .cala-aviso {

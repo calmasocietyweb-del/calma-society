@@ -333,6 +333,16 @@ const F0cala: Record<string, { band: string; windName: string; windKmh: number }
 const counts: Record<string, number> = { alto: 0, medio: 0, bajo: 0 };
 for (const c of parte.calas) { const b = F0cala[c.id].band; if (b === "alto" || b === "medio" || b === "bajo") counts[b]++; }
 
+/* La lista sale ORDENADA POR ESTADO: primero las que hoy están en calma, luego las de
+   algo de oleaje, y al final las revueltas (a igualdad, por nombre). Es el orden que
+   sirve a la pregunta real —«¿dónde me baño hoy?»—. Se ordena aquí, en el servidor, para
+   que funcione sin JS; y el island la reordena al cambiar el día en la barra. */
+const ORDEN_BANDA: Record<string, number> = { alto: 0, medio: 1, bajo: 2, "sin-dato": 3 };
+const calasOrdenadas = [...parte.calas].sort((a, b) => {
+  const d = (ORDEN_BANDA[F0cala[a.id].band] ?? 9) - (ORDEN_BANDA[F0cala[b.id].band] ?? 9);
+  return d !== 0 ? d : a.name.localeCompare(b.name, locale);
+});
+
 // MODO ZONAS: la banda de cada TRAMO de costa, con la MISMA fórmula que las calas
 // (`bandaDe`) — solo cambia la entrada: en vez de la orientación de una cala, la
 // orientación del tramo; el viento es el de su municipio (el de la cala vecina).
@@ -963,7 +973,7 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
         De 75 fichas apiladas a 25 filas. Cada ficha sigue siendo un <li> con su id,
         su color y sus datos (es la versión canónica del parte, la que cita la IA). */}
     <ol class="calma-lista mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-      {parte.calas.map((c) => {
+      {calasOrdenadas.map((c) => {
         const f0 = F0cala[c.id];
         const b0 = f0.band;
         return (
@@ -971,7 +981,7 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
           id={`cala-${c.id}`}
           data-calma={b0}
           data-nombre={c.name}
-          class="cursor-pointer rounded-xl border border-niebla bg-lino p-3.5 transition-colors hover:border-arcilla"
+          class="cala-ficha cursor-pointer rounded-xl border border-niebla p-3.5 transition-colors hover:border-arcilla"
           style={`border-left:4px solid ${FILL[b0]}`}
         >
           <h3 class="font-display text-base leading-tight text-tinta">
@@ -1116,6 +1126,22 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
       zonasG.innerHTML = html;
     };
 
+    /* Al cambiar el día cambian las bandas, así que la lista se reordena: primero las
+       calas en calma. Se reordena el DOM (no solo la vista con `order`) para que quien
+       usa lector de pantalla o teclado reciba el mismo orden que quien ve la pantalla. */
+    const ORDEN: Record<string, number> = { alto: 0, medio: 1, bajo: 2, "sin-dato": 3 };
+    const reordenarLista = () => {
+      const ol = document.querySelector(".calma-lista");
+      if (!ol) return;
+      const fichas = Array.from(ol.children) as HTMLElement[];
+      fichas
+        .sort((a, b) => {
+          const d = (ORDEN[a.dataset.calma || ""] ?? 9) - (ORDEN[b.dataset.calma || ""] ?? 9);
+          return d !== 0 ? d : (a.dataset.nombre || "").localeCompare(b.dataset.nombre || "");
+        })
+        .forEach((li) => ol.appendChild(li));
+    };
+
     const windName = document.getElementById("calma-wind-name");
     const windKmh = document.getElementById("calma-wind-kmh");
     const windDial = document.getElementById("calma-wind-dial");
@@ -1181,7 +1207,8 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
           const hl = mk.querySelector(".cala-hilo"); if (hl) hl.setAttribute("stroke", D.fill[band]);
         }
       }
-      pintarZonas(fr); // la costa pintada también cambia con el día elegido
+      pintarZonas(fr);  // la costa pintada también cambia con el día elegido
+      reordenarLista(); // y la lista vuelve a poner delante las calas en calma
       if (windName) windName.textContent = fr.rep.name;
       if (windKmh) windKmh.textContent = fr.rep.kmh;
       if (windDial) windDial.setAttribute("transform", "translate(34,34) rotate(" + fr.rep.deg + ")");
