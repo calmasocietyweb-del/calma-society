@@ -36,6 +36,10 @@ const MEDUSAS_ENABLED = false;
 // UNIFORME → mantiene la proporción real de la isla. La costa (RING) define la
 // extensión; los marcadores usan la MISMA proyección. ----
 const RING: [number, number][] = outline.ring as [number, number][];
+// Recuadro que cubre la malla de relieve (mismo que en scripts/relieve-menorca.mjs).
+const RELIEVE_BBOX = { latMin: 39.74, latMax: 40.13, lngMin: 3.71, lngMax: 4.42 };
+// Icono de aviso, de línea (nada de emojis — estética de marca).
+const UI_ICON_AVISO = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5 21 19.5H3z"/><path d="M12 10v3.6"/><path d="M12 16.6h.01"/></svg>`;
 const LAT_REF = (outline.bbox.latMin + outline.bbox.latMax) / 2;
 const KX = Math.cos((LAT_REF * Math.PI) / 180);
 const xsRaw = RING.map((p) => p[0] * KX);
@@ -61,6 +65,18 @@ const project = (lat: number, lng: number) => ({
   y: offY + (maxY - lat) * SCALE,
 });
 
+/* Dónde cae la imagen del relieve dentro del dibujo. La malla (GEBCO 2020, altitud y
+   profundidad REALES, ≈450 m de paso) cubre la isla y su mar alrededor; se coloca por
+   sus cuatro esquinas, proyectadas igual que la costa. Ver scripts/relieve-menorca.mjs. */
+const relieveNO = project(RELIEVE_BBOX.latMax, RELIEVE_BBOX.lngMin);
+const relieveSE = project(RELIEVE_BBOX.latMin, RELIEVE_BBOX.lngMax);
+const RELIEVE = {
+  x: +relieveNO.x.toFixed(1),
+  y: +relieveNO.y.toFixed(1),
+  w: +(relieveSE.x - relieveNO.x).toFixed(1),
+  h: +(relieveSE.y - relieveNO.y).toFixed(1),
+};
+
 // Silueta real (un único path con los ~600 vértices de la costa).
 const islandPath =
   "M " +
@@ -70,14 +86,48 @@ const islandPath =
   }).join(" ") +
   " Z";
 
-// Fija un punto al tramo de costa más cercano (en el plano proyectado), de modo
-// que el marcador de cada cala quede siempre exactamente sobre la orilla.
-const snapToCoast = (lat: number, lng: number) => {
-  const px = lng * KX;
-  const py = lat;
-  let bestX = px;
-  let bestY = py;
-  let bestD = Infinity;
+// El anillo de la costa en el plano del dibujo, con la longitud de arco acumulada:
+// permite hablar de "el punto que está a X unidades de recorrido por la orilla".
+const ringXY = RING.map((p) => project(p[1], p[0]));
+const arc: number[] = [0];
+for (let i = 1; i < ringXY.length; i++) {
+  arc.push(arc[i - 1] + Math.hypot(ringXY[i].x - ringXY[i - 1].x, ringXY[i].y - ringXY[i - 1].y));
+}
+const PERIMETRO = arc[arc.length - 1];
+// ¿En qué sentido gira el anillo? Decide cuál de las dos normales apunta al mar.
+const ringHorario =
+  ringXY.reduce((a, p, i) => {
+    const q = ringXY[(i + 1) % ringXY.length];
+    return a + (p.x * q.y - q.x * p.y);
+  }, 0) > 0;
+
+// Hacia dónde da al mar cada punto de la costa. Se promedia en una ventana de ±8
+// vértices: si no, un entrante o un saliente sueltos despeinan la orientación.
+const enAnillo = (i: number) => ((i % ringXY.length) + ringXY.length) % ringXY.length;
+const normales = ringXY.map((_, i) => {
+  let sx = 0, sy = 0;
+  for (let k = -8; k <= 8; k++) {
+    const a = ringXY[enAnillo(i + k - 1)], b = ringXY[enAnillo(i + k + 1)];
+    const tx = b.x - a.x, ty = b.y - a.y;                 // tangente
+    const nx = ringHorario ? ty : -ty;                     // normal exterior
+    const ny = ringHorario ? -tx : tx;
+    const len = Math.hypot(nx, ny) || 1;
+    sx += nx / len; sy += ny / len;
+  }
+  const len = Math.hypot(sx, sy) || 1;
+  return { x: sx / len, y: sy / len };
+});
+// La misma orientación, en rumbo geográfico (N=0°, E=90°): la usa el cálculo del abrigo.
+const bearings: number[] = normales.map((n) => {
+  const deg = (Math.atan2(n.x, -n.y) * 180) / Math.PI;
+  return deg < 0 ? deg + 360 : deg;
+});
+
+// Fija una cala a la orilla: devuelve su posición sobre la costa medida como
+// RECORRIDO por la línea de agua (s), no como par de coordenadas sueltas.
+const snapS = (lat: number, lng: number) => {
+  const px = lng * KX, py = lat;
+  let bestS = 0, bestD = Infinity;
   for (let i = 0; i < RING.length - 1; i++) {
     const ax = RING[i][0] * KX, ay = RING[i][1];
     const bx = RING[i + 1][0] * KX, by = RING[i + 1][1];
@@ -87,11 +137,93 @@ const snapToCoast = (lat: number, lng: number) => {
     t = Math.max(0, Math.min(1, t));
     const cx = ax + t * dx, cy = ay + t * dy;
     const d = (px - cx) ** 2 + (py - cy) ** 2;
-    if (d < bestD) { bestD = d; bestX = cx; bestY = cy; }
+    if (d < bestD) { bestD = d; bestS = arc[i] + t * (arc[i + 1] - arc[i]); }
   }
-  return { x: offX + (bestX - minX) * SCALE, y: offY + (maxY - bestY) * SCALE };
+  return bestS;
 };
-const markers = parte.calas.map((c) => ({ ...c, ...snapToCoast(c.lat, c.lng) }));
+// Del recorrido (s) de vuelta a un punto del dibujo.
+const idxDeArco = (s: number) => {
+  const t = ((s % PERIMETRO) + PERIMETRO) % PERIMETRO;
+  let lo = 1, hi = arc.length - 1;
+  while (lo < hi) { const m = (lo + hi) >> 1; if (arc[m] < t) lo = m + 1; else hi = m; }
+  return { i: lo, f: (t - arc[lo - 1]) / ((arc[lo] - arc[lo - 1]) || 1) };
+};
+const puntoEnArco = (s: number) => {
+  const { i, f } = idxDeArco(s);
+  return {
+    x: ringXY[i - 1].x + f * (ringXY[i].x - ringXY[i - 1].x),
+    y: ringXY[i - 1].y + f * (ringXY[i].y - ringXY[i - 1].y),
+  };
+};
+
+/* ── LOS PUNTOS NO SE PISAN ──────────────────────────────────────────────────
+   Hay calas que en la realidad están pegadas: Binibèquer y Binibèquer Nou distan
+   unos cientos de metros, y en un mapa de la isla entera caen a 1 px una de otra.
+   No hay punto lo bastante pequeño ni zoom razonable que las separe: es la escala.
+   Y deslizarlas por la orilla tampoco basta, porque dos calas a los dos lados de un
+   cabo quedan lejos POR LA COSTA pero pegadas EN LÍNEA RECTA.
+
+   Así que se separan de verdad, con dos grados de libertad:
+     · se deslizan a lo largo de la orilla (s), que es lo que menos falsea;
+     · y solo si eso no basta, el punto se despega hacia el mar (h), con un hilo
+       finísimo que lo ata a su sitio en la costa.
+   Es el recurso clásico de la cartografía de infografía (point displacement): se cede
+   algo de exactitud posicional a cambio de que las 75 calas se vean y se puedan tocar.
+   La ubicación exacta sigue estando en Google Maps, desde la ficha de cada cala. */
+// Afinado en banco de pruebas: con estos valores NINGÚN punto tapa a otro (el más
+// apretado queda a 13,2 u y el punto mide 10), los puntos se mueven 277 m de media
+// y solo 17 de 75 necesitan despegarse de la orilla.
+const SEPARACION = 14;  // lo que debe haber entre centros
+const MAR_MAX = 30;     // lo más que un punto puede despegarse hacia el mar
+const MUELLE = 0.02;    // tira de cada punto hacia su sitio real (miente lo menos posible)
+const PASO = 0.04;
+const ITERACIONES = 4000;
+
+const normalEnArco = (s: number) => normales[idxDeArco(s).i];
+const sFinal = parte.calas.map((c) => snapS(c.lat, c.lng));
+const sOriginal = [...sFinal];
+const hFinal = parte.calas.map(() => 0);
+const posDe = (i: number) => {
+  const p = puntoEnArco(sFinal[i]);
+  const n = normalEnArco(sFinal[i]);
+  return { x: p.x + n.x * hFinal[i], y: p.y + n.y * hFinal[i] };
+};
+
+for (let paso = 0; paso < ITERACIONES; paso++) {
+  const pos = parte.calas.map((_, i) => posDe(i));
+  const ds = parte.calas.map(() => 0);
+  const dh = parte.calas.map(() => 0);
+  let choques = 0;
+  for (let i = 0; i < pos.length; i++) {
+    for (let j = i + 1; j < pos.length; j++) {
+      const vx = pos[i].x - pos[j].x, vy = pos[i].y - pos[j].y;
+      const d = Math.hypot(vx, vy) || 0.001;
+      if (d >= SEPARACION) continue;
+      choques++;
+      const fuerza = SEPARACION - d;
+      const ex = (vx / d) * fuerza, ey = (vy / d) * fuerza;
+      // El empuje se descompone en "por la costa" (tangente) y "hacia el mar" (normal).
+      for (const [k, signo] of [[i, 1], [j, -1]] as [number, number][]) {
+        const n = normalEnArco(sFinal[k]);
+        ds[k] += signo * (ex * -n.y + ey * n.x);
+        dh[k] += signo * (ex * n.x + ey * n.y);
+      }
+    }
+  }
+  if (!choques && paso > 5) break;
+  for (let i = 0; i < pos.length; i++) {
+    ds[i] -= (sFinal[i] - sOriginal[i]) * MUELLE; // muelle: vuelve a su sitio si puede
+    dh[i] -= hFinal[i] * MUELLE;
+    sFinal[i] += ds[i] * PASO;
+    hFinal[i] = Math.max(0, Math.min(MAR_MAX, hFinal[i] + dh[i] * PASO)); // hacia el mar, nunca tierra adentro
+  }
+}
+
+const markers = parte.calas.map((c, i) => {
+  const anclaje = puntoEnArco(sFinal[i]); // su sitio en la orilla
+  const p = posDe(i);                     // donde se dibuja el punto
+  return { ...c, ...p, ax: anclaje.x, ay: anclaje.y, despegado: hFinal[i] > 4 };
+});
 
 // Pueblos de referencia para orientarse (no son calas). Faint, decorativos.
 const TOWNS = [
@@ -115,6 +247,33 @@ const scaleY = baseY + 30;
 // Colores "semáforo elegante": verde salvia / ámbar cálido / rojo terracota.
 // Solo como punto/filete de acento; el texto va siempre en color oscuro.
 const FILL: Record<string, string> = { alto: "#4f7a52", medio: "#c08a2b", bajo: "#a8483a", "sin-dato": "#b3aa99" };
+
+/* ────────────────────────────────────────────────────────────────────────────
+   MODO ZONAS (prototipo, 13-jul) — el LITORAL pintado por tramos.
+   Con 75 calas, los puntos se amontonan y se solapan. Pero el abrigo no es cosa
+   de puntos: depende de HACIA DÓNDE MIRA la costa. Así que se colorea la propia
+   orilla, tramo a tramo, con la misma fórmula del parte:
+     - de cada tramo se saca su normal (hacia dónde da al mar), suavizada para que
+       no la despeinen los recovecos de la costa;
+     - se le aplica el viento de hoy de la cala más próxima (AEMET, por municipio);
+     - abrigo = 1 - onshore(viento, orientación) · (velocidad / 38), igual que en
+       `scripts/parte-calma.mjs`.
+   Cero JS: se calcula al construir la web.
+   ──────────────────────────────────────────────────────────────────────────── */
+const MODO_MAPA: "puntos" | "zonas" = "zonas"; // "zonas" = litoral pintado + puntos encima
+
+// La cala más cercana a cada vértice: de ella sale el municipio (AEMET da el viento
+// por municipio, así que la cala vecina es la fuente honesta más próxima). Se mide
+// contra su ANCLAJE en la orilla (ax, ay), no contra el punto ya repartido.
+const calaCercana = (x: number, y: number) => {
+  let best = markers[0], bestD = Infinity;
+  for (const m of markers) {
+    const d = (m.ax - x) ** 2 + (m.ay - y) ** 2;
+    if (d < bestD) { bestD = d; best = m; }
+  }
+  return best;
+};
+const vecinaDeVertice = ringXY.map((p) => calaCercana(p.x, p.y).id);
 
 // Recuento por estado para los chips del filtro (y para desactivar los vacíos).
 const BANDS = ["alto", "medio", "bajo"] as const;
@@ -169,6 +328,57 @@ const F0cala: Record<string, { band: string; windName: string; windKmh: number }
 );
 const counts: Record<string, number> = { alto: 0, medio: 0, bajo: 0 };
 for (const c of parte.calas) { const b = F0cala[c.id].band; if (b === "alto" || b === "medio" || b === "bajo") counts[b]++; }
+
+// MODO ZONAS: la banda de cada TRAMO de costa, con la MISMA fórmula que las calas
+// (`bandaDe`) — solo cambia la entrada: en vez de la orientación de una cala, la
+// orientación del tramo; el viento es el de su municipio (el de la cala vecina).
+const ESCALON: Record<string, number> = { bajo: 0, medio: 1, alto: 2 };
+const bandaVertice: string[] = ringXY.map((_, i) => {
+  const vecina = calaMeta[vecinaDeVertice[i]];
+  const w = vecina ? F0.winds?.[vecina.ine] : null;
+  if (!vecina || !w || w.d == null) {
+    const c = parte.calas.find((x) => x.id === vecinaDeVertice[i]) as any;
+    return c ? c.abrigo.band : "sin-dato"; // sin previsión → el parte diario, nunca calma falsa
+  }
+  const banda = bandaDe(bearings[i], w.d, w.v);
+  // SALVAGUARDA DE VERACIDAD. En un puerto natural (Maó, Fornells, Addaia) la costa
+  // exterior mira a un lado y la cala, metida en la ría, al contrario: el tramo diría
+  // "oleaje" donde la cala está en calma. Cuando el tramo contradice de plano a la cala
+  // que tiene al lado, NO afirmamos nada: el tramo va en neutro y manda su punto.
+  const bandaCala = bandaDe(vecina.op, w.d, w.v);
+  const dif = Math.abs((ESCALON[banda] ?? 0) - (ESCALON[bandaCala] ?? 0));
+  return dif >= 2 ? "sin-dato" : banda;
+});
+/* Lo que el cliente necesita para rehacer la costa pintada al mover la barra de días:
+   un vértice de cada dos (basta para un trazo grueso), su rumbo y la cala vecina —de la
+   que salen el municipio (para el viento) y su propia orientación (para la salvaguarda
+   de los puertos). Va redondeado para que ocupe poco. */
+const PASO_ZONA = 2;
+const idxCala: Record<string, number> = Object.fromEntries((tl.calas || []).map((c: any, i: number) => [c.id, i]));
+const ZONAS_CLIENTE = {
+  pts: ringXY.filter((_, i) => i % PASO_ZONA === 0).map((p) => [+p.x.toFixed(1), +p.y.toFixed(1)]),
+  bear: bearings.filter((_, i) => i % PASO_ZONA === 0).map((b) => Math.round(b)),
+  cala: vecinaDeVertice.filter((_, i) => i % PASO_ZONA === 0).map((id) => idxCala[id] ?? -1),
+};
+
+// Tramos consecutivos del mismo color, en un solo trazo cada uno.
+const tramos: { band: string; d: string }[] = [];
+if (MODO_MAPA === "zonas") {
+  let ini = 0;
+  for (let i = 1; i <= ringXY.length; i++) {
+    if (i === ringXY.length || bandaVertice[i] !== bandaVertice[ini]) {
+      // Se solapan en un vértice para que no queden costuras entre tramos.
+      const pts = ringXY.slice(ini, Math.min(i + 1, ringXY.length));
+      if (pts.length > 1) {
+        tramos.push({
+          band: bandaVertice[ini],
+          d: "M " + pts.map((p) => `${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(" L "),
+        });
+      }
+      ini = i;
+    }
+  }
+}
 const dayFechas: string[] = [...new Set(FRAMES.map((f) => f.fecha))];
 
 // Obsolescencia detectada YA en el servidor (cubre a quien navega sin JS): si el
@@ -193,7 +403,16 @@ const T = {
       "Mapa de Menorca con el estado del mar previsto hoy en cada cala. El detalle está en la lista siguiente.",
     costaNorte: "COSTA NORTE",
     costaSur: "COSTA SUR",
-    mapCredit: "Contorno: © OpenStreetMap · Estado del mar: AEMET",
+    mapCredit: "Contorno: © OpenStreetMap · Relieve: GEBCO 2020 · Estado del mar: AEMET",
+    zoomIn: "Ampliar el mapa",
+    zoomOut: "Reducir el mapa",
+    zoomHint: "Amplía y arrastra el mapa con el dedo.",
+    legendTitle: "Cómo leer el mapa",
+    legendCosta: "La orilla va pintada con el abrigo de cada tramo, según hacia dónde mira la costa y de dónde sopla hoy el viento.",
+    legendPuntos: "Cada punto es una cala. Tócalo y bajas a su ficha.",
+    legendHilo: "Hay calas casi pegadas: su punto se aparta un poco para verse, y un hilo lo ata a su sitio en la costa.",
+    legendNeutro: "En puertos y rías (Maó, Fornells) no pintamos la orilla: ahí la costa mira a un lado y la cala, resguardada dentro, al contrario. Manda el punto.",
+    legendGris: "Puerto o ría",
     filterTitle: "Filtrar por el estado del mar",
     windTitle: "Viento general",
     skyTitle: "Cielo y temperatura",
@@ -223,6 +442,7 @@ const T = {
     medusasCTA: "Ver avistamientos reales en MedusApp",
     noLifeguard:
       "Cala sin socorrismo: no hay banderas que consultar. Extrema la precaución y no te bañes solo.",
+    noLifeguardShort: "Sin socorrismo",
     disclaimerTitle: "Cómo leer este parte",
     disclaimer:
       "Es una estimación editorial orientativa a partir de la predicción del viento. Mide solo el ABRIGO frente al viento, no las corrientes, el fondo ni otros peligros de baño. No es un aviso oficial de seguridad ni sustituye a las banderas ni al criterio de los socorristas.",
@@ -236,7 +456,16 @@ const T = {
       "Map of Menorca with today’s forecast sea state for each cove. Full detail in the list below.",
     costaNorte: "NORTH COAST",
     costaSur: "SOUTH COAST",
-    mapCredit: "Outline: © OpenStreetMap · Sea state: AEMET",
+    mapCredit: "Outline: © OpenStreetMap · Relief: GEBCO 2020 · Sea state: AEMET",
+    zoomIn: "Zoom in",
+    zoomOut: "Zoom out",
+    zoomHint: "Zoom in and drag the map with your finger.",
+    legendTitle: "How to read the map",
+    legendCosta: "The shoreline is painted with each stretch's shelter, based on which way the coast faces and where the wind blows from today.",
+    legendPuntos: "Each dot is a cove. Tap it and you drop to its entry.",
+    legendHilo: "Some coves sit almost on top of each other: their dot steps aside to be seen, and a thread ties it to its place on the coast.",
+    legendNeutro: "In harbours and inlets (Maó, Fornells) we leave the shore unpainted: there the coast faces one way and the cove, tucked inside, the other. The dot is what counts.",
+    legendGris: "Harbour or inlet",
     filterTitle: "Filter by sea state",
     windTitle: "General wind",
     skyTitle: "Sky and temperature",
@@ -266,6 +495,7 @@ const T = {
     medusasCTA: "See real sightings on MedusApp",
     noLifeguard:
       "Unguarded cove: there are no flags to check. Take extra care and never swim alone.",
+    noLifeguardShort: "Unguarded",
     disclaimerTitle: "How to read this forecast",
     disclaimer:
       "This is an orientative editorial estimate based on the wind forecast. It measures only SHELTER from the wind, not currents, the seabed or other bathing hazards. It is not an official safety notice and does not replace beach flags or lifeguards’ judgement.",
@@ -279,7 +509,16 @@ const T = {
       "Carte de Minorque avec l'état de la mer prévu aujourd'hui dans chaque crique. Le détail figure dans la liste ci-dessous.",
     costaNorte: "CÔTE NORD",
     costaSur: "CÔTE SUD",
-    mapCredit: "Contour : © OpenStreetMap · État de la mer : AEMET",
+    mapCredit: "Contour : © OpenStreetMap · Relief : GEBCO 2020 · État de la mer : AEMET",
+    zoomIn: "Agrandir la carte",
+    zoomOut: "Réduire la carte",
+    zoomHint: "Agrandissez et faites glisser la carte avec le doigt.",
+    legendTitle: "Comment lire la carte",
+    legendCosta: "Le rivage est peint selon l'abri de chaque tronçon : d'après l'orientation de la côte et le vent du jour.",
+    legendPuntos: "Chaque point est une crique. Touchez-le pour aller à sa fiche.",
+    legendHilo: "Certaines criques se touchent presque : leur point s'écarte un peu pour rester visible, et un fil le relie à sa place sur la côte.",
+    legendNeutro: "Dans les ports et les rias (Maó, Fornells), le rivage reste non peint : la côte y regarde d'un côté et la crique, abritée à l'intérieur, de l'autre. C'est le point qui fait foi.",
+    legendGris: "Port ou ria",
     filterTitle: "Filtrer par état de la mer",
     windTitle: "Vent général",
     skyTitle: "Ciel et température",
@@ -309,6 +548,7 @@ const T = {
     medusasCTA: "Voir les observations réelles sur MedusApp",
     noLifeguard:
       "Crique sans surveillance : pas de drapeaux à consulter. Redoublez de prudence et ne vous baignez jamais seul.",
+    noLifeguardShort: "Sans surveillance",
     disclaimerTitle: "Comment lire ce bulletin",
     disclaimer:
       "C'est une estimation éditoriale indicative à partir de la prévision du vent. Elle mesure uniquement l'ABRI face au vent, pas les courants, les fonds ni les autres dangers de la baignade. Ce n'est pas un avis de sécurité officiel et cela ne remplace pas les drapeaux ni le jugement des sauveteurs.",
@@ -401,7 +641,7 @@ const graph = [
 const jsonLd = { "@context": "https://schema.org", "@graph": graph };
 ---
 
-<section class="mx-auto max-w-5xl px-5 pb-16 sm:px-8">
+<section class="mx-auto max-w-6xl px-5 pb-16 sm:px-8">
   {/* Meta: validez y fuente. Sin fecha fija del parte: el día se ve (y se elige) en la
       línea temporal; una fecha congelada aquí inducía a error al quedar obsoleta. */}
   <p class="text-sm text-piedra-suave">
@@ -413,7 +653,10 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
   )}
   {/* Aviso de datos obsoletos (oculto; el JS lo muestra si la previsión no es de hoy
       o si el generador degradó: red de seguridad si el robot diario se parase). */}
-  <p id="calma-stale" class={`mt-2 rounded-md border border-terracota/50 bg-arena px-4 py-2 text-sm text-arcilla${isStaleServer ? "" : " hidden"}`}>⚠ {T.staleAviso}</p>
+  <p id="calma-stale" class={`mt-2 flex items-start gap-2 rounded-md border border-terracota/50 bg-arena px-4 py-2 text-sm text-arcilla${isStaleServer ? "" : " hidden"}`}>
+    <span class="mt-0.5 shrink-0" aria-hidden="true" set:html={UI_ICON_AVISO} />
+    <span>{T.staleAviso}</span>
+  </p>
 
   {/* `.calma-filterable` envuelve filtro + mapa + lista: al marcar un estado, `:has()`
       oculta a la vez los puntos del mapa y las filas de la lista de los otros estados. */}
@@ -485,10 +728,15 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
       </div>
     )}
 
-    {/* Datos para el cliente (línea temporal): frames + meta de calas. No se ejecuta. */}
+    {/* Datos para el cliente (línea temporal): frames + meta de calas. No se ejecuta.
+        `zonas` deja que la COSTA PINTADA se rehaga con el día que se elija en la barra:
+        sin esto, los puntos cambiarían de color y la orilla se quedaría con la de hoy —
+        el mapa se contradiría. Va comprimido: un vértice de cada dos, coordenadas con un
+        decimal, el rumbo redondeado y el índice de la cala vecina. */}
     <script type="application/json" id="calma-tl-data" set:html={JSON.stringify({
       frames: FRAMES,
       calas: tl.calas,
+      zonas: ZONAS_CLIENTE,
       vmax: ABRIGO_VMAX,
       fill: FILL,
       bandLabel: T.abrigo,
@@ -543,8 +791,14 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
       )}
     </div>
 
-    {/* Mapa SVG (contorno real de Menorca, OSM). La LISTA debajo es la versión canónica. */}
-    <figure class="calma-mapa mt-5 scroll-mt-20 overflow-hidden rounded-2xl border border-niebla">
+    {/* Mapa SVG (contorno real de Menorca, OSM). La LISTA debajo es la versión canónica.
+        En móvil el mapa entero encoge a un tercio y los puntos quedan diminutos: por eso
+        el marco es una VENTANA por la que se arrastra el mapa, y el botón de abajo lo
+        AMPLÍA. Todo con CSS (un checkbox), sin JS: el mapa sigue siendo estático. */}
+    <div class="mt-5 flex flex-col gap-5 lg:flex-row lg:items-start">
+    <figure class="calma-mapa min-w-0 flex-1 scroll-mt-20 overflow-hidden rounded-2xl border border-niebla">
+      <input type="checkbox" id="calma-zoom" class="sr-only" />
+      <div class="calma-viewport">
       <svg viewBox={`0 0 ${VIEW_W} ${VIEW_H}`} role="img" aria-label={T.mapAria} class="h-auto w-full">
         <defs>
           {/* Mar: azul mediterráneo desaturado (matices, no chillón) */}
@@ -557,6 +811,10 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
             <stop offset="0" stop-color="#dee4cc" />
             <stop offset="1" stop-color="#ccd6b4" />
           </linearGradient>
+          {/* La silueta real recorta el relieve de la tierra. */}
+          <clipPath id="calma-isla">
+            <path d={islandPath} />
+          </clipPath>
           <filter id="calma-sombra" x="-20%" y="-20%" width="140%" height="140%">
             <feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="#33493b" flood-opacity="0.20" />
           </filter>
@@ -566,16 +824,30 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
           </filter>
         </defs>
 
-        {/* Mar */}
+        {/* Mar: relieve REAL del fondo (GEBCO). El azul se ahonda con la profundidad y
+            se adivinan la plataforma costera y el talud. Debajo, el degradado de siempre
+            por si la imagen no cargara. */}
         <rect x="0" y="0" width={VIEW_W} height={VIEW_H} fill="url(#calma-mar)" aria-hidden="true" />
+        <image
+          href="/uploads/menorca-relieve-mar.webp"
+          x={RELIEVE.x} y={RELIEVE.y} width={RELIEVE.w} height={RELIEVE.h}
+          preserveAspectRatio="none" opacity="0.5" aria-hidden="true"
+        />
 
         {/* Agua somera: anillo más claro junto a la costa (matiz nautical) */}
-        <path d={islandPath} fill="none" stroke="#e8f1f1" stroke-width="22" stroke-linejoin="round" opacity="0.55" aria-hidden="true" />
-        <path d={islandPath} fill="none" stroke="#d4e5e5" stroke-width="11" stroke-linejoin="round" opacity="0.7" aria-hidden="true" />
+        <path d={islandPath} fill="none" stroke="#e8f1f1" stroke-width="18" stroke-linejoin="round" opacity="0.4" aria-hidden="true" />
+        <path d={islandPath} fill="none" stroke="#d4e5e5" stroke-width="9" stroke-linejoin="round" opacity="0.55" aria-hidden="true" />
 
-        {/* Isla (silueta real, con sombra suave y costa definida) */}
+        {/* Isla: la silueta real de OSM, rellena con el relieve REAL de la tierra
+            (recortado por esa misma silueta, para que la costa caiga en su sitio). */}
         <g filter="url(#calma-sombra)" aria-hidden="true">
           <path d={islandPath} fill="url(#calma-tierra)" stroke="#9fb189" stroke-width="1.4" stroke-linejoin="round" />
+          <image
+            href="/uploads/menorca-relieve-tierra.webp"
+            x={RELIEVE.x} y={RELIEVE.y} width={RELIEVE.w} height={RELIEVE.h}
+            preserveAspectRatio="none" opacity="0.72" clip-path="url(#calma-isla)"
+          />
+          <path d={islandPath} fill="none" stroke="#9fb189" stroke-width="1.4" stroke-linejoin="round" />
         </g>
 
         {/* Orientación de costas */}
@@ -613,23 +885,80 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
 
         {/* Marcadores por cala (fijados a la costa). El nombre aparece al señalar
             (hover/foco). Enlazan a su fila de la lista. */}
+        {/* ZONAS: el litoral pintado por tramos, según hacia dónde mira la costa. */}
+        {MODO_MAPA === "zonas" && (
+          <g class="calma-zonas" fill="none" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+            {tramos.map((t) => <path d={t.d} stroke={FILL[t.band]} />)}
+          </g>
+        )}
+
         {markers.map((c) => {
           const b0 = F0cala[c.id].band;
           return (
             <a href={`#cala-${c.id}`} data-calma={b0} data-nombre={c.name}>
               <title>{c.name} — {T.abrigo[b0]}</title>
-              <circle cx={c.x} cy={c.y} r="6" fill={FILL[b0]} stroke="#ffffff" stroke-width="2.5" filter="url(#calma-punto)" />
+              {/* Si el punto tuvo que despegarse para no pisar a su vecina, un hilo
+                  finísimo lo ata a su sitio real en la orilla. */}
+              {c.despegado && (
+                <line class="cala-hilo" x1={c.ax} y1={c.ay} x2={c.x} y2={c.y} stroke={FILL[b0]} stroke-width="1.2" opacity="0.55" />
+              )}
+              {/* Diana invisible: el punto se ve fino, pero el dedo acierta. */}
+              <circle class="cala-diana" cx={c.x} cy={c.y} r="13" fill="transparent" />
+              <circle class="cala-punto" cx={c.x} cy={c.y} r="5" fill={FILL[b0]} stroke="#ffffff" stroke-width="2" filter="url(#calma-punto)" />
               <text class="cala-nombre" x={c.x} y={c.y - 11} text-anchor="middle" font-size="13">{c.name}</text>
             </a>
           );
         })}
       </svg>
+      </div>
+      {/* Ampliar / reducir: solo donde hace falta (móvil y tablet). El estado vive
+          en el checkbox → sin JS, y el teclado lo maneja igual que cualquier control. */}
+      <div class="calma-zoom-bar">
+        <p class="text-[0.7rem] text-piedra-suave">{T.zoomHint}</p>
+        <label for="calma-zoom" class="calma-zoom-btn">
+          <span class="cz-in">{T.zoomIn}</span>
+          <span class="cz-out">{T.zoomOut}</span>
+        </label>
+      </div>
       <figcaption class="border-t border-niebla bg-lino px-4 py-2 text-[0.7rem] text-piedra-suave">{T.mapCredit}</figcaption>
     </figure>
 
+    {/* Leyenda: al lado del mapa en pantalla ancha, debajo en el móvil. */}
+    <aside class="calma-leyenda rounded-2xl border border-niebla bg-arena/40 p-5 lg:w-64 lg:shrink-0">
+      <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">{T.legendTitle}</h3>
+      <ul class="mt-4 space-y-2.5">
+        {BANDS.map((b) => (
+          <li class="flex items-start gap-2.5">
+            <span class="mt-1 h-3 w-3 shrink-0 rounded-full" style={`background:${FILL[b]}`} aria-hidden="true"></span>
+            <span class="min-w-0 text-sm leading-tight text-piedra">
+              <span class="block font-medium text-tinta">{T.abrigo[b]}</span>
+              <span class="text-xs text-piedra-suave">{T.subAbrigo[b]}</span>
+            </span>
+          </li>
+        ))}
+        <li class="flex items-start gap-2.5">
+          <span class="mt-1 h-3 w-3 shrink-0 rounded-full" style={`background:${FILL["sin-dato"]}`} aria-hidden="true"></span>
+          <span class="min-w-0 text-sm leading-tight">
+            <span class="block font-medium text-tinta">{T.legendGris}</span>
+            <span class="text-xs text-piedra-suave">{T.abrigo["sin-dato"]}</span>
+          </span>
+        </li>
+      </ul>
+      <div class="mt-4 space-y-2 border-t border-niebla pt-4 text-xs leading-relaxed text-piedra-suave">
+        <p>{T.legendCosta}</p>
+        <p>{T.legendPuntos}</p>
+        <p>{T.legendHilo}</p>
+        <p>{T.legendNeutro}</p>
+      </div>
+    </aside>
+    </div>
+
     {/* Lista accesible — versión canónica del parte (la que cita la IA).
         Pulsar una fila resalta esa cala en el mapa (lo gestiona el JS de abajo). */}
-    <ol class="calma-lista mt-8 space-y-4">
+    {/* La lista, en rejilla: los mismos datos de siempre, pero en dos o tres columnas.
+        De 75 fichas apiladas a 25 filas. Cada ficha sigue siendo un <li> con su id,
+        su color y sus datos (es la versión canónica del parte, la que cita la IA). */}
+    <ol class="calma-lista mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {parte.calas.map((c) => {
         const f0 = F0cala[c.id];
         const b0 = f0.band;
@@ -638,24 +967,23 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
           id={`cala-${c.id}`}
           data-calma={b0}
           data-nombre={c.name}
-          class="cursor-pointer rounded-xl border border-niebla bg-lino p-4 transition-colors hover:border-arcilla sm:p-5"
+          class="cursor-pointer rounded-xl border border-niebla bg-lino p-3.5 transition-colors hover:border-arcilla"
           style={`border-left:4px solid ${FILL[b0]}`}
         >
-          <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-            <h3 class="font-display text-xl text-tinta">
-              {c.lugarSlug ? (
-                <a class="underline decoration-niebla underline-offset-4 hover:decoration-terracota" href={placeUrl(locale, `${c.lugarSlug}-${locale}`)} data-umami-event="calma-cala-ficha">{c.name}</a>
-              ) : c.name}
-            </h3>
-            <span class="inline-flex items-center gap-2 text-sm font-semibold text-tinta">
-              <span class="cala-dot inline-block h-3 w-3 rounded-full" style={`background:${FILL[b0]}`}></span>
-              <span class="cala-band">{T.abrigo[b0]}</span>
-            </span>
-          </div>
-          <p class="mt-1 text-sm text-piedra-suave">
-            {c.area} · <span class="cala-sub">{T.subAbrigo[b0]}</span> · {T.viento}: <span class="cala-wind">{f0.windName} {f0.windKmh} km/h</span>
+          <h3 class="font-display text-base leading-tight text-tinta">
+            {c.lugarSlug ? (
+              <a class="underline decoration-niebla underline-offset-4 hover:decoration-terracota" href={placeUrl(locale, `${c.lugarSlug}-${locale}`)} data-umami-event="calma-cala-ficha">{c.name}</a>
+            ) : c.name}
+          </h3>
+          <p class="mt-1 flex items-center gap-1.5 text-xs font-semibold text-tinta">
+            <span class="cala-dot inline-block h-2.5 w-2.5 shrink-0 rounded-full" style={`background:${FILL[b0]}`}></span>
+            <span class="cala-band">{T.abrigo[b0]}</span>
           </p>
-          <button type="button" class="cala-ver mt-2 text-xs font-medium text-arcilla underline underline-offset-2 hover:text-terracota" data-umami-event="calma-ver-mapa">{T.verEnMapa} ↑</button>
+          <p class="mt-1 text-xs leading-snug text-piedra-suave">
+            {c.area} · <span class="cala-sub">{T.subAbrigo[b0]}</span><br />
+            {T.viento}: <span class="cala-wind">{f0.windName} {f0.windKmh} km/h</span>
+          </p>
+          <button type="button" class="cala-ver mt-1.5 text-xs font-medium text-arcilla underline underline-offset-2 hover:text-terracota" data-umami-event="calma-ver-mapa">{T.verEnMapa} ↑</button>
           {MEDUSAS_ENABLED && c.medusas && (
             <details class="mt-3 border-t border-niebla pt-3">
               <summary class="cursor-pointer text-sm text-piedra-suave hover:text-piedra" data-umami-event="calma-condiciones">{T.waterCond} →</summary>
@@ -675,8 +1003,15 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
               </div>
             </details>
           )}
+          {/* Aviso de seguridad, comprimido a una etiqueta para que la lista no se
+              alargue. El texto entero sigue en el HTML (title + solo-lectores): lo lee
+              el lector de pantalla, lo cita la IA, y se ve al posar el ratón. */}
           {!c.tieneVigilancia && (
-            <p class="mt-2 rounded-md bg-arena px-3 py-2 text-xs text-piedra">⚠ {T.noLifeguard}</p>
+            <p class="cala-aviso mt-2" title={T.noLifeguard}>
+              <span aria-hidden="true" set:html={UI_ICON_AVISO} />
+              <span>{T.noLifeguardShort}</span>
+              <span class="sr-only">{T.noLifeguard}</span>
+            </p>
           )}
         </li>
         );
@@ -746,6 +1081,37 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
       const s = 1 - on * Math.min(v / D.vmax, 1);
       return s >= 0.66 ? "alto" : s >= 0.4 ? "medio" : "bajo";
     };
+    /* La COSTA PINTADA se rehace con el día que se elija: misma fórmula que las calas
+       (solo cambia la entrada: la orientación del tramo en vez de la de la cala) y la
+       misma salvaguarda —si el tramo contradice de plano a la cala que tiene al lado
+       (puertos, rías), va en neutro y manda el punto. */
+    const zonasG = document.querySelector(".calma-zonas");
+    const ESC: Record<string, number> = { bajo: 0, medio: 1, alto: 2 };
+    const pintarZonas = (fr: any) => {
+      const Z = D.zonas;
+      if (!zonasG || !Z) return;
+      const bandas = Z.pts.map((_: any, i: number) => {
+        const c = D.calas[Z.cala[i]];
+        const w = c ? fr.winds[c.ine] : null;
+        if (!c || !w || w.d == null) return "sin-dato";
+        const b = banda(Z.bear[i], w.d, w.v);
+        const bCala = banda(c.op, w.d, w.v);
+        return Math.abs((ESC[b] ?? 0) - (ESC[bCala] ?? 0)) >= 2 ? "sin-dato" : b;
+      });
+      let html = "", ini = 0;
+      for (let i = 1; i <= bandas.length; i++) {
+        if (i === bandas.length || bandas[i] !== bandas[ini]) {
+          const pts = Z.pts.slice(ini, Math.min(i + 1, Z.pts.length));
+          if (pts.length > 1) {
+            const d = "M " + pts.map((p: number[]) => p[0] + " " + p[1]).join(" L ");
+            html += '<path d="' + d + '" stroke="' + D.fill[bandas[ini]] + '"></path>';
+          }
+          ini = i;
+        }
+      }
+      zonasG.innerHTML = html;
+    };
+
     const windName = document.getElementById("calma-wind-name");
     const windKmh = document.getElementById("calma-wind-kmh");
     const windDial = document.getElementById("calma-wind-dial");
@@ -805,9 +1171,13 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
         const mk = document.querySelector<HTMLElement>('a[href="#cala-' + c.id + '"]');
         if (mk) {
           mk.dataset.calma = band;
-          const ci = mk.querySelector("circle"); if (ci) ci.setAttribute("fill", D.fill[band]);
+          // OJO: el primer <circle> del marcador es la diana invisible. Hay que pintar
+          // el punto de verdad (y su hilo a la orilla, si lo tiene).
+          const ci = mk.querySelector(".cala-punto"); if (ci) ci.setAttribute("fill", D.fill[band]);
+          const hl = mk.querySelector(".cala-hilo"); if (hl) hl.setAttribute("stroke", D.fill[band]);
         }
       }
+      pintarZonas(fr); // la costa pintada también cambia con el día elegido
       if (windName) windName.textContent = fr.rep.name;
       if (windKmh) windKmh.textContent = fr.rep.kmh;
       if (windDial) windDial.setAttribute("transform", "translate(34,34) rotate(" + fr.rep.deg + ")");

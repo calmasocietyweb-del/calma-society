@@ -333,6 +333,94 @@
   display: none;
 }
 
+/* ── Mapa del mar en calma: AMPLIAR Y ARRASTRAR (móvil y tablet) ──
+   El mapa se dibuja sobre un lienzo de 1000 px. En un móvil de 390 px queda a un
+   tercio: los puntos se ven a ~4 px y no hay quien los toque. El marco pasa a ser
+   una VENTANA con scroll (se arrastra con el dedo) y el botón amplía el mapa a
+   dos veces y media. Todo con un checkbox y `:has` — sin una línea de JS. */
+.calma-viewport {
+  overflow: hidden;
+}
+.calma-zoom-bar {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid var(--color-niebla);
+  background-color: var(--color-lino);
+  padding: 0.5rem 0.75rem;
+}
+.calma-zoom-btn {
+  flex: none;
+  cursor: pointer;
+  border-radius: 9999px;
+  border: 1px solid var(--color-arcilla);
+  padding: 0.35rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-arcilla);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.calma-zoom-btn:hover {
+  background-color: var(--color-arcilla);
+  color: var(--color-crema);
+}
+.calma-mapa:has(#calma-zoom:focus-visible) .calma-zoom-btn {
+  outline: 2px solid var(--color-terracota);
+  outline-offset: 2px;
+}
+.calma-zoom-btn .cz-out {
+  display: none;
+}
+.calma-mapa:has(#calma-zoom:checked) .calma-zoom-btn .cz-in {
+  display: none;
+}
+.calma-mapa:has(#calma-zoom:checked) .calma-zoom-btn .cz-out {
+  display: inline;
+}
+
+@media (max-width: 1023px) {
+  .calma-zoom-bar {
+    display: flex;
+  }
+  /* La ventana: se arrastra con el dedo en los dos ejes y no se lleva el scroll
+     de la página consigo (overscroll-behavior). */
+  .calma-viewport {
+    overflow: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+  .calma-mapa:has(#calma-zoom:checked) .calma-viewport {
+    max-height: 70vh;
+  }
+  .calma-mapa:has(#calma-zoom:checked) .calma-viewport svg {
+    width: 250%;
+    max-width: none;
+  }
+  /* Los nombres NO se muestran todos a la vez ni ampliando: con 75 calas se pisan
+     unos a otros y el mapa se vuelve ilegible (probado). El nombre aparece al
+     tocar el punto, que además lleva a su ficha en la lista. */
+  /* Sin ampliar, el punto se agranda un poco: se ve, aunque no se pueda leer. */
+  .cala-punto {
+    r: 8;
+  }
+}
+/* Aviso de "sin socorrismo", comprimido a etiqueta para que la lista de calas no se
+   alargue. El texto completo sigue en el HTML (title + .sr-only). */
+.cala-aviso {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  border-radius: 9999px;
+  background-color: var(--color-arena);
+  padding: 0.15rem 0.55rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--color-arcilla);
+}
+.cala-aviso svg {
+  flex: none;
+}
 /* Etiqueta con el nombre de la cala: oculta por defecto, aparece al pasar el ratón
    o enfocar el punto del mapa. El trazo claro (paint-order) hace de halo para que
    el nombre sea legible sobre mar, tierra o cualquier marcador. */
@@ -363,7 +451,7 @@ a:focus-visible > .cala-nombre {
 a.cala-activa > .cala-nombre {
   opacity: 1;
 }
-a.cala-activa > circle {
+a.cala-activa > .cala-punto {
   stroke: var(--color-tinta);
   transform: scale(1.7);
   transform-box: fill-box;
