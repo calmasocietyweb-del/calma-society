@@ -104,9 +104,16 @@ const T = isEs
       gateSending: "One second…",
     };
 
+// Iconos de LÍNEA del chrome (los últimos emojis fuera: candado y aviso).
+const UI_ICON = {
+  lock: `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="9.5" rx="2"/><path d="M8.2 10.5V7.8a3.8 3.8 0 0 1 7.6 0v2.7"/></svg>`,
+  alert: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-0.5 shrink-0"><path d="M12 4.5 21 19.5H3z"/><path d="M12 10v3.6"/><path d="M12 16.6h.01"/></svg>`,
+};
+
 // Config para el cliente (etiquetas que el render del plan necesita + URL del partner).
 const CFG = {
   lang: locale,
+  alertIcon: UI_ICON.alert,
   slot: T.slot,
   baseZ: T.base_z,
   planBtitle: T.planBtitle,
@@ -189,7 +196,28 @@ const ICON: Record<string, string> = {
   relajado: `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 5c0 7-4 11-11 11a6 6 0 0 1 .2-1.6C10 9 15 5 20 5z"/><path d="M9 16c1.5-4 4.5-7 8-9"/></svg>`,
   equilibrado: `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v15"/><path d="M7.5 19h9"/><path d="M4.5 8.5h15"/><path d="M4.5 8.5 2.6 12.6a2.4 2.4 0 0 0 3.8 0z"/><path d="M19.5 8.5 17.6 12.6a2.4 2.4 0 0 0 3.8 0z"/></svg>`,
   intenso: `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16l5-5 3 3 7-7"/><path d="M15 7h5v5"/></svg>`,
+  // Presupuesto: una, dos o tres monedas (el gesto, no la cifra).
+  ajustado: `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 10v4"/></svg>`,
+  medio: `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="4"/><path d="M14.2 8.4a4 4 0 0 1 0 7.2"/></svg>`,
+  alto: `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="12" r="3.6"/><path d="M12.4 8.7a3.6 3.6 0 0 1 0 6.6"/><path d="M16 8.7a3.6 3.6 0 0 1 0 6.6"/></svg>`,
+  // Accesibilidad.
+  ninguna: `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.2 4.2L19 7"/></svg>`,
+  carrito: `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h2l1.4 8h9.2"/><path d="M17 6a5.5 5.5 0 0 0-9.3 3.3"/><path d="M7.6 9.3h9.6"/><circle cx="9" cy="17.5" r="1.4"/><circle cx="16" cy="17.5" r="1.4"/></svg>`,
+  "movilidad-reducida": `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="9.5" cy="4.6" r="1.6"/><path d="M9.5 7.5v5h5"/><path d="M14.5 12.5 17 19"/><circle cx="10.5" cy="15.5" r="4.3"/></svg>`,
+  mayores: `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="4.6" r="1.7"/><path d="M10 7.5v5.5"/><path d="M10 9.5 7 12"/><path d="M10 13l-1.5 6"/><path d="M10 13l2 6"/><path d="M16 9v10"/></svg>`,
+  // Intereses.
+  calas: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 15c1.6-1.6 3.2-1.6 4.8 0s3.2 1.6 4.8 0 3.2-1.6 4.8 0 3.2 1.6 4.6 0"/><path d="M2.5 19c1.6-1.6 3.2-1.6 4.8 0s3.2 1.6 4.8 0 3.2-1.6 4.8 0 3.2 1.6 4.6 0"/><circle cx="17" cy="6.5" r="2.6"/></svg>`,
+  gastronomia: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v7a2.2 2.2 0 0 0 4.4 0V3"/><path d="M9.2 10.5V21"/><path d="M16.5 3c-1.4 1.2-2 3-2 5.2 0 1.5.7 2.4 2 2.6V21"/></svg>`,
+  cultura: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5 12 5l8 4.5"/><path d="M6 10v7"/><path d="M10 10v7"/><path d="M14 10v7"/><path d="M18 10v7"/><path d="M4 19.5h16"/></svg>`,
+  naturaleza: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19h18"/><path d="M4.5 19 10 8l3.4 6.4"/><path d="M12.6 13 16 7l4.5 12"/></svg>`,
+  "vida-nocturna": `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h11l-5.5 6.5z"/><path d="M10.5 11.5V19"/><path d="M7.5 19h6"/><path d="M18.5 4.5a3 3 0 1 0 2 4.6 3.6 3.6 0 0 1-2-4.6z"/></svg>`,
+  nautica: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><path d="M12 6.5 5.5 16H12z"/><path d="M14 16l4-6.5V16"/><path d="M3.5 19c1.4-1.3 2.8-1.3 4.2 0s2.8 1.3 4.2 0 2.8-1.3 4.2 0 2.8 1.3 4 0"/></svg>`,
+  "lujo-tranquilo": `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5c0 4-1.6 5.6-5.6 5.6 4 0 5.6 1.6 5.6 5.6 0-4 1.6-5.6 5.6-5.6-4 0-5.6-1.6-5.6-5.6z"/><path d="M6.5 17.5h11"/><path d="M8.5 20.5h7"/></svg>`,
+  // Extras: niños y barco.
+  kids: `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="5" r="1.6"/><path d="M8.5 8v5"/><path d="M6.2 10h4.6"/><path d="M8.5 13 7 18"/><path d="M8.5 13 10 18"/><circle cx="16.5" cy="8" r="1.3"/><path d="M16.5 10.4v3.6"/><path d="M14.8 11.8h3.4"/><path d="M16.5 14 15.4 18"/><path d="M16.5 14 17.6 18"/></svg>`,
+  boat: `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5.5" r="2.2"/><path d="M12 4v9"/><path d="M12 6.5 6 13h6z"/><path d="M3.5 16h17l-1.6 3.2a1 1 0 0 1-.9.55H6a1 1 0 0 1-.9-.55z"/></svg>`,
 };
+
 ---
 
 <section class="mx-auto max-w-3xl px-5 pb-20 sm:px-8">
@@ -229,7 +257,9 @@ const ICON: Record<string, string> = {
           </label>
         </div>
       </fieldset>
-      <label class="block text-sm font-medium text-piedra">{T.ferryPort}
+      {/* El puerto solo se pregunta si vienes en ferry. CSS puro (:has) → también
+          sin JS: marcas "Mi coche en ferry" y el campo aparece. */}
+      <label class="planner-when-ferry block text-sm font-medium text-piedra">{T.ferryPort}
         <select name="ferryPort" class="planner-field">
           <option value="">—</option>
           <option value="mao">Maó</option>
@@ -289,32 +319,43 @@ const ICON: Record<string, string> = {
       </fieldset>
       <fieldset>
         <legend class="text-sm font-medium text-piedra">{T.interests}</legend>
-        <div class="mt-2 flex flex-wrap gap-2">
+        <div class="mt-2 grid gap-2 sm:grid-cols-2">
           {interestList.map(([v, label]) => (
-            <label class="planner-pill">
+            <label class="planner-card planner-card-sm">
               <input type="checkbox" name="interests" value={v} class="sr-only" checked={v === "calas" || v === "gastronomia"} />
-              <span>{label}</span>
+              <Fragment set:html={ICON[v]} /><span>{label}</span>
             </label>
           ))}
         </div>
       </fieldset>
-      <label class="block text-sm font-medium text-piedra">{T.budget}
-        <select name="budget" class="planner-field">
-          <option value="ajustado">{T.bud_a}</option>
-          <option value="medio" selected>{T.bud_m}</option>
-          <option value="alto">{T.bud_alto}</option>
-        </select>
-      </label>
+      <fieldset>
+        <legend class="text-sm font-medium text-piedra">{T.budget}</legend>
+        <div class="mt-2 grid gap-2">
+          <label class="planner-card">
+            <input type="radio" name="budget" value="ajustado" class="sr-only" />
+            <Fragment set:html={ICON.ajustado} /><span>{T.bud_a}</span>
+          </label>
+          <label class="planner-card">
+            <input type="radio" name="budget" value="medio" class="sr-only" checked />
+            <Fragment set:html={ICON.medio} /><span>{T.bud_m}</span>
+          </label>
+          <label class="planner-card">
+            <input type="radio" name="budget" value="alto" class="sr-only" />
+            <Fragment set:html={ICON.alto} /><span>{T.bud_alto}</span>
+          </label>
+        </div>
+      </fieldset>
     </fieldset>
 
     {/* Bloque 5 */}
     <fieldset data-step="5" class="space-y-4 border-t border-niebla pt-5">
       <legend class="font-display text-xl text-tinta">{T.b5}</legend>
-      <label class="planner-pill w-fit">
+      <label class="planner-card">
         <input type="checkbox" name="kids" value="si" class="sr-only" />
-        <span>{T.kids}</span>
+        <Fragment set:html={ICON.kids} /><span>{T.kids}</span>
       </label>
-      <fieldset>
+      {/* Las edades solo se preguntan si viajas con niños (CSS puro, sin JS). */}
+      <fieldset class="planner-when-kids">
         <legend class="text-sm font-medium text-piedra">{T.kidAges}</legend>
         <div class="mt-2 flex flex-wrap gap-2">
           {kidAgeList.map(([v, label]) => (
@@ -325,22 +366,35 @@ const ICON: Record<string, string> = {
           ))}
         </div>
       </fieldset>
-      <label class="block text-sm font-medium text-piedra">{T.acc}
-        <select name="accessibility" class="planner-field">
-          <option value="ninguna">{T.acc_ning}</option>
-          <option value="carrito">{T.acc_carr}</option>
-          <option value="movilidad-reducida">{T.acc_mov}</option>
-          <option value="mayores">{T.acc_may}</option>
-        </select>
-      </label>
+      <fieldset>
+        <legend class="text-sm font-medium text-piedra">{T.acc}</legend>
+        <div class="mt-2 grid gap-2">
+          <label class="planner-card">
+            <input type="radio" name="accessibility" value="ninguna" class="sr-only" checked />
+            <Fragment set:html={ICON.ninguna} /><span>{T.acc_ning}</span>
+          </label>
+          <label class="planner-card">
+            <input type="radio" name="accessibility" value="carrito" class="sr-only" />
+            <Fragment set:html={ICON.carrito} /><span>{T.acc_carr}</span>
+          </label>
+          <label class="planner-card">
+            <input type="radio" name="accessibility" value="movilidad-reducida" class="sr-only" />
+            <Fragment set:html={ICON["movilidad-reducida"]} /><span>{T.acc_mov}</span>
+          </label>
+          <label class="planner-card">
+            <input type="radio" name="accessibility" value="mayores" class="sr-only" />
+            <Fragment set:html={ICON.mayores} /><span>{T.acc_may}</span>
+          </label>
+        </div>
+      </fieldset>
     </fieldset>
 
     {/* Bloque 6 */}
     <fieldset data-step="6" class="space-y-4 border-t border-niebla pt-5">
       <legend class="font-display text-xl text-tinta">{T.b6}</legend>
-      <label class="planner-pill w-fit">
+      <label class="planner-card">
         <input type="checkbox" name="boatSunset" value="si" checked class="sr-only" />
-        <span>{T.boat}</span>
+        <Fragment set:html={ICON.boat} /><span>{T.boat}</span>
       </label>
     </fieldset>
 
@@ -436,8 +490,9 @@ const ICON: Record<string, string> = {
     <p id="planner-gate-status" hidden role="status" class="mt-3 rounded-lg bg-crema/60 px-4 py-2.5 text-sm text-arcilla"></p>
 
     <div class="mt-4 flex flex-wrap gap-3 border-t border-niebla pt-4">
-      <button id="planner-pdf" type="button" data-locked="1" data-umami-event="planner-pdf" class="rounded-md border border-arcilla px-5 py-2.5 text-sm font-semibold text-arcilla transition-colors hover:bg-arcilla hover:text-lino data-[locked]:opacity-60">
-        <span aria-hidden="true">🔒</span> {T.savePdf}
+      {/* El candado (icono de línea, no emoji) desaparece al desbloquear el dossier. */}
+      <button id="planner-pdf" type="button" data-locked="1" data-umami-event="planner-pdf" class="inline-flex items-center gap-2 rounded-md border border-arcilla px-5 py-2.5 text-sm font-semibold text-arcilla transition-colors hover:bg-arcilla hover:text-lino data-[locked]:opacity-60">
+        <span class="planner-lock inline-flex" aria-hidden="true" set:html={UI_ICON.lock} />{T.savePdf}
       </button>
       <button id="planner-copy" type="button" data-umami-event="planner-copylink" class="rounded-md border border-arcilla px-5 py-2.5 text-sm font-semibold text-arcilla transition-colors hover:bg-arcilla hover:text-lino">
         {T.copyLink}
@@ -471,6 +526,10 @@ const ICON: Record<string, string> = {
 
   const isISODate = (s: string) => /^\d{4}-\d{2}-\d{2}$/.test(s) && !Number.isNaN(Date.parse(s + "T00:00:00Z"));
   const dayMs = 86400000;
+
+  // Aviso (fechas imposibles, motor caído): icono de línea, no emoji.
+  const alertBox = (msg: string) =>
+    `<p class="flex gap-2 rounded-lg border border-terracota/60 bg-arena px-4 py-3 text-sm text-arcilla" role="alert">${CFG.alertIcon}<span>${esc(msg)}</span></p>`;
 
   // Lee la encuesta de la URL y VALIDA/RECONCILIA las fechas con la duración.
   // Devuelve { survey, error }: si las fechas no son válidas, `error` (string) y
@@ -642,6 +701,28 @@ const ICON: Record<string, string> = {
     </article>`;
   }
 
+  // La tira-resumen sigue al lector: el día que tiene delante queda resaltado.
+  // IntersectionObserver (nativo, sin listener de scroll); si no lo hay, la tira
+  // sigue funcionando como índice de saltos.
+  function highlightCurrentDay() {
+    if (!out || !("IntersectionObserver" in window)) return;
+    const chips = Array.from(out.querySelectorAll<HTMLAnchorElement>(".planner-overview-chip"));
+    const days = Array.from(out.querySelectorAll<HTMLElement>("article[id^='dia-']"));
+    if (!chips.length || chips.length !== days.length) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (!e.isIntersecting) continue;
+          const idx = days.indexOf(e.target as HTMLElement);
+          chips.forEach((c, n) => c.classList.toggle("is-active", n === idx));
+        }
+      },
+      // Franja estrecha bajo la cabecera: el día "en vista" es el que se está leyendo.
+      { rootMargin: "-25% 0px -60% 0px" },
+    );
+    for (const d of days) io.observe(d);
+  }
+
   function render(survey: any) {
     if (!out) return;
     // La querystring es manipulable y compartible: si algo revienta el motor,
@@ -650,7 +731,7 @@ const ICON: Record<string, string> = {
     try {
       plan = planTrip(survey, dataset, CFG.lang, events, food);
     } catch {
-      out.innerHTML = `<p class="rounded-lg border border-terracota/60 bg-arena px-4 py-3 text-sm text-arcilla" role="alert">⚠ ${esc(CFG.renderError)}</p>`;
+      out.innerHTML = alertBox(CFG.renderError);
       return;
     }
     // Denominador del embudo (auditoría 30-jun AHORA-2): cuántos planes se generan.
@@ -674,6 +755,7 @@ const ICON: Record<string, string> = {
       ${plan.days.length > 1 ? `<nav class="planner-overview print:hidden" aria-label="${esc(CFG.overviewLabel)}">${plan.days.map((d: any, idx: number) => `<a href="#dia-${idx}" class="planner-overview-chip"><span class="oi-n">${esc(CFG.dayWord)} ${idx + 1}</span><span class="oi-t">${esc((d.blocks.find((b: any) => b.placeName)?.placeName) || d.label || "")}</span></a>`).join("")}</nav>` : ""}
       <div class="mt-6 space-y-5">${plan.days.map((d: any, idx: number) => dayCard(d, idx)).join("")}</div>`;
     out.scrollIntoView({ behavior: "smooth", block: "start" });
+    highlightCurrentDay();
     const actions = $("planner-actions"); // hay plan → ofrece guardarlo/compartirlo
     if (actions) actions.hidden = false;
     // La URL del plan viaja oculta en el form de email (el plan vive en la querystring).
@@ -710,7 +792,7 @@ const ICON: Record<string, string> = {
   const unlockPdf = () => {
     if (!pdfBtn) return;
     pdfBtn.removeAttribute("data-locked");
-    pdfBtn.querySelector("span[aria-hidden]")?.remove(); // fuera el candado
+    pdfBtn.querySelector(".planner-lock")?.remove(); // fuera el candado
     gateMsg(CFG.gateThanks);
   };
 
@@ -818,7 +900,7 @@ const ICON: Record<string, string> = {
     const sel = form?.elements.namedItem("days") as HTMLSelectElement | null;
     if (sel && [...sel.options].some((o) => o.value === String(r.survey.days))) sel.value = String(r.survey.days);
     if (r.error) {
-      out.innerHTML = `<p class="rounded-lg border border-terracota/60 bg-arena px-4 py-3 text-sm text-arcilla" role="alert">⚠ ${esc(r.error)}</p>`;
+      out.innerHTML = alertBox(r.error);
       out.scrollIntoView({ behavior: "smooth", block: "start" });
     } else {
       render(r.survey);
