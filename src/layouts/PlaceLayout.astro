@@ -5,7 +5,8 @@ import BaseLayout from "./BaseLayout.astro";
 import JsonLd from "../components/JsonLd.astro";
 import { useTranslations, placeTypeLabel } from "../i18n/ui";
 import { SITE, type Locale } from "../config/site";
-import { placeUrl, homePath } from "../i18n/utils";
+import { placeUrl, homePath, placesIndexPath } from "../i18n/utils";
+import { publishedPlaces, relatedPlaces } from "../lib/places";
 import { abs, placeSchema, breadcrumbSchema } from "../lib/schema";
 import { srcset } from "../lib/img";
 import { menorcaBusUrl } from "../lib/links";
@@ -73,6 +74,13 @@ const plannerHref = L === "es" ? "/planificador" : L === "en" ? "/en/trip-planne
 
 const mapUrl = `https://www.google.com/maps/search/?api=1&query=${data.coordinates.lat},${data.coordinates.lng}`;
 const officialUrl = data.website ?? pl?.officialUrl;
+
+// ── Malla interna: "Cerca de aquí" (13-jul-2026) ─────────────────────────────
+// Las fichas eran CALLEJONES SIN SALIDA: no enlazaban a ninguna otra ficha, y
+// ninguna página del sitio las enlazaba a ellas. Google apenas las indexaba
+// (248 de ~500 URLs). Estos enlaces + el índice /lugares les dan camino de
+// rastreo y autoridad interna. Ver lib/places.ts.
+const nearby = relatedPlaces(entry, await publishedPlaces(locale), 6);
 
 const canonical = abs(placeUrl(locale, entry.id));
 const placeLd = {
@@ -306,6 +314,44 @@ const breadcrumb = breadcrumbSchema([
       }
     </p>
   </article>
+
+  {/* "Cerca de aquí": malla de enlaces entre fichas (misma zona, si no mismo
+      tipo) + salida al índice. Es lo que da a Google un camino para rastrear
+      las ~300 fichas, que antes eran huérfanas. Ver lib/places.ts. */}
+  {
+    nearby.length > 0 && (
+      <section class="mx-auto max-w-prosa px-5 sm:px-8">
+        <h2 class="border-t border-niebla pt-8 font-display text-2xl text-tinta">
+          {t("place.nearby")}
+        </h2>
+        <ul class="mt-5 grid gap-x-8 gap-y-4 sm:grid-cols-2">
+          {nearby.map((p) => (
+            <li>
+              <a
+                href={placeUrl(locale, p.id)}
+                class="group block border-b border-transparent pb-1 transition-colors hover:border-terracota"
+              >
+                <span class="text-[15px] font-medium text-piedra transition-colors group-hover:text-terracota">
+                  {p.data.name}
+                </span>
+                <span class="mt-0.5 block text-xs text-piedra-suave">
+                  {placeTypeLabel(p.data.type, locale)} · {p.data.area}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p class="mt-6">
+          <a
+            href={placesIndexPath(locale)}
+            class="inline-block border-b border-terracota pb-0.5 text-sm font-medium text-arcilla hover:text-terracota"
+          >
+            {t("place.nearby.all")} →
+          </a>
+        </p>
+      </section>
+    )
+  }
 
   {/* Captación al pie de la ficha de lugar: páginas de entrada de tráfico
       orgánico/IA que no deben ser un callejón sin salida sin invitación a la Society. */}

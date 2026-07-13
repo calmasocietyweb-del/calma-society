@@ -50,6 +50,16 @@ export const ui = {
 
     "section.empty": "Pronto, más historias en esta sección.",
 
+    // Índice de lugares (malla interna; ver lib/places.ts)
+    "places.title": "Lugares de Menorca",
+    "places.description":
+      "El índice de la isla: calas, restaurantes, monumentos y rincones con criterio. Cada lugar, con su acceso, su aparcamiento y su mejor hora.",
+    "places.intro":
+      "Toda la isla, lugar a lugar. Calas con su acceso y su aparcamiento, mesas con criterio, monumentos y rincones que merecen el desvío.",
+    "places.all": "Todos los lugares",
+    "place.nearby": "Cerca de aquí",
+    "place.nearby.all": "Ver todos los lugares",
+
     "place.practical": "Información práctica",
     "place.access": "Acceso",
     "place.parking": "Aparcamiento",
@@ -164,6 +174,16 @@ export const ui = {
     "article.insection": "In",
 
     "section.empty": "More stories coming to this section soon.",
+
+    // Places index (internal mesh; see lib/places.ts)
+    "places.title": "Places in Menorca",
+    "places.description":
+      "The island, place by place: coves, restaurants, monuments and corners worth the detour — each with its access, parking and best hour.",
+    "places.intro":
+      "The whole island, place by place. Coves with their access and parking, tables with judgement, monuments and corners worth the detour.",
+    "places.all": "All places",
+    "place.nearby": "Nearby",
+    "place.nearby.all": "See all places",
 
     "place.practical": "Practical information",
     "place.access": "Access",
@@ -280,6 +300,16 @@ export const ui = {
 
     "section.empty": "Bientôt, d'autres histoires dans cette rubrique.",
 
+    // Index des lieux (maillage interne ; voir lib/places.ts)
+    "places.title": "Lieux de Minorque",
+    "places.description":
+      "L'île, lieu par lieu : criques, restaurants, monuments et coins qui valent le détour — chacun avec son accès, son parking et sa meilleure heure.",
+    "places.intro":
+      "Toute l'île, lieu par lieu. Des criques avec leur accès et leur parking, des tables avec du goût, des monuments et des coins qui valent le détour.",
+    "places.all": "Tous les lieux",
+    "place.nearby": "À proximité",
+    "place.nearby.all": "Voir tous les lieux",
+
     "place.practical": "Informations pratiques",
     "place.access": "Accès",
     "place.parking": "Stationnement",
@@ -384,6 +414,16 @@ const PLACE_TYPES: Record<string, Record<Locale, string>> = {
   otro: { es: "Lugar", en: "Place", fr: "Lieu" },
 };
 
+/** Etiquetas en PLURAL: encabezados de los grupos del índice de lugares. */
+const PLACE_TYPES_PLURAL: Record<string, Record<Locale, string>> = {
+  cala: { es: "Calas y playas", en: "Coves & beaches", fr: "Criques et plages" },
+  restaurante: { es: "Mesas con criterio", en: "Tables with judgement", fr: "Tables de caractère" },
+  alojamiento: { es: "Alojamientos", en: "Stays", fr: "Hébergements" },
+  monumento: { es: "Monumentos y patrimonio", en: "Monuments & heritage", fr: "Monuments et patrimoine" },
+  comercio: { es: "Comercios y ocio", en: "Shops & nightlife", fr: "Boutiques et sorties" },
+  otro: { es: "Pueblos y otros lugares", en: "Villages & other places", fr: "Villages et autres lieux" },
+};
+
 const EVENT_CATEGORIES: Record<string, Record<Locale, string>> = {
   fiesta: { es: "Fiesta", en: "Festival", fr: "Fête" },
   concierto: { es: "Concierto", en: "Concert", fr: "Concert" },
@@ -396,6 +436,10 @@ const EVENT_CATEGORIES: Record<string, Record<Locale, string>> = {
 
 export function placeTypeLabel(type: string, locale: Locale): string {
   return PLACE_TYPES[type]?.[locale] ?? type;
+}
+
+export function placeTypePlural(type: string, locale: Locale): string {
+  return PLACE_TYPES_PLURAL[type]?.[locale] ?? type;
 }
 
 export function eventCategoryLabel(cat: string, locale: Locale): string {

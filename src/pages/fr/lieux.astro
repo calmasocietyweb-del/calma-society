@@ -1,0 +1,13 @@
+---
+// Index des lieux en français : /fr/lieux
+import PlacesLayout from "../../layouts/PlacesLayout.astro";
+import { placesIndexPath } from "../../i18n/utils";
+
+const alternates = {
+  es: placesIndexPath("es"),
+  en: placesIndexPath("en"),
+  fr: placesIndexPath("fr"),
+};
+---
+
+<PlacesLayout locale="fr" alternates={alternates} />

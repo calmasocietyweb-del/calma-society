@@ -4,7 +4,7 @@ import { SITE, type Locale } from "../config/site";
 import { menorcaBusUrl } from "../lib/links";
 import { SECTIONS } from "../config/sections";
 import { useTranslations } from "../i18n/ui";
-import { currentLocale } from "../i18n/utils";
+import { currentLocale, placesIndexPath } from "../i18n/utils";
 import Logo from "./Logo.astro";
 
 const locale = currentLocale(Astro.url.pathname);
@@ -96,6 +96,13 @@ const legalLinks = f.legal;
             {t("footer.more")}
           </h2>
           <ul class="mt-4 space-y-2 text-sm">
+            {/* Índice de lugares: desde el pie es alcanzable en TODA la web, que
+                es lo que rescata a las ~300 fichas de ser huérfanas (lib/places.ts). */}
+            <li>
+              <a href={placesIndexPath(locale)} class="text-piedra transition-colors hover:text-terracota">
+                {t("places.all")}
+              </a>
+            </li>
             {
               f.calma && (
                 <li>

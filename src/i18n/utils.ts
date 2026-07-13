@@ -58,6 +58,17 @@ export function authorUrl(locale: Locale, slug: string): string {
   return `${PREFIX.author[locale]}/${slug}`;
 }
 
+/** Índice de lugares (la puerta de entrada a las fichas; ver lib/places.ts). */
+const PLACES_INDEX = {
+  es: "/lugares",
+  en: "/en/places",
+  fr: "/fr/lieux",
+} satisfies Record<Locale, string>;
+
+export function placesIndexPath(locale: Locale): string {
+  return PLACES_INDEX[locale];
+}
+
 /** Locale BCP-47 por idioma (para Intl: fechas, números…). */
 export const INTL_LOCALE: Record<Locale, string> = {
   es: "es-ES",
