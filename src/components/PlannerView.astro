@@ -126,6 +126,11 @@ const CFG = {
     : "We couldn't build the plan with that input. Check the survey and create it again.",
   menorcaBusUrl: SITE.partners.menorcaBus.url,
   copied: T.copied,
+  // Wizard (paso a paso): etiquetas que necesita el island.
+  wizard: { step: isEs ? "Paso" : "Step", of: isEs ? "de" : "of", next: isEs ? "Siguiente →" : "Next →", submit: T.submit },
+  // Tira-resumen del resultado ("de un vistazo").
+  overviewLabel: isEs ? "Tu viaje de un vistazo" : "Your trip at a glance",
+  dayWord: isEs ? "Día" : "Day",
   // Enlaces de la respuesta: ficha /lugar (solo published), Google Maps por
   // coordenadas (sin API ni JS externo: solo una URL) y web oficial.
   placePrefix: isEs ? "/lugar" : "/en/place",
@@ -148,7 +153,20 @@ const CFG = {
   gateThanks: T.gateThanks,
   gateSending: T.gateSending,
   emailBtn: T.emailBtn,
-  noticeIcon: { reserva: "📌", madrugar: "⏰", "agua-sombra": "💧", parking: "🅿️", "confirma-horario": "🕒", esfuerzo: "🥾", viento: "🌬️", accesibilidad: "♿", fiesta: "🎉", transfer: "🚌", logistica: "🧭" } as Record<string, string>,
+  // Iconos de LÍNEA para los avisos (antes emojis — fuera, por estética de marca).
+  noticeIcon: {
+    reserva: `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12v16l-6-4-6 4z"/></svg>`,
+    madrugar: `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>`,
+    "agua-sombra": `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6 6 10a6 6 0 0 1-12 0c0-4 6-10 6-10z"/></svg>`,
+    parking: `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.3"/></svg>`,
+    "confirma-horario": `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>`,
+    esfuerzo: `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l6-11 4 6 2.5-4L21 20z"/></svg>`,
+    viento: `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h11a2.5 2.5 0 1 0-2.5-2.5"/><path d="M3 13h15a2.5 2.5 0 1 1-2.5 2.5"/></svg>`,
+    accesibilidad: `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="1.6"/><path d="M5 9h14"/><path d="M12 8.5v5.5"/><path d="M8.5 20 12 14l3.5 6"/></svg>`,
+    fiesta: `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 5.4 5.6.5-4.2 3.7 1.3 5.5L12 20.6l-4.9 2.9 1.3-5.5L4 9.4l5.6-.5z"/></svg>`,
+    transfer: `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="11" rx="2"/><path d="M4 12h16"/><circle cx="8" cy="18.5" r="1.1"/><circle cx="16" cy="18.5" r="1.1"/></svg>`,
+    logistica: `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M14.6 9.4l-1.7 3.5-3.5 1.7 1.7-3.5z"/></svg>`,
+  } as Record<string, string>,
 };
 
 // Alta en la Sociedad (KPI nº1) por nuestra función /api/suscribir → MailerLite
@@ -161,6 +179,17 @@ const interestList = [
 ];
 const baseOptions = ["recomiendame", "ciutadella", "mao", "cala-galdana", "son-bou", "es-mercadal", "fornells"];
 const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "15+"]];
+
+// Iconos de LÍNEA (SVG, stroke fino, currentColor) para las tarjetas del wizard.
+// Nada de emojis — estética de lujo tranquilo (feedback de marca).
+const ICON: Record<string, string> = {
+  "coche-alquiler": `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13l1.6-4.4A2.2 2.2 0 0 1 7.7 7h8.6a2.2 2.2 0 0 1 2.1 1.6L20 13"/><path d="M3.5 13h17v3.4a1 1 0 0 1-1 1H18a1 1 0 0 1-1-1V16H7v.4a1 1 0 0 1-1 1H4.5a1 1 0 0 1-1-1z"/><circle cx="7.2" cy="15" r=".9"/><circle cx="16.8" cy="15" r=".9"/></svg>`,
+  "coche-propio-ferry": `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15h16l-1.4 4.2a1 1 0 0 1-.95.7H6.35a1 1 0 0 1-.95-.7z"/><path d="M6 15v-4.5h12V15"/><path d="M9 10.5V8h6v2.5"/></svg>`,
+  "sin-coche": `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12.5" cy="5" r="1.7"/><path d="M12.5 8v5"/><path d="M12.5 9.5 15 12"/><path d="M12.5 9.5 10 11.5"/><path d="M12.5 13 10.5 19"/><path d="M12.5 13 14.5 19"/></svg>`,
+  relajado: `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 5c0 7-4 11-11 11a6 6 0 0 1 .2-1.6C10 9 15 5 20 5z"/><path d="M9 16c1.5-4 4.5-7 8-9"/></svg>`,
+  equilibrado: `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v15"/><path d="M7.5 19h9"/><path d="M4.5 8.5h15"/><path d="M4.5 8.5 2.6 12.6a2.4 2.4 0 0 0 3.8 0z"/><path d="M19.5 8.5 17.6 12.6a2.4 2.4 0 0 0 3.8 0z"/></svg>`,
+  intenso: `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16l5-5 3 3 7-7"/><path d="M15 7h5v5"/></svg>`,
+};
 ---
 
 <section class="mx-auto max-w-3xl px-5 pb-20 sm:px-8">
@@ -169,21 +198,37 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
   <form id="planner-form" method="get" class="mt-8 space-y-8">
     <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">{T.formTitle}</p>
 
+    {/* Progreso + "Paso X de N" — solo en modo wizard (el island los gestiona). */}
+    <div class="planner-progress" aria-hidden="true">
+      {[1, 2, 3, 4, 5, 6].map(() => <span></span>)}
+    </div>
+    <p class="planner-step-label text-xs font-semibold uppercase tracking-[0.2em] text-oro" aria-live="polite"></p>
+
     {/* Bloque 1 */}
-    <fieldset class="space-y-4 border-t border-niebla pt-5">
+    <fieldset data-step="1" class="space-y-4 border-t border-niebla pt-5">
       <legend class="font-display text-xl text-tinta">{T.b1}</legend>
       <label class="block text-sm font-medium text-piedra">{T.days}
         <select name="days" class="planner-field">
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14].map((d) => <option value={d} selected={d === 5}>{d}</option>)}
         </select>
       </label>
-      <label class="block text-sm font-medium text-piedra">{T.transport}
-        <select name="transport" class="planner-field">
-          <option value="coche-alquiler">{T.t_coche}</option>
-          <option value="coche-propio-ferry">{T.t_ferry}</option>
-          <option value="sin-coche">{T.t_sin}</option>
-        </select>
-      </label>
+      <fieldset>
+        <legend class="text-sm font-medium text-piedra">{T.transport}</legend>
+        <div class="mt-2 grid gap-2">
+          <label class="planner-card">
+            <input type="radio" name="transport" value="coche-alquiler" class="sr-only" checked />
+            <Fragment set:html={ICON["coche-alquiler"]} /><span>{T.t_coche}</span>
+          </label>
+          <label class="planner-card">
+            <input type="radio" name="transport" value="coche-propio-ferry" class="sr-only" />
+            <Fragment set:html={ICON["coche-propio-ferry"]} /><span>{T.t_ferry}</span>
+          </label>
+          <label class="planner-card">
+            <input type="radio" name="transport" value="sin-coche" class="sr-only" />
+            <Fragment set:html={ICON["sin-coche"]} /><span>{T.t_sin}</span>
+          </label>
+        </div>
+      </fieldset>
       <label class="block text-sm font-medium text-piedra">{T.ferryPort}
         <select name="ferryPort" class="planner-field">
           <option value="">—</option>
@@ -194,7 +239,7 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
     </fieldset>
 
     {/* Bloque 2 */}
-    <fieldset class="space-y-4 border-t border-niebla pt-5">
+    <fieldset data-step="2" class="space-y-4 border-t border-niebla pt-5">
       <legend class="font-display text-xl text-tinta">{T.b2}</legend>
       <p class="text-xs text-piedra-suave">{T.dateHint}</p>
       <div class="grid grid-cols-2 gap-4">
@@ -213,7 +258,7 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
     </fieldset>
 
     {/* Bloque 3 */}
-    <fieldset class="space-y-4 border-t border-niebla pt-5">
+    <fieldset data-step="3" class="space-y-4 border-t border-niebla pt-5">
       <legend class="font-display text-xl text-tinta">{T.b3}</legend>
       <label class="block text-sm font-medium text-piedra">{T.base}
         <select name="base" class="planner-field">
@@ -223,15 +268,25 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
     </fieldset>
 
     {/* Bloque 4 */}
-    <fieldset class="space-y-4 border-t border-niebla pt-5">
+    <fieldset data-step="4" class="space-y-4 border-t border-niebla pt-5">
       <legend class="font-display text-xl text-tinta">{T.b4}</legend>
-      <label class="block text-sm font-medium text-piedra">{T.pace}
-        <select name="pace" class="planner-field">
-          <option value="relajado">{T.p_rel}</option>
-          <option value="equilibrado" selected>{T.p_eq}</option>
-          <option value="intenso">{T.p_int}</option>
-        </select>
-      </label>
+      <fieldset>
+        <legend class="text-sm font-medium text-piedra">{T.pace}</legend>
+        <div class="mt-2 grid gap-2">
+          <label class="planner-card">
+            <input type="radio" name="pace" value="relajado" class="sr-only" />
+            <Fragment set:html={ICON.relajado} /><span>{T.p_rel}</span>
+          </label>
+          <label class="planner-card">
+            <input type="radio" name="pace" value="equilibrado" class="sr-only" checked />
+            <Fragment set:html={ICON.equilibrado} /><span>{T.p_eq}</span>
+          </label>
+          <label class="planner-card">
+            <input type="radio" name="pace" value="intenso" class="sr-only" />
+            <Fragment set:html={ICON.intenso} /><span>{T.p_int}</span>
+          </label>
+        </div>
+      </fieldset>
       <fieldset>
         <legend class="text-sm font-medium text-piedra">{T.interests}</legend>
         <div class="mt-2 flex flex-wrap gap-2">
@@ -253,7 +308,7 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
     </fieldset>
 
     {/* Bloque 5 */}
-    <fieldset class="space-y-4 border-t border-niebla pt-5">
+    <fieldset data-step="5" class="space-y-4 border-t border-niebla pt-5">
       <legend class="font-display text-xl text-tinta">{T.b5}</legend>
       <label class="planner-pill w-fit">
         <input type="checkbox" name="kids" value="si" class="sr-only" />
@@ -281,7 +336,7 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
     </fieldset>
 
     {/* Bloque 6 */}
-    <fieldset class="space-y-4 border-t border-niebla pt-5">
+    <fieldset data-step="6" class="space-y-4 border-t border-niebla pt-5">
       <legend class="font-display text-xl text-tinta">{T.b6}</legend>
       <label class="planner-pill w-fit">
         <input type="checkbox" name="boatSunset" value="si" checked class="sr-only" />
@@ -289,9 +344,17 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
       </label>
     </fieldset>
 
-    <button type="submit" class="rounded-full bg-arcilla px-7 py-3 font-medium text-crema transition-colors hover:bg-terracota">
-      {T.submit}
-    </button>
+    {/* Navegación del wizard (solo con JS). Sin JS se usa el envío de abajo. */}
+    <div class="planner-nav">
+      <button type="button" id="planner-back" class="text-sm font-medium text-piedra-suave transition-colors hover:text-arcilla">← {isEs ? "Atrás" : "Back"}</button>
+      <button type="button" id="planner-next" class="rounded-full bg-arcilla px-7 py-3 font-medium text-crema transition-colors hover:bg-terracota">{isEs ? "Siguiente →" : "Next →"}</button>
+    </div>
+
+    <div class="planner-submit-row">
+      <button type="submit" class="rounded-full bg-arcilla px-7 py-3 font-medium text-crema transition-colors hover:bg-terracota">
+        {T.submit}
+      </button>
+    </div>
   </form>
 
   {/* ── PORTADA DEL DOSSIER (solo se ve al imprimir/PDF; el island la rellena) ── */}
@@ -460,7 +523,10 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
     const hasInterests = p.has("interests");
     for (const el of Array.from(form.elements) as HTMLInputElement[]) {
       if (!el.name) continue;
-      if (el.type === "checkbox") {
+      if (el.type === "radio") {
+        // Radios (transporte, ritmo): solo si la URL trae el valor (si no, deja el default).
+        if (p.has(el.name)) el.checked = p.getAll(el.name).includes(el.value);
+      } else if (el.type === "checkbox") {
         // Si la URL no trae intereses, conserva los marcados por defecto en el
         // formulario (que coinciden con los que el motor usa por defecto).
         if (el.name === "interests" && !hasInterests) continue;
@@ -545,7 +611,7 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
     return `<a href="https://www.google.com/maps/dir/${pts.join("/")}" target="_blank" rel="noopener" data-umami-event="planner-ruta-dia" class="text-sm font-medium text-arcilla underline decoration-niebla underline-offset-2 hover:text-terracota print:hidden">${esc(CFG.routeLabel)} ↗</a>`;
   }
 
-  function dayCard(d: any) {
+  function dayCard(d: any, idx: number) {
     // Foto de cabecera del día: la primera parada con foto verificada (con su crédito CC si toca).
     const heroP = d.blocks.map((b: any) => (b.placeId ? byId[b.placeId] : undefined)).find((p: any) => p?.image);
     const hero = heroP
@@ -563,7 +629,7 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
       hasBeach ? `<a href="${CFG.seaCalm.href}" data-umami-event="planner-mar-en-calma" class="text-sm font-medium text-arcilla underline decoration-niebla underline-offset-2 hover:text-terracota">${esc(CFG.seaCalm.text)} →</a>` : "",
     ].filter(Boolean).join("");
     const dateChip = d.date ? `<time datetime="${esc(d.date)}" class="text-xs text-piedra-suave">${esc(fmtDate(d.date))}</time>` : "";
-    return `<article class="overflow-hidden rounded-2xl border border-niebla bg-lino p-5 sm:p-6">
+    return `<article id="dia-${idx}" class="scroll-mt-24 overflow-hidden rounded-2xl border border-niebla bg-lino p-5 sm:p-6">
       ${hero}
       <header class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
         <h3 class="font-display text-2xl text-tinta">${esc(d.label)}</h3>
@@ -605,7 +671,8 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
         ${bus}
       </div>
       ${sig}
-      <div class="mt-6 space-y-5">${plan.days.map(dayCard).join("")}</div>`;
+      ${plan.days.length > 1 ? `<nav class="planner-overview print:hidden" aria-label="${esc(CFG.overviewLabel)}">${plan.days.map((d: any, idx: number) => `<a href="#dia-${idx}" class="planner-overview-chip"><span class="oi-n">${esc(CFG.dayWord)} ${idx + 1}</span><span class="oi-t">${esc((d.blocks.find((b: any) => b.placeName)?.placeName) || d.label || "")}</span></a>`).join("")}</nav>` : ""}
+      <div class="mt-6 space-y-5">${plan.days.map((d: any, idx: number) => dayCard(d, idx)).join("")}</div>`;
     out.scrollIntoView({ behavior: "smooth", block: "start" });
     const actions = $("planner-actions"); // hay plan → ofrece guardarlo/compartirlo
     if (actions) actions.hidden = false;
@@ -698,6 +765,51 @@ const kidAgeList = [["0-3", "0-3"], ["4-8", "4-8"], ["9-14", "9-14"], ["15+", "1
     b.textContent = CFG.copied;
     setTimeout(() => { b.textContent = prev; }, 2000);
   });
+
+  // ── WIZARD (paso a paso): MEJORA PROGRESIVA. Sin JS, el formulario se ve
+  // entero y su botón de envío funciona. Con JS, se muestra un paso cada vez. ──
+  (function setupWizard() {
+    if (!form) return;
+    const f = form;
+    const steps = Array.from(f.querySelectorAll("fieldset[data-step]")) as HTMLElement[];
+    const next = $("planner-next") as HTMLButtonElement | null;
+    if (steps.length < 2 || !next) return;
+    const back = $("planner-back") as HTMLButtonElement | null;
+    const segs = Array.from(f.querySelector(".planner-progress")?.children || []) as HTMLElement[];
+    const stepLabel = f.querySelector(".planner-step-label");
+    f.classList.add("is-wizard");
+    let i = 0;
+
+    const show = (idx: number, focus = true) => {
+      i = Math.max(0, Math.min(steps.length - 1, idx));
+      steps.forEach((s, n) => s.classList.toggle("is-active", n === i));
+      segs.forEach((s, n) => s.classList.toggle("done", n <= i));
+      if (stepLabel) stepLabel.textContent = `${CFG.wizard.step} ${i + 1} ${CFG.wizard.of} ${steps.length}`;
+      if (back) back.style.visibility = i === 0 ? "hidden" : "visible";
+      next.textContent = i === steps.length - 1 ? CFG.wizard.submit : CFG.wizard.next;
+      if (focus) {
+        f.scrollIntoView({ behavior: "smooth", block: "start" });
+        steps[i].setAttribute("tabindex", "-1");
+        steps[i].focus({ preventScroll: true });
+      }
+    };
+
+    const advance = () => {
+      const invalid = steps[i].querySelector(":invalid") as HTMLInputElement | null;
+      if (invalid) { invalid.reportValidity(); return; }
+      if (i < steps.length - 1) show(i + 1);
+      else f.requestSubmit();
+    };
+
+    back?.addEventListener("click", () => show(i - 1));
+    next.addEventListener("click", advance);
+    // Enter dentro de un campo: avanza en vez de enviar (salvo en el último paso).
+    f.addEventListener("submit", (e) => {
+      if (i < steps.length - 1) { e.preventDefault(); advance(); }
+    });
+
+    show(0, false);
+  })();
 
   const r = readSurvey();
   if (r && out) {
