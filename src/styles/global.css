@@ -674,6 +674,39 @@ a.cala-activa > circle {
   outline: 2px solid var(--color-terracota);
   outline-offset: 2px;
 }
+/* Etiqueta SÍ/NO de las preguntas de sí o no: sin ella, la tarjeta se ilumina
+   pero no se entiende si está activada (feedback de Cristian, 13-jul). Cambia
+   sola con CSS (`:has`), sin JS; el estado real sigue en el checkbox nativo. */
+.planner-yesno {
+  margin-left: auto;
+  flex: none;
+  border-radius: 9999px;
+  border: 1px solid var(--color-niebla);
+  background-color: var(--color-arena);
+  padding: 0.15rem 0.7rem;
+  font-family: "Inter Variable", system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-piedra); /* sobre arena: contraste AA (texto pequeño) */
+}
+.planner-yesno .yn-si {
+  display: none;
+}
+/* Activada: fondo arcilla (no terracota) — con crema encima da 7,1:1; la
+   terracota se quedaba en 3,4:1 y no cumple AA para texto pequeño. */
+.planner-card:has(input:checked) .planner-yesno {
+  border-color: var(--color-arcilla);
+  background-color: var(--color-arcilla);
+  color: var(--color-crema);
+}
+.planner-card:has(input:checked) .planner-yesno .yn-si {
+  display: inline;
+}
+.planner-card:has(input:checked) .planner-yesno .yn-no {
+  display: none;
+}
 /* Variante compacta: para listas de varias opciones (intereses) en dos columnas. */
 .planner-card-sm {
   gap: 0.6rem;

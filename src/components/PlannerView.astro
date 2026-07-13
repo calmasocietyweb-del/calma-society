@@ -53,6 +53,7 @@ const T = isEs
       kids: "¿Viajas con niños?", kidAges: "Edades", budget: "Presupuesto",
       bud_a: "Ajustado", bud_m: "Medio", bud_alto: "Alto",
       boat: "¿Te apetece barco y atardeceres?", acc: "¿Necesitas accesibilidad?",
+      yes: "Sí", no: "No",
       acc_ning: "Ninguna", acc_carr: "Carrito de bebé", acc_mov: "Movilidad reducida", acc_may: "Personas mayores",
       submit: "Crear mi plan", recompute: "Actualizar el plan",
       base_z: { ciutadella: "Ciutadella", mao: "Maó", "cala-galdana": "Cala Galdana", "son-bou": "Son Bou", "es-mercadal": "Es Mercadal", fornells: "Fornells" } as Record<string, string>,
@@ -85,6 +86,7 @@ const T = isEs
       kids: "Travelling with kids?", kidAges: "Ages", budget: "Budget",
       bud_a: "Tight", bud_m: "Medium", bud_alto: "High",
       boat: "Fancy boat trips & sunsets?", acc: "Do you need accessibility?",
+      yes: "Yes", no: "No",
       acc_ning: "None", acc_carr: "Baby stroller", acc_mov: "Reduced mobility", acc_may: "Older travellers",
       submit: "Build my plan", recompute: "Update the plan",
       base_z: { ciutadella: "Ciutadella", mao: "Maó", "cala-galdana": "Cala Galdana", "son-bou": "Son Bou", "es-mercadal": "Es Mercadal", fornells: "Fornells" } as Record<string, string>,
@@ -350,9 +352,13 @@ const ICON: Record<string, string> = {
     {/* Bloque 5 */}
     <fieldset data-step="5" class="space-y-4 border-t border-niebla pt-5">
       <legend class="font-display text-xl text-tinta">{T.b5}</legend>
+      {/* Pregunta de sí/no: la tarjeta dice en voz alta si está activada (CSS puro;
+          el estado real lo lleva el checkbox nativo, que es lo que oye el lector
+          de pantalla — la etiqueta es solo visual). */}
       <label class="planner-card">
         <input type="checkbox" name="kids" value="si" class="sr-only" />
         <Fragment set:html={ICON.kids} /><span>{T.kids}</span>
+        <span class="planner-yesno" aria-hidden="true"><span class="yn-si">{T.yes}</span><span class="yn-no">{T.no}</span></span>
       </label>
       {/* Las edades solo se preguntan si viajas con niños (CSS puro, sin JS). */}
       <fieldset class="planner-when-kids">
@@ -395,6 +401,7 @@ const ICON: Record<string, string> = {
       <label class="planner-card">
         <input type="checkbox" name="boatSunset" value="si" checked class="sr-only" />
         <Fragment set:html={ICON.boat} /><span>{T.boat}</span>
+        <span class="planner-yesno" aria-hidden="true"><span class="yn-si">{T.yes}</span><span class="yn-no">{T.no}</span></span>
       </label>
     </fieldset>
 
