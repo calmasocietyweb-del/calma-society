@@ -8,6 +8,7 @@ import {
   barcosConPagina as calcular,
   cabe,
   hhmmAMin,
+  pernocta,
   slugBarco,
   PLANES,
   DESEMBARQUE_MIN,
@@ -67,6 +68,39 @@ test("el que zarpa a las 21:00 llega al atardecer; el de las 16:00, no", () => {
 test("el que zarpa a las 22:00 da para cenar en tierra", () => {
   const wind = barcosConPagina().find((b) => b.ship === "Wind Spirit");
   assert.equal(wind?.daParaCenar, true, "Wind Spirit zarpa a las 22:00");
+});
+
+test("una PERNOCTA no se toma por el día tipo del barco", () => {
+  // El Wind Spirit atraca el 27-oct a las 08:00 y zarpa el 28 a las 17:00: duerme en Maó.
+  // Si el cálculo la tomara por una escala normal, restaría 17:00 − 08:00 = 9 h y le
+  // prometería al lector MENOS tiempo del que tiene. Peor aún sería lo contrario.
+  const escala = CALLS.find(
+    (c: { date: string; ship: string }) => c.date === "2026-10-27" && c.ship === "Wind Spirit",
+  );
+  assert.ok(escala, "la escala con pernocta debe seguir en el calendario");
+  assert.equal(pernocta(escala), true);
+
+  // El día tipo del Wind Spirit sale de una escala normal (agosto: 08:00–22:00), no de esta.
+  const wind = barcosConPagina().find((b) => b.ship === "Wind Spirit");
+  assert.ok(wind);
+  assert.equal(wind.departure, "22:00");
+  assert.ok(wind.escalaMin > 9 * 60, "no puede haber cogido las horas de la pernocta");
+});
+
+test("una escala SIN horas no inventa un tiempo en tierra", () => {
+  // Emerald Cruises no publica horas de atraque. Antes que estimarlas, no se publican:
+  // el barco sale en el calendario, pero no puede sostener una página de tiempo útil.
+  const sakara = CALLS.filter((c: { ship: string }) => c.ship === "Emerald Sakara");
+  assert.ok(sakara.length >= 2, "el Sakara repite: sin horas, es el caso límite");
+  for (const e of sakara) {
+    assert.equal(e.arrival, null);
+    assert.equal(e.departure, null);
+  }
+  assert.equal(
+    barcosConPagina().some((b) => b.ship === "Emerald Sakara"),
+    false,
+    "repite, pero sin horas no hay nada honesto que contarle al crucerista",
+  );
 });
 
 test("solo tienen página los barcos que repiten Y tienen horas", () => {

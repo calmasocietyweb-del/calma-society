@@ -1,10 +1,10 @@
 {
   "season": 2026,
   "port": "Maó",
-  "updated": "2026-06-23",
+  "updated": "2026-07-14",
   "seasonEstimate": "125-130",
-  "coveragePct": 76,
-  "totalListed": 97,
+  "coveragePct": 78,
+  "totalListed": 99,
   "officialSource": "https://www.portsdebalears.com/es/buques-en-puerto",
   "sources": {
     "confirmadas": "menorca.info — datos de los consignatarios del puerto",
@@ -509,15 +509,26 @@
       "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
     },
     {
+      "date": "2026-07-26",
+      "ship": "Marella Explorer",
+      "line": "Marella Cruises (TUI)",
+      "pax": 1924,
+      "arrival": "11:00",
+      "departure": "18:00",
+      "confidence": "alta",
+      "sourceCount": 2,
+      "source": "https://posidoniaweb.portsdebalears.com/docs/files/atraques.json"
+    },
+    {
       "date": "2026-07-29",
       "ship": "AIDAstella",
       "line": "AIDA Cruises",
       "pax": 2194,
-      "arrival": "09:30",
+      "arrival": "09:00",
       "departure": "19:00",
       "confidence": "alta",
-      "sourceCount": 3,
-      "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
+      "sourceCount": 2,
+      "source": "https://posidoniaweb.portsdebalears.com/docs/files/atraques.json"
     },
     {
       "date": "2026-07-30",
@@ -537,7 +548,7 @@
       "pax": 922,
       "arrival": "09:00",
       "departure": "20:00",
-      "confidence": "alta",
+      "confidence": "media",
       "sourceCount": 3,
       "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
     },
@@ -559,8 +570,8 @@
       "pax": 2194,
       "arrival": "08:30",
       "departure": "19:00",
-      "confidence": "alta",
-      "sourceCount": 2,
+      "confidence": "media",
+      "sourceCount": 1,
       "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
     },
     {
@@ -570,7 +581,7 @@
       "pax": 2150,
       "arrival": "09:00",
       "departure": "16:00",
-      "confidence": "alta",
+      "confidence": "media",
       "sourceCount": 3,
       "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
     },
@@ -592,7 +603,7 @@
       "pax": 148,
       "arrival": "08:00",
       "departure": "22:00",
-      "confidence": "alta",
+      "confidence": "media",
       "sourceCount": 3,
       "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
     },
@@ -614,7 +625,7 @@
       "pax": 148,
       "arrival": "08:00",
       "departure": "22:00",
-      "confidence": "alta",
+      "confidence": "media",
       "sourceCount": 3,
       "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
     },
@@ -634,11 +645,11 @@
       "ship": "AIDAstella",
       "line": "AIDA Cruises",
       "pax": 2194,
-      "arrival": "09:30",
+      "arrival": null,
       "departure": "19:00",
-      "confidence": "alta",
+      "confidence": "media",
       "sourceCount": 3,
-      "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
+      "source": "https://www.cruisemapper.com/ports/port-mahon-port-1368?month=2026-08"
     },
     {
       "date": "2026-08-19",
@@ -647,7 +658,7 @@
       "pax": 2150,
       "arrival": "09:00",
       "departure": "16:00",
-      "confidence": "alta",
+      "confidence": "media",
       "sourceCount": 3,
       "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
     },
@@ -658,7 +669,7 @@
       "pax": 999,
       "arrival": "08:00",
       "departure": "17:00",
-      "confidence": "alta",
+      "confidence": "media",
       "sourceCount": 3,
       "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
     },
@@ -669,7 +680,7 @@
       "pax": 2150,
       "arrival": "09:00",
       "departure": "16:00",
-      "confidence": "alta",
+      "confidence": "media",
       "sourceCount": 3,
       "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
     },
@@ -680,7 +691,7 @@
       "pax": 922,
       "arrival": "09:00",
       "departure": "20:00",
-      "confidence": "alta",
+      "confidence": "media",
       "sourceCount": 3,
       "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
     },
@@ -690,10 +701,10 @@
       "line": "Silversea Cruises",
       "pax": 596,
       "arrival": "08:00",
-      "departure": "19:00",
+      "departure": "17:30",
       "confidence": "alta",
-      "sourceCount": 3,
-      "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
+      "sourceCount": 2,
+      "source": "https://www.silversea.com/destinations/mediterranean-cruise/barcelona-to-barcelona-sm260829009.html"
     },
     {
       "date": "2026-09-08",
@@ -735,9 +746,9 @@
       "pax": 100,
       "arrival": null,
       "departure": null,
-      "confidence": "media",
-      "sourceCount": 1,
-      "source": "https://www.cruisemapper.com/ports/port-mahon-port-1368?month=2026-09"
+      "confidence": "alta",
+      "sourceCount": 2,
+      "source": "https://emerald.cruises/EU/en-GB/yacht/plan-your-journey/cruise-calendar"
     },
     {
       "date": "2026-09-18",
@@ -757,7 +768,7 @@
       "pax": 408,
       "arrival": "08:00",
       "departure": "18:30",
-      "confidence": "alta",
+      "confidence": "media",
       "sourceCount": 3,
       "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
     },
@@ -768,7 +779,7 @@
       "pax": 1358,
       "arrival": "11:30",
       "departure": "20:30",
-      "confidence": "alta",
+      "confidence": "media",
       "sourceCount": 2,
       "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
     },
@@ -779,9 +790,9 @@
       "pax": 100,
       "arrival": null,
       "departure": null,
-      "confidence": "media",
-      "sourceCount": 1,
-      "source": "https://www.cruisemapper.com/ports/port-mahon-port-1368?month=2026-09"
+      "confidence": "alta",
+      "sourceCount": 2,
+      "source": "https://emerald.cruises/EU/en-GB/yacht/plan-your-journey/cruise-calendar"
     },
     {
       "date": "2026-09-27",
@@ -812,9 +823,20 @@
       "pax": 100,
       "arrival": null,
       "departure": null,
-      "confidence": "media",
-      "sourceCount": 1,
-      "source": "https://www.cruisemapper.com/ports/port-mahon-port-1368?month=2026-09"
+      "confidence": "alta",
+      "sourceCount": 2,
+      "source": "https://emerald.cruises/EU/en-GB/yacht/plan-your-journey/cruise-calendar"
+    },
+    {
+      "date": "2026-09-29",
+      "ship": "Scenic Eclipse II",
+      "line": "Scenic",
+      "pax": 228,
+      "arrival": null,
+      "departure": null,
+      "confidence": "alta",
+      "sourceCount": 2,
+      "source": "https://travel-dealz.com/deal/scenic-eclipse-mediterranean/"
     },
     {
       "date": "2026-09-30",
@@ -837,6 +859,17 @@
       "confidence": "alta",
       "sourceCount": 3,
       "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
+    },
+    {
+      "date": "2026-10-04",
+      "ship": "Silver Ray",
+      "line": "Silversea Cruises",
+      "pax": 728,
+      "arrival": "08:00",
+      "departure": "16:00",
+      "confidence": "alta",
+      "sourceCount": 2,
+      "source": "https://www.silversea.com/destinations/mediterranean-cruise/barcelona-to-monte-carlo-ra260928010.html"
     },
     {
       "date": "2026-10-05",
@@ -922,9 +955,9 @@
       "pax": 100,
       "arrival": null,
       "departure": null,
-      "confidence": "media",
-      "sourceCount": 1,
-      "source": "https://www.cruisemapper.com/ports/port-mahon-port-1368?month=2026-10"
+      "confidence": "alta",
+      "sourceCount": 2,
+      "source": "https://emerald.cruises/EU/en-GB/yacht/plan-your-journey/cruise-calendar"
     },
     {
       "date": "2026-10-18",
@@ -957,7 +990,8 @@
       "departure": null,
       "confidence": "alta",
       "sourceCount": 3,
-      "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
+      "source": "https://www.seadream.com/",
+      "departureDate": "2026-10-28"
     },
     {
       "date": "2026-10-27",
@@ -965,21 +999,11 @@
       "line": "Windstar Cruises",
       "pax": 148,
       "arrival": "08:00",
-      "departure": null,
+      "departure": "17:00",
       "confidence": "media",
-      "sourceCount": 1,
-      "source": "https://www.cruisemapper.com/ports/port-mahon-port-1368?month=2026-10"
-    },
-    {
-      "date": "2026-10-28",
-      "ship": "SeaDream I",
-      "line": "SeaDream Yacht Club",
-      "pax": 112,
-      "arrival": null,
-      "departure": null,
-      "confidence": "media",
-      "sourceCount": 1,
-      "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
+      "sourceCount": 2,
+      "source": "https://www.windstarcruises.com/",
+      "departureDate": "2026-10-28"
     },
     {
       "date": "2026-10-29",

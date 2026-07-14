@@ -56,8 +56,10 @@ const T = isEs
       thEstado: "Fiabilidad",
       caption: "Escalas de cruceros previstas en el puerto de Maó en 2026.",
       disclaimer:
-        `Calendario en actualización continua: recoge ${nCalls} de las ~${seasonEst} escalas previstas para 2026. Marzo y abril están confirmados por los consignatarios del puerto; el resto procede de agregadores internacionales y puede cambiar (mayo es el tramo más provisional). No es el calendario oficial.`,
+        `Calendario en actualización continua: recoge ${nCalls} de las ~${seasonEst} escalas previstas para 2026. Las próximas semanas se contrastan con el registro de atraques de la Autoridad Portuaria; las escalas más lejanas proceden de agregadores internacionales y pueden cambiar. Cuando una naviera no publica sus horas, lo decimos en vez de estimarlas. No es el calendario oficial.`,
       legendTitle: "Fiabilidad:",
+      overnight: "pernocta",
+      overnightNote: "Pernocta: el barco duerme en el puerto y zarpa al día siguiente. Es la escala con más tiempo real en tierra.",
       paxNote: "“Capacidad” es el máximo del barco, no el pasaje real embarcado. Las horas, cuando constan, son orientativas.",
       ciutadella:
         "Ciutadella apenas recibe cruceros en 2026: unas 2 escalas del pequeño National Geographic Orion (Lindblad), sin fecha confirmada. El resto del tráfico atraca en Maó.",
@@ -71,8 +73,10 @@ const T = isEs
       thEstado: "Reliability",
       caption: "Cruise calls scheduled at the port of Maó in 2026.",
       disclaimer:
-        `Calendar under continuous update: it lists ${nCalls} of the ~${seasonEst} calls expected for 2026. March and April are confirmed by the port agents; the rest comes from international aggregators and may change (May is the most provisional stretch). This is not the official schedule.`,
+        `Calendar under continuous update: it lists ${nCalls} of the ~${seasonEst} calls expected for 2026. The coming weeks are cross-checked against the Port Authority's berthing record; calls further out come from international aggregators and may change. When a cruise line does not publish its times, we say so instead of estimating them. This is not the official schedule.`,
       legendTitle: "Reliability:",
+      overnight: "overnight",
+      overnightNote: "Overnight: the ship sleeps in port and sails the next day. It is the call with the most real time ashore.",
       paxNote: "“Capacity” is the ship's maximum, not actual passengers aboard. Times, where given, are indicative.",
       ciutadella:
         "Ciutadella barely receives cruise ships in 2026: around 2 calls of the small National Geographic Orion (Lindblad), with no confirmed date. All other traffic docks in Maó.",
@@ -80,9 +84,11 @@ const T = isEs
     };
 
 // Agrupa las escalas por mes, conservando el orden.
-type Call = { date: string; ship: string; line: string; pax: number | null; arrival: string | null; departure: string | null; confidence: string; source: string };
-const groups: { key: string; label: string; items: (Call & { d: number; dow: string; hours: string })[] }[] = [];
-for (const c of cruceros.calls as Call[]) {
+// La escala tal y como vive en el JSON: la del motor de cálculo + su fuente.
+type CalendarCall = Call & { source: string };
+const groups: { key: string; label: string; items: (CalendarCall & { d: number; dow: string; hours: string; overnight: boolean })[] }[] = [];
+let hayPernocta = false;
+for (const c of cruceros.calls as CalendarCall[]) {
   const [y, m, d] = c.date.split("-").map(Number);
   const key = `${y}-${m}`;
   let g = groups.find((gr) => gr.key === key);
@@ -91,8 +97,19 @@ for (const c of cruceros.calls as Call[]) {
     groups.push(g);
   }
   const dow = DOW[lang][new Date(Date.UTC(y, m - 1, d, 12)).getUTCDay()];
-  const hours = c.arrival && c.departure ? `${c.arrival}–${c.departure}` : c.arrival || "";
-  g.items.push({ ...c, d, dow, hours });
+  // El barco duerme en el puerto: la zarpa es de OTRO día y hay que decirlo, o el lector
+  // leería «08:00–17:00» y creería que tiene nueve horas cuando tiene más de treinta.
+  const overnight = Boolean(c.departureDate && c.departureDate !== c.date);
+  if (overnight) hayPernocta = true;
+  // Si no hay horas, no se dibuja una flecha vacía: la etiqueta «pernocta» ya lo dice todo.
+  const hours = overnight
+    ? c.arrival && c.departure
+      ? `${c.arrival} → ${c.departure} (+1)`
+      : c.arrival || ""
+    : c.arrival && c.departure
+      ? `${c.arrival}–${c.departure}`
+      : c.arrival || "";
+  g.items.push({ ...c, d, dow, hours, overnight });
 }
 const fmtPax = (n: number | null) => (n == null ? "—" : "≈ " + n.toLocaleString(isEs ? "es-ES" : "en-US"));
 const officialUrl = cruceros.officialSource;
@@ -101,8 +118,12 @@ const colCount = 5;
 
 <div class="my-10">
   {/* Descargo honesto, siempre visible antes del calendario. */}
-  <p class="rounded-xl border border-terracota/40 bg-arena/60 px-4 py-3 text-sm leading-relaxed text-piedra">
-    ⚓ {T.disclaimer}
+  <p class="flex gap-3 rounded-xl border border-terracota/40 bg-arena/60 px-4 py-3 text-sm leading-relaxed text-piedra">
+    <svg class="mt-0.5 h-4 w-4 shrink-0 text-terracota" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="4" r="2"></circle>
+      <path d="M12 6v15M8 9h8M3 15a9 9 0 0 0 18 0"></path>
+    </svg>
+    <span>{T.disclaimer}</span>
   </p>
 
   {/* Leyenda de fiabilidad. */}
@@ -154,6 +175,11 @@ const colCount = 5;
                 ) : (
                   c.ship
                 )}
+                {c.overnight && (
+                  <span class="ml-2 inline-block rounded-full border border-oro-vivo/50 px-2 py-0.5 align-middle text-[0.65rem] font-normal uppercase tracking-wider text-oro">
+                    {T.overnight}
+                  </span>
+                )}
               </td>
               <td class="px-3 py-2.5 text-piedra-suave">{c.line}</td>
               <td class="whitespace-nowrap px-3 py-2.5 text-right text-piedra-suave">{fmtPax(c.pax)}</td>
@@ -170,6 +196,7 @@ const colCount = 5;
     </table>
   </div>
 
+  {hayPernocta && <p class="mt-2 text-xs leading-relaxed text-piedra-suave">{T.overnightNote}</p>}
   <p class="mt-2 text-xs leading-relaxed text-piedra-suave">{T.paxNote}</p>
   <p class="mt-2 text-xs leading-relaxed text-piedra-suave">{T.ciutadella}</p>
   <p class="mt-3 text-sm">

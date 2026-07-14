@@ -20,8 +20,14 @@ export type Call = {
   pax: number | null;
   arrival: string | null;
   departure: string | null;
+  /** Fecha real de zarpa cuando el barco PERNOCTA en Maó (duerme en el puerto). */
+  departureDate?: string | null;
   confidence: string;
 };
+
+/** El barco duerme en Maó: no es una escala de un día, y no se modela como tal. */
+export const pernocta = (c: Call): boolean =>
+  Boolean(c.departureDate && c.departureDate !== c.date);
 
 /** Lo que se descuenta de la escala para saber el tiempo REAL en tierra. */
 export const DESEMBARQUE_MIN = 30; // bajar del barco, pasar el control, salir del muelle
@@ -179,7 +185,9 @@ export function barcosConPagina(calls: Call[]): Barco[] {
   const barcos: Barco[] = [];
   for (const [ship, escalas] of porBarco) {
     if (escalas.length < 2) continue; // un barco que viene un día suelto no sostiene una página
-    const conHora = escalas.find((e) => e.arrival && e.departure);
+    // Una pernocta NO sirve para calcular el día tipo: restar sus horas daría una escala
+    // absurdamente corta (zarpa a las 17:00 del día SIGUIENTE, no del mismo día).
+    const conHora = escalas.find((e) => e.arrival && e.departure && !pernocta(e));
     if (!conHora) continue; // sin horas no hay nada útil que contar
 
     const arrival = conHora.arrival!;
