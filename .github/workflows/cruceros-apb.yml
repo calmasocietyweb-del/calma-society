@@ -1,0 +1,62 @@
+# El robot del puerto — vigila a diario que el calendario de cruceros no mienta.
+#
+# Lee el registro oficial de atraques de la Autoridad Portuaria de Baleares y CORRIGE
+# las horas que no cuadran (dato oficial y objetivo, como el parte del viento de AEMET).
+# Lo que pide criterio —una escala nueva, una que desaparece— NO lo publica: lo deja en
+# src/data/cruceros-avisos.json y en el resumen del job, para que lo mire una persona.
+#
+# Por qué existe: el calendario estuvo 21 días sin refrescar y con tres datos falsos
+# publicados, entre ellos una hora de zarpa que regalaba hora y media de tierra que no
+# existía. El tiempo en tierra es LA promesa de las páginas por barco.
+#
+# No necesita ningún secreto: el feed de la APB es público.
+name: Cruceros — registro del puerto (diario)
+
+on:
+  schedule:
+    - cron: "40 5 * * *" # ~07:40 en Menorca (verano). Tras el parte de calma (05:00), para no cruzar dos push.
+  workflow_dispatch: {} # se puede lanzar a mano desde la pestaña Actions
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cruceros-apb
+  cancel-in-progress: false
+
+jobs:
+  vigilar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24 # el script importa src/lib/apb.ts (type-stripping nativo)
+
+      - name: Comparar el calendario con el registro del puerto
+        run: node scripts/cruceros-apb.mjs
+
+      - name: Commit si cambió
+        run: |
+          git config user.name "calma-bot"
+          git config user.email "bot@calmasociety.com"
+          git add src/data/cruceros-menorca-2026.json src/data/cruceros-avisos.json
+          if git diff --staged --quiet; then
+            echo "Sin cambios: el calendario coincide con el puerto."
+            exit 0
+          fi
+          # El mensaje canta lo que hay que mirar: un aviso enterrado en un JSON no lo ve nadie.
+          MSG=$(node -e '
+            const a = require("./src/data/cruceros-avisos.json");
+            const p = a.nuevas.length + a.desaparecidas.length;
+            const partes = [];
+            if (a.nuevas.length) partes.push(`${a.nuevas.length} escala(s) nueva(s)`);
+            if (a.desaparecidas.length) partes.push(`${a.desaparecidas.length} posible(s) cancelacion(es)`);
+            console.log(p
+              ? `chore(cruceros): el puerto avisa — ${partes.join(" y ")} POR REVISAR`
+              : "chore(cruceros): el registro del puerto corrige el calendario");
+          ')
+          git commit -m "$MSG"
+          # Otro robot (el parte de calma) también empuja a main: si se cruzan, rebase.
+          git pull --rebase origin main
+          git push
