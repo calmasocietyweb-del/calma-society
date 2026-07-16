@@ -82,10 +82,28 @@ Hoy los artículos tienen `heroImage` y **ninguna imagen en el cuerpo**.
 | `mb-clase-v-interior.webp` | Tarjeta Clase V en `FlotaChofer`. |
 | `mb-excursiones.webp`, `mb-aeropuerto.webp`, `mb-lujo.webp`, `mb-lujo-detalle.webp` | Reserva. |
 
-### Pendiente de aportar por el dueño
+### Aportado por el dueño — LOCALIZADO 2026-07-16
 
-- **Clase E** y **Audi A8** → nombrar `mb-clase-e-*.webp` y `mb-audi-a8-*.webp` en `public/uploads/`.
-- **Requisito innegociable:** deben ser fotos **de la flota real**, no material de prensa de Audi/Mercedes (no es libre). Norma del proyecto: ninguna foto sin autor y licencia.
+Origen: `COCHES Videos y fotos/Fotos/` (fuera de `public/`, sin procesar).
+
+| Origen | Contenido | Destino |
+|---|---|---|
+| `Fotos/Audi A8/Audi A8 Exterior*.jpg` (4) | A8 negro, matrícula **8439 LWZ**, en una cala menorquina | `mb-audi-a8-cala.webp` |
+| `Fotos/Audi A8/AUDI INTERIOR*.png` (2) | Plazas traseras, piel negra con rombos | `mb-audi-a8-interior.webp` |
+| `Fotos/Clase E/Mercedes clase E exterior *.jpg` (4) | Clase E negro, matrícula **9354 NCN**, en la costa | `mb-clase-e-costa.webp` |
+| `Fotos/Clase E/CLASE E INTERIOR 1.png` (1) | Plazas traseras, piel coñac | `mb-clase-e-interior.webp` |
+
+**Licencia:** el dueño confirma el 2026-07-16 que **todas son propias / de su fotógrafo**. Las exteriores lo corroboran solas (matrícula de la flota, contexto menorquín real). Las interiores se preguntaron expresamente por tener aire de foto de catálogo (PNG, sin EXIF, fecha distinta a las exteriores); **autorizadas por el dueño**. Crédito: "Menorca Bus".
+
+**También hay** `Fotos/Clase S/`, `Fotos/Clase V/` y `Videos/` sin explotar. Fuera de este spec; anotar como oportunidad (¿mejorar las fotos actuales del clúster? ¿material para redes?).
+
+### Preferencia editorial: exterior sobre interior
+
+Las **exteriores mandan**. Un interior de estudio podría ser de cualquier concesionario del mundo; **un A8 frente a una cala menorquina no puede ser de nadie más**. Eso es el "anclar en Menorca" ya decidido para todo el clúster de chófer, y es lo que nos hace citables. Los interiores son apoyo.
+
+### Procesado necesario
+
+Los originales pesan 2,3-4,8 MB en JPG/PNG. Antes de entrar en `public/uploads/`: convertir a **webp** y generar variantes **480/960**, siguiendo la convención ya existente (`mb-clase-s-interior-480.webp` etc.). Sin esto se cae Lighthouse.
 
 ### Equilibrio editorial
 
@@ -115,8 +133,8 @@ Módulo de 4 tarjetas: foto · nombre · para quién · una línea · enlace.
 |---|---|---|---|
 | **Mercedes Clase V** | Familias y grupos con equipaje | `/articulo/mercedes-clase-v-menorca/` · EN `/en/article/mercedes-v-class-menorca/` (200 ✅) | `mb-clase-v-interior.webp` |
 | **Mercedes Clase S** | Pareja, gama alta | `/articulo/mercedes-clase-s-menorca/` · EN `/en/article/mercedes-s-class-menorca/` (200 ✅) | `mb-clase-s-interior.webp` |
-| **Mercedes Clase E** | Pareja | menorcabus.com + UTM *(temporal → Spec B)* | pendiente |
-| **Audi A8** | Pareja | menorcabus.com + UTM *(temporal → Spec B)* | pendiente |
+| **Mercedes Clase E** | Pareja | menorcabus.com + UTM *(temporal → Spec B)* | `mb-clase-e-costa.webp` ✅ |
+| **Audi A8** | Pareja | menorcabus.com + UTM *(temporal → Spec B)* | `mb-audi-a8-cala.webp` ✅ |
 
 **Sobre el A8:** es **A8 normal**, no A8 L (confirmado por el dueño). Por tanto se describe como berlina de pareja junto al Clase E y **no** se sitúa por encima del Clase S. Justificación: la distancia entre ejes del A8 normal (2.998 mm) está a 37 mm del Clase E (2.961 mm) y por debajo del Clase S (3.106 mm). Solo el A8 L (3.128 mm) superaría al Clase S. La etiqueta de segmento (A8 = F, E = E) es cierta pero irrelevante para el pasajero de atrás.
 
@@ -151,7 +169,10 @@ Afecta a las 30 páginas (15 barcos × ES/EN) generadas por `barcosConPagina()`.
 ## 7. Restricciones innegociables
 
 1. **No inventar condiciones comerciales de Menorca Bus.** Nada de precios, tarifas, cancelación, disponibilidad, compromisos ni tiempos de espera que el dueño no haya confirmado. Copy neutro.
-2. **No inventar la flota.** No sabemos el año, el acabado ni si el Clase E o el A8 son híbridos enchufables (esto último hunde el maletero del A8 de 505 a 390 L). Si un dato depende de eso, no se afirma.
+2. **No inventar la flota.** Solo se afirma lo verificado. Lo que sabemos a fecha de hoy, y de dónde:
+   - **Audi A8 normal, no A8 L** — confirmado por el dueño (2026-07-16).
+   - **Mercedes E 450 d 4MATIC** — leído en la insignia del portón en la propia foto `Mercedes clase E exterior 2.jpg`. Es **diésel de seis cilindros, no híbrido enchufable**, luego conserva el maletero completo. No es un Clase E de acceso: el 450 d es la versión alta de la gama.
+   - **Del A8 no sabemos** motorización ni acabado. El dueño indicó que ese dato no importa (2026-07-16). Por tanto **no se cita el maletero del A8** ni nada que dependa de su motorización.
 3. **`rel="sponsored"` sí; etiqueta visible de patrocinio no.** Decisión registrada del dueño: la web es canal propio y la flota propia no se etiqueta como "patrocinado". **Consecuencia asumida:** como el lector no recibe aviso, la carga de la honestidad recae entera sobre el contenido. De ahí §5 ("cuándo NO hace falta transfer") y el orden de §3: no son adornos, son lo que sostiene esta decisión.
 4. **Sin emojis** en la UI (lujo tranquilo).
 5. **Ninguna foto sin autor y licencia.**
@@ -164,7 +185,8 @@ Afecta a las 30 páginas (15 barcos × ES/EN) generadas por `barcosConPagina()`.
 - **Intención objetivo:** "qué hacer en escala Maó", "cruceros Menorca 2026", "shore excursion Mahon", "Mahon cruise port what to do". Sin keyword stuffing.
 - `seo.title` / `seo.description` reorientados de "temporada de cruceros" a "qué hacer en tu escala".
 - **FAQ ampliada** (`faq` en frontmatter → `FAQPage`) con preguntas reales: ¿me da tiempo a Ciutadella? ¿el centro está a pie? ¿hay taxis en el puerto? ¿cuánto tiempo tengo de verdad?
-- **Dato citable de alto valor GEO:** un Clase E no híbrido (540 L) lleva más maleta que un A8 (505 L). "Más gama = más maletas" es falso. Útil si se usa en el clúster; verificar antes de publicar.
+- **Dato citable de alto valor GEO (con reserva):** "más gama = más maletas" es falso — un Clase E no híbrido lleva más maleta que un A8. Encaja con la pregunta real del crucerista (equipaje) y es el tipo de dato que la IA cita.
+  **No se usa en este spec.** Requiere cifras del A8, y del A8 no conocemos motorización (§7.2). Comparar maleteros sin saber qué A8 es sería exactamente el error de las horas de cruceros: un dato plausible publicado sin fuente primaria. **Se traslada al Spec B**, donde se verificará contra ficha oficial antes de afirmarlo.
 - **Enlazado interno:** guía → 15 páginas de barco · barco → guía · guía → clúster de chófer (V y S). Hoy el flujo barco→guía no existe.
 - Canonical y `hreflang` ES/EN ya operativos: no tocar.
 
@@ -182,11 +204,12 @@ Afecta a las 30 páginas (15 barcos × ES/EN) generadas por `barcosConPagina()`.
 
 | Dependencia | Bloquea | Estado |
 |---|---|---|
-| Fotos reales de Clase E y A8 | Solo las 2 tarjetas del módulo | ⏳ Pendiente del dueño. **No bloquea el resto del spec.** |
+| Fotos de Clase E y A8 | Las 2 tarjetas del módulo | ✅ **Resuelto 2026-07-16.** Localizadas y autorizadas. Falta solo procesarlas a webp 480/960. |
+| ¿A8 o A8 L? | Cómo se describe el A8 | ✅ **Resuelto.** A8 normal → berlina de pareja junto al Clase E, no por encima del Clase S. |
+| ¿Híbridos enchufables? | Solo si se citan maleteros | ✅ **Cerrado.** El Clase E es 450 d (diésel, visible en la foto). Del A8 no se sabe → no se cita su maletero. |
 | Spec B (artículos E/A8) | Solo el destino final de 2 enlaces | ⏳ Posterior. Redirigir = 1 línea. |
-| ¿Clase E / A8 híbridos? | Solo si se citan maleteros | ⏳ A confirmar por el dueño |
 
-**Ninguna bloquea la entrega.** La guía, la fotografía existente, el módulo con V y S, y las 30 páginas por barco se construyen ya.
+**Ninguna dependencia bloquea la entrega.** El spec es ejecutable de principio a fin.
 
 ---
 
