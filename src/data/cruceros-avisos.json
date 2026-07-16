@@ -1,10 +1,90 @@
 {
-  "updated": "2026-07-15",
+  "updated": "2026-07-16",
   "ventana": {
-    "desde": "2026-07-15",
-    "hasta": "2026-07-30"
+    "desde": "2026-07-16",
+    "hasta": "2026-08-13"
   },
-  "nuevas": [],
-  "desaparecidas": [],
-  "dobles": []
+  "nuevas": [
+    {
+      "date": "2026-08-08",
+      "ship": "LE DUMONT-D URVILLE",
+      "arrival": "12:00",
+      "departure": "18:00",
+      "departureDate": null,
+      "muelle": "MUELLE CRUCEROS",
+      "consignatario": "AGENCIA MELIA VIVES S L",
+      "escala": "M202600050",
+      "nota": "El puerto la tiene y nosotros no. Falta capacidad de pasaje y naviera antes de publicarla."
+    },
+    {
+      "date": "2026-08-10",
+      "ship": "LA BELLE DES OCEANS",
+      "arrival": "16:00",
+      "departure": "00:30",
+      "departureDate": "2026-08-11",
+      "muelle": "MUELLE CRUCEROS",
+      "consignatario": "FEDERICO CARDONA TREMOL S L",
+      "escala": "M202600155",
+      "nota": "El puerto la tiene y nosotros no. Falta capacidad de pasaje y naviera antes de publicarla."
+    },
+    {
+      "date": "2026-08-11",
+      "ship": "ILMA",
+      "arrival": "10:00",
+      "departure": "20:00",
+      "departureDate": null,
+      "muelle": "MUELLE CRUCEROS",
+      "consignatario": "AGENCIA MELIA VIVES S L",
+      "escala": "M202600161",
+      "nota": "El puerto la tiene y nosotros no. Falta capacidad de pasaje y naviera antes de publicarla."
+    },
+    {
+      "date": "2026-08-13",
+      "ship": "LE DUMONT-D URVILLE",
+      "arrival": "12:00",
+      "departure": "18:00",
+      "departureDate": null,
+      "muelle": "MUELLE CRUCEROS",
+      "consignatario": "AGENCIA MELIA VIVES S L",
+      "escala": "M202600059",
+      "nota": "El puerto la tiene y nosotros no. Falta capacidad de pasaje y naviera antes de publicarla."
+    }
+  ],
+  "desaparecidas": [
+    {
+      "date": "2026-08-11",
+      "ship": "Ritz-Carlton Ilma",
+      "nota": "La publicamos y el puerto NO la tiene, estando dentro de su ventana. ¿Cancelada? Verificar antes de retirarla."
+    }
+  ],
+  "dobles": [
+    {
+      "date": "2026-08-08",
+      "barcos": [
+        {
+          "ship": "AIDASTELLA",
+          "eslora": 253.26
+        },
+        {
+          "ship": "LE DUMONT-D URVILLE",
+          "eslora": 131.5
+        }
+      ],
+      "nota": "Dos cruceros el mismo día. Si uno fondea, se desembarca en lancha y el tiempo real en tierra cambia."
+    },
+    {
+      "date": "2026-08-11",
+      "barcos": [
+        {
+          "ship": "WIND SPIRIT",
+          "eslora": 134.02
+        },
+        {
+          "ship": "ILMA",
+          "eslora": 241.84
+        }
+      ],
+      "nota": "Dos cruceros el mismo día. Si uno fondea, se desembarca en lancha y el tiempo real en tierra cambia."
+    }
+  ]
 }

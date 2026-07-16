@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "port": "Maó",
-  "updated": "2026-07-14",
+  "updated": "2026-07-16",
   "seasonEstimate": "125-130",
   "coveragePct": 78,
   "totalListed": 99,
@@ -548,9 +548,9 @@
       "pax": 922,
       "arrival": "09:00",
       "departure": "20:00",
-      "confidence": "media",
-      "sourceCount": 3,
-      "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
+      "confidence": "alta",
+      "sourceCount": 2,
+      "source": "https://www.portsdebalears.com/es/buques-en-puerto"
     },
     {
       "date": "2026-08-06",
@@ -558,10 +558,10 @@
       "line": "Atlas Ocean Voyages",
       "pax": 196,
       "arrival": "09:00",
-      "departure": "19:00",
-      "confidence": "media",
-      "sourceCount": 1,
-      "source": "https://www.cruisemapper.com/ports/port-mahon-port-1368?month=2026-08"
+      "departure": "19:30",
+      "confidence": "alta",
+      "sourceCount": 2,
+      "source": "https://www.portsdebalears.com/es/buques-en-puerto"
     },
     {
       "date": "2026-08-08",
@@ -570,9 +570,9 @@
       "pax": 2194,
       "arrival": "08:30",
       "departure": "19:00",
-      "confidence": "media",
-      "sourceCount": 1,
-      "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
+      "confidence": "alta",
+      "sourceCount": 2,
+      "source": "https://www.portsdebalears.com/es/buques-en-puerto"
     },
     {
       "date": "2026-08-09",
@@ -580,10 +580,10 @@
       "line": "MSC Cruises",
       "pax": 2150,
       "arrival": "09:00",
-      "departure": "16:00",
-      "confidence": "media",
-      "sourceCount": 3,
-      "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
+      "departure": "18:00",
+      "confidence": "alta",
+      "sourceCount": 2,
+      "source": "https://www.portsdebalears.com/es/buques-en-puerto"
     },
     {
       "date": "2026-08-11",
@@ -603,9 +603,9 @@
       "pax": 148,
       "arrival": "08:00",
       "departure": "22:00",
-      "confidence": "media",
-      "sourceCount": 3,
-      "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
+      "confidence": "alta",
+      "sourceCount": 2,
+      "source": "https://www.portsdebalears.com/es/buques-en-puerto"
     },
     {
       "date": "2026-08-14",
