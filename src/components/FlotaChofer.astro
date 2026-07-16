@@ -1,0 +1,189 @@
+---
+/**
+ * Módulo "Cómo moverte según con quién viajas" — la flota con chófer de
+ * Menorca Bus presentada por PÚBLICO, no por catálogo.
+ *
+ * Va SIEMPRE después de haber dado valor en el artículo (planes por horas,
+ * ir por libre o contratar). El lector debe llegar aquí con un problema ya
+ * sentido ("me quedan 6 h y quiero ver Ciutadella y una cala"); si aparece
+ * antes, la pieza lee a anuncio y quema la confianza, que es el activo.
+ *
+ * Mapeo confirmado por el dueño (2026-07-16):
+ *   Clase V → familias y grupos · Clase S → pareja, gama alta
+ *   Clase E y Audi A8 → pareja (alternativas entre sí)
+ *
+ * Sobre el A8: es A8 normal, NO A8 L. Su batalla (2.998 mm) está a 37 mm del
+ * Clase E y por debajo del Clase S, así que va con el Clase E y no por encima
+ * del S. Además está descatalogado desde feb-2026: no se habla de él en
+ * presente comercial ("pídelo", "lo último de Audi").
+ *
+ * Clase E y A8 aún no tienen artículo propio (llegará con el Spec B); sus
+ * tarjetas enlazan a Menorca Bus con UTM mientras tanto.
+ *
+ * Uso en MDX:
+ *   <FlotaChofer lang="es" />
+ */
+import { menorcaBusUrl } from "../lib/links";
+import { srcset } from "../lib/img";
+import type { Locale } from "../config/site";
+
+interface Props {
+  lang?: Locale;
+}
+const { lang = "es" } = Astro.props;
+const isEs = lang === "es";
+
+const T = {
+  es: {
+    title: "Cómo moverte según con quién viajas",
+    intro:
+      "Si decides resolver el transporte de antemano, esto es lo que conduce por la isla. La diferencia no está en el lujo del coche, sino en cuánta gente y cuánta maleta llevas.",
+    para: "Para",
+    saber: "Saber más",
+    pedir: "Consultar",
+    credit: "Foto: Menorca Bus",
+  },
+  en: {
+    title: "Getting around, depending on who you're travelling with",
+    intro:
+      "If you'd rather sort the transport in advance, this is what drives the island. The difference isn't the car's luxury — it's how many of you there are and how much luggage you carry.",
+    para: "For",
+    saber: "Read more",
+    pedir: "Enquire",
+    credit: "Photo: Menorca Bus",
+  },
+} as const;
+const t = T[lang] ?? T.es;
+
+interface Coche {
+  nombre: string;
+  para: { es: string; en: string };
+  linea: { es: string; en: string };
+  img: string;
+  alt: { es: string; en: string };
+  /** Artículo propio en la revista; si falta, la tarjeta sale a Menorca Bus. */
+  href?: { es: string; en: string };
+  /** Identifica la tarjeta en el UTM → sabemos QUÉ coche se clica. */
+  slug: string;
+}
+
+const FLOTA: Coche[] = [
+  {
+    nombre: "Mercedes Clase V",
+    slug: "clase-v",
+    para: { es: "Familias y grupos", en: "Families and groups" },
+    linea: {
+      es: "Sitio de sobra para el equipaje de crucero y para que nadie viaje de lado. Es el que resuelve una escala en familia.",
+      en: "Room to spare for cruise luggage, and nobody travels wedged in. This is the one that solves a call ashore with the family.",
+    },
+    img: "/uploads/mb-clase-v-interior.webp",
+    alt: {
+      es: "Interior de una Mercedes Clase V de Menorca Bus, con plazas traseras amplias.",
+      en: "Interior of a Menorca Bus Mercedes V-Class, with roomy rear seats.",
+    },
+    href: {
+      es: "/articulo/mercedes-clase-v-menorca/",
+      en: "/en/article/mercedes-v-class-menorca/",
+    },
+  },
+  {
+    nombre: "Mercedes Clase S",
+    slug: "clase-s",
+    para: { es: "Dos, sin renuncias", en: "Two, with no compromises" },
+    linea: {
+      es: "El silencio como lujo. Para quien quiere que el trayecto también cuente, no solo el destino.",
+      en: "Silence as luxury. For those who want the journey to count too, not just the destination.",
+    },
+    img: "/uploads/mb-clase-s-interior.webp",
+    alt: {
+      es: "Asientos traseros en piel coñac de un Mercedes Clase S de Menorca Bus.",
+      en: "Cognac leather rear seats in a Menorca Bus Mercedes S-Class.",
+    },
+    href: {
+      es: "/articulo/mercedes-clase-s-menorca/",
+      en: "/en/article/mercedes-s-class-menorca/",
+    },
+  },
+  {
+    nombre: "Mercedes Clase E",
+    slug: "clase-e",
+    para: { es: "Dos", en: "Two" },
+    linea: {
+      es: "El mismo silencio, un escalón por debajo del Clase S. Un E 450 d diésel: berlina de seis cilindros con el maletero entero, sin batería que robe sitio.",
+      en: "The same silence, one step below the S-Class. An E 450 d diesel: a six-cylinder saloon with its boot intact — no battery stealing space.",
+    },
+    img: "/uploads/mb-clase-e-costa.webp",
+    alt: {
+      es: "Mercedes Clase E negro de Menorca Bus aparcado frente a la costa rocosa de Menorca.",
+      en: "Black Menorca Bus Mercedes E-Class parked facing Menorca's rocky coast.",
+    },
+  },
+  {
+    nombre: "Audi A8",
+    slug: "audi-a8",
+    para: { es: "Dos", en: "Two" },
+    linea: {
+      es: "La alternativa al Clase E para quien prefiere el gesto de Audi: presencia sin estridencia. El buque insignia de la marca, del que ya casi nadie habla.",
+      en: "The alternative to the E-Class for those who prefer Audi's register: presence without noise. The brand's flagship, and one hardly anyone talks about any more.",
+    },
+    img: "/uploads/mb-audi-a8-cala.webp",
+    alt: {
+      es: "Audi A8 negro de Menorca Bus aparcado junto a una cala de Menorca.",
+      en: "Black Menorca Bus Audi A8 parked beside a cove in Menorca.",
+    },
+  },
+];
+---
+
+<section class="not-prose my-10" aria-labelledby="flota-chofer">
+  <h2 id="flota-chofer" class="font-display text-2xl text-tinta">{t.title}</h2>
+  <p class="mt-2 max-w-2xl text-piedra">{t.intro}</p>
+
+  <ul class="mt-6 grid gap-5 sm:grid-cols-2">
+    {
+      FLOTA.map((c) => {
+        const interno = c.href?.[lang];
+        // Sin artículo propio todavía → sale a Menorca Bus con UTM.
+        // utm_content lleva el slug del coche: así sabemos QUÉ coche convierte.
+        const url = interno ?? menorcaBusUrl("flota", `${Astro.url.pathname}#${c.slug}`);
+        const externo = !interno;
+        return (
+          <li class="overflow-hidden rounded-xl border border-niebla bg-lino">
+            <img
+              src={c.img}
+              srcset={srcset(c.img)}
+              sizes="(min-width: 640px) 340px, 100vw"
+              alt={c.alt[lang] ?? c.alt.es}
+              width="1500"
+              height="1000"
+              loading="lazy"
+              decoding="async"
+              class="aspect-[3/2] w-full object-cover"
+            />
+            <div class="p-5">
+              <p class="text-xs uppercase tracking-wider text-piedra-suave">
+                {t.para} · {c.para[lang] ?? c.para.es}
+              </p>
+              <h3 class="mt-1 font-display text-lg text-tinta">{c.nombre}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-piedra">
+                {c.linea[lang] ?? c.linea.es}
+              </p>
+              <a
+                href={url}
+                class="mt-3 inline-block text-sm font-medium text-arcilla underline underline-offset-4 hover:text-terracota"
+                data-umami-event="flota-chofer"
+                data-umami-event-coche={c.slug}
+                {...(externo
+                  ? { rel: "sponsored noopener", target: "_blank" }
+                  : {})}
+              >
+                {externo ? t.pedir : t.saber} →
+              </a>
+            </div>
+          </li>
+        );
+      })
+    }
+  </ul>
+  <p class="mt-3 text-xs text-piedra-suave">{t.credit}</p>
+</section>

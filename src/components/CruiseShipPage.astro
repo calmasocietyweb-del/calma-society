@@ -12,6 +12,7 @@
  */
 import { enHoras, margenDe, vaJusto, type Barco } from "../lib/cruises";
 import MenorcaBusCTA from "./MenorcaBusCTA.astro";
+import { srcset } from "../lib/img";
 import type { Locale } from "../config/site";
 
 interface Props {
@@ -68,6 +69,8 @@ const T = isEs
       busText:
         "El riesgo de una escala no es aburrirse: es mirar el reloj. Con chófer privado te recogen en el muelle, te llevan donde quieras, te esperan y te devuelven al barco con margen. También hay traslado directo puerto ↔ destino.",
       busCta: "Reserva con Menorca Bus",
+      fotoAlt: "Mercedes Clase S negro de Menorca Bus esperando en el muelle del puerto de Maó.",
+      fotoPie: "En el muelle de Maó, a la hora del atraque · Foto: Menorca Bus",
     }
   : {
       kicker: "Cruise call in Maó",
@@ -113,6 +116,8 @@ const T = isEs
       busText:
         "The risk of a cruise call isn't boredom: it's watching the clock. With a private driver you're picked up at the quay, taken wherever you like, waited for, and returned to the ship with time to spare. There are also straight port ↔ destination transfers.",
       busCta: "Book with Menorca Bus",
+      fotoAlt: "A black Menorca Bus Mercedes S-Class waiting on the quay at the port of Maó.",
+      fotoPie: "On the quay in Maó, at docking time · Photo: Menorca Bus",
     };
 
 const fmtFecha = (iso: string) => {
@@ -237,7 +242,24 @@ const enlaces = [
   )}
 
   {/* ── El chófer: el producto real (chófer por horas + traslado) ── */}
-  <div class="mt-10">
+  {/* La foto ancla el servicio EN el puerto de Maó: es el coche esperando donde
+      atraca este barco, no un render de catálogo. Va justo antes del CTA porque
+      es lo que hace creíble la promesa de «te esperamos en el muelle». */}
+  <figure class="mt-10">
+    <img
+      src="/uploads/mb-clase-s-puerto.webp"
+      srcset={srcset("/uploads/mb-clase-s-puerto.webp")}
+      sizes="(min-width: 700px) 672px, 100vw"
+      alt={T.fotoAlt}
+      width="1500"
+      height="1000"
+      loading="lazy"
+      decoding="async"
+      class="aspect-[3/2] w-full rounded-xl object-cover"
+    />
+    <figcaption class="mt-2 text-xs text-piedra-suave">{T.fotoPie}</figcaption>
+  </figure>
+  <div class="mt-6">
     <MenorcaBusCTA lang={locale} title={T.busTitle} text={T.busText} cta={T.busCta} />
   </div>
 

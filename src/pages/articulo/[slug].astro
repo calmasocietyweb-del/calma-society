@@ -9,10 +9,11 @@ import { articleUrl, homePath } from "../../i18n/utils";
 import Figure from "../../components/Figure.astro";
 import MenorcaBusCTA from "../../components/MenorcaBusCTA.astro";
 import CruceroCalendar from "../../components/CruceroCalendar.astro";
+import FlotaChofer from "../../components/FlotaChofer.astro";
 import NightlifeMap from "../../components/NightlifeMap.astro";
 import ToolsCTA from "../../components/ToolsCTA.astro";
 
-const mdxComponents = { Figure, MenorcaBusCTA, CruceroCalendar, NightlifeMap, ToolsCTA };
+const mdxComponents = { Figure, MenorcaBusCTA, CruceroCalendar, FlotaChofer, NightlifeMap, ToolsCTA };
 
 export async function getStaticPaths() {
   const arts = await getCollection(
