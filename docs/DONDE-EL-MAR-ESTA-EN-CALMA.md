@@ -12,7 +12,8 @@
   cala. **No** es un porcentaje exacto (sería falsa precisión): se comunica en bandas.
 - **Posibilidad de medusas** (banda **baja / media / alta**): estimación por
   persistencia de viento *onshore*. Mide **condiciones de llegada**, NO presencia.
-  Siempre emparejada con un enlace a **MedusApp** (avistamientos reales).
+  Sin fuentes externas (decisión de Cristian, 17-jul-2026): solo nuestro dato de
+  viento; el descargo remite a banderas y socorristas.
 - **Nunca**: un aviso de seguridad. No mide corrientes, fondo ni peligros de baño.
 
 ## 2. Arquitectura (100% estática, no toca el despliegue)
@@ -32,7 +33,9 @@ CRON diario → scripts/parte-calma.mjs → AEMET (viento por municipio)
 
 Fuente del viento: **AEMET OpenData**, `prediccion/especifica/municipio/horaria/{INE}`
 (JSON estructurado, dirección + velocidad por hora). Cada cala se alimenta del
-viento de su municipio. Atribución obligatoria: **"Datos: AEMET"** (Ley 18/2015).
+viento de su municipio. Atribución obligatoria: **«Fuente: AEMET»** (leyenda literal
+que exige AEMET para derivados; verificado 17-jul-2026, brief en
+`.tmp_research/2026-07-17-medusas-fuentes.md`).
 
 ```
 onshore   = (1 + cos(dirViento − openingBearingDeg)) / 2     # 1 = viento de frente
@@ -57,12 +60,13 @@ score   = empuje · gateEstacional(mes)
 - `gauss(h)` centrada en **24 h** (σ 12 h): el retardo típico de varamiento es ~1 día.
 - `gateEstacional` por fenología de Pelagia (pico jun–ago); **bloquea ALTA fuera de temporada**.
 - Bandas: **ALTA** `score≥0.45 ∧ horasAfavor≥12 ∧ temporada`; **MEDIA** `score≥0.18 ∨ (horasAfavor≥8 ∧ temporada)`; **BAJA** el resto. (`horasAfavor` = horas con onshore≥0.3 y viento≥8 km/h.)
-- **Degradación honesta**: si falta >40 % de la ventana → `sin-dato` (solo descargo +
-  MedusApp), **nunca** un "baja" por defecto (sería un falso negativo peligroso).
+- **Degradación honesta**: si falta >40 % de la ventana → `sin-dato` (solo descargo),
+  **nunca** un "baja" por defecto (sería un falso negativo peligroso).
 
 AEMET solo da previsión, así que el viento horario se **acumula** en
 `src/data/viento-historia.json` a cada corrida del cron; hasta tener ~48 h, el empuje
-sale `sin-dato`. La banda va siempre **inseparable** de su descargo y del enlace a MedusApp.
+sale `sin-dato`. La banda va siempre **inseparable** de su descargo (que remite a
+banderas y socorristas).
 
 ## 4. La "IP": orientación por cala (`windExposure`)
 
@@ -114,12 +118,12 @@ envejece >24–36 h.
   `tieneVigilancia` verificado contra el plan de socorrismo del Consell (2024–2026).
 - **Empuje de medusas — INVARIANTE de componente** (parte de la Definition of Done):
   el componente NUNCA renderiza la banda sin su descargo adyacente (misma jerarquía,
-  no plegado aparte) ni sin el enlace a MedusApp. En la UE un descargo solo exime si
-  es inevadible visualmente.
-- **Bloqueantes legales del empuje de medusas (APAGADO `MEDUSAS_ENABLED=false` hasta cerrarlos):**
-  1. forma exacta de atribución de **AEMET** y permiso de uso comercial derivado;
-  2. atribución de **Open-Meteo** (solo dev, pero confirmar);
-  3. **MedusApp**: permiso por escrito del **deep-link** (enlazar, nunca embeber ni *scrapear*).
+  no plegado aparte). El descargo remite a **banderas y socorristas**. En la UE un
+  descargo solo exime si es inevadible visualmente.
+- **Bloqueantes legales del empuje de medusas — CERRADOS el 17-jul-2026** (encendido `MEDUSAS_ENABLED=true`, KAN-81):
+  1. AEMET: leyenda literal **«Fuente: AEMET»** aplicada (permite derivados comerciales; brief del investigador en `.tmp_research/2026-07-17-medusas-fuentes.md`).
+  2. Open-Meteo: solo vive en los `*.poc.mjs` de dev; producción no lo usa.
+  3. MedusApp: **ELIMINADA del producto** (decisión de Cristian: sin fuentes externas). Sin enlace, sin datos, sin permiso que pedir.
 - Recomendado: revisión de un abogado antes del lanzamiento público (es un dato sobre el mar).
 
 ## 7. Operación
@@ -148,7 +152,8 @@ migra a Cloudflare Cron Triggers).
 - [x] Las 18 calas del piloto con datos verificados (investigador).
 - [x] Baremo de medusas v1 aprobado (ciencia+legal) e implementado + acumulación de viento.
 - [x] `tieneVigilancia` real por cala (plan de socorrismo del Consell).
-- [ ] **Cerrar los 3 bloqueantes legales** y poner `MEDUSAS_ENABLED=true` (hoy apagado).
+- [x] **Cerrar los 3 bloqueantes legales** y poner `MEDUSAS_ENABLED=true` (17-jul-2026, KAN-81).
+- [x] Capa visual de medusas en el mapa (stickers rosa malva, ALTA plena + MODERADO tenue; 17-jul-2026, KAN-81).
 - [ ] Recalibrar el modelo de medusas tras 1 temporada (cortes 0.45/0.18, lag 24 h, `fBrisa`).
 - [ ] UI de override manual (ALTA) + alerta de dato obsoleto.
 - [ ] Estado de la mar (oleaje) de la marítima costera de AEMET (código de costa en {40–47}).

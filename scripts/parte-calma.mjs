@@ -244,7 +244,8 @@ async function main() {
     forecastDate: realFecha,
     validityNote: "Previsión para la franja diurna (10–18 h). El viento puede rolar por la tarde.",
     sources: [ATRIBUCION],
-    attribution: `Datos: ${ATRIBUCION}`,
+    // Leyenda literal exigida por AEMET para productos derivados (verificado 17-jul-2026).
+    attribution: `Fuente: ${ATRIBUCION}`,
     formulaVersion: FORMULA_VERSION,
     stale: fallos > 0,
     calas: resultado.sort((a, b) => b.abrigo.score - a.abrigo.score),
