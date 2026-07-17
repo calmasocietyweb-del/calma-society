@@ -714,7 +714,9 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
       línea temporal; una fecha congelada aquí inducía a error al quedar obsoleta. */}
   <p class="text-sm text-piedra-suave">
     {parte.validityNote}{" "}
-    <span class="text-piedra-suave">· {tri("Datos", "Data", "Données")}: {parte.sources.join(", ")}</span>
+    {/* «Fuente: AEMET» es la leyenda LITERAL que exige AEMET para productos
+        derivados (verificado 17-jul-2026). No sustituir por «Datos:» ni similar. */}
+    <span class="text-piedra-suave">· {tri("Fuente", "Source", "Source")}: {parte.sources.join(", ")}</span>
   </p>
   {parte.stale && (
     <p class="mt-2 rounded-md border border-niebla bg-arena px-4 py-2 text-sm text-piedra">{T.stale}</p>
