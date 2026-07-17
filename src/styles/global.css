@@ -503,6 +503,65 @@ a.cala-activa > .cala-punto {
   font-weight: 700;
 }
 
+/* ── Posibilidad de medusas (KAN-81): stickers rosa malva en el mar ──────────
+   ALTA = plena (~17 px, opacidad 0.9) con vaivén lentísimo; MODERADO = pequeña y
+   translúcida (0.38), quieta tras el fundido. Van apareciendo escalonadas (--mf-in
+   por índice). Los hex son de la Pelagia real, no tokens de marca (como el semáforo
+   FILL del mapa). La clase medusas-ocultas la pone applyFrame al salir del día del
+   parte. */
+.calma-medusas use {
+  fill: #e3b7c4;
+  stroke: #c98da3;
+}
+.calma-medusas .medusa {
+  --mo: 0.9;
+  opacity: 0;
+  animation: medusa-in 0.8s ease-out forwards;
+  animation-delay: var(--mf-in, 0s);
+}
+.calma-medusas .medusa-media {
+  --mo: 0.38;
+}
+.calma-medusas .medusa-alta use {
+  animation: medusa-float 6s ease-in-out infinite;
+  animation-delay: var(--mf, 0s);
+  transform-box: fill-box;
+}
+@keyframes medusa-in {
+  to {
+    opacity: var(--mo);
+  }
+}
+@keyframes medusa-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(1.6px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .calma-medusas .medusa {
+    animation: none;
+    opacity: var(--mo);
+  }
+  .calma-medusas .medusa-alta use {
+    animation: none;
+  }
+}
+.calma-medusas.medusas-ocultas {
+  display: none;
+}
+/* La medusita de la leyenda, alineada con su texto. */
+.calma-leyenda-medusa svg {
+  display: inline-block;
+  vertical-align: -3px;
+  margin-right: 4px;
+  fill: #e3b7c4;
+  stroke: #c98da3;
+}
+
 /* ============================================================
    El mapa de la noche (NightlifeMap) — se incrusta DENTRO del cuerpo del
    artículo (.article-body). Neutraliza la prosa heredada en los enlaces del

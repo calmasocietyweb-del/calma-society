@@ -399,6 +399,23 @@ const dayFechas: string[] = [...new Set(FRAMES.map((f) => f.fecha))];
 // generador degradó (stale) o la fecha del dato es anterior al día de build.
 const isStaleServer = !!parte.stale || !!tl.stale || (typeof parte.forecastDate === "string" && parte.forecastDate < buildToday);
 
+// ---- Posibilidad de medusas (KAN-81): las calas con empuje alto/medio llevan un
+// sticker EN EL MAR, delante de su cala: punto de orilla + normal POSITIVA (los
+// puntos de cala usan la negativa, tierra adentro). Se usa sFinal (posición ya
+// repartida por el anti-solape) para heredar su separación tangencial. Solo si el
+// parte no está caducado: una medusa de ayer sería una mentira de hoy. ----
+const MEDUSA_W: Record<string, number> = { alta: 17, media: 11 };
+const MEDUSA_OFF: Record<string, number> = { alta: 14, media: 10 };
+const medusas = MEDUSAS_ENABLED && !isStaleServer
+  ? parte.calas.flatMap((c: any, i: number) => {
+      const band = c.medusas?.band;
+      if (band !== "alta" && band !== "media") return [];
+      const p = puntoEnArco(sFinal[i]);
+      const n = normalEnArco(sFinal[i]);
+      return [{ id: c.id, name: c.name, band, x: p.x + n.x * MEDUSA_OFF[band], y: p.y + n.y * MEDUSA_OFF[band] }];
+    })
+  : [];
+
 const repName = F0.rep.name;
 const repKmh = F0.rep.kmh;
 const repDeg = F0.rep.deg;
@@ -769,6 +786,8 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
       skyIcon: SKY_ICON,
       skyLabel: SKY_LABELS,
       stale: !!tl.stale,
+      // Las medusas solo valen para el día del parte (48 h de viento YA soplado).
+      medusasFecha: parte.forecastDate,
     }).replace(/</g, "\\u003c")} />
 
     {/* Indicador general (encima del mapa): viento + cielo y temperatura. Ambos cambian
@@ -839,6 +858,14 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
           <filter id="calma-punto" x="-60%" y="-60%" width="220%" height="220%">
             <feDropShadow dx="0" dy="1" stdDeviation="1.3" flood-color="#16241c" flood-opacity="0.45" />
           </filter>
+          {/* Medusa (Pelagia, rosa malva): campana con faldón y 3 tentáculos de trazo
+              fino. Un solo símbolo; el tamaño y la opacidad los pone cada banda. */}
+          <symbol id="calma-medusa" viewBox="0 0 24 24">
+            <path d="M4 11 C4 6.6 7.6 3 12 3 C16.4 3 20 6.6 20 11 L20 12 C18.5 13.1 16.9 13.1 15.4 12.3 C14.3 13 13.1 13.2 12 13.2 C10.9 13.2 9.7 13 8.6 12.3 C7.1 13.1 5.5 13.1 4 12 Z" stroke-width="0.8" />
+            <path d="M8 13.5 C7.6 15.5 8.6 16 8.2 18 C7.9 19.6 8.5 20.4 8.3 21.5" fill="none" stroke-width="1.1" stroke-linecap="round" />
+            <path d="M12 13.8 C12.3 16 11.4 16.8 11.8 19 C12 20.2 11.7 21 11.9 22" fill="none" stroke-width="1.1" stroke-linecap="round" />
+            <path d="M16 13.5 C16.5 15.2 15.6 16.2 16 18 C16.3 19.4 15.8 20.2 16 21.3" fill="none" stroke-width="1.1" stroke-linecap="round" />
+          </symbol>
         </defs>
 
         {/* Mar: relieve REAL del fondo (GEBCO). El azul se ahonda con la profundidad y
@@ -900,6 +927,34 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
         {MODO_MAPA === "zonas" && (
           <g class="calma-zonas" fill="none" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
             {tramos.map((t) => <path d={t.d} stroke={FILL[t.band]} />)}
+          </g>
+        )}
+
+        {/* Posibilidad de medusas: stickers EN EL MAR, delante de su cala. Capa
+            decorativa-redundante (el dato accesible vive en la ficha): aria-hidden y
+            fuera del tab; el clic baja a la ficha, como el punto. Se ocultan cuando el
+            día elegido no es el del parte (clase medusas-ocultas, la pone applyFrame). */}
+        {medusas.length > 0 && (
+          <g class="calma-medusas" aria-hidden="true">
+            {medusas.map((m, i) => (
+              <a
+                href={`#cala-${m.id}`}
+                tabindex="-1"
+                class={`medusa medusa-${m.band}`}
+                data-umami-event="calma-medusa"
+                data-umami-event-cala={m.id}
+                style={`--mf-in: ${(i % 7) * 0.12}s; --mf: ${(i % 5) * -1.3}s`}
+              >
+                <circle cx={m.x} cy={m.y} r="11" fill="transparent" />
+                <use
+                  href="#calma-medusa"
+                  x={m.x - MEDUSA_W[m.band] / 2}
+                  y={m.y - MEDUSA_W[m.band] / 2}
+                  width={MEDUSA_W[m.band]}
+                  height={MEDUSA_W[m.band]}
+                />
+              </a>
+            ))}
           </g>
         )}
 
@@ -975,6 +1030,12 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
         <p>{T.legendPuntos}</p>
         <p>{T.legendHilo}</p>
         <p>{T.legendNeutro}</p>
+        {MEDUSAS_ENABLED && (
+          <p class="calma-leyenda-medusa">
+            <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><use href="#calma-medusa" /></svg>
+            {T.legendMedusa}
+          </p>
+        )}
       </div>
     </aside>
     </div>
@@ -1230,6 +1291,9 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
         }
       }
       pintarZonas(fr);  // la costa pintada también cambia con el día elegido
+      // Las medusas solo valen para el día del parte (48 h de viento YA soplado):
+      // en cualquier otro día de la barra, la capa desaparece — predecirlas sería inventar.
+      document.querySelector(".calma-medusas")?.classList.toggle("medusas-ocultas", fr.fecha !== D.medusasFecha);
       reordenarLista(); // y la lista vuelve a poner delante las calas en calma
       if (windName) windName.textContent = fr.rep.name;
       if (windKmh) windKmh.textContent = fr.rep.kmh;
