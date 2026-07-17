@@ -404,17 +404,19 @@ const isStaleServer = !!parte.stale || !!tl.stale || (typeof parte.forecastDate 
 // puntos de cala usan la negativa, tierra adentro). Se usa sFinal (posición ya
 // repartida por el anti-solape) para heredar su separación tangencial. Solo si el
 // parte no está caducado: una medusa de ayer sería una mentira de hoy. ----
-const MEDUSA_W: Record<string, number> = { alta: 17, media: 11 };
+// Tamaños subidos el 17-jul a petición de Cristian («se ve demasiado pequeño»):
+// la jerarquía se mantiene por tamaño Y opacidad (alta plena, media tenue).
+const MEDUSA_W: Record<string, number> = { alta: 26, media: 17 };
 // El despegue salta el trazo del litoral pintado (±4,5 px), su halo de agua somera
 // y los abultamientos de los cabos: la medusa FLOTA en el agua (~1 km mar adentro,
 // que es de donde viene con el empuje), nunca mordida por la orilla.
-const MEDUSA_OFF: Record<string, number> = { alta: 25, media: 20 };
+const MEDUSA_OFF: Record<string, number> = { alta: 28, media: 22 };
 // Garantía anti-orilla: en los cabos la normal SUAVIZADA resbala (empuja a lo largo
 // del trazo, no lejos de él) y la medusa acababa montada en el verde. Se mide la
 // distancia real al contorno y, si no llega al margen, se aleja del vértice de costa
 // más cercano hasta flotar limpia. Los datos cambian a diario: sin esto, el caso
 // cabo reaparecería cualquier otro día en otra cala.
-const MEDUSA_MARGEN: Record<string, number> = { alta: 15, media: 12 };
+const MEDUSA_MARGEN: Record<string, number> = { alta: 22, media: 17 };
 const despejarDeCosta = (x: number, y: number, margen: number) => {
   for (let paso = 0; paso < 8; paso++) {
     let bx = 0, by = 0, bd = Infinity;
@@ -972,7 +974,7 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
                 data-umami-event-cala={m.id}
                 style={`--mf-in: ${(i % 7) * 0.12}s; --mf: ${(i % 5) * -1.3}s`}
               >
-                <circle cx={m.x} cy={m.y} r="11" fill="transparent" />
+                <circle cx={m.x} cy={m.y} r="15" fill="transparent" />
                 <use
                   href="#calma-medusa"
                   x={m.x - MEDUSA_W[m.band] / 2}
