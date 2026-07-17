@@ -27,8 +27,15 @@ import { menorcaBusUrl } from "../lib/links";
 import { srcset } from "../lib/img";
 import type { Locale } from "../config/site";
 
+/**
+ * Solo habla ES y EN: sus textos NO están traducidos al francés. El tipo lo dice
+ * para que, si algún día se monta en una página FR, salte en `astro check` en vez
+ * de caer al español en silencio (entonces: añadir el diccionario y ampliar esto).
+ */
+type LangFlota = Extract<Locale, "es" | "en">;
+
 interface Props {
-  lang?: Locale;
+  lang?: LangFlota;
 }
 const { lang = "es" } = Astro.props;
 const isEs = lang === "es";
