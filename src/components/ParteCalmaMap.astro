@@ -26,11 +26,11 @@ const { locale } = Astro.props;
 const tri = (es: string, en: string, fr: string): string =>
   locale === "fr" ? fr : locale === "en" ? en : es;
 
-const MEDUSAPP = "https://www.medusapp.net/";
-// Empuje de medusas: APAGADO hasta cerrar pendientes legales (atribución exacta de
-// AEMET, atribución Open-Meteo y permiso de deep-link de MedusApp por escrito) y
-// recalibrar el modelo tras una temporada. Poner true para activarlo. Ver doc §legal.
-const MEDUSAS_ENABLED = false;
+// Empuje de medusas: ENCENDIDO el 17-jul-2026 (KAN-81). Bloqueantes legales cerrados:
+// leyenda literal «Fuente: AEMET» aplicada, Open-Meteo solo en los POC de dev, y
+// MedusApp eliminada del producto (decisión de Cristian: sin fuentes externas — el
+// descargo remite a banderas y socorristas). Recalibrar el modelo tras 1 temporada.
+const MEDUSAS_ENABLED = true;
 
 // ---- Proyección equirectangular con corrección de meridiano (cos lat) y escala
 // UNIFORME → mantiene la proporción real de la isla. La costa (RING) define la
@@ -442,7 +442,9 @@ const T = {
       "sin-dato": "sin datos de viento para este momento",
     } as Record<string, string>,
     viento: "Viento",
-    waterCond: "Ver condiciones del agua",
+    medusasTitle: "Posibilidad de medusas",
+    legendMedusa:
+      "Medusa rosa: el viento lleva horas empujando hacia esa cala — podría haber. No es un avistamiento; solo vale para hoy.",
     medusasSublabel: "Empuje del viento hacia la cala (orientativo)",
     medusasBand: { baja: "Bajo", media: "Moderado", alta: "Alto" } as Record<string, string>,
     medusasCopy: {
@@ -452,8 +454,7 @@ const T = {
     } as Record<string, string>,
     medusasNoData: "No tenemos datos de viento suficientes para estimarlo hoy.",
     medusasDisclaimer:
-      "Estimamos condiciones de llegada a partir del viento de las últimas 48 h; no detectamos medusas ni afirmamos que las haya. No captura las corrientes marinas. Para avistamientos reales, consulta MedusApp y las banderas y socorristas.",
-    medusasCTA: "Ver avistamientos reales en MedusApp",
+      "Estimamos condiciones de llegada a partir del viento de las últimas 48 h; no detectamos medusas ni afirmamos que las haya. No captura las corrientes marinas. Para presencia real, consulta las banderas y a los socorristas de la playa.",
     noLifeguard:
       "Cala sin socorrismo: no hay banderas que consultar. Extrema la precaución y no te bañes solo.",
     noLifeguardShort: "Sin socorrismo",
@@ -495,7 +496,9 @@ const T = {
       "sin-dato": "no wind data for this time",
     } as Record<string, string>,
     viento: "Wind",
-    waterCond: "See today’s water conditions",
+    medusasTitle: "Possible jellyfish",
+    legendMedusa:
+      "Pink jellyfish: the wind has been pushing towards that cove for hours — there could be some. Not a sighting; valid today only.",
     medusasSublabel: "Wind push towards the cove (indicative)",
     medusasBand: { baja: "Low", media: "Moderate", alta: "High" } as Record<string, string>,
     medusasCopy: {
@@ -505,8 +508,7 @@ const T = {
     } as Record<string, string>,
     medusasNoData: "We don’t have enough wind data to estimate it today.",
     medusasDisclaimer:
-      "We estimate arrival conditions from the last 48 h of wind; we do not detect jellyfish or claim there are any. It does not capture sea currents. For real sightings, check MedusApp and the beach flags and lifeguards.",
-    medusasCTA: "See real sightings on MedusApp",
+      "We estimate arrival conditions from the last 48 h of wind; we do not detect jellyfish or claim there are any. It does not capture sea currents. For actual presence, check the beach flags and ask the lifeguards.",
     noLifeguard:
       "Unguarded cove: there are no flags to check. Take extra care and never swim alone.",
     noLifeguardShort: "Unguarded",
@@ -548,7 +550,9 @@ const T = {
       "sin-dato": "pas de données de vent pour ce moment",
     } as Record<string, string>,
     viento: "Vent",
-    waterCond: "Voir les conditions de l'eau",
+    medusasTitle: "Possibilité de méduses",
+    legendMedusa:
+      "Méduse rose : le vent pousse vers cette crique depuis des heures — il pourrait y en avoir. Ce n'est pas une observation ; valable aujourd'hui seulement.",
     medusasSublabel: "Poussée du vent vers la crique (indicatif)",
     medusasBand: { baja: "Faible", media: "Modéré", alta: "Élevé" } as Record<string, string>,
     medusasCopy: {
@@ -558,8 +562,7 @@ const T = {
     } as Record<string, string>,
     medusasNoData: "Nous n'avons pas assez de données de vent pour l'estimer aujourd'hui.",
     medusasDisclaimer:
-      "Nous estimons les conditions d'arrivée à partir du vent des dernières 48 h ; nous ne détectons pas de méduses et n'affirmons pas qu'il y en a. Cela ne tient pas compte des courants marins. Pour des observations réelles, consultez MedusApp ainsi que les drapeaux et les sauveteurs.",
-    medusasCTA: "Voir les observations réelles sur MedusApp",
+      "Nous estimons les conditions d'arrivée à partir du vent des dernières 48 h ; nous ne détectons pas de méduses et n'affirmons pas qu'il y en a. Cela ne tient pas compte des courants marins. Pour une présence réelle, consultez les drapeaux et les sauveteurs.",
     noLifeguard:
       "Crique sans surveillance : pas de drapeaux à consulter. Redoublez de prudence et ne vous baignez jamais seul.",
     noLifeguardShort: "Sans surveillance",
@@ -1009,7 +1012,7 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
           <button type="button" class="cala-ver mt-1.5 text-xs font-medium text-arcilla underline underline-offset-2 hover:text-terracota" data-umami-event="calma-ver-mapa">{T.verEnMapa} ↑</button>
           {MEDUSAS_ENABLED && c.medusas && (
             <details class="mt-3 border-t border-niebla pt-3">
-              <summary class="cursor-pointer text-sm text-piedra-suave hover:text-piedra" data-umami-event="calma-condiciones">{T.waterCond} →</summary>
+              <summary class="cursor-pointer text-sm text-piedra-suave hover:text-piedra" data-umami-event="calma-condiciones">{T.medusasTitle} →</summary>
               <div class="mt-2 rounded-md bg-arena/50 p-3">
                 <p class="text-[0.7rem] font-semibold uppercase tracking-wider text-oro">{T.medusasSublabel}</p>
                 <p class="mt-1 text-sm text-piedra">
@@ -1020,9 +1023,6 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
                   )}
                 </p>
                 <p class="mt-2 text-xs leading-relaxed text-piedra-suave">{T.medusasDisclaimer}</p>
-                <p class="mt-2 text-sm">
-                  <a class="font-medium text-arcilla underline underline-offset-2 hover:text-terracota" href={MEDUSAPP} target="_blank" rel="noopener" data-umami-event="calma-medusas-app">{T.medusasCTA} →</a>
-                </p>
               </div>
             </details>
           )}
