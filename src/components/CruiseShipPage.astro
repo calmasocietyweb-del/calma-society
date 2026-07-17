@@ -69,8 +69,10 @@ const T = isEs
       busText:
         "El riesgo de una escala no es aburrirse: es mirar el reloj. Con chófer privado te recogen en el muelle, te llevan donde quieras, te esperan y te devuelven al barco con margen. También hay traslado directo puerto ↔ destino.",
       busCta: "Reserva con Menorca Bus",
-      fotoAlt: "Mercedes Clase S negro de Menorca Bus esperando en el muelle del puerto de Maó.",
+      fotoAlt: "Mercedes Clase E y Clase V de Menorca Bus esperando en el muelle de cruceros de Maó.",
       fotoPie: "En el muelle de Maó, a la hora del atraque · Foto: Menorca Bus",
+      fotoAltAida: "La flota de Menorca Bus esperando al pie del AIDAstella en el muelle de cruceros de Maó.",
+      fotoPieAida: "Tu coche, esperando a tu barco: la flota ante el AIDAstella en Maó · Foto: Menorca Bus",
     }
   : {
       kicker: "Cruise call in Maó",
@@ -116,8 +118,10 @@ const T = isEs
       busText:
         "The risk of a cruise call isn't boredom: it's watching the clock. With a private driver you're picked up at the quay, taken wherever you like, waited for, and returned to the ship with time to spare. There are also straight port ↔ destination transfers.",
       busCta: "Book with Menorca Bus",
-      fotoAlt: "A black Menorca Bus Mercedes S-Class waiting on the quay at the port of Maó.",
+      fotoAlt: "A Menorca Bus Mercedes E-Class and V-Class waiting on the cruise quay in Maó.",
       fotoPie: "On the quay in Maó, at docking time · Photo: Menorca Bus",
+      fotoAltAida: "The Menorca Bus fleet waiting beside AIDAstella on the cruise quay in Maó.",
+      fotoPieAida: "Your car, waiting for your ship: the fleet before AIDAstella in Maó · Photo: Menorca Bus",
     };
 
 const fmtFecha = (iso: string) => {
@@ -128,6 +132,16 @@ const fmtFecha = (iso: string) => {
 };
 const hoy = new Date().toISOString().slice(0, 10);
 const proximas = b.fechas.filter((f) => f >= hoy);
+
+// Foto del muelle (2026-07-17, flota esperando una escala real). Límite de
+// honestidad: la escala fotografiada es la del AIDAstella, así que SOLO su
+// página puede decir «tu coche esperando a tu barco» (y lleva la vertical con
+// el barco entero). El resto de barcos recibe un encuadre donde el casco del
+// fondo es anónimo y el pie habla solo del muelle — que es la verdad.
+const esAidastella = b.slug === "aidastella";
+const foto = esAidastella
+  ? { src: "/uploads/mb-flota-aidastella.webp", w: 1600, h: 2400, aspect: "aspect-[2/3]", alt: T.fotoAltAida, pie: T.fotoPieAida }
+  : { src: "/uploads/mb-flota-muelle.webp", w: 1600, h: 1066, aspect: "aspect-[3/2]", alt: T.fotoAlt, pie: T.fotoPie };
 
 const calendarioHref = isEs ? "/articulo/cruceros-en-menorca-2026" : "/en/article/cruises-in-menorca-2026";
 const enlaces = [
@@ -247,17 +261,17 @@ const enlaces = [
       es lo que hace creíble la promesa de «te esperamos en el muelle». */}
   <figure class="mt-10">
     <img
-      src="/uploads/mb-clase-s-puerto.webp"
-      srcset={srcset("/uploads/mb-clase-s-puerto.webp")}
+      src={foto.src}
+      srcset={srcset(foto.src)}
       sizes="(min-width: 700px) 672px, 100vw"
-      alt={T.fotoAlt}
-      width="1500"
-      height="1000"
+      alt={foto.alt}
+      width={foto.w}
+      height={foto.h}
       loading="lazy"
       decoding="async"
-      class="aspect-[3/2] w-full rounded-xl object-cover"
+      class={`${foto.aspect} w-full rounded-xl object-cover`}
     />
-    <figcaption class="mt-2 text-xs text-piedra-suave">{T.fotoPie}</figcaption>
+    <figcaption class="mt-2 text-xs text-piedra-suave">{foto.pie}</figcaption>
   </figure>
   <div class="mt-6">
     <MenorcaBusCTA lang={locale} title={T.busTitle} text={T.busText} cta={T.busCta} />
