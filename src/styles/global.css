@@ -510,17 +510,20 @@ a.cala-activa > .cala-punto {
    FILL del mapa). La clase medusas-ocultas la pone applyFrame al salir del día del
    parte. */
 .calma-medusas use {
-  fill: #e3b7c4;
-  stroke: #c98da3;
+  /* Rosa saturado + silueta malva profunda + sombra fina (la misma idea que los
+     puntos de cala): sin esto, pastel sobre mar pastel se lavaba y «no se veían». */
+  fill: #e8a8c0;
+  stroke: #a05377;
+  filter: drop-shadow(0 1px 1.2px rgba(22, 36, 28, 0.4));
 }
 .calma-medusas .medusa {
-  --mo: 0.9;
+  --mo: 1;
   opacity: 0;
   animation: medusa-in 0.8s ease-out forwards;
   animation-delay: var(--mf-in, 0s);
 }
 .calma-medusas .medusa-media {
-  --mo: 0.55; /* subida de 0.38 el 17-jul: a 0.38 se veían «borrosas» de lejos */
+  --mo: 0.7; /* 0.38→0.55→0.7 (17-jul): Cristian las quiere VER; la jerarquía la da el tamaño */
 }
 .calma-medusas .medusa-alta use {
   animation: medusa-float 6s ease-in-out infinite;
@@ -558,8 +561,8 @@ a.cala-activa > .cala-punto {
   display: inline-block;
   vertical-align: -3px;
   margin-right: 4px;
-  fill: #e3b7c4;
-  stroke: #c98da3;
+  fill: #e8a8c0;
+  stroke: #a05377;
 }
 
 /* ============================================================
