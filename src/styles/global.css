@@ -520,7 +520,7 @@ a.cala-activa > .cala-punto {
   animation-delay: var(--mf-in, 0s);
 }
 .calma-medusas .medusa-media {
-  --mo: 0.38;
+  --mo: 0.55; /* subida de 0.38 el 17-jul: a 0.38 se veían «borrosas» de lejos */
 }
 .calma-medusas .medusa-alta use {
   animation: medusa-float 6s ease-in-out infinite;

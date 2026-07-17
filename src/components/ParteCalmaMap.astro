@@ -404,19 +404,20 @@ const isStaleServer = !!parte.stale || !!tl.stale || (typeof parte.forecastDate 
 // puntos de cala usan la negativa, tierra adentro). Se usa sFinal (posición ya
 // repartida por el anti-solape) para heredar su separación tangencial. Solo si el
 // parte no está caducado: una medusa de ayer sería una mentira de hoy. ----
-// Tamaños subidos el 17-jul a petición de Cristian («se ve demasiado pequeño»):
-// la jerarquía se mantiene por tamaño Y opacidad (alta plena, media tenue).
-const MEDUSA_W: Record<string, number> = { alta: 26, media: 17 };
+// Tamaños subidos DOS veces el 17-jul a petición de Cristian («se ve demasiado
+// pequeño», «de lejos se ven borrosas»): grandes y con trazo definido. La jerarquía
+// se mantiene por tamaño Y opacidad (alta plena, media tenue).
+const MEDUSA_W: Record<string, number> = { alta: 34, media: 24 };
 // El despegue salta el trazo del litoral pintado (±4,5 px), su halo de agua somera
 // y los abultamientos de los cabos: la medusa FLOTA en el agua (~1 km mar adentro,
 // que es de donde viene con el empuje), nunca mordida por la orilla.
-const MEDUSA_OFF: Record<string, number> = { alta: 28, media: 22 };
+const MEDUSA_OFF: Record<string, number> = { alta: 32, media: 26 };
 // Garantía anti-orilla: en los cabos la normal SUAVIZADA resbala (empuja a lo largo
 // del trazo, no lejos de él) y la medusa acababa montada en el verde. Se mide la
 // distancia real al contorno y, si no llega al margen, se aleja del vértice de costa
 // más cercano hasta flotar limpia. Los datos cambian a diario: sin esto, el caso
 // cabo reaparecería cualquier otro día en otra cala.
-const MEDUSA_MARGEN: Record<string, number> = { alta: 22, media: 17 };
+const MEDUSA_MARGEN: Record<string, number> = { alta: 26, media: 21 };
 const despejarDeCosta = (x: number, y: number, margen: number) => {
   for (let paso = 0; paso < 8; paso++) {
     let bx = 0, by = 0, bd = Infinity;
@@ -890,10 +891,10 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
           {/* Medusa (Pelagia, rosa malva): campana con faldón y 3 tentáculos de trazo
               fino. Un solo símbolo; el tamaño y la opacidad los pone cada banda. */}
           <symbol id="calma-medusa" viewBox="0 0 24 24">
-            <path d="M4 11 C4 6.6 7.6 3 12 3 C16.4 3 20 6.6 20 11 L20 12 C18.5 13.1 16.9 13.1 15.4 12.3 C14.3 13 13.1 13.2 12 13.2 C10.9 13.2 9.7 13 8.6 12.3 C7.1 13.1 5.5 13.1 4 12 Z" stroke-width="0.8" />
-            <path d="M8 13.5 C7.6 15.5 8.6 16 8.2 18 C7.9 19.6 8.5 20.4 8.3 21.5" fill="none" stroke-width="1.1" stroke-linecap="round" />
-            <path d="M12 13.8 C12.3 16 11.4 16.8 11.8 19 C12 20.2 11.7 21 11.9 22" fill="none" stroke-width="1.1" stroke-linecap="round" />
-            <path d="M16 13.5 C16.5 15.2 15.6 16.2 16 18 C16.3 19.4 15.8 20.2 16 21.3" fill="none" stroke-width="1.1" stroke-linecap="round" />
+            <path d="M4 11 C4 6.6 7.6 3 12 3 C16.4 3 20 6.6 20 11 L20 12 C18.5 13.1 16.9 13.1 15.4 12.3 C14.3 13 13.1 13.2 12 13.2 C10.9 13.2 9.7 13 8.6 12.3 C7.1 13.1 5.5 13.1 4 12 Z" stroke-width="1" />
+            <path d="M8 13.5 C7.6 15.5 8.6 16 8.2 18 C7.9 19.6 8.5 20.4 8.3 21.5" fill="none" stroke-width="1.35" stroke-linecap="round" />
+            <path d="M12 13.8 C12.3 16 11.4 16.8 11.8 19 C12 20.2 11.7 21 11.9 22" fill="none" stroke-width="1.35" stroke-linecap="round" />
+            <path d="M16 13.5 C16.5 15.2 15.6 16.2 16 18 C16.3 19.4 15.8 20.2 16 21.3" fill="none" stroke-width="1.35" stroke-linecap="round" />
           </symbol>
         </defs>
 
@@ -974,7 +975,7 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
                 data-umami-event-cala={m.id}
                 style={`--mf-in: ${(i % 7) * 0.12}s; --mf: ${(i % 5) * -1.3}s`}
               >
-                <circle cx={m.x} cy={m.y} r="15" fill="transparent" />
+                <circle cx={m.x} cy={m.y} r="18" fill="transparent" />
                 <use
                   href="#calma-medusa"
                   x={m.x - MEDUSA_W[m.band] / 2}
