@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "port": "Maó",
-  "updated": "2026-07-16",
+  "updated": "2026-07-17",
   "seasonEstimate": "125-130",
   "coveragePct": 78,
   "totalListed": 99,
@@ -513,11 +513,11 @@
       "ship": "Marella Explorer",
       "line": "Marella Cruises (TUI)",
       "pax": 1924,
-      "arrival": "11:00",
+      "arrival": "08:00",
       "departure": "18:00",
       "confidence": "alta",
       "sourceCount": 2,
-      "source": "https://posidoniaweb.portsdebalears.com/docs/files/atraques.json"
+      "source": "https://www.portsdebalears.com/es/buques-en-puerto"
     },
     {
       "date": "2026-07-29",
