@@ -405,14 +405,41 @@ const isStaleServer = !!parte.stale || !!tl.stale || (typeof parte.forecastDate 
 // repartida por el anti-solape) para heredar su separación tangencial. Solo si el
 // parte no está caducado: una medusa de ayer sería una mentira de hoy. ----
 const MEDUSA_W: Record<string, number> = { alta: 17, media: 11 };
-const MEDUSA_OFF: Record<string, number> = { alta: 14, media: 10 };
+// El despegue salta el trazo del litoral pintado (±4,5 px), su halo de agua somera
+// y los abultamientos de los cabos: la medusa FLOTA en el agua (~1 km mar adentro,
+// que es de donde viene con el empuje), nunca mordida por la orilla.
+const MEDUSA_OFF: Record<string, number> = { alta: 25, media: 20 };
+// Garantía anti-orilla: en los cabos la normal SUAVIZADA resbala (empuja a lo largo
+// del trazo, no lejos de él) y la medusa acababa montada en el verde. Se mide la
+// distancia real al contorno y, si no llega al margen, se aleja del vértice de costa
+// más cercano hasta flotar limpia. Los datos cambian a diario: sin esto, el caso
+// cabo reaparecería cualquier otro día en otra cala.
+const MEDUSA_MARGEN: Record<string, number> = { alta: 15, media: 12 };
+const despejarDeCosta = (x: number, y: number, margen: number) => {
+  for (let paso = 0; paso < 8; paso++) {
+    let bx = 0, by = 0, bd = Infinity;
+    for (const p of ringXY) {
+      const d = (p.x - x) ** 2 + (p.y - y) ** 2;
+      if (d < bd) { bd = d; bx = p.x; by = p.y; }
+    }
+    const dist = Math.sqrt(bd);
+    if (dist >= margen) break;
+    // Se aleja del punto de costa más cercano (caso degenerado: empuja al sur, mar abierto).
+    const ux = dist > 0.01 ? (x - bx) / dist : 0;
+    const uy = dist > 0.01 ? (y - by) / dist : 1;
+    x = bx + ux * margen;
+    y = by + uy * margen;
+  }
+  return { x, y };
+};
 const medusas = MEDUSAS_ENABLED && !isStaleServer
   ? parte.calas.flatMap((c: any, i: number) => {
       const band = c.medusas?.band;
       if (band !== "alta" && band !== "media") return [];
       const p = puntoEnArco(sFinal[i]);
       const n = normalEnArco(sFinal[i]);
-      return [{ id: c.id, name: c.name, band, x: p.x + n.x * MEDUSA_OFF[band], y: p.y + n.y * MEDUSA_OFF[band] }];
+      const pos = despejarDeCosta(p.x + n.x * MEDUSA_OFF[band], p.y + n.y * MEDUSA_OFF[band], MEDUSA_MARGEN[band]);
+      return [{ id: c.id, name: c.name, band, x: pos.x, y: pos.y }];
     })
   : [];
 
