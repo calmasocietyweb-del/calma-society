@@ -500,6 +500,8 @@ const T = {
       alta: "El viento entra de frente a esta cala desde hace más de medio día: condiciones favorables para que, si las hay, lleguen a la orilla. No detectamos medusas.",
     } as Record<string, string>,
     medusasNoData: "No tenemos datos de viento suficientes para estimarlo hoy.",
+    // El dato duro que evita la contradicción con el viento de AHORA (y que cita la IA).
+    medusasEmpujeDato: "{horas} h de las últimas {ventana} empujando hacia esta cala.",
     medusasDisclaimer:
       "Estimamos condiciones de llegada a partir del viento de las últimas 48 h; no detectamos medusas ni afirmamos que las haya. No captura las corrientes marinas. Para presencia real, consulta las banderas y a los socorristas de la playa.",
     noLifeguard:
@@ -554,6 +556,7 @@ const T = {
       alta: "The wind has been blowing straight into this cove for over half a day: favourable conditions for any jellyfish to reach the shore. We have not observed any.",
     } as Record<string, string>,
     medusasNoData: "We don’t have enough wind data to estimate it today.",
+    medusasEmpujeDato: "{horas} h out of the last {ventana} pushing towards this cove.",
     medusasDisclaimer:
       "We estimate arrival conditions from the last 48 h of wind; we do not detect jellyfish or claim there are any. It does not capture sea currents. For actual presence, check the beach flags and ask the lifeguards.",
     noLifeguard:
@@ -608,6 +611,7 @@ const T = {
       alta: "Le vent entre de face dans cette crique depuis plus d'une demi-journée : conditions favorables pour que, s'il y en a, elles atteignent le rivage. Nous n'en détectons aucune.",
     } as Record<string, string>,
     medusasNoData: "Nous n'avons pas assez de données de vent pour l'estimer aujourd'hui.",
+    medusasEmpujeDato: "{horas} h sur les {ventana} dernières poussant vers cette crique.",
     medusasDisclaimer:
       "Nous estimons les conditions d'arrivée à partir du vent des dernières 48 h ; nous ne détectons pas de méduses et n'affirmons pas qu'il y en a. Cela ne tient pas compte des courants marins. Pour une présence réelle, consultez les drapeaux et les sauveteurs.",
     noLifeguard:
@@ -1113,6 +1117,19 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
                     <Fragment><strong class="text-tinta">{T.medusasBand[c.medusas.band]}.</strong> {T.medusasCopy[c.medusas.band]}</Fragment>
                   )}
                 </p>
+                {/* QUÉ viento empujó y cuántas horas. Sin este dato, el lector cruzaba el
+                    viento de AHORA (arriba, grande) con un empuje de 48 h atrás y la página
+                    parecía contradecirse. Solo en media/alta: es lo que explica la medusa;
+                    en "baja" el copy ya dice que el viento no favorece. */}
+                {(c.medusas.band === "media" || c.medusas.band === "alta") && c.medusas.vientoEmpuje && (
+                  <p class="mt-2 text-sm text-piedra">
+                    <strong class="text-tinta">{c.medusas.vientoEmpuje}</strong>:{" "}
+                    {T.medusasEmpujeDato.replace("{horas}", String(c.medusas.horasAfavor)).replace(
+                      "{ventana}",
+                      String(c.medusas.ventanaH ?? 48),
+                    )}
+                  </p>
+                )}
                 <p class="mt-2 text-xs leading-relaxed text-piedra-suave">{T.medusasDisclaimer}</p>
               </div>
             </details>

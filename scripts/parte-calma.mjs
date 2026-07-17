@@ -168,6 +168,11 @@ function calcularAbrigo(op, diurnas) {
 function calcularEmpuje(op, histMun, now) {
   const gate = FACTOR_MES[now.getMonth()];
   let psum = 0, wsum = 0, expected = 0, avail = 0, horasAfavor = 0;
+  // Vector medio del viento SOLO en las horas a favor: dice de QUÉ viento vino el
+  // empuje. Sin este dato la página enseñaba el viento de AHORA junto a un empuje de
+  // 48 h atrás y parecía contradecirse (p. ej. «Tramuntana» con medusas en el sur,
+  // cuando lo que las arrimó fue el Migjorn de anteayer).
+  let fx = 0, fy = 0;
   for (let k = EMPUJE_DESDE; k <= EMPUJE_HASTA; k++) {
     expected += 1;
     const rec = histMun.find((r) => r.iso === isoHour(new Date(now.getTime() - k * 3600e3)));
@@ -179,12 +184,24 @@ function calcularEmpuje(op, histMun, now) {
     if (deg == null || rec.dir === "C") continue; // calma: empuje 0, pero cuenta como hora con dato
     const onsh = onshorePos(deg, op);
     psum += onsh * fBrisa(rec.vel) * w;
-    if (onsh >= 0.3 && rec.vel >= 8) horasAfavor += 1;
+    if (onsh >= 0.3 && rec.vel >= 8) {
+      horasAfavor += 1;
+      fx += Math.cos(rad(deg)); fy += Math.sin(rad(deg));
+    }
   }
   const coverage = expected ? avail / expected : 0;
   if (coverage < COBERTURA_MIN) return { band: "sin-dato", coverage: Number(coverage.toFixed(2)) };
   const score = clamp01((wsum ? psum / wsum : 0) * gate);
-  return { band: bandaEmpuje(score, horasAfavor, gate), score: Number(score.toFixed(2)), horasAfavor, coverage: Number(coverage.toFixed(2)) };
+  let vientoEmpuje = null;
+  if (horasAfavor > 0) {
+    let d = (Math.atan2(fy, fx) * 180) / Math.PI;
+    if (d < 0) d += 360;
+    vientoEmpuje = nombreViento(d);
+  }
+  return {
+    band: bandaEmpuje(score, horasAfavor, gate), score: Number(score.toFixed(2)),
+    horasAfavor, vientoEmpuje, ventanaH: EMPUJE_HASTA, coverage: Number(coverage.toFixed(2)),
+  };
 }
 
 async function main() {
