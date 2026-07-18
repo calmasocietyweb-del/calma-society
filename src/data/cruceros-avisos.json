@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-17",
+  "updated": "2026-07-18",
   "ventana": {
-    "desde": "2026-07-17",
-    "hasta": "2026-08-13"
+    "desde": "2026-07-18",
+    "hasta": "2026-08-15"
   },
   "nuevas": [
     {
@@ -54,6 +54,11 @@
     {
       "date": "2026-08-11",
       "ship": "Ritz-Carlton Ilma",
+      "nota": "La publicamos y el puerto NO la tiene, estando dentro de su ventana. ¿Cancelada? Verificar antes de retirarla."
+    },
+    {
+      "date": "2026-08-14",
+      "ship": "Azamara Onward",
       "nota": "La publicamos y el puerto NO la tiene, estando dentro de su ventana. ¿Cancelada? Verificar antes de retirarla."
     }
   ],
