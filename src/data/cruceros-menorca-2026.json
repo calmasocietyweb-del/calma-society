@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "port": "Maó",
-  "updated": "2026-07-18",
+  "updated": "2026-07-19",
   "seasonEstimate": "125-130",
   "coveragePct": 78,
   "totalListed": 99,
@@ -491,11 +491,11 @@
       "ship": "Explora I",
       "line": "Explora Journeys",
       "pax": 922,
-      "arrival": "09:00",
+      "arrival": "08:31",
       "departure": "20:00",
       "confidence": "alta",
-      "sourceCount": 3,
-      "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
+      "sourceCount": 2,
+      "source": "https://www.portsdebalears.com/es/buques-en-puerto"
     },
     {
       "date": "2026-07-20",
