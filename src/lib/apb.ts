@@ -76,6 +76,26 @@ function partirFecha(f: string | undefined): { date: string | null; time: string
   return { date: `${m[3]}-${m[2]}-${m[1]}`, time: m[4] ?? null };
 }
 
+/**
+ * Barcos que el puerto y nosotros llamamos distinto. La clave es el nombre del puerto
+ * ya normalizado; el valor, el nuestro.
+ *
+ * El puerto registra el CASCO ("ILMA") y nosotros publicamos el nombre COMERCIAL con la
+ * naviera delante ("Ritz-Carlton Ilma"), que es como lo busca el lector. Sin esta tabla
+ * la misma escala salía a la vez como nueva y como cancelada — y, peor, el robot no
+ * llegaba a comparar las horas: el 17-ago-2026 publicábamos 09:00-17:00 con el puerto
+ * diciendo 08:00-16:00, y la falsa alarma tapaba el error.
+ *
+ * Va a mano y no por regla A PROPÓSITO: quitar la marca o el numeral final a ciegas
+ * fusionaría barcos distintos — "Scenic Eclipse", "Scenic Eclipse 2" y "Scenic Eclipse II"
+ * son TRES barcos, y las tres navieras con varios cascos (Oceania, Seabourn, Azamara)
+ * comparten prefijo. Un falso emparejado corrompería el calendario en silencio, que es
+ * peor que un aviso de más.
+ */
+const ALIAS_BARCOS: Record<string, string> = {
+  ILMA: "RITZCARLTONILMA",
+};
+
 /** El puerto escribe "AIDASTELLA" y nosotros "AIDAstella": es el mismo barco. */
 export function mismoBarco(a: string, b: string): boolean {
   const norm = (s: string) =>
@@ -84,7 +104,27 @@ export function mismoBarco(a: string, b: string): boolean {
       .replace(/[̀-ͯ]/g, "")
       .toUpperCase()
       .replace(/[^A-Z0-9]/g, "");
-  return norm(a) === norm(b);
+  const canon = (s: string) => {
+    const n = norm(s);
+    return ALIAS_BARCOS[n] ?? n;
+  };
+  return canon(a) === canon(b);
+}
+
+/**
+ * ¿Podrían ser el mismo barco escrito de otra forma? Solo si uno contiene al otro
+ * entero ("ILMA" dentro de "RITZCARLTONILMA"), que es como se dan las divergencias
+ * reales: el puerto pone el casco y nosotros le anteponemos la naviera.
+ *
+ * Exige 4 caracteres para no emparejar por casualidad, y NO vale para decidir que dos
+ * escalas son la misma —eso solo lo hace `mismoBarco`—: solo para preguntar.
+ */
+function nombreParecido(a: string, b: string): boolean {
+  const norm = (s: string) =>
+    s.normalize("NFD").replace(/[̀-ͯ]/g, "").toUpperCase().replace(/[^A-Z0-9]/g, "");
+  const [x, y] = [norm(a), norm(b)];
+  if (x.length < 4 || y.length < 4) return false;
+  return x.includes(y) || y.includes(x);
 }
 
 /** Del feed de toda Baleares, las escalas de crucero de Maó. */
@@ -152,6 +192,8 @@ export type Diff = {
   nuevas: EscalaAPB[];
   /** Las tenemos, el puerto no, y caen DENTRO de su ventana. ¿Canceladas? Se avisa. */
   desaparecidas: EscalaNuestra[];
+  /** Mismo día, nombres parecidos: casi seguro el mismo barco escrito de otra forma. */
+  dudasDeNombre: { date: string; puerto: string; nuestro: string }[];
   /** Días con dos cruceros: uno puede tener que fondear (se desembarca en lancha). */
   dobles: { date: string; barcos: { ship: string; eslora: number }[] }[];
 };
@@ -209,6 +251,20 @@ export function diffCalendario(
     }
   }
 
+  // La red para el próximo ILMA. Si el mismo día tenemos una escala "nueva" y otra
+  // "cancelada" y un nombre contiene al otro, es casi seguro el mismo barco con distinto
+  // nombre. NO se fusionan solos —un falso emparejado corrompería el calendario en
+  // silencio, que es peor que un aviso de más—, pero tampoco se anuncia una cancelación
+  // que no existe: se pregunta, y quien lo confirme lo añade a ALIAS_BARCOS.
+  const dudasDeNombre: Diff["dudasDeNombre"] = [];
+  for (const p of [...nuevas]) {
+    const c = desaparecidas.find((d) => d.date === p.date && nombreParecido(p.ship, d.ship));
+    if (!c) continue;
+    dudasDeNombre.push({ date: p.date, puerto: p.ship, nuestro: c.ship });
+    nuevas.splice(nuevas.indexOf(p), 1);
+    desaparecidas.splice(desaparecidas.indexOf(c), 1);
+  }
+
   // Días con más de un crucero: en Maó el muelle de cruceros es uno.
   const porDia = new Map<string, { ship: string; eslora: number }[]>();
   for (const p of puerto) {
@@ -219,5 +275,5 @@ export function diffCalendario(
     .filter(([, barcos]) => barcos.length > 1)
     .map(([date, barcos]) => ({ date, barcos }));
 
-  return { correcciones, confirmadas, nuevas, desaparecidas, dobles };
+  return { correcciones, confirmadas, nuevas, desaparecidas, dudasDeNombre, dobles };
 }

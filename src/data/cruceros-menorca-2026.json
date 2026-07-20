@@ -592,9 +592,9 @@
       "pax": 448,
       "arrival": "10:00",
       "departure": "20:00",
-      "confidence": "media",
-      "sourceCount": 1,
-      "source": "https://www.cruisemapper.com/ports/port-mahon-port-1368?month=2026-08"
+      "confidence": "alta",
+      "sourceCount": 2,
+      "source": "https://www.portsdebalears.com/es/buques-en-puerto"
     },
     {
       "date": "2026-08-11",
@@ -634,11 +634,11 @@
       "ship": "Ritz-Carlton Ilma",
       "line": "Ritz-Carlton Yacht Collection",
       "pax": 448,
-      "arrival": "09:00",
-      "departure": "17:00",
-      "confidence": "media",
-      "sourceCount": 1,
-      "source": "https://www.cruisemapper.com/ports/port-mahon-port-1368?month=2026-08"
+      "arrival": "08:00",
+      "departure": "16:00",
+      "confidence": "alta",
+      "sourceCount": 2,
+      "source": "https://www.portsdebalears.com/es/buques-en-puerto"
     },
     {
       "date": "2026-08-19",

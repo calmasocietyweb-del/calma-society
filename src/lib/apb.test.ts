@@ -67,6 +67,69 @@ test("el mismo barco se reconoce aunque el puerto lo escriba a su manera", () =>
   assert.equal(mismoBarco("MSC OPERA", "MSC Orchestra"), false);
 });
 
+test("EL CASO ILMA: el puerto usa el nombre del casco y nosotros el comercial", () => {
+  // El puerto lo registra como "ILMA" (IMO 9967586) y nosotros lo publicamos como
+  // "Ritz-Carlton Ilma", que es como lo vende la naviera. Es el mismo barco.
+  assert.equal(mismoBarco("ILMA", "Ritz-Carlton Ilma"), true);
+  // Y no por ello se confunde con el otro barco de la misma naviera.
+  assert.equal(mismoBarco("ILMA", "Ritz-Carlton Evrima"), false);
+});
+
+test("EL CASO ILMA: sin alias, una escala real salía a la vez como nueva y como cancelada", () => {
+  // Datos REALES del 20-jul-2026: el puerto tiene ILMA el 11-ago 10:00-20:00 y nosotros
+  // esa misma escala como "Ritz-Carlton Ilma". Al no casar los nombres, el robot avisaba
+  // de una escala nueva Y de una posible cancelación el mismo día — las dos falsas.
+  const feed = [reg({ nombuq: "ILMA", fecatr: "11/08/2026 10:00", fecsal: "11/08/2026 20:00" })];
+  const calendario = [
+    { date: "2026-08-11", ship: "Ritz-Carlton Ilma", line: "The Ritz-Carlton Yacht Collection", pax: 448, arrival: "10:00", departure: "20:00", confidence: "media" },
+  ];
+  const { nuevas, desaparecidas, confirmadas } = diffCalendario(escalasDeMao(feed), calendario, { desde: "2026-08-01", hasta: "2026-08-20" });
+  assert.equal(nuevas.length, 0, "no es una escala nueva: ya la teníamos");
+  assert.equal(desaparecidas.length, 0, "no está cancelada: el puerto la tiene");
+  assert.equal(confirmadas.length, 1, "el puerto la avala tal cual la publicamos");
+});
+
+test("EL CASO ILMA: el nombre que no casaba tapaba una corrección de hora de verdad", () => {
+  // Lo grave del fallo no era el ruido: mientras los nombres no casaban, el robot NO
+  // comparaba las horas. Publicábamos el 17-ago 09:00-17:00 y el puerto dice 08:00-16:00.
+  const feed = [reg({ nombuq: "ILMA", fecatr: "17/08/2026 08:00", fecsal: "17/08/2026 16:00" })];
+  const calendario = [
+    { date: "2026-08-17", ship: "Ritz-Carlton Ilma", line: "The Ritz-Carlton Yacht Collection", pax: 448, arrival: "09:00", departure: "17:00", confidence: "media" },
+  ];
+  const { correcciones } = diffCalendario(escalasDeMao(feed), calendario, { desde: "2026-08-01", hasta: "2026-08-20" });
+  assert.deepEqual(
+    correcciones.map((c) => [c.campo, c.antes, c.ahora]),
+    [["arrival", "09:00", "08:00"], ["departure", "17:00", "16:00"]],
+  );
+});
+
+test("un nombre nuevo que no casa se avisa como DUDA DE NOMBRE, no como cancelación", () => {
+  // La red para el próximo ILMA: si el mismo día aparece una escala "nueva" y otra
+  // "cancelada" y un nombre contiene al otro, casi seguro es el mismo barco escrito de
+  // otra forma. No lo damos por hecho (fusionar a ciegas corrompería el calendario en
+  // silencio), pero tampoco gritamos "cancelada": se pregunta.
+  const feed = [reg({ nombuq: "VISTA", fecatr: "20/07/2026 09:00", fecsal: "20/07/2026 18:00" })];
+  const calendario = [
+    { date: "2026-07-20", ship: "Oceania Vista", line: "Oceania", pax: 1200, arrival: "09:00", departure: "18:00", confidence: "media" },
+  ];
+  const { nuevas, desaparecidas, dudasDeNombre } = diffCalendario(escalasDeMao(feed), calendario, VENTANA);
+  assert.equal(nuevas.length, 0, "no se anuncia como escala nueva");
+  assert.equal(desaparecidas.length, 0, "no se anuncia como cancelada");
+  assert.deepEqual(dudasDeNombre, [{ date: "2026-07-20", puerto: "VISTA", nuestro: "Oceania Vista" }]);
+});
+
+test("dos barcos distintos el mismo día NO se toman por una duda de nombre", () => {
+  // Que coincidan en fecha no basta: los nombres tienen que parecerse de verdad.
+  const feed = [reg({ nombuq: "SILVER RAY", fecatr: "20/07/2026 09:00", fecsal: "20/07/2026 18:00" })];
+  const calendario = [
+    { date: "2026-07-20", ship: "MSC Opera", line: "MSC", pax: 2150, arrival: "09:00", departure: "18:00", confidence: "media" },
+  ];
+  const { nuevas, desaparecidas, dudasDeNombre } = diffCalendario(escalasDeMao(feed), calendario, VENTANA);
+  assert.equal(dudasDeNombre.length, 0);
+  assert.equal(nuevas.length, 1, "sigue siendo una escala nueva de verdad");
+  assert.equal(desaparecidas.length, 1, "y la nuestra sigue sin estar en el puerto");
+});
+
 test("EL CASO SILVER MUSE: si la hora publicada no cuadra con la del puerto, se corrige", () => {
   const feed = [reg({ fecsal: "20/07/2026 17:30" })]; // el puerto dice 17:30
   const calendario = [

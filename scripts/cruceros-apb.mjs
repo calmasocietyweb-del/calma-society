@@ -59,7 +59,7 @@ const puerto = escalasDeMao(feed);
 const ventana = ventanaDeCruceros(puerto, hoy);
 const cal = JSON.parse(readFileSync(CALENDARIO, "utf8"));
 
-const { correcciones, confirmadas, nuevas, desaparecidas, dobles } = diffCalendario(puerto, cal.calls, ventana);
+const { correcciones, confirmadas, nuevas, desaparecidas, dudasDeNombre, dobles } = diffCalendario(puerto, cal.calls, ventana);
 
 console.log(`Registro del puerto: ${feed.length} atraques · ${puerto.length} cruceros en Maó`);
 console.log(`Ventana que alcanza a ver: ${ventana.desde} → ${ventana.hasta}\n`);
@@ -110,6 +110,10 @@ const avisos = {
     ship: d.ship,
     nota: "La publicamos y el puerto NO la tiene, estando dentro de su ventana. ¿Cancelada? Verificar antes de retirarla.",
   })),
+  dudasDeNombre: dudasDeNombre.map((d) => ({
+    ...d,
+    nota: "Mismo día y nombres que se solapan: casi seguro el mismo barco escrito de otra forma, no una cancelación. Si se confirma, añadirlo a ALIAS_BARCOS en src/lib/apb.ts y dejará de preguntarlo.",
+  })),
   dobles: dobles.map((d) => ({
     ...d,
     nota: "Dos cruceros el mismo día. Si uno fondea, se desembarca en lancha y el tiempo real en tierra cambia.",
@@ -118,9 +122,10 @@ const avisos = {
 
 for (const n of avisos.nuevas) console.log(`AVISO+   ${n.date} ${n.ship} (${n.arrival ?? "sin hora"}) — el puerto la tiene, nosotros no`);
 for (const d of avisos.desaparecidas) console.log(`AVISO-   ${d.date} ${d.ship} — la publicamos y el puerto no la tiene`);
+for (const d of avisos.dudasDeNombre) console.log(`AVISO?   ${d.date} el puerto dice "${d.puerto}" y nosotros "${d.nuestro}" — ¿el mismo barco?`);
 for (const d of avisos.dobles) console.log(`AVISO=   ${d.date}: ${d.barcos.map((b) => `${b.ship} (${b.eslora} m)`).join(" + ")}`);
 
-const pendientes = avisos.nuevas.length + avisos.desaparecidas.length;
+const pendientes = avisos.nuevas.length + avisos.desaparecidas.length + avisos.dudasDeNombre.length;
 
 if (DRY) {
   console.log("\n--dry-run: no se ha escrito nada.");
@@ -150,6 +155,7 @@ if (process.env.GITHUB_STEP_SUMMARY) {
     l.push("### Pendiente de que una persona lo mire");
     for (const n of avisos.nuevas) l.push(`- ➕ **${n.date} ${n.ship}** (${n.arrival ?? "sin hora"}) — el puerto la tiene, nosotros no`);
     for (const d of avisos.desaparecidas) l.push(`- ➖ **${d.date} ${d.ship}** — la publicamos y el puerto no la tiene`);
+    for (const d of avisos.dudasDeNombre) l.push(`- ❓ **${d.date}** — el puerto dice «${d.puerto}» y nosotros «${d.nuestro}»: ¿el mismo barco?`);
     l.push("");
   }
   if (!correcciones.length && !pendientes) l.push("Sin novedades: el calendario coincide con el registro del puerto.");
