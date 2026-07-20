@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-20T07:52:56.806Z",
+  "generatedAt": "2026-07-20T08:03:29.348Z",
   "forecastDate": "2026-07-20",
   "validityNote": "Previsión para la franja diurna (10–18 h). El viento puede rolar por la tarde.",
   "sources": [
     "AEMET"
   ],
   "attribution": "Fuente: AEMET",
-  "formulaVersion": "abrigo-1.0 / empuje-medusas-1.0",
+  "formulaVersion": "abrigo-1.0 / empuje-medusas-2.0",
   "stale": false,
   "calas": [
     {
@@ -28,10 +28,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.15,
-        "horasAfavor": 9,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.03,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -53,10 +55,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.19,
-        "horasAfavor": 9,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.03,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -78,10 +82,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.21,
-        "horasAfavor": 9,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.04,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -104,9 +110,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.16,
-        "horasAfavor": 6,
-        "coverage": 0.88
+        "score": 0.04,
+        "horasAfavor": 1,
+        "vientoEmpuje": "Gregal (NE)",
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -129,9 +137,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.13,
-        "horasAfavor": 7,
-        "coverage": 0.88
+        "score": 0.03,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -153,10 +163,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.19,
-        "horasAfavor": 9,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.03,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -178,10 +190,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.18,
-        "horasAfavor": 9,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.03,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -203,10 +217,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.19,
-        "horasAfavor": 9,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.03,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -229,9 +245,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.17,
-        "horasAfavor": 6,
-        "coverage": 0.88
+        "score": 0.04,
+        "horasAfavor": 1,
+        "vientoEmpuje": "Gregal (NE)",
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -253,10 +271,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.19,
-        "horasAfavor": 9,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.03,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -278,10 +298,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.3,
-        "horasAfavor": 17,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.05,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -304,9 +326,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.11,
-        "horasAfavor": 2,
-        "coverage": 0.88
+        "score": 0.02,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -328,10 +352,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.2,
-        "horasAfavor": 7,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.04,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -353,10 +379,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.2,
-        "horasAfavor": 7,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.04,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -378,10 +406,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.2,
-        "horasAfavor": 7,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.04,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -403,10 +433,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.2,
-        "horasAfavor": 7,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.04,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -428,10 +460,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.22,
-        "horasAfavor": 7,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.04,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -454,9 +488,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.05,
-        "horasAfavor": 2,
-        "coverage": 0.88
+        "score": 0.01,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -479,9 +515,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.06,
-        "horasAfavor": 2,
-        "coverage": 0.88
+        "score": 0.02,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -504,9 +542,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.06,
-        "horasAfavor": 2,
-        "coverage": 0.88
+        "score": 0.02,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -529,9 +569,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.06,
-        "horasAfavor": 2,
-        "coverage": 0.88
+        "score": 0.02,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -553,10 +595,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.36,
-        "horasAfavor": 17,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.06,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -579,9 +623,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.08,
-        "horasAfavor": 1,
-        "coverage": 0.88
+        "score": 0.01,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -604,9 +650,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.07,
-        "horasAfavor": 1,
-        "coverage": 0.88
+        "score": 0.01,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -629,9 +677,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.07,
-        "horasAfavor": 1,
-        "coverage": 0.88
+        "score": 0.01,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -654,9 +704,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.08,
-        "horasAfavor": 5,
-        "coverage": 0.88
+        "score": 0.02,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -679,9 +731,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.08,
-        "horasAfavor": 5,
-        "coverage": 0.88
+        "score": 0.02,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -703,10 +757,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.3,
-        "horasAfavor": 11,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.07,
+        "horasAfavor": 1,
+        "vientoEmpuje": "Gregal (NE)",
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -728,10 +784,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.31,
-        "horasAfavor": 14,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.07,
+        "horasAfavor": 1,
+        "vientoEmpuje": "Llevant (E)",
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -754,9 +812,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.08,
-        "horasAfavor": 5,
-        "coverage": 0.88
+        "score": 0.03,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -779,9 +839,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.08,
-        "horasAfavor": 5,
-        "coverage": 0.88
+        "score": 0.03,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -804,9 +866,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.08,
-        "horasAfavor": 5,
-        "coverage": 0.88
+        "score": 0.03,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -829,9 +893,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.08,
-        "horasAfavor": 5,
-        "coverage": 0.88
+        "score": 0.03,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -853,10 +919,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.32,
-        "horasAfavor": 14,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.07,
+        "horasAfavor": 1,
+        "vientoEmpuje": "Llevant (E)",
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -878,10 +946,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.35,
-        "horasAfavor": 24,
-        "coverage": 0.95
+        "band": "baja",
+        "score": 0.07,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
       }
     },
     {
@@ -903,10 +973,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.33,
-        "horasAfavor": 16,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.06,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -928,10 +1000,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.37,
-        "horasAfavor": 19,
-        "coverage": 0.95
+        "band": "baja",
+        "score": 0.08,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
       }
     },
     {
@@ -953,10 +1027,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.37,
-        "horasAfavor": 19,
-        "coverage": 0.95
+        "band": "baja",
+        "score": 0.08,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
       }
     },
     {
@@ -979,9 +1055,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.11,
-        "horasAfavor": 3,
-        "coverage": 0.88
+        "score": 0.02,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1004,9 +1082,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.11,
-        "horasAfavor": 3,
-        "coverage": 0.88
+        "score": 0.02,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1029,9 +1109,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.11,
-        "horasAfavor": 3,
-        "coverage": 0.88
+        "score": 0.02,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1054,9 +1136,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.11,
-        "horasAfavor": 3,
-        "coverage": 0.88
+        "score": 0.02,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1079,9 +1163,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.15,
-        "horasAfavor": 6,
-        "coverage": 0.88
+        "score": 0.03,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1104,9 +1190,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.15,
-        "horasAfavor": 6,
-        "coverage": 0.88
+        "score": 0.03,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1129,9 +1217,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.15,
-        "horasAfavor": 6,
-        "coverage": 0.88
+        "score": 0.03,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1154,9 +1244,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.15,
-        "horasAfavor": 6,
-        "coverage": 0.88
+        "score": 0.03,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1179,9 +1271,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.15,
-        "horasAfavor": 6,
-        "coverage": 0.88
+        "score": 0.03,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1204,9 +1298,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.15,
-        "horasAfavor": 6,
-        "coverage": 0.88
+        "score": 0.03,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1229,9 +1325,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.15,
-        "horasAfavor": 6,
-        "coverage": 0.88
+        "score": 0.03,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1254,9 +1352,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.14,
-        "horasAfavor": 5,
-        "coverage": 0.88
+        "score": 0.03,
+        "horasAfavor": 1,
+        "vientoEmpuje": "Ponent (O)",
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1279,9 +1379,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.14,
-        "horasAfavor": 5,
-        "coverage": 0.88
+        "score": 0.03,
+        "horasAfavor": 1,
+        "vientoEmpuje": "Ponent (O)",
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1304,9 +1406,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.14,
-        "horasAfavor": 5,
-        "coverage": 0.88
+        "score": 0.03,
+        "horasAfavor": 1,
+        "vientoEmpuje": "Ponent (O)",
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1329,9 +1433,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.14,
-        "horasAfavor": 5,
-        "coverage": 0.88
+        "score": 0.03,
+        "horasAfavor": 1,
+        "vientoEmpuje": "Ponent (O)",
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1354,9 +1460,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.14,
-        "horasAfavor": 5,
-        "coverage": 0.88
+        "score": 0.03,
+        "horasAfavor": 1,
+        "vientoEmpuje": "Ponent (O)",
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1378,10 +1486,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.17,
-        "horasAfavor": 9,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.03,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1403,10 +1513,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.17,
-        "horasAfavor": 9,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.03,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1428,10 +1540,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.18,
-        "horasAfavor": 9,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.03,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1453,10 +1567,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.37,
-        "horasAfavor": 19,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.08,
+        "horasAfavor": 1,
+        "vientoEmpuje": "Llevant (E)",
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1478,10 +1594,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.37,
-        "horasAfavor": 19,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.08,
+        "horasAfavor": 1,
+        "vientoEmpuje": "Llevant (E)",
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1503,10 +1621,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.24,
-        "horasAfavor": 13,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.08,
+        "horasAfavor": 1,
+        "vientoEmpuje": "Migjorn (S)",
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1528,10 +1648,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.24,
-        "horasAfavor": 14,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.08,
+        "horasAfavor": 1,
+        "vientoEmpuje": "Migjorn (S)",
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1553,10 +1675,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.24,
-        "horasAfavor": 14,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.08,
+        "horasAfavor": 1,
+        "vientoEmpuje": "Migjorn (S)",
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1578,10 +1702,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.24,
-        "horasAfavor": 13,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.08,
+        "horasAfavor": 1,
+        "vientoEmpuje": "Migjorn (S)",
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1604,9 +1730,11 @@
       },
       "medusas": {
         "band": "baja",
-        "score": 0.15,
-        "horasAfavor": 7,
-        "coverage": 0.88
+        "score": 0.02,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1628,10 +1756,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.2,
-        "horasAfavor": 11,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.04,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1653,10 +1783,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.2,
-        "horasAfavor": 11,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.04,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1678,10 +1810,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.2,
-        "horasAfavor": 11,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.04,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1703,10 +1837,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.25,
-        "horasAfavor": 13,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.08,
+        "horasAfavor": 1,
+        "vientoEmpuje": "Migjorn (S)",
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1728,10 +1864,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.25,
-        "horasAfavor": 13,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.08,
+        "horasAfavor": 1,
+        "vientoEmpuje": "Migjorn (S)",
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1753,10 +1891,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.25,
-        "horasAfavor": 13,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.08,
+        "horasAfavor": 1,
+        "vientoEmpuje": "Migjorn (S)",
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1778,10 +1918,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.25,
-        "horasAfavor": 13,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.08,
+        "horasAfavor": 1,
+        "vientoEmpuje": "Migjorn (S)",
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1803,10 +1945,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.26,
-        "horasAfavor": 13,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.08,
+        "horasAfavor": 1,
+        "vientoEmpuje": "Migjorn (S)",
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1828,10 +1972,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.39,
-        "horasAfavor": 20,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.1,
+        "horasAfavor": 1,
+        "vientoEmpuje": "Llevant (E)",
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1853,10 +1999,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.39,
-        "horasAfavor": 20,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.1,
+        "horasAfavor": 1,
+        "vientoEmpuje": "Llevant (E)",
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     },
     {
@@ -1878,10 +2026,12 @@
         }
       },
       "medusas": {
-        "band": "media",
-        "score": 0.39,
-        "horasAfavor": 20,
-        "coverage": 0.88
+        "band": "baja",
+        "score": 0.1,
+        "horasAfavor": 1,
+        "vientoEmpuje": "Llevant (E)",
+        "ventanaH": 48,
+        "coverage": 0.86
       }
     }
   ]
