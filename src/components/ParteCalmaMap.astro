@@ -10,7 +10,7 @@
  * lista + filtro 100% estáticos; la lista es la versión accesible y citable por IA;
  * el color NUNCA es el único indicador (siempre con su texto al lado).
  */
-import parte from "../data/parte-calma.json";
+import parteRaw from "../data/parte-calma.json";
 import outline from "../data/menorca-outline.json";
 import timeline from "../data/parte-timeline.json";
 import { placeUrl } from "../i18n/utils";
@@ -22,6 +22,36 @@ interface Props {
   locale: Locale;
 }
 const { locale } = Astro.props;
+
+/**
+ * Contrato del parte diario. Se declara a mano en vez de dejar que TypeScript lo
+ * infiera del JSON: el fichero es un dato del día, y un día sin viento suficiente
+ * lo deja entero en "sin-dato" (sin `vientoEmpuje` ni `horasAfavor`). Infiriendo,
+ * el tipo cambiaba según el tiempo que hiciera y `astro check` fallaba solo
+ * algunos días — un CI que depende de la meteorología no sirve de nada.
+ */
+type BandaMedusas = "alta" | "media" | "baja" | "sin-dato";
+interface ParteCala {
+  id: string;
+  name: string;
+  area?: string;
+  costa?: string;
+  lat: number;
+  lng: number;
+  lugarSlug: string | null;
+  tieneVigilancia?: boolean;
+  tienePradera?: boolean;
+  abrigo: { band: string; score: number; viento: { nombre: string; kmh: number } };
+  medusas: {
+    band: BandaMedusas;
+    coverage: number;
+    score?: number;
+    horasAfavor?: number;
+    vientoEmpuje?: string | null;
+    ventanaH?: number;
+  };
+}
+const parte = parteRaw as unknown as Omit<typeof parteRaw, "calas"> & { calas: ParteCala[] };
 // Selector trilingüe para los pocos textos sueltos fuera del diccionario `T`.
 const tri = (es: string, en: string, fr: string): string =>
   locale === "fr" ? fr : locale === "en" ? en : es;

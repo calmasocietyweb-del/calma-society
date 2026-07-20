@@ -43,25 +43,44 @@ abrigo    = 1 − media_horaria( onshore · min(vel/38, 1) )    # franja diurna 
 banda: ≥0.66 alto · ≥0.4 medio · resto bajo
 ```
 
-**Empuje del viento hacia la cala** (`empuje-medusas-1.0`, modelo aprobado tras
-revisión científica + legal; recalibrar tras 1 temporada con SOS PlatGes/MedusApp).
-Reencuadre honesto: el viento es un **modulador de 2º orden** del último tramo
-costa-adentro de *Pelagia noctiluca* — el driver real es la **corriente, que no
-medimos** (punto ciego declarado). No afirma presencia: estima condiciones de llegada.
+**Empuje del viento hacia la cala** (`empuje-medusas-2.0`, código en
+`scripts/lib/empuje-medusas.mjs`). Reencuadre honesto: el viento es un **modulador
+de 2º orden** del último tramo costa-adentro de *Pelagia noctiluca* — el driver real
+es la **corriente, que no medimos** (punto ciego declarado). No afirma presencia:
+estima condiciones de llegada.
 
 ```
-push_h  = max(0, cos(dirViento_h − openingBearingDeg)) · fBrisa(vel_h) · gauss(h)
+push_h  = max(0, cos(dirViento_h − openingBearingDeg)) · fTransporte(vel_h) · gauss(h)
 empuje  = Σ push_h / Σ gauss(h)      sobre la ventana t−48 h … t−6 h
 score   = empuje · gateEstacional(mes)
 ```
 
-- `fBrisa` **decreciente-desde-brisa** (HIPÓTESIS no calibrada): óptimo en brisa
-  sostenida ~3–12 km/h, penaliza el viento fuerte. No hay meseta a 1.0.
+- `fTransporte` **creciente con umbral**: ~0 por debajo de 8 km/h, sube desde
+  **18 km/h** (Berline 2013: el viento que «impacta significativamente la corriente
+  superficial»), pleno a 28–45 km/h, y baja algo en temporal (>45) porque el oleaje
+  dispersa y daña. La medusa no navega: el viento mueve el **agua**, y mover agua
+  exige energía.
 - `gauss(h)` centrada en **24 h** (σ 12 h): el retardo típico de varamiento es ~1 día.
-- `gateEstacional` por fenología de Pelagia (pico jun–ago); **bloquea ALTA fuera de temporada**.
-- Bandas: **ALTA** `score≥0.45 ∧ horasAfavor≥12 ∧ temporada`; **MEDIA** `score≥0.18 ∨ (horasAfavor≥8 ∧ temporada)`; **BAJA** el resto. (`horasAfavor` = horas con onshore≥0.3 y viento≥8 km/h.)
+  **La pieza mejor calibrada** (ICM-CSIC 24–48 h; Berline lag 1 día; Keesing ~2 días).
+- `gateEstacional` (suelo 0,5 en invierno): modula la **presencia** en el agua, no el
+  empuje. Suelo alto a propósito — «onshore arrivals are not restricted to the summer».
+- Bandas: **ALTA** `score≥0.40 ∧ horasAfavor≥10`; **MEDIA** `score≥0.18 ∧ horasAfavor≥5`;
+  **BAJA** el resto. (`horasAfavor` = horas con onshore≥0.5 y viento≥18 km/h.)
 - **Degradación honesta**: si falta >40 % de la ventana → `sin-dato` (solo descargo),
   **nunca** un "baja" por defecto (sería un falso negativo peligroso).
+
+> **Recalibrado del 20-jul-2026 (v1 → v2).** La v1 suponía que «la brisa arrima más»
+> y el propio código lo declaraba como hipótesis sin calibrar. La literatura dice lo
+> contrario y la v1 hacía que la brisa floja del norte **empatara** con el viento
+> fuerte del sur (0,293 vs 0,292 con datos reales del 17-jul) → **39 de 75 calas en
+> MODERADO**: un aviso que sale en media isla todos los días no informa de nada.
+> También se subió el suelo invernal: con `ene = 0,15` la v1 habría dicho «baja» el
+> **4-ene-2023**, el día real en que cientos de medusas cubrieron Son Parc y Arenal
+> d'en Castell. Las cuatro piezas (intensidad, estacionalidad, umbrales y regla de
+> horas) están **acopladas**: se calibraron a la vez y se miden con
+> `node scripts/calibrar-medusas.mjs`, que pasa el modelo por escenarios de viento
+> conocidos y falla si el sur avisa con viento del norte, si la brisa floja dispara
+> un aviso o si enero vuelve a callar. Fuentes: `.tmp_research/2026-07-17-medusas-viento-fisica.md`.
 
 AEMET solo da previsión, así que el viento horario se **acumula** en
 `src/data/viento-historia.json` a cada corrida del cron; hasta tener ~48 h, el empuje
@@ -136,6 +155,8 @@ node scripts/parte-calma.mjs
 # Pruebas de concepto (Open-Meteo, solo dev, no comercial):
 node scripts/donde-el-mar-esta-en-calma.poc.mjs   # motor de abrigo
 node scripts/posibilidad-medusas.poc.mjs          # baremo de medusas
+# Banco de pruebas del empuje (escenarios de viento conocidos; falla si se descuadra):
+node scripts/calibrar-medusas.mjs
 ```
 
 El cron de producción: `.github/workflows/parte-calma.yml` (diario). Requiere el
@@ -154,7 +175,10 @@ migra a Cloudflare Cron Triggers).
 - [x] `tieneVigilancia` real por cala (plan de socorrismo del Consell).
 - [x] **Cerrar los 3 bloqueantes legales** y poner `MEDUSAS_ENABLED=true` (17-jul-2026, KAN-81).
 - [x] Capa visual de medusas en el mapa (stickers rosa malva, ALTA plena + MODERADO tenue; 17-jul-2026, KAN-81).
-- [ ] Recalibrar el modelo de medusas tras 1 temporada (cortes 0.45/0.18, lag 24 h, `fBrisa`).
+- [x] **Recalibrado v2 del empuje** (20-jul-2026): intensidad invertida a creciente-con-umbral,
+      suelo invernal, umbrales y regla de horas — las cuatro a la vez, con banco de pruebas
+      (`scripts/calibrar-medusas.mjs`) y modelo extraído a `scripts/lib/empuje-medusas.mjs`.
+- [ ] Revalidar los cortes al cierre de temporada, ya con episodios reales observados.
 - [ ] UI de override manual (ALTA) + alerta de dato obsoleto.
 - [ ] Estado de la mar (oleaje) de la marítima costera de AEMET (código de costa en {40–47}).
 - [ ] Enlace a la herramienta desde /descubrir y la home; CTA newsletter.

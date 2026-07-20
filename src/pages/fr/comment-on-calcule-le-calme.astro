@@ -40,7 +40,11 @@ const faqs = [
   },
   {
     q: "Et les méduses ?",
-    a: "Nous ne le publions pas encore. Nous avons un modèle de « poussée du vent » à l'étude, et nous ne l'activerons qu'une fois sa validation et les autorisations de source réglées. Pour des observations réelles, consultez MedusApp.",
+    a: "Nous signalons d'une méduse rose les criques vers lesquelles le vent pousse depuis des heures. Ce n'est pas une observation : personne n'est allé voir. C'est une condition d'arrivée, calculée avec le même vent de l'AEMET, et elle ne vaut que pour aujourd'hui. Ce que vous verrez sur place prime toujours : les drapeaux et les sauveteurs.",
+  },
+  {
+    q: "Comment calcule-t-on cette possibilité de méduses ?",
+    a: "La méduse ne nage pas : elle dérive, et le vent qui déplace l'eau l'emporte avec elle. Nous regardons les 48 dernières heures de vent (en pesant davantage ce qui s'est passé il y a un jour, le temps qu'il faut pour que cela se voie) et comptons combien d'heures sont entrées de face vers la crique avec assez de force pour entraîner l'eau : en dessous d'environ 18 km/h, le vent ne déplace guère la surface. C'est pourquoi le signal peut apparaître sur une mer déjà calme : ce qui les a rapprochées, c'est le vent d'avant-hier, pas celui de maintenant.",
   },
 ];
 
@@ -144,7 +148,7 @@ const jsonLd = {
       <h2>Limites honnêtes</h2>
       <ul>
         <li>Cela ne mesure pas les courants, les fonds ni les dangers de la baignade.</li>
-        <li>Cela ne détecte pas les méduses et n'affirme pas qu'il y en a.</li>
+        <li>Cela ne détecte pas les méduses : quand nous signalons une crique, nous disons que le vent pousse vers elle, pas qu'il y en a.</li>
         <li>Ce n'est pas un avis de sécurité et cela ne remplace pas les drapeaux ni les sauveteurs.</li>
         <li>Beaucoup de criques sont sans surveillance : redoublez de prudence.</li>
       </ul>

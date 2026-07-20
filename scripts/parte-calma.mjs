@@ -21,6 +21,9 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import {
+  calcularEmpuje, dirADeg, nombreViento, isoHour, FORMULA_VERSION_EMPUJE,
+} from "./lib/empuje-medusas.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -30,54 +33,18 @@ const OUT_DIR = join(ROOT, "src", "data");
 const OUT_FILE = join(OUT_DIR, "parte-calma.json");
 const HIST_FILE = join(OUT_DIR, "viento-historia.json");
 
-const FORMULA_VERSION = "abrigo-1.0 / empuje-medusas-1.0";
+const FORMULA_VERSION = `abrigo-1.0 / ${FORMULA_VERSION_EMPUJE}`;
 const ATRIBUCION = "AEMET";
 
-// ---- Parámetros (constantes visibles; modelo aprobado, recalibrar tras 1 temporada) ----
+// ---- Parámetros del ABRIGO (el empuje de medusas vive en lib/empuje-medusas.mjs) ----
 const VENTANA_DIURNA = [10, 18]; // franja de baño para el ABRIGO
 const ABRIGO_VMAX = 38; // km/h donde el viento onshore satura la penalización de abrigo
-// Empuje de medusas: ventana 48 h con retardo 6 h, peso gaussiano centrado en 24 h.
-const EMPUJE_DESDE = 6;
-const EMPUJE_HASTA = 48;
-const GAUSS_CENTRO = 24; // h (parámetro a calibrar, rango 18–30)
-const GAUSS_SIGMA = 12; // h
-const COBERTURA_MIN = 0.6; // si falta >40% de la ventana → "sin-dato"
-// Gate estacional (fenología de Pelagia en Baleares; bloquea ALTA fuera de temporada).
-const FACTOR_MES = [0.15, 0.15, 0.3, 0.55, 0.85, 1.0, 1.0, 0.95, 0.7, 0.4, 0.2, 0.15];
-
-const DIR_DEG = {
-  N: 0, NNE: 22.5, NE: 45, ENE: 67.5, E: 90, ESE: 112.5, SE: 135, SSE: 157.5,
-  S: 180, SSO: 202.5, SO: 225, OSO: 247.5, O: 270, ONO: 292.5, NO: 315, NNO: 337.5,
-};
-const VIENTOS = [
-  [22.5, "Tramuntana (N)"], [67.5, "Gregal (NE)"], [112.5, "Llevant (E)"],
-  [157.5, "Xaloc (SE)"], [202.5, "Migjorn (S)"], [247.5, "Llebeig (SO)"],
-  [292.5, "Ponent (O)"], [337.5, "Mestral (NO)"], [361, "Tramuntana (N)"],
-];
-const nombreViento = (deg) => (VIENTOS.find(([m]) => deg < m) ?? VIENTOS[0])[1];
 
 const rad = (d) => (d * Math.PI) / 180;
 const clamp01 = (x) => Math.max(0, Math.min(1, x));
 const onshoreCalma = (windFrom, op) => (1 + Math.cos(rad(windFrom - op))) / 2; // abrigo
-const onshorePos = (windFrom, op) => Math.max(0, Math.cos(rad(windFrom - op))); // empuje
-const gaussW = (h) => Math.exp(-((h - GAUSS_CENTRO) ** 2) / (2 * GAUSS_SIGMA ** 2));
-
-/** Peso por intensidad de viento (DECRECIENTE-desde-brisa). HIPÓTESIS no calibrada. */
-function fBrisa(kmh) {
-  if (kmh < 3) return 0.3;
-  if (kmh < 12) return 0.3 + ((kmh - 3) / 9) * 0.7; // 0.3 → 1.0 (óptimo: brisa sostenida)
-  if (kmh < 20) return 1.0 - ((kmh - 12) / 8) * 0.4; // 1.0 → 0.6
-  if (kmh < 35) return 0.6 - ((kmh - 20) / 15) * 0.3; // 0.6 → 0.3
-  return 0.2; // techo bajo, no 0 (prudencia)
-}
 
 const bandaAbrigo = (s) => (s >= 0.66 ? "alto" : s >= 0.4 ? "medio" : "bajo");
-function bandaEmpuje(score, horasAfavor, gate) {
-  const temporada = gate >= 0.5;
-  if (score >= 0.45 && horasAfavor >= 12 && temporada) return "alta";
-  if (score >= 0.18 || (horasAfavor >= 8 && temporada)) return "media";
-  return "baja";
-}
 
 function leerEnv(clave) {
   try {
@@ -103,7 +70,6 @@ async function aemet(ruta) {
 }
 
 const pad = (n) => String(n).padStart(2, "0");
-const isoHour = (t) => `${t.getFullYear()}-${pad(t.getMonth() + 1)}-${pad(t.getDate())}T${pad(t.getHours())}:00`;
 
 function cargarCalas() {
   const calas = [];
@@ -151,7 +117,7 @@ function mergeHistoria(hist, ine, todas, now) {
 function calcularAbrigo(op, diurnas) {
   let penal = 0, n = 0, sx = 0, sy = 0, sVel = 0;
   for (const x of diurnas) {
-    const deg = DIR_DEG[x.dir];
+    const deg = dirADeg(x.dir);
     n += 1;
     if (deg == null || x.dir === "C") continue;
     penal += onshoreCalma(deg, op) * clamp01(x.vel / ABRIGO_VMAX);
@@ -162,45 +128,6 @@ function calcularAbrigo(op, diurnas) {
   return {
     band: bandaAbrigo(clamp01(1 - penal / k)), score: Number(clamp01(1 - penal / k).toFixed(2)),
     viento: { nombre: nombreViento(dirMedia), kmh: Math.round(sVel / k) },
-  };
-}
-
-function calcularEmpuje(op, histMun, now) {
-  const gate = FACTOR_MES[now.getMonth()];
-  let psum = 0, wsum = 0, expected = 0, avail = 0, horasAfavor = 0;
-  // Vector medio del viento SOLO en las horas a favor: dice de QUÉ viento vino el
-  // empuje. Sin este dato la página enseñaba el viento de AHORA junto a un empuje de
-  // 48 h atrás y parecía contradecirse (p. ej. «Tramuntana» con medusas en el sur,
-  // cuando lo que las arrimó fue el Migjorn de anteayer).
-  let fx = 0, fy = 0;
-  for (let k = EMPUJE_DESDE; k <= EMPUJE_HASTA; k++) {
-    expected += 1;
-    const rec = histMun.find((r) => r.iso === isoHour(new Date(now.getTime() - k * 3600e3)));
-    if (!rec || rec.dir == null) continue;
-    avail += 1;
-    const w = gaussW(k);
-    wsum += w;
-    const deg = DIR_DEG[rec.dir];
-    if (deg == null || rec.dir === "C") continue; // calma: empuje 0, pero cuenta como hora con dato
-    const onsh = onshorePos(deg, op);
-    psum += onsh * fBrisa(rec.vel) * w;
-    if (onsh >= 0.3 && rec.vel >= 8) {
-      horasAfavor += 1;
-      fx += Math.cos(rad(deg)); fy += Math.sin(rad(deg));
-    }
-  }
-  const coverage = expected ? avail / expected : 0;
-  if (coverage < COBERTURA_MIN) return { band: "sin-dato", coverage: Number(coverage.toFixed(2)) };
-  const score = clamp01((wsum ? psum / wsum : 0) * gate);
-  let vientoEmpuje = null;
-  if (horasAfavor > 0) {
-    let d = (Math.atan2(fy, fx) * 180) / Math.PI;
-    if (d < 0) d += 360;
-    vientoEmpuje = nombreViento(d);
-  }
-  return {
-    band: bandaEmpuje(score, horasAfavor, gate), score: Number(score.toFixed(2)),
-    horasAfavor, vientoEmpuje, ventanaH: EMPUJE_HASTA, coverage: Number(coverage.toFixed(2)),
   };
 }
 

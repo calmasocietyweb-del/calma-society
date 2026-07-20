@@ -39,7 +39,11 @@ const faqs = [
   },
   {
     q: "¿Y las medusas?",
-    a: "De momento no lo publicamos. Tenemos un modelo de “empuje del viento” en estudio, pero solo lo activaremos cuando cerremos su validación y los permisos de las fuentes. Para avistamientos reales, consulta MedusApp.",
+    a: "Señalamos con una medusa rosa las calas hacia las que el viento lleva horas empujando. No es un avistamiento: nadie ha ido a mirar. Es una condición de llegada, calculada con el mismo viento de la AEMET, y solo vale para hoy. Manda siempre lo que veas al llegar: las banderas y los socorristas.",
+  },
+  {
+    q: "¿Cómo se calcula esa posibilidad de medusas?",
+    a: "La medusa no navega: flota, y el viento que mueve el agua se la lleva. Miramos las últimas 48 horas de viento (pesando más lo ocurrido hace un día, que es lo que tarda en notarse) y contamos cuántas entraron de frente hacia la cala con fuerza suficiente para arrastrar agua: por debajo de unos 18 km/h el viento apenas mueve la superficie. Por eso el aviso puede saltar con el mar ya en calma: lo que las arrimó fue el viento de anteayer, no el de ahora.",
   },
 ];
 
@@ -140,7 +144,7 @@ const jsonLd = {
       <h2>Límites honestos</h2>
       <ul>
         <li>No mide corrientes, fondo ni peligros de baño.</li>
-        <li>No detecta medusas ni afirma que las haya.</li>
+        <li>No detecta medusas: cuando señalamos una cala decimos que el viento empuja hacia ella, no que las haya.</li>
         <li>No es un aviso de seguridad ni reemplaza a banderas y socorristas.</li>
         <li>Muchas calas no tienen vigilancia: extrema la precaución.</li>
       </ul>

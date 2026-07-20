@@ -36,7 +36,11 @@ const faqs = [
   },
   {
     q: "What about jellyfish?",
-    a: "We don’t publish it yet. We have a “wind push” model under study, and we’ll only switch it on once its validation and source permissions are settled. For real sightings, check MedusApp.",
+    a: "We mark with a pink jellyfish the coves the wind has been pushing towards for hours. It isn’t a sighting: nobody has gone to look. It’s an arrival condition, worked out from the same AEMET wind, and it only holds for today. What you see when you get there always wins: the flags and the lifeguards.",
+  },
+  {
+    q: "How is that jellyfish possibility worked out?",
+    a: "A jellyfish doesn’t swim anywhere: it drifts, and the wind that moves the water carries it along. We look at the last 48 hours of wind (weighting most heavily what happened a day ago, which is how long it takes to show) and count how many hours came head-on towards the cove with enough strength to drag water: below about 18 km/h the wind barely moves the surface. That’s why the flag can appear on an already calm sea — what brought them in was the wind of two days ago, not today’s.",
   },
 ];
 
@@ -135,7 +139,7 @@ const jsonLd = {
       <h2>Honest limits</h2>
       <ul>
         <li>It does not measure currents, the seabed or bathing hazards.</li>
-        <li>It does not detect jellyfish or claim there are any.</li>
+        <li>It does not detect jellyfish: when we mark a cove we are saying the wind pushes towards it, not that there are any.</li>
         <li>It is not a safety notice and does not replace flags and lifeguards.</li>
         <li>Many coves are unguarded: take extra care.</li>
       </ul>
