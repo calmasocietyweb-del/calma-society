@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-19",
+  "updated": "2026-07-20",
   "ventana": {
-    "desde": "2026-07-19",
-    "hasta": "2026-08-15"
+    "desde": "2026-07-20",
+    "hasta": "2026-08-17"
   },
   "nuevas": [
     {
@@ -48,6 +48,39 @@
       "consignatario": "AGENCIA MELIA VIVES S L",
       "escala": "M202600059",
       "nota": "El puerto la tiene y nosotros no. Falta capacidad de pasaje y naviera antes de publicarla."
+    },
+    {
+      "date": "2026-08-16",
+      "ship": "MARELLA EXPLORER",
+      "arrival": "11:00",
+      "departure": "18:00",
+      "departureDate": null,
+      "muelle": "MUELLE CRUCEROS",
+      "consignatario": "FEDERICO CARDONA TREMOL S L",
+      "escala": "M202600733",
+      "nota": "El puerto la tiene y nosotros no. Falta capacidad de pasaje y naviera antes de publicarla."
+    },
+    {
+      "date": "2026-08-17",
+      "ship": "ILMA",
+      "arrival": "08:00",
+      "departure": "16:00",
+      "departureDate": null,
+      "muelle": "MUELLE CRUCEROS",
+      "consignatario": "AGENCIA MELIA VIVES S L",
+      "escala": "M202600162",
+      "nota": "El puerto la tiene y nosotros no. Falta capacidad de pasaje y naviera antes de publicarla."
+    },
+    {
+      "date": "2026-08-17",
+      "ship": "FOUR SEASONS",
+      "arrival": "08:00",
+      "departure": "16:00",
+      "departureDate": null,
+      "muelle": "MUELLE CRUCEROS",
+      "consignatario": "AGENCIA MELIA VIVES S L",
+      "escala": "M202600197",
+      "nota": "El puerto la tiene y nosotros no. Falta capacidad de pasaje y naviera antes de publicarla."
     }
   ],
   "desaparecidas": [
@@ -59,6 +92,11 @@
     {
       "date": "2026-08-14",
       "ship": "Azamara Onward",
+      "nota": "La publicamos y el puerto NO la tiene, estando dentro de su ventana. ¿Cancelada? Verificar antes de retirarla."
+    },
+    {
+      "date": "2026-08-17",
+      "ship": "Ritz-Carlton Ilma",
       "nota": "La publicamos y el puerto NO la tiene, estando dentro de su ventana. ¿Cancelada? Verificar antes de retirarla."
     }
   ],
@@ -87,6 +125,20 @@
         {
           "ship": "ILMA",
           "eslora": 241.84
+        }
+      ],
+      "nota": "Dos cruceros el mismo día. Si uno fondea, se desembarca en lancha y el tiempo real en tierra cambia."
+    },
+    {
+      "date": "2026-08-17",
+      "barcos": [
+        {
+          "ship": "ILMA",
+          "eslora": 241.84
+        },
+        {
+          "ship": "FOUR SEASONS",
+          "eslora": 207
         }
       ],
       "nota": "Dos cruceros el mismo día. Si uno fondea, se desembarca en lancha y el tiempo real en tierra cambia."

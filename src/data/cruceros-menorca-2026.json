@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "port": "Maó",
-  "updated": "2026-07-19",
+  "updated": "2026-07-20",
   "seasonEstimate": "125-130",
   "coveragePct": 78,
   "totalListed": 99,
@@ -502,11 +502,11 @@
       "ship": "MSC Opera",
       "line": "MSC Cruises",
       "pax": 2150,
-      "arrival": "09:00",
+      "arrival": "08:35",
       "departure": "16:00",
       "confidence": "alta",
-      "sourceCount": 3,
-      "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
+      "sourceCount": 2,
+      "source": "https://www.portsdebalears.com/es/buques-en-puerto"
     },
     {
       "date": "2026-07-26",
