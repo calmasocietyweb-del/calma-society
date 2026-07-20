@@ -45,6 +45,11 @@ const jobs = [
   { src: `${SRC}/_stock/vino-menorca.jpg`, out: "vino-menorca" },
   { src: `${SRC}/_stock/embutidos-menorca.jpg`, out: "embutidos-menorca" },
   { src: `${SRC}/_stock/dulces-menorca.jpg`, out: "dulces-menorca" },
+  // Auditoría de fotos KAN-84 (Adobe Stock, licenciadas — jul 2026).
+  { src: `${SRC}/_stock/langosta-parrilla.jpg`, out: "langosta-parrilla" }, // langosta DE VERDAD (sin pinzas)
+  { src: `${SRC}/_stock/fornells-pueblo.jpg`, out: "fornells-pueblo" }, // paseo de Fornells con reflejos
+  { src: `${SRC}/_stock/faro-punta-nati.jpg`, out: "faro-punta-nati" }, // el faro, aéreo (para faros)
+  { src: `${SRC}/_stock/sobrasada-pan.jpg`, out: "sobrasada-pan" }, // sobrassada + pan + pimentón
   // Clúster de movilidad / transporte (Adobe Stock, licenciadas — jun 2026).
   { src: `${SRC}/_stock/crucero-menorca.jpg`, out: "crucero-menorca", cover: { w: 1600, h: 1000 } },
   { src: `${SRC}/_stock/transfer-menorca.jpg`, out: "transfer-menorca" },
