@@ -2008,7 +2008,7 @@
     "indoorAlternativeOf": [],
     "seasonalHours": "Jun-Aug from 11:30 until dusk; May/Oct from 15:00. Daytime viewpoint (~€8.5), afternoon lounge (~€12), nightclub after dark. Online booking recommended in summer.",
     "needsReservation": true,
-    "officialUrl": "https://www.covadenxoroi.com",
+    "officialUrl": "https://www.covadenxoroi.com/en",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-22"
   },
@@ -3439,7 +3439,6 @@
     "name": "Naveta des Tudons",
     "slug": "naveta-des-tudons-en",
     "image": "/uploads/naveta-tudons-480.webp",
-    "imageCredit": "Menorquino · Wikimedia Commons, CC BY-SA 3.0",
     "coordinates": {
       "lat": 39.9967,
       "lng": 3.884
@@ -3895,7 +3894,6 @@
   {
     "id": "restaurant-sa-llagosta",
     "name": "Restaurant Sa Llagosta",
-    "slug": "restaurant-sa-llagosta-en",
     "coordinates": {
       "lat": 40.05,
       "lng": 4.13
@@ -3908,7 +3906,7 @@
       "parejas",
       "lujo-tranquilo"
     ],
-    "blurb": "A Fornells institution for Menorcan lobster stew (caldereta de langosta). According to local comparisons, a deeper-flavoured version with a thicker…",
+    "blurb": "A Fornells institution for Menorcan lobster stew (caldereta de langosta), holding a Repsol Guide Sol since the 2024 edition. According to local…",
     "durationMin": 150,
     "carAccess": "coche-directo",
     "busServed": false,
@@ -3924,7 +3922,6 @@
   {
     "id": "restaurante-es-cranc",
     "name": "Restaurante Es Cranc",
-    "slug": "restaurante-es-cranc-en",
     "coordinates": {
       "lat": 40.05,
       "lng": 4.13
@@ -3938,7 +3935,7 @@
       "lujo-tranquilo",
       "familias"
     ],
-    "blurb": "One of Menorca's most emblematic and traditional restaurants for lobster stew in Fornells. It keeps its own tank of local lobsters, chosen on the…",
+    "blurb": "One of Menorca's most emblematic and traditional restaurants for lobster stew in Fornells, recommended by the Michelin Guide 2026 (one of eleven on…",
     "durationMin": 150,
     "carAccess": "coche-directo",
     "busServed": true,
@@ -3954,7 +3951,6 @@
   {
     "id": "restaurante-sant-joan-de-binissaida",
     "name": "Restaurante Sant Joan de Binissaida",
-    "slug": "restaurante-sant-joan-de-binissaida-en",
     "coordinates": {
       "lat": 39.88,
       "lng": 4.27
@@ -3992,7 +3988,6 @@
   {
     "id": "restaurante-smoix",
     "name": "Restaurante Smoix",
-    "slug": "restaurante-smoix-en",
     "coordinates": {
       "lat": 40,
       "lng": 3.84
@@ -4007,11 +4002,11 @@
       "cultura"
     ],
     "highlights": [
-      "the only Bib Gourmand table in the Michelin Guide on Menorca",
+      "a Bib Gourmand table in the Michelin Guide since 2023, plus a Repsol Guide Sol",
       "Mediterranean cooking of organic, seasonal produce",
       "book ahead, right in the centre of Ciutadella"
     ],
-    "blurb": "The only restaurant in Menorca with a Bib Gourmand distinction from the Michelin Guide, in the heart of Ciutadella. Mediterranean cooking built on…",
+    "blurb": "A Bib Gourmand distinction from the Michelin Guide held since 2023, a recommended plaque in the 2026 guide and one of the island's longest-standing…",
     "durationMin": 120,
     "carAccess": "sin-coche-ok",
     "busServed": false,
@@ -4544,6 +4539,7 @@
     "id": "talati-de-dalt",
     "name": "Talatí de Dalt",
     "slug": "talati-de-dalt-en",
+    "image": "/uploads/talati-de-dalt-480.webp",
     "coordinates": {
       "lat": 39.8836,
       "lng": 4.2058
@@ -4683,6 +4679,7 @@
     "id": "torre-den-galmes",
     "name": "Torre d'en Galmés",
     "slug": "torre-den-galmes-en",
+    "image": "/uploads/torre-den-galmes-480.webp",
     "coordinates": {
       "lat": 39.9269,
       "lng": 4.1283
@@ -4747,6 +4744,7 @@
     "id": "trepuco",
     "name": "Trepucó",
     "slug": "trepuco-en",
+    "image": "/uploads/trepuco-480.webp",
     "coordinates": {
       "lat": 39.8703,
       "lng": 4.2719
