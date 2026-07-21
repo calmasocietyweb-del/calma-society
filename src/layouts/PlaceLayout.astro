@@ -117,9 +117,21 @@ const breadcrumb = breadcrumbSchema([
   { name: SITE.name, url: abs(homePath(locale)) },
   { name: data.name, url: canonical },
 ]);
+
+/* Título SEO único por idioma (KAN-88). Con el nombre a secas, las versiones
+   ES/EN/FR de una ficha compartían <title> IDÉNTICO (214 págs duplicadas en
+   GSC). Tipo y zona ya vienen localizados y dan contexto en el buscador; el
+   tipo se omite si el nombre ya lo lleva («Cala Turqueta — Cala…») o es "otro". */
+const typeLbl = placeTypeLabel(data.type, locale);
+const typeRedundant =
+  data.type === "otro" || data.name.toLowerCase().includes(typeLbl.split(" ")[0].toLowerCase());
+const island = locale === "fr" ? "Minorque" : "Menorca";
+const titleParts = [typeRedundant ? null : typeLbl, data.area].filter(Boolean).join(", ");
+const seoTitle =
+  data.seo?.title ?? `${data.name} — ${titleParts.includes(island) ? titleParts : `${titleParts}, ${island}`}`;
 ---
 
-<BaseLayout title={data.name} description={data.seo?.description ?? data.description} locale={locale} alternates={alternates}>
+<BaseLayout title={seoTitle} description={data.seo?.description ?? data.description} locale={locale} alternates={alternates}>
   <article class="mx-auto max-w-prosa px-5 pb-8 pt-12 sm:px-8 sm:pt-16">
     <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">
       {placeTypeLabel(data.type, locale)} · {data.area}

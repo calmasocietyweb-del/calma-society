@@ -49,6 +49,20 @@ const isDefaultImage = !image; // la OG por defecto es /og-default.png (1200x630
 // canonical (Astro.url.href) y el sitemap. Normalizamos los hreflang para que
 // terminen en "/" y coincidan EXACTAMENTE con esas dos referencias.
 const withSlash = (url: string) => (url.endsWith("/") ? url : `${url}/`);
+
+/* Meta description a ≤160 caracteres (KAN-88): 259 páginas la tenían larga
+   (Google la corta a ~160 y el corte a ciegas mata el CTR). Se recorta por
+   FRASE completa si queda un texto digno; si no, por palabra + elipsis.
+   Solo afecta a <meta name="description">: Open Graph conserva el texto íntegro. */
+function metaDescription(s: string): string {
+  if (s.length <= 160) return s;
+  const cut = s.slice(0, 160);
+  const dot = cut.lastIndexOf('. ');
+  if (dot >= 80) return cut.slice(0, dot + 1);
+  const sp = cut.lastIndexOf(" ");
+  return cut.slice(0, sp > 100 ? sp : 157).replace(/[\s,;:·—-]+$/, "") + "…";
+}
+const metaDesc = metaDescription(description);
 const hreflangs = alternates
   ? SITE.locales
       .filter((l) => alternates[l.code])
@@ -60,7 +74,7 @@ const xDefault = alternates?.[SITE.defaultLocale]
 ---
 
 <title>{fullTitle}</title>
-<meta name="description" content={description} />
+<meta name="description" content={metaDesc} />
 {/* max-image-preview:large permite a Google mostrar la imagen grande en
     Discover y en resultados (requisito práctico para salir en Discover). */}
 <meta name="robots" content={noindex ? "noindex, follow" : "max-image-preview:large"} />

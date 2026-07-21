@@ -84,6 +84,10 @@ export const SECTIONS: Section[] = [
   {
     key: "cultura",
     label: { es: "Cultura", en: "Culture", fr: "Culture" },
+    // seoTitle: el label a secas era IDÉNTICO en EN y FR → <title> duplicado
+    // en GSC (KAN-88). El nombre completo de la sección (§5 del CLAUDE.md)
+    // diferencia idiomas sin tocar la navegación.
+    seoTitle: { es: "Cultura e identidad", en: "Culture & identity", fr: "Culture et identité" },
     href: { es: "/cultura", en: "/en/culture", fr: "/fr/culture" },
     intro: {
       es: "Historia, lengua, artesanía y la Menorca talayótica. La identidad de la isla.",
