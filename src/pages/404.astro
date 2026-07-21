@@ -3,7 +3,9 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="404" description="Página no encontrada." locale="es">
+{/* `alternates` explícitos: sin ellos, el selector de idioma intercambiaba el
+    prefijo sobre /404/ y producía un enlace a /en/404/, que no existe. */}
+<BaseLayout title="404" description="Página no encontrada." locale="es" alternates={{ es: "/", en: "/en/" }}>
   <section class="mx-auto max-w-prosa px-5 py-28 text-center sm:px-8">
     <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">404</p>
     <h1 class="mt-4 font-display text-4xl text-tinta sm:text-5xl">

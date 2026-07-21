@@ -10,6 +10,7 @@
  * lista + filtro 100% estáticos; la lista es la versión accesible y citable por IA;
  * el color NUNCA es el único indicador (siempre con su texto al lado).
  */
+import { getCollection } from "astro:content";
 import parteRaw from "../data/parte-calma.json";
 import outline from "../data/menorca-outline.json";
 import timeline from "../data/parte-timeline.json";
@@ -22,6 +23,19 @@ interface Props {
   locale: Locale;
 }
 const { locale } = Astro.props;
+
+/* Fichas de lugar que EXISTEN en este idioma. Una cala solo se enlaza si su
+   ficha está publicada en el idioma de la página: en FR hay menos fichas que
+   en ES/EN y componer el href a ciegas creaba enlaces a 404 (los "huérfanos"
+   de KAN-25). Cuando la ficha se traduzca, el enlace aparece solo. */
+const fichasDelIdioma = new Set(
+  (
+    await getCollection(
+      "lugares",
+      (e) => e.data.lang === locale && e.data.status === "published",
+    )
+  ).map((e) => e.id),
+);
 
 /**
  * Contrato del parte diario. Se declara a mano en vez de dejar que TypeScript lo
@@ -1124,7 +1138,7 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
           style={`border-left:4px solid ${FILL[b0]}`}
         >
           <h3 class="font-display text-base leading-tight text-tinta">
-            {c.lugarSlug ? (
+            {c.lugarSlug && fichasDelIdioma.has(`${c.lugarSlug}-${locale}`) ? (
               <a class="underline decoration-niebla underline-offset-4 hover:decoration-terracota" href={placeUrl(locale, `${c.lugarSlug}-${locale}`)} data-umami-event="calma-cala-ficha">{c.name}</a>
             ) : c.name}
           </h3>

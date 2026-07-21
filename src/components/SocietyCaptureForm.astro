@@ -5,6 +5,7 @@
 // Tras enviar, Formspree redirige a la página de bienvenida (`_next`).
 import { SITE } from "../config/site";
 import { useTranslations } from "../i18n/ui";
+import { privacyPath } from "../i18n/utils";
 import type { Locale } from "../config/site";
 
 interface Props {
@@ -22,7 +23,7 @@ const t = useTranslations(locale);
 const endpoint = SITE.newsletter.capture.endpoint;
 const emailId = `society-email${idSuffix}`;
 const consentId = `society-consent${idSuffix}`;
-const privacyHref = locale === "es" ? "/privacidad" : "/en/privacy";
+const privacyHref = privacyPath(locale);
 const thanksUrl =
   locale === "es"
     ? `${SITE.url}/sociedad-bienvenida`

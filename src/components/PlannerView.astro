@@ -27,6 +27,7 @@ import foodEs from "../data/planner-food.es.json";
 import foodEn from "../data/planner-food.en.json";
 import { SITE } from "../config/site";
 import type { Locale } from "../config/site";
+import { privacyPath } from "../i18n/utils";
 import Logo from "./Logo.astro";
 
 interface Props {
@@ -180,7 +181,7 @@ const CFG = {
 
 // Alta en la Sociedad (KPI nº1) por nuestra función /api/suscribir → MailerLite
 // (grupo general, doble opt-in). La URL del plan viaja en un campo oculto.
-const privacyHref = isEs ? "/privacidad" : "/en/privacy";
+const privacyHref = privacyPath(locale);
 
 const interestList = [
   ["calas", T.i_calas], ["gastronomia", T.i_gastro], ["cultura", T.i_cultura],

@@ -69,6 +69,21 @@ export function placesIndexPath(locale: Locale): string {
   return PLACES_INDEX[locale];
 }
 
+/**
+ * Política de privacidad por idioma. ÚNICA fuente para los formularios con
+ * consentimiento RGPD (suscripción, contacto, planificador): componer el path
+ * a mano (`/${locale}/privacy`) generó 404 en FR (/fr/privacy no existe).
+ */
+const PRIVACY_PATH = {
+  es: "/privacidad",
+  en: "/en/privacy",
+  fr: "/fr/confidentialite",
+} satisfies Record<Locale, string>;
+
+export function privacyPath(locale: Locale): string {
+  return PRIVACY_PATH[locale];
+}
+
 /** Locale BCP-47 por idioma (para Intl: fechas, números…). */
 export const INTL_LOCALE: Record<Locale, string> = {
   es: "es-ES",

@@ -3,13 +3,13 @@
 // backend propio. Si no está configurado, muestra el correo directo.
 import { SITE } from "../config/site";
 import { useTranslations } from "../i18n/ui";
-import { currentLocale } from "../i18n/utils";
+import { currentLocale, privacyPath } from "../i18n/utils";
 
 const locale = currentLocale(Astro.url.pathname);
 const t = useTranslations(locale);
 const action = SITE.forms.contact;
 const connected = action.length > 0;
-const privacyHref = locale === "es" ? "/privacidad" : "/en/privacy";
+const privacyHref = privacyPath(locale);
 
 const field =
   "mt-1 w-full rounded-md border border-niebla bg-lino/60 px-4 py-3 text-sm text-piedra focus-visible:outline-terracota";

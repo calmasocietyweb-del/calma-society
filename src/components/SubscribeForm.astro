@@ -3,7 +3,7 @@
 // Sociedad). Progresivamente mejorado: sin JS hace POST clásico con redirect;
 // con JS envía por fetch y muestra el estado sin salir de página. KPI nº1.
 import { useTranslations } from "../i18n/ui";
-import { currentLocale } from "../i18n/utils";
+import { currentLocale, privacyPath } from "../i18n/utils";
 
 interface Props {
   origen: string;
@@ -17,7 +17,7 @@ const t = useTranslations(locale);
 const dark = tone === "dark";
 const emailId = `sub-email${idSuffix}`;
 const consentId = `sub-consent${idSuffix}`;
-const privacyHref = locale === "es" ? "/privacidad" : `/${locale}/privacy`;
+const privacyHref = privacyPath(locale);
 
 const inputClass = dark
   ? "w-full rounded-md border border-lino/20 bg-lino/10 px-4 py-3 text-sm text-lino placeholder:text-lino/50 transition-colors duration-150 ease-calma focus:border-champan/40 focus:bg-lino/[0.16] focus-visible:outline-champan"

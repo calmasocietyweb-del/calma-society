@@ -61,7 +61,9 @@ const xDefault = alternates?.[SITE.defaultLocale]
 
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
-{noindex && <meta name="robots" content="noindex, follow" />}
+{/* max-image-preview:large permite a Google mostrar la imagen grande en
+    Discover y en resultados (requisito práctico para salir en Discover). */}
+<meta name="robots" content={noindex ? "noindex, follow" : "max-image-preview:large"} />
 <link rel="canonical" href={canonical} />
 
 {hreflangs.map((h) => <link rel="alternate" hreflang={h.lang} href={h.href} />)}
