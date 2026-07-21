@@ -9,7 +9,7 @@ import { placeUrl, homePath, placesIndexPath } from "../i18n/utils";
 import { publishedPlaces, relatedPlaces } from "../lib/places";
 import { abs, placeSchema, breadcrumbSchema } from "../lib/schema";
 import { srcset } from "../lib/img";
-import { menorcaBusUrl } from "../lib/links";
+import { menorcaBusUrl, partnerUrl } from "../lib/links";
 import { googleRatings, fmtScore, fmtReviews } from "../data/google-ratings";
 import MenorcaBusPromo from "../components/MenorcaBusPromo.astro";
 import NewsletterSignup from "../components/NewsletterSignup.astro";
@@ -74,6 +74,11 @@ const plannerHref = L === "es" ? "/planificador" : L === "en" ? "/en/trip-planne
 
 const mapUrl = `https://www.google.com/maps/search/?api=1&query=${data.coordinates.lat},${data.coordinates.lng}`;
 const officialUrl = data.website ?? pl?.officialUrl;
+// Slug del negocio SIN idioma (entry.id = "<base>-<locale>"): agrupa los clics
+// de las 3 versiones de la ficha bajo el mismo dato `negocio` (KAN-78).
+const negocioSlug = entry.id.endsWith(`-${locale}`)
+  ? entry.id.slice(0, -(locale.length + 1))
+  : entry.id;
 
 // ── Malla interna: "Cerca de aquí" (13-jul-2026) ─────────────────────────────
 // Las fichas eran CALLEJONES SIN SALIDA: no enlazaban a ninguna otra ficha, y
@@ -303,9 +308,11 @@ const breadcrumb = breadcrumbSchema([
       {
         officialUrl && (
           <a
-            href={officialUrl}
+            href={partnerUrl(officialUrl, "ficha")}
             rel="noopener"
             target="_blank"
+            data-umami-event="click-salida-web"
+            data-umami-event-negocio={negocioSlug}
             class="ml-6 inline-block border-b border-terracota pb-0.5 text-sm font-medium text-arcilla hover:text-terracota"
           >
             {t("place.official")} →

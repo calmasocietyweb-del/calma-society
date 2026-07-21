@@ -604,15 +604,21 @@ const ICON: Record<string, string> = {
     }
   }
 
+  // UTM del negocio (KAN-78): el local ve «calmasociety / referral» en SU
+  // analítica. En cliente (este HTML se genera aquí), sin URL() por peso.
+  const utmNegocio = (u: string) =>
+    u + (u.includes("?") ? "&" : "?") + "utm_source=calmasociety&utm_medium=referral&utm_campaign=planificador";
+
   function notice(n: any) {
     // CTA contextual: RESERVA (rel=sponsored, listo para afiliado) o CONFIRMA
     // HORARIO (informativo) enlazan a la web oficial del lugar si la hay.
+    // `data-umami-event-negocio` agrupa el clic por negocio (KAN-78).
     let cta = "";
     const url = n.placeId && byId[n.placeId]?.officialUrl;
     if (n.kind === "reserva" && url) {
-      cta = ` <a href="${esc(url)}" target="_blank" rel="sponsored noopener" data-umami-event="planner-reserva" class="whitespace-nowrap font-medium text-arcilla underline underline-offset-2 hover:text-terracota">${esc(CFG.reservar)} →</a>`;
+      cta = ` <a href="${esc(utmNegocio(url))}" target="_blank" rel="sponsored noopener" data-umami-event="planner-reserva" data-umami-event-negocio="${esc(n.placeId)}" class="whitespace-nowrap font-medium text-arcilla underline underline-offset-2 hover:text-terracota">${esc(CFG.reservar)} →</a>`;
     } else if (n.kind === "confirma-horario" && url) {
-      cta = ` <a href="${esc(url)}" target="_blank" rel="noopener" data-umami-event="planner-web-oficial" class="whitespace-nowrap font-medium text-arcilla underline underline-offset-2 hover:text-terracota">${esc(CFG.officialLabel)} →</a>`;
+      cta = ` <a href="${esc(utmNegocio(url))}" target="_blank" rel="noopener" data-umami-event="planner-web-oficial" data-umami-event-negocio="${esc(n.placeId)}" class="whitespace-nowrap font-medium text-arcilla underline underline-offset-2 hover:text-terracota">${esc(CFG.officialLabel)} →</a>`;
     }
     return `<li class="flex gap-2 text-sm text-piedra"><span aria-hidden="true">${CFG.noticeIcon[n.kind] || "•"}</span><span>${esc(n.text)}${cta}</span></li>`;
   }

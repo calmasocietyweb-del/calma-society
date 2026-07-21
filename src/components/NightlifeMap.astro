@@ -18,7 +18,7 @@
 import outline from "../data/menorca-outline.json";
 import { getPlaces } from "../lib/content";
 import { placeUrl, articleUrl } from "../i18n/utils";
-import { menorcaBusUrl } from "../lib/links";
+import { menorcaBusUrl, partnerUrl } from "../lib/links";
 import { srcset } from "../lib/img";
 import type { Locale } from "../config/site";
 import { googleRatings, fmtScore, fmtReviews, GOOGLE_RATINGS_AS_OF, type GoogleRating } from "../data/google-ratings";
@@ -138,6 +138,7 @@ const byKey = new Map(places.map((p) => [p.data.translationKey, p]));
 // miradores de atardecer verificados; enlazan a la guía de atardeceres).
 type V = {
   id: string;
+  negocio: string; // slug SIN idioma: agrupa el clic saliente por negocio (KAN-78)
   name: string;
   cat: Cat;
   cat2?: Cat; // el sitio que es dos cosas a la vez (El Toro: amanecer y atardecer)
@@ -160,6 +161,7 @@ const fromFichas: V[] = VENUES.flatMap((def) => {
   return [
     {
       id: e.id,
+      negocio: e.id.endsWith(`-${locale}`) ? e.id.slice(0, -(locale.length + 1)) : e.id,
       name: e.data.name,
       cat: def.cat,
       zone: zoneOf(e.data.coordinates.lng),
@@ -726,6 +728,7 @@ const sunsetArticle =
   locale === "es" ? "atardeceres-menorca" : locale === "fr" ? "couchers-de-soleil-minorque" : "menorca-sunsets";
 const fromExtra: V[] = EXTRA.map((x) => ({
   id: x.id,
+  negocio: x.id,
   name: x.name,
   cat: x.cat,
   cat2: x.cat2,
@@ -1461,7 +1464,7 @@ const jsonLd = {
               {v.website && (
                 <Fragment>
                   {" · "}
-                  <a class="underline decoration-niebla underline-offset-2 hover:text-arcilla" href={v.website} target="_blank" rel="noopener">{T.web} ↗</a>
+                  <a class="underline decoration-niebla underline-offset-2 hover:text-arcilla" href={partnerUrl(v.website, "atardeceres")} target="_blank" rel="noopener" data-umami-event="click-salida-web" data-umami-event-negocio={v.negocio}>{T.web} ↗</a>
                 </Fragment>
               )}
             </p>

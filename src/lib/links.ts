@@ -6,7 +6,9 @@
  * en reserva, y desde qué página salió. En la revista, los clics ya se miden
  * con Umami (data-umami-event); el UTM cierra el círculo en el lado del negocio.
  */
-import { SITE } from "../config/site";
+// Extensión .ts explícita: igual que planner/bookings, para que node --test
+// pueda cargar este módulo (KAN-78 le puso test).
+import { SITE } from "../config/site.ts";
 
 /**
  * URL de Menorca Bus con UTM.
@@ -20,4 +22,25 @@ export function menorcaBusUrl(campaign: string, content?: string): string {
   u.searchParams.set("utm_campaign", campaign);
   if (content) u.searchParams.set("utm_content", content.replace(/^\/|\/$/g, ""));
   return u.toString();
+}
+
+/**
+ * URL saliente a la web de un negocio de la isla (KAN-78): ficha de lugar,
+ * mapa de copas, planificador. El colaborador ve «calmasociety / referral» en
+ * SU propia analítica y verifica el tráfico que le enviamos sin fiarse de
+ * nuestros números — el argumento de venta del directorio. En nuestro lado el
+ * clic se mide con Umami (`click-salida-web` + dato `negocio`).
+ * @param campaign  Superficie del enlace: "ficha" | "atardeceres" | "planificador"…
+ */
+export function partnerUrl(website: string, campaign: string): string {
+  try {
+    const u = new URL(website);
+    u.searchParams.set("utm_source", "calmasociety");
+    u.searchParams.set("utm_medium", "referral");
+    u.searchParams.set("utm_campaign", campaign);
+    return u.toString();
+  } catch {
+    // Dato raro en la colección: mejor el enlace limpio que romper la build.
+    return website;
+  }
 }

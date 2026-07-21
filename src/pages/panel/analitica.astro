@@ -14,6 +14,7 @@
  */
 export const prerender = !process.env.VERCEL;
 import "../../styles/global.css";
+import { getCollection } from "astro:content";
 
 const onVercel = !!process.env.VERCEL;
 
@@ -48,6 +49,13 @@ let error: string | null = null;
 let stats: any = null;
 let topPages: any[] = [];
 let events: any[] = [];
+// ── Colaboradores (KAN-78) ───────────────────────────────────────────────────
+// Clics salientes por negocio: los tres eventos de salida llevan el dato
+// `negocio` (data-umami-event-negocio) y se leen por la API de event-data.
+const SALIDA_EVENTS = ["click-salida-web", "planner-reserva", "planner-web-oficial"];
+let allPages: any[] = []; // metrics?type=url con límite alto: las fichas son long-tail
+let clicsNegocio: Record<string, number> = {};
+let eventDataOk = false;
 
 if (configured) {
   try {
@@ -56,14 +64,36 @@ if (configured) {
     const headers = { "x-umami-api-key": API_KEY, accept: "application/json" };
     const qs = `startAt=${start}&endAt=${end}`;
     const base = `${API_URL}/websites/${WEBSITE_ID}`;
-    const [s, urls, ev] = await Promise.all([
+    const [s, urls, ev, urlsAll] = await Promise.all([
       fetch(`${base}/stats?${qs}`, { headers }).then((r) => r.json()),
       fetch(`${base}/metrics?type=url&${qs}&limit=50`, { headers }).then((r) => r.json()),
       fetch(`${base}/metrics?type=event&${qs}&limit=100`, { headers }).then((r) => r.json()),
+      fetch(`${base}/metrics?type=url&${qs}&limit=500`, { headers }).then((r) => r.json()),
     ]);
     stats = s;
     topPages = Array.isArray(urls) ? urls : [];
     events = Array.isArray(ev) ? ev : [];
+    allPages = Array.isArray(urlsAll) ? urlsAll : [];
+
+    // Valores de la propiedad `negocio` de cada evento de salida. Si el plan de
+    // Umami no expone event-data, el bloque lo avisa y el total sigue visible
+    // en «Clics en enlaces» (por nombre de evento).
+    const vals = await Promise.all(
+      SALIDA_EVENTS.map((name) =>
+        fetch(`${base}/event-data/values?${qs}&eventName=${encodeURIComponent(name)}&propertyName=negocio`, { headers })
+          .then((r) => (r.ok ? r.json() : null))
+          .catch(() => null),
+      ),
+    );
+    for (const lista of vals) {
+      if (!Array.isArray(lista)) continue;
+      eventDataOk = true;
+      for (const row of lista) {
+        const slug = String(row.value ?? row.x ?? "");
+        const n = Number(row.total ?? row.y) || 0;
+        if (slug) clicsNegocio[slug] = (clicsNegocio[slug] ?? 0) + n;
+      }
+    }
   } catch (e) {
     error = e instanceof Error ? e.message : String(e);
   }
@@ -130,6 +160,32 @@ const toolRows = TOOLS.map((t) => {
     evs,
   };
 });
+
+// ── Filas de «Colaboradores» ─────────────────────────────────────────────────
+// Universo: fichas ES publicadas con web enlazada (lo que puede recibir un clic
+// saliente). Los locales del mapa de copas sin ficha propia aparecen con su id
+// en cuanto registran el primer clic. Visitas = suma de la ficha en ES+EN+FR.
+const negociosRoster = configured
+  ? await getCollection("lugares", (e) => e.data.lang === "es" && e.data.status === "published" && !!e.data.website)
+  : [];
+const FICHA_RE = /^\/(?:lugar|en\/place|fr\/lieu)\/(.+)-(?:es|en|fr)$/;
+const fichaViews: Record<string, number> = {};
+for (const p of allPages) {
+  const m = cleanPath(p.x).match(FICHA_RE);
+  if (m) fichaViews[m[1]] = (fichaViews[m[1]] ?? 0) + (Number(p.y) || 0);
+}
+const nombrePorSlug: Record<string, string> = {};
+for (const e of negociosRoster) nombrePorSlug[e.id.replace(/-es$/, "")] = e.data.name;
+const colabSlugs = [...new Set([...Object.keys(nombrePorSlug), ...Object.keys(clicsNegocio)])];
+const colabRows = colabSlugs
+  .map((slug) => ({
+    slug,
+    nombre: nombrePorSlug[slug] ?? slug,
+    visitas: fichaViews[slug] ?? 0,
+    clics: clicsNegocio[slug] ?? 0,
+  }))
+  .sort((a, b) => b.clics - a.clics || b.visitas - a.visitas || a.nombre.localeCompare(b.nombre));
+const totalSalidas = SALIDA_EVENTS.reduce((n, name) => n + eventCount(name), 0);
 ---
 
 <!doctype html>
@@ -234,6 +290,50 @@ const toolRows = TOOLS.map((t) => {
                     </ul>
                   </div>
                 ))}
+              </div>
+            </section>
+
+            <section>
+              <h2 class="font-display text-xl text-tinta">
+                Colaboradores <span class="text-sm font-normal text-piedra-suave">· {rangeLabel}</span>
+              </h2>
+              <p class="mt-1 text-sm text-piedra-suave">
+                Lo que alimenta el registro de colaboraciones (Excel): visitas a la ficha de cada
+                negocio y clics que le enviamos a su web desde la ficha, el mapa de copas y el
+                planificador. A primeros de mes, copia estos números a las columnas
+                «Visitas/mes» y «Clics enviados/mes». El negocio puede verificarlo en su propia
+                analítica: llegamos como <code>calmasociety / referral</code>.
+              </p>
+              {!eventDataOk && totalSalidas > 0 && (
+                <p class="mt-3 rounded-md bg-terracota/10 p-3 text-sm text-terracota">
+                  Umami no devuelve el detalle por negocio (API de event-data): hay {totalSalidas}
+                  clics salientes registrados en total, visibles por evento en «Clics en enlaces».
+                </p>
+              )}
+              <div class="mt-4 overflow-x-auto">
+                <table class="w-full min-w-[28rem] text-sm">
+                  <thead>
+                    <tr class="border-b border-niebla text-left text-xs uppercase tracking-wide text-piedra-suave">
+                      <th scope="col" class="py-2 pr-4 font-medium">Negocio</th>
+                      <th scope="col" class="py-2 pr-4 text-right font-medium">Visitas a la ficha</th>
+                      <th scope="col" class="py-2 text-right font-medium">Clics a su web</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-niebla">
+                    {colabRows.map((r) => (
+                      <tr>
+                        <td class="py-2 pr-4 text-piedra">{r.nombre}</td>
+                        <td class={`py-2 pr-4 text-right ${r.visitas > 0 ? "font-semibold text-tinta" : "font-semibold text-niebla"}`}>{r.visitas}</td>
+                        <td class={`py-2 text-right ${r.clics > 0 ? "font-semibold text-tinta" : "font-semibold text-niebla"}`}>{r.clics}</td>
+                      </tr>
+                    ))}
+                    {colabRows.length === 0 && (
+                      <tr>
+                        <td colspan="3" class="py-2 text-sm text-piedra-suave">Sin datos todavía.</td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
               </div>
             </section>
 
