@@ -3,10 +3,10 @@
   "lang": "es",
   "translationKey": "restaurante-smoix",
   "type": "restaurante",
-  "description": "Distinción Bib Gourmand de la Guía Michelin desde 2023, placa de recomendado en la guía 2026 y un Sol de la Guía Repsol de los veteranos de la isla, en pleno centro de Ciutadella. Cocina mediterránea de producto local con técnica e influencias internacionales, del chef Germán Blanch. Hotel boutique con cinco habitaciones. La parada de alta cocina con criterio en la capital de poniente.",
+  "description": "Distinción Bib Gourmand de la Guía Michelin desde 2023 y un Sol de la Guía Repsol que conserva tras mudarse al Hotel Rural Sant Ignasi, una finca del siglo XVIII en la carretera de Cala Morell, a unos 3 km de Ciutadella. Cocina mediterránea de producto local con técnica e influencias internacionales, del chef Miquel Sánchez. La parada de alta cocina con criterio del poniente de la isla, ahora entre encinas y campo.",
   "coordinates": {
-    "lat": 40,
-    "lng": 3.84
+    "lat": 40.0255,
+    "lng": 3.8653
   },
   "area": "Oeste (Ciutadella)",
   "tags": [
@@ -26,7 +26,7 @@
       "cultura"
     ],
     "durationMin": 120,
-    "carAccess": "sin-coche-ok",
+    "carAccess": "coche-directo",
     "busServed": false,
     "carAccessClosedSummer": false,
     "effortLevel": "A2",
@@ -34,11 +34,12 @@
     "weatherProof": "exterior",
     "needsReservation": true,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22",
+    "lastVerified": "2026-07-22",
     "highlights": [
       "mesa con Bib Gourmand de la Guía Michelin desde 2023 y un Sol de la Guía Repsol",
       "cocina mediterránea de producto ecológico y de temporada",
-      "reservar con antelación, en pleno centro de Ciutadella"
-    ]
+      "reservar con antelación; está en el Hotel Rural Sant Ignasi, carretera de Cala Morell (~3 km de Ciutadella)"
+    ],
+    "officialUrl": "https://www.smoix.com/"
   }
 }

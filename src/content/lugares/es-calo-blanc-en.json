@@ -3,10 +3,10 @@
   "lang": "en",
   "translationKey": "es-calo-blanc",
   "type": "cala",
-  "description": "A tiny cove, barely a few metres wide, tucked between the rocks and counted among the smallest on the island; a curious, little-known spot for a brief stop. Best to confirm the exact access on the ground.",
+  "description": "A tiny cove, barely a few metres wide, tucked between the rocks and counted among the smallest on the island; a curious, little-known spot for a brief stop. It sits by the residential area of Cap d'en Font (Sant Lluís), with an unpaved car park nearby and a staircase down to the sand on the western side; rocky surroundings, not step-free.",
   "coordinates": {
-    "lat": 39.83,
-    "lng": 4.29
+    "lat": 39.8294,
+    "lng": 4.211
   },
   "area": "South-east (Sant Lluís)",
   "tags": [
@@ -31,12 +31,12 @@
     "isIndoor": false,
     "weatherProof": "exterior",
     "needsReservation": false,
-    "dataCertainty": "baja",
-    "lastVerified": "2026-06-22",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-07-22",
     "highlights": [
       "looking out over one of the tiniest coves on the island",
       "a quick dip among the rocks in a curious little spot",
-      "combining it with Punta Prima or Binibeca, which are right next door"
+      "combining it with Binibèquer or Binidalí, which are right next door"
     ]
   }
 }

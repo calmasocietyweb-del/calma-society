@@ -3,10 +3,10 @@
   "lang": "es",
   "translationKey": "es-calo-blanc",
   "type": "cala",
-  "description": "Diminuta cala (apenas unos metros de anchura) encajada entre rocas, de las más pequeñas de la isla; un rincón curioso y poco conocido para una parada breve. El acceso exacto conviene confirmarlo sobre el terreno.",
+  "description": "Diminuta cala (apenas unos metros de anchura) encajada entre rocas, de las más pequeñas de la isla; un rincón curioso y poco conocido para una parada breve. Se llega junto a la zona residencial de Cap d'en Font (Sant Lluís), con aparcamiento sin asfaltar cerca y una escalera hasta la arena por el lado oeste; entorno rocoso, no adaptado.",
   "coordinates": {
-    "lat": 39.83,
-    "lng": 4.29
+    "lat": 39.8294,
+    "lng": 4.211
   },
   "area": "Sur-este (Sant Lluis)",
   "tags": [
@@ -31,12 +31,12 @@
     "isIndoor": false,
     "weatherProof": "exterior",
     "needsReservation": false,
-    "dataCertainty": "baja",
-    "lastVerified": "2026-06-22",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-07-22",
     "highlights": [
       "asomarte a una de las calas más diminutas de la isla",
       "un chapuzón rápido entre rocas en un rincón curioso",
-      "combinarla con Punta Prima o Binibeca, que quedan al lado"
+      "combinarla con Binibèquer o Binidalí, que quedan al lado"
     ]
   }
 }

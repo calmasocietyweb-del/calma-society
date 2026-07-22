@@ -5,8 +5,8 @@
   "type": "cala",
   "description": "A small, quiet cove with a residential feel, marked by boathouses and rock rather than a broad expanse of sand — more a spot for a local dip. Well suited to families seeking calm near the south-eastern villages.",
   "coordinates": {
-    "lat": 39.817,
-    "lng": 4.255
+    "lat": 39.8291,
+    "lng": 4.2185
   },
   "area": "South-east (Sant Lluís)",
   "tags": [
@@ -31,8 +31,8 @@
     "isIndoor": false,
     "weatherProof": "exterior",
     "needsReservation": false,
-    "dataCertainty": "baja",
-    "lastVerified": "2026-06-22",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-07-22",
     "highlights": [
       "bathing in a quiet residential cove, away from the bustle",
       "seeing the traditional boat houses up close",

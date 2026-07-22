@@ -3,7 +3,7 @@
   "lang": "en",
   "translationKey": "restaurante-sant-joan-de-binissaida",
   "type": "restaurante",
-  "description": "A welcoming 12-room country hotel with a market-led kitchen: fresh fish, local meat and vegetables from its own garden, reworking the Menorcan classics. Recommended in the Michelin Guide. Quiet luxury.",
+  "description": "A welcoming 12-room country hotel with a market-led kitchen: fresh fish, local meat and vegetables from its own garden, reworking the Menorcan classics. Quiet luxury in the countryside of the island's east.",
   "coordinates": {
     "lat": 39.88,
     "lng": 4.27
@@ -34,7 +34,7 @@
     "weatherProof": "cubierto",
     "needsReservation": true,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22",
+    "lastVerified": "2026-07-22",
     "indoorAlternativeOf": [
       "mao-puerto",
       "este"
@@ -43,6 +43,7 @@
       "market cooking with vegetables from its own organic garden",
       "dining in an 18th-century manor house with a garden",
       "booking ahead (a rural-hotel restaurant)"
-    ]
+    ],
+    "officialUrl": "https://binissaida.com/en/"
   }
 }
