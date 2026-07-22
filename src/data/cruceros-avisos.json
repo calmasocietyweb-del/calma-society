@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-21",
+  "updated": "2026-07-22",
   "ventana": {
-    "desde": "2026-07-21",
-    "hasta": "2026-08-17"
+    "desde": "2026-07-22",
+    "hasta": "2026-08-19"
   },
   "nuevas": [
     {
@@ -108,6 +108,20 @@
         {
           "ship": "ILMA",
           "eslora": 241.84
+        }
+      ],
+      "nota": "Dos cruceros el mismo día. Si uno fondea, se desembarca en lancha y el tiempo real en tierra cambia."
+    },
+    {
+      "date": "2026-08-19",
+      "barcos": [
+        {
+          "ship": "MSC OPERA",
+          "eslora": 274.9
+        },
+        {
+          "ship": "AIDASTELLA",
+          "eslora": 253.26
         }
       ],
       "nota": "Dos cruceros el mismo día. Si uno fondea, se desembarca en lancha y el tiempo real en tierra cambia."
