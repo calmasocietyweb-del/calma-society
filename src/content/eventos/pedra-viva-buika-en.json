@@ -6,8 +6,15 @@
   "location": "Mallaui venue (Pedra Viva festival)",
   "category": "concierto",
   "description": "The voice of Concha Buika, somewhere between jazz and flamenco, opens August at the 15th edition of Pedra Viva, the festival that brings performing arts to Menorca's most unexpected spaces. The 2026 edition returns after a year's pause with a smaller, more experimental programme. 9pm; tickets 45 €. Check the festival's official map for the exact venue location.",
-  "tags": ["concert", "jazz", "flamenco", "Pedra Viva"],
+  "tags": [
+    "concert",
+    "jazz",
+    "flamenco",
+    "Pedra Viva"
+  ],
   "sourceUrl": "https://pedraviva.events/programa",
   "status": "draft",
-  "source": "auto-agenda"
+  "source": "auto-agenda",
+  "image": "/uploads/ag-pedra-viva-buika.webp",
+  "imageCredit": "Abalg · Wikimedia (CC BY-SA 4.0)"
 }

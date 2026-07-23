@@ -7,8 +7,15 @@
   "location": "Espacios del festival Pedra Viva (Ciutadella y otros municipios)",
   "category": "cultura",
   "description": "Jornada-mostra del festival Pedra Viva con múltiples pases de teatro, circo, danza y música en espacios singulares de la isla; la mayoría de pases a 5 € (algunos gratuitos) y abono de jornada por 30 €. El festival pide silencio absoluto durante las funciones, y no todos los pases son familiares. El día 30, jornada profesional gratuita en Es Pinaret.",
-  "tags": ["artes escénicas", "teatro", "danza", "Pedra Viva"],
+  "tags": [
+    "artes escénicas",
+    "teatro",
+    "danza",
+    "Pedra Viva"
+  ],
   "sourceUrl": "https://pedraviva.events/programa",
   "status": "draft",
-  "source": "auto-agenda"
+  "source": "auto-agenda",
+  "image": "/uploads/ag-pedra-en-viu-mostra.webp",
+  "imageCredit": "Ehsanul Siddiq Aranya · Wikimedia (CC BY-SA 4.0)"
 }

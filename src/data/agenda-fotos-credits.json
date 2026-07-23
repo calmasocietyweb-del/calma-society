@@ -113,12 +113,6 @@
     "source": "Adobe Stock",
     "licencia": "colección gratuita (free)"
   },
-  "ag-trail-menorca-cami-de-cavalls-2026": {
-    "assetId": "466481959",
-    "name": "Closeup of man trail running on rocky terrain.",
-    "source": "Adobe Stock",
-    "licencia": "colección gratuita (free)"
-  },
   "ag-vela-clasica-menorca-copa-rey-barcos-epoca": {
     "assetId": "349492419",
     "name": "Schooner under sails sailing across a bay under beautiful skies",
@@ -456,6 +450,105 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fiestas_de_Sant_Jaume_en_Es_Castell_Menorca_(7831902056).jpg",
     "desc": "Caixers a caballo, Es Castell",
+    "nota": "recortada/redimensionada para la web"
+  },
+  "ag-pedra-viva-buika": {
+    "source": "Wikimedia Commons",
+    "author": "Abalg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Concha_Buika.JPG",
+    "desc": "Concha Buika en concierto",
+    "nota": "recortada/redimensionada para la web"
+  },
+  "ag-pedra-viva-tancarville-la-mola": {
+    "source": "Wikimedia Commons",
+    "author": "Menorquino",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fortalesa_de_La_Mola_(Menorca,_2_de_agosto_de_2014)_11.jpg",
+    "desc": "Fortalesa de la Mola, Maó",
+    "nota": "recortada/redimensionada para la web"
+  },
+  "ag-pedra-en-viu-mostra": {
+    "source": "Wikimedia Commons",
+    "author": "Ehsanul Siddiq Aranya",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aerial_Marvel,_Young_Acrobat_Takes_Center_Stage.jpg",
+    "desc": "Acróbata en carpa (artes escénicas)",
+    "nota": "imagen representativa de artes escénicas/circo; recortada para la web"
+  },
+  "ag-gala-estrelles-dansa-teatre-principal": {
+    "source": "Wikimedia Commons",
+    "author": "Teatremao",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_night_at_the_Opera_IV.jpg",
+    "desc": "Interior del Teatre Principal de Maó",
+    "nota": "recortada/redimensionada para la web"
+  },
+  "ag-enjoy-ciutadella-rutes-patrimoni": {
+    "source": "Wikimedia Commons",
+    "author": "Menorquino",
+    "license": "CC BY-SA 3.0 ES",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/es/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ciutadella_de_Menorca_(29_de_julio_de_2014)_06.JPG",
+    "desc": "Puerto de Ciutadella",
+    "nota": "recortada/redimensionada para la web"
+  },
+  "ag-jornades-vedella-vermella": {
+    "source": "Wikimedia Commons",
+    "author": "Alejandro Muñoz Cabrisas",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vaca_aut%C3%B3ctona_1.jpg",
+    "desc": "Vaca vermella menorquina",
+    "nota": "recortada/redimensionada para la web"
+  },
+  "ag-october-trail-menorca": {
+    "source": "Wikimedia Commons",
+    "author": "Franrull",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Camino_de_Caballos,_cerca_de_Cala_Macarella_en_Menorca.jpg",
+    "desc": "Camí de Cavalls junto a Cala Macarella",
+    "nota": "recortada/redimensionada para la web"
+  },
+  "ag-hauser-wirth-directionless": {
+    "source": "Wikimedia Commons",
+    "author": "Dreizung",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Illa_del_Rei_2011.JPG",
+    "desc": "Illa del Rei, puerto de Maó",
+    "nota": "recortada/redimensionada para la web"
+  },
+  "ag-jornades-europees-patrimoni": {
+    "source": "Wikimedia Commons",
+    "author": "Daniel Lobo",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Naveta_des_Tudons_(2).jpg",
+    "desc": "Naveta des Tudons",
+    "nota": "recortada/redimensionada para la web"
+  },
+  "ag-jornades-berenar-pages": {
+    "source": "Wikimedia Commons",
+    "author": "Slastic",
+    "license": "Public domain",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pa_amb_sobrassada_i_mel.jpg",
+    "desc": "Pa amb sobrassada i mel",
+    "nota": "recortada/redimensionada para la web"
+  },
+  "ag-dimecres-dia-de-brou": {
+    "source": "Wikimedia Commons",
+    "author": "Juan Emilio Prades Bel",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Escudella_catalana_plato_de_cuchara_con_carne,_verduras_y_pasta.jpg",
+    "desc": "Escudella / caldo con galets",
     "nota": "recortada/redimensionada para la web"
   }
 }

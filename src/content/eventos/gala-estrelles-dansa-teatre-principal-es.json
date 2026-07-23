@@ -6,8 +6,15 @@
   "location": "Teatre Principal de Maó",
   "category": "cultura",
   "description": "Figuras internacionales de la danza sobre el escenario del teatro de ópera más antiguo de España (1829), en la gala anual a beneficio de la Fundació Rubió. Una cita veraniega consolidada del Principal. A las 20:30; entradas en la taquilla y la web del teatro.",
-  "tags": ["danza", "Teatre Principal", "Maó", "gala"],
+  "tags": [
+    "danza",
+    "Teatre Principal",
+    "Maó",
+    "gala"
+  ],
   "sourceUrl": "https://teatremao.com/calendari/",
   "status": "draft",
-  "source": "auto-agenda"
+  "source": "auto-agenda",
+  "image": "/uploads/ag-gala-estrelles-dansa-teatre-principal.webp",
+  "imageCredit": "Teatremao · Wikimedia (CC BY-SA 4.0)"
 }

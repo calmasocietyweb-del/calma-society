@@ -7,8 +7,15 @@
   "location": "Participating restaurants across the island",
   "category": "gastronomia",
   "description": "Every Wednesday in December (2, 9, 16, 23 and 30), participating restaurants serve menus built around brou, Menorca's traditional broth: the island's signature winter food event, now in its thirteenth edition. The cycle continues on Wednesdays 13, 20 and 27 January 2027. The list of restaurants is at gastronomiamenorca.es.",
-  "tags": ["gastronomy", "brou", "winter", "tradition"],
+  "tags": [
+    "gastronomy",
+    "brou",
+    "winter",
+    "tradition"
+  ],
   "sourceUrl": "https://www.gastronomiamenorca.es/jornadas",
   "status": "draft",
-  "source": "auto-agenda"
+  "source": "auto-agenda",
+  "image": "/uploads/ag-dimecres-dia-de-brou.webp",
+  "imageCredit": "Juan Emilio Prades Bel · Wikimedia (CC BY 4.0)"
 }

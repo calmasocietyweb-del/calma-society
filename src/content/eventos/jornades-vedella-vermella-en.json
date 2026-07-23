@@ -7,8 +7,15 @@
   "location": "Participating restaurants across the island",
   "category": "gastronomia",
   "description": "Two October weekends (9-11 and 16-18) devoted to the meat of the vedella vermella, Menorca's native red cattle breed, bound to the landscapes of the Biosphere Reserve, with special menus at participating restaurants. Eighth edition; the list of restaurants is published at gastronomiamenorca.es.",
-  "tags": ["gastronomy", "local produce", "vedella vermella", "autumn"],
+  "tags": [
+    "gastronomy",
+    "local produce",
+    "vedella vermella",
+    "autumn"
+  ],
   "sourceUrl": "https://www.gastronomiamenorca.es/jornadas",
   "status": "draft",
-  "source": "auto-agenda"
+  "source": "auto-agenda",
+  "image": "/uploads/ag-jornades-vedella-vermella.webp",
+  "imageCredit": "Alejandro Muñoz Cabrisas · Wikimedia (CC BY-SA 4.0)"
 }

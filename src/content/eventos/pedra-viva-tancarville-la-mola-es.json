@@ -6,8 +6,15 @@
   "location": "Fortalesa de la Mola, Maó",
   "category": "cultura",
   "description": "El circo contemporáneo de «Tancarville» toma la Fortalesa de la Mola, uno de los escenarios patrimoniales más imponentes de la bocana del puerto de Maó, dentro del festival Pedra Viva 2026. A las 21:00; entrada 30 €.",
-  "tags": ["circo contemporáneo", "La Mola", "Maó", "Pedra Viva"],
+  "tags": [
+    "circo contemporáneo",
+    "La Mola",
+    "Maó",
+    "Pedra Viva"
+  ],
   "sourceUrl": "https://pedraviva.events/programa",
   "status": "draft",
-  "source": "auto-agenda"
+  "source": "auto-agenda",
+  "image": "/uploads/ag-pedra-viva-tancarville-la-mola.webp",
+  "imageCredit": "Menorquino · Wikimedia (CC BY-SA 4.0)"
 }

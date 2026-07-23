@@ -7,8 +7,15 @@
   "location": "Monumentos y yacimientos de toda la isla",
   "category": "cultura",
   "description": "Cada octubre Menorca se suma a las Jornadas Europeas de Patrimonio con visitas guiadas y actividades gratuitas en monumentos y yacimientos, Menorca Talayótica (Patrimonio Mundial) incluida. El lema europeo de 2026 es «Heritage at Risk». El programa insular se publica en septiembre en agenda.menorca.es; las fechas del marco europeo son el 9-11 de octubre.",
-  "tags": ["patrimonio", "Menorca Talayótica", "visitas guiadas", "gratis"],
+  "tags": [
+    "patrimonio",
+    "Menorca Talayótica",
+    "visitas guiadas",
+    "gratis"
+  ],
   "sourceUrl": "https://patrimoni.gencat.cat/ca/jornadeseuropeesdelpatrimoni",
   "status": "draft",
-  "source": "auto-agenda"
+  "source": "auto-agenda",
+  "image": "/uploads/ag-jornades-europees-patrimoni.webp",
+  "imageCredit": "Daniel Lobo · Wikimedia (CC BY 2.0)"
 }

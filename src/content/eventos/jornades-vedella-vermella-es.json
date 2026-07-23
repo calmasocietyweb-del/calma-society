@@ -7,8 +7,15 @@
   "location": "Restaurantes participantes de toda la isla",
   "category": "gastronomia",
   "description": "Dos fines de semana de octubre (9-11 y 16-18) dedicados a la carne de vaca vermella menorquina, la raza autóctona ligada al paisaje de la Reserva de Biosfera, con menús especiales en los restaurantes adheridos. Octava edición; la lista de restaurantes participantes se publica en gastronomiamenorca.es.",
-  "tags": ["gastronomía", "producto local", "vedella vermella", "otoño"],
+  "tags": [
+    "gastronomía",
+    "producto local",
+    "vedella vermella",
+    "otoño"
+  ],
   "sourceUrl": "https://www.gastronomiamenorca.es/jornadas",
   "status": "draft",
-  "source": "auto-agenda"
+  "source": "auto-agenda",
+  "image": "/uploads/ag-jornades-vedella-vermella.webp",
+  "imageCredit": "Alejandro Muñoz Cabrisas · Wikimedia (CC BY-SA 4.0)"
 }

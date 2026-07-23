@@ -6,8 +6,15 @@
   "location": "Teatre Principal de Maó",
   "category": "cultura",
   "description": "International dance figures on the stage of Spain's oldest opera house (1829), at the annual gala in aid of the Fundació Rubió. A well-established summer fixture of the Principal. 8.30pm; tickets at the box office and on the theatre's website.",
-  "tags": ["dance", "Teatre Principal", "Maó", "gala"],
+  "tags": [
+    "dance",
+    "Teatre Principal",
+    "Maó",
+    "gala"
+  ],
   "sourceUrl": "https://teatremao.com/calendari/",
   "status": "draft",
-  "source": "auto-agenda"
+  "source": "auto-agenda",
+  "image": "/uploads/ag-gala-estrelles-dansa-teatre-principal.webp",
+  "imageCredit": "Teatremao · Wikimedia (CC BY-SA 4.0)"
 }

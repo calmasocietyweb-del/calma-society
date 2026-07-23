@@ -6,8 +6,15 @@
   "location": "From Son Bou (Alaior) to Cala en Bosc (Ciutadella)",
   "category": "deporte",
   "description": "The autumn race along the Camí de Cavalls, now in its eighth edition: a 32 km marathon from Son Bou (9.30am), a 19 km half and an 11 km fun run, all finishing by the sea on Cala en Bosc beach. Organised by Club Esportiu Biosport, with entries via Elitechip. It falls the day after the Volta Cicloturista — a big autumn sports weekend on the island.",
-  "tags": ["trail running", "Camí de Cavalls", "sport", "autumn"],
+  "tags": [
+    "trail running",
+    "Camí de Cavalls",
+    "sport",
+    "autumn"
+  ],
   "sourceUrl": "https://illadelstrails.com/carrera-october-trail/",
   "status": "draft",
-  "source": "auto-agenda"
+  "source": "auto-agenda",
+  "image": "/uploads/ag-october-trail-menorca.webp",
+  "imageCredit": "Franrull · Wikimedia (CC BY-SA 4.0)"
 }

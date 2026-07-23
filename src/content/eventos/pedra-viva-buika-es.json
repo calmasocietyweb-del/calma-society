@@ -6,8 +6,15 @@
   "location": "Espacio Mallaui (festival Pedra Viva)",
   "category": "concierto",
   "description": "La voz de Concha Buika, entre el jazz y el flamenco, abre el agosto de la 15ª edición de Pedra Viva, el festival que lleva las artes escénicas a espacios no escénicos de Menorca. La edición 2026 vuelve tras un año de pausa con un programa más experimental y reducido. A las 21:00; entrada 45 €. La ubicación exacta del espacio, en el mapa oficial del festival.",
-  "tags": ["concierto", "jazz", "flamenco", "Pedra Viva"],
+  "tags": [
+    "concierto",
+    "jazz",
+    "flamenco",
+    "Pedra Viva"
+  ],
   "sourceUrl": "https://pedraviva.events/programa",
   "status": "draft",
-  "source": "auto-agenda"
+  "source": "auto-agenda",
+  "image": "/uploads/ag-pedra-viva-buika.webp",
+  "imageCredit": "Abalg · Wikimedia (CC BY-SA 4.0)"
 }

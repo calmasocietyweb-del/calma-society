@@ -7,8 +7,15 @@
   "location": "Ciutadella (varios puntos de encuentro)",
   "category": "cultura",
   "description": "El servicio de turismo del Ajuntament de Ciutadella enseña la identidad del municipio sin prisa y sin coste: ruta creativa entre artesanos, la costa mirando al mar, cielo estrellado de noche y producto local. Ciclo de junio a octubre con varias rutas semanales; plazas limitadas con inscripción previa en ajciutadella.org. Los horarios de cada semana, en la web municipal.",
-  "tags": ["visitas guiadas", "patrimonio", "Ciutadella", "gratis"],
+  "tags": [
+    "visitas guiadas",
+    "patrimonio",
+    "Ciutadella",
+    "gratis"
+  ],
   "sourceUrl": "https://agenda.menorca.es/Contingut.aspx?IdPub=34794",
   "status": "draft",
-  "source": "auto-agenda"
+  "source": "auto-agenda",
+  "image": "/uploads/ag-enjoy-ciutadella-rutes-patrimoni.webp",
+  "imageCredit": "Menorquino · Wikimedia (CC BY-SA 3.0 ES)"
 }
