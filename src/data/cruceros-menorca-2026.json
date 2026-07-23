@@ -1,10 +1,10 @@
 {
   "season": 2026,
   "port": "Maó",
-  "updated": "2026-07-22",
+  "updated": "2026-07-23",
   "seasonEstimate": "125-130",
-  "coveragePct": 78,
-  "totalListed": 99,
+  "coveragePct": 80,
+  "totalListed": 103,
   "officialSource": "https://www.portsdebalears.com/es/buques-en-puerto",
   "sources": {
     "confirmadas": "menorca.info — datos de los consignatarios del puerto",
@@ -17,12 +17,13 @@
       "date": "2026-03-22",
       "ship": "Four Seasons I",
       "line": "Four Seasons Yachts",
-      "pax": 95,
+      "pax": 190,
       "arrival": null,
       "departure": null,
       "confidence": "alta",
       "sourceCount": 1,
-      "source": "https://www.menorca.info/menorca/local/2026/03/22/2594251/four-seasons-lujoso-estreno-nueva-temporada-cruceros-puerto-mao.html"
+      "source": "https://www.menorca.info/menorca/local/2026/03/22/2594251/four-seasons-lujoso-estreno-nueva-temporada-cruceros-puerto-mao.html",
+      "paxNote": "~190 pasajeros (máx. 222; 95 suites)"
     },
     {
       "date": "2026-03-23",
@@ -575,6 +576,17 @@
       "source": "https://www.portsdebalears.com/es/buques-en-puerto"
     },
     {
+      "date": "2026-08-08",
+      "ship": "Le Dumont-d'Urville",
+      "line": "Ponant",
+      "pax": 184,
+      "arrival": "12:00",
+      "departure": "18:00",
+      "confidence": "alta",
+      "sourceCount": 2,
+      "source": "https://www.cruisekings.co.uk/cruise-details/ponant/le-dumont-durville/corsica-sardinia-iberian-shores/depart-03-aug-2026-for-8-nights/2201228/"
+    },
+    {
       "date": "2026-08-09",
       "ship": "MSC Opera",
       "line": "MSC Cruises",
@@ -584,6 +596,18 @@
       "confidence": "alta",
       "sourceCount": 2,
       "source": "https://www.portsdebalears.com/es/buques-en-puerto"
+    },
+    {
+      "date": "2026-08-10",
+      "ship": "La Belle des Océans",
+      "line": "CroisiEurope",
+      "pax": 130,
+      "arrival": "16:00",
+      "departure": "00:30",
+      "departureDate": "2026-08-11",
+      "confidence": "alta",
+      "sourceCount": 2,
+      "source": "https://www.croisieuroperivercruises.com/boat/mv-la-belle-des-oceans"
     },
     {
       "date": "2026-08-11",
@@ -608,15 +632,15 @@
       "source": "https://www.portsdebalears.com/es/buques-en-puerto"
     },
     {
-      "date": "2026-08-14",
-      "ship": "Azamara Onward",
-      "line": "Azamara Cruises",
-      "pax": 684,
-      "arrival": "08:00",
-      "departure": "16:00",
-      "confidence": "media",
-      "sourceCount": 1,
-      "source": "https://cruisedig.com/ports/port-mahon-minorca/arrivals"
+      "date": "2026-08-13",
+      "ship": "Le Dumont-d'Urville",
+      "line": "Ponant",
+      "pax": 184,
+      "arrival": "12:00",
+      "departure": "18:00",
+      "confidence": "alta",
+      "sourceCount": 2,
+      "source": "https://www.cruisekings.co.uk/cruise-details/ponant/le-dumont-durville/a-solar-eclipse-at-sea-voyage-across-the-western/depart-11-aug-2026-for-8-nights/2201103/"
     },
     {
       "date": "2026-08-15",
@@ -630,6 +654,17 @@
       "source": "https://www.portsdebalears.com/es/buques-en-puerto"
     },
     {
+      "date": "2026-08-16",
+      "ship": "Marella Explorer",
+      "line": "Marella Cruises",
+      "pax": 1924,
+      "arrival": "11:00",
+      "departure": "18:00",
+      "confidence": "alta",
+      "sourceCount": 2,
+      "source": "https://www.cruisetimetables.com/cruisesonmarellaexplorer-aug2026.html"
+    },
+    {
       "date": "2026-08-17",
       "ship": "Ritz-Carlton Ilma",
       "line": "Ritz-Carlton Yacht Collection",
@@ -639,6 +674,18 @@
       "confidence": "alta",
       "sourceCount": 2,
       "source": "https://www.portsdebalears.com/es/buques-en-puerto"
+    },
+    {
+      "date": "2026-08-17",
+      "ship": "Four Seasons I",
+      "line": "Four Seasons Yachts",
+      "pax": 190,
+      "paxNote": "~190 pasajeros (máx. 222; 95 suites)",
+      "arrival": "08:00",
+      "departure": "16:00",
+      "confidence": "alta",
+      "sourceCount": 2,
+      "source": "https://www.fourseasonsyachts.com/voyages/the-rivieras-featuring-menorca-and-cassis?id=FS-I-260816-007"
     },
     {
       "date": "2026-08-19",
