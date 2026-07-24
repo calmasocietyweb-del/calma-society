@@ -1,12 +1,19 @@
 {
-  "updated": "2026-07-23",
+  "updated": "2026-07-24",
   "ventana": {
-    "desde": "2026-07-23",
+    "desde": "2026-07-24",
     "hasta": "2026-08-19"
   },
   "nuevas": [],
   "desaparecidas": [],
-  "dudasDeNombre": [],
+  "dudasDeNombre": [
+    {
+      "date": "2026-08-17",
+      "puerto": "FOUR SEASONS",
+      "nuestro": "Four Seasons I",
+      "nota": "Mismo día y nombres que se solapan: casi seguro el mismo barco escrito de otra forma, no una cancelación. Si se confirma, añadirlo a ALIAS_BARCOS en src/lib/apb.ts y dejará de preguntarlo."
+    }
+  ],
   "dobles": [
     {
       "date": "2026-08-08",
@@ -64,6 +71,5 @@
       ],
       "nota": "Dos cruceros el mismo día. Si uno fondea, se desembarca en lancha y el tiempo real en tierra cambia."
     }
-  ],
-  "resueltoManual": "2026-07-23: las 5 escalas verificadas se integraron en el calendario y el Azamara Onward del 14-ago se retiró (su itinerario vigente lo pone en Roses). El robot lo recalculará solo en su próxima corrida; los avisos de dobles se conservan por ser válidos."
+  ]
 }
