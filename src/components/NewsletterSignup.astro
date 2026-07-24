@@ -25,6 +25,14 @@ interface Props {
   title?: string;
   text?: string;
   cta?: string;
+  /**
+   * Variante "inline": origen del alta (→ /api/suscribir) y nombre del evento
+   * Umami del envío, para DISTINGUIR la captación por colocación (p. ej. la
+   * portada de Agenda usa `agenda` / `newsletter-submit-agenda`). Por defecto,
+   * fin de artículo.
+   */
+  origen?: string;
+  umamiEvent?: string;
 }
 const {
   variant = "section",
@@ -33,6 +41,8 @@ const {
   title,
   text,
   cta,
+  origen = "articulo",
+  umamiEvent = "newsletter-submit-inline",
 } = Astro.props;
 
 const locale = currentLocale(Astro.url.pathname);
@@ -77,7 +87,7 @@ const mlMode = action
         <p class="mx-auto mt-3 max-w-md text-sm leading-relaxed text-piedra-suave">
           {copy.text}
         </p>
-        <SubscribeForm origen="articulo" tone="light" idSuffix="-inline" umamiEvent="newsletter-submit-inline" />
+        <SubscribeForm origen={origen} tone="light" idSuffix="-inline" umamiEvent={umamiEvent} />
       </div>
     </aside>
   )

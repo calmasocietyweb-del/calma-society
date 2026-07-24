@@ -111,5 +111,22 @@ const brief = (text: string) =>
 
 {/* Punto de captación al pie de la portada de sección: el visitante orgánico
     (buscador/IA) que no entra en ningún artículo también ve la invitación a la
-    Society. Variante "inline" = la versión sobria, una sola por pantalla. */}
-<NewsletterSignup variant="inline" />
+    Society. Variante "inline" = la versión sobria, una sola por pantalla.
+    La AGENDA (2ª página más vista) usa aquí su PROPIO gancho y su PROPIA
+    atribución (origen `agenda` + evento Umami `newsletter-submit-agenda`) para
+    medir cuántas altas nacen en la agenda, sin prometer una cadencia de agenda
+    que hoy no enviamos. El resto de secciones mantiene la invitación genérica. */}
+{
+  isAgenda ? (
+    <NewsletterSignup
+      variant="inline"
+      eyebrow={t("newsletter.agenda.eyebrow")}
+      title={t("newsletter.agenda.title")}
+      text={t("newsletter.agenda.text")}
+      origen="agenda"
+      umamiEvent="newsletter-submit-agenda"
+    />
+  ) : (
+    <NewsletterSignup variant="inline" />
+  )
+}

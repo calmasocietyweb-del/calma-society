@@ -101,8 +101,20 @@ export const ui = {
 
     "newsletter.eyebrow": "La Sociedad",
     "newsletter.title": "Forma parte de la Sociedad",
+    // Copy VERAZ (visto bueno del dueño, 24-jul): hoy no se envía una newsletter
+    // periódica, así que NO prometemos cadencia ni una publicación continua.
+    // Solo lo que el suscriptor recibe de verdad: alta, bienvenida y algún envío
+    // puntual cuando de veras merece la pena.
     "newsletter.text":
-      "Mantente conectado a Calma Society: cada quince días, las noticias de la Sociedad y lo mejor de Menorca, con mirada de lujo tranquilo. Sin ruido.",
+      "Forma parte de la Sociedad. Sin cadencia impuesta ni ruido: te escribimos solo cuando hay algo que de verdad merece la pena — lo mejor de Menorca, con mirada de lujo tranquilo.",
+    // Gancho específico de la portada de Agenda (2ª página más vista). Copy
+    // conservador (visto bueno del dueño, 24-jul): NO prometemos entrega de
+    // contenido por correo — hoy no se envía newsletter periódica. Reutiliza el
+    // mismo CTA de la Sociedad.
+    "newsletter.agenda.eyebrow": "No te lo pierdas",
+    "newsletter.agenda.title": "No te pierdas lo que pasa en Menorca",
+    "newsletter.agenda.text":
+      "La isla no para: fiestas, conciertos y mercados durante todo el año. Únete a la Sociedad y mantén Menorca cerca, con mirada de lujo tranquilo. Sin ruido.",
     "newsletter.placeholder": "Tu correo electrónico",
     "newsletter.cta": "Unirme a la Sociedad",
     "newsletter.privacy": "Sin spam. Te das de baja cuando quieras.",
@@ -226,8 +238,19 @@ export const ui = {
 
     "newsletter.eyebrow": "The Society",
     "newsletter.title": "Become part of the Society",
+    // Truthful copy (owner sign-off, 24 Jul): no periodic newsletter is sent
+    // today, so we promise NO cadence and no continuous publication. Only what
+    // the subscriber actually gets: sign-up, welcome and the occasional email
+    // when it's genuinely worth it.
     "newsletter.text":
-      "Stay connected to Calma Society: every fortnight, the Society's news and the best of Menorca, through a quiet-luxury lens. No noise.",
+      "Become part of the Society. No fixed cadence, no noise: we only write when there's something truly worth your time — the best of Menorca, through a quiet-luxury lens.",
+    // Agenda-specific hook (2nd most-viewed page). Conservative copy (owner
+    // sign-off, 24 Jul): we do NOT promise content delivery by email — no
+    // periodic newsletter is sent today. Reuses the same Society CTA.
+    "newsletter.agenda.eyebrow": "Don't miss out",
+    "newsletter.agenda.title": "Don't miss what's on in Menorca",
+    "newsletter.agenda.text":
+      "The island never rests: festivals, concerts and markets all year round. Join the Society and keep Menorca close, through a quiet-luxury lens. No noise.",
     "newsletter.placeholder": "Your email address",
     "newsletter.cta": "Join the Society",
     "newsletter.privacy": "No spam. Unsubscribe anytime.",
@@ -351,8 +374,20 @@ export const ui = {
 
     "newsletter.eyebrow": "La Société",
     "newsletter.title": "Rejoignez la Société",
+    // Copy honnête (accord du propriétaire, 24 juil.) : aucune newsletter
+    // périodique n'est envoyée aujourd'hui, donc nous ne promettons NI cadence ni
+    // publication continue. Seulement ce que l'abonné reçoit vraiment : inscription,
+    // bienvenue et un e-mail ponctuel quand cela en vaut vraiment la peine.
     "newsletter.text":
-      "Restez connecté à Calma Society : tous les quinze jours, les nouvelles de la Société et le meilleur de Minorque, dans un regard de luxe tranquille. Sans bruit.",
+      "Faites partie de la Société. Sans cadence imposée ni bruit : nous vous écrivons seulement quand il y a quelque chose qui en vaut vraiment la peine — le meilleur de Minorque, dans un regard de luxe tranquille.",
+    // Accroche propre à l'Agenda (2e page la plus vue). Copy conservateur (accord
+    // du propriétaire, 24 juil.) : nous ne promettons PAS de livraison de contenu
+    // par e-mail — aucune newsletter périodique n'est envoyée aujourd'hui. Reprend
+    // le même CTA de la Société.
+    "newsletter.agenda.eyebrow": "Ne manquez rien",
+    "newsletter.agenda.title": "Ne manquez rien de ce qui se passe à Minorque",
+    "newsletter.agenda.text":
+      "L'île ne s'arrête jamais : fêtes, concerts et marchés toute l'année. Rejoignez la Société et gardez Minorque tout près, dans un regard de luxe tranquille. Sans bruit.",
     "newsletter.placeholder": "Votre adresse e-mail",
     "newsletter.cta": "Rejoindre la Société",
     "newsletter.privacy": "Pas de spam. Désabonnement quand vous voulez.",
