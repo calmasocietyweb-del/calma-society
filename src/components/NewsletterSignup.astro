@@ -26,10 +26,15 @@ interface Props {
   text?: string;
   cta?: string;
   /**
-   * Variante "inline": origen del alta (→ /api/suscribir) y nombre del evento
-   * Umami del envío, para DISTINGUIR la captación por colocación (p. ej. la
-   * portada de Agenda usa `agenda` / `newsletter-submit-agenda`). Por defecto,
-   * fin de artículo.
+   * ATRIBUCIÓN POR-ORIGEN de la captación (para comparar en Umami qué superficie
+   * convierte mejor). Cada colocación pasa su propio `origen` (→ /api/suscribir,
+   * medido por Umami no por MailerLite) y su propio `umamiEvent` (`newsletter-submit-<origen>`).
+   * - Variante "inline": el evento se dispara en el envío REAL del SubscribeForm.
+   * - Variante "section": en modo MailerLite EMBEBIDO el envío real ocurre dentro
+   *   del formulario de MailerLite (no lo ve Umami); aquí el `umamiEvent` etiqueta
+   *   el formulario NATIVO de respaldo (`<origen>-fallback`) y el modo "custom".
+   * Superficies: home · pagina-newsletter · seccion · agenda · articulo · lugar ·
+   * herramienta · lead-magnet · popup (este último en NewsletterPopup.astro).
    */
   origen?: string;
   umamiEvent?: string;
@@ -41,8 +46,8 @@ const {
   title,
   text,
   cta,
-  origen = "articulo",
-  umamiEvent = "newsletter-submit-inline",
+  origen = "web",
+  umamiEvent = "newsletter-submit-web",
 } = Astro.props;
 
 const locale = currentLocale(Astro.url.pathname);
@@ -108,7 +113,7 @@ const mlMode = action
         </p>
 
         {captureMode ? (
-          <SocietyCaptureForm locale={locale} tone="dark" umamiEvent="newsletter-submit" />
+          <SocietyCaptureForm locale={locale} tone="dark" umamiEvent={umamiEvent} />
         ) : mlMode === "embedded" ? (
           <div class="mx-auto mt-8 max-w-md">
             {/* Captación principal: formulario embebido de MailerLite (su lista). */}
@@ -119,7 +124,7 @@ const mlMode = action
                 cuando hace falta, sin parpadeo en el caso normal. */}
             <div class="ml-fallback" hidden>
               <p class="mb-1 text-xs text-lino/60">{copy.text}</p>
-              <SocietyCaptureForm locale={locale} tone="dark" idSuffix="-mlfb" umamiEvent="newsletter-submit-fallback" />
+              <SocietyCaptureForm locale={locale} tone="dark" idSuffix="-mlfb" umamiEvent={`${umamiEvent}-fallback`} />
             </div>
             <noscript>
               <style>{`.ml-fallback{display:block!important}`}</style>
@@ -170,7 +175,7 @@ const mlMode = action
               type="submit"
               disabled={mlMode === "preview"}
               class="press shrink-0 rounded-md bg-oro-vivo px-6 py-3 text-sm font-semibold text-tinta hover:bg-lino disabled:cursor-not-allowed disabled:opacity-60"
-              data-umami-event={mlMode === "custom" ? "newsletter-submit" : undefined}
+              data-umami-event={mlMode === "custom" ? umamiEvent : undefined}
             >
               {copy.cta}
             </button>

@@ -71,7 +71,7 @@ const beneficios = [
   {
     SITE.newsletter.enabled || SITE.newsletter.capture.enabled ? (
       <div class="mt-14">
-        <NewsletterSignup />
+        <NewsletterSignup origen="pagina-newsletter" umamiEvent="newsletter-submit-pagina-newsletter" />
       </div>
     ) : (
       <p class="mx-auto mt-12 max-w-prosa px-5 text-center text-piedra-suave sm:px-8">

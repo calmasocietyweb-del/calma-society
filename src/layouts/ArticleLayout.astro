@@ -223,7 +223,7 @@ const breadcrumb = breadcrumbSchema([
   }
 
   {/* Invitación a la Sociedad (captación = KPI nº1). Compacta, al cierre. */}
-  <NewsletterSignup variant="inline" />
+  <NewsletterSignup variant="inline" origen="articulo" umamiEvent="newsletter-submit-articulo" />
 
   <JsonLd schema={faqLd ? [articleLd, breadcrumb, faqLd] : [articleLd, breadcrumb]} />
 </BaseLayout>
