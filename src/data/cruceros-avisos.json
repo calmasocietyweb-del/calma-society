@@ -1,19 +1,12 @@
 {
-  "updated": "2026-07-26",
+  "updated": "2026-07-27",
   "ventana": {
-    "desde": "2026-07-26",
+    "desde": "2026-07-27",
     "hasta": "2026-08-19"
   },
   "nuevas": [],
   "desaparecidas": [],
-  "dudasDeNombre": [
-    {
-      "date": "2026-08-17",
-      "puerto": "FOUR SEASONS",
-      "nuestro": "Four Seasons I",
-      "nota": "Mismo día y nombres que se solapan: casi seguro el mismo barco escrito de otra forma, no una cancelación. Si se confirma, añadirlo a ALIAS_BARCOS en src/lib/apb.ts y dejará de preguntarlo."
-    }
-  ],
+  "dudasDeNombre": [],
   "dobles": [
     {
       "date": "2026-08-08",
