@@ -94,6 +94,9 @@ function partirFecha(f: string | undefined): { date: string | null; time: string
  */
 const ALIAS_BARCOS: Record<string, string> = {
   ILMA: "RITZCARLTONILMA",
+  // El puerto escribe "FOUR SEASONS" y nosotros "Four Seasons I" (el único
+  // barco en servicio de la naviera). Confirmado en la escala del 17-ago-2026.
+  FOURSEASONS: "FOURSEASONSI",
 };
 
 /** El puerto escribe "AIDASTELLA" y nosotros "AIDAstella": es el mismo barco. */
