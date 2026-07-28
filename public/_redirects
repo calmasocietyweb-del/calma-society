@@ -1,0 +1,47 @@
+# Redirecciones permanentes (Cloudflare Pages).
+#
+# Cada regla mata un 404 real detectado en Google Search Console. Google tarda
+# semanas en dejar de pedir una URL retirada: un 301 le dice a dónde ha ido y
+# recupera la autoridad del enlace en vez de perderla.
+#
+# Sintaxis: <origen> <destino> <código>. Sin comodín salvo que se diga: las
+# reglas exactas NO capturan las páginas hijas (p. ej. `/en/place/` no afecta a
+# `/en/place/cala-macarella-en/`).
+#
+# Al añadir una regla, comprueba antes que el destino responde 200.
+# Auditoría: 2026-07-28 (14 × 404 en GSC, primera detección 1-jul).
+
+# ── Firma editorial ────────────────────────────────────────────────────────
+# La autoría pasó de una persona ("cristian-camps") a la firma de redacción.
+# Google seguía pidiendo las URLs viejas: 6 de los 14 404 eran variantes de esto.
+/autor/cristian-camps       /autor/redaccion/       301
+/autor/cristian-camps/      /autor/redaccion/       301
+/en/author/cristian-camps   /en/author/redaccion/   301
+/en/author/cristian-camps/  /en/author/redaccion/   301
+/fr/auteur/cristian-camps   /fr/auteur/redaccion/   301
+/fr/auteur/cristian-camps/  /fr/auteur/redaccion/   301
+
+# ── Página de bienvenida de la Sociedad ────────────────────────────────────
+# La versión inglesa vive bajo /en/. Alguien enlazó la ruta sin prefijo de
+# idioma y Google la rastreó (25-jul). Es el final del embudo de captación:
+# un 404 aquí es una alta que se pierde justo al confirmarla.
+/society-welcome            /en/society-welcome/    301
+/society-welcome/           /en/society-welcome/    301
+
+# ── Privacidad en francés ──────────────────────────────────────────────────
+# El slug francés es /fr/confidentialite; quedaban enlaces al slug inglés.
+/fr/privacy                 /fr/confidentialite/    301
+/fr/privacy/                /fr/confidentialite/    301
+
+# ── Índice de lugares en inglés ────────────────────────────────────────────
+# El índice es /en/places (plural). Solo la ruta exacta: las fichas
+# individuales cuelgan de /en/place/<slug>/ y NO deben redirigirse.
+/en/place                   /en/places/             301
+/en/place/                  /en/places/             301
+
+# ── Barcos retirados del calendario del puerto ─────────────────────────────
+# El robot del puerto (KAN-77) borra la escala cuando el barco deja de venir,
+# pero Google conserva la URL. Se manda a la guía de escala, que sigue viva.
+# Regla EXACTA por barco: un comodín /crucero/* tumbaría las escalas vigentes.
+/crucero/azamara-onward     /articulo/cruceros-en-menorca-2026/  301
+/crucero/azamara-onward/    /articulo/cruceros-en-menorca-2026/  301
