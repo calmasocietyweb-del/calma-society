@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "port": "Maó",
-  "updated": "2026-07-23",
+  "updated": "2026-07-28",
   "seasonEstimate": "125-130",
   "coveragePct": 80,
   "totalListed": 103,
@@ -716,9 +716,9 @@
       "pax": 999,
       "arrival": "08:00",
       "departure": "17:00",
-      "confidence": "media",
-      "sourceCount": 3,
-      "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
+      "confidence": "alta",
+      "sourceCount": 2,
+      "source": "https://www.portsdebalears.com/es/buques-en-puerto"
     },
     {
       "date": "2026-08-29",
