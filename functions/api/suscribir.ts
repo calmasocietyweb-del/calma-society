@@ -9,22 +9,29 @@
 import {
   validateSubscribeInput,
   buildSubscriberPayload,
+  groupsForLocale,
   MAILERLITE_ENDPOINT,
 } from "../../src/lib/newsletter/subscribe.ts";
 
 interface Env {
   MAILERLITE_API_KEY?: string;
+  /** Lista maestra de la Sociedad. Sin automatización: por sí sola no envía nada. */
   MAILERLITE_GROUP_ID?: string;
+  /** Grupos del imán de las calas: son los que disparan la bienvenida con la guía. */
+  MAILERLITE_GROUP_ES?: string;
+  MAILERLITE_GROUP_EN?: string;
 }
 type Ctx = { request: Request; env: Env };
 
 const THANKS: Record<string, string> = {
   es: "/sociedad-bienvenida",
   en: "/en/society-welcome",
+  fr: "/fr/societe-bienvenue",
 };
 const RETRY: Record<string, string> = {
   es: "/newsletter",
   en: "/en/newsletter",
+  fr: "/fr/newsletter",
 };
 
 function wantsJson(request: Request): boolean {
@@ -46,7 +53,9 @@ export async function onRequestPost({ request, env }: Ctx): Promise<Response> {
     const form = await request.formData();
     for (const [k, v] of form.entries()) if (typeof v === "string") raw[k] = v;
   }
-  const locale = raw.locale === "en" ? "en" : "es";
+  // Solo para elegir a dónde redirigir sin JS; el idioma que cuenta para los
+  // grupos lo normaliza validateSubscribeInput.
+  const locale = raw.locale === "en" ? "en" : raw.locale === "fr" ? "fr" : "es";
   const asJson = wantsJson(request);
 
   const respondErr = (error: string, status: number): Response =>
@@ -83,10 +92,18 @@ export async function onRequestPost({ request, env }: Ctx): Promise<Response> {
       // La IP de quien consiente la pone Cloudflare; queda como prueba del
       // consentimiento RGPD junto a la marca temporal (ver buildSubscriberPayload).
       body: JSON.stringify(
-        buildSubscriberPayload(result.value, env.MAILERLITE_GROUP_ID.trim(), {
-          at: new Date(),
-          ip: request.headers.get("cf-connecting-ip") ?? undefined,
-        }),
+        buildSubscriberPayload(
+          result.value,
+          groupsForLocale(result.value.locale, {
+            general: env.MAILERLITE_GROUP_ID.trim(),
+            magnetEs: env.MAILERLITE_GROUP_ES?.trim(),
+            magnetEn: env.MAILERLITE_GROUP_EN?.trim(),
+          }),
+          {
+            at: new Date(),
+            ip: request.headers.get("cf-connecting-ip") ?? undefined,
+          },
+        ),
       ),
     });
     // 200/201 = creado; 422 suele ser "ya existe" → idempotente, lo damos por bueno.

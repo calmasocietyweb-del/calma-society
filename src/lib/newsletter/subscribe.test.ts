@@ -1,6 +1,11 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { validateSubscribeInput, buildSubscriberPayload, mailerliteTimestamp } from "./subscribe.ts";
+import {
+  validateSubscribeInput,
+  buildSubscriberPayload,
+  groupsForLocale,
+  mailerliteTimestamp,
+} from "./subscribe.ts";
 
 function base(): Record<string, string> {
   return { email: "Prueba@Example.com ", consent: "on", locale: "es", origen: "planificador", web: "" };
@@ -48,20 +53,29 @@ test("locale desconocido cae a es", () => {
   assert.equal(r.value.locale, "es");
 });
 
-test("buildSubscriberPayload mete el email y el grupo", () => {
+test("buildSubscriberPayload mete el email y los grupos", () => {
   const payload = buildSubscriberPayload(
     { email: "a@b.com", locale: "es", origen: "popup" },
-    "1234567890",
+    ["1234567890", "999"],
     { at: new Date("2026-07-28T09:05:03Z"), ip: "203.0.113.7" },
   );
   assert.deepEqual(payload, {
     email: "a@b.com",
-    groups: ["1234567890"],
+    groups: ["1234567890", "999"],
     status: "active",
     subscribed_at: "2026-07-28 09:05:03",
     opted_in_at: "2026-07-28 09:05:03",
     optin_ip: "203.0.113.7",
   });
+});
+
+test("los grupos repetidos o vacíos no llegan a MailerLite (rechazaría el alta)", () => {
+  const payload = buildSubscriberPayload(
+    { email: "a@b.com", locale: "es", origen: "home" },
+    ["7", "7", "", "8"],
+    { at: new Date("2026-07-28T09:05:03Z") },
+  );
+  assert.deepEqual(payload.groups, ["7", "8"]);
 });
 
 // Sin esto, MailerLite deja el alta en "sin confirmar" y NO manda el correo de
@@ -70,7 +84,7 @@ test("buildSubscriberPayload mete el email y el grupo", () => {
 test("el alta se crea ACTIVA: si no, MailerLite no entrega nada", () => {
   const payload = buildSubscriberPayload(
     { email: "a@b.com", locale: "en", origen: "articulo" },
-    "1",
+    ["1"],
     { at: new Date("2026-07-28T09:05:03Z") },
   );
   assert.equal(payload.status, "active");
@@ -79,11 +93,38 @@ test("el alta se crea ACTIVA: si no, MailerLite no entrega nada", () => {
 test("sin IP no se inventa el campo (el consentimiento sigue fechado)", () => {
   const payload = buildSubscriberPayload(
     { email: "a@b.com", locale: "es", origen: "home" },
-    "1",
+    ["1"],
     { at: new Date("2026-07-28T09:05:03Z") },
   );
   assert.equal("optin_ip" in payload, false);
   assert.equal(payload.opted_in_at, "2026-07-28 09:05:03");
+});
+
+// La bienvenida (con la guía) la disparan los grupos del IMÁN, no el general:
+// si un alta no entra en el suyo, no recibe nada. Es el fallo del 28-jul.
+const GRUPOS = { general: "GEN", magnetEs: "ES", magnetEn: "EN" };
+
+test("un alta en español entra en el general y en el del imán ES", () => {
+  assert.deepEqual(groupsForLocale("es", GRUPOS), ["GEN", "ES"]);
+});
+
+test("un alta en inglés entra en el general y en el del imán EN", () => {
+  assert.deepEqual(groupsForLocale("en", GRUPOS), ["GEN", "EN"]);
+});
+
+test("en francés no hay guía: solo el general, sin prometer bienvenida", () => {
+  assert.deepEqual(groupsForLocale("fr", GRUPOS), ["GEN"]);
+});
+
+test("si falta el id del imán, el alta NO se pierde: queda en el general", () => {
+  assert.deepEqual(groupsForLocale("es", { general: "GEN" }), ["GEN"]);
+});
+
+test("el francés se reconoce y ya no cae a español", () => {
+  const r = validateSubscribeInput({ ...base(), locale: "fr" });
+  assert.equal(r.ok, true);
+  if (!r.ok) return;
+  assert.equal(r.value.locale, "fr");
 });
 
 test("mailerliteTimestamp usa el formato de MailerLite, no ISO", () => {

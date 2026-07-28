@@ -10,11 +10,18 @@
     "binding": "ASSETS",
     "not_found_handling": "404-page"
   },
-  // Variable PÚBLICA: ID del grupo general "Suscriptores Web" de MailerLite (destino
-  // del embudo). No es secreta (es un identificador, como los formIds de
-  // src/config/site.ts). La API key SÍ es secreta y vive solo en Cloudflare
-  // (secret MAILERLITE_API_KEY).
+  // Variables PÚBLICAS: IDs de grupo de MailerLite. No son secretas (son
+  // identificadores, como los formIds de src/config/site.ts). La API key SÍ es
+  // secreta y vive solo en Cloudflare (secret MAILERLITE_API_KEY).
+  //
+  // GROUP_ID = "Suscriptores Web", la lista maestra. **No tiene automatización**,
+  // así que por sí sola no entrega nada. GROUP_ES / GROUP_EN son los grupos del
+  // imán de las calas: son ELLOS los que disparan la bienvenida que envía la guía
+  // (las dos únicas automatizaciones activas de la cuenta escuchan a estos dos).
+  // Un alta entra en el general + el de su idioma. En francés aún no hay guía.
   "vars": {
-    "MAILERLITE_GROUP_ID": "190338204448065520"
+    "MAILERLITE_GROUP_ID": "190338204448065520",
+    "MAILERLITE_GROUP_ES": "191681681450600130",
+    "MAILERLITE_GROUP_EN": "191681718043804688"
   }
 }

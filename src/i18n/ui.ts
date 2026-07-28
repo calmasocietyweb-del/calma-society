@@ -99,34 +99,35 @@ export const ui = {
 
     "author.articlesby": "Artículos de",
 
-    "newsletter.eyebrow": "La Sociedad",
-    "newsletter.title": "Forma parte de la Sociedad",
-    // Copy VERAZ (visto bueno del dueño, 24-jul): hoy no se envía una newsletter
-    // periódica, así que NO prometemos cadencia ni una publicación continua.
-    // Solo lo que el suscriptor recibe de verdad: alta, bienvenida y algún envío
-    // puntual cuando de veras merece la pena.
+    // Ofrecemos LA GUÍA, no una idea abstracta (28-jul-2026). El dato que lo
+    // decidió: el formulario genérico convirtió 1 de 489 visitantes; la landing
+    // del imán, 2 de 9 (22%). Lo que convence es algo concreto que se recibe.
+    // La entrega es real: el alta entra en el grupo del imán, que dispara la
+    // automatización de bienvenida con el PDF.
+    "newsletter.eyebrow": "La guía, de bienvenida",
+    "newsletter.title": "Las calas con menos gente",
     "newsletter.text":
-      "Forma parte de la Sociedad. Sin cadencia impuesta ni ruido: te escribimos solo cuando hay algo que de verdad merece la pena — lo mejor de Menorca, con mirada de lujo tranquilo.",
-    // Gancho específico de la portada de Agenda (2ª página más vista). Copy
-    // conservador (visto bueno del dueño, 24-jul): NO prometemos entrega de
-    // contenido por correo — hoy no se envía newsletter periódica. Reutiliza el
-    // mismo CTA de la Sociedad.
+      "Déjanos tu correo y te enviamos la guía: las calas de Menorca donde todavía se puede estar tranquilo, con cómo llegar y a qué hora ir. Después, alguna carta serena — solo cuando de verdad merece la pena.",
+    // Gancho de la portada de Agenda (2ª página más vista). Mantiene el gancho de
+    // eventos pero entrega la misma guía, que es lo que de verdad se envía.
     "newsletter.agenda.eyebrow": "No te lo pierdas",
     "newsletter.agenda.title": "No te pierdas lo que pasa en Menorca",
     "newsletter.agenda.text":
-      "La isla no para: fiestas, conciertos y mercados durante todo el año. Únete a la Sociedad y mantén Menorca cerca, con mirada de lujo tranquilo. Sin ruido.",
+      "La isla no para: fiestas, conciertos y mercados todo el año. Únete a la Sociedad y te damos la bienvenida con la guía de las calas con menos gente. Sin ruido.",
     "newsletter.placeholder": "Tu correo electrónico",
-    "newsletter.cta": "Unirme a la Sociedad",
+    "newsletter.cta": "Quiero la guía",
     "newsletter.privacy": "Sin spam. Te das de baja cuando quieras.",
     // El alta es directa (opt-in simple con casilla de consentimiento): ya no hay
     // correo de confirmación, así que el texto no puede prometerlo (28-jul-2026).
-    "newsletter.optinNote": "Solo la carta de la Sociedad. Puedes darte de baja cuando quieras.",
-    "newsletter.optinDone": "Ya estás dentro de la Sociedad. Echa un ojo a tu correo (y al spam).",
+    "newsletter.optinNote": "Te enviamos la guía y poco más. Puedes darte de baja cuando quieras.",
+    "newsletter.optinDone": "Ya estás dentro. Te hemos enviado la guía al correo (mira también en spam).",
     "newsletter.optinError": "No hemos podido completar el alta. Inténtalo de nuevo en un momento.",
     "newsletter.consent": "Acepto recibir las noticias de la Sociedad y la",
-    "thanks.title": "Confirma tu correo",
+    // Ya no hay paso de confirmación (opt-in simple, 28-jul-2026): la página de
+    // gracias no puede pedir algo que no va a llegar.
+    "thanks.title": "Ya estás en la Sociedad",
     "thanks.text":
-      "Casi listo. Te hemos enviado un correo para confirmar tu suscripción — ábrelo y confírmala (mira también en spam). En cuanto lo hagas, entrarás en la Sociedad.",
+      "Te hemos enviado la guía de las calas con menos gente al correo. Si no la ves en unos minutos, mira en spam. Después te escribiremos solo cuando de verdad merezca la pena.",
     "thanks.back": "Volver a la portada",
 
     "nav.contact": "Contacto",
@@ -238,31 +239,33 @@ export const ui = {
 
     "author.articlesby": "Articles by",
 
-    "newsletter.eyebrow": "The Society",
-    "newsletter.title": "Become part of the Society",
-    // Truthful copy (owner sign-off, 24 Jul): no periodic newsletter is sent
-    // today, so we promise NO cadence and no continuous publication. Only what
-    // the subscriber actually gets: sign-up, welcome and the occasional email
-    // when it's genuinely worth it.
+    // We offer THE GUIDE, not an abstract idea (28 Jul 2026). The number that
+    // settled it: the generic form converted 1 of 489 visitors; the lead-magnet
+    // landing, 2 of 9 (22%). What persuades is something concrete you receive.
+    // Delivery is real: sign-ups join the lead-magnet group, which triggers the
+    // welcome automation carrying the PDF.
+    "newsletter.eyebrow": "The welcome guide",
+    "newsletter.title": "Menorca's quietest coves",
     "newsletter.text":
-      "Become part of the Society. No fixed cadence, no noise: we only write when there's something truly worth your time — the best of Menorca, through a quiet-luxury lens.",
-    // Agenda-specific hook (2nd most-viewed page). Conservative copy (owner
-    // sign-off, 24 Jul): we do NOT promise content delivery by email — no
-    // periodic newsletter is sent today. Reuses the same Society CTA.
+      "Leave us your email and we'll send you the guide: the coves where you can still find room to breathe, with how to get there and when to go. After that, the occasional calm letter — only when it's genuinely worth it.",
+    // Agenda hook (2nd most-viewed page). Keeps the events angle but delivers the
+    // same guide, which is what actually gets sent.
     "newsletter.agenda.eyebrow": "Don't miss out",
     "newsletter.agenda.title": "Don't miss what's on in Menorca",
     "newsletter.agenda.text":
-      "The island never rests: festivals, concerts and markets all year round. Join the Society and keep Menorca close, through a quiet-luxury lens. No noise.",
+      "The island never rests: festivals, concerts and markets all year round. Join the Society and we'll welcome you with the guide to Menorca's quietest coves. No noise.",
     "newsletter.placeholder": "Your email address",
-    "newsletter.cta": "Join the Society",
+    "newsletter.cta": "Send me the guide",
     "newsletter.privacy": "No spam. Unsubscribe anytime.",
-    "newsletter.optinNote": "Just the Society letter. You can unsubscribe whenever you like.",
-    "newsletter.optinDone": "You're in the Society. Keep an eye on your inbox (and your spam folder).",
+    "newsletter.optinNote": "We'll send you the guide and little else. Unsubscribe whenever you like.",
+    "newsletter.optinDone": "You're in. We've sent the guide to your inbox (check spam too).",
     "newsletter.optinError": "We couldn't complete your sign-up. Please try again in a moment.",
     "newsletter.consent": "I agree to receive the Society's news and accept the",
-    "thanks.title": "Confirm your email",
+    // No confirmation step any more (single opt-in, 28 Jul 2026): the thank-you
+    // page can't ask for something that will never arrive.
+    "thanks.title": "You're in the Society",
     "thanks.text":
-      "Almost there. We've sent you an email to confirm your subscription — open it and confirm (check spam too). As soon as you do, you're in the Society.",
+      "We've sent the guide to Menorca's quietest coves to your inbox. If you don't see it within a few minutes, check your spam folder. After that, we'll only write when it's genuinely worth it.",
     "thanks.back": "Back to home",
 
     "nav.contact": "Contact",
@@ -393,13 +396,16 @@ export const ui = {
     "newsletter.placeholder": "Votre adresse e-mail",
     "newsletter.cta": "Rejoindre la Société",
     "newsletter.privacy": "Pas de spam. Désabonnement quand vous voulez.",
-    "newsletter.optinNote": "Uniquement la lettre de la Society. Vous pouvez vous désabonner quand vous voulez.",
-    "newsletter.optinDone": "Vous faites partie de la Society. Surveillez votre boîte mail (et les spams).",
+    // ⚠️ En français il n'existe encore NI guide NI automatisation de bienvenue
+    // (28 juil. 2026) : ce copy ne doit donc rien promettre qui n'arrivera pas.
+    // À corriger dès que la guide existera en français.
+    "newsletter.optinNote": "Uniquement la lettre de la Société. Vous pouvez vous désabonner quand vous voulez.",
+    "newsletter.optinDone": "C'est fait : vous faites partie de la Société. Nous vous écrirons seulement quand cela en vaudra la peine.",
     "newsletter.optinError": "Nous n'avons pas pu finaliser votre inscription. Réessayez dans un instant.",
     "newsletter.consent": "J'accepte de recevoir les nouvelles de la Société et la",
-    "thanks.title": "Confirmez votre e-mail",
+    "thanks.title": "Vous faites partie de la Société",
     "thanks.text":
-      "Presque terminé. Nous vous avons envoyé un e-mail pour confirmer votre abonnement — ouvrez-le et confirmez (vérifiez aussi les spams). Dès que c'est fait, vous entrez dans la Société.",
+      "Votre inscription est enregistrée. Nous vous écrirons seulement quand il y aura quelque chose qui en vaut vraiment la peine — le meilleur de Minorque, dans un regard de luxe tranquille.",
     "thanks.back": "Retour à l'accueil",
 
     "nav.contact": "Contact",

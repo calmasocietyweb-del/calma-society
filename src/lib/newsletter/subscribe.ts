@@ -8,7 +8,7 @@ export const MAILERLITE_ENDPOINT = "https://connect.mailerlite.com/api/subscribe
 
 export interface SubscribeInput {
   email: string;
-  locale: "es" | "en";
+  locale: "es" | "en" | "fr";
   origen: string;
 }
 
@@ -29,7 +29,9 @@ export function validateSubscribeInput(
   const consent = (raw.consent || raw.consentimiento || "").trim();
   if (consent === "") return { ok: false, error: "consent" };
 
-  const locale = raw.locale === "en" ? "en" : "es";
+  // El francés se reconoce explícitamente: antes caía a "es" y un lector
+  // francés habría acabado en el grupo español, recibiendo la guía en castellano.
+  const locale = raw.locale === "en" ? "en" : raw.locale === "fr" ? "fr" : "es";
   const origen = (raw.origen ?? "web").slice(0, 40);
   return { ok: true, value: { email, locale, origen } };
 }
@@ -65,17 +67,39 @@ export interface SubscriberPayload {
  */
 export function buildSubscriberPayload(
   value: SubscribeInput,
-  groupId: string,
+  groups: string[],
   consent: { at: Date; ip?: string },
 ): SubscriberPayload {
   const at = mailerliteTimestamp(consent.at);
-  // El grupo general de la Sociedad dispara la bienvenida ya existente.
   return {
     email: value.email,
-    groups: [groupId],
+    // Sin duplicados y sin vacíos: un id repetido o una variable sin definir
+    // haría que MailerLite rechazara el alta entera.
+    groups: [...new Set(groups.filter(Boolean))],
     status: "active",
     subscribed_at: at,
     opted_in_at: at,
     ...(consent.ip ? { optin_ip: consent.ip } : {}),
   };
+}
+
+/**
+ * Grupos a los que entra un alta.
+ *
+ * Siempre el **general** (la lista maestra de la Sociedad) y, si existe para su
+ * idioma, el del **imán de las calas** — porque es ese grupo el que dispara la
+ * automatización de bienvenida que ENTREGA la guía. El grupo general no tiene
+ * automatización, así que por sí solo no envía nada (comprobado el 28-jul-2026:
+ * las dos únicas automatizaciones activas escuchan a los grupos del imán).
+ *
+ * En francés todavía no hay guía ni automatización: esas altas quedan en el
+ * grupo general y **no reciben bienvenida**. Es una carencia conocida, no un
+ * descuido: mejor guardarlas que prometerles algo que no existe.
+ */
+export function groupsForLocale(
+  locale: SubscribeInput["locale"],
+  env: { general?: string; magnetEs?: string; magnetEn?: string },
+): string[] {
+  const magnet = locale === "en" ? env.magnetEn : locale === "es" ? env.magnetEs : undefined;
+  return [env.general, magnet].filter((g): g is string => Boolean(g));
 }
