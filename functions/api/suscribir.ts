@@ -80,7 +80,14 @@ export async function onRequestPost({ request, env }: Ctx): Promise<Response> {
         // colarse un salto de línea o espacio que invalidaría la cabecera.
         authorization: `Bearer ${env.MAILERLITE_API_KEY.trim()}`,
       },
-      body: JSON.stringify(buildSubscriberPayload(result.value, env.MAILERLITE_GROUP_ID.trim())),
+      // La IP de quien consiente la pone Cloudflare; queda como prueba del
+      // consentimiento RGPD junto a la marca temporal (ver buildSubscriberPayload).
+      body: JSON.stringify(
+        buildSubscriberPayload(result.value, env.MAILERLITE_GROUP_ID.trim(), {
+          at: new Date(),
+          ip: request.headers.get("cf-connecting-ip") ?? undefined,
+        }),
+      ),
     });
     // 200/201 = creado; 422 suele ser "ya existe" → idempotente, lo damos por bueno.
     if (!r.ok && r.status !== 422) {

@@ -32,7 +32,17 @@ const linkClass = dark
 const accent = dark ? "accent-oro-vivo" : "accent-terracota";
 ---
 
-<form class="cs-subscribe mx-auto mt-8 max-w-md text-left" action="/api/suscribir" method="POST">
+{/* `data-ok-event` (no `data-umami-event`): el evento lo dispara el script
+    CUANDO el alta se confirma, no al pulsar. Con el atributo estándar en el
+    botón, Umami contaba el CLIC — incluso si el navegador bloqueaba el envío
+    por un campo vacío o si la API fallaba. Eso inflaba el KPI nº1 y escondía
+    los errores (auditoría 28-jul-2026). */}
+<form
+  class="cs-subscribe mx-auto mt-8 max-w-md text-left"
+  action="/api/suscribir"
+  method="POST"
+  data-ok-event={umamiEvent}
+>
   <input type="hidden" name="locale" value={locale} />
   <input type="hidden" name="origen" value={origen} />
   {/* Honeypot: oculto a personas y a lectores de pantalla. Un bot lo rellena. */}
@@ -41,7 +51,7 @@ const accent = dark ? "accent-oro-vivo" : "accent-terracota";
   <div class="cs-subscribe-row flex flex-col gap-3 sm:flex-row">
     <label for={emailId} class="sr-only">{t("newsletter.placeholder")}</label>
     <input id={emailId} type="email" name="email" required autocomplete="email" placeholder={t("newsletter.placeholder")} class={inputClass} />
-    <button type="submit" class={btnClass} data-umami-event={umamiEvent}>{t("newsletter.cta")}</button>
+    <button type="submit" class={btnClass}>{t("newsletter.cta")}</button>
   </div>
 
   <label class="cs-subscribe-consent mt-3 flex items-start gap-2.5 text-xs leading-relaxed" for={consentId}>
@@ -49,18 +59,29 @@ const accent = dark ? "accent-oro-vivo" : "accent-terracota";
     <span class={subtle}>{t("newsletter.consent")} <a href={privacyHref} class={linkClass}>{t("contact.consentLink")}</a>.</span>
   </label>
 
-  {/* Aviso de doble opt-in + estado del envío (role=status para a11y).
+  {/* Aviso de qué recibe + estado del envío (role=status para a11y).
       data-done/data-error los usa el script para el mensaje tras enviar. */}
   <p class={`cs-subscribe-note mt-3 text-xs ${subtle}`} role="status"
-     data-done={t("newsletter.optinDone")} data-error={t("newsletter.optinError")}>{t("newsletter.doubleOptin")}</p>
+     data-done={t("newsletter.optinDone")} data-error={t("newsletter.optinError")}>{t("newsletter.optinNote")}</p>
 </form>
 
 <script>
   // Envío por fetch: no salir de página y avisar del doble opt-in. Sin JS, el
   // form hace POST clásico con redirect (el action ya apunta a /api/suscribir).
+  // Mide en Umami solo lo que de verdad ocurre. `track` no existe si el script
+  // de Umami está bloqueado por un ad-blocker: por eso el encadenado opcional.
+  const track = (name: string | undefined, data?: Record<string, string>) => {
+    if (!name) return;
+    (window as unknown as { umami?: { track: (n: string, d?: unknown) => void } }).umami?.track(
+      name,
+      data,
+    );
+  };
+
   document.querySelectorAll<HTMLFormElement>("form.cs-subscribe").forEach((form) => {
     const note = form.querySelector<HTMLElement>(".cs-subscribe-note");
     const btn = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+    const okEvent = form.dataset.okEvent;
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       if (btn) btn.disabled = true;
@@ -70,17 +91,25 @@ const accent = dark ? "accent-oro-vivo" : "accent-terracota";
           headers: { Accept: "application/json" },
           body: new FormData(form),
         });
-        const data = (await res.json().catch(() => ({ ok: res.ok }))) as { ok?: boolean };
+        const data = (await res.json().catch(() => ({ ok: res.ok }))) as {
+          ok?: boolean;
+          error?: string;
+        };
         if (data.ok) {
           if (note && note.dataset.done) note.textContent = note.dataset.done;
           form.querySelector<HTMLElement>(".cs-subscribe-consent")?.setAttribute("hidden", "");
           form.querySelector<HTMLElement>(".cs-subscribe-row")?.setAttribute("hidden", "");
+          // KPI nº1: solo aquí. El alta existe.
+          track(okEvent);
         } else {
           if (note && note.dataset.error) note.textContent = note.dataset.error;
           if (btn) btn.disabled = false;
+          // Un alta que falla deja rastro: sin esto, los errores son invisibles.
+          track("newsletter-error", { motivo: data.error ?? String(res.status) });
         }
       } catch {
         // Red caída: envío clásico como último recurso (no perder el alta).
+        track("newsletter-error", { motivo: "red" });
         form.submit();
       }
     });

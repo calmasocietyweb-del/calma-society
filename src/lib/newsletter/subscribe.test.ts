@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { validateSubscribeInput, buildSubscriberPayload } from "./subscribe.ts";
+import { validateSubscribeInput, buildSubscriberPayload, mailerliteTimestamp } from "./subscribe.ts";
 
 function base(): Record<string, string> {
   return { email: "Prueba@Example.com ", consent: "on", locale: "es", origen: "planificador", web: "" };
@@ -52,6 +52,40 @@ test("buildSubscriberPayload mete el email y el grupo", () => {
   const payload = buildSubscriberPayload(
     { email: "a@b.com", locale: "es", origen: "popup" },
     "1234567890",
+    { at: new Date("2026-07-28T09:05:03Z"), ip: "203.0.113.7" },
   );
-  assert.deepEqual(payload, { email: "a@b.com", groups: ["1234567890"] });
+  assert.deepEqual(payload, {
+    email: "a@b.com",
+    groups: ["1234567890"],
+    status: "active",
+    subscribed_at: "2026-07-28 09:05:03",
+    opted_in_at: "2026-07-28 09:05:03",
+    optin_ip: "203.0.113.7",
+  });
+});
+
+// Sin esto, MailerLite deja el alta en "sin confirmar" y NO manda el correo de
+// confirmación a las altas por API: el suscriptor no recibe nada y la bienvenida
+// nunca se dispara. Es el fallo que dejó el proyecto a 0 suscriptores (28-jul-2026).
+test("el alta se crea ACTIVA: si no, MailerLite no entrega nada", () => {
+  const payload = buildSubscriberPayload(
+    { email: "a@b.com", locale: "en", origen: "articulo" },
+    "1",
+    { at: new Date("2026-07-28T09:05:03Z") },
+  );
+  assert.equal(payload.status, "active");
+});
+
+test("sin IP no se inventa el campo (el consentimiento sigue fechado)", () => {
+  const payload = buildSubscriberPayload(
+    { email: "a@b.com", locale: "es", origen: "home" },
+    "1",
+    { at: new Date("2026-07-28T09:05:03Z") },
+  );
+  assert.equal("optin_ip" in payload, false);
+  assert.equal(payload.opted_in_at, "2026-07-28 09:05:03");
+});
+
+test("mailerliteTimestamp usa el formato de MailerLite, no ISO", () => {
+  assert.equal(mailerliteTimestamp(new Date("2026-01-05T23:59:09.842Z")), "2026-01-05 23:59:09");
 });

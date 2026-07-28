@@ -34,10 +34,48 @@ export function validateSubscribeInput(
   return { ok: true, value: { email, locale, origen } };
 }
 
+/** Marca temporal en el formato que espera MailerLite: "YYYY-MM-DD HH:MM:SS" (UTC). */
+export function mailerliteTimestamp(now: Date): string {
+  return now.toISOString().slice(0, 19).replace("T", " ");
+}
+
+export interface SubscriberPayload {
+  email: string;
+  groups: string[];
+  status: "active";
+  subscribed_at: string;
+  opted_in_at: string;
+  optin_ip?: string;
+}
+
+/**
+ * Cuerpo del alta en MailerLite.
+ *
+ * `status: "active"` es DELIBERADO (decisión del dueño, 28-jul-2026). MailerLite
+ * NO envía el correo de confirmación a las altas creadas por API — solo a las de
+ * sus propios formularios. Al no mandar estado, el suscriptor se quedaba en
+ * "sin confirmar" para siempre: ni recibía la confirmación, ni se disparaba la
+ * bienvenida con el PDF. Es exactamente lo que le pasó al único suscriptor real
+ * que ha tenido el proyecto (auditoría del 28-jul: "Enviados 0").
+ *
+ * La base legal RGPD no es el doble opt-in sino el consentimiento explícito, que
+ * el formulario ya exige: casilla obligatoria + enlace a la política de
+ * privacidad. Aquí dejamos constancia de CUÁNDO y DESDE DÓNDE se dio, que es lo
+ * que hace ese consentimiento demostrable.
+ */
 export function buildSubscriberPayload(
   value: SubscribeInput,
   groupId: string,
-): { email: string; groups: string[] } {
+  consent: { at: Date; ip?: string },
+): SubscriberPayload {
+  const at = mailerliteTimestamp(consent.at);
   // El grupo general de la Sociedad dispara la bienvenida ya existente.
-  return { email: value.email, groups: [groupId] };
+  return {
+    email: value.email,
+    groups: [groupId],
+    status: "active",
+    subscribed_at: at,
+    opted_in_at: at,
+    ...(consent.ip ? { optin_ip: consent.ip } : {}),
+  };
 }

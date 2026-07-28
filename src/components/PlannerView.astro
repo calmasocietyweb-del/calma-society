@@ -479,7 +479,9 @@ const ICON: Record<string, string> = {
           placeholder={T.emailPlaceholder}
           class="w-full rounded-md border border-niebla bg-lino/60 px-4 py-2.5 text-sm text-piedra placeholder:text-piedra-suave transition-colors duration-150 focus:border-terracota/50 focus-visible:outline-terracota"
         />
-        <button type="submit" id="planner-email-btn" data-umami-event="planner-email" class="press shrink-0 rounded-md bg-arcilla px-5 py-2.5 text-sm font-semibold text-lino transition-colors hover:bg-tinta">
+        {/* Sin `data-umami-event`: el evento se dispara al confirmarse el alta,
+            no al pulsar (antes contaba clics y el KPI mentía — 28-jul-2026). */}
+        <button type="submit" id="planner-email-btn" class="press shrink-0 rounded-md bg-arcilla px-5 py-2.5 text-sm font-semibold text-lino transition-colors hover:bg-tinta">
           {T.emailBtn}
         </button>
       </div>
@@ -830,13 +832,22 @@ const ICON: Record<string, string> = {
         body: new FormData(emailForm),
         headers: { Accept: "application/json" },
       });
-      if (!res.ok) throw new Error(String(res.status));
+      const data = (await res.json().catch(() => ({ ok: res.ok }))) as { ok?: boolean; error?: string };
+      if (!res.ok || !data.ok) throw new Error(data.error ?? String(res.status));
+      // KPI nº1: solo cuando el alta existe de verdad.
+      (window as unknown as { umami?: { track: (n: string, d?: unknown) => void } }).umami?.track("planner-email");
       unlockPdf();
       // Desbloqueado → directo al dossier (el gesto ya es suyo).
       setTimeout(() => window.print(), 350);
-    } catch {
+    } catch (err) {
       // La función/red falló: no penalizamos al usuario (su gesto ya es suyo).
       // Desbloqueamos el dossier y lo abrimos; el alta se reintenta si vuelve.
+      // Pero SÍ lo registramos: antes este fallo era invisible y el clic se
+      // contaba como alta (auditoría 28-jul-2026).
+      (window as unknown as { umami?: { track: (n: string, d?: unknown) => void } }).umami?.track(
+        "planner-email-error",
+        { motivo: err instanceof Error ? err.message : "red" },
+      );
       unlockPdf();
       setTimeout(() => window.print(), 350);
     } finally {
