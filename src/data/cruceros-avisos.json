@@ -1,10 +1,22 @@
 {
-  "updated": "2026-07-28",
+  "updated": "2026-07-29",
   "ventana": {
-    "desde": "2026-07-28",
+    "desde": "2026-07-29",
     "hasta": "2026-08-25"
   },
-  "nuevas": [],
+  "nuevas": [
+    {
+      "date": "2026-08-25",
+      "ship": "SEA CLOUD SPIRIT",
+      "arrival": "16:00",
+      "departure": "14:00",
+      "departureDate": "2026-08-26",
+      "muelle": "MUELLE CRUCEROS",
+      "consignatario": "FEDERICO CARDONA TREMOL S L",
+      "escala": "M202600108",
+      "nota": "El puerto la tiene y nosotros no. Falta capacidad de pasaje y naviera antes de publicarla."
+    }
+  ],
   "desaparecidas": [],
   "dudasDeNombre": [],
   "dobles": [
@@ -60,6 +72,20 @@
         {
           "ship": "AIDASTELLA",
           "eslora": 253.26
+        }
+      ],
+      "nota": "Dos cruceros el mismo día. Si uno fondea, se desembarca en lancha y el tiempo real en tierra cambia."
+    },
+    {
+      "date": "2026-08-25",
+      "barcos": [
+        {
+          "ship": "SPIRIT OF ADVENTURE",
+          "eslora": 236
+        },
+        {
+          "ship": "SEA CLOUD SPIRIT",
+          "eslora": 125.7
         }
       ],
       "nota": "Dos cruceros el mismo día. Si uno fondea, se desembarca en lancha y el tiempo real en tierra cambia."
