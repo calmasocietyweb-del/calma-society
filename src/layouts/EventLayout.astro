@@ -1,0 +1,202 @@
+---
+// Plantilla de DETALLE DE EVENTO (KAN-102): /agenda/[slug] y /en/whats-on/[slug].
+// Antes las tarjetas de la agenda parecían clicables y no llevaban a nada; cada
+// evento tiene ahora su página propia con fechas, lugar, web oficial, JSON-LD
+// `Event` y captación de la Sociedad (el KPI nº1).
+import { type CollectionEntry, getEntry } from "astro:content";
+import BaseLayout from "./BaseLayout.astro";
+import JsonLd from "../components/JsonLd.astro";
+import NewsletterSignup from "../components/NewsletterSignup.astro";
+import { useTranslations, experienceTypeLabel } from "../i18n/ui";
+import { SITE, type Locale } from "../config/site";
+import { eventUrl, placeUrl, homePath, formatDate } from "../i18n/utils";
+import { getSection } from "../config/sections";
+import { placeSlugFor } from "../lib/content";
+import { abs, eventSchema, breadcrumbSchema } from "../lib/schema";
+import { srcset } from "../lib/img";
+
+interface Props {
+  entry: CollectionEntry<"eventos">;
+  alternates?: Partial<Record<Locale, string>>;
+}
+const { entry, alternates } = Astro.props;
+const { data } = entry;
+const locale = data.lang as Locale;
+const t = useTranslations(locale);
+
+// Breadcrumb hacia la portada de la agenda (la 2ª página más visitada).
+const agenda = getSection("agenda")!;
+const agendaHref = agenda.href[locale];
+const agendaLabel = agenda.label[locale];
+
+// ── Fechas por idioma (mismo criterio que EventCard: UTC, sin husos raros) ───
+const startISO = data.startDate.toISOString().slice(0, 10);
+const endISO = data.endDate?.toISOString().slice(0, 10);
+const sameDay =
+  data.endDate && data.endDate.toDateString() === data.startDate.toDateString();
+const showRange = !!data.endDate && !sameDay;
+
+// ── Lugar: si el evento referencia una ficha de `lugares`, se enlaza ─────────
+// La referencia puede apuntar a la ficha de otro idioma; se resuelve la versión
+// del idioma de la página vía translationKey. Solo fichas `published` (§6 bis).
+let place: CollectionEntry<"lugares"> | null = null;
+if (data.locationRef) {
+  const referenced = await getEntry(data.locationRef);
+  if (referenced && referenced.data.status === "published") {
+    if (referenced.data.lang === locale) {
+      place = referenced;
+    } else {
+      const sameLangId = await placeSlugFor(referenced.data.translationKey, locale);
+      if (sameLangId) place = (await getEntry("lugares", sameLangId)) ?? null;
+    }
+  }
+}
+const locationName = place?.data.name ?? data.location;
+
+// ── SEO + GEO (CLAUDE.md §8) ─────────────────────────────────────────────────
+// Título único por idioma y anclado a "Menorca" (lección KAN-88: nada de
+// <title> duplicados entre versiones de idioma).
+const TITLE_SUFFIX: Record<Locale, string> = {
+  es: "Agenda de Menorca",
+  en: "What's on in Menorca",
+  fr: "Agenda de Minorque",
+};
+const seoTitle = `${data.title} — ${TITLE_SUFFIX[locale]}`;
+
+const canonical = abs(eventUrl(locale, entry.id));
+const eventLd = eventSchema({
+  title: data.title,
+  description: data.description,
+  startDate: data.startDate,
+  endDate: data.endDate,
+  location: locationName,
+  url: canonical,
+  image: data.image,
+  geo: place ? { lat: place.data.coordinates.lat, lng: place.data.coordinates.lng } : undefined,
+  sameAs: data.sourceUrl,
+});
+const breadcrumb = breadcrumbSchema([
+  { name: SITE.name, url: abs(homePath(locale)) },
+  { name: agendaLabel, url: abs(agendaHref) },
+  { name: data.title, url: canonical },
+]);
+---
+
+<BaseLayout
+  title={seoTitle}
+  description={data.description}
+  locale={locale}
+  alternates={alternates}
+  image={data.image}
+  imageAlt={data.title}
+>
+  <article class="mx-auto max-w-prosa px-5 pb-8 pt-12 sm:px-8 sm:pt-16">
+    {/* Miga de pan visible hacia la agenda (además del BreadcrumbList JSON-LD). */}
+    <nav aria-label={t("a11y.breadcrumb")} class="text-xs font-semibold uppercase tracking-widest">
+      <a href={agendaHref} class="text-oro transition-colors hover:text-terracota">{agendaLabel}</a>
+      <span aria-hidden="true" class="mx-1.5 text-niebla">/</span>
+      <span class="text-piedra-suave">{experienceTypeLabel(data.category, locale)}</span>
+    </nav>
+
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">{data.title}</h1>
+    <p class="mt-5 text-lg leading-relaxed text-piedra-suave">{data.description}</p>
+
+    {
+      data.image && (
+        <figure class="mt-8">
+          <div class="aspect-[3/2] overflow-hidden rounded-xl bg-arena">
+            <img
+              src={data.image}
+              srcset={srcset(data.image)}
+              sizes="(min-width: 700px) 672px, 100vw"
+              alt={data.title}
+              width="1600"
+              height="1067"
+              class="h-full w-full object-cover"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </div>
+          {data.imageCredit && (
+            <figcaption class="mt-2 text-xs text-piedra-suave">
+              {locale === "es" ? "Foto" : "Photo"}: {data.imageCredit}
+            </figcaption>
+          )}
+        </figure>
+      )
+    }
+
+    {/* Cuándo y dónde: los datos concretos que la IA cita (GEO, CLAUDE.md §8). */}
+    <section class="mt-10 rounded-xl border border-niebla bg-arena/30 p-6">
+      <dl class="grid gap-x-6 gap-y-3 sm:grid-cols-2">
+        <div>
+          <dt class="text-xs uppercase tracking-wide text-piedra-suave">{t("agenda.when")}</dt>
+          <dd class="mt-0.5 text-sm text-piedra">
+            <time datetime={startISO}>{formatDate(data.startDate, locale)}</time>
+            {
+              showRange && (
+                <>
+                  {" – "}
+                  <time datetime={endISO}>{formatDate(data.endDate!, locale)}</time>
+                </>
+              )
+            }
+          </dd>
+        </div>
+        <div>
+          <dt class="text-xs uppercase tracking-wide text-piedra-suave">{t("agenda.where")}</dt>
+          <dd class="mt-0.5 text-sm text-piedra">
+            {
+              place ? (
+                <a
+                  href={placeUrl(locale, place.id)}
+                  class="border-b border-terracota pb-0.5 font-medium text-arcilla transition-colors hover:text-terracota"
+                >
+                  {place.data.name}
+                </a>
+              ) : (
+                data.location
+              )
+            }
+          </dd>
+        </div>
+      </dl>
+    </section>
+
+    <p class="mt-8 flex flex-wrap gap-x-6 gap-y-3">
+      {
+        data.sourceUrl && (
+          <a
+            href={data.sourceUrl}
+            rel="noopener"
+            target="_blank"
+            data-umami-event="click-salida-evento"
+            class="inline-block border-b border-terracota pb-0.5 text-sm font-medium text-arcilla hover:text-terracota"
+          >
+            {t("event.official")} →
+          </a>
+        )
+      }
+      <a
+        href={agendaHref}
+        class="inline-block border-b border-terracota pb-0.5 text-sm font-medium text-arcilla hover:text-terracota"
+      >
+        {t("event.all")} →
+      </a>
+    </p>
+  </article>
+
+  {/* Captación al pie (KPI nº1): mismo gancho honesto que la portada de agenda,
+      con atribución propia por-origen para medir qué convierte (KAN-93). */}
+  <NewsletterSignup
+    variant="inline"
+    eyebrow={t("newsletter.agenda.eyebrow")}
+    title={t("newsletter.agenda.title")}
+    text={t("newsletter.agenda.text")}
+    origen="evento"
+    umamiEvent="newsletter-submit-evento"
+  />
+
+  <JsonLd schema={[eventLd, breadcrumb]} />
+</BaseLayout>

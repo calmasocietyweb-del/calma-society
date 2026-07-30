@@ -1,9 +1,11 @@
 ---
 // Tarjeta de evento (agenda) — con foto (tratamiento Galería de Lino), badge de
 // fecha y tipo de experiencia. `data-agenda` permite el filtro CSS de la agenda.
+// Foto y título enlazan a la página de detalle del evento (KAN-102): el hover
+// prometía un clic que antes no llevaba a ninguna parte.
 import type { CollectionEntry } from "astro:content";
 import { experienceTypeLabel } from "../i18n/ui";
-import { formatDate } from "../i18n/utils";
+import { formatDate, eventUrl } from "../i18n/utils";
 import { srcset } from "../lib/img";
 import type { Locale } from "../config/site";
 
@@ -16,6 +18,8 @@ interface Props {
 }
 const { event, locale, animate = false } = Astro.props;
 const { data } = event;
+// URL de la página de detalle del evento en el idioma de la tarjeta.
+const href = eventUrl(locale, event.id);
 
 const intl = locale === "es" ? "es-ES" : "en-GB";
 const day = data.startDate.getUTCDate();
@@ -31,7 +35,14 @@ const dateLabel =
 ---
 
 <article data-agenda={data.category} class={animate ? "reveal group flex flex-col" : "group flex flex-col"}>
-  <div class="relative aspect-[3/2] w-full overflow-hidden bg-arena">
+  {/* La foto duplica el destino del título: se saca del orden de tabulación y
+      del árbol de accesibilidad para no repetir el enlace (patrón de tarjeta). */}
+  <a
+    href={href}
+    tabindex="-1"
+    aria-hidden="true"
+    class="relative block aspect-[3/2] w-full overflow-hidden bg-arena"
+  >
     {
       data.image && (
         <img
@@ -63,12 +74,14 @@ const dateLabel =
       <span class="font-display text-xl text-tinta">{day}</span>
       <span class="mt-0.5 text-[0.6rem] font-semibold uppercase tracking-wider text-oro">{month}</span>
     </div>
-  </div>
+  </a>
 
   <p class="mt-4 border-t border-niebla/60 pt-3 text-xs font-semibold uppercase tracking-widest text-oro">
     {experienceTypeLabel(data.category, locale)}
   </p>
-  <h3 class="mt-2 font-display text-xl leading-snug text-tinta">{data.title}</h3>
+  <h3 class="mt-2 font-display text-xl leading-snug text-tinta">
+    <a href={href} class="transition-colors duration-300 hover:text-terracota">{data.title}</a>
+  </h3>
   <p class="mt-1 text-sm text-piedra-suave">{dateLabel} · {data.location}</p>
   <p class="mt-2 text-sm leading-relaxed text-piedra-suave">{data.description}</p>
 </article>

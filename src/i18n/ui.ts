@@ -18,6 +18,7 @@ export const ui = {
     "lang.label": "Idioma",
     "a11y.skip": "Saltar al contenido",
     "a11y.close": "Cerrar",
+    "a11y.breadcrumb": "Ruta de navegación",
 
     "common.readmore": "Leer más",
     "common.viewall": "Ver todo",
@@ -97,6 +98,10 @@ export const ui = {
     "agenda.when": "Cuándo",
     "agenda.where": "Dónde",
 
+    // Página de detalle de evento (KAN-102)
+    "event.official": "Web oficial del evento",
+    "event.all": "Ver toda la agenda",
+
     "author.articlesby": "Artículos de",
 
     // Ofrecemos LA GUÍA, no una idea abstracta (28-jul-2026). El dato que lo
@@ -158,6 +163,7 @@ export const ui = {
     "lang.label": "Language",
     "a11y.skip": "Skip to content",
     "a11y.close": "Close",
+    "a11y.breadcrumb": "Breadcrumb",
 
     "common.readmore": "Read more",
     "common.viewall": "View all",
@@ -237,6 +243,10 @@ export const ui = {
     "agenda.when": "When",
     "agenda.where": "Where",
 
+    // Event detail page (KAN-102)
+    "event.official": "Official event website",
+    "event.all": "See everything that's on",
+
     "author.articlesby": "Articles by",
 
     // We offer THE GUIDE, not an abstract idea (28 Jul 2026). The number that
@@ -296,6 +306,7 @@ export const ui = {
     "lang.label": "Langue",
     "a11y.skip": "Aller au contenu",
     "a11y.close": "Fermer",
+    "a11y.breadcrumb": "Fil d'Ariane",
 
     "common.readmore": "Lire la suite",
     "common.viewall": "Tout voir",
@@ -374,6 +385,10 @@ export const ui = {
     "agenda.empty": "Aucun événement publié pour le moment.",
     "agenda.when": "Quand",
     "agenda.where": "Où",
+
+    // Page de détail d'événement (KAN-102)
+    "event.official": "Site officiel de l'événement",
+    "event.all": "Voir tout l'agenda",
 
     "author.articlesby": "Articles de",
 

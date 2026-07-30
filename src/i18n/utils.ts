@@ -44,6 +44,10 @@ const PREFIX = {
   article: { es: "/articulo", en: "/en/article", fr: "/fr/article" },
   place: { es: "/lugar", en: "/en/place", fr: "/fr/lieu" },
   author: { es: "/autor", en: "/en/author", fr: "/fr/auteur" },
+  // Detalle de evento: cuelga de la propia agenda (KAN-102). FR aún no tiene
+  // eventos publicados; el prefijo existe para que el tipo no se rompa al
+  // activar ese mercado.
+  event: { es: "/agenda", en: "/en/whats-on", fr: "/fr/agenda" },
 } satisfies Record<string, Record<Locale, string>>;
 
 export function articleUrl(locale: Locale, slug: string): string {
@@ -56,6 +60,10 @@ export function placeUrl(locale: Locale, slug: string): string {
 
 export function authorUrl(locale: Locale, slug: string): string {
   return `${PREFIX.author[locale]}/${slug}`;
+}
+
+export function eventUrl(locale: Locale, slug: string): string {
+  return `${PREFIX.event[locale]}/${slug}`;
 }
 
 /** Índice de lugares (la puerta de entrada a las fichas; ver lib/places.ts). */

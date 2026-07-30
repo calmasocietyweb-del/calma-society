@@ -6,7 +6,8 @@ import EventCard from "./EventCard.astro";
 import JsonLd from "./JsonLd.astro";
 import { getEvents } from "../lib/content";
 import { EXPERIENCE_TYPES, experienceTypeLabel, useTranslations } from "../i18n/ui";
-import { eventSchema } from "../lib/schema";
+import { abs, eventSchema } from "../lib/schema";
+import { eventUrl } from "../i18n/utils";
 import type { Locale } from "../config/site";
 
 interface Props {
@@ -21,6 +22,8 @@ const present = EXPERIENCE_TYPES.map((e) => e.key).filter((key) =>
   events.some((ev) => ev.data.category === key),
 );
 
+// `url` apunta a NUESTRA página de detalle (KAN-102) — la misma que declara el
+// JSON-LD de esa página —; la web oficial del evento va en `sameAs`.
 const eventsLd = events.map((e) =>
   eventSchema({
     title: e.data.title,
@@ -29,7 +32,8 @@ const eventsLd = events.map((e) =>
     endDate: e.data.endDate,
     location: e.data.location,
     image: e.data.image,
-    url: e.data.sourceUrl,
+    url: abs(eventUrl(locale, e.id)),
+    sameAs: e.data.sourceUrl,
   }),
 );
 ---

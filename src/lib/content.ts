@@ -114,6 +114,21 @@ export async function articleSlugFor(
   return all[0]?.id ?? null;
 }
 
+/** Slug del evento equivalente en otro idioma (selector de idioma + hreflang). */
+export async function eventSlugFor(
+  translationKey: string,
+  locale: Locale,
+): Promise<string | null> {
+  const all = await getCollection(
+    "eventos",
+    (e) =>
+      e.data.translationKey === translationKey &&
+      e.data.lang === locale &&
+      e.data.status === PUBLISHED,
+  );
+  return all[0]?.id ?? null;
+}
+
 /** Slug del lugar equivalente en otro idioma. */
 export async function placeSlugFor(
   translationKey: string,

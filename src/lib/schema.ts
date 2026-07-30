@@ -122,6 +122,10 @@ export function eventSchema(opts: {
   location: string;
   url?: string;
   image?: string;
+  /** Coordenadas del lugar (si el evento referencia una ficha de `lugares`). */
+  geo?: { lat: number; lng: number };
+  /** Web oficial del evento (sourceUrl): refuerza la entidad sin disputar `url`. */
+  sameAs?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -142,10 +146,14 @@ export function eventSchema(opts: {
         addressRegion: "Menorca",
         addressCountry: "ES",
       },
+      geo: opts.geo
+        ? { "@type": "GeoCoordinates", latitude: opts.geo.lat, longitude: opts.geo.lng }
+        : undefined,
     },
     // Imagen del evento (rich results de Event la destacan). A URL absoluta.
     image: opts.image ? [abs(opts.image)] : undefined,
     url: opts.url,
+    sameAs: opts.sameAs ? [opts.sameAs] : undefined,
   };
 }
 
