@@ -94,6 +94,45 @@ export async function getEvents(locale: Locale) {
   );
 }
 
+/**
+ * Malla interna ENTRE eventos para "Próximas citas" (pie del detalle de evento):
+ * los `limit` eventos siguientes por fecha en el MISMO idioma (startDate >= la
+ * del evento actual, excluyéndose a sí mismo). Si al final del calendario no
+ * llegan a `limit`, completa con los más cercanos anteriores para que el bloque
+ * nunca salga vacío ni cojo. El bloque final se muestra en orden cronológico.
+ * Determinista en build (desempate por id): la web se reconstruye a diario.
+ */
+export async function getUpcomingEvents(
+  locale: Locale,
+  current: CollectionEntry<"eventos">,
+  limit = 3,
+): Promise<CollectionEntry<"eventos">[]> {
+  const rest = await getCollection(
+    "eventos",
+    (e) =>
+      e.data.lang === locale && e.data.status === PUBLISHED && e.id !== current.id,
+  );
+  const byDate = (
+    a: CollectionEntry<"eventos">,
+    b: CollectionEntry<"eventos">,
+  ) =>
+    a.data.startDate.getTime() - b.data.startDate.getTime() ||
+    (a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
+  const sorted = rest.sort(byDate);
+  const t0 = current.data.startDate.getTime();
+  const picked = sorted
+    .filter((e) => e.data.startDate.getTime() >= t0)
+    .slice(0, limit);
+  if (picked.length < limit) {
+    // Cola del calendario: completar con los anteriores más cercanos.
+    const previous = sorted
+      .filter((e) => e.data.startDate.getTime() < t0)
+      .reverse();
+    picked.push(...previous.slice(0, limit - picked.length));
+  }
+  return picked.sort(byDate);
+}
+
 /** Todos los autores (entradas únicas, no traducidas). */
 export async function getAuthors() {
   return getCollection("autores");

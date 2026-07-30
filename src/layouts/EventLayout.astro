@@ -11,7 +11,7 @@ import { useTranslations, experienceTypeLabel } from "../i18n/ui";
 import { SITE, type Locale } from "../config/site";
 import { eventUrl, placeUrl, homePath, formatDate } from "../i18n/utils";
 import { getSection } from "../config/sections";
-import { placeSlugFor } from "../lib/content";
+import { placeSlugFor, getUpcomingEvents } from "../lib/content";
 import { abs, eventSchema, breadcrumbSchema } from "../lib/schema";
 import { srcset } from "../lib/img";
 
@@ -75,6 +75,13 @@ const eventLd = eventSchema({
   geo: place ? { lat: place.data.coordinates.lat, lng: place.data.coordinates.lng } : undefined,
   sameAs: data.sourceUrl,
 });
+// ── Malla interna ENTRE eventos (continuación de KAN-102) ────────────────────
+// Las páginas de detalle solo enlazaban hacia fuera; sin camino de rastreo
+// entre ellas se repite el patrón de las fichas de lugares (rastreadas sin
+// indexar en GSC hasta la malla "Cerca de aquí"). Tres citas siguientes por
+// fecha, del mismo idioma; al final del calendario se completa con anteriores.
+const upcoming = await getUpcomingEvents(locale, entry);
+
 const breadcrumb = breadcrumbSchema([
   { name: SITE.name, url: abs(homePath(locale)) },
   { name: agendaLabel, url: abs(agendaHref) },
@@ -185,6 +192,42 @@ const breadcrumb = breadcrumbSchema([
         {t("event.all")} →
       </a>
     </p>
+
+    {/* Próximas citas: variante ligera (sin foto) para el pie — fecha, título y
+        tipo de experiencia con los tokens del sistema. Enlazado interno entre
+        eventos: una razón para seguir navegando y un camino de rastreo. */}
+    {
+      upcoming.length > 0 && (
+        <section aria-labelledby="upcoming-events" class="mt-14 border-t border-niebla pt-8">
+          <h2 id="upcoming-events" class="font-display text-2xl text-tinta">
+            {t("event.upcoming")}
+          </h2>
+          <ul class="mt-6 grid gap-4 sm:grid-cols-3">
+            {upcoming.map((e) => (
+              <li>
+                <a
+                  href={eventUrl(locale, e.id)}
+                  class="group flex h-full flex-col border border-niebla p-4 transition-colors duration-300 hover:border-terracota"
+                >
+                  <span class="text-[0.65rem] font-semibold uppercase tracking-widest text-oro">
+                    {experienceTypeLabel(e.data.category, locale)}
+                  </span>
+                  <span class="mt-1.5 font-display text-lg leading-snug text-tinta transition-colors duration-300 group-hover:text-terracota">
+                    {e.data.title}
+                  </span>
+                  <time
+                    datetime={e.data.startDate.toISOString().slice(0, 10)}
+                    class="mt-auto pt-3 text-sm text-piedra-suave"
+                  >
+                    {formatDate(e.data.startDate, locale)}
+                  </time>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
   </article>
 
   {/* Captación al pie (KPI nº1): mismo gancho honesto que la portada de agenda,

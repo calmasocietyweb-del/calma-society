@@ -101,6 +101,7 @@ export const ui = {
     // Página de detalle de evento (KAN-102)
     "event.official": "Web oficial del evento",
     "event.all": "Ver toda la agenda",
+    "event.upcoming": "Próximas citas",
 
     "author.articlesby": "Artículos de",
 
@@ -246,6 +247,7 @@ export const ui = {
     // Event detail page (KAN-102)
     "event.official": "Official event website",
     "event.all": "See everything that's on",
+    "event.upcoming": "Coming up next",
 
     "author.articlesby": "Articles by",
 
@@ -389,6 +391,7 @@ export const ui = {
     // Page de détail d'événement (KAN-102)
     "event.official": "Site officiel de l'événement",
     "event.all": "Voir tout l'agenda",
+    "event.upcoming": "Prochains rendez-vous",
 
     "author.articlesby": "Articles de",
 
