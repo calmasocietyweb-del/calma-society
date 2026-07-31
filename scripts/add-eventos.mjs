@@ -81,11 +81,14 @@ const CAT_POOLS = {
     "alaior", "binibeca-calle", "cales-fonts", "ciutadella", "avarcas-menorca",
     "embutidos-menorca", "queso-tabla", "dulces-menorca", "vino-menorca",
     "gin-menorca", "mahonesa", "embutidos-tabla", "dulces-amargos", "binibeca",
-    "gin-tonic", "queso-curacion", "vino-bodega"],
+    "gin-tonic", "vino-bodega"],
   deporte: ["cami-de-cavalls", "navegar-menorca", "crucero-menorca", "son-bou",
     "cala-galdana", "cala-mitjana", "cala-macarella", "cala-turqueta", "binigaus",
     "menorca-punta-nati", "albufera-des-grau", "faro-artrutx", "cala-pregonda"],
-  gastronomia: ["caldereta-langosta", "queso-curacion", "queso-tabla", "vino-bodega",
+  // "queso-curacion" RETIRADA (31-jul-2026, KAN-98): son ruedas redondas de bodega
+  // industrial, no el Mahón-Menorca DOP (cuadrado, corteza anaranjada). Ilustrar el
+  // queso de la isla con queso de otra parte rompe el moat. No devolverla a la lista.
+  gastronomia: ["caldereta-langosta", "queso-tabla", "vino-bodega",
     "fine-dining", "alta-cocina-plato", "gin-tonic", "embutidos-tabla",
     "dulces-amargos", "mahonesa", "vino-menorca", "productos-menorca"],
   otro: ["productos-menorca", "alaior", "calma-menorca", "menorca-hero"],

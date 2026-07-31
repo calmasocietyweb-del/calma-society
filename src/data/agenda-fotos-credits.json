@@ -239,7 +239,14 @@
     "assetId": "1214534862",
     "name": "Person wearing gloves and hairnet inspecting large wheels of cheese on wooden shelves in a storage room",
     "source": "Adobe Stock",
-    "licencia": "colección gratuita (free)"
+    "licencia": "colección gratuita (free)",
+    "retirada": "2026-07-31 — ruedas REDONDAS de bodega industrial: no es Mahón-Menorca DOP (cuadrado, corteza anaranjada). No reutilizar para queso de Menorca (KAN-98)"
+  },
+  "queso-tabla": {
+    "assetId": null,
+    "name": "Cuña y lonchas de queso curado sobre tabla de madera; lonchas con corteza anaranjada",
+    "source": "Adobe Stock",
+    "licencia": "licenciada (lote de fotos de artículo, jun 2026 — ver scripts/optimize-photos.mjs)"
   },
   "ag-fira-arrels-es-mercadal": {
     "assetId": "288880171",
