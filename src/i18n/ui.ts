@@ -102,6 +102,7 @@ export const ui = {
     "event.official": "Web oficial del evento",
     "event.all": "Ver toda la agenda",
     "event.upcoming": "Próximas citas",
+    "event.related": "Para ir con contexto",
 
     "author.articlesby": "Artículos de",
 
@@ -248,6 +249,7 @@ export const ui = {
     "event.official": "Official event website",
     "event.all": "See everything that's on",
     "event.upcoming": "Coming up next",
+    "event.related": "Read this first",
 
     "author.articlesby": "Articles by",
 
@@ -392,6 +394,7 @@ export const ui = {
     "event.official": "Site officiel de l'événement",
     "event.all": "Voir tout l'agenda",
     "event.upcoming": "Prochains rendez-vous",
+    "event.related": "À lire avant d'y aller",
 
     "author.articlesby": "Articles de",
 

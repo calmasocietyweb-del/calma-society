@@ -332,6 +332,12 @@ const eventos = defineCollection({
     // con licencia CC (Wikimedia Commons). Ej.: "MANovillo / Wikimedia (CC BY 2.0)".
     imageCredit: z.string().optional(),
     sourceUrl: z.url().optional(),
+    // Artículos nuestros que dan contexto a este evento (KAN-110): el pueblo
+    // donde ocurre, la tradición que celebra, el producto que se feria. Sin
+    // esto la ficha solo sabe enlazar HACIA FUERA (la web oficial) y la agenda
+    // —la 2ª página más vista— se queda en página de paso. Máximo 3, y solo si
+    // el artículo aporta de verdad: un enlace de relleno vale menos que ninguno.
+    relatedArticles: z.array(reference("articulos")).max(3).optional(),
     status: STATUS,
     source: z.enum(["humano", "auto-agenda"]).default("humano"),
   }),

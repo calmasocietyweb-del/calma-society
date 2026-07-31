@@ -9,9 +9,9 @@ import JsonLd from "../components/JsonLd.astro";
 import NewsletterSignup from "../components/NewsletterSignup.astro";
 import { useTranslations, experienceTypeLabel } from "../i18n/ui";
 import { SITE, type Locale } from "../config/site";
-import { eventUrl, placeUrl, homePath, formatDate } from "../i18n/utils";
+import { articleUrl, eventUrl, placeUrl, homePath, formatDate } from "../i18n/utils";
 import { getSection } from "../config/sections";
-import { placeSlugFor, getUpcomingEvents } from "../lib/content";
+import { articleSlugFor, placeSlugFor, getUpcomingEvents } from "../lib/content";
 import { abs, eventSchema, breadcrumbSchema } from "../lib/schema";
 import { srcset } from "../lib/img";
 
@@ -52,6 +52,23 @@ if (data.locationRef) {
   }
 }
 const locationName = place?.data.name ?? data.location;
+
+// ── Artículos que dan contexto al evento (KAN-110) ───────────────────────────
+// Mismo criterio que el lugar: se acepta una referencia en otro idioma y se
+// resuelve la versión de esta página por translationKey; solo `published`
+// (§6 bis). Si un artículo se despublica, desaparece del bloque sin romper la
+// página — por eso se filtra en vez de confiar en el dato.
+const related = (
+  await Promise.all(
+    (data.relatedArticles ?? []).map(async (ref) => {
+      const referenced = await getEntry(ref);
+      if (!referenced || referenced.data.status !== "published") return null;
+      if (referenced.data.lang === locale) return referenced;
+      const sameLangId = await articleSlugFor(referenced.data.translationKey, locale);
+      return sameLangId ? ((await getEntry("articulos", sameLangId)) ?? null) : null;
+    }),
+  )
+).filter((a): a is CollectionEntry<"articulos"> => a !== null);
 
 // ── SEO + GEO (CLAUDE.md §8) ─────────────────────────────────────────────────
 // Título único por idioma y anclado a "Menorca" (lección KAN-88: nada de
@@ -192,6 +209,34 @@ const breadcrumb = breadcrumbSchema([
         {t("event.all")} →
       </a>
     </p>
+
+    {/* Para ir con contexto: los artículos que explican el pueblo, la tradición
+        o el producto de este evento. Es el enlace que faltaba HACIA DENTRO —
+        antes la única salida de la ficha era la web oficial, que se lleva al
+        lector fuera. Lista sobria, sin foto: aquí manda el titular. */}
+    {
+      related.length > 0 && (
+        <section aria-labelledby="related-articles" class="mt-14 border-t border-niebla pt-8">
+          <h2 id="related-articles" class="font-display text-2xl text-tinta">
+            {t("event.related")}
+          </h2>
+          <ul class="mt-6 space-y-5">
+            {related.map((a) => (
+              <li>
+                <a href={articleUrl(locale, a.id)} class="group block">
+                  <span class="font-display text-lg leading-snug text-tinta transition-colors duration-300 group-hover:text-terracota">
+                    {a.data.title}
+                  </span>
+                  <span class="mt-1 block text-sm leading-relaxed text-piedra-suave">
+                    {a.data.excerpt}
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
 
     {/* Próximas citas: variante ligera (sin foto) para el pie — fecha, título y
         tipo de experiencia con los tokens del sistema. Enlazado interno entre

@@ -16,5 +16,9 @@
   "sourceUrl": "https://fiestasmenorca.es/religiosas/mare-de-deu-del-toro/",
   "status": "published",
   "source": "auto-agenda",
-  "image": "/uploads/monte-toro.webp"
+  "image": "/uploads/monte-toro.webp",
+  "locationRef": "monte-toro-es",
+  "relatedArticles": [
+    "es-mercadal-monte-toro"
+  ]
 }

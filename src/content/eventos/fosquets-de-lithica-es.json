@@ -18,5 +18,10 @@
   "sourceUrl": "https://apuntmenorca.com/ca/actualitat/fosquets-de-lithica-2026/",
   "status": "published",
   "source": "auto-agenda",
-  "image": "/uploads/ag-fosquets-de-lithica.webp"
+  "image": "/uploads/ag-fosquets-de-lithica.webp",
+  "locationRef": "lithica-es",
+  "relatedArticles": [
+    "lithica-pedreres-shostal",
+    "ciutadella-ciudad-de-palacios"
+  ]
 }
