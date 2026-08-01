@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-31",
+  "updated": "2026-08-01",
   "ventana": {
-    "desde": "2026-07-31",
-    "hasta": "2026-08-25"
+    "desde": "2026-08-01",
+    "hasta": "2026-08-29"
   },
   "nuevas": [
     {
@@ -52,12 +52,12 @@
       "date": "2026-08-17",
       "barcos": [
         {
-          "ship": "ILMA",
-          "eslora": 241.84
-        },
-        {
           "ship": "FOUR SEASONS",
           "eslora": 207
+        },
+        {
+          "ship": "ILMA",
+          "eslora": 241.84
         }
       ],
       "nota": "Dos cruceros el mismo día. Si uno fondea, se desembarca en lancha y el tiempo real en tierra cambia."
