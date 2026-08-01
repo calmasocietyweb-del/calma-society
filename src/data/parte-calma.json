@@ -1,14 +1,68 @@
 {
-  "generatedAt": "2026-07-31T07:45:16.340Z",
-  "forecastDate": "2026-07-31",
+  "generatedAt": "2026-08-01T07:23:40.872Z",
+  "forecastDate": "2026-08-01",
   "validityNote": "Previsión para la franja diurna (10–18 h). El viento puede rolar por la tarde.",
   "sources": [
     "AEMET"
   ],
   "attribution": "Fuente: AEMET",
   "formulaVersion": "abrigo-1.0 / empuje-medusas-2.0",
-  "stale": false,
+  "stale": true,
   "calas": [
+    {
+      "id": "cala-mitjana",
+      "name": "Cala Mitjana",
+      "area": "Sur (Ferreries)",
+      "costa": "sur",
+      "lat": 39.9355,
+      "lng": 3.9686,
+      "lugarSlug": "cala-mitjana",
+      "tieneVigilancia": false,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 1,
+        "viento": {
+          "nombre": "Tramuntana (N)",
+          "kmh": 7
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.01,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "cala-galdana",
+      "name": "Cala Galdana",
+      "area": "Sur (Ferreries)",
+      "costa": "sur",
+      "lat": 39.9369,
+      "lng": 3.9631,
+      "lugarSlug": null,
+      "tieneVigilancia": true,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 1,
+        "viento": {
+          "nombre": "Tramuntana (N)",
+          "kmh": 7
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.02,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
     {
       "id": "cala-pilar",
       "name": "Cala Pilar",
@@ -34,7 +88,8 @@
         "vientoEmpuje": null,
         "ventanaH": 48,
         "coverage": 0.95
-      }
+      },
+      "stale": true
     },
     {
       "id": "cala-morts",
@@ -61,78 +116,25 @@
         "vientoEmpuje": null,
         "ventanaH": 48,
         "coverage": 0.95
-      }
+      },
+      "stale": true
     },
     {
-      "id": "cala-mitjana",
-      "name": "Cala Mitjana",
+      "id": "cala-mitjaneta",
+      "name": "Cala Mitjaneta",
       "area": "Sur (Ferreries)",
       "costa": "sur",
-      "lat": 39.9355,
-      "lng": 3.9686,
-      "lugarSlug": "cala-mitjana",
+      "lat": 39.934,
+      "lng": 3.9737,
+      "lugarSlug": null,
       "tieneVigilancia": false,
       "tienePradera": true,
       "abrigo": {
         "band": "alto",
-        "score": 0.99,
+        "score": 1,
         "viento": {
           "nombre": "Tramuntana (N)",
-          "kmh": 5
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.01,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.88
-      }
-    },
-    {
-      "id": "cala-galdana",
-      "name": "Cala Galdana",
-      "area": "Sur (Ferreries)",
-      "costa": "sur",
-      "lat": 39.9369,
-      "lng": 3.9631,
-      "lugarSlug": null,
-      "tieneVigilancia": true,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.99,
-        "viento": {
-          "nombre": "Tramuntana (N)",
-          "kmh": 5
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.01,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.88
-      }
-    },
-    {
-      "id": "cala-cavalleria",
-      "name": "Cala Cavalleria",
-      "area": "Norte (Es Mercadal)",
-      "costa": "norte",
-      "lat": 40.0596,
-      "lng": 4.0751,
-      "lugarSlug": null,
-      "tieneVigilancia": true,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.99,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 11
+          "kmh": 7
         }
       },
       "medusas": {
@@ -141,7 +143,7 @@
         "horasAfavor": 0,
         "vientoEmpuje": null,
         "ventanaH": 48,
-        "coverage": 0.88
+        "coverage": 0.93
       }
     },
     {
@@ -169,466 +171,8 @@
         "vientoEmpuje": null,
         "ventanaH": 48,
         "coverage": 0.95
-      }
-    },
-    {
-      "id": "arenal-den-castell",
-      "name": "Arenal d'en Castell",
-      "area": "Norte (Es Mercadal)",
-      "costa": "norte",
-      "lat": 40.0217,
-      "lng": 4.1828,
-      "lugarSlug": null,
-      "tieneVigilancia": true,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.99,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 11
-        }
       },
-      "medusas": {
-        "band": "baja",
-        "score": 0.03,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.88
-      }
-    },
-    {
-      "id": "es-grau",
-      "name": "Es Grau",
-      "area": "Norte (Maó)",
-      "costa": "norte",
-      "lat": 39.9504,
-      "lng": 4.2696,
-      "lugarSlug": null,
-      "tieneVigilancia": true,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.99,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 12
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.01,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.95
-      }
-    },
-    {
-      "id": "sa-mesquida",
-      "name": "Sa Mesquida",
-      "area": "Norte (Maó)",
-      "costa": "norte",
-      "lat": 39.9189,
-      "lng": 4.2895,
-      "lugarSlug": null,
-      "tieneVigilancia": true,
-      "tienePradera": false,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.99,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 12
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.01,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.95
-      }
-    },
-    {
-      "id": "cala-presili",
-      "name": "Cala Presili",
-      "area": "Norte (Maó)",
-      "costa": "norte",
-      "lat": 39.9828,
-      "lng": 4.2412,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": false,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.99,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 12
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.95
-      }
-    },
-    {
-      "id": "cala-mitjaneta",
-      "name": "Cala Mitjaneta",
-      "area": "Sur (Ferreries)",
-      "costa": "sur",
-      "lat": 39.934,
-      "lng": 3.9737,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.99,
-        "viento": {
-          "nombre": "Tramuntana (N)",
-          "kmh": 5
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.01,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.88
-      }
-    },
-    {
-      "id": "macar-de-binillauti",
-      "name": "Macar de Binillautí",
-      "area": "Norte (Maó)",
-      "costa": "norte",
-      "lat": 39.925,
-      "lng": 4.2829,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": false,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.99,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 12
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.01,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.95
-      }
-    },
-    {
-      "id": "cala-de-sa-torreta",
-      "name": "Cala de sa Torreta",
-      "area": "Norte (Maó)",
-      "costa": "norte",
-      "lat": 39.9641,
-      "lng": 4.2543,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.99,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 12
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.01,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.95
-      }
-    },
-    {
-      "id": "binimella",
-      "name": "Binimel·là",
-      "area": "Norte (Es Mercadal)",
-      "costa": "norte",
-      "lat": 40.0517,
-      "lng": 4.0532,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.98,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 11
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.02,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.88
-      }
-    },
-    {
-      "id": "fornells",
-      "name": "Fornells",
-      "area": "Norte (Es Mercadal)",
-      "costa": "norte",
-      "lat": 40.0535,
-      "lng": 4.1285,
-      "lugarSlug": null,
-      "tieneVigilancia": true,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.98,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 11
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.02,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.88
-      }
-    },
-    {
-      "id": "cala-tirant",
-      "name": "Cala Tirant",
-      "area": "Norte (Es Mercadal)",
-      "costa": "norte",
-      "lat": 40.0448,
-      "lng": 4.1026,
-      "lugarSlug": null,
-      "tieneVigilancia": true,
-      "tienePradera": false,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.98,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 11
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.02,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.88
-      }
-    },
-    {
-      "id": "cala-pudent",
-      "name": "Cala Pudent",
-      "area": "Norte (Es Mercadal)",
-      "costa": "norte",
-      "lat": 40.0452,
-      "lng": 4.1585,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": false,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.98,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 11
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.02,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.88
-      }
-    },
-    {
-      "id": "cala-en-tosqueta",
-      "name": "Cala en Tosqueta",
-      "area": "Norte (Es Mercadal)",
-      "costa": "norte",
-      "lat": 40.0585,
-      "lng": 4.1663,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.98,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 11
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.02,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.88
-      }
-    },
-    {
-      "id": "cala-pregonda",
-      "name": "Cala Pregonda",
-      "area": "Norte (Es Mercadal)",
-      "costa": "norte",
-      "lat": 40.0489,
-      "lng": 4.0512,
-      "lugarSlug": "cala-pregonda",
-      "tieneVigilancia": true,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.97,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 11
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.01,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.88
-      }
-    },
-    {
-      "id": "cala-tortuga",
-      "name": "Cala Tortuga",
-      "area": "Norte (Maó)",
-      "costa": "norte",
-      "lat": 39.988,
-      "lng": 4.2555,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.97,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 12
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.03,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.95
-      }
-    },
-    {
-      "id": "cala-des-tamarells",
-      "name": "Cala des Tamarells",
-      "area": "Norte (Maó)",
-      "costa": "norte",
-      "lat": 39.9615,
-      "lng": 4.2644,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.97,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 12
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.03,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.95
-      }
-    },
-    {
-      "id": "cala-pregondo",
-      "name": "Cala Pregondó",
-      "area": "Norte (Es Mercadal)",
-      "costa": "norte",
-      "lat": 40.057,
-      "lng": 4.043,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.97,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 11
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.03,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.88
-      }
-    },
-    {
-      "id": "cala-mica",
-      "name": "Cala Mica",
-      "area": "Norte (Es Mercadal)",
-      "costa": "norte",
-      "lat": 40.0564,
-      "lng": 4.0654,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": false,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.96,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 11
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.01,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.88
-      }
+      "stale": true
     },
     {
       "id": "cala-fontanelles",
@@ -655,6 +199,88 @@
         "vientoEmpuje": null,
         "ventanaH": 48,
         "coverage": 0.95
+      },
+      "stale": true
+    },
+    {
+      "id": "sant-tomas",
+      "name": "Sant Tomàs",
+      "area": "Sur (Es Migjorn Gran)",
+      "costa": "sur",
+      "lat": 39.9135,
+      "lng": 4.0419,
+      "lugarSlug": null,
+      "tieneVigilancia": true,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.93,
+        "viento": {
+          "nombre": "Llevant (E)",
+          "kmh": 11
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.1,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "cala-escorxada",
+      "name": "Cala Escorxada",
+      "area": "Sur (Es Migjorn Gran)",
+      "costa": "sur",
+      "lat": 39.9253,
+      "lng": 4.0053,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.93,
+        "viento": {
+          "nombre": "Llevant (E)",
+          "kmh": 11
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.1,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "cala-fustam",
+      "name": "Cala Fustam",
+      "area": "Sur (Es Migjorn Gran)",
+      "costa": "sur",
+      "lat": 39.9262,
+      "lng": 4.0009,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.93,
+        "viento": {
+          "nombre": "Llevant (E)",
+          "kmh": 11
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.1,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
       }
     },
     {
@@ -682,6 +308,34 @@
         "vientoEmpuje": null,
         "ventanaH": 48,
         "coverage": 0.95
+      },
+      "stale": true
+    },
+    {
+      "id": "sant-adeodato",
+      "name": "Platja de Sant Adeodato (Binicodrell)",
+      "area": "Sur (Es Migjorn Gran)",
+      "costa": "sur",
+      "lat": 39.9166,
+      "lng": 4.0345,
+      "lugarSlug": null,
+      "tieneVigilancia": true,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.93,
+        "viento": {
+          "nombre": "Llevant (E)",
+          "kmh": 11
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.1,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
       }
     },
     {
@@ -709,7 +363,8 @@
         "vientoEmpuje": null,
         "ventanaH": 48,
         "coverage": 0.95
-      }
+      },
+      "stale": true
     },
     {
       "id": "platja-des-bot",
@@ -736,7 +391,8 @@
         "vientoEmpuje": null,
         "ventanaH": 48,
         "coverage": 0.95
-      }
+      },
+      "stale": true
     },
     {
       "id": "cala-carbo",
@@ -763,15 +419,16 @@
         "vientoEmpuje": null,
         "ventanaH": 48,
         "coverage": 0.95
-      }
+      },
+      "stale": true
     },
     {
-      "id": "cala-moli",
-      "name": "Cala Molí",
-      "area": "Este (Es Mercadal)",
-      "costa": "este",
-      "lat": 40.0106,
-      "lng": 4.1987,
+      "id": "cala-trebaluger",
+      "name": "Cala Trebalúger",
+      "area": "Sur (Es Migjorn Gran)",
+      "costa": "sur",
+      "lat": 39.9353,
+      "lng": 3.9947,
       "lugarSlug": null,
       "tieneVigilancia": false,
       "tienePradera": true,
@@ -779,17 +436,422 @@
         "band": "alto",
         "score": 0.88,
         "viento": {
-          "nombre": "Migjorn (S)",
+          "nombre": "Llevant (E)",
           "kmh": 11
         }
       },
       "medusas": {
         "band": "baja",
-        "score": 0.03,
+        "score": 0.11,
         "horasAfavor": 0,
         "vientoEmpuje": null,
         "ventanaH": 48,
-        "coverage": 0.88
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "es-grau",
+      "name": "Es Grau",
+      "area": "Norte (Maó)",
+      "costa": "norte",
+      "lat": 39.9504,
+      "lng": 4.2696,
+      "lugarSlug": null,
+      "tieneVigilancia": true,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.88,
+        "viento": {
+          "nombre": "Llevant (E)",
+          "kmh": 11
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "sa-mesquida",
+      "name": "Sa Mesquida",
+      "area": "Norte (Maó)",
+      "costa": "norte",
+      "lat": 39.9189,
+      "lng": 4.2895,
+      "lugarSlug": null,
+      "tieneVigilancia": true,
+      "tienePradera": false,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.88,
+        "viento": {
+          "nombre": "Llevant (E)",
+          "kmh": 11
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "es-canutells",
+      "name": "Es Canutells",
+      "area": "Sur (Maó)",
+      "costa": "sur",
+      "lat": 39.8511,
+      "lng": 4.169,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.88,
+        "viento": {
+          "nombre": "Llevant (E)",
+          "kmh": 11
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.11,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "macar-de-binillauti",
+      "name": "Macar de Binillautí",
+      "area": "Norte (Maó)",
+      "costa": "norte",
+      "lat": 39.925,
+      "lng": 4.2829,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": false,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.88,
+        "viento": {
+          "nombre": "Llevant (E)",
+          "kmh": 11
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "cala-de-sa-torreta",
+      "name": "Cala de sa Torreta",
+      "area": "Norte (Maó)",
+      "costa": "norte",
+      "lat": 39.9641,
+      "lng": 4.2543,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.88,
+        "viento": {
+          "nombre": "Llevant (E)",
+          "kmh": 11
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "cala-binigaus",
+      "name": "Cala Binigaus",
+      "area": "Sur (Es Migjorn Gran)",
+      "costa": "sur",
+      "lat": 39.9206,
+      "lng": 4.0264,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.87,
+        "viento": {
+          "nombre": "Llevant (E)",
+          "kmh": 11
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.11,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "cala-binibequer",
+      "name": "Cala Binibèquer",
+      "area": "Sur (Sant Lluís)",
+      "costa": "sur",
+      "lat": 39.8164,
+      "lng": 4.2399,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.86,
+        "viento": {
+          "nombre": "Xaloc (SE)",
+          "kmh": 10
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.11,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "cala-binisafuller",
+      "name": "Cala Binisafúller",
+      "area": "Sur (Sant Lluís)",
+      "costa": "sur",
+      "lat": 39.8291,
+      "lng": 4.2186,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.86,
+        "viento": {
+          "nombre": "Xaloc (SE)",
+          "kmh": 10
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.11,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "cala-mica",
+      "name": "Cala Mica",
+      "area": "Norte (Es Mercadal)",
+      "costa": "norte",
+      "lat": 40.0564,
+      "lng": 4.0654,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": false,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.86,
+        "viento": {
+          "nombre": "Gregal (NE)",
+          "kmh": 10
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "cala-presili",
+      "name": "Cala Presili",
+      "area": "Norte (Maó)",
+      "costa": "norte",
+      "lat": 39.9828,
+      "lng": 4.2412,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": false,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.86,
+        "viento": {
+          "nombre": "Llevant (E)",
+          "kmh": 11
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "binibequer-nou",
+      "name": "Binibèquer Nou",
+      "area": "Sur (Sant Lluís)",
+      "costa": "sur",
+      "lat": 39.8177,
+      "lng": 4.2403,
+      "lugarSlug": null,
+      "tieneVigilancia": true,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.86,
+        "viento": {
+          "nombre": "Xaloc (SE)",
+          "kmh": 10
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.11,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "calo-fondo-ses-olles",
+      "name": "Caló Fondo (Ses Olles de Binissafúller)",
+      "area": "Sur (Sant Lluís)",
+      "costa": "sur",
+      "lat": 39.8244,
+      "lng": 4.2264,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.86,
+        "viento": {
+          "nombre": "Xaloc (SE)",
+          "kmh": 10
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.11,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "es-calo-blanc",
+      "name": "Es Caló Blanc",
+      "area": "Sur (Sant Lluís)",
+      "costa": "sur",
+      "lat": 39.8307,
+      "lng": 4.2115,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.86,
+        "viento": {
+          "nombre": "Xaloc (SE)",
+          "kmh": 10
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.11,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "binidali",
+      "name": "Cala de Binidalí",
+      "area": "Sur (Sant Lluís)",
+      "costa": "sur",
+      "lat": 39.8344,
+      "lng": 4.198,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.86,
+        "viento": {
+          "nombre": "Xaloc (SE)",
+          "kmh": 10
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.11,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "cala-biniparratx",
+      "name": "Cala de Biniparratx",
+      "area": "Sur (Sant Lluís)",
+      "costa": "sur",
+      "lat": 39.833,
+      "lng": 4.2055,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.86,
+        "viento": {
+          "nombre": "Xaloc (SE)",
+          "kmh": 10
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.11,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
       }
     },
     {
@@ -817,7 +879,8 @@
         "vientoEmpuje": null,
         "ventanaH": 48,
         "coverage": 0.95
-      }
+      },
+      "stale": true
     },
     {
       "id": "cala-santandria",
@@ -844,24 +907,25 @@
         "vientoEmpuje": null,
         "ventanaH": 48,
         "coverage": 0.95
-      }
+      },
+      "stale": true
     },
     {
-      "id": "cala-teulera",
-      "name": "Cala Teulera",
-      "area": "Este (Es Castell)",
-      "costa": "este",
-      "lat": 39.8801,
-      "lng": 4.3086,
+      "id": "cala-en-porter",
+      "name": "Cala en Porter",
+      "area": "Sur (Alaior)",
+      "costa": "sur",
+      "lat": 39.8687,
+      "lng": 4.1351,
       "lugarSlug": null,
-      "tieneVigilancia": false,
+      "tieneVigilancia": true,
       "tienePradera": true,
       "abrigo": {
         "band": "alto",
-        "score": 0.84,
+        "score": 0.85,
         "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 13
+          "nombre": "Xaloc (SE)",
+          "kmh": 9
         }
       },
       "medusas": {
@@ -870,61 +934,169 @@
         "horasAfavor": 0,
         "vientoEmpuje": null,
         "ventanaH": 48,
-        "coverage": 0.88
+        "coverage": 0.93
       }
     },
     {
-      "id": "cala-llonga",
-      "name": "Cala Llonga",
-      "area": "Este (Maó)",
-      "costa": "este",
-      "lat": 39.8921,
-      "lng": 4.2969,
+      "id": "cales-coves",
+      "name": "Cales Coves",
+      "area": "Sur (Alaior)",
+      "costa": "sur",
+      "lat": 39.865,
+      "lng": 4.1468,
       "lugarSlug": null,
       "tieneVigilancia": false,
       "tienePradera": true,
       "abrigo": {
         "band": "alto",
-        "score": 0.84,
+        "score": 0.85,
         "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 12
+          "nombre": "Xaloc (SE)",
+          "kmh": 9
         }
       },
       "medusas": {
         "band": "baja",
-        "score": 0.06,
+        "score": 0.1,
         "horasAfavor": 0,
         "vientoEmpuje": null,
         "ventanaH": 48,
-        "coverage": 0.95
+        "coverage": 0.93
       }
     },
     {
-      "id": "cala-rata",
-      "name": "Cala Rata",
-      "area": "Este (Maó)",
-      "costa": "este",
-      "lat": 39.8927,
-      "lng": 4.2778,
+      "id": "cala-atalis",
+      "name": "Cala Atalis (Talis)",
+      "area": "Sur (Alaior)",
+      "costa": "sur",
+      "lat": 39.9071,
+      "lng": 4.0536,
       "lugarSlug": null,
       "tieneVigilancia": false,
       "tienePradera": true,
       "abrigo": {
         "band": "alto",
-        "score": 0.84,
+        "score": 0.85,
         "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 12
+          "nombre": "Xaloc (SE)",
+          "kmh": 9
         }
       },
       "medusas": {
         "band": "baja",
-        "score": 0.06,
+        "score": 0.1,
         "horasAfavor": 0,
         "vientoEmpuje": null,
         "ventanaH": 48,
-        "coverage": 0.95
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "cala-llucalari",
+      "name": "Cala Llucalari",
+      "area": "Sur (Alaior)",
+      "costa": "sur",
+      "lat": 39.8913,
+      "lng": 4.082,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.85,
+        "viento": {
+          "nombre": "Xaloc (SE)",
+          "kmh": 9
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.1,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "cala-de-sant-llorenc",
+      "name": "Cala de Sant Llorenç",
+      "area": "Sur (Alaior)",
+      "costa": "sur",
+      "lat": 39.8831,
+      "lng": 4.0936,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.85,
+        "viento": {
+          "nombre": "Xaloc (SE)",
+          "kmh": 9
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.1,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "cala-pregonda",
+      "name": "Cala Pregonda",
+      "area": "Norte (Es Mercadal)",
+      "costa": "norte",
+      "lat": 40.0489,
+      "lng": 4.0512,
+      "lugarSlug": "cala-pregonda",
+      "tieneVigilancia": true,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.83,
+        "viento": {
+          "nombre": "Gregal (NE)",
+          "kmh": 10
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "son-bou",
+      "name": "Son Bou",
+      "area": "Sur (Alaior)",
+      "costa": "sur",
+      "lat": 39.9002,
+      "lng": 4.0702,
+      "lugarSlug": null,
+      "tieneVigilancia": true,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.83,
+        "viento": {
+          "nombre": "Xaloc (SE)",
+          "kmh": 9
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.12,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
       }
     },
     {
@@ -952,7 +1124,8 @@
         "vientoEmpuje": null,
         "ventanaH": 48,
         "coverage": 0.95
-      }
+      },
+      "stale": true
     },
     {
       "id": "cala-en-forcat",
@@ -979,7 +1152,8 @@
         "vientoEmpuje": null,
         "ventanaH": 48,
         "coverage": 0.95
-      }
+      },
+      "stale": true
     },
     {
       "id": "cala-en-brut",
@@ -1006,7 +1180,8 @@
         "vientoEmpuje": null,
         "ventanaH": 48,
         "coverage": 0.95
-      }
+      },
+      "stale": true
     },
     {
       "id": "cala-des-frares",
@@ -1033,6 +1208,412 @@
         "vientoEmpuje": null,
         "ventanaH": 48,
         "coverage": 0.95
+      },
+      "stale": true
+    },
+    {
+      "id": "cala-tirant",
+      "name": "Cala Tirant",
+      "area": "Norte (Es Mercadal)",
+      "costa": "norte",
+      "lat": 40.0448,
+      "lng": 4.1026,
+      "lugarSlug": null,
+      "tieneVigilancia": true,
+      "tienePradera": false,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.82,
+        "viento": {
+          "nombre": "Gregal (NE)",
+          "kmh": 10
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "binimella",
+      "name": "Binimel·là",
+      "area": "Norte (Es Mercadal)",
+      "costa": "norte",
+      "lat": 40.0517,
+      "lng": 4.0532,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.81,
+        "viento": {
+          "nombre": "Gregal (NE)",
+          "kmh": 10
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "fornells",
+      "name": "Fornells",
+      "area": "Norte (Es Mercadal)",
+      "costa": "norte",
+      "lat": 40.0535,
+      "lng": 4.1285,
+      "lugarSlug": null,
+      "tieneVigilancia": true,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.81,
+        "viento": {
+          "nombre": "Gregal (NE)",
+          "kmh": 10
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "punta-prima",
+      "name": "Punta Prima",
+      "area": "Sur (Sant Lluís)",
+      "costa": "sur",
+      "lat": 39.8135,
+      "lng": 4.2793,
+      "lugarSlug": null,
+      "tieneVigilancia": true,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.81,
+        "viento": {
+          "nombre": "Xaloc (SE)",
+          "kmh": 10
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.13,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "cala-pudent",
+      "name": "Cala Pudent",
+      "area": "Norte (Es Mercadal)",
+      "costa": "norte",
+      "lat": 40.0452,
+      "lng": 4.1585,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": false,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.81,
+        "viento": {
+          "nombre": "Gregal (NE)",
+          "kmh": 10
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "cala-torret",
+      "name": "Cala Torret",
+      "area": "Sur (Sant Lluís)",
+      "costa": "sur",
+      "lat": 39.8171,
+      "lng": 4.2461,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": false,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.81,
+        "viento": {
+          "nombre": "Xaloc (SE)",
+          "kmh": 10
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.13,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "biniancolla",
+      "name": "Cala de Biniancolla",
+      "area": "Sur (Sant Lluís)",
+      "costa": "sur",
+      "lat": 39.8131,
+      "lng": 4.2636,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": false,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.81,
+        "viento": {
+          "nombre": "Xaloc (SE)",
+          "kmh": 10
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.13,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "cala-teulera",
+      "name": "Cala Teulera",
+      "area": "Este (Es Castell)",
+      "costa": "este",
+      "lat": 39.8801,
+      "lng": 4.3086,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.81,
+        "viento": {
+          "nombre": "Xaloc (SE)",
+          "kmh": 11
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.05,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "cala-en-tosqueta",
+      "name": "Cala en Tosqueta",
+      "area": "Norte (Es Mercadal)",
+      "costa": "norte",
+      "lat": 40.0585,
+      "lng": 4.1663,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.81,
+        "viento": {
+          "nombre": "Gregal (NE)",
+          "kmh": 10
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "cala-cavalleria",
+      "name": "Cala Cavalleria",
+      "area": "Norte (Es Mercadal)",
+      "costa": "norte",
+      "lat": 40.0596,
+      "lng": 4.0751,
+      "lugarSlug": null,
+      "tieneVigilancia": true,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.79,
+        "viento": {
+          "nombre": "Gregal (NE)",
+          "kmh": 10
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "cala-tortuga",
+      "name": "Cala Tortuga",
+      "area": "Norte (Maó)",
+      "costa": "norte",
+      "lat": 39.988,
+      "lng": 4.2555,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.79,
+        "viento": {
+          "nombre": "Llevant (E)",
+          "kmh": 11
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "cala-des-tamarells",
+      "name": "Cala des Tamarells",
+      "area": "Norte (Maó)",
+      "costa": "norte",
+      "lat": 39.9615,
+      "lng": 4.2644,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.77,
+        "viento": {
+          "nombre": "Llevant (E)",
+          "kmh": 11
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "arenal-den-castell",
+      "name": "Arenal d'en Castell",
+      "area": "Norte (Es Mercadal)",
+      "costa": "norte",
+      "lat": 40.0217,
+      "lng": 4.1828,
+      "lugarSlug": null,
+      "tieneVigilancia": true,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.76,
+        "viento": {
+          "nombre": "Gregal (NE)",
+          "kmh": 10
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "cala-alcaufar",
+      "name": "Cala Alcaufar",
+      "area": "Este (Sant Lluís)",
+      "costa": "este",
+      "lat": 39.829,
+      "lng": 4.2925,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.76,
+        "viento": {
+          "nombre": "Xaloc (SE)",
+          "kmh": 10
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.07,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "calo-den-rafalet",
+      "name": "Caló d'en Rafalet",
+      "area": "Este (Sant Lluís)",
+      "costa": "este",
+      "lat": 39.8411,
+      "lng": 4.2979,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": false,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.76,
+        "viento": {
+          "nombre": "Xaloc (SE)",
+          "kmh": 10
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.07,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
       }
     },
     {
@@ -1049,17 +1630,44 @@
         "band": "alto",
         "score": 0.76,
         "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 13
+          "nombre": "Xaloc (SE)",
+          "kmh": 11
         }
       },
       "medusas": {
         "band": "baja",
-        "score": 0.14,
+        "score": 0.11,
         "horasAfavor": 0,
         "vientoEmpuje": null,
         "ventanaH": 48,
-        "coverage": 0.88
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "salgar",
+      "name": "S'Algar",
+      "area": "Este (Sant Lluís)",
+      "costa": "este",
+      "lat": 39.8357,
+      "lng": 4.2993,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": false,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.76,
+        "viento": {
+          "nombre": "Xaloc (SE)",
+          "kmh": 10
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0.07,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
       }
     },
     {
@@ -1076,161 +1684,107 @@
         "band": "alto",
         "score": 0.76,
         "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 13
+          "nombre": "Xaloc (SE)",
+          "kmh": 11
         }
       },
       "medusas": {
         "band": "baja",
-        "score": 0.14,
+        "score": 0.11,
         "horasAfavor": 0,
         "vientoEmpuje": null,
         "ventanaH": 48,
-        "coverage": 0.88
+        "coverage": 0.93
       }
     },
     {
-      "id": "cala-alcaufar",
-      "name": "Cala Alcaufar",
-      "area": "Este (Sant Lluís)",
+      "id": "cala-moli",
+      "name": "Cala Molí",
+      "area": "Este (Es Mercadal)",
       "costa": "este",
-      "lat": 39.829,
-      "lng": 4.2925,
+      "lat": 40.0106,
+      "lng": 4.1987,
       "lugarSlug": null,
       "tieneVigilancia": false,
       "tienePradera": true,
       "abrigo": {
         "band": "alto",
-        "score": 0.75,
+        "score": 0.76,
         "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 13
+          "nombre": "Gregal (NE)",
+          "kmh": 10
         }
       },
       "medusas": {
         "band": "baja",
-        "score": 0.08,
+        "score": 0,
         "horasAfavor": 0,
         "vientoEmpuje": null,
         "ventanaH": 48,
-        "coverage": 0.95
+        "coverage": 0.93
       }
     },
     {
-      "id": "calo-den-rafalet",
-      "name": "Caló d'en Rafalet",
-      "area": "Este (Sant Lluís)",
+      "id": "cala-pregondo",
+      "name": "Cala Pregondó",
+      "area": "Norte (Es Mercadal)",
+      "costa": "norte",
+      "lat": 40.057,
+      "lng": 4.043,
+      "lugarSlug": null,
+      "tieneVigilancia": false,
+      "tienePradera": true,
+      "abrigo": {
+        "band": "alto",
+        "score": 0.74,
+        "viento": {
+          "nombre": "Gregal (NE)",
+          "kmh": 10
+        }
+      },
+      "medusas": {
+        "band": "baja",
+        "score": 0,
+        "horasAfavor": 0,
+        "vientoEmpuje": null,
+        "ventanaH": 48,
+        "coverage": 0.93
+      }
+    },
+    {
+      "id": "cala-llonga",
+      "name": "Cala Llonga",
+      "area": "Este (Maó)",
       "costa": "este",
-      "lat": 39.8411,
-      "lng": 4.2979,
+      "lat": 39.8921,
+      "lng": 4.2969,
       "lugarSlug": null,
       "tieneVigilancia": false,
-      "tienePradera": false,
+      "tienePradera": true,
       "abrigo": {
         "band": "alto",
-        "score": 0.75,
+        "score": 0.71,
         "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 13
+          "nombre": "Llevant (E)",
+          "kmh": 11
         }
       },
       "medusas": {
         "band": "baja",
-        "score": 0.08,
+        "score": 0.02,
         "horasAfavor": 0,
         "vientoEmpuje": null,
         "ventanaH": 48,
-        "coverage": 0.95
+        "coverage": 0.93
       }
     },
     {
-      "id": "salgar",
-      "name": "S'Algar",
-      "area": "Este (Sant Lluís)",
+      "id": "cala-rata",
+      "name": "Cala Rata",
+      "area": "Este (Maó)",
       "costa": "este",
-      "lat": 39.8357,
-      "lng": 4.2993,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": false,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.75,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 13
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.08,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.95
-      }
-    },
-    {
-      "id": "sant-tomas",
-      "name": "Sant Tomàs",
-      "area": "Sur (Es Migjorn Gran)",
-      "costa": "sur",
-      "lat": 39.9135,
-      "lng": 4.0419,
-      "lugarSlug": null,
-      "tieneVigilancia": true,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.71,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 12
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.03,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.95
-      }
-    },
-    {
-      "id": "cala-en-porter",
-      "name": "Cala en Porter",
-      "area": "Sur (Alaior)",
-      "costa": "sur",
-      "lat": 39.8687,
-      "lng": 4.1351,
-      "lugarSlug": null,
-      "tieneVigilancia": true,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.71,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 12
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.05,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.88
-      }
-    },
-    {
-      "id": "cales-coves",
-      "name": "Cales Coves",
-      "area": "Sur (Alaior)",
-      "costa": "sur",
-      "lat": 39.865,
-      "lng": 4.1468,
+      "lat": 39.8927,
+      "lng": 4.2778,
       "lugarSlug": null,
       "tieneVigilancia": false,
       "tienePradera": true,
@@ -1238,476 +1792,17 @@
         "band": "alto",
         "score": 0.71,
         "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 12
+          "nombre": "Llevant (E)",
+          "kmh": 11
         }
       },
       "medusas": {
         "band": "baja",
-        "score": 0.05,
+        "score": 0.02,
         "horasAfavor": 0,
         "vientoEmpuje": null,
         "ventanaH": 48,
-        "coverage": 0.88
-      }
-    },
-    {
-      "id": "cala-escorxada",
-      "name": "Cala Escorxada",
-      "area": "Sur (Es Migjorn Gran)",
-      "costa": "sur",
-      "lat": 39.9253,
-      "lng": 4.0053,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.71,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 12
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.03,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.95
-      }
-    },
-    {
-      "id": "cala-fustam",
-      "name": "Cala Fustam",
-      "area": "Sur (Es Migjorn Gran)",
-      "costa": "sur",
-      "lat": 39.9262,
-      "lng": 4.0009,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.71,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 12
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.03,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.95
-      }
-    },
-    {
-      "id": "sant-adeodato",
-      "name": "Platja de Sant Adeodato (Binicodrell)",
-      "area": "Sur (Es Migjorn Gran)",
-      "costa": "sur",
-      "lat": 39.9166,
-      "lng": 4.0345,
-      "lugarSlug": null,
-      "tieneVigilancia": true,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.71,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 12
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.03,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.95
-      }
-    },
-    {
-      "id": "cala-atalis",
-      "name": "Cala Atalis (Talis)",
-      "area": "Sur (Alaior)",
-      "costa": "sur",
-      "lat": 39.9071,
-      "lng": 4.0536,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.71,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 12
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.05,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.88
-      }
-    },
-    {
-      "id": "cala-llucalari",
-      "name": "Cala Llucalari",
-      "area": "Sur (Alaior)",
-      "costa": "sur",
-      "lat": 39.8913,
-      "lng": 4.082,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.71,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 12
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.05,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.88
-      }
-    },
-    {
-      "id": "cala-de-sant-llorenc",
-      "name": "Cala de Sant Llorenç",
-      "area": "Sur (Alaior)",
-      "costa": "sur",
-      "lat": 39.8831,
-      "lng": 4.0936,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.71,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 12
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.05,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.88
-      }
-    },
-    {
-      "id": "son-bou",
-      "name": "Son Bou",
-      "area": "Sur (Alaior)",
-      "costa": "sur",
-      "lat": 39.9002,
-      "lng": 4.0702,
-      "lugarSlug": null,
-      "tieneVigilancia": true,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.7,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 12
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.06,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.88
-      }
-    },
-    {
-      "id": "cala-trebaluger",
-      "name": "Cala Trebalúger",
-      "area": "Sur (Es Migjorn Gran)",
-      "costa": "sur",
-      "lat": 39.9353,
-      "lng": 3.9947,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.69,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 12
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.03,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.95
-      }
-    },
-    {
-      "id": "cala-binigaus",
-      "name": "Cala Binigaus",
-      "area": "Sur (Es Migjorn Gran)",
-      "costa": "sur",
-      "lat": 39.9206,
-      "lng": 4.0264,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.69,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 12
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.03,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.95
-      }
-    },
-    {
-      "id": "cala-binibequer",
-      "name": "Cala Binibèquer",
-      "area": "Sur (Sant Lluís)",
-      "costa": "sur",
-      "lat": 39.8164,
-      "lng": 4.2399,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.69,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 13
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.03,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.95
-      }
-    },
-    {
-      "id": "cala-binisafuller",
-      "name": "Cala Binisafúller",
-      "area": "Sur (Sant Lluís)",
-      "costa": "sur",
-      "lat": 39.8291,
-      "lng": 4.2186,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.69,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 13
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.03,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.95
-      }
-    },
-    {
-      "id": "binibequer-nou",
-      "name": "Binibèquer Nou",
-      "area": "Sur (Sant Lluís)",
-      "costa": "sur",
-      "lat": 39.8177,
-      "lng": 4.2403,
-      "lugarSlug": null,
-      "tieneVigilancia": true,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.69,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 13
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.03,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.95
-      }
-    },
-    {
-      "id": "calo-fondo-ses-olles",
-      "name": "Caló Fondo (Ses Olles de Binissafúller)",
-      "area": "Sur (Sant Lluís)",
-      "costa": "sur",
-      "lat": 39.8244,
-      "lng": 4.2264,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.69,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 13
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.03,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.95
-      }
-    },
-    {
-      "id": "es-calo-blanc",
-      "name": "Es Caló Blanc",
-      "area": "Sur (Sant Lluís)",
-      "costa": "sur",
-      "lat": 39.8307,
-      "lng": 4.2115,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.69,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 13
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.03,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.95
-      }
-    },
-    {
-      "id": "binidali",
-      "name": "Cala de Binidalí",
-      "area": "Sur (Sant Lluís)",
-      "costa": "sur",
-      "lat": 39.8344,
-      "lng": 4.198,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.69,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 13
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.03,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.95
-      }
-    },
-    {
-      "id": "cala-biniparratx",
-      "name": "Cala de Biniparratx",
-      "area": "Sur (Sant Lluís)",
-      "costa": "sur",
-      "lat": 39.833,
-      "lng": 4.2055,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.69,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 13
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.03,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.95
-      }
-    },
-    {
-      "id": "es-canutells",
-      "name": "Es Canutells",
-      "area": "Sur (Maó)",
-      "costa": "sur",
-      "lat": 39.8511,
-      "lng": 4.169,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.69,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 12
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.03,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.95
+        "coverage": 0.93
       }
     },
     {
@@ -1735,7 +1830,8 @@
         "vientoEmpuje": null,
         "ventanaH": 48,
         "coverage": 0.95
-      }
+      },
+      "stale": true
     },
     {
       "id": "cala-macarelleta",
@@ -1762,88 +1858,8 @@
         "vientoEmpuje": null,
         "ventanaH": 48,
         "coverage": 0.95
-      }
-    },
-    {
-      "id": "punta-prima",
-      "name": "Punta Prima",
-      "area": "Sur (Sant Lluís)",
-      "costa": "sur",
-      "lat": 39.8135,
-      "lng": 4.2793,
-      "lugarSlug": null,
-      "tieneVigilancia": true,
-      "tienePradera": true,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.67,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 13
-        }
       },
-      "medusas": {
-        "band": "baja",
-        "score": 0.04,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.95
-      }
-    },
-    {
-      "id": "cala-torret",
-      "name": "Cala Torret",
-      "area": "Sur (Sant Lluís)",
-      "costa": "sur",
-      "lat": 39.8171,
-      "lng": 4.2461,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": false,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.67,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 13
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.04,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.95
-      }
-    },
-    {
-      "id": "biniancolla",
-      "name": "Cala de Biniancolla",
-      "area": "Sur (Sant Lluís)",
-      "costa": "sur",
-      "lat": 39.8131,
-      "lng": 4.2636,
-      "lugarSlug": null,
-      "tieneVigilancia": false,
-      "tienePradera": false,
-      "abrigo": {
-        "band": "alto",
-        "score": 0.67,
-        "viento": {
-          "nombre": "Migjorn (S)",
-          "kmh": 13
-        }
-      },
-      "medusas": {
-        "band": "baja",
-        "score": 0.04,
-        "horasAfavor": 0,
-        "vientoEmpuje": null,
-        "ventanaH": 48,
-        "coverage": 0.95
-      }
+      "stale": true
     },
     {
       "id": "cala-macarella",
@@ -1870,7 +1886,8 @@
         "vientoEmpuje": null,
         "ventanaH": 48,
         "coverage": 0.95
-      }
+      },
+      "stale": true
     },
     {
       "id": "son-saura",
@@ -1897,7 +1914,8 @@
         "vientoEmpuje": null,
         "ventanaH": 48,
         "coverage": 0.95
-      }
+      },
+      "stale": true
     },
     {
       "id": "es-talaier",
@@ -1924,7 +1942,8 @@
         "vientoEmpuje": null,
         "ventanaH": 48,
         "coverage": 0.95
-      }
+      },
+      "stale": true
     },
     {
       "id": "cala-en-bosc",
@@ -1951,7 +1970,8 @@
         "vientoEmpuje": null,
         "ventanaH": 48,
         "coverage": 0.95
-      }
+      },
+      "stale": true
     },
     {
       "id": "son-xoriguer",
@@ -1978,7 +1998,8 @@
         "vientoEmpuje": null,
         "ventanaH": 48,
         "coverage": 0.95
-      }
+      },
+      "stale": true
     },
     {
       "id": "platja-gran-degollador",
@@ -2005,7 +2026,8 @@
         "vientoEmpuje": null,
         "ventanaH": 48,
         "coverage": 0.95
-      }
+      },
+      "stale": true
     },
     {
       "id": "sa-caleta",
@@ -2032,7 +2054,8 @@
         "vientoEmpuje": null,
         "ventanaH": 48,
         "coverage": 0.95
-      }
+      },
+      "stale": true
     }
   ]
 }
