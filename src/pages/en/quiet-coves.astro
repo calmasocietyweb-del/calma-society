@@ -1,5 +1,7 @@
 ---
-// Landing of the "Menorca's quietest coves" lead magnet (EN) — KPI #1.
+// Landing of the "Menorca's famous beaches" lead magnet (EN) — KPI #1.
+// The /en/quiet-coves route stays on purpose: it is indexed, and changing it
+// would create 404s in Search Console (lesson from KAN-85, Jul 2026).
 // Stays noindex and unlinked until SITE.newsletter.leadMagnet.enabled is true
 // (PDF designed + MailerLite automation delivering the guide).
 import BaseLayout from "../../layouts/BaseLayout.astro";
@@ -30,8 +32,8 @@ const recibes = [
 ---
 
 <BaseLayout
-  title="Menorca's quietest coves"
-  description="A free, calm guide to finding the sea without the crowds in Menorca: which coves stay quiet, at what hour, how to get there car-free, and which winds leave them sheltered."
+  title="Menorca's famous beaches, and how to see them without the crowd"
+  description="A free guide to the six beaches and coves everyone wants to see in Menorca, with the hour at which they stop being full, how to get there, and which winds leave them sheltered."
   locale="en"
   alternates={alternates}
   noindex={!lm.enabled}
@@ -41,10 +43,11 @@ const recibes = [
       Free guide · Calma Society
     </p>
     <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">
-      Menorca's quietest coves
+      Menorca's famous beaches
     </h1>
     <p class="lead mx-auto mt-5 max-w-xl">
-      A calm guide to finding the sea without the crowds: where, when and how to get there.
+      And how to see them without the crowd: the six everyone wants to see, with the hour at
+      which they stop being full and the wind that shelters them.
     </p>
   </section>
 
@@ -71,7 +74,7 @@ const recibes = [
       umamiEvent="newsletter-submit-lead-magnet"
       formId={lm.formIds.en}
       eyebrow="The guide, on us"
-      title="Get Menorca's quietest coves"
+      title="Get the famous beaches guide"
       text="Leave your email and we'll send you the guide. After that, a calm letter now and then — judgement, not noise."
       cta="Get the guide"
     />

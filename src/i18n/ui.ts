@@ -112,15 +112,15 @@ export const ui = {
     // La entrega es real: el alta entra en el grupo del imán, que dispara la
     // automatización de bienvenida con el PDF.
     "newsletter.eyebrow": "La guía, de bienvenida",
-    "newsletter.title": "Las calas con menos gente",
+    "newsletter.title": "Las playas famosas de Menorca",
     "newsletter.text":
-      "Déjanos tu correo y te enviamos la guía: las calas de Menorca donde todavía se puede estar tranquilo, con cómo llegar y a qué hora ir. Después, alguna carta serena — solo cuando de verdad merece la pena.",
+      "Déjanos tu correo y te enviamos la guía: las seis playas que todo el mundo quiere ver, con cómo llegar y a qué hora dejan de estar llenas. Después, alguna carta serena — solo cuando de verdad merece la pena.",
     // Gancho de la portada de Agenda (2ª página más vista). Mantiene el gancho de
     // eventos pero entrega la misma guía, que es lo que de verdad se envía.
     "newsletter.agenda.eyebrow": "No te lo pierdas",
     "newsletter.agenda.title": "No te pierdas lo que pasa en Menorca",
     "newsletter.agenda.text":
-      "La isla no para: fiestas, conciertos y mercados todo el año. Únete a la Sociedad y te damos la bienvenida con la guía de las calas con menos gente. Sin ruido.",
+      "La isla no para: fiestas, conciertos y mercados todo el año. Únete a la Sociedad y te damos la bienvenida con la guía de las playas famosas y la hora a la que se vacían. Sin ruido.",
     "newsletter.placeholder": "Tu correo electrónico",
     "newsletter.cta": "Quiero la guía",
     "newsletter.privacy": "Sin spam. Te das de baja cuando quieras.",
@@ -134,7 +134,7 @@ export const ui = {
     // gracias no puede pedir algo que no va a llegar.
     "thanks.title": "Ya estás en la Sociedad",
     "thanks.text":
-      "Te hemos enviado la guía de las calas con menos gente al correo. Si no la ves en unos minutos, mira en spam. Después te escribiremos solo cuando de verdad merezca la pena.",
+      "Te hemos enviado al correo la guía de las playas famosas de Menorca. Si no la ves en unos minutos, mira en spam. Después te escribiremos solo cuando de verdad merezca la pena.",
     "thanks.back": "Volver a la portada",
 
     "nav.contact": "Contacto",
@@ -259,15 +259,15 @@ export const ui = {
     // Delivery is real: sign-ups join the lead-magnet group, which triggers the
     // welcome automation carrying the PDF.
     "newsletter.eyebrow": "The welcome guide",
-    "newsletter.title": "Menorca's quietest coves",
+    "newsletter.title": "Menorca's famous beaches",
     "newsletter.text":
-      "Leave us your email and we'll send you the guide: the coves where you can still find room to breathe, with how to get there and when to go. After that, the occasional calm letter — only when it's genuinely worth it.",
+      "Leave us your email and we'll send you the guide: the six beaches everyone wants to see, with how to get there and the hour at which they stop being full. After that, the occasional calm letter — only when it's genuinely worth it.",
     // Agenda hook (2nd most-viewed page). Keeps the events angle but delivers the
     // same guide, which is what actually gets sent.
     "newsletter.agenda.eyebrow": "Don't miss out",
     "newsletter.agenda.title": "Don't miss what's on in Menorca",
     "newsletter.agenda.text":
-      "The island never rests: festivals, concerts and markets all year round. Join the Society and we'll welcome you with the guide to Menorca's quietest coves. No noise.",
+      "The island never rests: festivals, concerts and markets all year round. Join the Society and we'll welcome you with the guide to Menorca's famous beaches and the hour they empty out. No noise.",
     "newsletter.placeholder": "Your email address",
     "newsletter.cta": "Send me the guide",
     "newsletter.privacy": "No spam. Unsubscribe anytime.",
@@ -279,7 +279,7 @@ export const ui = {
     // page can't ask for something that will never arrive.
     "thanks.title": "You're in the Society",
     "thanks.text":
-      "We've sent the guide to Menorca's quietest coves to your inbox. If you don't see it within a few minutes, check your spam folder. After that, we'll only write when it's genuinely worth it.",
+      "We've sent the guide to Menorca's famous beaches to your inbox. If you don't see it within a few minutes, check your spam folder. After that, we'll only write when it's genuinely worth it.",
     "thanks.back": "Back to home",
 
     "nav.contact": "Contact",

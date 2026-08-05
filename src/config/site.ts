@@ -152,7 +152,11 @@ export const SITE = {
     formId: 'GIibQ8',
     emailField: 'fields[email]',
     /**
-     * Imán de captación "Las calas con menos gente" (lead magnet · KPI nº1).
+     * Imán de captación "Las playas famosas de Menorca, y cómo verlas sin la
+     * multitud" (lead magnet · KPI nº1). Retitulado el 4-ago-2026: el título
+     * anterior ("Las calas con menos gente") prometía lo contrario de lo que
+     * entregaba — cuatro de las seis fichas son de las calas más concurridas
+     * de la isla, incluida Son Bou, con acceso directo en coche.
      * Con `enabled: true` la landing /calas-tranquilas (+ /en/quiet-coves) se
      * INDEXA y se ENLAZA, y aparecen sus colocaciones (home, /newsletter). Mientras
      * sea `false`, la landing existe pero queda en `noindex` y sin enlazar (modo

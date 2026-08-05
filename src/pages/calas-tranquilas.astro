@@ -1,5 +1,7 @@
 ---
-// Landing del imán de captación "Las calas con menos gente" (ES) — KPI nº1.
+// Landing del imán de captación "Las playas famosas de Menorca" (ES) — KPI nº1.
+// La ruta sigue siendo /calas-tranquilas a propósito: está indexada y cambiarla
+// generaría 404 en Search Console (lección de KAN-85, jul-2026).
 // Vive en noindex y sin enlazar hasta que SITE.newsletter.leadMagnet.enabled sea
 // true (PDF maquetado + automatización de MailerLite que entrega la guía).
 import BaseLayout from "../layouts/BaseLayout.astro";
@@ -30,8 +32,8 @@ const recibes = [
 ---
 
 <BaseLayout
-  title="Las calas con menos gente de Menorca"
-  description="Una guía gratuita y serena para encontrar el mar en calma en Menorca: qué calas siguen tranquilas, a qué hora, cómo llegar sin coche y con qué viento están a resguardo."
+  title="Las playas famosas de Menorca, y cómo verlas sin la multitud"
+  description="Guía gratuita de las seis playas y calas que todo el mundo quiere ver en Menorca, con la hora a la que dejan de estar llenas, cómo llegar y con qué viento están a resguardo."
   locale="es"
   alternates={alternates}
   noindex={!lm.enabled}
@@ -41,10 +43,11 @@ const recibes = [
       Guía gratuita · Calma Society
     </p>
     <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">
-      Las calas con menos gente de Menorca
+      Las playas famosas de Menorca
     </h1>
     <p class="lead mx-auto mt-5 max-w-xl">
-      Una guía serena para encontrar el mar en calma: dónde, cuándo y cómo llegar sin gentío.
+      Y cómo verlas sin la multitud: las seis que todo el mundo quiere ver, con la hora a la que
+      dejan de estar llenas y el viento que las abriga.
     </p>
   </section>
 
@@ -71,7 +74,7 @@ const recibes = [
       umamiEvent="newsletter-submit-lead-magnet"
       formId={lm.formIds.es}
       eyebrow="La guía, de bienvenida"
-      title="Recibe las calas con menos gente"
+      title="Recibe la guía de las playas famosas"
       text="Déjanos tu correo y te enviamos la guía. Después, una carta serena de vez en cuando — criterio, no ruido."
       cta="Recibir la guía"
     />
