@@ -40,8 +40,23 @@
 /en/place/                  /en/places/             301
 
 # ── Barcos retirados del calendario del puerto ─────────────────────────────
-# El robot del puerto (KAN-77) borra la escala cuando el barco deja de venir,
-# pero Google conserva la URL. Se manda a la guía de escala, que sigue viva.
-# Regla EXACTA por barco: un comodín /crucero/* tumbaría las escalas vigentes.
-/crucero/azamara-onward     /articulo/cruceros-en-menorca-2026/  301
-/crucero/azamara-onward/    /articulo/cruceros-en-menorca-2026/  301
+# YA NO SE MANTIENEN A MANO. El robot del puerto (KAN-77) borra la escala
+# cuando el barco deja de venir y su página deja de generarse, pero Google
+# conserva la URL: es lo que dejó `/crucero/azamara-onward` en 404 (KAN-100),
+# y añadir el barco a mano solo tapa el caso de hoy — mañana cae otro.
+# Ahora lo genera `scripts/cruceros-redirects.mjs` en el bloque de abajo, que
+# además cubre la ruta EN (`/en/cruise/<slug>`), la que se nos había olvidado.
+# Sigue siendo regla EXACTA por barco: un comodín /crucero/* tumbaría las
+# escalas vigentes.
+
+# >>> AUTO — barcos retirados (scripts/cruceros-redirects.mjs). NO EDITAR A MANO.
+# Barcos que dejaron de repetir escala: su página ya no se genera, pero Google
+# sigue pidiendo la URL. Se manda a la guía de escala, que sigue viva.
+
+# Azamara Onward — sin página desde 2026-07-24
+/crucero/azamara-onward          /articulo/cruceros-en-menorca-2026/   301
+/crucero/azamara-onward/         /articulo/cruceros-en-menorca-2026/   301
+/en/cruise/azamara-onward        /en/article/cruises-in-menorca-2026/  301
+/en/cruise/azamara-onward/       /en/article/cruises-in-menorca-2026/  301
+
+# <<< AUTO

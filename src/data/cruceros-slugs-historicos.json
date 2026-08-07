@@ -1,0 +1,79 @@
+{
+  "_comentario": "Registro histórico de barcos que han tenido página. Lo mantiene scripts/cruceros-redirects.mjs. Sirve para que un barco retirado conserve su 301 en vez de dejar un 404 (KAN-100).",
+  "barcos": {
+    "azamara-onward": {
+      "ship": "Azamara Onward",
+      "desde": "2026-06-01",
+      "retiradoDesde": "2026-07-24",
+      "_nota": "Sembrado a mano el 7-ago-2026: se retiró del calendario antes de que existiera este registro. La fecha es el último rastreo que Google registró de su URL, no la fecha exacta en que perdió la página."
+    },
+    "msc-opera": {
+      "ship": "MSC Opera",
+      "desde": "2026-08-07"
+    },
+    "explora-i": {
+      "ship": "Explora I",
+      "desde": "2026-08-07"
+    },
+    "aidastella": {
+      "ship": "AIDAstella",
+      "desde": "2026-08-07"
+    },
+    "la-belle-des-oceans": {
+      "ship": "La Belle des Océans",
+      "desde": "2026-08-07"
+    },
+    "ms-europa": {
+      "ship": "MS Europa",
+      "desde": "2026-08-07"
+    },
+    "spirit-of-discovery": {
+      "ship": "Spirit of Discovery",
+      "desde": "2026-08-07"
+    },
+    "spirit-of-adventure": {
+      "ship": "Spirit of Adventure",
+      "desde": "2026-08-07"
+    },
+    "wind-spirit": {
+      "ship": "Wind Spirit",
+      "desde": "2026-08-07"
+    },
+    "four-seasons-i": {
+      "ship": "Four Seasons I",
+      "desde": "2026-08-07"
+    },
+    "seven-seas-splendor": {
+      "ship": "Seven Seas Splendor",
+      "desde": "2026-08-07"
+    },
+    "wind-star": {
+      "ship": "Wind Star",
+      "desde": "2026-08-07"
+    },
+    "ritz-carlton-evrima": {
+      "ship": "Ritz-Carlton Evrima",
+      "desde": "2026-08-07"
+    },
+    "seabourn-quest": {
+      "ship": "Seabourn Quest",
+      "desde": "2026-08-07"
+    },
+    "crystal-serenity": {
+      "ship": "Crystal Serenity",
+      "desde": "2026-08-07"
+    },
+    "marella-explorer": {
+      "ship": "Marella Explorer",
+      "desde": "2026-08-07"
+    },
+    "le-dumont-d-urville": {
+      "ship": "Le Dumont-d'Urville",
+      "desde": "2026-08-07"
+    },
+    "ritz-carlton-ilma": {
+      "ship": "Ritz-Carlton Ilma",
+      "desde": "2026-08-07"
+    }
+  }
+}

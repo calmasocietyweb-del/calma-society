@@ -36,11 +36,18 @@ jobs:
       - name: Comparar el calendario con el registro del puerto
         run: node scripts/cruceros-apb.mjs
 
+      # Si el calendario cambió, puede que un barco haya dejado de tener página.
+      # Su URL quedaría en 404 con Google pidiéndola durante semanas (KAN-100).
+      # Esto le pone su 301 automáticamente, en ES y en EN.
+      - name: Redirigir los barcos que se han quedado sin página
+        run: node scripts/cruceros-redirects.mjs
+
       - name: Commit si cambió
         run: |
           git config user.name "calma-bot"
           git config user.email "bot@calmasociety.com"
-          git add src/data/cruceros-menorca-2026.json src/data/cruceros-avisos.json
+          git add src/data/cruceros-menorca-2026.json src/data/cruceros-avisos.json \
+                  src/data/cruceros-slugs-historicos.json public/_redirects
           if git diff --staged --quiet; then
             echo "Sin cambios: el calendario coincide con el puerto."
             exit 0
