@@ -56,6 +56,11 @@ const fmtDur = (min: number) => {
 };
 const busNote = pl?.busServed ? { es: " · con bus en temporada", en: " · seasonal bus service", fr: " · bus en saison" }[L] : "";
 
+// Operador de la salida: solo cuando la ficha describe una EXPERIENCIA y no un
+// negocio (KAN-60). Si la ficha tiene `website` propia, ese SÍ es su sitio
+// oficial y la etiqueta no cambia; el operador solo aplica al enlace del planner.
+const operatorName = data.website ? undefined : pl?.operatorName;
+
 const rows: { label: string; value?: string }[] = [
   { label: t("place.access"), value: pi?.acceso ?? (pl?.carAccess ? `${CAR_ACCESS[pl.carAccess]?.[L] ?? pl.carAccess}${busNote}` : undefined) },
   { label: t("place.parking"), value: pi?.aparcamiento },
@@ -64,7 +69,14 @@ const rows: { label: string; value?: string }[] = [
   { label: t("place.hours"), value: pi?.horario ?? pl?.seasonalHours },
   { label: t("place.effort"), value: pl?.effortLevel ? (pl.effortNote ?? EFFORT[pl.effortLevel]?.[L]) : undefined },
   { label: t("place.duration"), value: pl?.durationMin ? fmtDur(pl.durationMin) : undefined },
-  { label: t("place.reserve"), value: pl?.needsReservation ? t("place.reserve.yes") : undefined },
+  {
+    label: t("place.reserve"),
+    value: pl?.needsReservation
+      ? operatorName
+        ? t("place.reserve.yes.operator").replace("%s", operatorName)
+        : t("place.reserve.yes")
+      : undefined,
+  },
 ].filter((r) => r.value);
 
 // Aviso de cierre estival al coche (Macarella, Favàritx…): va aparte, destacado.
@@ -327,7 +339,7 @@ const seoTitle =
             data-umami-event-negocio={negocioSlug}
             class="ml-6 inline-block border-b border-terracota pb-0.5 text-sm font-medium text-arcilla hover:text-terracota"
           >
-            {t("place.official")} →
+            {operatorName ? t("place.operator").replace("%s", operatorName) : t("place.official")} →
           </a>
         )
       }

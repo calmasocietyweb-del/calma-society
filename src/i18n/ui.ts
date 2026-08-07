@@ -78,7 +78,12 @@ export const ui = {
     "place.season": "Temporada y horarios",
     "place.reserve": "Reserva",
     "place.reserve.yes": "Recomendada — confirma en la web oficial",
+    // Fichas de experiencia (no de negocio): nombramos al operador en vez de
+    // llamarlo "web oficial", porque no podemos afirmar que sea EL negocio de
+    // la ficha (KAN-60). "%s" = nombre del operador.
+    "place.reserve.yes.operator": "Recomendada — la hace %s",
     "place.official": "Web oficial",
+    "place.operator": "Web de %s",
     "place.verified": "Datos verificados el",
     "place.verified.note": "confirma horarios y accesos el día de tu visita",
     "place.planit.title": "Encájalo en tu viaje",
@@ -225,7 +230,9 @@ export const ui = {
     "place.season": "Season & opening times",
     "place.reserve": "Booking",
     "place.reserve.yes": "Recommended — confirm on the official site",
+    "place.reserve.yes.operator": "Recommended — run by %s",
     "place.official": "Official site",
+    "place.operator": "%s’s site",
     "place.verified": "Facts checked on",
     "place.verified.note": "confirm times and access on the day of your visit",
     "place.planit.title": "Fit it into your trip",
@@ -370,7 +377,9 @@ export const ui = {
     "place.season": "Saison et horaires",
     "place.reserve": "Réservation",
     "place.reserve.yes": "Conseillée — à confirmer sur le site officiel",
+    "place.reserve.yes.operator": "Conseillée — assurée par %s",
     "place.official": "Site officiel",
+    "place.operator": "Site de %s",
     "place.verified": "Données vérifiées le",
     "place.verified.note": "confirmez horaires et accès le jour de votre visite",
     "place.planit.title": "Intégrez-le à votre voyage",

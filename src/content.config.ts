@@ -296,6 +296,14 @@ const lugares = defineCollection({
         seasonalHours: z.string().optional(),
         needsReservation: z.boolean().default(false),
         officialUrl: z.url().optional(),
+        // Nombre del operador cuando la ficha describe una EXPERIENCIA y no un
+        // negocio concreto (kayak en Cala Galdana, paseo en barco…). En esos
+        // casos `officialUrl` no es "la web oficial del lugar": es la web de una
+        // empresa que hace esa salida. Rellenarlo cambia la etiqueta del enlace
+        // ("Reservar con Mar en Calma" en vez de "Web oficial"), para que el
+        // lector sepa con quién reserva y nosotros no afirmemos que ese es EL
+        // negocio de la ficha — que es justo lo que no podemos verificar (KAN-60).
+        operatorName: z.string().optional(),
 
         // — Gobernanza del dato (credibilidad / GEO) —
         dataCertainty: CERTAINTY.default("media"),

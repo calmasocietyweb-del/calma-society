@@ -109,6 +109,10 @@ export interface PlannerPlace {
   seasonalHours?: string;
   needsReservation: boolean;
   officialUrl?: string;
+  /** Operador que hace la salida cuando la ficha es una experiencia, no un
+   *  negocio (ver `operatorName` en content.config.ts). Cambia la etiqueta del
+   *  enlace: "Reservar con X" en vez de "Web oficial". */
+  operatorName?: string;
 
   dataCertainty: Certainty;
   lastVerified?: string;

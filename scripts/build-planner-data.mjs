@@ -74,6 +74,8 @@ function toPlannerPlace(f, slugByFile) {
     seasonalHours: p.seasonalHours,
     needsReservation: p.needsReservation ?? false,
     officialUrl: p.officialUrl,
+    // Solo en fichas de experiencia: nombra al operador en el CTA (KAN-60).
+    operatorName: p.operatorName,
     dataCertainty: p.dataCertainty ?? "media",
     lastVerified: p.lastVerified,
   };

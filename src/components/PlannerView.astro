@@ -125,6 +125,10 @@ const CFG = {
   globalTitle: T.globalTitle,
   signatureTitle: isEs ? "La experiencia del viaje" : "The signature of your trip",
   reservar: isEs ? "Reservar" : "Book",
+  // Fichas de experiencia (no de negocio): el enlace nombra al operador para no
+  // dar por hecho que es EL negocio de la ficha (KAN-60). "%s" = operador.
+  reservarCon: isEs ? "Reservar con %s" : "Book with %s",
+  webDe: isEs ? "Web de %s" : "%s’s site",
   hours: T.hours,
   // Mensajes de validación de fechas (los usa el island).
   dateInvalid: isEs ? "Las fechas no son válidas. Revisa el formato (día, mes y año)." : "The dates are not valid. Check the format (day, month, year).",
@@ -616,11 +620,19 @@ const ICON: Record<string, string> = {
     // HORARIO (informativo) enlazan a la web oficial del lugar si la hay.
     // `data-umami-event-negocio` agrupa el clic por negocio (KAN-78).
     let cta = "";
-    const url = n.placeId && byId[n.placeId]?.officialUrl;
+    const place = n.placeId ? byId[n.placeId] : undefined;
+    const url = place?.officialUrl;
+    // Si la ficha es una EXPERIENCIA y no un negocio, el enlace nombra al
+    // operador: "Reservar con Mar en Calma" en vez de "Reservar" a secas. Así
+    // el lector sabe con quién trata y no damos por hecho lo que no está
+    // verificado (KAN-60).
+    const op = place?.operatorName;
     if (n.kind === "reserva" && url) {
-      cta = ` <a href="${esc(utmNegocio(url))}" target="_blank" rel="sponsored noopener" data-umami-event="planner-reserva" data-umami-event-negocio="${esc(n.placeId)}" class="whitespace-nowrap font-medium text-arcilla underline underline-offset-2 hover:text-terracota">${esc(CFG.reservar)} →</a>`;
+      const label = op ? CFG.reservarCon.replace("%s", op) : CFG.reservar;
+      cta = ` <a href="${esc(utmNegocio(url))}" target="_blank" rel="sponsored noopener" data-umami-event="planner-reserva" data-umami-event-negocio="${esc(n.placeId)}" class="whitespace-nowrap font-medium text-arcilla underline underline-offset-2 hover:text-terracota">${esc(label)} →</a>`;
     } else if (n.kind === "confirma-horario" && url) {
-      cta = ` <a href="${esc(utmNegocio(url))}" target="_blank" rel="noopener" data-umami-event="planner-web-oficial" data-umami-event-negocio="${esc(n.placeId)}" class="whitespace-nowrap font-medium text-arcilla underline underline-offset-2 hover:text-terracota">${esc(CFG.officialLabel)} →</a>`;
+      const label = op ? CFG.webDe.replace("%s", op) : CFG.officialLabel;
+      cta = ` <a href="${esc(utmNegocio(url))}" target="_blank" rel="noopener" data-umami-event="planner-web-oficial" data-umami-event-negocio="${esc(n.placeId)}" class="whitespace-nowrap font-medium text-arcilla underline underline-offset-2 hover:text-terracota">${esc(label)} →</a>`;
     }
     return `<li class="flex gap-2 text-sm text-piedra"><span aria-hidden="true">${CFG.noticeIcon[n.kind] || "•"}</span><span>${esc(n.text)}${cta}</span></li>`;
   }
