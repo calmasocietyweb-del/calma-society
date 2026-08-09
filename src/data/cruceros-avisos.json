@@ -1,7 +1,7 @@
 {
-  "updated": "2026-08-08",
+  "updated": "2026-08-09",
   "ventana": {
-    "desde": "2026-08-08",
+    "desde": "2026-08-09",
     "hasta": "2026-08-31"
   },
   "nuevas": [
@@ -31,20 +31,6 @@
   "desaparecidas": [],
   "dudasDeNombre": [],
   "dobles": [
-    {
-      "date": "2026-08-08",
-      "barcos": [
-        {
-          "ship": "AIDASTELLA",
-          "eslora": 253.26
-        },
-        {
-          "ship": "LE DUMONT-D URVILLE",
-          "eslora": 131.5
-        }
-      ],
-      "nota": "Dos cruceros el mismo día. Si uno fondea, se desembarca en lancha y el tiempo real en tierra cambia."
-    },
     {
       "date": "2026-08-11",
       "barcos": [
