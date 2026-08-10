@@ -15,7 +15,7 @@ const WIDTHS = [1600, 960, 480]; // base + variantes responsive
 const jobs = [
   { src: `${SRC}/_web_CC/Menorca_Cala_Macarella_Menorca_02.jpg`, out: "cala-macarella" },
   { src: `${SRC}/_web_CC/Menorca_Cala_Turqueta_Menorca_06.jpg`, out: "cala-turqueta" },
-  { src: `${SRC}/Cala-Mitjana-desde-el-Aire.jpg`, out: "cala-mitjana" },
+  { src: `${SRC}/_stock/cala-mitjana-adobe.jpg`, out: "cala-mitjana" }, // Adobe Stock #772827664 — sustituye al aéreo sin procedencia (KAN-113)
   { src: `${SRC}/cala pregonda.jpg`, out: "cala-pregonda" },
   { src: `${SRC}/pelayo-arbues-OYUj4l3FoPQ-unsplash.jpg`, out: "menorca-hero", cover: { w: 1600, h: 1000 } },
   { src: `${SRC}/pelayo-arbues-B1gDa1LjMG4-unsplash.jpg`, out: "cala-macarelleta" },
@@ -123,6 +123,7 @@ const jobs = [
   { src: `${SRC}/_stock/fiesta-caballos.jpg`, out: "fiesta-caballos" }, // Adobe Stock #316855635 (jinete y caballo, fiesta tradicional)
   { src: `${SRC}/_stock/caballos-jinetes.jpg`, out: "caballos-jinetes" }, // Adobe Stock #510706254 (caballos y jinetes)
   { src: `${SRC}/_stock/jinetes-fiesta.jpg`, out: "jinetes-fiesta" }, // Adobe Stock #1239213075 (jinetes engalanados)
+  { src: `${SRC}/_stock/playa-norte-menorca.jpg`, out: "playa-norte-menorca" }, // Adobe Stock #543952852 (playa dorada del norte, sin nombrar cala)
 ];
 
 mkdirSync(OUT, { recursive: true });
