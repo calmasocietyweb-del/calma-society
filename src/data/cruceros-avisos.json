@@ -4,30 +4,7 @@
     "desde": "2026-08-10",
     "hasta": "2026-08-31"
   },
-  "nuevas": [
-    {
-      "date": "2026-08-25",
-      "ship": "SEA CLOUD SPIRIT",
-      "arrival": "16:00",
-      "departure": "14:00",
-      "departureDate": "2026-08-26",
-      "muelle": "MUELLE CRUCEROS",
-      "consignatario": "FEDERICO CARDONA TREMOL S L",
-      "escala": "M202600108",
-      "nota": "El puerto la tiene y nosotros no. Falta capacidad de pasaje y naviera antes de publicarla."
-    },
-    {
-      "date": "2026-08-31",
-      "ship": "FOUR SEASONS I",
-      "arrival": "08:00",
-      "departure": "16:00",
-      "departureDate": null,
-      "muelle": "MUELLE CRUCEROS",
-      "consignatario": "AGENCIA MELIA VIVES S L",
-      "escala": "M202600196",
-      "nota": "El puerto la tiene y nosotros no. Falta capacidad de pasaje y naviera antes de publicarla."
-    }
-  ],
+  "nuevas": [],
   "desaparecidas": [],
   "dudasDeNombre": [],
   "dobles": [

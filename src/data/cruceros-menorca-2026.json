@@ -1,10 +1,10 @@
 {
   "season": 2026,
   "port": "Maó",
-  "updated": "2026-08-02",
+  "updated": "2026-08-10",
   "seasonEstimate": "125-130",
-  "coveragePct": 80,
-  "totalListed": 103,
+  "coveragePct": 82,
+  "totalListed": 105,
   "officialSource": "https://www.portsdebalears.com/es/buques-en-puerto",
   "sources": {
     "confirmadas": "menorca.info — datos de los consignatarios del puerto",
@@ -721,6 +721,18 @@
       "source": "https://www.portsdebalears.com/es/buques-en-puerto"
     },
     {
+      "date": "2026-08-25",
+      "ship": "Sea Cloud Spirit",
+      "line": "Sea Cloud Cruises",
+      "pax": 136,
+      "arrival": "16:00",
+      "departure": "14:00",
+      "departureDate": "2026-08-26",
+      "confidence": "alta",
+      "sourceCount": 2,
+      "source": "https://www.seacloud.com/en/seacloudspirit/"
+    },
+    {
       "date": "2026-08-29",
       "ship": "MSC Opera",
       "line": "MSC Cruises",
@@ -741,6 +753,18 @@
       "confidence": "alta",
       "sourceCount": 2,
       "source": "https://www.portsdebalears.com/es/buques-en-puerto"
+    },
+    {
+      "date": "2026-08-31",
+      "ship": "Four Seasons I",
+      "line": "Four Seasons Yachts",
+      "pax": 190,
+      "paxNote": "~190 pasajeros (máx. 222; 95 suites)",
+      "arrival": "08:00",
+      "departure": "16:00",
+      "confidence": "alta",
+      "sourceCount": 2,
+      "source": "https://www.fourseasonsyachts.com/voyages/the-rivieras-featuring-menorca-and-cassis?id=FS-I-260830-007"
     },
     {
       "date": "2026-09-02",
