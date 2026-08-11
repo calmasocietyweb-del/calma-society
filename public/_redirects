@@ -39,6 +39,21 @@
 /en/place                   /en/places/             301
 /en/place/                  /en/places/             301
 
+# ── Locales cerrados retirados del mapa ────────────────────────────────────
+# Contrabandú (bar de copas) cerró y su ficha pasó a `draft` el 06-08-2026
+# (commit 0642df5, KAN-74): decisión correcta —no mandamos a nadie a una puerta
+# cerrada—, pero la ficha llevaba meses publicada e indexada y NADIE puso el 301.
+# Resultado: 404 vivos en GSC, el de ES rastreado aún el 07-08, diez días
+# después del arreglo de KAN-100. Mismo patrón exacto que el barco retirado.
+# Destino: la página que sigue respondiendo a lo que buscaba el lector —dónde
+# tomar algo—, no el índice genérico. Los tres destinos verificados con 200.
+/lugar/contrabandu-es       /atardeceres-y-copas/         301
+/lugar/contrabandu-es/      /atardeceres-y-copas/         301
+/en/place/contrabandu-en    /en/sunsets-and-drinks/       301
+/en/place/contrabandu-en/   /en/sunsets-and-drinks/       301
+/fr/lieu/contrabandu-fr     /fr/couchers-et-cocktails/    301
+/fr/lieu/contrabandu-fr/    /fr/couchers-et-cocktails/    301
+
 # ── Barcos retirados del calendario del puerto ─────────────────────────────
 # YA NO SE MANTIENEN A MANO. El robot del puerto (KAN-77) borra la escala
 # cuando el barco deja de venir y su página deja de generarse, pero Google

@@ -124,19 +124,50 @@ for (const f of fichas) {
   informes.push({ file: f.file, status: f.status, lang: f.lang, key: f.translationKey, errores, avisos });
 }
 
+// ── Fichas retiradas: ¿tienen su 301? ───────────────────────────────────────
+// Retirar una ficha está bien (no mandamos a nadie a una puerta cerrada), pero
+// deja de generarse su página y Google sigue pidiendo la URL durante semanas.
+// Eso dejó `/lugar/contrabandu-es` en 404 diez días después de retirarla
+// (KAN-74 hizo bien lo suyo; nadie puso la redirección). Tercera vez que muerde
+// el mismo patrón —la firma de autor, el barco retirado y ahora un local—, así
+// que a partir de aquí BLOQUEA el CI en vez de descubrirse en Search Console.
+const RUTA_LUGAR = { es: "/lugar/", en: "/en/place/", fr: "/fr/lieu/" };
+let reglas = "";
+try {
+  reglas = readFileSync("public/_redirects", "utf8");
+} catch {
+  reglas = "";
+}
+const sinRedireccion = [];
+for (const f of fichas) {
+  if (f.__parseError || f.status === "published") continue;
+  const base = RUTA_LUGAR[f.lang];
+  if (!base) continue;
+  const url = base + f.file.replace(/\.json$/, "");
+  // La regla puede estar con o sin barra final; basta con que exista una.
+  if (!new RegExp(`^\\s*${url}/?\\s`, "m").test(reglas)) sinRedireccion.push({ url, file: f.file });
+}
+
 const conError = informes.filter((i) => i.errores.length);
 const conAviso = informes.filter((i) => !i.errores.length && i.avisos.length);
 const limpias = informes.filter((i) => !i.errores.length && !i.avisos.length);
 
 if (asJson) {
-  console.log(JSON.stringify({ total: informes.length, conError, conAviso: conAviso.length, limpias: limpias.length, informes }, null, 1));
+  console.log(JSON.stringify({ total: informes.length, conError, conAviso: conAviso.length, limpias: limpias.length, sinRedireccion, informes }, null, 1));
 } else {
   console.log(`QA lugares — ${informes.length} fichas examinadas${soloDraft ? " (solo draft)" : ""}`);
   console.log(`  ✅ limpias: ${limpias.length}   ⚠️ con avisos: ${conAviso.length}   ❌ con errores: ${conError.length}\n`);
   for (const i of conError) console.log(`❌ ${i.file} [${i.status}] — ${i.errores.join(" · ")}`);
   if (conError.length) console.log("");
   for (const i of conAviso) console.log(`⚠️  ${i.file} [${i.status}] — ${i.avisos.join(" · ")}`);
+  if (sinRedireccion.length) {
+    console.log("\n❌ Fichas retiradas SIN redirección en `public/_redirects` (404 vivo para Google):");
+    for (const s of sinRedireccion) console.log(`   ${s.url}   ← ${s.file}`);
+    console.log("   Añade un 301 a la página que siga respondiendo a lo que buscaba el lector,");
+    console.log("   y comprueba que el destino da 200 antes de escribirla.");
+  }
 }
 
-// Código de salida para CI: solo los ERRORES bloquean (los avisos informan).
-process.exitCode = conError.length ? 1 : 0;
+// Código de salida para CI: los ERRORES y los 404 sin redirección bloquean
+// (los avisos solo informan).
+process.exitCode = conError.length || sinRedireccion.length ? 1 : 0;
