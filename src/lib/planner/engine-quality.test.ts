@@ -115,6 +115,91 @@ test("determinismo: mismo input (con fechas) → mismo plan", () => {
   assert.deepEqual(planTrip(input, DATASET, "es"), planTrip(input, DATASET, "es"));
 });
 
+// ── Invariantes de la auditoría 2026-08-11 (riqueza y variedad) ──────────────
+// Lo que se protege aquí es la PROMESA: "un plan a medida", no un formulario que
+// devuelve siempre lo mismo. Cada test fija un fallo medido en producción.
+
+/** Todas las paradas con lugar real de un plan, día a día. */
+const placeIdsByDay = (plan: ReturnType<typeof planTrip>): string[][] =>
+  plan.days.map((d) => d.blocks.map((b) => b.placeId).filter((x): x is string => !!x));
+
+test("INVARIANTE: ningún día del plan se queda sin una sola parada real (1…21 días)", () => {
+  for (const days of [1, 2, 3, 4, 5, 7, 10, 14, 21]) {
+    const plan = planTrip(s({ days }), DATASET, "es");
+    placeIdsByDay(plan).forEach((ids, i) => {
+      assert.ok(ids.length > 0, `viaje de ${days} días: el día ${i} ("${plan.days[i].label}") no propone ni un lugar`);
+    });
+  }
+});
+
+test("INVARIANTE: las visitas de un día no se repiten entre sí", () => {
+  // Las COMIDAS sí pueden caer en un lugar ya visitado: cenar en el pueblo por el
+  // que pasaste ("Cena en el pueblo tras la jornada, sin desplazamientos") es la
+  // decisión buena, y el motor lo dice con ese texto. Lo que nunca debe pasar es
+  // que la tarde te mande a la misma cala de la mañana.
+  const VISITAS = new Set(["manana", "tarde", "atardecer"]);
+  for (const days of [3, 5, 7, 10, 14, 21]) {
+    for (const d of planTrip(s({ days }), DATASET, "es").days) {
+      const ids = d.blocks.filter((b) => VISITAS.has(b.slot) && b.placeId).map((b) => b.placeId!);
+      assert.equal(new Set(ids).size, ids.length, `viaje de ${days} días, día "${d.label}": repite visita → ${ids.join(", ")}`);
+    }
+  }
+});
+
+test("INVARIANTE: en estancias normales (≤10 días) no se repite lugar en TODO el viaje", () => {
+  for (const days of [3, 5, 7, 10]) {
+    const all = placeIdsByDay(planTrip(s({ days, interests: ["calas", "gastronomia"] }), DATASET, "es")).flat();
+    assert.equal(new Set(all).size, all.length, `viaje de ${days} días: repite lugar entre días`);
+  }
+});
+
+test("variantes: 'otra versión' cambia el plan, y cada variante es estable", () => {
+  const base: Partial<Survey> = { days: 6, interests: ["calas", "cultura"], arrivalDate: "2026-07-20" };
+  const v = [0, 1, 2].map((variant) => planTrip(s({ ...base, variant }), DATASET, "es"));
+  assert.notDeepEqual(v[0], v[1], "la variante 1 devuelve el mismo plan que la 0");
+  assert.notDeepEqual(v[1], v[2], "la variante 2 devuelve el mismo plan que la 1");
+  // …pero cada una sigue siendo determinista (el plan se comparte por URL).
+  assert.deepEqual(planTrip(s({ ...base, variant: 1 }), DATASET, "es"), v[1]);
+});
+
+test("variantes: una variante fuera de rango se acota en vez de romper el plan", () => {
+  const ok = planTrip(s({ days: 5, variant: 1 }), DATASET, "es");
+  assert.deepEqual(planTrip(s({ days: 5, variant: 4 } as Partial<Survey>), DATASET, "es"), ok, "4 debe caer en 1 (mód 3)");
+  assert.equal(planTrip(s({ days: 5, variant: -1 } as Partial<Survey>), DATASET, "es").days.length, 5);
+  assert.equal(planTrip(s({ days: 5, variant: NaN } as Partial<Survey>), DATASET, "es").days.length, 5);
+});
+
+test("INVARIANTE: los días de llegada y salida nombran un lugar real (no solo 'un paseo')", () => {
+  const plan = planTrip(s({ days: 5, arrivalFlightTime: "09:30" }), DATASET, "es");
+  const llegada = placeIdsByDay(plan)[0];
+  const salida = placeIdsByDay(plan)[plan.days.length - 1];
+  assert.ok(llegada.length > 0, "el día de llegada no propone ningún lugar con nombre");
+  assert.ok(salida.length > 0, "el día de salida no propone ningún lugar con nombre");
+});
+
+test("riqueza: los días plenos ofrecen recambios y 'también cerca'", () => {
+  const plan = planTrip(s({ days: 6, interests: ["calas", "gastronomia"] }), DATASET, "es");
+  const plenos = plan.days.filter((d) => d.cluster);
+  assert.ok(plenos.length > 0);
+  for (const d of plenos) {
+    assert.ok((d.alsoNearby?.length ?? 0) > 0, `el día "${d.label}" no ofrece nada más de la zona`);
+  }
+  const conRecambio = plenos.filter((d) => d.blocks.some((b) => b.alternatives?.length));
+  assert.ok(conRecambio.length > 0, "ningún día ofrece un recambio de parada");
+});
+
+test("recambios: nunca proponen un lugar que ya está en el plan de ese día", () => {
+  const plan = planTrip(s({ days: 7, interests: ["calas", "naturaleza"] }), DATASET, "es");
+  for (const d of plan.days) {
+    const enElDia = new Set(d.blocks.map((b) => b.placeId).filter(Boolean));
+    for (const b of d.blocks) {
+      for (const alt of b.alternatives ?? []) {
+        assert.ok(!enElDia.has(alt.placeId), `"${alt.name}" se ofrece como recambio y ya está en el día "${d.label}"`);
+      }
+    }
+  }
+});
+
 test("querystring hostil: intereses/enums desconocidos no revientan el motor (AHORA-1)", () => {
   const hostil = {
     days: 5,

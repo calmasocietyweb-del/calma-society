@@ -7,10 +7,70 @@
  * Presupuesto de horas útiles por ritmo; si se pasa, cae la parada de MENOR
  * afinidad (nunca la de la mañana) y se avisa. Función pura y trazable.
  */
-import type { PlannerPlace, PlannerZone, BaseZone, IntradayBlock, Notice, ZoneFood, Weekday } from "../types.ts";
+import type { PlannerPlace, PlannerZone, BaseZone, IntradayBlock, Notice, ZoneFood, Weekday, Swap } from "../types.ts";
 import type { Survey, Pace } from "../survey.ts";
 import { affinity } from "./interests.ts";
+import { pickRotating } from "./seed.ts";
 import { S, type Lang } from "../strings.ts";
+
+/**
+ * Ventana de "casi empate" (puntos de afinidad). Dentro de ella, dos lugares son
+ * igual de buenos para el viaje, así que la elección puede ROTAR por semilla sin
+ * bajar la calidad. Fuera de ella manda la afinidad y no se rota.
+ * Calibrado con la sonda de cobertura: 1,25 sube el dataset alcanzable del 62%
+ * al 90%+ sin colar lugares poco afines (el salto de tipo pedido vale 2,5).
+ */
+const NEAR_TIE = 1.25;
+/** Cuántos recambios se ofrecen por hueco. Tres es elegir; diez es un catálogo. */
+const ALT_COUNT = 3;
+/** Cuántos lugares "también cerca" se listan por día. */
+const NEARBY_COUNT = 5;
+
+interface Selection {
+  pick?: PlannerPlace;
+  alts: PlannerPlace[];
+}
+
+/**
+ * Elige un lugar para un hueco: entre los que cumplen el filtro, descarta los ya
+ * usados en el viaje, se queda con los de afinidad comparable a la del mejor y
+ * rota por semilla. Devuelve además los recambios de ese hueco.
+ */
+function selectFrom(
+  ranked: readonly PlannerPlace[],
+  pred: (p: PlannerPlace) => boolean,
+  survey: Survey,
+  seed: number,
+  salt: number,
+  taken: Set<string>,
+  /**
+   * Si no queda nada sin usar, ¿vale repetir un lugar de OTRO día? Solo para la
+   * parada de la mañana (la esencial: antes repetir que dejar el día vacío en una
+   * estancia larga). Para los huecos opcionales NO: repetir la cala de la mañana
+   * por la tarde del mismo día sería un plan roto, no un plan lleno.
+   */
+  reuse = false,
+): Selection {
+  const all = ranked.filter(pred);
+  if (all.length === 0) return { alts: [] };
+  const fresh = all.filter((p) => !taken.has(p.id));
+  const pool = fresh.length ? fresh : reuse ? all : [];
+  if (pool.length === 0) return { alts: [] };
+  const best = affinity(pool[0], survey);
+  const near = pool.filter((p) => affinity(p, survey) >= best - NEAR_TIE);
+  const pick = pickRotating(near, seed, salt);
+  const alts = pool.filter((p) => p !== pick).slice(0, ALT_COUNT);
+  return { pick, alts };
+}
+
+/** Una frase corta que justifique el recambio (sin volcar la ficha entera). */
+function swapNote(p: PlannerPlace): string | undefined {
+  const raw = p.highlights?.[0] || p.blurb;
+  if (!raw) return undefined;
+  return raw.length > 110 ? `${raw.slice(0, 107).trimEnd()}…` : raw;
+}
+
+const toSwap = (p: PlannerPlace): Swap => ({ placeId: p.id, name: p.name, note: swapNote(p) });
 
 const PACE: Record<Pace, { budget: number; maxAnchors: number }> = {
   relajado: { budget: 7, maxAnchors: 2 },
@@ -77,12 +137,18 @@ export interface DayInput {
   /** Hora real del atardecer "HH:MM" (sun.ts, solo con fechas): sustituye al
    * 19:30 fijo y desplaza la cena si el sol se pone tarde (verano). */
   sunsetHint?: string;
+  /** Semilla del plan (rules/seed.ts): rota entre lugares igual de afines. */
+  seed?: number;
+  /** Lugares YA programados en días anteriores: no se repiten. */
+  used?: ReadonlySet<string>;
 }
 
 export interface DayResult {
   blocks: IntradayBlock[];
   budgetHours: number;
   notices: Notice[];
+  /** Lo que queda a mano y no cabe en el día (profundidad sin saturar). */
+  alsoNearby?: Swap[];
 }
 
 /** Horas útiles que consume un conjunto de anclas (paradas) + comidas + coche. */
@@ -113,24 +179,49 @@ export function sequenceDay(input: DayInput): DayResult {
   const ranked = [...places].sort(
     (a, b) => affinity(b, survey) - affinity(a, survey) || a.name.localeCompare(b.name),
   );
+  // Semilla y memoria del viaje: la elección rota entre lugares igual de afines
+  // y no repite lo ya programado en días anteriores. `taken` arranca con lo usado
+  // y va creciendo dentro del día (la tarde no puede caer en la misma cala que
+  // la mañana). El salt lleva el día para que dos días no roten en fase.
+  const seed = input.seed ?? 0;
+  const day = input.dayIndex ?? 0;
+  const taken = new Set<string>(input.used ?? []);
+  const claim = (p?: PlannerPlace) => { if (p) taken.add(p.id); return p; };
+
   // Cruce openDays × día real: lo cerrado ese día no se propone (y si era el
   // mejor candidato, se dice por qué quedó fuera — trazabilidad, §6 blueprint).
   const morningAny = ranked.find((p) => DAYTIME.has(p.plannerType));
-  const morning = ranked.find((p) => DAYTIME.has(p.plannerType) && openOn(p, weekday));
-  if (morningAny && morning !== morningAny) {
+  const mSel = selectFrom(ranked, (p) => DAYTIME.has(p.plannerType) && openOn(p, weekday), survey, seed, day * 10 + 1, taken, true);
+  const morning = claim(mSel.pick);
+  if (morningAny && morning && morning !== morningAny && !openOn(morningAny, weekday)) {
     notices.push({
       kind: "confirma-horario",
       text: t.closedThatDay(morningAny.name, S(lang).weekdayName[weekday!]),
       placeId: morningAny.id,
     });
   }
-  const sunset = ranked.find((p) => SUNSET.has(p.plannerType) && openOn(p, weekday));
-  const tarde = ranked.find((p) => DAYTIME.has(p.plannerType) && p !== morning && openOn(p, weekday));
-  // Para anclar las comidas a sitios reales (no "cenar en la zona").
-  const pueblo = ranked.find((p) => p.plannerType === "pueblo");
-  const diner = ranked.find(
-    (p) => (p.plannerType === "cena" || p.plannerType === "comida") && openOn(p, weekday),
+  const sSel = selectFrom(ranked, (p) => SUNSET.has(p.plannerType) && openOn(p, weekday), survey, seed, day * 10 + 2, taken);
+  const sunset = claim(sSel.pick);
+  const tSel = selectFrom(ranked, (p) => DAYTIME.has(p.plannerType) && openOn(p, weekday), survey, seed, day * 10 + 3, taken);
+  const tarde = claim(tSel.pick);
+  // Para anclar las comidas a sitios reales (no "cenar en la zona"). Si la mañana
+  // o la tarde YA son un pueblo, ese es el pueblo del día (cenas donde has estado);
+  // si no, se elige uno aparte.
+  const anchorTown = [morning, tarde].find((p) => p?.plannerType === "pueblo");
+  const pueblo = anchorTown
+    ?? claim(selectFrom(ranked, (p) => p.plannerType === "pueblo", survey, seed, day * 10 + 4, taken).pick);
+  const diner = claim(
+    selectFrom(
+      ranked,
+      (p) => (p.plannerType === "cena" || p.plannerType === "comida") && openOn(p, weekday),
+      survey, seed, day * 10 + 5, taken,
+    ).pick,
   );
+  const altsFor = (slot: IntradayBlock["slot"]): Swap[] | undefined => {
+    const sel = slot === "manana" ? mSel : slot === "tarde" ? tSel : slot === "atardecer" ? sSel : undefined;
+    const list = sel?.alts.filter((p) => p !== morning && p !== tarde && p !== sunset).map(toSwap);
+    return list && list.length ? list : undefined;
+  };
 
   // Orden de preferencia de las paradas OPCIONALES (la mañana es la esencial).
   const optional: Array<{ slot: IntradayBlock["slot"]; place: PlannerPlace }> = [];
@@ -182,6 +273,7 @@ export function sequenceDay(input: DayInput): DayResult {
       slot, timeHint: timeOf(slot), placeId: c.place.id, placeName: c.place.name,
       durationMin: durOf(c.place),
       reason: whatToSee(c.place, lang) || t.anchorFallbackReason(c.place.name),
+      alternatives: altsFor(slot),
     };
   };
   const puebloIsAnchor = chosen.some((c) => c.place === pueblo);
@@ -249,5 +341,15 @@ export function sequenceDay(input: DayInput): DayResult {
     });
   }
 
-  return { blocks, budgetHours, notices };
+  // "También cerca": lo bueno del ramal que el día no llega a programar. No es
+  // relleno — es lo que hace que el plan se lea como una guía de la zona y no
+  // como una lista cerrada, y da salida a los lugares verificados que la regla
+  // de no-saturar deja siempre fuera.
+  const scheduled = new Set(blocks.map((b) => b.placeId).filter(Boolean) as string[]);
+  const alsoNearby = ranked
+    .filter((p) => !scheduled.has(p.id) && !(input.used?.has(p.id) ?? false) && p.plannerType !== "cena" && p.plannerType !== "comida")
+    .slice(0, NEARBY_COUNT)
+    .map(toSwap);
+
+  return { blocks, budgetHours, notices, alsoNearby: alsoNearby.length ? alsoNearby : undefined };
 }

@@ -51,6 +51,20 @@ export function eventsOnDate(events: PlannerEvent[], date: string): PlannerEvent
 }
 
 /**
+ * Fecha legible ("24 de julio" / "24 July"). Los avisos de fiesta enseñaban la
+ * fecha ISO cruda —"El 2026-07-24 hay Festes de Sant Jaume"— en español y en
+ * inglés (auditoría 2026-08-11): un formato de base de datos delante del lector.
+ */
+export function humanDate(iso: string, lang: Lang): string {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+  if (!m) return iso;
+  const t = S(lang);
+  const month = t.monthName[+m[2] - 1];
+  if (!month) return iso;
+  return t.dayMonth(+m[3], month);
+}
+
+/**
  * Avisos de agenda para un día. Devuelve los avisos "de zona" (van al día) y los
  * "de otra zona" (el motor los acumula como globales, sin duplicar).
  */
@@ -63,11 +77,15 @@ export function agendaForDay(
   const t = S(lang).agenda;
   const dayNotices: Notice[] = [];
   const otherZone: Array<{ key: string; notice: Notice }> = [];
+  const when = humanDate(date, lang);
   for (const ev of eventsOnDate(events, date)) {
     if (ev.zone === "varios" || ev.zone === dayZone) {
-      dayNotices.push({ kind: "fiesta", text: t.inZone(ev.title, date) });
+      dayNotices.push({ kind: "fiesta", text: t.inZone(ev.title, when) });
     } else {
-      otherZone.push({ key: ev.translationKey, notice: { kind: "fiesta", text: t.otherZone(ev.title, date, ev.zone) } });
+      otherZone.push({
+        key: ev.translationKey,
+        notice: { kind: "fiesta", text: t.otherZone(ev.title, when, S(lang).zoneName[ev.zone as PlannerZone] ?? ev.zone) },
+      });
     }
   }
   return { dayNotices, otherZone };

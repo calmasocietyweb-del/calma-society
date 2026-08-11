@@ -1013,6 +1013,583 @@ form.is-wizard .planner-submit-row {
 }
 
 /* ============================================================
+   PLANIFICADOR · el plan como páginas de revista (`pl-*`)
+   ============================================================
+   El resultado se leía como un horario de tren: cada bloque del día —el
+   desayuno igual que la cala— en tres columnas (hora · SLOT · texto gris de
+   12 px), todo al mismo peso, una sola foto en cinco días. Los cinco días
+   abrían idénticos, porque el primer bloque siempre es el desayuno, y lo
+   memorable del viaje quedaba enterrado a media tabla (auditoría 2026-08-11).
+
+   La jerarquía que sustituye a esa tabla:
+     1. la VISITA del día manda (nombre grande, foto, porqué, recambios);
+     2. las COMIDAS son una columna vertebral discreta;
+     3. los avisos y "también cerca" son notas al pie, no ruido intercalado.
+   Sin tipografías ni colores nuevos: los de la marca, mejor ordenados.
+   ------------------------------------------------------------ */
+
+.pl-days {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 5vw, 3.25rem);
+}
+
+/* ── El día ─────────────────────────────────────────────────── */
+.pl-day {
+  scroll-margin-top: 6rem;
+  border-top: 1px solid var(--color-niebla);
+  padding-top: clamp(1.25rem, 3vw, 2rem);
+}
+
+/* Cabecera visual: foto verificada si la hay; si no, la isla de verdad con las
+   paradas del día. Nunca una foto de otro sitio fingiendo ser este. */
+.pl-day-hero {
+  margin: 0 0 clamp(1rem, 2.5vw, 1.5rem);
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  background-color: var(--color-arena);
+}
+.pl-day-hero img {
+  display: block;
+  width: 100%;
+  height: clamp(11rem, 30vw, 17rem);
+  object-fit: cover;
+}
+/* Crédito de la foto: encima de la imagen. El pie del mapa NO es un crédito y
+   va en flujo normal (`.pl-map-cap`), así que se excluye aquí. */
+.pl-day-hero > figcaption:not(.pl-map-cap) {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.4rem;
+  border-radius: 0.25rem;
+  background-color: color-mix(in oklab, var(--color-tinta) 62%, transparent);
+  padding: 0.1rem 0.4rem;
+  font-size: 0.625rem;
+  line-height: 1.4;
+  color: var(--color-crema);
+}
+.pl-day-hero-map {
+  display: grid;
+  justify-items: center;
+  gap: 0.75rem;
+  background-color: color-mix(in oklab, var(--color-crema) 55%, var(--color-lino));
+  padding: clamp(1.1rem, 3vw, 1.75rem);
+}
+
+/* Localizador: la silueta real de la isla (OpenStreetMap, ODbL). */
+.pl-map {
+  width: 100%;
+  max-width: 24rem;
+  height: auto;
+}
+.pl-map-land {
+  fill: color-mix(in oklab, var(--color-arena) 88%, var(--color-oro-vivo));
+  stroke: color-mix(in oklab, var(--color-piedra-suave) 45%, transparent);
+  stroke-width: 0.8;
+  stroke-linejoin: round;
+}
+.pl-map-route {
+  fill: none;
+  stroke: var(--color-terracota);
+  stroke-width: 1.6;
+  stroke-dasharray: 4 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+/* La base (donde duermes) va hueca; las paradas del día, macizas. */
+.pl-map-home {
+  fill: var(--color-lino);
+  stroke: var(--color-arcilla);
+  stroke-width: 2;
+}
+.pl-map-dot {
+  fill: var(--color-terracota);
+  stroke: var(--color-lino);
+  stroke-width: 1.2;
+}
+.pl-map-cap {
+  max-width: 40ch;
+  text-align: center;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--color-piedra);
+  text-wrap: balance;
+}
+
+.pl-day-head { margin-bottom: clamp(1.25rem, 3vw, 1.75rem); }
+.pl-day-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 0.85rem;
+  font-size: 0.8125rem;
+  color: var(--color-piedra-suave);
+}
+.pl-day-n {
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.6875rem;
+  color: var(--color-oro);
+}
+.pl-day-hours { margin-left: auto; }
+.pl-day-title {
+  margin-top: 0.3rem;
+  font-family: "Fraunces Variable", Georgia, serif;
+  font-size: clamp(1.6rem, 4.5vw, 2.35rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  color: var(--color-tinta);
+}
+/* Qué se hace hoy, en una frase: reconocer el día sin leer la jornada entera. */
+.pl-day-sum {
+  margin-top: 0.6rem;
+  max-width: 46ch;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--color-piedra);
+}
+
+/* ── Secciones dentro del día ───────────────────────────────── */
+.pl-block { margin-top: clamp(1.25rem, 3vw, 1.75rem); }
+.pl-block-h {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--color-niebla);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-oro);
+}
+.pl-block-quiet .pl-block-h { color: var(--color-piedra-suave); }
+
+/* ── La jornada: las visitas, que son el viaje ──────────────── */
+.pl-stops {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  list-style: none;
+}
+.pl-stop {
+  display: grid;
+  grid-template-columns: 4.25rem 1fr;
+  gap: 0 0.9rem;
+}
+@media (min-width: 40rem) {
+  .pl-stop { grid-template-columns: 4.75rem 1fr auto; }
+}
+.pl-stop-time {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding-top: 0.2rem;
+  font-size: 0.9375rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--color-arcilla);
+}
+.pl-stop-slot {
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-piedra-suave);
+}
+.pl-stop-body { min-width: 0; }
+.pl-stop-name {
+  font-family: "Fraunces Variable", Georgia, serif;
+  font-size: clamp(1.125rem, 2.6vw, 1.375rem);
+  line-height: 1.25;
+  color: var(--color-tinta);
+  text-wrap: pretty;
+}
+.pl-stop-name a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--color-niebla);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s ease, color 0.15s ease;
+}
+.pl-stop-name a:hover {
+  color: var(--color-arcilla);
+  text-decoration-color: var(--color-terracota);
+}
+.pl-stop-dur {
+  margin-left: 0.5rem;
+  font-family: "Inter Variable", system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--color-piedra-suave);
+}
+.pl-stop-why {
+  margin-top: 0.35rem;
+  max-width: 68ch;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-piedra);
+  text-wrap: pretty;
+}
+.pl-stop-links {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.1rem;
+}
+.pl-stop-links a {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-arcilla);
+  text-decoration: underline;
+  text-decoration-color: var(--color-niebla);
+  text-underline-offset: 3px;
+}
+.pl-stop-links a:hover { text-decoration-color: var(--color-terracota); }
+.pl-stop-thumb {
+  display: none;
+  border-radius: 0.6rem;
+  object-fit: cover;
+}
+@media (min-width: 40rem) {
+  .pl-stop-thumb {
+    display: block;
+    width: 7rem;
+    height: 5.25rem;
+  }
+}
+
+/* Recambios: el plan como propuesta con salidas, no como una orden. */
+.pl-swap { margin-top: 0.6rem; }
+.pl-swap > summary {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  cursor: pointer;
+  list-style: none;
+  border-radius: 9999px;
+  border: 1px solid var(--color-niebla);
+  padding: 0.2rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-piedra-suave);
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.pl-swap > summary::-webkit-details-marker { display: none; }
+.pl-swap > summary:hover {
+  border-color: var(--color-terracota);
+  color: var(--color-arcilla);
+}
+.pl-swap[open] > summary {
+  border-color: var(--color-terracota);
+  color: var(--color-arcilla);
+}
+.pl-swap ul {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-left: 1px solid var(--color-niebla);
+  padding-left: 0.85rem;
+  list-style: none;
+}
+.pl-swap-name {
+  display: block;
+  font-family: "Fraunces Variable", Georgia, serif;
+  font-size: 0.9375rem;
+  color: var(--color-tinta);
+}
+.pl-swap-name a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--color-niebla);
+  text-underline-offset: 3px;
+}
+.pl-swap-name a:hover { color: var(--color-arcilla); }
+.pl-swap-note {
+  display: block;
+  max-width: 62ch;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--color-piedra-suave);
+}
+
+/* ── Dónde comer: la columna vertebral, en voz baja ─────────── */
+.pl-meals {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  list-style: none;
+}
+.pl-meal {
+  display: grid;
+  grid-template-columns: 4.25rem 1fr;
+  gap: 0 0.9rem;
+}
+@media (min-width: 40rem) {
+  .pl-meal { grid-template-columns: 4.75rem 1fr; }
+}
+.pl-meal-time {
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-piedra-suave);
+}
+.pl-meal-slot {
+  margin-right: 0.4rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-piedra-suave);
+}
+.pl-meal-name {
+  font-weight: 500;
+  color: var(--color-tinta);
+}
+.pl-meal-name a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--color-niebla);
+  text-underline-offset: 3px;
+}
+.pl-meal-name a:hover { color: var(--color-arcilla); }
+/* El porqué de la comida es un dato largo (mesas, horarios, qué pedir): se
+   ofrece entero pero recortado a 2 líneas, para que no tape la jornada. */
+.pl-meal-why {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-top: 0.15rem;
+  max-width: 70ch;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--color-piedra-suave);
+}
+
+/* ── Avisos ─────────────────────────────────────────────────── */
+.pl-notices {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  list-style: none;
+}
+.pl-notice {
+  display: flex;
+  gap: 0.6rem;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--color-piedra);
+}
+.pl-notice-i {
+  flex: none;
+  padding-top: 0.1rem;
+  color: var(--color-terracota);
+}
+.pl-notice-cta {
+  white-space: nowrap;
+  font-weight: 500;
+  color: var(--color-arcilla);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.pl-notice-cta:hover { color: var(--color-terracota); }
+
+/* ── También cerca: la profundidad del ramal, sin saturar el día ── */
+.pl-nearby {
+  display: grid;
+  gap: 0.6rem 1.5rem;
+  list-style: none;
+}
+@media (min-width: 40rem) {
+  .pl-nearby { grid-template-columns: 1fr 1fr; }
+}
+.pl-nearby li {
+  font-size: 0.875rem;
+  color: var(--color-tinta);
+}
+.pl-nearby a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--color-niebla);
+  text-underline-offset: 3px;
+}
+.pl-nearby a:hover { color: var(--color-arcilla); }
+.pl-nearby span {
+  display: block;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--color-piedra-suave);
+}
+
+/* ── Pie del día y plan-B ───────────────────────────────────── */
+.pl-day-foot {
+  margin-top: clamp(1.25rem, 3vw, 1.75rem);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+.pl-day-foot a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-arcilla);
+  text-decoration: underline;
+  text-decoration-color: var(--color-niebla);
+  text-underline-offset: 3px;
+}
+.pl-day-foot a:hover { text-decoration-color: var(--color-terracota); }
+
+.pl-planb {
+  margin-top: 1rem;
+  border-radius: 0.9rem;
+  background-color: color-mix(in oklab, var(--color-arena) 55%, transparent);
+  padding: 0.85rem 1rem;
+}
+.pl-planb > summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-arcilla);
+}
+.pl-planb > summary::-webkit-details-marker { display: none; }
+.pl-planb > summary::after {
+  content: " →";
+  color: var(--color-terracota);
+}
+.pl-planb[open] > summary::after { content: " ↓"; }
+.pl-planb-body { margin-top: 0.9rem; }
+.pl-planb-body .pl-stops { gap: 1rem; }
+.pl-planb-body .pl-stop-name { font-size: 1rem; }
+.pl-planb-body .pl-meals { margin-top: 0.9rem; }
+.pl-planb-body .pl-notices { margin-top: 0.9rem; }
+
+/* ── Apertura del plan (la base) ────────────────────────────── */
+.pl-open {
+  border-radius: 1.1rem;
+  background-color: color-mix(in oklab, var(--color-arena) 55%, transparent);
+  padding: clamp(1.25rem, 4vw, 2rem);
+}
+.pl-open-kicker {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-oro);
+}
+.pl-open-base {
+  margin-top: 0.35rem;
+  font-family: "Fraunces Variable", Georgia, serif;
+  font-size: clamp(1.85rem, 5.5vw, 2.75rem);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  color: var(--color-tinta);
+}
+.pl-open-why {
+  margin-top: 0.7rem;
+  max-width: 62ch;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--color-piedra);
+  text-wrap: pretty;
+}
+.pl-open-notes {
+  margin-top: 1.25rem;
+  border-top: 1px solid var(--color-niebla);
+  padding-top: 0.9rem;
+}
+.pl-open-notes h3 {
+  margin-bottom: 0.7rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-oro);
+}
+.pl-bus {
+  margin-top: 1.25rem;
+  display: inline-block;
+  border-radius: 9999px;
+  border: 1px solid var(--color-arcilla);
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-arcilla);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.pl-bus:hover {
+  background-color: var(--color-arcilla);
+  color: var(--color-crema);
+}
+
+/* ── La experiencia firma del viaje ─────────────────────────── */
+.pl-signature {
+  margin-top: 1.5rem;
+  border-top: 2px solid var(--color-oro-vivo);
+  border-bottom: 1px solid var(--color-niebla);
+  padding: 1.25rem 0 1.35rem;
+}
+.pl-signature h2 {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-oro);
+}
+.pl-sig-title {
+  margin-top: 0.5rem;
+  font-family: "Fraunces Variable", Georgia, serif;
+  font-size: clamp(1.25rem, 3.5vw, 1.7rem);
+  line-height: 1.2;
+  color: var(--color-tinta);
+  text-wrap: balance;
+}
+.pl-sig-desc {
+  margin-top: 0.5rem;
+  max-width: 66ch;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-piedra);
+  text-wrap: pretty;
+}
+
+/* ── "Otra versión de este plan" ────────────────────────────── */
+.pl-variants {
+  margin-top: clamp(2rem, 5vw, 3rem);
+  border-top: 1px solid var(--color-niebla);
+  padding-top: 1.5rem;
+  text-align: center;
+}
+.pl-variants-t {
+  font-family: "Fraunces Variable", Georgia, serif;
+  font-size: 1.25rem;
+  color: var(--color-tinta);
+}
+.pl-variants-n {
+  margin-top: 0.3rem;
+  font-size: 0.8125rem;
+  color: var(--color-piedra-suave);
+}
+.pl-variants button {
+  margin-top: 0.9rem;
+  cursor: pointer;
+  border-radius: 9999px;
+  background-color: var(--color-arcilla);
+  padding: 0.6rem 1.6rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-crema);
+  transition: background-color 0.15s ease;
+}
+.pl-variants button:hover { background-color: var(--color-terracota); }
+.pl-variants button:focus-visible {
+  outline: 2px solid var(--color-terracota);
+  outline-offset: 3px;
+}
+
+/* ============================================================
    CAPA EDITORIAL — presencia de revista con calma (CSS puro, sin JS).
    Entrada del hero, revelado al hacer scroll y subrayado dibujado. Todo
    respeta `prefers-reduced-motion` y degrada con elegancia donde no haya

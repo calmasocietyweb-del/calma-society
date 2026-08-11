@@ -25,10 +25,92 @@ import eventsEs from "../data/planner-events.es.json";
 import eventsEn from "../data/planner-events.en.json";
 import foodEs from "../data/planner-food.es.json";
 import foodEn from "../data/planner-food.en.json";
+import outline from "../data/menorca-outline.json";
+import { VARIANT_COUNT } from "../lib/planner/survey";
 import { SITE } from "../config/site";
 import type { Locale } from "../config/site";
 import { privacyPath } from "../i18n/utils";
 import Logo from "./Logo.astro";
+
+/* ── Silueta de Menorca para el localizador de cada día ──────────────────────
+   Solo 33 de los 141 lugares verificados tienen foto, así que la mayoría de los
+   días se quedaban sin una sola imagen: paredes de texto gris (auditoría
+   2026-08-11). En vez de rellenar con fotos prestadas —que sería mentir sobre
+   dónde se ha hecho cada una—, cada día se sitúa en la isla de verdad: el
+   contorno real de la costa (OpenStreetMap, ODbL) con las paradas del día en sus
+   coordenadas. Es un dato honesto y, además, lo que de verdad quiere saber quien
+   planifica: dónde cae hoy.
+
+   El contorno completo son 596 vértices; para un dibujo de ~200 px se simplifica
+   a ~110 (Douglas-Peucker) y así el island no engorda su payload. */
+const RING = outline.ring as [number, number][];
+const LAT_REF = (outline.bbox.latMin + outline.bbox.latMax) / 2;
+const KX = Math.cos((LAT_REF * Math.PI) / 180);
+
+/**
+ * Douglas-Peucker sobre un anillo CERRADO. Aplicado tal cual, el algoritmo se
+ * derrumba aquí: como el primer y el último vértice de la costa son el mismo
+ * punto, la línea base mide cero, todas las distancias perpendiculares salen
+ * nulas y la isla entera se reduce a 2 puntos (silueta invisible). Por eso el
+ * anillo se parte primero por su vértice más lejano al de partida y se simplifica
+ * cada mitad como una polilínea abierta.
+ */
+function simplifyOpen(pts: [number, number][], from: number, to: number, tol: number, keep: Uint8Array): void {
+  const stack: [number, number][] = [[from, to]];
+  while (stack.length) {
+    const [a, b] = stack.pop()!;
+    if (b - a < 2) continue;
+    let far = -1;
+    let best = tol;
+    const [ax, ay] = pts[a];
+    const [bx, by] = pts[b];
+    const dx = bx - ax;
+    const dy = by - ay;
+    const len = Math.hypot(dx, dy) || 1;
+    for (let i = a + 1; i < b; i++) {
+      const d = Math.abs((pts[i][0] - ax) * dy - (pts[i][1] - ay) * dx) / len;
+      if (d > best) { best = d; far = i; }
+    }
+    if (far > 0) { keep[far] = 1; stack.push([a, far], [far, b]); }
+  }
+}
+
+function simplifyRing(pts: [number, number][], tol: number): [number, number][] {
+  if (pts.length < 4) return pts;
+  const last = pts.length - 1;
+  let split = 1;
+  let maxD = -1;
+  for (let i = 1; i < last; i++) {
+    const d = Math.hypot(pts[i][0] - pts[0][0], pts[i][1] - pts[0][1]);
+    if (d > maxD) { maxD = d; split = i; }
+  }
+  const keep = new Uint8Array(pts.length);
+  keep[0] = keep[split] = keep[last] = 1;
+  simplifyOpen(pts, 0, split, tol, keep);
+  simplifyOpen(pts, split, last, tol, keep);
+  return pts.filter((_, i) => keep[i]);
+}
+
+const RING_XY = RING.map(([lng, lat]) => [lng * KX, lat] as [number, number]);
+// Tolerancia calibrada para el tamaño al que se dibuja (~260 px de ancho): 179
+// vértices (1,9 KB) conservan las calas reconocibles —Fornells, Maó, Addaia— sin
+// cargar el island con los 596 originales.
+const SIMPLE = simplifyRing(RING_XY, 0.003);
+const MIN_X = Math.min(...SIMPLE.map((p) => p[0]));
+const MAX_X = Math.max(...SIMPLE.map((p) => p[0]));
+const MIN_Y = Math.min(...SIMPLE.map((p) => p[1]));
+const MAX_Y = Math.max(...SIMPLE.map((p) => p[1]));
+const MAP_W = 260;
+const MAP_SCALE = MAP_W / (MAX_X - MIN_X);
+const MAP_H = Math.round((MAX_Y - MIN_Y) * MAP_SCALE);
+const ISLAND_PATH =
+  "M" +
+  SIMPLE.map(([x, y]) =>
+    `${((x - MIN_X) * MAP_SCALE).toFixed(1)} ${((MAX_Y - y) * MAP_SCALE).toFixed(1)}`,
+  ).join("L") +
+  "Z";
+/** Constantes de proyección que el island usa para colocar cada parada. */
+const ISLAND = { path: ISLAND_PATH, w: MAP_W, h: MAP_H, kx: KX, minX: MIN_X, maxY: MAX_Y, s: MAP_SCALE };
 
 interface Props {
   locale: Locale;
@@ -145,6 +227,28 @@ const CFG = {
   // Tira-resumen del resultado ("de un vistazo").
   overviewLabel: isEs ? "Tu viaje de un vistazo" : "Your trip at a glance",
   dayWord: isEs ? "Día" : "Day",
+  // Silueta de la isla: el localizador de cada día (ver frontmatter).
+  island: ISLAND,
+  mapAria: isEs ? "Dónde cae este día en Menorca" : "Where this day falls on Menorca",
+  // Centro de cada zona base, para dibujar el trayecto del día desde donde duermes.
+  baseCoords: {
+    ciutadella: [39.998, 3.8416], mao: [39.8885, 4.2658],
+    "cala-galdana": [39.9364, 3.9662], "son-bou": [39.9078, 4.0653],
+    "es-mercadal": [39.9887, 4.093], fornells: [40.0559, 4.1332],
+  } as Record<string, [number, number]>,
+  // Rótulos del nuevo resultado editorial.
+  journeyTitle: isEs ? "La jornada" : "The day",
+  tableTitle: isEs ? "Dónde comer" : "Where to eat",
+  noticesTitle: isEs ? "Ten en cuenta" : "Worth knowing",
+  nearbyTitle: isEs ? "También cerca" : "Also nearby",
+  swapTitle: isEs ? "En su lugar" : "Instead",
+  variantTitle: isEs ? "¿Otra manera de verlo?" : "Another way to see it",
+  variantCta: isEs ? "Enséñame otra versión" : "Show me another version",
+  variantOf: isEs ? "Versión %a de %b" : "Version %a of %b",
+  stopsWord: isEs ? "paradas" : "stops",
+  planLead: isEs ? "Tu base" : "Your base",
+  andWord: isEs ? "y" : "and",
+  variantCount: VARIANT_COUNT,
   // Enlaces de la respuesta: ficha /lugar (solo published), Google Maps por
   // coordenadas (sin API ni JS externo: solo una URL) y web oficial.
   placePrefix: isEs ? "/lugar" : "/en/place",
@@ -541,6 +645,12 @@ const ICON: Record<string, string> = {
   const isISODate = (s: string) => /^\d{4}-\d{2}-\d{2}$/.test(s) && !Number.isNaN(Date.parse(s + "T00:00:00Z"));
   const dayMs = 86400000;
 
+  /** "A, B y C" / "A, B and C" — sin fugar comas de lista inglesa al español. */
+  function listJoin(items: string[]): string {
+    if (items.length <= 1) return items[0] ?? "";
+    return `${items.slice(0, -1).join(", ")} ${CFG.andWord} ${items[items.length - 1]}`;
+  }
+
   // Aviso (fechas imposibles, motor caído): icono de línea, no emoji.
   const alertBox = (msg: string) =>
     `<p class="flex gap-2 rounded-lg border border-terracota/60 bg-arena px-4 py-3 text-sm text-arcilla" role="alert">${CFG.alertIcon}<span>${esc(msg)}</span></p>`;
@@ -582,6 +692,8 @@ const ICON: Record<string, string> = {
       accessibility: p.get("accessibility") || "ninguna",
       boatSunset: p.get("boatSunset") === "si",
       budget: p.get("budget") || "medio",
+      // Variante del plan ("otra versión"): el motor la sanea y la acota.
+      variant: Number(p.get("variant")) || 0,
       arrivalDate,
       departureDate,
       arrivalFlightTime: p.get("arrivalFlightTime") || undefined,
@@ -629,51 +741,106 @@ const ICON: Record<string, string> = {
     const op = place?.operatorName;
     if (n.kind === "reserva" && url) {
       const label = op ? CFG.reservarCon.replace("%s", op) : CFG.reservar;
-      cta = ` <a href="${esc(utmNegocio(url))}" target="_blank" rel="sponsored noopener" data-umami-event="planner-reserva" data-umami-event-negocio="${esc(n.placeId)}" class="whitespace-nowrap font-medium text-arcilla underline underline-offset-2 hover:text-terracota">${esc(label)} →</a>`;
+      cta = ` <a href="${esc(utmNegocio(url))}" target="_blank" rel="sponsored noopener" data-umami-event="planner-reserva" data-umami-event-negocio="${esc(n.placeId)}" class="pl-notice-cta">${esc(label)} →</a>`;
     } else if (n.kind === "confirma-horario" && url) {
       const label = op ? CFG.webDe.replace("%s", op) : CFG.officialLabel;
-      cta = ` <a href="${esc(utmNegocio(url))}" target="_blank" rel="noopener" data-umami-event="planner-web-oficial" data-umami-event-negocio="${esc(n.placeId)}" class="whitespace-nowrap font-medium text-arcilla underline underline-offset-2 hover:text-terracota">${esc(label)} →</a>`;
+      cta = ` <a href="${esc(utmNegocio(url))}" target="_blank" rel="noopener" data-umami-event="planner-web-oficial" data-umami-event-negocio="${esc(n.placeId)}" class="pl-notice-cta">${esc(label)} →</a>`;
     }
-    return `<li class="flex gap-2 text-sm text-piedra"><span aria-hidden="true">${CFG.noticeIcon[n.kind] || "•"}</span><span>${esc(n.text)}${cta}</span></li>`;
+    return `<li class="pl-notice"><span class="pl-notice-i" aria-hidden="true">${CFG.noticeIcon[n.kind] || "·"}</span><span>${esc(n.text)}${cta}</span></li>`;
   }
 
   // Enlace "Cómo llegar" (Google Maps por coordenadas: solo una URL, sin API ni JS).
   const gmapsUrl = (p: any) =>
     `https://www.google.com/maps/dir/?api=1&destination=${p.coordinates.lat},${p.coordinates.lng}`;
 
-  function block(b: any, heroId?: string) {
+  // ── Anatomía del día ───────────────────────────────────────────────────────
+  // El plan se leía como un horario de tren: cada bloque —el desayuno igual que
+  // la cala— ocupaba una fila de tres columnas (hora · SLOT · texto gris de 12px).
+  // Con eso, los cinco días empezaban idénticos ("Desayuno con calma en
+  // Ciutadella") y lo único memorable del viaje quedaba enterrado a media tabla.
+  //
+  // Ahora se separan dos cosas distintas: las VISITAS, que son el viaje y mandan,
+  // y las COMIDAS, que son su columna vertebral y se leen de un vistazo.
+  const VISIT_SLOTS = new Set(["llegada", "manana", "tarde", "atardecer"]);
+
+  /** Duración legible: "3 h", "1 h 30", "45 min". Nunca "180 min". */
+  function dur(min: number): string {
+    if (!min) return "";
+    if (min < 60) return `${min} min`;
+    const h = Math.floor(min / 60);
+    const m = min % 60;
+    return m ? `${h} h ${m}` : `${h} h`;
+  }
+
+  const placeLink = (p: any, label: string) =>
+    p?.slug
+      ? `<a href="${CFG.placePrefix}/${esc(p.slug)}">${esc(label)}</a>`
+      : esc(label);
+
+  /** Recambios de un hueco: el plan como propuesta con salidas, no como orden. */
+  function swaps(b: any) {
+    if (!b.alternatives?.length) return "";
+    const items = b.alternatives
+      .map((a: any) => {
+        const p = byId[a.placeId];
+        return `<li><span class="pl-swap-name">${placeLink(p, a.name)}</span>${a.note ? `<span class="pl-swap-note">${esc(a.note)}</span>` : ""}</li>`;
+      })
+      .join("");
+    return `<details class="pl-swap"><summary>${esc(CFG.swapTitle)} <span aria-hidden="true">·</span> ${b.alternatives.length}</summary><ul>${items}</ul></details>`;
+  }
+
+  /** Una VISITA: la parada real, con su foto, su porqué y sus recambios. */
+  function stop(b: any, heroId?: string) {
     const p = b.placeId ? byId[b.placeId] : undefined;
-    // Nombre → enlace a la ficha /lugar SOLO si está publicada (las draft no tienen página).
-    const name = p?.slug
-      ? `<a href="${CFG.placePrefix}/${esc(p.slug)}" class="font-medium text-arcilla underline decoration-niebla underline-offset-2 hover:text-terracota">${esc(b.placeName)}</a>`
-      : b.placeId
-        ? `<span class="font-medium text-tinta">${esc(b.placeName)}</span>`
-        : `<span class="text-piedra">${esc(b.placeName)}</span>`;
-    const dur = b.durationMin ? `<span class="text-xs text-piedra-suave"> · ${b.durationMin} min</span>` : "";
-    // Miniatura (foto verificada; decorativa → alt vacío, el nombre va al lado).
     const thumb = p?.image && p.id !== heroId
-      ? `<img src="${esc(p.image)}" alt="" loading="lazy" decoding="async" width="112" height="84"${p.imageCredit ? ` title="${esc(CFG.photoBy + " " + p.imageCredit)}"` : ""} class="mt-0.5 hidden h-14 w-[4.5rem] shrink-0 rounded-lg object-cover sm:block">`
+      ? `<img src="${esc(p.image)}" alt="" loading="lazy" decoding="async" width="160" height="120"${p.imageCredit ? ` title="${esc(CFG.photoBy + " " + p.imageCredit)}"` : ""} class="pl-stop-thumb">`
       : "";
     const links: string[] = [];
     if (p?.coordinates) {
-      links.push(`<a href="${gmapsUrl(p)}" target="_blank" rel="noopener" data-umami-event="planner-gmaps" class="text-xs font-medium text-piedra-suave underline decoration-niebla underline-offset-2 hover:text-terracota print:hidden">${esc(CFG.gmapsLabel)} ↗</a>`);
+      links.push(`<a href="${gmapsUrl(p)}" target="_blank" rel="noopener" data-umami-event="planner-gmaps" class="print:hidden">${esc(CFG.gmapsLabel)} ↗</a>`);
     }
-    return `<li class="flex gap-3 py-2">
-      <span class="w-12 shrink-0 text-xs font-semibold text-oro">${b.timeHint || ""}</span>
-      <span class="w-20 shrink-0 text-xs uppercase tracking-wider text-piedra-suave">${CFG.slot[b.slot] || b.slot}</span>
-      <span class="min-w-0 flex-1">${name}${dur}${b.reason ? `<span class="block text-xs text-piedra-suave">${esc(b.reason)}</span>` : ""}${links.length ? `<span class="mt-1 flex flex-wrap gap-3">${links.join("")}</span>` : ""}</span>
+    return `<li class="pl-stop">
+      <p class="pl-stop-time"><span>${esc(b.timeHint || "")}</span><span class="pl-stop-slot">${esc(CFG.slot[b.slot] || b.slot)}</span></p>
+      <div class="pl-stop-body">
+        <h4 class="pl-stop-name">${placeLink(p, b.placeName)}${b.durationMin ? `<span class="pl-stop-dur">${esc(dur(b.durationMin))}</span>` : ""}</h4>
+        ${b.reason ? `<p class="pl-stop-why">${esc(b.reason)}</p>` : ""}
+        ${links.length ? `<p class="pl-stop-links">${links.join("")}</p>` : ""}
+        ${swaps(b)}
+      </div>
       ${thumb}
     </li>`;
   }
 
+  /** Una COMIDA: línea sobria; el porqué se despliega si se quiere. */
+  function meal(b: any) {
+    const p = b.placeId ? byId[b.placeId] : undefined;
+    return `<li class="pl-meal">
+      <span class="pl-meal-time">${esc(b.timeHint || "")}</span>
+      <span class="pl-meal-body">
+        <span class="pl-meal-slot">${esc(CFG.slot[b.slot] || b.slot)}</span>
+        <span class="pl-meal-name">${placeLink(p, b.placeName)}</span>
+        ${b.reason ? `<span class="pl-meal-why">${esc(b.reason)}</span>` : ""}
+      </span>
+    </li>`;
+  }
+
+  /** Los dos grupos de un día, ya repartidos. */
+  const splitBlocks = (blocks: any[]) => ({
+    visits: blocks.filter((b) => VISIT_SLOTS.has(b.slot)),
+    meals: blocks.filter((b) => !VISIT_SLOTS.has(b.slot)),
+  });
+
   function planB(pb: any) {
     if (!pb || (!pb.blocks?.length && !pb.notices?.length)) return "";
-    const blocks = (pb.blocks || []).map(block).join("");
+    const { visits, meals } = splitBlocks(pb.blocks || []);
     const notices = (pb.notices || []).map(notice).join("");
-    return `<details class="mt-3 rounded-lg bg-arena/50 p-3">
-      <summary class="cursor-pointer text-sm font-medium text-arcilla">${esc(CFG.planBtitle)} →</summary>
-      <ul class="mt-2 divide-y divide-niebla">${blocks}</ul>
-      ${notices ? `<ul class="mt-2 space-y-1">${notices}</ul>` : ""}
+    return `<details class="pl-planb">
+      <summary>${esc(CFG.planBtitle)}</summary>
+      <div class="pl-planb-body">
+        ${visits.length ? `<ol class="pl-stops">${visits.map((b: any) => stop(b)).join("")}</ol>` : ""}
+        ${meals.length ? `<ul class="pl-meals">${meals.map(meal).join("")}</ul>` : ""}
+        ${notices ? `<ul class="pl-notices">${notices}</ul>` : ""}
+      </div>
     </details>`;
   }
 
@@ -698,13 +865,63 @@ const ICON: Record<string, string> = {
     return `<a href="https://www.google.com/maps/dir/${pts.join("/")}" target="_blank" rel="noopener" data-umami-event="planner-ruta-dia" class="text-sm font-medium text-arcilla underline decoration-niebla underline-offset-2 hover:text-terracota print:hidden">${esc(CFG.routeLabel)} ↗</a>`;
   }
 
-  function dayCard(d: any, idx: number) {
+  /**
+   * Localizador: la isla de verdad con las paradas del día en sus coordenadas.
+   * Resuelve el día sin foto sin recurrir a una foto prestada (no tenemos imagen
+   * de 108 de los 141 lugares) y, de paso, responde a la pregunta que de verdad
+   * se hace quien planifica: ¿dónde cae hoy?
+   */
+  function dayMap(d: any, baseKey: string) {
+    const I = CFG.island;
+    const xy = (lat: number, lng: number) => ({
+      x: (lng * I.kx - I.minX) * I.s,
+      y: (I.maxY - lat) * I.s,
+    });
+    const stops = d.blocks
+      .map((b: any) => (b.placeId ? byId[b.placeId] : undefined))
+      .filter((p: any) => p?.coordinates);
+    if (!stops.length) return "";
+    // Nombres del recorrido, sin repetir el mismo sitio dos veces seguidas.
+    const names: string[] = [];
+    const pts: Array<{ x: number; y: number }> = [];
+    const home = CFG.baseCoords[baseKey];
+    if (home) pts.push(xy(home[0], home[1]));
+    for (const p of stops) {
+      const q = xy(p.coordinates.lat, p.coordinates.lng);
+      const prev = pts[pts.length - 1];
+      if (prev && Math.hypot(q.x - prev.x, q.y - prev.y) < 2) continue;
+      pts.push(q);
+      if (names[names.length - 1] !== p.name) names.push(p.name);
+    }
+    const line = pts.length > 1
+      ? `<polyline points="${pts.map((p) => `${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(" ")}" class="pl-map-route"/>`
+      : "";
+    // La base se dibuja como anillo hueco; las paradas del día, macizas.
+    const homeDot = home
+      ? `<circle cx="${pts[0].x.toFixed(1)}" cy="${pts[0].y.toFixed(1)}" r="4.6" class="pl-map-home"/>`
+      : "";
+    const dots = pts
+      .slice(home ? 1 : 0)
+      .map((p) => `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="4" class="pl-map-dot"/>`)
+      .join("");
+    const route = [home ? CFG.baseZ[baseKey] || baseKey : "", ...names].filter(Boolean).join(" → ");
+    return `<figure class="pl-day-hero pl-day-hero-map">
+      <svg viewBox="0 0 ${I.w} ${I.h}" class="pl-map" role="img" aria-label="${esc(CFG.mapAria)}: ${esc(route)}" focusable="false">
+        <path d="${I.path}" class="pl-map-land"/>${line}${homeDot}${dots}
+      </svg>
+      <figcaption class="pl-map-cap">${esc(route)}</figcaption>
+    </figure>`;
+  }
+
+  function dayCard(d: any, idx: number, baseKey: string) {
+    const { visits, meals } = splitBlocks(d.blocks || []);
     // Foto de cabecera del día: la primera parada con foto verificada (con su crédito CC si toca).
     const heroP = d.blocks.map((b: any) => (b.placeId ? byId[b.placeId] : undefined)).find((p: any) => p?.image);
+    // Sin foto verificada del día no se pone una prestada: se sitúa el día en la
+    // isla de verdad, que además dice de un vistazo cuánto se conduce hoy.
     const hero = heroP
-      ? `<figure class="relative -mx-5 -mt-5 mb-4 sm:-mx-6 sm:-mt-6"><img src="${esc(heroP.image.replace("-480.", "-960."))}" alt="${esc(heroP.name)}" loading="lazy" decoding="async" width="960" height="640" class="h-44 w-full rounded-t-2xl object-cover sm:h-56">${heroP.imageCredit ? `<figcaption class="absolute bottom-1.5 right-2 rounded bg-tinta/60 px-1.5 py-0.5 text-[10px] leading-none text-crema/90">${esc(CFG.photoBy)} ${esc(heroP.imageCredit)}</figcaption>` : ""}</figure>`
-      : "";
-    const anchors = d.blocks.map((b: any) => block(b, heroP?.id)).join("");
+      ? `<figure class="pl-day-hero"><img src="${esc(heroP.image.replace("-480.", "-960."))}" alt="${esc(heroP.name)}" loading="lazy" decoding="async" width="960" height="640">${heroP.imageCredit ? `<figcaption>${esc(CFG.photoBy)} ${esc(heroP.imageCredit)}</figcaption>` : ""}</figure>`
+      : dayMap(d, baseKey);
     const chips = (d.notices || []).map(notice).join("");
     // Día de playa → enlace al parte del mar (herramienta propia, interno).
     const hasBeach = d.blocks.some((b: any) => {
@@ -713,18 +930,30 @@ const ICON: Record<string, string> = {
     });
     const footerLinks = [
       dayRoute(d),
-      hasBeach ? `<a href="${CFG.seaCalm.href}" data-umami-event="planner-mar-en-calma" class="text-sm font-medium text-arcilla underline decoration-niebla underline-offset-2 hover:text-terracota">${esc(CFG.seaCalm.text)} →</a>` : "",
+      hasBeach ? `<a href="${CFG.seaCalm.href}" data-umami-event="planner-mar-en-calma">${esc(CFG.seaCalm.text)} →</a>` : "",
     ].filter(Boolean).join("");
-    const dateChip = d.date ? `<time datetime="${esc(d.date)}" class="text-xs text-piedra-suave">${esc(fmtDate(d.date))}</time>` : "";
-    return `<article id="dia-${idx}" class="scroll-mt-24 overflow-hidden rounded-2xl border border-niebla bg-lino p-5 sm:p-6">
+    // Resumen en prosa: lo que de verdad se hace hoy, para reconocer el día de un
+    // vistazo sin leer la tabla entera.
+    const summary = visits.map((b: any) => b.placeName).filter(Boolean);
+    const nearby = (d.alsoNearby || [])
+      .map((a: any) => `<li>${placeLink(byId[a.placeId], a.name)}${a.note ? `<span>${esc(a.note)}</span>` : ""}</li>`)
+      .join("");
+    return `<article id="dia-${idx}" class="pl-day">
       ${hero}
-      <header class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-        <h3 class="font-display text-2xl text-tinta">${esc(d.label)}</h3>
-        <span class="flex items-baseline gap-3">${dateChip}<span class="text-xs text-piedra-suave">~${d.budgetHours} ${esc(CFG.hours)}</span></span>
+      <header class="pl-day-head">
+        <p class="pl-day-meta">
+          <span class="pl-day-n">${esc(CFG.dayWord)} ${idx + 1}</span>
+          ${d.date ? `<time datetime="${esc(d.date)}">${esc(fmtDate(d.date))}</time>` : ""}
+          <span class="pl-day-hours">~${d.budgetHours} ${esc(CFG.hours)}</span>
+        </p>
+        <h3 class="pl-day-title">${esc(d.label)}</h3>
+        ${summary.length ? `<p class="pl-day-sum">${esc(listJoin(summary))}.</p>` : ""}
       </header>
-      <ul class="mt-4 divide-y divide-niebla">${anchors}</ul>
-      ${chips ? `<ul class="mt-4 space-y-1.5 border-t border-niebla pt-3">${chips}</ul>` : ""}
-      ${footerLinks ? `<div class="mt-4 flex flex-wrap gap-x-6 gap-y-2 border-t border-niebla pt-3">${footerLinks}</div>` : ""}
+      ${visits.length ? `<section class="pl-block"><h4 class="pl-block-h">${esc(CFG.journeyTitle)}</h4><ol class="pl-stops">${visits.map((b: any) => stop(b, heroP?.id)).join("")}</ol></section>` : ""}
+      ${meals.length ? `<section class="pl-block"><h4 class="pl-block-h">${esc(CFG.tableTitle)}</h4><ul class="pl-meals">${meals.map(meal).join("")}</ul></section>` : ""}
+      ${chips ? `<section class="pl-block"><h4 class="pl-block-h">${esc(CFG.noticesTitle)}</h4><ul class="pl-notices">${chips}</ul></section>` : ""}
+      ${nearby ? `<section class="pl-block pl-block-quiet"><h4 class="pl-block-h">${esc(CFG.nearbyTitle)}</h4><ul class="pl-nearby">${nearby}</ul></section>` : ""}
+      ${footerLinks ? `<div class="pl-day-foot">${footerLinks}</div>` : ""}
       ${planB(d.planB)}
     </article>`;
   }
@@ -767,21 +996,45 @@ const ICON: Record<string, string> = {
     const baseName = CFG.baseZ[plan.base] || plan.base;
     const globals = (plan.globalNotices || []).map(notice).join("");
     const sig = plan.signature
-      ? `<div class="mt-4 rounded-xl border border-oro-vivo/40 bg-crema/40 p-4"><p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">✦ ${esc(CFG.signatureTitle)}</p><p class="mt-1 font-display text-lg text-tinta">${esc(plan.signature.title)}</p><p class="mt-1 text-sm leading-relaxed text-piedra-suave">${esc(plan.signature.desc)}</p></div>`
+      ? `<aside class="pl-signature"><h2>${esc(CFG.signatureTitle)}</h2><p class="pl-sig-title">${esc(plan.signature.title)}</p><p class="pl-sig-desc">${esc(plan.signature.desc)}</p></aside>`
       : "";
     const bus = (plan.menorcaBusHooks || []).length
-      ? `<a href="${CFG.menorcaBusUrl}" target="_blank" rel="sponsored noopener" data-umami-event="planner-menorcabus" class="mt-4 inline-block rounded-full border border-arcilla px-5 py-2 text-sm font-medium text-arcilla transition-colors hover:bg-arcilla hover:text-crema">${esc(CFG.busCTA)} →</a>`
+      ? `<a href="${CFG.menorcaBusUrl}" target="_blank" rel="sponsored noopener" data-umami-event="planner-menorcabus" class="pl-bus">${esc(CFG.busCTA)} →</a>`
       : "";
+    // La tira "de un vistazo" rotulaba cada día con su PRIMER bloque, que siempre
+    // es el desayuno: los cinco chips decían "Desayuno con calma en Ciutadella" y
+    // no servían para nada (auditoría 2026-08-11). Ahora rotula con la visita que
+    // define el día.
+    const dayHeadline = (d: any) =>
+      d.blocks.find((b: any) => VISIT_SLOTS.has(b.slot) && b.placeId)?.placeName
+      || d.blocks.find((b: any) => VISIT_SLOTS.has(b.slot))?.placeName
+      || d.label
+      || "";
+    const variant = Number(new URLSearchParams(location.search).get("variant")) || 0;
+    const variants = `<div class="pl-variants print:hidden">
+      <p class="pl-variants-t">${esc(CFG.variantTitle)}</p>
+      <p class="pl-variants-n">${esc(CFG.variantOf.replace("%a", String(variant + 1)).replace("%b", String(CFG.variantCount)))}</p>
+      <button type="button" id="planner-variant" data-umami-event="planner-variante">${esc(CFG.variantCta)} →</button>
+    </div>`;
     out.innerHTML = `
-      <div class="rounded-2xl bg-arena/50 p-5 sm:p-6">
-        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">${esc(baseName)}</p>
-        <p class="lead mt-2">${esc(plan.baseReason)}</p>
-        ${globals ? `<div class="mt-4 border-t border-niebla pt-3"><p class="text-xs font-semibold uppercase tracking-wider text-oro">${esc(CFG.globalTitle)}</p><ul class="mt-2 space-y-1.5">${globals}</ul></div>` : ""}
+      <section class="pl-open">
+        <p class="pl-open-kicker">${esc(CFG.planLead)}</p>
+        <h2 class="pl-open-base">${esc(baseName)}</h2>
+        <p class="pl-open-why">${esc(plan.baseReason)}</p>
+        ${globals ? `<div class="pl-open-notes"><h3>${esc(CFG.globalTitle)}</h3><ul class="pl-notices">${globals}</ul></div>` : ""}
         ${bus}
-      </div>
+      </section>
       ${sig}
-      ${plan.days.length > 1 ? `<nav class="planner-overview print:hidden" aria-label="${esc(CFG.overviewLabel)}">${plan.days.map((d: any, idx: number) => `<a href="#dia-${idx}" class="planner-overview-chip"><span class="oi-n">${esc(CFG.dayWord)} ${idx + 1}</span><span class="oi-t">${esc((d.blocks.find((b: any) => b.placeName)?.placeName) || d.label || "")}</span></a>`).join("")}</nav>` : ""}
-      <div class="mt-6 space-y-5">${plan.days.map((d: any, idx: number) => dayCard(d, idx)).join("")}</div>`;
+      ${plan.days.length > 1 ? `<nav class="planner-overview print:hidden" aria-label="${esc(CFG.overviewLabel)}">${plan.days.map((d: any, idx: number) => `<a href="#dia-${idx}" class="planner-overview-chip"><span class="oi-n">${esc(CFG.dayWord)} ${idx + 1}</span><span class="oi-t">${esc(dayHeadline(d))}</span></a>`).join("")}</nav>` : ""}
+      <div class="pl-days">${plan.days.map((d: any, idx: number) => dayCard(d, idx, plan.base)).join("")}</div>
+      ${variants}`;
+    // "Otra versión": el motor produce planes distintos para la misma encuesta y
+    // cada uno vive en su propia URL, así que sigue siendo compartible.
+    $("planner-variant")?.addEventListener("click", () => {
+      const p = new URLSearchParams(location.search);
+      p.set("variant", String((variant + 1) % CFG.variantCount));
+      location.search = p.toString();
+    });
     out.scrollIntoView({ behavior: "smooth", block: "start" });
     highlightCurrentDay();
     const actions = $("planner-actions"); // hay plan → ofrece guardarlo/compartirlo
@@ -951,7 +1204,14 @@ const ICON: Record<string, string> = {
 <style is:global>
   @media print {
     @page { size: A4; margin: 15mm 14mm; }
-    header, footer, nav, #planner-form, #planner-actions { display: none !important; }
+    /* Fuera el cromo del sitio. IMPORTANTE: acotado al header/footer/nav DEL SITIO
+       (hijos directos del body). Antes la regla decía `header, footer, nav` a secas
+       y también tapaba la cabecera de cada día del plan, que es un `<header>`: el
+       dossier salía con 10 páginas en las que NINGUNA decía qué día era ni su
+       fecha (auditoría 2026-08-11). */
+    body > header, body > footer, body > nav,
+    #planner-form, #planner-actions { display: none !important; }
+    #planner-results nav { display: none !important; } /* la tira "de un vistazo" */
     body { background: #fff !important; }
 
     /* ── Portada y cierre (ocultos en pantalla con .hidden) ── */
@@ -975,28 +1235,48 @@ const ICON: Record<string, string> = {
     /* ── Cuerpo del plan ── */
     #planner-results { margin-top: 0 !important; }
     /* Resumen de base + firma en la primera página; cada DÍA arranca página nueva. */
-    #planner-results article {
+    #planner-results .pl-day {
       break-before: page;
       border: none !important;
       border-radius: 0 !important;
       padding: 0 !important;
       overflow: visible !important;
     }
-    /* La foto de cabecera del día, contenida y con sus colores reales. */
-    #planner-results article > figure { margin: 0 0 5mm !important; }
-    #planner-results article > figure img {
+    #planner-results .pl-days { display: block !important; }
+    /* La cabecera del día —foto verificada o el localizador de la isla—, contenida. */
+    #planner-results .pl-day-hero {
+      margin: 0 0 5mm !important;
+      padding: 0 !important;
+      background: transparent !important;
+    }
+    #planner-results .pl-day-hero img {
       height: 52mm !important;
       width: 100% !important;
       object-fit: cover;
       border-radius: 2mm;
     }
-    #planner-results img { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    #planner-results .pl-map { max-width: 78mm !important; margin: 0 auto; }
+    #planner-results img, #planner-results svg { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    /* La miniatura por parada se va: en papel manda la foto grande del día. */
+    #planner-results .pl-stop-thumb { display: none !important; }
     /* Bloques y avisos: aire de dossier, nada de UI. */
     #planner-results li { break-inside: avoid; }
     #planner-results a[href] { text-decoration: none !important; color: inherit !important; }
-    /* Plan-B: se imprime ABIERTO (beforeprint) como apunte sobrio, sin flecha. */
-    #planner-results details { break-inside: avoid; background: transparent !important; border-top: 1px solid #ded4c4; border-radius: 0 !important; padding: 3mm 0 0 !important; }
-    #planner-results details summary { list-style: none; cursor: default; }
-    #planner-results details summary::-webkit-details-marker { display: none; }
+    /* Sin botones ni afordancias de pantalla dentro del dossier. */
+    #planner-results .pl-variants, #planner-results .pl-bus { display: none !important; }
+    /* Los recambios se imprimen ABIERTOS (beforeprint): en papel, tener a mano la
+       alternativa es justo lo que salva el día si la cala está llena. */
+    #planner-results .pl-swap > summary {
+      border: none !important;
+      padding: 0 !important;
+      font-weight: 600;
+    }
+    /* Plan-B: se imprime ABIERTO como apunte sobrio, sin flecha. */
+    #planner-results .pl-planb { break-inside: avoid; background: transparent !important; border-top: 1px solid #ded4c4; border-radius: 0 !important; padding: 3mm 0 0 !important; }
+    #planner-results details > summary { list-style: none; cursor: default; }
+    #planner-results details > summary::-webkit-details-marker { display: none; }
+    #planner-results .pl-planb > summary::after { content: "" !important; }
+    /* En papel no hay recorte de líneas: el porqué de cada mesa se lee entero. */
+    #planner-results .pl-meal-why { -webkit-line-clamp: unset !important; display: block !important; }
   }
 </style>

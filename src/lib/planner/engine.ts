@@ -10,7 +10,7 @@
  * Con fechas, cada día conoce su fecha real: día de la semana (openDays) y
  * atardecer NOAA (sun-core) para horas orientativas honestas.
  */
-import type { Plan, DayCard, PlannerPlace, PlannerZone, IntradayBlock, Notice, MenorcaBusHook, FoodByZone } from "./types.ts";
+import type { Plan, DayCard, PlannerPlace, PlannerZone, IntradayBlock, Notice, MenorcaBusHook, FoodByZone, Swap } from "./types.ts";
 import type { Survey, Interest } from "./survey.ts";
 import { normalizeSurvey, isCarless } from "./survey.ts";
 import { recommendBase } from "./rules/base.ts";
@@ -23,6 +23,7 @@ import { windAdvice } from "./rules/wind.ts";
 import { buildPlanB, weekdayForDay } from "./rules/planb.ts";
 import { addDaysISO, agendaForDay } from "./rules/agenda.ts";
 import type { PlannerEvent } from "./rules/agenda.ts";
+import { surveySeed } from "./rules/seed.ts";
 import { S } from "./strings.ts";
 import { sunTimes, MENORCA } from "../sun-core.ts";
 
@@ -42,6 +43,7 @@ interface DayResult {
   blocks: IntradayBlock[];
   budgetHours: number;
   notices: Notice[];
+  alsoNearby?: Swap[];
 }
 
 export function planTrip(
@@ -55,12 +57,20 @@ export function planTrip(
   // PASO 5: filtra el dataset por accesibilidad ANTES de componer (afecta a todos los pasos).
   const usable = filterAccessible(dataset, survey.accessibility);
   const pace = effectivePace(survey);
-  const { base, baseReason, splitBase } = recommendBase(survey, lang);
+  // El dataset ya filtrado por accesibilidad: si alguien viaja en silla, la base
+  // se elige por lo que ESA persona puede visitar, no por el catálogo completo.
+  const { base, baseReason, splitBase } = recommendBase(survey, lang, usable);
   const skeleton = buildDaySkeleton(survey, base, usable);
   const clusters = new Map(rankClusters(survey, base, usable).map((c) => [c.cluster, c]));
   const byId = new Map(usable.map((p) => [p.id, p]));
   // Guía de comida verificada de la zona BASE (desayuno) y anclas de base (llegada/salida).
   const baseFood = foodByZone?.zones[BASE_SIDE[base]];
+
+  // Semilla del viaje: hace que dos encuestas distintas den planes distintos sin
+  // perder la invariante "misma URL = mismo plan" (rules/seed.ts).
+  const seed = surveySeed(survey);
+  // Memoria del viaje: un lugar ya programado no se repite en otro día.
+  const used = new Set<string>();
 
   const days: DayCard[] = [];
   const menorcaBusHooks: MenorcaBusHook[] = [];
@@ -76,7 +86,7 @@ export function planTrip(
     const sunsetHint = sunsetHintFor(date);
 
     if (sk.dayTypeKey === "dia-llegada") {
-      result = arrivalDay(survey, base, usable, lang, foodByZone?.bases[base], sunsetHint);
+      result = arrivalDay(survey, base, usable, lang, foodByZone?.bases[base], sunsetHint, seed, used);
       if (isCarless(survey) || base !== "mao") {
         menorcaBusHooks.push({ type: "transfer-aeropuerto", context: `Transfer aeropuerto → ${base}`, dayIndex: sk.dayIndex });
       }
@@ -85,7 +95,7 @@ export function planTrip(
         menorcaBusHooks.push({ type: "transfer-adaptado", context: `Transfer adaptado a una playa accesible desde ${base}`, dayIndex: sk.dayIndex });
       }
     } else if (sk.dayTypeKey === "dia-salida") {
-      result = departureDay(survey, base, lang, foodByZone?.bases[base]);
+      result = departureDay(survey, base, lang, foodByZone?.bases[base], usable, seed, used);
       if (isCarless(survey)) {
         menorcaBusHooks.push({ type: "transfer-aeropuerto", context: `Transfer ${base} → aeropuerto`, dayIndex: sk.dayIndex });
       }
@@ -96,7 +106,7 @@ export function planTrip(
         travelFromBaseMin: info.travelFromBaseMin, pace, survey, lang,
         zoneFood: foodByZone?.zones[info.zone], baseFood,
         baseBreakfasts: foodByZone?.bases[base]?.breakfasts, dayIndex: sk.dayIndex,
-        weekday, sunsetHint,
+        weekday, sunsetHint, seed, used,
       });
       // PASO 4: aviso de viento (FLEXIBLE) con alternativa resguardada en costa opuesta.
       const anchors = result.blocks
@@ -147,6 +157,9 @@ export function planTrip(
       for (const o of otherZone) if (!globalFiestas.has(o.key)) globalFiestas.set(o.key, o.notice);
     }
 
+    // Memoria del viaje: lo programado hoy no vuelve a proponerse mañana.
+    for (const b of result.blocks) if (b.placeId) used.add(b.placeId);
+
     days.push({
       dayIndex: sk.dayIndex,
       dayTypeKey: sk.dayTypeKey,
@@ -158,6 +171,7 @@ export function planTrip(
       notices: result.notices,
       budgetHours: result.budgetHours,
       planB: dayPlanB,
+      alsoNearby: result.alsoNearby,
     });
   }
 

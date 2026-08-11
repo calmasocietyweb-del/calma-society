@@ -16,7 +16,7 @@
  * Los NOMBRES PROPIOS (Ciutadella, Maó, Son Bou…) no se traducen: viven en un
  * único mapa compartido por ambos idiomas.
  */
-import type { BaseZone, Weekday } from "./types.ts";
+import type { BaseZone, Weekday, PlannerZone } from "./types.ts";
 
 export type Lang = "es" | "en";
 
@@ -36,6 +36,12 @@ interface Strings {
   paceName: Record<"relajado" | "equilibrado" | "intenso", string>;
   /** Nombres localizados del día de la semana (avisos de cierre). */
   weekdayName: Record<Weekday, string>;
+  /** Nombres legibles de las zonas (para explicar por qué se elige una base). */
+  zoneName: Record<PlannerZone, string>;
+  /** Meses (índice 0 = enero). Para no enseñar nunca una fecha ISO a una persona. */
+  monthName: readonly string[];
+  /** Fecha legible a partir de sus partes ("24 de julio" / "24 July"). */
+  dayMonth: (day: number, month: string) => string;
 
   // ── base.ts ──────────────────────────────────────────────────────────────
   base: {
@@ -63,6 +69,8 @@ interface Strings {
     broad: string;
     /** primera vez / por defecto → Ciutadella. */
     firstTime: string;
+    /** elegida por los datos: la base que deja más cerca lo pedido. */
+    dataDriven: (place: string, zones: string) => string;
   };
 
   // ── arrival-departure.ts ─────────────────────────────────────────────────
@@ -174,6 +182,18 @@ const ES: Strings = {
     lun: "lunes", mar: "martes", mie: "miércoles", jue: "jueves",
     vie: "viernes", sab: "sábado", dom: "domingo",
   },
+  monthName: ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"],
+  dayMonth: (day, month) => `${day} de ${month}`,
+  zoneName: {
+    oeste: "Ciutadella y el oeste",
+    "sur-oeste": "las calas del suroeste",
+    "sur-centro": "las playas del sur-centro",
+    "sur-este": "el sureste tranquilo",
+    este: "Maó y el este",
+    norte: "el norte agreste",
+    centro: "el interior",
+    "eje-me1": "el eje Me-1",
+  },
   base: {
     chosenCarlessLimited: (place) =>
       `Te alojas en ${place}. Aviso: sin coche, esta base tiene transporte público limitado; valora transfers/excursiones para moverte.`,
@@ -199,6 +219,8 @@ const ES: Strings = {
       "Si quieres recorrer toda la isla, Es Mercadal es la base central y equidistante (las mejores conexiones), perfecta para salir cada día a una costa distinta.",
     firstTime:
       "Para una primera vez equilibrada, Ciutadella es la recomendación segura: ciudad con alma, ambiente y a tiro de las calas más famosas del sur y oeste.",
+    dataDriven: (place, zones) =>
+      `Te proponemos ${place}: de las seis bases posibles, es la que deja más cerca lo que nos has pedido (${zones}), y así el coche del día es corto en vez de cruzar la isla.`,
   },
   arrival: {
     usefulTime: (time) =>
@@ -315,6 +337,18 @@ const EN: Strings = {
     lun: "Monday", mar: "Tuesday", mie: "Wednesday", jue: "Thursday",
     vie: "Friday", sab: "Saturday", dom: "Sunday",
   },
+  monthName: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+  dayMonth: (day, month) => `${day} ${month}`,
+  zoneName: {
+    oeste: "Ciutadella and the west",
+    "sur-oeste": "the south-western coves",
+    "sur-centro": "the south-central beaches",
+    "sur-este": "the quiet south-east",
+    este: "Maó and the east",
+    norte: "the wild north",
+    centro: "the inland heart",
+    "eje-me1": "the Me-1 axis",
+  },
   base: {
     chosenCarlessLimited: (place) =>
       `You are staying in ${place}. Note: without a car, this base has limited public transport; consider transfers or excursions to get around.`,
@@ -340,6 +374,8 @@ const EN: Strings = {
       "If you want to take in the whole island, Es Mercadal is the central, equidistant base (the best connections), ideal for heading to a different coast each day.",
     firstTime:
       "For a balanced first visit, Ciutadella is the safe recommendation: a city with soul, atmosphere and within easy reach of the best-known coves of the south and west.",
+    dataDriven: (place, zones) =>
+      `We suggest ${place}: of the six possible bases, it is the one that keeps closest what you asked us for (${zones}), so each day's drive stays short instead of crossing the island.`,
   },
   arrival: {
     usefulTime: (time) =>

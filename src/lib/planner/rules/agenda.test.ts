@@ -1,7 +1,7 @@
 /** Tests del PASO 2 — cruce con la agenda. node --test */
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { addDaysISO, eventsOnDate, agendaForDay } from "./agenda.ts";
+import { addDaysISO, eventsOnDate, agendaForDay, humanDate } from "./agenda.ts";
 import type { PlannerEvent } from "./agenda.ts";
 import { planTrip } from "../engine.ts";
 import { DATASET } from "./test-fixtures.ts";
@@ -52,6 +52,30 @@ test("addDaysISO con fecha malformada NO cuelga y devuelve la entrada (bug crít
   assert.equal(addDaysISO("not-a-date", 1), "not-a-date");
   assert.equal(addDaysISO("2026-13-45", 1), "2026-13-45");
   assert.equal(addDaysISO("2026-02-28", 1), "2026-03-01"); // válida sigue funcionando
+});
+
+test("los avisos de fiesta NUNCA enseñan una fecha ISO (auditoría 2026-08-11)", () => {
+  // Producción mostraba: "El 2026-07-24 hay Festes de Sant Jaume (este)".
+  for (const lang of ["es", "en"] as const) {
+    const a = agendaForDay("oeste", "2026-06-23", EVENTS, lang);
+    const b = agendaForDay("norte", "2026-06-23", EVENTS, lang);
+    const textos = [...a.dayNotices, ...b.otherZone.map((o) => o.notice)].map((n) => n.text);
+    assert.ok(textos.length > 0);
+    for (const t of textos) {
+      assert.ok(!/\d{4}-\d{2}-\d{2}/.test(t), `[${lang}] fecha ISO cruda en: ${t}`);
+      assert.ok(/23/.test(t), `[${lang}] la fecha desapareció del aviso: ${t}`);
+    }
+    // La zona tampoco puede salir como enum ("oeste" a secas / "norte").
+    const zonaCruda = b.otherZone[0].notice.text;
+    assert.ok(!/\(oeste\)/.test(zonaCruda), `[${lang}] zona en crudo: ${zonaCruda}`);
+  }
+});
+
+test("humanDate localiza y deja pasar lo que no es una fecha", () => {
+  assert.equal(humanDate("2026-07-24", "es"), "24 de julio");
+  assert.equal(humanDate("2026-07-24", "en"), "24 July");
+  assert.equal(humanDate("no-es-fecha", "es"), "no-es-fecha");
+  assert.equal(humanDate("2026-13-01", "es"), "2026-13-01"); // mes imposible → sin inventar
 });
 
 test("planTrip NO se cuelga con arrivalDate malformada + eventos", () => {

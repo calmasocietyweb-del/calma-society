@@ -164,6 +164,14 @@ export interface FoodByZone {
 }
 
 // ── Salida del motor ─────────────────────────────────────────────────────────
+/** Recambio para un hueco del día: mismo momento, otro lugar igual de afín. */
+export interface Swap {
+  placeId: string;
+  name: string;
+  /** Por qué también encaja aquí (una frase corta, no una ficha). */
+  note?: string;
+}
+
 /** Un bloque de la línea de tiempo intradía (llegada/desayuno → cena). */
 export interface IntradayBlock {
   slot: "llegada" | "desayuno" | "manana" | "comida" | "tarde" | "atardecer" | "cena";
@@ -174,6 +182,12 @@ export interface IntradayBlock {
   durationMin?: number;
   /** Razón trazable (PASO 9): alimenta el "por qué" visible (E-E-A-T + GEO). */
   reason?: string;
+  /**
+   * Recambios para este hueco: lugares del mismo ramal y afinidad comparable.
+   * El plan deja de ser una respuesta cerrada y pasa a ser una propuesta con
+   * salidas — que es como decide de verdad quien viaja.
+   */
+  alternatives?: Swap[];
 }
 
 /** Aviso contextual (chip): reserva, madrugar, agua/sombra, confirmar horario… */
@@ -217,6 +231,13 @@ export interface DayCard {
   budgetHours: number;
   /** Plan-B de mal tiempo (PASO 6): interiores de la zona como toggle "Si llueve". */
   planB?: { blocks: IntradayBlock[]; notices: Notice[] };
+  /**
+   * Lo que queda a mano ese día y NO entró en el plan (la regla de no-saturar
+   * manda). No es relleno: es la profundidad del ramal, visible sin romper la
+   * calma del itinerario — y la vía por la que salen a la luz los lugares
+   * verificados que el plan no llega a programar.
+   */
+  alsoNearby?: Swap[];
 }
 
 /** Plan completo (salida del motor). */

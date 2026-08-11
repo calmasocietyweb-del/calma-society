@@ -61,6 +61,13 @@ export interface Survey {
   boatSunset: boolean;
   /** P12 — presupuesto. */
   budget: Budget;
+
+  /**
+   * Variante del plan (0 = la primera). No es una pregunta de la encuesta: es el
+   * botón "enséñame otra versión". Entra en la semilla (rules/seed.ts) y viaja en
+   * la querystring, así que cada variante es un plan distinto Y compartible.
+   */
+  variant?: number;
 }
 
 /** Encuesta por defecto (perfil "calma" de marca: primera vez, equilibrado). */
@@ -92,9 +99,16 @@ const BASES: readonly BaseChoice[] = ["recomiendame", "ciutadella", "mao", "cala
 const oneOf = <T extends string>(valid: readonly T[], v: unknown, fallback: T): T =>
   valid.includes(v as T) ? (v as T) : fallback;
 
+/** Cuántas variantes distintas ofrece el motor de un mismo viaje. */
+export const VARIANT_COUNT = 3;
+
 export function normalizeSurvey(input: Partial<Survey>): Survey {
   const s: Survey = { ...DEFAULT_SURVEY, ...input };
   s.days = clampDays(s.days);
+  // La variante llega de la querystring (manipulable): se acota al rango real.
+  s.variant = Number.isFinite(s.variant)
+    ? ((Math.trunc(s.variant as number) % VARIANT_COUNT) + VARIANT_COUNT) % VARIANT_COUNT
+    : 0;
   // Enums saneados: lo desconocido cae al defecto, nunca revienta el motor.
   s.transport = oneOf(TRANSPORTS, s.transport, DEFAULT_SURVEY.transport);
   s.pace = oneOf(PACES, s.pace, DEFAULT_SURVEY.pace);

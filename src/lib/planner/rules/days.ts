@@ -9,6 +9,7 @@
 import type { PlannerPlace, PlannerZone, BaseZone } from "../types.ts";
 import type { Survey } from "../survey.ts";
 import { affinity, estimateTravelMin } from "./interests.ts";
+import { surveySeed, pickRotating } from "./seed.ts";
 
 export interface ClusterInfo {
   cluster: string;
@@ -75,9 +76,38 @@ const ZONE_DAY: Record<PlannerZone, { key: string; es: string; en: string }> = {
   "eje-me1": { key: "cultura-talayotica", es: "Día de cultura en el eje Me-1", en: "Culture along the Me-1 day" },
 };
 
-function fullDay(dayIndex: number, info: ClusterInfo): DaySkeleton {
+function fullDay(dayIndex: number, info: ClusterInfo, revisit = false): DaySkeleton {
   const z = ZONE_DAY[info.zone];
-  return { dayIndex, dayTypeKey: z.key, label: { es: z.es, en: z.en }, zone: info.zone, cluster: info.cluster };
+  // Segunda vuelta al mismo ramal: el motor ya no repite lugares, así que el día
+  // enseña otras paradas. El título lo dice en voz alta para no parecer un
+  // duplicado ("Más del norte agreste").
+  const label = revisit
+    ? { es: `Más ${z.es.replace(/^Día de /, "").replace(/^Día del /, "del ")}`, en: `More: ${z.en.replace(/ day$/, "")}` }
+    : { es: z.es, en: z.en };
+  return { dayIndex, dayTypeKey: z.key, label, zone: info.zone, cluster: info.cluster };
+}
+
+/**
+ * Ventana de "casi empate" entre clusters (puntos de afinidad). Dentro de ella,
+ * dos ramales sirven igual de bien al viaje, así que el orden puede ROTAR por
+ * semilla: es lo que hace que dos viajeros con la misma encuesta pero distinta
+ * variante recorran la isla por sitios distintos.
+ */
+const CLUSTER_TIE = 1.5;
+/** Mínimo de lugares para que merezca la pena volver a un ramal otro día. */
+const REVISIT_MIN_PLACES = 5;
+
+/** Elige el siguiente cluster: el mejor disponible, rotando entre los equivalentes. */
+function nextCluster(
+  ranked: ClusterInfo[],
+  ok: (c: ClusterInfo) => boolean,
+  seed: number,
+  salt: number,
+): ClusterInfo | undefined {
+  const cands = ranked.filter(ok);
+  if (cands.length === 0) return undefined;
+  const near = cands.filter((c) => c.affinity >= cands[0].affinity - CLUSTER_TIE);
+  return pickRotating(near, seed, salt);
 }
 
 const ARRIVAL: Pick<DaySkeleton, "dayTypeKey" | "label" | "zone"> = {
@@ -94,45 +124,46 @@ const COLCHON: Pick<DaySkeleton, "dayTypeKey" | "label" | "zone"> = {
 export function buildDaySkeleton(s: Survey, base: BaseZone, dataset: PlannerPlace[]): DaySkeleton[] {
   const ranked = rankClusters(s, base, dataset);
   const days = Math.max(1, s.days);
+  const seed = surveySeed(s);
+  const used = new Set<string>();
+  const revisits = new Map<string, number>();
+  let prevZone: PlannerZone | undefined;
+
+  /**
+   * Un día pleno. Primero un ramal NUEVO de otra zona; si no queda ninguno,
+   * se VUELVE a un ramal grande (el motor no repite lugares, así que la segunda
+   * vuelta enseña paradas distintas). El día colchón queda como último recurso
+   * de verdad: antes aparecía a partir de los 15 días y dejaba 8 días de un
+   * viaje de 21 sin una sola parada (auditoría 2026-08-11).
+   */
+  const planDay = (dayIndex: number): DaySkeleton => {
+    const fresh = nextCluster(ranked, (c) => !used.has(c.cluster) && c.zone !== prevZone, seed, dayIndex);
+    if (fresh) {
+      used.add(fresh.cluster);
+      prevZone = fresh.zone;
+      return fullDay(dayIndex, fresh);
+    }
+    const again = [...ranked]
+      .filter((c) => c.zone !== prevZone && c.places.length >= REVISIT_MIN_PLACES)
+      .sort((a, b) => (revisits.get(a.cluster) ?? 0) - (revisits.get(b.cluster) ?? 0) || b.affinity - a.affinity)[0];
+    if (again) {
+      revisits.set(again.cluster, (revisits.get(again.cluster) ?? 0) + 1);
+      prevZone = again.zone;
+      return fullDay(dayIndex, again, true);
+    }
+    prevZone = undefined; // el colchón rompe la racha de zona
+    return { dayIndex, ...COLCHON };
+  };
 
   // Viajes muy cortos (1-2 días): cada día cuenta como día PLENO (no se gastan
   // días en pura logística). La llegada/salida se añaden como AVISOS al primer y
   // último día desde el motor, no como días vacíos.
   if (days <= 2) {
-    const out: DaySkeleton[] = [];
-    const used = new Set<string>();
-    let prevZone: PlannerZone | undefined;
-    for (let d = 0; d < days; d++) {
-      // Solo un cluster de OTRA zona (nunca repetir zona dos días seguidos). Si no
-      // queda ninguno de otra zona, día colchón (que además rompe la racha).
-      const info = ranked.find((c) => !used.has(c.cluster) && c.zone !== prevZone);
-      if (!info) { out.push({ dayIndex: d, ...COLCHON }); prevZone = undefined; continue; }
-      used.add(info.cluster);
-      prevZone = info.zone;
-      out.push(fullDay(d, info));
-    }
-    return out;
+    return Array.from({ length: days }, (_, d) => planDay(d));
   }
 
   const out: DaySkeleton[] = [{ dayIndex: 0, ...ARRIVAL }];
-  const fullCount = days - 2; // entre llegada y salida
-  const used = new Set<string>();
-  let prevZone: PlannerZone | undefined;
-
-  for (let d = 0; d < fullCount; d++) {
-    const dayIndex = d + 1;
-    // Solo un cluster de OTRA zona; si no queda, día colchón (rompe la racha de zona).
-    const info = ranked.find((c) => !used.has(c.cluster) && c.zone !== prevZone);
-    if (!info) {
-      out.push({ dayIndex, ...COLCHON });
-      prevZone = undefined;
-      continue;
-    }
-    used.add(info.cluster);
-    prevZone = info.zone;
-    out.push(fullDay(dayIndex, info));
-  }
-
+  for (let d = 0; d < days - 2; d++) out.push(planDay(d + 1));
   out.push({ dayIndex: days - 1, ...DEPARTURE });
   return out;
 }

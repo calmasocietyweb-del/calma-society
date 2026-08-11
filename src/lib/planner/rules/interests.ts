@@ -75,19 +75,27 @@ export function affinity(place: PlannerPlace, s: Survey): number {
   return score;
 }
 
-// ── Proximidad coarse a lo largo del eje Me-1 (espina de pez) ────────────────
-// Posición de cada zona en el eje Maó(este)↔Ciutadella(oeste). El norte y el sur
-// cuelgan como ramales; los aproximamos a su altura en el eje. Sirve para ESTIMAR
-// tiempos de coche cuando no hay un par exacto en src/data/travelTimes.ts.
-const ZONE_AXIS: Record<PlannerZone, number> = {
-  oeste: 0,
-  "sur-oeste": 1,
-  "eje-me1": 2,
-  centro: 2,
-  "sur-centro": 2.5,
-  norte: 3,
-  "sur-este": 4,
-  este: 4.5,
+// ── Minutos de coche de cada base a cada zona (espina de pez) ────────────────
+// Anclado en los pares VERIFICADOS de `src/data/travelTimes.ts` (Maó–Ciutadella
+// 45, Maó–Fornells 20, Ciutadella–Galdana 27, Es Mercadal–Fornells 12, Ferreries
+// –Galdana 15…) y completado por interpolación sobre esos anclajes.
+//
+// Antes esto era un eje de una sola dimensión con las zonas colocadas por
+// posición Maó↔Ciutadella. El modelo trataba los RAMALES como si estuvieran en
+// la carretera principal: Fornells y Cala Galdana, que son fondos de saco a los
+// que se baja desde la Me-1, salían "centrales" y por tanto cerca de todo. Con
+// eso, el motor recomendaba Fornells a quien pedía gastronomía —cuando los
+// mercados y las mesas están en Maó, a 20 min— y las seis bases quedaban dentro
+// del 1% unas de otras, así que la recomendación no discriminaba nada
+// (auditoría 2026-08-11).
+const TRAVEL: Record<BaseZone, Record<PlannerZone, number>> = {
+  //              oeste sur-oeste sur-centro sur-este este norte centro eje-me1
+  ciutadella:   { oeste: 10, "sur-oeste": 20, "sur-centro": 27, "sur-este": 48, este: 45, norte: 33, centro: 22, "eje-me1": 22 },
+  mao:          { oeste: 45, "sur-oeste": 50, "sur-centro": 30, "sur-este": 15, este: 10, norte: 25, centro: 25, "eje-me1": 25 },
+  "cala-galdana": { oeste: 27, "sur-oeste": 25, "sur-centro": 10, "sur-este": 40, este: 34, norte: 30, centro: 15, "eje-me1": 15 },
+  "son-bou":    { oeste: 35, "sur-oeste": 40, "sur-centro": 12, "sur-este": 30, este: 27, norte: 30, centro: 15, "eje-me1": 15 },
+  "es-mercadal": { oeste: 22, "sur-oeste": 30, "sur-centro": 20, "sur-este": 32, este: 25, norte: 12, centro: 8, "eje-me1": 8 },
+  fornells:     { oeste: 33, "sur-oeste": 45, "sur-centro": 32, "sur-este": 35, este: 20, norte: 12, centro: 12, "eje-me1": 12 },
 };
 
 /** Lado (zona) en que cae cada base. */
@@ -100,10 +108,9 @@ export const BASE_SIDE: Record<BaseZone, PlannerZone> = {
   fornells: "norte",
 };
 
-/** Estimación de minutos en coche entre el lado de la base y una zona. */
+/** Minutos en coche (solo ida) de la base a una zona. */
 export function estimateTravelMin(base: BaseZone, zone: PlannerZone): number {
-  const diff = Math.abs(ZONE_AXIS[BASE_SIDE[base]] - ZONE_AXIS[zone]);
-  return Math.min(55, Math.round(12 + diff * 12)); // 12 min (misma zona) … 55 (cruce isla)
+  return TRAVEL[base][zone];
 }
 
 /** ¿La zona es "del día" desde la base (sin cruzar media isla)? */
