@@ -92,6 +92,21 @@ export function privacyPath(locale: Locale): string {
   return PRIVACY_PATH[locale];
 }
 
+/**
+ * Puerta de entrada de negocios de la isla (ficha editorial gratuita). Se
+ * enlaza desde el pie de las ~330 fichas de lugar, y esas fichas existen
+ * también en FR: por eso los tres idiomas tienen página, igual que privacidad.
+ */
+const BUSINESS_PATH = {
+  es: "/para-negocios",
+  en: "/en/for-businesses",
+  fr: "/fr/pour-les-professionnels",
+} satisfies Record<Locale, string>;
+
+export function businessPath(locale: Locale): string {
+  return BUSINESS_PATH[locale];
+}
+
 /** Locale BCP-47 por idioma (para Intl: fechas, números…). */
 export const INTL_LOCALE: Record<Locale, string> = {
   es: "es-ES",

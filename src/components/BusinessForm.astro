@@ -1,0 +1,142 @@
+---
+// Formulario para negocios de la isla que quieren ficha (o corregir la suya).
+// Va al mismo endpoint que el contacto (SITE.forms.contact), pero con asunto
+// propio para poder separarlo en la bandeja. Sin backend ni claves nuevas.
+//
+// NO recoge ningún dato de pago ni promete tarifa: en esta fase la ficha es
+// gratuita y editorial (ver NEGOCIO/CAPTACION-EMPRESAS.md §6).
+import { SITE } from "../config/site";
+import { useTranslations } from "../i18n/ui";
+import { currentLocale, privacyPath } from "../i18n/utils";
+
+const locale = currentLocale(Astro.url.pathname);
+const t = useTranslations(locale);
+const action = SITE.forms.contact;
+const connected = action.length > 0;
+const privacyHref = privacyPath(locale);
+
+const field =
+  "mt-1 w-full rounded-md border border-niebla bg-lino/60 px-4 py-3 text-sm text-piedra focus-visible:outline-terracota";
+const label = "text-sm font-medium text-piedra";
+const help = "mt-1.5 block text-xs leading-relaxed text-piedra-suave";
+
+const types = [
+  "restaurante",
+  "alojamiento",
+  "experiencia",
+  "producto",
+  "comercio",
+  "otro",
+] as const;
+---
+
+{
+  connected && (
+    <form action={action} method="POST" class="space-y-5">
+      <div>
+        <label for="negocio" class={label}>
+          {t("business.field.business")}
+        </label>
+        <input id="negocio" type="text" name="negocio" required class={field} />
+      </div>
+
+      <div>
+        <label for="tipo" class={label}>
+          {t("business.field.type")}
+        </label>
+        <select id="tipo" name="tipo" required class={field}>
+          {types.map((tipo) => (
+            <option value={tipo}>{t(`business.type.${tipo}` as never)}</option>
+          ))}
+        </select>
+      </div>
+
+      <div>
+        <label for="web" class={label}>
+          {t("business.field.website")}
+        </label>
+        <input id="web" type="url" name="web" placeholder="https://" class={field} />
+      </div>
+
+      <div>
+        <label for="temporada" class={label}>
+          {t("business.field.season")}
+        </label>
+        <input id="temporada" type="text" name="temporada" class={field} />
+        <span class={help}>{t("business.field.seasonHelp")}</span>
+      </div>
+
+      <div>
+        <label for="distinto" class={label}>
+          {t("business.field.what")}
+        </label>
+        <textarea id="distinto" name="distinto" rows="4" required class={field} />
+        <span class={help}>{t("business.field.whatHelp")}</span>
+      </div>
+
+      <div class="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label for="persona" class={label}>
+            {t("business.field.person")}
+          </label>
+          <input
+            id="persona"
+            type="text"
+            name="persona"
+            required
+            autocomplete="name"
+            class={field}
+          />
+        </div>
+        <div>
+          <label for="email-negocio" class={label}>
+            {t("contact.email")}
+          </label>
+          <input
+            id="email-negocio"
+            type="email"
+            name="email"
+            required
+            autocomplete="email"
+            class={field}
+          />
+        </div>
+      </div>
+
+      <input type="hidden" name="_subject" value="Calma Society — negocio en la guía" />
+
+      <div class="flex items-start gap-2.5">
+        <input
+          id="consent-negocio"
+          type="checkbox"
+          name="consent"
+          value="acepto"
+          required
+          class="mt-1 h-4 w-4 shrink-0 accent-terracota"
+        />
+        <label for="consent-negocio" class="text-sm leading-relaxed text-piedra-suave">
+          {t("contact.consent")}{" "}
+          <a href={privacyHref} class="font-medium text-arcilla underline hover:text-terracota">
+            {t("contact.consentLink")}
+          </a>
+          .
+        </label>
+      </div>
+
+      <button
+        type="submit"
+        data-umami-event="negocio-submit"
+        class="rounded-md bg-arcilla px-6 py-3 text-sm font-semibold text-lino transition-colors hover:bg-tinta"
+      >
+        {t("business.send")}
+      </button>
+    </form>
+  )
+}
+
+<p class:list={["text-sm text-piedra-suave", connected && "mt-8"]}>
+  {t("contact.directemail")}{" "}
+  <a href={`mailto:${SITE.email}`} class="font-medium text-arcilla hover:text-terracota">
+    {SITE.email}
+  </a>
+</p>

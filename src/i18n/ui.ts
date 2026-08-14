@@ -84,6 +84,7 @@ export const ui = {
     "place.reserve.yes.operator": "Recomendada — la hace %s",
     "place.official": "Web oficial",
     "place.operator": "Web de %s",
+    "place.owner": "¿Es tu negocio? Corrígenos los datos",
     "place.verified": "Datos verificados el",
     "place.verified.note": "confirma horarios y accesos el día de tu visita",
     "place.planit.title": "Encájalo en tu viaje",
@@ -152,6 +153,32 @@ export const ui = {
     "contact.sent": "¡Gracias! Te responderemos pronto.",
     "contact.consent": "He leído y acepto la",
     "contact.consentLink": "Política de privacidad",
+
+    // Puerta de entrada para negocios de la isla. La ficha editorial es
+    // gratuita; el día que haya tarifa, lo pagado se etiqueta (CLAUDE.md §3.8).
+    "business.nav": "Para negocios",
+    "business.title": "¿Tienes un negocio en Menorca?",
+    "business.lead":
+      "Escribimos fichas de los sitios que nos gustan: una foto, un texto con criterio, tus datos, el enlace a tu web y los datos estructurados que Google necesita para enseñarte bien. En español e inglés, y dentro del planificador de viajes. Hoy no cuesta nada.",
+    "business.rules.title": "Lo que no se compra",
+    "business.rules.body":
+      "El puesto, el orden y la opinión no se pagan nunca. El día que haya una tarifa, lo que se pague irá etiquetado y separado de lo editorial. Eso es justamente lo que hace que esta guía valga algo para quien la lee.",
+    "business.field.business": "Nombre del negocio",
+    "business.field.type": "Tipo",
+    "business.type.restaurante": "Restaurante o bar",
+    "business.type.alojamiento": "Hotel, agroturismo o alojamiento",
+    "business.type.experiencia": "Experiencia, náutica o excursión",
+    "business.type.producto": "Productor, bodega o quesería",
+    "business.type.comercio": "Comercio o taller",
+    "business.type.otro": "Otro",
+    "business.field.website": "Web",
+    "business.field.season": "Meses que abrís",
+    "business.field.seasonHelp": "En Menorca media isla cierra en invierno y casi ninguna guía lo mantiene al día.",
+    "business.field.what": "Qué hacéis distinto",
+    "business.field.whatHelp":
+      "Una o dos frases, sin adornos. Es lo que de verdad decide si escribimos sobre vosotros. Si ya tenéis ficha y hay algo mal, contadlo aquí.",
+    "business.field.person": "Tu nombre",
+    "business.send": "Enviar",
 
     "footer.about":
       "Calma Society — el Mediterráneo, sin prisa: una mirada de lujo tranquilo sobre Menorca. Primera edición.",
@@ -233,6 +260,7 @@ export const ui = {
     "place.reserve.yes.operator": "Recommended — run by %s",
     "place.official": "Official site",
     "place.operator": "%s’s site",
+    "place.owner": "Is this your business? Send us a correction",
     "place.verified": "Facts checked on",
     "place.verified.note": "confirm times and access on the day of your visit",
     "place.planit.title": "Fit it into your trip",
@@ -299,6 +327,30 @@ export const ui = {
     "contact.sent": "Thank you! We'll be in touch soon.",
     "contact.consent": "I have read and accept the",
     "contact.consentLink": "Privacy policy",
+
+    "business.nav": "For businesses",
+    "business.title": "Do you run a business in Menorca?",
+    "business.lead":
+      "We write listings for the places we like: a photograph, a description with judgement, your details, a link to your site and the structured data Google needs to display you properly. In Spanish and English, and inside the trip planner. Today it costs nothing.",
+    "business.rules.title": "What is not for sale",
+    "business.rules.body":
+      "Placement, order and opinion are never paid for. The day there is a rate, whatever is paid will be labelled and kept apart from the editorial. That is precisely what makes this guide worth anything to the person reading it.",
+    "business.field.business": "Business name",
+    "business.field.type": "Type",
+    "business.type.restaurante": "Restaurant or bar",
+    "business.type.alojamiento": "Hotel, agrotourism or other stay",
+    "business.type.experiencia": "Experience, boating or excursion",
+    "business.type.producto": "Producer, winery or cheese dairy",
+    "business.type.comercio": "Shop or workshop",
+    "business.type.otro": "Other",
+    "business.field.website": "Website",
+    "business.field.season": "Months you open",
+    "business.field.seasonHelp": "Half the island closes in winter and almost no guide keeps that up to date.",
+    "business.field.what": "What you do differently",
+    "business.field.whatHelp":
+      "One or two sentences, plainly put. This is what really decides whether we write about you. If you already have a listing and something is wrong, tell us here.",
+    "business.field.person": "Your name",
+    "business.send": "Send",
 
     "footer.about":
       "Calma Society — the Mediterranean, at ease: a quiet-luxury look at Menorca. Our first edition.",
@@ -380,6 +432,7 @@ export const ui = {
     "place.reserve.yes.operator": "Conseillée — assurée par %s",
     "place.official": "Site officiel",
     "place.operator": "Site de %s",
+    "place.owner": "C’est votre établissement ? Signalez-nous une correction",
     "place.verified": "Données vérifiées le",
     "place.verified.note": "confirmez horaires et accès le jour de votre visite",
     "place.planit.title": "Intégrez-le à votre voyage",
@@ -448,6 +501,30 @@ export const ui = {
     "contact.sent": "Merci ! Nous vous répondrons bientôt.",
     "contact.consent": "J'ai lu et j'accepte la",
     "contact.consentLink": "Politique de confidentialité",
+
+    "business.nav": "Pour les professionnels",
+    "business.title": "Vous avez une activité à Minorque ?",
+    "business.lead":
+      "Nous écrivons des fiches sur les lieux qui nous plaisent : une photo, un texte avec un point de vue, vos coordonnées, le lien vers votre site et les données structurées dont Google a besoin pour bien vous afficher. En espagnol et en anglais, et dans le planificateur de voyage. Aujourd’hui, c’est gratuit.",
+    "business.rules.title": "Ce qui ne s’achète pas",
+    "business.rules.body":
+      "La place, l’ordre et l’avis ne se paient jamais. Le jour où il y aura un tarif, ce qui sera payé sera signalé et séparé de l’éditorial. C’est précisément ce qui donne de la valeur à ce guide pour celui qui le lit.",
+    "business.field.business": "Nom de l’établissement",
+    "business.field.type": "Type",
+    "business.type.restaurante": "Restaurant ou bar",
+    "business.type.alojamiento": "Hôtel, agrotourisme ou hébergement",
+    "business.type.experiencia": "Expérience, nautisme ou excursion",
+    "business.type.producto": "Producteur, cave ou fromagerie",
+    "business.type.comercio": "Commerce ou atelier",
+    "business.type.otro": "Autre",
+    "business.field.website": "Site web",
+    "business.field.season": "Mois d’ouverture",
+    "business.field.seasonHelp": "À Minorque, la moitié de l’île ferme en hiver et presque aucun guide ne le tient à jour.",
+    "business.field.what": "Ce que vous faites différemment",
+    "business.field.whatHelp":
+      "Une ou deux phrases, sans fioritures. C’est ce qui décide vraiment si nous écrivons sur vous. Si vous avez déjà une fiche et qu’une information est erronée, dites-le ici.",
+    "business.field.person": "Votre nom",
+    "business.send": "Envoyer",
 
     "footer.about":
       "Calma Society — la Méditerranée, sans hâte : un regard de luxe tranquille sur Minorque. Notre première édition.",
