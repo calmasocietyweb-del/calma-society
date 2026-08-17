@@ -200,6 +200,75 @@ test("recambios: nunca proponen un lugar que ya está en el plan de ese día", (
   }
 });
 
+// ── Coste orientativo (auditoría 2026-08-11) ─────────────────────────────────
+// La encuesta preguntaba el presupuesto desde el primer día y el motor apenas lo
+// usaba: elegir "ajustado" o "alto" daba casi el mismo plan.
+
+/** Paradas con lugar real y su banda de coste. */
+const bandsOf = (plan: ReturnType<typeof planTrip>) =>
+  plan.days.flatMap((d) => d.blocks).filter((b) => b.placeId && b.costBand).map((b) => b.costBand!);
+
+test("INVARIANTE: todo lugar del dataset lleva banda de coste", () => {
+  const sin = DATASET.filter((p) => !p.costBand);
+  assert.equal(sin.length, 0, `${sin.length} lugares sin coste: ${sin.slice(0, 5).map((p) => p.name).join(", ")}`);
+  const validas = new Set(["gratis", "€", "€€", "€€€"]);
+  for (const p of DATASET) assert.ok(validas.has(p.costBand!), `banda inválida en ${p.name}: ${p.costBand}`);
+});
+
+test("INVARIANTE: una cala o playa pública nunca se marca de pago", () => {
+  for (const p of DATASET.filter((x) => x.plannerType === "cala" || x.plannerType === "playa")) {
+    assert.equal(p.costBand, "gratis", `${p.name} (${p.plannerType}) sale como ${p.costBand}`);
+  }
+});
+
+test("el presupuesto AJUSTADO evita lo caro y se apoya en el acceso libre", () => {
+  const bandas = bandsOf(planTrip(s({ days: 7, budget: "ajustado", interests: ["calas", "cultura"] }), DATASET, "es"));
+  assert.ok(bandas.length > 0);
+  const caras = bandas.filter((b) => b === "€€€").length;
+  const libres = bandas.filter((b) => b === "gratis").length;
+  assert.equal(caras, 0, `con presupuesto ajustado se colaron ${caras} paradas de banda alta`);
+  assert.ok(libres > bandas.length / 2, `solo ${libres} de ${bandas.length} paradas son de acceso libre`);
+});
+
+test("el presupuesto ALTO sí propone las experiencias de pago", () => {
+  const bandas = bandsOf(planTrip(s({ days: 7, budget: "alto", interests: ["calas", "cultura"] }), DATASET, "es"));
+  const pago = bandas.filter((b) => b === "€€" || b === "€€€").length;
+  assert.ok(pago >= 3, `con presupuesto alto solo aparecen ${pago} paradas de pago`);
+});
+
+test("ajustado y alto NO devuelven el mismo viaje", () => {
+  const base: Partial<Survey> = { days: 7, interests: ["calas", "gastronomia", "cultura"] };
+  const ids = (budget: Survey["budget"]) =>
+    new Set(planTrip(s({ ...base, budget }), DATASET, "es").days.flatMap((d) => d.blocks).map((b) => b.placeId).filter(Boolean));
+  const a = ids("ajustado");
+  const b = ids("alto");
+  const solape = [...a].filter((x) => b.has(x)).length / new Set([...a, ...b]).size;
+  assert.ok(solape < 0.5, `ajustado y alto comparten el ${Math.round(solape * 100)}% de las paradas`);
+});
+
+test("cada día informa de su coste, y el plan lleva su descargo", () => {
+  const plan = planTrip(s({ days: 5, budget: "medio" }), DATASET, "es");
+  for (const d of plan.days) {
+    assert.equal(typeof d.paidStops, "number", `el día "${d.label}" no dice cuántas paradas se pagan`);
+  }
+  const coste = plan.globalNotices.filter((n) => n.kind === "coste");
+  assert.ok(coste.length >= 2, "faltan los avisos de coste (qué ha hecho el presupuesto + descargo)");
+  assert.ok(
+    coste.some((n) => /orientativa/i.test(n.text)),
+    "el descargo debe dejar claro que el coste es una banda orientativa, no una tarifa",
+  );
+});
+
+test("EN: los textos de coste van localizados", () => {
+  const dsEn: PlannerPlace[] = JSON.parse(
+    readFileSync(new URL("../../data/planner-data.en.json", import.meta.url), "utf8"),
+  );
+  const plan = planTrip(s({ days: 5, budget: "ajustado" }), dsEn, "en");
+  const textos = plan.globalNotices.filter((n) => n.kind === "coste").map((n) => n.text).join(" ¶ ");
+  assert.ok(/indicative BAND/.test(textos), `descargo sin traducir: ${textos.slice(0, 160)}`);
+  assert.ok(!/orientativa|presupuesto/.test(textos), `fuga de español en EN: ${textos.slice(0, 160)}`);
+});
+
 test("querystring hostil: intereses/enums desconocidos no revientan el motor (AHORA-1)", () => {
   const hostil = {
     days: 5,

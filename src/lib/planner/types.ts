@@ -61,6 +61,16 @@ export type WeatherProof = "cubierto" | "semicubierto" | "exterior";
 
 export type Certainty = "alta" | "media" | "baja";
 
+/**
+ * Banda de coste ORIENTATIVA de un plan. Es una banda, nunca un precio: una
+ * tarifa concreta envejece en una temporada y publicarla sin verificar es el
+ * fallo que este proyecto ya ha pagado. La asigna `scripts/planner-cost-map.mjs`
+ * (regla estructural sobre datos verificados + tabla curada a mano).
+ */
+export type CostBand = "gratis" | "€" | "€€" | "€€€";
+/** Orden de las bandas, de menor a mayor. */
+export const COST_ORDER: readonly CostBand[] = ["gratis", "€", "€€", "€€€"];
+
 // ── Lugar (vista que consume el motor) ───────────────────────────────────────
 // Subconjunto máquina-legible de una ficha `lugares`. El dataset compilado
 // (planner-data.json, por idioma) es un array de estos. Las descripciones
@@ -116,6 +126,11 @@ export interface PlannerPlace {
 
   dataCertainty: Certainty;
   lastVerified?: string;
+
+  /** Cuánto cuesta hacer este plan, en banda (nunca en euros). */
+  costBand?: CostBand;
+  /** "alta" = hecho estructural (una cala pública es gratis); "media" = criterio editorial. */
+  costCertainty?: Certainty;
 }
 
 export type Weekday = "lun" | "mar" | "mie" | "jue" | "vie" | "sab" | "dom";
@@ -170,6 +185,8 @@ export interface Swap {
   name: string;
   /** Por qué también encaja aquí (una frase corta, no una ficha). */
   note?: string;
+  /** Coste orientativo: cambiar de parada puede cambiar lo que cuesta el día. */
+  costBand?: CostBand;
 }
 
 /** Un bloque de la línea de tiempo intradía (llegada/desayuno → cena). */
@@ -188,6 +205,8 @@ export interface IntradayBlock {
    * salidas — que es como decide de verdad quien viaja.
    */
   alternatives?: Swap[];
+  /** Coste orientativo de esta parada. */
+  costBand?: CostBand;
 }
 
 /** Aviso contextual (chip): reserva, madrugar, agua/sombra, confirmar horario… */
@@ -203,7 +222,8 @@ export interface Notice {
     | "accesibilidad"
     | "fiesta"
     | "transfer"
-    | "logistica";
+    | "logistica"
+    | "coste";
   text: string;
   placeId?: string;
 }
@@ -238,6 +258,10 @@ export interface DayCard {
    * verificados que el plan no llega a programar.
    */
   alsoNearby?: Swap[];
+  /** Lo que cuesta el día: la banda más alta de sus paradas. */
+  costBand?: CostBand;
+  /** Cuántas paradas del día se pagan (0 = día entero de acceso libre). */
+  paidStops?: number;
 }
 
 /** Plan completo (salida del motor). */

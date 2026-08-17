@@ -4,9 +4,49 @@
  *
  * Todo determinista: el cruce encuesta↔dataset es una TABLA, no IA.
  */
-import type { IdealFor, PlannerPlace, PlannerType, PlannerZone, BaseZone } from "../types.ts";
-import type { Survey, Interest } from "../survey.ts";
+import type { IdealFor, PlannerPlace, PlannerType, PlannerZone, BaseZone, CostBand } from "../types.ts";
+import type { Survey, Interest, Budget } from "../survey.ts";
 import { isCarless } from "../survey.ts";
+
+/**
+ * Cuánto pesa el coste según el presupuesto declarado. Antes, la pregunta del
+ * presupuesto solo servía para añadir la etiqueta "lujo-tranquilo" cuando era
+ * alto: elegir "ajustado" o "alto" apenas cambiaba el plan (auditoría 2026-08-11).
+ *
+ * Con presupuesto ajustado NO se empobrece el viaje: lo mejor de Menorca —las
+ * calas, los miradores, el Camí de Cavalls— es de acceso libre, así que subir lo
+ * gratis sube justo lo que la isla tiene de mejor. Y con presupuesto alto sí se
+ * pide lo contrario: que el plan se atreva con lo que hay que reservar y pagar.
+ */
+const COST_WEIGHT: Record<Budget, Record<CostBand, number>> = {
+  ajustado: { gratis: 1.5, "€": 0.5, "€€": -0.75, "€€€": -2.25 },
+  medio: { gratis: 0.4, "€": 0.25, "€€": 0, "€€€": -0.75 },
+  alto: { gratis: 0, "€": 0.1, "€€": 0.9, "€€€": 1.6 },
+};
+
+/** Las bandas de coste, de menos a más. */
+const BAND_ORDER: readonly CostBand[] = ["gratis", "€", "€€", "€€€"];
+
+/**
+ * Banda máxima que el plan se permite NOMBRAR según el presupuesto declarado.
+ *
+ * El peso de arriba ORDENA, y ordenar no sirve cuando toda la lista de un hueco
+ * está fuera de precio: hay zonas donde lo único que el dataset tiene de comer
+ * es de banda alta (en el norte, Es Cranc y Sa Llagosta, las dos €€€), así que
+ * quien marcaba "ajustado" recibía Es Cranc por ser el mejor de los caros
+ * (medido con la sonda el 17-ago-2026). El techo corta eso: si no hay nada
+ * asequible, el plan NO nombra la parada y deja el texto genérico de la zona.
+ *
+ * No toca lo gratis, que es donde está lo mejor de la isla: nadie pierde una
+ * cala, un mirador ni un tramo de Camí de Cavalls por marcar presupuesto
+ * ajustado. Solo deja de recibir la mesa y el barco que no puede pagar.
+ */
+const COST_CEILING: Record<Budget, CostBand> = { ajustado: "€€", medio: "€€€", alto: "€€€" };
+
+/** ¿Cabe esta parada en el presupuesto declarado? Sin banda → sí (no consta gasto). */
+export const affordable = (place: PlannerPlace, s: Survey): boolean =>
+  !place.costBand ||
+  BAND_ORDER.indexOf(place.costBand) <= BAND_ORDER.indexOf(COST_CEILING[s.budget]);
 
 /** Cada interés de la encuesta apunta a uno o varios `idealFor` del dataset. */
 const INTEREST_TO_IDEALFOR: Record<Interest, IdealFor[]> = {
@@ -67,6 +107,10 @@ export function affinity(place: PlannerPlace, s: Survey): number {
   for (const tag of place.idealFor) if (target.has(tag)) score += 1;
   if (s.kids.has && place.idealFor.includes("familias")) score += 1;
   if (place.dataCertainty === "alta") score += 0.5;
+  // Coste: el presupuesto declarado inclina la balanza, no filtra. Nadie se queda
+  // sin ver Macarella por marcar "ajustado", pero el plan deja de proponerle un
+  // spa; y quien marca "alto" deja de recibir el mismo plan que todo el mundo.
+  if (place.costBand) score += COST_WEIGHT[s.budget][place.costBand];
   if (isCarless(s)) {
     const reachable =
       place.busServed || place.carAccess === "sin-coche-ok" || place.carAccessClosedSummer;

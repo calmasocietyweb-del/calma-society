@@ -12,6 +12,7 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { PHOTO_MAP } from "./planner-photo-map.mjs";
+import { costOf, CURATED_COUNT } from "./planner-cost-map.mjs";
 
 const DIR = "src/content/lugares";
 const OUT = "src/data";
@@ -78,6 +79,9 @@ function toPlannerPlace(f, slugByFile) {
     operatorName: p.operatorName,
     dataCertainty: p.dataCertainty ?? "media",
     lastVerified: p.lastVerified,
+    // Banda de coste ORIENTATIVA (nunca un precio): regla estructural sobre datos
+    // ya verificados + tabla curada a mano. Ver scripts/planner-cost-map.mjs.
+    ...costOf({ ...p, __id: f.translationKey }, f.priceRange),
   };
 }
 
@@ -115,3 +119,13 @@ for (const lang of Object.keys(byLang)) {
   console.log(`✓ ${path} — ${byLang[lang].length} lugares`);
 }
 console.log(`Hecho: ${total} fichas compiladas (published ${statusCount.published}, draft ${statusCount.draft}, pending ${statusCount.pending}). El dataset incluye draft (son datos del motor, no páginas); el slug/enlace a /lugar solo se emite para published.`);
+
+// Reparto por banda de coste: si un idioma se descuadra respecto al otro, o si
+// una banda se queda vacía, se ve aquí y no en producción.
+const bands = {};
+for (const p of byLang.es) bands[p.costBand] = (bands[p.costBand] ?? 0) + 1;
+const cert = byLang.es.filter((p) => p.costCertainty === "media").length;
+console.log(
+  `Coste orientativo: ${["gratis", "€", "€€", "€€€"].map((b) => `${b} ${bands[b] ?? 0}`).join(" · ")}` +
+  ` (${CURATED_COUNT} correcciones a mano; ${cert} lugares con certeza media).`,
+);

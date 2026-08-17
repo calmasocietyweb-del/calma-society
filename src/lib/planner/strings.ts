@@ -172,6 +172,18 @@ interface Strings {
     freeDay: string;
     freeDayReason: string;
     busTransferDay: (place: string) => string;
+    /** Qué ha hecho el presupuesto declarado con el plan. */
+    budgetShaped: (budget: "ajustado" | "medio" | "alto") => string;
+    /** Descargo: publicamos bandas orientativas, nunca tarifas. */
+    costDisclaimer: string;
+  };
+
+  /** Nombres de las bandas de coste, para leerlas sin símbolos. */
+  costName: Record<"gratis" | "€" | "€€" | "€€€", string>;
+  /** Resumen de coste de un día. */
+  dayCost: {
+    free: string;
+    paid: (n: number) => string;
   };
 }
 
@@ -327,6 +339,21 @@ const ES: Strings = {
     freeDayReason: "Margen para reordenar por viento o por cansancio.",
     busTransferDay: (place: string) =>
       `Sin coche: llega a ${place} con un transfer puerta a puerta de Menorca Bus (esta zona no tiene bus directo cómodo).`,
+    budgetShaped: (budget) =>
+      budget === "ajustado"
+        ? "Con presupuesto ajustado el plan se apoya en lo que no se paga: calas, miradores y tramos del Camí de Cavalls. En Menorca eso no es conformarse — es casi todo lo mejor."
+        : budget === "alto"
+          ? "Con presupuesto alto el plan se atreve con lo que hay que reservar: salir al mar, mesas de autor y bienestar. Reserva con antelación en temporada."
+          : "El plan mezcla lo de acceso libre con alguna experiencia de pago; puedes subir o bajar el listón cambiando el presupuesto de la encuesta.",
+    costDisclaimer:
+      "Los costes son una BANDA orientativa (gratis · € · €€ · €€€), no una tarifa: confirma el precio del día en la web de cada sitio.",
+  },
+  costName: { gratis: "gratis", "€": "económico", "€€": "de pago", "€€€": "alto" },
+  // "Sin entradas" y no "día gratis": se sigue comiendo, y de una mesa sin ficha
+  // propia no sabemos el precio, así que no lo damos por hecho.
+  dayCost: {
+    free: "Sin entradas de pago",
+    paid: (n) => (n === 1 ? "1 parada de pago" : `${n} paradas de pago`),
   },
 };
 
@@ -482,6 +509,19 @@ const EN: Strings = {
     freeDayReason: "Room to reorder for wind or for tiredness.",
     busTransferDay: (place) =>
       `Without a car: reach ${place} with a door-to-door Menorca Bus transfer (this area has no convenient direct bus).`,
+    budgetShaped: (budget) =>
+      budget === "ajustado"
+        ? "On a tight budget the plan leans on what costs nothing: coves, viewpoints and stretches of the Camí de Cavalls. On Menorca that is not settling — it is most of the best of it."
+        : budget === "alto"
+          ? "With a generous budget the plan reaches for what has to be booked: going out to sea, chef's tables and wellbeing. Book ahead in season."
+          : "The plan mixes free access with the occasional paid experience; raise or lower the bar by changing the budget in the survey.",
+    costDisclaimer:
+      "Costs are an indicative BAND (free · € · €€ · €€€), not a rate: confirm the day's price on each place's own site.",
+  },
+  costName: { gratis: "free", "€": "inexpensive", "€€": "paid", "€€€": "high-end" },
+  dayCost: {
+    free: "No paid entries",
+    paid: (n) => (n === 1 ? "1 paid stop" : `${n} paid stops`),
   },
 };
 

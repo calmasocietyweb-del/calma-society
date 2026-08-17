@@ -9,7 +9,7 @@
  */
 import type { PlannerPlace, PlannerZone, BaseZone, IntradayBlock, Notice, ZoneFood, Weekday, Swap } from "../types.ts";
 import type { Survey, Pace } from "../survey.ts";
-import { affinity } from "./interests.ts";
+import { affinity, affordable } from "./interests.ts";
 import { pickRotating } from "./seed.ts";
 import { S, type Lang } from "../strings.ts";
 
@@ -56,10 +56,17 @@ function selectFrom(
   const fresh = all.filter((p) => !taken.has(p.id));
   const pool = fresh.length ? fresh : reuse ? all : [];
   if (pool.length === 0) return { alts: [] };
-  const best = affinity(pool[0], survey);
-  const near = pool.filter((p) => affinity(p, survey) >= best - NEAR_TIE);
+  // Techo de presupuesto: preferimos NO nombrar una parada antes que nombrar una
+  // que el viajero acaba de decir que no puede pagar. Los huecos opcionales y las
+  // comidas se quedan sin lugar y caen en su texto genérico de zona; la parada
+  // ESENCIAL (la mañana, `reuse`) cede el techo, porque un día vacío es peor.
+  const canPay = pool.filter((p) => affordable(p, survey));
+  const usable = canPay.length ? canPay : reuse ? pool : [];
+  if (usable.length === 0) return { alts: [] };
+  const best = affinity(usable[0], survey);
+  const near = usable.filter((p) => affinity(p, survey) >= best - NEAR_TIE);
   const pick = pickRotating(near, seed, salt);
-  const alts = pool.filter((p) => p !== pick).slice(0, ALT_COUNT);
+  const alts = usable.filter((p) => p !== pick).slice(0, ALT_COUNT);
   return { pick, alts };
 }
 
@@ -70,7 +77,7 @@ function swapNote(p: PlannerPlace): string | undefined {
   return raw.length > 110 ? `${raw.slice(0, 107).trimEnd()}…` : raw;
 }
 
-const toSwap = (p: PlannerPlace): Swap => ({ placeId: p.id, name: p.name, note: swapNote(p) });
+const toSwap = (p: PlannerPlace): Swap => ({ placeId: p.id, name: p.name, note: swapNote(p), costBand: p.costBand });
 
 const PACE: Record<Pace, { budget: number; maxAnchors: number }> = {
   relajado: { budget: 7, maxAnchors: 2 },
@@ -274,6 +281,7 @@ export function sequenceDay(input: DayInput): DayResult {
       durationMin: durOf(c.place),
       reason: whatToSee(c.place, lang) || t.anchorFallbackReason(c.place.name),
       alternatives: altsFor(slot),
+      costBand: c.place.costBand,
     };
   };
   const puebloIsAnchor = chosen.some((c) => c.place === pueblo);
@@ -291,7 +299,7 @@ export function sequenceDay(input: DayInput): DayResult {
   // COMIDA — anclada a un restaurante/mercado o al pueblo del día; la guía
   // verificada de la zona enriquece el "por qué" cuando no hay ficha real.
   if (diner) {
-    blocks.push({ slot: "comida", timeHint: timeOf("comida"), placeId: diner.id, placeName: t.lunchAt(diner.name), durationMin: 90, reason: whatToSee(diner, lang) || input.zoneFood?.lunch || t.lunchAtReason });
+    blocks.push({ slot: "comida", timeHint: timeOf("comida"), placeId: diner.id, placeName: t.lunchAt(diner.name), durationMin: 90, reason: whatToSee(diner, lang) || input.zoneFood?.lunch || t.lunchAtReason, costBand: diner.costBand });
   } else if (pueblo) {
     blocks.push({ slot: "comida", timeHint: timeOf("comida"), placeName: t.lunchInTown(pueblo.name), durationMin: 90, reason: input.zoneFood?.lunch || t.lunchInTownReason });
   } else {
@@ -313,7 +321,7 @@ export function sequenceDay(input: DayInput): DayResult {
           : t.dinnerStrollDefaultReason);
     blocks.push({ slot: "cena", timeHint: timeOf("cena"), placeId: pueblo.id, placeName: t.dinnerStroll(pueblo.name), durationMin: 90, reason });
   } else if (diner) {
-    blocks.push({ slot: "cena", timeHint: timeOf("cena"), placeId: diner.id, placeName: t.dinnerAt(diner.name), durationMin: 90, reason: whatToSee(diner, lang) || input.zoneFood?.dinner || t.dinnerAtReason });
+    blocks.push({ slot: "cena", timeHint: timeOf("cena"), placeId: diner.id, placeName: t.dinnerAt(diner.name), durationMin: 90, reason: whatToSee(diner, lang) || input.zoneFood?.dinner || t.dinnerAtReason, costBand: diner.costBand });
   } else {
     blocks.push({ slot: "cena", timeHint: timeOf("cena"), placeName: t.dinnerLocal, durationMin: 90, reason: input.zoneFood?.dinner || t.dinnerLocalReason });
   }

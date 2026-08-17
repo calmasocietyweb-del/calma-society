@@ -34,7 +34,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "alquiler-barco-sin-licencia-ciutadella",
@@ -69,7 +71,9 @@
     "needsReservation": true,
     "officialUrl": "https://twinsboats.com",
     "dataCertainty": "media",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€€",
+    "costCertainty": "media"
   },
   {
     "id": "alquiler-de-llaut-tradicional-barco-privado-al-a",
@@ -105,7 +109,9 @@
     "officialUrl": "https://www.alquilerbarcoenmenorca.es/",
     "operatorName": "Minorboats",
     "dataCertainty": "media",
-    "lastVerified": "2026-08-06"
+    "lastVerified": "2026-08-06",
+    "costBand": "€€€",
+    "costCertainty": "media"
   },
   {
     "id": "aquarock-parque-acuatico-calan-bosch",
@@ -139,7 +145,9 @@
     "needsReservation": false,
     "officialUrl": "https://aquarock-menorca.com/en/",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "artrutx-sea-club",
@@ -175,7 +183,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": true,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "atardecer-barco-binibeca-faralmar",
@@ -210,7 +220,9 @@
     "needsReservation": true,
     "officialUrl": "https://faralmar.com/",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€€",
+    "costCertainty": "media"
   },
   {
     "id": "atardecer-barco-puerto-mao-faralmar",
@@ -245,7 +257,9 @@
     "needsReservation": true,
     "officialUrl": "https://faralmar.com/",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€€",
+    "costCertainty": "media"
   },
   {
     "id": "atardecer-catamaran-ciutadella-oceancat",
@@ -281,7 +295,9 @@
     "needsReservation": true,
     "officialUrl": "https://oceancatmenorca.com/",
     "dataCertainty": "media",
-    "lastVerified": "2026-07-22"
+    "lastVerified": "2026-07-22",
+    "costBand": "€€€",
+    "costCertainty": "media"
   },
   {
     "id": "atardecer-catamaran-fornells",
@@ -316,7 +332,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.boatmenorca.es/catamaran-excursions-menorca/",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€€",
+    "costCertainty": "media"
   },
   {
     "id": "binibeca-vell",
@@ -352,7 +370,9 @@
     "seasonalHours": "Es propiedad privada con horarios de visita restringidos; respeta el silencio y los accesos. Ve fuera de la hora punta del mediodía.",
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "binisafua",
@@ -385,7 +405,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-07-22"
+    "lastVerified": "2026-07-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "birdwatching-salbufera-des-grau",
@@ -421,7 +443,9 @@
     "needsReservation": false,
     "officialUrl": "https://www.caib.es/sites/xarxanatura/es/parc_natural_de_salbufera_des_grau-46059/",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "bodega-binitord",
@@ -456,7 +480,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.binitord.com/tours",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "bodega-son-cremat",
@@ -491,7 +517,9 @@
     "needsReservation": true,
     "officialUrl": "https://vimenorca.com/en/son-cremat/",
     "dataCertainty": "media",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "bodega-vinya-sa-cudia",
@@ -526,7 +554,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.illesbalears.travel/en/menorca/winery-vinya-sa-cudia",
     "dataCertainty": "media",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "bodegas-binifadet",
@@ -565,7 +595,9 @@
     "needsReservation": true,
     "officialUrl": "https://binifadet.com/",
     "dataCertainty": "alta",
-    "lastVerified": "2026-07-22"
+    "lastVerified": "2026-07-22",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "bodegas-menorquinas-ferrer-muntpalau",
@@ -599,7 +631,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.descobreixmenorca.com/en/wines-of-menorca/bodegas-menorquinas/",
     "dataCertainty": "media",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "btt-cicloturismo-cami-de-cavalls-velos-joan",
@@ -633,7 +667,9 @@
     "needsReservation": true,
     "officialUrl": "https://velosjoan.com",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "buceo-fornells-reserva-marina-nord",
@@ -667,7 +703,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.divingfornells.com",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€€",
+    "costCertainty": "media"
   },
   {
     "id": "buceo-salgar-illa-de-laire",
@@ -702,7 +740,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.salgardiving.com",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€€",
+    "costCertainty": "media"
   },
   {
     "id": "cala-algaiarens",
@@ -735,7 +775,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cala-binidali",
@@ -768,7 +810,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "media",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cala-blanca",
@@ -800,7 +844,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cala-cavalleria",
@@ -834,7 +880,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cala-de-biniancolla",
@@ -867,7 +915,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "media",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cala-de-llucalari",
@@ -899,7 +949,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "media",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cala-del-pilar",
@@ -932,7 +984,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cala-des-talaier",
@@ -965,7 +1019,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "media",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cala-en-bosch",
@@ -998,7 +1054,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cala-en-porter",
@@ -1042,7 +1100,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cala-escorxada",
@@ -1074,7 +1134,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "media",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cala-galdana",
@@ -1121,7 +1183,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cala-macarella",
@@ -1158,7 +1222,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cala-macarelleta",
@@ -1193,7 +1259,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cala-mesquida",
@@ -1227,7 +1295,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "media",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cala-mica",
@@ -1260,7 +1330,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "media",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cala-mitjana",
@@ -1297,7 +1369,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cala-morell",
@@ -1332,7 +1406,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cala-pregonda",
@@ -1368,7 +1444,9 @@
     "seasonalHours": "Junio o septiembre; en julio/agosto el parking de Binimel·la se llena pronto. Mejor con poco viento del norte.",
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cala-presili",
@@ -1401,7 +1479,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cala-roja",
@@ -1434,7 +1514,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "media",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cala-santandria",
@@ -1478,7 +1560,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cala-tirant",
@@ -1511,7 +1595,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cala-tortuga",
@@ -1544,7 +1630,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cala-trebaluger",
@@ -1576,7 +1664,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cala-turqueta",
@@ -1613,7 +1703,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cales-coves",
@@ -1646,7 +1738,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cami-de-cavalls-es-grau-sa-mesquida-familiar",
@@ -1682,7 +1776,9 @@
     "needsReservation": false,
     "officialUrl": "https://www.camidecavalls360.com/es/",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cami-de-cavalls-etapa-10-punta-nati-ciutadella",
@@ -1718,7 +1814,9 @@
     "needsReservation": false,
     "officialUrl": "https://www.camidecavalls.com",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cami-de-cavalls-etapa-13-turqueta-galdana",
@@ -1755,7 +1853,9 @@
     "needsReservation": false,
     "officialUrl": "https://www.camidecavalls.com",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cami-de-cavalls-etapa-2-es-grau-favaritx",
@@ -1790,7 +1890,9 @@
     "needsReservation": false,
     "officialUrl": "https://www.camidecavalls.com",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cami-de-cavalls-etapa-20-sant-esteve-mao",
@@ -1827,7 +1929,9 @@
     "needsReservation": false,
     "officialUrl": "https://www.camidecavalls.com",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cami-de-cavalls-etapa-6-binimella-els-alocs",
@@ -1861,7 +1965,9 @@
     "needsReservation": false,
     "officialUrl": "https://www.camidecavalls.com",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "castell-de-sant-felip",
@@ -1895,7 +2001,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.consorciomilitarmenorca.com/es/visitas-guiadas-al-castillo-de-san-felipe/",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "castell-de-sant-nicolau",
@@ -1929,7 +2037,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "media",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "media"
   },
   {
     "id": "catedral-de-santa-maria-ciutadella",
@@ -1964,7 +2074,9 @@
     "needsReservation": false,
     "officialUrl": "https://bisbatdemenorca.org/diocesi/la-catedral-i-el-seu-museu/",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€",
+    "costCertainty": "media"
   },
   {
     "id": "ciutadella",
@@ -2002,7 +2114,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "cova-den-xoroi",
@@ -2041,7 +2155,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.covadenxoroi.com/es",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "cova-des-coloms-barranc-binigaus",
@@ -2075,7 +2191,9 @@
     "needsReservation": false,
     "officialUrl": "https://www.ajmigjorngran.org",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "destileria-gin-xoriguer",
@@ -2114,7 +2232,9 @@
     ],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "media"
   },
   {
     "id": "eolo-sunset-bar",
@@ -2148,7 +2268,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "media",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "€",
+    "costCertainty": "media"
   },
   {
     "id": "es-calo-blanc",
@@ -2181,7 +2303,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-07-22"
+    "lastVerified": "2026-07-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "es-canutells",
@@ -2214,7 +2338,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "media",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "es-castell",
@@ -2250,7 +2376,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "es-grau",
@@ -2292,7 +2420,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "es-mercadal",
@@ -2326,7 +2456,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "es-migjorn-gran",
@@ -2359,7 +2491,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "excursion-barco-calas-sur-menorca-blava-ciutadella",
@@ -2394,7 +2528,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.menorcablava.com",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€€",
+    "costCertainty": "media"
   },
   {
     "id": "excursion-llaut-mar-en-calma-fornells",
@@ -2429,7 +2565,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.marencalmamenorca.com",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€€",
+    "costCertainty": "media"
   },
   {
     "id": "excursion-llaut-mar-en-calma-galdana",
@@ -2464,7 +2602,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.marencalmamenorca.com",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€€",
+    "costCertainty": "media"
   },
   {
     "id": "faro-cavalleria",
@@ -2499,7 +2639,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "media"
   },
   {
     "id": "faro-de-punta-nati",
@@ -2532,7 +2674,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "faro-favaritx",
@@ -2559,14 +2703,16 @@
     "carAccess": "solo-bus-lanzadera",
     "busServed": true,
     "carAccessClosedSummer": true,
-    "shuttleInfo": "Acceso en coche restringido en verano (aprox. 1 jun–mediados oct): bus de temporada desde Maó (línea ~43, ~3,50 €/trayecto). Confirma el calendario del año.",
+    "shuttleInfo": "Acceso en coche restringido en verano (1 jun–31 oct; en 2026 se adelantó al 15 de mayo): bus de temporada desde Maó (línea 43, ~3,65 €/trayecto). Confirma el calendario del año.",
     "effortLevel": "B",
     "isIndoor": false,
     "weatherProof": "exterior",
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "ferreries",
@@ -2600,7 +2746,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "finca-binillubet",
@@ -2639,7 +2787,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.quesosbinillubet.com/",
     "dataCertainty": "media",
-    "lastVerified": "2026-07-22"
+    "lastVerified": "2026-07-22",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "fornells",
@@ -2676,7 +2826,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "fort-marlborough",
@@ -2711,7 +2863,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.menorca.es/en/Visitas_guiadas_al_Fort_de_Marlborough/16037",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "fortaleza-de-la-mola",
@@ -2750,7 +2904,9 @@
     ],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "hort-de-sant-patrici",
@@ -2790,7 +2946,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.santpatrici.com",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "illa-del-rei",
@@ -2826,7 +2984,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "kayak-galdana-rutas-cuevas-familia",
@@ -2862,7 +3022,9 @@
     "officialUrl": "https://www.artiemhotels.com/experiencias/tour-cuevas-kayak.html",
     "operatorName": "ARTIEM Sports",
     "dataCertainty": "media",
-    "lastVerified": "2026-08-06"
+    "lastVerified": "2026-08-06",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "kayak-snorkel-fornells-reserva-marina",
@@ -2897,7 +3059,9 @@
     "needsReservation": true,
     "officialUrl": "https://katayak.net",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "lago-spa-cala-en-bosch",
@@ -2931,7 +3095,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.lagoresortmenorca.com/en/spa/",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "lithica",
@@ -2969,7 +3135,9 @@
     "needsReservation": false,
     "officialUrl": "https://lithica.es",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "€",
+    "costCertainty": "media"
   },
   {
     "id": "llatzeret-de-mao",
@@ -3004,7 +3172,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.menorca.es/en/Visitas_guiadas_a_la_Illa_de_Llatzeret/14057",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "lloc-de-menorca-zoo-granja",
@@ -3038,7 +3208,9 @@
     "needsReservation": false,
     "officialUrl": "https://llocdemenorca.com/en/",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "llucmacanes",
@@ -3071,7 +3243,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-07-22"
+    "lastVerified": "2026-07-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "mao",
@@ -3108,7 +3282,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "marea-beach-house-sunset-bar",
@@ -3142,7 +3318,9 @@
     "needsReservation": false,
     "officialUrl": "https://mareabeachhouse.com/sunset-bar/",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€",
+    "costCertainty": "media"
   },
   {
     "id": "mel-i-reines-experiencia-apicola",
@@ -3177,7 +3355,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.menorca.info/balears/economico/2025/09/19/2472611/abejas-experiencias-nueva-ruta-miel.html",
     "dataCertainty": "media",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "mercat-claustre-carme",
@@ -3223,7 +3403,9 @@
     "seasonalHours": "Centro de Maó, a pie. El Mercat des Peix anexo abre mar-sáb 07:00-14:00.",
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "€",
+    "costCertainty": "media"
   },
   {
     "id": "mercat-des-peix",
@@ -3261,7 +3443,9 @@
     ],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "€",
+    "costCertainty": "media"
   },
   {
     "id": "mercat-municipal-de-ciutadella",
@@ -3299,7 +3483,9 @@
     ],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "€",
+    "costCertainty": "media"
   },
   {
     "id": "monte-toro",
@@ -3336,7 +3522,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "museu-de-ciutadella-can-saura",
@@ -3370,7 +3558,9 @@
     "needsReservation": false,
     "officialUrl": "https://www.menorca.es/en/Municipal_Museum_of_Ciutadella/9111",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€",
+    "costCertainty": "media"
   },
   {
     "id": "museu-de-menorca",
@@ -3405,7 +3595,9 @@
     "needsReservation": false,
     "officialUrl": "https://www.museudemenorca.com",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€",
+    "costCertainty": "media"
   },
   {
     "id": "museu-de-menorca-pequeno-museo",
@@ -3440,7 +3632,9 @@
     "needsReservation": false,
     "officialUrl": "https://www.museudemenorca.com/es/inicio",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€",
+    "costCertainty": "media"
   },
   {
     "id": "museu-diocesa-de-menorca",
@@ -3474,7 +3668,9 @@
     "needsReservation": false,
     "officialUrl": "https://bisbatdemenorca.org/diocesi/la-catedral-i-el-seu-museu/",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€",
+    "costCertainty": "media"
   },
   {
     "id": "museu-militar-de-menorca",
@@ -3507,7 +3703,9 @@
     "needsReservation": false,
     "officialUrl": "https://www.menorca.es/en/Military_Museum_of_Menorca/9109",
     "dataCertainty": "media",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€",
+    "costCertainty": "media"
   },
   {
     "id": "naveta-tudons",
@@ -3544,7 +3742,9 @@
     "seasonalHours": "Mañana o última hora; cualquier época. La mejor luz y menos calor a primera o última hora del día.",
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "€",
+    "costCertainty": "media"
   },
   {
     "id": "necropolis-de-cala-morell",
@@ -3577,7 +3777,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "media"
   },
   {
     "id": "necropolis-de-calescoves",
@@ -3610,7 +3812,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "media",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "media"
   },
   {
     "id": "parc-natural-de-salbufera-des-grau",
@@ -3645,7 +3849,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "paseo-barco-calas-cuevas-cala-galdana",
@@ -3681,7 +3887,9 @@
     "officialUrl": "https://www.marencalmamenorca.com/es/inicio",
     "operatorName": "Mar en Calma",
     "dataCertainty": "media",
-    "lastVerified": "2026-08-06"
+    "lastVerified": "2026-08-06",
+    "costBand": "€€€",
+    "costCertainty": "media"
   },
   {
     "id": "paseo-catamaran-bahia-fornells",
@@ -3717,7 +3925,9 @@
     "officialUrl": "https://www.katayak.net/",
     "operatorName": "Katayak",
     "dataCertainty": "media",
-    "lastVerified": "2026-08-06"
+    "lastVerified": "2026-08-06",
+    "costBand": "€€€",
+    "costCertainty": "media"
   },
   {
     "id": "platja-de-binigaus",
@@ -3750,7 +3960,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "platja-de-sant-tomas",
@@ -3794,7 +4006,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "platja-den-ferragut",
@@ -3827,7 +4041,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "media",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "playa-de-binimel-la",
@@ -3860,7 +4076,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "pont-den-gil",
@@ -3893,7 +4111,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "media",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "punta-prima",
@@ -3934,7 +4154,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "queseria-subaida",
@@ -3974,7 +4196,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.subaida.com/es/visitas",
     "dataCertainty": "alta",
-    "lastVerified": "2026-07-22"
+    "lastVerified": "2026-07-22",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "restaurant-sa-llagosta",
@@ -4004,7 +4228,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.instagram.com/sallagosta/",
     "dataCertainty": "media",
-    "lastVerified": "2026-08-07"
+    "lastVerified": "2026-08-07",
+    "costBand": "€€€",
+    "costCertainty": "media"
   },
   {
     "id": "restaurante-es-cranc",
@@ -4035,7 +4261,9 @@
     "needsReservation": true,
     "officialUrl": "http://www.escranc.com/",
     "dataCertainty": "alta",
-    "lastVerified": "2026-07-22"
+    "lastVerified": "2026-07-22",
+    "costBand": "€€€",
+    "costCertainty": "media"
   },
   {
     "id": "restaurante-sant-joan-de-binissaida",
@@ -4074,7 +4302,9 @@
     "needsReservation": true,
     "officialUrl": "https://binissaida.com/es/restaurante",
     "dataCertainty": "alta",
-    "lastVerified": "2026-07-22"
+    "lastVerified": "2026-07-22",
+    "costBand": "€€€",
+    "costCertainty": "media"
   },
   {
     "id": "restaurante-smoix",
@@ -4110,7 +4340,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.smoix.com/",
     "dataCertainty": "alta",
-    "lastVerified": "2026-07-22"
+    "lastVerified": "2026-07-22",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "rutas-a-caballo-cavalls-son-angel",
@@ -4144,7 +4376,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.cavallssonangel.com",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "rutas-a-caballo-son-bou",
@@ -4179,7 +4413,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.menorcahorseback.com",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "sa-torreta",
@@ -4212,7 +4448,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "media",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "sant-climent",
@@ -4246,7 +4484,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "media",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "sant-lluis",
@@ -4280,7 +4520,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "son-bou",
@@ -4324,7 +4566,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "son-bou-beach-club",
@@ -4360,7 +4604,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.instagram.com/sonboubeachclub/",
     "dataCertainty": "media",
-    "lastVerified": "2026-07-22"
+    "lastVerified": "2026-07-22",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "son-felip-visita-apicola-algaiarens",
@@ -4395,7 +4641,9 @@
     "needsReservation": true,
     "officialUrl": "https://sonfelip.com/visita_apicultura_algaiarens/",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "son-martorellet-caballos-menorquines",
@@ -4430,7 +4678,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.sonmartorellet.com/es/inicio/",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "son-saura-del-sur",
@@ -4463,7 +4713,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "son-xoriguer",
@@ -4496,7 +4748,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "alta"
   },
   {
     "id": "spa-faustino-gran",
@@ -4530,7 +4784,9 @@
     "needsReservation": true,
     "officialUrl": "https://faustinogran.com/es/spa",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€€",
+    "costCertainty": "media"
   },
   {
     "id": "spa-menorca-experimental",
@@ -4564,7 +4820,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.menorcaexperimental.com/spa",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€€",
+    "costCertainty": "media"
   },
   {
     "id": "spa-santa-ponsa-fontenille",
@@ -4598,7 +4856,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.santa-ponsa.fontenille-collection.com/en/spa-minorca-yoga-retreat/",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€€",
+    "costCertainty": "media"
   },
   {
     "id": "spa-torralbenc",
@@ -4632,7 +4892,9 @@
     "needsReservation": true,
     "officialUrl": "https://torralbenc.com/es/wellness/",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€€",
+    "costCertainty": "media"
   },
   {
     "id": "talati-de-dalt",
@@ -4667,7 +4929,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "€",
+    "costCertainty": "media"
   },
   {
     "id": "torralba-den-salort",
@@ -4700,7 +4964,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "€",
+    "costCertainty": "media"
   },
   {
     "id": "torralbenc",
@@ -4735,7 +5001,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "torre-de-fornells",
@@ -4772,7 +5040,9 @@
     ],
     "needsReservation": false,
     "dataCertainty": "media",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "€",
+    "costCertainty": "media"
   },
   {
     "id": "torre-den-galmes",
@@ -4808,7 +5078,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "€",
+    "costCertainty": "media"
   },
   {
     "id": "torre-vella-yoga-naturaleza",
@@ -4842,7 +5114,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.torre-vella.fontenille-collection.com/en/yoga-wellness-spa-retreat-menorca/",
     "dataCertainty": "media",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€",
+    "costCertainty": "media"
   },
   {
     "id": "trepuco",
@@ -4876,7 +5150,9 @@
     "indoorAlternativeOf": [],
     "needsReservation": false,
     "dataCertainty": "media",
-    "lastVerified": "2026-06-22"
+    "lastVerified": "2026-06-22",
+    "costBand": "gratis",
+    "costCertainty": "media"
   },
   {
     "id": "wellness-cugo-gran",
@@ -4909,7 +5185,9 @@
     "needsReservation": true,
     "officialUrl": "https://menorca.cugogran.com/en/",
     "dataCertainty": "media",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€€",
+    "costCertainty": "media"
   },
   {
     "id": "yellow-catamarans-fondo-cristal-mao",
@@ -4944,7 +5222,9 @@
     "needsReservation": true,
     "officialUrl": "https://www.yellowcatamarans.com/en/home",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€€",
+    "costCertainty": "media"
   },
   {
     "id": "yellow-catamarans-puerto-mao",
@@ -4980,6 +5260,8 @@
     "needsReservation": true,
     "officialUrl": "https://www.yellowcatamarans.com",
     "dataCertainty": "alta",
-    "lastVerified": "2026-06-24"
+    "lastVerified": "2026-06-24",
+    "costBand": "€€€",
+    "costCertainty": "media"
   }
 ]

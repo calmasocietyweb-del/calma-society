@@ -1225,6 +1225,41 @@ form.is-wizard .planner-submit-row {
   white-space: nowrap;
   color: var(--color-piedra-suave);
 }
+/* ── Coste orientativo ──────────────────────────────────────────
+   Una BANDA, nunca un precio (ver scripts/planner-cost-map.mjs). Se lee con la
+   misma escala de € que el sitio ya usa para las mesas, y "Gratis" con palabra
+   porque en Menorca es la respuesta buena la mayoría de las veces. Discreto a
+   propósito: informa al pasar la vista, no compite con el nombre del sitio. */
+.pl-cost {
+  margin-left: 0.5rem;
+  display: inline-block;
+  border-radius: 9999px;
+  border: 1px solid var(--color-niebla);
+  padding: 0.05rem 0.45rem;
+  font-family: "Inter Variable", system-ui, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  vertical-align: 0.14em;
+  color: var(--color-piedra-suave);
+}
+/* Lo de acceso libre se marca en verde-oliva de la paleta cálida; lo alto, en
+   arcilla. Contraste AA comprobado sobre lino y sobre arena. */
+.pl-cost[data-band="gratis"] {
+  border-color: color-mix(in oklab, var(--color-oro-vivo) 45%, transparent);
+  color: var(--color-oro);
+}
+.pl-cost[data-band="€€€"] {
+  border-color: color-mix(in oklab, var(--color-terracota) 55%, transparent);
+  color: var(--color-arcilla);
+}
+.pl-day-cost {
+  display: inline-flex;
+  align-items: baseline;
+}
+.pl-day-cost .pl-cost { margin-left: 0.35rem; }
+
 .pl-stop-why {
   margin-top: 0.35rem;
   max-width: 68ch;

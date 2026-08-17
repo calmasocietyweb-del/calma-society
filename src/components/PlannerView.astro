@@ -249,6 +249,16 @@ const CFG = {
   planLead: isEs ? "Tu base" : "Your base",
   andWord: isEs ? "y" : "and",
   variantCount: VARIANT_COUNT,
+  // Coste orientativo. "gratis" se escribe con palabra; el resto, con la misma
+  // escala de € que el sitio ya usa para las mesas.
+  costLabel: isEs
+    ? { gratis: "Gratis", "€": "€", "€€": "€€", "€€€": "€€€" }
+    : { gratis: "Free", "€": "€", "€€": "€€", "€€€": "€€€" },
+  costTitle: isEs
+    ? { gratis: "Acceso libre", "€": "Coste bajo", "€€": "De pago", "€€€": "Coste alto" }
+    : { gratis: "Free access", "€": "Low cost", "€€": "Paid", "€€€": "High-end" },
+  dayCostFree: isEs ? "Sin entradas de pago" : "No paid entries",
+  dayCostPaid: isEs ? "%n de pago" : "%n paid",
   // Enlaces de la respuesta: ficha /lugar (solo published), Google Maps por
   // coordenadas (sin API ni JS externo: solo una URL) y web oficial.
   placePrefix: isEs ? "/lugar" : "/en/place",
@@ -284,6 +294,7 @@ const CFG = {
     fiesta: `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 5.4 5.6.5-4.2 3.7 1.3 5.5L12 20.6l-4.9 2.9 1.3-5.5L4 9.4l5.6-.5z"/></svg>`,
     transfer: `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="11" rx="2"/><path d="M4 12h16"/><circle cx="8" cy="18.5" r="1.1"/><circle cx="16" cy="18.5" r="1.1"/></svg>`,
     logistica: `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M14.6 9.4l-1.7 3.5-3.5 1.7 1.7-3.5z"/></svg>`,
+    coste: `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M14.8 9.3a3.3 3.3 0 1 0 0 5.4"/><path d="M8.8 11.2h4"/><path d="M8.8 13.1h4"/></svg>`,
   } as Record<string, string>,
 };
 
@@ -777,13 +788,19 @@ const ICON: Record<string, string> = {
       ? `<a href="${CFG.placePrefix}/${esc(p.slug)}">${esc(label)}</a>`
       : esc(label);
 
+  /** Banda de coste: orientativa y sin cifras (ver scripts/planner-cost-map.mjs). */
+  const cost = (band?: string) =>
+    band
+      ? `<span class="pl-cost" data-band="${esc(band)}" title="${esc(CFG.costTitle[band] || "")}">${esc(CFG.costLabel[band] || band)}</span>`
+      : "";
+
   /** Recambios de un hueco: el plan como propuesta con salidas, no como orden. */
   function swaps(b: any) {
     if (!b.alternatives?.length) return "";
     const items = b.alternatives
       .map((a: any) => {
         const p = byId[a.placeId];
-        return `<li><span class="pl-swap-name">${placeLink(p, a.name)}</span>${a.note ? `<span class="pl-swap-note">${esc(a.note)}</span>` : ""}</li>`;
+        return `<li><span class="pl-swap-name">${placeLink(p, a.name)}${cost(a.costBand)}</span>${a.note ? `<span class="pl-swap-note">${esc(a.note)}</span>` : ""}</li>`;
       })
       .join("");
     return `<details class="pl-swap"><summary>${esc(CFG.swapTitle)} <span aria-hidden="true">·</span> ${b.alternatives.length}</summary><ul>${items}</ul></details>`;
@@ -802,7 +819,7 @@ const ICON: Record<string, string> = {
     return `<li class="pl-stop">
       <p class="pl-stop-time"><span>${esc(b.timeHint || "")}</span><span class="pl-stop-slot">${esc(CFG.slot[b.slot] || b.slot)}</span></p>
       <div class="pl-stop-body">
-        <h4 class="pl-stop-name">${placeLink(p, b.placeName)}${b.durationMin ? `<span class="pl-stop-dur">${esc(dur(b.durationMin))}</span>` : ""}</h4>
+        <h4 class="pl-stop-name">${placeLink(p, b.placeName)}${b.durationMin ? `<span class="pl-stop-dur">${esc(dur(b.durationMin))}</span>` : ""}${cost(b.costBand)}</h4>
         ${b.reason ? `<p class="pl-stop-why">${esc(b.reason)}</p>` : ""}
         ${links.length ? `<p class="pl-stop-links">${links.join("")}</p>` : ""}
         ${swaps(b)}
@@ -818,7 +835,7 @@ const ICON: Record<string, string> = {
       <span class="pl-meal-time">${esc(b.timeHint || "")}</span>
       <span class="pl-meal-body">
         <span class="pl-meal-slot">${esc(CFG.slot[b.slot] || b.slot)}</span>
-        <span class="pl-meal-name">${placeLink(p, b.placeName)}</span>
+        <span class="pl-meal-name">${placeLink(p, b.placeName)}</span>${cost(b.costBand)}
         ${b.reason ? `<span class="pl-meal-why">${esc(b.reason)}</span>` : ""}
       </span>
     </li>`;
@@ -944,6 +961,7 @@ const ICON: Record<string, string> = {
         <p class="pl-day-meta">
           <span class="pl-day-n">${esc(CFG.dayWord)} ${idx + 1}</span>
           ${d.date ? `<time datetime="${esc(d.date)}">${esc(fmtDate(d.date))}</time>` : ""}
+          <span class="pl-day-cost">${d.paidStops ? esc(CFG.dayCostPaid.replace("%n", String(d.paidStops))) + " " + cost(d.costBand) : esc(CFG.dayCostFree)}</span>
           <span class="pl-day-hours">~${d.budgetHours} ${esc(CFG.hours)}</span>
         </p>
         <h3 class="pl-day-title">${esc(d.label)}</h3>

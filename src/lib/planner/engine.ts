@@ -10,7 +10,8 @@
  * Con fechas, cada día conoce su fecha real: día de la semana (openDays) y
  * atardecer NOAA (sun-core) para horas orientativas honestas.
  */
-import type { Plan, DayCard, PlannerPlace, PlannerZone, IntradayBlock, Notice, MenorcaBusHook, FoodByZone, Swap } from "./types.ts";
+import type { Plan, DayCard, PlannerPlace, PlannerZone, IntradayBlock, Notice, MenorcaBusHook, FoodByZone, Swap, CostBand } from "./types.ts";
+import { COST_ORDER } from "./types.ts";
 import type { Survey, Interest } from "./survey.ts";
 import { normalizeSurvey, isCarless } from "./survey.ts";
 import { recommendBase } from "./rules/base.ts";
@@ -160,6 +161,14 @@ export function planTrip(
     // Memoria del viaje: lo programado hoy no vuelve a proponerse mañana.
     for (const b of result.blocks) if (b.placeId) used.add(b.placeId);
 
+    // Lo que cuesta el día: su banda más alta y cuántas paradas se pagan. Deja
+    // ver de un vistazo si mañana toca un día de acceso libre o uno de reservar.
+    const bands = result.blocks.map((b) => b.costBand).filter((b): b is CostBand => !!b);
+    const dayBand = bands.length
+      ? bands.reduce((a, b) => (COST_ORDER.indexOf(b) > COST_ORDER.indexOf(a) ? b : a))
+      : undefined;
+    const paidStops = bands.filter((b) => b !== "gratis").length;
+
     days.push({
       dayIndex: sk.dayIndex,
       dayTypeKey: sk.dayTypeKey,
@@ -172,6 +181,8 @@ export function planTrip(
       budgetHours: result.budgetHours,
       planB: dayPlanB,
       alsoNearby: result.alsoNearby,
+      costBand: dayBand,
+      paidStops,
     });
   }
 
@@ -215,6 +226,10 @@ function buildGlobalNotices(survey: Survey, base: string, lang: "es" | "en", spl
   if (isCarless(survey)) {
     out.push({ kind: "logistica", text: t.carless });
   }
+  // El presupuesto ya inclina el plan, así que se dice en voz alta lo que ha
+  // hecho — y el descargo: publicamos bandas orientativas, nunca tarifas.
+  out.push({ kind: "coste", text: t.budgetShaped(survey.budget) });
+  out.push({ kind: "coste", text: t.costDisclaimer });
   if (survey.accessibility !== "ninguna") {
     out.push({ kind: "accesibilidad", text: t.accessibilityFilter(survey.accessibility, allowedEfforts(survey.accessibility).join("/")) });
     out.push({ kind: "accesibilidad", text: t.accessibilityWindow });

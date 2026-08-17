@@ -12,6 +12,7 @@
  */
 import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
+import { execFileSync } from "node:child_process";
 
 const DIR = "src/content/lugares";
 // Caja de Menorca con margen (islotes incluidos).
@@ -138,9 +139,37 @@ try {
 } catch {
   reglas = "";
 }
+
+// Una ficha está RETIRADA si alguna vez estuvo publicada. Una ficha NUEVA que
+// todavía no se ha publicado no deja ningún 404: Google no la ha visto nunca, y
+// exigirle un 301 bloquearía cualquier contenido nuevo — que por regla del
+// proyecto nace siempre en `draft`. Se pregunta al historial de git por los
+// ficheros que en algún commit contuvieron `"status": "published"`.
+// Si git no responde (repo sin historial, CI raro), se mantiene el criterio
+// conservador de antes: se exige redirección a todo lo no publicado. Mejor un
+// falso positivo que volver a dejar un 404 vivo (KAN-100).
+let publicadasAlgunaVez = null;
+try {
+  const salida = execFileSync(
+    "git",
+    ["log", "-S", '"status": "published"', "--name-only", "--pretty=format:", "--", "src/content/lugares"],
+    { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] },
+  );
+  publicadasAlgunaVez = new Set(
+    salida
+      .split("\n")
+      .map((l) => l.trim())
+      .filter(Boolean)
+      .map((ruta) => ruta.split("/").pop()),
+  );
+} catch {
+  publicadasAlgunaVez = null; // sin git → criterio conservador
+}
+
 const sinRedireccion = [];
 for (const f of fichas) {
   if (f.__parseError || f.status === "published") continue;
+  if (publicadasAlgunaVez && !publicadasAlgunaVez.has(f.file)) continue; // nunca publicada: no hay 404 que tapar
   const base = RUTA_LUGAR[f.lang];
   if (!base) continue;
   const url = base + f.file.replace(/\.json$/, "");
