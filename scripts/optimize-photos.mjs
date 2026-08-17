@@ -124,6 +124,16 @@ const jobs = [
   { src: `${SRC}/_stock/caballos-jinetes.jpg`, out: "caballos-jinetes" }, // Adobe Stock #510706254 (caballos y jinetes)
   { src: `${SRC}/_stock/jinetes-fiesta.jpg`, out: "jinetes-fiesta" }, // Adobe Stock #1239213075 (jinetes engalanados)
   { src: `${SRC}/_stock/playa-norte-menorca.jpg`, out: "playa-norte-menorca" }, // Adobe Stock #543952852 (playa dorada del norte, sin nombrar cala)
+  // QUESO MAHÓN-MENORCA DE VERDAD (Wikimedia, 17-ago-2026 — KAN-109). El artículo
+  // de la DOP se ilustraba con `queso-tabla`: cuñas agujereadas cortadas de una
+  // RUEDA REDONDA, o sea un queso tipo emmental. El Mahón-Menorca se prensa en
+  // fogasser y es CUADRADO, de corteza anaranjada. Peor aún, dos pies de foto
+  // señalaban esa imagen para enseñar «la corteza anaranjada que delata al
+  // Mahón curado» — una seña de identidad falsa sobre la foto equivocada.
+  // Dos fotos porque cada una prueba una cosa distinta: el bloque cuadrado y la
+  // corteza naranja. Ambas mirada a mirada antes de entrar.
+  { src: `${SRC}/_web_CC/queso-mahon-artesa.jpg`, out: "queso-mahon-artesa" }, // Slastic, dominio público — bloque CUADRADO curado artesano
+  { src: `${SRC}/_web_CC/queso-mahon-cuna.jpg`, out: "queso-mahon-cuna" }, // Asphaltbuffet, CC BY-SA 3.0 — cuña con la CORTEZA ANARANJADA (exige atribución)
 ];
 
 mkdirSync(OUT, { recursive: true });
