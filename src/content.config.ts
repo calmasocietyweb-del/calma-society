@@ -336,6 +336,21 @@ const eventos = defineCollection({
     ]),
     description: z.string(),
     image: z.string().optional(),
+    /**
+     * Qué se VE en la foto, no qué evento ilustra.
+     *
+     * ⚠️ POR QUÉ EXISTE (KAN-119, 17-ago-2026). Antes no había campo, así que la
+     * plantilla ponía `alt={data.title}`: las 154 fotos de la agenda se
+     * anunciaban con el nombre de su evento fuera lo que fuese que enseñaran. Un
+     * lector de pantalla oía «Mercadillo de Alaior» sobre una foto de granadas de
+     * cualquier parte del mundo, y Google leía lo mismo como un hecho. El alt
+     * dejaba de describir y pasaba a AFIRMAR — el mismo fallo que costó la
+     * auditoría KAN-83, donde 18 imágenes mentían por alt heredado.
+     *
+     * Regla: describe la imagen. Si no puedes describirla sin mentir, la foto no
+     * vale y se retira (mejor sin foto que con foto falsa).
+     */
+    imageAlt: z.string().optional(),
     // Crédito de la foto (autor + licencia). Obligatorio mostrarlo para fotos
     // con licencia CC (Wikimedia Commons). Ej.: "MANovillo / Wikimedia (CC BY 2.0)".
     imageCredit: z.string().optional(),
@@ -348,7 +363,15 @@ const eventos = defineCollection({
     relatedArticles: z.array(reference("articulos")).max(3).optional(),
     status: STATUS,
     source: z.enum(["humano", "auto-agenda"]).default("humano"),
-  }),
+  })
+    // El alt es OBLIGATORIO si hay imagen, igual que en `articulos`. Es el
+    // cortafuegos: sin esto se puede volver a añadir una foto a la agenda sin
+    // que nadie la mire ni la describa, que es justo como entraron Sevilla,
+    // Madeira y un mercado navideño centroeuropeo (KAN-119).
+    .refine((d) => !d.image || !!d.imageAlt, {
+      message: "imageAlt es obligatorio cuando hay image: describe QUÉ SE VE en la foto",
+      path: ["imageAlt"],
+    }),
 });
 
 /** Autores/firmas (E-E-A-T). Puede ser una persona o una firma editorial del medio;
