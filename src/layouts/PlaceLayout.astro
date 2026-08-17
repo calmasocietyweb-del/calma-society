@@ -5,7 +5,7 @@ import BaseLayout from "./BaseLayout.astro";
 import JsonLd from "../components/JsonLd.astro";
 import { useTranslations, placeTypeLabel } from "../i18n/ui";
 import { SITE, type Locale } from "../config/site";
-import { placeUrl, homePath, placesIndexPath } from "../i18n/utils";
+import { placeUrl, homePath, placesIndexPath, businessPath } from "../i18n/utils";
 import { publishedPlaces, relatedPlaces } from "../lib/places";
 import { abs, placeSchema, breadcrumbSchema } from "../lib/schema";
 import { srcset } from "../lib/img";
@@ -383,6 +383,20 @@ const seoTitle =
       </section>
     )
   }
+
+  {/* Puerta de entrada del propio negocio. Las ~330 fichas ya están indexadas y
+      el dueño del sitio llega a la suya buscándose: es la captación de negocios
+      más barata que tenemos, y llega pidiendo en vez de siendo pedido.
+      No promete tarifa: la ficha es gratuita y editorial. */}
+  <p class="mx-auto mt-10 max-w-prosa px-5 text-sm text-piedra-suave sm:px-8">
+    <a
+      href={businessPath(locale)}
+      data-umami-event="ficha-es-tu-negocio"
+      class="border-b border-niebla pb-0.5 transition-colors hover:border-terracota hover:text-terracota"
+    >
+      {t("place.owner")} →
+    </a>
+  </p>
 
   {/* Captación al pie de la ficha de lugar: páginas de entrada de tráfico
       orgánico/IA que no deben ser un callejón sin salida sin invitación a la Society. */}
