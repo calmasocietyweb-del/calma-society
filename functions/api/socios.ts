@@ -156,6 +156,32 @@ export async function onRequest({ request, env }: Ctx): Promise<Response> {
     return json({ ok: true, filas });
   }
 
+  if (accion === "medicion") {
+    // Foto mensual ASISTIDA (plan B sin coste): la cuenta de Umami Cloud es del
+    // plan gratuito y no tiene API (Pro requerido), así que el cron no puede
+    // calcular solo. Esta acción deposita las filas de un mes leídas a mano
+    // (Claude desde el dashboard de Umami) con el mismo upsert que usaría el
+    // cron. Si algún día hay Umami Pro, la acción `snapshot` toma el relevo
+    // sin tocar nada más.
+    const filas = Array.isArray(body.filas) ? (body.filas as Record<string, unknown>[]) : [];
+    const fuente = typeof body.fuente === "string" ? body.fuente : "manual-asistida";
+    let escritas = 0;
+    for (const f of filas) {
+      const socioId = String(f.socio_id ?? "");
+      const mes = String(f.mes ?? "");
+      const visitas = Number(f.visitas_ficha ?? 0);
+      const clics = Number(f.clics_web ?? 0);
+      if (!socioId || !mesRango(mes) || !Number.isSafeInteger(visitas) || !Number.isSafeInteger(clics)) continue;
+      const stmt = upsertMedicion(
+        { socio_id: socioId, mes, visitas_ficha: visitas, clics_web: clics, fuente },
+        now,
+      );
+      await env.DB.prepare(stmt.sql).bind(...stmt.params).run();
+      escritas++;
+    }
+    return json({ ok: true, filas: escritas });
+  }
+
   return json({ error: "accion-no-valida" }, 400);
 }
 

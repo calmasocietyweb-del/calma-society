@@ -56,8 +56,13 @@ apagarlo de urgencia basta retirar el binding (o el secreto `SOCIOS_ADMIN_KEY`).
    Builds recoge el binding).
 3. **Secretos en Cloudflare** (Worker `calma-society` → Settings → Variables):
    - `SOCIOS_ADMIN_KEY` = una clave larga aleatoria (p. ej. `openssl rand -hex 24`).
-   - `UMAMI_API_KEY` y `UMAMI_WEBSITE_ID` = los mismos valores que ya existen en
-     Vercel para `/panel/analitica` (los usa la foto mensual).
+   - `UMAMI_WEBSITE_ID` = el id público del sitio en Umami (está en `site.ts`).
+   - `UMAMI_API_KEY` — ⚠️ **hoy NO existe y no puede existir**: la cuenta de Umami
+     Cloud es del plan gratuito y **el acceso por API requiere el plan Pro**
+     (comprobado el 18-ago-2026 en cloud.umami.is → Settings → API keys). Sin ella,
+     la foto AUTOMÁTICA del cron responde `faltan-secretos-umami` y la foto se hace
+     por la vía ASISTIDA (§5). Si algún día se contrata Umami Pro, se crea la clave
+     ahí, se sube aquí, y el cron toma el relevo sin tocar código.
 4. **Variable en Vercel** (proyecto del panel): `SOCIOS_ADMIN_KEY` con **la misma**
    clave. (`PANEL_USER`/`PANEL_PASS` ya existen.) Redeploy.
 5. **Esquema y socios:**
@@ -70,10 +75,16 @@ apagarlo de urgencia basta retirar el binding (o el secreto `SOCIOS_ADMIN_KEY`).
    y pulsar **«Hacer la foto del mes»**. Si devuelve `faltan-secretos-umami`,
    revisar el paso 3.
 
-## 5. Operativa mensual (5 minutos)
+## 5. Operativa mensual (5-10 minutos)
 
-- **Día 2 (solo):** el cron hace la foto del mes anterior. Si fallara, el botón
-  del panel hace lo mismo a mano.
+- **Día 2-3 — la foto del mes anterior, por la vía ASISTIDA** (mientras Umami siga
+  en plan gratuito): Claude lee el dashboard de `cloud.umami.is` con el navegador
+  (mes anterior completo: visitas de las fichas `/lugar/…` + desglose del dato
+  `negocio` en los eventos `click-salida-web` / `planner-reserva` /
+  `planner-web-oficial`) y deposita las filas con la acción `medicion` de la API
+  (mismo upsert que usaría el cron; fuente `manual-asistida`). El cron del día 2
+  queda en guardia: si algún día hay Umami Pro + `UMAMI_API_KEY`, hace la foto solo
+  y la vía asistida sobra.
 - **Cuando entra dinero:** registrar el cobro en el detalle del socio (fecha,
   concepto, importe, nº de factura, cobrado). La factura la emite la gestoría de
   Menorca Bus, S.L.; el panel solo guarda la referencia.
