@@ -46,3 +46,10 @@ REDES-SOCIALES/
 
 # Estado local de wrangler dev (D1 local, cache)
 .wrangler/
+
+# Negocio y estrategia (contactos de empresas, tratos, dinero): NUNCA a un repo
+# público. Su copia de seguridad es el script de respaldo (KAN-53), no git.
+COLABORACIONES/
+NEGOCIO/
+ESTRATEGIA/
+_PANEL/
