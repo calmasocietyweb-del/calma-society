@@ -14,6 +14,10 @@ import { SITE } from "../../config/site";
 import { VEHICLE_CATEGORIES, EXTRAS } from "../../lib/bookings/catalog";
 
 const onVercel = !!process.env.VERCEL;
+
+// Página con autenticación y datos: PROHIBIDO que el edge la cachee (el
+// adaptador emite public,max-age=0 por defecto y Vercel llegó a servir un HIT).
+if (onVercel) Astro.response.headers.set("cache-control", "no-store");
 const USER = process.env.PANEL_USER ?? "";
 const PASS = process.env.PANEL_PASS ?? "";
 const ADMIN_KEY = process.env.RESERVAS_ADMIN_KEY ?? "";
@@ -30,7 +34,7 @@ if (onVercel && USER && PASS) {
   if (!ok) {
     return new Response("Autenticación requerida", {
       status: 401,
-      headers: { "WWW-Authenticate": 'Basic realm="Panel Calma Society"' },
+      headers: { "WWW-Authenticate": 'Basic realm="Panel Calma Society"', "cache-control": "no-store" },
     });
   }
 }
