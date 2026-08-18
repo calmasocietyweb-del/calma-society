@@ -1,0 +1,30 @@
+{
+ "name": "Biniarroca",
+ "lang": "es",
+ "translationKey": "biniarroca",
+ "type": "alojamiento",
+ "edition": "menorca",
+ "description": "Un lloc menorquín del siglo XVII entre Sant Lluís, Es Castell y Maó, pionero del hotel rural en la isla (abrió en 1998 tras tres años de restauración). Solo para adultos, con dos piscinas entre jardines desbordados de flores, terrazas de piedra y un restaurante a la carta de acento francés. Romántico sin cursilería.",
+ "coordinates": {
+  "lat": 39.856,
+  "lng": 4.254
+ },
+ "area": "Sureste (Sant Lluís)",
+ "practicalInfo": {
+  "acceso": "Campo de Sant Lluís, entre el pueblo, Es Castell y Maó; el aeropuerto a unos 12 minutos.",
+  "horario": "Confirma temporada y fechas en la web oficial.",
+  "servicios": "Solo adultos, dos piscinas exteriores, jardines, restaurante a la carta."
+ },
+ "website": "https://www.biniarroca.com/",
+ "images": [],
+ "tags": [
+  "alojamiento",
+  "hotel",
+  "lujo",
+  "sant-lluis"
+ ],
+ "status": "draft",
+ "seo": {
+  "description": "Biniarroca, Sant Lluís: lloc del s. XVII pionero del hotel rural, solo adultos, con dos piscinas y jardines."
+ }
+}

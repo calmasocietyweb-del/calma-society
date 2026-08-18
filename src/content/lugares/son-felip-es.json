@@ -1,0 +1,30 @@
+{
+ "name": "Son Felip",
+ "lang": "es",
+ "translationKey": "son-felip",
+ "type": "alojamiento",
+ "edition": "menorca",
+ "description": "Una finca-granja ecológica del norte de Ciutadella, entre Algaiarens y Cala Pilar, con una casa de campo de uso exclusivo: se alquila entera, con piscina entre olivos, huerto ecológico, caballos de raza menorquina y un camino privado que baja a Cala Pilar por el Camí de Cavalls. Certificada Starlight por la calidad de su cielo nocturno. El lujo aquí es literal: la finca entera para ti.",
+ "coordinates": {
+  "lat": 40.047,
+  "lng": 3.908
+ },
+ "area": "Norte (Ciutadella)",
+ "practicalInfo": {
+  "acceso": "Norte de Ciutadella, zona de Algaiarens; indicaciones al reservar.",
+  "horario": "Uso exclusivo bajo reserva; consulta disponibilidad en la web oficial.",
+  "servicios": "Casa de uso exclusivo, piscina, huerto ecológico, caballos menorquines, acceso privado hacia Cala Pilar, cielo Starlight."
+ },
+ "website": "https://sonfelip.com/",
+ "images": [],
+ "tags": [
+  "alojamiento",
+  "villa",
+  "lujo",
+  "ciutadella"
+ ],
+ "status": "draft",
+ "seo": {
+  "description": "Son Felip, norte de Ciutadella: finca ecológica de uso exclusivo entre Algaiarens y Cala Pilar, con caballos y cielo Starlight."
+ }
+}

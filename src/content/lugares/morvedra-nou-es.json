@@ -1,0 +1,30 @@
+{
+ "name": "Morvedra Nou",
+ "lang": "es",
+ "translationKey": "morvedra-nou",
+ "type": "alojamiento",
+ "edition": "menorca",
+ "description": "Hotel rural solo para adultos en el campo de Ciutadella, camino de las calas del sur, con habitaciones rústicas que dan a terraza o jardín propio —algunas con piscina privada— y cocina menorquina tradicional en su restaurante. Abre de junio a octubre: un verano de campo a diez minutos de Macarella.",
+ "coordinates": {
+  "lat": 39.966,
+  "lng": 3.885
+ },
+ "area": "Oeste (Ciutadella)",
+ "practicalInfo": {
+  "acceso": "Campo de Ciutadella, a unos 7 km de la ciudad, en dirección a las calas del sur.",
+  "horario": "Temporada de junio a octubre; confirma fechas en la web oficial.",
+  "servicios": "Solo adultos, piscina exterior, habitaciones con terraza o jardín (algunas con piscina privada), restaurante de cocina menorquina."
+ },
+ "website": "https://www.morvedranou.es/",
+ "images": [],
+ "tags": [
+  "alojamiento",
+  "agroturismo",
+  "lujo",
+  "ciutadella"
+ ],
+ "status": "draft",
+ "seo": {
+  "description": "Morvedra Nou, Ciutadella: hotel rural solo adultos camino de las calas del sur, con piscina y cocina menorquina."
+ }
+}

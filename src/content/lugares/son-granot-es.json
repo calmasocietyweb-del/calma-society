@@ -1,0 +1,30 @@
+{
+ "name": "Son Granot",
+ "lang": "es",
+ "translationKey": "son-granot",
+ "type": "alojamiento",
+ "edition": "menorca",
+ "description": "La casa georgiana roja del siglo XVIII sobre Es Castell, con ocho habitaciones y una de las vistas más nobles de la isla: la bocana del puerto de Maó y La Mola enfrente. Jardines con muros de piedra seca levantados sobre defensas británicas, huerto propio que alimenta su restaurante, y el mar a 500 metros. Historia menorquina con desayuno.",
+ "coordinates": {
+  "lat": 39.876,
+  "lng": 4.283
+ },
+ "area": "Este (Es Castell)",
+ "practicalInfo": {
+  "acceso": "Es Castell, a la entrada del puerto de Maó.",
+  "horario": "Confirma temporada y fechas en la web oficial.",
+  "servicios": "8 habitaciones (5 con vista al mar), piscina y jardines, restaurante con huerto propio."
+ },
+ "website": "https://www.songranot.com/",
+ "images": [],
+ "tags": [
+  "alojamiento",
+  "hotel",
+  "lujo",
+  "es-castell"
+ ],
+ "status": "draft",
+ "seo": {
+  "description": "Son Granot, Es Castell: casa georgiana del s. XVIII con 8 habitaciones y vistas a la bocana del puerto de Maó."
+ }
+}

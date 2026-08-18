@@ -1,0 +1,30 @@
+{
+ "name": "Son Felip",
+ "lang": "en",
+ "translationKey": "son-felip",
+ "type": "alojamiento",
+ "edition": "menorca",
+ "description": "An organic farm estate in northern Ciutadella, between Algaiarens and Cala Pilar, with an exclusive-use country house: you rent the whole place, with a pool among olive trees, an organic garden, purebred Menorcan horses and a private path down to Cala Pilar on the Camí de Cavalls. Starlight-certified for the quality of its night sky. Luxury here is literal: the entire estate to yourself.",
+ "coordinates": {
+  "lat": 40.047,
+  "lng": 3.908
+ },
+ "area": "North (Ciutadella)",
+ "practicalInfo": {
+  "acceso": "North of Ciutadella, Algaiarens area; directions on booking.",
+  "horario": "Exclusive use by reservation; check availability on the official website.",
+  "servicios": "Exclusive-use house, pool, organic garden, Menorcan horses, private path towards Cala Pilar, Starlight sky."
+ },
+ "website": "https://sonfelip.com/",
+ "images": [],
+ "tags": [
+  "alojamiento",
+  "villa",
+  "lujo",
+  "ciutadella"
+ ],
+ "status": "draft",
+ "seo": {
+  "description": "Son Felip, north Ciutadella: an exclusive-use organic estate between Algaiarens and Cala Pilar, with horses and a Starlight sky."
+ }
+}

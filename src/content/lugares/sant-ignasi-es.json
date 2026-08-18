@@ -1,0 +1,30 @@
+{
+ "name": "Sant Ignasi",
+ "lang": "es",
+ "translationKey": "sant-ignasi",
+ "type": "alojamiento",
+ "edition": "menorca",
+ "description": "Una casa de campo de 1777 al norte de Ciutadella, camino de Cala Morell, convertida en hotel rural con piscina entre jardines, pistas de tenis y pádel y servicio de masajes. Clásico y sin estridencias: la finca de siempre, bien llevada, a diez minutos del casco antiguo.",
+ "coordinates": {
+  "lat": 40.018,
+  "lng": 3.864
+ },
+ "area": "Oeste (Ciutadella)",
+ "practicalInfo": {
+  "acceso": "Norte de Ciutadella, en dirección a Cala Morell.",
+  "horario": "Confirma temporada y fechas en la web oficial.",
+  "servicios": "Piscina exterior, jardines, tenis y pádel, masajes, aparcamiento."
+ },
+ "website": "https://www.santignasi.com/",
+ "images": [],
+ "tags": [
+  "alojamiento",
+  "hotel",
+  "lujo",
+  "ciutadella"
+ ],
+ "status": "draft",
+ "seo": {
+  "description": "Sant Ignasi, Ciutadella: casa de 1777 convertida en hotel rural con piscina, tenis y jardines, camino de Cala Morell."
+ }
+}

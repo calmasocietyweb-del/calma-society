@@ -1,0 +1,30 @@
+{
+ "name": "Casa Ládico",
+ "lang": "es",
+ "translationKey": "casa-ladico",
+ "type": "alojamiento",
+ "edition": "menorca",
+ "description": "Casona del siglo XIX a unos minutos a pie del puerto de Maó, convertida en boutique solo para adultos: catorce habitaciones, patio tranquilo con piscina exterior, suite de spa propia y un café-bistró de producto menorquín. Es la opción serena del centro: calle silenciosa, desayuno largo y el puerto a mano.",
+ "coordinates": {
+  "lat": 39.89,
+  "lng": 4.266
+ },
+ "area": "Este (Maó)",
+ "practicalInfo": {
+  "acceso": "Centro de Maó, a pocos minutos a pie del puerto.",
+  "horario": "Confirma temporada y fechas en la web oficial.",
+  "servicios": "14 habitaciones (solo adultos), piscina exterior con terraza, Ládico Spa Suite, Café Ládico de producto local."
+ },
+ "website": "https://www.bordoyhotels.com/es/hotel-casa-ladico/hotel",
+ "images": [],
+ "tags": [
+  "alojamiento",
+  "hotel",
+  "lujo",
+  "mao"
+ ],
+ "status": "draft",
+ "seo": {
+  "description": "Casa Ládico, Maó: boutique solo adultos del s. XIX con patio, piscina y spa, a minutos del puerto."
+ }
+}
