@@ -16,7 +16,9 @@
   "servicios": "Restaurante Faustino, spa con piscina (Casa de Pau), barcos privados para excursiones, varios palacetes en el centro histórico."
  },
  "website": "https://faustinogran.com/",
- "images": [],
+ "images": [
+  "/uploads/ciutadella-puerto.webp"
+ ],
  "tags": [
   "alojamiento",
   "hotel",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Faustino Gran (Relais & Châteaux), Ciutadella: palacetes del casco antiguo convertidos en hotel boutique con spa y barcos propios."
- }
+ },
+ "imageAlt": "El puerto viejo de Ciutadella al atardecer, con los tejados del casco antiguo.",
+ "imageCredit": "Adobe Stock"
 }

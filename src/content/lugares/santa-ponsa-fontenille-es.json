@@ -16,7 +16,9 @@
   "servicios": "22 habitaciones y suites, piscina infinita, spa en las cisternas antiguas, restaurante Nura, jardines en terrazas."
  },
  "website": "https://www.santa-ponsa.fontenille-collection.com/",
- "images": [],
+ "images": [
+  "/uploads/alaior.webp"
+ ],
  "tags": [
   "alojamiento",
   "agroturismo",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Santa Ponsa (Fontenille), Alaior: finca palaciega del s. XVII con 22 habitaciones, spa en las cisternas y restaurante Nura."
- }
+ },
+ "imageAlt": "Calle empedrada de casas encaladas con persianas verdes en el casco antiguo de Alaior.",
+ "imageCredit": "Mathewr1999 / Wikimedia Commons (CC BY-SA 4.0)"
 }

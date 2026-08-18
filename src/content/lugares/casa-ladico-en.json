@@ -16,7 +16,9 @@
   "servicios": "14 rooms (adults only), outdoor pool with terrace, Ládico Spa Suite, Café Ládico with local produce."
  },
  "website": "https://www.bordoyhotels.com/es/hotel-casa-ladico/hotel",
- "images": [],
+ "images": [
+  "/uploads/puerto-mao.webp"
+ ],
  "tags": [
   "alojamiento",
   "hotel",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Casa Ládico, Maó: a 19th-century adults-only boutique with courtyard pool and spa, minutes from the harbour."
- }
+ },
+ "imageAlt": "The harbour of Mahón with its waterfront.",
+ "imageCredit": "Adobe Stock"
 }

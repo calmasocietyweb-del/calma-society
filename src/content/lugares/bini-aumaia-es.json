@@ -16,7 +16,9 @@
   "servicios": "Finca en activo con huerto ecológico, gallinas y vacas. Casa menorquina restaurada de una planta."
  },
  "website": "https://www.biniaumaia.com/",
- "images": [],
+ "images": [
+  "/uploads/monte-toro.webp"
+ ],
  "tags": [
   "alojamiento",
   "agroturismo",
@@ -25,5 +27,7 @@
  "status": "published",
  "seo": {
   "description": "Bini Aumaia (Es Mercadal): agroturismo en una finca en activo de 98 ha a 850 m del pueblo, con huerto ecológico y ganado."
- }
+ },
+ "imageAlt": "La isla de Menorca y el pueblo de Es Mercadal vistos desde la cima del Monte Toro.",
+ "imageCredit": "Ian Kirk / Wikimedia Commons (CC BY 2.0)"
 }

@@ -16,7 +16,9 @@
   "servicios": "15 habitaciones en dos edificios, jardín con restaurante Es Jardí, Illa Spa, terraza en la azotea."
  },
  "website": "https://hotelsesbruixes.com/",
- "images": [],
+ "images": [
+  "/uploads/puerto-mao.webp"
+ ],
  "tags": [
   "alojamiento",
   "hotel",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Ses Bruixes, Maó: casa de 1811 con 15 habitaciones, jardín-restaurante y spa en el centro de la ciudad."
- }
+ },
+ "imageAlt": "El puerto de Maó, con su paseo junto al agua.",
+ "imageCredit": "Adobe Stock"
 }

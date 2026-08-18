@@ -16,7 +16,9 @@
   "servicios": "Exclusive-use house, pool, organic garden, Menorcan horses, private path towards Cala Pilar, Starlight sky."
  },
  "website": "https://sonfelip.com/",
- "images": [],
+ "images": [
+  "/uploads/playa-norte-menorca.webp"
+ ],
  "tags": [
   "alojamiento",
   "villa",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Son Felip, north Ciutadella: an exclusive-use organic estate between Algaiarens and Cala Pilar, with horses and a Starlight sky."
- }
+ },
+ "imageAlt": "A golden-sand beach with calm water on Menorca north coast, with low green hills behind.",
+ "imageCredit": "Adobe Stock"
 }

@@ -16,7 +16,9 @@
   "servicios": "Adults only, outdoor pool, rooms with terrace or garden (some with private pools), Menorcan restaurant."
  },
  "website": "https://www.morvedranou.es/",
- "images": [],
+ "images": [
+  "/uploads/cami-de-cavalls.webp"
+ ],
  "tags": [
   "alojamiento",
   "agroturismo",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Morvedra Nou, Ciutadella: an adults-only rural hotel on the way to the southern coves, with pool and Menorcan cooking."
- }
+ },
+ "imageAlt": "A turquoise cove between cliffs and pines on the Camí de Cavalls, Menorca.",
+ "imageCredit": "Pelayo Arbués / Unsplash"
 }

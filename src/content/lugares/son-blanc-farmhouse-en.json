@@ -16,7 +16,9 @@
   "servicios": "Fourteen rooms. Seasonal kitchen, table bookable. contact@sonblancmenorca.com · +34 624 171 408."
  },
  "website": "https://www.sonblancmenorca.com/",
- "images": [],
+ "images": [
+  "/uploads/casa-piedra.webp"
+ ],
  "tags": [
   "alojamiento",
   "agroturismo",
@@ -25,5 +27,7 @@
  "status": "published",
  "seo": {
   "description": "Son Blanc Farmhouse (Alaior): a 14-room agrotourism stay on a 130-hectare working farm, with a seasonal kitchen."
- }
+ },
+ "imageAlt": "Interior of a Mediterranean stone house, with wooden beams and a staircase.",
+ "imageCredit": "Adobe Stock"
 }

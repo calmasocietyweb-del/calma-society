@@ -16,7 +16,9 @@
   "servicios": "Veintisiete habitaciones, algunas junior suite con piscina privada. Restaurante. 89 hectáreas de campo."
  },
  "website": "https://www.binigausvell.com/",
- "images": [],
+ "images": [
+  "/uploads/binigaus.webp"
+ ],
  "tags": [
   "alojamiento",
   "hotel-rural",
@@ -25,5 +27,7 @@
  "status": "published",
  "seo": {
   "description": "Binigaus Vell (Es Migjorn Gran): hotel rural de 27 habitaciones en una finca de 89 ha donde se hacía queso Mahón-Menorca."
- }
+ },
+ "imageAlt": "La playa virgen de Binigaus, de arena dorada y acantilados, en Es Migjorn Gran.",
+ "imageCredit": "Adobe Stock"
 }

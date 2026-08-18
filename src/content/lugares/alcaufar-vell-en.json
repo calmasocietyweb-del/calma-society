@@ -16,7 +16,9 @@
   "servicios": "Restaurant open to non-residents. A 250-hectare estate inside the Biosphere Reserve."
  },
  "website": "http://alcaufarvell.com/",
- "images": [],
+ "images": [
+  "/uploads/binibeca.webp"
+ ],
  "tags": [
   "alojamiento",
   "hotel-rural",
@@ -25,5 +27,7 @@
  "status": "published",
  "seo": {
   "description": "Alcaufar Vell (Sant Lluís): a rural hotel in an 18th-century manor farm with 250 hectares and a restaurant open to all."
- }
+ },
+ "imageAlt": "Whitewashed houses and labyrinthine lanes of Binibeca Vell, in southeast Menorca.",
+ "imageCredit": "Adobe Stock"
 }

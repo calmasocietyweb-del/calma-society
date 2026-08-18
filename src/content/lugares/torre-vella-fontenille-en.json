@@ -16,7 +16,9 @@
   "servicios": "17 rooms and suites, Siempreviva restaurant, 200-hectare estate with olive groves and organic vineyard, access to the Santa Ponsa spa."
  },
  "website": "https://www.torre-vella.fontenille-collection.com/",
- "images": [],
+ "images": [
+  "/uploads/cami-de-cavalls.webp"
+ ],
  "tags": [
   "alojamiento",
   "agroturismo",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Torre Vella (Fontenille), Alaior: an agroturismo around a watchtower, 17 rooms on a 200-hectare estate with its own wine."
- }
+ },
+ "imageAlt": "A turquoise cove between cliffs and pines on the Camí de Cavalls, Menorca.",
+ "imageCredit": "Pelayo Arbués / Unsplash"
 }

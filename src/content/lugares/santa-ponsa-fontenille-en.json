@@ -16,7 +16,9 @@
   "servicios": "22 rooms and suites, infinity pool, spa in the old cisterns, Nura restaurant, terraced gardens."
  },
  "website": "https://www.santa-ponsa.fontenille-collection.com/",
- "images": [],
+ "images": [
+  "/uploads/alaior.webp"
+ ],
  "tags": [
   "alojamiento",
   "agroturismo",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Santa Ponsa (Fontenille), Alaior: a 17th-century palatial finca with 22 rooms, a cistern spa and the Nura restaurant."
- }
+ },
+ "imageAlt": "Cobbled street of whitewashed houses with green shutters in the old town of Alaior, Menorca.",
+ "imageCredit": "Mathewr1999 / Wikimedia Commons (CC BY-SA 4.0)"
 }

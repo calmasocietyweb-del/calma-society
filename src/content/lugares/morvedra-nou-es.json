@@ -16,7 +16,9 @@
   "servicios": "Solo adultos, piscina exterior, habitaciones con terraza o jardín (algunas con piscina privada), restaurante de cocina menorquina."
  },
  "website": "https://www.morvedranou.es/",
- "images": [],
+ "images": [
+  "/uploads/cami-de-cavalls.webp"
+ ],
  "tags": [
   "alojamiento",
   "agroturismo",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Morvedra Nou, Ciutadella: hotel rural solo adultos camino de las calas del sur, con piscina y cocina menorquina."
- }
+ },
+ "imageAlt": "Cala de aguas turquesas entre acantilados y pinos en el Camí de Cavalls.",
+ "imageCredit": "Pelayo Arbués / Unsplash"
 }

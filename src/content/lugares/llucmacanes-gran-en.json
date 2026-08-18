@@ -16,7 +16,9 @@
   "servicios": "Houses, apartments and rooms. Owner-run."
  },
  "website": "https://www.llucmagran.com/",
- "images": [],
+ "images": [
+  "/uploads/casa-piedra.webp"
+ ],
  "tags": [
   "alojamiento",
   "agroturismo",
@@ -25,5 +27,7 @@
  "status": "published",
  "seo": {
   "description": "Llucmaçanes Gran (Maó): an agrotourism stay on the square of Llucmaçanes, with houses, apartments and rooms."
- }
+ },
+ "imageAlt": "Interior of a Mediterranean stone house, with wooden beams and a staircase.",
+ "imageCredit": "Adobe Stock"
 }

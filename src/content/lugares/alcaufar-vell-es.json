@@ -16,7 +16,9 @@
   "servicios": "Restaurante abierto a clientes externos. Finca de 250 hectáreas dentro de la Reserva de Biosfera."
  },
  "website": "http://alcaufarvell.com/",
- "images": [],
+ "images": [
+  "/uploads/binibeca.webp"
+ ],
  "tags": [
   "alojamiento",
   "hotel-rural",
@@ -25,5 +27,7 @@
  "status": "published",
  "seo": {
   "description": "Alcaufar Vell (Sant Lluís): hotel rural en una finca señorial del siglo XVIII con 250 ha y restaurante abierto al público."
- }
+ },
+ "imageAlt": "Casas blancas encaladas y callejones laberínticos de Binibeca Vell, en el sureste de Menorca.",
+ "imageCredit": "Adobe Stock"
 }

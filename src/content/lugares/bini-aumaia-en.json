@@ -16,7 +16,9 @@
   "servicios": "A working farm with an organic garden, hens and cattle. Restored single-storey Menorcan house."
  },
  "website": "https://www.biniaumaia.com/",
- "images": [],
+ "images": [
+  "/uploads/monte-toro.webp"
+ ],
  "tags": [
   "alojamiento",
   "agroturismo",
@@ -25,5 +27,7 @@
  "status": "published",
  "seo": {
   "description": "Bini Aumaia (Es Mercadal): an agrotourism stay on a working 98-hectare farm 850 m from the village."
- }
+ },
+ "imageAlt": "View of the island of Menorca and the village of Es Mercadal from the summit of Monte Toro.",
+ "imageCredit": "Ian Kirk / Wikimedia Commons (CC BY 2.0)"
 }

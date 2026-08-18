@@ -16,7 +16,9 @@
   "servicios": "15 rooms across two buildings, garden with the Es Jardí restaurant, Illa Spa, rooftop terrace."
  },
  "website": "https://hotelsesbruixes.com/",
- "images": [],
+ "images": [
+  "/uploads/puerto-mao.webp"
+ ],
  "tags": [
   "alojamiento",
   "hotel",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Ses Bruixes, Maó: an 1811 house with 15 rooms, a garden restaurant and a spa in the city centre."
- }
+ },
+ "imageAlt": "The harbour of Mahón with its waterfront.",
+ "imageCredit": "Adobe Stock"
 }

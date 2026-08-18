@@ -16,7 +16,9 @@
   "servicios": "8 rooms, seasonal outdoor pool, own DOP Mahón-Menorca cheese dairy and winery, vineyards and gardens."
  },
  "website": "https://santpatrici.com/",
- "images": [],
+ "images": [
+  "/uploads/queso-mahon-artesa.webp"
+ ],
  "tags": [
   "alojamiento",
   "agroturismo",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Ca Na Xini, Ferreries: an 8-room rural hotel on the Hort Sant Patrici estate, with its own DOP dairy and winery."
- }
+ },
+ "imageAlt": "A square block of artisan cured Mahón-Menorca cheese on a wooden board, with its natural rind and ivory paste.",
+ "imageCredit": "Slastic / Wikimedia Commons (public domain)"
 }

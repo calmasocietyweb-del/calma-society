@@ -16,7 +16,9 @@
   "servicios": "Piscina exterior con vistas al mar, spa, varios restaurantes, acceso directo a la playa de Sant Tomàs."
  },
  "website": "https://www.melia.com/es/hoteles/espana/menorca/villa-le-blanc-gran-melia",
- "images": [],
+ "images": [
+  "/uploads/binigaus.webp"
+ ],
  "tags": [
   "alojamiento",
   "hotel",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Villa Le Blanc Gran Meliá, playa de Sant Tomàs: el 5 estrellas frente al mar de la costa sur, con spa y cocina local."
- }
+ },
+ "imageAlt": "La playa virgen de Binigaus, de arena dorada y acantilados, en Es Migjorn Gran.",
+ "imageCredit": "Adobe Stock"
 }

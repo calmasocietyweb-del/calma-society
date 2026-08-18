@@ -16,7 +16,9 @@
   "servicios": "15 suites with private pools, Casa del Mar restaurant, spa and massages, yoga, private skippered boats."
  },
  "website": "https://www.relaischateaux.com/us/hotel/cap-menorca/",
- "images": [],
+ "images": [
+  "/uploads/son-bou.webp"
+ ],
  "tags": [
   "alojamiento",
   "hotel",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "CAP Menorca (Relais & Châteaux), Alaior: 15 clifftop suites with private pools on the south coast, with a private fleet."
- }
+ },
+ "imageAlt": "The long arc of Son Bou, Menorca longest beach, seen from the cliffs.",
+ "imageCredit": "Wasquewhat / Wikimedia Commons (CC BY-SA 4.0)"
 }

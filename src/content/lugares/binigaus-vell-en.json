@@ -16,7 +16,9 @@
   "servicios": "Twenty-seven rooms, some junior suites with a private pool. Restaurant. 89 hectares of countryside."
  },
  "website": "https://www.binigausvell.com/",
- "images": [],
+ "images": [
+  "/uploads/binigaus.webp"
+ ],
  "tags": [
   "alojamiento",
   "hotel-rural",
@@ -25,5 +27,7 @@
  "status": "published",
  "seo": {
   "description": "Binigaus Vell (Es Migjorn Gran): a 27-room rural hotel on an 89-hectare estate where Mahón-Menorca cheese was once made."
- }
+ },
+ "imageAlt": "The wild beach of Binigaus, with golden sand and cliffs, in Es Migjorn Gran, Menorca.",
+ "imageCredit": "Adobe Stock"
 }

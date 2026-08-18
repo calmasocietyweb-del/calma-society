@@ -16,7 +16,9 @@
   "servicios": "Suites con jardín privado, dos piscinas exteriores, dos restaurantes y bar, cala semiprivada a pie, experiencias de finca."
  },
  "website": "https://vestigecollection.com/son-vell/",
- "images": [],
+ "images": [
+  "/uploads/cami-de-cavalls.webp"
+ ],
  "tags": [
   "alojamiento",
   "hotel",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Son Vell (Vestige Collection), Ciutadella: casa señorial del s. XVIII en una finca de 180 ha con cala propia, dos piscinas y dos restaurantes."
- }
+ },
+ "imageAlt": "Cala de aguas turquesas entre acantilados y pinos en el Camí de Cavalls.",
+ "imageCredit": "Pelayo Arbués / Unsplash"
 }

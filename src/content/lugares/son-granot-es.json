@@ -16,7 +16,9 @@
   "servicios": "8 habitaciones (5 con vista al mar), piscina y jardines, restaurante con huerto propio."
  },
  "website": "https://www.songranot.com/",
- "images": [],
+ "images": [
+  "/uploads/cales-fonts.webp"
+ ],
  "tags": [
   "alojamiento",
   "hotel",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Son Granot, Es Castell: casa georgiana del s. XVIII con 8 habitaciones y vistas a la bocana del puerto de Maó."
- }
+ },
+ "imageAlt": "El puerto de Cales Fonts en Es Castell, con barcas tradicionales y casas sobre el acantilado.",
+ "imageCredit": "Adobe Stock"
 }

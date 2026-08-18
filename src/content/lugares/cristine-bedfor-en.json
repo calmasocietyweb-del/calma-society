@@ -16,7 +16,9 @@
   "servicios": "21 rooms, garden, La Cocina de Cristine restaurant (chef Pau Sintes), massages and spa, shared lounge."
  },
  "website": "https://cristinebedforhotel.com/en/menorca/",
- "images": [],
+ "images": [
+  "/uploads/puerto-mao.webp"
+ ],
  "tags": [
   "alojamiento",
   "hotel",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Cristine Bedfor, Maó: boutique hotel with Lorenzo Castillo interiors, a garden and La Cocina de Cristine. Michelin Key 2025."
- }
+ },
+ "imageAlt": "The harbour of Mahón with its waterfront.",
+ "imageCredit": "Adobe Stock"
 }

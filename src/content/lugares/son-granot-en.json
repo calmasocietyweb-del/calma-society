@@ -16,7 +16,9 @@
   "servicios": "8 rooms (5 with sea views), pool and gardens, restaurant with its own kitchen garden."
  },
  "website": "https://www.songranot.com/",
- "images": [],
+ "images": [
+  "/uploads/cales-fonts.webp"
+ ],
  "tags": [
   "alojamiento",
   "hotel",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Son Granot, Es Castell: an 18th-century Georgian house with 8 rooms overlooking the mouth of Maó harbour."
- }
+ },
+ "imageAlt": "The Cales Fonts harbour in Es Castell, with traditional boats and houses above the water.",
+ "imageCredit": "Adobe Stock"
 }

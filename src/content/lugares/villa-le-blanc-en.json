@@ -16,7 +16,9 @@
   "servicios": "Sea-view outdoor pool, spa, several restaurants, direct access to Sant Tomàs beach."
  },
  "website": "https://www.melia.com/es/hoteles/espana/menorca/villa-le-blanc-gran-melia",
- "images": [],
+ "images": [
+  "/uploads/binigaus.webp"
+ ],
  "tags": [
   "alojamiento",
   "hotel",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Villa Le Blanc Gran Meliá, Sant Tomàs beach: the seafront five-star on the south coast, with a spa and local cuisine."
- }
+ },
+ "imageAlt": "The wild beach of Binigaus, with golden sand and cliffs, in Es Migjorn Gran, Menorca.",
+ "imageCredit": "Adobe Stock"
 }

@@ -16,7 +16,9 @@
   "servicios": "Faustino restaurant, spa with pool (Casa de Pau), private boats for excursions, several palaces in the historic centre."
  },
  "website": "https://faustinogran.com/",
- "images": [],
+ "images": [
+  "/uploads/ciutadella-puerto.webp"
+ ],
  "tags": [
   "alojamiento",
   "hotel",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Faustino Gran (Relais & Châteaux), Ciutadella: old-town palaces turned boutique hotel with a spa and private boats."
- }
+ },
+ "imageAlt": "The old harbour of Ciutadella at sunset, with the rooftops of the historic centre.",
+ "imageCredit": "Adobe Stock"
 }

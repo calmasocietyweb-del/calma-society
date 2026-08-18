@@ -16,7 +16,9 @@
   "servicios": "Adults only, two outdoor pools, gardens, à la carte restaurant."
  },
  "website": "https://www.biniarroca.com/",
- "images": [],
+ "images": [
+  "/uploads/binibeca-calle.webp"
+ ],
  "tags": [
   "alojamiento",
   "hotel",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Biniarroca, Sant Lluís: a 17th-century lloc and rural-hotel pioneer, adults only, with two pools and gardens."
- }
+ },
+ "imageAlt": "A whitewashed lane with a white staircase in Binibeca Vell, southeast Menorca.",
+ "imageCredit": "Adobe Stock"
 }

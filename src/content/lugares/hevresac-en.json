@@ -16,7 +16,9 @@
   "servicios": "8 rooms, breakfast of local and organic produce, Biosphere certificate."
  },
  "website": "https://www.hotelhevresac.com/",
- "images": [],
+ "images": [
+  "/uploads/casa-piedra.webp"
+ ],
  "tags": [
   "alojamiento",
   "hotel",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Hevresac, Maó: an 8-room boutique hotel in an 18th-century manor, Biosphere certified."
- }
+ },
+ "imageAlt": "Interior of a Mediterranean stone house, with wooden beams and a staircase.",
+ "imageCredit": "Adobe Stock"
 }

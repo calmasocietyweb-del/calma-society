@@ -16,7 +16,9 @@
   "servicios": "15 suites con piscina privada, restaurante Casa del Mar, spa y masajes, yoga, barcos privados con patrón."
  },
  "website": "https://www.relaischateaux.com/us/hotel/cap-menorca/",
- "images": [],
+ "images": [
+  "/uploads/son-bou.webp"
+ ],
  "tags": [
   "alojamiento",
   "hotel",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "CAP Menorca (Relais & Châteaux), Alaior: 15 suites con piscina privada sobre un acantilado de la costa sur, con barcos propios."
- }
+ },
+ "imageAlt": "El gran arco de la playa de Son Bou, la más larga de Menorca, vista desde el acantilado.",
+ "imageCredit": "Wasquewhat / Wikimedia Commons (CC BY-SA 4.0)"
 }

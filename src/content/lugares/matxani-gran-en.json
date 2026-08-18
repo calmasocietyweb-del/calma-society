@@ -16,7 +16,9 @@
   "servicios": "Its own organic kitchen garden and farm animals. Pool and gardens."
  },
  "website": "http://matxanigran.com/",
- "images": [],
+ "images": [
+  "/uploads/talati-de-dalt.webp"
+ ],
  "tags": [
   "alojamiento",
   "agroturismo",
@@ -25,5 +27,7 @@
  "status": "published",
  "seo": {
   "description": "Matxani Gran (Sant Climent): an agrotourism stay in a Menorcan farmhouse with its own organic garden and farm animals."
- }
+ },
+ "imageAlt": "The taula of Talatí de Dalt with its fallen pillar leaning against it, among olive trees at the Talayotic settlement.",
+ "imageCredit": "Paul Stephenson · Wikimedia (CC BY 2.0)"
 }

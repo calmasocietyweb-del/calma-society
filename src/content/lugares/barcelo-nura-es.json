@@ -16,7 +16,9 @@
   "servicios": "128 habitaciones (45 con piscina semiprivada), tres piscinas, spa y gimnasio, restaurantes."
  },
  "website": "https://www.barcelo.com/es-es/barcelo-nura/",
- "images": [],
+ "images": [
+  "/uploads/binibeca.webp"
+ ],
  "tags": [
   "alojamiento",
   "hotel",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Barceló Nura, Biniancolla: el resort de diseño 5 estrellas junto a Punta Prima, con piscinas semiprivadas y spa."
- }
+ },
+ "imageAlt": "Casas blancas encaladas y callejones laberínticos de Binibeca Vell, en el sureste de Menorca.",
+ "imageCredit": "Adobe Stock"
 }

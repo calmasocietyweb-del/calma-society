@@ -16,7 +16,9 @@
   "servicios": "17 habitaciones y suites, restaurante Siempreviva, finca de 200 ha con olivar y viñedo ecológico, acceso al spa de Santa Ponsa."
  },
  "website": "https://www.torre-vella.fontenille-collection.com/",
- "images": [],
+ "images": [
+  "/uploads/cami-de-cavalls.webp"
+ ],
  "tags": [
   "alojamiento",
   "agroturismo",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Torre Vella (Fontenille), Alaior: agroturismo en torno a una torre de vigía, 17 habitaciones y finca de 200 ha con vino propio."
- }
+ },
+ "imageAlt": "Cala de aguas turquesas entre acantilados y pinos en el Camí de Cavalls.",
+ "imageCredit": "Pelayo Arbués / Unsplash"
 }

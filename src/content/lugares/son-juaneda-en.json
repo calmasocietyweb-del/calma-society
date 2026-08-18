@@ -16,7 +16,9 @@
   "servicios": "Nine rooms. Its own 29 kWp solar array. agroturismo@sonjuaneda.com · +34 686 40 42 75."
  },
  "website": "http://sonjuaneda.com/",
- "images": [],
+ "images": [
+  "/uploads/ciutadella-puerto.webp"
+ ],
  "tags": [
   "alojamiento",
   "agroturismo",
@@ -25,5 +27,7 @@
  "status": "published",
  "seo": {
   "description": "Son Juaneda (Ciutadella): a nine-room agrotourism stay in an 18th-century farmhouse on the road to Cala Morell."
- }
+ },
+ "imageAlt": "The old harbour of Ciutadella at sunset, with the rooftops of the historic centre.",
+ "imageCredit": "Adobe Stock"
 }

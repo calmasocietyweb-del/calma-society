@@ -16,7 +16,9 @@
   "servicios": "Garden suites, two outdoor pools, two restaurants and a bar, semi-private cove on foot, estate experiences."
  },
  "website": "https://vestigecollection.com/son-vell/",
- "images": [],
+ "images": [
+  "/uploads/cami-de-cavalls.webp"
+ ],
  "tags": [
   "alojamiento",
   "hotel",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Son Vell (Vestige Collection), Ciutadella: an 18th-century manor on a 180-hectare estate with its own cove, two pools and two restaurants."
- }
+ },
+ "imageAlt": "A turquoise cove between cliffs and pines on the Camí de Cavalls, Menorca.",
+ "imageCredit": "Pelayo Arbués / Unsplash"
 }

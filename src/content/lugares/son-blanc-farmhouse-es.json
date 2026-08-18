@@ -16,7 +16,9 @@
   "servicios": "Catorce habitaciones. Cocina de temporada con mesa reservable. contact@sonblancmenorca.com · +34 624 171 408."
  },
  "website": "https://www.sonblancmenorca.com/",
- "images": [],
+ "images": [
+  "/uploads/casa-piedra.webp"
+ ],
  "tags": [
   "alojamiento",
   "agroturismo",
@@ -25,5 +27,7 @@
  "status": "published",
  "seo": {
   "description": "Son Blanc Farmhouse (Alaior): agroturismo de 14 habitaciones en una finca de 130 ha con granja en activo y cocina de temporada."
- }
+ },
+ "imageAlt": "Interior de una casa mediterránea de piedra, con vigas de madera y escalera.",
+ "imageCredit": "Adobe Stock"
 }

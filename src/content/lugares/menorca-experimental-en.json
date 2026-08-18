@@ -16,7 +16,9 @@
   "servicios": "43 rooms (9 with private pools), infinity pool, restaurant and terrace with own kitchen garden, cocktail bar."
  },
  "website": "https://www.menorcaexperimental.com/",
- "images": [],
+ "images": [
+  "/uploads/alaior.webp"
+ ],
  "tags": [
   "alojamiento",
   "hotel",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Menorca Experimental, Alaior: a 19th-century finca with 43 rooms, an infinity pool and garden-to-table cooking near Cala Llucalari."
- }
+ },
+ "imageAlt": "Cobbled street of whitewashed houses with green shutters in the old town of Alaior, Menorca.",
+ "imageCredit": "Mathewr1999 / Wikimedia Commons (CC BY-SA 4.0)"
 }

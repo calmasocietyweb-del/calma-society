@@ -16,7 +16,9 @@
   "servicios": "Eight exhibition rooms, sculpture trail (Chillida, Miró...), Piet Oudolf garden, cantina and shop."
  },
  "website": "https://menorca.hauserwirth.com/",
- "images": [],
+ "images": [
+  "/uploads/illa-del-rei.webp"
+ ],
  "tags": [
   "arte",
   "cultura",
@@ -27,5 +29,7 @@
  "status": "published",
  "seo": {
   "description": "Hauser & Wirth Menorca, Illa del Rei: the international gallery in Maó harbour, with a Piet Oudolf garden. By boat."
- }
+ },
+ "imageAlt": "Aerial view of Illa del Rei, with the former military hospital, in the middle of the natural harbour of Maó, Menorca.",
+ "imageCredit": "Florent Pécassou / Wikimedia Commons (CC BY-SA 4.0)"
 }

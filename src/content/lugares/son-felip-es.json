@@ -16,7 +16,9 @@
   "servicios": "Casa de uso exclusivo, piscina, huerto ecológico, caballos menorquines, acceso privado hacia Cala Pilar, cielo Starlight."
  },
  "website": "https://sonfelip.com/",
- "images": [],
+ "images": [
+  "/uploads/playa-norte-menorca.webp"
+ ],
  "tags": [
   "alojamiento",
   "villa",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Son Felip, norte de Ciutadella: finca ecológica de uso exclusivo entre Algaiarens y Cala Pilar, con caballos y cielo Starlight."
- }
+ },
+ "imageAlt": "Playa de arena dorada y aguas tranquilas en la costa norte de Menorca, con colinas verdes bajas.",
+ "imageCredit": "Adobe Stock"
 }

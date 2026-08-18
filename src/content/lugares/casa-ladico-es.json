@@ -16,7 +16,9 @@
   "servicios": "14 habitaciones (solo adultos), piscina exterior con terraza, Ládico Spa Suite, Café Ládico de producto local."
  },
  "website": "https://www.bordoyhotels.com/es/hotel-casa-ladico/hotel",
- "images": [],
+ "images": [
+  "/uploads/puerto-mao.webp"
+ ],
  "tags": [
   "alojamiento",
   "hotel",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Casa Ládico, Maó: boutique solo adultos del s. XIX con patio, piscina y spa, a minutos del puerto."
- }
+ },
+ "imageAlt": "El puerto de Maó, con su paseo junto al agua.",
+ "imageCredit": "Adobe Stock"
 }

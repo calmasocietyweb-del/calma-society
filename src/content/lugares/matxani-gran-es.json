@@ -16,7 +16,9 @@
   "servicios": "Huerto ecológico propio y animales de granja. Piscina y jardines."
  },
  "website": "http://matxanigran.com/",
- "images": [],
+ "images": [
+  "/uploads/talati-de-dalt.webp"
+ ],
  "tags": [
   "alojamiento",
   "agroturismo",
@@ -25,5 +27,7 @@
  "status": "published",
  "seo": {
   "description": "Matxani Gran (Sant Climent): agroturismo en una casa de campo menorquina con huerto ecológico propio y animales de granja."
- }
+ },
+ "imageAlt": "La taula de Talatí de Dalt con su pilastra caída apoyada, entre olivos, en el poblado talayótico.",
+ "imageCredit": "Paul Stephenson · Wikimedia (CC BY 2.0)"
 }

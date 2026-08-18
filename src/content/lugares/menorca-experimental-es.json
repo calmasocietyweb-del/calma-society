@@ -16,7 +16,9 @@
   "servicios": "43 habitaciones (9 con piscina privada), piscina infinita, restaurante y terraza con huerto propio, coctelería."
  },
  "website": "https://www.menorcaexperimental.com/",
- "images": [],
+ "images": [
+  "/uploads/alaior.webp"
+ ],
  "tags": [
   "alojamiento",
   "hotel",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Menorca Experimental, Alaior: finca del s. XIX con 43 habitaciones, piscina infinita y cocina de huerto propio, cerca de Cala Llucalari."
- }
+ },
+ "imageAlt": "Calle empedrada de casas encaladas con persianas verdes en el casco antiguo de Alaior.",
+ "imageCredit": "Mathewr1999 / Wikimedia Commons (CC BY-SA 4.0)"
 }

@@ -16,7 +16,9 @@
   "servicios": "Garden and pond in the extension. Menorca Biosphere Reserve mark."
  },
  "website": "https://www.hotelsessucreres.com/",
- "images": [],
+ "images": [
+  "/uploads/cala-galdana.webp"
+ ],
  "tags": [
   "alojamiento",
   "hotel-de-pueblo",
@@ -25,5 +27,7 @@
  "status": "published",
  "seo": {
   "description": "Ses Sucreres (Ferreries): a small hotel in the old centre, in the village's former sweet shop, a hotel since 2009."
- }
+ },
+ "imageAlt": "The turquoise bay of Cala Galdana with sailboats and pine woods, in the municipality of Ferreries.",
+ "imageCredit": "Adobe Stock"
 }

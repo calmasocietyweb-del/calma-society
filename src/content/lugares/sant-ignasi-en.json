@@ -16,7 +16,9 @@
   "servicios": "Outdoor pool, gardens, tennis and padel, massages, parking."
  },
  "website": "https://www.santignasi.com/",
- "images": [],
+ "images": [
+  "/uploads/faro-punta-nati.webp"
+ ],
  "tags": [
   "alojamiento",
   "hotel",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Sant Ignasi, Ciutadella: a 1777 country house turned rural hotel with pool, tennis and gardens, near Cala Morell."
- }
+ },
+ "imageAlt": "Aerial view of the Punta Nati lighthouse on bare ochre rock, with the sea breaking against the cliff.",
+ "imageCredit": "Adobe Stock"
 }

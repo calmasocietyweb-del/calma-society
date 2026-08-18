@@ -16,7 +16,9 @@
   "servicios": "8 habitaciones, piscina exterior de temporada, quesería DOP Mahón-Menorca y bodega propias, viñedos y jardines."
  },
  "website": "https://santpatrici.com/",
- "images": [],
+ "images": [
+  "/uploads/queso-mahon-artesa.webp"
+ ],
  "tags": [
   "alojamiento",
   "agroturismo",
@@ -26,5 +28,7 @@
  "status": "published",
  "seo": {
   "description": "Ca Na Xini, Ferreries: hotel rural de 8 habitaciones en la finca Hort Sant Patrici, con quesería DOP y bodega propias."
- }
+ },
+ "imageAlt": "Un queso Mahón-Menorca artesano curado sobre tabla de madera, con su corteza natural y la pasta marfil.",
+ "imageCredit": "Slastic / Wikimedia Commons (public domain)"
 }

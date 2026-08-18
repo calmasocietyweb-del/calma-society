@@ -16,7 +16,9 @@
   "servicios": "Ocho salas de exposición, recorrido de esculturas (Chillida, Miró...), jardín de Piet Oudolf, cantina y tienda."
  },
  "website": "https://menorca.hauserwirth.com/",
- "images": [],
+ "images": [
+  "/uploads/illa-del-rei.webp"
+ ],
  "tags": [
   "arte",
   "cultura",
@@ -27,5 +29,7 @@
  "status": "published",
  "seo": {
   "description": "Hauser & Wirth Menorca, Illa del Rei: la gran galería internacional en el puerto de Maó, con jardín de Piet Oudolf. En barca."
- }
+ },
+ "imageAlt": "Vista aérea de la Illa del Rei, con el antiguo hospital naval, en medio del puerto natural de Maó.",
+ "imageCredit": "Florent Pécassou / Wikimedia Commons (CC BY-SA 4.0)"
 }
