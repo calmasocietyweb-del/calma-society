@@ -27,7 +27,7 @@ dice lo que el acuerdo *vale*; los cobros dicen lo que *entró*.
 
 | Pieza | Dónde vive | Qué hace |
 |---|---|---|
-| API | `functions/api/socios.ts`, enrutada en `worker.js` | `GET` estado completo · `POST` acciones `crear` / `actualizar` / `snapshot` / `importar`. **Todos los métodos** exigen la cabecera `x-admin-key` = secreto `SOCIOS_ADMIN_KEY`. Sin base D1 responde `503`. |
+| API | `functions/api/socios.ts`, enrutada en `worker.js` | `GET` estado completo · `POST` acciones `crear` / `actualizar` / `snapshot` / `importar` / `medicion`. **Todos los métodos** exigen la cabecera `x-admin-key` = secreto `SOCIOS_ADMIN_KEY`. Sin base D1 responde `503`. ⚠️ Las llamadas **servidor-a-servidor** (panel de Vercel, scripts) van a la URL directa del Worker `https://calma-society.calmasocietyweb.workers.dev/api/socios`: el escudo anti-bots del dominio público devuelve 403 a los fetch de datacenter (lección del encendido, 18-ago). Se puede cambiar sin código con la variable `SOCIOS_API_URL` en Vercel. |
 | Lógica pura | `src/lib/socios/` (`catalog`, `money`, `sql`, `resumen`) | Catálogo de estados/modelos, dinero en céntimos, esquema y sentencias, composición del panel. Testeada (`npm test`). |
 | Panel | `src/pages/panel/socios.astro` → `…vercel.app/panel/socios` | SSR solo en Vercel, Basic auth (`PANEL_USER`/`PANEL_PASS`). Dinero, curva mensual, avisos, tabla de socios y detalle con formularios (ficha, tratos, cobros). |
 | Índice | `src/pages/panel/index.astro` → `/panel/` | Una sola puerta: Editor, Analítica, Socios y dinero, Reservas + cuentas externas. |
