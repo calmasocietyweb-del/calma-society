@@ -50,16 +50,19 @@ de la web.
 Ejecutar en orden cuando el dueño dé el visto bueno:
 
 1. **Crear la base D1 y el binding.**
+   > **Nota 2026-08-18 (KAN-122):** la base es ahora **ÚNICA para toda la casa:
+   > `calma-db`** (binding `DB`), compartida con el registro de socios
+   > (`docs/PANEL-SOCIOS-DINERO.md`). Si ya existe por haber encendido el panel
+   > de socios, **salta la creación** y pasa directamente a crear la tabla.
    ```bash
-   npx wrangler d1 create calma-reservas
+   npx wrangler d1 create calma-db
    ```
-   Después, en el proyecto de Cloudflare Pages: **Settings → Functions →
-   D1 database bindings** → añadir binding con nombre `DB` apuntando a
-   `calma-reservas` (en producción y en preview si se quiere probar allí).
+   Después, enlazarla en `wrangler.jsonc` (bloque `d1_databases` comentado:
+   descomentar y pegar el `database_id`) y hacer push.
 
 2. **Crear la tabla.**
    ```bash
-   npx wrangler d1 execute calma-reservas --file=db/reservas-schema.sql
+   npx wrangler d1 execute calma-db --remote --file=db/reservas-schema.sql
    ```
    (La API también crea la tabla sola en el primer uso; este paso la deja
    lista y documentada.)
