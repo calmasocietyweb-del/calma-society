@@ -1,0 +1,30 @@
+{
+ "name": "Villa Le Blanc (Gran Meliá)",
+ "lang": "es",
+ "translationKey": "villa-le-blanc",
+ "type": "alojamiento",
+ "edition": "menorca",
+ "description": "El cinco estrellas en primera línea de la playa de Sant Tomàs, miembro de The Leading Hotels of the World. Piscina mirando al mar, spa completo y varios restaurantes con cocina local de temporada. Es el lujo clásico de playa —toallas, hamacas, servicio— hecho con la contención que pide Menorca: arquitectura blanca y baja, y la bahía de arena delante.",
+ "coordinates": {
+  "lat": 39.9165,
+  "lng": 4.0345
+ },
+ "area": "Sur (Es Migjorn Gran)",
+ "practicalInfo": {
+  "acceso": "Playa de Sant Tomàs, Es Migjorn Gran, en primera línea de mar.",
+  "horario": "Temporada: confirma fechas de 2026 en la web oficial.",
+  "servicios": "Piscina exterior con vistas al mar, spa, varios restaurantes, acceso directo a la playa de Sant Tomàs."
+ },
+ "website": "https://www.melia.com/es/hoteles/espana/menorca/villa-le-blanc-gran-melia",
+ "images": [],
+ "tags": [
+  "alojamiento",
+  "hotel",
+  "lujo",
+  "es-migjorn-gran"
+ ],
+ "status": "draft",
+ "seo": {
+  "description": "Villa Le Blanc Gran Meliá, playa de Sant Tomàs: el 5 estrellas frente al mar de la costa sur, con spa y cocina local."
+ }
+}

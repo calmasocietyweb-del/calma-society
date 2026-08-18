@@ -1,0 +1,30 @@
+{
+ "name": "Menorca Experimental",
+ "lang": "es",
+ "translationKey": "menorca-experimental",
+ "type": "alojamiento",
+ "edition": "menorca",
+ "description": "Una finca del siglo XIX de 30 hectáreas cerca de Cala Llucalari, reconvertida por el grupo Experimental con interiores de Dorothée Meilichzon. Cuarenta y tres habitaciones —nueve con piscina privada—, piscina infinita en el corazón de la finca y cocina de huerto propio y productores pequeños de la isla. El espíritu es el de una casa de artista de vacaciones: color, calma y coctelería seria al atardecer.",
+ "coordinates": {
+  "lat": 39.906,
+  "lng": 4.118
+ },
+ "area": "Centro-sur (Alaior)",
+ "practicalInfo": {
+  "acceso": "Finca en el término de Alaior, cerca de Cala Llucalari; indicaciones exactas en la web oficial.",
+  "horario": "Temporada: confirma fechas de 2026 en la web oficial.",
+  "servicios": "43 habitaciones (9 con piscina privada), piscina infinita, restaurante y terraza con huerto propio, coctelería."
+ },
+ "website": "https://www.menorcaexperimental.com/",
+ "images": [],
+ "tags": [
+  "alojamiento",
+  "hotel",
+  "lujo",
+  "alaior"
+ ],
+ "status": "draft",
+ "seo": {
+  "description": "Menorca Experimental, Alaior: finca del s. XIX con 43 habitaciones, piscina infinita y cocina de huerto propio, cerca de Cala Llucalari."
+ }
+}

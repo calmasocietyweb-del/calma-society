@@ -1,0 +1,29 @@
+{
+  "name": "Alcaufar Vell",
+  "lang": "es",
+  "translationKey": "alcaufar-vell",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Una finca señorial del siglo XVIII convertida en hotel rural, camino de Cala Alcaufar. Alrededor tiene 250 hectáreas dentro de la Reserva de Biosfera, con árboles centenarios, y dentro un restaurante abierto también a quien no duerme aquí, con producto menorquín: langosta, huerta y repostería de la isla.",
+  "coordinates": {
+    "lat": 39.834168,
+    "lng": 4.275817
+  },
+  "area": "Sureste (Sant Lluís)",
+  "practicalInfo": {
+    "acceso": "Carretera de Cala Alcaufar km 8, 07710 Sant Lluís.",
+    "horario": "No publica su temporada; confirma fechas y horarios de 2026 en la web oficial.",
+    "servicios": "Restaurante abierto a clientes externos. Finca de 250 hectáreas dentro de la Reserva de Biosfera."
+  },
+  "website": "http://alcaufarvell.com/",
+  "images": [],
+  "tags": [
+    "alojamiento",
+    "hotel-rural",
+    "sant-lluis"
+  ],
+  "status": "draft",
+  "seo": {
+    "description": "Alcaufar Vell (Sant Lluís): hotel rural en una finca señorial del siglo XVIII con 250 ha y restaurante abierto al público."
+  }
+}

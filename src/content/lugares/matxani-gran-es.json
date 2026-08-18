@@ -1,0 +1,29 @@
+{
+  "name": "Matxani Gran",
+  "lang": "es",
+  "translationKey": "matxani-gran",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Agroturismo en una casa de campo menorquina a las afueras de Sant Climent, camino de Binidalí. Tiene huerto ecológico propio —de ahí salen las verduras que se sirven— y animales de granja, y las zonas comunes son de las que invitan a no salir: piscina, jardines y campo alrededor.",
+  "coordinates": {
+    "lat": 39.860478,
+    "lng": 4.20941
+  },
+  "area": "Sureste (Sant Climent)",
+  "practicalInfo": {
+    "acceso": "Carretera de Binidalí km 1,5, 07712 Sant Climent.",
+    "horario": "No publica su temporada; confirma fechas de 2026 en la web oficial.",
+    "servicios": "Huerto ecológico propio y animales de granja. Piscina y jardines."
+  },
+  "website": "http://matxanigran.com/",
+  "images": [],
+  "tags": [
+    "alojamiento",
+    "agroturismo",
+    "sant-climent"
+  ],
+  "status": "draft",
+  "seo": {
+    "description": "Matxani Gran (Sant Climent): agroturismo en una casa de campo menorquina con huerto ecológico propio y animales de granja."
+  }
+}
