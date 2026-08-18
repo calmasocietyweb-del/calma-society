@@ -44,7 +44,13 @@ if (onVercel) Astro.response.headers.set("cache-control", "no-store");
 const USER = process.env.PANEL_USER ?? "";
 const PASS = process.env.PANEL_PASS ?? "";
 const ADMIN_KEY = process.env.SOCIOS_ADMIN_KEY ?? "";
-const API = `${SITE.url}/api/socios`;
+// La llamada servidor-a-servidor va a la URL DIRECTA del Worker (workers.dev):
+// el escudo anti-bots del dominio público devolvía 403 a los fetch desde la
+// función de Vercel (descubierto el 18-ago al encender, KAN-122). La URL no es
+// secreta (la API exige clave en todos los métodos) y SOCIOS_API_URL permite
+// cambiarla sin tocar código.
+const API_BASE = (process.env.SOCIOS_API_URL ?? "https://calma-society.calmasocietyweb.workers.dev").replace(/\/$/, "");
+const API = `${API_BASE}/api/socios`;
 
 // Auth básica (solo cuando hay servidor en Vercel y credenciales definidas).
 if (onVercel && USER && PASS) {

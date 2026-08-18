@@ -23,7 +23,10 @@ if (onVercel) Astro.response.headers.set("cache-control", "no-store");
 const USER = process.env.PANEL_USER ?? "";
 const PASS = process.env.PANEL_PASS ?? "";
 const ADMIN_KEY = process.env.RESERVAS_ADMIN_KEY ?? "";
-const API = `${SITE.url}/api/reservas`;
+// URL directa del Worker (workers.dev): el escudo anti-bots del dominio público
+// devuelve 403 a los fetch servidor-a-servidor desde Vercel (lección KAN-122).
+const API_BASE = (process.env.SOCIOS_API_URL ?? "https://calma-society.calmasocietyweb.workers.dev").replace(/\/$/, "");
+const API = `${API_BASE}/api/reservas`;
 
 if (onVercel && USER && PASS) {
   const auth = Astro.request.headers.get("authorization") ?? "";
