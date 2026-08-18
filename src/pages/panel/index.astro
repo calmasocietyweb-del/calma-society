@@ -1,0 +1,101 @@
+---
+/**
+ * Índice del panel (KAN-122; cierra el pendiente del 10-jul-2026: una sola URL
+ * con todo lo interno). Página ESTÁTICA y sin secretos: se puede prerenderizar
+ * en los dos despliegues. Los paneles con datos (analítica, socios, reservas)
+ * solo funcionan en el despliegue de edición (Vercel), y cada uno lo explica
+ * si se abre donde no toca. `noindex` + excluida del sitemap (regla /panel/).
+ */
+import "../../styles/global.css";
+
+const TARJETAS = [
+  {
+    href: "/keystatic",
+    titulo: "Editor de artículos",
+    texto: "Keystatic: crear y aprobar contenido sin tocar código.",
+    nota: "",
+  },
+  {
+    href: "/panel/analitica",
+    titulo: "Analítica",
+    texto: "Umami resumido: tráfico, herramientas y clics por colaborador.",
+    nota: "",
+  },
+  {
+    href: "/panel/socios",
+    titulo: "Socios y dinero",
+    texto: "El registro del dinero: socios, tratos, cobros y valor entregado.",
+    nota: "",
+  },
+  {
+    href: "/panel/reservas",
+    titulo: "Reservas de transfers",
+    texto: "Solicitudes de traslado y su estado.",
+    nota: "Apagado hasta la API de Menorca Bus",
+  },
+];
+
+const EXTERNOS = [
+  { href: "https://cloud.umami.is", label: "Umami" },
+  { href: "https://dashboard.mailerlite.com", label: "MailerLite" },
+  { href: "https://search.google.com/search-console", label: "Search Console" },
+  { href: "https://calmasocietyweb.atlassian.net/jira/software/projects/KAN/boards/1", label: "Jira" },
+];
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Panel — Calma Society</title>
+  </head>
+  <body class="bg-lino font-sans text-piedra antialiased">
+    <main class="mx-auto max-w-4xl px-5 py-12 sm:px-8">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">Calma Society · Panel</p>
+      <h1 class="mt-2 font-display text-3xl text-tinta">Panel interno</h1>
+      <p class="mt-3 max-w-prose text-sm text-piedra-suave">
+        Una sola puerta para todo lo interno. Los paneles con datos se abren desde el
+        despliegue de edición (Vercel) con usuario y contraseña.
+      </p>
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-2">
+        {
+          TARJETAS.map((t) => (
+            <a
+              href={t.href}
+              class="group rounded-xl border border-niebla bg-lino p-5 transition-colors hover:border-terracota"
+            >
+              <h2 class="font-display text-xl text-tinta group-hover:text-arcilla">{t.titulo}</h2>
+              <p class="mt-2 text-sm text-piedra-suave">{t.texto}</p>
+              {t.nota && (
+                <p class="mt-3 inline-block rounded-full border border-niebla px-3 py-0.5 text-xs uppercase tracking-wide text-piedra-suave">
+                  {t.nota}
+                </p>
+              )}
+            </a>
+          ))
+        }
+      </div>
+
+      <p class="mt-10 text-xs font-semibold uppercase tracking-[0.2em] text-oro">Cuentas externas</p>
+      <ul class="mt-3 flex flex-wrap gap-2 text-sm">
+        {
+          EXTERNOS.map((e) => (
+            <li>
+              <a
+                href={e.href}
+                target="_blank"
+                rel="noopener"
+                class="inline-block rounded-full border border-niebla px-4 py-1.5 text-piedra hover:border-terracota hover:text-arcilla"
+              >
+                {e.label} ↗
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </main>
+  </body>
+</html>
