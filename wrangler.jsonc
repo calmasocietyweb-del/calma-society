@@ -9,13 +9,12 @@
   // UTC el Worker fotografía el mes anterior (Umami → D1 medicion_mensual).
   // Sin la base D1 el handler scheduled no hace nada, así que es seguro ya.
   "triggers": { "crons": ["23 4 2 * *"] },
-  // DESCOMENTAR AL ENCENDER el registro de socios (runbook
-  // docs/PANEL-SOCIOS-DINERO.md): pegar el database_id que devuelva
-  // `npx wrangler d1 create calma-db`. Va comentado porque el deploy de
-  // Workers Builds fallaría con un id inexistente.
-  // "d1_databases": [
-  //   { "binding": "DB", "database_name": "calma-db", "database_id": "PEGAR-ID-AQUI" }
-  // ],
+  // Base D1 ÚNICA de la casa (encendida el 18-ago-2026, runbook
+  // docs/PANEL-SOCIOS-DINERO.md): tablas del registro de socios (KAN-122)
+  // y, cuando se enciendan, las reservas de transfers (KAN-63).
+  "d1_databases": [
+    { "binding": "DB", "database_name": "calma-db", "database_id": "e24f4fc3-9980-4842-ac72-ca29e25f8a29" }
+  ],
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
