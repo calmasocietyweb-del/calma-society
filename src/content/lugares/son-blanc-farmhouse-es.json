@@ -1,29 +1,29 @@
 {
-  "name": "Son Blanc Farmhouse",
-  "lang": "es",
-  "translationKey": "son-blanc-farmhouse",
-  "type": "alojamiento",
-  "edition": "menorca",
-  "description": "Una casa de campo menorquina dormida durante años y devuelta a la vida como agroturismo, en una finca de 130 hectáreas al suroeste de Alaior. Catorce habitaciones, materiales de la isla —piedra, arcilla, madera— y una granja que sigue funcionando de verdad: gallinas, cerdos, burros, vacas, ovejas y abejas, con un manejo pensado para regenerar el suelo, no para el escaparate. La cocina es de temporada y su mesa se puede reservar.",
-  "coordinates": {
-    "lat": 39.931745,
-    "lng": 4.084353
-  },
-  "area": "Centro-sur (Alaior)",
-  "practicalInfo": {
-    "acceso": "Camí de Son Blanc, carretera de Torresoli, 07730 Alaior. Ubicación aproximada: confirma el punto exacto en la web oficial.",
-    "horario": "No publica su temporada; confirma fechas de 2026 en la web oficial.",
-    "servicios": "Catorce habitaciones. Cocina de temporada con mesa reservable. contact@sonblancmenorca.com · +34 624 171 408."
-  },
-  "website": "https://www.sonblancmenorca.com/",
-  "images": [],
-  "tags": [
-    "alojamiento",
-    "agroturismo",
-    "alaior"
-  ],
-  "status": "draft",
-  "seo": {
-    "description": "Son Blanc Farmhouse (Alaior): agroturismo de 14 habitaciones en una finca de 130 ha con granja en activo y cocina de temporada."
-  }
+ "name": "Son Blanc Farmhouse",
+ "lang": "es",
+ "translationKey": "son-blanc-farmhouse",
+ "type": "alojamiento",
+ "edition": "menorca",
+ "description": "Una casa de campo menorquina dormida durante años y devuelta a la vida como agroturismo, en una finca de 130 hectáreas al suroeste de Alaior. Catorce habitaciones, materiales de la isla —piedra, arcilla, madera— y una granja que sigue funcionando de verdad: gallinas, cerdos, burros, vacas, ovejas y abejas, con un manejo pensado para regenerar el suelo, no para el escaparate. La cocina es de temporada y su mesa se puede reservar.",
+ "coordinates": {
+  "lat": 39.931745,
+  "lng": 4.084353
+ },
+ "area": "Centro-sur (Alaior)",
+ "practicalInfo": {
+  "acceso": "Camí de Son Blanc, carretera de Torresoli, 07730 Alaior. Ubicación aproximada: confirma el punto exacto en la web oficial.",
+  "horario": "No publica su temporada; confirma fechas de 2026 en la web oficial.",
+  "servicios": "Catorce habitaciones. Cocina de temporada con mesa reservable. contact@sonblancmenorca.com · +34 624 171 408."
+ },
+ "website": "https://www.sonblancmenorca.com/",
+ "images": [],
+ "tags": [
+  "alojamiento",
+  "agroturismo",
+  "alaior"
+ ],
+ "status": "published",
+ "seo": {
+  "description": "Son Blanc Farmhouse (Alaior): agroturismo de 14 habitaciones en una finca de 130 ha con granja en activo y cocina de temporada."
+ }
 }

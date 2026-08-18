@@ -1,29 +1,29 @@
 {
-  "name": "Binigaus Vell",
-  "lang": "en",
-  "translationKey": "binigaus-vell",
-  "type": "alojamiento",
-  "edition": "menorca",
-  "description": "An old 89-hectare estate turned rural hotel, between Es Migjorn Gran and the south coast. They tell it plainly themselves: where you now rest, wheat was sown, cows were milked and Mahón-Menorca cheese was made. Twenty-seven rooms across several categories, some with a private pool, and breakfasts with pastries made in the house.",
-  "coordinates": {
-    "lat": 39.937522,
-    "lng": 4.039101
-  },
-  "area": "South (Es Migjorn Gran)",
-  "practicalInfo": {
-    "acceso": "Camí de sa Mala Garba km 0.9, 07749 Es Migjorn Gran.",
-    "horario": "The season is not published; confirm 2026 dates on the official site.",
-    "servicios": "Twenty-seven rooms, some junior suites with a private pool. Restaurant. 89 hectares of countryside."
-  },
-  "website": "https://www.binigausvell.com/",
-  "images": [],
-  "tags": [
-    "alojamiento",
-    "hotel-rural",
-    "es-migjorn-gran"
-  ],
-  "status": "draft",
-  "seo": {
-    "description": "Binigaus Vell (Es Migjorn Gran): a 27-room rural hotel on an 89-hectare estate where Mahón-Menorca cheese was once made."
-  }
+ "name": "Binigaus Vell",
+ "lang": "en",
+ "translationKey": "binigaus-vell",
+ "type": "alojamiento",
+ "edition": "menorca",
+ "description": "An old 89-hectare estate turned rural hotel, between Es Migjorn Gran and the south coast. They tell it plainly themselves: where you now rest, wheat was sown, cows were milked and Mahón-Menorca cheese was made. Twenty-seven rooms across several categories, some with a private pool, and breakfasts with pastries made in the house.",
+ "coordinates": {
+  "lat": 39.937522,
+  "lng": 4.039101
+ },
+ "area": "South (Es Migjorn Gran)",
+ "practicalInfo": {
+  "acceso": "Camí de sa Mala Garba km 0.9, 07749 Es Migjorn Gran.",
+  "horario": "The season is not published; confirm 2026 dates on the official site.",
+  "servicios": "Twenty-seven rooms, some junior suites with a private pool. Restaurant. 89 hectares of countryside."
+ },
+ "website": "https://www.binigausvell.com/",
+ "images": [],
+ "tags": [
+  "alojamiento",
+  "hotel-rural",
+  "es-migjorn-gran"
+ ],
+ "status": "published",
+ "seo": {
+  "description": "Binigaus Vell (Es Migjorn Gran): a 27-room rural hotel on an 89-hectare estate where Mahón-Menorca cheese was once made."
+ }
 }

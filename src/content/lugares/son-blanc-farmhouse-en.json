@@ -1,29 +1,29 @@
 {
-  "name": "Son Blanc Farmhouse",
-  "lang": "en",
-  "translationKey": "son-blanc-farmhouse",
-  "type": "alojamiento",
-  "edition": "menorca",
-  "description": "A Menorcan farmhouse left dormant for years and brought back as an agrotourism stay, on a 130-hectare estate south-west of Alaior. Fourteen rooms, island materials — stone, clay, timber — and a farm that genuinely still works: hens, pigs, donkeys, cattle, sheep and bees, managed to regenerate the soil rather than to be looked at. The kitchen follows the season and its table can be booked.",
-  "coordinates": {
-    "lat": 39.931745,
-    "lng": 4.084353
-  },
-  "area": "South-central (Alaior)",
-  "practicalInfo": {
-    "acceso": "Camí de Son Blanc, carretera de Torresoli, 07730 Alaior. Approximate location: confirm the exact point on the official site.",
-    "horario": "The season is not published; confirm 2026 dates on the official site.",
-    "servicios": "Fourteen rooms. Seasonal kitchen, table bookable. contact@sonblancmenorca.com · +34 624 171 408."
-  },
-  "website": "https://www.sonblancmenorca.com/",
-  "images": [],
-  "tags": [
-    "alojamiento",
-    "agroturismo",
-    "alaior"
-  ],
-  "status": "draft",
-  "seo": {
-    "description": "Son Blanc Farmhouse (Alaior): a 14-room agrotourism stay on a 130-hectare working farm, with a seasonal kitchen."
-  }
+ "name": "Son Blanc Farmhouse",
+ "lang": "en",
+ "translationKey": "son-blanc-farmhouse",
+ "type": "alojamiento",
+ "edition": "menorca",
+ "description": "A Menorcan farmhouse left dormant for years and brought back as an agrotourism stay, on a 130-hectare estate south-west of Alaior. Fourteen rooms, island materials — stone, clay, timber — and a farm that genuinely still works: hens, pigs, donkeys, cattle, sheep and bees, managed to regenerate the soil rather than to be looked at. The kitchen follows the season and its table can be booked.",
+ "coordinates": {
+  "lat": 39.931745,
+  "lng": 4.084353
+ },
+ "area": "South-central (Alaior)",
+ "practicalInfo": {
+  "acceso": "Camí de Son Blanc, carretera de Torresoli, 07730 Alaior. Approximate location: confirm the exact point on the official site.",
+  "horario": "The season is not published; confirm 2026 dates on the official site.",
+  "servicios": "Fourteen rooms. Seasonal kitchen, table bookable. contact@sonblancmenorca.com · +34 624 171 408."
+ },
+ "website": "https://www.sonblancmenorca.com/",
+ "images": [],
+ "tags": [
+  "alojamiento",
+  "agroturismo",
+  "alaior"
+ ],
+ "status": "published",
+ "seo": {
+  "description": "Son Blanc Farmhouse (Alaior): a 14-room agrotourism stay on a 130-hectare working farm, with a seasonal kitchen."
+ }
 }

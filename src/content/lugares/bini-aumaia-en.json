@@ -1,29 +1,29 @@
 {
-  "name": "Bini Aumaia",
-  "lang": "en",
-  "translationKey": "bini-aumaia",
-  "type": "alojamiento",
-  "edition": "menorca",
-  "description": "A 98-hectare farm less than a kilometre from the centre of Es Mercadal, set on a hillside, with the Menorcan house restored on a single floor. It is a working operation: an organic kitchen garden, free-range hens and cattle, and guests are welcome to join the day's work, starting with collecting the eggs.",
-  "coordinates": {
-    "lat": 39.994542,
-    "lng": 4.088625
-  },
-  "area": "Centre (Es Mercadal)",
-  "practicalInfo": {
-    "acceso": "Finca Bini Aumaia, 07740 Es Mercadal. About 850 metres from the village centre.",
-    "horario": "The season is not published; confirm 2026 dates on the official site.",
-    "servicios": "A working farm with an organic garden, hens and cattle. Restored single-storey Menorcan house."
-  },
-  "website": "https://www.biniaumaia.com/",
-  "images": [],
-  "tags": [
-    "alojamiento",
-    "agroturismo",
-    "es-mercadal"
-  ],
-  "status": "draft",
-  "seo": {
-    "description": "Bini Aumaia (Es Mercadal): an agrotourism stay on a working 98-hectare farm 850 m from the village."
-  }
+ "name": "Bini Aumaia",
+ "lang": "en",
+ "translationKey": "bini-aumaia",
+ "type": "alojamiento",
+ "edition": "menorca",
+ "description": "A 98-hectare farm less than a kilometre from the centre of Es Mercadal, set on a hillside, with the Menorcan house restored on a single floor. It is a working operation: an organic kitchen garden, free-range hens and cattle, and guests are welcome to join the day's work, starting with collecting the eggs.",
+ "coordinates": {
+  "lat": 39.994542,
+  "lng": 4.088625
+ },
+ "area": "Centre (Es Mercadal)",
+ "practicalInfo": {
+  "acceso": "Finca Bini Aumaia, 07740 Es Mercadal. About 850 metres from the village centre.",
+  "horario": "The season is not published; confirm 2026 dates on the official site.",
+  "servicios": "A working farm with an organic garden, hens and cattle. Restored single-storey Menorcan house."
+ },
+ "website": "https://www.biniaumaia.com/",
+ "images": [],
+ "tags": [
+  "alojamiento",
+  "agroturismo",
+  "es-mercadal"
+ ],
+ "status": "published",
+ "seo": {
+  "description": "Bini Aumaia (Es Mercadal): an agrotourism stay on a working 98-hectare farm 850 m from the village."
+ }
 }

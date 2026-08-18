@@ -1,29 +1,29 @@
 {
-  "name": "Llucmaçanes Gran",
-  "lang": "en",
-  "translationKey": "llucmacanes-gran",
-  "type": "alojamiento",
-  "edition": "menorca",
-  "description": "An agrotourism stay on the plaça des Pla de Sant Gaietà, the heart of Llucmaçanes — Menorca's smallest village, and one of the few places where you can stay inside a genuine rural hamlet. It is run by its owners, and the accommodation is split between houses, apartments and rooms.",
-  "coordinates": {
-    "lat": 39.86841,
-    "lng": 4.241323
-  },
-  "area": "East (Maó)",
-  "practicalInfo": {
-    "acceso": "Plaça es Pla de Sant Gaietà 10, Llucmaçanes, 07712 Maó.",
-    "horario": "The season is not published; confirm 2026 dates on the official site.",
-    "servicios": "Houses, apartments and rooms. Owner-run."
-  },
-  "website": "https://www.llucmagran.com/",
-  "images": [],
-  "tags": [
-    "alojamiento",
-    "agroturismo",
-    "mao"
-  ],
-  "status": "draft",
-  "seo": {
-    "description": "Llucmaçanes Gran (Maó): an agrotourism stay on the square of Llucmaçanes, with houses, apartments and rooms."
-  }
+ "name": "Llucmaçanes Gran",
+ "lang": "en",
+ "translationKey": "llucmacanes-gran",
+ "type": "alojamiento",
+ "edition": "menorca",
+ "description": "An agrotourism stay on the plaça des Pla de Sant Gaietà, the heart of Llucmaçanes — Menorca's smallest village, and one of the few places where you can stay inside a genuine rural hamlet. It is run by its owners, and the accommodation is split between houses, apartments and rooms.",
+ "coordinates": {
+  "lat": 39.86841,
+  "lng": 4.241323
+ },
+ "area": "East (Maó)",
+ "practicalInfo": {
+  "acceso": "Plaça es Pla de Sant Gaietà 10, Llucmaçanes, 07712 Maó.",
+  "horario": "The season is not published; confirm 2026 dates on the official site.",
+  "servicios": "Houses, apartments and rooms. Owner-run."
+ },
+ "website": "https://www.llucmagran.com/",
+ "images": [],
+ "tags": [
+  "alojamiento",
+  "agroturismo",
+  "mao"
+ ],
+ "status": "published",
+ "seo": {
+  "description": "Llucmaçanes Gran (Maó): an agrotourism stay on the square of Llucmaçanes, with houses, apartments and rooms."
+ }
 }

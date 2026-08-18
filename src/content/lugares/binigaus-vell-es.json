@@ -1,29 +1,29 @@
 {
-  "name": "Binigaus Vell",
-  "lang": "es",
-  "translationKey": "binigaus-vell",
-  "type": "alojamiento",
-  "edition": "menorca",
-  "description": "Una finca antigua de 89 hectáreas convertida en hotel rural, entre Es Migjorn Gran y la costa sur. Lo cuentan ellos mismos sin adornos: donde hoy se descansa antes se sembraba trigo, se ordeñaban vacas y se hacía queso Mahón-Menorca. Veintisiete habitaciones en varias categorías, algunas con piscina privada, y desayunos con dulces de elaboración propia.",
-  "coordinates": {
-    "lat": 39.937522,
-    "lng": 4.039101
-  },
-  "area": "Sur (Es Migjorn Gran)",
-  "practicalInfo": {
-    "acceso": "Camí de sa Mala Garba km 0,9, 07749 Es Migjorn Gran.",
-    "horario": "No publica su temporada; confirma fechas de 2026 en la web oficial.",
-    "servicios": "Veintisiete habitaciones, algunas junior suite con piscina privada. Restaurante. 89 hectáreas de campo."
-  },
-  "website": "https://www.binigausvell.com/",
-  "images": [],
-  "tags": [
-    "alojamiento",
-    "hotel-rural",
-    "es-migjorn-gran"
-  ],
-  "status": "draft",
-  "seo": {
-    "description": "Binigaus Vell (Es Migjorn Gran): hotel rural de 27 habitaciones en una finca de 89 ha donde se hacía queso Mahón-Menorca."
-  }
+ "name": "Binigaus Vell",
+ "lang": "es",
+ "translationKey": "binigaus-vell",
+ "type": "alojamiento",
+ "edition": "menorca",
+ "description": "Una finca antigua de 89 hectáreas convertida en hotel rural, entre Es Migjorn Gran y la costa sur. Lo cuentan ellos mismos sin adornos: donde hoy se descansa antes se sembraba trigo, se ordeñaban vacas y se hacía queso Mahón-Menorca. Veintisiete habitaciones en varias categorías, algunas con piscina privada, y desayunos con dulces de elaboración propia.",
+ "coordinates": {
+  "lat": 39.937522,
+  "lng": 4.039101
+ },
+ "area": "Sur (Es Migjorn Gran)",
+ "practicalInfo": {
+  "acceso": "Camí de sa Mala Garba km 0,9, 07749 Es Migjorn Gran.",
+  "horario": "No publica su temporada; confirma fechas de 2026 en la web oficial.",
+  "servicios": "Veintisiete habitaciones, algunas junior suite con piscina privada. Restaurante. 89 hectáreas de campo."
+ },
+ "website": "https://www.binigausvell.com/",
+ "images": [],
+ "tags": [
+  "alojamiento",
+  "hotel-rural",
+  "es-migjorn-gran"
+ ],
+ "status": "published",
+ "seo": {
+  "description": "Binigaus Vell (Es Migjorn Gran): hotel rural de 27 habitaciones en una finca de 89 ha donde se hacía queso Mahón-Menorca."
+ }
 }

@@ -1,29 +1,29 @@
 {
-  "name": "Matxani Gran",
-  "lang": "en",
-  "translationKey": "matxani-gran",
-  "type": "alojamiento",
-  "edition": "menorca",
-  "description": "An agrotourism stay in a Menorcan farmhouse on the edge of Sant Climent, on the road to Binidalí. It keeps its own organic kitchen garden — that is where the vegetables come from — and farm animals, and the shared spaces are the kind that keep you in: a pool, gardens and open country all around.",
-  "coordinates": {
-    "lat": 39.860478,
-    "lng": 4.20941
-  },
-  "area": "South-east (Sant Climent)",
-  "practicalInfo": {
-    "acceso": "Carretera de Binidalí km 1.5, 07712 Sant Climent.",
-    "horario": "The season is not published; confirm 2026 dates on the official site.",
-    "servicios": "Its own organic kitchen garden and farm animals. Pool and gardens."
-  },
-  "website": "http://matxanigran.com/",
-  "images": [],
-  "tags": [
-    "alojamiento",
-    "agroturismo",
-    "sant-climent"
-  ],
-  "status": "draft",
-  "seo": {
-    "description": "Matxani Gran (Sant Climent): an agrotourism stay in a Menorcan farmhouse with its own organic garden and farm animals."
-  }
+ "name": "Matxani Gran",
+ "lang": "en",
+ "translationKey": "matxani-gran",
+ "type": "alojamiento",
+ "edition": "menorca",
+ "description": "An agrotourism stay in a Menorcan farmhouse on the edge of Sant Climent, on the road to Binidalí. It keeps its own organic kitchen garden — that is where the vegetables come from — and farm animals, and the shared spaces are the kind that keep you in: a pool, gardens and open country all around.",
+ "coordinates": {
+  "lat": 39.860478,
+  "lng": 4.20941
+ },
+ "area": "South-east (Sant Climent)",
+ "practicalInfo": {
+  "acceso": "Carretera de Binidalí km 1.5, 07712 Sant Climent.",
+  "horario": "The season is not published; confirm 2026 dates on the official site.",
+  "servicios": "Its own organic kitchen garden and farm animals. Pool and gardens."
+ },
+ "website": "http://matxanigran.com/",
+ "images": [],
+ "tags": [
+  "alojamiento",
+  "agroturismo",
+  "sant-climent"
+ ],
+ "status": "published",
+ "seo": {
+  "description": "Matxani Gran (Sant Climent): an agrotourism stay in a Menorcan farmhouse with its own organic garden and farm animals."
+ }
 }

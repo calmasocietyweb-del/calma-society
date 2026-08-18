@@ -1,29 +1,29 @@
 {
-  "name": "Ses Sucreres",
-  "lang": "es",
-  "translationKey": "hotel-ses-sucreres",
-  "type": "alojamiento",
-  "edition": "menorca",
-  "description": "Un hotel pequeño en el casco antiguo de Ferreries, en la casa que fue la tienda de golosinas del pueblo: Ca Ses Sucreres, donde compraban los niños del pueblo. Es hotel desde 2009 y ha crecido con una ampliación contemporánea que dobla la capacidad original y añade zonas comunes, jardín y estanque. Lleva la marca Menorca Reserva de Biosfera.",
-  "coordinates": {
-    "lat": 39.983295,
-    "lng": 4.009739
-  },
-  "area": "Centro (Ferreries)",
-  "practicalInfo": {
-    "acceso": "Carrer de Sant Joan 15, 07750 Ferreries.",
-    "horario": "No publica su temporada; confirma fechas de 2026 en la web oficial.",
-    "servicios": "Jardín y estanque en la ampliación. Marca Menorca Reserva de Biosfera."
-  },
-  "website": "https://www.hotelsessucreres.com/",
-  "images": [],
-  "tags": [
-    "alojamiento",
-    "hotel-de-pueblo",
-    "ferreries"
-  ],
-  "status": "draft",
-  "seo": {
-    "description": "Ses Sucreres (Ferreries): hotel pequeño en el casco antiguo, en la antigua tienda de golosinas del pueblo, hotel desde 2009."
-  }
+ "name": "Ses Sucreres",
+ "lang": "es",
+ "translationKey": "hotel-ses-sucreres",
+ "type": "alojamiento",
+ "edition": "menorca",
+ "description": "Un hotel pequeño en el casco antiguo de Ferreries, en la casa que fue la tienda de golosinas del pueblo: Ca Ses Sucreres, donde compraban los niños del pueblo. Es hotel desde 2009 y ha crecido con una ampliación contemporánea que dobla la capacidad original y añade zonas comunes, jardín y estanque. Lleva la marca Menorca Reserva de Biosfera.",
+ "coordinates": {
+  "lat": 39.983295,
+  "lng": 4.009739
+ },
+ "area": "Centro (Ferreries)",
+ "practicalInfo": {
+  "acceso": "Carrer de Sant Joan 15, 07750 Ferreries.",
+  "horario": "No publica su temporada; confirma fechas de 2026 en la web oficial.",
+  "servicios": "Jardín y estanque en la ampliación. Marca Menorca Reserva de Biosfera."
+ },
+ "website": "https://www.hotelsessucreres.com/",
+ "images": [],
+ "tags": [
+  "alojamiento",
+  "hotel-de-pueblo",
+  "ferreries"
+ ],
+ "status": "published",
+ "seo": {
+  "description": "Ses Sucreres (Ferreries): hotel pequeño en el casco antiguo, en la antigua tienda de golosinas del pueblo, hotel desde 2009."
+ }
 }

@@ -1,29 +1,29 @@
 {
-  "name": "Alcaufar Vell",
-  "lang": "en",
-  "translationKey": "alcaufar-vell",
-  "type": "alojamiento",
-  "edition": "menorca",
-  "description": "An eighteenth-century manor farm turned rural hotel, on the road down to Cala Alcaufar. Around it, 250 hectares inside the Biosphere Reserve, with centenarian trees; inside, a restaurant open to non-residents too, working with Menorcan produce: lobster, garden vegetables and island baking.",
-  "coordinates": {
-    "lat": 39.834168,
-    "lng": 4.275817
-  },
-  "area": "South-east (Sant Lluís)",
-  "practicalInfo": {
-    "acceso": "Carretera de Cala Alcaufar km 8, 07710 Sant Lluís.",
-    "horario": "The season is not published; confirm 2026 dates and hours on the official site.",
-    "servicios": "Restaurant open to non-residents. A 250-hectare estate inside the Biosphere Reserve."
-  },
-  "website": "http://alcaufarvell.com/",
-  "images": [],
-  "tags": [
-    "alojamiento",
-    "hotel-rural",
-    "sant-lluis"
-  ],
-  "status": "draft",
-  "seo": {
-    "description": "Alcaufar Vell (Sant Lluís): a rural hotel in an 18th-century manor farm with 250 hectares and a restaurant open to all."
-  }
+ "name": "Alcaufar Vell",
+ "lang": "en",
+ "translationKey": "alcaufar-vell",
+ "type": "alojamiento",
+ "edition": "menorca",
+ "description": "An eighteenth-century manor farm turned rural hotel, on the road down to Cala Alcaufar. Around it, 250 hectares inside the Biosphere Reserve, with centenarian trees; inside, a restaurant open to non-residents too, working with Menorcan produce: lobster, garden vegetables and island baking.",
+ "coordinates": {
+  "lat": 39.834168,
+  "lng": 4.275817
+ },
+ "area": "South-east (Sant Lluís)",
+ "practicalInfo": {
+  "acceso": "Carretera de Cala Alcaufar km 8, 07710 Sant Lluís.",
+  "horario": "The season is not published; confirm 2026 dates and hours on the official site.",
+  "servicios": "Restaurant open to non-residents. A 250-hectare estate inside the Biosphere Reserve."
+ },
+ "website": "http://alcaufarvell.com/",
+ "images": [],
+ "tags": [
+  "alojamiento",
+  "hotel-rural",
+  "sant-lluis"
+ ],
+ "status": "published",
+ "seo": {
+  "description": "Alcaufar Vell (Sant Lluís): a rural hotel in an 18th-century manor farm with 250 hectares and a restaurant open to all."
+ }
 }
