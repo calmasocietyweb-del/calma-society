@@ -5,6 +5,17 @@
   "name": "calma-society",
   "compatibility_date": "2025-06-15",
   "main": "worker.js",
+  // Foto mensual del panel de socios (KAN-122): día 2 de cada mes a las 04:23
+  // UTC el Worker fotografía el mes anterior (Umami → D1 medicion_mensual).
+  // Sin la base D1 el handler scheduled no hace nada, así que es seguro ya.
+  "triggers": { "crons": ["23 4 2 * *"] },
+  // DESCOMENTAR AL ENCENDER el registro de socios (runbook
+  // docs/PANEL-SOCIOS-DINERO.md): pegar el database_id que devuelva
+  // `npx wrangler d1 create calma-db`. Va comentado porque el deploy de
+  // Workers Builds fallaría con un id inexistente.
+  // "d1_databases": [
+  //   { "binding": "DB", "database_name": "calma-db", "database_id": "PEGAR-ID-AQUI" }
+  // ],
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",

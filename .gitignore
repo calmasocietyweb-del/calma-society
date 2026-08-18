@@ -40,3 +40,9 @@ REDES-SOCIALES/
 
 # Compañero visual de brainstorming (maquetas temporales; no van al repo)
 .superpowers/
+
+# Secretos locales de wrangler dev (nunca al repo)
+.dev.vars
+
+# Estado local de wrangler dev (D1 local, cache)
+.wrangler/
