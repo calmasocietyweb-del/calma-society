@@ -1,37 +1,36 @@
 ---
 /**
- * Índice del panel (KAN-122; cierra el pendiente del 10-jul-2026: una sola URL
- * con todo lo interno). Página ESTÁTICA y sin secretos: se puede prerenderizar
- * en los dos despliegues. Los paneles con datos (analítica, socios, reservas)
- * solo funcionan en el despliegue de edición (Vercel), y cada uno lo explica
- * si se abre donde no toca. `noindex` + excluida del sitemap (regla /panel/).
+ * Índice del panel de gestión (KAN-122; una sola URL para todo lo interno).
+ * Página ESTÁTICA y sin secretos: se prerenderiza en los dos despliegues.
+ * Los paneles con datos (socios, analítica, reservas) solo funcionan en el
+ * despliegue de edición (Vercel) y cada uno lo explica si se abre donde no
+ * toca. `noindex` + excluida del sitemap (regla /panel/).
+ *
+ * Interfaz: sistema "libro de cuentas" (src/styles/panel.css), separado de
+ * la marca — esto es el back-office, no la revista.
  */
-import "../../styles/global.css";
+import "../../styles/panel.css";
 
-const TARJETAS = [
-  {
-    href: "/keystatic",
-    titulo: "Editor de artículos",
-    texto: "Keystatic: crear y aprobar contenido sin tocar código.",
-    nota: "",
-  },
-  {
-    href: "/panel/analitica",
-    titulo: "Analítica",
-    texto: "Umami resumido: tráfico, herramientas y clics por colaborador.",
-    nota: "",
-  },
+const HERRAMIENTAS = [
   {
     href: "/panel/socios",
     titulo: "Socios y dinero",
     texto: "El registro del dinero: socios, tratos, cobros y valor entregado.",
-    nota: "",
+  },
+  {
+    href: "/panel/analitica",
+    titulo: "Analítica",
+    texto: "Espejo de Umami: tráfico, herramientas y clics por colaborador.",
+  },
+  {
+    href: "/keystatic",
+    titulo: "Editor de artículos",
+    texto: "Keystatic: crear y aprobar contenido de la revista sin tocar código.",
   },
   {
     href: "/panel/reservas",
     titulo: "Reservas de transfers",
-    texto: "Solicitudes de traslado y su estado.",
-    nota: "Apagado hasta la API de Menorca Bus",
+    texto: "Solicitudes de traslado y su estado. Apagado hasta la API de Menorca Bus.",
   },
 ];
 
@@ -49,53 +48,47 @@ const EXTERNOS = [
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
-    <title>Panel — Calma Society</title>
+    <title>Panel de gestión — Calma Society</title>
   </head>
-  <body class="bg-lino font-sans text-piedra antialiased">
-    <main class="mx-auto max-w-4xl px-5 py-12 sm:px-8">
-      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">Calma Society · Panel</p>
-      <h1 class="mt-2 font-display text-3xl text-tinta">Panel interno</h1>
-      <p class="mt-3 max-w-prose text-sm text-piedra-suave">
-        Una sola puerta para todo lo interno. Los paneles con datos se abren desde el
-        despliegue de edición (Vercel) con usuario y contraseña.
+  <body class="bo">
+    <header class="bo-topbar">
+      <a class="bo-brand" href="/panel/" aria-current="page">Gestión<small>Calma Society</small></a>
+      <nav class="bo-topnav" aria-label="Secciones del panel">
+        <a href="/panel/socios">Socios y dinero</a>
+        <a href="/panel/analitica">Analítica</a>
+        <a href="/panel/reservas">Reservas</a>
+      </nav>
+    </header>
+
+    <main class="bo-wrap">
+      <p class="bo-note" style="margin:0;">
+        Una sola puerta para todo lo interno. Los paneles con datos se abren desde el despliegue
+        de edición, con usuario y contraseña.
       </p>
 
-      <div class="mt-8 grid gap-4 sm:grid-cols-2">
+      <nav class="bo-idx" aria-label="Herramientas internas">
         {
-          TARJETAS.map((t) => (
-            <a
-              href={t.href}
-              class="group rounded-xl border border-niebla bg-lino p-5 transition-colors hover:border-terracota"
-            >
-              <h2 class="font-display text-xl text-tinta group-hover:text-arcilla">{t.titulo}</h2>
-              <p class="mt-2 text-sm text-piedra-suave">{t.texto}</p>
-              {t.nota && (
-                <p class="mt-3 inline-block rounded-full border border-niebla px-3 py-0.5 text-xs uppercase tracking-wide text-piedra-suave">
-                  {t.nota}
-                </p>
-              )}
+          HERRAMIENTAS.map((t) => (
+            <a href={t.href} class="bo-card">
+              <h2>{t.titulo}</h2>
+              <p>{t.texto}</p>
             </a>
           ))
         }
-      </div>
+      </nav>
 
-      <p class="mt-10 text-xs font-semibold uppercase tracking-[0.2em] text-oro">Cuentas externas</p>
-      <ul class="mt-3 flex flex-wrap gap-2 text-sm">
-        {
-          EXTERNOS.map((e) => (
-            <li>
-              <a
-                href={e.href}
-                target="_blank"
-                rel="noopener"
-                class="inline-block rounded-full border border-niebla px-4 py-1.5 text-piedra hover:border-terracota hover:text-arcilla"
-              >
-                {e.label} ↗
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+      <section class="bo-card" aria-labelledby="externos">
+        <div class="bo-h"><h2 id="externos">Cuentas externas</h2></div>
+        <ul class="bo-lista">
+          {
+            EXTERNOS.map((e) => (
+              <li>
+                <a href={e.href} target="_blank" rel="noopener">{e.label} ↗</a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
     </main>
   </body>
 </html>

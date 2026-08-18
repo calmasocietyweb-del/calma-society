@@ -1,0 +1,610 @@
+/**
+ * Sistema visual del PANEL DE GESTIÓN interno (KAN-122) — "libro de cuentas".
+ *
+ * Deliberadamente SEPARADO del sistema de marca (global.css): el dueño pidió
+ * un back-office serio de software de empresa, sin la estética editorial de
+ * Calma Society. Dirección: gris frío, superficies blancas con reglas finas,
+ * TODOS los números en monoespaciada (se comparan en columna, como en un
+ * extracto), y un único acento con significado contable: el verde de
+ * «cobrado» (la verdad del sistema). Ámbar = facturado sin cobrar.
+ * Rojo apagado = vencido/rechazado. Sin azul SaaS, sin sombras, sin emojis.
+ */
+@import "@fontsource-variable/inter";
+
+:root {
+  --bo-bg: #eef0f3;
+  --bo-surface: #ffffff;
+  --bo-line: #e2e4e9;
+  --bo-line-2: #c9cdd6;
+  --bo-ink: #171a20;
+  --bo-ink-2: #5c6470;
+  --bo-ink-3: #9aa1ac;
+  --bo-verde: #0e7a4a;
+  --bo-verde-2: #0a5c38;
+  --bo-verde-bg: #e7f3ec;
+  --bo-ambar: #925500;
+  --bo-ambar-bg: #f7eedd;
+  --bo-rojo: #b3261e;
+  --bo-rojo-bg: #f9e9e8;
+  --bo-topbar: #1c1f26;
+  --bo-topbar-ink: #d6dae2;
+  --bo-sans: "Inter Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --bo-mono: ui-monospace, "Cascadia Mono", Consolas, "SF Mono", "Roboto Mono", monospace;
+}
+
+/* ── Base ──────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body.bo {
+  background: var(--bo-bg);
+  color: var(--bo-ink);
+  font-family: var(--bo-sans);
+  font-size: 14px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+.bo a {
+  color: inherit;
+}
+.bo :focus-visible {
+  outline: 2px solid var(--bo-verde);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ── Barra superior (la única superficie oscura) ───────────────────────── */
+.bo-topbar {
+  background: var(--bo-topbar);
+  color: var(--bo-topbar-ink);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  min-height: 46px;
+}
+.bo-brand {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.bo-brand small {
+  color: var(--bo-ink-3);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  margin-left: 8px;
+}
+.bo-topnav {
+  display: flex;
+  gap: 2px;
+  flex-wrap: wrap;
+}
+.bo-topnav a {
+  color: var(--bo-topbar-ink);
+  text-decoration: none;
+  font-size: 13px;
+  padding: 13px 10px;
+  border-bottom: 2px solid transparent;
+}
+.bo-topnav a:hover {
+  color: #fff;
+}
+.bo-topnav a[aria-current="page"] {
+  color: #fff;
+  border-bottom-color: var(--bo-verde);
+}
+.bo-topbar-side {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--bo-ink-3);
+}
+
+/* ── Contenedor ────────────────────────────────────────────────────────── */
+.bo-wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 20px 20px 56px;
+  display: grid;
+  gap: 16px;
+}
+
+/* ── Superficies ───────────────────────────────────────────────────────── */
+.bo-card {
+  background: var(--bo-surface);
+  border: 1px solid var(--bo-line);
+  border-radius: 6px;
+}
+.bo-card-pad {
+  padding: 14px 16px;
+}
+.bo-h {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--bo-line);
+}
+.bo-h h2,
+.bo-h h3 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bo-ink);
+}
+.bo-h .bo-note {
+  margin: 0;
+}
+.bo-note {
+  font-size: 12px;
+  color: var(--bo-ink-2);
+}
+.bo-note-min {
+  font-size: 11px;
+  color: var(--bo-ink-3);
+}
+
+/* ── Banda de asientos (KPI) — la firma de la página ───────────────────── */
+.bo-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background: var(--bo-surface);
+  border: 1px solid var(--bo-line);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.bo-cell {
+  padding: 14px 16px 12px;
+  border-left: 1px solid var(--bo-line);
+  min-width: 0;
+}
+.bo-cell:first-child {
+  border-left: 0;
+}
+.bo-kpi-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bo-ink-2);
+  margin: 0 0 6px;
+  white-space: nowrap;
+}
+.bo-kpi {
+  font-family: var(--bo-mono);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.1;
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+.bo-kpi.es-verde {
+  color: var(--bo-verde);
+}
+.bo-kpi.es-ambar {
+  color: var(--bo-ambar);
+}
+.bo-kpi.es-cero {
+  color: var(--bo-ink-3);
+}
+.bo-kpi small {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--bo-ink-3);
+}
+.bo-kpi-note {
+  margin: 5px 0 0;
+  font-size: 11px;
+  color: var(--bo-ink-3);
+}
+@media (max-width: 900px) {
+  .bo-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bo-cell {
+    border-top: 1px solid var(--bo-line);
+  }
+  .bo-cell:nth-child(-n + 2) {
+    border-top: 0;
+  }
+  .bo-cell:nth-child(odd) {
+    border-left: 0;
+  }
+}
+
+/* ── Rejillas ──────────────────────────────────────────────────────────── */
+.bo-2col {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .bo-2col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Tablas ────────────────────────────────────────────────────────────── */
+.bo-scroll {
+  overflow-x: auto;
+}
+.bo-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.bo-table th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--bo-ink-2);
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--bo-line-2);
+  white-space: nowrap;
+}
+.bo-table td {
+  padding: 7px 12px;
+  border-bottom: 1px solid var(--bo-line);
+  vertical-align: middle;
+}
+.bo-table tbody tr:hover {
+  background: #f8f9fb;
+}
+.bo-table .num,
+.bo-table th.num {
+  text-align: right;
+}
+.bo-table td.num {
+  font-family: var(--bo-mono);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.bo-cero {
+  color: var(--bo-ink-3);
+}
+.bo-fila-nombre a {
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--bo-ink);
+}
+.bo-fila-nombre a:hover {
+  color: var(--bo-verde-2);
+  text-decoration: underline;
+}
+.bo-vacio {
+  padding: 28px 16px;
+  text-align: center;
+  color: var(--bo-ink-2);
+  font-size: 13px;
+}
+
+/* ── Barras del libro mensual ──────────────────────────────────────────── */
+.bo-barra {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 130px;
+}
+.bo-barra i {
+  display: block;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--bo-verde);
+  min-width: 2px;
+}
+.bo-barra i.gris {
+  background: var(--bo-line-2);
+}
+.bo-barra span {
+  font-family: var(--bo-mono);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* ── Badges de estado ──────────────────────────────────────────────────── */
+.bo-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: #eceef2;
+  color: var(--bo-ink-2);
+  white-space: nowrap;
+}
+.bo-badge.es-verde {
+  background: var(--bo-verde-bg);
+  color: var(--bo-verde-2);
+}
+.bo-badge.es-ambar {
+  background: var(--bo-ambar-bg);
+  color: var(--bo-ambar);
+}
+.bo-badge.es-rojo {
+  background: var(--bo-rojo-bg);
+  color: var(--bo-rojo);
+}
+
+/* ── Avisos y mensajes ─────────────────────────────────────────────────── */
+.bo-alerta {
+  border: 1px solid var(--bo-line);
+  background: var(--bo-surface);
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 13px;
+}
+.bo-alerta.es-ok {
+  background: var(--bo-verde-bg);
+  border-color: #c8dfd2;
+  color: var(--bo-verde-2);
+}
+.bo-alerta.es-error {
+  background: var(--bo-rojo-bg);
+  border-color: #ead0ce;
+  color: var(--bo-rojo);
+}
+.bo-alerta.es-ambar {
+  background: var(--bo-ambar-bg);
+  border-color: #e8dcc2;
+  color: var(--bo-ambar);
+}
+.bo-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.bo-lista li {
+  padding: 9px 16px;
+  border-bottom: 1px solid var(--bo-line);
+  font-size: 13px;
+}
+.bo-lista li:last-child {
+  border-bottom: 0;
+}
+.bo-lista a {
+  font-weight: 600;
+  color: var(--bo-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--bo-line-2);
+  text-underline-offset: 2px;
+}
+.bo-lista a:hover {
+  text-decoration-color: var(--bo-verde);
+}
+
+/* ── Filtro (pestañas rectangulares) ───────────────────────────────────── */
+.bo-filtro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.bo-filtro a {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--bo-ink-2);
+  text-decoration: none;
+  padding: 4px 10px;
+  border: 1px solid var(--bo-line);
+  border-radius: 4px;
+  background: var(--bo-surface);
+}
+.bo-filtro a:hover {
+  border-color: var(--bo-line-2);
+  color: var(--bo-ink);
+}
+.bo-filtro a[aria-current="true"] {
+  background: var(--bo-ink);
+  border-color: var(--bo-ink);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ── Formularios ───────────────────────────────────────────────────────── */
+.bo-form {
+  display: grid;
+  gap: 10px 14px;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 700px) {
+  .bo-form {
+    grid-template-columns: 1fr;
+  }
+}
+.bo-form .ancho {
+  grid-column: 1 / -1;
+}
+.bo-campo {
+  display: block;
+  font-size: 13px;
+}
+.bo-campo > span {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--bo-ink-2);
+  margin-bottom: 4px;
+}
+.bo-input,
+.bo-select,
+.bo-textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 13px;
+  color: var(--bo-ink);
+  background: var(--bo-surface);
+  border: 1px solid var(--bo-line-2);
+  border-radius: 4px;
+  padding: 6px 9px;
+}
+.bo-input:focus,
+.bo-select:focus,
+.bo-textarea:focus {
+  outline: 2px solid var(--bo-verde);
+  outline-offset: 0;
+  border-color: var(--bo-verde);
+}
+.bo-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  padding-top: 18px;
+}
+.bo-check input {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--bo-verde);
+}
+
+/* ── Botones ───────────────────────────────────────────────────────────── */
+.bo-btn {
+  display: inline-block;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--bo-verde);
+  border: 1px solid var(--bo-verde);
+  border-radius: 4px;
+  padding: 7px 14px;
+  cursor: pointer;
+}
+.bo-btn:hover {
+  background: var(--bo-verde-2);
+  border-color: var(--bo-verde-2);
+}
+.bo-btn-quiet {
+  display: inline-block;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--bo-ink-2);
+  background: var(--bo-surface);
+  border: 1px solid var(--bo-line-2);
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+.bo-btn-quiet:hover {
+  color: var(--bo-ink);
+  border-color: var(--bo-ink-3);
+}
+.bo-btn-quiet.es-rojo:hover {
+  color: var(--bo-rojo);
+  border-color: var(--bo-rojo);
+}
+
+/* ── Plegables ─────────────────────────────────────────────────────────── */
+.bo-details > summary {
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--bo-verde-2);
+  padding: 10px 16px;
+  list-style: none;
+}
+.bo-details > summary::-webkit-details-marker {
+  display: none;
+}
+.bo-details > summary::before {
+  content: "+";
+  font-family: var(--bo-mono);
+  margin-right: 8px;
+  color: var(--bo-ink-3);
+}
+.bo-details[open] > summary::before {
+  content: "−";
+}
+.bo-details .bo-form {
+  padding: 4px 16px 16px;
+}
+
+/* ── Detalle de socio ──────────────────────────────────────────────────── */
+.bo-det-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 14px 16px 4px;
+}
+.bo-det-head h2 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.bo-det-meta {
+  padding: 0 16px 12px;
+  border-bottom: 1px solid var(--bo-line);
+}
+.bo-cerrar {
+  font-size: 12px;
+  color: var(--bo-ink-2);
+  text-decoration: none;
+  border: 1px solid var(--bo-line);
+  border-radius: 4px;
+  padding: 3px 9px;
+}
+.bo-cerrar:hover {
+  color: var(--bo-ink);
+  border-color: var(--bo-line-2);
+}
+
+/* ── Índice del panel ──────────────────────────────────────────────────── */
+.bo-idx {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 700px) {
+  .bo-idx {
+    grid-template-columns: 1fr;
+  }
+}
+.bo-idx a.bo-card {
+  display: block;
+  padding: 16px;
+  text-decoration: none;
+}
+.bo-idx a.bo-card:hover {
+  border-color: var(--bo-verde);
+}
+.bo-idx h2 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.bo-idx p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--bo-ink-2);
+}
