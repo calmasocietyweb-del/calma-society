@@ -59,6 +59,22 @@ export default defineConfig({
   },
 
   integrations: [
+    // Paneles internos con datos (socios/analítica/reservas): en Vercel deben ser
+    // SSR de verdad. ⚠️ Un `export const prerender = <expresión>` en la página NO
+    // funciona (Astro solo analiza literales y cae al default estático): con las
+    // credenciales puestas, la build llegó a HORNEAR el 401 como HTML público
+    // (KAN-122, 18-ago-2026). Por eso se decide AQUÍ, donde sí sabemos si hay
+    // adaptador, con el hook oficial astro:route:setup.
+    {
+      name: 'panel-ssr-en-vercel',
+      hooks: {
+        'astro:route:setup': ({ route }) => {
+          if (onVercel && /panel[\\/](socios|analitica|reservas)\.astro$/.test(route.component)) {
+            route.prerender = false;
+          }
+        },
+      },
+    } satisfies import('astro').AstroIntegration,
     mdx(),
     sitemap({
       // Excluye las páginas de confirmación ("gracias"), que van con noindex,

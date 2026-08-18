@@ -13,7 +13,9 @@
  * Regla de oro (no mezclar): los COBROS son dinero recibido y los escribe el
  * dueño; la MEDICIÓN mensual es valor entregado y se calcula sola desde Umami.
  */
-export const prerender = !process.env.VERCEL;
+// El prerender de esta pagina lo decide astro.config.ts (panel-ssr-en-vercel):
+// SSR real solo en Vercel; estatica en Cloudflare/local. Un export const prerender
+// con expresion NO funciona (Astro solo analiza literales) - leccion KAN-122.
 import "../../styles/global.css";
 import { SITE } from "../../config/site";
 import {

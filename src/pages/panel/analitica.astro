@@ -12,7 +12,9 @@
  *     UMAMI_WEBSITE_ID
  *     PANEL_USER, PANEL_PASS
  */
-export const prerender = !process.env.VERCEL;
+// El prerender de esta pagina lo decide astro.config.ts (panel-ssr-en-vercel):
+// SSR real solo en Vercel; estatica en Cloudflare/local. Un export const prerender
+// con expresion NO funciona (Astro solo analiza literales) - leccion KAN-122.
 import "../../styles/global.css";
 import { getCollection } from "astro:content";
 
