@@ -1,27 +1,54 @@
 {
-  "updated": "2026-08-19",
+  "updated": "2026-08-20",
   "ventana": {
-    "desde": "2026-08-19",
-    "hasta": "2026-08-31"
+    "desde": "2026-08-20",
+    "hasta": "2026-09-12"
   },
-  "nuevas": [],
-  "desaparecidas": [],
-  "dudasDeNombre": [],
-  "dobles": [
+  "nuevas": [
     {
-      "date": "2026-08-19",
-      "barcos": [
-        {
-          "ship": "MSC OPERA",
-          "eslora": 274.9
-        },
-        {
-          "ship": "AIDASTELLA",
-          "eslora": 253.26
-        }
-      ],
-      "nota": "Dos cruceros el mismo día. Si uno fondea, se desembarca en lancha y el tiempo real en tierra cambia."
+      "date": "2026-09-03",
+      "ship": "CLUB MED 2",
+      "arrival": "08:00",
+      "departure": "18:00",
+      "departureDate": null,
+      "muelle": "MUELLE CRUCEROS",
+      "consignatario": "FEDERICO CARDONA TREMOL S L",
+      "escala": "M202600075",
+      "nota": "El puerto la tiene y nosotros no. Falta capacidad de pasaje y naviera antes de publicarla."
     },
+    {
+      "date": "2026-09-06",
+      "ship": "EMERALD SAKARA",
+      "arrival": "10:00",
+      "departure": "15:00",
+      "departureDate": null,
+      "muelle": "MUELLE CRUCEROS",
+      "consignatario": "AGENCIA MELIA VIVES S L",
+      "escala": "M202600032",
+      "nota": "El puerto la tiene y nosotros no. Falta capacidad de pasaje y naviera antes de publicarla."
+    },
+    {
+      "date": "2026-09-12",
+      "ship": "AZAMARA QUEST",
+      "arrival": "11:00",
+      "departure": "18:00",
+      "departureDate": null,
+      "muelle": "MUELLE CRUCEROS",
+      "consignatario": "BALEARES CONSIGNATARIOS S L",
+      "escala": "M202600053",
+      "nota": "El puerto la tiene y nosotros no. Falta capacidad de pasaje y naviera antes de publicarla."
+    }
+  ],
+  "desaparecidas": [],
+  "dudasDeNombre": [
+    {
+      "date": "2026-09-10",
+      "puerto": "NAUTICA",
+      "nuestro": "Oceania Nautica",
+      "nota": "Mismo día y nombres que se solapan: casi seguro el mismo barco escrito de otra forma, no una cancelación. Si se confirma, añadirlo a ALIAS_BARCOS en src/lib/apb.ts y dejará de preguntarlo."
+    }
+  ],
+  "dobles": [
     {
       "date": "2026-08-25",
       "barcos": [
