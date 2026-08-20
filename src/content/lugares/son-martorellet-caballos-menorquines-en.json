@@ -10,7 +10,9 @@
     "lng": 3.985
   },
   "area": "Ferreries",
-  "images": [],
+  "images": [
+    "/uploads/lg-son-martorellet-caballos-menorquines.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -39,5 +41,7 @@
     "officialUrl": "https://www.sonmartorellet.com/es/inicio/",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "A black Menorcan-breed horse, ridden, in the jaleo of a village festival",
+  "imageCredit": "MANovillo (computer down) from Madrid, España / Wikimedia Commons (CC BY 2.0)"
 }

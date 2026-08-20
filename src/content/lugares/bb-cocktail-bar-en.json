@@ -15,11 +15,14 @@
     "horario": "Seasonal; opening hours change each season — check the venue's website or Instagram."
   },
   "website": "https://www.bbcocktailbar.com/",
-  "images": [],
+  "images": [
+    "/uploads/atardecer-menorca.webp"
+  ],
   "tags": [
     "cocktails",
     "binibèquer",
     "sant lluís"
   ],
-  "status": "published"
+  "status": "published",
+  "imageAlt": "Sunset over the sea on the Menorcan coast"
 }

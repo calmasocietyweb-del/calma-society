@@ -10,7 +10,9 @@
     "lng": 4.268
   },
   "area": "Maó",
-  "images": [],
+  "images": [
+    "/uploads/lg-yellow-catamarans-puerto-mao.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -40,5 +42,7 @@
     "officialUrl": "https://www.yellowcatamarans.com",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "The ferry terminal in Maó harbour and its palm-lined promenade",
+  "imageCredit": "Santiago Lap / Wikimedia Commons (CC BY-SA 3.0)"
 }

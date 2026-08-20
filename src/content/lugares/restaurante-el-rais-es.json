@@ -16,7 +16,9 @@
   },
   "priceRange": "€€€",
   "website": "https://www.sesforquilles.com/",
-  "images": [],
+  "images": [
+    "/uploads/lg-restaurante-el-rais.webp"
+  ],
   "tags": [
     "este",
     "gastronomia",
@@ -25,5 +27,7 @@
   "status": "published",
   "seo": {
     "description": "El Rais (puerto de Maó): los arroces y la cocina marinera del grupo Ses Forquilles en el Moll de Llevant, recomendado por la Guía Michelin 2026."
-  }
+  },
+  "imageAlt": "Barcas de pesca amarradas de noche en el puerto de Maó",
+  "imageCredit": "Santiago Lap / Wikimedia Commons (CC BY-SA 3.0)"
 }

@@ -14,7 +14,9 @@
     "horario": "Saisonnier ; les horaires changent à chaque saison — consultez leur site web ou leur Instagram."
   },
   "website": "https://www.isabellamenorca.com/en/",
-  "images": [],
+  "images": [
+    "/uploads/lg-isabella-beach-club.webp"
+  ],
   "tags": [
     "beach club",
     "atardecer",
@@ -46,7 +48,11 @@
         ]
       }
     ],
-    "bestFor": ["Couples", "Coucher de soleil", "Dîner avec un verre"],
+    "bestFor": [
+      "Couples",
+      "Coucher de soleil",
+      "Dîner avec un verre"
+    ],
     "goodToKnow": [
       "Sur un promontoire rocheux au ras de l'eau, sur les Platges de Fornells (côte nord).",
       "Cuisine de fusion asiatique-méditerranéenne : sushis, grillades, produits locaux et bar à cocktails.",
@@ -55,5 +61,7 @@
     ],
     "transfer": true,
     "transferText": "On rentre de nuit par les routes secondaires du Nord, peu éclairées et sinueuses, et après un verre, conduire est bien la dernière chose dont on a envie. Nous vous emmenons et venons vous chercher avec un chauffeur privé."
-  }
+  },
+  "imageAlt": "La costa de Cala Tirant con las casas blancas sobre la loma",
+  "imageCredit": "carlos venegas gavilán / Wikimedia Commons (CC BY-SA 4.0)"
 }

@@ -14,12 +14,16 @@
     "horario": "Seasonal; opening hours change each season — check the venue's website or Instagram."
   },
   "website": "https://vidaunamenorca.com/",
-  "images": [],
+  "images": [
+    "/uploads/lg-vida-una.webp"
+  ],
   "tags": [
     "cocktails",
     "vermouth",
     "harbour",
     "maó"
   ],
-  "status": "published"
+  "status": "published",
+  "imageAlt": "An orange sunset over the houses of Maó",
+  "imageCredit": "Biancachavez / Wikimedia Commons (CC BY-SA 4.0)"
 }

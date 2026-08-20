@@ -10,7 +10,9 @@
     "lng": 3.8378
   },
   "area": "Ciutadella de Menorca",
-  "images": [],
+  "images": [
+    "/uploads/lg-spa-faustino-gran.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -38,5 +40,7 @@
     "officialUrl": "https://faustinogran.com/es/spa",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "The palaces of Ciutadella's Plaça des Born, in the old town",
+  "imageCredit": "Américo Toledano / Wikimedia Commons (CC BY-SA 4.0)"
 }

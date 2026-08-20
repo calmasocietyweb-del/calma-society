@@ -14,7 +14,9 @@
     "horario": "Estacional; los horarios cambian cada temporada — consulta su web o Instagram."
   },
   "website": "https://www.kopasclub.com/",
-  "images": [],
+  "images": [
+    "/uploads/lg-kopas-club.webp"
+  ],
   "tags": [
     "discoteca",
     "coctelería",
@@ -45,7 +47,11 @@
         ]
       }
     ],
-    "bestFor": ["Salir de noche", "Coctelería", "Puerto de Ciutadella"],
+    "bestFor": [
+      "Salir de noche",
+      "Coctelería",
+      "Puerto de Ciutadella"
+    ],
     "goodToKnow": [
       "Varias plantas y terrazas con vistas al puerto, de la copa tranquila a la pista.",
       "Coctelería y música variada, con varios ambientes en un mismo local.",
@@ -54,5 +60,7 @@
     ],
     "transfer": true,
     "transferText": "En el puerto de Ciutadella aparcar de noche y en verano es difícil. Deja el coche: te llevamos y te recogemos con chófer privado."
-  }
+  },
+  "imageAlt": "El arco de piedra del ayuntamiento de Ciutadella, con las banderas",
+  "imageCredit": "Américo Toledano / Wikimedia Commons (CC BY-SA 4.0)"
 }

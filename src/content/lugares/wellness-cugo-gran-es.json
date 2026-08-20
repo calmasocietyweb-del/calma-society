@@ -10,7 +10,9 @@
     "lng": 4.2419
   },
   "area": "Sant Climent (Maó)",
-  "images": [],
+  "images": [
+    "/uploads/villa-menorca.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -37,5 +39,6 @@
     "officialUrl": "https://menorca.cugogran.com/en/",
     "dataCertainty": "media",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "Una casa señorial menorquina con su fachada encalada y el jardín delante"
 }

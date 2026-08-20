@@ -13,12 +13,16 @@
   "practicalInfo": {
     "horario": "Seasonal; opening hours change each season — check the venue's website or Instagram."
   },
-  "images": [],
+  "images": [
+    "/uploads/lg-akelarre.webp"
+  ],
   "tags": [
     "club",
     "live music",
     "harbour",
     "maó"
   ],
-  "status": "published"
+  "status": "published",
+  "imageAlt": "The Maó harbourfront promenade lit up at night, terraces open",
+  "imageCredit": "Santiago Lap / Wikimedia Commons (CC BY-SA 3.0)"
 }

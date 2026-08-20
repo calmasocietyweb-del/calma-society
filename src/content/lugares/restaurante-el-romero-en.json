@@ -16,7 +16,9 @@
   },
   "priceRange": "€€€",
   "website": "https://www.elromero.bio/",
-  "images": [],
+  "images": [
+    "/uploads/tomatiga-ramellet.webp"
+  ],
   "tags": [
     "este",
     "gastronomia",
@@ -25,5 +27,6 @@
   "status": "published",
   "seo": {
     "description": "El Romero (Maó): the sustainable table of Fabio Tullini and Francesca Baroni, with a Repsol Sol since 2024, a gluten-free menu and sea and garden tasting menus."
-  }
+  },
+  "imageAlt": "Tomàtigues de ramellet, the Balearic hanging-tomato variety"
 }

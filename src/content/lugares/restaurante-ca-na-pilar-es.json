@@ -16,7 +16,9 @@
   },
   "priceRange": "€€€",
   "website": "https://www.canapilar.com/",
-  "images": [],
+  "images": [
+    "/uploads/productos-menorca.webp"
+  ],
   "tags": [
     "sur-centro",
     "gastronomia",
@@ -25,5 +27,6 @@
   "status": "published",
   "seo": {
     "description": "Ca na Pilar (Es Migjorn Gran): cocina de mercado con toques franceses del chef Víctor Lidón en una casa menorquina bicentenaria, recomendada por la Guía Michelin 2026."
-  }
+  },
+  "imageAlt": "Producto local menorquín dispuesto sobre una mesa de madera"
 }

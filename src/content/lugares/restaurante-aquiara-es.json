@@ -17,7 +17,9 @@
   },
   "priceRange": "€€€€",
   "website": "https://www.annuahotels.com/",
-  "images": [],
+  "images": [
+    "/uploads/alta-cocina-plato.webp"
+  ],
   "tags": [
     "sur-oeste",
     "gastronomia",
@@ -26,5 +28,6 @@
   "status": "published",
   "seo": {
     "description": "Aquiara, la mesa de José María Borrás en el hotel Morvedra Nou (Ciutadella): Sol Repsol 2026 y menú degustación de tradición menorquina y técnica contemporánea."
-  }
+  },
+  "imageAlt": "Un plato de alta cocina emplatado con detalle"
 }

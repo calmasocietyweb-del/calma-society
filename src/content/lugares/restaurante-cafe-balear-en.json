@@ -16,7 +16,9 @@
   },
   "priceRange": "€€€",
   "website": "https://www.baleargrup.com/",
-  "images": [],
+  "images": [
+    "/uploads/ciutadella-puerto.webp"
+  ],
   "tags": [
     "oeste",
     "gastronomia",
@@ -25,5 +27,6 @@
   "status": "published",
   "seo": {
     "description": "Cafè Balear (Ciutadella harbour): half a century of seafood with its own boat, the Rosa Santa Primera, grilled red prawns and a Repsol Guide Sol."
-  }
+  },
+  "imageAlt": "Ciutadella harbour with boats moored below the old town"
 }

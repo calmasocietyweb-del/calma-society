@@ -10,7 +10,9 @@
     "lng": 4.0899
   },
   "area": "Alaior",
-  "images": [],
+  "images": [
+    "/uploads/lg-spa-menorca-experimental.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -38,5 +40,7 @@
     "officialUrl": "https://www.menorcaexperimental.com/spa",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "Countryside near Alaior with cattle grazing between dry-stone walls",
+  "imageCredit": "Discasto / Wikimedia Commons (CC BY-SA 4.0)"
 }

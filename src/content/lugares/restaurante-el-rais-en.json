@@ -16,7 +16,9 @@
   },
   "priceRange": "€€€",
   "website": "https://www.sesforquilles.com/",
-  "images": [],
+  "images": [
+    "/uploads/lg-restaurante-el-rais.webp"
+  ],
   "tags": [
     "este",
     "gastronomia",
@@ -25,5 +27,7 @@
   "status": "published",
   "seo": {
     "description": "El Rais (Maó harbour): rice dishes and seafaring cooking by the Ses Forquilles group on the Moll de Llevant, Michelin Guide recommended in 2026."
-  }
+  },
+  "imageAlt": "Fishing boats moored at night in Maó harbour",
+  "imageCredit": "Santiago Lap / Wikimedia Commons (CC BY-SA 3.0)"
 }

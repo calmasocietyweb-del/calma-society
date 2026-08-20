@@ -10,7 +10,9 @@
     "lng": 3.965
   },
   "area": "Ferreries (Cala Galdana)",
-  "images": [],
+  "images": [
+    "/uploads/lg-excursion-llaut-mar-en-calma-galdana.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -39,5 +41,7 @@
     "officialUrl": "https://www.marencalmamenorca.com",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "Cala Galdana bay with boats at anchor and buildings above the beach",
+  "imageCredit": "pacai1952 / Wikimedia Commons (CC BY-SA 2.0)"
 }

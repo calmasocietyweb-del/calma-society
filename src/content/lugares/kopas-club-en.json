@@ -14,7 +14,9 @@
     "horario": "Seasonal; opening hours change each season — check the venue's website or Instagram."
   },
   "website": "https://www.kopasclub.com/",
-  "images": [],
+  "images": [
+    "/uploads/lg-kopas-club.webp"
+  ],
   "tags": [
     "club",
     "cocktails",
@@ -45,7 +47,11 @@
         ]
       }
     ],
-    "bestFor": ["A night out", "Cocktails", "Ciutadella harbour"],
+    "bestFor": [
+      "A night out",
+      "Cocktails",
+      "Ciutadella harbour"
+    ],
     "goodToKnow": [
       "Several floors and terraces with harbour views, from a quiet cocktail to the dance floor.",
       "Cocktails and varied music, with several moods in one venue.",
@@ -54,5 +60,7 @@
     ],
     "transfer": true,
     "transferText": "Parking by Ciutadella's harbour is hard at night and in summer. Leave the car: we'll take you there and bring you back with a private chauffeur."
-  }
+  },
+  "imageAlt": "The stone arch of Ciutadella town hall, flags flying",
+  "imageCredit": "Américo Toledano / Wikimedia Commons (CC BY-SA 4.0)"
 }

@@ -10,7 +10,9 @@
     "lng": 3.8295
   },
   "area": "Ciutadella de Menorca",
-  "images": [],
+  "images": [
+    "/uploads/lg-atardecer-catamaran-ciutadella-oceancat.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -40,5 +42,7 @@
     "dataCertainty": "media",
     "lastVerified": "2026-07-22",
     "officialUrl": "https://oceancatmenorca.com/"
-  }
+  },
+  "imageAlt": "La costa oeste de Ciutadella al final de la tarde, con el mar abierto",
+  "imageCredit": "LucT / Wikimedia Commons (CC BY-SA 3.0)"
 }

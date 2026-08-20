@@ -10,7 +10,9 @@
     "lng": 3.8375
   },
   "area": "Ciutadella (Cala en Bosch)",
-  "images": [],
+  "images": [
+    "/uploads/lg-lago-spa-cala-en-bosch.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -38,5 +40,7 @@
     "officialUrl": "https://www.lagoresortmenorca.com/en/spa/",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "The marina at Cala en Bosc with boats moored alongside",
+  "imageCredit": "Bärwinkel,Klaus / Wikimedia Commons (CC BY-SA 4.0)"
 }

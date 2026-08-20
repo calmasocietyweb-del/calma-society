@@ -14,12 +14,15 @@
     "acceso": "Approximate location for the area; check the exact spot on the venue's website or Instagram.",
     "horario": "Seasonal; opening hours change each season — check the venue's website or Instagram."
   },
-  "images": [],
+  "images": [
+    "/uploads/gin-menorca.webp"
+  ],
   "tags": [
     "cocktails",
     "speakeasy",
     "harbour",
     "maó"
   ],
-  "status": "draft"
+  "status": "draft",
+  "imageAlt": "A bottle of Menorcan gin"
 }

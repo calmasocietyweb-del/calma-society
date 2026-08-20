@@ -10,7 +10,9 @@
     "lng": 3.86
   },
   "area": "Ciutadella (Camí d'Algaiarens)",
-  "images": [],
+  "images": [
+    "/uploads/caballos-jinetes.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -38,5 +40,6 @@
     "officialUrl": "https://www.cavallssonangel.com",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "Menorcan horses with their riders"
 }

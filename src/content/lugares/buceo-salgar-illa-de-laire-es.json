@@ -10,7 +10,9 @@
     "lng": 4.282
   },
   "area": "Sant Lluís (s'Algar)",
-  "images": [],
+  "images": [
+    "/uploads/lg-buceo-salgar-illa-de-laire.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -39,5 +41,7 @@
     "officialUrl": "https://www.salgardiving.com",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "La orilla de Punta Prima, con la Illa de l'Aire y su faro a rayas en el horizonte",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)"
 }

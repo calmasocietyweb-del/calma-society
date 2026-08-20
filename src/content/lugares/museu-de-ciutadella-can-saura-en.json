@@ -10,7 +10,9 @@
     "lng": 3.8385
   },
   "area": "Ciutadella de Menorca",
-  "images": [],
+  "images": [
+    "/uploads/lg-museu-de-ciutadella-can-saura.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -38,5 +40,7 @@
     "officialUrl": "https://www.menorca.es/en/Municipal_Museum_of_Ciutadella/9111",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "A stone palace in central Ciutadella, of the same kind that houses the museum",
+  "imageCredit": "Tomeu / Wikimedia Commons (CC BY-SA 4.0)"
 }

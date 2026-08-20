@@ -14,7 +14,9 @@
     "horario": "Seasonal; opening hours change each season — check the venue's website or Instagram."
   },
   "website": "https://www.isabellamenorca.com/en/",
-  "images": [],
+  "images": [
+    "/uploads/lg-isabella-beach-club.webp"
+  ],
   "tags": [
     "beach club",
     "sunset",
@@ -46,7 +48,11 @@
         ]
       }
     ],
-    "bestFor": ["Couples", "Sunset", "Dinner & drinks"],
+    "bestFor": [
+      "Couples",
+      "Sunset",
+      "Dinner & drinks"
+    ],
     "goodToKnow": [
       "On a rocky promontory at the water's edge on the Platges de Fornells (north coast).",
       "Asian-Mediterranean fusion: sushi, grill, local produce and cocktails.",
@@ -55,5 +61,7 @@
     ],
     "transfer": true,
     "transferText": "The way back runs along the north's dark, winding secondary roads, and after a drink, driving is the last thing you want. We'll take you there and bring you back with a private chauffeur."
-  }
+  },
+  "imageAlt": "The shore at Cala Tirant with white houses on the ridge",
+  "imageCredit": "carlos venegas gavilán / Wikimedia Commons (CC BY-SA 4.0)"
 }

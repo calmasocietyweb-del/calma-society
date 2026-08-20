@@ -10,7 +10,9 @@
     "lng": 4.2986
   },
   "area": "Es Castell / Maó",
-  "images": [],
+  "images": [
+    "/uploads/lg-cami-de-cavalls-etapa-20-sant-esteve-mao.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -39,5 +41,7 @@
     "officialUrl": "https://www.camidecavalls.com",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "A small cove on the south-east coast, low rock and clear water",
+  "imageCredit": "Alejandro Muñoz Cabrisas / Wikimedia Commons (CC BY-SA 4.0)"
 }

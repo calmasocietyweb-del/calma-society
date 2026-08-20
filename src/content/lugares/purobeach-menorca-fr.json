@@ -15,7 +15,9 @@
     "horario": "Saisonnier ; les horaires changent à chaque saison — consultez leur site web ou leur Instagram."
   },
   "website": "https://www.purobeach.com/en/beach-club-menorca/",
-  "images": [],
+  "images": [
+    "/uploads/lg-purobeach-menorca.webp"
+  ],
   "tags": [
     "beach club",
     "piscina",
@@ -47,7 +49,11 @@
         ]
       }
     ],
-    "bestFor": ["Couples", "Luxe tranquille", "Journée piscine et mer"],
+    "bestFor": [
+      "Couples",
+      "Luxe tranquille",
+      "Journée piscine et mer"
+    ],
     "goodToKnow": [
       "Le premier beach club du groupe Puro à Minorque, ouvert en 2023.",
       "Il est intégré au complexe Aluasoul Menorca, dans le lotissement de S'Algar (Sant Lluís).",
@@ -56,5 +62,7 @@
     ],
     "transfer": true,
     "transferText": "S'Algar est un lotissement du Sud-est et la soirée s'achève en cocktail : le plus confortable — et le plus sensé — est de ne pas reprendre le volant au retour. Nous vous emmenons et venons vous chercher avec chauffeur privé, en Mercedes Classe S ou Classe V."
-  }
+  },
+  "imageAlt": "El caserío blanco de Punta Prima junto al mar, visto entre el monte bajo",
+  "imageCredit": "Dreizung / Wikimedia Commons (CC BY-SA 3.0)"
 }

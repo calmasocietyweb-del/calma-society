@@ -10,7 +10,9 @@
     "lng": 4.266
   },
   "area": "Maó (Es Grau)",
-  "images": [],
+  "images": [
+    "/uploads/lg-cami-de-cavalls-es-grau-sa-mesquida-familiar.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -38,5 +40,7 @@
     "officialUrl": "https://www.camidecavalls360.com/es/",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "La cala de Sa Mesquida vista entre el monte bajo, con el mar abierto detrás",
+  "imageCredit": "carlos venegas gavilán / Wikimedia Commons (CC BY-SA 4.0)"
 }

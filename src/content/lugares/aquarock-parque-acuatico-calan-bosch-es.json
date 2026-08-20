@@ -10,7 +10,9 @@
     "lng": 3.818
   },
   "area": "Ciutadella",
-  "images": [],
+  "images": [
+    "/uploads/lg-aquarock-parque-acuatico-calan-bosch.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -38,5 +40,7 @@
     "officialUrl": "https://aquarock-menorca.com/en/",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "La playa de Cala en Bosc con las palmeras y las sombrillas",
+  "imageCredit": "Ben Salter from Wales / Wikimedia Commons (CC BY 2.0)"
 }

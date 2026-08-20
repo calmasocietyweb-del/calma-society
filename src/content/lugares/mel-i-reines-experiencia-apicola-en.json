@@ -10,7 +10,9 @@
     "lng": 4.09
   },
   "area": "Es Mercadal (Finca Lluriach, Camí de Tramuntana, hacia la costa norte)",
-  "images": [],
+  "images": [
+    "/uploads/miel-menorca.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -39,5 +41,6 @@
     "officialUrl": "https://www.menorca.info/balears/economico/2025/09/19/2472611/abejas-experiencias-nueva-ruta-miel.html",
     "dataCertainty": "media",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "Menorcan honey in a glass jar"
 }

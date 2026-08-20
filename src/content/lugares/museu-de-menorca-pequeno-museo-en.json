@@ -10,7 +10,9 @@
     "lng": 4.2636
   },
   "area": "Maó",
-  "images": [],
+  "images": [
+    "/uploads/lg-museu-de-menorca-pequeno-museo.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -39,5 +41,7 @@
     "officialUrl": "https://www.museudemenorca.com/es/inicio",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "A room in the Museu de Menorca with pieces displayed in glass cases",
+  "imageCredit": "rene boulay / Wikimedia Commons (CC BY-SA 3.0)"
 }

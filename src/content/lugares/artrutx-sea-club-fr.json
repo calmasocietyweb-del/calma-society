@@ -14,7 +14,9 @@
     "horario": "Saisonnier ; les horaires changent à chaque saison — consultez leur site web ou Instagram."
   },
   "website": "https://www.artrutx.com/en/sea-club/",
-  "images": [],
+  "images": [
+    "/uploads/faro-artrutx.webp"
+  ],
   "tags": [
     "beach club",
     "atardecer",
@@ -48,5 +50,6 @@
       "una copa o cena con el atardecer",
       "reservar con antelación en verano"
     ]
-  }
+  },
+  "imageAlt": "El faro de Cap d'Artrutx, a rayas, en el extremo sur-oeste de la isla"
 }

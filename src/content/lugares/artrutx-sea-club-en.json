@@ -14,7 +14,9 @@
     "horario": "Seasonal; opening hours change each season — check the venue's website or Instagram."
   },
   "website": "https://www.artrutx.com/en/sea-club/",
-  "images": [],
+  "images": [
+    "/uploads/faro-artrutx.webp"
+  ],
   "tags": [
     "sea club",
     "sunset",
@@ -43,5 +45,6 @@
     "lastVerified": "2026-06-22",
     "shuttleInfo": "Drive from Ciutadella (~8-10 km south, 15-20 min). Restaurant's private car park and roadside parking (fills up early in summer: arrive ahead of time).",
     "effortNote": "Flat terrace next to the Cap d'Artrutx lighthouse."
-  }
+  },
+  "imageAlt": "The striped Cap d'Artrutx lighthouse, at the island's south-west tip"
 }

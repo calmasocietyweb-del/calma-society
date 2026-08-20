@@ -13,12 +13,16 @@
   "practicalInfo": {
     "horario": "Saisonnier ; les horaires changent à chaque saison — consultez leur site web ou Instagram."
   },
-  "images": [],
+  "images": [
+    "/uploads/lg-akelarre.webp"
+  ],
   "tags": [
     "club",
     "música en vivo",
     "puerto",
     "maó"
   ],
-  "status": "published"
+  "status": "published",
+  "imageAlt": "El paseo del puerto de Maó iluminado de noche, con las terrazas abiertas",
+  "imageCredit": "Santiago Lap / Wikimedia Commons (CC BY-SA 3.0)"
 }

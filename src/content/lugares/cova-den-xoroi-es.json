@@ -14,7 +14,9 @@
     "horario": "Estacional; los horarios cambian cada temporada — consulta su web o Instagram."
   },
   "website": "https://www.covadenxoroi.com/es",
-  "images": [],
+  "images": [
+    "/uploads/cova-den-xoroi.webp"
+  ],
   "tags": [
     "atardecer",
     "discoteca",
@@ -54,7 +56,12 @@
         ]
       }
     ],
-    "bestFor": ["Parejas", "Lujo tranquilo", "Atardecer", "Vida nocturna"],
+    "bestFor": [
+      "Parejas",
+      "Lujo tranquilo",
+      "Atardecer",
+      "Vida nocturna"
+    ],
     "goodToKnow": [
       "Tres ambientes según la hora: mirador de día (~8,5 €), lounge al atardecer (~12 €) y discoteca por la noche. Precios orientativos.",
       "En verano conviene reservar online, sobre todo para el atardecer.",
@@ -90,5 +97,6 @@
       "una copa con el atardecer",
       "reservar online en verano"
     ]
-  }
+  },
+  "imageAlt": "Las terrazas de la Cova d'en Xoroi excavadas en el acantilado sobre el mar"
 }

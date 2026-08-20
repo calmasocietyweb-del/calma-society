@@ -10,7 +10,9 @@
     "lng": 4.3015
   },
   "area": "Es Castell (Cala de Sant Esteve)",
-  "images": [],
+  "images": [
+    "/uploads/lg-fort-marlborough.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -39,5 +41,7 @@
     "officialUrl": "https://www.menorca.es/en/Visitas_guiadas_al_Fort_de_Marlborough/16037",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "The houses of Es Castell above the water, the town the Sant Esteve inlet belongs to",
+  "imageCredit": "Markus Trienke / Wikimedia Commons (CC BY-SA 2.0)"
 }

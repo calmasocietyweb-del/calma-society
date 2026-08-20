@@ -10,7 +10,9 @@
     "lng": 4.3039
   },
   "area": "Maó (isla del puerto)",
-  "images": [],
+  "images": [
+    "/uploads/lg-llatzeret-de-mao.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -39,5 +41,7 @@
     "officialUrl": "https://www.menorca.es/en/Visitas_guiadas_a_la_Illa_de_Llatzeret/14057",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "El jardín interior del Llatzeret de Maó, con una palmera y los muros de piedra",
+  "imageCredit": "Jorge Franganillo / Wikimedia Commons (CC BY 2.0)"
 }

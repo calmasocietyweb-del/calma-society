@@ -10,7 +10,9 @@
     "lng": 3.833
   },
   "area": "Ciutadella de Menorca",
-  "images": [],
+  "images": [
+    "/uploads/lg-excursion-barco-calas-sur-menorca-blava-ciutadella.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -39,5 +41,7 @@
     "officialUrl": "https://www.menorcablava.com",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "Veleros fondeados frente a Cala Macarella, en la costa sur",
+  "imageCredit": "Franrull / Wikimedia Commons (CC BY-SA 4.0)"
 }

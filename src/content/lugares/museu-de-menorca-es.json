@@ -10,7 +10,9 @@
     "lng": 4.2606
   },
   "area": "Maó",
-  "images": [],
+  "images": [
+    "/uploads/lg-museu-de-menorca.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -39,5 +41,7 @@
     "officialUrl": "https://www.museudemenorca.com",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "La galería abovedada del Museu de Menorca, con las vitrinas alineadas junto a las ventanas",
+  "imageCredit": "rene boulay / Wikimedia Commons (CC BY-SA 3.0)"
 }

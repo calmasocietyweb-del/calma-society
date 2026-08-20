@@ -10,7 +10,9 @@
     "lng": 3.834
   },
   "area": "Ciutadella (Cala Blanca)",
-  "images": [],
+  "images": [
+    "/uploads/lg-marea-beach-house-sunset-bar.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -41,5 +43,7 @@
   },
   "seo": {
     "title": "Marea Beach House – Sunset Bar — beach bar in Cala Blanca, Menorca"
-  }
+  },
+  "imageAlt": "The shoreline at Cala Blanca, sand and still water",
+  "imageCredit": "RafelJuan / Wikimedia Commons (CC BY-SA 3.0)"
 }

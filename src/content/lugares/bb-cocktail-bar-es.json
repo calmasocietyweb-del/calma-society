@@ -15,11 +15,14 @@
     "horario": "Estacional; los horarios cambian cada temporada — consulta su web o Instagram."
   },
   "website": "https://www.bbcocktailbar.com/",
-  "images": [],
+  "images": [
+    "/uploads/atardecer-menorca.webp"
+  ],
   "tags": [
     "coctelería",
     "binibèquer",
     "sant lluís"
   ],
-  "status": "published"
+  "status": "published",
+  "imageAlt": "Un atardecer sobre el mar en la costa de Menorca"
 }

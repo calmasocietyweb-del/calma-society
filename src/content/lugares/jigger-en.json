@@ -15,7 +15,9 @@
     "horario": "Seasonal; opening hours change each season — check the venue's website or Instagram."
   },
   "website": "https://www.jiggermenorca.com/",
-  "images": [],
+  "images": [
+    "/uploads/gin-tonic.webp"
+  ],
   "tags": [
     "cocktails",
     "cala blanca",
@@ -45,7 +47,11 @@
         ]
       }
     ],
-    "bestFor": ["Couples", "Craft cocktails", "Cala Blanca"],
+    "bestFor": [
+      "Couples",
+      "Craft cocktails",
+      "Cala Blanca"
+    ],
     "goodToKnow": [
       "A «cooking cocktail» concept: an author cocktail bar with a kitchen, from brunch by day to cocktails by night.",
       "A broad spirits list, with a speciality in gin.",
@@ -54,5 +60,6 @@
     ],
     "transfer": true,
     "transferText": "Cala Blanca is some 5 km from Ciutadella and, over cocktails, the sensible thing is to leave the car. We'll take you there and bring you back with a private chauffeur —you just choose the drink."
-  }
+  },
+  "imageAlt": "A gin and tonic served with ice and lemon"
 }

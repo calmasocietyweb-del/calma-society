@@ -10,7 +10,9 @@
     "lng": 4.137
   },
   "area": "Es Mercadal (Fornells)",
-  "images": [],
+  "images": [
+    "/uploads/lg-buceo-fornells-reserva-marina-nord.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -38,5 +40,7 @@
     "officialUrl": "https://www.divingfornells.com",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "Agua transparente sobre el fondo rocoso de una cala de la costa norte",
+  "imageCredit": "Discasto / Wikimedia Commons (CC BY-SA 4.0)"
 }

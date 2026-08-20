@@ -14,7 +14,9 @@
     "horario": "Seasonal; opening hours change each season — check the venue's website or Instagram."
   },
   "website": "https://www.covadenxoroi.com/en",
-  "images": [],
+  "images": [
+    "/uploads/cova-den-xoroi.webp"
+  ],
   "tags": [
     "sunset",
     "club",
@@ -54,7 +56,12 @@
         ]
       }
     ],
-    "bestFor": ["Couples", "Quiet luxury", "Sunset", "Nightlife"],
+    "bestFor": [
+      "Couples",
+      "Quiet luxury",
+      "Sunset",
+      "Nightlife"
+    ],
     "goodToKnow": [
       "Three moods by the hour: lookout by day (~€8.5), sunset lounge (~€12) and club at night. Prices are indicative.",
       "In summer it's wise to book online, especially for sunset.",
@@ -85,5 +92,6 @@
     "lastVerified": "2026-06-22",
     "effortNote": "You climb down to the cliff on carved steps; not suitable for wheelchairs or very limited mobility.",
     "seasonalHours": "Jun-Aug from 11:30 until dusk; May/Oct from 15:00. Daytime viewpoint (~€8.5), afternoon lounge (~€12), nightclub after dark. Online booking recommended in summer."
-  }
+  },
+  "imageAlt": "The terraces of Cova d'en Xoroi cut into the cliff above the sea"
 }

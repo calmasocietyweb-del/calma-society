@@ -16,7 +16,9 @@
   },
   "priceRange": "€€€",
   "website": "https://www.baleargrup.com/",
-  "images": [],
+  "images": [
+    "/uploads/ciutadella-puerto.webp"
+  ],
   "tags": [
     "oeste",
     "gastronomia",
@@ -25,5 +27,6 @@
   "status": "published",
   "seo": {
     "description": "Cafè Balear (puerto de Ciutadella): medio siglo de marisco con barca propia, la Rosa Santa Primera, gamba roja a la plancha y un Sol de la Guía Repsol."
-  }
+  },
+  "imageAlt": "El puerto de Ciutadella con las embarcaciones amarradas al pie del casco antiguo"
 }

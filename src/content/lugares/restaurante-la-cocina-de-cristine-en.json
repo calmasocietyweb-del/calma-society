@@ -15,7 +15,9 @@
     "servicios": "Book through the Cristine Bedfor hotel."
   },
   "priceRange": "€€€",
-  "images": [],
+  "images": [
+    "/uploads/fine-dining.webp"
+  ],
   "tags": [
     "este",
     "gastronomia",
@@ -24,5 +26,6 @@
   "status": "published",
   "seo": {
     "description": "La Cocina de Cristine (Maó): chef Pau Sintes's market cooking at the Cristine Bedfor hotel (one Michelin Key), Michelin Guide recommended in 2026."
-  }
+  },
+  "imageAlt": "A table laid with restaurant china and glassware"
 }

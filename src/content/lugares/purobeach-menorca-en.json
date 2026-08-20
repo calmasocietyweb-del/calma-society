@@ -15,7 +15,9 @@
     "horario": "Seasonal; opening hours change each season — check the venue's website or Instagram."
   },
   "website": "https://www.purobeach.com/en/beach-club-menorca/",
-  "images": [],
+  "images": [
+    "/uploads/lg-purobeach-menorca.webp"
+  ],
   "tags": [
     "beach club",
     "pool",
@@ -47,7 +49,11 @@
         ]
       }
     ],
-    "bestFor": ["Couples", "Quiet luxury", "Pool & sea day"],
+    "bestFor": [
+      "Couples",
+      "Quiet luxury",
+      "Pool & sea day"
+    ],
     "goodToKnow": [
       "The Puro group's first beach club in Menorca, opened in 2023.",
       "Set within the Aluasoul Menorca complex, in the resort of S'Algar (Sant Lluís).",
@@ -56,5 +62,7 @@
     ],
     "transfer": true,
     "transferText": "S'Algar is a southeastern resort and the evening ends in a cocktail: the comfortable —and sensible— choice is not to drive back. We'll take you there and pick you up with a private chauffeur, in a Mercedes S-Class or V-Class."
-  }
+  },
+  "imageAlt": "The white houses of Punta Prima beside the sea, seen through low scrub",
+  "imageCredit": "Dreizung / Wikimedia Commons (CC BY-SA 3.0)"
 }

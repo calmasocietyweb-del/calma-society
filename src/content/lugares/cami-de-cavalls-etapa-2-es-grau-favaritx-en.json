@@ -10,7 +10,9 @@
     "lng": 4.266
   },
   "area": "Maó",
-  "images": [],
+  "images": [
+    "/uploads/lg-cami-de-cavalls-etapa-2-es-grau-favaritx.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -37,5 +39,7 @@
     "officialUrl": "https://www.camidecavalls.com",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "A dirt path through scrub, in the s'Albufera des Grau natural park",
+  "imageCredit": "Alejandro Muñoz Cabrisas / Wikimedia Commons (CC BY-SA 4.0)"
 }

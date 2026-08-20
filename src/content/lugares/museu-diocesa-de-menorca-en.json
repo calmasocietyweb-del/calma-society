@@ -10,7 +10,9 @@
     "lng": 3.8389
   },
   "area": "Ciutadella de Menorca",
-  "images": [],
+  "images": [
+    "/uploads/lg-museu-diocesa-de-menorca.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -38,5 +40,7 @@
     "officialUrl": "https://bisbatdemenorca.org/diocesi/la-catedral-i-el-seu-museu/",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "A street in the old town of Ciutadella, where the museum stands",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)"
 }

@@ -16,7 +16,9 @@
   },
   "priceRange": "€€€€",
   "website": "https://www.torralbenc.com/",
-  "images": [],
+  "images": [
+    "/uploads/lg-restaurante-torralbenc.webp"
+  ],
   "tags": [
     "sur-centro",
     "gastronomia",
@@ -25,5 +27,7 @@
   "status": "published",
   "seo": {
     "description": "Torralbenc (Alaior): Mediterranean cooking with produce and wine from its own 74-hectare estate, Michelin Guide recommended 2026, at a hotel holding a Michelin Key."
-  }
+  },
+  "imageAlt": "Cattle grazing on stubble in the Alaior countryside, beside low scrub",
+  "imageCredit": "Discasto / Wikimedia Commons (CC BY-SA 4.0)"
 }

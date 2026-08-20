@@ -10,7 +10,9 @@
     "lng": 4.0492
   },
   "area": "Es Migjorn Gran",
-  "images": [],
+  "images": [
+    "/uploads/lg-cova-des-coloms-barranc-binigaus.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -38,5 +40,7 @@
     "officialUrl": "https://www.ajmigjorngran.org",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "Inside Cova des Coloms, the mouth of light at the far end and people giving the scale",
+  "imageCredit": "Andrómeda7 / Wikimedia Commons (CC BY-SA 3.0)"
 }

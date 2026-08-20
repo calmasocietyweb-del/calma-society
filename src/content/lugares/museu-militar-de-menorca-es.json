@@ -10,7 +10,9 @@
     "lng": 4.2903
   },
   "area": "Es Castell",
-  "images": [],
+  "images": [
+    "/uploads/lg-museu-militar-de-menorca.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -37,5 +39,7 @@
     "officialUrl": "https://www.menorca.es/en/Military_Museum_of_Menorca/9109",
     "dataCertainty": "media",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "Es Castell visto desde el agua, el pueblo de trazado militar donde está el museo",
+  "imageCredit": "Jorge Franganillo / Wikimedia Commons (CC BY 2.0)"
 }

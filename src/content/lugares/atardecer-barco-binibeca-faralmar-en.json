@@ -10,7 +10,9 @@
     "lng": 4.2389
   },
   "area": "Sant Lluís (Binibeca / Cala Torret)",
-  "images": [],
+  "images": [
+    "/uploads/binibeca.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -39,5 +41,6 @@
     "officialUrl": "https://faralmar.com/",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "The white hamlet of Binibeca beside the sea"
 }

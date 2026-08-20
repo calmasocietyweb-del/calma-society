@@ -10,7 +10,9 @@
     "lng": 3.8377
   },
   "area": "Ciutadella de Menorca",
-  "images": [],
+  "images": [
+    "/uploads/lg-catedral-de-santa-maria-ciutadella.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -39,5 +41,7 @@
     "officialUrl": "https://bisbatdemenorca.org/diocesi/la-catedral-i-el-seu-museu/",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "La fachada de la catedral de Ciutadella con su rosetón, y gente en la plaza",
+  "imageCredit": "Menorquino / Wikimedia Commons (CC BY-SA 3.0 es)"
 }

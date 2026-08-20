@@ -10,7 +10,9 @@
     "lng": 4.3031
   },
   "area": "Es Castell (Cala de Sant Esteve)",
-  "images": [],
+  "images": [
+    "/uploads/lg-castell-de-sant-felip.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -38,5 +40,7 @@
     "officialUrl": "https://www.consorciomilitarmenorca.com/es/visitas-guiadas-al-castillo-de-san-felipe/",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "Las galerías y los muros de piedra que quedan del castell de Sant Felip",
+  "imageCredit": "SSANTY / Wikimedia Commons (CC BY-SA 3.0)"
 }

@@ -10,7 +10,9 @@
     "lng": 3.9
   },
   "area": "Ciutadella (Camí de Cala Pilar, fincas Son Felip y Algaiarens, costa norte)",
-  "images": [],
+  "images": [
+    "/uploads/lg-son-felip-visita-apicola-algaiarens.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -39,5 +41,7 @@
     "officialUrl": "https://sonfelip.com/visita_apicultura_algaiarens/",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "The countryside and dunes of Algaiarens, on Ciutadella's north coast",
+  "imageCredit": "Marcelsala007 / Wikimedia Commons (CC BY-SA 3.0)"
 }

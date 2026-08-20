@@ -10,7 +10,9 @@
     "lng": 4.2747
   },
   "area": "Maó",
-  "images": [],
+  "images": [
+    "/uploads/lg-yellow-catamarans-fondo-cristal-mao.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -39,5 +41,7 @@
     "officialUrl": "https://www.yellowcatamarans.com/en/home",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "La marina del puerto de Maó de noche, con las embarcaciones amarradas",
+  "imageCredit": "Santiago Lap / Wikimedia Commons (CC BY-SA 3.0)"
 }

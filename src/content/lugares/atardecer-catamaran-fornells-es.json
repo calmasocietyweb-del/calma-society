@@ -10,7 +10,9 @@
     "lng": 4.1372
   },
   "area": "Es Mercadal (Fornells)",
-  "images": [],
+  "images": [
+    "/uploads/lg-atardecer-catamaran-fornells.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -39,5 +41,7 @@
     "officialUrl": "https://www.boatmenorca.es/catamaran-excursions-menorca/",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "El agua clara de la bahía de Fornells con el pantalán de madera",
+  "imageCredit": "Markus Trienke / Wikimedia Commons (CC BY-SA 2.0)"
 }

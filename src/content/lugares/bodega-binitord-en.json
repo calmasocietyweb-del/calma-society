@@ -10,7 +10,9 @@
     "lng": 3.855
   },
   "area": "Ciutadella de Menorca",
-  "images": [],
+  "images": [
+    "/uploads/vino-bodega.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -39,5 +41,6 @@
     "officialUrl": "https://www.binitord.com/tours",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "Barrels and bottles inside a winery"
 }

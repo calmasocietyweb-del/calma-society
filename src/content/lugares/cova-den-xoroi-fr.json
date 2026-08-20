@@ -14,7 +14,9 @@
     "horario": "Saisonnier ; les horaires changent à chaque saison — consultez leur site web ou Instagram."
   },
   "website": "https://www.covadenxoroi.com/en",
-  "images": [],
+  "images": [
+    "/uploads/cova-den-xoroi.webp"
+  ],
   "tags": [
     "atardecer",
     "discoteca",
@@ -54,7 +56,12 @@
         ]
       }
     ],
-    "bestFor": ["Couples", "Luxe tranquille", "Coucher de soleil", "Vie nocturne"],
+    "bestFor": [
+      "Couples",
+      "Luxe tranquille",
+      "Coucher de soleil",
+      "Vie nocturne"
+    ],
     "goodToKnow": [
       "Trois ambiances selon l'heure : belvédère le jour (~8,5 €), lounge au coucher de soleil (~12 €) et club la nuit. Prix indicatifs.",
       "En été, mieux vaut réserver en ligne, surtout pour le coucher de soleil.",
@@ -90,5 +97,6 @@
       "una copa con el atardecer",
       "reservar online en verano"
     ]
-  }
+  },
+  "imageAlt": "Las terrazas de la Cova d'en Xoroi excavadas en el acantilado sobre el mar"
 }

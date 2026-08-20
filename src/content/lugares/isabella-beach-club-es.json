@@ -14,7 +14,9 @@
     "horario": "Estacional; los horarios cambian cada temporada — consulta su web o Instagram."
   },
   "website": "https://www.isabellamenorca.com/en/",
-  "images": [],
+  "images": [
+    "/uploads/lg-isabella-beach-club.webp"
+  ],
   "tags": [
     "beach club",
     "atardecer",
@@ -46,7 +48,11 @@
         ]
       }
     ],
-    "bestFor": ["Parejas", "Atardecer", "Cena con copa"],
+    "bestFor": [
+      "Parejas",
+      "Atardecer",
+      "Cena con copa"
+    ],
     "goodToKnow": [
       "Sobre un promontorio de roca a pie de agua en las Platges de Fornells (costa norte).",
       "Cocina de fusión asiática-mediterránea: sushi, brasa, producto local y coctelería.",
@@ -55,5 +61,7 @@
     ],
     "transfer": true,
     "transferText": "Se vuelve de noche por carreteras secundarias del norte, poco iluminadas y con curvas, y después de la copa conducir es lo último que apetece. Te llevamos y te recogemos con chófer privado."
-  }
+  },
+  "imageAlt": "La costa de Cala Tirant con las casas blancas sobre la loma",
+  "imageCredit": "carlos venegas gavilán / Wikimedia Commons (CC BY-SA 4.0)"
 }

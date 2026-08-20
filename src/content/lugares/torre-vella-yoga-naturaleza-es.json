@@ -10,7 +10,9 @@
     "lng": 4.1
   },
   "area": "Alaior",
-  "images": [],
+  "images": [
+    "/uploads/calma-menorca.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -38,5 +40,6 @@
     "officialUrl": "https://www.torre-vella.fontenille-collection.com/en/yoga-wellness-spa-retreat-menorca/",
     "dataCertainty": "media",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "Un rincón de campo menorquín en calma, con luz baja de tarde"
 }

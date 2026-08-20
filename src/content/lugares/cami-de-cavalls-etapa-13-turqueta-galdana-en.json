@@ -10,7 +10,9 @@
     "lng": 3.913
   },
   "area": "Ciutadella / Ferreries",
-  "images": [],
+  "images": [
+    "/uploads/lg-cami-de-cavalls-etapa-13-turqueta-galdana.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -39,5 +41,7 @@
     "officialUrl": "https://www.camidecavalls.com",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "Cala Galdana from the cliff, a yacht anchored at the mouth",
+  "imageCredit": "Ben Salter from Wales / Wikimedia Commons (CC BY 2.0)"
 }

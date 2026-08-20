@@ -10,7 +10,9 @@
     "lng": 4.24
   },
   "area": "Maó",
-  "images": [],
+  "images": [
+    "/uploads/vino-menorca.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -39,5 +41,6 @@
     "officialUrl": "https://vimenorca.com/en/son-cremat/",
     "dataCertainty": "media",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "A glass and bottle of Menorcan wine on a table"
 }

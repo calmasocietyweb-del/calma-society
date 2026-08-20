@@ -10,7 +10,9 @@
     "lng": 4.2225
   },
   "area": "Alaior",
-  "images": [],
+  "images": [
+    "/uploads/lg-lloc-de-menorca-zoo-granja.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -38,5 +40,7 @@
     "officialUrl": "https://llocdemenorca.com/en/",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "A herd of Menorcan-breed cows resting in a meadow",
+  "imageCredit": "Alejandro Muñoz Cabrisas / Wikimedia Commons (CC BY-SA 4.0)"
 }

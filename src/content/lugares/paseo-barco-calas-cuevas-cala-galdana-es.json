@@ -10,7 +10,9 @@
     "lng": 3.965
   },
   "area": "Ferreries (Cala Galdana)",
-  "images": [],
+  "images": [
+    "/uploads/lg-paseo-barco-calas-cuevas-cala-galdana.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -40,5 +42,7 @@
     "lastVerified": "2026-08-06",
     "officialUrl": "https://www.marencalmamenorca.com/es/inicio",
     "operatorName": "Mar en Calma"
-  }
+  },
+  "imageAlt": "Una cala del sur con la arena clara y una embarcación varada en la orilla",
+  "imageCredit": "Mediatres / Wikimedia Commons (CC BY-SA 3.0)"
 }

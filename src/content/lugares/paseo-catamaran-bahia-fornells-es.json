@@ -10,7 +10,9 @@
     "lng": 4.1356
   },
   "area": "Es Mercadal (Fornells)",
-  "images": [],
+  "images": [
+    "/uploads/lg-paseo-catamaran-bahia-fornells.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -40,5 +42,7 @@
     "lastVerified": "2026-08-06",
     "officialUrl": "https://www.katayak.net/",
     "operatorName": "Katayak"
-  }
+  },
+  "imageAlt": "Casas blancas de Fornells asomadas al agua de la bahía",
+  "imageCredit": "Nikodem Nijaki / Wikimedia Commons (CC BY-SA 3.0)"
 }

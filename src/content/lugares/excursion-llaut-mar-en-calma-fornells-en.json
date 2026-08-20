@@ -10,7 +10,9 @@
     "lng": 4.137
   },
   "area": "Es Mercadal (Fornells)",
-  "images": [],
+  "images": [
+    "/uploads/lg-excursion-llaut-mar-en-calma-fornells.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -39,5 +41,7 @@
     "officialUrl": "https://www.marencalmamenorca.com",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "Fornells bay with yachts at anchor and the white village behind",
+  "imageCredit": "Nikodem Nijaki / Wikimedia Commons (CC BY-SA 3.0)"
 }

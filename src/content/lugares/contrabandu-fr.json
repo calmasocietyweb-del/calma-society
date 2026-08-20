@@ -14,12 +14,15 @@
     "acceso": "Emplacement indicatif de la zone ; confirmez le point exact sur leur site web ou Instagram.",
     "horario": "Saisonnier ; les horaires changent à chaque saison — consultez leur site web ou Instagram."
   },
-  "images": [],
+  "images": [
+    "/uploads/gin-menorca.webp"
+  ],
   "tags": [
     "coctelería",
     "speakeasy",
     "puerto",
     "maó"
   ],
-  "status": "draft"
+  "status": "draft",
+  "imageAlt": "Una botella de gin de Menorca"
 }

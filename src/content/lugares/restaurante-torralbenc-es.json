@@ -16,7 +16,9 @@
   },
   "priceRange": "€€€€",
   "website": "https://www.torralbenc.com/",
-  "images": [],
+  "images": [
+    "/uploads/lg-restaurante-torralbenc.webp"
+  ],
   "tags": [
     "sur-centro",
     "gastronomia",
@@ -25,5 +27,7 @@
   "status": "published",
   "seo": {
     "description": "Torralbenc (Alaior): cocina mediterránea con producto y vino de su finca de 74 ha, recomendada por la Guía Michelin 2026, en un hotel con Llave Michelin."
-  }
+  },
+  "imageAlt": "Ganado pastando en un rastrojo del campo de Alaior, junto al monte bajo",
+  "imageCredit": "Discasto / Wikimedia Commons (CC BY-SA 4.0)"
 }

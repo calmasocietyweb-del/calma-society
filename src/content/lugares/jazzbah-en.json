@@ -14,7 +14,9 @@
     "horario": "Seasonal; opening hours change each season — check the venue's website or Instagram."
   },
   "website": "https://jazzbah.es/",
-  "images": [],
+  "images": [
+    "/uploads/lg-jazzbah.webp"
+  ],
   "tags": [
     "club",
     "gigs",
@@ -45,7 +47,11 @@
         ]
       }
     ],
-    "bestFor": ["Live music", "A night out", "Ciutadella harbour"],
+    "bestFor": [
+      "Live music",
+      "A night out",
+      "Ciutadella harbour"
+    ],
     "goodToKnow": [
       "More than two decades as a landmark of Ciutadella's nightlife.",
       "Live gigs, DJ sets and themed nights, with several moods.",
@@ -54,5 +60,7 @@
     ],
     "transfer": true,
     "transferText": "Parking by Ciutadella's harbour is hard at night and in summer. Forget the car: we'll take you there and bring you back with a private chauffeur, no circling for a space."
-  }
+  },
+  "imageAlt": "The pink palace on Ciutadella's Plaça des Born",
+  "imageCredit": "Américo Toledano / Wikimedia Commons (CC BY-SA 4.0)"
 }

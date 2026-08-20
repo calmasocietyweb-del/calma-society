@@ -14,7 +14,9 @@
     "horario": "Saisonnier ; les horaires changent à chaque saison — consultez leur site web ou Instagram."
   },
   "website": "https://jazzbah.es/",
-  "images": [],
+  "images": [
+    "/uploads/lg-jazzbah.webp"
+  ],
   "tags": [
     "discoteca",
     "conciertos",
@@ -45,7 +47,11 @@
         ]
       }
     ],
-    "bestFor": ["Musique live", "Sortir le soir", "Port de Ciutadella"],
+    "bestFor": [
+      "Musique live",
+      "Sortir le soir",
+      "Port de Ciutadella"
+    ],
     "goodToKnow": [
       "Plus de deux décennies en tant que salle de référence de la nuit de Ciutadella.",
       "Concerts en direct, sessions de DJ et soirées à thème, avec plusieurs ambiances.",
@@ -54,5 +60,7 @@
     ],
     "transfer": true,
     "transferText": "Sur le port de Ciutadella, se garer la nuit et en été est difficile. Oubliez la voiture : nous vous emmenons et vous récupérons avec chauffeur privé, sans tourner en rond à chercher une place."
-  }
+  },
+  "imageAlt": "El palacio rosado de la Plaça des Born de Ciutadella",
+  "imageCredit": "Américo Toledano / Wikimedia Commons (CC BY-SA 4.0)"
 }

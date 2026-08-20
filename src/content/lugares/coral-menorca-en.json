@@ -14,12 +14,16 @@
     "horario": "Seasonal; opening hours change each season — check the venue's website or Instagram."
   },
   "website": "https://www.coralmenorca.es/en/home",
-  "images": [],
+  "images": [
+    "/uploads/lg-coral-menorca.webp"
+  ],
   "tags": [
     "sunset",
     "cocktails",
     "cala'n forcat",
     "ciutadella"
   ],
-  "status": "published"
+  "status": "published",
+  "imageAlt": "The arcaded buildings of Ciutadella's Plaça des Born",
+  "imageCredit": "Américo Toledano / Wikimedia Commons (CC BY-SA 4.0)"
 }

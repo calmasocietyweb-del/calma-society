@@ -310,7 +310,15 @@ const lugares = defineCollection({
         lastVerified: z.string().optional(), // fecha ISO de la última verificación
       })
       .optional(),
-  }),
+  })
+    // Mismo cortafuegos que `articulos` y `eventos`: si hay foto, hay que haberla
+    // MIRADO y descrito. Sin esto, PlaceLayout caía en `data.imageAlt ?? data.name`
+    // y el alt pasaba a AFIRMAR el nombre de la ficha fuera lo que fuese que
+    // enseñara la imagen — el fallo que costó KAN-83 y KAN-119.
+    .refine((d) => !d.images?.length || !!d.imageAlt, {
+      message: "imageAlt es obligatorio cuando hay images: describe QUÉ SE VE en la foto",
+      path: ["imageAlt"],
+    }),
 });
 
 /** Agenda de eventos. Datos → JSON. */

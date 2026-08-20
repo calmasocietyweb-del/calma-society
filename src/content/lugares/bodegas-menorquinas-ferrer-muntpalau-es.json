@@ -10,7 +10,9 @@
     "lng": 4.008
   },
   "area": "Ferreries (finca S'Estància Alta, junto a Sant Patrici)",
-  "images": [],
+  "images": [
+    "/uploads/lg-bodegas-menorquinas-ferrer-muntpalau.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -38,5 +40,7 @@
     "officialUrl": "https://www.descobreixmenorca.com/en/wines-of-menorca/bodegas-menorquinas/",
     "dataCertainty": "media",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "Casas de campo blancas en el término de Ferreries, con la sierra al fondo",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)"
 }

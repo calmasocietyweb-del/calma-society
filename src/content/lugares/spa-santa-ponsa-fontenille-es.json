@@ -10,7 +10,9 @@
     "lng": 4.093
   },
   "area": "Alaior",
-  "images": [],
+  "images": [
+    "/uploads/lg-spa-santa-ponsa-fontenille.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -38,5 +40,7 @@
     "officialUrl": "https://www.santa-ponsa.fontenille-collection.com/en/spa-minorca-yoga-retreat/",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "Rastrojo y monte bajo del campo de Alaior, con ganado a la sombra",
+  "imageCredit": "Discasto / Wikimedia Commons (CC BY-SA 4.0)"
 }

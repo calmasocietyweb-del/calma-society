@@ -10,7 +10,9 @@
     "lng": 3.8228
   },
   "area": "Ciutadella",
-  "images": [],
+  "images": [
+    "/uploads/lg-cami-de-cavalls-etapa-10-punta-nati-ciutadella.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -38,5 +40,7 @@
     "officialUrl": "https://www.camidecavalls.com",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "The Camí de Cavalls above the cliffs, near Punta Nati",
+  "imageCredit": "Franrull / Wikimedia Commons (CC BY-SA 4.0)"
 }

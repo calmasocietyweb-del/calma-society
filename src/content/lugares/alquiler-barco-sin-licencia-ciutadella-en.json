@@ -10,7 +10,9 @@
     "lng": 3.833
   },
   "area": "Ciutadella de Menorca",
-  "images": [],
+  "images": [
+    "/uploads/ciutadella-puerto.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -39,5 +41,6 @@
     "officialUrl": "https://twinsboats.com",
     "dataCertainty": "media",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "Ciutadella harbour with boats moored below the old town"
 }

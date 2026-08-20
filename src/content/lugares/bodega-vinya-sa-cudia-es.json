@@ -10,7 +10,9 @@
     "lng": 4.225
   },
   "area": "Maó (carretera des Grau, s'Albufera des Grau)",
-  "images": [],
+  "images": [
+    "/uploads/albufera-des-grau.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -39,5 +41,6 @@
     "officialUrl": "https://www.illesbalears.travel/en/menorca/winery-vinya-sa-cudia",
     "dataCertainty": "media",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "La lámina de agua de s'Albufera des Grau rodeada de campo, junto a la carretera des Grau"
 }

@@ -10,7 +10,9 @@
     "lng": 4.038
   },
   "area": "Es Mercadal",
-  "images": [],
+  "images": [
+    "/uploads/lg-cami-de-cavalls-etapa-6-binimella-els-alocs.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -36,5 +38,7 @@
     "officialUrl": "https://www.camidecavalls.com",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "La costa norte junto a Binimel·là, con la roca rojiza cayendo al mar",
+  "imageCredit": "Boladevidre / Wikimedia Commons (CC BY-SA 2.0)"
 }

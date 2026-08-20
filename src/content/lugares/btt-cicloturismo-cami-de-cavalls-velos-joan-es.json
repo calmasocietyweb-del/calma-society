@@ -10,7 +10,9 @@
     "lng": 3.8416
   },
   "area": "Ciutadella",
-  "images": [],
+  "images": [
+    "/uploads/lg-btt-cicloturismo-cami-de-cavalls-velos-joan.webp"
+  ],
   "tags": [],
   "status": "published",
   "planner": {
@@ -38,5 +40,7 @@
     "officialUrl": "https://velosjoan.com",
     "dataCertainty": "alta",
     "lastVerified": "2026-06-24"
-  }
+  },
+  "imageAlt": "Un camino rural de Menorca entre paredes de piedra seca",
+  "imageCredit": "Vriullop / Wikimedia Commons (CC BY-SA 3.0)"
 }

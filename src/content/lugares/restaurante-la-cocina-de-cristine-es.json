@@ -15,7 +15,9 @@
     "servicios": "Reserva a través del hotel Cristine Bedfor."
   },
   "priceRange": "€€€",
-  "images": [],
+  "images": [
+    "/uploads/fine-dining.webp"
+  ],
   "tags": [
     "este",
     "gastronomia",
@@ -24,5 +26,6 @@
   "status": "published",
   "seo": {
     "description": "La Cocina de Cristine (Maó): la cocina de mercado del chef Pau Sintes en el hotel Cristine Bedfor (una Llave Michelin), recomendada por la Guía Michelin 2026."
-  }
+  },
+  "imageAlt": "Una mesa puesta con vajilla y cristalería de restaurante"
 }
