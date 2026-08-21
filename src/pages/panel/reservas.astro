@@ -14,6 +14,7 @@
 import "../../styles/global.css";
 import { SITE } from "../../config/site";
 import { VEHICLE_CATEGORIES, EXTRAS } from "../../lib/bookings/catalog";
+import { componerPeticionDeInfo, mailtoHref, type CorreoCompuesto } from "../../lib/bookings/emails";
 
 const onVercel = !!process.env.VERCEL;
 
@@ -75,6 +76,14 @@ if (configured) {
 }
 const catName = (id: string) => VEHICLE_CATEGORIES.find((c) => c.id === id)?.name.es ?? id;
 const ESTADOS = ["", "solicitada", "confirmada", "rechazada", "cancelada"];
+
+/* Para cada solicitud se redacta por adelantado el correo que pide los datos
+   que faltan para poder presupuestar (ver lib/bookings/emails.ts). Se compone
+   aquí, en el servidor, para que la tabla pueda mostrar de un vistazo cuáles
+   están incompletas sin tener que abrir ninguna. */
+const correos: Record<string, CorreoCompuesto> = Object.fromEntries(
+  bookings.map((b) => [b.ref, componerPeticionDeInfo(b, b.email, SITE.name)]),
+);
 
 // Extras: del JSON de la base a texto legible («Silla de niño ×1, …»).
 const extrasLabel = (json: string): string => {
@@ -198,8 +207,53 @@ const fmtDate = (iso: string) => (iso ? iso.slice(0, 16).replace("T", " ") : "�
                       </td>
                       <td class="px-3 py-3">{b.coupon ?? "—"}</td>
                       <td class="px-3 py-3">{extrasLabel(b.extras)}</td>
-                      <td class="px-3 py-3 font-medium text-tinta">{b.status}</td>
+                      <td class="px-3 py-3 font-medium text-tinta">
+                        {b.status}
+                        {correos[b.ref].huecos.length > 0 && (
+                          <p class="mt-1 text-xs font-normal text-arcilla">
+                            Faltan {correos[b.ref].huecos.length} dato
+                            {correos[b.ref].huecos.length === 1 ? "" : "s"} para presupuestar
+                          </p>
+                        )}
+                      </td>
                       <td class="px-3 py-3">
+                        {/* Pedir datos que faltan. Se abre el correo YA ESCRITO en el
+                            cliente de correo, para leerlo y ajustarlo antes de enviarlo:
+                            no sale nada a un cliente sin que una persona lo vea. Al ser
+                            `mailto:`, el cuerpo es texto plano por definición. */}
+                        {correos[b.ref].huecos.length > 0 && (
+                          <details class="mb-2">
+                            <summary class="cursor-pointer list-none rounded-md border border-arcilla px-3 py-1.5 text-center text-xs font-semibold text-arcilla hover:bg-arena/60">
+                              Pedir más información
+                            </summary>
+                            <div class="mt-2 w-72 rounded-md border border-niebla bg-arena/40 p-2">
+                              <ul class="mb-2 list-disc pl-4 text-xs text-piedra-suave">
+                                {correos[b.ref].huecos.map((h) => (
+                                  <li>{h.motivo}</li>
+                                ))}
+                              </ul>
+                              <label class="block text-xs font-semibold text-piedra">
+                                Correo, en {b.locale === "en" ? "inglés" : "español"}
+                                <textarea
+                                  readonly
+                                  rows="12"
+                                  class="mt-1 w-full rounded border border-niebla bg-lino p-2 font-mono text-[0.7rem] leading-snug text-piedra"
+                                >
+                                  {correos[b.ref].cuerpo}
+                                </textarea>
+                              </label>
+                              <a
+                                href={mailtoHref(correos[b.ref])}
+                                class="mt-2 block rounded-md bg-arcilla px-3 py-1.5 text-center text-xs font-semibold text-crema hover:bg-terracota"
+                              >
+                                Abrir en el correo
+                              </a>
+                              <p class="mt-1 text-[0.65rem] leading-tight text-piedra-suave">
+                                Se abre para revisarlo. No se envía solo.
+                              </p>
+                            </div>
+                          </details>
+                        )}
                         <form method="POST" class="flex flex-col gap-1.5">
                           <input type="hidden" name="ref" value={b.ref} />
                           <button
