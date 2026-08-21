@@ -1,34 +1,33 @@
 {
- "name": "Ca Na Xini (Hort Sant Patrici)",
- "lang": "es",
- "translationKey": "ca-na-xini",
- "type": "alojamiento",
- "edition": "menorca",
- "description": "Ocho habitaciones en la casa de 1918 de la finca Hort Sant Patrici, a cinco minutos de Ferreries, entre viñedos y jardines. Es el único hotel de la isla donde se duerme dentro de una quesería con DOP Mahón-Menorca y una bodega propias: se visita la elaboración, se cata el vino de la casa y se desayuna el queso hecho a metros de la cama.",
- "coordinates": {
-  "lat": 39.995,
-  "lng": 4.012
- },
- "area": "Centro (Ferreries)",
- "practicalInfo": {
-  "acceso": "Camí de Sant Patrici, a unos 5 minutos en coche de Ferreries.",
-  "horario": "Confirma temporada y fechas en la web oficial; la quesería y bodega tienen horario de visita propio.",
-  "servicios": "8 habitaciones, piscina exterior de temporada, quesería DOP Mahón-Menorca y bodega propias, viñedos y jardines."
- },
- "website": "https://santpatrici.com/",
- "images": [
-  "/uploads/queso-mahon-artesa.webp"
- ],
- "tags": [
-  "alojamiento",
-  "agroturismo",
-  "lujo",
-  "ferreries"
- ],
- "status": "published",
- "seo": {
-  "description": "Ca Na Xini, Ferreries: hotel rural de 8 habitaciones en la finca Hort Sant Patrici, con quesería DOP y bodega propias."
- },
- "imageAlt": "Un queso Mahón-Menorca artesano curado sobre tabla de madera, con su corteza natural y la pasta marfil.",
- "imageCredit": "Slastic / Wikimedia Commons (public domain)"
+  "name": "Ca Na Xini (Hort Sant Patrici)",
+  "lang": "es",
+  "translationKey": "ca-na-xini",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Ocho habitaciones en la casa de 1918 de la finca Hort Sant Patrici, a cinco minutos de Ferreries, entre viñedos y jardines. Es el único hotel de la isla donde se duerme dentro de una quesería con DOP Mahón-Menorca y una bodega propias: se visita la elaboración, se cata el vino de la casa y se desayuna el queso hecho a metros de la cama.",
+  "coordinates": {
+    "lat": 39.995,
+    "lng": 4.012
+  },
+  "area": "Centro (Ferreries)",
+  "practicalInfo": {
+    "acceso": "Camí de Sant Patrici, a unos 5 minutos en coche de Ferreries.",
+    "horario": "Confirma temporada y fechas en la web oficial; la quesería y bodega tienen horario de visita propio.",
+    "servicios": "8 habitaciones, piscina exterior de temporada, quesería DOP Mahón-Menorca y bodega propias, viñedos y jardines."
+  },
+  "images": [
+    "/uploads/queso-mahon-artesa.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "agroturismo",
+    "lujo",
+    "ferreries"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Ca Na Xini, Ferreries: hotel rural de 8 habitaciones en la finca Hort Sant Patrici, con quesería DOP y bodega propias."
+  },
+  "imageAlt": "Un queso Mahón-Menorca artesano curado sobre tabla de madera, con su corteza natural y la pasta marfil.",
+  "imageCredit": "Slastic / Wikimedia Commons (public domain)"
 }

@@ -1,34 +1,34 @@
 {
- "name": "Morvedra Nou",
- "lang": "en",
- "translationKey": "morvedra-nou",
- "type": "alojamiento",
- "edition": "menorca",
- "description": "An adults-only rural hotel in the Ciutadella countryside, on the way to the southern coves, with rustic rooms opening onto their own terrace or garden — some with private pools — and traditional Menorcan cooking in its restaurant. Open June to October: a country summer ten minutes from Macarella.",
- "coordinates": {
-  "lat": 39.966,
-  "lng": 3.885
- },
- "area": "West (Ciutadella)",
- "practicalInfo": {
-  "acceso": "Ciutadella countryside, about 7 km from town, towards the southern coves.",
-  "horario": "Season June to October; check dates on the official website.",
-  "servicios": "Adults only, outdoor pool, rooms with terrace or garden (some with private pools), Menorcan restaurant."
- },
- "website": "https://www.morvedranou.es/",
- "images": [
-  "/uploads/cami-de-cavalls.webp"
- ],
- "tags": [
-  "alojamiento",
-  "agroturismo",
-  "lujo",
-  "ciutadella"
- ],
- "status": "published",
- "seo": {
-  "description": "Morvedra Nou, Ciutadella: an adults-only rural hotel on the way to the southern coves, with pool and Menorcan cooking."
- },
- "imageAlt": "A turquoise cove between cliffs and pines on the Camí de Cavalls, Menorca.",
- "imageCredit": "Pelayo Arbués / Unsplash"
+  "name": "Morvedra Nou",
+  "lang": "en",
+  "translationKey": "morvedra-nou",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "An adults-only rural hotel in the Ciutadella countryside, on the way to the southern coves, with rustic rooms opening onto their own terrace or garden — some with private pools — and traditional Menorcan cooking in its restaurant. Open June to October: a country summer ten minutes from Macarella.",
+  "coordinates": {
+    "lat": 39.966,
+    "lng": 3.885
+  },
+  "area": "West (Ciutadella)",
+  "practicalInfo": {
+    "acceso": "Ciutadella countryside, about 7 km from town, towards the southern coves.",
+    "horario": "Season June to October; check dates on the official website.",
+    "servicios": "Adults only, outdoor pool, rooms with terrace or garden (some with private pools), Menorcan restaurant."
+  },
+  "website": "https://annuahotels.com/en/boutique-hotels-menorca/hotel-morvedra-nou-menorca",
+  "images": [
+    "/uploads/cami-de-cavalls.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "agroturismo",
+    "lujo",
+    "ciutadella"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Morvedra Nou, Ciutadella: an adults-only rural hotel on the way to the southern coves, with pool and Menorcan cooking."
+  },
+  "imageAlt": "A turquoise cove between cliffs and pines on the Camí de Cavalls, Menorca.",
+  "imageCredit": "Pelayo Arbués / Unsplash"
 }
