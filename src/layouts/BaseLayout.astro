@@ -115,13 +115,34 @@ const umamiOrigin = (() => {
         <meta name="p:domain_verify" content={SITE.pinterestDomainVerify} />
       )
     }
-    {/* Preconnect a los dos únicos orígenes de terceros del sitio (KAN-127).
-        Los dos se cargan en diferido (Umami con `defer`, MailerLite al primer
-        gesto), así que el navegador descubría su dominio tarde y pagaba DNS y
-        TLS en el peor momento. Ahorro medido con Lighthouse: 337 ms en
-        MailerLite y 220 ms en Umami. `umamiOrigin` se deriva de `site.ts` para
-        que cambiar a self-host siga funcionando; `gateway` es a donde el
-        script envía los eventos. */}
+    {/* ORDEN DEL <head>: PRIMERO el preload de la imagen LCP, ANTES que ninguna
+        pista de red a terceros. Se puso al revés el 21-ago-2026 y la home cayó
+        de 97 a 78 en móvil (LCP 2,3 s → 4,7 s, medido dos veces con la caché
+        del borde caliente): los tres `preconnect` abrían tres apretones de
+        manos TLS y se comían las conexiones antes de que el navegador
+        descubriera la foto que más necesita. Nada por encima de esto. */}
+    {
+      heroImage && (
+        <link
+          rel="preload"
+          as="image"
+          href={heroPreloadHref}
+          imagesrcset={heroPreloadSrcset}
+          imagesizes={heroImageSizes}
+          fetchpriority="high"
+          type={heroImageAvif ? "image/avif" : undefined}
+        />
+      )
+    }
+
+    {/* Ahora sí, los dos únicos orígenes de terceros del sitio (KAN-127). Ambos
+        se cargan en diferido —Umami con `defer`, MailerLite al primer gesto o
+        cuando el navegador esté ocioso—, así que NO hacen falta para el primer
+        pintado: van después del héroe a propósito. Aun así conviene avisar de
+        su dominio, porque si no se paga DNS y TLS en el peor momento (Lighthouse
+        midió 337 ms en MailerLite y 220 ms en Umami). `umamiOrigin` se deriva de
+        `site.ts` para que cambiar a self-host siga funcionando; `gateway` es a
+        donde el script envía los eventos. */}
     {
       SITE.analytics.enabled && SITE.analytics.websiteId && umamiOrigin && (
         <>
@@ -144,22 +165,6 @@ const umamiOrigin = (() => {
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="alternate" type="application/rss+xml" title={`${SITE.name} — RSS`} href={rssHref} />
-
-    {/* Preload de la imagen LCP del hero: el navegador la descarga ya, sin esperar
-        al CSS de fuentes (render-blocking). Decisivo para el LCP en móvil. */}
-    {
-      heroImage && (
-        <link
-          rel="preload"
-          as="image"
-          href={heroPreloadHref}
-          imagesrcset={heroPreloadSrcset}
-          imagesizes={heroImageSizes}
-          fetchpriority="high"
-          type={heroImageAvif ? "image/avif" : undefined}
-        />
-      )
-    }
 
     <Seo
       title={title}
