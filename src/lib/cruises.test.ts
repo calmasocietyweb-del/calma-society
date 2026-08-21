@@ -87,20 +87,39 @@ test("una PERNOCTA no se toma por el día tipo del barco", () => {
   assert.ok(wind.escalaMin > 9 * 60, "no puede haber cogido las horas de la pernocta");
 });
 
-test("una escala SIN horas no inventa un tiempo en tierra", () => {
-  // Emerald Cruises no publica horas de atraque. Antes que estimarlas, no se publican:
-  // el barco sale en el calendario, pero no puede sostener una página de tiempo útil.
-  const sakara = CALLS.filter((c: { ship: string }) => c.ship === "Emerald Sakara");
-  assert.ok(sakara.length >= 2, "el Sakara repite: sin horas, es el caso límite");
-  for (const e of sakara) {
-    assert.equal(e.arrival, null);
-    assert.equal(e.departure, null);
+/**
+ * Barcos que repiten escala pero de los que el puerto NO publica horas en
+ * ninguna de ellas. Se calcula del dato real en vez de nombrar un barco
+ * concreto: el registro del puerto se actualiza a diario, y una prueba que
+ * decía «Emerald Sakara nunca tiene horas» se cayó sola el 21-ago-2026, en
+ * cuanto el puerto publicó las suyas. El dato era correcto; la premisa de la
+ * prueba había caducado. Lo que hay que proteger es la REGLA, no el ejemplo.
+ */
+const repitenSinHoras = () => {
+  const porBarco = new Map<string, { arrival: string | null; departure: string | null }[]>();
+  for (const c of CALLS as { ship: string; arrival: string | null; departure: string | null }[]) {
+    if (!porBarco.has(c.ship)) porBarco.set(c.ship, []);
+    porBarco.get(c.ship)!.push(c);
   }
-  assert.equal(
-    barcosConPagina().some((b) => b.ship === "Emerald Sakara"),
-    false,
-    "repite, pero sin horas no hay nada honesto que contarle al crucerista",
-  );
+  return [...porBarco.entries()]
+    .filter(([, e]) => e.length >= 2 && !e.some((x) => x.arrival && x.departure))
+    .map(([ship]) => ship);
+};
+
+test("una escala SIN horas no inventa un tiempo en tierra", () => {
+  // Antes que estimar unas horas, no se publican: el barco sale en el calendario,
+  // pero no puede sostener una página de "cuánto te da tiempo a ver".
+  const sinHoras = repitenSinHoras();
+  assert.ok(sinHoras.length > 0, "debe quedar algún barco que repita sin horas: es el caso límite");
+
+  const conPagina = new Set(barcosConPagina().map((b) => b.ship));
+  for (const ship of sinHoras) {
+    assert.equal(
+      conPagina.has(ship),
+      false,
+      `${ship} repite, pero sin horas no hay nada honesto que contarle al crucerista`,
+    );
+  }
 });
 
 test("solo tienen página los barcos que repiten Y tienen horas", () => {
@@ -111,8 +130,6 @@ test("solo tienen página los barcos que repiten Y tienen horas", () => {
     assert.ok(b.arrival && b.departure, `${b.ship} debería tener horas`);
     assert.ok(b.utilesMin > 0, `${b.ship} debería dejar tiempo útil`);
   }
-  // Un barco sin horas conocidas NO puede colarse (Emerald Sakara repite, pero no las tiene).
-  assert.equal(barcos.some((b) => b.ship === "Emerald Sakara"), false);
 });
 
 test("cada barco dice lo que cabe y lo que no, sin solaparse", () => {
