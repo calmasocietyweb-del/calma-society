@@ -1,0 +1,47 @@
+# Cabeceras de Cloudflare Pages (KAN-127).
+#
+# Hasta ahora TODO el sitio se servía con `Cache-Control: max-age=0,
+# must-revalidate`, incluidos los ficheros con hash de contenido y las ~100 MB
+# de fotos: el navegador volvía a preguntar por cada imagen en cada visita.
+#
+# Regla: si el nombre del fichero cambia cuando cambia su contenido, se cachea
+# para siempre; si no, se revalida.
+
+# Por defecto: seguridad para todo el sitio. El HTML se deja sin caché de
+# navegador (la web se reconstruye a diario y el parte de calas cambia cada
+# mañana); del caché de borde ya se encarga Cloudflare.
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=(), interest-cohort=()
+
+# Assets con hash en el nombre (Astro los renombra en cada build): inmutables.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Fotos y ficheros subidos. El nombre NO lleva hash, así que se usa un año con
+# revalidación en segundo plano: el visitante nunca espera por una foto y, si
+# se sustituye una, el borde sirve la nueva en la siguiente pasada.
+/uploads/*
+  Cache-Control: public, max-age=31536000, stale-while-revalidate=86400
+
+# Fuentes: mismo criterio que los assets con hash.
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Iconos y manifiesto: cambian muy de tarde en tarde.
+/favicon.svg
+  Cache-Control: public, max-age=604800
+/favicon.ico
+  Cache-Control: public, max-age=604800
+
+# El panel no es público: fuera de buscadores y de cualquier caché compartida.
+/panel/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store
+
+# NOTA: `Strict-Transport-Security` (HSTS) NO se pone aquí a propósito. Va de la
+# mano de la decisión pendiente sobre `www`/`http`, que hoy sirven duplicados
+# (ver "Conocido y NO arreglado" en el registro del vault). Activar HSTS antes
+# de redirigir `http` → `https` es un cambio difícil de revertir.

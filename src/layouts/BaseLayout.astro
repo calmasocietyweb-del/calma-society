@@ -88,6 +88,16 @@ const locale = Astro.props.locale ?? currentLocale(Astro.url.pathname);
 const localeConfig = getLocaleConfig(locale);
 const t = useTranslations(locale);
 const rssHref = locale === "es" ? "/rss.xml" : `/${locale}/rss.xml`;
+
+// Origen del script de analítica, derivado de `site.ts` para que un cambio a
+// self-host no deje el `preconnect` apuntando al sitio equivocado (KAN-127).
+const umamiOrigin = (() => {
+  try {
+    return new URL(SITE.analytics.scriptUrl).origin;
+  } catch {
+    return null;
+  }
+})();
 ---
 
 <!doctype html>
@@ -105,6 +115,30 @@ const rssHref = locale === "es" ? "/rss.xml" : `/${locale}/rss.xml`;
         <meta name="p:domain_verify" content={SITE.pinterestDomainVerify} />
       )
     }
+    {/* Preconnect a los dos únicos orígenes de terceros del sitio (KAN-127).
+        Los dos se cargan en diferido (Umami con `defer`, MailerLite al primer
+        gesto), así que el navegador descubría su dominio tarde y pagaba DNS y
+        TLS en el peor momento. Ahorro medido con Lighthouse: 337 ms en
+        MailerLite y 220 ms en Umami. `umamiOrigin` se deriva de `site.ts` para
+        que cambiar a self-host siga funcionando; `gateway` es a donde el
+        script envía los eventos. */}
+    {
+      SITE.analytics.enabled && SITE.analytics.websiteId && umamiOrigin && (
+        <>
+          <link rel="preconnect" href={umamiOrigin} crossorigin />
+          <link rel="preconnect" href="https://gateway.umami.is" crossorigin />
+        </>
+      )
+    }
+    {/* Misma condición que carga el script universal más abajo: `action` está
+        vacío (el formulario lo sirve MailerLite), así que la puerta real es
+        `enabled` + `accountId`. */}
+    {
+      SITE.newsletter.enabled && SITE.newsletter.accountId && (
+        <link rel="preconnect" href="https://assets.mailerlite.com" crossorigin />
+      )
+    }
+
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon-96x96.png" sizes="96x96" type="image/png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

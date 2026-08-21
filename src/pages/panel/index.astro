@@ -11,6 +11,18 @@
  */
 import "../../styles/panel.css";
 
+/**
+ * ¿Se ha compilado Keystatic en ESTE despliegue? Misma condición que
+ * `cmsEnabled` en `astro.config.ts`. En la web pública (Cloudflare) el CMS no
+ * se compila, así que `/keystatic` devolvía 404: era el único enlace interno
+ * roto del sitio (KAN-127). Ahora la tarjeta explica dónde se abre en vez de
+ * prometer una página que no existe.
+ */
+const cmsDisponible =
+  !!process.env.VERCEL ||
+  process.env.KEYSTATIC === "true" ||
+  ["dev", "start", "cms"].includes(process.env.npm_lifecycle_event ?? "");
+
 const HERRAMIENTAS = [
   {
     href: "/panel/socios",
@@ -23,9 +35,11 @@ const HERRAMIENTAS = [
     texto: "Espejo de Umami: tráfico, herramientas y clics por colaborador.",
   },
   {
-    href: "/keystatic",
+    href: cmsDisponible ? "/keystatic" : null,
     titulo: "Editor de artículos",
-    texto: "Keystatic: crear y aprobar contenido de la revista sin tocar código.",
+    texto: cmsDisponible
+      ? "Keystatic: crear y aprobar contenido de la revista sin tocar código."
+      : "Keystatic solo se compila en el despliegue de edición (Vercel). Ábrelo desde ahí.",
   },
   {
     href: "/panel/reservas",
@@ -68,12 +82,21 @@ const EXTERNOS = [
 
       <nav class="bo-idx" aria-label="Herramientas internas">
         {
-          HERRAMIENTAS.map((t) => (
-            <a href={t.href} class="bo-card">
-              <h2>{t.titulo}</h2>
-              <p>{t.texto}</p>
-            </a>
-          ))
+          HERRAMIENTAS.map((t) =>
+            t.href ? (
+              <a href={t.href} class="bo-card">
+                <h2>{t.titulo}</h2>
+                <p>{t.texto}</p>
+              </a>
+            ) : (
+              /* Sin destino en este despliegue: se muestra como ficha apagada,
+                 no como enlace, para no prometer un clic que da 404. */
+              <div class="bo-card bo-card--apagada">
+                <h2>{t.titulo}</h2>
+                <p>{t.texto}</p>
+              </div>
+            ),
+          )
         }
       </nav>
 

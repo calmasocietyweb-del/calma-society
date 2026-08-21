@@ -590,13 +590,23 @@ body.bo {
     grid-template-columns: 1fr;
   }
 }
-.bo-idx a.bo-card {
+.bo-idx a.bo-card,
+.bo-idx div.bo-card {
   display: block;
   padding: 16px;
   text-decoration: none;
 }
 .bo-idx a.bo-card:hover {
   border-color: var(--bo-verde);
+}
+/* Herramienta que no existe en ESTE despliegue: se ve, se explica, pero no
+   se puede pulsar. Sin hover ni cursor de enlace (KAN-127). */
+.bo-idx .bo-card--apagada {
+  background: var(--bo-bg);
+  border-style: dashed;
+}
+.bo-idx .bo-card--apagada h2 {
+  color: var(--bo-ink-2);
 }
 .bo-idx h2 {
   margin: 0 0 6px;

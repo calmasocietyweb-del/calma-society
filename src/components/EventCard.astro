@@ -15,8 +15,11 @@ interface Props {
   /** Activa el movimiento editorial (revelado + parallax). Solo la portada lo
       pasa; en la agenda y otros listados la tarjeta va estática (por defecto). */
   animate?: boolean;
+  /** La PRIMERA tarjeta de la rejilla es el elemento LCP de la agenda: su foto
+      debe pedirse de inmediato, no en diferido (KAN-127). Solo una por página. */
+  priority?: boolean;
 }
-const { event, locale, animate = false } = Astro.props;
+const { event, locale, animate = false, priority = false } = Astro.props;
 const { data } = event;
 // URL de la página de detalle del evento en el idioma de la tarjeta.
 const href = eventUrl(locale, event.id);
@@ -53,7 +56,8 @@ const dateLabel =
           width="1600"
           height="1067"
           class={animate ? "img-calma parallax-img h-full w-full object-cover" : "img-calma h-full w-full object-cover"}
-          loading="lazy"
+          loading={priority ? "eager" : "lazy"}
+          fetchpriority={priority ? "high" : undefined}
           decoding="async"
         />
       )

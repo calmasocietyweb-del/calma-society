@@ -67,8 +67,8 @@ const eventsLd = events.map((e) =>
       {/* REJILLA de eventos (foto + datos), por proximidad. El filtro CSS oculta
           las que no son del tipo elegido (ver global.css → .agenda-filterable). */}
       <div class="mt-10 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-        {events.map((e) => (
-          <EventCard event={e} locale={locale} />
+        {events.map((e, i) => (
+          <EventCard event={e} locale={locale} priority={i === 0} />
         ))}
       </div>
     </div>
