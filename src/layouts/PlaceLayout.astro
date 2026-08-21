@@ -138,9 +138,32 @@ const typeLbl = placeTypeLabel(data.type, locale);
 const typeRedundant =
   data.type === "otro" || data.name.toLowerCase().includes(typeLbl.split(" ")[0].toLowerCase());
 const island = locale === "fr" ? "Minorque" : "Menorca";
-const titleParts = [typeRedundant ? null : typeLbl, data.area].filter(Boolean).join(", ");
-const seoTitle =
+
+/* Para el <title> se usa solo el MUNICIPIO, no la `area` completa (KAN-129).
+   Muchas fichas guardan en `area` una localización descriptiva entre paréntesis
+   («Es Mercadal (Finca Lluriach, Camí de Tramuntana, hacia la costa norte)») y
+   volcarla entera producía títulos de hasta 161 caracteres, de los que Google
+   solo enseña unos 60. El paréntesis se sigue viendo en la propia página. */
+const areaCorta = (data.area ?? "").split(" (")[0].trim();
+const titleParts = [typeRedundant ? null : typeLbl, areaCorta].filter(Boolean).join(", ");
+const seoTitleBase =
   data.seo?.title ?? `${data.name} — ${titleParts.includes(island) ? titleParts : `${titleParts}, ${island}`}`;
+
+/* Recorte final por si el NOMBRE ya es largo de por sí. Se corta por la última
+   frontera de palabra para no partir palabras, y se limpia la puntuación que
+   quede colgando: una coma o un guion final, o un paréntesis que se abrió y ya
+   no se cierra («… reserve (S'Algar» quedaría manco). */
+const MAX_TITULO = 62;
+function recortar(t: string): string {
+  if (t.length <= MAX_TITULO) return t;
+  const corte = t.lastIndexOf(" ", MAX_TITULO);
+  let out = t.slice(0, corte > 0 ? corte : MAX_TITULO).trim();
+  const abre = (out.match(/\(/g) ?? []).length;
+  const cierra = (out.match(/\)/g) ?? []).length;
+  if (abre > cierra) out = out.slice(0, out.lastIndexOf("(")).trim();
+  return out.replace(/[,;:—–-]+$/, "").trim();
+}
+const seoTitle = recortar(seoTitleBase);
 ---
 
 <BaseLayout title={seoTitle} description={data.seo?.description ?? data.description} locale={locale} alternates={alternates}>
@@ -155,7 +178,7 @@ const seoTitle =
     {
       rating && (
         <p class="mt-3 flex flex-wrap items-center gap-x-1.5 text-sm text-piedra-suave">
-          <span aria-hidden="true" class="text-oro-vivo">★</span>
+          <span aria-hidden="true" class="text-oro">★</span>
           <span class="font-semibold text-tinta">{fmtScore(rating.score, locale)}</span>
           <span>
             · {fmtReviews(rating.reviews, locale)} {locale === "es" ? "reseñas en Google" : locale === "fr" ? "avis Google" : "Google reviews"}

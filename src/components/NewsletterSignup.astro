@@ -131,7 +131,7 @@ const mlMode = action
                 Formspree → importar a MailerLite. Oculto por defecto: solo aparece
                 cuando hace falta, sin parpadeo en el caso normal. */}
             <div class="ml-fallback" hidden>
-              <p class="mb-1 text-xs text-lino/60">{copy.text}</p>
+              <p class="mb-1 text-xs text-lino/75">{copy.text}</p>
               <SocietyCaptureForm locale={locale} tone="dark" idSuffix="-mlfb" umamiEvent={`${umamiEvent}-fallback`} />
             </div>
             <noscript>
@@ -182,7 +182,7 @@ const mlMode = action
           </form>
         )}
 
-        <p class="mt-4 text-xs text-lino/60">{t("newsletter.privacy")}</p>
+        <p class="mt-4 text-xs text-lino/75">{t("newsletter.privacy")}</p>
       </div>
     </section>
   )

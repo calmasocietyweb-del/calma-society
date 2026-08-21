@@ -16,8 +16,14 @@
   --color-terracota: #b96a4b; /* PRIMARIO cálido: olas del logo, acentos, bordes, hover */
   --color-arcilla: #73402d; /* oscuro: fondos, botones y texto-enlace (contraste AA) */
   --color-crema: #f4ecdc; /* texto/olas sobre fondos oscuros */
-  --color-oro: #8a6a3a; /* dorado en TEXTO sobre claro (contraste AA) */
-  --color-oro-vivo: #a8895c; /* dorado en GRÁFICOS/formas grandes: sol del logo, filetes, botón dorado */
+  /* Dorado de TEXTO. Era #8a6a3a, que solo pasaba AA sobre lino (4,55) y se
+     quedaba en 3,96 sobre arena — justo donde más se usa, incluido el pie de
+     página de las 833. Este pasa AA sobre los CUATRO fondos claros: lino 5,38 ·
+     arena/40 5,10 · arena/60 4,93 · arena 4,67 (KAN-128). */
+  --color-oro: #7d5f34;
+  /* Dorado de GRÁFICOS/formas grandes: sol del logo, filetes, botón dorado.
+     ⚠️ NO usar en texto: sobre lino da 2,99 y no llega a AA ni de lejos. */
+  --color-oro-vivo: #a8895c;
   --color-champan: #d9c293; /* oro claro (cima del degradado del sol): etiquetas doradas sobre fondo oscuro (AA) */
 
   /* ---- Tipografía ---- */

@@ -174,8 +174,9 @@ Color (paleta "Calma" — CÁLIDA / mediterránea, SIN azul; alineada con marca/
   --color-terracota:    #B96A4B   (PRIMARIO cálido: olas del logo, acentos, bordes, hover)
   --color-arcilla:      #73402D   (oscuro: fondos, botones y texto-enlace; contraste AA)
   --color-crema:        #F4ECDC   (texto/olas sobre fondos oscuros)
-  --color-oro:          #8A6A3A   (dorado en TEXTO sobre claro; contraste AA)
-  --color-oro-vivo:     #A8895C   (dorado en GRÁFICOS/formas: sol del logo, filetes, botón dorado)
+  --color-oro:          #7D5F34   (dorado en TEXTO sobre claro; AA sobre lino Y sobre arena)
+  --color-oro-vivo:     #A8895C   (dorado SOLO en GRÁFICOS/formas: sol del logo, filetes, botón
+                                   dorado. ⛔ NUNCA en texto: sobre lino da 2,99, muy lejos de AA)
   --color-champan:      #D9C293   (oro claro: etiquetas doradas sobre fondo oscuro; AA)
   // El teal anterior (#1E5566 / #143C49) se ha RETIRADO de la marca.
 
