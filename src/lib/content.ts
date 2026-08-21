@@ -5,6 +5,7 @@
  */
 import { getCollection, type CollectionEntry } from "astro:content";
 import type { Locale } from "../config/site";
+import { compareEvents, startOfToday } from "./events-order";
 
 const PUBLISHED = "published";
 
@@ -70,28 +71,18 @@ export async function getPlaces(locale: Locale) {
 }
 
 /**
- * Eventos publicados de un idioma, ordenados por PROXIMIDAD: la próxima
- * ocurrencia desde hoy primero, dando la vuelta al año (un evento de diciembre
- * va antes que uno de enero si hoy es noviembre). No por mes natural. Como
- * casi todos son fiestas anuales, se usa el mes-día de `startDate` y se calcula
- * la siguiente ocurrencia respecto a la fecha de compilación.
+ * Eventos publicados de un idioma, ordenados por `compareEvents`: primero los
+ * que están EN CURSO hoy (del que antes se acaba al que más tarde) y después el
+ * resto por próxima cita anual. La lógica vive en `events-order.ts`, que es un
+ * módulo puro y tiene sus propias pruebas (KAN-126).
  */
 export async function getEvents(locale: Locale) {
   const all = await getCollection(
     "eventos",
     (e) => e.data.lang === locale && e.data.status === PUBLISHED,
   );
-  const now = new Date();
-  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  const daysUntilNext = (start: Date) => {
-    // Usa el mes-día (UTC, porque las fechas se guardan como AAAA-MM-DD).
-    const next = new Date(today.getFullYear(), start.getUTCMonth(), start.getUTCDate());
-    if (next.getTime() < today.getTime()) next.setFullYear(next.getFullYear() + 1);
-    return next.getTime() - today.getTime();
-  };
-  return all.sort(
-    (a, b) => daysUntilNext(a.data.startDate) - daysUntilNext(b.data.startDate),
-  );
+  const today = startOfToday();
+  return all.sort((a, b) => compareEvents(a.data, b.data, today));
 }
 
 /**
