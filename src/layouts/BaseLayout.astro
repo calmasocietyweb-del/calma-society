@@ -116,11 +116,19 @@ const umamiOrigin = (() => {
       )
     }
     {/* ORDEN DEL <head>: PRIMERO el preload de la imagen LCP, ANTES que ninguna
-        pista de red a terceros. Se puso al revés el 21-ago-2026 y la home cayó
-        de 97 a 78 en móvil (LCP 2,3 s → 4,7 s, medido dos veces con la caché
-        del borde caliente): los tres `preconnect` abrían tres apretones de
-        manos TLS y se comían las conexiones antes de que el navegador
-        descubriera la foto que más necesita. Nada por encima de esto. */}
+        pista de red a terceros. Un `preconnect` abre un apretón de manos TLS y
+        ocupa una conexión; si va por delante, el navegador gasta cupo antes de
+        descubrir la foto que más necesita. Y ninguno de esos orígenes hace
+        falta para el primer pintado (Umami va con `defer`, MailerLite al primer
+        gesto). Nada por encima de esto.
+
+        ⚠️ Cómo se llegó aquí, 21-ago-2026: se pusieron los `preconnect` arriba
+        y una medición pareció mostrar la home cayendo de 97 a 78. Resultó ser
+        RUIDO de la máquina que medía, no el código: el `benchmarkIndex` de
+        Lighthouse había bajado de 2778 a ~2200 y la pasada con CPU comparable
+        daba 95. La reordenación se mantiene porque es lo correcto de todos
+        modos, no porque arreglara una regresión. Lección: comparar siempre el
+        `benchmarkIndex` entre pasadas antes de atribuir un cambio de nota. */}
     {
       heroImage && (
         <link
