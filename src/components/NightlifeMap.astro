@@ -901,6 +901,15 @@ const CH = {
     claseS: "mercedes-classe-s-minorque",
     claseV: "mercedes-classe-v-minorque",
   },
+  // DE: slugs previstos del clúster de chófer. ⚠️ Estos cuatro artículos AÚN NO
+  // existen en alemán; deben publicarse antes de que exista /de/sonnenuntergaenge-und-drinks,
+  // o estos enlaces darán 404 (el alemán es rollout 'partial', hoy no se renderiza).
+  de: {
+    lujo: "menorca-mit-stil-erkunden",
+    velada: "abend-mit-chauffeur-menorca",
+    claseS: "mercedes-s-klasse-menorca",
+    claseV: "mercedes-v-klasse-menorca",
+  },
 }[locale];
 
 // Mes de la última verificación de valoraciones (para el descargo honesto).
@@ -1050,6 +1059,53 @@ const TT = {
       claseS: "Mercedes Classe S",
       claseV: "Mercedes Classe V",
     },
+  },
+  de: {
+      eyebrow: "Die Karte der Nacht",
+      intro:
+        "Von den Klippen zum Sonnenuntergang bis zu den Sonnenaufgängen im Osten, dazu Beach Clubs, Cocktailbars an den Häfen und die traditionsreichsten Clubs der Insel: unsere bedachte Auswahl für Menorca nach Einbruch der Dunkelheit — mit der Google-Bewertung jedes Lokals, dem genauen Ort und der Antwort darauf, wie Sie hinkommen, ohne selbst zu fahren.",
+      filterTitle: "Nach Art des Abends filtern",
+      todas: "Alle",
+      mapAria:
+        "Karte von Menorca mit der Lage der Lokale des Nachtlebens. Alle Angaben in der Liste darunter.",
+      costaNorte: "NORDKÜSTE",
+      costaSur: "SÜDKÜSTE",
+      mapCredit: "Umriss: © OpenStreetMap",
+      teLlevamos: "Wir fahren Sie",
+      teLlevamosSub: "S-Klasse oder V-Klasse mit Chauffeur",
+      reserva: "Mit Menorca Bus buchen",
+      ubicacion: "Route berechnen",
+      web: "Offizielle Website",
+      seasonal:
+        "Öffnungszeiten, Saison und Kapazität ändern sich jedes Jahr, und fast alles ist saisonal (Sommer). Prüfen Sie vor dem Besuch die offizielle Website oder den Instagram-Kanal des Lokals.",
+      reviewsWord: "Bewertungen",
+      onGoogle: "auf Google",
+      ratingsNote: `Google-Bewertungen im ${ratingsMonth} von Hand erhoben; sie ändern sich mit der Zeit. Aussichtspunkte, Leuchttürme und Strände sind öffentlich zugängliche Orte in der Natur, ohne Bewertung als Betrieb.`,
+      sortTitle: "Sortieren",
+      sortRec: "Empfohlen",
+      sortRating: "Beste Bewertung",
+      zoneTitle: "Inselseite",
+      zonaTodas: "Ganze Insel",
+      naturalTag: "Öffentlicher Ort",
+      transferShort: "Mit Chauffeur ankommen",
+      resultsNone: "Keine Lokale passen zu diesen Filtern. Nehmen Sie einen Filter heraus.",
+      banner: {
+        eyebrow: "Mit Chauffeur ankommen",
+        title: "Kommen Sie so an, wie es die Nacht verdient",
+        lead: "Die beste Entscheidung des Abends ist, das Auto stehen zu lassen. Wir holen Sie in einem Mercedes mit privatem Chauffeur ab, vom ersten Sonnenuntergang bis zum letzten Cocktail — und Sie fahren nach Hause, ohne einen Gedanken ans Lenkrad.",
+        photoAlt: "Schwarze Mercedes S-Klasse von Menorca Bus am Meer an der menorquinischen Küste.",
+        benefits: [
+          "Ein privater Chauffeur in einer Mercedes S-Klasse, oder eine V-Klasse für die Gruppe.",
+          "Wir bringen Sie hin, warten auf Sie und holen Sie ab, wann immer Sie sagen.",
+          "Wir parken und fahren zurück: So können Sie beide anstoßen.",
+          "Ortskundige Fahrer, die jede Bucht und jeden Hafen kennen.",
+        ],
+        cta: "Mit Menorca Bus buchen",
+        lujo: "Mit Stil unterwegs",
+        velada: "Abende mit Chauffeur",
+        claseS: "Mercedes S-Klasse",
+        claseV: "Mercedes V-Klasse",
+      },
   },
 };
 const T = TT[locale];

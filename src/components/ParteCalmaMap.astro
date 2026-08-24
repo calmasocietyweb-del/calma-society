@@ -19,8 +19,22 @@ import type { Locale } from "../config/site";
 import { abs } from "../lib/schema";
 import JsonLd from "./JsonLd.astro";
 
+/*
+ * Idiomas en los que ESTA herramienta está desplegada. No es lo mismo que los
+ * locales del sitio: el despliegue es por mercados (CLAUDE.md decisión 2), y
+ * «Dónde el mar está en calma» solo tiene página en es/en/fr
+ * (`/donde-el-mar-esta-en-calma`, `/en/where-the-sea-is-calm`, `/fr/ou-la-mer-est-calme`).
+ *
+ * Declararlo aquí es lo que evita el fallo silencioso al añadir un idioma: sin
+ * esto, `T[locale]` era `undefined` en alemán y la herramienta reventaba en
+ * tiempo de ejecución. Ahora TypeScript impide renderizarla en un idioma que no
+ * tenga su copy traducido. Para sumar un idioma: traduce los bloques `T`,
+ * `HOY_MANANA`, los tramos del día y el cielo, y añádelo a esta unión.
+ */
+type ToolLocale = Extract<Locale, "es" | "en" | "fr">;
+
 interface Props {
-  locale: Locale;
+  locale: ToolLocale;
 }
 const { locale } = Astro.props;
 

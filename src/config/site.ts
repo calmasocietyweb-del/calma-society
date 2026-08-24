@@ -10,7 +10,7 @@
  */
 
 /** Códigos de idioma soportados. Amplía la unión al activar más idiomas. */
-export type Locale = 'es' | 'en' | 'fr';
+export type Locale = 'es' | 'en' | 'fr' | 'de';
 
 export interface LocaleConfig {
   /** Código corto (prefijo de URL para los no-por-defecto). */
@@ -60,6 +60,11 @@ export const SITE = {
     // Francés: arranque POR MERCADOS (jun 2026) — solo en las páginas perennes
     // traducidas (herramientas + faro). El selector solo lo muestra donde existe.
     { code: 'fr', label: 'Français', htmlLang: 'fr-FR', rollout: 'partial' },
+    // Alemán: arranque POR MERCADOS (ago 2026). Es el 2.º mercado con más demanda
+    // desaprovechada en Search Console — 2.623 impresiones en posición 7,3 con un
+    // CTR del 0,46 %: salimos en primera página y no nos hacen clic porque el
+    // título está en otro idioma. Orden de mercados fijado por el dueño: DE → FR → IT → PT.
+    { code: 'de', label: 'Deutsch', htmlLang: 'de-DE', rollout: 'partial' },
   ] as LocaleConfig[],
 
   /** Redes sociales. */

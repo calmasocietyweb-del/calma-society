@@ -41,13 +41,13 @@ export function homePath(locale: Locale): string {
 // ---- URLs de los tipos de contenido (prefijos traducidos por idioma) ----
 
 const PREFIX = {
-  article: { es: "/articulo", en: "/en/article", fr: "/fr/article" },
-  place: { es: "/lugar", en: "/en/place", fr: "/fr/lieu" },
-  author: { es: "/autor", en: "/en/author", fr: "/fr/auteur" },
+  article: { es: "/articulo", en: "/en/article", fr: "/fr/article", de: "/de/artikel" },
+  place: { es: "/lugar", en: "/en/place", fr: "/fr/lieu", de: "/de/ort" },
+  author: { es: "/autor", en: "/en/author", fr: "/fr/auteur", de: "/de/autor" },
   // Detalle de evento: cuelga de la propia agenda (KAN-102). FR aún no tiene
   // eventos publicados; el prefijo existe para que el tipo no se rompa al
   // activar ese mercado.
-  event: { es: "/agenda", en: "/en/whats-on", fr: "/fr/agenda" },
+  event: { es: "/agenda", en: "/en/whats-on", fr: "/fr/agenda", de: "/de/veranstaltungen" },
 } satisfies Record<string, Record<Locale, string>>;
 
 export function articleUrl(locale: Locale, slug: string): string {
@@ -71,6 +71,7 @@ const PLACES_INDEX = {
   es: "/lugares",
   en: "/en/places",
   fr: "/fr/lieux",
+  de: "/de/orte",
 } satisfies Record<Locale, string>;
 
 export function placesIndexPath(locale: Locale): string {
@@ -86,6 +87,7 @@ const PRIVACY_PATH = {
   es: "/privacidad",
   en: "/en/privacy",
   fr: "/fr/confidentialite",
+  de: "/de/datenschutz",
 } satisfies Record<Locale, string>;
 
 export function privacyPath(locale: Locale): string {
@@ -101,6 +103,7 @@ const BUSINESS_PATH = {
   es: "/para-negocios",
   en: "/en/for-businesses",
   fr: "/fr/pour-les-professionnels",
+  de: "/de/fuer-unternehmen",
 } satisfies Record<Locale, string>;
 
 export function businessPath(locale: Locale): string {
@@ -112,6 +115,7 @@ export const INTL_LOCALE: Record<Locale, string> = {
   es: "es-ES",
   en: "en-GB",
   fr: "fr-FR",
+  de: "de-DE",
 };
 
 /** Formatea una fecha según el idioma. */

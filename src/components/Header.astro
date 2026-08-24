@@ -23,6 +23,7 @@ const PAGES: Record<Locale, { about: string; newsletter: string; contact: string
   es: { about: "/quienes-somos", newsletter: "/newsletter", contact: "/contacto" },
   en: { about: "/en/about", newsletter: "/en/newsletter", contact: "/en/contact" },
   fr: { about: "/fr/qui-sommes-nous", newsletter: "/fr/newsletter", contact: "/fr/contact" },
+  de: { about: "/de/ueber-uns", newsletter: "/de/newsletter", contact: "/de/kontakt" },
 };
 const pages = PAGES[locale];
 
@@ -44,6 +45,12 @@ const TOOLS: Record<Locale, { href: string; label: string }[]> = {
   fr: [
     { href: "/fr/ou-la-mer-est-calme", label: "Mer calme" },
     { href: "/fr/couchers-et-cocktails", label: "Couchers & cocktails" },
+  ],
+  // DE (despliegue por mercados): Mar en calma + Atardeceres, las dos herramientas
+  // perennes. El Planificador queda fuera hasta tener su dataset en alemán, igual que FR.
+  de: [
+    { href: "/de/wo-das-meer-ruhig-ist", label: "Ruhiges Meer" },
+    { href: "/de/sonnenuntergaenge-und-drinks", label: "Sonnenuntergänge & Drinks" },
   ],
 };
 const tools = TOOLS[locale];

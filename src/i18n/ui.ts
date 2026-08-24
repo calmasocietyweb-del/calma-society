@@ -533,6 +533,178 @@ export const ui = {
     "footer.follow": "Suivez-nous",
     "footer.rights": "Tous droits réservés.",
   },
+  de: {
+    "site.tagline": "Das Mittelmeer, ohne Eile",
+    "brand.tagline": "Das Mittelmeer, ohne Eile",
+    "nav.home": "Startseite",
+    "nav.menu": "Menü",
+    "nav.about": "Über uns",
+    "nav.newsletter": "Die Society",
+    "lang.label": "Sprache",
+    "a11y.skip": "Zum Inhalt springen",
+    "a11y.close": "Schließen",
+    "a11y.breadcrumb": "Navigationspfad",
+
+    "common.readmore": "Weiterlesen",
+    "common.viewall": "Alle ansehen",
+    "common.backhome": "Zurück zur Startseite",
+
+    "home.preview": "Design-Vorschau",
+    "home.hero.title": "Menorca, ohne Eile.",
+    "home.hero.subtitle":
+      "Die Erlebnisse, das Gespür und die Schönheit der Insel — gehoben. Eine Publikation von Calma Society.",
+    "home.featured": "Auswahl der Redaktion",
+    "home.readmore": "Die Geschichte lesen",
+    "home.discover.eyebrow": "Das Wesentliche der Insel",
+    "home.discover.title": "Buchten, Strände und Natur",
+    "home.agenda": "Nicht verpassen",
+    "home.agenda.eyebrow": "Termine",
+    "home.explore": "Die Insel entdecken",
+    "home.explore.eyebrow": "Rubriken",
+    "home.sections.intro": "Sechs Blickwinkel auf Menorca, alle mit Gespür.",
+    "home.manifesto":
+      "Calma Society ist kein weiterer Reiseführer: Es ist ein Blick auf Menorca im Zeichen des stillen Luxus — und eine Gemeinschaft derer, die die Insel ohne Eile lieben. Gespür, in Ruhe gewählte Erlebnisse und die Insel an 365 Tagen im Jahr. Willkommen in der Society.",
+    "home.manifesto.cta": "Die Society entdecken",
+
+    "article.by": "Von",
+    "article.published": "Veröffentlicht am",
+    "article.updated": "Aktualisiert am",
+    "article.related": "Passende Orte",
+    "article.keepreading": "Auch lesenswert",
+    "article.sponsored": "Gesponserter Inhalt",
+    "article.insection": "In",
+
+    "section.empty": "Bald mehr Geschichten in dieser Rubrik.",
+
+    // Ortsverzeichnis (interne Verlinkung; siehe lib/places.ts)
+    "places.title": "Orte auf Menorca",
+    "places.description":
+      "Die Insel, Ort für Ort: Buchten, Restaurants, Baudenkmäler und Winkel, für die sich der Umweg lohnt — jeweils mit Anfahrt, Parkmöglichkeit und der besten Uhrzeit.",
+    "places.intro":
+      "Die ganze Insel, Ort für Ort. Buchten mit Anfahrt und Parkmöglichkeit, Tische mit Gespür, Baudenkmäler und Winkel, für die sich der Umweg lohnt.",
+    "places.all": "Alle Orte",
+    "place.nearby": "In der Nähe",
+    "place.nearby.all": "Alle Orte ansehen",
+
+    "place.practical": "Praktische Hinweise",
+    "place.access": "Zufahrt",
+    "place.parking": "Parken",
+    "place.services": "Ausstattung",
+    "place.besttime": "Beste Zeit",
+    "place.hours": "Öffnungszeiten",
+    "place.area": "Gegend",
+    "place.viewmap": "Auf der Karte ansehen",
+    "place.bestfor": "Gut für",
+    "place.goodtoknow": "Gut zu wissen",
+    "place.what": "Sehen und erleben",
+    "place.getthere": "Anfahrt",
+    "place.effort": "Anstrengung",
+    "place.duration": "Empfohlene Dauer",
+    "place.season": "Saison und Öffnungszeiten",
+    "place.reserve": "Reservierung",
+    "place.reserve.yes": "Empfohlen — auf der offiziellen Seite bestätigen",
+    "place.reserve.yes.operator": "Empfohlen — durchgeführt von %s",
+    "place.official": "Offizielle Website",
+    "place.operator": "Website von %s",
+    "place.owner": "Ist das Ihr Betrieb? Schicken Sie uns eine Korrektur",
+    "place.verified": "Angaben geprüft am",
+    "place.verified.note": "Zeiten und Zufahrt am Tag des Besuchs bestätigen",
+    "place.planit.title": "In Ihre Reise einbauen",
+    "place.planit.text":
+      "Der Reiseplaner stellt Ihre Menorca-Route Tag für Tag zusammen — diesen Ort inbegriffen —, nach Nähe verkettet und ohne Eile.",
+    "place.planit.cta": "Reise planen",
+    "place.transfer.eyebrow": "Mit Chauffeur ankommen",
+    "place.transfer.title": "Wir fahren Sie hin und zurück",
+    "place.transfer.text":
+      "An den Klippen zum Sonnenuntergang und rund um die Häfen gibt es kaum einen Parkplatz — und abends ist Autofahren das Letzte, worauf man Lust hat. Wir holen Sie mit einer Mercedes S-Klasse oder V-Klasse und privatem Chauffeur ab, vom ersten Sonnenuntergang bis zum letzten Cocktail.",
+    "place.transfer.cta": "Mit Menorca Bus buchen",
+
+    "agenda.upcoming": "Was ansteht",
+    "agenda.all": "Alle",
+    "agenda.filterlabel": "Nach Art des Erlebnisses filtern",
+    "agenda.empty": "Zurzeit sind keine Veranstaltungen veröffentlicht.",
+    "agenda.when": "Wann",
+    "agenda.where": "Wo",
+
+    // Veranstaltungsseite (KAN-102)
+    "event.official": "Offizielle Veranstaltungsseite",
+    "event.all": "Alle Termine ansehen",
+    "event.upcoming": "Als Nächstes",
+    "event.related": "Vorher lesen",
+
+    "author.articlesby": "Beiträge von",
+
+    // Wir bieten DEN GUIDE an, keine abstrakte Idee (28. Juli 2026). Die Zahl, die
+    // es entschieden hat: Das allgemeine Formular überzeugte 1 von 489 Besuchern;
+    // die Landingpage des Lead-Magneten 2 von 9 (22 %). Was überzeugt, ist etwas
+    // Konkretes, das man bekommt. Die Zustellung ist echt: Anmeldungen landen in
+    // der Lead-Magnet-Gruppe, die die Willkommensstrecke mit dem PDF auslöst.
+    "newsletter.eyebrow": "Der Willkommens-Guide",
+    "newsletter.title": "Menorcas berühmte Strände",
+    "newsletter.text":
+      "Hinterlassen Sie uns Ihre E-Mail-Adresse und wir schicken Ihnen den Guide: die sechs Strände, die alle sehen wollen — mit der Anfahrt und der Uhrzeit, zu der sie sich leeren. Danach nur hin und wieder ein ruhiger Brief, wenn er sich wirklich lohnt.",
+    // Aufhänger für die Terminseite (zweitmeistbesuchte Seite). Behält den
+    // Veranstaltungswinkel, liefert aber denselben Guide, der tatsächlich verschickt wird.
+    "newsletter.agenda.eyebrow": "Nichts verpassen",
+    "newsletter.agenda.title": "Verpassen Sie nicht, was auf Menorca los ist",
+    "newsletter.agenda.text":
+      "Die Insel ruht nie: Feste, Konzerte und Märkte das ganze Jahr über. Treten Sie der Society bei und wir begrüßen Sie mit dem Guide zu Menorcas berühmten Stränden und der Uhrzeit, zu der sie sich leeren. Ohne Lärm.",
+    "newsletter.placeholder": "Ihre E-Mail-Adresse",
+    "newsletter.cta": "Schicken Sie mir den Guide",
+    "newsletter.privacy": "Kein Spam. Jederzeit abbestellbar.",
+    "newsletter.optinNote": "Wir schicken Ihnen den Guide und wenig sonst. Abbestellen jederzeit möglich.",
+    "newsletter.optinDone": "Sie sind dabei. Wir haben den Guide an Ihr Postfach geschickt (schauen Sie auch im Spam nach).",
+    "newsletter.optinError": "Ihre Anmeldung konnte nicht abgeschlossen werden. Bitte versuchen Sie es gleich noch einmal.",
+    "newsletter.consent": "Ich möchte die Neuigkeiten der Society erhalten und akzeptiere die",
+    // Kein Bestätigungsschritt mehr (Single Opt-in, 28. Juli 2026): Die Dankesseite
+    // kann nichts verlangen, was nie ankommen wird.
+    "thanks.title": "Sie gehören zur Society",
+    "thanks.text":
+      "Wir haben Ihnen den Guide zu Menorcas berühmten Stränden an Ihr Postfach geschickt. Sollte er nicht innerhalb weniger Minuten ankommen, schauen Sie bitte im Spam-Ordner nach. Danach schreiben wir nur, wenn es sich wirklich lohnt.",
+    "thanks.back": "Zurück zur Startseite",
+
+    "nav.contact": "Kontakt",
+    "contact.lead": "Sie haben eine Geschichte, einen Vorschlag oder eine Zusammenarbeit im Sinn? Schreiben Sie uns.",
+    "contact.name": "Name",
+    "contact.email": "E-Mail",
+    "contact.message": "Nachricht",
+    "contact.send": "Nachricht senden",
+    "contact.directemail": "Oder schreiben Sie uns direkt an",
+    "contact.sent": "Vielen Dank! Wir melden uns in Kürze.",
+    "contact.consent": "Ich habe die Datenschutzerklärung gelesen und akzeptiere sie:",
+    "contact.consentLink": "Datenschutzerklärung",
+
+    "business.nav": "Für Betriebe",
+    "business.title": "Führen Sie einen Betrieb auf Menorca?",
+    "business.lead":
+      "Wir schreiben Einträge über die Orte, die uns gefallen: ein Foto, eine Beschreibung mit Gespür, Ihre Angaben, ein Link zu Ihrer Website und die strukturierten Daten, die Google braucht, um Sie richtig anzuzeigen. Auf Spanisch und Englisch, und im Reiseplaner. Heute kostet das nichts.",
+    "business.rules.title": "Was nicht zu kaufen ist",
+    "business.rules.body":
+      "Platzierung, Reihenfolge und Urteil werden nie bezahlt. An dem Tag, an dem es einen Tarif gibt, wird alles Bezahlte gekennzeichnet und vom Redaktionellen getrennt. Genau das ist es, was diesen Reiseführer für den Leser überhaupt wertvoll macht.",
+    "business.field.business": "Name des Betriebs",
+    "business.field.type": "Art",
+    "business.type.restaurante": "Restaurant oder Bar",
+    "business.type.alojamiento": "Hotel, Agrotourismus oder andere Unterkunft",
+    "business.type.experiencia": "Erlebnis, Bootsfahrt oder Ausflug",
+    "business.type.producto": "Erzeuger, Weingut oder Käserei",
+    "business.type.comercio": "Geschäft oder Werkstatt",
+    "business.type.otro": "Sonstiges",
+    "business.field.website": "Website",
+    "business.field.season": "Monate, in denen Sie geöffnet haben",
+    "business.field.seasonHelp": "Die halbe Insel schließt im Winter, und fast kein Reiseführer hält das aktuell.",
+    "business.field.what": "Was Sie anders machen",
+    "business.field.whatHelp":
+      "Ein oder zwei Sätze, ganz schlicht. Davon hängt wirklich ab, ob wir über Sie schreiben. Wenn Sie schon einen Eintrag haben und etwas nicht stimmt, sagen Sie es uns hier.",
+    "business.field.person": "Ihr Name",
+    "business.send": "Senden",
+
+    "footer.about":
+      "Calma Society — das Mittelmeer, ohne Eile: ein Blick auf Menorca im Zeichen des stillen Luxus. Unsere erste Ausgabe.",
+    "footer.sections": "Rubriken",
+    "footer.more": "Mehr",
+    "footer.follow": "Folgen Sie uns",
+    "footer.rights": "Alle Rechte vorbehalten.",
+  },
 } satisfies Record<Locale, Record<string, string>>;
 
 export type UIKey = keyof (typeof ui)["es"];
@@ -556,32 +728,50 @@ export function pick<T>(obj: Partial<Record<Locale, T>>, locale: Locale): T {
 // ---- Etiquetas de datos (tipos de lugar y categorías de evento) ----
 
 const PLACE_TYPES: Record<string, Record<Locale, string>> = {
-  cala: { es: "Cala", en: "Cove", fr: "Crique" },
-  restaurante: { es: "Restaurante", en: "Restaurant", fr: "Restaurant" },
-  alojamiento: { es: "Alojamiento", en: "Stay", fr: "Hébergement" },
-  monumento: { es: "Monumento", en: "Monument", fr: "Monument" },
-  comercio: { es: "Comercio", en: "Shop", fr: "Boutique" },
-  otro: { es: "Lugar", en: "Place", fr: "Lieu" },
+  cala: { es: "Cala", en: "Cove", fr: "Crique", de: "Bucht" },
+  restaurante: { es: "Restaurante", en: "Restaurant", fr: "Restaurant", de: "Restaurant" },
+  bodega: { es: "Bodega", en: "Winery", fr: "Cave viticole", de: "Weingut" },
+  productor: { es: "Productor", en: "Producer", fr: "Producteur", de: "Erzeuger" },
+  bar: { es: "Bar", en: "Bar", fr: "Bar", de: "Bar" },
+  experiencia: { es: "Experiencia", en: "Experience", fr: "Expérience", de: "Erlebnis" },
+  ruta: { es: "Ruta", en: "Trail", fr: "Sentier", de: "Wanderweg" },
+  naturaleza: { es: "Naturaleza", en: "Nature", fr: "Nature", de: "Natur" },
+  monumento: { es: "Monumento", en: "Monument", fr: "Monument", de: "Baudenkmal" },
+  museo: { es: "Museo", en: "Museum", fr: "Musée", de: "Museum" },
+  spa: { es: "Spa", en: "Spa", fr: "Spa", de: "Spa" },
+  alojamiento: { es: "Alojamiento", en: "Stay", fr: "Hébergement", de: "Unterkunft" },
+  comercio: { es: "Comercio", en: "Shop", fr: "Boutique", de: "Geschäft" },
+  pueblo: { es: "Pueblo", en: "Village", fr: "Village", de: "Ortschaft" },
+  otro: { es: "Lugar", en: "Place", fr: "Lieu", de: "Ort" },
 };
 
 /** Etiquetas en PLURAL: encabezados de los grupos del índice de lugares. */
 const PLACE_TYPES_PLURAL: Record<string, Record<Locale, string>> = {
-  cala: { es: "Calas y playas", en: "Coves & beaches", fr: "Criques et plages" },
-  restaurante: { es: "Mesas con criterio", en: "Tables with judgement", fr: "Tables de caractère" },
-  alojamiento: { es: "Alojamientos", en: "Stays", fr: "Hébergements" },
-  monumento: { es: "Monumentos y patrimonio", en: "Monuments & heritage", fr: "Monuments et patrimoine" },
-  comercio: { es: "Comercios y ocio", en: "Shops & nightlife", fr: "Boutiques et sorties" },
-  otro: { es: "Pueblos y otros lugares", en: "Villages & other places", fr: "Villages et autres lieux" },
+  cala: { es: "Calas y playas", en: "Coves & beaches", fr: "Criques et plages", de: "Buchten und Strände" },
+  restaurante: { es: "Mesas con criterio", en: "Tables with judgement", fr: "Tables de caractère", de: "Tische mit Gespür" },
+  bodega: { es: "Bodegas y vinos", en: "Wineries & wine", fr: "Caves et vins", de: "Weingüter und Weine" },
+  productor: { es: "Productores y visitas", en: "Producers & farm visits", fr: "Producteurs et visites", de: "Erzeuger und Besichtigungen" },
+  bar: { es: "Copas y atardeceres", en: "Drinks & sunsets", fr: "Verres et couchers de soleil", de: "Drinks und Sonnenuntergänge" },
+  experiencia: { es: "Experiencias", en: "Experiences", fr: "Expériences", de: "Erlebnisse" },
+  ruta: { es: "Rutas y senderos", en: "Trails & walks", fr: "Sentiers et randonnées", de: "Wege und Wanderungen" },
+  naturaleza: { es: "Naturaleza y parques", en: "Nature & parks", fr: "Nature et parcs", de: "Natur und Naturparks" },
+  monumento: { es: "Monumentos y patrimonio", en: "Monuments & heritage", fr: "Monuments et patrimoine", de: "Baudenkmäler und Kulturerbe" },
+  museo: { es: "Museos y arte", en: "Museums & art", fr: "Musées et art", de: "Museen und Kunst" },
+  spa: { es: "Spas y bienestar", en: "Spas & wellness", fr: "Spas et bien-être", de: "Spas und Wellness" },
+  alojamiento: { es: "Alojamientos", en: "Stays", fr: "Hébergements", de: "Unterkünfte" },
+  comercio: { es: "Comercios y mercados", en: "Shops & markets", fr: "Boutiques et marchés", de: "Geschäfte und Märkte" },
+  pueblo: { es: "Pueblos", en: "Villages & towns", fr: "Villages", de: "Orte und Städte" },
+  otro: { es: "Otros lugares", en: "Other places", fr: "Autres lieux", de: "Weitere Orte" },
 };
 
 const EVENT_CATEGORIES: Record<string, Record<Locale, string>> = {
-  fiesta: { es: "Fiesta", en: "Festival", fr: "Fête" },
-  concierto: { es: "Concierto", en: "Concert", fr: "Concert" },
-  mercado: { es: "Mercado", en: "Market", fr: "Marché" },
-  deporte: { es: "Deporte", en: "Sport", fr: "Sport" },
-  cultura: { es: "Cultura", en: "Culture", fr: "Culture" },
-  gastronomia: { es: "Gastronomía", en: "Gastronomy", fr: "Gastronomie" },
-  otro: { es: "Evento", en: "Event", fr: "Événement" },
+  fiesta: { es: "Fiesta", en: "Festival", fr: "Fête", de: "Fest" },
+  concierto: { es: "Concierto", en: "Concert", fr: "Concert", de: "Konzert" },
+  mercado: { es: "Mercado", en: "Market", fr: "Marché", de: "Markt" },
+  deporte: { es: "Deporte", en: "Sport", fr: "Sport", de: "Sport" },
+  cultura: { es: "Cultura", en: "Culture", fr: "Culture", de: "Kultur" },
+  gastronomia: { es: "Gastronomía", en: "Gastronomy", fr: "Gastronomie", de: "Gastronomie" },
+  otro: { es: "Evento", en: "Event", fr: "Événement", de: "Veranstaltung" },
 };
 
 export function placeTypeLabel(type: string, locale: Locale): string {
@@ -600,13 +790,13 @@ export function eventCategoryLabel(cat: string, locale: Locale): string {
 // agenda). Se derivan de la `category` del evento; la clave del tipo ES la
 // propia categoría, para poder filtrar por ella. El orden marca el de los chips.
 export const EXPERIENCE_TYPES = [
-  { key: "fiesta", label: { es: "Fiestas de pueblo", en: "Town festivals", fr: "Fêtes de village" } },
-  { key: "concierto", label: { es: "Música", en: "Music", fr: "Musique" } },
-  { key: "cultura", label: { es: "Cultura", en: "Culture", fr: "Culture" } },
-  { key: "deporte", label: { es: "Naturaleza y deporte", en: "Nature & sport", fr: "Nature et sport" } },
-  { key: "mercado", label: { es: "Mercados y ferias", en: "Markets & fairs", fr: "Marchés et foires" } },
-  { key: "gastronomia", label: { es: "Gastronomía", en: "Food & drink", fr: "Gastronomie" } },
-  { key: "otro", label: { es: "Otros", en: "Other", fr: "Autres" } },
+  { key: "fiesta", label: { es: "Fiestas de pueblo", en: "Town festivals", fr: "Fêtes de village", de: "Dorffeste" } },
+  { key: "concierto", label: { es: "Música", en: "Music", fr: "Musique", de: "Musik" } },
+  { key: "cultura", label: { es: "Cultura", en: "Culture", fr: "Culture", de: "Kultur" } },
+  { key: "deporte", label: { es: "Naturaleza y deporte", en: "Nature & sport", fr: "Nature et sport", de: "Natur und Sport" } },
+  { key: "mercado", label: { es: "Mercados y ferias", en: "Markets & fairs", fr: "Marchés et foires", de: "Märkte und Messen" } },
+  { key: "gastronomia", label: { es: "Gastronomía", en: "Food & drink", fr: "Gastronomie", de: "Essen und Trinken" } },
+  { key: "otro", label: { es: "Otros", en: "Other", fr: "Autres", de: "Sonstiges" } },
 ] as const;
 
 export function experienceTypeLabel(category: string, locale: Locale): string {
