@@ -43,6 +43,17 @@ const DEFAULTS: Record<Locale, { title: string; text: string; cta: string }> = {
     text: "Private Minibus-Transfers und maßgeschneiderte Ausflüge zu Stränden, Buchten, Dörfern und Aussichtspunkten — in Ihrem Tempo und mit ortskundigem Fahrer.",
     cta: "Mit Menorca Bus buchen",
   },
+  it: {
+    title: "Muoversi a Minorca senza auto",
+    text: "Transfer privati in minibus ed escursioni su misura verso spiagge, cale, paesi e belvedere — al suo ritmo e con un autista del posto.",
+    // Botón: imperativo de tú, no de cortesía (ver docs/GLOSARIO-TRADUCCION.md §2).
+    cta: "Prenota con Menorca Bus",
+  },
+  pt: {
+    title: "Deslocar-se em Menorca sem carro",
+    text: "Transfers privados em minibus e excursões à medida a praias, enseadas, vilas e miradouros — ao seu ritmo e com motorista local.",
+    cta: "Reserve com a Menorca Bus",
+  },
 };
 const defaults = DEFAULTS[lang];
 
@@ -54,6 +65,8 @@ const DISCLOSURE: Record<Locale, string> = {
   en: "Transparency: Menorca Bus is the transport service run by Calma Society's publisher.",
   fr: "Transparence : Menorca Bus est le service de transport de l'éditeur de Calma Society.",
   de: "Transparenz: Menorca Bus ist der Transportdienst des Verlags von Calma Society.",
+  it: "Trasparenza: Menorca Bus è il servizio di trasporto della stessa casa editrice che pubblica Calma Society.",
+  pt: "Transparência: a Menorca Bus é o serviço de transporte da própria editora da Calma Society.",
 };
 const disclosure = DISCLOSURE[lang];
 

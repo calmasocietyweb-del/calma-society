@@ -53,3 +53,25 @@ COLABORACIONES/
 NEGOCIO/
 ESTRATEGIA/
 _PANEL/
+
+# Herramientas del agente y ficheros de trabajo temporales. No son código de la
+# web: se regeneran solos y ensucian el historial (un `git add -A` se llevó 1.235
+# ficheros de aquí el 24-ago-2026 dentro de un commit de i18n).
+.claude/
+.agents/
+.codex/
+.impeccable/
+.superpowers/
+skills-lock.json
+.github/hooks/
+.github/skills/
+.tmp_wiki/
+.tmp_cruise/
+.tmp_i18n/
+*.tgz
+
+# Identidad de marca (logos, plantillas, fuentes, pines): assets pesados que no
+# sirve a la web. Mismo criterio que ESTRATEGIA/ y NEGOCIO/ de arriba — su copia
+# de seguridad es el script de respaldo (KAN-53), no git.
+marca/
+MARCA-PARA-ABRIR/

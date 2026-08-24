@@ -41,13 +41,13 @@ export function homePath(locale: Locale): string {
 // ---- URLs de los tipos de contenido (prefijos traducidos por idioma) ----
 
 const PREFIX = {
-  article: { es: "/articulo", en: "/en/article", fr: "/fr/article", de: "/de/artikel" },
-  place: { es: "/lugar", en: "/en/place", fr: "/fr/lieu", de: "/de/ort" },
-  author: { es: "/autor", en: "/en/author", fr: "/fr/auteur", de: "/de/autor" },
+  article: { es: "/articulo", en: "/en/article", fr: "/fr/article", de: "/de/artikel", it: "/it/articolo", pt: "/pt/artigo" },
+  place: { es: "/lugar", en: "/en/place", fr: "/fr/lieu", de: "/de/ort", it: "/it/luogo", pt: "/pt/local" },
+  author: { es: "/autor", en: "/en/author", fr: "/fr/auteur", de: "/de/autor", it: "/it/autore", pt: "/pt/autor" },
   // Detalle de evento: cuelga de la propia agenda (KAN-102). FR aún no tiene
   // eventos publicados; el prefijo existe para que el tipo no se rompa al
   // activar ese mercado.
-  event: { es: "/agenda", en: "/en/whats-on", fr: "/fr/agenda", de: "/de/veranstaltungen" },
+  event: { es: "/agenda", en: "/en/whats-on", fr: "/fr/agenda", de: "/de/veranstaltungen", it: "/it/eventi", pt: "/pt/eventos" },
 } satisfies Record<string, Record<Locale, string>>;
 
 export function articleUrl(locale: Locale, slug: string): string {
@@ -72,6 +72,8 @@ const PLACES_INDEX = {
   en: "/en/places",
   fr: "/fr/lieux",
   de: "/de/orte",
+  it: "/it/luoghi",
+  pt: "/pt/locais",
 } satisfies Record<Locale, string>;
 
 export function placesIndexPath(locale: Locale): string {
@@ -88,6 +90,8 @@ const PRIVACY_PATH = {
   en: "/en/privacy",
   fr: "/fr/confidentialite",
   de: "/de/datenschutz",
+  it: "/it/privacy",
+  pt: "/pt/privacidade",
 } satisfies Record<Locale, string>;
 
 export function privacyPath(locale: Locale): string {
@@ -104,6 +108,8 @@ const BUSINESS_PATH = {
   en: "/en/for-businesses",
   fr: "/fr/pour-les-professionnels",
   de: "/de/fuer-unternehmen",
+  it: "/it/per-le-aziende",
+  pt: "/pt/para-empresas",
 } satisfies Record<Locale, string>;
 
 export function businessPath(locale: Locale): string {
@@ -125,6 +131,8 @@ const WELCOME_PATH = {
   en: "/en/society-welcome",
   fr: "/fr/societe-bienvenue",
   de: "/de/willkommen-in-der-society",
+  it: "/it/benvenuti-nella-society",
+  pt: "/pt/bem-vindo-a-society",
 } satisfies Record<Locale, string>;
 
 export function welcomePath(locale: Locale): string {
@@ -137,6 +145,8 @@ export const INTL_LOCALE: Record<Locale, string> = {
   en: "en-GB",
   fr: "fr-FR",
   de: "de-DE",
+  it: "it-IT",
+  pt: "pt-PT", // portugués EUROPEO, no de Brasil (ver docs/GLOSARIO-TRADUCCION.md)
 };
 
 /** Formatea una fecha según el idioma. */

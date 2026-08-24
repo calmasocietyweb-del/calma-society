@@ -32,5 +32,12 @@ jobs:
       - name: QA de las fichas de lugares
         run: node scripts/qa-lugares.mjs
 
+      # Regla del dueño (24-ago-2026): todo lo que se cree nace en TODOS los
+      # idiomas. Lo que ya existía cuando se puso la regla está en la línea base
+      # y no rompe nada mientras se traduce; una pieza NUEVA sin sus versiones
+      # falla aquí. Es lo que impide que el fondo pendiente vuelva a crecer.
+      - name: Paridad de idiomas
+        run: node scripts/check-paridad-idiomas.mjs
+
       - name: Build
         run: npm run build

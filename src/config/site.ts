@@ -4,13 +4,21 @@
  * Cambia aquí el nombre, el dominio, los idiomas activos y las redes.
  * No "hardcodees" estos datos por el resto del código (CLAUDE.md §11).
  *
- * Para AÑADIR UN IDIOMA NUEVO: añade su entrada a `locales` y crea su
- * diccionario en `src/i18n/ui.ts`. No hace falta tocar nada más.
- * (Ver docs/ESTRATEGIA-MULTIIDIOMA.md)
+ * Para AÑADIR UN IDIOMA NUEVO, empieza por ampliar el tipo `Locale` de abajo y
+ * añadir su entrada a `locales`. Aviso honesto: aquí ponía «no hace falta tocar
+ * nada más», y era FALSO — son ~330 cadenas de andamiaje (diccionario de UI,
+ * etiquetas de datos, mapas de ruta, secciones y el copy propio de 9
+ * componentes) más ~24 páginas fijas, antes de traducir una sola línea de
+ * contenido. Creerse esa frase es lo que dejó el francés parado en el 5 %
+ * durante dos meses.
+ *
+ * Lo bueno: al ampliar el tipo, `npm run check` te enumera TODO lo que falta,
+ * porque los mapas son `Record<Locale, …>`. Esa lista de errores ES el plan de
+ * trabajo. (Ver docs/superpowers/specs/2026-08-24-idiomas-europa-completo-design.md)
  */
 
 /** Códigos de idioma soportados. Amplía la unión al activar más idiomas. */
-export type Locale = 'es' | 'en' | 'fr' | 'de';
+export type Locale = 'es' | 'en' | 'fr' | 'de' | 'it' | 'pt';
 
 export interface LocaleConfig {
   /** Código corto (prefijo de URL para los no-por-defecto). */
@@ -65,6 +73,13 @@ export const SITE = {
     // CTR del 0,46 %: salimos en primera página y no nos hacen clic porque el
     // título está en otro idioma. Orden de mercados fijado por el dueño: DE → FR → IT → PT.
     { code: 'de', label: 'Deutsch', htmlLang: 'de-DE', rollout: 'partial' },
+    // Italiano y portugués: dados de alta el 24-ago-2026 con el encargo de
+    // traducir la web ENTERA a los cuatro idiomas. Entran como 'partial' a
+    // propósito: el selector solo los ofrece donde la página ya existe, así que
+    // el alta no genera ni una sola página huérfana mientras se traduce.
+    // Italia: 1.059 impresiones en posición 8,5. Portugal: 643 en posición 9,1.
+    { code: 'it', label: 'Italiano', htmlLang: 'it-IT', rollout: 'partial' },
+    { code: 'pt', label: 'Português', htmlLang: 'pt-PT', rollout: 'partial' },
   ] as LocaleConfig[],
 
   /** Redes sociales. */

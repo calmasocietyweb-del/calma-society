@@ -19,8 +19,11 @@ const FOOTER: Record<
     about: string;
     newsletter: string;
     contact: string;
-    calma: string;
-    calmaLabel: string;
+    /* Opcionales: la herramienta del mar en calma se traduce la ÚLTIMA (lleva
+       dataset propio). Donde todavía no existe, se omite y el pie no la pinta
+       —ya iba dentro de un `f.calma && (…)`—, en vez de enlazar a un 404. */
+    calma?: string;
+    calmaLabel?: string;
     transfers: string;
     legal: { label: string; href: string }[];
   }
@@ -63,6 +66,24 @@ const FOOTER: Record<
       { label: "Impressum", href: "/de/impressum" },
       { label: "Datenschutz", href: "/de/datenschutz" },
       { label: "Cookies", href: "/de/cookies" },
+    ],
+  },
+  it: {
+    about: "/it/chi-siamo", newsletter: "/it/newsletter", contact: "/it/contatti",
+    transfers: "Transfer ed escursioni ↗",
+    legal: [
+      { label: "Note legali", href: "/it/note-legali" },
+      { label: "Privacy", href: "/it/privacy" },
+      { label: "Cookie", href: "/it/cookie" },
+    ],
+  },
+  pt: {
+    about: "/pt/quem-somos", newsletter: "/pt/newsletter", contact: "/pt/contactos",
+    transfers: "Transfers e excursões ↗",
+    legal: [
+      { label: "Aviso legal", href: "/pt/aviso-legal" },
+      { label: "Privacidade", href: "/pt/privacidade" },
+      { label: "Cookies", href: "/pt/cookies" },
     ],
   },
 };

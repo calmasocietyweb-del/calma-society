@@ -24,6 +24,8 @@ const PAGES: Record<Locale, { about: string; newsletter: string; contact: string
   en: { about: "/en/about", newsletter: "/en/newsletter", contact: "/en/contact" },
   fr: { about: "/fr/qui-sommes-nous", newsletter: "/fr/newsletter", contact: "/fr/contact" },
   de: { about: "/de/ueber-uns", newsletter: "/de/newsletter", contact: "/de/kontakt" },
+  it: { about: "/it/chi-siamo", newsletter: "/it/newsletter", contact: "/it/contatti" },
+  pt: { about: "/pt/quem-somos", newsletter: "/pt/newsletter", contact: "/pt/contactos" },
 };
 const pages = PAGES[locale];
 
@@ -52,6 +54,12 @@ const TOOLS: Record<Locale, { href: string; label: string }[]> = {
     { href: "/de/wo-das-meer-ruhig-ist", label: "Ruhiges Meer" },
     { href: "/de/sonnenuntergaenge-und-drinks", label: "Sonnenuntergänge & Drinks" },
   ],
+  // IT y PT: dados de alta el 24-ago-2026 para traducir la web entera. Las
+  // herramientas son lo ÚLTIMO que se traduce (llevan dataset propio), así que
+  // por ahora el menú no ofrece ninguna: una lista vacía no pinta nada, y es
+  // preferible a un enlace a una página que todavía no existe.
+  it: [],
+  pt: [],
 };
 const tools = TOOLS[locale];
 ---

@@ -20,7 +20,9 @@ export interface SubscribeInput {
    habría vuelto a fallar con el alemán: el idioma no reconocido caía a "es" sin
    avisar y el lector acababa en el grupo español recibiendo la guía en
    castellano (KAN-133). */
-const LOCALE_RECONOCIDO: Record<Locale, true> = { es: true, en: true, fr: true, de: true };
+const LOCALE_RECONOCIDO: Record<Locale, true> = {
+  es: true, en: true, fr: true, de: true, it: true, pt: true,
+};
 
 // Email pragmático: algo@algo.algo (no perseguimos el RFC completo).
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

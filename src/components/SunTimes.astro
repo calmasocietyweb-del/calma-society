@@ -13,8 +13,14 @@ import { sunTimes, fmtMenorcaTime, dayLength, MENORCA } from "../lib/sun";
 import type { Locale } from "../config/site";
 import { INTL_LOCALE } from "../i18n/utils";
 
+/* Tabla de la herramienta "Atardeceres y copas", desplegada POR MERCADOS: existe
+   en español, inglés, francés y alemán. El italiano y el portugués entran cuando
+   se traduzca la herramienta entera; declararlo aquí hace que intentar montarla
+   antes sea un error de compilación en vez de una tabla en otro idioma (KAN-133). */
+type ToolLocale = Extract<Locale, "es" | "en" | "fr" | "de">;
+
 interface Props {
-  locale: Locale;
+  locale: ToolLocale;
 }
 const { locale } = Astro.props;
 
