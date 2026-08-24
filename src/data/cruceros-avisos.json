@@ -1,8 +1,8 @@
 {
-  "updated": "2026-08-23",
+  "updated": "2026-08-24",
   "ventana": {
-    "desde": "2026-08-23",
-    "hasta": "2026-09-18"
+    "desde": "2026-08-24",
+    "hasta": "2026-09-21"
   },
   "nuevas": [
     {
@@ -37,14 +37,37 @@
       "consignatario": "BALEARES CONSIGNATARIOS S L",
       "escala": "M202600053",
       "nota": "El puerto la tiene y nosotros no. Falta capacidad de pasaje y naviera antes de publicarla."
+    },
+    {
+      "date": "2026-09-21",
+      "ship": "HEBRIDEAN SKY",
+      "arrival": "08:00",
+      "departure": "18:30",
+      "departureDate": null,
+      "muelle": "MUELLE CRUCEROS",
+      "consignatario": "FEDERICO CARDONA TREMOL S L",
+      "escala": "M202600178",
+      "nota": "El puerto la tiene y nosotros no. Falta capacidad de pasaje y naviera antes de publicarla."
     }
   ],
-  "desaparecidas": [],
+  "desaparecidas": [
+    {
+      "date": "2026-09-21",
+      "ship": "Emerald Sakara",
+      "nota": "La publicamos y el puerto NO la tiene, estando dentro de su ventana. ¿Cancelada? Verificar antes de retirarla."
+    }
+  ],
   "dudasDeNombre": [
     {
       "date": "2026-09-10",
       "puerto": "NAUTICA",
       "nuestro": "Oceania Nautica",
+      "nota": "Mismo día y nombres que se solapan: casi seguro el mismo barco escrito de otra forma, no una cancelación. Si se confirma, añadirlo a ALIAS_BARCOS en src/lib/apb.ts y dejará de preguntarlo."
+    },
+    {
+      "date": "2026-09-20",
+      "puerto": "EUROPA",
+      "nuestro": "MS Europa",
       "nota": "Mismo día y nombres que se solapan: casi seguro el mismo barco escrito de otra forma, no una cancelación. Si se confirma, añadirlo a ALIAS_BARCOS en src/lib/apb.ts y dejará de preguntarlo."
     }
   ],
@@ -59,6 +82,20 @@
         {
           "ship": "SEA CLOUD SPIRIT",
           "eslora": 125.7
+        }
+      ],
+      "nota": "Dos cruceros el mismo día. Si uno fondea, se desembarca en lancha y el tiempo real en tierra cambia."
+    },
+    {
+      "date": "2026-09-20",
+      "barcos": [
+        {
+          "ship": "EUROPA",
+          "eslora": 198.52
+        },
+        {
+          "ship": "RENAISSANCE",
+          "eslora": 219.3
         }
       ],
       "nota": "Dos cruceros el mismo día. Si uno fondea, se desembarca en lancha y el tiempo real en tierra cambia."
