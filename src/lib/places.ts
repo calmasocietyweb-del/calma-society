@@ -22,9 +22,18 @@ export type Place = CollectionEntry<"lugares">;
 export const TYPE_ORDER = [
   "cala",
   "restaurante",
+  "bodega",
+  "productor",
+  "bar",
+  "experiencia",
+  "ruta",
+  "naturaleza",
   "monumento",
-  "comercio",
+  "museo",
+  "spa",
   "alojamiento",
+  "comercio",
+  "pueblo",
   "otro",
 ] as const;
 

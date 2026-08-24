@@ -158,12 +158,26 @@ const lugares = defineCollection({
     name: z.string(),
     lang: LOCALE,
     translationKey: z.string(),
+    // Tipo de lugar. Alimenta la etiqueta visible (i18n/ui.ts), el agrupado del
+    // índice (lib/places.ts) y el @type de schema.org (lib/schema.ts) — o sea, lo
+    // que Google y la IA leen para saber QUÉ es cada sitio. Por eso se afina:
+    // decir "monumento" de un spa o "Place" a secas de una experiencia vendible
+    // es contarles algo falso (KAN-131).
     type: z.enum([
       "cala",
       "restaurante",
-      "alojamiento",
+      "bodega",
+      "productor",
+      "bar",
+      "experiencia",
+      "ruta",
+      "naturaleza",
       "monumento",
+      "museo",
+      "spa",
+      "alojamiento",
       "comercio",
+      "pueblo",
       "otro",
     ]),
     edition: z.string().default("menorca"),

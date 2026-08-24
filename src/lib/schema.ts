@@ -73,12 +73,24 @@ export function articleSchema(opts: {
   };
 }
 
+/* Cada tipo de lugar a su @type de schema.org (KAN-131). Cuanto más preciso, más
+   fácil es que Google dé resultado enriquecido y que la IA nos cite bien. "Place"
+   queda solo como red de seguridad para lo que de verdad no encaja en nada. */
 const PLACE_SCHEMA_TYPE: Record<string, string> = {
-  cala: "TouristAttraction",
+  cala: "Beach",
   restaurante: "Restaurant",
-  alojamiento: "LodgingBusiness",
+  bodega: "Winery",
+  productor: "FoodEstablishment",
+  bar: "BarOrPub",
+  experiencia: "TouristTrip",
+  ruta: "TouristTrip",
+  naturaleza: "Park",
   monumento: "TouristAttraction",
+  museo: "Museum",
+  spa: "HealthAndBeautyBusiness",
+  alojamiento: "LodgingBusiness",
   comercio: "Store",
+  pueblo: "City",
   otro: "Place",
 };
 
