@@ -5,7 +5,7 @@
 // prometía un clic que antes no llevaba a ninguna parte.
 import type { CollectionEntry } from "astro:content";
 import { experienceTypeLabel } from "../i18n/ui";
-import { formatDate, eventUrl } from "../i18n/utils";
+import { formatDate, eventUrl, INTL_LOCALE } from "../i18n/utils";
 import { srcset } from "../lib/img";
 import type { Locale } from "../config/site";
 
@@ -24,7 +24,10 @@ const { data } = event;
 // URL de la página de detalle del evento en el idioma de la tarjeta.
 const href = eventUrl(locale, event.id);
 
-const intl = locale === "es" ? "es-ES" : "en-GB";
+// El mes de la tarjeta sale del Intl del idioma. Estaba a mano como
+// `es ? "es-ES" : "en-GB"`, así que la agenda ALEMANA —que es por donde entra
+// el alemán, la página más vista de la web— habría fechado en inglés (KAN-133).
+const intl = INTL_LOCALE[locale];
 const day = data.startDate.getUTCDate();
 const month = data.startDate
   .toLocaleDateString(intl, { month: "short", timeZone: "UTC" })

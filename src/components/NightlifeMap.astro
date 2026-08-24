@@ -17,7 +17,7 @@
  */
 import outline from "../data/menorca-outline.json";
 import { getPlaces } from "../lib/content";
-import { placeUrl, articleUrl } from "../i18n/utils";
+import { placeUrl, articleUrl, INTL_LOCALE } from "../i18n/utils";
 import { menorcaBusUrl, partnerUrl } from "../lib/links";
 import { srcset } from "../lib/img";
 import type { Locale } from "../config/site";
@@ -25,11 +25,17 @@ import { googleRatings, fmtScore, fmtReviews, GOOGLE_RATINGS_AS_OF, type GoogleR
 import JsonLd from "./JsonLd.astro";
 import MenorcaBusPromo from "./MenorcaBusPromo.astro";
 
+/* Herramienta desplegada POR MERCADOS: hoy solo existe en español, inglés y
+   francés. Declarar los idiomas en el tipo convierte "idioma sin textos" en un
+   ERROR DE COMPILACIÓN en vez de una página alemana escrita en inglés. Al
+   traducir la herramienta se añade el idioma aquí y TypeScript señala, uno a
+   uno, todos los textos que faltan por rellenar (KAN-133). */
+type ToolLocale = Extract<Locale, "es" | "en" | "fr">;
+
 interface Props {
-  locale: Locale;
+  locale: ToolLocale;
 }
 const { locale } = Astro.props;
-const isEs = locale === "es";
 
 // ── Selección editorial: qué locales entran y en qué categoría (glifo/color) ──
 // El orden define el orden de la lista (agrupada por categoría).
@@ -91,10 +97,9 @@ const CATS: Record<
     parkFr: "Zone portuaire, pas de stationnement facile au petit matin.",
   },
 };
-const catLabel = (cat: Cat) =>
-  locale === "es" ? CATS[cat].es : locale === "fr" ? CATS[cat].fr : CATS[cat].en;
+const catLabel = (cat: Cat) => CATS[cat][locale];
 const catPark = (cat: Cat) =>
-  locale === "es" ? CATS[cat].parkEs : locale === "fr" ? CATS[cat].parkFr : CATS[cat].parkEn;
+  ({ es: CATS[cat].parkEs, en: CATS[cat].parkEn, fr: CATS[cat].parkFr })[locale];
 
 // ── Zona (filtro extra): tres franjas por longitud, como mentalmente se divide
 // la isla (extremo Ciutadella / centro / extremo Maó). Determinista, sin datos
@@ -108,7 +113,7 @@ const ZONES: { key: Zone; es: string; en: string; fr: string }[] = [
 const zoneOf = (lng: number): Zone => (lng <= 3.92 ? "oeste" : lng >= 4.2 ? "este" : "centro");
 const zoneLabel = (z: Zone) => {
   const zz = ZONES.find((x) => x.key === z)!;
-  return locale === "es" ? zz.es : locale === "fr" ? zz.fr : zz.en;
+  return zz[locale];
 };
 
 // Glifo blanco centrado en (0,0), ~12 px, para distinguir la categoría sin
@@ -724,8 +729,11 @@ const EXTRA: Extra[] = [
 ];
 
 // Enlace de los puntos en línea: a la guía de atardeceres (ES/EN).
-const sunsetArticle =
-  locale === "es" ? "atardeceres-menorca" : locale === "fr" ? "couchers-de-soleil-minorque" : "menorca-sunsets";
+const sunsetArticle = {
+  es: "atardeceres-menorca",
+  en: "menorca-sunsets",
+  fr: "couchers-de-soleil-minorque",
+}[locale];
 const fromExtra: V[] = EXTRA.map((x) => ({
   id: x.id,
   negocio: x.id,
@@ -735,11 +743,11 @@ const fromExtra: V[] = EXTRA.map((x) => ({
   zone: zoneOf(x.lng),
   lat: x.lat,
   lng: x.lng,
-  area: locale === "es" ? x.areaEs : locale === "fr" ? x.areaFr : x.areaEn,
-  description: locale === "es" ? x.descEs : locale === "fr" ? x.descFr : x.descEn,
+  area: { es: x.areaEs, en: x.areaEn, fr: x.areaFr }[locale],
+  description: { es: x.descEs, en: x.descEn, fr: x.descFr }[locale],
   website: x.website,
   href: x.toArticle ? articleUrl(locale, sunsetArticle) : undefined,
-  note: locale === "es" ? x.noteEs : locale === "fr" ? x.noteFr : x.noteEn,
+  note: { es: x.noteEs, en: x.noteEn, fr: x.noteFr }[locale],
   schemaType: x.schemaType,
   rating: googleRatings[x.id],
 }));
@@ -914,7 +922,7 @@ const CH = {
 
 // Mes de la última verificación de valoraciones (para el descargo honesto).
 const ratingsMonth = new Date(`${GOOGLE_RATINGS_AS_OF}T12:00:00`).toLocaleDateString(
-  locale === "es" ? "es-ES" : locale === "fr" ? "fr-FR" : "en-GB",
+  INTL_LOCALE[locale],
   { month: "long", year: "numeric" },
 );
 
@@ -1139,7 +1147,7 @@ const busSlides = [
   },
 ];
 const busAlt = (s: (typeof busSlides)[number]) =>
-  locale === "es" ? s.altEs : locale === "fr" ? s.altFr : s.altEn;
+  ({ es: s.altEs, en: s.altEn, fr: s.altFr })[locale];
 
 // ── JSON-LD: cada local como negocio con su geo (GEO/citabilidad por IA) ──
 const jsonLd = {
@@ -1185,13 +1193,13 @@ const jsonLd = {
       <div
         class="cs-noche relative min-h-64 overflow-hidden bg-arcilla md:min-h-full"
         role="group"
-        aria-roledescription={locale === "es" ? "carrusel" : locale === "fr" ? "carrousel" : "carousel"}
+        aria-roledescription={{ es: "carrusel", en: "carousel", fr: "carrousel" }[locale]}
         aria-label={
-          locale === "es"
-            ? "Fotos del Mercedes Clase S de noche"
-            : locale === "fr"
-              ? "Photos de la Mercedes Classe S la nuit"
-              : "Photos of the Mercedes S-Class at night"
+          {
+            es: "Fotos del Mercedes Clase S de noche",
+            en: "Photos of the Mercedes S-Class at night",
+            fr: "Photos de la Mercedes Classe S la nuit",
+          }[locale]
         }
       >
         {
@@ -1417,7 +1425,7 @@ const jsonLd = {
             TOWNS.map((t) => (
               <Fragment>
                 <circle cx={t.x} cy={t.y} r="2.6" fill="#7c6a4c" />
-                <text x={t.x} y={t.y - 8} fill="#7c6a4c" font-size="13" text-anchor="middle">{locale === "es" ? t.es : locale === "fr" ? t.fr : t.en}</text>
+                <text x={t.x} y={t.y - 8} fill="#7c6a4c" font-size="13" text-anchor="middle">{t[locale]}</text>
               </Fragment>
             ))
           }

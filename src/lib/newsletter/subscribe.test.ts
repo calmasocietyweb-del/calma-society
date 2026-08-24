@@ -47,10 +47,25 @@ test("rechaza si falta el consentimiento", () => {
 });
 
 test("locale desconocido cae a es", () => {
-  const r = validateSubscribeInput({ ...base(), locale: "de" });
+  // Un idioma que NO está activo en site.ts. Ojo: este test usaba "de" como
+  // ejemplo de desconocido, y al dar de alta el alemán pasó a ser un idioma
+  // real — cambiarlo por uno inventado es lo correcto, porque lo que se prueba
+  // es el descarte de basura, no que el alemán se pierda (KAN-133).
+  const r = validateSubscribeInput({ ...base(), locale: "xx" });
   assert.equal(r.ok, true);
   if (!r.ok) return;
   assert.equal(r.value.locale, "es");
+});
+
+test("un idioma ACTIVO se conserva, no cae a es", () => {
+  // La regresión que este arreglo cierra: el suscriptor alemán acababa en el
+  // grupo español y recibía la guía en castellano.
+  for (const locale of ["en", "fr", "de"]) {
+    const r = validateSubscribeInput({ ...base(), locale });
+    assert.equal(r.ok, true);
+    if (!r.ok) return;
+    assert.equal(r.value.locale, locale);
+  }
 });
 
 test("buildSubscriberPayload mete el email y los grupos", () => {

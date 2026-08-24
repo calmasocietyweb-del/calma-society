@@ -137,7 +137,7 @@ const breadcrumb = breadcrumbSchema([
 const typeLbl = placeTypeLabel(data.type, locale);
 const typeRedundant =
   data.type === "otro" || data.name.toLowerCase().includes(typeLbl.split(" ")[0].toLowerCase());
-const island = locale === "fr" ? "Minorque" : "Menorca";
+const island = t("island.name");
 
 /* Para el <title> se usa solo el MUNICIPIO, no la `area` completa (KAN-129).
    Muchas fichas guardan en `area` una localización descriptiva entre paréntesis
@@ -220,7 +220,7 @@ const seoTitle = recortar(candidatos.find((c) => c.length <= MAX_TITULO) ?? cand
           <span aria-hidden="true" class="text-oro">★</span>
           <span class="font-semibold text-tinta">{fmtScore(rating.score, locale)}</span>
           <span>
-            · {fmtReviews(rating.reviews, locale)} {locale === "es" ? "reseñas en Google" : locale === "fr" ? "avis Google" : "Google reviews"}
+            · {fmtReviews(rating.reviews, locale)} {t("place.reviews")}
           </span>
         </p>
       )

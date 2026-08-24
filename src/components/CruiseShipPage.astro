@@ -15,9 +15,14 @@ import MenorcaBusCTA from "./MenorcaBusCTA.astro";
 import { srcset } from "../lib/img";
 import type { Locale } from "../config/site";
 
+/* Las páginas de escala existen en español e inglés. Con `locale: Locale`, un
+   idioma nuevo caía al inglés en los 13 sitios donde decide `isEs` —incluido el
+   formato de fechas— sin dar un aviso. Declarado, es error de compilación (KAN-133). */
+type ToolLocale = Extract<Locale, "es" | "en">;
+
 interface Props {
   barco: Barco;
-  locale: Locale;
+  locale: ToolLocale;
   /** Cuándo se actualizó el calendario y qué cobertura tiene (honestidad). */
   fuente: { updated: string; coveragePct: number; officialSource: string };
 }

@@ -112,8 +112,15 @@ const ISLAND_PATH =
 /** Constantes de proyección que el island usa para colocar cada parada. */
 const ISLAND = { path: ISLAND_PATH, w: MAP_W, h: MAP_H, kx: KX, minX: MIN_X, maxY: MAX_Y, s: MAP_SCALE };
 
+/* El planificador está desplegado POR MERCADOS: hoy solo español e inglés, y su
+   dataset se compila en build por idioma. `isEs` decide 50 veces en este fichero,
+   así que con `locale: Locale` un idioma nuevo servía el planificador ENTERO en
+   inglés sin un solo aviso. Declararlo lo convierte en error de compilación
+   (KAN-133). Es el mismo patrón que ya usan `ParteCalmaMap` y `PlannerSeoContent`. */
+type ToolLocale = Extract<Locale, "es" | "en">;
+
 interface Props {
-  locale: Locale;
+  locale: ToolLocale;
 }
 const { locale } = Astro.props;
 const isEs = locale === "es";

@@ -12,6 +12,7 @@
  * fondos claros (lino/arena → texto piedra/arcilla).
  */
 import { SITE, type Locale } from "../config/site";
+import { useTranslations } from "../i18n/ui";
 
 interface Props {
   locale: Locale;
@@ -19,8 +20,8 @@ interface Props {
   class?: string;
 }
 const { locale, tone = "light", class: className } = Astro.props;
+const t = useTranslations(locale);
 const promo = SITE.partners.menorcaBus.promo;
-const isEs = locale === "es";
 
 // Autocaducidad (hora de build): cuando pasa `until`, no se renderiza.
 const active = !!promo && new Date() <= new Date(`${promo.until}T23:59:59`);
@@ -35,17 +36,11 @@ const active = !!promo && new Date() <= new Date(`${promo.until}T23:59:59`);
         className,
       ]}
     >
-      {isEs ? "Con el código " : locale === "fr" ? "Avec le code " : "Use code "}
+      {t("promo.prefix")}
       <span class:list={["font-semibold", tone === "dark" ? "text-champan" : "text-arcilla"]}>
         {promo.code}
       </span>
-      {
-        isEs
-          ? `, ${promo.amount} de descuento en tu reserva.`
-          : locale === "fr"
-            ? ` : ${promo.amount} de réduction sur votre réservation.`
-            : ` for ${promo.amount} off your booking.`
-      }
+      {t("promo.suffix").replace("%s", promo.amount)}
     </p>
   )
 }

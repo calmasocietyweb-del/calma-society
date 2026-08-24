@@ -55,12 +55,7 @@ const faqLd =
         })),
       }
     : null;
-const faqHeading =
-  locale === "es"
-    ? "Preguntas frecuentes"
-    : locale === "fr"
-      ? "Questions fréquentes"
-      : "Frequently asked questions";
+const faqHeading = t("article.faq");
 
 // Artículos relacionados (misma sección + tags) para "Sigue leyendo".
 const related = await getRelatedArticles(locale, entry.id, data.section, data.tags, 3);
@@ -151,7 +146,7 @@ const breadcrumb = breadcrumbSchema([
           </div>
           {data.heroImageCredit && (
             <figcaption class="mt-2 text-xs text-piedra-suave">
-              {locale === "es" ? "Foto" : "Photo"}: {data.heroImageCredit}
+              {t("common.photo")}: {data.heroImageCredit}
             </figcaption>
           )}
         </figure>

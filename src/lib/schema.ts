@@ -3,12 +3,18 @@
  * Esto es lo que hace que Google y las IAs nos entiendan y nos citen (GEO).
  * Los campos `undefined` se omiten al serializar a JSON.
  */
-import { SITE, type Locale } from "../config/site";
+import { SITE, getLocaleConfig, type Locale } from "../config/site";
 
 /** Convierte un path en URL absoluta usando el dominio del sitio. */
 export const abs = (path: string) => new URL(path, SITE.url).href;
 
-const ogLocale = (locale: Locale) => (locale === "es" ? "es-ES" : "en-GB");
+/**
+ * Etiqueta BCP-47 del idioma para `inLanguage`. Sale de `site.ts`, que es la
+ * única fuente de los idiomas activos: estaba a mano como `es ? "es-ES" :
+ * "en-GB"`, así que un artículo ALEMÁN le declaraba a Google y a la IA que
+ * estaba escrito en inglés británico (KAN-133).
+ */
+const bcp47 = (locale: Locale) => getLocaleConfig(locale).htmlLang;
 
 export function organizationSchema() {
   return {
@@ -40,7 +46,8 @@ export function websiteSchema() {
     name: SITE.name,
     url: SITE.url,
     description: SITE.description,
-    inLanguage: ["es-ES", "en-GB"],
+    // Todos los idiomas activos, no una lista a mano que se queda vieja.
+    inLanguage: SITE.locales.map((l) => l.htmlLang),
     publisher: { "@type": "Organization", name: SITE.name, url: SITE.url },
   };
 }
@@ -62,7 +69,7 @@ export function articleSchema(opts: {
     headline: opts.title,
     description: opts.description,
     mainEntityOfPage: opts.url,
-    inLanguage: ogLocale(opts.locale),
+    inLanguage: bcp47(opts.locale),
     datePublished: opts.datePublished.toISOString(),
     dateModified: (opts.dateModified ?? opts.datePublished).toISOString(),
     author: opts.authorName

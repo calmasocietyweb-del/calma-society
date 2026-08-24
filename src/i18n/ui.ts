@@ -186,6 +186,15 @@ export const ui = {
     "footer.more": "Más",
     "footer.follow": "Síguenos",
     "footer.rights": "Todos los derechos reservados.",
+
+    // Textos que vivían en escaleras de ternarios dentro de los componentes
+    // y que con un idioma nuevo caían a otro idioma SIN avisar (KAN-133).
+    "article.faq": "Preguntas frecuentes",
+    "place.reviews": "reseñas en Google",
+    "island.name": "Menorca",
+    "promo.prefix": "Con el código ",
+    "promo.suffix": ", %s de descuento en tu reserva.",
+    "common.photo": "Foto",
   },
   en: {
     "site.tagline": "The Mediterranean, at ease",
@@ -358,6 +367,14 @@ export const ui = {
     "footer.more": "More",
     "footer.follow": "Follow us",
     "footer.rights": "All rights reserved.",
+
+    // Strings that used to live in per-locale ternaries inside components (KAN-133).
+    "article.faq": "Frequently asked questions",
+    "place.reviews": "Google reviews",
+    "island.name": "Menorca",
+    "promo.prefix": "Use code ",
+    "promo.suffix": " for %s off your booking.",
+    "common.photo": "Photo",
   },
   fr: {
     "site.tagline": "La Méditerranée, sans hâte",
@@ -532,6 +549,14 @@ export const ui = {
     "footer.more": "Plus",
     "footer.follow": "Suivez-nous",
     "footer.rights": "Tous droits réservés.",
+
+    // Textes qui vivaient dans des ternaires par langue (KAN-133).
+    "article.faq": "Questions fréquentes",
+    "place.reviews": "avis Google",
+    "island.name": "Minorque",
+    "promo.prefix": "Avec le code ",
+    "promo.suffix": " : %s de réduction sur votre réservation.",
+    "common.photo": "Photo",
   },
   de: {
     "site.tagline": "Das Mittelmeer, ohne Eile",
@@ -704,10 +729,28 @@ export const ui = {
     "footer.more": "Mehr",
     "footer.follow": "Folgen Sie uns",
     "footer.rights": "Alle Rechte vorbehalten.",
+
+    // Texte, die vorher in Ternären pro Sprache steckten (KAN-133).
+    "article.faq": "Häufige Fragen",
+    "place.reviews": "Bewertungen auf Google",
+    "island.name": "Menorca",
+    "promo.prefix": "Mit dem Code ",
+    "promo.suffix": " erhalten Sie %s Rabatt auf Ihre Buchung.",
+    "common.photo": "Foto",
   },
 } satisfies Record<Locale, Record<string, string>>;
 
 export type UIKey = keyof (typeof ui)["es"];
+
+/* CERROJO DE PARIDAD (KAN-133). `satisfies Record<Locale, Record<string, string>>`
+   de arriba solo exige que cada idioma sea un mapa de textos: NO exige que tengan
+   las MISMAS claves. Una clave que faltara en alemán no daba error — `t()` caía al
+   español y la página alemana enseñaba una frase en español sin avisar a nadie.
+   Esta línea obliga a que TODO idioma activo tenga TODAS las claves del español:
+   si falta una, esto no compila. Al dar de alta un idioma nuevo, es lo que te dice
+   exactamente qué queda por traducir. */
+const _paridadDeClaves: Record<Locale, Record<UIKey, string>> = ui;
+void _paridadDeClaves;
 
 /** Devuelve una función de traducción `t('clave')` para el idioma dado. */
 export function useTranslations(locale: Locale) {

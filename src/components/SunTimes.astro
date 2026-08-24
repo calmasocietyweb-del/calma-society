@@ -11,6 +11,7 @@
  */
 import { sunTimes, fmtMenorcaTime, dayLength, MENORCA } from "../lib/sun";
 import type { Locale } from "../config/site";
+import { INTL_LOCALE } from "../i18n/utils";
 
 interface Props {
   locale: Locale;
@@ -23,10 +24,16 @@ const now = new Date();
 const YEAR = now.getFullYear();
 const thisMonth = now.getMonth(); // 0-11, para resaltar el mes en curso
 
-const MONTHS_ES = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
-const MONTHS_EN = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-const MONTHS_FR = ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
-const months = locale === "es" ? MONTHS_ES : locale === "fr" ? MONTHS_FR : MONTHS_EN;
+/* Los meses salen de `Intl`, no de tres listas escritas a mano (KAN-133). Antes
+   había una escalera de ternarios que, con un idioma nuevo, servía la tabla en
+   inglés sin avisar. Así cualquier idioma que se dé de alta trae sus meses
+   correctos sin tocar este fichero. Se capitaliza la inicial porque son
+   etiquetas de fila: `Intl` devuelve "enero"/"janvier" en minúscula. */
+const mesLargo = new Intl.DateTimeFormat(INTL_LOCALE[locale], { month: "long", timeZone: "UTC" });
+const months = Array.from({ length: 12 }, (_, i) => {
+  const m = mesLargo.format(new Date(Date.UTC(2001, i, 15)));
+  return m.charAt(0).toUpperCase() + m.slice(1);
+});
 
 // Una fila por mes, calculada para el día 15 (representativo del mes).
 const rows = months.map((label, i) => {

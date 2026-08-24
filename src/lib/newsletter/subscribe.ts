@@ -4,13 +4,23 @@
  * validar el formulario y construir el cuerpo de la API de MailerLite.
  * El origen del alta se mide por eventos de Umami, no por campos de ML.
  */
+import type { Locale } from "../../config/site";
+
 export const MAILERLITE_ENDPOINT = "https://connect.mailerlite.com/api/subscribers";
 
 export interface SubscribeInput {
   email: string;
-  locale: "es" | "en" | "fr";
+  locale: Locale;
   origen: string;
 }
+
+/* Idiomas que el alta reconoce. Es un `Record<Locale, true>` a propósito: si se
+   da de alta un idioma nuevo en `site.ts` y no se añade aquí, ESTO NO COMPILA.
+   La alternativa (una escalera de ternarios) ya falló una vez con el francés y
+   habría vuelto a fallar con el alemán: el idioma no reconocido caía a "es" sin
+   avisar y el lector acababa en el grupo español recibiendo la guía en
+   castellano (KAN-133). */
+const LOCALE_RECONOCIDO: Record<Locale, true> = { es: true, en: true, fr: true, de: true };
 
 // Email pragmático: algo@algo.algo (no perseguimos el RFC completo).
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -29,9 +39,8 @@ export function validateSubscribeInput(
   const consent = (raw.consent || raw.consentimiento || "").trim();
   if (consent === "") return { ok: false, error: "consent" };
 
-  // El francés se reconoce explícitamente: antes caía a "es" y un lector
-  // francés habría acabado en el grupo español, recibiendo la guía en castellano.
-  const locale = raw.locale === "en" ? "en" : raw.locale === "fr" ? "fr" : "es";
+  // Cualquier idioma activo se reconoce; lo que no esté en la lista cae a "es".
+  const locale: Locale = LOCALE_RECONOCIDO[raw.locale as Locale] ? (raw.locale as Locale) : "es";
   const origen = (raw.origen ?? "web").slice(0, 40);
   return { ok: true, value: { email, locale, origen } };
 }

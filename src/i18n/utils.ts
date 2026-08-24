@@ -110,6 +110,27 @@ export function businessPath(locale: Locale): string {
   return BUSINESS_PATH[locale];
 }
 
+/**
+ * Página de bienvenida tras darse de alta. Es el `redirect` del formulario de
+ * captación, así que un path mal compuesto no da un enlace roto: se lleva por
+ * delante el final del alta.
+ *
+ * Estaba a mano en `SocietyCaptureForm` como `es ? "/sociedad-bienvenida" :
+ * "/en/society-welcome"` — exactamente el fallo que ya documenta PRIVACY_PATH
+ * más arriba: al lector FRANCÉS que se suscribía se le devolvía a la página de
+ * gracias en INGLÉS, existiendo /fr/societe-bienvenue (KAN-133).
+ */
+const WELCOME_PATH = {
+  es: "/sociedad-bienvenida",
+  en: "/en/society-welcome",
+  fr: "/fr/societe-bienvenue",
+  de: "/de/willkommen-in-der-society",
+} satisfies Record<Locale, string>;
+
+export function welcomePath(locale: Locale): string {
+  return WELCOME_PATH[locale];
+}
+
 /** Locale BCP-47 por idioma (para Intl: fechas, números…). */
 export const INTL_LOCALE: Record<Locale, string> = {
   es: "es-ES",
