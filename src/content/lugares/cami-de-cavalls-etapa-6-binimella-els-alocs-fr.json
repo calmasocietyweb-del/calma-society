@@ -1,0 +1,44 @@
+{
+  "name": "Camí de Cavalls · Étape 6 : Binimel·là – Els Alocs",
+  "lang": "fr",
+  "translationKey": "cami-de-cavalls-etapa-6-binimella-els-alocs",
+  "type": "ruta",
+  "edition": "menorca",
+  "description": "Le tronçon le plus sauvage et le plus exigeant du Camí de Cavalls : 8,9 km le long de la côte nord, rougeoyante et âpre, avec la mythique Cala Pregonda et ses îlots aux airs lunaires en récompense. Réservé aux marcheurs endurants, et parmi les plus spectaculaires de l'île.",
+  "coordinates": {
+    "lat": 40.045,
+    "lng": 4.038
+  },
+  "area": "Es Mercadal",
+  "images": [
+    "/uploads/lg-cami-de-cavalls-etapa-6-binimella-els-alocs.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "highlights": [
+      "atteindre à pied Cala Pregonda, l'une des images les plus emblématiques du nord",
+      "longer la côte de Tramuntana vierge, ocre et battue par le vent",
+      "partir autonome : c'est l'étape la plus dure, sans services ni ombre"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.camidecavalls.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "La côte nord près de Binimel·là, avec la roche rougeâtre plongeant dans la mer",
+  "imageCredit": "Boladevidre / Wikimedia Commons (CC BY-SA 2.0)"
+}

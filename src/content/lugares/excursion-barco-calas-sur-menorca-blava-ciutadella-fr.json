@@ -1,0 +1,47 @@
+{
+  "name": "Excursion en bateau vers les criques vierges du sud (Menorca Blava, Ciutadella)",
+  "lang": "fr",
+  "translationKey": "excursion-barco-calas-sur-menorca-blava-ciutadella",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Une journée en mer depuis le vieux port de Ciutadella jusqu'aux criques les plus convoitées du sud-ouest, celles qu'aucune route ne dessert. Plateforme de baignade, solarium et riz servi à bord : la façon confortable de voir Son Saura, Turqueta et Macarella sans voiture.",
+  "coordinates": {
+    "lat": 39.9985,
+    "lng": 3.833
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [
+    "/uploads/lg-excursion-barco-calas-sur-menorca-blava-ciutadella.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "primera-vez",
+      "naturaleza",
+      "nautica"
+    ],
+    "highlights": [
+      "naviguer le long du sud-ouest vierge : Son Saura, Es Talaier, Turqueta, Macarella et Macarelleta",
+      "deux haltes baignade avec accès direct depuis la plateforme du bateau",
+      "paella mixte à bord et grottes marines inaccessibles par la terre ; ~7 h"
+    ],
+    "durationMin": 420,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.menorcablava.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Des voiliers au mouillage devant Cala Macarella, sur la côte sud",
+  "imageCredit": "Franrull / Wikimedia Commons (CC BY-SA 4.0)"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "Cala Roja",
+  "lang": "fr",
+  "translationKey": "cala-roja",
+  "type": "cala",
+  "description": "La petite sœur, plus intime, de Cavalleria : une crique rouge et discrète entre les rochers, presque toujours déserte. Idéale pour échapper à la foule sans s'éloigner du parking.",
+  "coordinates": {
+    "lat": 40.0575,
+    "lng": 4.0905
+  },
+  "area": "Nord (Es Mercadal)",
+  "tags": [
+    "norte",
+    "cala",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "une petite crique rouge et recueillie, presque toujours déserte",
+      "échapper à la foule sans vous éloigner de Cavalleria",
+      "un recoin intime entre les rochers pour le masque et tuba"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-roja.webp"
+  ],
+  "imageAlt": "La roche rougeâtre du cap de Cavalleria tombant dans l'eau, sur la côte nord",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)"
+}

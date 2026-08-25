@@ -1,0 +1,46 @@
+{
+  "name": "Bodegas Menorquinas (Ferrer de Muntpalau)",
+  "lang": "fr",
+  "translationKey": "bodegas-menorquinas-ferrer-muntpalau",
+  "type": "bodega",
+  "edition": "menorca",
+  "description": "Le domaine pionnier du Vi de la Terra Illa de Menorca : né en 1987 dans le giron de l'historique restaurant Ca n'Aguedet, à Es Mercadal, il commercialise depuis 1990. Les vins Ferrer de Muntpalau viennent de son domaine voisin de Sant Patrici, à Ferreries.",
+  "coordinates": {
+    "lat": 39.982,
+    "lng": 4.008
+  },
+  "area": "Ferreries (finca S'Estància Alta, près de Sant Patrici)",
+  "images": [
+    "/uploads/lg-bodegas-menorquinas-ferrer-muntpalau.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "parejas"
+    ],
+    "highlights": [
+      "découvrir le domaine qui a lancé le vin de Minorque à étiquette propre",
+      "déguster ses blancs, ses rouges de garde et le Fusió",
+      "convenir de la visite par téléphone avant de venir"
+    ],
+    "durationMin": 75,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.descobreixmenorca.com/en/wines-of-menorca/bodegas-menorquinas/",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Maisons de campagne blanches sur la commune de Ferreries, les collines en toile de fond",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)"
+}

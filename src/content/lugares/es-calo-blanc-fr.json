@@ -1,0 +1,47 @@
+{
+  "name": "Es Calo Blanc",
+  "lang": "fr",
+  "translationKey": "es-calo-blanc",
+  "type": "cala",
+  "description": "Minuscule crique (à peine quelques mètres de large) enchâssée entre les rochers, l'une des plus petites de l'île ; un recoin singulier et peu connu pour une halte brève. On y arrive par la zone résidentielle de Cap d'en Font (Sant Lluís), avec un parking non goudronné à proximité et un escalier qui descend jusqu'au sable par le côté ouest ; cadre rocheux, non adapté.",
+  "coordinates": {
+    "lat": 39.8294,
+    "lng": 4.211
+  },
+  "area": "Sud-Est (Sant Lluis)",
+  "tags": [
+    "sur-este",
+    "cala",
+    "sant-lluis"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "cala",
+    "idealFor": [
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-07-22",
+    "highlights": [
+      "découvrir l'une des criques les plus minuscules de l'île",
+      "un plongeon rapide entre les rochers, dans un recoin singulier",
+      "la combiner avec Binibèquer ou Binidalí, juste à côté"
+    ]
+  },
+  "images": [
+    "/uploads/lg-es-calo-blanc.webp"
+  ],
+  "imageAlt": "Es Caló Blanc : une petite crique de sable clair et d'eau transparente entre la roche basse",
+  "imageCredit": "MontanNito / Wikimedia Commons (CC BY-SA 3.0)"
+}

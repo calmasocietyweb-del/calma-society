@@ -1,0 +1,48 @@
+{
+  "name": "Es Mercadal",
+  "lang": "fr",
+  "translationKey": "es-mercadal",
+  "type": "pueblo",
+  "description": "Village blanc au cœur géographique de Minorque, au pied du Monte Toro (le point culminant, 358 m). Son nom vient du privilège de marché accordé par Jaume II. La grande excursion consiste à monter au sanctuaire de la Mare de Déu del Toro (1670), patronne de l'île, avec une vue panoramique sur toute Minorque. Une base idéale, par sa position centrale, pour rayonner vers les deux côtes.",
+  "coordinates": {
+    "lat": 39.9889,
+    "lng": 4.0942
+  },
+  "area": "Centre (Es Mercadal)",
+  "tags": [
+    "centro",
+    "pueblo",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "monter au Monte Toro au coucher du soleil",
+      "le centre paisible d'un village de l'intérieur",
+      "une fromagerie AOP toute proche (Subaida)"
+    ]
+  },
+  "images": [
+    "/uploads/lg-es-mercadal.webp"
+  ],
+  "imageAlt": "L'église d'Es Mercadal illuminée à la tombée de la nuit, au-dessus de sa terrasse de pierre",
+  "imageCredit": "Markus Trienke / Wikimedia Commons (CC BY-SA 2.0)"
+}

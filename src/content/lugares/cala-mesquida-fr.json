@@ -1,0 +1,48 @@
+{
+  "name": "Cala Mesquida",
+  "lang": "fr",
+  "translationKey": "cala-mesquida",
+  "type": "cala",
+  "description": "Plage de sable clair et d'eaux tranquilles tout près de Maó, avec un petit noyau de maisons de pêcheurs, des restaurants et une tour de défense. Elle est sur la côte est — pas dans le sud turquoise — : c'est le bain de proximité de Maó, moins carte postale et plus vie locale.",
+  "coordinates": {
+    "lat": 39.902,
+    "lng": 4.31
+  },
+  "area": "Est (Maó)",
+  "tags": [
+    "este",
+    "playa",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "la plage de sable clair et d'eaux tranquilles à 10 min de Maó",
+      "la tour de défense qui domine la crique",
+      "déjeuner dans l'un de ses restaurants de poisson au bord de la plage"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-mesquida.webp"
+  ],
+  "imageAlt": "La plage de Sa Mesquida avec la colline arrondie qui ferme la baie",
+  "imageCredit": "Seruba / Wikimedia Commons (CC BY-SA 3.0)"
+}

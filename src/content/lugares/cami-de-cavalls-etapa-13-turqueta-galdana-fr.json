@@ -1,0 +1,47 @@
+{
+  "name": "Camí de Cavalls · Étape 13 : Cala en Turqueta – Cala Galdana",
+  "lang": "fr",
+  "translationKey": "cami-de-cavalls-etapa-13-turqueta-galdana",
+  "type": "ruta",
+  "edition": "menorca",
+  "description": "Le tronçon le plus photographié du sentier historique qui fait le tour de l'île : 6,4 km balisés entre pinèdes et ravins calcaires, reliant trois des plus belles criques vierges du sud. Marcher à la première heure, avant que le monde n'arrive, est un luxe silencieux.",
+  "coordinates": {
+    "lat": 39.9268,
+    "lng": 3.913
+  },
+  "area": "Ciutadella / Ferreries",
+  "images": [
+    "/uploads/lg-cami-de-cavalls-etapa-13-turqueta-galdana.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "excursion",
+    "idealFor": [
+      "parejas",
+      "naturaleza",
+      "primera-vez",
+      "cultura"
+    ],
+    "highlights": [
+      "relier à pied les criques Turqueta, Macarella et Macarelleta par le Camí de Cavalls",
+      "traverser le ravin ombragé aux parois calcaires, entre figuiers et végétation fraîche",
+      "partir à l'aube du parking de Turqueta (vite complet en été) et finir à Cala Galdana"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.camidecavalls.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Cala Galdana vue depuis la falaise, avec un voilier au mouillage à l'entrée de la baie",
+  "imageCredit": "Ben Salter from Wales / Wikimedia Commons (CC BY 2.0)"
+}

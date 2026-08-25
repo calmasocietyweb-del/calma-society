@@ -1,0 +1,34 @@
+{
+  "name": "Barceló Nura",
+  "lang": "fr",
+  "translationKey": "barcelo-nura",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Le grand resort design de l'île : cinq étoiles à Biniancolla, près de Punta Prima, avec 128 chambres — dont 45 avec accès direct à des piscines semi-privées —, trois piscines extérieures, un spa et une architecture pensée pour se fondre dans le paysage : eau recyclée, énergie solaire thermique et matériaux naturels. Pour qui veut le format resort sans renoncer au design.",
+  "coordinates": {
+    "lat": 39.821,
+    "lng": 4.274
+  },
+  "area": "Sud-est (Sant Lluís)",
+  "practicalInfo": {
+    "acceso": "Biniancolla, Sant Lluís, à côté de Punta Prima.",
+    "horario": "Saison : vérifiez les dates 2026 sur le site officiel.",
+    "servicios": "128 chambres (45 avec piscine semi-privée), trois piscines, spa et salle de sport, restaurants."
+  },
+  "website": "https://www.barcelo.com/es-es/barcelo-nura/",
+  "images": [
+    "/uploads/binibeca.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "hotel",
+    "lujo",
+    "sant-lluis"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Barceló Nura, Biniancolla : le resort design 5 étoiles près de Punta Prima, avec piscines semi-privées et spa."
+  },
+  "imageAlt": "Maisons blanches chaulées et ruelles labyrinthiques de Binibeca Vell, dans le sud-est de Minorque.",
+  "imageCredit": "Adobe Stock"
+}

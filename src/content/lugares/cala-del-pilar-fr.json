@@ -1,0 +1,51 @@
+{
+  "name": "Cala del Pilar",
+  "lang": "fr",
+  "translationKey": "cala-del-pilar",
+  "type": "cala",
+  "description": "L'une des plages les plus sauvages et isolées de Minorque : du sable doré sous des falaises d'argile rouge, sans le moindre service. La longue marche et le contrôle des accès la gardent presque vierge ; elle se mérite.",
+  "coordinates": {
+    "lat": 40.022,
+    "lng": 3.93
+  },
+  "area": "Nord (Ferreries)",
+  "tags": [
+    "norte",
+    "cala",
+    "ferreries"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 300,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "l'une des plages les plus sauvages et isolées du nord",
+      "la marche à travers pinède et maquis jusqu'au sable doré sous les argiles rouges",
+      "y aller autosuffisant : il n'y a pas un seul service"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-del-pilar.webp"
+  ],
+  "imageAlt": "Cala del Pilar vue d'en haut : sable roux, eau turquoise et versant de garrigue",
+  "imageCredit": "Markus Trienke / Wikimedia Commons (CC BY-SA 2.0)",
+  "practicalInfo": {
+    "aparcamiento": "Capacité contrôlée (saison 2026) : le parking ferme une fois complet, et il reste ensuite une longue marche à travers le bois jusqu'au sable. Comme elle fait partie de celles qui se gagnent à pied, elle tient plus longtemps que les plages du sud de Ciutadella, mais en août mieux vaut arriver tôt le matin. Inutile de chercher une place aux alentours : les chemins sont étroits et le stationnement y est interdit.",
+    "mejorEpoca": "La marche la protège : elle ne se remplit pas aussi vite que les plages célèbres. En juillet et août, arrivez tout de même avant 9 h. Le contrôle des accès fonctionne de 7 h 30 à 21 h et reste en place jusqu'au 15 octobre."
+  }
+}

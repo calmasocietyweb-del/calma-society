@@ -1,0 +1,49 @@
+{
+  "name": "Cap de Cavalleria",
+  "lang": "fr",
+  "translationKey": "faro-cavalleria",
+  "type": "monumento",
+  "description": "Le cap et le phare les plus septentrionaux de l'île : falaises spectaculaires, vent et vues immenses. Rendez-vous incontournable au coucher du soleil.",
+  "coordinates": {
+    "lat": 40.0915,
+    "lng": 4.092
+  },
+  "area": "Nord (Es Mercadal)",
+  "tags": [
+    "norte",
+    "faro",
+    "mirador",
+    "atardecer"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "parejas",
+      "naturaleza",
+      "lujo-tranquilo"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Route étroite mais goudronnée, avec parking près du phare ; on marche à peine. En été, l'endroit se remplit au coucher du soleil.",
+    "highlights": [
+      "le point le plus septentrional de l'île",
+      "les falaises et les vues immenses",
+      "l'un des plus beaux couchers de soleil de Minorque"
+    ]
+  },
+  "images": [
+    "/uploads/lg-faro-cavalleria.webp"
+  ],
+  "imageAlt": "Le phare blanc du cap de Cavalleria et les maisons du gardien, sur la roche",
+  "imageCredit": "Anka D. / Wikimedia Commons (CC BY 3.0)"
+}

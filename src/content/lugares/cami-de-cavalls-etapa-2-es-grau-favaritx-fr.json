@@ -1,0 +1,45 @@
+{
+  "name": "Camí de Cavalls · Étape 2 : Es Grau – Cap de Favàritx",
+  "lang": "fr",
+  "translationKey": "cami-de-cavalls-etapa-2-es-grau-favaritx",
+  "type": "ruta",
+  "edition": "menorca",
+  "description": "8,6 km au cœur du Parc Natural de s'Albufera des Grau, Réserve de biosphère UNESCO, jusqu'au phare et au paysage lunaire d'ardoise noire de Favàritx. Une nature protégée à l'état pur, sans un seul bâtiment à l'horizon.",
+  "coordinates": {
+    "lat": 39.956,
+    "lng": 4.266
+  },
+  "area": "Maó",
+  "images": [
+    "/uploads/lg-cami-de-cavalls-etapa-2-es-grau-favaritx.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "highlights": [
+      "traverser l'unique parc naturel de Minorque, cœur de la Réserve de biosphère",
+      "finir entre les roches d'ardoise noire et le phare de Favàritx",
+      "vous pencher à mi-chemin sur les criques vierges de Tortuga et Presili"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.camidecavalls.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Un sentier de terre entre le maquis, dans le parc naturel de s'Albufera des Grau",
+  "imageCredit": "Alejandro Muñoz Cabrisas / Wikimedia Commons (CC BY-SA 4.0)"
+}

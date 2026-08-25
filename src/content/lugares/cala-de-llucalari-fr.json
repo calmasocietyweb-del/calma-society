@@ -1,0 +1,46 @@
+{
+  "name": "Cala de Llucalari",
+  "lang": "fr",
+  "translationKey": "cala-de-llucalari",
+  "type": "cala",
+  "description": "Petite crique cachée près de Son Bou, récompense d'une courte marche. Tranquille et peu fréquentée grâce à son accès à pied ; aucun service.",
+  "coordinates": {
+    "lat": 39.892,
+    "lng": 4.1
+  },
+  "area": "Centre-sud (Alaior)",
+  "tags": [
+    "sur-centro",
+    "cala",
+    "alaior"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "suivre le court sentier depuis Son Bou jusqu'à cette crique cachée",
+      "profiter d'une crique tranquille et peu fréquentée, sans services",
+      "emporter eau et parasol : il n'y a ni buvette ni quoi que ce soit sur place"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-de-llucalari.webp"
+  ],
+  "imageAlt": "L'eau turquoise de Cala Llucalari entre de grands blocs de roche",
+  "imageCredit": "Josefito123 / Wikimedia Commons (CC BY-SA 4.0)"
+}

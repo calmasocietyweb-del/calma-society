@@ -1,0 +1,51 @@
+{
+  "name": "Cala Presili",
+  "lang": "fr",
+  "translationKey": "cala-presili",
+  "type": "cala",
+  "description": "Petite crique vierge voisine de Cala Tortuga, au pied du phare de Favàritx, en plein parc naturel. On la combine souvent avec Tortuga lors de la même excursion à pied ; la quiétude est garantie par le contrôle des accès.",
+  "coordinates": {
+    "lat": 39.995,
+    "lng": 4.272
+  },
+  "area": "Nord (Maó)",
+  "tags": [
+    "norte",
+    "cala",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 180,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "la baignade sauvage au pied du phare de Favàritx",
+      "la combiner avec Cala Tortuga, sa voisine, dans la même journée",
+      "en été, l'accès se fait en bus saisonnier, pas en voiture"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-presili.webp"
+  ],
+  "imageAlt": "La côte rocheuse près du phare de Favàritx, avec Cala Presili et la Platja de Tortuga en arrière-plan",
+  "imageCredit": "carlos venegas gavilán / Wikimedia Commons (CC BY-SA 4.0)",
+  "practicalInfo": {
+    "aparcamiento": "Du 1er juin au 30 septembre, on ne peut y arriver ni en voiture ni en deux-roues : toute la zone du phare de Favàritx est fermée au trafic privé et l'on y entre en bus. Depuis le 1er juin 2026, le bus vers Favàritx compte douze liaisons quotidiennes, quatre de plus que l'an dernier. Depuis l'arrêt, comptez environ 15 minutes à pied.",
+    "mejorEpoca": "En dehors de la période de restriction (d'octobre à mai), on arrive en voiture jusqu'au parking du phare et la plage est pratiquement déserte. En été, le premier bus du matin."
+  }
+}

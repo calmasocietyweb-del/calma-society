@@ -1,0 +1,48 @@
+{
+  "name": "Platja de Cavalleria",
+  "lang": "fr",
+  "translationKey": "cala-cavalleria",
+  "type": "cala",
+  "description": "Grande plage vierge de sable roux encadrée de falaises ocre, l'une des cartes postales du nord. Commode grâce à son parking tout près du rivage.",
+  "coordinates": {
+    "lat": 40.056,
+    "lng": 4.093
+  },
+  "area": "Nord (Es Mercadal)",
+  "tags": [
+    "norte",
+    "arena rojiza",
+    "virgen",
+    "es mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "playa",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Route étroite asphaltée (~15 min) jusqu'au parking gratuit ; de là, ~400 m à pied par des escaliers de bois.",
+    "highlights": [
+      "la grande plage vierge de sable roux sous les falaises ocre",
+      "le parking commode près de la plage et la descente par des passerelles de bois",
+      "monter ensuite au phare du Cap de Cavalleria au coucher du soleil"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-cavalleria.webp"
+  ],
+  "imageAlt": "La plage de Cavalleria en demi-lune, sable doré et eau claire",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)"
+}

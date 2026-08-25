@@ -1,0 +1,47 @@
+{
+  "name": "Cala des Talaier",
+  "lang": "fr",
+  "translationKey": "cala-des-talaier",
+  "type": "cala",
+  "description": "Petite crique retirée et abritée, au sable clair et aux eaux tranquilles, avec un îlot face au rivage. La marche qu'elle exige la garde moins fréquentée que Son Saura ; aucun service.",
+  "coordinates": {
+    "lat": 39.921,
+    "lng": 3.9
+  },
+  "area": "Sud-ouest (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "cala",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "une crique retirée et abritée, avec un îlot face au rivage",
+      "moins fréquentée car elle se gagne à pied : prévoyez pique-nique, eau et parasol",
+      "sable clair et eaux tranquilles, pour déconnecter à deux"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-des-talaier.webp"
+  ],
+  "imageAlt": "Cala des Talaier : sable clair, eau transparente et pins jusqu'au rivage",
+  "imageCredit": "Josefito123 / Wikimedia Commons (CC BY-SA 4.0)"
+}

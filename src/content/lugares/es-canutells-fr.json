@@ -1,0 +1,47 @@
+{
+  "name": "Es Canutells",
+  "lang": "fr",
+  "translationKey": "es-canutells",
+  "type": "cala",
+  "description": "Petite crique abritée entre Cales Coves et Binidali, aux eaux calmes, peu fréquentée par les touristes et davantage par les Minorquins. Ambiance locale et apaisée.",
+  "coordinates": {
+    "lat": 39.865,
+    "lng": 4.17
+  },
+  "area": "Sud-Est (Maó)",
+  "tags": [
+    "sur-este",
+    "cala",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "familias"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "la baignade abritée dans une crique d'ambiance locale",
+      "le mouillage de barques et les cabanons traditionnels",
+      "du masque et tuba tranquille dans des eaux calmes et peu fréquentées"
+    ]
+  },
+  "images": [
+    "/uploads/lg-es-canutells.webp"
+  ],
+  "imageAlt": "La crique d'Es Canutells avec les barques au mouillage et la falaise qui ferme l'entrée",
+  "imageCredit": "Songbird8 / Wikimedia Commons (CC BY-SA 4.0)"
+}

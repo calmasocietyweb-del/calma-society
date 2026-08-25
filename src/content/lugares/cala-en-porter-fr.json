@@ -1,0 +1,58 @@
+{
+  "name": "Cala en Porter",
+  "lang": "fr",
+  "translationKey": "cala-en-porter",
+  "type": "cala",
+  "description": "Crique encaissée entre de hautes falaises, au sable fin et aux eaux tranquilles, adossée à une urbanisation bien équipée. Célèbre pour la Cova d'en Xoroi (bar-belvédère et club dans la roche). Commode en voiture, mais plus urbaine que les criques vierges voisines.",
+  "coordinates": {
+    "lat": 39.872,
+    "lng": 4.13
+  },
+  "area": "Centre-sud (Alaior)",
+  "tags": [
+    "sur-centro",
+    "cala",
+    "alaior"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "seasonWindow": {
+        "from": "05-01",
+        "to": "10-31"
+      },
+      "certainty": "alta"
+    },
+    "highlights": [
+      "se baigner dans une crique de sable fin encaissée entre de hautes falaises",
+      "monter à la Cova d'en Xoroi, dans la falaise, pour un verre au coucher du soleil",
+      "se garer en haut, dans l'urbanisation, et descendre à la plage par les escaliers"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-en-porter.webp"
+  ],
+  "imageAlt": "Cala en Porter, avec sa plage au fond du ravin, entre les falaises",
+  "imageCredit": "Gimo61 / Wikimedia Commons (CC BY 3.0)"
+}

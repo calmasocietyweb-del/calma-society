@@ -1,0 +1,46 @@
+{
+  "name": "Cova des Coloms (« la Cathédrale ») par le Barranc de Binigaus",
+  "lang": "fr",
+  "translationKey": "cova-des-coloms-barranc-binigaus",
+  "type": "ruta",
+  "edition": "menorca",
+  "description": "L'une des grottes les plus impressionnantes de Minorque, surnommée « la Cathédrale » pour ses dimensions de temple (salle centrale de 50 m, 24 m de hauteur), au bout d'un sentier plat qui remonte un ravin verdoyant. Une excursion à l'atmosphère magique, à la portée de toute la famille.",
+  "coordinates": {
+    "lat": 39.9266,
+    "lng": 4.0492
+  },
+  "area": "Es Migjorn Gran",
+  "images": [
+    "/uploads/lg-cova-des-coloms-barranc-binigaus.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "familias",
+      "cultura"
+    ],
+    "highlights": [
+      "remonter le verdoyant Barranc de Binigaus depuis Es Migjorn Gran, presque sans dénivelé",
+      "entrer par une ouverture discrète dans une vaste salle au plafond vertigineux (possible sanctuaire préhistorique)",
+      "prolonger la promenade jusqu'à la plage sauvage de Binigaus"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.ajmigjorngran.org",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "L'intérieur de la Cova des Coloms, avec l'ouverture lumineuse au fond et des personnes qui donnent l'échelle",
+  "imageCredit": "Andrómeda7 / Wikimedia Commons (CC BY-SA 3.0)"
+}

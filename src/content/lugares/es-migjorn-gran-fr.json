@@ -1,0 +1,47 @@
+{
+  "name": "Es Migjorn Gran",
+  "lang": "fr",
+  "translationKey": "es-migjorn-gran",
+  "type": "pueblo",
+  "description": "La commune la plus petite et la plus tranquille, où « le temps semble s'être arrêté » : maisons blanches basses et essence de la Minorque d'autrefois (commune récente, curieusement, mais à la population très longève). Porte d'entrée vers la Cova des Coloms (la plus grande grotte naturelle de l'île, la « Cathédrale des grottes »), vers le barranc de Binigaus et vers des criques vierges paradisiaques comme Trebaluger. Pour qui cherche l'authenticité rurale et la nature sans les foules.",
+  "coordinates": {
+    "lat": 39.9469,
+    "lng": 4.0481
+  },
+  "area": "Centre-sud (Es Migjorn Gran)",
+  "tags": [
+    "sur-centro",
+    "pueblo",
+    "es-migjorn-gran"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "cultura"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "le village blanc le plus serein du sud",
+      "le barranc de Binigaus vers la Cova des Coloms",
+      "descendre à pied jusqu'à la plage de Binigaus"
+    ]
+  },
+  "images": [
+    "/uploads/lg-es-migjorn-gran.webp"
+  ],
+  "imageAlt": "La côte de Binigaus, sur la commune d'Es Migjorn Gran, avec l'étendue de sable et le promontoire",
+  "imageCredit": "Boladevidre / Wikimedia Commons (CC BY-SA 2.0)"
+}

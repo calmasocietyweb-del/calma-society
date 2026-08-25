@@ -1,0 +1,71 @@
+{
+  "name": "Cala Pregonda",
+  "lang": "fr",
+  "translationKey": "cala-pregonda",
+  "type": "cala",
+  "description": "L'une des criques les plus iconiques du nord : un sable aux tons roux, des îlots face au rivage et un air presque lunaire. Aucun service — et c'est là tout son charme.",
+  "coordinates": {
+    "lat": 40.0489,
+    "lng": 4.0512
+  },
+  "area": "Nord (Es Mercadal)",
+  "practicalInfo": {
+    "acceso": "À pied, environ 30 min depuis le parking de Binimel·là",
+    "aparcamiento": "Pas de parking propre : on laisse la voiture à Binimel·là et l'on marche une trentaine de minutes. Ce parking est à capacité contrôlée (saison 2026) et ferme une fois complet ; la place qu'il vous faut n'est donc pas celle de Pregonda mais celle de Binimel·là — et elle sert deux plages à la fois. Inutile de chercher une place aux alentours : les chemins sont étroits et le stationnement y est interdit.",
+    "servicios": "Aucun : emportez eau, de quoi manger et un parasol",
+    "mejorEpoca": "Mai, juin et septembre. En août, à la première heure : si Binimel·là est déjà fermé, Pregonda cesse d'être une option ce jour-là. Le contrôle des accès fonctionne de 7 h 30 à 21 h et reste en place jusqu'au 15 octobre."
+  },
+  "images": [
+    "/uploads/cala-pregonda.webp"
+  ],
+  "tags": [
+    "norte",
+    "arena rojiza",
+    "camí de cavalls"
+  ],
+  "status": "published",
+  "windExposure": {
+    "openingBearingDeg": 340,
+    "embayment": "encajonada",
+    "municipioINE": "07037",
+    "shelteredFrom": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
+    "exposedTo": [
+      "Tramuntana (N)",
+      "Mestral (NO)",
+      "Gregal (NE)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Pas d'accès routier jusqu'à la crique : ~30 min à pied (2 km) par le Camí de Cavalls depuis le parking de Binimel·la. Aucun service ; chaussures confortables, eau et parasol indispensables.",
+    "seasonalHours": "Juin ou septembre ; en juillet-août, le parking de Binimel·la se remplit tôt. Mieux par faible vent du nord.",
+    "highlights": [
+      "le sable roux et les îlots de l'une des criques les plus iconiques du nord",
+      "marcher ~30 min par le Camí de Cavalls depuis Binimel·la",
+      "choisir un jour de faible vent du nord ; aucun service"
+    ]
+  },
+  "imageAlt": "L'eau claire de Cala Pregonda sur le fond rocheux, avec l'îlot de roche ocre au fond"
+}

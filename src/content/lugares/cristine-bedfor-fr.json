@@ -1,0 +1,34 @@
+{
+ "name": "Cristine Bedfor",
+ "lang": "fr",
+ "translationKey": "cristine-bedfor",
+ "type": "alojamiento",
+ "edition": "menorca",
+ "description": "L'hôtel boutique de référence du centre de Maó, dans la rue de la Infanta, avec des intérieurs chinés signés Lorenzo Castillo et un jardin qui compte parmi les recoins les plus recherchés de la ville. Son restaurant est La Cocina de Cristine, avec le chef Pau Sintes (European Young Chef Award 2022). Distingué d'une Clef Michelin en 2025. Un luxe de maison particulière : celui qui ne se remarque pas, jusqu'à ce que l'on vous installe au jardin.",
+ "coordinates": {
+  "lat": 39.8886,
+  "lng": 4.264
+ },
+ "area": "Est (Maó)",
+ "practicalInfo": {
+  "acceso": "Calle de la Infanta 19, 07702 Maó, dans le centre historique.",
+  "horario": "Confirmez la saison et les dates 2026 sur le site officiel.",
+  "servicios": "21 chambres, jardin, restaurant La Cocina de Cristine (chef Pau Sintes), massages et spa, salon commun."
+ },
+ "website": "https://cristinebedforhotel.com/en/menorca/",
+ "images": [
+  "/uploads/puerto-mao.webp"
+ ],
+ "tags": [
+  "alojamiento",
+  "hotel",
+  "lujo",
+  "mao"
+ ],
+ "status": "published",
+ "seo": {
+  "description": "Cristine Bedfor, Maó : hôtel boutique aux intérieurs de Lorenzo Castillo, jardin et La Cocina de Cristine. Clef Michelin 2025."
+ },
+ "imageAlt": "Le port de Maó, avec sa promenade au bord de l'eau.",
+ "imageCredit": "Adobe Stock"
+}

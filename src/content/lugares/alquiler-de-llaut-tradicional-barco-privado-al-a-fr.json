@@ -1,0 +1,50 @@
+{
+  "name": "Location de llaut traditionnel / bateau privé au coucher du soleil",
+  "lang": "fr",
+  "translationKey": "alquiler-de-llaut-tradicional-barco-privado-al-a",
+  "type": "experiencia",
+  "description": "Sortie en llaut minorquin en bois (embarcation traditionnelle, élégante, avec solarium) ou en bateau privé avec skipper, depuis Cala Galdana ou Ciutadella, vers les joyaux turquoise du sud : Cala Macarella, Macarelleta, Turqueta, Mitjana. On peut mouiller, nager et explorer les fonds au masque et tuba dans des criques dont l'accès par la terre est très restreint en été. Option de traiteur avec produits locaux et vins, et sorties au coucher du soleil : le luxe tranquille par excellence.",
+  "coordinates": {
+    "lat": 39.93,
+    "lng": 3.96
+  },
+  "area": "Sud-ouest (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "experiencia",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-08-06",
+    "highlights": [
+      "longer par la mer les criques vierges du sud-ouest, loin des foules",
+      "mouiller devant Macarella ou Turqueta et se baigner depuis le bateau",
+      "coucher de soleil à bord avec du cava ; en été, réservez le skipper à l'avance"
+    ],
+    "officialUrl": "https://www.alquilerbarcoenmenorca.es/",
+    "operatorName": "Minorboats"
+  },
+  "images": [
+    "/uploads/lg-alquiler-de-llaut-tradicional-barco-privado-al-a.webp"
+  ],
+  "imageAlt": "Llaüts en bois amarrés en file dans le port, face aux maisons d'Es Castell",
+  "imageCredit": "Markus Trienke / Wikimedia Commons (CC BY-SA 2.0)"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "Cala en Bosch",
+  "lang": "fr",
+  "translationKey": "cala-en-bosch",
+  "type": "cala",
+  "description": "Plage urbanisée de taille moyenne, près d'un port de plaisance et d'un lac intérieur (El Lago) bordé de restaurants et d'appartements. Commode et bien équipée, pensée pour les familles plus que pour la quête de criques vierges.",
+  "coordinates": {
+    "lat": 39.927,
+    "lng": 3.812
+  },
+  "area": "Sud-ouest (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "playa",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "une plage familiale près du port de plaisance et du lac intérieur (El Lago)",
+      "restaurants de poisson et de riz autour du port, face à l'eau",
+      "promenade de bord de mer, plate, jusqu'au phare du Cap d'Artrutx et à Son Xoriguer"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-en-bosch.webp"
+  ],
+  "imageAlt": "Le canal et le port de plaisance de Cala en Bosc, avec les bateaux amarrés",
+  "imageCredit": "Bärwinkel,Klaus / Wikimedia Commons (CC BY-SA 4.0)"
+}

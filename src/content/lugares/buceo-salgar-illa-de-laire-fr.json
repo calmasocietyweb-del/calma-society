@@ -1,0 +1,47 @@
+{
+  "name": "Plongée et baptême de mer dans la réserve de l'Illa de l'Aire (S'Algar Diving)",
+  "lang": "fr",
+  "translationKey": "buceo-salgar-illa-de-laire",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "S'immerger dans la réserve marine de l'Illa de l'Aire avec un centre PADI présent depuis plus de trente ans sur la côte sud-est. Du baptême pour débutants aux immersions sur plus de vingt sites, avec piscine sur place et moniteurs.",
+  "coordinates": {
+    "lat": 39.843,
+    "lng": 4.282
+  },
+  "area": "Sant Lluís (s'Algar)",
+  "images": [
+    "/uploads/lg-buceo-salgar-illa-de-laire.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "nautica",
+      "naturaleza",
+      "parejas",
+      "familias"
+    ],
+    "highlights": [
+      "baptême de plongée pour s'initier, ou immersions dans la réserve de l'Illa de l'Aire",
+      "plus de 20 sites de plongée et sorties guidées masque et tuba",
+      "centre PADI 5 étoiles avec piscine d'entraînement, salles de cours et bateaux en propre"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.salgardiving.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Le rivage de Punta Prima, avec l'Illa de l'Aire et son phare rayé à l'horizon",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)"
+}

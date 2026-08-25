@@ -1,0 +1,47 @@
+{
+  "name": "Eolo Sunset Bar",
+  "lang": "fr",
+  "translationKey": "eolo-sunset-bar",
+  "type": "bar",
+  "description": "Paillote pleine de style sur les falaises de Cala'n Forcat, sur la côte ouest près de Ciutadella. Ambiance détendue, bons cocktails et l'une des plus belles vues de coucher de soleil de l'île. L'apéritif au crépuscule, sans prétention mais avec du discernement.",
+  "coordinates": {
+    "lat": 40.01,
+    "lng": 3.79
+  },
+  "area": "Ouest (Ciutadella)",
+  "tags": [
+    "oeste",
+    "experiencia",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "parejas",
+      "naturaleza",
+      "lujo-tranquilo"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "un verre au soleil couchant sur les falaises de Cala'n Forcat",
+      "l'un des plus beaux couchers de soleil de la côte ouest",
+      "une ambiance détendue de paillote avec du style, près de Ciutadella"
+    ]
+  },
+  "images": [
+    "/uploads/faro-punta-nati.webp"
+  ],
+  "imageAlt": "Le phare de Punta Nati sur la côte ouest, à la tombée du jour"
+}

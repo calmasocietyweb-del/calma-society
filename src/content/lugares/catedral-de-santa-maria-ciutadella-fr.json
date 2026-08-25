@@ -1,0 +1,47 @@
+{
+  "name": "Cathédrale Santa Maria de Ciutadella",
+  "lang": "fr",
+  "translationKey": "catedral-de-santa-maria-ciutadella",
+  "type": "monumento",
+  "edition": "menorca",
+  "description": "La cathédrale gothique de Minorque, élevée après la conquête d'Alphonse III (1287) sur l'ancienne grande mosquée. Cœur monumental de la vieille ville de Ciutadella et halte culturelle sereine, à deux pas des palais et des places seigneuriales.",
+  "coordinates": {
+    "lat": 40.0018,
+    "lng": 3.8377
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [
+    "/uploads/lg-catedral-de-santa-maria-ciutadella.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "primera-vez",
+      "parejas",
+      "lujo-tranquilo"
+    ],
+    "highlights": [
+      "admirer la nef gothique catalane et le portail néoclassique",
+      "situer l'histoire de la ville : une cathédrale bâtie sur la grande mosquée d'al-Andalus",
+      "enchaîner avec la promenade dans la vieille ville, le Born et les palais de Ciutadella"
+    ],
+    "durationMin": 45,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://bisbatdemenorca.org/diocesi/la-catedral-i-el-seu-museu/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "La façade de la cathédrale de Ciutadella avec sa rosace, et des passants sur la place",
+  "imageCredit": "Menorquino / Wikimedia Commons (CC BY-SA 3.0 es)"
+}

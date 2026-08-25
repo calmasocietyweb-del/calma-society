@@ -1,0 +1,47 @@
+{
+  "name": "Cala Mica",
+  "lang": "fr",
+  "translationKey": "cala-mica",
+  "type": "cala",
+  "description": "Crique vierge peu connue, en forme de coquille, au sable moyen mêlé de galets, près d'une ancienne maison de campagne. La récompense du marcheur qui prolonge le Camí de Cavalls au-delà de Cavalleria.",
+  "coordinates": {
+    "lat": 40.05,
+    "lng": 4.085
+  },
+  "area": "Nord (Es Mercadal)",
+  "tags": [
+    "norte",
+    "cala",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "une crique vierge en forme de coquille, peu connue",
+      "prolonger le Camí de Cavalls depuis Binimel·la ou Cavalleria",
+      "emporter eau et parasol : aucun service"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-mica.webp"
+  ],
+  "imageAlt": "Cala Mica vue d'en haut : une langue de sable et la houle qui brise sur le rivage",
+  "imageCredit": "Alejandro Muñoz Cabrisas / Wikimedia Commons (CC BY-SA 4.0)"
+}

@@ -1,0 +1,51 @@
+{
+  "name": "Cala Tortuga",
+  "lang": "fr",
+  "translationKey": "cala-tortuga",
+  "type": "cala",
+  "description": "Plage vierge de sable doré sous le paysage lunaire d'ardoise noire de Favàritx, au cœur du parc naturel. L'accès restreint en voiture et la marche d'approche préservent sa sérénité : nature à l'état pur, sans la moindre paillote en vue.",
+  "coordinates": {
+    "lat": 39.998,
+    "lng": 4.27
+  },
+  "area": "Nord (Maó)",
+  "tags": [
+    "norte",
+    "cala",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 180,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "le sable doré sous le paysage lunaire d'ardoise de Favàritx",
+      "le cadre vierge du Parc Natural de s'Albufera des Grau",
+      "en été, on y arrive en bus saisonnier depuis Maó"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-tortuga.webp"
+  ],
+  "imageAlt": "La Platja d'en Tortuga, sur l'anse sableuse de Morella, entourée de garrigue basse",
+  "imageCredit": "Nicolas G. Mertens / Wikimedia Commons (CC BY-SA 4.0)",
+  "practicalInfo": {
+    "aparcamiento": "Du 1er juin au 30 septembre, on ne peut y arriver ni en voiture ni en deux-roues : elle partage avec Presili la fermeture au trafic privé de toute la zone du phare de Favàritx, et l'on y entre en bus. Depuis le 1er juin 2026, douze liaisons quotidiennes desservent Favàritx. Depuis l'arrêt, comptez environ 20 minutes à pied par le Camí de Cavalls.",
+    "mejorEpoca": "D'octobre à mai, on y arrive en voiture et la plage est le plus souvent déserte. En été, prenez le premier bus : la marche depuis l'arrêt fait le reste du filtre."
+  }
+}

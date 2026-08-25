@@ -1,0 +1,46 @@
+{
+  "name": "Cyclotourisme et VTT sur le Camí de Cavalls (location Velos Joan)",
+  "lang": "fr",
+  "translationKey": "btt-cicloturismo-cami-de-cavalls-velos-joan",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Découvrir la côte à coups de pédale : le Camí de Cavalls compte des tronçons praticables en VTT et l'île est faite pour le vélo. Velos Joan, atelier et loueur de référence à Ciutadella, propose VTT, gravel et vélos électriques, avec livraison dans les hôtels de toute l'île.",
+  "coordinates": {
+    "lat": 40.0014,
+    "lng": 3.8416
+  },
+  "area": "Ciutadella",
+  "images": [
+    "/uploads/lg-btt-cicloturismo-cami-de-cavalls-velos-joan.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "parejas",
+      "familias"
+    ],
+    "highlights": [
+      "louer un VTT, un gravel ou un vélo électrique de qualité (livraison à l'hôtel possible)",
+      "rouler sur les tronçons cyclables du Camí de Cavalls (formule VTT en versions Basic, Standard ou Plus)",
+      "choisir le niveau selon votre expérience ; les tronçons les plus durs sont réservés aux cyclistes aguerris"
+    ],
+    "durationMin": 240,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://velosjoan.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Un chemin rural de Minorque entre des murs de pierre sèche",
+  "imageCredit": "Vriullop / Wikimedia Commons (CC BY-SA 3.0)"
+}

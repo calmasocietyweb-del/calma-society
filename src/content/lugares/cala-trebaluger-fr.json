@@ -1,0 +1,46 @@
+{
+  "name": "Cala Trebaluger",
+  "lang": "fr",
+  "translationKey": "cala-trebaluger",
+  "type": "cala",
+  "description": "L'une des plus belles criques vierges de l'île : sable blanc, falaises calcaires, pins jusqu'au rivage et un petit torrent qui débouche sur un côté. Son accès uniquement à pied préserve sa tranquillité ; aucun service sur place, prévoyez eau et provisions.",
+  "coordinates": {
+    "lat": 39.932,
+    "lng": 3.987
+  },
+  "area": "Centre-sud (Ferreries)",
+  "tags": [
+    "sur-centro",
+    "cala",
+    "ferreries"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "rejoindre à pied ou en bateau l'une des plus belles criques vierges de l'île",
+      "profiter du sable blanc, des pins jusqu'au rivage et d'un torrent sur un côté",
+      "planifier le retour : marche exigeante et aucun service sur place"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-trebaluger.webp"
+  ],
+  "imageAlt": "L'eau turquoise de Cala Trebalúger avec les pins penchés sur la roche",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)"
+}

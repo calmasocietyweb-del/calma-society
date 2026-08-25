@@ -1,0 +1,51 @@
+{
+  "name": "Cala Algaiarens",
+  "lang": "fr",
+  "translationKey": "cala-algaiarens",
+  "type": "cala",
+  "description": "Deux plages jumelles (es Bot et es Tancats) de sable doré tirant sur le roux, dans un espace naturel vierge entouré de pinède et de dunes, sans la moindre construction. L'une des rares plages sauvages du nord accessibles en voiture — ce qui la rend très demandée (contrôle des accès en saison).",
+  "coordinates": {
+    "lat": 40.047,
+    "lng": 3.88
+  },
+  "area": "Nord (Ciutadella)",
+  "tags": [
+    "norte",
+    "playa",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "vous baigner sur deux plages vierges jumelles (es Bot et es Tancats)",
+      "parcourir la pinède et les dunes d'un espace protégé sans constructions",
+      "arriver tôt en été : l'accès et le stationnement sont régulés"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-algaiarens.webp"
+  ],
+  "imageAlt": "La plage d'Algaiarens : sable clair, eau turquoise et dunes à la végétation basse",
+  "imageCredit": "Marcelsala007 / Wikimedia Commons (CC BY-SA 3.0)",
+  "practicalInfo": {
+    "aparcamiento": "Capacité contrôlée (saison 2026) : l'accès à La Vall ferme dès que le parking est complet, et des contrôleurs sont postés sur le chemin d'entrée. En juillet et août, mieux vaut arriver dans la matinée. Inutile de chercher une place aux alentours : les chemins sont étroits et le stationnement y est interdit. En saison, un bus arrive aussi depuis Ciutadella.",
+    "mejorEpoca": "Juin et septembre, sans hésiter. En haute saison, avant 9 h. Le contrôle des accès fonctionne de 7 h 30 à 21 h et reste en place jusqu'au 15 octobre."
+  }
+}

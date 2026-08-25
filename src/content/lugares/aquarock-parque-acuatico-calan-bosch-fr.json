@@ -1,0 +1,46 @@
+{
+  "name": "Aquarock (parc aquatique, Cala'n Bosch)",
+  "lang": "fr",
+  "translationKey": "aquarock-parque-acuatico-calan-bosch",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Le grand parc aquatique de l'ouest, à côté de Cala'n Bosch : la seule piscine à vagues de l'île, des toboggans pour tous les âges et un espace dédié aux plus petits. Le plan rafraîchissant par excellence pour une journée avec des enfants.",
+  "coordinates": {
+    "lat": 39.929,
+    "lng": 3.818
+  },
+  "area": "Ciutadella",
+  "images": [
+    "/uploads/lg-aquarock-parque-acuatico-calan-bosch.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "vida-nocturna"
+    ],
+    "highlights": [
+      "se baigner dans la seule piscine à vagues de Minorque",
+      "toboggans pour les grands et pataugeoire sûre pour les petits",
+      "journée complète avec restaurant, transats et karting ; billet moins cher en ligne"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://aquarock-menorca.com/en/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "La plage de Cala en Bosc, avec ses palmiers et ses parasols",
+  "imageCredit": "Ben Salter from Wales / Wikimedia Commons (CC BY 2.0)"
+}

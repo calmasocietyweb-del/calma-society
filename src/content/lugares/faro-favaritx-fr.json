@@ -1,0 +1,49 @@
+{
+  "name": "Phare de Favàritx",
+  "lang": "fr",
+  "translationKey": "faro-favaritx",
+  "type": "monumento",
+  "description": "Phare dressé sur un cap d'ardoise noire striée qui semble venir d'une autre planète, à l'extrémité nord du Parc Natural de s'Albufera des Grau.",
+  "coordinates": {
+    "lat": 40.001,
+    "lng": 4.272
+  },
+  "area": "Nord (Maó)",
+  "tags": [
+    "norte",
+    "faro",
+    "pizarra",
+    "parc natural"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "faro",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 90,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "shuttleInfo": "Accès en voiture restreint l'été (1er juin–31 oct. ; en 2026, avancé au 15 mai) : bus saisonnier depuis Maó (ligne 43, ~3,65 € le trajet). Confirmez le calendrier de l'année.",
+    "highlights": [
+      "le paysage lunaire d'ardoise noire",
+      "le phare au cœur du Parc Natural",
+      "en été, on y arrive en bus saisonnier"
+    ]
+  },
+  "images": [
+    "/uploads/lg-faro-favaritx.webp"
+  ],
+  "imageAlt": "Le phare de Favàritx, avec sa tour à bandes blanches et noires au bout du chemin",
+  "imageCredit": "Markus Trienke / Wikimedia Commons (CC BY-SA 2.0)"
+}

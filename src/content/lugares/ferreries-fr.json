@@ -1,0 +1,48 @@
+{
+  "name": "Ferreries",
+  "lang": "fr",
+  "translationKey": "ferreries",
+  "type": "pueblo",
+  "description": "Village blanc et rural, le plus haut perché de Minorque, avec une tradition enracinée de chaussure (dont Pretty Ballerinas) et de meuble. Entouré de ravins et de collines, c'est la porte naturelle du Barranc d'Algendar, le ravin le plus important de l'île. La Minorque authentique de l'intérieur, idéale pour marier village et nature.",
+  "coordinates": {
+    "lat": 39.9817,
+    "lng": 4.0103
+  },
+  "area": "Centre (Ferreries)",
+  "tags": [
+    "centro",
+    "pueblo",
+    "ferreries"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "cultura",
+      "familias"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "le village le plus haut de l'île",
+      "le marché artisanal (en saison)",
+      "la porte d'entrée vers Cala Galdana"
+    ]
+  },
+  "images": [
+    "/uploads/lg-ferreries.webp"
+  ],
+  "imageAlt": "Le bâtiment des anciennes écoles nationales de Ferreries, de 1933",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)"
+}

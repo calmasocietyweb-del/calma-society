@@ -1,0 +1,52 @@
+{
+  "name": "Forteresse de La Mola",
+  "lang": "fr",
+  "translationKey": "fortaleza-de-la-mola",
+  "type": "monumento",
+  "description": "Imposante forteresse militaire (1848-1875) qui garde l'entrée du port de Maó. Batteries, tunnels, canons Vickers et vues sur la mer. Une enceinte immense, à parcourir librement avec un plan, avec audioguide ou en visite guidée. Une grande sortie patrimoniale d'une demi-journée.",
+  "coordinates": {
+    "lat": 39.8819,
+    "lng": 4.3097
+  },
+  "area": "Est (Es Castell)",
+  "tags": [
+    "este",
+    "monumento",
+    "es-castell"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "mao-puerto",
+      "este"
+    ],
+    "highlights": [
+      "la forteresse du XIXe siècle au-dessus de l'entrée du port",
+      "les tunnels et les batteries",
+      "les vues sur Maó depuis les belvédères"
+    ]
+  },
+  "images": [
+    "/uploads/lg-fortaleza-de-la-mola.webp"
+  ],
+  "imageAlt": "Un canon Vickers de la batterie de La Mola, son tube camouflé pointé vers la mer",
+  "imageCredit": "Àlex / Wikimedia Commons (CC BY-SA 4.0)"
+}

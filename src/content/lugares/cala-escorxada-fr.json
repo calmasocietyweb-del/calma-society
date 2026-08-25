@@ -1,0 +1,46 @@
+{
+  "name": "Cala Escorxada",
+  "lang": "fr",
+  "translationKey": "cala-escorxada",
+  "type": "cala",
+  "description": "Crique vierge et isolée, à l'ambiance de bout du monde, au sable fin et aux eaux limpides — la récompense d'une bonne marche. Pour les voyageurs en quête de solitude et de paysage ; aucun service.",
+  "coordinates": {
+    "lat": 39.93,
+    "lng": 4.025
+  },
+  "area": "Centre-sud (Es Migjorn Gran)",
+  "tags": [
+    "sur-centro",
+    "cala",
+    "es-migjorn-gran"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "durationMin": 300,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "marcher par le Camí de Cavalls jusqu'à une crique vierge de « bout du monde »",
+      "nager dans des eaux limpides, sur une plage presque toujours déserte",
+      "partir autosuffisant : pas de services, pas d'ombre, et une longue marche"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-escorxada.webp"
+  ],
+  "imageAlt": "L'eau turquoise de Cala Escorxada sous un versant couvert de pins",
+  "imageCredit": "RD_Elsie from Sansepolcro (AR), Italy / Wikimedia Commons (CC BY 2.0)"
+}

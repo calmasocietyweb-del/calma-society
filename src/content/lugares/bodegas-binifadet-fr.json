@@ -1,0 +1,53 @@
+{
+  "name": "Bodegas Binifadet",
+  "lang": "fr",
+  "translationKey": "bodegas-binifadet",
+  "type": "bodega",
+  "description": "Le domaine viticole le plus ancien de Minorque et le premier par la production (~100 000 bouteilles/an, la moitié de l'île ; le seul à élaborer des effervescents). 12 ha à Sant Lluís, entre cépages blancs (chardonnay, malvoisie, muscat...) et rouges (merlot, syrah, cabernet...). Visite du vignoble, explication du processus, dégustation et restaurant au milieu des vignes. L'œnotourisme de référence sous IGP Vi de la Terra Illa de Menorca.",
+  "coordinates": {
+    "lat": 39.85,
+    "lng": 4.27
+  },
+  "area": "Sud-est (Sant Lluís)",
+  "tags": [
+    "sur-este",
+    "experiencia",
+    "sant-lluis"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "lujo-tranquilo",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-07-22",
+    "indoorAlternativeOf": [
+      "binibeca-sur-este",
+      "sur-este"
+    ],
+    "highlights": [
+      "la visite guidée du vignoble, avec dégustation du vin de Minorque",
+      "déjeuner ou dîner en terrasse au milieu des vignes",
+      "réserver la dégustation et la table à l'avance"
+    ],
+    "officialUrl": "https://binifadet.com/"
+  },
+  "images": [
+    "/uploads/vino-bodega.webp"
+  ],
+  "imageAlt": "Barriques et bouteilles à l'intérieur d'un chai"
+}

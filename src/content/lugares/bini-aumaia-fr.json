@@ -1,0 +1,33 @@
+{
+  "name": "Bini Aumaia",
+  "lang": "fr",
+  "translationKey": "bini-aumaia",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Un domaine de 98 hectares à moins d'un kilomètre du centre d'Es Mercadal, à flanc de colline, avec sa maison minorquine restaurée, de plain-pied. C'est une exploitation en activité : potager biologique, poules élevées en plein air et vaches — et les hôtes sont invités à participer aux tâches du jour, à commencer par la récolte des œufs.",
+  "coordinates": {
+    "lat": 39.994542,
+    "lng": 4.088625
+  },
+  "area": "Centre (Es Mercadal)",
+  "practicalInfo": {
+    "acceso": "Finca Bini Aumaia, 07740 Es Mercadal. À environ 850 mètres du centre du village.",
+    "horario": "La saison n'est pas publiée ; vérifiez les dates 2026 sur le site officiel.",
+    "servicios": "Exploitation en activité avec potager biologique, poules et vaches. Maison minorquine restaurée, de plain-pied."
+  },
+  "website": "https://www.biniaumaia.com/",
+  "images": [
+    "/uploads/monte-toro.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "agroturismo",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Bini Aumaia (Es Mercadal) : agritourisme dans une exploitation en activité de 98 ha, à 850 m du village, avec potager biologique et bétail."
+  },
+  "imageAlt": "L'île de Minorque et le village d'Es Mercadal vus depuis le sommet du Monte Toro.",
+  "imageCredit": "Ian Kirk / Wikimedia Commons (CC BY 2.0)"
+}

@@ -1,0 +1,50 @@
+{
+  "name": "Fornells",
+  "lang": "fr",
+  "translationKey": "fornells",
+  "type": "pueblo",
+  "description": "Village de pêcheurs du nord, aux maisons blanches posées sur une grande baie naturelle de près de 3 km ponctuée de llaüts. La référence de la caldereta de langosta, le ragoût de langouste, et une base nautique.",
+  "coordinates": {
+    "lat": 40.0539,
+    "lng": 4.1356
+  },
+  "area": "Nord (Es Mercadal)",
+  "tags": [
+    "norte",
+    "puerto",
+    "caldereta",
+    "náutica"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "nautica"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Petit village piétonnier ; garez-vous à l'entrée. Liaison de bus limitée (mieux vaut la voiture).",
+    "highlights": [
+      "la promenade du port entre les llaüts",
+      "monter à la tour de défense pour la vue",
+      "une caldereta de langouste",
+      "kayak ou paddle dans la baie protégée"
+    ]
+  },
+  "images": [
+    "/uploads/lg-fornells.webp"
+  ],
+  "imageAlt": "Une façade blanche de Fornells avec le store d'un café et les volets verts",
+  "imageCredit": "Nikodem Nijaki / Wikimedia Commons (CC BY-SA 3.0)"
+}

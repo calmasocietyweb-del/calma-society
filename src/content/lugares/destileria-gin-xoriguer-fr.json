@@ -1,0 +1,53 @@
+{
+  "name": "Distillerie Gin Xoriguer",
+  "lang": "fr",
+  "translationKey": "destileria-gin-xoriguer",
+  "type": "productor",
+  "description": "Distillerie historique du port de Maó, qui produit le gin de Minorque dans des alambics en cuivre de plus de 250 ans, au feu de bois local, avec de l'alcool de vin, du genièvre et l'eau d'un puits de Maó. La visite guidée s'achève par une dégustation de gins, de liqueurs artisanales et de la « pomada » (gin-limonade, la boisson des fêtes patronales). Une halte gastronomique incontournable et très bien située.",
+  "coordinates": {
+    "lat": 39.89,
+    "lng": 4.262
+  },
+  "area": "Est (Maó)",
+  "tags": [
+    "este",
+    "experiencia",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 60,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "mao-puerto",
+      "este"
+    ],
+    "highlights": [
+      "la boutique au bord du port de Maó",
+      "la dégustation du gin de Minorque",
+      "goûter la pomada (gin-limonade)"
+    ]
+  },
+  "images": [
+    "/uploads/lg-destileria-gin-xoriguer.webp"
+  ],
+  "imageAlt": "Une bouteille de gin Xoriguer de Maó à côté de citrons coupés",
+  "imageCredit": "MinorKan / Wikimedia Commons (CC BY-SA 3.0)"
+}

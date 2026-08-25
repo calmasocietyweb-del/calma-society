@@ -1,0 +1,60 @@
+{
+  "name": "Cala Galdana",
+  "lang": "fr",
+  "translationKey": "cala-galdana",
+  "type": "cala",
+  "description": "Grande anse en fer à cheval, protégée par les falaises, au sable fin, aux eaux turquoise très calmes et aux pins qui descendent jusqu'au rivage. Le camp de base des criques du sud.",
+  "coordinates": {
+    "lat": 39.936,
+    "lng": 3.965
+  },
+  "area": "Sud (Ferreries)",
+  "tags": [
+    "sur",
+    "turquesa",
+    "familiar",
+    "ferreries"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "primera-vez",
+      "parejas"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Grand parking gratuit en haut ; on descend à pied en 5-10 min par une pente prononcée. Urbanisée, avec tous les services.",
+    "highlights": [
+      "la baignade dans des eaux turquoise très calmes",
+      "suivre le Camí de Cavalls jusqu'à Cala Mitjana",
+      "le kayak vers les criques vierges voisines"
+    ],
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "seasonWindow": {
+        "from": "05-01",
+        "to": "10-31"
+      },
+      "certainty": "alta"
+    }
+  },
+  "images": [
+    "/uploads/lg-cala-galdana.webp"
+  ],
+  "imageCredit": "pacai1952 / Wikimedia Commons (CC BY-SA 2.0)",
+  "imageAlt": "La baie de Cala Galdana avec les bateaux au mouillage et les immeubles au-dessus de la plage"
+}

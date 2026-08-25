@@ -1,0 +1,47 @@
+{
+  "name": "Fort Marlborough",
+  "lang": "fr",
+  "translationKey": "fort-marlborough",
+  "type": "monumento",
+  "edition": "menorca",
+  "description": "Fortin britannique (1710-1726) creusé dans la roche au-dessus de l'idyllique Cala de Sant Esteve, face au Castell de Sant Felip. Une visite guidée théâtralisée à travers galeries souterraines et fossé, avec l'entrée du port de Maó en toile de fond.",
+  "coordinates": {
+    "lat": 39.8629,
+    "lng": 4.3015
+  },
+  "area": "Es Castell (Cala de Sant Esteve)",
+  "images": [
+    "/uploads/lg-fort-marlborough.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "familias",
+      "primera-vez",
+      "lujo-tranquilo"
+    ],
+    "highlights": [
+      "descendre dans les galeries souterraines, mises en scène par un jeu de lumière et de son",
+      "parcourir le fossé creusé dans la roche jusqu'au point haut au-dessus de la crique",
+      "profiter des vues sur l'entrée du port de Maó et le Castell de Sant Felip, juste en face"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.menorca.es/en/Visitas_guiadas_al_Fort_de_Marlborough/16037",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Les maisons d'Es Castell penchées sur l'eau, le village auquel appartient la cala de Sant Esteve",
+  "imageCredit": "Markus Trienke / Wikimedia Commons (CC BY-SA 2.0)"
+}

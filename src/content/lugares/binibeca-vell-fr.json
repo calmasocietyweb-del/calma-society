@@ -1,0 +1,48 @@
+{
+  "name": "Binibeca Vell",
+  "lang": "fr",
+  "translationKey": "binibeca-vell",
+  "type": "pueblo",
+  "description": "Ensemble de maisons blanches chaulées (1972) qui imite un village de pêcheurs, avec ses ruelles labyrinthiques et ses recoins de carte postale. C'est une propriété privée.",
+  "coordinates": {
+    "lat": 39.8158,
+    "lng": 4.2253
+  },
+  "area": "Sud-est (Sant Lluís)",
+  "tags": [
+    "sureste",
+    "pueblo blanco",
+    "fotogénico",
+    "sant lluís"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "parejas",
+      "cultura",
+      "primera-vez"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "seasonalHours": "Propriété privée aux horaires de visite restreints ; respectez le silence et les accès. Venez en dehors de l'affluence de la mi-journée.",
+    "highlights": [
+      "le dédale des ruelles chaulées",
+      "les recoins photogéniques sans personne (tôt le matin ou en fin de journée)",
+      "respecter le caractère privé des lieux"
+    ]
+  },
+  "images": [
+    "/uploads/binibeca-calle.webp"
+  ],
+  "imageAlt": "Les ruelles chaulées de Binibeca Vell, étroites et ombragées"
+}

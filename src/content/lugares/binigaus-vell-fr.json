@@ -1,0 +1,33 @@
+{
+  "name": "Binigaus Vell",
+  "lang": "fr",
+  "translationKey": "binigaus-vell",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Une ancienne ferme de 89 hectares devenue hôtel rural, entre Es Migjorn Gran et la côte sud. Ils le racontent eux-mêmes, sans fioritures : là où l'on se repose aujourd'hui, on semait le blé, on trayait les vaches et l'on faisait du fromage Mahón-Menorca. Vingt-sept chambres en plusieurs catégories, certaines avec piscine privée, et des petits déjeuners aux douceurs maison.",
+  "coordinates": {
+    "lat": 39.937522,
+    "lng": 4.039101
+  },
+  "area": "Sud (Es Migjorn Gran)",
+  "practicalInfo": {
+    "acceso": "Camí de sa Mala Garba, km 0,9, 07749 Es Migjorn Gran.",
+    "horario": "La saison n'est pas publiée ; vérifiez les dates 2026 sur le site officiel.",
+    "servicios": "Vingt-sept chambres, dont des junior suites avec piscine privée. Restaurant. 89 hectares de campagne."
+  },
+  "website": "https://www.binigausvell.com/",
+  "images": [
+    "/uploads/binigaus.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "hotel-rural",
+    "es-migjorn-gran"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Binigaus Vell (Es Migjorn Gran) : hôtel rural de 27 chambres dans une ferme de 89 ha où l'on faisait le fromage Mahón-Menorca."
+  },
+  "imageAlt": "La plage vierge de Binigaus, sable doré et falaises, à Es Migjorn Gran.",
+  "imageCredit": "Adobe Stock"
+}

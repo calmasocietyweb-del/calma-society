@@ -1,0 +1,47 @@
+{
+  "name": "Cales Coves",
+  "lang": "fr",
+  "translationKey": "cales-coves",
+  "type": "cala",
+  "description": "Double crique entourée de falaises creusées par une nécropole préhistorique de grottes (site talayotique et romain), d'une grande valeur culturelle et paysagère. Aucun service sur place ; elle marie baignade tranquille et archéologie.",
+  "coordinates": {
+    "lat": 39.874,
+    "lng": 4.148
+  },
+  "area": "Centre-sud (Alaior)",
+  "tags": [
+    "sur-centro",
+    "cala",
+    "alaior"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "cultura"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "vous baigner dans une double crique cernée de falaises creusées de grottes",
+      "contempler depuis l'eau la nécropole de grottes préhistoriques taillées dans la roche",
+      "respecter les lieux : c'est un site archéologique protégé"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cales-coves.webp"
+  ],
+  "imageAlt": "Un voilier au mouillage à Cales Coves, sous la paroi rocheuse criblée de grottes",
+  "imageCredit": "Ben Salter from Wales / Wikimedia Commons (CC BY 2.0)"
+}

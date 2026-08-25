@@ -1,0 +1,46 @@
+{
+  "name": "Cala Blanca",
+  "lang": "fr",
+  "translationKey": "cala-blanca",
+  "type": "cala",
+  "description": "Crique urbanisée d'une cinquantaine de mètres de sable très blanc et fin, avec tous les services et toute proche de Ciutadella. Pratique pour se loger et se baigner sans longs trajets, même si elle n'a pas la nature vierge des criques de l'est.",
+  "coordinates": {
+    "lat": 39.954,
+    "lng": 3.803
+  },
+  "area": "Sud-ouest (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "cala",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "sable blanc et fin avec tous les services, aux portes de Ciutadella",
+      "eaux peu profondes et tranquilles, commodes pour les familles",
+      "accès direct en voiture : une bonne base pour se loger près de l'eau"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-blanca.webp"
+  ],
+  "imageAlt": "Cala Blanca avec des baigneurs au bord de l'eau et les terrasses en surplomb de la roche",
+  "imageCredit": "Herodotptlomeu / Wikimedia Commons (CC BY-SA 4.0)"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Camí de Cavalls facile : Es Grau – Sa Mesquida (tronçon familial)",
+  "lang": "fr",
+  "translationKey": "cami-de-cavalls-es-grau-sa-mesquida-familiar",
+  "type": "ruta",
+  "edition": "menorca",
+  "description": "Un tronçon doux de l'historique Camí de Cavalls (GR-223) entre le village de pêcheurs d'Es Grau et la plage de Sa Mesquida, en plein parc naturel. La passerelle en bois sur la zone humide accepte la poussette ; la première promenade côtière idéale avec des enfants, loin des montées.",
+  "coordinates": {
+    "lat": 39.956,
+    "lng": 4.266
+  },
+  "area": "Maó (Es Grau)",
+  "images": [
+    "/uploads/lg-cami-de-cavalls-es-grau-sa-mesquida-familiar.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "excursion",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza"
+    ],
+    "highlights": [
+      "traverser la passerelle en bois sur la zone humide de Sa Mesquida (praticable en poussette sur sa partie plane)",
+      "parcourir le GR-223 dans un paysage côtier protégé, au sein de la Réserve de biosphère",
+      "le combiner avec une baignade tranquille dans les eaux peu profondes de la plage d'Es Grau"
+    ],
+    "durationMin": 130,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.camidecavalls360.com/es/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "La crique de Sa Mesquida aperçue entre la garrigue, avec la mer ouverte derrière",
+  "imageCredit": "carlos venegas gavilán / Wikimedia Commons (CC BY-SA 4.0)"
+}

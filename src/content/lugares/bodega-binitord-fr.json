@@ -1,0 +1,46 @@
+{
+  "name": "Bodega Binitord",
+  "lang": "fr",
+  "translationKey": "bodega-binitord",
+  "type": "bodega",
+  "edition": "menorca",
+  "description": "Domaine familial bâti sur une ancienne carrière au sud de Ciutadella, avec 7 ha de vignes et quelque 30 000 bouteilles par an de Vi de la Terra Illa de Menorca. Une visite intime, sans hâte, au milieu de ceps qui tiennent tête à la tramontane.",
+  "coordinates": {
+    "lat": 39.96,
+    "lng": 3.855
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [
+    "/uploads/vino-bodega.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "lujo-tranquilo",
+      "cultura"
+    ],
+    "highlights": [
+      "parcourir le vignoble et découvrir l'élaboration avec l'équipe elle-même",
+      "déguster ses vins (blanc, rosé, rouge) et le premier vermouth de Minorque",
+      "réserver en ligne la visite guidée (ES/EN/FR), env. 1 h"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.binitord.com/tours",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Barriques et bouteilles à l'intérieur d'un chai"
+}

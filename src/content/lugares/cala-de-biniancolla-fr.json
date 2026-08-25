@@ -1,0 +1,47 @@
+{
+  "name": "Cala de Biniancolla",
+  "lang": "fr",
+  "translationKey": "cala-de-biniancolla",
+  "type": "cala",
+  "description": "Petite crique traditionnelle (~100 m) entre Punta Prima et Binibeca, avec ses cabanons de pêcheurs, un fond qui descend en pente douce et des falaises rocheuses qui lui donnent son intimité. Tranquille, à l'ambiance locale.",
+  "coordinates": {
+    "lat": 39.815,
+    "lng": 4.268
+  },
+  "area": "Sud-est (Sant Lluís)",
+  "tags": [
+    "sur-este",
+    "cala",
+    "sant-lluis"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "une baignade tranquille, sur un fond qui descend en pente douce (adaptée aux enfants)",
+      "les cabanons de pêcheurs des alentours",
+      "déjeuner d'un riz ou d'un poisson au bord de la crique, chez En Caragol"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-de-biniancolla.webp"
+  ],
+  "imageAlt": "Le camí vell de Biniancolla, un chemin de terre entre des murs de pierre sèche",
+  "imageCredit": "Luc.T from Buggenhout, België / Wikimedia Commons (CC BY 2.0)"
+}

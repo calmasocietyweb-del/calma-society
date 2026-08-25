@@ -1,0 +1,46 @@
+{
+  "name": "Location de bateau sans permis depuis Ciutadella",
+  "lang": "fr",
+  "translationKey": "alquiler-barco-sin-licencia-ciutadella",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Prendre la barre de votre propre bateau, sans permis, depuis le port de Ciutadella, et découvrir les criques de l'ouest à votre rythme. Embarcations jusqu'à cinq personnes et moteur de 15 CV, pour une demi-journée ou la journée entière.",
+  "coordinates": {
+    "lat": 39.9985,
+    "lng": 3.833
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [
+    "/uploads/ciutadella-puerto.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "parejas",
+      "familias",
+      "nautica",
+      "naturaleza"
+    ],
+    "highlights": [
+      "naviguer sans permis (bateaux jusqu'à 5 personnes, moteur 15 CV) jusqu'à 5 milles",
+      "mouiller et vous baigner en toute liberté dans les criques et les eaux de l'ouest",
+      "location à la demi-journée ou à la journée depuis le port de Ciutadella"
+    ],
+    "durationMin": 240,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://twinsboats.com",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Le port de Ciutadella et ses bateaux amarrés au pied de la vieille ville"
+}

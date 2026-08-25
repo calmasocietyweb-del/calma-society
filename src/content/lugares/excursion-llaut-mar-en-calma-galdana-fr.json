@@ -1,0 +1,47 @@
+{
+  "name": "Excursion en llaüt vers les criques du sud (Mar en Calma, Cala Galdana)",
+  "lang": "fr",
+  "translationKey": "excursion-llaut-mar-en-calma-galdana",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Découvrir par la mer les criques vierges du sud au départ de Cala Galdana, à bord d'un llaüt minorquin, avec des haltes baignade devant des étendues de sable turquoise difficiles à atteindre par la terre. Le luxe tranquille à fleur d'eau.",
+  "coordinates": {
+    "lat": 39.936,
+    "lng": 3.965
+  },
+  "area": "Ferreries (Cala Galdana)",
+  "images": [
+    "/uploads/lg-excursion-llaut-mar-en-calma-galdana.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "familias",
+      "nautica"
+    ],
+    "highlights": [
+      "naviguer le long de la côte sud, entre falaises calcaires et pinèdes, depuis Cala Galdana",
+      "deux haltes baignade, masque et tuba et paddle devant des criques vierges",
+      "apéritif minorquin à bord ; embarcation traditionnelle en bois"
+    ],
+    "durationMin": 210,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.marencalmamenorca.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "La baie de Cala Galdana avec les embarcations au mouillage et les immeubles au-dessus de la plage",
+  "imageCredit": "pacai1952 / Wikimedia Commons (CC BY-SA 2.0)"
+}

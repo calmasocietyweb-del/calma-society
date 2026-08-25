@@ -1,0 +1,46 @@
+{
+  "name": "Vinya Sa Cúdia",
+  "lang": "fr",
+  "translationKey": "bodega-vinya-sa-cudia",
+  "type": "bodega",
+  "edition": "menorca",
+  "description": "Domaine familial d'une fratrie de six, au sein du Parc Natural de s'Albufera des Grau, sur l'un des rares sols d'ardoise des Baléares. De la malvoisie cultivée en sec, qui résiste à la tramontane, dans un site protégé et silencieux de l'est.",
+  "coordinates": {
+    "lat": 39.92,
+    "lng": 4.225
+  },
+  "area": "Maó (carretera des Grau, s'Albufera des Grau)",
+  "images": [
+    "/uploads/albufera-des-grau.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "albufera-favaritx",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "naturaleza",
+      "parejas",
+      "lujo-tranquilo"
+    ],
+    "highlights": [
+      "découvrir une vigne de malvoisie cultivée en sec au cœur du parc naturel",
+      "déguster ses blancs (Favàritx, Sa Cudia) et le rouge Favàritx",
+      "convenir de la visite à l'avance (uniquement sur rendez-vous)"
+    ],
+    "durationMin": 75,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.illesbalears.travel/en/menorca/winery-vinya-sa-cudia",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Le plan d'eau de s'Albufera des Grau entouré de campagne, près de la carretera des Grau"
+}
