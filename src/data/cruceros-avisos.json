@@ -1,7 +1,7 @@
 {
-  "updated": "2026-08-24",
+  "updated": "2026-08-25",
   "ventana": {
-    "desde": "2026-08-24",
+    "desde": "2026-08-25",
     "hasta": "2026-09-21"
   },
   "nuevas": [
@@ -50,13 +50,7 @@
       "nota": "El puerto la tiene y nosotros no. Falta capacidad de pasaje y naviera antes de publicarla."
     }
   ],
-  "desaparecidas": [
-    {
-      "date": "2026-09-21",
-      "ship": "Emerald Sakara",
-      "nota": "La publicamos y el puerto NO la tiene, estando dentro de su ventana. ¿Cancelada? Verificar antes de retirarla."
-    }
-  ],
+  "desaparecidas": [],
   "dudasDeNombre": [
     {
       "date": "2026-09-10",
@@ -96,6 +90,20 @@
         {
           "ship": "RENAISSANCE",
           "eslora": 219.3
+        }
+      ],
+      "nota": "Dos cruceros el mismo día. Si uno fondea, se desembarca en lancha y el tiempo real en tierra cambia."
+    },
+    {
+      "date": "2026-09-21",
+      "barcos": [
+        {
+          "ship": "HEBRIDEAN SKY",
+          "eslora": 90.36
+        },
+        {
+          "ship": "EMERALD SAKARA",
+          "eslora": 110
         }
       ],
       "nota": "Dos cruceros el mismo día. Si uno fondea, se desembarca en lancha y el tiempo real en tierra cambia."
