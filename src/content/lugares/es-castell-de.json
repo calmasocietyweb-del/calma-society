@@ -1,0 +1,49 @@
+{
+  "name": "Es Castell",
+  "lang": "de",
+  "translationKey": "es-castell",
+  "type": "pueblo",
+  "description": "Ein Ort mit britischem Militärgrundriss, 1771 als Georgetown an der Einfahrt des Hafens von Maó gegründet. Die Plaza de la Esplanada mit dem Rathaus in kolonialem Rot und dem Militärmuseum; dazu die Roser-Kirche. Sein Juwel ist Cales Fonts, ein kleiner Hafen in einer Bucht, wo die alten Lager der Fischer heute Restaurants und Bars mit Terrassen über dem Wasser sind: das stimmungsvollste Abendessen bei Sonnenuntergang im Osten der Insel.",
+  "coordinates": {
+    "lat": 39.8794,
+    "lng": 4.2906
+  },
+  "area": "Osten (Es Castell)",
+  "tags": [
+    "este",
+    "pueblo",
+    "es-castell"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "naturaleza",
+      "cultura"
+    ],
+    "durationMin": 180,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "der Hafen von Cales Fonts bei Sonnenuntergang",
+      "die Festung La Mola",
+      "Fisch essen auf einer Terrasse über dem Wasser"
+    ]
+  },
+  "images": [
+    "/uploads/lg-es-castell.webp"
+  ],
+  "imageAlt": "Es Castell bei Nacht, die Lichter der Mole spiegeln sich im Wasser",
+  "imageCredit": "Santiago Lap / Wikimedia Commons (CC BY-SA 3.0)"
+}

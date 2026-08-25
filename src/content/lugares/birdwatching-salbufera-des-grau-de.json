@@ -1,0 +1,46 @@
+{
+  "name": "Vogelbeobachtung in s'Albufera des Grau (Wege des Parks)",
+  "lang": "de",
+  "translationKey": "birdwatching-salbufera-des-grau",
+  "type": "ruta",
+  "edition": "menorca",
+  "description": "Der einzige Naturpark Menorcas und das Herz des Biosphärenreservats: drei kurze, ebene Wanderwege mit Beobachtungsständen über der Lagune, um Reiher, Kormorane, Haubentaucher und Greifvögel zu sehen. Stille Natur, kostenlos und für alle zugänglich.",
+  "coordinates": {
+    "lat": 39.9508,
+    "lng": 4.2453
+  },
+  "area": "Maó",
+  "images": [
+    "/uploads/lg-birdwatching-salbufera-des-grau.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "familias",
+      "parejas"
+    ],
+    "highlights": [
+      "den Weg Santa Madrona gehen (2,8 km, der beste für Wasservögel), mit seinen Beobachtungsständen über der Lagune",
+      "die Wege Sa Gola (1,7 km, Dünen und Strand) und Cala Llimpa (1,7 km, Aussichtspunkt Ses Puntes) anschließen",
+      "zur Orientierung am Centre de Recepció Rodríguez Femenias beginnen (Straße Maó–Es Grau, km 3,5)"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.caib.es/sites/xarxanatura/es/parc_natural_de_salbufera_des_grau-46059/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Die Badia des Grau mit dem weißen Dorf im Hintergrund und ankernden Booten",
+  "imageCredit": "Discasto / Wikimedia Commons (CC BY-SA 4.0)"
+}

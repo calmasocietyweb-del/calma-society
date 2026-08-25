@@ -1,0 +1,47 @@
+{
+  "name": "Ausritte auf dem Camí de Cavalls (Son Bou)",
+  "lang": "de",
+  "translationKey": "rutas-a-caballo-son-bou",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Zu Pferd einen Abschnitt des Camí de Cavalls am großen Strand von Son Bou und seinem Feuchtgebiet entlangreiten, im ruhigen Schritt des menorquinischen Pferdes. Eine gelassene, andere Art, die Landschaft zu spüren — geeignet für Familien und Reitanfänger.",
+  "coordinates": {
+    "lat": 39.897,
+    "lng": 4.083
+  },
+  "area": "Alaior (Son Bou / Torre Solí Nou)",
+  "images": [
+    "/uploads/lg-rutas-a-caballo-son-bou.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "excursion",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza",
+      "parejas"
+    ],
+    "highlights": [
+      "Familienroute von 1 Std. durch Wiesen und Feuchtgebiet von Son Bou (ab 5 Jahren)",
+      "2-Stunden-Route an der Küste für alle Niveaus, mit angepasster Gangart des Pferdes",
+      "Start bei Torre Solí Nou, neben dem Hotel Jardín de Menorca"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.menorcahorseback.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Gerittene schwarze menorquinische Pferde beim Jaleo eines Dorffests",
+  "imageCredit": "Songbird8 / Wikimedia Commons (CC BY-SA 4.0)"
+}

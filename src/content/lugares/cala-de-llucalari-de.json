@@ -1,0 +1,46 @@
+{
+  "name": "Cala de Llucalari",
+  "lang": "de",
+  "translationKey": "cala-de-llucalari",
+  "type": "cala",
+  "description": "Kleine versteckte Bucht bei Son Bou, die Belohnung für einen kurzen Fußmarsch. Ruhig und wenig besucht, weil sie nur zu Fuß erreichbar ist; ohne jede Einrichtung.",
+  "coordinates": {
+    "lat": 39.892,
+    "lng": 4.1
+  },
+  "area": "Zentraler Süden (Alaior)",
+  "tags": [
+    "sur-centro",
+    "cala",
+    "alaior"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "den kurzen Pfad von Son Bou zu dieser versteckten Bucht gehen",
+      "eine ruhige, wenig besuchte Bucht ohne Einrichtungen genießen",
+      "Wasser und Schatten mitnehmen: In der Bucht gibt es weder Strandbar noch sonst etwas"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-de-llucalari.webp"
+  ],
+  "imageAlt": "Das türkisfarbene Wasser der Cala Llucalari zwischen großen Felsblöcken",
+  "imageCredit": "Josefito123 / Wikimedia Commons (CC BY-SA 4.0)"
+}

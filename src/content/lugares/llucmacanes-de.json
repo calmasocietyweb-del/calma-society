@@ -1,0 +1,47 @@
+{
+  "name": "Llucmaçanes",
+  "lang": "de",
+  "translationKey": "llucmacanes",
+  "type": "pueblo",
+  "description": "Ländlicher Ortsteil von Maó, ein kleiner traditioneller menorquinischer Weiler weißer Häuser im Umland des Südostens. Kein Reiseziel im eigentlichen Sinn, sondern ein authentisches Bild des ländlichen, bäuerlichen Menorca — als Pinselstrich lokalen Charakters oder auf dem Weg zu den Buchten des Südostens. Am ersten Augustwochenende feiert der Ort seine Festes de Sant Gaietà, mit eigenem Jaleo.",
+  "coordinates": {
+    "lat": 39.8686,
+    "lng": 4.2431
+  },
+  "area": "Osten (Maó)",
+  "tags": [
+    "este",
+    "nucleo",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "cultura"
+    ],
+    "durationMin": 30,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-07-22",
+    "highlights": [
+      "ein weißer Weiler abseits der touristischen Routen",
+      "das Umland des Südostens mit seinen traditionellen Bauernhäusern",
+      "ein kurzer, ruhiger Halt auf dem Weg zwischen Maó und der Südküste"
+    ]
+  },
+  "images": [
+    "/uploads/lg-llucmacanes.webp"
+  ],
+  "imageAlt": "Ein sich aufbäumendes schwarzes Pferd inmitten der Menge, beim nächtlichen Jaleo von Llucmaçanes",
+  "imageCredit": "Songbird8 / Wikimedia Commons (CC BY-SA 4.0)"
+}

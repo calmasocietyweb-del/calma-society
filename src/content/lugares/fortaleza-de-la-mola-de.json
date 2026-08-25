@@ -1,0 +1,52 @@
+{
+  "name": "Festung La Mola",
+  "lang": "de",
+  "translationKey": "fortaleza-de-la-mola",
+  "type": "monumento",
+  "description": "Imposante Militärfestung (1848–1875), die die Einfahrt zum Hafen von Maó bewacht. Batterien, Tunnel, Vickers-Geschütze und Meerblick. Ein riesiges Gelände, das sich auf eigene Faust mit Karte, mit Audioguide oder in einer Führung erkunden lässt. Ein lohnender Halbtagsausflug ins Kulturerbe.",
+  "coordinates": {
+    "lat": 39.8819,
+    "lng": 4.3097
+  },
+  "area": "Osten (Es Castell)",
+  "tags": [
+    "este",
+    "monumento",
+    "es-castell"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "mao-puerto",
+      "este"
+    ],
+    "highlights": [
+      "die Festung aus dem 19. Jahrhundert über der Hafeneinfahrt",
+      "die Tunnel und Batterien",
+      "der Blick auf Maó von den Aussichtspunkten"
+    ]
+  },
+  "images": [
+    "/uploads/lg-fortaleza-de-la-mola.webp"
+  ],
+  "imageAlt": "Ein Vickers-Geschütz der Batterie von La Mola, das getarnte Rohr aufs Meer gerichtet",
+  "imageCredit": "Àlex / Wikimedia Commons (CC BY-SA 4.0)"
+}

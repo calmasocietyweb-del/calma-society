@@ -1,0 +1,55 @@
+{
+  "name": "Punta Prima",
+  "lang": "de",
+  "translationKey": "punta-prima",
+  "type": "cala",
+  "description": "Offener Strand mit hellem Sand und vollständiger Ausstattung, gegenüber der Insel l'Aire mit ihrem Leuchtturm. Bequem und familienfreundlich; dem Wind stärker ausgesetzt als die Strände des Südwestens.",
+  "coordinates": {
+    "lat": 39.812,
+    "lng": 4.275
+  },
+  "area": "Südosten (Sant Lluís)",
+  "tags": [
+    "sureste",
+    "accesible",
+    "familiar",
+    "sant lluís"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "primera-vez"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "effortLevel": "A1",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "certainty": "alta"
+    },
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Barrierefreier Strand mit Steg, Amphibien-Rollstuhl und Rettungsschwimmern (1. Mai–31. Okt.). Parkplatz und vollständige Ausstattung.",
+    "highlights": [
+      "der Leuchtturm der Illa de l'Aire direkt gegenüber",
+      "familienfreundlicher Strand mit vollständiger Ausstattung",
+      "barrierefreies Baden (von Mai bis Oktober)"
+    ]
+  },
+  "images": [
+    "/uploads/lg-punta-prima.webp"
+  ],
+  "imageAlt": "Das Ufer von Punta Prima, am Horizont die Illa de l'Aire mit ihrem gestreiften Leuchtturm",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)"
+}

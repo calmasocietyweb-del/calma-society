@@ -1,0 +1,47 @@
+{
+  "name": "Bootsausfahrt zum Sonnenuntergang im Hafen von Maó",
+  "lang": "de",
+  "translationKey": "atardecer-barco-puerto-mao-faralmar",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Private Ausfahrt zum Sonnenuntergang durch den Naturhafen von Maó, einen der größten des Mittelmeers — mit einem Glas Cava, während die Lichter der Stadt im Hintergrund angehen. Eine ruhige Art, die Insel vom Wasser aus zu sehen, wenige Schritte vom Zentrum.",
+  "coordinates": {
+    "lat": 39.8861,
+    "lng": 4.2906
+  },
+  "area": "Maó",
+  "images": [
+    "/uploads/lg-atardecer-barco-puerto-mao-faralmar.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "gastronomia",
+      "nautica"
+    ],
+    "highlights": [
+      "den großen Hafen von Maó im warmen Licht der sinkenden Sonne abfahren",
+      "an Bord mit Cava und kalten Getränken anstoßen",
+      "zentrumsnaher Start ab Cala Figuera, ganz ohne Auto"
+    ],
+    "durationMin": 120,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://faralmar.com/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Vertäute Segelboote im Hafen von Maó unter dem Abendhimmel",
+  "imageCredit": "Carles garcia-roca / Wikimedia Commons (CC BY 2.5 es)"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "Cala des Talaier",
+  "lang": "de",
+  "translationKey": "cala-des-talaier",
+  "type": "cala",
+  "description": "Kleine, versteckte und geschützte Bucht mit hellem Sand, ruhigem Wasser und einer Felsinsel vor dem Ufer. Da sie eine Wanderung verlangt, bleibt sie weniger überlaufen als Son Saura; keine Einrichtungen vor Ort.",
+  "coordinates": {
+    "lat": 39.921,
+    "lng": 3.9
+  },
+  "area": "Südwesten (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "cala",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "versteckte, geschützte Bucht mit einer Felsinsel vor dem Ufer",
+      "weniger überlaufen, weil sie eine Wanderung verlangt: Picknick, Wasser und Schatten mitnehmen",
+      "heller Sand und ruhiges Wasser, ideal zum Abschalten zu zweit"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-des-talaier.webp"
+  ],
+  "imageAlt": "Cala des Talaier mit hellem Sand, klarem Wasser und Pinien bis ans Ufer",
+  "imageCredit": "Josefito123 / Wikimedia Commons (CC BY-SA 4.0)"
+}

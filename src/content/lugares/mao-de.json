@@ -1,0 +1,50 @@
+{
+  "name": "Maó",
+  "lang": "de",
+  "translationKey": "mao",
+  "type": "pueblo",
+  "description": "Kosmopolitische Hauptstadt mit deutlicher britischer Prägung aus dem 18. Jahrhundert, über dem größten Naturhafen des Mittelmeers. Elegantes Zentrum und Heimat einer Gin-Destillerie.",
+  "coordinates": {
+    "lat": 39.8885,
+    "lng": 4.2658
+  },
+  "area": "Osten (Maó)",
+  "tags": [
+    "este",
+    "puerto",
+    "capital",
+    "maó"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "cultura",
+      "gastronomia",
+      "primera-vez"
+    ],
+    "durationMin": 240,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Gut zu Fuß erkundbare, bestens angebundene Hauptstadt (Busse auf die ganze Insel und zum Flughafen). Parken im Zentrum gebührenpflichtig.",
+    "highlights": [
+      "der Naturhafen, einer der größten der Welt",
+      "über Ses Voltes in die Altstadt hinaufsteigen",
+      "die Gin-Destillerie Xoriguer",
+      "der Mercat des Claustre del Carme"
+    ]
+  },
+  "images": [
+    "/uploads/lg-mao.webp"
+  ],
+  "imageAlt": "Der Hafen von Maó von oben, mit dem Llatzeret und ankernden Booten",
+  "imageCredit": "20702125@N05 / Wikimedia Commons (CC BY-SA 2.0)"
+}

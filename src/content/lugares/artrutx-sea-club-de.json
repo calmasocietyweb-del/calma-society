@@ -1,0 +1,55 @@
+{
+  "name": "Artrutx Sea Club",
+  "lang": "de",
+  "translationKey": "artrutx-sea-club",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Sea Club am Leuchtturm von Cap d'Artrutx: Restaurant und Cocktailbar direkt am Meer, mit einem der schönsten Sonnenuntergänge im Westen der Insel.",
+  "coordinates": {
+    "lat": 39.9225937,
+    "lng": 3.824224
+  },
+  "area": "Westen (Ciutadella)",
+  "practicalInfo": {
+    "horario": "Saisonal; die Zeiten ändern sich mit jeder Saison — prüfen Sie die Website oder Instagram."
+  },
+  "website": "https://www.artrutx.com/en/sea-club/",
+  "images": [
+    "/uploads/faro-artrutx.webp"
+  ],
+  "tags": [
+    "beach club",
+    "atardecer",
+    "faro",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "artrutx-cap",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "parejas",
+      "lujo-tranquilo",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "shuttleInfo": "Mit dem Auto ab Ciutadella (ca. 8–10 km südlich, 15–20 Min.). Privater Parkplatz des Restaurants sowie Stellplätze an der Straße (im Sommer früh voll: kommen Sie rechtzeitig).",
+    "effortNote": "Ebene Terrasse am Leuchtturm von Cap d'Artrutx.",
+    "highlights": [
+      "die Terrasse am Leuchtturm von Cap d'Artrutx",
+      "ein Glas oder ein Abendessen zum Sonnenuntergang",
+      "im Sommer rechtzeitig reservieren"
+    ]
+  },
+  "imageAlt": "Der gestreifte Leuchtturm von Cap d'Artrutx an der Südwestspitze der Insel"
+}

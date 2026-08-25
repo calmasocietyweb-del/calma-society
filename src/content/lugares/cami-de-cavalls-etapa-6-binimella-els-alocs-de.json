@@ -1,0 +1,44 @@
+{
+  "name": "Camí de Cavalls · Etappe 6: Binimel·là – Els Alocs",
+  "lang": "de",
+  "translationKey": "cami-de-cavalls-etapa-6-binimella-els-alocs",
+  "type": "ruta",
+  "edition": "menorca",
+  "description": "Der wildeste und anspruchsvollste Abschnitt des Camí de Cavalls: 8,9 km entlang der rötlichen, schroffen Nordküste, mit der legendären Cala Pregonda und ihren mondhaft wirkenden Felsinseln als Belohnung. Nur für ausdauernde Wanderer — und einer der eindrucksvollsten Wege der Insel.",
+  "coordinates": {
+    "lat": 40.045,
+    "lng": 4.038
+  },
+  "area": "Es Mercadal",
+  "images": [
+    "/uploads/lg-cami-de-cavalls-etapa-6-binimella-els-alocs.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "highlights": [
+      "Cala Pregonda zu Fuß erreichen, eines der ikonischen Postkartenmotive des Nordens",
+      "die unberührte Tramuntana-Küste erwandern, ockerfarben und vom Wind gezeichnet",
+      "autark unterwegs sein: die härteste Etappe, ohne Versorgung und ohne Schatten"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.camidecavalls.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Die Nordküste bei Binimel·là, wo der rötliche Fels ins Meer abfällt",
+  "imageCredit": "Boladevidre / Wikimedia Commons (CC BY-SA 2.0)"
+}

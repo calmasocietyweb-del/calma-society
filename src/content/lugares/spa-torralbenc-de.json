@@ -1,0 +1,46 @@
+{
+  "name": "Spa Torralbenc (Natura-Bissé-Rituale)",
+  "lang": "de",
+  "translationKey": "spa-torralbenc",
+  "type": "spa",
+  "edition": "menorca",
+  "description": "Auf einem landwirtschaftlichen Gut von 74 Hektar zwischen Weinbergen bietet das Spa von Torralbenc Massagen und Rituale mit Kosmetik von Natura Bissé. Auch für externe Gäste geöffnet: eine Auszeit in stillem Luxus mit Blick auf das menorquinische Land.",
+  "coordinates": {
+    "lat": 39.91,
+    "lng": 4.16
+  },
+  "area": "Alaior",
+  "images": [
+    "/uploads/lg-spa-torralbenc.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza"
+    ],
+    "highlights": [
+      "Massagen sowie Gesichts- und Körperrituale mit Produkten von Natura Bissé",
+      "Torralbenc-Massage mit Rosmarin- und Lavendelölen vom eigenen Gut",
+      "Yoga- und Pilates-Retreats in der Saison, zwischen Reben und Feldern"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://torralbenc.com/es/wellness/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Eine menorquinische Kuh weidet auf einem Stoppelfeld bei Alaior",
+  "imageCredit": "Discasto / Wikimedia Commons (CC BY-SA 4.0)"
+}

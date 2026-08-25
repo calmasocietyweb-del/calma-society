@@ -1,0 +1,50 @@
+{
+  "name": "Fornells",
+  "lang": "de",
+  "translationKey": "fornells",
+  "type": "pueblo",
+  "description": "Fischerdorf des Nordens mit weißen Häusern an einer großen Naturbucht von fast 3 km, in der Llaüts liegen. Die Referenz für die Caldereta de Langosta, den Langusten-Eintopf der Insel, und ein Stützpunkt für den Wassersport.",
+  "coordinates": {
+    "lat": 40.0539,
+    "lng": 4.1356
+  },
+  "area": "Norden (Es Mercadal)",
+  "tags": [
+    "norte",
+    "puerto",
+    "caldereta",
+    "náutica"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "nautica"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Kleiner, fußläufiger Ort; parken Sie am Ortseingang. Begrenzte Busverbindung (besser mit dem Auto).",
+    "highlights": [
+      "die Hafenpromenade zwischen Llaüts",
+      "der Aufstieg zum Verteidigungsturm für die Aussicht",
+      "eine Caldereta de Langosta",
+      "Kajak oder Stand-up-Paddling in der geschützten Bucht"
+    ]
+  },
+  "images": [
+    "/uploads/lg-fornells.webp"
+  ],
+  "imageAlt": "Eine weiße Fassade in Fornells mit der Markise eines Cafés und grünen Fensterläden",
+  "imageCredit": "Nikodem Nijaki / Wikimedia Commons (CC BY-SA 3.0)"
+}

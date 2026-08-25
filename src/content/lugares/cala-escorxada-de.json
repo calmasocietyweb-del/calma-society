@@ -1,0 +1,46 @@
+{
+  "name": "Cala Escorxada",
+  "lang": "de",
+  "translationKey": "cala-escorxada",
+  "type": "cala",
+  "description": "Abgelegene, unberührte Bucht mit einer Stimmung wie am Ende der Welt, feinem Sand und klarem Wasser — der Lohn einer ordentlichen Wanderung. Für Reisende, die Einsamkeit und Landschaft suchen; ohne jede Infrastruktur.",
+  "coordinates": {
+    "lat": 39.93,
+    "lng": 4.025
+  },
+  "area": "Zentraler Süden (Es Migjorn Gran)",
+  "tags": [
+    "sur-centro",
+    "cala",
+    "es-migjorn-gran"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "durationMin": 300,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "über den Camí de Cavalls zu einer unberührten Bucht wie am Ende der Welt wandern",
+      "in klarem Wasser schwimmen, an einem fast immer einsamen Strand",
+      "autark unterwegs sein: keine Versorgung, kein Schatten und ein langer Fußweg"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-escorxada.webp"
+  ],
+  "imageAlt": "Das türkisfarbene Wasser der Cala Escorxada unter einem dicht mit Pinien bewachsenen Hang",
+  "imageCredit": "RD_Elsie from Sansepolcro (AR), Italy / Wikimedia Commons (CC BY 2.0)"
+}

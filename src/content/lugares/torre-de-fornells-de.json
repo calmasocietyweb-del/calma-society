@@ -1,0 +1,52 @@
+{
+  "name": "Torre de Fornells",
+  "lang": "de",
+  "translationKey": "torre-de-fornells",
+  "type": "monumento",
+  "description": "Britisch-spanischer Verteidigungsturm (18. Jahrhundert) mit achteckigem Grundriss aus Marès-Stein, über der Einfahrt der Bucht von Fornells. Im Inneren ein Besucherzentrum, dazu Blick über die Bucht. Lässt sich gut mit dem Fischerdorf Fornells und seiner Küche verbinden (Caldereta de Langosta).",
+  "coordinates": {
+    "lat": 40.0556,
+    "lng": 4.1372
+  },
+  "area": "Norden (Es Mercadal)",
+  "tags": [
+    "norte",
+    "monumento",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "fornells-cavalleria",
+      "norte"
+    ],
+    "highlights": [
+      "der Verteidigungsturm des 18. Jahrhunderts über der Einfahrt der Bucht",
+      "das Besucherzentrum in seinem Inneren",
+      "der Blick über die Bucht von Fornells und das offene Meer"
+    ]
+  },
+  "images": [
+    "/uploads/lg-torre-de-fornells.webp"
+  ],
+  "imageAlt": "Der runde Turm von Fornells vor dem Himmel, oben auf der Anhöhe",
+  "imageCredit": "Markus Trienke / Wikimedia Commons (CC BY-SA 2.0)"
+}

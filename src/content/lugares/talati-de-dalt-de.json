@@ -1,0 +1,48 @@
+{
+  "name": "Talatí de Dalt",
+  "lang": "de",
+  "translationKey": "talati-de-dalt",
+  "type": "monumento",
+  "description": "Eine der malerischsten und am leichtesten zugänglichen talayotischen Anlagen, Teil des UNESCO-Welterbes. Die Taula mit ihrer angelehnten (gestürzten) Säule, umgeben von jahrhundertealten Olivenbäumen, gehört zu den bekanntesten Bildern der menorquinischen Vorgeschichte.",
+  "images": [
+    "/uploads/talati-de-dalt.webp"
+  ],
+  "imageAlt": "Die Taula von Talatí de Dalt mit ihrer angelehnten, gestürzten Säule, umgeben von Olivenbäumen, in der talayotischen Siedlung auf Menorca.",
+  "imageCredit": "Paul Stephenson · Wikimedia (CC BY 2.0)",
+  "coordinates": {
+    "lat": 39.8836,
+    "lng": 4.2058
+  },
+  "area": "Inselmitte (Maó)",
+  "tags": [
+    "centro",
+    "yacimiento",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "familias"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "die Taula mit ihrer angelehnten Säule, umgeben von Olivenbäumen",
+      "die Höhlen und Winkel der talayotischen Siedlung betreten (UNESCO)",
+      "früh am Morgen oder am späten Nachmittag kommen: Es gibt wenig Schatten"
+    ]
+  }
+}

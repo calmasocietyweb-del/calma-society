@@ -1,0 +1,47 @@
+{
+  "name": "Son Xoriguer",
+  "lang": "de",
+  "translationKey": "son-xoriguer",
+  "type": "cala",
+  "description": "Breiter Sandstrand rund 10 km von Ciutadella, dessen rechte Seite naturbelassener ist, mit Felsen im Wasser. Er markiert die Grenze zwischen der bebauten Küste des Südwestens und dem unberührten Küstenstreifen des Südens. Üblicher Ausgangspunkt für Bootsausflüge.",
+  "coordinates": {
+    "lat": 39.926,
+    "lng": 3.805
+  },
+  "area": "Südwesten (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "playa",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "breiter Strand rund 10 km von Ciutadella, mit naturbelassener rechter Seite",
+      "markiert die Grenze zwischen bebauter Küste und den unberührten Buchten des Südens",
+      "Ausgangspunkt für Bootsausflüge und Wassersport; direkte Anfahrt mit dem Auto"
+    ]
+  },
+  "images": [
+    "/uploads/lg-son-xoriguer.webp"
+  ],
+  "imageAlt": "Die Küste bei Son Xoriguer, mit dem Feldweg entlang der Meereskante",
+  "imageCredit": "Franrull / Wikimedia Commons (CC BY-SA 4.0)"
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Sant Lluis",
+  "lang": "de",
+  "translationKey": "sant-lluis",
+  "type": "pueblo",
+  "description": "Eines der weißesten Dörfer der Insel, französischen Ursprungs: 1761 gegründet und während der kurzen französischen Herrschaft (1756–1763) zu Ehren Ludwigs XV. benannt. Neoklassizistische Kirche, der Molí de Dalt (eine Getreidemühle aus dem 18. Jahrhundert, heute ethnologisches Museum) und die Plaça de Sa Creu mit einem Gedenkstein für Ludwig XV. Ruhig, von Wohnvierteln geprägt und gut gelegen als Basis, um den Südosten und seine Küstenorte zu erkunden (Binibeca eingeschlossen).",
+  "coordinates": {
+    "lat": 39.8425,
+    "lng": 4.2747
+  },
+  "area": "Südosten (Sant Lluis)",
+  "tags": [
+    "sur-este",
+    "pueblo",
+    "sant-lluis"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "cultura",
+      "familias"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "das weiße Dorf mit französischem Grundriss",
+      "die restaurierten Mühlen",
+      "Basis für Binibèquer und Punta Prima"
+    ]
+  },
+  "images": [
+    "/uploads/lg-sant-lluis.webp"
+  ],
+  "imageAlt": "Die weiß-blaue Mühle von Sant Lluís über den Häusern des Dorfs",
+  "imageCredit": "Jack ChampionJuchamco / Wikimedia Commons (CC BY-SA 4.0)"
+}

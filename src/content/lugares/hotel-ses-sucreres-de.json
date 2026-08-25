@@ -1,0 +1,33 @@
+{
+  "name": "Ses Sucreres",
+  "lang": "de",
+  "translationKey": "hotel-ses-sucreres",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Ein kleines Hotel in der Altstadt von Ferreries, im Haus des einstigen Süßwarenladens des Ortes: Ca Ses Sucreres, wo die Kinder des Dorfes einkauften. Hotel seit 2009, gewachsen um einen zeitgenössischen Anbau, der die ursprüngliche Kapazität verdoppelt und Gemeinschaftsräume, Garten und Teich hinzufügt. Trägt das Siegel Menorca Reserva de Biosfera.",
+  "coordinates": {
+    "lat": 39.983295,
+    "lng": 4.009739
+  },
+  "area": "Zentrum (Ferreries)",
+  "practicalInfo": {
+    "acceso": "Carrer de Sant Joan 15, 07750 Ferreries.",
+    "horario": "Die Saison wird nicht veröffentlicht; prüfen Sie die Termine für 2026 auf der offiziellen Website.",
+    "servicios": "Garten und Teich im Anbau. Siegel Menorca Reserva de Biosfera."
+  },
+  "website": "https://www.hotelsessucreres.com/",
+  "images": [
+    "/uploads/cala-galdana.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "hotel-de-pueblo",
+    "ferreries"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Ses Sucreres (Ferreries): kleines Hotel in der Altstadt, im einstigen Süßwarenladen des Ortes, Hotel seit 2009."
+  },
+  "imageAlt": "Die türkisfarbene Bucht von Cala Galdana mit Segelbooten und Pinienwald, in der Gemeinde Ferreries.",
+  "imageCredit": "Adobe Stock"
+}

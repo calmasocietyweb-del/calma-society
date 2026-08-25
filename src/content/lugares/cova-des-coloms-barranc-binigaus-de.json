@@ -1,0 +1,46 @@
+{
+  "name": "Cova des Coloms („die Kathedrale“) durch den Barranc de Binigaus",
+  "lang": "de",
+  "translationKey": "cova-des-coloms-barranc-binigaus",
+  "type": "ruta",
+  "edition": "menorca",
+  "description": "Eine der eindrucksvollsten Höhlen Menorcas, wegen ihrer Ausmaße eines Gotteshauses (50 m Hauptsaal, 24 m Höhe) „die Kathedrale“ genannt, am Ende eines ebenen Weges durch eine grüne Schlucht. Ein Ausflug mit magischer Note, geeignet für die ganze Familie.",
+  "coordinates": {
+    "lat": 39.9266,
+    "lng": 4.0492
+  },
+  "area": "Es Migjorn Gran",
+  "images": [
+    "/uploads/lg-cova-des-coloms-barranc-binigaus.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "familias",
+      "cultura"
+    ],
+    "highlights": [
+      "durch den üppig grünen Barranc de Binigaus ab Es Migjorn Gran wandern, fast ohne Steigung",
+      "durch einen unscheinbaren Eingang eine gewaltige Halle mit sehr hoher Decke betreten (womöglich ein prähistorisches Heiligtum)",
+      "den Weg bis zum unberührten Strand von Binigaus verlängern"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.ajmigjorngran.org",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Das Innere der Cova des Coloms, mit der Lichtöffnung im Hintergrund und Menschen, die den Maßstab geben",
+  "imageCredit": "Andrómeda7 / Wikimedia Commons (CC BY-SA 3.0)"
+}

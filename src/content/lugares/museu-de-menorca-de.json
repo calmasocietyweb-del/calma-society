@@ -1,0 +1,47 @@
+{
+  "name": "Museu de Menorca",
+  "lang": "de",
+  "translationKey": "museu-de-menorca",
+  "type": "museo",
+  "edition": "menorca",
+  "description": "Das maßgebliche Museum der Insel, im ehemaligen Franziskanerkloster Sant Francesc (18. Jahrhundert), mit einem prachtvollen barocken Kreuzgang. Der beste rote Faden, um Menorca von der talayotischen Vorgeschichte bis zur britischen Zeit zu verstehen, bevor man hinausfährt und die Insel selbst erkundet.",
+  "coordinates": {
+    "lat": 39.8911,
+    "lng": 4.2606
+  },
+  "area": "Maó",
+  "images": [
+    "/uploads/lg-museu-de-menorca.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "primera-vez",
+      "familias",
+      "lujo-tranquilo"
+    ],
+    "highlights": [
+      "die größte archäologische Sammlung der Insel durchwandern (mehr als 36.000 Stücke), von der talayotischen Kultur bis zur islamischen Epoche",
+      "durch den barocken Kreuzgang des ehemaligen Klosters Sant Francesc gehen",
+      "Taulas und Siedlungen in ihren Zusammenhang setzen, bevor Sie sie vor Ort besuchen"
+    ],
+    "durationMin": 90,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.museudemenorca.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Die gewölbte Galerie des Museu de Menorca, mit Vitrinen entlang der Fenster",
+  "imageCredit": "rene boulay / Wikimedia Commons (CC BY-SA 3.0)"
+}

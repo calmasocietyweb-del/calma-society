@@ -1,0 +1,46 @@
+{
+  "name": "Tauchen in der Reserva Marina del Nord (Fornells Diving Center / Dune)",
+  "lang": "de",
+  "translationKey": "buceo-fornells-reserva-marina-nord",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Tauchgänge in den Gründen der Reserva Marina del Nord ab Fornells, mit außergewöhnlicher Sicht und Tauchplätzen, die nur fünfzehn Minuten von der Bucht entfernt liegen. Ein erfahrenes PADI-Zentrum für Schnuppertauchen, Kurse und tägliche Ausfahrten.",
+  "coordinates": {
+    "lat": 40.0535,
+    "lng": 4.137
+  },
+  "area": "Es Mercadal (Fornells)",
+  "images": [
+    "/uploads/lg-buceo-fornells-reserva-marina-nord.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "nautica",
+      "naturaleza",
+      "parejas"
+    ],
+    "highlights": [
+      "Tauchgänge im Meeresschutzgebiet des Nordens mit großer Sichtweite",
+      "Schnuppertauchen für Anfänger, PADI-Kurse und Schnorchelausfahrten",
+      "PADI-5-Sterne-Zentrum mit eigenen Booten direkt vor der Basis"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.divingfornells.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Klares Wasser über dem felsigen Grund einer Bucht der Nordküste",
+  "imageCredit": "Discasto / Wikimedia Commons (CC BY-SA 4.0)"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "Nekropole von Cala Morell",
+  "lang": "de",
+  "translationKey": "necropolis-de-cala-morell",
+  "type": "monumento",
+  "description": "Nekropole aus 14 in den Fels geschlagenen Grabhöhlen (Hypogäen), genutzt von der prätalayotischen Zeit bis ins 2. Jahrhundert n. Chr. Einige mit Säulen im Inneren, Fenstern und einer Fassade, die mit Reliefsäulen klassischen Einflusses geschmückt ist.",
+  "coordinates": {
+    "lat": 40.0556,
+    "lng": 3.8786
+  },
+  "area": "Norden (Ciutadella)",
+  "tags": [
+    "norte",
+    "yacimiento",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza"
+    ],
+    "durationMin": 38,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "die Nekropole aus 14 in den Fels geschlagenen Höhlen (Hypogäen)",
+      "die Details im Inneren: Säulen, Fenster und Reliefs",
+      "den Besuch mit einem Bad in der Bucht von Cala Morell verbinden"
+    ]
+  },
+  "images": [
+    "/uploads/lg-necropolis-de-cala-morell.webp"
+  ],
+  "imageAlt": "Das Innere einer in den Fels geschlagenen Grabhöhle von Cala Morell, mit Licht, das durch die Öffnung fällt",
+  "imageCredit": "Dreizung / Wikimedia Commons (CC BY-SA 4.0)"
+}

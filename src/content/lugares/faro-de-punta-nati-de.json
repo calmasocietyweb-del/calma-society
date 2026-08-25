@@ -1,0 +1,46 @@
+{
+  "name": "Leuchtturm Punta Nati",
+  "lang": "de",
+  "translationKey": "faro-de-punta-nati",
+  "type": "monumento",
+  "description": "Leuchtturm in der steinigen, kargen Landschaft des Nordwestens, durchsetzt von Trockenstein-Hütten (Ponts). Einsam und rau — ideal für Fotografie und Sonnenuntergänge ohne Menschenmengen. Ganz in der Nähe von Ciutadella.",
+  "coordinates": {
+    "lat": 40.0578,
+    "lng": 3.8228
+  },
+  "area": "Westen (Ciutadella)",
+  "tags": [
+    "oeste",
+    "faro",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "faro",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "die steinige, karge Landschaft des Nordwestens mit Trockenstein-Hütten (Ponts de Bens)",
+      "der einsame Leuchtturm auf der Steilküste, 6 km von Ciutadella entfernt",
+      "einer der schönsten Sonnenuntergänge der Insel, abseits der Menschenmengen"
+    ]
+  },
+  "images": [
+    "/uploads/lg-faro-de-punta-nati.webp"
+  ],
+  "imageAlt": "Der Leuchtturm von Punta Nati über einem Feld aus losem Gestein",
+  "imageCredit": "Alejandro Muñoz Cabrisas / Wikimedia Commons (CC BY-SA 4.0)"
+}

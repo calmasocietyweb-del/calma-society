@@ -1,0 +1,66 @@
+{
+  "name": "Jazzbah",
+  "lang": "de",
+  "translationKey": "jazzbah",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Seit mehr als zwanzig Jahren die erste Adresse der Nacht von Ciutadella: DJs, Themenpartys und Konzerte, direkt am Hafen.",
+  "coordinates": {
+    "lat": 40.0025073,
+    "lng": 3.8360987
+  },
+  "area": "Westen (Ciutadella)",
+  "practicalInfo": {
+    "horario": "Saisonal; die Zeiten ändern sich mit jeder Saison — prüfen Sie die Website oder Instagram."
+  },
+  "website": "https://jazzbah.es/",
+  "images": [
+    "/uploads/lg-jazzbah.webp"
+  ],
+  "tags": [
+    "discoteca",
+    "conciertos",
+    "puerto",
+    "ciutadella"
+  ],
+  "status": "published",
+  "editorial": {
+    "lead": "Wenn Ciutadella eine Kathedrale der Nacht hat, dann ist es das Jazzbah. Seit über zwei Jahrzehnten stehen hier Livemusik und DJ-Sets direkt am Hafen auf dem Programm — und noch immer ist es die erste Adresse für einen Abend in der Stadt.",
+    "sections": [
+      {
+        "heading": "Der Club der Nacht von Ciutadella",
+        "body": [
+          "Es gibt Orte, die bestehen, weil sie wissen, was sie sind. Das Jazzbah ist seit mehr als zwanzig Jahren am Hafen von Ciutadella dasselbe und doch jeden Abend anders: Livekonzerte, DJ-Sets und Themenpartys, mit mehreren Bereichen — von der Bühne bis zur Terrasse — unter einem Dach.",
+          "Keine Diskothek, die nur aus Tanzfläche besteht: Das Jazzbah ist ein Club mit musikalischem Anspruch — einer von denen, die ein Programm machen und nicht bloß öffnen."
+        ]
+      },
+      {
+        "heading": "Direkt am Hafen",
+        "body": [
+          "Es liegt unten am Pla de Sant Joan, der Hafenpromenade von Ciutadella, an der sich das Nachtleben der Stadt versammelt. Sie gehen hinunter, wählen Ihren Club und bleiben: der natürliche Ausgangspunkt jeder Nacht in Ciutadella."
+        ]
+      },
+      {
+        "heading": "Mit Ruhe erleben",
+        "body": [
+          "Werfen Sie vor dem Abend einen Blick auf das Programm — das Line-up wechselt ständig — und überlassen Sie uns die Logistik. Zeiten und Programm sind saisonal: Prüfen Sie sie auf der Website oder auf Instagram."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Livemusik",
+      "Nachtleben",
+      "Hafen von Ciutadella"
+    ],
+    "goodToKnow": [
+      "Seit mehr als zwei Jahrzehnten die erste Adresse der Nacht von Ciutadella.",
+      "Livekonzerte, DJ-Sets und Themenpartys, mit mehreren Bereichen.",
+      "Liegt am Hafen von Ciutadella (Passeig es Pla de Sant Joan).",
+      "Line-up, Zeiten und Saison ändern sich: Prüfen Sie sie auf der Website oder auf Instagram."
+    ],
+    "transfer": true,
+    "transferText": "Am Hafen von Ciutadella ist Parken nachts und im Sommer schwierig. Vergessen Sie das Auto: Wir bringen Sie mit privatem Chauffeur hin und holen Sie wieder ab — ganz ohne Runden auf der Suche nach einem Parkplatz."
+  },
+  "imageAlt": "Der rosafarbene Palast an der Plaça des Born in Ciutadella",
+  "imageCredit": "Américo Toledano / Wikimedia Commons (CC BY-SA 4.0)"
+}

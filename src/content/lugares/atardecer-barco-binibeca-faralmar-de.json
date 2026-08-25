@@ -1,0 +1,46 @@
+{
+  "name": "Sonnenuntergang mit dem Boot ab Binibeca",
+  "lang": "de",
+  "translationKey": "atardecer-barco-binibeca-faralmar",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Bootsausfahrt zum Sonnenuntergang ab Cala Torret bei Binibeca, mit Cava und kalten Getränken an Bord und den weißen Fischerhäusern, die sich gegen das Meer abzeichnen. Ruhige Südostküste, ideal zum Ankern und für ein letztes Bad.",
+  "coordinates": {
+    "lat": 39.8147,
+    "lng": 4.2389
+  },
+  "area": "Sant Lluís (Binibeca / Cala Torret)",
+  "images": [
+    "/uploads/binibeca.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "nautica",
+      "naturaleza"
+    ],
+    "highlights": [
+      "am frühen Abend die Südostküste mit ihren weißen Häusern entlangfahren",
+      "in einer geschützten Bucht ankern und baden",
+      "ein Glas Cava und Snacks an Bord"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://faralmar.com/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Die weißen Häuser von Binibeca am Meer"
+}

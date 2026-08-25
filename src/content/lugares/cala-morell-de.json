@@ -1,0 +1,49 @@
+{
+  "name": "Cala Morell",
+  "lang": "de",
+  "translationKey": "cala-morell",
+  "type": "cala",
+  "description": "Natürliche Hafenbucht zwischen rötlichen Felswänden, umgeben von einer Siedlung weißer Häuser im kykladischen Stil. Gleich daneben die prähistorische Nekropole von Cala Morell (rund 14 Höhlen) — Badetag und talayotische Kultur in einem. Die bequemste und am besten erreichbare Bucht des Nordens.",
+  "coordinates": {
+    "lat": 40.056,
+    "lng": 3.883
+  },
+  "area": "Norden (Ciutadella)",
+  "tags": [
+    "norte",
+    "cala",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "familias",
+      "cultura",
+      "parejas"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "die Hafenbucht zwischen rötlichen Felswänden und weißen kykladischen Häusern",
+      "die prähistorische Nekropole gleich neben der Siedlung besuchen",
+      "Schnorcheln im geschützten Wasser"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-morell.webp"
+  ],
+  "imageAlt": "Die Küste von Cala Morell, mit dem offenen Meer und dem hellen Fels der Steilküste",
+  "imageCredit": "Franrull / Wikimedia Commons (CC BY-SA 4.0)"
+}

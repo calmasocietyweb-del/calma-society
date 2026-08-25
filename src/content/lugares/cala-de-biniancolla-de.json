@@ -1,0 +1,47 @@
+{
+  "name": "Cala de Biniancolla",
+  "lang": "de",
+  "translationKey": "cala-de-biniancolla",
+  "type": "cala",
+  "description": "Kleine, traditionelle Bucht (ca. 100 m) zwischen Punta Prima und Binibeca, mit Fischerhäuschen, langsam abfallendem Grund und felsigen Klippen, die ihr etwas Geborgenes geben. Ruhig und von lokalem Charakter.",
+  "coordinates": {
+    "lat": 39.815,
+    "lng": 4.268
+  },
+  "area": "Südosten (Sant Lluis)",
+  "tags": [
+    "sur-este",
+    "cala",
+    "sant-lluis"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "das ruhige Bad über langsam abfallendem Grund (gut für Kinder)",
+      "die Fischerhäuschen ringsum",
+      "Reisgerichte und Fisch direkt an der Bucht im En Caragol essen"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-de-biniancolla.webp"
+  ],
+  "imageAlt": "Der Camí Vell de Biniancolla, ein Feldweg zwischen Trockensteinmauern",
+  "imageCredit": "Luc.T from Buggenhout, België / Wikimedia Commons (CC BY 2.0)"
+}

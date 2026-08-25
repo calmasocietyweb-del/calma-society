@@ -1,0 +1,29 @@
+{
+  "name": "Coral Menorca",
+  "lang": "de",
+  "translationKey": "coral-menorca",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Über den Klippen von Cala'n Forcat: mediterrane Küche, Cocktails und einer der schönsten Sonnenuntergänge des Westens. Früher als Sa Posta de Sol bekannt.",
+  "coordinates": {
+    "lat": 40.0014228,
+    "lng": 3.7967121
+  },
+  "area": "Westen (Ciutadella)",
+  "practicalInfo": {
+    "horario": "Saisonal; die Zeiten ändern sich mit jeder Saison — prüfen Sie die Website oder Instagram."
+  },
+  "website": "https://www.coralmenorca.es/en/home",
+  "images": [
+    "/uploads/lg-coral-menorca.webp"
+  ],
+  "tags": [
+    "atardecer",
+    "coctelería",
+    "cala'n forcat",
+    "ciutadella"
+  ],
+  "status": "published",
+  "imageAlt": "Die Arkadengebäude an der Plaça des Born in Ciutadella",
+  "imageCredit": "Américo Toledano / Wikimedia Commons (CC BY-SA 4.0)"
+}

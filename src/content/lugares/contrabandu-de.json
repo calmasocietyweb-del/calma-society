@@ -1,0 +1,28 @@
+{
+  "name": "Contrabandu",
+  "lang": "de",
+  "translationKey": "contrabandu",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Cocktailbar mit eigener Handschrift und dem Flair eines Speakeasy, mit Terrasse am Hafen von Maó, inspiriert vom Schmuggel des 19. Jahrhunderts.",
+  "coordinates": {
+    "lat": 39.8905966,
+    "lng": 4.2632449
+  },
+  "area": "Osten (Maó)",
+  "practicalInfo": {
+    "acceso": "Ungefähre Lage der Gegend; prüfen Sie den genauen Standort auf der Website oder auf Instagram.",
+    "horario": "Saisonal; die Zeiten ändern sich mit jeder Saison — prüfen Sie die Website oder Instagram."
+  },
+  "images": [
+    "/uploads/gin-menorca.webp"
+  ],
+  "tags": [
+    "coctelería",
+    "speakeasy",
+    "puerto",
+    "maó"
+  ],
+  "status": "draft",
+  "imageAlt": "Eine Flasche Gin aus Menorca"
+}

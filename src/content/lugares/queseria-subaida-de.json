@@ -1,0 +1,54 @@
+{
+  "name": "Käserei Subaida",
+  "lang": "de",
+  "translationKey": "queseria-subaida",
+  "type": "productor",
+  "description": "Landwirtschaftlicher Betrieb mit 350 Hektar, der täglich rund 80 Laibe handwerklichen Mahón-Menorca-Käse g.U. herstellt. Der Besuch umfasst eine Vorführung der Herstellung, den Reiferaum und eine Verkostung von drei Sorten mit Sobrasada, Salchichón, Mandelgebäck, Brot, Wein und Wasser. Eines der authentischsten und am besten bewerteten gastronomischen Erlebnisse der Insel.",
+  "coordinates": {
+    "lat": 39.96,
+    "lng": 4.16
+  },
+  "area": "Zentrum (Es Mercadal)",
+  "tags": [
+    "centro",
+    "experiencia",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "familias",
+      "cultura",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-07-22",
+    "indoorAlternativeOf": [
+      "interior-cultura",
+      "centro"
+    ],
+    "highlights": [
+      "die Führung über das Landgut",
+      "die Verkostung von Mahón-Menorca-Käse g.U.",
+      "vorab reservieren"
+    ],
+    "officialUrl": "https://www.subaida.com/es/visitas"
+  },
+  "images": [
+    "/uploads/queso-tabla.webp"
+  ],
+  "imageAlt": "Ein Brett mit mehreren Reifegraden des Mahón-Menorca-Käses"
+}

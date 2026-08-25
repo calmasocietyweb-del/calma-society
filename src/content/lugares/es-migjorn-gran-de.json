@@ -1,0 +1,47 @@
+{
+  "name": "Es Migjorn Gran",
+  "lang": "de",
+  "translationKey": "es-migjorn-gran",
+  "type": "pueblo",
+  "description": "Die kleinste und ruhigste Gemeinde der Insel, in der „die Zeit stehen geblieben scheint“: weiße Einfamilienhäuser und der Charakter des alten Menorca (als Gemeinde erstaunlich jung, mit auffallend langlebiger Bevölkerung). Tor zur Cova des Coloms — der größten Naturhöhle der Insel, der „Kathedrale der Höhlen“ —, zum Barranc de Binigaus und zu paradiesischen unberührten Buchten wie Trebaluger. Für alle, die ländliche Authentizität und Natur ohne Menschenmengen suchen.",
+  "coordinates": {
+    "lat": 39.9469,
+    "lng": 4.0481
+  },
+  "area": "Zentraler Süden (Es Migjorn Gran)",
+  "tags": [
+    "sur-centro",
+    "pueblo",
+    "es-migjorn-gran"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "cultura"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "das ruhigste weiße Dorf des Südens",
+      "durch den Barranc de Binigaus zur Cova des Coloms",
+      "zu Fuß hinunter zum Strand von Binigaus"
+    ]
+  },
+  "images": [
+    "/uploads/lg-es-migjorn-gran.webp"
+  ],
+  "imageAlt": "Die Küste von Binigaus im Gemeindegebiet von Es Migjorn Gran, mit dem Sandstrand und dem Felsvorsprung",
+  "imageCredit": "Boladevidre / Wikimedia Commons (CC BY-SA 2.0)"
+}

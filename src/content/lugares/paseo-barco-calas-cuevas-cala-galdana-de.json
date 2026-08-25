@@ -1,0 +1,48 @@
+{
+  "name": "Bootstour zu den Buchten und Höhlen des Südens (ab Cala Galdana)",
+  "lang": "de",
+  "translationKey": "paseo-barco-calas-cuevas-cala-galdana",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Eine Bootstour ab Cala Galdana zeigt vom Meer aus die unberührten Buchten des Südwestens — Mitjana, Trebalúger, Macarella — und Höhlen, die sich anders nicht sehen lassen, mit einem Stopp für ein Bad im türkisfarbenen Wasser. Ideal für die Kleinen: kein Fußmarsch, dafür Zeit an Bord.",
+  "coordinates": {
+    "lat": 39.936,
+    "lng": 3.965
+  },
+  "area": "Ferreries (Cala Galdana)",
+  "images": [
+    "/uploads/lg-paseo-barco-calas-cuevas-cala-galdana.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza",
+      "primera-vez"
+    ],
+    "highlights": [
+      "Cala Mitjana, Trebalúger und Macarella vom Meer aus sehen, dazu verborgene Höhlen",
+      "ein bis zwei Badestopps in glasklarem Wasser (Schnorchelbrillen werden meist gestellt)",
+      "Tour von rund 3,5 Stunden ohne Fußmarsch, für jedes Alter geeignet; fragen Sie bei der Reservierung nach der Ausstattung an Bord"
+    ],
+    "durationMin": 210,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-08-06",
+    "officialUrl": "https://www.marencalmamenorca.com/es/inicio",
+    "operatorName": "Mar en Calma"
+  },
+  "imageAlt": "Eine Bucht des Südens mit hellem Sand und einem Boot am Ufer",
+  "imageCredit": "Mediatres / Wikimedia Commons (CC BY-SA 3.0)"
+}

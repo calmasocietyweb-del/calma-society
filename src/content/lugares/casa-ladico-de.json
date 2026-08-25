@@ -1,0 +1,34 @@
+{
+  "name": "Casa Ládico",
+  "lang": "de",
+  "translationKey": "casa-ladico",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Ein Herrenhaus aus dem 19. Jahrhundert, wenige Gehminuten vom Hafen von Maó, zum Boutique-Hotel nur für Erwachsene gewandelt: vierzehn Zimmer, ein ruhiger Innenhof mit Außenpool, eine eigene Spa-Suite und ein Café-Bistro mit menorquinischen Produkten. Die gelassene Adresse im Zentrum: stille Straße, langes Frühstück, der Hafen in Reichweite.",
+  "coordinates": {
+    "lat": 39.89,
+    "lng": 4.266
+  },
+  "area": "Osten (Maó)",
+  "practicalInfo": {
+    "acceso": "Zentrum von Maó, wenige Gehminuten vom Hafen.",
+    "horario": "Prüfen Sie Saison und Termine auf der offiziellen Website.",
+    "servicios": "14 Zimmer (nur für Erwachsene), Außenpool mit Terrasse, Ládico Spa Suite, Café Ládico mit lokalen Produkten."
+  },
+  "website": "https://www.bordoyhotels.com/es/hotel-casa-ladico/hotel",
+  "images": [
+    "/uploads/puerto-mao.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "hotel",
+    "lujo",
+    "mao"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Casa Ládico, Maó: Boutique-Hotel nur für Erwachsene im Haus aus dem 19. Jh., mit Innenhof, Pool und Spa, wenige Minuten vom Hafen."
+  },
+  "imageAlt": "Der Hafen von Maó mit seiner Promenade am Wasser.",
+  "imageCredit": "Adobe Stock"
+}

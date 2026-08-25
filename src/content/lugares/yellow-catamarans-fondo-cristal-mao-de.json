@@ -1,0 +1,47 @@
+{
+  "name": "Yellow Catamarans (Glasbodenkatamaran, Hafen von Maó)",
+  "lang": "de",
+  "translationKey": "yellow-catamarans-fondo-cristal-mao",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Eine ruhige Fahrt durch den größten Naturhafen des Mittelmeers an Bord eines Glasbodenkatamarans: oben die Geschichte von Maó, unten das Leben im Meer — ohne Anstrengung und ohne Seekrankheit. Das erste Meer Menorcas, das Kinder zu sehen bekommen.",
+  "coordinates": {
+    "lat": 39.8917,
+    "lng": 4.2747
+  },
+  "area": "Maó",
+  "images": [
+    "/uploads/lg-yellow-catamarans-fondo-cristal-mao.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "primera-vez",
+      "cultura"
+    ],
+    "highlights": [
+      "vom Unterdeck aus Fische und Meeresgrund durch den Glasrumpf beobachten",
+      "die Hafeneinfahrt mit den Festungen und der Illa del Rei abfahren",
+      "zu Fuß am Moll de Llevant an Bord gehen, ohne Auto und mit einfachem Zugang"
+    ],
+    "durationMin": 75,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.yellowcatamarans.com/en/home",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Die Marina im Hafen von Maó bei Nacht, mit vertäuten Booten",
+  "imageCredit": "Santiago Lap / Wikimedia Commons (CC BY-SA 3.0)"
+}

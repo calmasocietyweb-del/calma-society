@@ -1,0 +1,46 @@
+{
+  "name": "Lloc de Menorca (Tierpark und Lernbauernhof)",
+  "lang": "de",
+  "translationKey": "lloc-de-menorca-zoo-granja",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Ein Refugium für Tiere direkt an der Me-1, wo die Kleinsten Zwergziegen füttern, zwischen frei laufenden Lemuren spazieren und sich im Sommer im Wasserbereich abkühlen. Ein ganzer Tag Natur, ohne das Zentrum der Insel zu verlassen.",
+  "coordinates": {
+    "lat": 39.9072,
+    "lng": 4.2225
+  },
+  "area": "Alaior",
+  "images": [
+    "/uploads/lg-lloc-de-menorca-zoo-granja.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "talayotic-alaior",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza"
+    ],
+    "highlights": [
+      "Zwergziegen füttern und Ringelschwanzlemuren in Halbfreiheit erleben",
+      "den Besuch mit dem Wasserbereich „Talaquàtic“ und dem Spielplatz abrunden (im Sommer)",
+      "eine Pause im Picknickbereich einlegen; Tickets online mit Rabatt kaufen"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://llocdemenorca.com/en/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Eine Herde menorquinischer Kühe ruht auf einer Weide",
+  "imageCredit": "Alejandro Muñoz Cabrisas / Wikimedia Commons (CC BY-SA 4.0)"
+}

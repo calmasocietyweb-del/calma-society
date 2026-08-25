@@ -1,0 +1,46 @@
+{
+  "name": "Bootsverleih ohne Führerschein ab Ciutadella",
+  "lang": "de",
+  "translationKey": "alquiler-barco-sin-licencia-ciutadella",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Ein eigenes Boot ohne Führerschein vom Hafen von Ciutadella aus steuern und die Buchten des Westens im eigenen Rhythmus entdecken. Boote für bis zu fünf Personen mit 15-PS-Motor, für einen halben oder einen ganzen Tag.",
+  "coordinates": {
+    "lat": 39.9985,
+    "lng": 3.833
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [
+    "/uploads/ciutadella-puerto.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "parejas",
+      "familias",
+      "nautica",
+      "naturaleza"
+    ],
+    "highlights": [
+      "ohne Führerschein fahren (Boote für bis zu 5 Personen, 15-PS-Motor), bis zu 5 Meilen vor der Küste",
+      "auf eigene Faust in den Buchten und Gewässern des Westens ankern und baden",
+      "Miete für einen halben oder einen ganzen Tag ab dem Hafen von Ciutadella"
+    ],
+    "durationMin": 240,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://twinsboats.com",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Der Hafen von Ciutadella mit den vertäuten Booten am Fuß der Altstadt"
+}

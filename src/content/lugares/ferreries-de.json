@@ -1,0 +1,48 @@
+{
+  "name": "Ferreries",
+  "lang": "de",
+  "translationKey": "ferreries",
+  "type": "pueblo",
+  "description": "Weißes Landstädtchen, das höchstgelegene Menorcas, mit fest verwurzelter Schuhtradition (u. a. Pretty Ballerinas) und Möbelhandwerk. Umgeben von Schluchten und Hügeln; das natürliche Tor zum Barranc d'Algendar, der bedeutendsten Schlucht der Insel. Authentisches Menorca im Landesinneren, ideal, um Ort und Natur zu verbinden.",
+  "coordinates": {
+    "lat": 39.9817,
+    "lng": 4.0103
+  },
+  "area": "Inselmitte (Ferreries)",
+  "tags": [
+    "centro",
+    "pueblo",
+    "ferreries"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "cultura",
+      "familias"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "der höchstgelegene Ort der Insel",
+      "der Kunsthandwerksmarkt (in der Saison)",
+      "das Tor nach Cala Galdana"
+    ]
+  },
+  "images": [
+    "/uploads/lg-ferreries.webp"
+  ],
+  "imageAlt": "Das Gebäude der alten Escuelas Nacionales von Ferreries, aus dem Jahr 1933",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)"
+}

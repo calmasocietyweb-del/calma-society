@@ -1,0 +1,50 @@
+{
+  "name": "Ciutadella de Menorca",
+  "lang": "de",
+  "translationKey": "ciutadella",
+  "type": "pueblo",
+  "description": "Einstige herrschaftliche Hauptstadt: die monumentalste Altstadt der Insel, mit gotischer Kathedrale, Palästen und einem Hafen, der zum Sonnenuntergang lebendig wird.",
+  "coordinates": {
+    "lat": 40.0014,
+    "lng": 3.8416
+  },
+  "area": "Westen (Ciutadella)",
+  "tags": [
+    "oeste",
+    "casco histórico",
+    "catedral",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "cultura",
+      "parejas",
+      "gastronomia",
+      "primera-vez"
+    ],
+    "durationMin": 240,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Ebene Fußgänger-Altstadt; parken Sie außerhalb des Zentrums (bewirtschaftete Zonen und Parkplätze am Rand).",
+    "highlights": [
+      "die gotische Kathedrale Santa María",
+      "der Spaziergang über den Born und durch Ses Voltes",
+      "der Hafen zum Sonnenuntergang",
+      "Tapas im Mercat des Peix"
+    ]
+  },
+  "images": [
+    "/uploads/ciutadella.webp"
+  ],
+  "imageAlt": "Die Altstadt von Ciutadella, mit Fassaden aus Marés-Sandstein und Arkaden"
+}

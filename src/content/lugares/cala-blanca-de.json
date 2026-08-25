@@ -1,0 +1,46 @@
+{
+  "name": "Cala Blanca",
+  "lang": "de",
+  "translationKey": "cala-blanca",
+  "type": "cala",
+  "description": "Erschlossene Bucht mit rund 50 m sehr weißem, feinem Sand, allen Annehmlichkeiten und ganz in der Nähe von Ciutadella. Praktisch, um zu wohnen und ohne lange Wege zu baden — wenn auch ohne die unberührte Natur der Buchten weiter im Osten.",
+  "coordinates": {
+    "lat": 39.954,
+    "lng": 3.803
+  },
+  "area": "Südwesten (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "cala",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "weißer, feiner Sand mit allen Annehmlichkeiten, wenige Minuten von Ciutadella",
+      "flaches, ruhiges Wasser, bequem für Familien",
+      "direkte Anfahrt mit dem Auto: gute Basis, um nah am Wasser zu wohnen"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-blanca.webp"
+  ],
+  "imageAlt": "Cala Blanca mit Badegästen am Ufer und den Terrassen über dem Fels",
+  "imageCredit": "Herodotptlomeu / Wikimedia Commons (CC BY-SA 4.0)"
+}

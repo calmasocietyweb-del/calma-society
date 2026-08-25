@@ -1,0 +1,47 @@
+{
+  "name": "Cales Coves",
+  "lang": "de",
+  "translationKey": "cales-coves",
+  "type": "cala",
+  "description": "Doppelbucht, umgeben von Steilwänden, die eine prähistorische Höhlennekropole durchzieht (talayotisch-römische Stätte) — von großem kulturellem und landschaftlichem Wert. Keine Einrichtungen; ruhiges Baden trifft hier auf Archäologie.",
+  "coordinates": {
+    "lat": 39.874,
+    "lng": 4.148
+  },
+  "area": "Zentraler Süden (Alaior)",
+  "tags": [
+    "sur-centro",
+    "cala",
+    "alaior"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "cultura"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "in einer Doppelbucht baden, umgeben von höhlendurchzogenen Steilwänden",
+      "vom Wasser aus die Nekropole prähistorischer, in den Fels geschlagener Höhlen betrachten",
+      "die Stätte respektieren: ein geschütztes archäologisches Gelände"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cales-coves.webp"
+  ],
+  "imageAlt": "Ein ankerndes Segelboot in Cales Coves, unter der von Höhlen durchzogenen Felswand",
+  "imageCredit": "Ben Salter from Wales / Wikimedia Commons (CC BY 2.0)"
+}

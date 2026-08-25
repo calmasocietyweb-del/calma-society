@@ -1,0 +1,47 @@
+{
+  "name": "Museu de Menorca – El Pequeño Museo (Maó)",
+  "lang": "de",
+  "translationKey": "museu-de-menorca-pequeno-museo",
+  "type": "museo",
+  "edition": "menorca",
+  "description": "Das Museum der Insel in einem ehemaligen Kloster in Maó, mit einem Kinderbereich („El Pequeño Museo“ — das kleine Museum), in dem spielend gelernt wird: eine nachgestellte archäologische Ausgrabung und Spiele zu Piraten und zum talayotischen Menorca. Der ideale kulturelle Zufluchtsort für einen heißen oder regnerischen Tag.",
+  "coordinates": {
+    "lat": 39.8889,
+    "lng": 4.2636
+  },
+  "area": "Maó",
+  "images": [
+    "/uploads/lg-museu-de-menorca-pequeno-museo.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "cultura",
+      "primera-vez"
+    ],
+    "highlights": [
+      "im „El Pequeño Museo“ spielen: nachgestellte archäologische Ausgrabung und Spiele zur Geschichte",
+      "die Sammlung zum prähistorischen und talayotischen Menorca durchstreifen (Welterbe)",
+      "ein Plan für drinnen, zu Fuß im Zentrum von Maó — ideal bei schlechtem Wetter"
+    ],
+    "durationMin": 90,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.museudemenorca.com/es/inicio",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Ein Saal des Museu de Menorca mit Exponaten in Vitrinen",
+  "imageCredit": "rene boulay / Wikimedia Commons (CC BY-SA 3.0)"
+}

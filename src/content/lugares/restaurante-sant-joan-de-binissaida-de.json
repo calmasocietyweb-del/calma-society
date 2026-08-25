@@ -1,0 +1,53 @@
+{
+  "name": "Restaurant Sant Joan de Binissaida",
+  "lang": "de",
+  "translationKey": "restaurante-sant-joan-de-binissaida",
+  "type": "restaurante",
+  "description": "Einladendes Landhotel mit 12 Zimmern und einem Restaurant mit Marktküche: frischer Fisch, Fleisch von der Insel und Gemüse aus dem eigenen Garten, das die menorquinischen Klassiker behutsam auffrischt. Stiller Luxus im Osten der Insel.",
+  "coordinates": {
+    "lat": 39.88,
+    "lng": 4.27
+  },
+  "area": "Osten (Es Castell)",
+  "tags": [
+    "este",
+    "gastronomia",
+    "es-castell"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "cena",
+    "idealFor": [
+      "gastronomia",
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-07-22",
+    "indoorAlternativeOf": [
+      "mao-puerto",
+      "este"
+    ],
+    "highlights": [
+      "Marktküche mit Gemüse aus dem eigenen Biogarten",
+      "Abendessen in einem Herrenhaus aus dem 18. Jahrhundert mit Garten",
+      "frühzeitig reservieren (Restaurant eines Landhotels)"
+    ],
+    "officialUrl": "https://binissaida.com/es/restaurante"
+  },
+  "images": [
+    "/uploads/casa-piedra.webp"
+  ],
+  "imageAlt": "Ein menorquinisches Haus aus Stein und Kalk, die Fassade in der Sonne"
+}

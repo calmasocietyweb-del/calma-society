@@ -1,0 +1,46 @@
+{
+  "name": "Platja de Binigaus",
+  "lang": "de",
+  "translationKey": "platja-de-binigaus",
+  "type": "cala",
+  "description": "Langer, unberührter Strand mit goldenem Sand und flachem, glasklarem Wasser, die natürliche Fortsetzung von Sant Tomàs. Er gilt als einer der besten FKK-Strände Menorcas (im westlichen Abschnitt, geschützter zwischen Vegetation und Klippen).",
+  "coordinates": {
+    "lat": 39.93,
+    "lng": 4.04
+  },
+  "area": "Zentraler Süden (Es Migjorn Gran)",
+  "tags": [
+    "sur-centro",
+    "playa",
+    "es-migjorn-gran"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "playa",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "von Sant Tomàs zu diesem langen, unberührten Strand mit goldenem Sand gehen",
+      "im flachen, glasklaren Wasser baden; mit FKK-Abschnitt",
+      "vom Strand aus den Barranc de Binigaus und die Cova des Coloms erkunden"
+    ]
+  },
+  "images": [
+    "/uploads/lg-platja-de-binigaus.webp"
+  ],
+  "imageAlt": "Der Strand von Binigaus mit dem grünen Vorsprung und klarem Wasser, das den Sand umspült",
+  "imageCredit": "Boladevidre / Wikimedia Commons (CC BY-SA 2.0)"
+}

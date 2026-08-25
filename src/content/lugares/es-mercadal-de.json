@@ -1,0 +1,48 @@
+{
+  "name": "Es Mercadal",
+  "lang": "de",
+  "translationKey": "es-mercadal",
+  "type": "pueblo",
+  "description": "Weißes Dorf im geografischen Herzen Menorcas, am Fuß des Monte Toro (mit 358 m der höchste Punkt der Insel). Sein Name geht auf das von Jaume II. verliehene Marktprivileg zurück. Der große Ausflug führt hinauf zum Heiligtum der Mare de Déu del Toro (1670), der Schutzpatronin der Insel, mit Panoramablick über ganz Menorca. Dank seiner zentralen Lage eine ideale Basis für Ausflüge an beide Küsten.",
+  "coordinates": {
+    "lat": 39.9889,
+    "lng": 4.0942
+  },
+  "area": "Zentrum (Es Mercadal)",
+  "tags": [
+    "centro",
+    "pueblo",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "zum Sonnenuntergang hinauf auf den Monte Toro",
+      "der ruhige Ortskern eines Dorfs im Inselinneren",
+      "eine Käserei mit g.U. in der Nähe (Subaida)"
+    ]
+  },
+  "images": [
+    "/uploads/lg-es-mercadal.webp"
+  ],
+  "imageAlt": "Die Kirche von Es Mercadal am Abend beleuchtet, über ihrer Steinterrasse",
+  "imageCredit": "Markus Trienke / Wikimedia Commons (CC BY-SA 2.0)"
+}

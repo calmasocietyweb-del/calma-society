@@ -1,0 +1,34 @@
+{
+  "name": "Sant Ignasi",
+  "lang": "de",
+  "translationKey": "sant-ignasi",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Ein Landhaus von 1777 nördlich von Ciutadella, am Weg nach Cala Morell, verwandelt in ein Landhotel mit Pool zwischen Gärten, Tennis- und Padelplätzen und Massageservice. Klassisch und ohne Aufhebens: die Finca von jeher, gut geführt, zehn Minuten von der Altstadt.",
+  "coordinates": {
+    "lat": 40.018,
+    "lng": 3.864
+  },
+  "area": "Westen (Ciutadella)",
+  "practicalInfo": {
+    "acceso": "Nördlich von Ciutadella, in Richtung Cala Morell.",
+    "horario": "Prüfen Sie Saison und Termine auf der offiziellen Website.",
+    "servicios": "Außenpool, Gärten, Tennis und Padel, Massagen, Parkplatz."
+  },
+  "website": "https://www.santignasi.com/",
+  "images": [
+    "/uploads/faro-punta-nati.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "hotel",
+    "lujo",
+    "ciutadella"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Sant Ignasi, Ciutadella: Landhaus von 1777, heute Landhotel mit Pool, Tennis und Gärten, am Weg nach Cala Morell."
+  },
+  "imageAlt": "Luftaufnahme des Leuchtturms von Punta Nati auf ockerfarbenem Fels, mit dem Meer, das gegen die Steilküste schlägt.",
+  "imageCredit": "Adobe Stock"
+}

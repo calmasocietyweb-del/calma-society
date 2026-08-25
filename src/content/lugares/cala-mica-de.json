@@ -1,0 +1,47 @@
+{
+  "name": "Cala Mica",
+  "lang": "de",
+  "translationKey": "cala-mica",
+  "type": "cala",
+  "description": "Wenig bekannte, unberührte Bucht in Muschelform, mit mittelgrobem Sand und Kieseln, neben einem alten Landhaus. Die Belohnung für alle, die den Camí de Cavalls über Cavalleria hinaus weitergehen.",
+  "coordinates": {
+    "lat": 40.05,
+    "lng": 4.085
+  },
+  "area": "Norden (Es Mercadal)",
+  "tags": [
+    "norte",
+    "cala",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "eine unberührte, wenig bekannte Bucht in Muschelform",
+      "den Camí de Cavalls von Binimel·la oder Cavalleria aus verlängern",
+      "Wasser und Schatten mitnehmen: keine Einrichtungen vor Ort"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-mica.webp"
+  ],
+  "imageAlt": "Cala Mica von oben: eine Sandzunge und die Brandung am Ufer",
+  "imageCredit": "Alejandro Muñoz Cabrisas / Wikimedia Commons (CC BY-SA 4.0)"
+}

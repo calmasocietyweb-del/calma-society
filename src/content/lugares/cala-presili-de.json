@@ -1,0 +1,51 @@
+{
+  "name": "Cala Presili",
+  "lang": "de",
+  "translationKey": "cala-presili",
+  "type": "cala",
+  "description": "Kleine, unberührte Bucht neben Cala Tortuga, am Fuß des Leuchtturms von Favàritx, mitten im Naturpark. Meist wird sie mit Tortuga auf derselben Wanderung verbunden; die Zufahrtskontrolle garantiert die Stille.",
+  "coordinates": {
+    "lat": 39.995,
+    "lng": 4.272
+  },
+  "area": "Norden (Maó)",
+  "tags": [
+    "norte",
+    "cala",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 180,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "das Baden in unberührter Natur am Fuß des Leuchtturms von Favàritx",
+      "sie mit der Nachbarbucht Cala Tortuga am selben Tag verbinden",
+      "im Sommer nur mit dem Saisonbus erreichbar, nicht mit dem Auto"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-presili.webp"
+  ],
+  "imageAlt": "Die felsige Küste am Leuchtturm von Favàritx, mit Cala Presili und Platja de Tortuga im Hintergrund",
+  "imageCredit": "carlos venegas gavilán / Wikimedia Commons (CC BY-SA 4.0)",
+  "practicalInfo": {
+    "aparcamiento": "Vom 1. Juni bis zum 30. September ist die Anfahrt mit Auto oder Motorrad nicht möglich: Das gesamte Gebiet um den Leuchtturm von Favàritx ist für den Privatverkehr gesperrt, der Zugang erfolgt per Bus. Seit dem 1. Juni 2026 fährt der Bus nach Favàritx zwölfmal täglich, viermal öfter als im Vorjahr. Von der Haltestelle sind es rund 15 Minuten zu Fuß.",
+    "mejorEpoca": "Außerhalb der Sperrzeit (Oktober bis Mai) fahren Sie mit dem Auto bis zum Parkplatz am Leuchtturm, und der Strand ist praktisch leer. Im Sommer: der erste Bus am Morgen."
+  }
+}

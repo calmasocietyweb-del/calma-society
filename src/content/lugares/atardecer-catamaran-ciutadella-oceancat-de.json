@@ -1,0 +1,48 @@
+{
+  "name": "Bootsausflug zum Sonnenuntergang ab Ciutadella",
+  "lang": "de",
+  "translationKey": "atardecer-catamaran-ciutadella-oceancat",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Bootsausflug vom Hafen von Ciutadella an der Westküste, um den Sonnenuntergang vom Meer aus zu erleben — ohne Auto und in ruhigem Rhythmus.",
+  "coordinates": {
+    "lat": 40.0006,
+    "lng": 3.8295
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [
+    "/uploads/lg-atardecer-catamaran-ciutadella-oceancat.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "familias",
+      "nautica",
+      "naturaleza"
+    ],
+    "highlights": [
+      "im historischen Hafen von Ciutadella an Bord gehen, ganz ohne Auto",
+      "die Sonne an der Westküste ins Meer sinken sehen",
+      "die goldene Stunde mit tief stehendem Licht über dem Wasser"
+    ],
+    "durationMin": 150,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-07-22",
+    "officialUrl": "https://oceancatmenorca.com/"
+  },
+  "imageAlt": "Die Westküste von Ciutadella am späten Nachmittag, mit dem offenen Meer",
+  "imageCredit": "LucT / Wikimedia Commons (CC BY-SA 3.0)"
+}

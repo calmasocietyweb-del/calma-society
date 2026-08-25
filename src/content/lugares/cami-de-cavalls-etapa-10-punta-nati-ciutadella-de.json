@@ -1,0 +1,46 @@
+{
+  "name": "Camí de Cavalls · Etappe 10: Punta Nati – Ciutadella",
+  "lang": "de",
+  "translationKey": "cami-de-cavalls-etapa-10-punta-nati-ciutadella",
+  "type": "ruta",
+  "edition": "menorca",
+  "description": "Eine kurze, leichte Etappe (5 km) zwischen dem kargen Leuchtturm von Punta Nati, in einer steinernen Landschaft voller Hirtenhütten, und dem Hafen von Ciutadella. Perfekt für eine erste Begegnung mit dem Camí de Cavalls am späten Nachmittag.",
+  "coordinates": {
+    "lat": 40.0578,
+    "lng": 3.8228
+  },
+  "area": "Ciutadella",
+  "images": [
+    "/uploads/lg-cami-de-cavalls-etapa-10-punta-nati-ciutadella.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "primera-vez",
+      "parejas"
+    ],
+    "highlights": [
+      "am einsamen Leuchtturm von Punta Nati und seiner Trockensteinlandschaft starten",
+      "die Barraques sehen, die alten Hirtenbauten aus Stein",
+      "zum Abschluss bei Sonnenuntergang an der Hafeneinfahrt von Ciutadella spazieren"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.camidecavalls.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Der Camí de Cavalls über den Klippen, nahe Punta Nati",
+  "imageCredit": "Franrull / Wikimedia Commons (CC BY-SA 4.0)"
+}

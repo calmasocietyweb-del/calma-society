@@ -1,0 +1,47 @@
+{
+  "name": "Eolo Sunset Bar",
+  "lang": "de",
+  "translationKey": "eolo-sunset-bar",
+  "type": "bar",
+  "description": "Strandbar mit Stil über den Klippen von Cala'n Forcat, an der Westküste nahe Ciutadella. Entspannte Atmosphäre, gute Cocktails und einer der schönsten Blicke auf den Sonnenuntergang der Insel. Ein Glas zum Abend, unprätentiös, aber mit Anspruch.",
+  "coordinates": {
+    "lat": 40.01,
+    "lng": 3.79
+  },
+  "area": "Westen (Ciutadella)",
+  "tags": [
+    "oeste",
+    "experiencia",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "parejas",
+      "naturaleza",
+      "lujo-tranquilo"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "ein Glas bei Sonnenuntergang über den Klippen von Cala'n Forcat",
+      "einer der schönsten Sonnenuntergänge der Westküste",
+      "die entspannte Atmosphäre einer stilvollen Strandbar nahe Ciutadella"
+    ]
+  },
+  "images": [
+    "/uploads/faro-punta-nati.webp"
+  ],
+  "imageAlt": "Der Leuchtturm von Punta Nati an der Westküste am frühen Abend"
+}

@@ -1,0 +1,51 @@
+{
+  "name": "Cala Tortuga",
+  "lang": "de",
+  "translationKey": "cala-tortuga",
+  "type": "cala",
+  "description": "Unberührter Strand mit goldenem Sand unter der mondartigen Landschaft aus schwarzem Schiefer von Favàritx, mitten im Naturpark. Die beschränkte Zufahrt für Autos und der Fußweg halten ihn ruhig: reine Natur, weit und breit keine Strandbar.",
+  "coordinates": {
+    "lat": 39.998,
+    "lng": 4.27
+  },
+  "area": "Norden (Maó)",
+  "tags": [
+    "norte",
+    "cala",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 180,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "der goldene Sand unter der Schiefer-Mondlandschaft von Favàritx",
+      "die unberührte Umgebung des Parc Natural de s'Albufera des Grau",
+      "im Sommer per Saisonbus ab Maó erreichbar"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-tortuga.webp"
+  ],
+  "imageAlt": "Die Platja d'en Tortuga im Sandgebiet von Morella, umgeben von niedriger Macchia",
+  "imageCredit": "Nicolas G. Mertens / Wikimedia Commons (CC BY-SA 4.0)",
+  "practicalInfo": {
+    "aparcamiento": "Vom 1. Juni bis zum 30. September ist die Anfahrt mit Auto oder Motorrad nicht möglich: Wie Presili liegt die Bucht in der für den Privatverkehr gesperrten Zone rund um den Leuchtturm von Favàritx, und man fährt mit dem Bus hinein. Seit dem 1. Juni 2026 gibt es täglich zwölf Verbindungen nach Favàritx. Von der Haltestelle sind es noch rund 20 Minuten zu Fuß über den Camí de Cavalls.",
+    "mejorEpoca": "Von Oktober bis Mai kommen Sie mit dem Auto hin, und meist ist die Bucht leer. Im Sommer nehmen Sie den ersten Bus: Der Fußweg von der Haltestelle erledigt den Rest der Auslese."
+  }
+}

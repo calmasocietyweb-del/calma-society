@@ -1,0 +1,51 @@
+{
+  "name": "Cala del Pilar",
+  "lang": "de",
+  "translationKey": "cala-del-pilar",
+  "type": "cala",
+  "description": "Einer der wildesten und abgelegensten Strände Menorcas: goldener Sand unter Steilhängen aus rotem Lehm, ohne jede Infrastruktur. Der lange Fußweg und die Zufahrtskontrolle halten ihn nahezu unberührt; er belohnt nur, wer sich den Weg erarbeitet.",
+  "coordinates": {
+    "lat": 40.022,
+    "lng": 3.93
+  },
+  "area": "Norden (Ferreries)",
+  "tags": [
+    "norte",
+    "cala",
+    "ferreries"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 300,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "einer der wildesten und abgelegensten Strände des Nordens",
+      "der Fußweg durch Pinienwald und Macchia bis zum goldenen Sand unter roten Lehmhängen",
+      "alles Nötige mitbringen und wieder mitnehmen: Es gibt keinerlei Infrastruktur"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-del-pilar.webp"
+  ],
+  "imageAlt": "Cala del Pilar von oben: rötlicher Sand, türkisfarbenes Wasser und ein Hang mit niedrigem Buschwerk",
+  "imageCredit": "Markus Trienke / Wikimedia Commons (CC BY-SA 2.0)",
+  "practicalInfo": {
+    "aparcamiento": "Kontrollierte Kapazität (Saison 2026): Der Parkplatz schließt, sobald er voll ist, und von dort bleibt ein langer Fußweg durch den Wald bis zum Sand. Weil sie zu den Buchten gehört, die einen Marsch verlangen, hält sie länger durch als die südlich von Ciutadella; im August kommen Sie dennoch am besten früh am Morgen. In der Umgebung nach einem Platz zu suchen lohnt nicht: Die Wege sind schmal, und Parken ist dort nicht erlaubt.",
+    "mejorEpoca": "Der Fußweg schützt sie: Sie füllt sich nicht so schnell wie die berühmten Buchten. Kommen Sie im Juli und August dennoch vor 9:00 Uhr. Die Zufahrtskontrolle läuft von 7:30 bis 21:00 Uhr und gilt bis zum 15. Oktober."
+  }
+}

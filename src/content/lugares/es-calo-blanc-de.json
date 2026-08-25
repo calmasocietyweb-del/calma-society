@@ -1,0 +1,47 @@
+{
+  "name": "Es Caló Blanc",
+  "lang": "de",
+  "translationKey": "es-calo-blanc",
+  "type": "cala",
+  "description": "Winzige Bucht (kaum ein paar Meter breit), eingebettet zwischen Felsen — eine der kleinsten der Insel und ein wenig bekannter, eigenwilliger Winkel für einen kurzen Halt. Sie liegt an der Wohnsiedlung Cap d'en Font (Sant Lluís), mit unbefestigtem Parkplatz in der Nähe und einer Treppe zum Sand auf der Westseite; felsiges Gelände, nicht barrierefrei.",
+  "coordinates": {
+    "lat": 39.8294,
+    "lng": 4.211
+  },
+  "area": "Südosten (Sant Lluís)",
+  "tags": [
+    "sur-este",
+    "cala",
+    "sant-lluis"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "cala",
+    "idealFor": [
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-07-22",
+    "highlights": [
+      "einen Blick in eine der kleinsten Buchten der Insel werfen",
+      "ein kurzes Bad zwischen Felsen in einem eigenwilligen Winkel",
+      "mit Binibèquer oder Binidalí kombinieren, die gleich nebenan liegen"
+    ]
+  },
+  "images": [
+    "/uploads/lg-es-calo-blanc.webp"
+  ],
+  "imageAlt": "Es Caló Blanc: eine kleine Bucht mit hellem Sand und glasklarem Wasser zwischen niedrigem Fels",
+  "imageCredit": "MontanNito / Wikimedia Commons (CC BY-SA 3.0)"
+}

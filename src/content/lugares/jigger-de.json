@@ -1,0 +1,64 @@
+{
+  "name": "Jigger Cooking Cocktail",
+  "lang": "de",
+  "translationKey": "jigger",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Cocktailbar mit eigener Handschrift und eigener Küche in Cala Blanca (Ciutadella): charakterstarke Cocktails und eine umfangreiche Karte an Destillaten.",
+  "coordinates": {
+    "lat": 39.9726926,
+    "lng": 3.8331929
+  },
+  "area": "Westen (Ciutadella)",
+  "practicalInfo": {
+    "acceso": "Ungefähre Lage der Zone; prüfen Sie den genauen Standort auf der Website oder auf Instagram.",
+    "horario": "Saisonal; die Zeiten ändern sich mit jeder Saison — prüfen Sie die Website oder Instagram."
+  },
+  "images": [
+    "/uploads/gin-tonic.webp"
+  ],
+  "tags": [
+    "coctelería",
+    "cala blanca",
+    "ciutadella"
+  ],
+  "status": "published",
+  "editorial": {
+    "lead": "Jigger bewegt sich zwischen zwei Welten: der Küche und der Bar. Eine Cocktailbar mit eigener Handschrift und eigener Küche in Cala Blanca, wo der Tag mit einem Brunch beginnen kann und sich der Abend zwischen charakterstarken Cocktails und einer langen Karte an Destillaten dehnt.",
+    "sections": [
+      {
+        "heading": "Cocktailbar mit Küche",
+        "body": [
+          "Der Name sagt es nur zur Hälfte: Ein Jigger ist das Messglas des Barkeepers, und die Cocktails werden hier ernst genommen. Doch Jigger fügt etwas Ungewöhnliches hinzu — eine eigene Küche unter demselben Dach —, sodass das Haus tagsüber als Restaurant funktioniert und abends als Cocktailbar mit Handschrift, ohne dass Sie den Tisch wechseln müssten.",
+          "Die Auswahl an Destillaten ist groß, mit einer Schwäche für Gin; es ist einer jener Orte, an denen Sie ruhig um Rat fragen und sich führen lassen können."
+        ]
+      },
+      {
+        "heading": "In Cala Blanca",
+        "body": [
+          "Die Bar liegt weder im Zentrum noch am Hafen, sondern in der Siedlung Cala Blanca an der Westküste, rund fünf Kilometer südlich von Ciutadella, neben der gleichnamigen Bucht. Eine ruhige Wohngegend: der Plan für ein entspanntes Glas, nicht für eine lange Nacht im Hafen."
+        ]
+      },
+      {
+        "heading": "Mit Ruhe erleben",
+        "body": [
+          "Kommen Sie ohne Eile, beginnen Sie mit der Küche, wenn Sie früh da sind, und lassen Sie den Abend zu den Cocktails hinübergleiten. Und da Saison und Karte wechseln, prüfen Sie vor dem Besuch die Website oder Instagram."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Paare",
+      "Cocktails mit Handschrift",
+      "Cala Blanca"
+    ],
+    "goodToKnow": [
+      "Konzept „Cooking Cocktail“: Cocktailbar mit eigener Küche — vom Brunch am Tag bis zu Cocktails am Abend.",
+      "Umfangreiche Karte an Destillaten, mit Schwerpunkt auf Gin.",
+      "Liegt in der Siedlung Cala Blanca, rund 5 km südlich von Ciutadella.",
+      "Karte, Zeiten und Saison ändern sich: Prüfen Sie sie auf der Website oder auf Instagram."
+    ],
+    "transfer": true,
+    "transferText": "Cala Blanca liegt rund 5 km von Ciutadella entfernt, und zwischen Cocktails ist es vernünftig, für die Rückfahrt nicht selbst zu fahren. Wir bringen Sie hin und holen Sie ab, mit privatem Chauffeur — Sie wählen nur das Glas."
+  },
+  "imageAlt": "Ein Gin Tonic mit Eis und Zitrone"
+}

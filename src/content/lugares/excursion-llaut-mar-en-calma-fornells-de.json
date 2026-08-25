@@ -1,0 +1,47 @@
+{
+  "name": "Ausflug im menorquinischen Llaüt entlang der Nordküste (Mar en Calma, Fornells)",
+  "lang": "de",
+  "translationKey": "excursion-llaut-mar-en-calma-fornells",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Die Nordküste an Bord eines hölzernen menorquinischen Llaüt befahren, des traditionellen Bootes der Insel, mit zwei Badestopps in kristallklarem Wasser und einem menorquinischen Aperitif. Der wilde Norden — ohne Eile und ohne Menschenmengen.",
+  "coordinates": {
+    "lat": 40.0535,
+    "lng": 4.137
+  },
+  "area": "Es Mercadal (Fornells)",
+  "images": [
+    "/uploads/lg-excursion-llaut-mar-en-calma-fornells.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza",
+      "nautica"
+    ],
+    "highlights": [
+      "ab Fornells in einem traditionellen menorquinischen Llaüt auslaufen (Portobello / Don Pancho)",
+      "zwei Stopps zum Schwimmen, Schnorcheln und Stand-up-Paddeln in Buchten der Nordküste",
+      "menorquinischer Aperitif an Bord; ca. 3 Std. 30 Min. ruhige Fahrt"
+    ],
+    "durationMin": 210,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.marencalmamenorca.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Die Bucht von Fornells mit ankernden Segelbooten und dem weißen Dorf im Hintergrund",
+  "imageCredit": "Nikodem Nijaki / Wikimedia Commons (CC BY-SA 3.0)"
+}

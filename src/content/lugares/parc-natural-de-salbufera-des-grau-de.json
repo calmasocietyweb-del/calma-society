@@ -1,0 +1,47 @@
+{
+  "name": "Parc Natural de s'Albufera des Grau",
+  "lang": "de",
+  "translationKey": "parc-natural-de-salbufera-des-grau",
+  "type": "naturaleza",
+  "description": "Kernzone des Biosphärenreservats Menorca: Küstenlagune, Feuchtgebiet und mediterraner Wald mit Aussichtspunkten und Routen zur Vogelbeobachtung. Die natürliche, stille Seite des Nordens, ideal für sanftes Wandern mit der Familie. Besucherzentrum kostenlos.",
+  "coordinates": {
+    "lat": 39.9461,
+    "lng": 4.2628
+  },
+  "area": "Norden (Maó)",
+  "tags": [
+    "norte",
+    "naturaleza",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "familias"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "der Rundweg an der Lagune und durch den mediterranen Wald",
+      "die Aussichtspunkte zur Vogelbeobachtung",
+      "das Herz des Biosphärenreservats Menorca"
+    ]
+  },
+  "images": [
+    "/uploads/lg-parc-natural-de-salbufera-des-grau.webp"
+  ],
+  "imageAlt": "Die Wasserfläche von s'Albufera des Grau zwischen Schilf und niedrigem Buschland",
+  "imageCredit": "CARME MARTORELL / Wikimedia Commons (CC BY-SA 3.0)"
+}

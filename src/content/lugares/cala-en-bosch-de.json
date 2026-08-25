@@ -1,0 +1,47 @@
+{
+  "name": "Cala en Bosch",
+  "lang": "de",
+  "translationKey": "cala-en-bosch",
+  "type": "cala",
+  "description": "Erschlossener Strand mittlerer Größe neben einem Yachthafen und einem Binnensee (El Lago), umgeben von Restaurants und Apartments. Bequem und gut ausgestattet — eher für Familien gedacht als für die Suche nach unberührten Buchten.",
+  "coordinates": {
+    "lat": 39.927,
+    "lng": 3.812
+  },
+  "area": "Südwesten (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "playa",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "familienfreundlicher Strand am Yachthafen und am Binnensee (El Lago)",
+      "Fisch- und Reisgerichte in den Restaurants rund um den Hafen, direkt am Wasser",
+      "ebene Uferpromenade bis zum Leuchtturm am Cap d'Artrutx und nach Son Xoriguer"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-en-bosch.webp"
+  ],
+  "imageAlt": "Der Kanal und der Yachthafen von Cala en Bosc mit vertäuten Booten",
+  "imageCredit": "Bärwinkel,Klaus / Wikimedia Commons (CC BY-SA 4.0)"
+}

@@ -1,0 +1,61 @@
+{
+  "name": "Mercat des Claustre del Carme",
+  "lang": "de",
+  "translationKey": "mercat-claustre-carme",
+  "type": "comercio",
+  "description": "Gastronomischer Markt in einem Karmeliter-Kreuzgang aus dem 18. Jahrhundert im Herzen von Maó: Erzeugnisse der Insel, Hausgemachtes und Kunsthandwerk.",
+  "coordinates": {
+    "lat": 39.888,
+    "lng": 4.265
+  },
+  "area": "Osten (Maó)",
+  "tags": [
+    "este",
+    "mercado",
+    "gastronomía",
+    "maó"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "comida",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "familias"
+    ],
+    "durationMin": 90,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "effortLevel": "A1",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "indoorAlternativeOf": [
+      "mao-puerto",
+      "este"
+    ],
+    "openDays": [
+      "lun",
+      "mar",
+      "mie",
+      "jue",
+      "vie",
+      "sab"
+    ],
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "seasonalHours": "Zentrum von Maó, zu Fuß erreichbar. Der angrenzende Mercat des Peix öffnet Di–Sa 07:00–14:00 Uhr.",
+    "highlights": [
+      "sich zwischen den Ständen durch lokale Produkte kosten",
+      "der Karmeliter-Kreuzgang aus dem 18. Jahrhundert",
+      "der angrenzende Mercat des Peix für Tapas"
+    ]
+  },
+  "images": [
+    "/uploads/lg-mercat-claustre-carme.webp"
+  ],
+  "imageAlt": "Es Claustre del Carme in Maó bei Nacht, mit beleuchteten Arkaden und Gästen an den Tischen",
+  "imageCredit": "Gamatzem / Wikimedia Commons (CC BY-SA 4.0)"
+}

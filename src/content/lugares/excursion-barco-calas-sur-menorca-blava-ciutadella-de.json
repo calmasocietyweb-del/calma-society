@@ -1,0 +1,47 @@
+{
+  "name": "Bootsausflug zu den unberührten Buchten des Südens (Menorca Blava, Ciutadella)",
+  "lang": "de",
+  "translationKey": "excursion-barco-calas-sur-menorca-blava-ciutadella",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Ein Tag auf dem Meer, vom alten Hafen von Ciutadella zu den begehrtesten Buchten des Südwestens — denen ohne Straße. Badeplattform, Sonnendeck und ein Reisgericht an Bord: die bequeme Art, Son Saura, Turqueta und Macarella ohne Auto zu sehen.",
+  "coordinates": {
+    "lat": 39.9985,
+    "lng": 3.833
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [
+    "/uploads/lg-excursion-barco-calas-sur-menorca-blava-ciutadella.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "primera-vez",
+      "naturaleza",
+      "nautica"
+    ],
+    "highlights": [
+      "den unberührten Südwesten befahren: Son Saura, Es Talaier, Turqueta, Macarella und Macarelleta",
+      "zwei Badestopps mit direktem Zugang von der Plattform des Boots",
+      "gemischte Paella an Bord und Meereshöhlen, die vom Land aus unerreichbar sind; ca. 7 Std."
+    ],
+    "durationMin": 420,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.menorcablava.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Vor Cala Macarella ankernde Segelboote an der Südküste",
+  "imageCredit": "Franrull / Wikimedia Commons (CC BY-SA 4.0)"
+}

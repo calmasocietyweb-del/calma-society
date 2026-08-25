@@ -1,0 +1,47 @@
+{
+  "name": "Es Canutells",
+  "lang": "de",
+  "translationKey": "es-canutells",
+  "type": "cala",
+  "description": "Kleine, geschützte Bucht zwischen Cales Coves und Binidali mit ruhigem Wasser — von Touristen wenig, von Menorquinern gern besucht. Die Atmosphäre ist lokal und gelassen.",
+  "coordinates": {
+    "lat": 39.865,
+    "lng": 4.17
+  },
+  "area": "Südosten (Maó)",
+  "tags": [
+    "sur-este",
+    "cala",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "familias"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "geschütztes Baden in einer Bucht mit lokalem Charakter",
+      "der Ankerplatz mit traditionellen Booten und Bootshäusern",
+      "ruhiges Schnorcheln in stillem, wenig besuchtem Wasser"
+    ]
+  },
+  "images": [
+    "/uploads/lg-es-canutells.webp"
+  ],
+  "imageAlt": "Die Bucht von Es Canutells mit ankernden Booten und der Steilwand, die die Einfahrt abschließt",
+  "imageCredit": "Songbird8 / Wikimedia Commons (CC BY-SA 4.0)"
+}

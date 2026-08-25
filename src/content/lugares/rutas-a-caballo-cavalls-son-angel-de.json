@@ -1,0 +1,45 @@
+{
+  "name": "Reitausflüge an der Nordküste (Cavalls Son Àngel)",
+  "lang": "de",
+  "translationKey": "rutas-a-caballo-cavalls-son-angel",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Zu Pferd durch eine Finca mit 300 ha Wald und unberührter Küste im Norden von Ciutadella, bis zu versteckten Buchten wie Codolar de Biniatram oder Ses Fontanelles. Echte Tramuntana-Natur, fern der Menschenmengen, im Rhythmus des Pferdes.",
+  "coordinates": {
+    "lat": 40.022,
+    "lng": 3.86
+  },
+  "area": "Ciutadella (Camí d'Algaiarens)",
+  "images": [
+    "/uploads/caballos-jinetes.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "parejas",
+      "familias"
+    ],
+    "highlights": [
+      "Rundritt durch den Wald von Son Àngel mit Besuch zweier unberührter Buchten",
+      "Tour von ca. 2,5 Std. bis Codolar de Biniatram mit Halt an der Cala Ses Fontanelles",
+      "Angebote von 1 bis 3 Std. für Einsteiger (Kinder ab 6 Jahren) und lange Touren für Geübte"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.cavallssonangel.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Menorquinische Pferde mit Reitern"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "Tauchen und Schnuppertauchen im Schutzgebiet der Illa de l'Aire (S'Algar Diving)",
+  "lang": "de",
+  "translationKey": "buceo-salgar-illa-de-laire",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Abtauchen im Meeresschutzgebiet der Illa de l'Aire mit einer PADI-Basis, die seit über dreißig Jahren an der Südostküste arbeitet. Vom Schnuppertauchen für Anfänger bis zu Tauchgängen an mehr als zwanzig Spots, mit eigenem Pool und Tauchlehrern.",
+  "coordinates": {
+    "lat": 39.843,
+    "lng": 4.282
+  },
+  "area": "Sant Lluís (s'Algar)",
+  "images": [
+    "/uploads/lg-buceo-salgar-illa-de-laire.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "nautica",
+      "naturaleza",
+      "parejas",
+      "familias"
+    ],
+    "highlights": [
+      "Schnuppertauchen für den Einstieg oder Tauchgänge im Schutzgebiet der Illa de l'Aire",
+      "mehr als 20 Tauchplätze und geführte Schnorchelausfahrten",
+      "PADI-5-Sterne-Center mit Übungspool, Schulungsräumen und eigenen Booten"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.salgardiving.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Das Ufer von Punta Prima, am Horizont die Illa de l'Aire mit ihrem gestreiften Leuchtturm",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)"
+}

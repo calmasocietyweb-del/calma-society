@@ -1,0 +1,32 @@
+{
+  "name": "Cafè Balear",
+  "lang": "de",
+  "translationKey": "restaurante-cafe-balear",
+  "type": "restaurante",
+  "description": "Die ikonische Adresse für Meeresfrüchte im Hafen von Ciutadella, mit über fünfzig Jahren Geschichte und einem Sol des Guía Repsol — einer der Veteranen der Insel. In den Siebzigern als Fischertaverne entstanden — der Großvater, 'Bep Fitora', fischte mit seinem Boot, seine Frau Juanita kochte den Fang — und bis heute kommen Fisch und Meeresfrüchte vom eigenen Boot an Land, der Rosa Santa Primera: rote Garnelen aus Ciutadella von der Plancha und rote Langusten aus Menorca je nach Saison.",
+  "coordinates": {
+    "lat": 40,
+    "lng": 3.83
+  },
+  "area": "Westen (Ciutadella)",
+  "practicalInfo": {
+    "acceso": "Passeig des Moll 15, Hafen von Ciutadella.",
+    "horario": "Richtwerte: Dienstag bis Samstag 13:00–15:30 und 20:00–23:00 Uhr; montags nur abends; sonntags geschlossen. Saisonale Zeiten: Bestätigen Sie sie vor dem Besuch.",
+    "servicios": "Reservierungen: +34 971 38 00 05"
+  },
+  "priceRange": "€€€",
+  "website": "https://www.baleargrup.com/",
+  "images": [
+    "/uploads/ciutadella-puerto.webp"
+  ],
+  "tags": [
+    "oeste",
+    "gastronomia",
+    "ciutadella"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Cafè Balear, Hafen von Ciutadella: ein halbes Jahrhundert Meeresfrüchte mit eigenem Boot, rote Garnelen von der Plancha und ein Sol des Guía Repsol."
+  },
+  "imageAlt": "Der Hafen von Ciutadella mit vertäuten Booten am Fuß der Altstadt"
+}

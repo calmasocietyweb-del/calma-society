@@ -1,0 +1,46 @@
+{
+  "name": "Castell de Sant Felip",
+  "lang": "de",
+  "translationKey": "castell-de-sant-felip",
+  "type": "monumento",
+  "edition": "menorca",
+  "description": "Die große Festung, die seit dem 16. Jahrhundert die Einfahrt zum Hafen von Maó bewachte, mit kilometerlangen Tunneln, heute unter der Erde verborgen. Zugänglich nur mit Führung des Consorci — ein exklusives, wenig überlaufenes Stück Kulturerbe.",
+  "coordinates": {
+    "lat": 39.8675,
+    "lng": 4.3031
+  },
+  "area": "Es Castell (Cala de Sant Esteve)",
+  "images": [
+    "/uploads/lg-castell-de-sant-felip.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "lujo-tranquilo",
+      "primera-vez"
+    ],
+    "highlights": [
+      "mit einem spezialisierten Guide in die unterirdischen Galerien und Minengänge hinabsteigen",
+      "die Belagerung von 1782 und das Leben der Garnison verstehen, die den Hafen verteidigte",
+      "das militärische Ensemble der Hafeneinfahrt mit Fort Marlborough und La Mola vervollständigen"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.consorciomilitarmenorca.com/es/visitas-guiadas-al-castillo-de-san-felipe/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Die Galerien und Steinmauern, die vom Castell de Sant Felip erhalten sind",
+  "imageCredit": "SSANTY / Wikimedia Commons (CC BY-SA 3.0)"
+}

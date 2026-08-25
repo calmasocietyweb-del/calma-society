@@ -1,0 +1,47 @@
+{
+  "name": "Llaüt-Ausflug zu den Buchten des Südens (Mar en Calma, Cala Galdana)",
+  "lang": "de",
+  "translationKey": "excursion-llaut-mar-en-calma-galdana",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Die unberührten Buchten des Südens vom Meer aus entdecken: ab Cala Galdana im menorquinischen Llaüt, mit Badestopps vor türkisfarbenen Sandbuchten, die über Land nur mühsam zu erreichen sind. Stiller Luxus dicht über dem Wasser.",
+  "coordinates": {
+    "lat": 39.936,
+    "lng": 3.965
+  },
+  "area": "Ferreries (Cala Galdana)",
+  "images": [
+    "/uploads/lg-excursion-llaut-mar-en-calma-galdana.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "familias",
+      "nautica"
+    ],
+    "highlights": [
+      "ab Cala Galdana die Südküste zwischen Kalkklippen und Pinienwäldern entlangfahren",
+      "zwei Stopps zum Baden, Schnorcheln und Stand-up-Paddeln vor unberührten Buchten",
+      "menorquinischer Aperitif an Bord; traditionelle Barke aus Holz"
+    ],
+    "durationMin": 210,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.marencalmamenorca.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Die Bucht von Cala Galdana mit ankernden Booten und den Gebäuden über dem Strand",
+  "imageCredit": "pacai1952 / Wikimedia Commons (CC BY-SA 2.0)"
+}

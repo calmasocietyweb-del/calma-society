@@ -1,0 +1,47 @@
+{
+  "name": "Nekropole von Calescoves",
+  "lang": "de",
+  "translationKey": "necropolis-de-calescoves",
+  "type": "monumento",
+  "description": "Prähistorische Nekropole aus rund 90 Grabhöhlen, in die Steilwand einer unberührten, abgelegenen Bucht geschlagen. Eine eindrucksvolle Naturkulisse, die Kulturerbe und ein Bad in einer Bucht ohne Infrastruktur verbindet. Für alle, die Ruhe und Authentizität suchen.",
+  "coordinates": {
+    "lat": 39.8689,
+    "lng": 4.1217
+  },
+  "area": "Zentraler Süden (Alaior)",
+  "tags": [
+    "sur-centro",
+    "yacimiento",
+    "alaior"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "eine prähistorische Nekropole aus rund 90 Grabhöhlen in der Steilwand erkunden",
+      "den Besuch mit einem Bad in der unberührten Bucht von Cales Coves verbinden",
+      "mit Respekt besuchen und nichts berühren: geschützte Fundstätte"
+    ]
+  },
+  "images": [
+    "/uploads/lg-necropolis-de-calescoves.webp"
+  ],
+  "imageAlt": "Der Eingang einer Grabhöhle von Cales Coves, zwischen Steinblöcken",
+  "imageCredit": "Dreizung / Wikimedia Commons (CC BY-SA 4.0)"
+}

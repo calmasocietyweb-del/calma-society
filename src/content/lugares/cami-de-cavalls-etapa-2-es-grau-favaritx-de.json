@@ -1,0 +1,45 @@
+{
+  "name": "Camí de Cavalls · Etappe 2: Es Grau – Cap de Favàritx",
+  "lang": "de",
+  "translationKey": "cami-de-cavalls-etapa-2-es-grau-favaritx",
+  "type": "ruta",
+  "edition": "menorca",
+  "description": "8,6 km durch das Herz des Parc Natural de s'Albufera des Grau, UNESCO-Biosphärenreservat, bis zum Leuchtturm und zur mondartigen Landschaft aus schwarzem Schiefer von Favàritx. Geschützte Natur in Reinform, ohne ein einziges Gebäude am Horizont.",
+  "coordinates": {
+    "lat": 39.956,
+    "lng": 4.266
+  },
+  "area": "Maó",
+  "images": [
+    "/uploads/lg-cami-de-cavalls-etapa-2-es-grau-favaritx.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "highlights": [
+      "den einzigen Naturpark Menorcas durchqueren, Kernzone des Biosphärenreservats",
+      "zwischen den schwarzen Schieferfelsen am Leuchtturm von Favàritx ankommen",
+      "auf halbem Weg einen Blick auf die unberührten Buchten Tortuga und Presili werfen"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.camidecavalls.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Ein Erdpfad zwischen Buschwerk im Naturpark s'Albufera des Grau",
+  "imageCredit": "Alejandro Muñoz Cabrisas / Wikimedia Commons (CC BY-SA 4.0)"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Sa Bodega de Son Cremat",
+  "lang": "de",
+  "translationKey": "bodega-son-cremat",
+  "type": "bodega",
+  "edition": "menorca",
+  "description": "Kleines Familienweingut im Umland von Maó, am Weg zum Flughafen, das 2010 seine ersten Reben pflanzte. Junge Weißweine aus Chardonnay und Muskateller, frisch und aromatisch — bei einem persönlichen Besuch an der Seite der Familie.",
+  "coordinates": {
+    "lat": 39.875,
+    "lng": 4.24
+  },
+  "area": "Maó",
+  "images": [
+    "/uploads/vino-menorca.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "naturaleza",
+      "familias"
+    ],
+    "highlights": [
+      "zwischen den Reben spazieren und Weißweine und Rosé mit den Eigentümern verkosten",
+      "die Weinlese am Ende des Sommers erleben (saisonales Angebot)",
+      "vorab anrufen: Besuch nur nach Vereinbarung"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://vimenorca.com/en/son-cremat/",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Glas und Flasche menorquinischen Weins auf einem Tisch"
+}

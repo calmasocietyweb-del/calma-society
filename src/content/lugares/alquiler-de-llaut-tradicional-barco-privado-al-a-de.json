@@ -1,0 +1,50 @@
+{
+  "name": "Charter: traditioneller Llaüt oder Privatboot zum Sonnenuntergang",
+  "lang": "de",
+  "translationKey": "alquiler-de-llaut-tradicional-barco-privado-al-a",
+  "type": "experiencia",
+  "description": "Ausfahrt im menorquinischen Holz-Llaüt (traditionelle, elegante Barke mit Sonnendeck) oder im Privatboot mit Skipper ab Cala Galdana oder Ciutadella zu den türkisfarbenen Juwelen des Südens: Cala Macarella, Macarelleta, Turqueta, Mitjana. Ankern, Schwimmen und Schnorcheln in Buchten, die im Sommer über Land nur sehr eingeschränkt erreichbar sind. Auf Wunsch Catering mit lokalen Produkten und Weinen sowie Ausfahrten zum Sonnenuntergang: stiller Luxus in Reinform.",
+  "coordinates": {
+    "lat": 39.93,
+    "lng": 3.96
+  },
+  "area": "Südwesten (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "experiencia",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-08-06",
+    "highlights": [
+      "die unberührten Buchten des Südwestens vom Meer aus erleben, fern der Menge",
+      "vor Macarella oder Turqueta ankern und vom Boot aus baden",
+      "Sonnenuntergang an Bord mit Cava; den Skipper im Sommer frühzeitig reservieren"
+    ],
+    "officialUrl": "https://www.alquilerbarcoenmenorca.es/",
+    "operatorName": "Minorboats"
+  },
+  "images": [
+    "/uploads/lg-alquiler-de-llaut-tradicional-barco-privado-al-a.webp"
+  ],
+  "imageAlt": "Hölzerne Llaüts, in Reihe vertäut im Hafen, vor den Häusern von Es Castell",
+  "imageCredit": "Markus Trienke / Wikimedia Commons (CC BY-SA 2.0)"
+}

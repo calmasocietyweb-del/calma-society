@@ -1,0 +1,66 @@
+{
+  "name": "Kopas Club",
+  "lang": "de",
+  "translationKey": "kopas-club",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Club auf mehreren Etagen im Hafen von Ciutadella, mit Terrassen, Cocktails und wechselnder Musik bis in die frühen Morgenstunden.",
+  "coordinates": {
+    "lat": 40.0026571,
+    "lng": 3.8361687
+  },
+  "area": "Westen (Ciutadella)",
+  "practicalInfo": {
+    "horario": "Saisonal; die Zeiten ändern sich mit jeder Saison — prüfen Sie die Website oder Instagram."
+  },
+  "website": "https://www.kopasclub.com/",
+  "images": [
+    "/uploads/lg-kopas-club.webp"
+  ],
+  "tags": [
+    "discoteca",
+    "coctelería",
+    "puerto",
+    "ciutadella"
+  ],
+  "status": "published",
+  "editorial": {
+    "lead": "Der Kopas Club ist der Plan für alle, die das Tempo ihrer Nacht bestimmen möchten, ohne den Ort zu wechseln. Mitten im Hafen von Ciutadella verteilt er das ruhige Glas, die Cocktailbar und die Tanzfläche auf mehrere Etagen und Terrassen — mit Blick aufs Wasser.",
+    "sections": [
+      {
+        "heading": "Mehrere Nächte an einem Ort",
+        "body": [
+          "Die Idee des Kopas ist Vielfalt unter einem Dach: mehrere Etagen, Terrassen und Bars, die Sie vom Gespräch bei einem Glas zur Tanzfläche wechseln lassen, ohne das Lokal zu verlassen. Oben blickt die offene Terrasse auf den Hafen; unten legt die Musik zu.",
+          "Ein Ort für eine lange Nacht, die Sie nicht im Detail planen möchten: Sie gehen hinauf, wieder hinunter, und jede Etage hat ihren eigenen Ton."
+        ]
+      },
+      {
+        "heading": "Im Hafen von Ciutadella",
+        "body": [
+          "Er liegt am Pla de Sant Joan, der Hafenpromenade, an der die Nacht von Ciutadella pulsiert — in einem Lokal, das die Einheimischen noch als das frühere Esfera kennen. An Gesellschaft fehlt es nicht: Wenige Meter entfernt liegen weitere Clubs, die Nacht lässt sich also gut in dieser Ecke verbringen."
+        ]
+      },
+      {
+        "heading": "Mit Ruhe erleben",
+        "body": [
+          "Zeiten, Programm und Saison ändern sich jedes Jahr; prüfen Sie das vor dem Besuch auf der Website. Und um nicht ans Auto denken zu müssen: Lassen Sie sich fahren."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Nachtleben",
+      "Cocktails",
+      "Hafen von Ciutadella"
+    ],
+    "goodToKnow": [
+      "Mehrere Etagen und Terrassen mit Blick auf den Hafen — vom ruhigen Glas bis zur Tanzfläche.",
+      "Cocktails und wechselnde Musik, mit mehreren Stimmungen in einem Lokal.",
+      "Liegt im Hafen von Ciutadella (Passeig es Pla de Sant Joan).",
+      "Zeiten, Programm und Saison ändern sich: Prüfen Sie sie auf der Website."
+    ],
+    "transfer": true,
+    "transferText": "Im Hafen von Ciutadella ist Parken nachts und im Sommer schwierig. Lassen Sie das Auto stehen: Wir bringen Sie hin und holen Sie mit Chauffeur wieder ab."
+  },
+  "imageAlt": "Der steinerne Bogen des Rathauses von Ciutadella mit den Flaggen",
+  "imageCredit": "Américo Toledano / Wikimedia Commons (CC BY-SA 4.0)"
+}

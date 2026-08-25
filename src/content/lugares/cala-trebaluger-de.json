@@ -1,0 +1,46 @@
+{
+  "name": "Cala Trebaluger",
+  "lang": "de",
+  "translationKey": "cala-trebaluger",
+  "type": "cala",
+  "description": "Eine der schönsten unberührten Buchten: weißer Sand, Kalkfelsen, Pinien bis ans Ufer und ein kleiner Bachlauf, der an einer Seite mündet. Da sie nur zu Fuß erreichbar ist, bleibt sie ruhig; keine Infrastruktur — Wasser und Verpflegung mitnehmen.",
+  "coordinates": {
+    "lat": 39.932,
+    "lng": 3.987
+  },
+  "area": "Zentraler Süden (Ferreries)",
+  "tags": [
+    "sur-centro",
+    "cala",
+    "ferreries"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "zu Fuß oder per Boot eine der schönsten unberührten Buchten der Insel erreichen",
+      "weißer Sand, Pinien bis ans Ufer und ein Bachlauf an der Seite",
+      "den Rückweg einplanen: fordernder Fußmarsch und keinerlei Infrastruktur"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-trebaluger.webp"
+  ],
+  "imageAlt": "Das türkisfarbene Wasser der Cala Trebalúger, mit über den Fels geneigten Pinien",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)"
+}

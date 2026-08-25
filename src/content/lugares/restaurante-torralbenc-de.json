@@ -1,0 +1,33 @@
+{
+  "name": "Torralbenc",
+  "lang": "de",
+  "translationKey": "restaurante-torralbenc",
+  "type": "restaurante",
+  "description": "Der Tisch des Agrotourismus Torralbenc, eines 74 Hektar großen Landguts mit eigenem Weingut an der Straße von Maó nach Cala en Porter (Alaior). Ehrliche, verfeinerte Mittelmeerküche — Gegrilltes, Fisch und Fleisch, Reisgerichte — unter der Beratung von Küchenchef Gorka Txapartegi (Alameda, Hondarribia), mit Gemüse, Eiern, Öl und Wein vom eigenen Gut und einem Speisesaal in einem restaurierten ehemaligen Erntegebäude. Empfohlen vom Guide Michelin 2026; das Hotel trägt seit November 2024 einen Michelin-Schlüssel.",
+  "coordinates": {
+    "lat": 39.9,
+    "lng": 4.14
+  },
+  "area": "Süden (Alaior)",
+  "practicalInfo": {
+    "acceso": "Finca Torralbenc, Straße Maó–Cala en Porter (Alaior). Ungefähre Lage: Bestätigen Sie den genauen Punkt auf der offiziellen Website.",
+    "horario": "Hotel und Restaurant saisonal geöffnet (Frühjahr–Herbst); bestätigen Sie Termine und Zeiten für 2026 auf der offiziellen Website.",
+    "servicios": "Reservierungen: +34 971 37 72 11 · info@torralbenc.com. Sechsgängige Abendessen zum Sonnenuntergang und Dinner in der Höhle, auf Reservierung."
+  },
+  "priceRange": "€€€€",
+  "website": "https://www.torralbenc.com/",
+  "images": [
+    "/uploads/lg-restaurante-torralbenc.webp"
+  ],
+  "tags": [
+    "sur-centro",
+    "gastronomia",
+    "alaior"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Torralbenc (Alaior): Mittelmeerküche mit Produkten und Wein vom eigenen 74-ha-Gut, empfohlen vom Guide Michelin 2026, in einem Hotel mit Michelin-Schlüssel."
+  },
+  "imageAlt": "Weidendes Vieh auf einem Stoppelfeld bei Alaior, am Rand der Macchia",
+  "imageCredit": "Discasto / Wikimedia Commons (CC BY-SA 4.0)"
+}

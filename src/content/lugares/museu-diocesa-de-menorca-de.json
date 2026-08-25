@@ -1,0 +1,46 @@
+{
+  "name": "Museu Diocesà de Menorca",
+  "lang": "de",
+  "translationKey": "museu-diocesa-de-menorca",
+  "type": "museo",
+  "edition": "menorca",
+  "description": "Das Diözesanmuseum von Ciutadella im ehemaligen Kloster Sant Agustí (el Socors): ein Kreuzgang der Stille, sakrale Kunst und Archäologie, mit Werken des menorquinischen Malers Pere Daura. Der Eintritt lässt sich mit der Kathedrale kombinieren — ein Zweiklang aus Ruhe und Erbe im herrschaftlichen Herzen des Westens.",
+  "coordinates": {
+    "lat": 40.0008,
+    "lng": 3.8389
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [
+    "/uploads/lg-museu-diocesa-de-menorca.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "lujo-tranquilo",
+      "parejas"
+    ],
+    "highlights": [
+      "durch den Kreuzgang des Klosters Sant Agustí gehen",
+      "Malerei des 18. und 19. Jahrhunderts und Werke von Pere Daura sehen, dazu lokale Archäologie",
+      "den Besuch mit der Kathedrale Santa Maria in einem einzigen Ticket verbinden"
+    ],
+    "durationMin": 75,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://bisbatdemenorca.org/diocesi/la-catedral-i-el-seu-museu/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Eine Gasse der Altstadt von Ciutadella, in der das Museum liegt",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)"
+}

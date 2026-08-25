@@ -1,0 +1,33 @@
+{
+  "name": "Ca Na Xini (Hort Sant Patrici)",
+  "lang": "de",
+  "translationKey": "ca-na-xini",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Acht Zimmer im Haus von 1918 auf der Finca Hort Sant Patrici, fünf Minuten von Ferreries, zwischen Weinbergen und Gärten. Es ist das einzige Hotel der Insel, in dem man in einer Käserei mit der g.U. Mahón-Menorca und einem eigenen Weingut schläft: Man besichtigt die Herstellung, verkostet den Hauswein und frühstückt den Käse, der wenige Meter vom Bett entfernt entsteht.",
+  "coordinates": {
+    "lat": 39.995,
+    "lng": 4.012
+  },
+  "area": "Zentrum (Ferreries)",
+  "practicalInfo": {
+    "acceso": "Camí de Sant Patrici, rund 5 Autominuten von Ferreries.",
+    "horario": "Prüfen Sie Saison und Termine auf der offiziellen Website; Käserei und Weingut haben eigene Besuchszeiten.",
+    "servicios": "8 Zimmer, saisonaler Außenpool, eigene Käserei (g.U. Mahón-Menorca) und eigenes Weingut, Weinberge und Gärten."
+  },
+  "images": [
+    "/uploads/queso-mahon-artesa.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "agroturismo",
+    "lujo",
+    "ferreries"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Ca Na Xini, Ferreries: Landhotel mit 8 Zimmern auf der Finca Hort Sant Patrici, mit eigener g.U.-Käserei und eigenem Weingut."
+  },
+  "imageAlt": "Ein handwerklich gereifter Mahón-Menorca-Käse auf einem Holzbrett, mit natürlicher Rinde und elfenbeinfarbenem Teig.",
+  "imageCredit": "Slastic / Wikimedia Commons (public domain)"
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Morvedra Nou",
+  "lang": "de",
+  "translationKey": "morvedra-nou",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Landhotel nur für Erwachsene im Umland von Ciutadella, auf dem Weg zu den Buchten des Südens, mit rustikalen Zimmern, die auf eine eigene Terrasse oder in einen eigenen Garten führen — einige mit privatem Pool —, und traditioneller menorquinischer Küche im Restaurant. Geöffnet von Juni bis Oktober: ein Sommer auf dem Land, zehn Minuten von Macarella entfernt.",
+  "coordinates": {
+    "lat": 39.966,
+    "lng": 3.885
+  },
+  "area": "Westen (Ciutadella)",
+  "practicalInfo": {
+    "acceso": "Im Umland von Ciutadella, rund 7 km von der Stadt, in Richtung der Buchten des Südens.",
+    "horario": "Saison von Juni bis Oktober; bestätigen Sie die Termine auf der offiziellen Website.",
+    "servicios": "Nur für Erwachsene, Außenpool, Zimmer mit Terrasse oder Garten (einige mit privatem Pool), Restaurant mit menorquinischer Küche."
+  },
+  "website": "https://annuahotels.com/es/hoteles-con-encanto-menorca/hotel-morvedra-nou-menorca",
+  "images": [
+    "/uploads/cami-de-cavalls.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "agroturismo",
+    "lujo",
+    "ciutadella"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Morvedra Nou, Ciutadella: Landhotel nur für Erwachsene auf dem Weg zu den Buchten des Südens, mit Pool und menorquinischer Küche."
+  },
+  "imageAlt": "Bucht mit türkisfarbenem Wasser zwischen Klippen und Pinien am Camí de Cavalls.",
+  "imageCredit": "Pelayo Arbués / Unsplash"
+}

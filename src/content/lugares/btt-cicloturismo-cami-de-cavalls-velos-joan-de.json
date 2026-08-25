@@ -1,0 +1,46 @@
+{
+  "name": "Radtouren und Mountainbike auf dem Camí de Cavalls (Verleih Velos Joan)",
+  "lang": "de",
+  "translationKey": "btt-cicloturismo-cami-de-cavalls-velos-joan",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Die Küste in die Pedale tretend entdecken: Der Camí de Cavalls lässt sich abschnittsweise mit dem Mountainbike befahren, und die Insel ist wie gemacht fürs Rad. Velos Joan, Werkstatt und renommierter Verleih in Ciutadella, bietet Mountainbikes, Gravelbikes und E-Bikes, mit Lieferung an Hotels auf der ganzen Insel.",
+  "coordinates": {
+    "lat": 40.0014,
+    "lng": 3.8416
+  },
+  "area": "Ciutadella",
+  "images": [
+    "/uploads/lg-btt-cicloturismo-cami-de-cavalls-velos-joan.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "parejas",
+      "familias"
+    ],
+    "highlights": [
+      "ein hochwertiges Mountainbike, Gravelbike oder E-Bike mieten (Lieferung ans Hotel möglich)",
+      "die befahrbaren Abschnitte des Camí de Cavalls fahren (MTB-Varianten Basic, Standard oder Plus)",
+      "das Niveau nach Erfahrung wählen; die härtesten Abschnitte nur für versierte Radfahrer"
+    ],
+    "durationMin": 240,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://velosjoan.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Ein Feldweg auf Menorca zwischen Trockensteinmauern",
+  "imageCredit": "Vriullop / Wikimedia Commons (CC BY-SA 3.0)"
+}

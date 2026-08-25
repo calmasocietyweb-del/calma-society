@@ -1,0 +1,46 @@
+{
+  "name": "Spa Santa Ponsa (Fontenille)",
+  "lang": "de",
+  "translationKey": "spa-santa-ponsa-fontenille",
+  "type": "spa",
+  "edition": "menorca",
+  "description": "Das Spa des Landguts Santa Ponsa ist in die Zisterne eines alten Palasts aus dem 18. Jahrhundert eingezogen, umgeben von denkmalgeschützten Gärten. Hallenbad, Sauna und Hammam, mit Kosmetik von Susanne Kaufmann und Yogastunden: Wellness der gehobenen Klasse, mit Spa-Tag für Tagesgäste.",
+  "coordinates": {
+    "lat": 39.902,
+    "lng": 4.093
+  },
+  "area": "Alaior",
+  "images": [
+    "/uploads/lg-spa-santa-ponsa-fontenille.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza"
+    ],
+    "highlights": [
+      "Spa in der alten Zisterne aus dem 18. Jahrhundert: Hallenbad mit Massagedüsen, Sauna und Hammam",
+      "Anwendungen mit Naturkosmetik von Susanne Kaufmann",
+      "Yogastunden und Spa-Tageskarte auch für externe Gäste"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.santa-ponsa.fontenille-collection.com/en/spa-minorca-yoga-retreat/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Stoppelfeld und Macchia im Umland von Alaior, mit Vieh im Schatten",
+  "imageCredit": "Discasto / Wikimedia Commons (CC BY-SA 4.0)"
+}

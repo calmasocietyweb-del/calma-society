@@ -1,0 +1,33 @@
+{
+  "name": "Bini Aumaia",
+  "lang": "de",
+  "translationKey": "bini-aumaia",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Eine Finca von 98 Hektar, keinen Kilometer vom Ortskern von Es Mercadal entfernt, an einem Hang gelegen, mit einem restaurierten menorquinischen Haus auf nur einer Ebene. Der Hof wird aktiv bewirtschaftet: Biogarten, freilaufende Hühner und Kühe — und die Gäste dürfen bei den täglichen Aufgaben mit anfassen, angefangen beim Einsammeln der Eier.",
+  "coordinates": {
+    "lat": 39.994542,
+    "lng": 4.088625
+  },
+  "area": "Zentrum (Es Mercadal)",
+  "practicalInfo": {
+    "acceso": "Finca Bini Aumaia, 07740 Es Mercadal. Etwa 850 Meter vom Ortskern entfernt.",
+    "horario": "Die Saison wird nicht veröffentlicht; prüfen Sie die Termine für 2026 auf der offiziellen Website.",
+    "servicios": "Aktiv bewirtschaftete Finca mit Biogarten, Hühnern und Kühen. Restauriertes menorquinisches Haus auf einer Ebene."
+  },
+  "website": "https://www.biniaumaia.com/",
+  "images": [
+    "/uploads/monte-toro.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "agroturismo",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Bini Aumaia (Es Mercadal): Agrotourismus auf einer aktiven Finca von 98 ha, 850 m vom Dorf, mit Biogarten und Vieh."
+  },
+  "imageAlt": "Die Insel Menorca und das Dorf Es Mercadal, gesehen vom Gipfel des Monte Toro.",
+  "imageCredit": "Ian Kirk / Wikimedia Commons (CC BY 2.0)"
+}

@@ -1,0 +1,45 @@
+{
+  "name": "Torre Vella – Yoga und Massage im Freien (Fontenille)",
+  "lang": "de",
+  "translationKey": "torre-vella-yoga-naturaleza",
+  "type": "spa",
+  "edition": "menorca",
+  "description": "Auf 200 Hektar Natur zwischen Olivenbäumen, Weinreben und Klippen bietet Torre Vella Yoga und Meditation unter Steineichen sowie Massageliegen im Freien mit Blick aufs Meer. Wellness auf dem Landgut, ohne Lärm — das Spa von Santa Ponsa liegt zehn Minuten entfernt.",
+  "coordinates": {
+    "lat": 39.9,
+    "lng": 4.1
+  },
+  "area": "Alaior",
+  "images": [
+    "/uploads/calma-menorca.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "excursion",
+    "idealFor": [
+      "lujo-tranquilo",
+      "naturaleza",
+      "parejas"
+    ],
+    "highlights": [
+      "Täglich Yoga und Meditation unter Steineichen und Olivenbäumen",
+      "Massage im Freien vor den Klippen, mit natürlichen Produkten",
+      "Wellness-Programm: Yogastunde + Körperbehandlung + Aperitif an der Steilküste"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.torre-vella.fontenille-collection.com/en/yoga-wellness-spa-retreat-menorca/",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Ein ruhiger Winkel des menorquinischen Landes im tiefen Nachmittagslicht"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "Son Martorellet (Pferde der Pura Raza Menorquina)",
+  "lang": "de",
+  "translationKey": "son-martorellet-caballos-menorquines",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Ein Gestüt von 14 Hektar, seit 1997 dem Pferd der Pura Raza Menorquina gewidmet — der Seele der Feste der Insel. Zwischen dem Besuch der Ställe und der Pferdeschau „Somni“ entdecken Kinder die menorquinische Kultur auf die lebendigste Art.",
+  "coordinates": {
+    "lat": 39.957,
+    "lng": 3.985
+  },
+  "area": "Ferreries",
+  "images": [
+    "/uploads/lg-son-martorellet-caballos-menorquines.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "cultura",
+      "naturaleza"
+    ],
+    "highlights": [
+      "Hengste und Stuten der Pura Raza Menorquina aus der Nähe auf ihren Weiden sehen",
+      "die Pferdeschau „Somni“ besuchen oder an der Führung durch die Anlagen teilnehmen",
+      "Platz reservieren (Tickets über Eventbrite); geöffnet von Mai bis Oktober"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.sonmartorellet.com/es/inicio/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Ein gerittenes schwarzes Pferd der reinen menorquinischen Rasse beim Jaleo eines Dorffests",
+  "imageCredit": "MANovillo (computer down) from Madrid, España / Wikimedia Commons (CC BY 2.0)"
+}

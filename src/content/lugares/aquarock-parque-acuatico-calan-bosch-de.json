@@ -1,0 +1,46 @@
+{
+  "name": "Aquarock (Wasserpark, Cala'n Bosch)",
+  "lang": "de",
+  "translationKey": "aquarock-parque-acuatico-calan-bosch",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Der große Wasserpark im Westen der Insel, bei Cala'n Bosch: das einzige Wellenbad Menorcas, Rutschen für jedes Alter und ein Planschbereich für die Kleinsten. Der erfrischende Tagesplan mit Kindern schlechthin.",
+  "coordinates": {
+    "lat": 39.929,
+    "lng": 3.818
+  },
+  "area": "Ciutadella",
+  "images": [
+    "/uploads/lg-aquarock-parque-acuatico-calan-bosch.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "vida-nocturna"
+    ],
+    "highlights": [
+      "im einzigen Wellenbad Menorcas baden",
+      "Rutschen für die Großen und ein sicherer Planschbereich für die Kleinen",
+      "ein ganzer Tag mit Restaurant, Liegen und Kartbahn; Online-Tickets sind günstiger"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://aquarock-menorca.com/en/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Der Strand von Cala en Bosc mit Palmen und Sonnenschirmen",
+  "imageCredit": "Ben Salter from Wales / Wikimedia Commons (CC BY 2.0)"
+}

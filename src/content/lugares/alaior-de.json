@@ -1,0 +1,49 @@
+{
+  "name": "Alaior",
+  "lang": "de",
+  "translationKey": "alaior",
+  "type": "pueblo",
+  "description": "Weißes Dorf im Inselinneren, Wiege des Käses Mahón-Menorca g.U. sowie von handwerklichem Eis und Wurstwaren. Gegründet von Jaume II. rund um den Hügel von Ihalor. Mittelalterlicher Ortskern mit der Kirche Santa Eulalia als großem Bezugspunkt. Ein fester Halt für die Gastronomie (Käsereien) und für einen ruhigen Spaziergang, fern vom Trubel der Küste.",
+  "coordinates": {
+    "lat": 39.9356,
+    "lng": 4.1392
+  },
+  "area": "Zentrum (Alaior)",
+  "tags": [
+    "centro",
+    "pueblo",
+    "alaior"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "naturaleza",
+      "familias"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "der weiße Ortskern auf dem Hügel",
+      "Käse und Eis aus Handwerksbetrieben (g.U. Mahón-Menorca)",
+      "die Stätte Torre d'en Galmés ganz in der Nähe"
+    ]
+  },
+  "images": [
+    "/uploads/lg-alaior.webp"
+  ],
+  "imageAlt": "Gepflasterte Gasse in Alaior zwischen weißen Häusern mit grünen Fensterläden",
+  "imageCredit": "Mathewr1999 / Wikimedia Commons (CC BY-SA 4.0)"
+}

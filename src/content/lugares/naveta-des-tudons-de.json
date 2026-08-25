@@ -1,0 +1,55 @@
+{
+  "name": "Naveta des Tudons",
+  "lang": "de",
+  "translationKey": "naveta-tudons",
+  "type": "monumento",
+  "description": "Das am besten erhaltene talayotische Grabmonument Menorcas und ein Wahrzeichen der Insel. Teil von Menorca Talayótica, seit 2023 UNESCO-Welterbe.",
+  "images": [
+    "/uploads/naveta-tudons.webp"
+  ],
+  "imageAlt": "Die Naveta des Tudons, ein prähistorisches Kollektivgrab in Form eines umgedrehten Schiffsrumpfs, bei Ciutadella (Menorca).",
+  "imageCredit": "Menorquino · Wikimedia (CC BY-SA 3.0)",
+  "coordinates": {
+    "lat": 39.9967,
+    "lng": 3.884
+  },
+  "area": "Ciutadella (Westen)",
+  "practicalInfo": {
+    "acceso": "Direkt an der Straße Me-1, mit ausgeschildertem Parkplatz",
+    "horario": "Gelände unter freiem Himmel; Zugangszeiten bitte vorab prüfen",
+    "mejorEpoca": "Das ganze Jahr; besonders schön bei Sonnenuntergang"
+  },
+  "tags": [
+    "talayótico",
+    "patrimonio",
+    "unesco"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "eje-me1",
+    "cluster": "interior-cultura",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "primera-vez",
+      "familias"
+    ],
+    "durationMin": 40,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Parkplatz an der Me-1 (km ~40) plus kurzer 5-Minuten-Weg über festen Erdboden. Kein Schatten: Meiden Sie im Sommer die Mittagszeit.",
+    "seasonalHours": "Vormittags oder zur letzten Stunde des Tages; zu jeder Jahreszeit. Das schönste Licht und weniger Hitze am frühen Morgen und am Abend.",
+    "highlights": [
+      "das am besten erhaltene talayotische Grabmonument der Insel",
+      "kurzer Halt an der Me-1, ideal auf dem Weg zwischen Ciutadella und der Inselmitte",
+      "früh am Morgen oder am Abend kommen: Es gibt keinen Schatten"
+    ]
+  }
+}

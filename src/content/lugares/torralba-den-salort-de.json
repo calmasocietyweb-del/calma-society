@@ -1,0 +1,47 @@
+{
+  "name": "Torralba d'en Salort",
+  "lang": "de",
+  "translationKey": "torralba-den-salort",
+  "type": "monumento",
+  "description": "Talayotische Siedlung (UNESCO) mit der monumentalsten und am besten erhaltenen Taula Menorcas (ein Heiligtum der Eisenzeit), zwei Talayots, einem Hypostylsaal, in den Fels geschlagenen Höhlen und einer Zyklopenmauer. Privat verwaltet, mit geführter Besichtigung.",
+  "coordinates": {
+    "lat": 39.9019,
+    "lng": 4.1389
+  },
+  "area": "Zentrum (Alaior)",
+  "tags": [
+    "centro",
+    "yacimiento",
+    "alaior"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "die monumentalste und am besten erhaltene Taula Menorcas",
+      "die Talayots und den Hypostylsaal der Siedlung besichtigen (UNESCO)",
+      "am selben Tag mit einer Käserei der Inselmitte verbinden"
+    ]
+  },
+  "images": [
+    "/uploads/lg-torralba-den-salort.webp"
+  ],
+  "imageAlt": "Die aufrecht stehende Taula von Torralba d'en Salort, mit der horizontalen Deckplatte auf dem Träger",
+  "imageCredit": "Ben Salter from Wales / Wikimedia Commons (CC BY 2.0)"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Alcaufar Vell",
+  "lang": "de",
+  "translationKey": "alcaufar-vell",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Ein herrschaftliches Landgut aus dem 18. Jahrhundert, am Weg nach Cala Alcaufar zum Landhotel geworden. Ringsum liegen 250 Hektar innerhalb des Biosphärenreservats, mit jahrhundertealten Bäumen; im Haus ein Restaurant, das auch Gästen offensteht, die nicht hier übernachten — mit menorquinischem Produkt: Languste, Gemüse vom Feld und Backwerk der Insel.",
+  "coordinates": {
+    "lat": 39.834168,
+    "lng": 4.275817
+  },
+  "area": "Südosten (Sant Lluís)",
+  "practicalInfo": {
+    "acceso": "Carretera de Cala Alcaufar, km 8, 07710 Sant Lluís.",
+    "horario": "Die Saison wird nicht veröffentlicht; prüfen Sie Termine und Zeiten für 2026 auf der offiziellen Website.",
+    "servicios": "Restaurant auch für externe Gäste geöffnet. Landgut mit 250 Hektar innerhalb des Biosphärenreservats."
+  },
+  "website": "http://alcaufarvell.com/",
+  "images": [
+    "/uploads/binibeca.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "hotel-rural",
+    "sant-lluis"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Alcaufar Vell (Sant Lluís): Landhotel auf einem herrschaftlichen Gut aus dem 18. Jh. mit 250 ha und öffentlich zugänglichem Restaurant."
+  },
+  "imageAlt": "Weiß gekalkte Häuser und verwinkelte Gassen von Binibeca Vell im Südosten Menorcas.",
+  "imageCredit": "Adobe Stock"
+}

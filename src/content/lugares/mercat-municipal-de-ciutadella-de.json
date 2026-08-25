@@ -1,0 +1,53 @@
+{
+  "name": "Mercat Municipal de Ciutadella",
+  "lang": "de",
+  "translationKey": "mercat-municipal-de-ciutadella",
+  "type": "comercio",
+  "description": "Der Fisch- und Meeresfrüchtemarkt von Ciutadella, mit sonnengereiftem Gemüse und Obst lokaler Bauern. Der lebendige Markt der Stadt im Westen der Insel — ein Halt, um frische Produkte zu kaufen und das lokale Leben aufzusaugen.",
+  "coordinates": {
+    "lat": 40,
+    "lng": 3.84
+  },
+  "area": "Westen (Ciutadella)",
+  "tags": [
+    "oeste",
+    "gastronomia",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "cena",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 60,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "ciutadella-ciudad",
+      "oeste"
+    ],
+    "highlights": [
+      "Meeresfrüchte am Fischstand kaufen und sie an den Theken unter den Arkaden zubereiten lassen",
+      "früh am Morgen unter den Bögen frühstücken und Tapas essen",
+      "die Eisenarchitektur des 19. Jahrhunderts, einzigartig auf Menorca (Plaça de la Llibertat)"
+    ]
+  },
+  "images": [
+    "/uploads/lg-mercat-municipal-de-ciutadella.webp"
+  ],
+  "imageAlt": "Die Arkaden des Mercat Municipal de Ciutadella, mit Menschen im Schatten",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)"
+}

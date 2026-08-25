@@ -1,0 +1,53 @@
+{
+  "name": "Destillerie Gin Xoriguer",
+  "lang": "de",
+  "translationKey": "destileria-gin-xoriguer",
+  "type": "productor",
+  "description": "Historische Destillerie am Hafen von Mahón, die den Gin Menorcas mit über 250 Jahre alten Kupferbrennblasen herstellt — befeuert mit lokalem Holz, aus Weinalkohol, Wacholder und Brunnenwasser aus Mahón. Die Führung endet mit einer Verkostung von Gins, handwerklichen Likören und der „Pomada“ (Gin mit Limonade, das Getränk der Patronatsfeste). Ein unverzichtbarer gastronomischer Halt, sehr gut gelegen.",
+  "coordinates": {
+    "lat": 39.89,
+    "lng": 4.262
+  },
+  "area": "Osten (Maó)",
+  "tags": [
+    "este",
+    "experiencia",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 60,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "mao-puerto",
+      "este"
+    ],
+    "highlights": [
+      "der Laden am Hafen von Maó",
+      "die Verkostung des menorquinischen Gins",
+      "die Pomada probieren (Gin mit Limonade)"
+    ]
+  },
+  "images": [
+    "/uploads/lg-destileria-gin-xoriguer.webp"
+  ],
+  "imageAlt": "Eine Flasche Gin Xoriguer aus Maó neben aufgeschnittenen Zitronen",
+  "imageCredit": "MinorKan / Wikimedia Commons (CC BY-SA 3.0)"
+}

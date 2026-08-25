@@ -1,0 +1,28 @@
+{
+  "name": "BB Cocktail Bar",
+  "lang": "de",
+  "translationKey": "bb-cocktail-bar",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Mediterrane Cocktailbar mit Terrasse und Meerblick in Binibèquer Vell, mit einem zweiten Haus in Maó.",
+  "coordinates": {
+    "lat": 39.8231051,
+    "lng": 4.2301402
+  },
+  "area": "Südosten (Sant Lluís)",
+  "practicalInfo": {
+    "acceso": "Ungefähre Lage der Umgebung; den genauen Standort bestätigen Sie über die Website oder Instagram.",
+    "horario": "Saisonal; die Zeiten ändern sich mit jeder Saison — prüfen Sie die Website oder Instagram."
+  },
+  "website": "https://www.bbcocktailbar.com/",
+  "images": [
+    "/uploads/atardecer-menorca.webp"
+  ],
+  "tags": [
+    "coctelería",
+    "binibèquer",
+    "sant lluís"
+  ],
+  "status": "published",
+  "imageAlt": "Ein Sonnenuntergang über dem Meer an der Küste Menorcas"
+}

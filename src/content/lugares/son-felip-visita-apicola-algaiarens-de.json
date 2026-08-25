@@ -1,0 +1,47 @@
+{
+  "name": "Son Felip — Imkereibesuch in Algaiarens",
+  "lang": "de",
+  "translationKey": "son-felip-visita-apicola-algaiarens",
+  "type": "productor",
+  "edition": "menorca",
+  "description": "Imkerei-Erlebnis auf einer Finca mit regenerativer Landwirtschaft an der Nordküste, zwischen Algaiarens und Cala del Pilar. Ihr Sulla-Honig von Algaiarens gewann die Platin-Medaille der International Honey Awards in London — unter den 50 besten der Welt.",
+  "coordinates": {
+    "lat": 40.02,
+    "lng": 3.9
+  },
+  "area": "Ciutadella (Camí de Cala Pilar, Fincas Son Felip und Algaiarens, Nordküste)",
+  "images": [
+    "/uploads/lg-son-felip-visita-apicola-algaiarens.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "naturaleza",
+      "familias",
+      "lujo-tranquilo",
+      "gastronomia"
+    ],
+    "highlights": [
+      "den Imkeranzug anlegen und zwischen den Bienenstöcken gehen",
+      "die Manufaktur besichtigen und prämierte Honige verkosten, kombiniert mit Produkten der Finca",
+      "Platz online reservieren (jeden Monat neue Termine); bequemes Schuhwerk und eine Kappe mitbringen"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://sonfelip.com/visita_apicultura_algaiarens/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Felder und Dünen von Algaiarens, an der Nordküste von Ciutadella",
+  "imageCredit": "Marcelsala007 / Wikimedia Commons (CC BY-SA 3.0)"
+}

@@ -1,0 +1,67 @@
+{
+  "name": "Isabella Beach Club",
+  "lang": "de",
+  "translationKey": "isabella-beach-club",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Beachclub an den Platges de Fornells, an der Nordküste: Chill-out-Bereich, Cocktails und Abendessen mit einem der schönsten Sonnenuntergänge des Nordens.",
+  "coordinates": {
+    "lat": 40.0503428,
+    "lng": 4.1083587
+  },
+  "area": "Norden (Es Mercadal)",
+  "practicalInfo": {
+    "horario": "Saisonal; die Zeiten ändern sich mit jeder Saison — prüfen Sie die Website oder Instagram."
+  },
+  "website": "https://www.isabellamenorca.com/en/",
+  "images": [
+    "/uploads/lg-isabella-beach-club.webp"
+  ],
+  "tags": [
+    "beach club",
+    "atardecer",
+    "fornells",
+    "norte"
+  ],
+  "status": "published",
+  "editorial": {
+    "lead": "Die Sonnenuntergänge des Südens werden viel fotografiert, doch der Norden bewahrt die wilderen. Isabella Beach Club sitzt auf einem Felsvorsprung direkt am Wasser der Platges de Fornells, und dort — zwischen Sushi, Grill und einem Glas — versinkt die Sonne im Meer des Nordens.",
+    "sections": [
+      {
+        "heading": "Der Sonnenuntergang des Nordens",
+        "body": [
+          "Die Nordküste Menorcas ist die raueste: Wind, Fels und ein Meer, das nicht immer ruhig ist. Genau das macht sich Isabella zunutze. Der Club thront auf einem Felsvorsprung dicht über dem Wasser, an den Platges de Fornells, und hat sich mit seinen Sonnenuntergängen einen Namen gemacht — wilder und stiller als die des Südens.",
+          "Ein Ort, an dem man mit Zeit ankommt, etwas bestellt und den Himmel seine Arbeit machen lässt."
+        ]
+      },
+      {
+        "heading": "Sushi, Grill und Cocktails",
+        "body": [
+          "Die Küche blickt zugleich nach Osten und aufs Mittelmeer: asiatisch-spanische Fusion, mit Sushi und Grill als Spezialitäten, lokalen Produkten und einer guten Cocktailkarte. An manchen Abenden legt ein DJ auf, und die Mischung — gute Küche, ein Glas und leise Musik am Meer — ist sein Markenzeichen.",
+          "Das Abendessen läuft über Reservierung; planen Sie also voraus: Im Sommer ist das kein Ort für spontane Entscheidungen in letzter Minute."
+        ]
+      },
+      {
+        "heading": "Mit Ruhe erleben",
+        "body": [
+          "Reservieren Sie das Abendessen rechtzeitig über die Website, wählen Sie einen Tisch mit Blick nach Westen und lassen Sie den Abend vom Sonnenuntergang bis zum letzten Glas laufen. Einer jener Pläne, die die Fahrt hinauf in den Norden rechtfertigen."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Paare",
+      "Sonnenuntergang",
+      "Abendessen mit Drink"
+    ],
+    "goodToKnow": [
+      "Auf einem Felsvorsprung direkt am Wasser der Platges de Fornells (Nordküste).",
+      "Asiatisch-mediterrane Fusionsküche: Sushi, Grill, lokale Produkte und Cocktails.",
+      "Abendessen nur mit Reservierung (eigenes Online-System).",
+      "An manchen Abenden Musik mit DJ; Programm und Zeiten sind saisonal — prüfen Sie die Website."
+    ],
+    "transfer": true,
+    "transferText": "Die Rückfahrt führt nachts über schmale, wenig beleuchtete Landstraßen des Nordens mit vielen Kurven — und nach dem letzten Glas ist Selbstfahren das Letzte, wonach einem der Sinn steht. Wir bringen Sie hin und holen Sie mit privatem Chauffeur wieder ab."
+  },
+  "imageAlt": "Die Küste von Cala Tirant mit weißen Häusern auf der Anhöhe",
+  "imageCredit": "carlos venegas gavilán / Wikimedia Commons (CC BY-SA 4.0)"
+}

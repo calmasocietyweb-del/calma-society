@@ -1,0 +1,33 @@
+{
+  "name": "Llucmaçanes Gran",
+  "lang": "de",
+  "translationKey": "llucmacanes-gran",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Agrotourismus an der Plaça des Pla de Sant Gaietà, dem Herzen von Llucmaçanes — dem kleinsten Dorf Menorcas und einem der wenigen Orte, an denen man wirklich in einem ländlichen Ortskern wohnt. Geführt von den Eigentümern selbst; untergebracht wird in Häusern, Apartments und Zimmern.",
+  "coordinates": {
+    "lat": 39.86841,
+    "lng": 4.241323
+  },
+  "area": "Osten (Maó)",
+  "practicalInfo": {
+    "acceso": "Plaça es Pla de Sant Gaietà 10, Llucmaçanes, 07712 Maó.",
+    "horario": "Die Saison wird nicht veröffentlicht; prüfen Sie die Termine für 2026 auf der offiziellen Website.",
+    "servicios": "Häuser, Apartments und Zimmer. Von den Eigentümern geführt."
+  },
+  "website": "https://www.llucmagran.com/",
+  "images": [
+    "/uploads/casa-piedra.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "agroturismo",
+    "mao"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Llucmaçanes Gran (Maó): Agrotourismus am Dorfplatz von Llucmaçanes, mit Häusern, Apartments und Zimmern."
+  },
+  "imageAlt": "Innenraum eines mediterranen Steinhauses mit Holzbalken und Treppe.",
+  "imageCredit": "Adobe Stock"
+}

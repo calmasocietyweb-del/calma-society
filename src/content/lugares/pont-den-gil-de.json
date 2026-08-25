@@ -1,0 +1,47 @@
+{
+  "name": "Pont d'en Gil",
+  "lang": "de",
+  "translationKey": "pont-den-gil",
+  "type": "monumento",
+  "description": "Gewaltiger natürlicher Felsbogen über dem Meer an der Westküste, bei Ciutadella. Er rahmt einen der eindrucksvollsten Sonnenuntergänge der Insel, mit kraftvollem Gegenlicht, wenn die Sonne sich mit dem Bogen ausrichtet. Mit dem Boot lässt er sich sogar unterqueren. Ein Sonnenuntergangspunkt ersten Ranges.",
+  "coordinates": {
+    "lat": 40,
+    "lng": 3.8
+  },
+  "area": "Westen (Ciutadella)",
+  "tags": [
+    "oeste",
+    "mirador",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "mirador",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "der gewaltige natürliche Felsbogen, der sich gegen das Meer abzeichnet",
+      "einer der eindrucksvollsten Sonnenuntergänge nahe Ciutadella",
+      "zu Fuß oder mit dem Rad über den Camí de Cavalls erreichbar (am schönsten vom Meer aus)"
+    ]
+  },
+  "images": [
+    "/uploads/lg-pont-den-gil.webp"
+  ],
+  "imageAlt": "Die Felsplattform an der Westküste von Ciutadella, an der das offene Meer brandet",
+  "imageCredit": "LucT / Wikimedia Commons (CC BY-SA 3.0)"
+}

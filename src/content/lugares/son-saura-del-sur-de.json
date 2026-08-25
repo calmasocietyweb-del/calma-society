@@ -1,0 +1,51 @@
+{
+  "name": "Son Saura del Sur",
+  "lang": "de",
+  "translationKey": "son-saura-del-sur",
+  "type": "cala",
+  "description": "Zwei weite Halbkreise aus feinem Sand (Bellavista und des Banyuls), getrennt durch eine Landspitze, mit Pinienwald und flachem Wasser. Mehr Platz als in den Nachbarbuchten, ideal für Familien; im Sommer liegen viele Boote vor Anker.",
+  "coordinates": {
+    "lat": 39.918,
+    "lng": 3.895
+  },
+  "area": "Südwesten (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "playa",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "zwei weite Sandstrände (Bellavista und des Banyuls), getrennt durch eine Landspitze",
+      "mehr Platz und flacheres Wasser als in den kleinen Buchten, mit Pinienwald dahinter",
+      "Zugang zu Fuß vom Parkplatz: Picknick, Wasser und Schatten mitnehmen (keine Einrichtungen)"
+    ]
+  },
+  "images": [
+    "/uploads/lg-son-saura-del-sur.webp"
+  ],
+  "imageAlt": "Son Saura del Sur in der Abenddämmerung, mit ruhigem Ufer und Pinien im Hintergrund",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)",
+  "practicalInfo": {
+    "aparcamiento": "Kontrollierte Kapazität (Saison 2026): Der Parkplatz schließt, sobald er voll ist — im Juli und August meist gegen 9:00 Uhr. Unter den Buchten südlich von Ciutadella ist er einer der nachsichtigsten; an manchen Tagen der Nebensaison füllt er sich gar nicht erst. In der Umgebung nach einem Platz zu suchen lohnt nicht: Die Wege sind schmal, und Parken ist dort nicht erlaubt. Alternative ohne Auto: Bus ab Ciutadella von Montag bis Samstag um 11:15, 13:15 und 18:15 Uhr, Rückfahrt jeweils eine halbe Stunde später.",
+    "mejorEpoca": "Der Parkplatz schließt später als an Macarella und Turqueta und verzeiht damit eine gute Stunde: in der Hochsaison bis gegen 9:00 Uhr. Im Juli und August kommen Sie am besten zwischen 7:00 und 7:30 Uhr an. Im Mai, Juni und September bleibt deutlich mehr Spielraum: Im Mai füllen sich die Parkplätze erst gegen 10:00 oder 10:30 Uhr. Die Zufahrtskontrolle läuft von 7:30 bis 21:00 Uhr und gilt bis zum 15. Oktober."
+  }
+}

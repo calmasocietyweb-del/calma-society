@@ -1,0 +1,46 @@
+{
+  "name": "Mel i Reines — Imkerei-Erlebnis (Finca Lluriach)",
+  "lang": "de",
+  "translationKey": "mel-i-reines-experiencia-apicola",
+  "type": "productor",
+  "edition": "menorca",
+  "description": "Das Imkereiprojekt von Ana Marquès und Raúl Ameller züchtet einheimische Bienenköniginnen und öffnet seine Stöcke für Besucher. Das Erlebnis beginnt in der alten Küche der historischen Finca Lluriach in Es Mercadal, bevor es hinaus aufs Land geht.",
+  "coordinates": {
+    "lat": 39.99,
+    "lng": 4.09
+  },
+  "area": "Es Mercadal (Finca Lluriach, Camí de Tramuntana, Richtung Nordküste)",
+  "images": [
+    "/uploads/miel-menorca.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "naturaleza",
+      "familias",
+      "cultura",
+      "gastronomia"
+    ],
+    "highlights": [
+      "das Leben des Bienenstocks in der Küche der Finca Lluriach verstehen",
+      "den Imkeranzug anlegen und die Arbeit der Bienen im Feld beobachten",
+      "frisch geschleuderten Honig verkosten; kleine Gruppen (max. 8 Personen)"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.menorca.info/balears/economico/2025/09/19/2472611/abejas-experiencias-nueva-ruta-miel.html",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Menorquinischer Honig in einem Glas"
+}

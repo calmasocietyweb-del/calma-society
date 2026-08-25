@@ -1,0 +1,48 @@
+{
+  "name": "Hafenrundfahrt in Maó im Katamaran mit Unterwassersicht (Yellow Catamarans)",
+  "lang": "de",
+  "translationKey": "yellow-catamarans-puerto-mao",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Einen der größten Naturhäfen des Mittelmeers in einem Katamaran mit Unterwassersicht erkunden, während an Bord die Geschichte von Maó erzählt wird. Eine geruhsame Stunde zwischen der Illa del Rei, dem Marinestützpunkt und der Festung La Mola.",
+  "coordinates": {
+    "lat": 39.891,
+    "lng": 4.268
+  },
+  "area": "Maó",
+  "images": [
+    "/uploads/lg-yellow-catamarans-puerto-mao.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "primera-vez",
+      "cultura",
+      "nautica"
+    ],
+    "highlights": [
+      "komplette Runde durch den Hafen von Maó, vorbei an Illa del Rei, Illa Plana und La Mola",
+      "Räume mit Fenstern unter der Wasserlinie, um den Meeresgrund zu sehen",
+      "historische Erläuterungen an Bord; ideal mit Kindern, ohne Anstrengung (ca. 60–70 Min.)"
+    ],
+    "durationMin": 70,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.yellowcatamarans.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Die Estació Marítima im Hafen von Maó und die Palmenpromenade",
+  "imageCredit": "Santiago Lap / Wikimedia Commons (CC BY-SA 3.0)"
+}
