@@ -1,0 +1,31 @@
+---
+// Détail d'événement en français : /fr/agenda/[slug] (KAN-102).
+// Esta ruta desbloquea los eventos franceses: el índice /fr/agenda existía,
+// pero un evento FR no tenía dónde aterrizar (por eso el francés tenía CERO
+// eventos). Ver docs/superpowers/specs/2026-08-24-idiomas-europa-completo-design.md.
+import { getCollection } from "astro:content";
+import EventLayout from "../../../layouts/EventLayout.astro";
+import { eventSlugFor } from "../../../lib/content";
+import { eventUrl, homePath } from "../../../i18n/utils";
+
+export async function getStaticPaths() {
+  const events = await getCollection(
+    "eventos",
+    (e) => e.data.lang === "fr" && e.data.status === "published",
+  );
+  return events.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const esSlug = await eventSlugFor(entry.data.translationKey, "es");
+const enSlug = await eventSlugFor(entry.data.translationKey, "en");
+const deSlug = await eventSlugFor(entry.data.translationKey, "de");
+const alternates = {
+  fr: eventUrl("fr", entry.id),
+  es: esSlug ? eventUrl("es", esSlug) : homePath("es"),
+  en: enSlug ? eventUrl("en", enSlug) : homePath("en"),
+  ...(deSlug ? { de: eventUrl("de", deSlug) } : {}),
+};
+---
+
+<EventLayout entry={entry} alternates={alternates} />

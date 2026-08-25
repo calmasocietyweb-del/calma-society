@@ -1,0 +1,83 @@
+---
+// Política de privacidade (PT) — RGPD. Base revisable.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { SITE } from "../../config/site";
+
+const c = SITE.company;
+const cif = c.cif || "[NIF por indicar]";
+const address = c.address || "[Morada por indicar]";
+const alternates = {
+  es: "/privacidad",
+  en: "/en/privacy",
+  fr: "/fr/confidentialite",
+  de: "/de/datenschutz",
+  it: "/it/privacy",
+  pt: "/pt/privacidade",
+};
+---
+
+<BaseLayout title="Política de privacidade" description="Como a Calma Society trata os seus dados pessoais." locale="pt" alternates={alternates}>
+  <article class="mx-auto max-w-prosa px-5 pb-8 pt-12 sm:px-8 sm:pt-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Informação legal</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Política de privacidade</h1>
+    <p class="mt-2 text-sm text-piedra-suave">Última atualização: junho de 2026</p>
+
+    <div class="article-body mt-8">
+      <h2>1. Responsável pelo tratamento</h2>
+      <ul>
+        <li><strong>Responsável:</strong> {c.legalName} (CIF {cif})</li>
+        <li><strong>Morada:</strong> {address}</li>
+        <li><strong>E-mail:</strong> {c.email} · <strong>Telefone:</strong> {c.phone}</li>
+      </ul>
+
+      <h2>2. Que dados tratamos e para quê</h2>
+      <ul>
+        <li><strong>Subscrição da newsletter:</strong> o seu e-mail, para lhe enviar os nossos conteúdos. Base jurídica: o seu consentimento.</li>
+        <li><strong>Formulário de contacto:</strong> o seu nome, o seu e-mail e a sua mensagem, para responder ao seu pedido. Base jurídica: o seu consentimento.</li>
+        <li><strong>Dados de utilização:</strong> dados técnicos e de utilização, agregados e anónimos, para operar e melhorar o site. Base jurídica: interesse legítimo.</li>
+      </ul>
+
+      <h2>3. Prazo de conservação</h2>
+      <p>Conservamos os seus dados enquanto mantiver a subscrição ou até pedir a sua eliminação, e durante os prazos exigidos por lei.</p>
+
+      <h2>4. Destinatários e subcontratantes</h2>
+      <p>Não vendemos os seus dados. Trabalhamos com prestadores que atuam como subcontratantes:</p>
+      <ul>
+        <li><strong>Formspree</strong> (tratamento dos envios do formulário de contacto).</li>
+        <li><strong>MailerLite</strong> (gestão da newsletter, quando estiver ativa).</li>
+        <li><strong>Cloudflare</strong> (alojamento e distribuição dos conteúdos).</li>
+      </ul>
+      <p>
+        Alguns prestadores podem tratar dados fora do Espaço Económico Europeu; nesse caso,
+        aplicam-se as garantias adequadas previstas no RGPD (por exemplo, cláusulas
+        contratuais-tipo).
+      </p>
+
+      <h2>5. Os seus direitos</h2>
+      <p>
+        Pode exercer os direitos de acesso, retificação, apagamento, oposição, limitação e
+        portabilidade escrevendo para <strong>{c.email}</strong>. Pode retirar o seu
+        consentimento em qualquer momento (por exemplo, através da ligação de anulação em
+        cada newsletter) e apresentar reclamação junto da autoridade espanhola de proteção
+        de dados (<a href="https://www.aepd.es" rel="noopener" target="_blank">aepd.es</a>).
+      </p>
+
+      <h2>6. Segurança</h2>
+      <p>Aplicamos medidas técnicas e organizativas adequadas, e o site é sempre servido através de uma ligação cifrada (HTTPS).</p>
+
+      <h2>7. Menores</h2>
+      <p>
+        Este site não se dirige a menores de 14 anos. Não recolhemos conscientemente dados
+        de menores sem o consentimento do pai, da mãe ou do representante legal.
+      </p>
+
+      <h2>8. Alterações a esta política</h2>
+      <p>
+        Podemos atualizar esta política para refletir alterações legais ou dos serviços. A
+        data da última atualização figura no topo da página.
+      </p>
+
+      <p>Consulte também o <a href="/pt/aviso-legal">aviso legal</a> e a <a href="/pt/cookies">política de cookies</a>.</p>
+    </div>
+  </article>
+</BaseLayout>

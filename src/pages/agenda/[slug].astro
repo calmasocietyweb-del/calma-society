@@ -16,10 +16,16 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const enSlug = await eventSlugFor(entry.data.translationKey, "en");
 const deSlug = await eventSlugFor(entry.data.translationKey, "de");
+const itSlug = await eventSlugFor(entry.data.translationKey, "it");
+const frSlug = await eventSlugFor(entry.data.translationKey, "fr");
+const ptSlug = await eventSlugFor(entry.data.translationKey, "pt");
 const alternates = {
   es: eventUrl("es", entry.id),
   en: enSlug ? eventUrl("en", enSlug) : homePath("en"),
   ...(deSlug ? { de: eventUrl("de", deSlug) } : {}),
+  ...(itSlug ? { it: eventUrl("it", itSlug) } : {}),
+  ...(frSlug ? { fr: eventUrl("fr", frSlug) } : {}),
+  ...(ptSlug ? { pt: eventUrl("pt", ptSlug) } : {}),
 };
 ---
 

@@ -1,0 +1,83 @@
+---
+// Informativa sulla privacy (IT) — RGPD. Base revisable.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { SITE } from "../../config/site";
+
+const c = SITE.company;
+const cif = c.cif || "[codice fiscale in arrivo]";
+const address = c.address || "[indirizzo in arrivo]";
+const alternates = {
+  es: "/privacidad",
+  en: "/en/privacy",
+  fr: "/fr/confidentialite",
+  de: "/de/datenschutz",
+  it: "/it/privacy",
+  pt: "/pt/privacidade",
+};
+---
+
+<BaseLayout title="Informativa sulla privacy" description="Come Calma Society tratta i suoi dati personali." locale="it" alternates={alternates}>
+  <article class="mx-auto max-w-prosa px-5 pb-8 pt-12 sm:px-8 sm:pt-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Legale</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Informativa sulla privacy</h1>
+    <p class="mt-2 text-sm text-piedra-suave">Ultimo aggiornamento: giugno 2026</p>
+
+    <div class="article-body mt-8">
+      <h2>1. Titolare del trattamento</h2>
+      <ul>
+        <li><strong>Titolare:</strong> {c.legalName} (CIF {cif})</li>
+        <li><strong>Indirizzo:</strong> {address}</li>
+        <li><strong>E-mail:</strong> {c.email} · <strong>Telefono:</strong> {c.phone}</li>
+      </ul>
+
+      <h2>2. Quali dati trattiamo e perché</h2>
+      <ul>
+        <li><strong>Iscrizione alla newsletter:</strong> il suo indirizzo e-mail, per inviarle i nostri contenuti. Base giuridica: il suo consenso.</li>
+        <li><strong>Modulo di contatto:</strong> il suo nome, il suo indirizzo e-mail e il suo messaggio, per rispondere alla sua richiesta. Base giuridica: il suo consenso.</li>
+        <li><strong>Dati di utilizzo:</strong> dati tecnici e di navigazione, aggregati e anonimi, per far funzionare e migliorare il sito. Base giuridica: legittimo interesse.</li>
+      </ul>
+
+      <h2>3. Conservazione</h2>
+      <p>Conserviamo i suoi dati finché rimane iscritto o finché non ne chiede la cancellazione, oltre ai termini previsti dalla legge.</p>
+
+      <h2>4. Destinatari e responsabili del trattamento</h2>
+      <p>Non vendiamo i suoi dati. Collaboriamo con fornitori che operano come responsabili del trattamento:</p>
+      <ul>
+        <li><strong>Formspree</strong> (gestione degli invii del modulo di contatto).</li>
+        <li><strong>MailerLite</strong> (gestione della newsletter, quando è attiva).</li>
+        <li><strong>Cloudflare</strong> (hosting e distribuzione dei contenuti).</li>
+      </ul>
+      <p>
+        Alcuni fornitori possono trattare dati al di fuori dello Spazio Economico Europeo;
+        in tal caso si applicano le garanzie adeguate previste dal RGPD (per esempio le
+        clausole contrattuali standard).
+      </p>
+
+      <h2>5. I suoi diritti</h2>
+      <p>
+        Può esercitare i suoi diritti di accesso, rettifica, cancellazione, opposizione,
+        limitazione e portabilità scrivendo a <strong>{c.email}</strong>. Può revocare il
+        suo consenso in qualsiasi momento (per esempio con il link di disiscrizione presente
+        in ogni newsletter) e presentare un reclamo all'autorità spagnola per la protezione
+        dei dati (<a href="https://www.aepd.es" rel="noopener" target="_blank">aepd.es</a>).
+      </p>
+
+      <h2>6. Sicurezza</h2>
+      <p>Adottiamo misure tecniche e organizzative adeguate, e il sito viene sempre servito tramite una connessione cifrata (HTTPS).</p>
+
+      <h2>7. Minori</h2>
+      <p>
+        Questo sito non si rivolge ai minori di 14 anni. Non raccogliamo consapevolmente
+        dati di minori senza il consenso di un genitore o tutore legale.
+      </p>
+
+      <h2>8. Modifiche a questa informativa</h2>
+      <p>
+        Possiamo aggiornare questa informativa per riflettere cambiamenti normativi o dei
+        servizi. La data dell'ultimo aggiornamento è indicata in cima alla pagina.
+      </p>
+
+      <p>Veda anche le <a href="/it/note-legali">note legali</a> e l'<a href="/it/cookie">informativa sui cookie</a>.</p>
+    </div>
+  </article>
+</BaseLayout>

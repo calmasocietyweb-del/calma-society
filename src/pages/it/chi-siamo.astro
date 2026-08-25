@@ -1,0 +1,65 @@
+---
+// Chi siamo / criterio editorial (IT). Clave para E-E-A-T y citas de IA.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const alternates = {
+  es: "/quienes-somos",
+  en: "/en/about",
+  fr: "/fr/qui-sommes-nous",
+  de: "/de/ueber-uns",
+  it: "/it/chi-siamo",
+  pt: "/pt/quem-somos",
+};
+---
+
+<BaseLayout
+  title="Chi siamo"
+  description="Calma Society: una rivista indipendente di lusso tranquillo sul Mediterraneo. Il nostro criterio editoriale, la nostra indipendenza e il nostro sguardo."
+  locale="it"
+  alternates={alternates}
+>
+  <article class="mx-auto max-w-prosa px-5 pb-8 pt-12 sm:px-8 sm:pt-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Calma Society</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Chi siamo</h1>
+    <p class="mt-5 text-lg leading-relaxed text-piedra-suave">
+      Calma Society è una rivista indipendente di <strong>lusso tranquillo</strong> dedicata
+      al Mediterraneo. Cominciamo da Minorca: le sue esperienze, la sua gente e la sua
+      bellezza — raccontate con criterio e senza fretta.
+    </p>
+
+    <div class="article-body mt-10">
+      <h2>Che cosa facciamo</h2>
+      <p>
+        Scriviamo degli stessi temi delle altre guide — cale, gastronomia, eventi, dove
+        dormire —, ma <strong>a un altro livello</strong>: con sguardo editoriale, esperienze
+        scelte con cura e un occhio di lusso tranquillo. Non crediamo nel rumore né
+        nell'ostentazione; crediamo nello spazio, nel tempo, nel prodotto onesto e
+        nell'autenticità.
+      </p>
+
+      <h2>I nostri principi editoriali</h2>
+      <ul>
+        <li><strong>Indipendenza.</strong> Consigliamo per convinzione, mai per commissione.</li>
+        <li><strong>Di prima mano.</strong> Scriviamo di ciò che conosciamo e abbiamo vissuto davvero.</li>
+        <li><strong>Qualità prima della quantità.</strong> Una storia eccellente vale più di cinque articoli riempitivi.</li>
+        <li><strong>Dati chiari.</strong> Orari, accessi, date e prezzi, dove sono utili.</li>
+      </ul>
+
+      <h2>Indipendenza e trasparenza</h2>
+      <p>
+        Quando un contenuto è sponsorizzato, <strong>lo etichettiamo sempre</strong> — con
+        chiarezza. La fiducia di chi ci legge è il nostro bene più prezioso, e non è in
+        vendita. I link di affiliazione, dove esistono, non condizionano mai il nostro
+        giudizio.
+      </p>
+
+      <h2>Perché Minorca — e cosa verrà dopo</h2>
+      <p>
+        Minorca — Riserva della Biosfera UNESCO e, dal 2023, Patrimonio dell'Umanità per la
+        sua eredità talaiotica — è l'opposto del turismo di massa: tranquilla, naturale,
+        autentica. È la nostra prima edizione. Con il tempo, Calma Society arriverà ad altre
+        mete del Mediterraneo, con lo stesso spirito.
+      </p>
+    </div>
+  </article>
+</BaseLayout>

@@ -34,11 +34,15 @@ const relatedPlaces = entry.data.relatedPlaces
 const enSlug = await articleSlugFor(entry.data.translationKey, "en");
 const frSlug = await articleSlugFor(entry.data.translationKey, "fr");
 const deSlug = await articleSlugFor(entry.data.translationKey, "de");
+const itSlug = await articleSlugFor(entry.data.translationKey, "it");
+const ptSlug = await articleSlugFor(entry.data.translationKey, "pt");
 const alternates = {
   es: articleUrl("es", entry.id),
   en: enSlug ? articleUrl("en", enSlug) : homePath("en"),
   ...(frSlug ? { fr: articleUrl("fr", frSlug) } : {}),
   ...(deSlug ? { de: articleUrl("de", deSlug) } : {}),
+  ...(itSlug ? { it: articleUrl("it", itSlug) } : {}),
+  ...(ptSlug ? { pt: articleUrl("pt", ptSlug) } : {}),
 };
 ---
 

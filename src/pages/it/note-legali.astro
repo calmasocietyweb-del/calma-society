@@ -1,0 +1,83 @@
+---
+// Note legali (IT). Base revisable; datos de SITE.company.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { SITE } from "../../config/site";
+
+const c = SITE.company;
+const cif = c.cif || "[codice fiscale in arrivo]";
+const address = c.address || "[indirizzo in arrivo]";
+const alternates = {
+  es: "/aviso-legal",
+  en: "/en/legal-notice",
+  fr: "/fr/mentions-legales",
+  de: "/de/impressum",
+  it: "/it/note-legali",
+  pt: "/pt/aviso-legal",
+};
+---
+
+<BaseLayout title="Note legali" description="Note legali di Calma Society." locale="it" alternates={alternates}>
+  <article class="mx-auto max-w-prosa px-5 pb-8 pt-12 sm:px-8 sm:pt-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Legale</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Note legali</h1>
+    <p class="mt-2 text-sm text-piedra-suave">Ultimo aggiornamento: giugno 2026</p>
+
+    <div class="article-body mt-8">
+      <h2>1. Titolare del sito</h2>
+      <p>
+        Questo sito (<strong>{SITE.name}</strong>, raggiungibile all'indirizzo {SITE.url.replace("https://", "")})
+        è pubblicato e gestito da:
+      </p>
+      <ul>
+        <li><strong>Titolare:</strong> {c.legalName}</li>
+        <li><strong>Codice fiscale (CIF):</strong> {cif}</li>
+        <li><strong>Sede:</strong> {address}</li>
+        <li><strong>Responsabile:</strong> {c.responsible}</li>
+        <li><strong>E-mail:</strong> {c.email}</li>
+        <li><strong>Telefono:</strong> {c.phone}</li>
+      </ul>
+
+      <h2>2. Oggetto</h2>
+      <p>
+        {SITE.name} è una pubblicazione editoriale digitale su Minorca e il Mediterraneo.
+        Accedendo al sito e utilizzandolo, accetta queste note.
+      </p>
+
+      <h2>3. Condizioni d'uso</h2>
+      <p>
+        Chi utilizza il sito si impegna a farne un uso corretto dei contenuti e a non
+        impiegarli per fini illeciti né in modi che ledano diritti di terzi o del titolare.
+      </p>
+
+      <h2>4. Proprietà intellettuale</h2>
+      <p>
+        I contenuti (testi, fotografie, grafica, loghi e marchio) appartengono a
+        {c.legalName} o ai loro autori e sono protetti dal diritto d'autore.
+        Ne sono vietate la riproduzione, la distribuzione o la modifica senza
+        autorizzazione espressa.
+      </p>
+
+      <h2>5. Responsabilità</h2>
+      <p>
+        Il titolare non risponde dell'uso improprio del sito né dei danni derivanti dal suo
+        utilizzo. Ci impegniamo perché le informazioni siano corrette e aggiornate, ma non
+        possiamo garantire l'assenza di errori né una disponibilità ininterrotta.
+      </p>
+
+      <h2>6. Link a terzi</h2>
+      <p>
+        Il sito può contenere link a pagine di terzi (compresi link di affiliazione o di
+        partner, chiaramente etichettati). Il titolare non è responsabile dei loro contenuti
+        e delle loro condizioni.
+      </p>
+
+      <h2>7. Legge applicabile</h2>
+      <p>
+        Queste note sono soggette al diritto spagnolo; la competenza spetta ai tribunali
+        indicati dalla normativa applicabile.
+      </p>
+
+      <p>Veda anche la nostra <a href="/it/privacy">informativa sulla privacy</a> e la nostra <a href="/it/cookie">informativa sui cookie</a>.</p>
+    </div>
+  </article>
+</BaseLayout>

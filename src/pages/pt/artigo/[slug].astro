@@ -1,0 +1,48 @@
+---
+// Artículo en portugués: /pt/artigo/[slug]
+import { getCollection, getEntry, render } from "astro:content";
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import { articleSlugFor } from "../../../lib/content";
+import { articleUrl, homePath } from "../../../i18n/utils";
+// Componentes que el cuerpo MDX puede usar (inyectados, como en es/en/fr/de).
+import Figure from "../../../components/Figure.astro";
+import MenorcaBusCTA from "../../../components/MenorcaBusCTA.astro";
+import CruceroCalendar from "../../../components/CruceroCalendar.astro";
+import ToolsCTA from "../../../components/ToolsCTA.astro";
+
+const mdxComponents = { Figure, MenorcaBusCTA, CruceroCalendar, ToolsCTA };
+
+export async function getStaticPaths() {
+  const arts = await getCollection(
+    "articulos",
+    (e) => e.data.lang === "pt" && e.data.status === "published",
+  );
+  return arts.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const author = await getEntry(entry.data.author);
+const relatedPlaces = entry.data.relatedPlaces
+  ? await Promise.all(entry.data.relatedPlaces.map((ref) => getEntry(ref)))
+  : [];
+
+const esSlug = await articleSlugFor(entry.data.translationKey, "es");
+const enSlug = await articleSlugFor(entry.data.translationKey, "en");
+const frSlug = await articleSlugFor(entry.data.translationKey, "fr");
+const deSlug = await articleSlugFor(entry.data.translationKey, "de");
+const itSlug = await articleSlugFor(entry.data.translationKey, "it");
+const alternates = {
+  pt: articleUrl("pt", entry.id),
+  es: esSlug ? articleUrl("es", esSlug) : homePath("es"),
+  en: enSlug ? articleUrl("en", enSlug) : homePath("en"),
+  ...(frSlug ? { fr: articleUrl("fr", frSlug) } : {}),
+  ...(deSlug ? { de: articleUrl("de", deSlug) } : {}),
+  ...(itSlug ? { it: articleUrl("it", itSlug) } : {}),
+};
+---
+
+<ArticleLayout entry={entry} author={author} relatedPlaces={relatedPlaces} alternates={alternates}>
+  <Content components={mdxComponents} />
+</ArticleLayout>

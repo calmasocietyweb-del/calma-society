@@ -1,0 +1,33 @@
+---
+// Portadas de sección en italiano: /it/scoprire, /it/eventi, /it/mangiare-e-bere, …
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SectionView from "../../components/SectionView.astro";
+import { SECTIONS, getSection } from "../../config/sections";
+
+export async function getStaticPaths() {
+  return SECTIONS.map((s) => ({
+    params: { section: s.href.it.replace(/^\/it\//, "") },
+    props: { key: s.key },
+  }));
+}
+
+const { key } = Astro.props;
+const section = getSection(key)!;
+const alternates = {
+  es: section.href.es,
+  en: section.href.en,
+  fr: section.href.fr,
+  de: section.href.de,
+  it: section.href.it,
+  pt: section.href.pt,
+};
+---
+
+<BaseLayout
+  title={section.seoTitle?.it ?? section.label.it}
+  description={section.seoDescription?.it ?? section.intro.it}
+  locale="it"
+  alternates={alternates}
+>
+  <SectionView sectionKey={key} locale="it" />
+</BaseLayout>

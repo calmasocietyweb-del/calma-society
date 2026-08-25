@@ -1,0 +1,33 @@
+---
+// Detalle de evento en italiano: /it/eventi/[slug] (KAN-102).
+// Esta ruta va PRIMERO en cada despliegue de idioma: su ausencia es lo que dejó
+// al francés con cero eventos (el índice existía, pero un evento no tenía dónde
+// aterrizar). Ver docs/superpowers/specs/2026-08-24-idiomas-europa-completo-design.md.
+import { getCollection } from "astro:content";
+import EventLayout from "../../../layouts/EventLayout.astro";
+import { eventSlugFor } from "../../../lib/content";
+import { eventUrl, homePath } from "../../../i18n/utils";
+
+export async function getStaticPaths() {
+  const events = await getCollection(
+    "eventos",
+    (e) => e.data.lang === "it" && e.data.status === "published",
+  );
+  return events.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const esSlug = await eventSlugFor(entry.data.translationKey, "es");
+const enSlug = await eventSlugFor(entry.data.translationKey, "en");
+const deSlug = await eventSlugFor(entry.data.translationKey, "de");
+const ptSlug = await eventSlugFor(entry.data.translationKey, "pt");
+const alternates = {
+  it: eventUrl("it", entry.id),
+  es: esSlug ? eventUrl("es", esSlug) : homePath("es"),
+  en: enSlug ? eventUrl("en", enSlug) : homePath("en"),
+  ...(deSlug ? { de: eventUrl("de", deSlug) } : {}),
+  ...(ptSlug ? { pt: eventUrl("pt", ptSlug) } : {}),
+};
+---
+
+<EventLayout entry={entry} alternates={alternates} />

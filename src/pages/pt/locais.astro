@@ -1,0 +1,16 @@
+---
+// Índice de lugares en portugués: /pt/locais
+import PlacesLayout from "../../layouts/PlacesLayout.astro";
+import { placesIndexPath } from "../../i18n/utils";
+
+const alternates = {
+  es: placesIndexPath("es"),
+  en: placesIndexPath("en"),
+  fr: placesIndexPath("fr"),
+  de: placesIndexPath("de"),
+  it: placesIndexPath("it"),
+  pt: placesIndexPath("pt"),
+};
+---
+
+<PlacesLayout locale="pt" alternates={alternates} />

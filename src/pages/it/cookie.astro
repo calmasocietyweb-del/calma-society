@@ -1,0 +1,54 @@
+---
+// Informativa sui cookie (IT). Base revisable.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { SITE } from "../../config/site";
+
+const c = SITE.company;
+const alternates = {
+  es: "/cookies",
+  en: "/en/cookies",
+  fr: "/fr/cookies",
+  de: "/de/cookies",
+  it: "/it/cookie",
+  pt: "/pt/cookies",
+};
+---
+
+<BaseLayout title="Informativa sui cookie" description="Quali cookie e tecnologie utilizza Calma Society." locale="it" alternates={alternates}>
+  <article class="mx-auto max-w-prosa px-5 pb-8 pt-12 sm:px-8 sm:pt-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Legale</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Informativa sui cookie</h1>
+    <p class="mt-2 text-sm text-piedra-suave">Ultimo aggiornamento: giugno 2026</p>
+
+    <div class="article-body mt-8">
+      <h2>Che cosa sono i cookie?</h2>
+      <p>I cookie sono piccoli file che un sito web salva sul suo dispositivo per ricordare informazioni. Utilizziamo inoltre tecnologie simili (script).</p>
+
+      <h2>Cookie e servizi che utilizziamo</h2>
+      <ul>
+        <li><strong>Strettamente necessari.</strong> Indispensabili per il funzionamento e la sicurezza del sito (per esempio i cookie di sicurezza e prestazioni di <strong>Cloudflare</strong>, il nostro fornitore di hosting). Sono esenti dall'obbligo di consenso.</li>
+        <li><strong>Statistiche senza cookie.</strong> Utilizziamo <strong>Umami</strong> (e, a livello di server, <strong>Cloudflare</strong>) per misurare visite e clic <strong>in forma aggregata e anonima, senza cookie</strong> — senza tracciamento tra siti e senza dati personali identificabili.</li>
+        <li><strong>Newsletter (quando è attiva).</strong> Se attiviamo l'iscrizione, carichiamo uno script di <strong>MailerLite</strong> che può impostare cookie; in tal caso le chiediamo prima il consenso. <em>La newsletter è al momento in pausa e quindi non viene caricata.</em></li>
+      </ul>
+      <p>
+        A oggi <strong>non utilizziamo cookie pubblicitari né tracciamenti invasivi</strong> —
+        non deve quindi accettare nulla per usare il sito. Se in futuro introdurremo
+        pubblicità o altri strumenti basati sui cookie, mostreremo prima un
+        <strong>banner di consenso</strong>, perché possa decidere prima che venga impostato
+        qualsiasi cosa — e li elencheremmo qui nel dettaglio.
+      </p>
+
+      <h2>Gestire i cookie</h2>
+      <p>
+        Può gestire o eliminare i cookie nelle impostazioni del suo browser (Chrome, Safari,
+        Firefox, Edge…). Disattivare determinati cookie può compromettere parti del sito.
+      </p>
+
+      <h2>Maggiori informazioni</h2>
+      <p>
+        Per qualsiasi domanda su questa informativa, scriva a <strong>{c.email}</strong>.
+        Veda anche le <a href="/it/note-legali">note legali</a> e l'<a href="/it/privacy">informativa sulla privacy</a>.
+      </p>
+    </div>
+  </article>
+</BaseLayout>

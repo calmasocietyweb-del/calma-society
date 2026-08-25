@@ -11,8 +11,12 @@
  */
 import { SITE, type Locale } from "../config/site";
 
+// Idiomas con hub publicado (despliegue por mercados; CLAUDE.md §11: los
+// idiomas del componente se declaran con Extract, nunca con ternarios).
+type HubLocale = Extract<Locale, "es" | "en" | "fr">;
+
 interface Props {
-  locale: "es" | "en";
+  locale: HubLocale;
 }
 const { locale } = Astro.props;
 
@@ -35,7 +39,7 @@ type Item = {
   featured?: boolean;
 };
 
-const LINKS: Record<"es" | "en", Item[]> = {
+const LINKS: Record<HubLocale, Item[]> = {
   es: [
     { icon: "planner", href: "/planificador", event: "bio-planificador", label: "Planificador de viaje", text: "Tu itinerario a medida, día a día, según lo que te gusta." },
     { icon: "calm", href: "/donde-el-mar-esta-en-calma", event: "bio-mar-en-calma", label: "Dónde el mar está en calma", text: "Qué calas quedan resguardadas hoy, según el viento." },
@@ -52,9 +56,20 @@ const LINKS: Record<"es" | "en", Item[]> = {
     { icon: "guide", href: "/en/quiet-coves", event: "bio-coves-guide", label: "The quiet coves guide", text: "Join the Society and get it free by email.", featured: true },
     { icon: "magazine", href: "/en/", event: "bio-magazine", label: "The magazine", text: "All of Calma Society: Menorca, unhurried, with a quiet-luxury eye." },
   ],
+  // FR: solo las herramientas que EXISTEN en francés (componer una URL no es
+  // que exista). Sin planificador ni guía de calas: cuando se traduzcan, se
+  // añaden aquí. La tarjeta destacada capta hacia /fr/newsletter sin prometer
+  // la guía (en FR aún no hay guía ni automatización de bienvenida; ver ui.ts).
+  fr: [
+    { icon: "calm", href: "/fr/ou-la-mer-est-calme", event: "bio-mer-calme", label: "Où la mer est calme", text: "Quelles criques restent abritées aujourd'hui, selon le vent." },
+    { icon: "sunset", href: "/fr/couchers-et-cocktails", event: "bio-couchers", label: "Couchers de soleil & cocktails", text: "Les plus beaux couchers de soleil et où boire un verre, avec discernement." },
+    { icon: "agenda", href: "/fr/agenda", event: "bio-agenda-fr", label: "L'agenda de Minorque", text: "Fêtes, concerts et marchés. Ce qui se passe sur l'île, tenu à jour." },
+    { icon: "guide", href: "/fr/newsletter", event: "bio-societe", label: "Rejoignez la Société", text: "Le meilleur de Minorque, seulement quand cela en vaut la peine. Sans bruit.", featured: true },
+    { icon: "magazine", href: "/fr/", event: "bio-revue", label: "La revue", text: "Tout Calma Society : Minorque, sans hâte, dans un regard de luxe tranquille." },
+  ],
 };
 
-const COPY: Record<"es" | "en", { eyebrow: string; heading: string; sub: string; follow: string }> = {
+const COPY: Record<HubLocale, { eyebrow: string; heading: string; sub: string; follow: string }> = {
   es: {
     eyebrow: `${SITE.name} · ${SITE.edition}`,
     heading: "Todo, en un sitio",
@@ -66,6 +81,12 @@ const COPY: Record<"es" | "en", { eyebrow: string; heading: string; sub: string;
     heading: "Everything, in one place",
     sub: "Our tools and guides for a calm Menorca. Choose where to begin.",
     follow: "Follow us on Instagram",
+  },
+  fr: {
+    eyebrow: `${SITE.name} · ${SITE.edition}`,
+    heading: "Tout, au même endroit",
+    sub: "Nos outils et nos guides pour vivre Minorque avec calme. Choisissez par où commencer.",
+    follow: "Suivez-nous sur Instagram",
   },
 };
 
