@@ -1,0 +1,49 @@
+{
+  "name": "Torralbenc",
+  "lang": "de",
+  "translationKey": "torralbenc",
+  "type": "alojamiento",
+  "description": "Ein altes, von Weinbergen umgebenes Landgut, verwandelt in ein Luxus-Agrotourismus-Haus. Mediterranes Restaurant mit lokalen Produkten vom Grill (beraten vom Sternekoch Gorka Txapartegi), seit 2013 in den Führern Michelin und Repsol empfohlen; das Weingut wurde von Wine Spectator ausgezeichnet. Geführter Rundgang durch den Weinberg + Verkostung von drei Weinen mit Aperitif. Die Essenz des stillen Luxus Menorcas: langsame Zeit, Wein, Glut und Sonnenuntergang.",
+  "coordinates": {
+    "lat": 39.91,
+    "lng": 4.16
+  },
+  "area": "Zentraler Süden (Alaior)",
+  "tags": [
+    "sur-centro",
+    "experiencia",
+    "alaior"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "gastronomia",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "lokale Produkte vom Grill, zwischen Weinbergen, zum Sonnenuntergang",
+      "den auf dem Gut selbst ausgebauten Wein verkosten",
+      "rechtzeitig reservieren: begrenzte Plätze und im Sommer sehr gefragt"
+    ]
+  },
+  "images": [
+    "/uploads/lg-torralbenc.webp"
+  ],
+  "imageAlt": "Rote menorquinische Kühe auf einer Weide im Umland von Alaior",
+  "imageCredit": "Alejandro Muñoz Cabrisas / Wikimedia Commons (CC BY-SA 4.0)"
+}

@@ -1,0 +1,62 @@
+---
+// Über uns / Redaktioneller Anspruch (DE). Clave para E-E-A-T y citas de IA.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const alternates = {
+  es: "/quienes-somos",
+  en: "/en/about",
+  fr: "/fr/qui-sommes-nous",
+  de: "/de/ueber-uns",
+};
+---
+
+<BaseLayout
+  title="Über uns"
+  description="Calma Society: ein unabhängiges Magazin des stillen Luxus über das Mittelmeer. Unser redaktioneller Anspruch, unsere Unabhängigkeit und unser Blick auf die Insel."
+  locale="de"
+  alternates={alternates}
+>
+  <article class="mx-auto max-w-prosa px-5 pb-8 pt-12 sm:px-8 sm:pt-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Calma Society</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Über uns</h1>
+    <p class="mt-5 text-lg leading-relaxed text-piedra-suave">
+      Calma Society ist ein unabhängiges Magazin des <strong>stillen Luxus</strong>, dem
+      Mittelmeer gewidmet. Wir beginnen mit Menorca: seinen Erlebnissen, seinen Menschen und
+      seiner Schönheit — erzählt mit Gespür und ohne Eile.
+    </p>
+
+    <div class="article-body mt-10">
+      <h2>Was wir tun</h2>
+      <p>
+        Wir schreiben über dieselben Themen wie andere Reiseführer — Buchten, Gastronomie,
+        Veranstaltungen, Orte zum Übernachten —, aber <strong>gehoben</strong>: mit
+        redaktionellem Blick, sorgfältig gewählten Erlebnissen und einem ruhigen, luxuriösen
+        Auge. Wir glauben weder an Lärm noch an Zurschaustellung; wir glauben an Raum, an
+        Zeit, an ehrliches Produkt und an Echtheit.
+      </p>
+
+      <h2>Unsere redaktionellen Grundsätze</h2>
+      <ul>
+        <li><strong>Unabhängigkeit.</strong> Wir empfehlen aus Überzeugung, nie gegen Provision.</li>
+        <li><strong>Aus erster Hand.</strong> Wir schreiben über das, was wir kennen und selbst erlebt haben.</li>
+        <li><strong>Qualität vor Quantität.</strong> Eine hervorragende Geschichte ist mehr wert als fünf Artikel zum Auffüllen.</li>
+        <li><strong>Klare Angaben.</strong> Öffnungszeiten, Anfahrt, Termine und Preise, wo sie nützlich sind.</li>
+      </ul>
+
+      <h2>Unabhängigkeit und Transparenz</h2>
+      <p>
+        Wenn ein Inhalt gesponsert ist, <strong>kennzeichnen wir ihn immer</strong> — deutlich.
+        Das Vertrauen der Leserinnen und Leser ist unser wichtigstes Gut, und es steht nicht
+        zum Verkauf. Affiliate-Links, wo es sie gibt, beeinflussen unser Urteil nie.
+      </p>
+
+      <h2>Warum Menorca — und wie es weitergeht</h2>
+      <p>
+        Menorca — UNESCO-Biosphärenreservat und seit 2023 Welterbestätte für sein
+        talayotisches Erbe — ist das Gegenteil des Massentourismus: ruhig, natürlich, echt.
+        Es ist unsere erste Ausgabe. Mit der Zeit wird Calma Society weitere Ziele im
+        Mittelmeer erreichen, im selben Geist.
+      </p>
+    </div>
+  </article>
+</BaseLayout>

@@ -14,7 +14,7 @@ import { z } from "astro:schema";
 import { glob } from "astro/loaders";
 
 // Mantener en sync con los locales activos de src/config/site.ts
-const LOCALE = z.enum(["es", "en", "fr"]);
+const LOCALE = z.enum(["es", "en", "fr", "de", "it", "pt"]);
 
 // Ciclo de vida del contenido (ver docs/AUTOMATIZACION-Y-FLUJO-EDITORIAL.md)
 const STATUS = z.enum(["draft", "pending", "published"]).default("draft");

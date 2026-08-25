@@ -37,7 +37,8 @@ const TOOLS: Record<"calm-sea" | "planner", Tool> = {
       es: "/donde-el-mar-esta-en-calma",
       en: "/en/where-the-sea-is-calm",
       fr: "/fr/ou-la-mer-est-calme",
-      de: "/de/wo-das-meer-ruhig-ist",
+      // El mapa del mar en calma aún no existe en DE (ParteCalmaMap no declara
+      // "de" en ToolLocale): sin href, el enlace se omite solo — nunca roto.
     },
     label: {
       es: "¿Dónde está el mar en calma hoy?",

@@ -34,19 +34,21 @@ const pi = data.practicalInfo;
 // temporada, reserva…) que antes no se mostraban: la página quedaba en 2 líneas.
 // Se humanizan los enums y se funden en la misma caja de "Información práctica".
 const pl = data.planner;
-const L = locale as "es" | "en" | "fr";
-const CAR_ACCESS: Record<string, Record<"es" | "en" | "fr", string>> = {
-  "coche-directo": { es: "En coche hasta el lugar", en: "Drive-up by car", fr: "Accès direct en voiture" },
-  "coche-mas-caminata": { es: "Coche + caminata", en: "Car + a walk", fr: "Voiture + marche" },
-  "solo-bus-lanzadera": { es: "Solo bus lanzadera en verano", en: "Summer shuttle bus only", fr: "Navette estivale uniquement" },
-  "sin-coche-ok": { es: "Fácil sin coche", en: "Easy without a car", fr: "Facile sans voiture" },
+// Tablas por Locale COMPLETO: si se da de alta un idioma, el compilador exige
+// su fila aquí (nada de casts que caigan a otro idioma sin avisar — KAN-133).
+const L: Locale = locale;
+const CAR_ACCESS: Record<string, Record<Locale, string>> = {
+  "coche-directo": { es: "En coche hasta el lugar", en: "Drive-up by car", fr: "Accès direct en voiture", de: "Mit dem Auto bis vor Ort", it: "Accesso diretto in auto", pt: "Acesso direto de carro" },
+  "coche-mas-caminata": { es: "Coche + caminata", en: "Car + a walk", fr: "Voiture + marche", de: "Auto + Fußweg", it: "Auto + tratto a piedi", pt: "Carro + caminhada" },
+  "solo-bus-lanzadera": { es: "Solo bus lanzadera en verano", en: "Summer shuttle bus only", fr: "Navette estivale uniquement", de: "Nur Shuttlebus im Sommer", it: "Solo navetta estiva", pt: "Apenas autocarro shuttle no verão" },
+  "sin-coche-ok": { es: "Fácil sin coche", en: "Easy without a car", fr: "Facile sans voiture", de: "Gut ohne Auto erreichbar", it: "Facile senza auto", pt: "Fácil sem carro" },
 };
-const EFFORT: Record<string, Record<"es" | "en" | "fr", string>> = {
-  A1: { es: "Accesible, con baño asistido en temporada", en: "Accessible, assisted bathing in season", fr: "Accessible, baignade assistée en saison" },
-  A2: { es: "Fácil: apto para carrito y mayores", en: "Easy: stroller-friendly", fr: "Facile : poussette ok" },
-  B: { es: "Moderado: tramo a pie o escaleras", en: "Moderate: a short walk or steps", fr: "Modéré : marche courte ou escaliers" },
-  C: { es: "Exigente: sendero (15-40 min)", en: "Demanding: a 15-40 min trail", fr: "Exigeant : sentier (15-40 min)" },
-  D: { es: "Duro: caminata larga sin servicios", en: "Tough: a long hike, no services", fr: "Difficile : longue marche, sans services" },
+const EFFORT: Record<string, Record<Locale, string>> = {
+  A1: { es: "Accesible, con baño asistido en temporada", en: "Accessible, assisted bathing in season", fr: "Accessible, baignade assistée en saison", de: "Barrierefrei, mit betreutem Baden in der Saison", it: "Accessibile, con balneazione assistita in stagione", pt: "Acessível, com banho assistido na época" },
+  A2: { es: "Fácil: apto para carrito y mayores", en: "Easy: stroller-friendly", fr: "Facile : poussette ok", de: "Leicht: für Kinderwagen und Senioren geeignet", it: "Facile: adatto a passeggini e anziani", pt: "Fácil: adequado a carrinhos de bebé e idosos" },
+  B: { es: "Moderado: tramo a pie o escaleras", en: "Moderate: a short walk or steps", fr: "Modéré : marche courte ou escaliers", de: "Moderat: kurzer Fußweg oder Treppen", it: "Moderato: breve tratto a piedi o scale", pt: "Moderado: troço a pé ou escadas" },
+  C: { es: "Exigente: sendero (15-40 min)", en: "Demanding: a 15-40 min trail", fr: "Exigeant : sentier (15-40 min)", de: "Anspruchsvoll: Wanderweg (15–40 Min.)", it: "Impegnativo: sentiero (15-40 min)", pt: "Exigente: trilho (15-40 min)" },
+  D: { es: "Duro: caminata larga sin servicios", en: "Tough: a long hike, no services", fr: "Difficile : longue marche, sans services", de: "Anstrengend: lange Wanderung, ohne Einrichtungen", it: "Duro: lunga camminata senza servizi", pt: "Duro: caminhada longa sem serviços" },
 };
 const fmtDur = (min: number) => {
   const h = Math.floor(min / 60);
@@ -54,7 +56,8 @@ const fmtDur = (min: number) => {
   if (!h) return `~${m} min`;
   return m ? `~${h} h ${m} min` : `~${h} h`;
 };
-const busNote = pl?.busServed ? { es: " · con bus en temporada", en: " · seasonal bus service", fr: " · bus en saison" }[L] : "";
+const BUS_NOTE: Record<Locale, string> = { es: " · con bus en temporada", en: " · seasonal bus service", fr: " · bus en saison", de: " · Busanbindung in der Saison", it: " · bus in stagione", pt: " · autocarro na época" };
+const busNote = pl?.busServed ? BUS_NOTE[L] : "";
 
 // Operador de la salida: solo cuando la ficha describe una EXPERIENCIA y no un
 // negocio (KAN-60). Si la ficha tiene `website` propia, ese SÍ es su sitio
@@ -256,7 +259,7 @@ const seoTitle = recortar(candidatos.find((c) => c.length <= MAX_TITULO) ?? cand
           </div>
           {data.imageCredit && (
             <figcaption class="mt-2 text-xs text-piedra-suave">
-              {data.lang === "es" ? "Foto" : "Photo"}: {data.imageCredit}
+              {t("common.photo")}: {data.imageCredit}
             </figcaption>
           )}
         </figure>

@@ -1,0 +1,58 @@
+{
+  "name": "Cala en Porter",
+  "lang": "de",
+  "translationKey": "cala-en-porter",
+  "type": "cala",
+  "description": "Zwischen hohen Steilwänden eingebettete Bucht mit feinem Sand und ruhigem Wasser, neben einer Siedlung mit allen Einrichtungen. Bekannt durch die Cova d'en Xoroi (Bar, Aussichtspunkt und Club im Fels). Bequem mit dem Auto, aber städtischer als die unberührten Nachbarbuchten.",
+  "coordinates": {
+    "lat": 39.872,
+    "lng": 4.13
+  },
+  "area": "Zentraler Süden (Alaior)",
+  "tags": [
+    "sur-centro",
+    "cala",
+    "alaior"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "seasonWindow": {
+        "from": "05-01",
+        "to": "10-31"
+      },
+      "certainty": "alta"
+    },
+    "highlights": [
+      "das Bad in einer Bucht mit feinem Sand zwischen hohen Steilwänden",
+      "der Aufstieg zur Cova d'en Xoroi in der Steilküste, für ein Glas zum Sonnenuntergang",
+      "oben in der Siedlung parken und über die Treppen zum Strand hinuntergehen"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-en-porter.webp"
+  ],
+  "imageAlt": "Die Bucht von Cala en Porter mit dem Strand am Ende der Schlucht, zwischen Steilwänden",
+  "imageCredit": "Gimo61 / Wikimedia Commons (CC BY 3.0)"
+}

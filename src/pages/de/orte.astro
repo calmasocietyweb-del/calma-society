@@ -1,0 +1,14 @@
+---
+// Ortsverzeichnis auf Deutsch: /de/orte
+import PlacesLayout from "../../layouts/PlacesLayout.astro";
+import { placesIndexPath } from "../../i18n/utils";
+
+const alternates = {
+  es: placesIndexPath("es"),
+  en: placesIndexPath("en"),
+  fr: placesIndexPath("fr"),
+  de: placesIndexPath("de"),
+};
+---
+
+<PlacesLayout locale="de" alternates={alternates} />

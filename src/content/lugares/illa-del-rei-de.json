@@ -1,0 +1,48 @@
+{
+  "name": "Illa del Rei",
+  "lang": "de",
+  "translationKey": "illa-del-rei",
+  "type": "monumento",
+  "description": "Kleine Insel im Hafen von Maó mit dem ehemaligen britischen Militärhospital (18. Jahrhundert), von Freiwilligen sorgfältig restauriert, und einem Sitz der Galerie Hauser & Wirth mit einem von Piet Oudolf gestalteten Garten. Eine besondere Verbindung aus britischem Erbe, zeitgenössischer Kunst und einer kurzen Überfahrt per Boot.",
+  "coordinates": {
+    "lat": 39.8772,
+    "lng": 4.2906
+  },
+  "area": "Osten (Maó)",
+  "tags": [
+    "este",
+    "monumento",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "das britische Marinehospital (1711), von Freiwilligen restauriert",
+      "die Galerie Hauser & Wirth und der Garten von Piet Oudolf (Eintritt frei)",
+      "die Überfahrt mit dem Pendelboot vom Hafen von Maó"
+    ]
+  },
+  "images": [
+    "/uploads/lg-illa-del-rei.webp"
+  ],
+  "imageAlt": "Die Illa del Rei im Hafen von Maó, mit dem roten Gebäude des ehemaligen Hospitals",
+  "imageCredit": "Dreizung / Wikimedia Commons (CC BY 3.0)"
+}

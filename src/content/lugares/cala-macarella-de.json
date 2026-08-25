@@ -1,0 +1,77 @@
+{
+  "name": "Cala Macarella",
+  "lang": "de",
+  "translationKey": "cala-macarella",
+  "type": "cala",
+  "description": "Die Postkarte des Südens von Menorca schlechthin: ein Hufeisen aus weißem Sand, türkisfarbenem Wasser und Pinien bis ans Ufer. Gleich daneben ihre kleine Schwester, Cala Macarelleta. Stille Schönheit, die man am besten früh am Tag genießt.",
+  "coordinates": {
+    "lat": 39.9356,
+    "lng": 3.9286
+  },
+  "area": "Süden (Ciutadella)",
+  "practicalInfo": {
+    "acceso": "Zu Fuß von Cala Galdana (ca. 30 Min. über den Camí de Cavalls) oder mit dem Saisonbus; im Sommer ist die Anfahrt mit dem Auto eingeschränkt",
+    "aparcamiento": "Vom 1. Juni bis 30. September kommt man weder mit dem Auto noch mit dem Motorrad hin: Der öffentliche Parkplatz ist geschlossen, hinein geht es nur per Bus, zugelassenem Taxi, Fahrrad oder zu Fuß. Der Bus fährt in Ciutadella zwischen 8:25 und 20:20 Uhr ab (alle 40 Minuten, ab dem 15. Juni alle 20); 8,50 € hin und zurück beim Online-Kauf (die Hälfte mit der Verkehrskarte des Consell). Außerhalb dieser Daten gibt es einen Parkplatz mit kontrollierter Kapazität, der früh voll ist.",
+    "servicios": "Saisonale Strandbar; Wasser und Schatten sollten Sie dennoch mitbringen",
+    "mejorEpoca": "Im Hochsommer ist das Auto keine Option; die Frage ist also nicht, um welche Uhrzeit Sie parken, sondern welchen Bus Sie nehmen: Der erste, um 8:25 Uhr, bringt Sie zur fast leeren Bucht. Im Mai und Oktober, wenn man noch mit dem Auto hinauffahren kann, kommen Sie am besten vor 10:00 Uhr an."
+  },
+  "images": [
+    "/uploads/cala-macarella.webp"
+  ],
+  "tags": [
+    "sur",
+    "turquesa",
+    "arena blanca",
+    "camí de cavalls",
+    "ciutadella"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Die bekannteste Bucht im Süden Menorcas: ein Hufeisen aus weißem Sand, türkisfarbenem Wasser und Pinien bis ans Ufer, mit Cala Macarelleta nebenan. Am besten früh."
+  },
+  "windExposure": {
+    "openingBearingDeg": 195,
+    "embayment": "encajonada",
+    "municipioINE": "07015",
+    "shelteredFrom": [
+      "Tramuntana (N)",
+      "Gregal (NE)",
+      "Mestral (NO)"
+    ],
+    "exposedTo": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "primera-vez",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 240,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "shuttleInfo": "1. Juni–30. Sep.: private Autos und Motorräder verboten. Shuttlebus ab Ciutadella, zugelassenes Taxi, Fahrrad oder zu Fuß (Camí de Cavalls ab Cala Galdana). Außerhalb der Saison: mit dem Auto bis zum kostenlosen Parkplatz, 15–20 Min. zu Fuß.",
+    "effortNote": "Im Sommer Zugang zu Fuß oder per Shuttlebus; Weg über den Camí de Cavalls. Keine verlässlichen Einrichtungen: Wasser und Schatten mitnehmen.",
+    "highlights": [
+      "die Postkarte des Südens: ein Hufeisen aus weißem Sand, Türkis und Pinien",
+      "im Sommer per Shuttlebus ab Ciutadella oder zu Fuß über den Camí de Cavalls",
+      "keine verlässlichen Einrichtungen: mit Picknick, Wasser und Schatten hinuntersteigen"
+    ]
+  },
+  "imageAlt": "Cala Macarella vom Aussichtspunkt: der Strand mit Badenden und das grüntürkise Wasser, von Pinien umschlossen"
+}

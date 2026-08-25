@@ -1,0 +1,83 @@
+---
+// Datenschutzerklärung (DE) — DSGVO. Base revisable.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { SITE } from "../../config/site";
+
+const c = SITE.company;
+const cif = c.cif || "[Steuernummer folgt]";
+const address = c.address || "[Anschrift folgt]";
+const alternates = {
+  es: "/privacidad",
+  en: "/en/privacy",
+  fr: "/fr/confidentialite",
+  de: "/de/datenschutz",
+};
+---
+
+<BaseLayout title="Datenschutzerklärung" description="Wie Calma Society Ihre personenbezogenen Daten verarbeitet." locale="de" alternates={alternates}>
+  <article class="mx-auto max-w-prosa px-5 pb-8 pt-12 sm:px-8 sm:pt-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Rechtliches</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Datenschutzerklärung</h1>
+    <p class="mt-2 text-sm text-piedra-suave">Zuletzt aktualisiert: Juni 2026</p>
+
+    <div class="article-body mt-8">
+      <h2>1. Verantwortlicher</h2>
+      <ul>
+        <li><strong>Verantwortlicher:</strong> {c.legalName} (CIF {cif})</li>
+        <li><strong>Anschrift:</strong> {address}</li>
+        <li><strong>E-Mail:</strong> {c.email} · <strong>Telefon:</strong> {c.phone}</li>
+      </ul>
+
+      <h2>2. Welche Daten wir verarbeiten und wozu</h2>
+      <ul>
+        <li><strong>Newsletter-Anmeldung:</strong> Ihre E-Mail-Adresse, um Ihnen unsere Inhalte zu schicken. Rechtsgrundlage: Ihre Einwilligung.</li>
+        <li><strong>Kontaktformular:</strong> Ihr Name, Ihre E-Mail-Adresse und Ihre Nachricht, um Ihre Anfrage zu beantworten. Rechtsgrundlage: Ihre Einwilligung.</li>
+        <li><strong>Nutzungsdaten:</strong> technische und Nutzungsdaten, aggregiert und anonym, um die Website zu betreiben und zu verbessern. Rechtsgrundlage: berechtigtes Interesse.</li>
+      </ul>
+
+      <h2>3. Speicherdauer</h2>
+      <p>Wir speichern Ihre Daten, solange Sie abonniert bleiben oder bis Sie ihre Löschung verlangen, sowie für die gesetzlich vorgeschriebenen Fristen.</p>
+
+      <h2>4. Empfänger und Auftragsverarbeiter</h2>
+      <p>Wir verkaufen Ihre Daten nicht. Wir arbeiten mit Dienstleistern, die als Auftragsverarbeiter tätig sind:</p>
+      <ul>
+        <li><strong>Formspree</strong> (Verarbeitung der Einsendungen des Kontaktformulars).</li>
+        <li><strong>MailerLite</strong> (Verwaltung des Newsletters, wenn er aktiv ist).</li>
+        <li><strong>Cloudflare</strong> (Hosting und Auslieferung der Inhalte).</li>
+      </ul>
+      <p>
+        Einige Dienstleister können Daten außerhalb des Europäischen Wirtschaftsraums
+        verarbeiten; in diesem Fall gelten geeignete Garantien nach der DSGVO (zum Beispiel
+        Standardvertragsklauseln).
+      </p>
+
+      <h2>5. Ihre Rechte</h2>
+      <p>
+        Sie können Ihre Rechte auf Auskunft, Berichtigung, Löschung, Widerspruch,
+        Einschränkung und Datenübertragbarkeit ausüben, indem Sie an
+        <strong>{c.email}</strong> schreiben. Sie können Ihre Einwilligung jederzeit
+        widerrufen (zum Beispiel über den Abmeldelink in jedem Newsletter) und eine
+        Beschwerde bei der spanischen Datenschutzbehörde einreichen
+        (<a href="https://www.aepd.es" rel="noopener" target="_blank">aepd.es</a>).
+      </p>
+
+      <h2>6. Sicherheit</h2>
+      <p>Wir treffen angemessene technische und organisatorische Maßnahmen, und die Website wird stets über eine verschlüsselte Verbindung (HTTPS) ausgeliefert.</p>
+
+      <h2>7. Minderjährige</h2>
+      <p>
+        Diese Website richtet sich nicht an Kinder unter 14 Jahren. Wir erheben wissentlich
+        keine Daten Minderjähriger ohne die Einwilligung eines Elternteils oder gesetzlichen
+        Vertreters.
+      </p>
+
+      <h2>8. Änderungen dieser Erklärung</h2>
+      <p>
+        Wir können diese Erklärung aktualisieren, um rechtliche oder dienstliche Änderungen
+        abzubilden. Das Datum der letzten Aktualisierung steht oben auf der Seite.
+      </p>
+
+      <p>Siehe auch das <a href="/de/impressum">Impressum</a> und die <a href="/de/cookies">Cookie-Richtlinie</a>.</p>
+    </div>
+  </article>
+</BaseLayout>

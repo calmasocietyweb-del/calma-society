@@ -55,6 +55,7 @@ export const SECTIONS: Section[] = [
       es: "Agenda de Menorca: fiestas, conciertos y mercados",
       en: "What's on in Menorca: festivals, concerts and markets",
       fr: "Agenda de Minorque : fêtes, concerts et marchés",
+      de: "Veranstaltungen auf Menorca: Feste, Konzerte und Märkte",
       it: "Eventi a Minorca: feste, concerti e mercati",
       pt: "Agenda de Menorca: festas, concertos e mercados",
     },
@@ -62,6 +63,7 @@ export const SECTIONS: Section[] = [
       es: "Agenda de Menorca, actualizada: fiestas de Sant Joan, conciertos, mercados y cultura. Qué hacer cada mes en la isla, con criterio y a tu propio ritmo.",
       en: "What's on in Menorca, kept current: Sant Joan and the summer town festivals, concerts, markets and culture. What to do each month on the island, at your own pace.",
       fr: "L'agenda de Minorque, tenu à jour : Sant Joan et les fêtes des villages, concerts, marchés et culture. Que faire chaque mois sur l'île, à votre rythme.",
+      de: "Die Veranstaltungen auf Menorca, immer aktuell: Sant Joan und die Dorffeste, Konzerte, Märkte und Kultur. Monat für Monat, in Ihrem eigenen Tempo.",
       it: "Gli eventi di Minorca, sempre aggiornati: Sant Joan e le feste dei paesi, concerti, mercati e cultura. Cosa fare ogni mese sull'isola, al proprio ritmo.",
       pt: "A agenda de Menorca, sempre atualizada: Sant Joan e as festas populares, concertos, mercados e cultura. O que fazer na ilha, mês a mês, ao seu ritmo.",
     },
@@ -95,6 +97,7 @@ export const SECTIONS: Section[] = [
       es: "Vivir Menorca todo el año: lifestyle, propiedad e interiorismo con mirada de lujo tranquilo. Comprar casa, reformar y habitar la isla sin prisa.",
       en: "Living Menorca all year round: lifestyle, property and interiors with a quiet-luxury eye. Buying a home, renovating and inhabiting the island, unhurried.",
       fr: "Vivre Minorque toute l'année : art de vivre, immobilier et décoration dans un regard de luxe tranquille. Acheter, rénover et habiter l'île sans hâte.",
+      de: "Menorca das ganze Jahr leben: Lebensart, Immobilien und Interieur mit dem Blick des stillen Luxus. Ein Haus kaufen, renovieren und die Insel ohne Eile bewohnen.",
       it: "Vivere Minorca tutto l'anno: stile di vita, immobili e interni con lo sguardo del lusso tranquillo. Comprare casa, ristrutturare e abitare l'isola senza fretta.",
       pt: "Viver Menorca todo o ano: estilo de vida, imóveis e interiores com um olhar de luxo tranquilo. Comprar casa, remodelar e habitar a ilha sem pressa.",
     },
@@ -105,7 +108,7 @@ export const SECTIONS: Section[] = [
     // seoTitle: el label a secas era IDÉNTICO en EN y FR → <title> duplicado
     // en GSC (KAN-88). El nombre completo de la sección (§5 del CLAUDE.md)
     // diferencia idiomas sin tocar la navegación.
-    seoTitle: { es: "Cultura e identidad", en: "Culture & identity", fr: "Culture et identité", it: "Cultura e identità", pt: "Cultura e identidade" },
+    seoTitle: { es: "Cultura e identidad", en: "Culture & identity", fr: "Culture et identité", de: "Kultur und Identität", it: "Cultura e identità", pt: "Cultura e identidade" },
     href: { es: "/cultura", en: "/en/culture", fr: "/fr/culture", de: "/de/kultur", it: "/it/cultura", pt: "/pt/cultura" },
     intro: {
       es: "Historia, lengua, artesanía y la Menorca talayótica. La identidad de la isla.",
@@ -135,6 +138,7 @@ export const SECTIONS: Section[] = [
       es: "Moverse por Menorca con calma: traslados privados, chófer en Mercedes Clase S y V, excursiones a medida, transfers de crucero y cómo llegar. Operado por Menorca Bus.",
       en: "Getting around Menorca with calm: private transfers, chauffeur-driven Mercedes S and V Class, bespoke excursions, cruise transfers and how to get there. By Menorca Bus.",
       fr: "Se déplacer à Minorque en toute quiétude : transferts privés, chauffeur en Mercedes Classe S et V, excursions sur mesure, transferts de croisière et comment venir. Par Menorca Bus.",
+      de: "Unterwegs auf Menorca, in Ruhe: private Transfers, Chauffeur in Mercedes S- und V-Klasse, Ausflüge nach Maß, Kreuzfahrt-Transfers und die Anreise. Menorca Bus.",
       it: "Muoversi a Minorca con calma: transfer privati, autista in Mercedes Classe S e V, escursioni su misura, transfer da crociera e come arrivare. Operato da Menorca Bus.",
       pt: "Deslocar-se por Menorca com calma: transfers privados, motorista em Mercedes Classe S e V, excursões à medida, transfers de cruzeiro e como chegar. Operado pela Menorca Bus.",
     },

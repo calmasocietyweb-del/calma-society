@@ -1,0 +1,51 @@
+{
+  "name": "Cala Algaiarens",
+  "lang": "de",
+  "translationKey": "cala-algaiarens",
+  "type": "cala",
+  "description": "Zwei Schwesterstrände (es Bot und es Tancats) mit goldrötlichem Sand in einem unbebauten Naturschutzgebiet (ANEI) aus Pinienwald und Dünen. Einer der wenigen wilden Strände des Nordens, die mit dem Auto erreichbar sind — entsprechend gefragt (Zufahrtskontrolle in der Saison).",
+  "coordinates": {
+    "lat": 40.047,
+    "lng": 3.88
+  },
+  "area": "Norden (Ciutadella)",
+  "tags": [
+    "norte",
+    "playa",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "das Bad an zwei unberührten Schwesterstränden (es Bot und es Tancats)",
+      "der Spaziergang durch Pinienwald und Dünen eines unbebauten Schutzgebiets",
+      "im Sommer früh kommen: Zufahrt und Parkplatz sind reguliert"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-algaiarens.webp"
+  ],
+  "imageAlt": "Der Strand von Algaiarens: heller Sand, türkisfarbenes Wasser und Dünen mit niedriger Vegetation",
+  "imageCredit": "Marcelsala007 / Wikimedia Commons (CC BY-SA 3.0)",
+  "practicalInfo": {
+    "aparcamiento": "Kontrollierte Kapazität (Saison 2026): Die Zufahrt nach La Vall schließt, sobald der Parkplatz voll ist, und am Zufahrtsweg stehen Kontrolleure. Im Juli und August kommen Sie am besten am Vormittag. In der Umgebung nach einem Platz zu suchen lohnt nicht: Die Wege sind schmal, und Parken ist dort nicht erlaubt. In der Saison fährt auch der Bus ab Ciutadella.",
+    "mejorEpoca": "Juni und September, ohne Zweifel. In der Hochsaison vor 9:00 Uhr. Die Zufahrtskontrolle läuft von 7:30 bis 21:00 Uhr und gilt bis zum 15. Oktober."
+  }
+}

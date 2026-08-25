@@ -1,0 +1,51 @@
+{
+  "name": "Cala Macarelleta",
+  "lang": "de",
+  "translationKey": "cala-macarelleta",
+  "type": "cala",
+  "description": "Die kleine, intimere Schwester der Cala Macarella, durch eine felsige Landzunge von ihr getrennt; intensiv türkisfarbenes Wasser, in Teilen FKK. Geschützter und fotogener, ohne eigene Einrichtungen.",
+  "coordinates": {
+    "lat": 39.9337,
+    "lng": 3.9278
+  },
+  "area": "Südwesten (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "cala",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "die intime Schwester von Macarella, hinter einer felsigen Landzunge",
+      "intensives Türkis und eine geschützte Atmosphäre (in Teilen FKK)",
+      "Zugang zu Fuß von Macarella; keine Einrichtungen — nehmen Sie alles Nötige mit"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-macarelleta.webp"
+  ],
+  "imageAlt": "Cala Macarelleta: der weiße Sand, das türkisfarbene Wasser und die Pinien über der Steilküste",
+  "imageCredit": "Markus Trienke / Wikimedia Commons (CC BY-SA 2.0)",
+  "practicalInfo": {
+    "aparcamiento": "Kein eigener Parkplatz: Man erreicht die Bucht zu Fuß von Macarella, über einen kurzen Pfad die Steilküste hinauf. Damit erbt sie deren Einschränkung: Vom 1. Juni bis 30. September erreicht man Macarella nur per Bus, zugelassenem Taxi, Fahrrad oder zu Fuß. Der Bus fährt in Ciutadella zwischen 8:25 und 20:20 Uhr ab; 8,50 € hin und zurück beim Online-Kauf (die Hälfte mit der Verkehrskarte des Consell).",
+    "mejorEpoca": "Sie ist klein und füllt sich schneller als Macarella; der erste Bus des Tages (8:25 Uhr) entscheidet darüber, ob Sie die Bucht für sich haben oder mit vielen teilen. Mai, Juni und September sind deutlich besser als der August."
+  }
+}

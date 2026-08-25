@@ -1,0 +1,102 @@
+{
+  "name": "Cova d'en Xoroi",
+  "lang": "de",
+  "translationKey": "cova-den-xoroi",
+  "type": "bar",
+  "edition": "menorca",
+  "description": "Natürliche Höhle in der Steilküste von Cala'n Porter: Aussichtspunkt und Lounge zum Sonnenuntergang, Club in den Sommernächten. Der bekannteste Ort für einen Abend auf Menorca.",
+  "coordinates": {
+    "lat": 39.8656878,
+    "lng": 4.1327226
+  },
+  "area": "Süden (Alaior)",
+  "practicalInfo": {
+    "horario": "Saisonal; die Zeiten ändern sich mit jeder Saison — prüfen Sie die Website oder Instagram."
+  },
+  "website": "https://www.covadenxoroi.com/es",
+  "images": [
+    "/uploads/cova-den-xoroi.webp"
+  ],
+  "tags": [
+    "atardecer",
+    "discoteca",
+    "acantilado",
+    "cala'n porter"
+  ],
+  "status": "published",
+  "editorial": {
+    "lead": "Es gibt einen Ort auf Menorca, an dem man den Sonnenuntergang aus dem Inneren der Steilküste betrachtet. Die Cova d'en Xoroi ist eine Abfolge von Höhlen und Terrassen, in den Fels über dem Meer von Cala'n Porter geschlagen: tagsüber ein Aussichtspunkt, am Abend eine Lounge mit einem Glas vor der sinkenden Sonne, und in den Sommernächten der bekannteste Club der Insel.",
+    "sections": [
+      {
+        "heading": "Eine Höhle, zum Meer hin offen",
+        "body": [
+          "Das Erste ist der angenehme Schwindel beim Hinabblicken. Die Terrassen der Cova d'en Xoroi hängen an einer Steilwand der Südküste, in Cala'n Porter, und staffeln sich zum Mittelmeer hinunter — eine Abfolge von Steinbalkonen, Nischen und natürlichen Aussichtspunkten. Das ist keine Diskothek mit Aussicht: Es ist der Fels selbst, dem Meer abgerungen, mit einem Glas in der Hand.",
+          "Darin liegen ihr Geheimnis und ihr Ruf. Wenige Orte Menorcas verdichten die Insel so sehr in einer einzigen Geste — Stein, Licht und Meer —, und deshalb ist sie wohl der unverwechselbarste Ort des Ausgehens auf der ganzen Insel."
+        ]
+      },
+      {
+        "heading": "Der Sonnenuntergang, der Moment",
+        "body": [
+          "Wenn Sie nur einmal kommen, dann zum Sonnenuntergang. Sobald die Sonne sinkt, werden die Terrassen zu einer ruhigen Lounge: leise Musik, ein gut gemixtes Glas und ein Himmel, der über dem Wasser die Farbe wechselt. Es ist die stille Stunde der Cova, bevor die Nacht Fahrt aufnimmt.",
+          "Später, im Sommer, verwandelt sich derselbe Ort in einen Club und dreht auf. Beide Gesichter bestehen nebeneinander; Sie entscheiden, zu welchem Sie kommen. Für einen Abend im Zeichen des stillen Luxus ist die Lounge zum Sonnenuntergang der richtige Plan."
+        ]
+      },
+      {
+        "heading": "Die Legende von Xoroi",
+        "body": [
+          "Der Name geht auf eine alte menorquinische Legende zurück. Die Überlieferung erzählt von einem Schiffbrüchigen ungewisser Herkunft, Xoroi, der in diesen Höhlen Zuflucht fand und jahrelang verborgen in der Steilküste lebte. Die Geschichte hat so viele Fassungen, wie es Erzähler gibt, und genau darin liegt ihr Reiz: Sie gehört zur Folklore der Insel, nicht zu ihrer belegten Geschichte.",
+          "Es lohnt sich, das vor dem Abstieg zu wissen: Es legt eine Erzählung über einen Ort, der ohnehin aus einer anderen Zeit zu stammen scheint."
+        ]
+      },
+      {
+        "heading": "Mit Ruhe erleben",
+        "body": [
+          "Die Cova hat je nach Uhrzeit drei Leben: Aussichtspunkt am Tag, Lounge zum Sonnenuntergang, Diskothek in der Nacht. Wählen Sie Ihres rechtzeitig. Im Sommer empfiehlt sich die Online-Reservierung, vor allem für den Sonnenuntergang — dann ist der Andrang am größten.",
+          "Hinunter zur Steilküste geht es über in den Fels geschlagene Treppen; für Rollstühle oder stark eingeschränkte Mobilität ist der Ort daher nicht geeignet. Und wie überall auf Menorca sind Zeiten und Preise mit Blick auf den Sommer stark saisonabhängig: Prüfen Sie vor dem Besuch immer die Website."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Paare",
+      "Stiller Luxus",
+      "Sonnenuntergang",
+      "Nachtleben"
+    ],
+    "goodToKnow": [
+      "Drei Stimmungen je nach Uhrzeit: Aussichtspunkt am Tag (ca. 8,50 €), Lounge zum Sonnenuntergang (ca. 12 €) und Diskothek in der Nacht. Richtpreise.",
+      "Im Sommer empfiehlt sich die Online-Reservierung, besonders für den Sonnenuntergang.",
+      "Der Abstieg führt über in den Fels geschlagene Treppen: nicht geeignet für Rollstühle oder stark eingeschränkte Mobilität.",
+      "Stark saisonale Zeiten (Juni–August vom Vormittag bis nach Einbruch der Dunkelheit; Mai und Oktober ab dem Nachmittag). Prüfen Sie vor dem Besuch die Website."
+    ],
+    "transfer": true
+  },
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "calanporter-xoroi",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "parejas",
+      "lujo-tranquilo",
+      "vida-nocturna"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "semicubierto",
+    "needsReservation": true,
+    "officialUrl": "https://www.covadenxoroi.com/es",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Der Abstieg in die Steilküste führt über in den Fels geschlagene Treppen; nicht geeignet für Rollstuhl oder stark eingeschränkte Mobilität.",
+    "seasonalHours": "Juni–Aug. ab 11:30 Uhr bis zum Einbruch der Dunkelheit; Mai/Okt. ab 15 Uhr. Tagsüber Aussichtspunkt (ca. 8,50 €), abends Lounge (ca. 12 €), nachts Diskothek. Im Sommer Online-Reservierung ratsam.",
+    "highlights": [
+      "die in die Steilküste geschlagenen Terrassen",
+      "ein Glas zum Sonnenuntergang",
+      "im Sommer online reservieren"
+    ]
+  },
+  "imageAlt": "Die Terrassen der Cova d'en Xoroi, in die Steilküste über dem Meer geschlagen"
+}

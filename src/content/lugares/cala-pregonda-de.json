@@ -1,0 +1,71 @@
+{
+  "name": "Cala Pregonda",
+  "lang": "de",
+  "translationKey": "cala-pregonda",
+  "type": "cala",
+  "description": "Eine der bekanntesten Buchten des Nordens: rötlicher Sand, kleine Felsinseln vor dem Ufer und eine beinahe mondartige Anmutung. Es gibt keine Einrichtungen — und genau darin liegt ihr Reiz.",
+  "coordinates": {
+    "lat": 40.0489,
+    "lng": 4.0512
+  },
+  "area": "Norden (Es Mercadal)",
+  "practicalInfo": {
+    "acceso": "Zu Fuß, rund 30 Min. vom Parkplatz von Binimel·là",
+    "aparcamiento": "Kein eigener Parkplatz: Man stellt das Auto in Binimel·là ab und geht rund 30 Minuten zu Fuß. Dieser Parkplatz hat kontrollierte Kapazität (Saison 2026) und schließt bei Vollbesetzung — der Platz, den Sie brauchen, ist also nicht der von Pregonda, sondern der von Binimel·là, und er bedient zwei Strände zugleich. In der Umgebung nach einem Platz zu suchen lohnt nicht: Die Wege sind schmal, und Parken ist dort nicht erlaubt.",
+    "servicios": "Keine: Wasser, Verpflegung und Schatten mitnehmen",
+    "mejorEpoca": "Mai, Juni und September. Im August früh am Morgen: Ist Binimel·là bereits geschlossen, fällt Pregonda an diesem Tag aus. Die Zufahrtskontrolle läuft von 7:30 bis 21:00 Uhr und gilt bis zum 15. Oktober."
+  },
+  "images": [
+    "/uploads/cala-pregonda.webp"
+  ],
+  "tags": [
+    "norte",
+    "arena rojiza",
+    "camí de cavalls"
+  ],
+  "status": "published",
+  "windExposure": {
+    "openingBearingDeg": 340,
+    "embayment": "encajonada",
+    "municipioINE": "07037",
+    "shelteredFrom": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
+    "exposedTo": [
+      "Tramuntana (N)",
+      "Mestral (NO)",
+      "Gregal (NE)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Keine Zufahrt bis zur Bucht: ca. 30 Min. zu Fuß (2 km) über den Camí de Cavalls ab dem Parkplatz von Binimel·la. Keine Einrichtungen; bequemes Schuhwerk, Wasser und Schatten sind unerlässlich.",
+    "seasonalHours": "Juni oder September; im Juli/August ist der Parkplatz von Binimel·la früh voll. Am besten an einem Tag mit wenig Nordwind.",
+    "highlights": [
+      "der rötliche Sand und die Felsinseln einer der bekanntesten Buchten des Nordens",
+      "rund 30 Min. über den Camí de Cavalls ab Binimel·la gehen",
+      "einen Tag mit wenig Nordwind wählen; keine Einrichtungen"
+    ]
+  },
+  "imageAlt": "Das klare Wasser der Cala Pregonda über felsigem Grund, mit der ockerfarbenen Felsinsel im Hintergrund"
+}

@@ -1,0 +1,29 @@
+---
+// Veranstaltungsdetail auf Deutsch: /de/veranstaltungen/[slug] (KAN-102).
+// Esta ruta va PRIMERO en el despliegue alemán: su ausencia es lo que dejó al
+// francés con cero eventos (el índice existía, pero un evento no tenía dónde
+// aterrizar). Ver docs/superpowers/specs/2026-08-24-idiomas-europa-completo-design.md.
+import { getCollection } from "astro:content";
+import EventLayout from "../../../layouts/EventLayout.astro";
+import { eventSlugFor } from "../../../lib/content";
+import { eventUrl, homePath } from "../../../i18n/utils";
+
+export async function getStaticPaths() {
+  const events = await getCollection(
+    "eventos",
+    (e) => e.data.lang === "de" && e.data.status === "published",
+  );
+  return events.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const esSlug = await eventSlugFor(entry.data.translationKey, "es");
+const enSlug = await eventSlugFor(entry.data.translationKey, "en");
+const alternates = {
+  de: eventUrl("de", entry.id),
+  es: esSlug ? eventUrl("es", esSlug) : homePath("es"),
+  en: enSlug ? eventUrl("en", enSlug) : homePath("en"),
+};
+---
+
+<EventLayout entry={entry} alternates={alternates} />

@@ -1,0 +1,34 @@
+{
+  "name": "CAP Menorca (Relais & Châteaux)",
+  "lang": "de",
+  "translationKey": "cap-menorca",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Fünfzehn Suiten über einer Steilküste im Süden, im Gemeindegebiet von Alaior, jede mit eigenem Salzwasserpool, verborgen zwischen Gärten. Das Anwesen — rund 30 Hektar wieder aufgeforsteter Pinienwald mit Tausenden Bäumen und Sträuchern — beherbergt das Restaurant Casa del Mar und eine kleine eigene Bootsflotte für Ausfahrten zu den Buchten mit Skipper. Das zurückgezogenste Luxushaus der Insel: wenige Schlüssel, viel Horizont.",
+  "coordinates": {
+    "lat": 39.899,
+    "lng": 4.108
+  },
+  "area": "Zentraler Süden (Alaior)",
+  "practicalInfo": {
+    "acceso": "Südküste des Gemeindegebiets von Alaior; die genaue Anfahrt erhalten Sie bei der Reservierung.",
+    "horario": "Saisonbetrieb: Prüfen Sie die Daten für 2026 auf der offiziellen Website.",
+    "servicios": "15 Suiten mit eigenem Pool, Restaurant Casa del Mar, Spa und Massagen, Yoga, private Boote mit Skipper."
+  },
+  "website": "https://www.relaischateaux.com/us/hotel/cap-menorca/",
+  "images": [
+    "/uploads/son-bou.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "hotel",
+    "lujo",
+    "alaior"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "CAP Menorca (Relais & Châteaux), Alaior: 15 Suiten mit eigenem Pool über einer Steilküste im Süden, mit eigenen Booten."
+  },
+  "imageAlt": "Der weite Bogen des Strandes von Son Bou, des längsten Menorcas, von der Steilküste aus gesehen.",
+  "imageCredit": "Wasquewhat / Wikimedia Commons (CC BY-SA 4.0)"
+}

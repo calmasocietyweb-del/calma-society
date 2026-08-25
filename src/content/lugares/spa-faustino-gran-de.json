@@ -1,0 +1,46 @@
+{
+  "name": "Spa Faustino Gran",
+  "lang": "de",
+  "translationKey": "spa-faustino-gran",
+  "type": "spa",
+  "edition": "menorca",
+  "description": "Hammam und Innenpool des Faustino Gran liegen unter dem Gewölbe einer alten Grotte, im Herzen eines Palastes aus dem 16. Jahrhundert in der Altstadt von Ciutadella. Stiller Luxus in Reinform: Stein, Wasser und Stille.",
+  "coordinates": {
+    "lat": 39.9998,
+    "lng": 3.8378
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [
+    "/uploads/lg-spa-faustino-gran.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "cultura"
+    ],
+    "highlights": [
+      "Wasserparcours unter dem Gewölbe einer historischen Grotte (Innenpool, Sauna, Dampfbad)",
+      "Massagen sowie Gesichts- und Körperrituale in zwei Behandlungsräumen",
+      "Relais & Châteaux-Palast aus dem 16. Jahrhundert mit Olivenhof mitten in der Altstadt"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://faustinogran.com/es/spa",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Die Palais an der Plaça des Born in der Altstadt von Ciutadella",
+  "imageCredit": "Américo Toledano / Wikimedia Commons (CC BY-SA 4.0)"
+}

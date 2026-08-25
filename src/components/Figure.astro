@@ -9,6 +9,7 @@
  *   <Figure src="/uploads/cala-turqueta.webp" alt="..." caption="..." credit="Adobe Stock" lang="es" />
  */
 import { srcset } from "../lib/img";
+import { useTranslations } from "../i18n/ui";
 import type { Locale } from "../config/site";
 
 interface Props {
@@ -19,7 +20,9 @@ interface Props {
   lang?: Locale;
 }
 const { src, alt, caption, credit, lang = "es" } = Astro.props;
-const creditLabel = lang === "es" ? "Foto" : "Photo";
+// Del diccionario, no de un ternario: un ternario por idioma cae a inglés en
+// silencio cuando llega un idioma nuevo (KAN-133).
+const creditLabel = useTranslations(lang)("common.photo");
 ---
 
 <figure class="article-figure">

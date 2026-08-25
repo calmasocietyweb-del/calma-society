@@ -1,0 +1,57 @@
+{
+  "name": "Playa de Son Bou",
+  "lang": "de",
+  "translationKey": "son-bou",
+  "type": "cala",
+  "description": "Der längste Strand Menorcas (fast 4 km), mit feinem Sand und flachem Wasser, Strandbars und einem ausgedehnten Feuchtgebiet mit Dünensystem dahinter.",
+  "coordinates": {
+    "lat": 39.895,
+    "lng": 4.078
+  },
+  "area": "Süden (Alaior)",
+  "tags": [
+    "sur",
+    "arena",
+    "accesible",
+    "alaior",
+    "familiar"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "effortLevel": "A1",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "certainty": "alta"
+    },
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Barrierefreier Strand: Stege, Amphibien-Badestuhl, angepasste Toilette und Hilfspersonal (1. Mai–31. Okt.). Großer Parkplatz, der im Sommer früh voll ist.",
+    "highlights": [
+      "der fast 4 km lange Sandstrand",
+      "das Feuchtgebiet und das Dünensystem dahinter",
+      "der barrierefreie Badeservice mit Amphibien-Badestuhl"
+    ]
+  },
+  "images": [
+    "/uploads/lg-son-bou.webp"
+  ],
+  "imageAlt": "Der Strand von Son Bou von der Steilküste aus gesehen: Kilometer von Sand und türkisfarbenem Wasser",
+  "imageCredit": "Menorquino / Wikimedia Commons (CC BY-SA 4.0)"
+}

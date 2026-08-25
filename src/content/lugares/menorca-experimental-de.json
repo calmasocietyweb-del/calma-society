@@ -1,0 +1,34 @@
+{
+  "name": "Menorca Experimental",
+  "lang": "de",
+  "translationKey": "menorca-experimental",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Ein Landgut aus dem 19. Jahrhundert mit 30 Hektar nahe Cala Llucalari, von der Experimental-Gruppe umgestaltet, mit Interieurs von Dorothée Meilichzon. Dreiundvierzig Zimmer — neun mit eigenem Pool —, ein Infinity-Pool im Herzen des Guts und eine Küche aus eigenem Garten und von kleinen Erzeugern der Insel. Der Geist: ein Künstlerhaus in den Ferien — Farbe, Ruhe und ernsthafte Cocktails zum Sonnenuntergang.",
+  "coordinates": {
+    "lat": 39.906,
+    "lng": 4.118
+  },
+  "area": "Zentraler Süden (Alaior)",
+  "practicalInfo": {
+    "acceso": "Landgut im Gemeindegebiet von Alaior, nahe Cala Llucalari; genaue Anfahrt auf der offiziellen Website.",
+    "horario": "Saisonbetrieb: Prüfen Sie die Daten für 2026 auf der offiziellen Website.",
+    "servicios": "43 Zimmer (9 mit eigenem Pool), Infinity-Pool, Restaurant und Terrasse mit eigenem Garten, Cocktailbar."
+  },
+  "website": "https://www.menorcaexperimental.com/",
+  "images": [
+    "/uploads/alaior.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "hotel",
+    "lujo",
+    "alaior"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Menorca Experimental, Alaior: Landgut aus dem 19. Jh. mit 43 Zimmern, Infinity-Pool und Küche aus eigenem Garten, nahe Cala Llucalari."
+  },
+  "imageAlt": "Gepflasterte Gasse mit weiß gekalkten Häusern und grünen Fensterläden in der Altstadt von Alaior.",
+  "imageCredit": "Mathewr1999 / Wikimedia Commons (CC BY-SA 4.0)"
+}

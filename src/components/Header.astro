@@ -48,12 +48,11 @@ const TOOLS: Record<Locale, { href: string; label: string }[]> = {
     { href: "/fr/ou-la-mer-est-calme", label: "Mer calme" },
     { href: "/fr/couchers-et-cocktails", label: "Couchers & cocktails" },
   ],
-  // DE (despliegue por mercados): Mar en calma + Atardeceres, las dos herramientas
-  // perennes. El Planificador queda fuera hasta tener su dataset en alemán, igual que FR.
-  de: [
-    { href: "/de/wo-das-meer-ruhig-ist", label: "Ruhiges Meer" },
-    { href: "/de/sonnenuntergaenge-und-drinks", label: "Sonnenuntergänge & Drinks" },
-  ],
+  // DE (despliegue por mercados): las herramientas van DETRÁS del contenido
+  // (llevan dataset propio y sus componentes aún no declaran "de" en ToolLocale).
+  // Mientras /de/wo-das-meer-ruhig-ist y /de/sonnenuntergaenge-und-drinks no
+  // existan, la lista va VACÍA: cero enlaces a páginas que no existen.
+  de: [],
   // IT y PT: dados de alta el 24-ago-2026 para traducir la web entera. Las
   // herramientas son lo ÚLTIMO que se traduce (llevan dataset propio), así que
   // por ahora el menú no ofrece ninguna: una lista vacía no pinta nada, y es

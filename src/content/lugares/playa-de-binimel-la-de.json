@@ -1,0 +1,51 @@
+{
+  "name": "Playa de Binimel·la",
+  "lang": "de",
+  "translationKey": "playa-de-binimel-la",
+  "type": "cala",
+  "description": "Weiter Strand mit rötlichem Sand, einer Felsinsel vor dem Ufer und rotem Lehm (die Schlammbäder sind beliebt). Klassischer Ausgangspunkt für den Weg zur Cala Pregonda; mit dem Auto erreichbar und damit bequem inmitten des wilden Nordens.",
+  "coordinates": {
+    "lat": 40.049,
+    "lng": 4.098
+  },
+  "area": "Norden (Es Mercadal)",
+  "tags": [
+    "norte",
+    "playa",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "der rötliche Sand und die Schlammbäder im roten Lehm",
+      "der klassische Ausgangspunkt für den Fußweg zur Cala Pregonda",
+      "bequeme Anfahrt mit dem Auto und Parkplatz direkt am Strand"
+    ]
+  },
+  "images": [
+    "/uploads/lg-playa-de-binimel-la.webp"
+  ],
+  "imageAlt": "Der Strand von Binimel·là mit der Lagune dahinter und dem niedrigen Buschland der Nordküste",
+  "imageCredit": "carlos venegas gavilán / Wikimedia Commons (CC BY-SA 4.0)",
+  "practicalInfo": {
+    "aparcamiento": "Kontrollierte Kapazität (Saison 2026): Der Sandparkplatz schließt bei Vollbesetzung. Er ist das Tor zum roten Norden der Insel und daher im August am Vormittag voll. In der Umgebung nach einem Platz zu suchen lohnt nicht: Die Wege sind schmal, und Parken ist dort nicht erlaubt.",
+    "mejorEpoca": "Mai, Juni und September. Bedenken Sie, dass hier auch der Fußweg nach Pregonda beginnt — der Parkplatz bedient also zwei Strände zugleich. Die Zufahrtskontrolle läuft von 7:30 bis 21:00 Uhr und gilt bis zum 15. Oktober."
+  }
+}

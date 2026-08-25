@@ -1,0 +1,52 @@
+---
+// Cookie-Richtlinie (DE). Base revisable.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { SITE } from "../../config/site";
+
+const c = SITE.company;
+const alternates = {
+  es: "/cookies",
+  en: "/en/cookies",
+  fr: "/fr/cookies",
+  de: "/de/cookies",
+};
+---
+
+<BaseLayout title="Cookie-Richtlinie" description="Welche Cookies und Technologien Calma Society verwendet." locale="de" alternates={alternates}>
+  <article class="mx-auto max-w-prosa px-5 pb-8 pt-12 sm:px-8 sm:pt-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Rechtliches</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Cookie-Richtlinie</h1>
+    <p class="mt-2 text-sm text-piedra-suave">Zuletzt aktualisiert: Juni 2026</p>
+
+    <div class="article-body mt-8">
+      <h2>Was sind Cookies?</h2>
+      <p>Cookies sind kleine Dateien, die eine Website auf Ihrem Gerät speichert, um sich Informationen zu merken. Wir verwenden außerdem ähnliche Technologien (Skripte).</p>
+
+      <h2>Cookies und Dienste, die wir verwenden</h2>
+      <ul>
+        <li><strong>Unbedingt erforderlich.</strong> Notwendig für Betrieb und Sicherheit der Website (zum Beispiel die Sicherheits- und Performance-Cookies von <strong>Cloudflare</strong>, unserem Hosting-Anbieter). Sie sind von der Einwilligungspflicht ausgenommen.</li>
+        <li><strong>Reichweitenmessung ohne Cookies.</strong> Wir verwenden <strong>Umami</strong> (und, auf Server-Ebene, <strong>Cloudflare</strong>), um Besuche und Klicks <strong>aggregiert und anonym, ohne Cookies</strong> zu messen — ohne seitenübergreifendes Tracking und ohne identifizierbare personenbezogene Daten.</li>
+        <li><strong>Newsletter (wenn aktiv).</strong> Wenn wir die Anmeldung aktivieren, laden wir ein Skript von <strong>MailerLite</strong>, das Cookies setzen kann; in diesem Fall holen wir vorher Ihre Einwilligung ein. <em>Der Newsletter ist derzeit pausiert und wird daher nicht geladen.</em></li>
+      </ul>
+      <p>
+        Zum heutigen Stand verwenden wir <strong>keine Werbe-Cookies und kein aufdringliches Tracking</strong> —
+        Sie müssen also nichts akzeptieren, um die Seite zu nutzen. Sollten wir künftig Werbung
+        oder andere cookie-basierte Werkzeuge einsetzen, zeigen wir vorher ein
+        <strong>Einwilligungsbanner</strong>, damit Sie entscheiden können, bevor etwas gesetzt
+        wird — und wir würden es hier im Einzelnen aufführen.
+      </p>
+
+      <h2>Cookies verwalten</h2>
+      <p>
+        Sie können Cookies in den Einstellungen Ihres Browsers (Chrome, Safari, Firefox, Edge…)
+        verwalten oder löschen. Das Deaktivieren bestimmter Cookies kann Teile der Website beeinträchtigen.
+      </p>
+
+      <h2>Weitere Informationen</h2>
+      <p>
+        Bei Fragen zu dieser Richtlinie schreiben Sie an <strong>{c.email}</strong>.
+        Siehe auch das <a href="/de/impressum">Impressum</a> und die <a href="/de/datenschutz">Datenschutzerklärung</a>.
+      </p>
+    </div>
+  </article>
+</BaseLayout>
