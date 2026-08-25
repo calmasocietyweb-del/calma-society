@@ -1,0 +1,53 @@
+{
+  "name": "Mercat des Peix",
+  "lang": "it",
+  "translationKey": "mercat-des-peix",
+  "type": "comercio",
+  "description": "Antico mercato del pesce di Maó riconvertito in spazio gastronomico dall'anima locale: pesce e frutti di mare freschi, tapas, panini, birre e vini dell'isola. Un'istituzione della capitale vicino al porto, ideale per sentire la città stando al bancone.",
+  "coordinates": {
+    "lat": 39.888,
+    "lng": 4.264
+  },
+  "area": "Est (Maó)",
+  "tags": [
+    "este",
+    "gastronomia",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "cena",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 60,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "mao-puerto",
+      "este"
+    ],
+    "highlights": [
+      "assaggiare pesce e frutti di mare freschi in formato tapa",
+      "l'antico mercato del pesce di Maó (1927) riconvertito",
+      "le serate gastronomiche con musica del mercato (ven-dom)"
+    ]
+  },
+  "images": [
+    "/uploads/lg-mercat-des-peix.webp"
+  ],
+  "imageAlt": "Il porto di Maó di notte, con le luci della riva riflesse nell'acqua",
+  "imageCredit": "Santiago Lap / Wikimedia Commons (CC BY-SA 3.0)"
+}

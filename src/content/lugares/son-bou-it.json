@@ -1,0 +1,57 @@
+{
+  "name": "Spiaggia di Son Bou",
+  "lang": "it",
+  "translationKey": "son-bou",
+  "type": "cala",
+  "description": "L'arenile più lungo di Minorca (quasi 4 km), di sabbia fine e acque basse, con chioschi e, alle spalle, un'estesa zona umida e un sistema di dune.",
+  "coordinates": {
+    "lat": 39.895,
+    "lng": 4.078
+  },
+  "area": "Sud (Alaior)",
+  "tags": [
+    "sur",
+    "arena",
+    "accesible",
+    "alaior",
+    "familiar"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "effortLevel": "A1",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "certainty": "alta"
+    },
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Spiaggia accessibile: passerelle, sedia anfibia, bagno adattato e personale di supporto (1 mag–31 ott). Grande parcheggio che d'estate si riempie presto.",
+    "highlights": [
+      "l'arenile di quasi 4 km",
+      "la zona umida e il sistema di dune alle spalle",
+      "servizio di balneazione accessibile con sedia anfibia"
+    ]
+  },
+  "images": [
+    "/uploads/lg-son-bou.webp"
+  ],
+  "imageAlt": "La spiaggia di Son Bou vista dalla falesia: chilometri di sabbia e acqua turchese",
+  "imageCredit": "Menorquino / Wikimedia Commons (CC BY-SA 4.0)"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "Excursão de barco às enseadas virgens do sul (Menorca Blava, Ciutadella)",
+  "lang": "pt",
+  "translationKey": "excursion-barco-calas-sur-menorca-blava-ciutadella",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Um dia de mar desde o porto antigo de Ciutadella até às enseadas mais cobiçadas do sudoeste, as que não têm estrada. Plataforma de banho, solário e arroz a bordo: a forma cómoda de ver Son Saura, Turqueta e Macarella sem carro.",
+  "coordinates": {
+    "lat": 39.9985,
+    "lng": 3.833
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [
+    "/uploads/lg-excursion-barco-calas-sur-menorca-blava-ciutadella.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "primera-vez",
+      "naturaleza",
+      "nautica"
+    ],
+    "highlights": [
+      "navegar o sudoeste virgem: Son Saura, Es Talaier, Turqueta, Macarella e Macarelleta",
+      "duas paragens de banho com acesso direto da plataforma do barco",
+      "paella mista a bordo e grutas marinhas inacessíveis por terra; ~7 h"
+    ],
+    "durationMin": 420,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.menorcablava.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Veleiros fundeados diante de Cala Macarella, na costa sul",
+  "imageCredit": "Franrull / Wikimedia Commons (CC BY-SA 4.0)"
+}

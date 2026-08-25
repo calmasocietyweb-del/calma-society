@@ -1,0 +1,53 @@
+{
+  "name": "Finca Binillubet",
+  "lang": "pt",
+  "translationKey": "finca-binillubet",
+  "type": "productor",
+  "description": "Visita com oficina de queijo artesanal e prova sensorial de produtos locais numa quinta de gado, pela mão dos próprios proprietários. Experiência mais íntima e participativa (conhece-se o gado e o processo) do que as queijarias maiores. Coordenadas exatas por verificar.",
+  "coordinates": {
+    "lat": 39.96,
+    "lng": 4.13
+  },
+  "area": "Centro (Es Mercadal)",
+  "tags": [
+    "centro",
+    "experiencia",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "familias",
+      "naturaleza",
+      "cultura"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-07-22",
+    "indoorAlternativeOf": [
+      "interior-cultura",
+      "centro"
+    ],
+    "highlights": [
+      "fazer a oficina de queijo artesanal com os próprios donos da quinta",
+      "a prova sensorial de queijo Mahón-Menorca DOP e produtos locais",
+      "reservar antes de ir (visita guiada numa quinta de gado)"
+    ],
+    "officialUrl": "https://www.quesosbinillubet.com/"
+  },
+  "images": [
+    "/uploads/queso-curacion.webp"
+  ],
+  "imageAlt": "Queijos a curar nas prateleiras de uma câmara de maturação"
+}

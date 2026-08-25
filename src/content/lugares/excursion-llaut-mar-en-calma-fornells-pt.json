@@ -1,0 +1,47 @@
+{
+  "name": "Excursão em llaüt menorquino pela costa norte (Mar en Calma, Fornells)",
+  "lang": "pt",
+  "translationKey": "excursion-llaut-mar-en-calma-fornells",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Navegar a costa norte a bordo de um llaüt menorquino de madeira, a embarcação tradicional da ilha, com duas paragens de banho em águas cristalinas e um aperitivo menorquino. O norte selvagem sem pressa e sem multidões.",
+  "coordinates": {
+    "lat": 40.0535,
+    "lng": 4.137
+  },
+  "area": "Es Mercadal (Fornells)",
+  "images": [
+    "/uploads/lg-excursion-llaut-mar-en-calma-fornells.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza",
+      "nautica"
+    ],
+    "highlights": [
+      "partir de Fornells num llaüt menorquino tradicional (Portobello / Don Pancho)",
+      "duas paragens para nadar, fazer snorkel e paddle em enseadas da costa norte",
+      "aperitivo menorquino a bordo; ~3 h 30 min de navegação tranquila"
+    ],
+    "durationMin": 210,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.marencalmamenorca.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "A baía de Fornells com os veleiros fundeados e a vila branca ao fundo",
+  "imageCredit": "Nikodem Nijaki / Wikimedia Commons (CC BY-SA 3.0)"
+}

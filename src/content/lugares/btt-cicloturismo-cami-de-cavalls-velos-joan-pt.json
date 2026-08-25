@@ -1,0 +1,46 @@
+{
+  "name": "Cicloturismo e BTT pelo Camí de Cavalls (aluguer Velos Joan)",
+  "lang": "pt",
+  "translationKey": "btt-cicloturismo-cami-de-cavalls-velos-joan",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Descobrir a costa a pedal: o Camí de Cavalls admite troços em BTT e a ilha está feita para a bicicleta. A Velos Joan, oficina e aluguer de referência em Ciutadella, oferece bicicletas de montanha, gravel e elétricas com entrega em hotéis por toda a ilha.",
+  "coordinates": {
+    "lat": 40.0014,
+    "lng": 3.8416
+  },
+  "area": "Ciutadella",
+  "images": [
+    "/uploads/lg-btt-cicloturismo-cami-de-cavalls-velos-joan.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "parejas",
+      "familias"
+    ],
+    "highlights": [
+      "alugar BTT, gravel ou e-bike de gama (entrega no hotel disponível)",
+      "rodar os troços cicláveis do Camí de Cavalls (modalidade BTT nas versões Basic, Standard ou Plus)",
+      "escolher o nível segundo a experiência; os troços mais duros só para ciclistas experientes"
+    ],
+    "durationMin": 240,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://velosjoan.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Um caminho rural de Menorca entre muros de pedra seca",
+  "imageCredit": "Vriullop / Wikimedia Commons (CC BY-SA 3.0)"
+}

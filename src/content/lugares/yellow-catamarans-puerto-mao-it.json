@@ -1,0 +1,48 @@
+{
+  "name": "Giro del porto di Maó in catamarano con visione subacquea (Yellow Catamarans)",
+  "lang": "it",
+  "translationKey": "yellow-catamarans-puerto-mao",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Percorrere uno dei porti naturali più grandi del Mediterraneo su un catamarano con visione subacquea, con la storia di Maó raccontata a bordo. Un'ora placida tra l'Illa del Rei, la base navale e la Fortezza della Mola.",
+  "coordinates": {
+    "lat": 39.891,
+    "lng": 4.268
+  },
+  "area": "Maó",
+  "images": [
+    "/uploads/lg-yellow-catamarans-puerto-mao.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "primera-vez",
+      "cultura",
+      "nautica"
+    ],
+    "highlights": [
+      "giro completo del porto di Maó passando per Illa del Rei, Illa Plana e La Mola",
+      "sale con finestre sotto la linea di galleggiamento per vedere il fondale",
+      "commento storico a bordo; ideale con i bambini, senza sforzo (~60-70 min)"
+    ],
+    "durationMin": 70,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.yellowcatamarans.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "La Estació Marítima del porto di Maó e la passeggiata delle palme",
+  "imageCredit": "Santiago Lap / Wikimedia Commons (CC BY-SA 3.0)"
+}

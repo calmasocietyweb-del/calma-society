@@ -1,0 +1,47 @@
+{
+  "name": "Parc Natural de s'Albufera des Grau",
+  "lang": "it",
+  "translationKey": "parc-natural-de-salbufera-des-grau",
+  "type": "naturaleza",
+  "description": "Cuore della Riserva della Biosfera di Minorca: laguna costiera, zona umida e bosco mediterraneo con osservatori e itinerari per il birdwatching. Il volto naturale e sereno del nord, ideale per camminate dolci in famiglia. Centro visitatori gratuito.",
+  "coordinates": {
+    "lat": 39.9461,
+    "lng": 4.2628
+  },
+  "area": "Nord (Maó)",
+  "tags": [
+    "norte",
+    "naturaleza",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "familias"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "l'itinerario lungo la laguna e il bosco mediterraneo",
+      "gli osservatori per il birdwatching",
+      "il cuore della Riserva della Biosfera di Minorca"
+    ]
+  },
+  "images": [
+    "/uploads/lg-parc-natural-de-salbufera-des-grau.webp"
+  ],
+  "imageAlt": "Lo specchio d'acqua di s'Albufera des Grau tra giunchi e macchia bassa",
+  "imageCredit": "CARME MARTORELL / Wikimedia Commons (CC BY-SA 3.0)"
+}

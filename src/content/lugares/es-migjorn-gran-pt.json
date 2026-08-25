@@ -1,0 +1,47 @@
+{
+  "name": "Es Migjorn Gran",
+  "lang": "pt",
+  "translationKey": "es-migjorn-gran",
+  "type": "pueblo",
+  "description": "O município mais pequeno e tranquilo, onde 'o tempo parece ter parado': casas brancas unifamiliares e a essência da Menorca antiga (curiosamente, uma vila jovem como município mas de população muito longeva). Porta para a Cova des Coloms (a maior gruta natural da ilha, a 'Catedral das Grutas'), para o barranc de Binigaus e para enseadas virgens paradisíacas como Trebaluger. Para quem procura autenticidade rural e natureza sem multidões.",
+  "coordinates": {
+    "lat": 39.9469,
+    "lng": 4.0481
+  },
+  "area": "Centro-sul (Es Migjorn Gran)",
+  "tags": [
+    "sur-centro",
+    "pueblo",
+    "es-migjorn-gran"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "cultura"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "a vila branca mais serena do sul",
+      "o barranc de Binigaus até à Cova des Coloms",
+      "descer a pé até à praia de Binigaus"
+    ]
+  },
+  "images": [
+    "/uploads/lg-es-migjorn-gran.webp"
+  ],
+  "imageAlt": "A costa de Binigaus, no concelho de Es Migjorn Gran, com o areal e o promontório",
+  "imageCredit": "Boladevidre / Wikimedia Commons (CC BY-SA 2.0)"
+}

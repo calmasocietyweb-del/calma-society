@@ -1,0 +1,47 @@
+{
+  "name": "Cales Coves",
+  "lang": "pt",
+  "translationKey": "cales-coves",
+  "type": "cala",
+  "description": "Enseada dupla rodeada de falésias perfuradas por uma necrópole pré-histórica de grutas (sítio talaiótico-romano), de grande valor cultural e paisagístico. Sem serviços; combina banho tranquilo com arqueologia.",
+  "coordinates": {
+    "lat": 39.874,
+    "lng": 4.148
+  },
+  "area": "Centro-sul (Alaior)",
+  "tags": [
+    "sur-centro",
+    "cala",
+    "alaior"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "cultura"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "banhar-se numa enseada dupla rodeada de falésias perfuradas",
+      "ver da água a necrópole de grutas pré-históricas escavadas na rocha",
+      "respeitar o sítio: é um lugar arqueológico protegido"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cales-coves.webp"
+  ],
+  "imageAlt": "Um veleiro fundeado em Cales Coves, sob a parede de rocha perfurada de grutas",
+  "imageCredit": "Ben Salter from Wales / Wikimedia Commons (CC BY 2.0)"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Castell de Sant Felip",
+  "lang": "pt",
+  "translationKey": "castell-de-sant-felip",
+  "type": "monumento",
+  "edition": "menorca",
+  "description": "A grande fortaleza que guardou a entrada do porto de Maó desde o séc. XVI, com quilómetros de túneis subterrâneos hoje ocultos debaixo de terra. Só se conhece em visita guiada do Consorci, o que faz dela um plano de património exclusivo e pouco massificado.",
+  "coordinates": {
+    "lat": 39.8675,
+    "lng": 4.3031
+  },
+  "area": "Es Castell (Cala de Sant Esteve)",
+  "images": [
+    "/uploads/lg-castell-de-sant-felip.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "lujo-tranquilo",
+      "primera-vez"
+    ],
+    "highlights": [
+      "descer às galerias e contraminas subterrâneas com um guia especializado",
+      "compreender o cerco de 1782 e a vida da guarnição que defendia o porto",
+      "completar o conjunto militar da entrada do porto com o Fort Marlborough e La Mola"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.consorciomilitarmenorca.com/es/visitas-guiadas-al-castillo-de-san-felipe/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "As galerias e os muros de pedra que restam do castell de Sant Felip",
+  "imageCredit": "SSANTY / Wikimedia Commons (CC BY-SA 3.0)"
+}

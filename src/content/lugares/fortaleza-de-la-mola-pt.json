@@ -1,0 +1,52 @@
+{
+  "name": "Fortaleza de La Mola",
+  "lang": "pt",
+  "translationKey": "fortaleza-de-la-mola",
+  "type": "monumento",
+  "description": "Imponente fortaleza militar (1848-1875) que guarda a entrada do porto de Maó. Baterias, túneis, canhões Vickers e vistas para o mar. Recinto enorme que se pode percorrer livremente com mapa, com audioguia ou em visita guiada. Um grande plano patrimonial de meio dia.",
+  "coordinates": {
+    "lat": 39.8819,
+    "lng": 4.3097
+  },
+  "area": "Este (Es Castell)",
+  "tags": [
+    "este",
+    "monumento",
+    "es-castell"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "mao-puerto",
+      "este"
+    ],
+    "highlights": [
+      "a fortaleza do séc. XIX sobre a entrada do porto",
+      "os túneis e as baterias",
+      "as vistas de Maó desde os miradouros"
+    ]
+  },
+  "images": [
+    "/uploads/lg-fortaleza-de-la-mola.webp"
+  ],
+  "imageAlt": "Um canhão Vickers da bateria de La Mola, com o seu tubo camuflado apontado ao mar",
+  "imageCredit": "Àlex / Wikimedia Commons (CC BY-SA 4.0)"
+}

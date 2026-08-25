@@ -1,0 +1,46 @@
+{
+  "name": "Spa Torralbenc (rituali Natura Bissé)",
+  "lang": "it",
+  "translationKey": "spa-torralbenc",
+  "type": "spa",
+  "edition": "menorca",
+  "description": "In una tenuta agricola di 74 ettari tra i vigneti, la spa di Torralbenc propone massaggi e rituali con la cosmetica Natura Bissé. Aperta anche a chi non alloggia: una pausa di lusso sereno davanti alla campagna minorchina.",
+  "coordinates": {
+    "lat": 39.91,
+    "lng": 4.16
+  },
+  "area": "Alaior",
+  "images": [
+    "/uploads/lg-spa-torralbenc.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza"
+    ],
+    "highlights": [
+      "Massaggi e rituali viso e corpo con prodotti Natura Bissé",
+      "Massaggio Torralbenc con oli di rosmarino e lavanda della tenuta stessa",
+      "Ritiri di yoga e pilates in stagione, tra vigne e campagna"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://torralbenc.com/es/wellness/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Una mucca di razza minorchina al pascolo su un campo di stoppie ad Alaior",
+  "imageCredit": "Discasto / Wikimedia Commons (CC BY-SA 4.0)"
+}

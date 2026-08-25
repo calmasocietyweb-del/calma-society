@@ -1,0 +1,46 @@
+{
+  "name": "Spa Santa Ponsa (Fontenille)",
+  "lang": "it",
+  "translationKey": "spa-santa-ponsa-fontenille",
+  "type": "spa",
+  "edition": "menorca",
+  "description": "La spa della tenuta Santa Ponsa vive nella cisterna settecentesca di un antico palazzo, tra giardini catalogati. Piscina coperta, sauna e hammam, con la cosmetica Susanne Kaufmann e lezioni di yoga: benessere di alta gamma con giornata spa per i visitatori.",
+  "coordinates": {
+    "lat": 39.902,
+    "lng": 4.093
+  },
+  "area": "Alaior",
+  "images": [
+    "/uploads/lg-spa-santa-ponsa-fontenille.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza"
+    ],
+    "highlights": [
+      "Spa nell'antica cisterna del Settecento: piscina coperta con getti, sauna e hammam",
+      "Trattamenti con la cosmetica naturale Susanne Kaufmann",
+      "Lezioni di yoga e day-pass spa aperto ai non alloggiati"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.santa-ponsa.fontenille-collection.com/en/spa-minorca-yoga-retreat/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Stoppie e macchia bassa della campagna di Alaior, con bestiame all'ombra",
+  "imageCredit": "Discasto / Wikimedia Commons (CC BY-SA 4.0)"
+}

@@ -1,0 +1,73 @@
+{
+  "name": "Cala en Turqueta",
+  "lang": "pt",
+  "translationKey": "cala-turqueta",
+  "type": "cala",
+  "description": "Águas de um turquesa quase irreal e areia fina protegida por pinheiros. Mais recolhida e familiar, é das enseadas mais queridas do sudoeste. O nome diz tudo.",
+  "coordinates": {
+    "lat": 39.9268,
+    "lng": 3.913
+  },
+  "area": "Sul (Ciutadella)",
+  "practicalInfo": {
+    "acceso": "Curta caminhada (~10-15 min) desde o estacionamento por um trilho entre pinheiros",
+    "aparcamiento": "Lotação controlada (época de 2026): uma cancela fecha o estacionamento assim que enche, e Turqueta é a primeira a fechar de todas as enseadas a sul de Ciutadella. Em julho e agosto costuma estar completo por volta das 8:00; em maio, por volta das 10:00. Não vale a pena procurar lugar nos arredores: os caminhos são estreitos e não é permitido estacionar neles. Alternativa sem carro: autocarro de Ciutadella às 10:15, 12:15, 16:15 e 19:15, com regresso meia hora mais tarde.",
+    "servicios": "Sem bar de apoio: leve água, comida e sombra",
+    "mejorEpoca": "Se for de carro, madrugue a sério: é a primeira a pendurar o cartaz de completo. Em julho e agosto, chegue entre as 7:00 e as 7:30. Em maio, junho e setembro há bastante mais margem: em maio os estacionamentos não enchem antes das 10:00 ou 10:30. O controlo de acessos funciona das 7:30 às 21:00 e mantém-se até 15 de outubro."
+  },
+  "images": [
+    "/uploads/cala-turqueta.webp"
+  ],
+  "tags": [
+    "sur",
+    "turquesa",
+    "familiar",
+    "ciutadella"
+  ],
+  "status": "published",
+  "windExposure": {
+    "openingBearingDeg": 200,
+    "embayment": "encajonada",
+    "municipioINE": "07015",
+    "shelteredFrom": [
+      "Tramuntana (N)",
+      "Gregal (NE)",
+      "Mestral (NO)"
+    ],
+    "exposedTo": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 200,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "shuttleInfo": "No verão mantém o acesso de carro, mas o estacionamento enche muito cedo (chegue por volta das 8:00). Na época alta há também autocarro de ligação desde Ciutadella. Ponto de partida habitual para caminhar até Macarella.",
+    "effortNote": "Trilho de 10-15 min entre pinheiros desde o estacionamento; piso firme mas não adequado a cadeira de rodas nem a carrinho de bebé.",
+    "highlights": [
+      "um turquesa quase irreal e areia fina protegida por pinheiros",
+      "no verão mantém o acesso de carro, mas o estacionamento enche cedo (chegue por volta das 8:00)",
+      "ponto de partida habitual para caminhar até Macarella pelo Camí de Cavalls"
+    ]
+  },
+  "imageAlt": "Cala en Turqueta vista por entre os pinheiros, com a areia branca e a água turquesa"
+}

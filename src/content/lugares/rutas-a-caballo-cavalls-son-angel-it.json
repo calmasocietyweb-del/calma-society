@@ -1,0 +1,45 @@
+{
+  "name": "Passeggiate a cavallo lungo la costa nord (Cavalls Son Àngel)",
+  "lang": "it",
+  "translationKey": "rutas-a-caballo-cavalls-son-angel",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "A cavallo attraverso una tenuta di 300 ha di bosco e costa vergine a nord di Ciutadella, fino a cale nascoste come Codolar de Biniatram o Ses Fontanelles. La natura autentica della Tramuntana, lontano dalle folle, al passo del cavallo.",
+  "coordinates": {
+    "lat": 40.022,
+    "lng": 3.86
+  },
+  "area": "Ciutadella (Camí d'Algaiarens)",
+  "images": [
+    "/uploads/caballos-jinetes.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "parejas",
+      "familias"
+    ],
+    "highlights": [
+      "anello nel bosco di Son Àngel con visita a due cale vergini",
+      "itinerario di ~2,5 h fino a Codolar de Biniatram con sosta a Cala Ses Fontanelles",
+      "opzioni da 1 a 3 h per chi inizia (bambini dai 6 anni) e itinerari lunghi per esperti"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.cavallssonangel.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Cavalli minorchini montati dai loro cavalieri"
+}

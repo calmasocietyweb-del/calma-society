@@ -1,0 +1,53 @@
+{
+  "name": "Bodegas Binifadet",
+  "lang": "pt",
+  "translationKey": "bodegas-binifadet",
+  "type": "bodega",
+  "description": "A adega mais antiga e de maior produção de Menorca (~100 000 garrafas/ano, metade da ilha; a única que elabora espumantes). 12 ha em Sant Lluís com castas brancas (Chardonnay, Malvasia, Moscatel...) e tintas (Merlot, Syrah, Cabernet...). Visita pela vinha, explicação do processo, prova e restaurante entre cepas. Enoturismo de referência sob a IGP Vi de la Terra Illa de Menorca.",
+  "coordinates": {
+    "lat": 39.85,
+    "lng": 4.27
+  },
+  "area": "Sudeste (Sant Lluis)",
+  "tags": [
+    "sur-este",
+    "experiencia",
+    "sant-lluis"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "lujo-tranquilo",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-07-22",
+    "indoorAlternativeOf": [
+      "binibeca-sur-este",
+      "sur-este"
+    ],
+    "highlights": [
+      "a visita guiada pela vinha com prova do vinho de Menorca",
+      "almoçar ou jantar na esplanada entre vinhas",
+      "reservar a prova e a mesa com antecedência"
+    ],
+    "officialUrl": "https://binifadet.com/"
+  },
+  "images": [
+    "/uploads/vino-bodega.webp"
+  ],
+  "imageAlt": "Barricas e garrafas no interior de uma adega"
+}

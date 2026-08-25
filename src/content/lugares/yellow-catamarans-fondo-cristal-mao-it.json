@@ -1,0 +1,47 @@
+{
+  "name": "Yellow Catamarans (catamarano con fondo trasparente, porto di Maó)",
+  "lang": "it",
+  "translationKey": "yellow-catamarans-fondo-cristal-mao",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Un giro sereno nel porto naturale più grande del Mediterraneo a bordo di un catamarano con il fondo trasparente: la storia di Maó in superficie e la vita marina di sotto, senza sforzo e senza mal di mare. Il primo mare di Minorca che i bambini vedono.",
+  "coordinates": {
+    "lat": 39.8917,
+    "lng": 4.2747
+  },
+  "area": "Maó",
+  "images": [
+    "/uploads/lg-yellow-catamarans-fondo-cristal-mao.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "primera-vez",
+      "cultura"
+    ],
+    "highlights": [
+      "vedere pesci e fondali attraverso lo scafo di cristallo dal ponte inferiore",
+      "percorrere l'imboccatura del porto con le fortezze e l'Illa del Rei",
+      "imbarco a piedi sul Moll de Llevant, senza auto e con accesso facile"
+    ],
+    "durationMin": 75,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.yellowcatamarans.com/en/home",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "La marina del porto di Maó di notte, con le imbarcazioni ormeggiate",
+  "imageCredit": "Santiago Lap / Wikimedia Commons (CC BY-SA 3.0)"
+}

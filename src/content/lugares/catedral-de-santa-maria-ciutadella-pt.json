@@ -1,0 +1,47 @@
+{
+  "name": "Catedral de Santa Maria de Ciutadella",
+  "lang": "pt",
+  "translationKey": "catedral-de-santa-maria-ciutadella",
+  "type": "monumento",
+  "edition": "menorca",
+  "description": "A catedral gótica de Menorca, erguida após a conquista de Afonso III (1287) sobre a antiga mesquita maior. Coração monumental do centro histórico de Ciutadella e paragem serena de cultura, a um passo de palácios e praças senhoriais.",
+  "coordinates": {
+    "lat": 40.0018,
+    "lng": 3.8377
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [
+    "/uploads/lg-catedral-de-santa-maria-ciutadella.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "primera-vez",
+      "parejas",
+      "lujo-tranquilo"
+    ],
+    "highlights": [
+      "admirar a nave gótica catalã e o portal neoclássico",
+      "situar a história da cidade: uma catedral sobre a mesquita maior andalusí",
+      "continuar com o passeio pelo centro histórico, o Born e os palácios de Ciutadella"
+    ],
+    "durationMin": 45,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://bisbatdemenorca.org/diocesi/la-catedral-i-el-seu-museu/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "A fachada da catedral de Ciutadella com a sua rosácea, e pessoas na praça",
+  "imageCredit": "Menorquino / Wikimedia Commons (CC BY-SA 3.0 es)"
+}

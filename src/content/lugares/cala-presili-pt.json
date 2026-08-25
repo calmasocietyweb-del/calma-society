@@ -1,0 +1,51 @@
+{
+  "name": "Cala Presili",
+  "lang": "pt",
+  "translationKey": "cala-presili",
+  "type": "cala",
+  "description": "Pequena enseada virgem junto à Cala Tortuga, aos pés do farol de Favaritx, em pleno parque natural. Costuma combinar-se com a Tortuga na mesma excursão a pé; a tranquilidade está garantida pelo controlo de acessos.",
+  "coordinates": {
+    "lat": 39.995,
+    "lng": 4.272
+  },
+  "area": "Norte (Maó)",
+  "tags": [
+    "norte",
+    "cala",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 180,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "o banho virgem aos pés do farol de Favàritx",
+      "combiná-la com a Cala Tortuga, a sua vizinha, no mesmo dia",
+      "no verão chega-se de autocarro sazonal, não de carro"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-presili.webp"
+  ],
+  "imageAlt": "A costa rochosa junto ao farol de Favàritx, com a Cala Presili e a Platja de Tortuga ao fundo",
+  "imageCredit": "carlos venegas gavilán / Wikimedia Commons (CC BY-SA 4.0)",
+  "practicalInfo": {
+    "aparcamiento": "De 1 de junho a 30 de setembro não é possível chegar de carro nem de mota: toda a zona do farol de Favàritx está fechada ao trânsito privado e a entrada faz-se de autocarro. Desde 1 de junho de 2026, o autocarro para Favàritx tem doze frequências diárias, mais quatro do que no ano passado. Da paragem ficam uns 15 minutos a pé.",
+    "mejorEpoca": "Fora da época de restrição (outubro a maio) chega-se de carro até ao estacionamento do farol e a praia está praticamente vazia. No verão, o primeiro autocarro da manhã."
+  }
+}

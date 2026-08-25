@@ -1,0 +1,53 @@
+{
+  "name": "Mercat Municipal de Ciutadella",
+  "lang": "it",
+  "translationKey": "mercat-municipal-de-ciutadella",
+  "type": "comercio",
+  "description": "Mercato del pesce e dei frutti di mare di Ciutadella, con verdura e frutta dei contadini locali maturate al sole. Il mercato vivo della città di ponente, una sosta per comprare prodotti freschi e respirare la vita locale.",
+  "coordinates": {
+    "lat": 40,
+    "lng": 3.84
+  },
+  "area": "Ovest (Ciutadella)",
+  "tags": [
+    "oeste",
+    "gastronomia",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "cena",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 60,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "ciutadella-ciudad",
+      "oeste"
+    ],
+    "highlights": [
+      "comprare i frutti di mare in pescheria e farseli cucinare ai banconi sotto i portici",
+      "fare colazione e assaggiare qualche tapa sotto gli archi di prima mattina",
+      "l'architettura in ferro del XIX secolo, unica a Minorca (Plaça de la Llibertat)"
+    ]
+  },
+  "images": [
+    "/uploads/lg-mercat-municipal-de-ciutadella.webp"
+  ],
+  "imageAlt": "I portici del Mercat Municipal di Ciutadella, con gente all'ombra",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)"
+}

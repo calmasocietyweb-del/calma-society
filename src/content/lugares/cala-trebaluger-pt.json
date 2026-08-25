@@ -1,0 +1,46 @@
+{
+  "name": "Cala Trebaluger",
+  "lang": "pt",
+  "translationKey": "cala-trebaluger",
+  "type": "cala",
+  "description": "Uma das enseadas virgens mais belas: areia branca, falésias calcárias, pinheiros até à beira-mar e uma pequena ribeira que desagua num dos lados. O acesso apenas a pé mantém-na tranquila; sem serviços, leve água e comida.",
+  "coordinates": {
+    "lat": 39.932,
+    "lng": 3.987
+  },
+  "area": "Centro-sul (Ferreries)",
+  "tags": [
+    "sur-centro",
+    "cala",
+    "ferreries"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "alcançar a pé ou de barco uma das enseadas virgens mais belas da ilha",
+      "desfrutar de areia branca, pinheiros até à beira-mar e uma ribeira a um lado",
+      "planear o regresso: caminhada exigente e sem qualquer serviço"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-trebaluger.webp"
+  ],
+  "imageAlt": "A água turquesa de Cala Trebalúger com os pinheiros inclinados sobre a rocha",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)"
+}

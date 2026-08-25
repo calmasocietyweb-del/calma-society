@@ -1,0 +1,34 @@
+{
+  "name": "Villa Le Blanc (Gran Meliá)",
+  "lang": "it",
+  "translationKey": "villa-le-blanc",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Il cinque stelle direttamente sulla spiaggia di Sant Tomàs, membro di The Leading Hotels of the World. Piscina affacciata sul mare, spa completa e diversi ristoranti con cucina locale di stagione. È il lusso classico da spiaggia — teli, lettini, servizio — fatto con la sobrietà che Minorca richiede: architettura bianca e bassa, e la baia di sabbia davanti.",
+  "coordinates": {
+    "lat": 39.9165,
+    "lng": 4.0345
+  },
+  "area": "Sud (Es Migjorn Gran)",
+  "practicalInfo": {
+    "acceso": "Spiaggia di Sant Tomàs, Es Migjorn Gran, fronte mare.",
+    "horario": "Stagione: confermi le date 2026 sul sito ufficiale.",
+    "servicios": "Piscina esterna con vista mare, spa, diversi ristoranti, accesso diretto alla spiaggia di Sant Tomàs."
+  },
+  "website": "https://www.melia.com/es/hoteles/espana/menorca/villa-le-blanc-gran-melia",
+  "images": [
+    "/uploads/binigaus.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "hotel",
+    "lujo",
+    "es-migjorn-gran"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Villa Le Blanc Gran Meliá, spiaggia di Sant Tomàs: il 5 stelle fronte mare della costa sud, con spa e cucina locale."
+  },
+  "imageAlt": "La spiaggia vergine di Binigaus, di sabbia dorata e falesie, a Es Migjorn Gran.",
+  "imageCredit": "Adobe Stock"
+}

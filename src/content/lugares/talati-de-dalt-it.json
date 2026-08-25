@@ -1,0 +1,48 @@
+{
+  "name": "Talati de Dalt",
+  "lang": "it",
+  "translationKey": "talati-de-dalt",
+  "type": "monumento",
+  "description": "Uno dei complessi talaiotici più pittoreschi e accessibili, parte del sito UNESCO. La sua taula con una colonna appoggiata (caduta), circondata da ulivi secolari, è tra le immagini più riconoscibili della preistoria minorchina.",
+  "images": [
+    "/uploads/talati-de-dalt.webp"
+  ],
+  "imageAlt": "La taula di Talatí de Dalt con la colonna caduta appoggiata, circondata dagli ulivi, nel villaggio talaiotico di Minorca.",
+  "imageCredit": "Paul Stephenson · Wikimedia (CC BY 2.0)",
+  "coordinates": {
+    "lat": 39.8836,
+    "lng": 4.2058
+  },
+  "area": "Centro (Maó)",
+  "tags": [
+    "centro",
+    "yacimiento",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "familias"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "la taula con la colonna appoggiata, circondata dagli ulivi",
+      "entrare nelle grotte e negli anfratti del villaggio talaiotico (UNESCO)",
+      "andare di prima mattina o sul tardi: c'è poca ombra"
+    ]
+  }
+}

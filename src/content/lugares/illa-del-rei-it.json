@@ -1,0 +1,48 @@
+{
+  "name": "Illa del Rei",
+  "lang": "it",
+  "translationKey": "illa-del-rei",
+  "type": "monumento",
+  "description": "Isolotto nel porto di Maó con l'antico ospedale militare britannico (XVIII secolo), magnificamente restaurato da volontari, e una sede della galleria d'arte Hauser & Wirth con giardino disegnato da Piet Oudolf. Un intreccio unico di patrimonio britannico, arte contemporanea e traversata in barca.",
+  "coordinates": {
+    "lat": 39.8772,
+    "lng": 4.2906
+  },
+  "area": "Est (Maó)",
+  "tags": [
+    "este",
+    "monumento",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "l'ospedale navale britannico (1711) restaurato dai volontari",
+      "la galleria d'arte Hauser & Wirth e il giardino di Piet Oudolf (ingresso gratuito)",
+      "la traversata con la barca navetta dal porto di Maó"
+    ]
+  },
+  "images": [
+    "/uploads/lg-illa-del-rei.webp"
+  ],
+  "imageAlt": "L'Illa del Rei nel porto di Maó, con l'edificio rosso dell'antico ospedale",
+  "imageCredit": "Dreizung / Wikimedia Commons (CC BY 3.0)"
+}

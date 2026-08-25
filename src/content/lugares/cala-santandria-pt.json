@@ -1,0 +1,58 @@
+{
+  "name": "Cala Santandria",
+  "lang": "pt",
+  "translationKey": "cala-santandria",
+  "type": "cala",
+  "description": "Enseada abrigada de areia branca e águas tranquilas e límpidas, muito resguardada do vento, ideal para famílias com crianças. Urbanizada e cómoda, junto a Ciutadella.",
+  "coordinates": {
+    "lat": 39.969,
+    "lng": 3.829
+  },
+  "area": "Sudoeste (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "cala",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "seasonWindow": {
+        "from": "05-01",
+        "to": "10-31"
+      },
+      "certainty": "alta"
+    },
+    "highlights": [
+      "enseada abrigada do vento, de areia branca e águas muito tranquilas",
+      "urbanizada e cómoda, com serviço de banho adaptado na época (maio-outubro)",
+      "ideal para famílias com crianças, muito perto de Ciutadella"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-santandria.webp"
+  ],
+  "imageAlt": "Cala Santandria com a areia, a água verde-clara e as casas brancas sobre a enseada",
+  "imageCredit": "Herodotptlomeu / Wikimedia Commons (CC BY-SA 4.0)"
+}

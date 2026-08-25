@@ -1,0 +1,76 @@
+{
+  "name": "Cala Mitjana",
+  "lang": "pt",
+  "translationKey": "cala-mitjana",
+  "type": "cala",
+  "description": "Enseada ampla de areia clara e água transparente, ladeada por falésias das quais alguns se lançam ao mar. Perto de Cala Galdana, combina beleza e uma acessibilidade razoável.",
+  "coordinates": {
+    "lat": 39.9355,
+    "lng": 3.9686
+  },
+  "area": "Sul (Ferreries)",
+  "practicalInfo": {
+    "acceso": "Caminhada cómoda (~15 min) desde o estacionamento, por pinhal",
+    "aparcamiento": "Estacionamento grande de terra batida à entrada de Cala Galdana, gratuito, com capacidade controlada desde 2025 (época de 2026): fecha com barreira quando enche. Em julho e agosto convém lá estar antes das 10h00. Do estacionamento resta um caminho sinalizado de pouco mais de um quilómetro, a descer. Não vale a pena procurar lugar nos arredores: os caminhos são estreitos e não é permitido estacionar neles.",
+    "servicios": "Sem serviços: leve tudo o que precisar",
+    "mejorEpoca": "Junho e setembro. Em agosto, de manhã: em julho e agosto, chegue entre as 7h00 e as 7h30. Em maio, junho e setembro há bastante mais margem: em maio os estacionamentos não enchem antes das 10h00 ou 10h30. O controlo de acessos funciona das 7h30 às 21h00 e mantém-se até 15 de outubro."
+  },
+  "images": [
+    "/uploads/cala-mitjana.webp"
+  ],
+  "tags": [
+    "sur",
+    "acantilados",
+    "transparente",
+    "ferreries"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Enseada de areia clara e água transparente entre falésias, perto de Cala Galdana. Beleza serena e acesso razoável. Melhor à primeira hora, no sul."
+  },
+  "windExposure": {
+    "openingBearingDeg": 195,
+    "embayment": "encajonada",
+    "municipioINE": "07021",
+    "shelteredFrom": [
+      "Tramuntana (N)",
+      "Gregal (NE)",
+      "Mestral (NO)"
+    ],
+    "exposedTo": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": false
+  },
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "shuttleInfo": "Grande estacionamento de terra batida gratuito (~250 lugares) + caminho sinalizado de 1,2 km a descer. Chegue antes das 10h em época alta. Autocarro L52 (Ciutadella) / L51 (Maó); também a pé desde Cala Galdana pelo Camí de Cavalls.",
+    "effortNote": "Caminho de 1,2 km a descer, na maior parte cómodo e apto para famílias; não para cadeira de rodas.",
+    "highlights": [
+      "descer o caminho de 1,2 km do estacionamento até à enseada de areia clara",
+      "ver alguns a saltar para a água das falésias (com prudência)",
+      "chegar antes das 10h no verão: o estacionamento enche cedo"
+    ]
+  },
+  "imageAlt": "A água turquesa de Cala Mitjana com a língua de rocha e a falésia branca ao fundo"
+}

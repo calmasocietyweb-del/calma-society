@@ -1,0 +1,46 @@
+{
+  "name": "Can Saura. Museu de Ciutadella",
+  "lang": "it",
+  "translationKey": "museu-de-ciutadella-can-saura",
+  "type": "museo",
+  "edition": "menorca",
+  "description": "Il museo municipale di Ciutadella, ospitato dal 2019 nella casa signorile di Can Saura (XVII-XVIII secolo). Collezione archeologica ed etnologica di ponente in quindici sale, con un'esposizione che guarda alla storia della morte a Minorca a partire da una necropoli andalusa scoperta sotto l'edificio.",
+  "coordinates": {
+    "lat": 40.0008,
+    "lng": 3.8385
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [
+    "/uploads/lg-museu-de-ciutadella-can-saura.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "familias",
+      "lujo-tranquilo"
+    ],
+    "highlights": [
+      "percorrere la casa nobiliare di Can Saura, restaurata, in pieno centro storico",
+      "vedere la collezione archeologica ed etnologica della metà di ponente dell'isola",
+      "scoprire la necropoli islamica trovata sotto il museo stesso"
+    ],
+    "durationMin": 75,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.menorca.es/en/Municipal_Museum_of_Ciutadella/9111",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Un palazzo di pietra del centro di Ciutadella, dello stesso tipo di quello che ospita il museo",
+  "imageCredit": "Tomeu / Wikimedia Commons (CC BY-SA 4.0)"
+}

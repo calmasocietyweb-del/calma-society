@@ -1,0 +1,47 @@
+{
+  "name": "Passeggiate a cavallo sul Camí de Cavalls (Son Bou)",
+  "lang": "it",
+  "translationKey": "rutas-a-caballo-son-bou",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Percorrere a cavallo un tratto del Camí de Cavalls accanto alla grande spiaggia di Son Bou e alla sua zona umida, al passo tranquillo del cavallo minorchino. Un modo sereno e diverso di sentire il paesaggio, adatto a famiglie e cavalieri principianti.",
+  "coordinates": {
+    "lat": 39.897,
+    "lng": 4.083
+  },
+  "area": "Alaior (Son Bou / Torre Solí Nou)",
+  "images": [
+    "/uploads/lg-rutas-a-caballo-son-bou.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "excursion",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza",
+      "parejas"
+    ],
+    "highlights": [
+      "itinerario familiare di 1 h nella prateria e zona umida di Son Bou (dai 5 anni)",
+      "itinerario di 2 h lungo la costa per tutti i livelli, adattando l'andatura del cavallo",
+      "partenza presso Torre Solí Nou, accanto all'hotel Jardín de Menorca"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.menorcahorseback.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Cavalli neri minorchini montati, nel jaleo di una festa di paese",
+  "imageCredit": "Songbird8 / Wikimedia Commons (CC BY-SA 4.0)"
+}

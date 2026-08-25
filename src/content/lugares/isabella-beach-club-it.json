@@ -1,0 +1,67 @@
+{
+  "name": "Isabella Beach Club",
+  "lang": "it",
+  "translationKey": "isabella-beach-club",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Beach club alle Platges de Fornells, sulla costa nord: zona chill-out, cocktail e cene con uno dei tramonti più belli del nord.",
+  "coordinates": {
+    "lat": 40.0503428,
+    "lng": 4.1083587
+  },
+  "area": "Nord (Es Mercadal)",
+  "practicalInfo": {
+    "horario": "Stagionale; gli orari cambiano ogni stagione — consulti il sito o Instagram."
+  },
+  "website": "https://www.isabellamenorca.com/en/",
+  "images": [
+    "/uploads/lg-isabella-beach-club.webp"
+  ],
+  "tags": [
+    "beach club",
+    "atardecer",
+    "fornells",
+    "norte"
+  ],
+  "status": "published",
+  "editorial": {
+    "lead": "Ci sono tramonti del sud molto fotografati, ma il nord custodisce i più selvaggi. Isabella Beach Club poggia su un promontorio di roccia a filo d'acqua alle Platges de Fornells, e lì — tra sushi, brace e un cocktail — il sole cala sul mare del nord.",
+    "sections": [
+      {
+        "heading": "Il tramonto del nord",
+        "body": [
+          "La costa nord di Minorca è la più aspra: vento, roccia e un mare che non sempre è in calma. Isabella sfrutta proprio questo. È appollaiato su un promontorio roccioso a filo d'acqua, alle Platges de Fornells, e si è fatto un nome per i suoi tramonti, più selvaggi e silenziosi di quelli del sud.",
+          "È un posto dove arrivare con anticipo, ordinare qualcosa e lasciare che il cielo faccia la sua parte."
+        ]
+      },
+      {
+        "heading": "Sushi, brace e cocktail",
+        "body": [
+          "La cucina guarda all'Oriente e al Mediterraneo insieme: fusione asiatica e spagnola, con il sushi e la brace come specialità, prodotto locale e una buona carta di cocktail. Alcune sere c'è un DJ, e la miscela — buona tavola, un bicchiere e musica soffusa davanti al mare — è la sua firma.",
+          "Le cene funzionano su prenotazione, quindi conviene organizzarsi: in estate non è un posto da improvvisare all'ultimo momento."
+        ]
+      },
+      {
+        "heading": "Come viverlo con calma",
+        "body": [
+          "Prenoti la cena in anticipo dal sito, scelga un tavolo rivolto a ovest e lasci che la serata scorra dal tramonto all'ultimo bicchiere. È uno di quei programmi che giustificano salire fino al nord."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Coppie",
+      "Tramonto",
+      "Cena con cocktail"
+    ],
+    "goodToKnow": [
+      "Su un promontorio di roccia a filo d'acqua alle Platges de Fornells (costa nord).",
+      "Cucina fusion asiatico-mediterranea: sushi, brace, prodotto locale e cocktail.",
+      "Le cene sono su prenotazione (sistema online proprio).",
+      "Musica con DJ alcune sere; programmazione e orari stagionali → li confermi sul sito."
+    ],
+    "transfer": true,
+    "transferText": "Si rientra di notte su strade secondarie del nord, poco illuminate e piene di curve, e dopo un cocktail guidare è l'ultima cosa di cui si ha voglia. La portiamo e la veniamo a riprendere con autista privato."
+  },
+  "imageAlt": "La costa di Cala Tirant con le case bianche sul crinale",
+  "imageCredit": "carlos venegas gavilán / Wikimedia Commons (CC BY-SA 4.0)"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Binigaus Vell",
+  "lang": "pt",
+  "translationKey": "binigaus-vell",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Uma quinta antiga de 89 hectares convertida em hotel rural, entre Es Migjorn Gran e a costa sul. Eles próprios o contam sem adornos: onde hoje se descansa, antes semeava-se trigo, ordenhavam-se vacas e fazia-se queijo Mahón-Menorca. Vinte e sete quartos em várias categorias, alguns com piscina privada, e pequenos-almoços com doces de fabrico próprio.",
+  "coordinates": {
+    "lat": 39.937522,
+    "lng": 4.039101
+  },
+  "area": "Sul (Es Migjorn Gran)",
+  "practicalInfo": {
+    "acceso": "Camí de sa Mala Garba km 0,9, 07749 Es Migjorn Gran.",
+    "horario": "Não publica a sua época; confirme as datas de 2026 no site oficial.",
+    "servicios": "Vinte e sete quartos, alguns junior suite com piscina privada. Restaurante. 89 hectares de campo."
+  },
+  "website": "https://www.binigausvell.com/",
+  "images": [
+    "/uploads/binigaus.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "hotel-rural",
+    "es-migjorn-gran"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Binigaus Vell (Es Migjorn Gran): hotel rural de 27 quartos numa quinta de 89 ha onde se fazia queijo Mahón-Menorca."
+  },
+  "imageAlt": "A praia virgem de Binigaus, de areia dourada e falésias, em Es Migjorn Gran.",
+  "imageCredit": "Adobe Stock"
+}

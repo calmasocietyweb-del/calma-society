@@ -1,0 +1,34 @@
+{
+  "name": "Sant Ignasi",
+  "lang": "it",
+  "translationKey": "sant-ignasi",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Una casa di campagna del 1777 a nord di Ciutadella, sulla strada per Cala Morell, trasformata in hotel rurale con piscina tra i giardini, campi da tennis e padel e servizio massaggi. Classico e senza stridori: la tenuta di sempre, ben condotta, a dieci minuti dal centro storico.",
+  "coordinates": {
+    "lat": 40.018,
+    "lng": 3.864
+  },
+  "area": "Ovest (Ciutadella)",
+  "practicalInfo": {
+    "acceso": "Nord di Ciutadella, in direzione di Cala Morell.",
+    "horario": "Confermi stagione e date sul sito ufficiale.",
+    "servicios": "Piscina esterna, giardini, tennis e padel, massaggi, parcheggio."
+  },
+  "website": "https://www.santignasi.com/",
+  "images": [
+    "/uploads/faro-punta-nati.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "hotel",
+    "lujo",
+    "ciutadella"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Sant Ignasi, Ciutadella: casa del 1777 trasformata in hotel rurale con piscina, tennis e giardini, sulla strada per Cala Morell."
+  },
+  "imageAlt": "Vista aerea del faro di Punta Nati sulla pietra ocra, con il mare che si infrange contro la scogliera.",
+  "imageCredit": "Adobe Stock"
+}

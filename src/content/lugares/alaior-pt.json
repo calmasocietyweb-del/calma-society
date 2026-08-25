@@ -1,0 +1,49 @@
+{
+  "name": "Alaior",
+  "lang": "pt",
+  "translationKey": "alaior",
+  "type": "pueblo",
+  "description": "Povoação branca do interior, berço do queijo DOP Mahón-Menorca e de gelados e enchidos artesanais. Fundada por Jaume II em torno da colina de Ihalor. Centro histórico medieval com a igreja de Santa Eulàlia como grande referência. Paragem gastronómica obrigatória (queijarias) e de passeio tranquilo, longe do bulício costeiro.",
+  "coordinates": {
+    "lat": 39.9356,
+    "lng": 4.1392
+  },
+  "area": "Centro (Alaior)",
+  "tags": [
+    "centro",
+    "pueblo",
+    "alaior"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "naturaleza",
+      "familias"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "o casario branco sobre a colina",
+      "queijo e gelado artesanais (DOP Mahón-Menorca)",
+      "o sítio arqueológico de Torre d'en Galmés muito perto"
+    ]
+  },
+  "images": [
+    "/uploads/lg-alaior.webp"
+  ],
+  "imageAlt": "Rua empedrada de Alaior entre casas brancas com persianas verdes",
+  "imageCredit": "Mathewr1999 / Wikimedia Commons (CC BY-SA 4.0)"
+}

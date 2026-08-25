@@ -1,0 +1,47 @@
+{
+  "name": "Cala Binidali",
+  "lang": "pt",
+  "translationKey": "cala-binidali",
+  "type": "cala",
+  "description": "Enseada pequena e natural de areia dourada fina e águas turquesa muito transparentes, encaixada entre falésias; excelente para snorkel. Íntima e de estacionamento reduzido, é melhor chegar cedo.",
+  "coordinates": {
+    "lat": 39.858,
+    "lng": 4.185
+  },
+  "area": "Sudeste (Maó)",
+  "tags": [
+    "sur-este",
+    "cala",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "o banho em águas turquesa muito transparentes",
+      "snorkel entre as falésias que a encaixam",
+      "chegar cedo: é pequena e íntima e enche depressa"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-binidali.webp"
+  ],
+  "imageAlt": "A enseada de Binidalí encaixada entre paredes de rocha, com a água de um azul intenso",
+  "imageCredit": "sguastevi / Wikimedia Commons (CC BY-SA 3.0)"
+}

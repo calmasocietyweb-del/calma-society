@@ -1,0 +1,53 @@
+{
+  "name": "Ristorante Sant Joan de Binissaida",
+  "lang": "it",
+  "translationKey": "restaurante-sant-joan-de-binissaida",
+  "type": "restaurante",
+  "description": "Accogliente hotel rurale di 12 camere con ristorante di cucina di mercato: pesce fresco, carne locale e verdure del proprio orto, che aggiorna i classici minorchini. Lusso tranquillo nella campagna dell'est dell'isola.",
+  "coordinates": {
+    "lat": 39.88,
+    "lng": 4.27
+  },
+  "area": "Est (Es Castell)",
+  "tags": [
+    "este",
+    "gastronomia",
+    "es-castell"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "cena",
+    "idealFor": [
+      "gastronomia",
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-07-22",
+    "indoorAlternativeOf": [
+      "mao-puerto",
+      "este"
+    ],
+    "highlights": [
+      "cucina di mercato con le verdure del proprio orto biologico",
+      "cenare in una casa padronale del Settecento con giardino",
+      "prenotare con anticipo (ristorante di hotel rurale)"
+    ],
+    "officialUrl": "https://binissaida.com/es/restaurante"
+  },
+  "images": [
+    "/uploads/casa-piedra.webp"
+  ],
+  "imageAlt": "Una casa minorchina di pietra e calce, con la facciata al sole"
+}

@@ -1,0 +1,49 @@
+{
+  "name": "Farol de Favàritx",
+  "lang": "pt",
+  "translationKey": "faro-favaritx",
+  "type": "monumento",
+  "description": "Farol sobre um cabo de ardósia negra estriada que parece de outro planeta, no extremo norte do Parc Natural de s'Albufera des Grau.",
+  "coordinates": {
+    "lat": 40.001,
+    "lng": 4.272
+  },
+  "area": "Norte (Maó)",
+  "tags": [
+    "norte",
+    "faro",
+    "pizarra",
+    "parc natural"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "faro",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 90,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "shuttleInfo": "Acesso de carro restringido no verão (1 jun–31 out; em 2026 antecipou-se para 15 de maio): autocarro sazonal desde Maó (linha 43, ~3,65 €/viagem). Confirme o calendário do ano.",
+    "highlights": [
+      "a paisagem lunar de ardósia negra",
+      "o farol dentro do Parc Natural",
+      "no verão chega-se de autocarro sazonal"
+    ]
+  },
+  "images": [
+    "/uploads/lg-faro-favaritx.webp"
+  ],
+  "imageAlt": "O farol de Favàritx, com a sua torre às faixas brancas e pretas ao fim do caminho",
+  "imageCredit": "Markus Trienke / Wikimedia Commons (CC BY-SA 2.0)"
+}

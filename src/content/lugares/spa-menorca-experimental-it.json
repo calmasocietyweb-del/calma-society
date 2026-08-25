@@ -1,0 +1,46 @@
+{
+  "name": "Spa Menorca Experimental",
+  "lang": "it",
+  "translationKey": "spa-menorca-experimental",
+  "type": "spa",
+  "edition": "menorca",
+  "description": "In una tenuta dell'Ottocento a due passi da Cala Llucalari, la spa del Menorca Experimental combina cabine, sauna e hammam con la cosmetica Biologique Recherche e uno spazio yoga. Aperta ai visitatori, non solo a chi alloggia.",
+  "coordinates": {
+    "lat": 39.8902,
+    "lng": 4.0899
+  },
+  "area": "Alaior",
+  "images": [
+    "/uploads/lg-spa-menorca-experimental.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza"
+    ],
+    "highlights": [
+      "Tre cabine di trattamento, sauna e bagno di vapore (hammam)",
+      "Trattamenti viso e corpo con Biologique Recherche; anche Nüssa e Alex Carro",
+      "Lezioni di yoga e pilates; spazio benessere aperto ai visitatori (10:00–20:00)"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.menorcaexperimental.com/spa",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Campagna di Alaior con mucche al pascolo tra muri a secco",
+  "imageCredit": "Discasto / Wikimedia Commons (CC BY-SA 4.0)"
+}

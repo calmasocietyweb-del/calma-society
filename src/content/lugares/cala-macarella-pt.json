@@ -1,0 +1,77 @@
+{
+  "name": "Cala Macarella",
+  "lang": "pt",
+  "translationKey": "cala-macarella",
+  "type": "cala",
+  "description": "O postal por excelência do sul de Menorca: uma ferradura de areia branca, água turquesa e pinhal até à margem. Ao lado, a irmã mais pequena, Cala Macarelleta. Beleza serena que convém desfrutar cedo.",
+  "coordinates": {
+    "lat": 39.9356,
+    "lng": 3.9286
+  },
+  "area": "Sul (Ciutadella)",
+  "practicalInfo": {
+    "acceso": "A pé desde Cala Galdana (~30 min pelo Camí de Cavalls) ou de autocarro sazonal; no verão o acesso de carro está restringido",
+    "aparcamiento": "De 1 de junho a 30 de setembro não se pode chegar de carro nem de mota: o estacionamento público está fechado e só se entra de autocarro, táxi autorizado, bicicleta ou a pé. O autocarro parte de Ciutadella entre as 8h25 e as 20h20 (a cada 40 minutos, e a cada 20 a partir de 15 de junho); 8,50 € ida e volta comprando online (metade com o cartão de transporte do Consell). Fora dessas datas há estacionamento, com capacidade controlada, e enche cedo.",
+    "servicios": "Bar de praia sazonal; convém levar água e sombra",
+    "mejorEpoca": "Em pleno verão o carro não é uma opção, pelo que a pergunta não é a que horas estacionar, mas que autocarro apanhar: o primeiro, o das 8h25, é o que lhe dá a enseada quase vazia. Em maio e outubro, quando ainda se pode subir de carro, chegue antes das 10h00."
+  },
+  "images": [
+    "/uploads/cala-macarella.webp"
+  ],
+  "tags": [
+    "sur",
+    "turquesa",
+    "arena blanca",
+    "camí de cavalls",
+    "ciutadella"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "A enseada mais icónica do sul de Menorca: ferradura de areia branca, água turquesa e pinhal até à margem, com Cala Macarelleta ao lado. Melhor cedo."
+  },
+  "windExposure": {
+    "openingBearingDeg": 195,
+    "embayment": "encajonada",
+    "municipioINE": "07015",
+    "shelteredFrom": [
+      "Tramuntana (N)",
+      "Gregal (NE)",
+      "Mestral (NO)"
+    ],
+    "exposedTo": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "primera-vez",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 240,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "shuttleInfo": "1 jun–30 set: carros e motas particulares proibidos. Autocarro de ligação a partir de Ciutadella, táxi autorizado, bicicleta ou a pé (Camí de Cavalls desde Cala Galdana). Fora de época: carro até ao estacionamento gratuito, a 15-20 min a pé.",
+    "effortNote": "Acesso a pé ou de autocarro no verão; trilho do Camí de Cavalls. Sem serviços garantidos: leve água e sombra.",
+    "highlights": [
+      "o postal do sul: ferradura de areia branca, turquesa e pinhal",
+      "no verão chega-se de autocarro a partir de Ciutadella ou a pé pelo Camí de Cavalls",
+      "sem serviços fiáveis: desça com piquenique, água e sombra"
+    ]
+  },
+  "imageAlt": "Cala Macarella vista do miradouro: a praia com banhistas e a água verde-turquesa fechada pelos pinheiros"
+}

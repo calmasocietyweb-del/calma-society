@@ -1,0 +1,34 @@
+{
+  "name": "Son Felip",
+  "lang": "it",
+  "translationKey": "son-felip",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Una tenuta-fattoria biologica a nord di Ciutadella, tra Algaiarens e Cala Pilar, con una casa di campagna a uso esclusivo: si affitta intera, con piscina tra gli ulivi, orto biologico, cavalli di razza minorchina e un sentiero privato che scende a Cala Pilar lungo il Camí de Cavalls. Certificata Starlight per la qualità del suo cielo notturno. Il lusso qui è letterale: la tenuta intera, tutta per lei.",
+  "coordinates": {
+    "lat": 40.047,
+    "lng": 3.908
+  },
+  "area": "Nord (Ciutadella)",
+  "practicalInfo": {
+    "acceso": "Nord di Ciutadella, zona di Algaiarens; indicazioni al momento della prenotazione.",
+    "horario": "Uso esclusivo su prenotazione; consulti la disponibilità sul sito ufficiale.",
+    "servicios": "Casa a uso esclusivo, piscina, orto biologico, cavalli minorchini, accesso privato verso Cala Pilar, cielo Starlight."
+  },
+  "website": "https://sonfelip.com/",
+  "images": [
+    "/uploads/playa-norte-menorca.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "villa",
+    "lujo",
+    "ciutadella"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Son Felip, nord di Ciutadella: tenuta biologica a uso esclusivo tra Algaiarens e Cala Pilar, con cavalli e cielo Starlight."
+  },
+  "imageAlt": "Spiaggia di sabbia dorata e acque tranquille sulla costa nord di Minorca, con basse colline verdi.",
+  "imageCredit": "Adobe Stock"
+}

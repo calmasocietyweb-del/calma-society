@@ -1,0 +1,46 @@
+{
+  "name": "Spa Faustino Gran",
+  "lang": "it",
+  "translationKey": "spa-faustino-gran",
+  "type": "spa",
+  "edition": "menorca",
+  "description": "L'hammam e la piscina coperta del Faustino Gran occupano la volta di un'antica grotta, nel cuore di un palazzo del Cinquecento nel centro storico di Ciutadella. Lusso tranquillo allo stato puro: pietra, acqua e silenzio.",
+  "coordinates": {
+    "lat": 39.9998,
+    "lng": 3.8378
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [
+    "/uploads/lg-spa-faustino-gran.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "cultura"
+    ],
+    "highlights": [
+      "Percorso d'acqua nella volta di una grotta storica (piscina coperta, sauna, bagno di vapore)",
+      "Massaggi e rituali viso e corpo in due cabine di trattamento",
+      "Palazzo Relais & Châteaux del Cinquecento con patio di ulivi in pieno centro storico"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://faustinogran.com/es/spa",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "I palazzi della Plaça des Born di Ciutadella, nel centro storico",
+  "imageCredit": "Américo Toledano / Wikimedia Commons (CC BY-SA 4.0)"
+}

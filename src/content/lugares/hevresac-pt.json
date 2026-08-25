@@ -1,0 +1,34 @@
+{
+  "name": "Hevresac",
+  "lang": "pt",
+  "translationKey": "hevresac",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Oito quartos numa casa senhorial de finais do século XVIII no centro de Maó, restaurada com critério: pavimentos hidráulicos originais, mobiliário vintage, arte contemporânea e uma sustentabilidade que não é fachada (certificado Biosphere, materiais naturais, aerotermia). Pequeno, singular e muito da cidade.",
+  "coordinates": {
+    "lat": 39.8875,
+    "lng": 4.26
+  },
+  "area": "Este (Maó)",
+  "practicalInfo": {
+    "acceso": "Esquina das ruas Anuncivay e San Fernando, centro de Maó; o porto a menos de 1 km.",
+    "horario": "Confirme a época e as datas no site oficial.",
+    "servicios": "8 quartos, pequeno-almoço de produto local e biológico, certificado Biosphere."
+  },
+  "website": "https://www.hotelhevresac.com/",
+  "images": [
+    "/uploads/casa-piedra.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "hotel",
+    "lujo",
+    "mao"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Hevresac, Maó: hotel boutique de 8 quartos numa casa senhorial do séc. XVIII, com certificado Biosphere."
+  },
+  "imageAlt": "Interior de uma casa mediterrânica de pedra, com vigas de madeira e escada.",
+  "imageCredit": "Adobe Stock"
+}

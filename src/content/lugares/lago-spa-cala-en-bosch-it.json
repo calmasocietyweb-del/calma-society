@@ -1,0 +1,46 @@
+{
+  "name": "Lago Spa (Lago Resort)",
+  "lang": "it",
+  "translationKey": "lago-spa-cala-en-bosch",
+  "type": "spa",
+  "edition": "menorca",
+  "description": "In riva al mare a Cala en Bosch, la spa del Lago Resort propone un percorso termale — piscina riscaldata, jacuzzi, sauna e bagno turco — e trattamenti su misura. Aperta anche ai visitatori esterni per una giornata di calma dal sapore mediterraneo.",
+  "coordinates": {
+    "lat": 39.9265,
+    "lng": 3.8375
+  },
+  "area": "Ciutadella (Cala en Bosch)",
+  "images": [
+    "/uploads/lg-lago-spa-cala-en-bosch.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "familias"
+    ],
+    "highlights": [
+      "Percorso termale: piscina riscaldata, getti d'acqua, jacuzzi, sauna e bagno turco",
+      "Rituali e trattamenti corpo e viso, massaggi terapeutici",
+      "Day spa aperta ai visitatori esterni, in riva al mare"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.lagoresortmenorca.com/en/spa/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Il porto turistico di Cala en Bosc con le imbarcazioni ormeggiate",
+  "imageCredit": "Bärwinkel,Klaus / Wikimedia Commons (CC BY-SA 4.0)"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Bini Aumaia",
+  "lang": "pt",
+  "translationKey": "bini-aumaia",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Uma quinta de 98 hectares a menos de um quilómetro do centro de Es Mercadal, numa encosta, com a casa menorquina restaurada num só piso. É uma exploração em atividade: horta biológica, galinhas criadas ao ar livre e vacas, e os hóspedes podem participar nas tarefas do dia, a começar pela recolha dos ovos.",
+  "coordinates": {
+    "lat": 39.994542,
+    "lng": 4.088625
+  },
+  "area": "Centro (Es Mercadal)",
+  "practicalInfo": {
+    "acceso": "Finca Bini Aumaia, 07740 Es Mercadal. A cerca de 850 metros do centro da povoação.",
+    "horario": "Não publica a sua época; confirme as datas de 2026 no site oficial.",
+    "servicios": "Quinta em atividade com horta biológica, galinhas e vacas. Casa menorquina restaurada de um só piso."
+  },
+  "website": "https://www.biniaumaia.com/",
+  "images": [
+    "/uploads/monte-toro.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "agroturismo",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Bini Aumaia (Es Mercadal): agroturismo numa quinta em atividade de 98 ha a 850 m da povoação, com horta biológica e gado."
+  },
+  "imageAlt": "A ilha de Menorca e a povoação de Es Mercadal vistas do cimo do Monte Toro.",
+  "imageCredit": "Ian Kirk / Wikimedia Commons (CC BY 2.0)"
+}

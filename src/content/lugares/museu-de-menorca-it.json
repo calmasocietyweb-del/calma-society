@@ -1,0 +1,47 @@
+{
+  "name": "Museu de Menorca",
+  "lang": "it",
+  "translationKey": "museu-de-menorca",
+  "type": "museo",
+  "edition": "menorca",
+  "description": "Il museo di riferimento dell'isola, nell'antico convento francescano di Sant Francesc (XVIII secolo), con un bellissimo chiostro barocco. Il filo migliore per capire Minorca dalla preistoria talaiotica all'impronta britannica, prima di uscire a percorrerla.",
+  "coordinates": {
+    "lat": 39.8911,
+    "lng": 4.2606
+  },
+  "area": "Maó",
+  "images": [
+    "/uploads/lg-museu-de-menorca.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "primera-vez",
+      "familias",
+      "lujo-tranquilo"
+    ],
+    "highlights": [
+      "percorrere la maggiore collezione archeologica dell'isola (oltre 36.000 pezzi), dalla cultura talaiotica all'epoca islamica",
+      "passeggiare nel chiostro barocco dell'antico convento di Sant Francesc",
+      "dare un contesto alle taules e ai villaggi prima di visitarli sul terreno"
+    ],
+    "durationMin": 90,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.museudemenorca.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "La galleria a volta del Museu de Menorca, con le vetrine allineate lungo le finestre",
+  "imageCredit": "rene boulay / Wikimedia Commons (CC BY-SA 3.0)"
+}

@@ -1,0 +1,58 @@
+{
+  "name": "Cala en Porter",
+  "lang": "pt",
+  "translationKey": "cala-en-porter",
+  "type": "cala",
+  "description": "Enseada encaixada entre altas falésias, com areia fina e águas tranquilas, junto a uma urbanização com serviços. Famosa pela Cova d'en Xoroi (bar-miradouro e clube na rocha). Cómoda de carro, mas mais urbana do que as enseadas virgens vizinhas.",
+  "coordinates": {
+    "lat": 39.872,
+    "lng": 4.13
+  },
+  "area": "Centro-sul (Alaior)",
+  "tags": [
+    "sur-centro",
+    "cala",
+    "alaior"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "seasonWindow": {
+        "from": "05-01",
+        "to": "10-31"
+      },
+      "certainty": "alta"
+    },
+    "highlights": [
+      "tomar banho numa enseada de areia fina encaixada entre altas falésias",
+      "subir à Cova d'en Xoroi, na falésia, para um copo ao pôr do sol",
+      "estacionar em cima, na urbanização, e descer à praia pelas escadas"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-en-porter.webp"
+  ],
+  "imageAlt": "A enseada de Cala en Porter com a praia ao fundo do barranco, entre falésias",
+  "imageCredit": "Gimo61 / Wikimedia Commons (CC BY 3.0)"
+}

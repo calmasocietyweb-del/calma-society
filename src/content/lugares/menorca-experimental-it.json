@@ -1,0 +1,34 @@
+{
+ "name": "Menorca Experimental",
+ "lang": "it",
+ "translationKey": "menorca-experimental",
+ "type": "alojamiento",
+ "edition": "menorca",
+ "description": "Una tenuta ottocentesca di 30 ettari vicino a Cala Llucalari, riconvertita dal gruppo Experimental con interni di Dorothée Meilichzon. Quarantatré camere — nove con piscina privata —, piscina a sfioro nel cuore della tenuta e una cucina di orto proprio e piccoli produttori dell'isola. Lo spirito è quello di una casa d'artista in vacanza: colore, calma e cocktail seri al tramonto.",
+ "coordinates": {
+  "lat": 39.906,
+  "lng": 4.118
+ },
+ "area": "Centro-sud (Alaior)",
+ "practicalInfo": {
+  "acceso": "Tenuta nel comune di Alaior, vicino a Cala Llucalari; indicazioni esatte sul sito ufficiale.",
+  "horario": "Stagione: confermi le date 2026 sul sito ufficiale.",
+  "servicios": "43 camere (9 con piscina privata), piscina a sfioro, ristorante e terrazza con orto proprio, cocktail bar."
+ },
+ "website": "https://www.menorcaexperimental.com/",
+ "images": [
+  "/uploads/alaior.webp"
+ ],
+ "tags": [
+  "alojamiento",
+  "hotel",
+  "lujo",
+  "alaior"
+ ],
+ "status": "published",
+ "seo": {
+  "description": "Menorca Experimental, Alaior: tenuta del XIX secolo con 43 camere, piscina a sfioro e cucina di orto proprio, vicino a Cala Llucalari."
+ },
+ "imageAlt": "Via lastricata di case imbiancate a calce con persiane verdi nel centro storico di Alaior.",
+ "imageCredit": "Mathewr1999 / Wikimedia Commons (CC BY-SA 4.0)"
+}

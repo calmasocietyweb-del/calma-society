@@ -1,0 +1,44 @@
+{
+  "name": "Wellness Cugó Gran",
+  "lang": "it",
+  "translationKey": "wellness-cugo-gran",
+  "type": "spa",
+  "edition": "menorca",
+  "description": "In una tenuta di 100 ettari vicino a Sant Climent, il centro benessere di Cugó Gran riunisce un'équipe di terapeuti, giardini e zone relax per una calma molto curata. Il ritiro Cugó Gran propone quattro giorni di riconnessione.",
+  "coordinates": {
+    "lat": 39.8694,
+    "lng": 4.2419
+  },
+  "area": "Sant Climent (Maó)",
+  "images": [
+    "/uploads/villa-menorca.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas"
+    ],
+    "highlights": [
+      "Centro benessere con terapeuti e trattamenti su misura",
+      "Giardini e zone relax in una tenuta di 100 ettari",
+      "Cugó Gran Retreat: esperienza di benessere di 4 giorni"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://menorca.cugogran.com/en/",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Una casa padronale minorchina con la facciata imbiancata a calce e il giardino davanti"
+}

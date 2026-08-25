@@ -1,0 +1,34 @@
+{
+  "name": "Biniarroca",
+  "lang": "pt",
+  "translationKey": "biniarroca",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Um lloc menorquino do século XVII entre Sant Lluís, Es Castell e Maó, pioneiro do hotel rural na ilha (abriu em 1998, após três anos de restauro). Só para adultos, com duas piscinas entre jardins transbordantes de flores, terraços de pedra e um restaurante à la carte com um toque francês. Romântico sem pieguice.",
+  "coordinates": {
+    "lat": 39.856,
+    "lng": 4.254
+  },
+  "area": "Sudeste (Sant Lluís)",
+  "practicalInfo": {
+    "acceso": "Campo de Sant Lluís, entre a povoação, Es Castell e Maó; o aeroporto fica a uns 12 minutos.",
+    "horario": "Confirme a época e as datas no site oficial.",
+    "servicios": "Só adultos, duas piscinas exteriores, jardins, restaurante à la carte."
+  },
+  "website": "https://www.biniarroca.com/",
+  "images": [
+    "/uploads/binibeca-calle.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "hotel",
+    "lujo",
+    "sant-lluis"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Biniarroca, Sant Lluís: lloc do séc. XVII pioneiro do hotel rural, só adultos, com duas piscinas e jardins."
+  },
+  "imageAlt": "Viela caiada com uma escadaria branca em Binibeca Vell, no sudeste de Menorca.",
+  "imageCredit": "Adobe Stock"
+}

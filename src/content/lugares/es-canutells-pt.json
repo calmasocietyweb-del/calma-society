@@ -1,0 +1,47 @@
+{
+  "name": "Es Canutells",
+  "lang": "pt",
+  "translationKey": "es-canutells",
+  "type": "cala",
+  "description": "Pequena enseada resguardada entre Cales Coves e Binidali, de águas tranquilas, pouco frequentada por turistas e mais por menorquinos. Ambiente local e sossegado.",
+  "coordinates": {
+    "lat": 39.865,
+    "lng": 4.17
+  },
+  "area": "Sudeste (Maó)",
+  "tags": [
+    "sur-este",
+    "cala",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "familias"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "o banho resguardado numa enseada de ambiente local",
+      "o fundeadouro de barcos e os abrigos tradicionais de pescadores",
+      "snorkel tranquilo em águas calmas pouco frequentadas"
+    ]
+  },
+  "images": [
+    "/uploads/lg-es-canutells.webp"
+  ],
+  "imageAlt": "A enseada de Es Canutells com os barcos fundeados e a falésia a fechar a entrada",
+  "imageCredit": "Songbird8 / Wikimedia Commons (CC BY-SA 4.0)"
+}

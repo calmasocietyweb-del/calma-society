@@ -1,0 +1,49 @@
+{
+  "name": "Cala Morell",
+  "lang": "pt",
+  "translationKey": "cala-morell",
+  "type": "cala",
+  "description": "Enseada-porto natural encaixada entre falésias avermelhadas numa urbanização de casas brancas de tipo cicládico. Ao lado, a necrópole pré-histórica de Cala Morell (~14 grutas), que une banho e cultura talaiótica. A enseada mais cómoda e acessível do norte.",
+  "coordinates": {
+    "lat": 40.056,
+    "lng": 3.883
+  },
+  "area": "Norte (Ciutadella)",
+  "tags": [
+    "norte",
+    "cala",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "familias",
+      "cultura",
+      "parejas"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "a enseada-porto entre falésias avermelhadas e casas brancas cicládicas",
+      "visitar a necrópole pré-histórica junto à urbanização",
+      "o snorkel em águas abrigadas"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-morell.webp"
+  ],
+  "imageAlt": "A costa de Cala Morell, com o mar aberto e a rocha clara da falésia",
+  "imageCredit": "Franrull / Wikimedia Commons (CC BY-SA 4.0)"
+}

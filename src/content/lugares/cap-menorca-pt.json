@@ -1,0 +1,34 @@
+{
+  "name": "CAP Menorca (Relais & Châteaux)",
+  "lang": "pt",
+  "translationKey": "cap-menorca",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Quinze suítes sobre uma falésia da costa sul, no concelho de Alaior, cada uma com a sua piscina privada de água salgada escondida entre jardins. A propriedade, cerca de 30 hectares de pinhal replantado com milhares de árvores e arbustos, guarda o restaurante Casa del Mar e uma pequena frota própria de barcos para sair até às enseadas com skipper. É a proposta mais recolhida do luxo da ilha: poucas chaves, muito horizonte.",
+  "coordinates": {
+    "lat": 39.899,
+    "lng": 4.108
+  },
+  "area": "Centro-sul (Alaior)",
+  "practicalInfo": {
+    "acceso": "Costa sul do concelho de Alaior; o hotel fornece as indicações exatas ao reservar.",
+    "horario": "Época: confirme as datas de 2026 no site oficial.",
+    "servicios": "15 suítes com piscina privada, restaurante Casa del Mar, spa e massagens, ioga, barcos privados com skipper."
+  },
+  "website": "https://www.relaischateaux.com/us/hotel/cap-menorca/",
+  "images": [
+    "/uploads/son-bou.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "hotel",
+    "lujo",
+    "alaior"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "CAP Menorca (Relais & Châteaux), Alaior: 15 suítes com piscina privada sobre uma falésia da costa sul, com barcos próprios."
+  },
+  "imageAlt": "O grande arco da praia de Son Bou, a mais longa de Menorca, vista da falésia.",
+  "imageCredit": "Wasquewhat / Wikimedia Commons (CC BY-SA 4.0)"
+}

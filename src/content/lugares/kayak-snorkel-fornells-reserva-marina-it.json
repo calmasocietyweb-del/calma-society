@@ -1,0 +1,47 @@
+{
+  "name": "Kayak e snorkeling nella Riserva Marina del Nord (Fornells)",
+  "lang": "it",
+  "translationKey": "kayak-snorkel-fornells-reserva-marina",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Uscire a remi dalla baia di Fornells per scoprire cale e grotte che si raggiungono solo dal mare, con una sosta di snorkeling nella riserva marina del nord. Mare sereno, ritmo pacato e acqua trasparente.",
+  "coordinates": {
+    "lat": 40.0535,
+    "lng": 4.137
+  },
+  "area": "Es Mercadal (Fornells)",
+  "images": [
+    "/uploads/lg-kayak-snorkel-fornells-reserva-marina.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "naturaleza",
+      "parejas",
+      "nautica"
+    ],
+    "highlights": [
+      "remare nella baia riparata di Fornells e lungo la costa della riserva marina",
+      "entrare in cale e grotte inaccessibili da terra e fare il bagno dal kayak",
+      "snorkeling guidato con attrezzatura inclusa e briefing di sicurezza preliminare"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://katayak.net",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Una via di Fornells che scende verso l'acqua tra case imbiancate a calce",
+  "imageCredit": "Nikodem Nijaki / Wikimedia Commons (CC BY-SA 3.0)"
+}

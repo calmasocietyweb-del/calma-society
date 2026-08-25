@@ -1,0 +1,46 @@
+{
+  "name": "Lloc de Menorca (zoo e fattoria didattica)",
+  "lang": "it",
+  "translationKey": "lloc-de-menorca-zoo-granja",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Un rifugio di fauna a bordo della Me-1 dove i più piccoli danno da mangiare alle capre nane, passeggiano tra lemuri in libertà e, in estate, si rinfrescano nella zona d'acqua. Una giornata piena di natura senza allontanarsi dal centro dell'isola.",
+  "coordinates": {
+    "lat": 39.9072,
+    "lng": 4.2225
+  },
+  "area": "Alaior",
+  "images": [
+    "/uploads/lg-lloc-de-menorca-zoo-granja.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "talayotic-alaior",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza"
+    ],
+    "highlights": [
+      "dare da mangiare alle capre nane e vedere i lemuri dalla coda ad anelli in semilibertà",
+      "completare la visita con la zona d'acqua 'Talaquàtic' e il parco giochi (in estate)",
+      "fare merenda nell'area picnic; comprare il biglietto online con lo sconto"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://llocdemenorca.com/en/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Una mandria di vacche di razza minorchina che riposa in un prato",
+  "imageCredit": "Alejandro Muñoz Cabrisas / Wikimedia Commons (CC BY-SA 4.0)"
+}

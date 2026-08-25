@@ -1,0 +1,47 @@
+{
+  "name": "Pont d'en Gil",
+  "lang": "it",
+  "translationKey": "pont-den-gil",
+  "type": "monumento",
+  "description": "Gigantesco arco di roccia naturale sospeso sul mare, sulla costa ovest accanto a Ciutadella. Incornicia uno dei tramonti più scenografici dell'isola, con un controluce molto potente quando il sole si allinea con l'arco. In barca lo si può persino attraversare da sotto. Un belvedere del tramonto di prim'ordine.",
+  "coordinates": {
+    "lat": 40,
+    "lng": 3.8
+  },
+  "area": "Ovest (Ciutadella)",
+  "tags": [
+    "oeste",
+    "mirador",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "mirador",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "il gigantesco arco di roccia naturale stagliato sul mare",
+      "uno dei tramonti più scenografici vicino a Ciutadella",
+      "si arriva a piedi o in bici lungo il Camí de Cavalls (meglio vederlo dal mare)"
+    ]
+  },
+  "images": [
+    "/uploads/lg-pont-den-gil.webp"
+  ],
+  "imageAlt": "La piattaforma di roccia della costa ovest di Ciutadella, battuta dal mare aperto",
+  "imageCredit": "LucT / Wikimedia Commons (CC BY-SA 3.0)"
+}

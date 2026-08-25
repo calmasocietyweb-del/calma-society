@@ -1,0 +1,47 @@
+{
+  "name": "Cala Roja",
+  "lang": "pt",
+  "translationKey": "cala-roja",
+  "type": "cala",
+  "description": "A irmã mais pequena e mais íntima de Cavalleria: uma enseada avermelhada e recolhida entre rochas, quase sempre vazia. Ideal para fugir à multidão sem se afastar do estacionamento.",
+  "coordinates": {
+    "lat": 40.0575,
+    "lng": 4.0905
+  },
+  "area": "Norte (Es Mercadal)",
+  "tags": [
+    "norte",
+    "cala",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "uma pequena enseada avermelhada e recolhida, quase sempre vazia",
+      "fugir à multidão sem se afastar de Cavalleria",
+      "um recanto íntimo entre rochas para snorkel"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-roja.webp"
+  ],
+  "imageAlt": "A rocha avermelhada do cap de Cavalleria a cair sobre a água, na costa norte",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)"
+}

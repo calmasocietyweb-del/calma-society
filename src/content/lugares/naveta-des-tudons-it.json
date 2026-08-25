@@ -1,0 +1,55 @@
+{
+  "name": "Naveta des Tudons",
+  "lang": "it",
+  "translationKey": "naveta-tudons",
+  "type": "monumento",
+  "description": "Il monumento funerario talaiotico meglio conservato di Minorca e simbolo dell'isola. Fa parte di Menorca Talayótica, Patrimonio Mondiale dell'UNESCO dal 2023.",
+  "images": [
+    "/uploads/naveta-tudons.webp"
+  ],
+  "imageAlt": "La Naveta des Tudons, sepolcro collettivo preistorico a forma di nave rovesciata, vicino a Ciutadella (Minorca).",
+  "imageCredit": "Menorquino · Wikimedia (CC BY-SA 3.0)",
+  "coordinates": {
+    "lat": 39.9967,
+    "lng": 3.884
+  },
+  "area": "Ciutadella (ovest)",
+  "practicalInfo": {
+    "acceso": "Lungo la strada Me-1, con parcheggio segnalato",
+    "horario": "Sito all'aperto; consultare gli orari di accesso",
+    "mejorEpoca": "Tutto l'anno; particolarmente bello al tramonto"
+  },
+  "tags": [
+    "talayótico",
+    "patrimonio",
+    "unesco"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "eje-me1",
+    "cluster": "interior-cultura",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "primera-vez",
+      "familias"
+    ],
+    "durationMin": 40,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Parcheggio lungo la strada Me-1 (km ~40) + breve passeggiata di 5 min su un sentiero di terra battuta. Senza ombra: eviti il mezzogiorno in estate.",
+    "seasonalHours": "Mattina o ultima ora; qualsiasi stagione. La luce migliore e meno caldo a inizio o fine giornata.",
+    "highlights": [
+      "il monumento funerario talaiotico meglio conservato dell'isola",
+      "una sosta breve lungo la Me-1, ideale sulla strada tra Ciutadella e il centro",
+      "andare a inizio o fine giornata: non c'è ombra"
+    ]
+  }
+}

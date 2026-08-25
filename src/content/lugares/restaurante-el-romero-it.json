@@ -1,0 +1,32 @@
+{
+  "name": "El Romero",
+  "lang": "it",
+  "translationKey": "restaurante-el-romero",
+  "type": "restaurante",
+  "description": "Il progetto intimo degli italiani Fabio Tullini e Francesca Baroni in un edificio storico della plaça de la Conquesta di Maó, con pochi tavoli che con il bel tempo escono sulla piazza. Menu degustazione di mare e di orto, carta interamente senza glutine e una convinzione sostenibile che la casa presenta come pionieristica: primo ristorante con il marchio Menorca Reserva de Biosfera, secondo il locale stesso, e membro dell'Alleanza dei Cuochi di Slow Food. Un Sol della Guida Repsol dall'edizione 2024 e raccomandato dalla Guida Michelin 2026.",
+  "coordinates": {
+    "lat": 39.89,
+    "lng": 4.26
+  },
+  "area": "Est (Maó)",
+  "practicalInfo": {
+    "acceso": "Plaça de la Conquesta, Maó (centro storico).",
+    "horario": "Stagionale; confermi giorni e orari sul sito ufficiale prima di andare.",
+    "servicios": "Prenotazione tramite il sito ufficiale (telefono sul sito stesso)."
+  },
+  "priceRange": "€€€",
+  "website": "https://www.elromero.bio/",
+  "images": [
+    "/uploads/tomatiga-ramellet.webp"
+  ],
+  "tags": [
+    "este",
+    "gastronomia",
+    "mao"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "El Romero (Maó): la tavola sostenibile di Fabio Tullini e Francesca Baroni, Sol Repsol dal 2024, carta senza glutine e menu di mare e di orto."
+  },
+  "imageAlt": "Tomàtigues de ramellet, la varietà di pomodoro da serbo delle Baleari"
+}

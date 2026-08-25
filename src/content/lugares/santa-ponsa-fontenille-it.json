@@ -1,0 +1,34 @@
+{
+  "name": "Santa Ponsa (Fontenille)",
+  "lang": "it",
+  "translationKey": "santa-ponsa-fontenille",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Tenuta signorile del Seicento nel comune di Alaior, restaurata dalla collezione francese Fontenille. Ventidue camere e suite distribuite tra la casa principale e le dipendenze, piscina a sfioro tra giardini a terrazze, spa ricavata nelle antiche cisterne di pietra e il ristorante Nura. Con la sorella Torre Vella forma il progetto di agriturismo di lusso più ambizioso del centro dell'isola.",
+  "coordinates": {
+    "lat": 39.913,
+    "lng": 4.112
+  },
+  "area": "Centro-sud (Alaior)",
+  "practicalInfo": {
+    "acceso": "Comune di Alaior, a circa 15 minuti da Maó; indicazioni esatte sul sito ufficiale.",
+    "horario": "Stagione: confermi le date 2026 sul sito ufficiale.",
+    "servicios": "22 camere e suite, piscina a sfioro, spa nelle cisterne antiche, ristorante Nura, giardini a terrazze."
+  },
+  "website": "https://www.santa-ponsa.fontenille-collection.com/",
+  "images": [
+    "/uploads/alaior.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "agroturismo",
+    "lujo",
+    "alaior"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Santa Ponsa (Fontenille), Alaior: tenuta signorile del Seicento con 22 camere, spa nelle cisterne e ristorante Nura."
+  },
+  "imageAlt": "Strada lastricata di case imbiancate a calce con persiane verdi nel centro storico di Alaior.",
+  "imageCredit": "Mathewr1999 / Wikimedia Commons (CC BY-SA 4.0)"
+}

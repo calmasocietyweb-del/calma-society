@@ -1,0 +1,102 @@
+{
+  "name": "Cova d'en Xoroi",
+  "lang": "pt",
+  "translationKey": "cova-den-xoroi",
+  "type": "bar",
+  "edition": "menorca",
+  "description": "Gruta natural aberta na falésia de Cala'n Porter: miradouro e lounge ao pôr do sol, e discoteca nas noites de verão. O espaço mais icónico de Menorca.",
+  "coordinates": {
+    "lat": 39.8656878,
+    "lng": 4.1327226
+  },
+  "area": "Sul (Alaior)",
+  "practicalInfo": {
+    "horario": "Sazonal; os horários mudam a cada época — consulte o site ou o Instagram."
+  },
+  "website": "https://www.covadenxoroi.com/es",
+  "images": [
+    "/uploads/cova-den-xoroi.webp"
+  ],
+  "tags": [
+    "atardecer",
+    "discoteca",
+    "acantilado",
+    "cala'n porter"
+  ],
+  "status": "published",
+  "editorial": {
+    "lead": "Há um lugar em Menorca onde o pôr do sol se contempla de dentro da falésia. A Cova d'en Xoroi é uma sucessão de grutas e esplanadas escavadas na rocha sobre o mar de Cala'n Porter: de dia, um miradouro; ao cair da tarde, um lounge com um copo diante do sol; e nas noites de verão, o clube mais icónico da ilha.",
+    "sections": [
+      {
+        "heading": "Uma gruta aberta para o mar",
+        "body": [
+          "A primeira sensação é a vertigem agradável de se debruçar. As esplanadas da Cova d'en Xoroi estão suspensas numa falésia do sul, em Cala'n Porter, e descem para o Mediterrâneo numa sucessão de varandas de pedra, recantos e miradouros naturais. Não é uma discoteca com vista: é a própria rocha, ganha ao mar, com um copo na mão.",
+          "É esse o seu segredo e a sua fama. Poucos lugares de Menorca condensam tanto a ilha num só gesto — pedra, luz e mar — e por isso é, provavelmente, o espaço de lazer mais reconhecível de toda a ilha."
+        ]
+      },
+      {
+        "heading": "O pôr do sol, o momento",
+        "body": [
+          "Se só for uma vez, vá ao pôr do sol. Quando o sol começa a descer, as esplanadas transformam-se num lounge tranquilo: música suave, um copo bem servido e o céu a mudar de cor sobre a água. É a hora de calma da Cova, antes de a noite acelerar.",
+          "Mais tarde, no verão, o mesmo espaço converte-se em clube e sobe de rotações. As duas faces convivem; cabe-lhe escolher a qual vem. Para uma noite de luxo tranquilo, o lounge do pôr do sol é o plano."
+        ]
+      },
+      {
+        "heading": "A lenda de Xoroi",
+        "body": [
+          "O nome vem de uma velha lenda menorquina. Conta a tradição que um náufrago de origem incerta, Xoroi, se refugiou nestas grutas e viveu escondido na falésia durante anos. A história tem tantas versões como quem a conta, e é aí que está o seu encanto: faz parte do folclore da ilha, não da sua história documentada.",
+          "Convém sabê-lo antes de descer: acrescenta uma camada de narrativa a um lugar que, por si só, já parece de outro tempo."
+        ]
+      },
+      {
+        "heading": "Como vivê-la com calma",
+        "body": [
+          "A Cova tem três vidas consoante a hora: miradouro de dia, lounge ao pôr do sol e discoteca à noite. Escolha a sua com antecedência. No verão convém reservar online, sobretudo para o pôr do sol, que é quando mais enche.",
+          "Desce-se à falésia por escadas talhadas na rocha, pelo que não é um lugar adequado a cadeiras de rodas nem a mobilidade muito reduzida. E, como tudo em Menorca na época de verão, os horários e os preços são muito sazonais: confirme sempre no site antes de ir."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Casais",
+      "Luxo tranquilo",
+      "Pôr do sol",
+      "Vida noturna"
+    ],
+    "goodToKnow": [
+      "Três ambientes consoante a hora: miradouro de dia (~8,5 €), lounge ao pôr do sol (~12 €) e discoteca à noite. Preços indicativos.",
+      "No verão convém reservar online, sobretudo para o pôr do sol.",
+      "Desce-se por escadas talhadas na falésia: não adequado a cadeiras de rodas nem a mobilidade muito reduzida.",
+      "Horários muito sazonais (jun–ago desde meio da manhã até ao anoitecer; mai e out a partir da tarde). Confirme no site antes de ir."
+    ],
+    "transfer": true
+  },
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "calanporter-xoroi",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "parejas",
+      "lujo-tranquilo",
+      "vida-nocturna"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "semicubierto",
+    "needsReservation": true,
+    "officialUrl": "https://www.covadenxoroi.com/es",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Desce-se à falésia por escadas talhadas; não adequado a cadeira de rodas nem a mobilidade muito reduzida.",
+    "seasonalHours": "Jun-ago das 11:30 até ao anoitecer; mai/out a partir das 15 h. De dia miradouro (~8,5 €), à tarde lounge (~12 €), à noite discoteca. Reserva online recomendável no verão.",
+    "highlights": [
+      "as esplanadas escavadas na falésia",
+      "um copo ao pôr do sol",
+      "reservar online no verão"
+    ]
+  },
+  "imageAlt": "As esplanadas da Cova d'en Xoroi escavadas na falésia sobre o mar"
+}

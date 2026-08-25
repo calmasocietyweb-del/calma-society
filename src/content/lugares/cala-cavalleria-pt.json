@@ -1,0 +1,48 @@
+{
+  "name": "Platja de Cavalleria",
+  "lang": "pt",
+  "translationKey": "cala-cavalleria",
+  "type": "cala",
+  "description": "Grande praia virgem de areia avermelhada emoldurada por falésias ocres, um dos postais do norte. Cómoda pelo estacionamento junto à praia.",
+  "coordinates": {
+    "lat": 40.056,
+    "lng": 4.093
+  },
+  "area": "Norte (Es Mercadal)",
+  "tags": [
+    "norte",
+    "arena rojiza",
+    "virgen",
+    "es mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "playa",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Estrada estreita asfaltada, ~15 min até ao estacionamento gratuito; dali, ~400 m a pé por escadas de madeira.",
+    "highlights": [
+      "a grande praia virgem de areia avermelhada sob falésias ocres",
+      "o cómodo estacionamento junto à praia e a descida por passadiços de madeira",
+      "subir depois ao farol do Cap de Cavalleria ao pôr do sol"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-cavalleria.webp"
+  ],
+  "imageAlt": "A praia de Cavalleria em meia-lua, com areia dourada e água límpida",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)"
+}

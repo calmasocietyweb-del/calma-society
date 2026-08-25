@@ -1,0 +1,33 @@
+{
+  "name": "Son Blanc Farmhouse",
+  "lang": "it",
+  "translationKey": "son-blanc-farmhouse",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Una casa di campagna minorchina rimasta addormentata per anni e riportata alla vita come agriturismo, in una tenuta di 130 ettari a sud-ovest di Alaior. Quattordici camere, materiali dell'isola — pietra, argilla, legno — e una fattoria che funziona davvero: galline, maiali, asini, mucche, pecore e api, con una gestione pensata per rigenerare il suolo, non per la vetrina. La cucina è di stagione e la sua tavola si può prenotare.",
+  "coordinates": {
+    "lat": 39.931745,
+    "lng": 4.084353
+  },
+  "area": "Centro-sud (Alaior)",
+  "practicalInfo": {
+    "acceso": "Camí de Son Blanc, strada di Torresoli, 07730 Alaior. Posizione approssimativa: confermi il punto esatto sul sito ufficiale.",
+    "horario": "Non pubblica la sua stagione; confermi le date 2026 sul sito ufficiale.",
+    "servicios": "Quattordici camere. Cucina di stagione con tavola prenotabile. contact@sonblancmenorca.com · +34 624 171 408."
+  },
+  "website": "https://www.sonblancmenorca.com/",
+  "images": [
+    "/uploads/casa-piedra.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "agroturismo",
+    "alaior"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Son Blanc Farmhouse (Alaior): agriturismo di 14 camere in una tenuta di 130 ha con fattoria in attività e cucina di stagione."
+  },
+  "imageAlt": "Interno di una casa mediterranea di pietra, con travi di legno e scala.",
+  "imageCredit": "Adobe Stock"
+}

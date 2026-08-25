@@ -1,0 +1,49 @@
+{
+  "name": "Es Castell",
+  "lang": "pt",
+  "translationKey": "es-castell",
+  "type": "pueblo",
+  "description": "Vila de traçado militar britânico, fundada em 1771 como Georgetown junto à entrada do porto de Maó. Praça da Esplanada com a Câmara Municipal de fachada vermelha colonial e o Museu Militar; igreja do Roser. A sua joia é Cales Fonts, uma pequena enseada-porto onde os antigos armazéns de pescadores são hoje restaurantes e bares com esplanadas sobre a água: o plano de jantar ao pôr do sol mais pitoresco do este da ilha.",
+  "coordinates": {
+    "lat": 39.8794,
+    "lng": 4.2906
+  },
+  "area": "Este (Es Castell)",
+  "tags": [
+    "este",
+    "pueblo",
+    "es-castell"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "naturaleza",
+      "cultura"
+    ],
+    "durationMin": 180,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "o porto de Cales Fonts ao pôr do sol",
+      "a Fortaleza de La Mola",
+      "jantar peixe numa esplanada sobre a água"
+    ]
+  },
+  "images": [
+    "/uploads/lg-es-castell.webp"
+  ],
+  "imageAlt": "Es Castell à noite, com as luzes do cais refletidas na água",
+  "imageCredit": "Santiago Lap / Wikimedia Commons (CC BY-SA 3.0)"
+}

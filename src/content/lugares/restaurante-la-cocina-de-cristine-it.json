@@ -1,0 +1,31 @@
+{
+  "name": "La Cocina de Cristine",
+  "lang": "it",
+  "translationKey": "restaurante-la-cocina-de-cristine",
+  "type": "restaurante",
+  "description": "La tavola dell'hotel boutique Cristine Bedfor — distinto con una Chiave Michelin nel novembre 2024 —, nel carrer de la Infanta di Maó, e una delle due novità minorchine tra i raccomandati della Guida Michelin 2026. Lo chef minorchino Pau Sintes firma una cucina di mercato legata al territorio: pane a lievito madre, gambero rosso, sobrasada contadina e pesce di Sa Llotja, in una sala con l'anima di una casa d'ospiti e un patio per le cene.",
+  "coordinates": {
+    "lat": 39.89,
+    "lng": 4.26
+  },
+  "area": "Est (Maó)",
+  "practicalInfo": {
+    "acceso": "Carrer de la Infanta 19, Maó (hotel Cristine Bedfor).",
+    "horario": "Confermi giorni e orari con l'hotel prima di andare.",
+    "servicios": "Prenotazione tramite l'hotel Cristine Bedfor."
+  },
+  "priceRange": "€€€",
+  "images": [
+    "/uploads/fine-dining.webp"
+  ],
+  "tags": [
+    "este",
+    "gastronomia",
+    "mao"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "La Cocina de Cristine (Maó): la cucina di mercato dello chef Pau Sintes all'hotel Cristine Bedfor (una Chiave Michelin), raccomandata dalla Guida Michelin 2026."
+  },
+  "imageAlt": "Un tavolo apparecchiato con stoviglie e cristalleria da ristorante"
+}

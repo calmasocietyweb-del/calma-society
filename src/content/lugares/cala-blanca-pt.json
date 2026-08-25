@@ -1,0 +1,46 @@
+{
+  "name": "Cala Blanca",
+  "lang": "pt",
+  "translationKey": "cala-blanca",
+  "type": "cala",
+  "description": "Enseada urbanizada com cerca de 50 m de areia muito branca e fina, com todos os serviços e muito perto de Ciutadella. Prática para ficar alojado e tomar banho sem grandes deslocações, ainda que sem a natureza virgem das enseadas do este.",
+  "coordinates": {
+    "lat": 39.954,
+    "lng": 3.803
+  },
+  "area": "Sudoeste (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "cala",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "areia branca e fina com todos os serviços, a dois passos de Ciutadella",
+      "águas pouco profundas e tranquilas, cómoda para famílias",
+      "acesso direto de carro: boa base para ficar alojado perto da água"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-blanca.webp"
+  ],
+  "imageAlt": "Cala Blanca com banhistas na margem e as esplanadas debruçadas sobre a rocha",
+  "imageCredit": "Herodotptlomeu / Wikimedia Commons (CC BY-SA 4.0)"
+}

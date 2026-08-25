@@ -1,0 +1,52 @@
+{
+  "name": "Torre de Fornells",
+  "lang": "it",
+  "translationKey": "torre-de-fornells",
+  "type": "monumento",
+  "description": "Torre difensiva britannico-spagnola (XVIII secolo) a pianta ottagonale in pietra di marès, sopra l'imboccatura della baia di Fornells. Centro di interpretazione all'interno e vista sulla baia. Da abbinare al villaggio di pescatori di Fornells e alla sua gastronomia (caldereta di aragosta).",
+  "coordinates": {
+    "lat": 40.0556,
+    "lng": 4.1372
+  },
+  "area": "Nord (Es Mercadal)",
+  "tags": [
+    "norte",
+    "monumento",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "fornells-cavalleria",
+      "norte"
+    ],
+    "highlights": [
+      "la torre di difesa del Settecento sopra l'imboccatura della baia",
+      "il centro di interpretazione all'interno",
+      "la vista sulla baia di Fornells e sul mare aperto"
+    ]
+  },
+  "images": [
+    "/uploads/lg-torre-de-fornells.webp"
+  ],
+  "imageAlt": "La torre rotonda di Fornells stagliata contro il cielo, in cima all'altura",
+  "imageCredit": "Markus Trienke / Wikimedia Commons (CC BY-SA 2.0)"
+}

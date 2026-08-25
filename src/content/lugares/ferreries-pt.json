@@ -1,0 +1,48 @@
+{
+  "name": "Ferreries",
+  "lang": "pt",
+  "translationKey": "ferreries",
+  "type": "pueblo",
+  "description": "Vila branca rural, a de maior altitude de Menorca, com uma enraizada tradição de calçado (incl. Pretty Ballerinas) e de mobiliário. Rodeada de barrancos e colinas; é a porta natural para o Barranc d'Algendar, o barranco mais importante da ilha. A Menorca autêntica e interior, ideal para combinar vila + natureza.",
+  "coordinates": {
+    "lat": 39.9817,
+    "lng": 4.0103
+  },
+  "area": "Centro (Ferreries)",
+  "tags": [
+    "centro",
+    "pueblo",
+    "ferreries"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "cultura",
+      "familias"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "a vila mais alta da ilha",
+      "o mercado artesanal (na época)",
+      "a porta de entrada para Cala Galdana"
+    ]
+  },
+  "images": [
+    "/uploads/lg-ferreries.webp"
+  ],
+  "imageAlt": "O edifício das antigas Escolas Nacionais de Ferreries, de 1933",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)"
+}

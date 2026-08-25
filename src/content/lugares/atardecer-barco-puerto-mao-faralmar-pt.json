@@ -1,0 +1,47 @@
+{
+  "name": "Pôr do sol de barco pelo porto de Maó",
+  "lang": "pt",
+  "translationKey": "atardecer-barco-puerto-mao-faralmar",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Passeio privado ao pôr do sol pelo porto natural de Maó, um dos maiores do Mediterrâneo, com um copo de cava e a cidade a iluminar-se ao fundo. Uma forma serena de ver a ilha a partir da água, a dois passos do centro.",
+  "coordinates": {
+    "lat": 39.8861,
+    "lng": 4.2906
+  },
+  "area": "Maó",
+  "images": [
+    "/uploads/lg-atardecer-barco-puerto-mao-faralmar.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "gastronomia",
+      "nautica"
+    ],
+    "highlights": [
+      "percorrer o grande porto de Maó com a luz quente do ocaso",
+      "brindar com cava e bebidas frescas a bordo",
+      "partida central a partir de Cala Figuera, sem necessidade de carro"
+    ],
+    "durationMin": 120,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://faralmar.com/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Veleiros amarrados no porto de Maó com o céu do entardecer",
+  "imageCredit": "Carles garcia-roca / Wikimedia Commons (CC BY 2.5 es)"
+}

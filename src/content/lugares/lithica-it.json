@@ -1,0 +1,51 @@
+{
+  "name": "Lithica – Pedreres de s'Hostal",
+  "lang": "it",
+  "translationKey": "lithica",
+  "type": "naturaleza",
+  "description": "Antiche cave di marés trasformate in uno spazio culturale unico: labirinti di pietra, giardini scolpiti nella roccia e un anfiteatro.",
+  "coordinates": {
+    "lat": 39.9889,
+    "lng": 3.865
+  },
+  "area": "Ovest (Ciutadella)",
+  "tags": [
+    "oeste",
+    "cantera",
+    "jardín",
+    "cultura",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "officialUrl": "https://lithica.es",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "seasonalHours": "9:30-14:30; in alta stagione anche il pomeriggio. Meglio contro il caldo che contro la pioggia (è all'aperto).",
+    "highlights": [
+      "i labirinti di pietra di marés",
+      "i giardini scolpiti nella roccia",
+      "l'anfiteatro e il giardino circolare"
+    ]
+  },
+  "images": [
+    "/uploads/lg-lithica.webp"
+  ],
+  "imageAlt": "Le antiche cave di marés di s'Hostal, con le pareti tagliate a mano",
+  "imageCredit": "Miquel Colomer Planagumà from BARCELONA, España / Wikimedia Commons (CC BY-SA 2.0)"
+}

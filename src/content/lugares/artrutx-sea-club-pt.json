@@ -1,0 +1,55 @@
+{
+  "name": "Artrutx Sea Club",
+  "lang": "pt",
+  "translationKey": "artrutx-sea-club",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Sea club junto ao farol do Cap d'Artrutx: restaurante e bar de cocktails à beira-mar, com um dos melhores pores do sol do oeste.",
+  "coordinates": {
+    "lat": 39.9225937,
+    "lng": 3.824224
+  },
+  "area": "Oeste (Ciutadella)",
+  "practicalInfo": {
+    "horario": "Sazonal; os horários mudam a cada época — consulte o site ou o Instagram."
+  },
+  "website": "https://www.artrutx.com/en/sea-club/",
+  "images": [
+    "/uploads/faro-artrutx.webp"
+  ],
+  "tags": [
+    "beach club",
+    "atardecer",
+    "faro",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "artrutx-cap",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "parejas",
+      "lujo-tranquilo",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "shuttleInfo": "De carro desde Ciutadella (~8-10 km para sul, 15-20 min). Estacionamento privado do restaurante e na estrada (enche cedo no verão: chegue com antecedência).",
+    "effortNote": "Esplanada plana junto ao farol do Cap d'Artrutx.",
+    "highlights": [
+      "a esplanada junto ao farol do Cap d'Artrutx",
+      "um copo ou um jantar com o pôr do sol",
+      "reservar com antecedência no verão"
+    ]
+  },
+  "imageAlt": "O farol do Cap d'Artrutx, às riscas, no extremo sudoeste da ilha"
+}

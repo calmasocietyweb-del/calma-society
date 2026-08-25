@@ -1,0 +1,47 @@
+{
+  "name": "Cala Tirant",
+  "lang": "pt",
+  "translationKey": "cala-tirant",
+  "type": "cala",
+  "description": "Ampla praia de areia fina e dourada entre Fornells e o cabo de Cavalleria, dividida em duas zonas por uma colina com passadiço de madeira. Mais acessível e familiar do que as enseadas selvagens vizinhas, com uma zona húmida por trás.",
+  "coordinates": {
+    "lat": 40.057,
+    "lng": 4.117
+  },
+  "area": "Norte (Es Mercadal)",
+  "tags": [
+    "norte",
+    "playa",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "um amplo areal dourado entre Fornells e Cavalleria",
+      "atravessar o passadiço de madeira entre as suas duas zonas",
+      "a opção de praia mais acessível e familiar perto de Fornells"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-tirant.webp"
+  ],
+  "imageAlt": "A praia de Cala Tirant com a albufeira por trás e as casas brancas na encosta",
+  "imageCredit": "carlos venegas gavilán / Wikimedia Commons (CC BY-SA 4.0)"
+}

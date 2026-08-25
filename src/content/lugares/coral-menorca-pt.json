@@ -1,0 +1,29 @@
+{
+  "name": "Coral Menorca",
+  "lang": "pt",
+  "translationKey": "coral-menorca",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Sobre as falésias de Cala'n Forcat: cozinha mediterrânica, cocktails e um dos melhores pores do sol do oeste. Antes, Sa Posta de Sol.",
+  "coordinates": {
+    "lat": 40.0014228,
+    "lng": 3.7967121
+  },
+  "area": "Oeste (Ciutadella)",
+  "practicalInfo": {
+    "horario": "Sazonal; os horários mudam a cada época — consulte o site ou o Instagram."
+  },
+  "website": "https://www.coralmenorca.es/en/home",
+  "images": [
+    "/uploads/lg-coral-menorca.webp"
+  ],
+  "tags": [
+    "atardecer",
+    "coctelería",
+    "cala'n forcat",
+    "ciutadella"
+  ],
+  "status": "published",
+  "imageAlt": "Os edifícios com arcadas da Plaça des Born de Ciutadella",
+  "imageCredit": "Américo Toledano / Wikimedia Commons (CC BY-SA 4.0)"
+}

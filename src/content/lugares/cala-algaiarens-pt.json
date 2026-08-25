@@ -1,0 +1,51 @@
+{
+  "name": "Cala Algaiarens",
+  "lang": "pt",
+  "translationKey": "cala-algaiarens",
+  "type": "cala",
+  "description": "Duas praias irmãs (es Bot e es Tancats) de areia dourada-avermelhada numa ANEI virgem rodeada de pinhal e dunas, sem construções. Das poucas praias selvagens do norte acessíveis de carro, o que a torna muito procurada (controlo de acessos na época).",
+  "coordinates": {
+    "lat": 40.047,
+    "lng": 3.88
+  },
+  "area": "Norte (Ciutadella)",
+  "tags": [
+    "norte",
+    "playa",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "tomar banho em duas praias virgens irmãs (es Bot e es Tancats)",
+      "passear pelo pinhal e pelas dunas de uma ANEI sem construções",
+      "chegar cedo no verão: o acesso e o estacionamento são regulados"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-algaiarens.webp"
+  ],
+  "imageAlt": "A praia de Algaiarens: areia clara, água turquesa e dunas com vegetação baixa",
+  "imageCredit": "Marcelsala007 / Wikimedia Commons (CC BY-SA 3.0)",
+  "practicalInfo": {
+    "aparcamiento": "Capacidade controlada (época de 2026): o acesso a La Vall fecha quando o estacionamento se completa, e há controladores no caminho de entrada. Em julho e agosto convém chegar de manhã. Não vale a pena procurar lugar nos arredores: os caminhos são estreitos e não é permitido estacionar neles. Na época também chega o autocarro de Ciutadella.",
+    "mejorEpoca": "Junho e setembro, sem hesitar. Em época alta, antes das 9h00. O controlo de acessos funciona das 7h30 às 21h00 e mantém-se até 15 de outubro."
+  }
+}

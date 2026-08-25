@@ -1,0 +1,49 @@
+{
+  "name": "Torralbenc",
+  "lang": "it",
+  "translationKey": "torralbenc",
+  "type": "alojamiento",
+  "description": "Antica tenuta circondata dai vigneti trasformata in agriturismo di lusso. Ristorante mediterraneo di prodotto locale alla brace (con la consulenza dello chef stellato Michelin Gorka Txapartegi), raccomandato dalle guide Michelin e Repsol dal 2013; cantina premiata da Wine Spectator. Percorso guidato nel vigneto + degustazione di tre vini con aperitivo. L'essenza del lusso tranquillo minorchino: tempo lento, vino, brace e tramonto.",
+  "coordinates": {
+    "lat": 39.91,
+    "lng": 4.16
+  },
+  "area": "Sud centrale (Alaior)",
+  "tags": [
+    "sur-centro",
+    "experiencia",
+    "alaior"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "gastronomia",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "cenare prodotto locale alla brace tra i vigneti al tramonto",
+      "degustare il vino di produzione propria della tenuta-agriturismo",
+      "prenotare con anticipo: posti limitati e molto richiesti d'estate"
+    ]
+  },
+  "images": [
+    "/uploads/lg-torralbenc.webp"
+  ],
+  "imageAlt": "Mucche rosse minorchine al pascolo in un prato della campagna di Alaior",
+  "imageCredit": "Alejandro Muñoz Cabrisas / Wikimedia Commons (CC BY-SA 4.0)"
+}

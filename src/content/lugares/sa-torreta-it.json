@@ -1,0 +1,47 @@
+{
+  "name": "Sa Torreta",
+  "lang": "it",
+  "translationKey": "sa-torreta",
+  "type": "cala",
+  "description": "Cala remota e quasi sempre deserta in pieno parco naturale, dominata dalla torre di difesa britannica di Sa Torreta di fronte all'Illa d'en Colom. Solo per escursionisti: il premio selvaggio di una lunga tappa del Camí de Cavalls da Es Grau.",
+  "coordinates": {
+    "lat": 39.975,
+    "lng": 4.27
+  },
+  "area": "Nord (Maó)",
+  "tags": [
+    "norte",
+    "cala",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 300,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "una cala remota e quasi sempre deserta del Parc Natural",
+      "la torre di difesa britannica di fronte all'Illa d'en Colom",
+      "la lunga camminata che garantisce solitudine; nessun servizio"
+    ]
+  },
+  "images": [
+    "/uploads/lg-sa-torreta.webp"
+  ],
+  "imageAlt": "La cala di Sa Torreta dal sentiero, tra macchia bassa e roccia aranciata",
+  "imageCredit": "Nicolas G. Mertens / Wikimedia Commons (CC BY-SA 4.0)"
+}

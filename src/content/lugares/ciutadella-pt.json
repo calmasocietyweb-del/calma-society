@@ -1,0 +1,50 @@
+{
+  "name": "Ciutadella de Menorca",
+  "lang": "pt",
+  "translationKey": "ciutadella",
+  "type": "pueblo",
+  "description": "Antiga capital senhorial: o centro histórico mais monumental da ilha, com catedral gótica, palácios e um porto cheio de vida ao pôr do sol.",
+  "coordinates": {
+    "lat": 40.0014,
+    "lng": 3.8416
+  },
+  "area": "Oeste (Ciutadella)",
+  "tags": [
+    "oeste",
+    "casco histórico",
+    "catedral",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "cultura",
+      "parejas",
+      "gastronomia",
+      "primera-vez"
+    ],
+    "durationMin": 240,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Centro pedonal e plano; estacione fora do centro (zonas reguladas e parques de estacionamento periféricos).",
+    "highlights": [
+      "a Catedral gótica de Santa Maria",
+      "o passeio do Born e Ses Voltes",
+      "o porto ao pôr do sol",
+      "petiscar no Mercat des Peix"
+    ]
+  },
+  "images": [
+    "/uploads/ciutadella.webp"
+  ],
+  "imageAlt": "O centro histórico de Ciutadella, com as suas fachadas de marés e as arcadas"
+}

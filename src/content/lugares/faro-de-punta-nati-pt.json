@@ -1,0 +1,46 @@
+{
+  "name": "Farol de Punta Nati",
+  "lang": "pt",
+  "translationKey": "faro-de-punta-nati",
+  "type": "monumento",
+  "description": "Farol numa paisagem pétrea e árida do noroeste, salpicada de abrigos de pedra seca (ponts). Ambiente solitário e agreste, ideal para fotografia e pores do sol sem multidões. Muito perto de Ciutadella.",
+  "coordinates": {
+    "lat": 40.0578,
+    "lng": 3.8228
+  },
+  "area": "Oeste (Ciutadella)",
+  "tags": [
+    "oeste",
+    "faro",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "faro",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "a paisagem pétrea e árida do noroeste, com abrigos de pedra seca (ponts de bens)",
+      "o farol solitário a 6 km de Ciutadella, sobre a falésia",
+      "um dos melhores pores do sol da ilha, longe das multidões"
+    ]
+  },
+  "images": [
+    "/uploads/lg-faro-de-punta-nati.webp"
+  ],
+  "imageAlt": "O farol de Punta Nati a erguer-se sobre um campo de rochas soltas",
+  "imageCredit": "Alejandro Muñoz Cabrisas / Wikimedia Commons (CC BY-SA 4.0)"
+}

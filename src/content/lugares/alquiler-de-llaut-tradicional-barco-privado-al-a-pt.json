@@ -1,0 +1,50 @@
+{
+  "name": "Aluguer de llaüt tradicional / barco privado ao pôr do sol",
+  "lang": "pt",
+  "translationKey": "alquiler-de-llaut-tradicional-barco-privado-al-a",
+  "type": "experiencia",
+  "description": "Saída em llaüt menorquino de madeira (embarcação tradicional, elegante, com solário) ou barco privado com skipper a partir de Cala Galdana ou Ciutadella rumo às joias turquesa do sul: Cala Macarella, Macarelleta, Turqueta, Mitjana. Permite fundear, nadar e fazer snorkel em enseadas que no verão têm o acesso por terra muito restringido. Opção de catering com produto local e vinhos e saídas ao pôr do sol: luxo tranquilo por excelência.",
+  "coordinates": {
+    "lat": 39.93,
+    "lng": 3.96
+  },
+  "area": "Sudoeste (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "experiencia",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-08-06",
+    "highlights": [
+      "navegar pelas enseadas virgens do sudoeste por mar, sem multidões",
+      "fundear diante de Macarella ou Turqueta e tomar banho a partir do barco",
+      "pôr do sol a bordo com cava; reserve skipper com antecedência no verão"
+    ],
+    "officialUrl": "https://www.alquilerbarcoenmenorca.es/",
+    "operatorName": "Minorboats"
+  },
+  "images": [
+    "/uploads/lg-alquiler-de-llaut-tradicional-barco-privado-al-a.webp"
+  ],
+  "imageAlt": "Llaüts de madeira amarrados em fila no porto, diante das casas de Es Castell",
+  "imageCredit": "Markus Trienke / Wikimedia Commons (CC BY-SA 2.0)"
+}

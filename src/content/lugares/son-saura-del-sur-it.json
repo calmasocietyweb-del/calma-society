@@ -1,0 +1,51 @@
+{
+  "name": "Son Saura del Sur",
+  "lang": "it",
+  "translationKey": "son-saura-del-sur",
+  "type": "cala",
+  "description": "Due ampi semicerchi di sabbia fine (Bellavista e des Banyuls) separati da una punta, con pineta e acque basse. Più spazio delle cale vicine, ideale per le famiglie; d'estate si riempie di barche all'ancora.",
+  "coordinates": {
+    "lat": 39.918,
+    "lng": 3.895
+  },
+  "area": "Sud-ovest (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "playa",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "due ampi arenili (Bellavista e des Banyuls) separati da una punta",
+      "più spazio e acque basse rispetto alle cale piccole, con la pineta alle spalle",
+      "accesso a piedi dal parcheggio: portare picnic, acqua e ombra (nessun servizio)"
+    ]
+  },
+  "images": [
+    "/uploads/lg-son-saura-del-sur.webp"
+  ],
+  "imageAlt": "Son Saura del Sur all'imbrunire, con la riva calma e i pini sullo sfondo",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)",
+  "practicalInfo": {
+    "aparcamiento": "Capienza controllata (stagione 2026): il parcheggio chiude appena si riempie, di solito verso le 9:00 a luglio e agosto. È tra i più indulgenti del sud di Ciutadella e in qualche giornata di media stagione non arriva nemmeno a completarsi. Non vale la pena cercare posto nei dintorni: le strade sono strette e non è consentito parcheggiarvi. Alternativa senza auto: bus da Ciutadella dal lunedì al sabato alle 11:15, 13:15 e 18:15, con ritorno mezz'ora più tardi.",
+    "mejorEpoca": "Chiude più tardi di Macarella e Turqueta, quindi perdona un'ora abbondante: fino alle 9:00 in alta stagione. A luglio e agosto arrivi tra le 7:00 e le 7:30. A maggio, giugno e settembre il margine è molto più ampio: a maggio i parcheggi non si riempiono prima delle 10:00 o 10:30. Il controllo degli accessi funziona dalle 7:30 alle 21:00 e resta attivo fino al 15 ottobre."
+  }
+}

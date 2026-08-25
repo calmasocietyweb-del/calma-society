@@ -1,0 +1,66 @@
+{
+  "name": "Kopas Club",
+  "lang": "it",
+  "translationKey": "kopas-club",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Club su più piani al porto di Ciutadella, con terrazze, cocktail e musica varia fino a notte fonda.",
+  "coordinates": {
+    "lat": 40.0026571,
+    "lng": 3.8361687
+  },
+  "area": "Ovest (Ciutadella)",
+  "practicalInfo": {
+    "horario": "Stagionale; gli orari cambiano ogni stagione — consulti il sito o Instagram."
+  },
+  "website": "https://www.kopasclub.com/",
+  "images": [
+    "/uploads/lg-kopas-club.webp"
+  ],
+  "tags": [
+    "discoteca",
+    "coctelería",
+    "puerto",
+    "ciutadella"
+  ],
+  "status": "published",
+  "editorial": {
+    "lead": "Il Kopas Club è il programma di chi vuole scegliere il ritmo della propria serata senza cambiare posto. In pieno porto di Ciutadella, distribuisce su più piani e terrazze il bicchiere tranquillo, i cocktail e la pista, con vista sull'acqua.",
+    "sections": [
+      {
+        "heading": "Più serate in un unico posto",
+        "body": [
+          "L'idea del Kopas è la varietà sotto lo stesso tetto: più piani, terrazze e banconi che permettono di passare dalla conversazione con un bicchiere alla pista senza uscire dal locale. Sopra, la terrazza all'aperto guarda il porto; sotto la musica incalza.",
+          "È un posto per una serata lunga che non si vuole pianificare nel dettaglio: si sale, si scende, e ogni piano ha il suo tono."
+        ]
+      },
+      {
+        "heading": "Al porto di Ciutadella",
+        "body": [
+          "Si trova al Pla de Sant Joan, la passeggiata del porto dove batte la notte di Ciutadella, in un locale che i minorchini ricorderanno come l'antica Esfera. Compagnia non gliene manca: a pochi metri ha altri locali, quindi è facile fare serata nella zona."
+        ]
+      },
+      {
+        "heading": "Come viverlo con calma",
+        "body": [
+          "Orari, programmazione e stagione cambiano ogni anno, quindi lo confermi sul sito prima di andare. E per non pensare all'auto, lasci che la accompagniamo noi."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Serate",
+      "Cocktail",
+      "Porto di Ciutadella"
+    ],
+    "goodToKnow": [
+      "Più piani e terrazze con vista sul porto, dal bicchiere tranquillo alla pista.",
+      "Cocktail e musica varia, con più ambienti in un unico locale.",
+      "Si trova al porto di Ciutadella (Passeig es Pla de Sant Joan).",
+      "Orari, programmazione e stagione cambiano: li confermi sul sito."
+    ],
+    "transfer": true,
+    "transferText": "Al porto di Ciutadella parcheggiare di notte e in estate è difficile. Lasci l'auto: la portiamo e la veniamo a riprendere con autista privato."
+  },
+  "imageAlt": "L'arco di pietra del municipio di Ciutadella, con le bandiere",
+  "imageCredit": "Américo Toledano / Wikimedia Commons (CC BY-SA 4.0)"
+}

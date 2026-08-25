@@ -1,0 +1,46 @@
+{
+  "name": "Mel i Reines — esperienza apistica (Finca Lluriach)",
+  "lang": "it",
+  "translationKey": "mel-i-reines-experiencia-apicola",
+  "type": "productor",
+  "edition": "menorca",
+  "description": "Progetto apistico di Ana Marquès e Raúl Ameller che alleva api regine autoctone e apre i suoi alveari ai visitatori. L'esperienza comincia nell'antica cucina della storica tenuta di Lluriach, a Es Mercadal, prima di uscire nei campi.",
+  "coordinates": {
+    "lat": 39.99,
+    "lng": 4.09
+  },
+  "area": "Es Mercadal (Finca Lluriach, Camí de Tramuntana, verso la costa nord)",
+  "images": [
+    "/uploads/miel-menorca.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "naturaleza",
+      "familias",
+      "cultura",
+      "gastronomia"
+    ],
+    "highlights": [
+      "capire la vita dell'alveare nella cucina della tenuta di Lluriach",
+      "indossare la tuta da apicoltore e vedere il lavoro delle api nei campi",
+      "assaggiare il miele appena estratto; gruppi ridotti (max 8 persone)"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.menorca.info/balears/economico/2025/09/19/2472611/abejas-experiencias-nueva-ruta-miel.html",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Miele di Minorca in un vasetto di vetro"
+}

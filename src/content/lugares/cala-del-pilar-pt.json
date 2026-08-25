@@ -1,0 +1,51 @@
+{
+  "name": "Cala del Pilar",
+  "lang": "pt",
+  "translationKey": "cala-del-pilar",
+  "type": "cala",
+  "description": "Uma das praias mais selvagens e isoladas de Menorca: areia dourada sob falésias de argila vermelha, sem um único serviço. A longa caminhada e o controlo de acessos mantêm-na quase virgem; só recompensa quem faz por ela.",
+  "coordinates": {
+    "lat": 40.022,
+    "lng": 3.93
+  },
+  "area": "Norte (Ferreries)",
+  "tags": [
+    "norte",
+    "cala",
+    "ferreries"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 300,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "uma das praias mais selvagens e isoladas do norte",
+      "a caminhada por pinhal e matagal até à areia dourada sob argilas vermelhas",
+      "ir sem nada e voltar sem nada: não há um único serviço"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-del-pilar.webp"
+  ],
+  "imageAlt": "Cala del Pilar vista de cima: areia avermelhada, água turquesa e a encosta de mato baixo",
+  "imageCredit": "Markus Trienke / Wikimedia Commons (CC BY-SA 2.0)",
+  "practicalInfo": {
+    "aparcamiento": "Capacidade controlada (época de 2026): o estacionamento fecha quando se completa, e dali resta uma caminhada longa pelo bosque até ao areal. Por ser das que exigem andar, aguenta mais do que as do sul de Ciutadella, mas em agosto convém chegar de manhã cedo. Não vale a pena procurar lugar nos arredores: os caminhos são estreitos e não é permitido estacionar neles.",
+    "mejorEpoca": "A caminhada protege-a: não enche tão depressa como as famosas. Ainda assim, em julho e agosto chegue antes das 9h00. O controlo de acessos funciona das 7h30 às 21h00 e mantém-se até 15 de outubro."
+  }
+}

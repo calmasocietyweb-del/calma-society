@@ -1,0 +1,48 @@
+{
+  "name": "Es Mercadal",
+  "lang": "pt",
+  "translationKey": "es-mercadal",
+  "type": "pueblo",
+  "description": "Vila branca no coração geográfico de Menorca, ao pé do Monte Toro (o ponto mais alto, 358 m). O nome vem do privilégio de mercado concedido por Jaume II. A grande excursão é subir ao santuário da Mare de Deu del Toro (1670), padroeira da ilha, com vistas panorâmicas de Menorca inteira. Base ideal, pela sua posição central, para excursões às duas costas.",
+  "coordinates": {
+    "lat": 39.9889,
+    "lng": 4.0942
+  },
+  "area": "Centro (Es Mercadal)",
+  "tags": [
+    "centro",
+    "pueblo",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "subir ao Monte Toro ao pôr do sol",
+      "o centro tranquilo de vila do interior",
+      "uma queijaria DOP próxima (Subaida)"
+    ]
+  },
+  "images": [
+    "/uploads/lg-es-mercadal.webp"
+  ],
+  "imageAlt": "A igreja de Es Mercadal iluminada ao anoitecer, sobre o seu terraço de pedra",
+  "imageCredit": "Markus Trienke / Wikimedia Commons (CC BY-SA 2.0)"
+}

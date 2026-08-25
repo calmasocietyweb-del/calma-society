@@ -1,0 +1,46 @@
+{
+  "name": "Cala de Llucalari",
+  "lang": "pt",
+  "translationKey": "cala-de-llucalari",
+  "type": "cala",
+  "description": "Pequena enseada escondida perto de Son Bou, recompensa de uma caminhada curta. Tranquila e pouco frequentada pelo acesso a pé; sem serviços.",
+  "coordinates": {
+    "lat": 39.892,
+    "lng": 4.1
+  },
+  "area": "Centro-sul (Alaior)",
+  "tags": [
+    "sur-centro",
+    "cala",
+    "alaior"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "caminhar o curto trilho desde Son Bou até esta enseada escondida",
+      "desfrutar de uma enseada tranquila e pouco frequentada, sem serviços",
+      "levar água e sombra: não há bar de praia nem nada na enseada"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-de-llucalari.webp"
+  ],
+  "imageAlt": "A água turquesa de Cala Llucalari entre grandes blocos de rocha",
+  "imageCredit": "Josefito123 / Wikimedia Commons (CC BY-SA 4.0)"
+}

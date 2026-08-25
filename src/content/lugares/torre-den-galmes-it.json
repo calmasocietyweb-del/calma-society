@@ -1,0 +1,49 @@
+{
+  "name": "Torre d'en Galmés",
+  "lang": "it",
+  "translationKey": "torre-den-galmes",
+  "type": "monumento",
+  "description": "Il più grande villaggio talaiotico delle Baleari (oltre 6 ha), parte della Menorca Talayótica UNESCO: talaioti, recinto della taula e sistema idraulico.",
+  "images": [
+    "/uploads/torre-den-galmes.webp"
+  ],
+  "imageAlt": "Il recinto della taula del villaggio talaiotico di Torre d'en Galmés, il più grande delle Baleari, ad Alaior (Minorca).",
+  "imageCredit": "Evelyne Bazalgette · Wikimedia (CC BY-SA 3.0)",
+  "coordinates": {
+    "lat": 39.9269,
+    "lng": 4.1283
+  },
+  "area": "Sud (Alaior)",
+  "tags": [
+    "talayótico",
+    "unesco",
+    "alaior",
+    "cultura"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "talayotic-alaior",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "primera-vez",
+      "familias"
+    ],
+    "durationMin": 75,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Strada sterrata di 2 km e area ampia quasi senza ombra: d'estate meglio visitarlo di prima mattina o sul tardi.",
+    "highlights": [
+      "i talaioti e il recinto della taula",
+      "il sistema idraulico preistorico",
+      "la vista verso sud dall'alto"
+    ]
+  }
+}

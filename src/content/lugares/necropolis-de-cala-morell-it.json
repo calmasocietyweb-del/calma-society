@@ -1,0 +1,47 @@
+{
+  "name": "Necropoli di Cala Morell",
+  "lang": "it",
+  "translationKey": "necropolis-de-cala-morell",
+  "type": "monumento",
+  "description": "Necropoli di grotte (14 ipogei) scavate nella roccia, in uso dal pre-talaiotico fino al II secolo d.C. Alcune con colonne interne, finestre e una facciata decorata con colonne in rilievo di influenza classica.",
+  "coordinates": {
+    "lat": 40.0556,
+    "lng": 3.8786
+  },
+  "area": "Nord (Ciutadella)",
+  "tags": [
+    "norte",
+    "yacimiento",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza"
+    ],
+    "durationMin": 38,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "la necropoli di 14 grotte scavate nella roccia (ipogei)",
+      "i dettagli interni: colonne, finestre e rilievi",
+      "abbinarla a un bagno nella cala di Cala Morell"
+    ]
+  },
+  "images": [
+    "/uploads/lg-necropolis-de-cala-morell.webp"
+  ],
+  "imageAlt": "L'interno di una grotta funeraria di Cala Morell, scavata nella roccia, con la luce che entra dall'imboccatura",
+  "imageCredit": "Dreizung / Wikimedia Commons (CC BY-SA 4.0)"
+}

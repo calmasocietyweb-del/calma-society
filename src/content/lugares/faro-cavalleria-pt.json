@@ -1,0 +1,49 @@
+{
+  "name": "Cap de Cavalleria",
+  "lang": "pt",
+  "translationKey": "faro-cavalleria",
+  "type": "monumento",
+  "description": "O cabo e o farol mais a norte da ilha: falésias dramáticas, vento e vistas imensas. Encontro obrigatório ao pôr do sol.",
+  "coordinates": {
+    "lat": 40.0915,
+    "lng": 4.092
+  },
+  "area": "Norte (Es Mercadal)",
+  "tags": [
+    "norte",
+    "faro",
+    "mirador",
+    "atardecer"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "parejas",
+      "naturaleza",
+      "lujo-tranquilo"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Estrada estreita mas asfaltada, com estacionamento junto ao farol; quase não se caminha. No verão enche ao pôr do sol.",
+    "highlights": [
+      "o ponto mais a norte da ilha",
+      "as falésias e as vistas imensas",
+      "um dos melhores pores do sol de Menorca"
+    ]
+  },
+  "images": [
+    "/uploads/lg-faro-cavalleria.webp"
+  ],
+  "imageAlt": "O farol branco do cap de Cavalleria e as casas do faroleiro, sobre a rocha",
+  "imageCredit": "Anka D. / Wikimedia Commons (CC BY 3.0)"
+}

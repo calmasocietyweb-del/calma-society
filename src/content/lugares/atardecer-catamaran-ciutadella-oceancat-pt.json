@@ -1,0 +1,48 @@
+{
+  "name": "Pôr do sol de barco a partir de Ciutadella",
+  "lang": "pt",
+  "translationKey": "atardecer-catamaran-ciutadella-oceancat",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Saída de barco a partir do porto de Ciutadella, na costa de poente, para ver o sol a pôr-se a partir do mar — sem carro e a um ritmo sereno.",
+  "coordinates": {
+    "lat": 40.0006,
+    "lng": 3.8295
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [
+    "/uploads/lg-atardecer-catamaran-ciutadella-oceancat.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "familias",
+      "nautica",
+      "naturaleza"
+    ],
+    "highlights": [
+      "embarcar no porto histórico de Ciutadella, sem carro",
+      "ver o sol descer sobre o mar na costa de poente",
+      "a hora dourada com a luz baixa sobre a água"
+    ],
+    "durationMin": 150,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-07-22",
+    "officialUrl": "https://oceancatmenorca.com/"
+  },
+  "imageAlt": "A costa oeste de Ciutadella ao fim da tarde, com o mar aberto",
+  "imageCredit": "LucT / Wikimedia Commons (CC BY-SA 3.0)"
+}

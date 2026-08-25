@@ -1,0 +1,48 @@
+{
+  "name": "Cala Mesquida",
+  "lang": "pt",
+  "translationKey": "cala-mesquida",
+  "type": "cala",
+  "description": "Praia de areia clara e águas tranquilas muito perto de Maó, com um pequeno núcleo de casas de pescadores, restaurantes e uma torre de defesa. Fica na costa este —não no sul turquesa—: é o banho de proximidade de Maó, menos postal e mais vida local.",
+  "coordinates": {
+    "lat": 39.902,
+    "lng": 4.31
+  },
+  "area": "Este (Maó)",
+  "tags": [
+    "este",
+    "playa",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "a praia de areia clara e águas tranquilas a 10 min de Maó",
+      "a torre de defesa sobre a enseada",
+      "comer num dos seus restaurantes de peixe à beira da praia"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-mesquida.webp"
+  ],
+  "imageAlt": "O areal de Sa Mesquida com o monte redondo que fecha a baía",
+  "imageCredit": "Seruba / Wikimedia Commons (CC BY-SA 3.0)"
+}

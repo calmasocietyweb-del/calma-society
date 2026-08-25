@@ -1,0 +1,47 @@
+{
+  "name": "Llucmaçanes",
+  "lang": "it",
+  "translationKey": "llucmacanes",
+  "type": "pueblo",
+  "description": "Frazione rurale di Maó, piccolo borgo tradizionale minorchino di case bianche nella campagna del sud-est. Non è una meta turistica in sé, ma un ritratto autentico della Minorca interna e agricola; utile come pennellata di carattere locale o di passaggio verso le cale del sud-est. Il primo fine settimana di agosto celebra le sue festes de Sant Gaietà, con il suo jaleo.",
+  "coordinates": {
+    "lat": 39.8686,
+    "lng": 4.2431
+  },
+  "area": "Est (Maó)",
+  "tags": [
+    "este",
+    "nucleo",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "cultura"
+    ],
+    "durationMin": 30,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-07-22",
+    "highlights": [
+      "un borgo rurale bianco fuori dalle rotte turistiche",
+      "la campagna del sud-est e le sue case contadine tradizionali",
+      "una sosta breve e tranquilla lungo la strada tra Maó e la costa sud"
+    ]
+  },
+  "images": [
+    "/uploads/lg-llucmacanes.webp"
+  ],
+  "imageAlt": "Un cavallo nero impennato tra la gente, nel jaleo notturno di Llucmaçanes",
+  "imageCredit": "Songbird8 / Wikimedia Commons (CC BY-SA 4.0)"
+}

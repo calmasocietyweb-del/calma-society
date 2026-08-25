@@ -1,0 +1,47 @@
+{
+  "name": "Necropoli di Calescoves",
+  "lang": "it",
+  "translationKey": "necropolis-de-calescoves",
+  "type": "monumento",
+  "description": "Necropoli preistorica di circa 90 grotte funerarie scavate nella falesia di una cala vergine e isolata. Un contesto naturale straordinario che unisce patrimonio e bagno in una cala senza servizi. Ideale per chi cerca calma e autenticità.",
+  "coordinates": {
+    "lat": 39.8689,
+    "lng": 4.1217
+  },
+  "area": "Sud centrale (Alaior)",
+  "tags": [
+    "sur-centro",
+    "yacimiento",
+    "alaior"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "percorrere una necropoli preistorica di circa 90 grotte funerarie nella falesia",
+      "abbinare la visita a un bagno nella cala vergine di Cales Coves",
+      "visitare con rispetto e senza toccare nulla: sito protetto"
+    ]
+  },
+  "images": [
+    "/uploads/lg-necropolis-de-calescoves.webp"
+  ],
+  "imageAlt": "L'ingresso di una grotta funeraria di Cales Coves, tra blocchi di pietra",
+  "imageCredit": "Dreizung / Wikimedia Commons (CC BY-SA 4.0)"
+}

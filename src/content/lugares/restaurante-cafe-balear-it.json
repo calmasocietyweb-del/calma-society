@@ -1,0 +1,32 @@
+{
+  "name": "Cafè Balear",
+  "lang": "it",
+  "translationKey": "restaurante-cafe-balear",
+  "type": "restaurante",
+  "description": "I frutti di mare iconici del porto di Ciutadella, con oltre cinquant'anni di storia e un Sol della Guida Repsol tra i veterani dell'isola. Nacque negli anni Settanta come taverna di mare — il nonno, 'Bep Fitora', pescava con la sua barca e la moglie Juanita cucinava il pescato — e ancora oggi serve il pesce e i crostacei sbarcati dalla propria imbarcazione, la Rosa Santa Primera: gambero rosso di Ciutadella alla piastra e aragosta rossa di Minorca secondo stagione.",
+  "coordinates": {
+    "lat": 40,
+    "lng": 3.83
+  },
+  "area": "Ovest (Ciutadella)",
+  "practicalInfo": {
+    "acceso": "Passeig des Moll 15, porto di Ciutadella.",
+    "horario": "Indicativo: da martedì a sabato, 13:00–15:30 e 20:00–23:00; lunedì solo cena; domenica chiuso. Orario stagionale: lo confermi prima di andare.",
+    "servicios": "Prenotazioni: +34 971 38 00 05"
+  },
+  "priceRange": "€€€",
+  "website": "https://www.baleargrup.com/",
+  "images": [
+    "/uploads/ciutadella-puerto.webp"
+  ],
+  "tags": [
+    "oeste",
+    "gastronomia",
+    "ciutadella"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Cafè Balear (porto di Ciutadella): mezzo secolo di frutti di mare con barca propria, la Rosa Santa Primera, gambero rosso alla piastra e un Sol della Guida Repsol."
+  },
+  "imageAlt": "Il porto di Ciutadella con le imbarcazioni ormeggiate ai piedi del centro storico"
+}

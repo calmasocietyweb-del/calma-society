@@ -1,0 +1,46 @@
+{
+  "name": "Pôr do sol de barco a partir de Binibeca",
+  "lang": "pt",
+  "translationKey": "atardecer-barco-binibeca-faralmar",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Saída de barco ao pôr do sol a partir de Cala Torret, junto a Binibeca, com cava e bebidas frescas a bordo e as casinhas brancas de pescadores recortadas sobre o mar. Costa sudeste tranquila, ideal para fundear e dar um último mergulho.",
+  "coordinates": {
+    "lat": 39.8147,
+    "lng": 4.2389
+  },
+  "area": "Sant Lluís (Binibeca / Cala Torret)",
+  "images": [
+    "/uploads/binibeca.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "nautica",
+      "naturaleza"
+    ],
+    "highlights": [
+      "navegar ao cair da tarde pela costa sudeste de casinhas brancas",
+      "fundear numa enseada abrigada para tomar banho",
+      "brinde com cava e snacks a bordo"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://faralmar.com/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "O casario branco de Binibeca junto ao mar"
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Monte Toro",
+  "lang": "it",
+  "translationKey": "monte-toro",
+  "type": "monumento",
+  "description": "Il punto più alto di Minorca (358 m), con il santuario della Mare de Déu del Toro e un belvedere a 360° su tutta l'isola, da mare a mare.",
+  "coordinates": {
+    "lat": 39.9925,
+    "lng": 4.1108
+  },
+  "area": "Centro (Es Mercadal)",
+  "tags": [
+    "centro",
+    "mirador",
+    "santuario",
+    "es mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "mirador",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "primera-vez"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Strada asfaltata con curve da Es Mercadal (~10 min) fino al parcheggio della cima.",
+    "highlights": [
+      "il belvedere a 360° su tutta l'isola, da mare a mare",
+      "il santuario della Mare de Déu del Toro",
+      "salire con la luce del tramonto"
+    ]
+  },
+  "images": [
+    "/uploads/monte-toro.webp"
+  ],
+  "imageAlt": "La vista dalla cima del Toro: l'interno dell'isola e i paesi in lontananza"
+}

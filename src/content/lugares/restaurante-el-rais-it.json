@@ -1,0 +1,33 @@
+{
+  "name": "El Rais",
+  "lang": "it",
+  "translationKey": "restaurante-el-rais",
+  "type": "restaurante",
+  "description": "I risi del porto di Maó: senyoret, riso nero e risi di stagione, con crudi e cucina alla brace e al forno a legna, direttamente sul Moll de Llevant. È la casa di mare del gruppo Ses Forquilles — gli chef proprietari Marco Antonio Collado e Oriol Castel, con la sommelier Raquel Yagüe — che rilegge il ricettario minorchino in chiave contemporanea. Raccomandato dalla Guida Michelin nel 2025 e nel 2026, e presente nella Guida Repsol.",
+  "coordinates": {
+    "lat": 39.89,
+    "lng": 4.27
+  },
+  "area": "Est (Maó)",
+  "practicalInfo": {
+    "acceso": "Moll de Llevant 314, porto di Maó (sopra il Club Marítimo).",
+    "horario": "Indicativo: da martedì a domenica, 13:00–15:15 e 19:30–22:45; lunedì chiuso. Orario stagionale: lo confermi prima di andare.",
+    "servicios": "Prenotazioni: +34 971 362 345"
+  },
+  "priceRange": "€€€",
+  "website": "https://www.sesforquilles.com/",
+  "images": [
+    "/uploads/lg-restaurante-el-rais.webp"
+  ],
+  "tags": [
+    "este",
+    "gastronomia",
+    "mao"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "El Rais (porto di Maó): i risi e la cucina di mare del gruppo Ses Forquilles sul Moll de Llevant, raccomandato dalla Guida Michelin 2026."
+  },
+  "imageAlt": "Barche da pesca ormeggiate di notte nel porto di Maó",
+  "imageCredit": "Santiago Lap / Wikimedia Commons (CC BY-SA 3.0)"
+}

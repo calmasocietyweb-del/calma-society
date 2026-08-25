@@ -1,0 +1,33 @@
+{
+ "name": "Matxani Gran",
+ "lang": "it",
+ "translationKey": "matxani-gran",
+ "type": "alojamiento",
+ "edition": "menorca",
+ "description": "Agriturismo in una casa di campagna minorchina alle porte di Sant Climent, sulla strada per Binidalí. Ha un orto biologico proprio — da lì arrivano le verdure che vengono servite — e animali da fattoria, e gli spazi comuni sono di quelli che invitano a non uscire: piscina, giardini e campagna tutt'intorno.",
+ "coordinates": {
+  "lat": 39.860478,
+  "lng": 4.20941
+ },
+ "area": "Sud-est (Sant Climent)",
+ "practicalInfo": {
+  "acceso": "Carretera de Binidalí km 1,5, 07712 Sant Climent.",
+  "horario": "Non pubblica la stagione di apertura; confermi le date 2026 sul sito ufficiale.",
+  "servicios": "Orto biologico proprio e animali da fattoria. Piscina e giardini."
+ },
+ "website": "http://matxanigran.com/",
+ "images": [
+  "/uploads/talati-de-dalt.webp"
+ ],
+ "tags": [
+  "alojamiento",
+  "agroturismo",
+  "sant-climent"
+ ],
+ "status": "published",
+ "seo": {
+  "description": "Matxani Gran (Sant Climent): agriturismo in una casa di campagna minorchina con orto biologico proprio e animali da fattoria."
+ },
+ "imageAlt": "La taula di Talatí de Dalt con il pilastro caduto appoggiato, tra gli ulivi, nel villaggio talaiotico.",
+ "imageCredit": "Paul Stephenson · Wikimedia (CC BY 2.0)"
+}

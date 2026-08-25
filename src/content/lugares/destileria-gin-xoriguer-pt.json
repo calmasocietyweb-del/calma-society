@@ -1,0 +1,53 @@
+{
+  "name": "Destilaria Gin Xoriguer",
+  "lang": "pt",
+  "translationKey": "destileria-gin-xoriguer",
+  "type": "productor",
+  "description": "Destilaria histórica no porto de Mahón que produz o gin de Menorca com alambiques de cobre com mais de 250 anos, fogo de lenha local, álcool de vinho, zimbro e água de poço de Mahón. A visita guiada termina com prova de gins, licores artesanais e da 'pomada' (gin com limonada, a bebida das festas patronais). Paragem gastronómica imprescindível e muito bem situada.",
+  "coordinates": {
+    "lat": 39.89,
+    "lng": 4.262
+  },
+  "area": "Este (Maó)",
+  "tags": [
+    "este",
+    "experiencia",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 60,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "mao-puerto",
+      "este"
+    ],
+    "highlights": [
+      "a loja junto ao porto de Maó",
+      "a prova do gin de Menorca",
+      "provar a pomada (gin com limonada)"
+    ]
+  },
+  "images": [
+    "/uploads/lg-destileria-gin-xoriguer.webp"
+  ],
+  "imageAlt": "Uma garrafa de gin Xoriguer de Maó junto a limões partidos",
+  "imageCredit": "MinorKan / Wikimedia Commons (CC BY-SA 3.0)"
+}

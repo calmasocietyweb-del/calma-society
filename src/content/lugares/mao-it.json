@@ -1,0 +1,50 @@
+{
+  "name": "Maó",
+  "lang": "it",
+  "translationKey": "mao",
+  "type": "pueblo",
+  "description": "Capitale cosmopolita dalla forte impronta britannica del XVIII secolo, affacciata sul porto naturale più grande del Mediterraneo. Centro elegante e casa del gin.",
+  "coordinates": {
+    "lat": 39.8885,
+    "lng": 4.2658
+  },
+  "area": "Est (Maó)",
+  "tags": [
+    "este",
+    "puerto",
+    "capital",
+    "maó"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "cultura",
+      "gastronomia",
+      "primera-vez"
+    ],
+    "durationMin": 240,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Capitale percorribile a piedi e ben collegata (bus per tutta l'isola e per l'aeroporto). Parcheggio a pagamento in centro.",
+    "highlights": [
+      "il porto naturale, tra i più grandi del mondo",
+      "salire al centro storico per Ses Voltes",
+      "la distilleria di gin Xoriguer",
+      "il Mercat des Claustre del Carme"
+    ]
+  },
+  "images": [
+    "/uploads/lg-mao.webp"
+  ],
+  "imageAlt": "Il porto di Maó dall'alto, con il Llatzeret e le imbarcazioni alla fonda",
+  "imageCredit": "20702125@N05 / Wikimedia Commons (CC BY-SA 2.0)"
+}

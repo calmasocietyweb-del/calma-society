@@ -1,0 +1,45 @@
+{
+  "name": "Torre Vella – yoga e massaggi all'aria aperta (Fontenille)",
+  "lang": "it",
+  "translationKey": "torre-vella-yoga-naturaleza",
+  "type": "spa",
+  "edition": "menorca",
+  "description": "In 200 ettari di natura tra ulivi, vigne e falesie, Torre Vella propone yoga e meditazione sotto i lecci e lettini da massaggio all'aria aperta davanti al mare. Benessere di tenuta, senza rumore, con la spa di Santa Ponsa a dieci minuti.",
+  "coordinates": {
+    "lat": 39.9,
+    "lng": 4.1
+  },
+  "area": "Alaior",
+  "images": [
+    "/uploads/calma-menorca.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "excursion",
+    "idealFor": [
+      "lujo-tranquilo",
+      "naturaleza",
+      "parejas"
+    ],
+    "highlights": [
+      "Yoga e meditazione ogni giorno sotto lecci e ulivi",
+      "Massaggio all'aria aperta davanti alle falesie, con prodotti naturali",
+      "Programma benessere: lezione di yoga + trattamento corpo + aperitivo sulla falesia"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.torre-vella.fontenille-collection.com/en/yoga-wellness-spa-retreat-menorca/",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Un angolo di campagna minorchina in calma, con la luce bassa del pomeriggio"
+}

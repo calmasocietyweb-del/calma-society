@@ -1,0 +1,48 @@
+{
+  "name": "Gita in barca alle cale e grotte del sud (da Cala Galdana)",
+  "lang": "it",
+  "translationKey": "paseo-barco-calas-cuevas-cala-galdana",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Un'uscita in barca da Cala Galdana mostra dal mare le cale vergini del sud-ovest — Mitjana, Trebalúger, Macarella — e grotte che non si vedono in altro modo, con una sosta per un bagno in acqua turchese. Ideale per i piccoli: nessuna camminata e tempo a bordo.",
+  "coordinates": {
+    "lat": 39.936,
+    "lng": 3.965
+  },
+  "area": "Ferreries (Cala Galdana)",
+  "images": [
+    "/uploads/lg-paseo-barco-calas-cuevas-cala-galdana.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza",
+      "primera-vez"
+    ],
+    "highlights": [
+      "vedere dal mare Cala Mitjana, Trebalúger e Macarella, e grotte nascoste",
+      "una o due soste per il bagno in acque cristalline (di solito prestano le maschere)",
+      "uscita di circa 3 h 30 senza camminate, adatta a tutte le età; chieda dei servizi a bordo al momento di prenotare"
+    ],
+    "durationMin": 210,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-08-06",
+    "officialUrl": "https://www.marencalmamenorca.com/es/inicio",
+    "operatorName": "Mar en Calma"
+  },
+  "imageAlt": "Una cala del sud con la sabbia chiara e un'imbarcazione tirata in secco sulla riva",
+  "imageCredit": "Mediatres / Wikimedia Commons (CC BY-SA 3.0)"
+}

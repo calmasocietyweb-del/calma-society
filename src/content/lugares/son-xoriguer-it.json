@@ -1,0 +1,47 @@
+{
+  "name": "Son Xoriguer",
+  "lang": "it",
+  "translationKey": "son-xoriguer",
+  "type": "cala",
+  "description": "Ampia spiaggia di sabbia a circa 10 km da Ciutadella, con il lato destro più naturale e rocce in acqua. Segna il confine tra la costa urbanizzata del sud-ovest e il litorale vergine del sud. Base abituale delle escursioni in barca.",
+  "coordinates": {
+    "lat": 39.926,
+    "lng": 3.805
+  },
+  "area": "Sud-ovest (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "playa",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "spiaggia ampia a ~10 km da Ciutadella, con il lato destro più naturale",
+      "segna il confine tra la costa urbanizzata e le cale vergini del sud",
+      "partenza di escursioni in barca e sport nautici; accesso diretto in auto"
+    ]
+  },
+  "images": [
+    "/uploads/lg-son-xoriguer.webp"
+  ],
+  "imageAlt": "La costa presso Son Xoriguer, con il sentiero sterrato che segue il bordo del mare",
+  "imageCredit": "Franrull / Wikimedia Commons (CC BY-SA 4.0)"
+}
