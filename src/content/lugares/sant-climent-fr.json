@@ -1,0 +1,48 @@
+{
+  "name": "Sant Climent",
+  "lang": "fr",
+  "translationKey": "sant-climent",
+  "type": "pueblo",
+  "description": "Petit bourg tranquille de la commune de Maó, sur la route de Cala en Porter, avec les services de base. Sa marque propre : les concerts de jazz qui rythment l'année dans son casino — le bar-restaurant du village —, un rendez-vous culturel à l'ambiance locale, peu connu du tourisme de masse. Une halte discrète et authentique, de passage ou pour une soirée différente.",
+  "coordinates": {
+    "lat": 39.8694,
+    "lng": 4.2419
+  },
+  "area": "Est (Maó)",
+  "tags": [
+    "este",
+    "nucleo",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "gastronomia",
+      "cultura"
+    ],
+    "durationMin": 45,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "un bourg rural tranquille dans la campagne de Maó",
+      "le Casino de Sant Climent, bar-restaurant avec ses sessions de jazz",
+      "une halte sur la route de Cala en Porter et de la côte sud"
+    ]
+  },
+  "images": [
+    "/uploads/lg-sant-climent.webp"
+  ],
+  "imageAlt": "Le village de Sant Climent vu du ciel, entouré de champs",
+  "imageCredit": "Arjuno3 / Wikimedia Commons (CC BY-SA 4.0)"
+}

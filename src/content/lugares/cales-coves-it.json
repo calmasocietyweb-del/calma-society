@@ -1,0 +1,47 @@
+{
+  "name": "Cales Coves",
+  "lang": "it",
+  "translationKey": "cales-coves",
+  "type": "cala",
+  "description": "Doppia cala circondata da falesie scavate da una necropoli preistorica di grotte (sito talaiotico-romano), di grande valore culturale e paesaggistico. Nessun servizio; unisce un bagno tranquillo all'archeologia.",
+  "coordinates": {
+    "lat": 39.874,
+    "lng": 4.148
+  },
+  "area": "Sud centrale (Alaior)",
+  "tags": [
+    "sur-centro",
+    "cala",
+    "alaior"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "cultura"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "fare il bagno in una doppia cala circondata da falesie traforate",
+      "osservare dall'acqua la necropoli di grotte preistoriche scavate nella roccia",
+      "rispettare il sito: è un'area archeologica protetta"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cales-coves.webp"
+  ],
+  "imageAlt": "Un veliero all'ancora a Cales Coves, sotto la parete di roccia traforata di grotte",
+  "imageCredit": "Ben Salter from Wales / Wikimedia Commons (CC BY 2.0)"
+}

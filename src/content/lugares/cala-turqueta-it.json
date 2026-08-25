@@ -1,0 +1,73 @@
+{
+  "name": "Cala en Turqueta",
+  "lang": "it",
+  "translationKey": "cala-turqueta",
+  "type": "cala",
+  "description": "Acque di un turchese quasi irreale e sabbia fine protetta dai pini. Più raccolta e familiare, è tra le cale più amate del sud-ovest. Il suo nome dice tutto.",
+  "coordinates": {
+    "lat": 39.9268,
+    "lng": 3.913
+  },
+  "area": "Sud (Ciutadella)",
+  "practicalInfo": {
+    "acceso": "Breve camminata (10-15 min circa) dal parcheggio lungo un sentiero tra i pini",
+    "aparcamiento": "Capienza controllata (stagione 2026): una sbarra chiude il parcheggio appena si riempie, e Turqueta è la prima a chiudere fra tutte le cale a sud di Ciutadella. A luglio e agosto di solito è completo verso le 8:00; a maggio, verso le 10:00. Non vale la pena cercare posto nei dintorni: le strade sono strette e non è consentito parcheggiarvi. Alternativa senza auto: bus da Ciutadella alle 10:15, 12:15, 16:15 e 19:15, con ritorno mezz'ora più tardi.",
+    "servicios": "Nessun chiosco: portare acqua, cibo e ombra",
+    "mejorEpoca": "Se viene in auto, parta davvero presto: è la prima ad appendere il cartello di completo. A luglio e agosto conviene arrivare tra le 7:00 e le 7:30. A maggio, giugno e settembre il margine è molto più ampio: a maggio i parcheggi non si riempiono prima delle 10:00 o 10:30. Il controllo degli accessi funziona dalle 7:30 alle 21:00 e resta attivo fino al 15 ottobre."
+  },
+  "images": [
+    "/uploads/cala-turqueta.webp"
+  ],
+  "tags": [
+    "sur",
+    "turquesa",
+    "familiar",
+    "ciutadella"
+  ],
+  "status": "published",
+  "windExposure": {
+    "openingBearingDeg": 200,
+    "embayment": "encajonada",
+    "municipioINE": "07015",
+    "shelteredFrom": [
+      "Tramuntana (N)",
+      "Gregal (NE)",
+      "Mestral (NO)"
+    ],
+    "exposedTo": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 200,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "shuttleInfo": "D'estate resta raggiungibile in auto, ma il parcheggio si riempie molto presto (arrivo verso le 8:00). In stagione anche bus navetta da Ciutadella. Punto di partenza abituale per raggiungere a piedi Macarella.",
+    "effortNote": "Sentiero di 10-15 min tra i pini dal parcheggio; fondo stabile ma non adatto a sedia a rotelle né passeggino.",
+    "highlights": [
+      "un turchese quasi irreale e sabbia fine protetta dai pini",
+      "d'estate si arriva in auto, ma il parcheggio si riempie presto (arrivo verso le 8:00)",
+      "punto di partenza abituale per raggiungere Macarella a piedi lungo il Camí de Cavalls"
+    ]
+  },
+  "imageAlt": "Cala en Turqueta vista tra i pini, con la sabbia bianca e l'acqua turchese"
+}

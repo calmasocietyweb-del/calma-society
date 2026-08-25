@@ -1,0 +1,47 @@
+{
+  "name": "Cala en Bosch",
+  "lang": "it",
+  "translationKey": "cala-en-bosch",
+  "type": "cala",
+  "description": "Spiaggia urbanizzata di medie dimensioni accanto a un porto turistico e a un lago interno (El Lago) circondato da ristoranti e appartamenti. Comoda e con servizi, pensata per le famiglie più che per chi cerca cale vergini.",
+  "coordinates": {
+    "lat": 39.927,
+    "lng": 3.812
+  },
+  "area": "Sud-ovest (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "playa",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "spiaggia per famiglie accanto al porto turistico e al lago interno (El Lago)",
+      "ristoranti di pesce e riso intorno al porto, davanti all'acqua",
+      "lungomare pianeggiante fino al faro di Cap d'Artrutx e Son Xoriguer"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-en-bosch.webp"
+  ],
+  "imageAlt": "Il canale e il porto turistico di Cala en Bosc, con le imbarcazioni ormeggiate",
+  "imageCredit": "Bärwinkel,Klaus / Wikimedia Commons (CC BY-SA 4.0)"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Restaurant Sa Llagosta",
+  "lang": "fr",
+  "translationKey": "restaurant-sa-llagosta",
+  "type": "restaurante",
+  "description": "Référence à Fornells pour la caldereta de langouste minorquine, avec un Sol du guide Repsol depuis l'édition 2024. Une version au goût plus intense et au bouillon plus épais que celle d'Es Cranc, selon les comparatifs locaux. Pour qui cherche la caldereta traditionnelle corsée, dans le village de pêcheurs qui a vu naître le plat.",
+  "coordinates": {
+    "lat": 40.05,
+    "lng": 4.13
+  },
+  "area": "Nord (Es Mercadal)",
+  "tags": [
+    "norte",
+    "gastronomia",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "cena",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "lujo-tranquilo"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-08-07",
+    "officialUrl": "https://www.instagram.com/sallagosta/"
+  },
+  "images": [
+    "/uploads/caldereta-langosta.webp"
+  ],
+  "imageAlt": "Une caldereta de langouste servie en cocotte"
+}

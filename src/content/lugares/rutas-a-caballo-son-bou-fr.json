@@ -1,0 +1,47 @@
+{
+  "name": "Randonnées à cheval sur le Camí de Cavalls (Son Bou)",
+  "lang": "fr",
+  "translationKey": "rutas-a-caballo-son-bou",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Parcourir à cheval un tronçon du Camí de Cavalls le long de la grande plage de Son Bou et de sa zone humide, au pas tranquille du cheval minorquin. Une manière sereine et différente de sentir le paysage, adaptée aux familles et aux cavaliers débutants.",
+  "coordinates": {
+    "lat": 39.897,
+    "lng": 4.083
+  },
+  "area": "Alaior (Son Bou / Torre Solí Nou)",
+  "images": [
+    "/uploads/lg-rutas-a-caballo-son-bou.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "excursion",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza",
+      "parejas"
+    ],
+    "highlights": [
+      "balade familiale d'1 h dans la prairie et la zone humide de Son Bou (à partir de 5 ans)",
+      "randonnée de 2 h le long de la côte pour tous les niveaux, en adaptant l'allure du cheval",
+      "départ près de Torre Solí Nou, à côté de l'hôtel Jardín de Menorca"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.menorcahorseback.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Chevaux noirs minorquins montés, dans le jaleo d'une fête de village",
+  "imageCredit": "Songbird8 / Wikimedia Commons (CC BY-SA 4.0)"
+}

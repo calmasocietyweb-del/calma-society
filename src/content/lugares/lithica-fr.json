@@ -1,0 +1,51 @@
+{
+  "name": "Lithica – Pedreres de s'Hostal",
+  "lang": "fr",
+  "translationKey": "lithica",
+  "type": "naturaleza",
+  "description": "D'anciennes carrières de pierre de marès devenues un espace culturel unique : labyrinthes de pierre, jardins sculptés dans la roche et un amphithéâtre.",
+  "coordinates": {
+    "lat": 39.9889,
+    "lng": 3.865
+  },
+  "area": "Ouest (Ciutadella)",
+  "tags": [
+    "oeste",
+    "cantera",
+    "jardín",
+    "cultura",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "officialUrl": "https://lithica.es",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "seasonalHours": "9 h 30 – 14 h 30 ; en haute saison, également l'après-midi. Mieux adapté à la chaleur qu'à la pluie (site en plein air).",
+    "highlights": [
+      "les labyrinthes de pierre de marès",
+      "les jardins sculptés dans la roche",
+      "l'amphithéâtre et le jardin circulaire"
+    ]
+  },
+  "images": [
+    "/uploads/lg-lithica.webp"
+  ],
+  "imageAlt": "Les anciennes carrières de marès de s'Hostal, aux parois taillées à la main",
+  "imageCredit": "Miquel Colomer Planagumà from BARCELONA, España / Wikimedia Commons (CC BY-SA 2.0)"
+}

@@ -1,0 +1,53 @@
+{
+  "name": "Bodegas Binifadet",
+  "lang": "it",
+  "translationKey": "bodegas-binifadet",
+  "type": "bodega",
+  "description": "La cantina più antica e con la maggiore produzione di Minorca (~100.000 bottiglie l'anno, la metà dell'isola; l'unica a elaborare spumanti). 12 ettari a Sant Lluís con varietà bianche (Chardonnay, Malvasia, Moscato...) e rosse (Merlot, Syrah, Cabernet...). Visita del vigneto, spiegazione del processo, degustazione e ristorante tra i filari. Enoturismo di riferimento sotto l'IGP Vi de la Terra Illa de Menorca.",
+  "coordinates": {
+    "lat": 39.85,
+    "lng": 4.27
+  },
+  "area": "Sud-est (Sant Lluís)",
+  "tags": [
+    "sur-este",
+    "experiencia",
+    "sant-lluis"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "lujo-tranquilo",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-07-22",
+    "indoorAlternativeOf": [
+      "binibeca-sur-este",
+      "sur-este"
+    ],
+    "highlights": [
+      "la visita guidata del vigneto con degustazione del vino di Minorca",
+      "pranzare o cenare sulla terrazza tra le vigne",
+      "prenotare degustazione e tavolo in anticipo"
+    ],
+    "officialUrl": "https://binifadet.com/"
+  },
+  "images": [
+    "/uploads/vino-bodega.webp"
+  ],
+  "imageAlt": "Botti e bottiglie all'interno di una cantina"
+}

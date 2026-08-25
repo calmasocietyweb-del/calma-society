@@ -1,0 +1,71 @@
+{
+  "name": "Cala Pregonda",
+  "lang": "it",
+  "translationKey": "cala-pregonda",
+  "type": "cala",
+  "description": "Una delle cale più iconiche del nord: sabbia dai toni rossastri, isolotti davanti alla riva e un'aria quasi lunare. Non ha servizi, e lì sta il suo fascino.",
+  "coordinates": {
+    "lat": 40.0489,
+    "lng": 4.0512
+  },
+  "area": "Nord (Es Mercadal)",
+  "practicalInfo": {
+    "acceso": "A piedi, circa 30 min dal parcheggio di Binimel·là",
+    "aparcamiento": "Non ha un parcheggio proprio: si lascia l'auto a Binimel·là e si cammina una trentina di minuti. Quel parcheggio ha una capienza controllata (stagione 2026) e si chiude quando è completo, quindi il posto che serve non è quello di Pregonda ma quello di Binimel·là, che vale per due spiagge alla volta. Non vale la pena cercare posto nei dintorni: le strade sono strette e non è consentito parcheggiarvi.",
+    "servicios": "Nessuno: porti acqua, cibo e qualcosa per l'ombra",
+    "mejorEpoca": "Maggio, giugno e settembre. In agosto, di prima mattina: se Binimel·là è già chiuso, quel giorno Pregonda smette di essere un'opzione. Il controllo degli accessi funziona dalle 7:30 alle 21:00 e resta attivo fino al 15 ottobre."
+  },
+  "images": [
+    "/uploads/cala-pregonda.webp"
+  ],
+  "tags": [
+    "norte",
+    "arena rojiza",
+    "camí de cavalls"
+  ],
+  "status": "published",
+  "windExposure": {
+    "openingBearingDeg": 340,
+    "embayment": "encajonada",
+    "municipioINE": "07037",
+    "shelteredFrom": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
+    "exposedTo": [
+      "Tramuntana (N)",
+      "Mestral (NO)",
+      "Gregal (NE)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Senza accesso su strada alla cala: ~30 min a piedi (2 km) lungo il Camí de Cavalls dal parcheggio di Binimel·la. Nessun servizio; scarpe comode, acqua e qualcosa per l'ombra indispensabili.",
+    "seasonalHours": "Giugno o settembre; in luglio/agosto il parcheggio di Binimel·la si riempie presto. Meglio con poco vento da nord.",
+    "highlights": [
+      "la sabbia rossastra e gli isolotti di una delle cale più iconiche del nord",
+      "camminare ~30 min lungo il Camí de Cavalls da Binimel·la",
+      "scegliere un giorno con poco vento da nord; nessun servizio"
+    ]
+  },
+  "imageAlt": "L'acqua limpida di Cala Pregonda sul fondale roccioso, con l'isolotto di roccia ocra sullo sfondo"
+}

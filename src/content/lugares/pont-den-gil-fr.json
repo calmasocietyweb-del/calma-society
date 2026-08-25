@@ -1,0 +1,47 @@
+{
+  "name": "Pont d'en Gil",
+  "lang": "fr",
+  "translationKey": "pont-den-gil",
+  "type": "monumento",
+  "description": "Gigantesque arche de roche naturelle au-dessus de la mer, sur la côte ouest, près de Ciutadella. Elle encadre l'un des couchers de soleil les plus spectaculaires de l'île, avec un contre-jour saisissant quand le soleil s'aligne avec l'arche. On peut même la traverser en bateau. Un belvédère de coucher de soleil de premier ordre.",
+  "coordinates": {
+    "lat": 40,
+    "lng": 3.8
+  },
+  "area": "Ouest (Ciutadella)",
+  "tags": [
+    "oeste",
+    "mirador",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "mirador",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "la gigantesque arche de roche naturelle découpée sur la mer",
+      "l'un des couchers de soleil les plus spectaculaires près de Ciutadella",
+      "on y arrive à pied ou à vélo par le Camí de Cavalls (le mieux : la voir depuis la mer)"
+    ]
+  },
+  "images": [
+    "/uploads/lg-pont-den-gil.webp"
+  ],
+  "imageAlt": "La plateforme rocheuse de la côte ouest de Ciutadella, battue par la mer ouverte",
+  "imageCredit": "LucT / Wikimedia Commons (CC BY-SA 3.0)"
+}

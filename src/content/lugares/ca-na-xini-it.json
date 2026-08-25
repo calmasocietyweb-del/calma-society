@@ -1,0 +1,33 @@
+{
+  "name": "Ca Na Xini (Hort Sant Patrici)",
+  "lang": "it",
+  "translationKey": "ca-na-xini",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Otto camere nella casa del 1918 della tenuta Hort Sant Patrici, a cinque minuti da Ferreries, tra vigneti e giardini. È l'unico hotel dell'isola dove si dorme dentro un caseificio con DOP Mahón-Menorca e una cantina propri: si visita la produzione, si degusta il vino della casa e a colazione si mangia il formaggio fatto a pochi metri dal letto.",
+  "coordinates": {
+    "lat": 39.995,
+    "lng": 4.012
+  },
+  "area": "Centro (Ferreries)",
+  "practicalInfo": {
+    "acceso": "Camí de Sant Patrici, a circa 5 minuti in auto da Ferreries.",
+    "horario": "Confermi stagione e date sul sito ufficiale; il caseificio e la cantina hanno orari di visita propri.",
+    "servicios": "8 camere, piscina esterna stagionale, caseificio DOP Mahón-Menorca e cantina propri, vigneti e giardini."
+  },
+  "images": [
+    "/uploads/queso-mahon-artesa.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "agroturismo",
+    "lujo",
+    "ferreries"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Ca Na Xini, Ferreries: hotel rurale di 8 camere nella tenuta Hort Sant Patrici, con caseificio DOP e cantina propri."
+  },
+  "imageAlt": "Un formaggio Mahón-Menorca artigianale stagionato su un tagliere di legno, con la crosta naturale e la pasta avorio.",
+  "imageCredit": "Slastic / Wikimedia Commons (public domain)"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Aquiara by José María Borrás",
+  "lang": "fr",
+  "translationKey": "restaurante-aquiara",
+  "type": "restaurante",
+  "description": "Un Sol du guide Repsol en 2026 — le seul nouveau de Minorque cette année-là — pour la table de l'hôtel rural Morvedra Nou, un domaine de 1650 entouré d'oliviers et d'oléastres sur le chemin de Macarella. Le chef José María Borrás, né à Maó en 1999 et formé chez Hofmann et au Japon, signe un menu dégustation de saison qui traduit la tradition minorquine avec une technique contemporaine et le produit local. À titre indicatif, été 2026 : dégustation 130 €, avec accords 210 €.",
+  "coordinates": {
+    "lat": 39.96,
+    "lng": 3.89
+  },
+  "area": "Sud-ouest (Ciutadella)",
+  "practicalInfo": {
+    "acceso": "Hôtel rural Morvedra Nou, Camí de Macarella km 7 (Ciutadella). Emplacement approximatif : confirmez le point exact sur le site officiel.",
+    "horario": "À titre indicatif pour 2026 : dîners du mercredi au samedi (19 h 30 – 21 h 30), et le dimanche également à midi. L'hôtel est saisonnier : confirmez la saison et les horaires avant d'y aller.",
+    "mejorEpoca": "Pendant la saison de l'hôtel (l'établissement ferme une partie de l'année) ; réservation indispensable.",
+    "servicios": "Réservations : +34 971 35 95 12 · info@morvedranoumenorca.com"
+  },
+  "priceRange": "€€€€",
+  "website": "https://www.annuahotels.com/",
+  "images": [
+    "/uploads/alta-cocina-plato.webp"
+  ],
+  "tags": [
+    "sur-oeste",
+    "gastronomia",
+    "ciutadella"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Aquiara, la table de José María Borrás à l'hôtel Morvedra Nou (Ciutadella) : Sol Repsol 2026 et menu dégustation entre tradition minorquine et technique contemporaine."
+  },
+  "imageAlt": "Un plat de haute cuisine dressé avec soin"
+}

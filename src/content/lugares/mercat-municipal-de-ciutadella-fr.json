@@ -1,0 +1,53 @@
+{
+  "name": "Mercat Municipal de Ciutadella",
+  "lang": "fr",
+  "translationKey": "mercat-municipal-de-ciutadella",
+  "type": "comercio",
+  "description": "Le marché aux poissons et fruits de mer de Ciutadella, avec les légumes et les fruits gorgés de soleil des paysans locaux. Le marché vivant de la ville du couchant, une halte pour acheter du produit frais et s'imprégner de la vie locale.",
+  "coordinates": {
+    "lat": 40,
+    "lng": 3.84
+  },
+  "area": "Ouest (Ciutadella)",
+  "tags": [
+    "oeste",
+    "gastronomia",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "cena",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 60,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "ciutadella-ciudad",
+      "oeste"
+    ],
+    "highlights": [
+      "acheter des fruits de mer à la poissonnerie et les faire cuisiner aux comptoirs des arcades",
+      "tapas et petit déjeuner sous les arches à la première heure",
+      "l'architecture de fer du XIXe siècle, unique à Minorque (Plaça de la Llibertat)"
+    ]
+  },
+  "images": [
+    "/uploads/lg-mercat-municipal-de-ciutadella.webp"
+  ],
+  "imageAlt": "Les arcades du Mercat Municipal de Ciutadella, avec des passants à l'ombre",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)"
+}

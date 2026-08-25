@@ -1,0 +1,51 @@
+{
+  "name": "Cala Tortuga",
+  "lang": "it",
+  "translationKey": "cala-tortuga",
+  "type": "cala",
+  "description": "Spiaggia vergine di sabbia dorata sotto il paesaggio lunare di ardesia nera di Favàritx, dentro il parco naturale. L'accesso limitato in auto e la camminata la mantengono serena: natura pura senza un chiosco in vista.",
+  "coordinates": {
+    "lat": 39.998,
+    "lng": 4.27
+  },
+  "area": "Nord (Maó)",
+  "tags": [
+    "norte",
+    "cala",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 180,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "la sabbia dorata sotto il paesaggio lunare di ardesia di Favàritx",
+      "lo scenario incontaminato del Parc Natural de s'Albufera des Grau",
+      "d'estate si arriva con il bus stagionale da Maó"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-tortuga.webp"
+  ],
+  "imageAlt": "La Platja d'en Tortuga, nell'arenile di Morella, con la macchia bassa intorno",
+  "imageCredit": "Nicolas G. Mertens / Wikimedia Commons (CC BY-SA 4.0)",
+  "practicalInfo": {
+    "aparcamiento": "Dal 1° giugno al 30 settembre non si può arrivare né in auto né in moto: condivide con Presili la chiusura al traffico privato di tutta la zona del faro di Favàritx, e si entra in bus. Dal 1° giugno 2026 ci sono dodici corse giornaliere per Favàritx. Dalla fermata restano circa 20 minuti a piedi lungo il Camí de Cavalls.",
+    "mejorEpoca": "Da ottobre a maggio si arriva in auto e di solito è vuota. D'estate, il primo bus del mattino: al resto pensa la camminata dalla fermata."
+  }
+}

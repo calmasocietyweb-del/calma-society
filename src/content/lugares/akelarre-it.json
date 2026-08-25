@@ -1,0 +1,28 @@
+{
+  "name": "Akelarre Jazz & Dance Club",
+  "lang": "it",
+  "translationKey": "akelarre",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Club e sala di musica dal vivo in un edificio centenario del porto di Maó (Moll de Ponent): concerti e vita notturna.",
+  "coordinates": {
+    "lat": 39.8904432,
+    "lng": 4.264093
+  },
+  "area": "Est (Maó)",
+  "practicalInfo": {
+    "horario": "Stagionale; gli orari cambiano a ogni stagione — consulti il sito web o Instagram."
+  },
+  "images": [
+    "/uploads/lg-akelarre.webp"
+  ],
+  "tags": [
+    "club",
+    "música en vivo",
+    "puerto",
+    "maó"
+  ],
+  "status": "published",
+  "imageAlt": "Il lungomare del porto di Maó illuminato di notte, con le terrazze aperte",
+  "imageCredit": "Santiago Lap / Wikimedia Commons (CC BY-SA 3.0)"
+}

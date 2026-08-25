@@ -1,0 +1,46 @@
+{
+  "name": "Lloc de Menorca (parc zoologique et ferme pédagogique)",
+  "lang": "fr",
+  "translationKey": "lloc-de-menorca-zoo-granja",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Un refuge animalier au bord de la Me-1, où les plus petits donnent à manger aux chèvres naines, se promènent parmi des lémuriens en liberté et, l'été, se rafraîchissent dans l'espace aquatique. Une journée complète de nature sans s'éloigner du centre de l'île.",
+  "coordinates": {
+    "lat": 39.9072,
+    "lng": 4.2225
+  },
+  "area": "Alaior",
+  "images": [
+    "/uploads/lg-lloc-de-menorca-zoo-granja.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "talayotic-alaior",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza"
+    ],
+    "highlights": [
+      "donner à manger aux chèvres naines et observer les lémuriens catta en semi-liberté",
+      "compléter la visite avec l'espace aquatique 'Talaquàtic' et l'aire de jeux (en été)",
+      "goûter dans l'aire de pique-nique ; achetez l'entrée en ligne, à tarif réduit"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://llocdemenorca.com/en/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Un troupeau de vaches de race minorquine au repos dans un pré",
+  "imageCredit": "Alejandro Muñoz Cabrisas / Wikimedia Commons (CC BY-SA 4.0)"
+}

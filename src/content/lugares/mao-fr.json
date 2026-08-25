@@ -1,0 +1,50 @@
+{
+  "name": "Maó",
+  "lang": "fr",
+  "translationKey": "mao",
+  "type": "pueblo",
+  "description": "Capitale cosmopolite à la forte empreinte britannique du XVIIIe siècle, tournée vers le plus grand port naturel de la Méditerranée. Centre élégant et berceau du gin minorquin.",
+  "coordinates": {
+    "lat": 39.8885,
+    "lng": 4.2658
+  },
+  "area": "Est (Maó)",
+  "tags": [
+    "este",
+    "puerto",
+    "capital",
+    "maó"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "cultura",
+      "gastronomia",
+      "primera-vez"
+    ],
+    "durationMin": 240,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Capitale qui se parcourt à pied, bien reliée (bus vers toute l'île et l'aéroport). Stationnement payant dans le centre.",
+    "highlights": [
+      "le port naturel, l'un des plus grands du monde",
+      "monter à la vieille ville par Ses Voltes",
+      "la distillerie de gin Xoriguer",
+      "le Mercat des Claustre del Carme"
+    ]
+  },
+  "images": [
+    "/uploads/lg-mao.webp"
+  ],
+  "imageAlt": "Le port de Maó vu d'en haut, avec le Llatzeret et les bateaux au mouillage",
+  "imageCredit": "20702125@N05 / Wikimedia Commons (CC BY-SA 2.0)"
+}

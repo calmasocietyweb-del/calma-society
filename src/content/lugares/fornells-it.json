@@ -1,0 +1,50 @@
+{
+  "name": "Fornells",
+  "lang": "it",
+  "translationKey": "fornells",
+  "type": "pueblo",
+  "description": "Villaggio di pescatori del nord, dalle case bianche su una grande baia naturale di quasi 3 km con i suoi llaüt. Il punto di riferimento della caldereta di aragosta e base nautica.",
+  "coordinates": {
+    "lat": 40.0539,
+    "lng": 4.1356
+  },
+  "area": "Nord (Es Mercadal)",
+  "tags": [
+    "norte",
+    "puerto",
+    "caldereta",
+    "náutica"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "nautica"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Paese pedonale e piccolo; parcheggiare all'ingresso. Collegamento in bus limitato (meglio in auto).",
+    "highlights": [
+      "la passeggiata del porto tra i llaüt",
+      "salire alla torre di difesa per il panorama",
+      "una caldereta di aragosta",
+      "kayak o paddle nella baia protetta"
+    ]
+  },
+  "images": [
+    "/uploads/lg-fornells.webp"
+  ],
+  "imageAlt": "Una facciata bianca di Fornells con la tenda di un caffè e le persiane verdi",
+  "imageCredit": "Nikodem Nijaki / Wikimedia Commons (CC BY-SA 3.0)"
+}

@@ -1,0 +1,53 @@
+{
+  "name": "Finca Binillubet",
+  "lang": "it",
+  "translationKey": "finca-binillubet",
+  "type": "productor",
+  "description": "Visita con laboratorio di formaggio artigianale e degustazione sensoriale di prodotti locali in una fattoria di allevamento, guidata dagli stessi proprietari. Un'esperienza più intima e partecipativa (si conoscono gli animali e il processo) rispetto ai caseifici più grandi. Coordinate esatte non verificate.",
+  "coordinates": {
+    "lat": 39.96,
+    "lng": 4.13
+  },
+  "area": "Centro (Es Mercadal)",
+  "tags": [
+    "centro",
+    "experiencia",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "familias",
+      "naturaleza",
+      "cultura"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-07-22",
+    "indoorAlternativeOf": [
+      "interior-cultura",
+      "centro"
+    ],
+    "highlights": [
+      "fare il laboratorio di formaggio artigianale con gli stessi contadini",
+      "la degustazione sensoriale di formaggio Mahón-Menorca DOP e prodotti locali",
+      "prenotare prima di andare (visita guidata in una fattoria di allevamento)"
+    ],
+    "officialUrl": "https://www.quesosbinillubet.com/"
+  },
+  "images": [
+    "/uploads/queso-curacion.webp"
+  ],
+  "imageAlt": "Formaggi in stagionatura sugli scaffali di una cella di maturazione"
+}

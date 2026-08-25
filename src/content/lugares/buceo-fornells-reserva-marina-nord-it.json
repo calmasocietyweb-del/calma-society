@@ -1,0 +1,46 @@
+{
+  "name": "Immersioni nella Reserva Marina del Nord (Fornells Diving Center / Dune)",
+  "lang": "it",
+  "translationKey": "buceo-fornells-reserva-marina-nord",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Immergersi nei fondali della Reserva Marina del Nord da Fornells, con una visibilità eccezionale e punti di immersione a quindici minuti dalla baia. Un centro PADI di lunga esperienza per battesimi del mare, corsi e uscite giornaliere.",
+  "coordinates": {
+    "lat": 40.0535,
+    "lng": 4.137
+  },
+  "area": "Es Mercadal (Fornells)",
+  "images": [
+    "/uploads/lg-buceo-fornells-reserva-marina-nord.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "nautica",
+      "naturaleza",
+      "parejas"
+    ],
+    "highlights": [
+      "immersioni nella riserva marina del nord con grande visibilità",
+      "battesimi per principianti, corsi PADI e uscite di snorkeling",
+      "centro PADI 5 stelle con barche proprie ormeggiate davanti alla base"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.divingfornells.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Acqua trasparente sul fondale roccioso di una cala della costa nord",
+  "imageCredit": "Discasto / Wikimedia Commons (CC BY-SA 4.0)"
+}

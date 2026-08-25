@@ -1,0 +1,47 @@
+{
+  "name": "Nécropole de Calescoves",
+  "lang": "fr",
+  "translationKey": "necropolis-de-calescoves",
+  "type": "monumento",
+  "description": "Nécropole préhistorique d'environ 90 grottes funéraires creusées dans la falaise d'une crique vierge et isolée. Un cadre naturel spectaculaire, entre patrimoine et baignade dans une crique sans services. Pour qui cherche calme et authenticité.",
+  "coordinates": {
+    "lat": 39.8689,
+    "lng": 4.1217
+  },
+  "area": "Centre-sud (Alaior)",
+  "tags": [
+    "sur-centro",
+    "yacimiento",
+    "alaior"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "parcourir une nécropole préhistorique d'environ 90 grottes funéraires dans la falaise",
+      "combiner la visite avec une baignade dans la crique vierge de Cales Coves",
+      "visiter avec respect et sans rien toucher : site protégé"
+    ]
+  },
+  "images": [
+    "/uploads/lg-necropolis-de-calescoves.webp"
+  ],
+  "imageAlt": "L'entrée d'une grotte funéraire de Cales Coves, entre des blocs de pierre",
+  "imageCredit": "Dreizung / Wikimedia Commons (CC BY-SA 4.0)"
+}

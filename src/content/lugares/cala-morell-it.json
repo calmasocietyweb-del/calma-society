@@ -1,0 +1,49 @@
+{
+  "name": "Cala Morell",
+  "lang": "it",
+  "translationKey": "cala-morell",
+  "type": "cala",
+  "description": "Cala-porto naturale incassata tra falesie rossastre in un nucleo residenziale di case bianche in stile cicladico. Accanto, la necropoli preistorica di Cala Morell (~14 grotte), che unisce bagno e cultura talaiotica. La cala più comoda e accessibile del nord.",
+  "coordinates": {
+    "lat": 40.056,
+    "lng": 3.883
+  },
+  "area": "Nord (Ciutadella)",
+  "tags": [
+    "norte",
+    "cala",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "familias",
+      "cultura",
+      "parejas"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "la cala-porto tra falesie rossastre e case bianche cicladiche",
+      "visitare la necropoli preistorica accanto al nucleo residenziale",
+      "lo snorkeling in acque riparate"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-morell.webp"
+  ],
+  "imageAlt": "La costa di Cala Morell, con il mare aperto e la roccia chiara della falesia",
+  "imageCredit": "Franrull / Wikimedia Commons (CC BY-SA 4.0)"
+}

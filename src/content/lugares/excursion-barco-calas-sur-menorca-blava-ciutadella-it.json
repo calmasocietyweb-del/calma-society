@@ -1,0 +1,47 @@
+{
+  "name": "Escursione in barca alle cale vergini del sud (Menorca Blava, Ciutadella)",
+  "lang": "it",
+  "translationKey": "excursion-barco-calas-sur-menorca-blava-ciutadella",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Una giornata di mare dal porto antico di Ciutadella fino alle cale più ambite del sud-ovest, quelle senza strada. Piattaforma bagno, solarium e riso a bordo: il modo comodo di vedere Son Saura, Turqueta e Macarella senza auto.",
+  "coordinates": {
+    "lat": 39.9985,
+    "lng": 3.833
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [
+    "/uploads/lg-excursion-barco-calas-sur-menorca-blava-ciutadella.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "primera-vez",
+      "naturaleza",
+      "nautica"
+    ],
+    "highlights": [
+      "navigare il sud-ovest vergine: Son Saura, Es Talaier, Turqueta, Macarella e Macarelleta",
+      "due soste bagno con accesso diretto dalla piattaforma della barca",
+      "paella mista a bordo e grotte marine irraggiungibili via terra; ~7 h"
+    ],
+    "durationMin": 420,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.menorcablava.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Velieri all'ancora davanti a Cala Macarella, sulla costa sud",
+  "imageCredit": "Franrull / Wikimedia Commons (CC BY-SA 4.0)"
+}

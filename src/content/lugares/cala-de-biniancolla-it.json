@@ -1,0 +1,47 @@
+{
+  "name": "Cala de Biniancolla",
+  "lang": "it",
+  "translationKey": "cala-de-biniancolla",
+  "type": "cala",
+  "description": "Cala piccola e tradizionale (~100 m) tra Punta Prima e Binibeca, con casette di pescatori, un fondale che digrada poco a poco e falesie rocciose che le danno intimità. Tranquilla e di atmosfera locale.",
+  "coordinates": {
+    "lat": 39.815,
+    "lng": 4.268
+  },
+  "area": "Sud-est (Sant Lluís)",
+  "tags": [
+    "sur-este",
+    "cala",
+    "sant-lluis"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "il bagno tranquillo su un fondale che digrada poco a poco (adatto ai bambini)",
+      "le casette di pescatori dei dintorni",
+      "mangiare riso e pesce in riva alla cala da En Caragol"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-de-biniancolla.webp"
+  ],
+  "imageAlt": "Il camí vell di Biniancolla, una strada sterrata tra muretti a secco",
+  "imageCredit": "Luc.T from Buggenhout, België / Wikimedia Commons (CC BY 2.0)"
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Ferreries",
+  "lang": "it",
+  "translationKey": "ferreries",
+  "type": "pueblo",
+  "description": "Paese bianco e rurale, il più alto di Minorca, con una radicata tradizione calzaturiera (tra cui Pretty Ballerinas) e del mobile. Circondato da gole e colline; è la porta naturale del Barranc d'Algendar, la gola più importante dell'isola. Minorca autentica e dell'interno, ideale per unire paese e natura.",
+  "coordinates": {
+    "lat": 39.9817,
+    "lng": 4.0103
+  },
+  "area": "Centro (Ferreries)",
+  "tags": [
+    "centro",
+    "pueblo",
+    "ferreries"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "cultura",
+      "familias"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "il paese più alto dell'isola",
+      "il mercato artigianale (in stagione)",
+      "la porta d'accesso a Cala Galdana"
+    ]
+  },
+  "images": [
+    "/uploads/lg-ferreries.webp"
+  ],
+  "imageAlt": "L'edificio delle antiche Scuole Nazionali di Ferreries, del 1933",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)"
+}

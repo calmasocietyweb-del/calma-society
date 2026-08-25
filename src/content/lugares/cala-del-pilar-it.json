@@ -1,0 +1,51 @@
+{
+  "name": "Cala del Pilar",
+  "lang": "it",
+  "translationKey": "cala-del-pilar",
+  "type": "cala",
+  "description": "Una delle spiagge più selvagge e isolate di Minorca: sabbia dorata sotto falesie di argilla rossa, senza un solo servizio. La lunga camminata e il controllo degli accessi la mantengono quasi vergine; ricompensa solo chi se la guadagna.",
+  "coordinates": {
+    "lat": 40.022,
+    "lng": 3.93
+  },
+  "area": "Nord (Ferreries)",
+  "tags": [
+    "norte",
+    "cala",
+    "ferreries"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 300,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "una delle spiagge più selvagge e isolate del nord",
+      "la camminata tra pineta e macchia fino alla sabbia dorata sotto le argille rosse",
+      "andare senza nulla e tornare senza nulla: non c'è un solo servizio"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-del-pilar.webp"
+  ],
+  "imageAlt": "Cala del Pilar vista dall'alto: sabbia rossastra, acqua turchese e il pendio di macchia bassa",
+  "imageCredit": "Markus Trienke / Wikimedia Commons (CC BY-SA 2.0)",
+  "practicalInfo": {
+    "aparcamiento": "Capienza controllata (stagione 2026): il parcheggio si chiude quando è completo, e da lì resta una lunga camminata nel bosco fino alla sabbia. Essendo una di quelle che esigono di camminare, regge più delle cale a sud di Ciutadella, ma in agosto conviene arrivare la mattina presto. Non vale la pena cercare posto nei dintorni: le strade sono strette e non è consentito parcheggiarvi.",
+    "mejorEpoca": "La camminata la protegge: non si riempie così in fretta come le più famose. Ciononostante, in luglio e agosto arrivi prima delle 9:00. Il controllo degli accessi funziona dalle 7:30 alle 21:00 e resta attivo fino al 15 ottobre."
+  }
+}

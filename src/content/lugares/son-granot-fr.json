@@ -1,0 +1,34 @@
+{
+  "name": "Son Granot",
+  "lang": "fr",
+  "translationKey": "son-granot",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "La maison georgienne rouge du XVIIIe siècle au-dessus d'Es Castell, huit chambres et l'une des vues les plus nobles de l'île : l'entrée du port de Maó, avec La Mola en face. Des jardins aux murs de pierre sèche élevés sur d'anciennes défenses britanniques, un potager qui nourrit son restaurant, et la mer à 500 mètres. L'histoire minorquine, petit déjeuner compris.",
+  "coordinates": {
+    "lat": 39.876,
+    "lng": 4.283
+  },
+  "area": "Est (Es Castell)",
+  "practicalInfo": {
+    "acceso": "Es Castell, à l'entrée du port de Maó.",
+    "horario": "Confirmez la saison et les dates sur le site officiel.",
+    "servicios": "8 chambres (5 avec vue sur la mer), piscine et jardins, restaurant avec son propre potager."
+  },
+  "website": "https://www.songranot.com/",
+  "images": [
+    "/uploads/cales-fonts.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "hotel",
+    "lujo",
+    "es-castell"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Son Granot, Es Castell : maison georgienne du XVIIIe siècle, 8 chambres et vue sur l'entrée du port de Maó."
+  },
+  "imageAlt": "Le port de Cales Fonts à Es Castell, avec ses barques traditionnelles et ses maisons au-dessus de la falaise.",
+  "imageCredit": "Adobe Stock"
+}

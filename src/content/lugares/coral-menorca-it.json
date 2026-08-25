@@ -1,0 +1,29 @@
+{
+  "name": "Coral Menorca",
+  "lang": "it",
+  "translationKey": "coral-menorca",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Sulle falesie di Cala'n Forcat: cucina mediterranea, cocktail e uno dei migliori tramonti dell'ovest. In passato, Sa Posta de Sol.",
+  "coordinates": {
+    "lat": 40.0014228,
+    "lng": 3.7967121
+  },
+  "area": "Ovest (Ciutadella)",
+  "practicalInfo": {
+    "horario": "Stagionale; gli orari cambiano ogni stagione — consultare il sito o Instagram."
+  },
+  "website": "https://www.coralmenorca.es/en/home",
+  "images": [
+    "/uploads/lg-coral-menorca.webp"
+  ],
+  "tags": [
+    "atardecer",
+    "coctelería",
+    "cala'n forcat",
+    "ciutadella"
+  ],
+  "status": "published",
+  "imageAlt": "Gli edifici con arcate della Plaça des Born di Ciutadella",
+  "imageCredit": "Américo Toledano / Wikimedia Commons (CC BY-SA 4.0)"
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Faustino Gran (Relais & Châteaux)",
+  "lang": "it",
+  "translationKey": "faustino-gran",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Palazzetti storici del centro di Ciutadella trasformati in hotel boutique della collezione Relais & Châteaux. Camere nel carrer de Sant Sebastià e a Sa Muradeta, ristorante proprio di cucina locale e di stagione, spa con piscina (Casa de Pau) e barche private per raggiungere le cale. Il lusso urbano dell'isola: pietra antica, silenzio di vicolo e il porto a due passi.",
+  "coordinates": {
+    "lat": 40.0004,
+    "lng": 3.8378
+  },
+  "area": "Ovest (Ciutadella)",
+  "practicalInfo": {
+    "acceso": "Carrer de Sant Sebastià 9-11, centro storico di Ciutadella.",
+    "horario": "Stagione: date 2026 da confermare sul sito ufficiale.",
+    "servicios": "Ristorante Faustino, spa con piscina (Casa de Pau), barche private per escursioni, diversi palazzetti nel centro storico."
+  },
+  "website": "https://faustinogran.com/",
+  "images": [
+    "/uploads/ciutadella-puerto.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "hotel",
+    "lujo",
+    "ciutadella"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Faustino Gran (Relais & Châteaux), Ciutadella: palazzetti del centro storico trasformati in hotel boutique con spa e barche proprie."
+  },
+  "imageAlt": "Il porto vecchio di Ciutadella al tramonto, con i tetti del centro storico.",
+  "imageCredit": "Adobe Stock"
+}

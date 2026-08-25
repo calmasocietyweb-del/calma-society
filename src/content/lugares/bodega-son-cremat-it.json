@@ -1,0 +1,46 @@
+{
+  "name": "Sa Bodega de Son Cremat",
+  "lang": "it",
+  "translationKey": "bodega-son-cremat",
+  "type": "bodega",
+  "edition": "menorca",
+  "description": "Piccola cantina familiare nella campagna di Maó, sulla strada dell'aeroporto, che ha piantato la sua prima vigna nel 2010. Bianchi giovani di chardonnay e moscato, freschi e aromatici, in una visita alla buona accompagnati dalla famiglia.",
+  "coordinates": {
+    "lat": 39.875,
+    "lng": 4.24
+  },
+  "area": "Maó",
+  "images": [
+    "/uploads/vino-menorca.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "naturaleza",
+      "familias"
+    ],
+    "highlights": [
+      "passeggiare tra le vigne e degustare i bianchi e il rosato con i proprietari",
+      "vivere la vendemmia a fine estate (esperienza stagionale)",
+      "telefonare in anticipo: si visita solo su appuntamento"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://vimenorca.com/en/son-cremat/",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Calice e bottiglia di vino minorchino su un tavolo"
+}

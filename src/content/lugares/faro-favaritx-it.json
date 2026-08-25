@@ -1,0 +1,49 @@
+{
+  "name": "Faro di Favàritx",
+  "lang": "it",
+  "translationKey": "faro-favaritx",
+  "type": "monumento",
+  "description": "Faro su un capo di ardesia nera striata che sembra un altro pianeta, all'estremità nord del Parc Natural de s'Albufera des Grau.",
+  "coordinates": {
+    "lat": 40.001,
+    "lng": 4.272
+  },
+  "area": "Nord (Maó)",
+  "tags": [
+    "norte",
+    "faro",
+    "pizarra",
+    "parc natural"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "faro",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 90,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "shuttleInfo": "Accesso in auto limitato d'estate (1 giu–31 ott; nel 2026 anticipato al 15 maggio): bus stagionale da Maó (linea 43, ~3,65 €/tratta). Verificare il calendario dell'anno.",
+    "highlights": [
+      "il paesaggio lunare di ardesia nera",
+      "il faro dentro il Parc Natural",
+      "d'estate si arriva con il bus stagionale"
+    ]
+  },
+  "images": [
+    "/uploads/lg-faro-favaritx.webp"
+  ],
+  "imageAlt": "Il faro di Favàritx, con la torre a strisce bianche e nere in fondo alla strada",
+  "imageCredit": "Markus Trienke / Wikimedia Commons (CC BY-SA 2.0)"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Cala Trebaluger",
+  "lang": "it",
+  "translationKey": "cala-trebaluger",
+  "type": "cala",
+  "description": "Una delle cale vergini più belle: sabbia bianca, falesie calcaree, pini fino alla riva e un piccolo torrente che sfocia su un lato. L'accesso solo a piedi la mantiene tranquilla; nessun servizio, portare acqua e cibo.",
+  "coordinates": {
+    "lat": 39.932,
+    "lng": 3.987
+  },
+  "area": "Sud centrale (Ferreries)",
+  "tags": [
+    "sur-centro",
+    "cala",
+    "ferreries"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "raggiungere a piedi o in barca una delle cale vergini più belle dell'isola",
+      "godersi la sabbia bianca, i pini fino alla riva e un torrente su un lato",
+      "pianificare il ritorno: camminata impegnativa e nessun servizio"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-trebaluger.webp"
+  ],
+  "imageAlt": "L'acqua turchese di Cala Trebalúger con i pini inclinati sulla roccia",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)"
+}

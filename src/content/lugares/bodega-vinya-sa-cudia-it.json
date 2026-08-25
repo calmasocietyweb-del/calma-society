@@ -1,0 +1,46 @@
+{
+  "name": "Vinya Sa Cúdia",
+  "lang": "it",
+  "translationKey": "bodega-vinya-sa-cudia",
+  "type": "bodega",
+  "edition": "menorca",
+  "description": "Cantina familiare di sei fratelli all'interno del Parc Natural de s'Albufera des Grau, su uno dei pochi suoli di ardesia delle Baleari. Malvasia coltivata in asciutto che resiste alla tramontana, in un angolo protetto e silenzioso dell'est.",
+  "coordinates": {
+    "lat": 39.92,
+    "lng": 4.225
+  },
+  "area": "Maó (strada des Grau, s'Albufera des Grau)",
+  "images": [
+    "/uploads/albufera-des-grau.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "albufera-favaritx",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "naturaleza",
+      "parejas",
+      "lujo-tranquilo"
+    ],
+    "highlights": [
+      "conoscere una vigna di malvasia in asciutto dentro il parco naturale",
+      "degustare i suoi bianchi (Favàritx, Sa Cudia) e il rosso Favàritx",
+      "concordare la visita in anticipo (solo su appuntamento)"
+    ],
+    "durationMin": 75,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.illesbalears.travel/en/menorca/winery-vinya-sa-cudia",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Lo specchio d'acqua di s'Albufera des Grau circondato dalla campagna, lungo la strada des Grau"
+}

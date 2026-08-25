@@ -1,0 +1,51 @@
+{
+  "name": "Cala Algaiarens",
+  "lang": "it",
+  "translationKey": "cala-algaiarens",
+  "type": "cala",
+  "description": "Due spiagge sorelle (es Bot ed es Tancats) di sabbia dorata-rossastra in un'area naturale protetta (ANEI) vergine circondata da pineta e dune, senza costruzioni. Una delle poche spiagge selvagge del nord raggiungibili in auto, il che la rende molto richiesta (controllo degli accessi in stagione).",
+  "coordinates": {
+    "lat": 40.047,
+    "lng": 3.88
+  },
+  "area": "Nord (Ciutadella)",
+  "tags": [
+    "norte",
+    "playa",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "fare il bagno in due spiagge vergini sorelle (es Bot ed es Tancats)",
+      "passeggiare nella pineta e tra le dune di un'area protetta senza costruzioni",
+      "arrivare presto in estate: l'accesso e il parcheggio sono regolati"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-algaiarens.webp"
+  ],
+  "imageAlt": "La spiaggia di Algaiarens: sabbia chiara, acqua turchese e dune con vegetazione bassa",
+  "imageCredit": "Marcelsala007 / Wikimedia Commons (CC BY-SA 3.0)",
+  "practicalInfo": {
+    "aparcamiento": "Capienza controllata (stagione 2026): l'accesso a La Vall si chiude quando il parcheggio è completo, e ci sono addetti al controllo sulla strada di ingresso. In luglio e agosto conviene arrivare in mattinata. Non vale la pena cercare posto nei dintorni: le strade sono strette e non è consentito parcheggiarvi. In stagione arriva anche il bus da Ciutadella.",
+    "mejorEpoca": "Giugno e settembre, senza esitazioni. In alta stagione, prima delle 9:00. Il controllo degli accessi funziona dalle 7:30 alle 21:00 e resta attivo fino al 15 ottobre."
+  }
+}

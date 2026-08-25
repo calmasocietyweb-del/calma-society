@@ -1,0 +1,48 @@
+{
+  "name": "Cala Mesquida",
+  "lang": "it",
+  "translationKey": "cala-mesquida",
+  "type": "cala",
+  "description": "Spiaggia di sabbia chiara e acque tranquille molto vicina a Maó, con un piccolo nucleo di case di pescatori, ristoranti e una torre di difesa. Si trova sulla costa est — non nel sud turchese —: è il bagno di prossimità di Maó, meno da cartolina e più di vita locale.",
+  "coordinates": {
+    "lat": 39.902,
+    "lng": 4.31
+  },
+  "area": "Est (Maó)",
+  "tags": [
+    "este",
+    "playa",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "la spiaggia di sabbia chiara e acque tranquille a 10 min da Maó",
+      "la torre di difesa sopra la cala",
+      "mangiare in uno dei suoi ristoranti di pesce in riva alla spiaggia"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-mesquida.webp"
+  ],
+  "imageAlt": "L'arenile di Sa Mesquida con il monte tondo che chiude la baia",
+  "imageCredit": "Seruba / Wikimedia Commons (CC BY-SA 3.0)"
+}

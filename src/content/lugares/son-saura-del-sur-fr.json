@@ -1,0 +1,51 @@
+{
+  "name": "Son Saura del Sur",
+  "lang": "fr",
+  "translationKey": "son-saura-del-sur",
+  "type": "cala",
+  "description": "Deux larges demi-cercles de sable fin (Bellavista et des Banyuls) séparés par une pointe, avec une pinède et des eaux peu profondes. Plus d'espace que dans les criques voisines, idéale pour les familles ; en été, elle se remplit de bateaux au mouillage.",
+  "coordinates": {
+    "lat": 39.918,
+    "lng": 3.895
+  },
+  "area": "Sud-ouest (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "playa",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "deux larges bandes de sable (Bellavista et des Banyuls) séparées par une pointe",
+      "plus d'espace et des eaux peu profondes que dans les petites criques, avec la pinède derrière",
+      "accès à pied depuis le parking : emportez pique-nique, eau et de quoi vous abriter du soleil (aucun service)"
+    ]
+  },
+  "images": [
+    "/uploads/lg-son-saura-del-sur.webp"
+  ],
+  "imageAlt": "Son Saura del Sur à la tombée du jour, le rivage en calme et les pins au fond",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)",
+  "practicalInfo": {
+    "aparcamiento": "Capacité contrôlée (saison 2026) : le parking ferme une fois plein, en général vers 9 h en juillet et en août. C'est l'un des plus indulgents du sud de Ciutadella et, certains jours de moyenne saison, il ne se remplit même pas. Inutile de chercher une place aux alentours : les chemins sont étroits et le stationnement y est interdit. Alternative sans voiture : bus depuis Ciutadella du lundi au samedi à 11 h 15, 13 h 15 et 18 h 15, retour une demi-heure plus tard.",
+    "mejorEpoca": "Elle ferme plus tard que Macarella et Turqueta, et pardonne donc une bonne heure de plus : jusqu'à 9 h en haute saison. En juillet et en août, arrivez entre 7 h et 7 h 30. En mai, juin et septembre, la marge est bien plus large : en mai, les parkings ne se remplissent pas avant 10 h ou 10 h 30. Le contrôle d'accès fonctionne de 7 h 30 à 21 h et reste en place jusqu'au 15 octobre."
+  }
+}

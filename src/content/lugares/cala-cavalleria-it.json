@@ -1,0 +1,48 @@
+{
+  "name": "Platja de Cavalleria",
+  "lang": "it",
+  "translationKey": "cala-cavalleria",
+  "type": "cala",
+  "description": "Grande spiaggia vergine di sabbia rossastra incorniciata da falesie ocra, una delle cartoline del nord. Comoda per il parcheggio a ridosso della cala.",
+  "coordinates": {
+    "lat": 40.056,
+    "lng": 4.093
+  },
+  "area": "Nord (Es Mercadal)",
+  "tags": [
+    "norte",
+    "arena rojiza",
+    "virgen",
+    "es mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "playa",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Strada stretta asfaltata, ~15 min fino al parcheggio gratuito; da lì ~400 m a piedi su scale di legno.",
+    "highlights": [
+      "la grande spiaggia vergine di sabbia rossastra sotto falesie ocra",
+      "il comodo parcheggio a ridosso della cala e la discesa su passerelle di legno",
+      "salire poi al faro del Cap de Cavalleria al tramonto"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-cavalleria.webp"
+  ],
+  "imageAlt": "La spiaggia di Cavalleria a mezzaluna, con sabbia dorata e acqua limpida",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)"
+}

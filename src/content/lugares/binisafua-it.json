@@ -1,0 +1,47 @@
+{
+  "name": "Binisafua",
+  "lang": "it",
+  "translationKey": "binisafua",
+  "type": "cala",
+  "description": "Piccola cala dall'atmosfera residenziale e tranquilla, con casette per le barche e rocce, più un bagno di quartiere che un grande arenile. Adatta alle famiglie che cercano calma vicino ai nuclei del sud-est.",
+  "coordinates": {
+    "lat": 39.8291,
+    "lng": 4.2185
+  },
+  "area": "Sud-est (Sant Lluís)",
+  "tags": [
+    "sur-este",
+    "cala",
+    "sant-lluis"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-07-22",
+    "highlights": [
+      "fare il bagno in una cala residenziale e tranquilla, lontano dal viavai",
+      "vedere da vicino le tradizionali casette per le barche",
+      "snorkeling tranquillo tra le rocce (con le scarpette da scoglio)"
+    ]
+  },
+  "images": [
+    "/uploads/lg-binisafua.webp"
+  ],
+  "imageAlt": "La cala di Binissafúller con la sua sabbia, una barca all'ancora e le case bianche sulla roccia",
+  "imageCredit": "Gabino Bolívar Subirats / Wikimedia Commons (CC BY-SA 3.0)"
+}

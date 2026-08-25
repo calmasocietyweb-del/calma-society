@@ -1,0 +1,34 @@
+{
+  "name": "Torre Vella (Fontenille)",
+  "lang": "fr",
+  "translationKey": "torre-vella-fontenille",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Un agritourisme de la collection Fontenille bâti autour d'une ancienne tour de guet, sur le camí de Llucalari (Alaior), au sein d'un domaine de 200 hectares à l'oliveraie centenaire. Dix-sept chambres et suites, le restaurant Siempreviva, dont l'essentiel du produit est cultivé sur place, des champs d'immortelles distillées pour ses huiles, et un vin biologique certifié, élaboré au domaine. Plus de la moitié de son énergie est solaire.",
+  "coordinates": {
+    "lat": 39.905,
+    "lng": 4.126
+  },
+  "area": "Centre-sud (Alaior)",
+  "practicalInfo": {
+    "acceso": "Camí de Llucalari, 07730 Alaior.",
+    "horario": "Saison : confirmez les dates 2026 sur le site officiel.",
+    "servicios": "17 chambres et suites, restaurant Siempreviva, domaine de 200 ha avec oliveraie et vignoble biologique, accès au spa de Santa Ponsa."
+  },
+  "website": "https://www.torre-vella.fontenille-collection.com/",
+  "images": [
+    "/uploads/cami-de-cavalls.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "agroturismo",
+    "lujo",
+    "alaior"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Torre Vella (Fontenille), Alaior : agritourisme autour d'une tour de guet, 17 chambres et un domaine de 200 ha avec son propre vin."
+  },
+  "imageAlt": "Crique aux eaux turquoise entre falaises et pins sur le Camí de Cavalls.",
+  "imageCredit": "Pelayo Arbués / Unsplash"
+}

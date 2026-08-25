@@ -1,0 +1,47 @@
+{
+  "name": "Cala Roja",
+  "lang": "it",
+  "translationKey": "cala-roja",
+  "type": "cala",
+  "description": "La sorella minore e più intima di Cavalleria: una cala rossa raccolta tra le rocce, quasi sempre vuota. Ideale per sfuggire alla folla senza allontanarsi dal parcheggio.",
+  "coordinates": {
+    "lat": 40.0575,
+    "lng": 4.0905
+  },
+  "area": "Nord (Es Mercadal)",
+  "tags": [
+    "norte",
+    "cala",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "una piccola cala rossa e raccolta, quasi sempre vuota",
+      "sfuggire alla folla senza allontanarsi da Cavalleria",
+      "un angolo intimo tra le rocce per lo snorkeling"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-roja.webp"
+  ],
+  "imageAlt": "La roccia rossastra del cap de Cavalleria a picco sull'acqua, sulla costa nord",
+  "imageCredit": "Nicolas Vigier / Wikimedia Commons (CC0)"
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Monte Toro",
+  "lang": "fr",
+  "translationKey": "monte-toro",
+  "type": "monumento",
+  "description": "Le point culminant de Minorque (358 m), avec le sanctuaire de la Mare de Déu del Toro et un belvédère à 360° sur toute l'île, d'une mer à l'autre.",
+  "coordinates": {
+    "lat": 39.9925,
+    "lng": 4.1108
+  },
+  "area": "Centre (Es Mercadal)",
+  "tags": [
+    "centro",
+    "mirador",
+    "santuario",
+    "es mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "mirador",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "primera-vez"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Route asphaltée en lacets depuis Es Mercadal (~10 min) jusqu'au parking du sommet.",
+    "highlights": [
+      "le belvédère à 360° sur toute l'île, d'une mer à l'autre",
+      "le sanctuaire de la Mare de Déu del Toro",
+      "y monter à la lumière du couchant"
+    ]
+  },
+  "images": [
+    "/uploads/monte-toro.webp"
+  ],
+  "imageAlt": "La vue depuis le sommet du Toro : l'intérieur de l'île et les villages au loin"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "Hauser & Wirth Menorca",
+  "lang": "it",
+  "translationKey": "hauser-wirth-menorca",
+  "type": "museo",
+  "edition": "menorca",
+  "description": "Una delle gallerie d'arte più influenti al mondo ha scelto un isolotto del porto di Maó per la sua prima sede mediterranea: parte dell'antico ospedale navale dell'Illa del Rei, restaurato dall'architetto Luis Laplace, con otto sale, un percorso di scultura all'aperto e un giardino del paesaggista Piet Oudolf (quello della High Line di New York). Si arriva in barca dal porto. Il programma d'arte più esclusivo delle Baleari, ed è aperto a tutti.",
+  "coordinates": {
+    "lat": 39.8878,
+    "lng": 4.2895
+  },
+  "area": "Est (porto di Maó)",
+  "practicalInfo": {
+    "acceso": "Illa del Rei, porto di Maó; barche regolari e taxi d'acqua dal porto.",
+    "horario": "Stagione e orari sul sito ufficiale; chiude in inverno.",
+    "servicios": "Otto sale espositive, percorso di sculture (Chillida, Miró...), giardino di Piet Oudolf, cantina e negozio."
+  },
+  "website": "https://menorca.hauserwirth.com/",
+  "images": [
+    "/uploads/illa-del-rei.webp"
+  ],
+  "tags": [
+    "arte",
+    "cultura",
+    "lujo",
+    "mao",
+    "puerto"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Hauser & Wirth Menorca, Illa del Rei: la grande galleria internazionale nel porto di Maó, con giardino di Piet Oudolf. In barca."
+  },
+  "imageAlt": "Vista aerea dell'Illa del Rei, con l'antico ospedale navale, in mezzo al porto naturale di Maó.",
+  "imageCredit": "Florent Pécassou / Wikimedia Commons (CC BY-SA 4.0)"
+}

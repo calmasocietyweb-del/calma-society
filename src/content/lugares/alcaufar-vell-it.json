@@ -1,0 +1,33 @@
+{
+  "name": "Alcaufar Vell",
+  "lang": "it",
+  "translationKey": "alcaufar-vell",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Una tenuta signorile del XVIII secolo trasformata in hotel rurale, sulla strada per Cala Alcaufar. Intorno, 250 ettari all'interno della Riserva della Biosfera, con alberi secolari; all'interno, un ristorante aperto anche a chi non dorme qui, con prodotti minorchini: aragosta, orto e pasticceria dell'isola.",
+  "coordinates": {
+    "lat": 39.834168,
+    "lng": 4.275817
+  },
+  "area": "Sud-est (Sant Lluís)",
+  "practicalInfo": {
+    "acceso": "Carretera de Cala Alcaufar km 8, 07710 Sant Lluís.",
+    "horario": "Non pubblica la sua stagione; confermi date e orari del 2026 sul sito ufficiale.",
+    "servicios": "Ristorante aperto ai clienti esterni. Tenuta di 250 ettari all'interno della Riserva della Biosfera."
+  },
+  "website": "http://alcaufarvell.com/",
+  "images": [
+    "/uploads/binibeca.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "hotel-rural",
+    "sant-lluis"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Alcaufar Vell (Sant Lluís): hotel rurale in una tenuta signorile del XVIII secolo con 250 ettari e ristorante aperto al pubblico."
+  },
+  "imageAlt": "Case bianche imbiancate a calce e vicoli labirintici di Binibeca Vell, nel sud-est di Minorca.",
+  "imageCredit": "Adobe Stock"
+}

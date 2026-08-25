@@ -1,0 +1,51 @@
+{
+  "name": "Cala Presili",
+  "lang": "it",
+  "translationKey": "cala-presili",
+  "type": "cala",
+  "description": "Piccola cala vergine accanto a Cala Tortuga, ai piedi del faro di Favàritx, in pieno parco naturale. Si abbina spesso a Tortuga nella stessa escursione a piedi; la quiete è garantita dal controllo degli accessi.",
+  "coordinates": {
+    "lat": 39.995,
+    "lng": 4.272
+  },
+  "area": "Nord (Maó)",
+  "tags": [
+    "norte",
+    "cala",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 180,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "un bagno in acque vergini ai piedi del faro di Favàritx",
+      "abbinarla a Cala Tortuga, la sua vicina, nella stessa giornata",
+      "d'estate si arriva con il bus stagionale, non in auto"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-presili.webp"
+  ],
+  "imageAlt": "La costa rocciosa accanto al faro di Favàritx, con Cala Presili e la Platja de Tortuga sullo sfondo",
+  "imageCredit": "carlos venegas gavilán / Wikimedia Commons (CC BY-SA 4.0)",
+  "practicalInfo": {
+    "aparcamiento": "Dal 1° giugno al 30 settembre non si può arrivare né in auto né in moto: tutta la zona del faro di Favàritx è chiusa al traffico privato e si entra in bus. Dal 1° giugno 2026 il bus per Favàritx ha dodici corse giornaliere, quattro in più rispetto all'anno scorso. Dalla fermata restano circa 15 minuti a piedi.",
+    "mejorEpoca": "Fuori dalla stagione di restrizione (da ottobre a maggio) si arriva in auto fino al parcheggio del faro e la spiaggia è praticamente vuota. D'estate, il primo bus del mattino."
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "name": "Platja de Sant Tomas",
+  "lang": "fr",
+  "translationKey": "platja-de-sant-tomas",
+  "type": "cala",
+  "description": "Vaste plage de sable doré aux eaux tranquilles, avec paillotes, hôtels et tous les services. Confortable et accessible ; elle sert de porte d'entrée à pied vers Binigaus (à l'ouest) et de liaison avec le Camí de Cavalls.",
+  "coordinates": {
+    "lat": 39.93,
+    "lng": 4.047
+  },
+  "area": "Centre-sud (Es Migjorn Gran)",
+  "tags": [
+    "sur-centro",
+    "playa",
+    "es-migjorn-gran"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "seasonWindow": {
+        "from": "05-01",
+        "to": "10-31"
+      },
+      "certainty": "alta"
+    },
+    "highlights": [
+      "se baigner confortablement sur une vaste plage de sable doré avec tous les services",
+      "manger du poisson grillé à la paillote Es Bruc, les pieds dans le sable",
+      "en faire la porte d'entrée à pied vers la plage vierge de Binigaus"
+    ]
+  },
+  "images": [
+    "/uploads/lg-platja-de-sant-tomas.webp"
+  ],
+  "imageAlt": "La plage de Sant Tomàs vue depuis le belvédère, longue et à l'eau turquoise",
+  "imageCredit": "Discasto / Wikimedia Commons (CC BY-SA 4.0)"
+}

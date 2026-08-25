@@ -1,0 +1,48 @@
+{
+  "name": "Binibeca Vell",
+  "lang": "it",
+  "translationKey": "binibeca-vell",
+  "type": "pueblo",
+  "description": "Insieme di case bianche imbiancate a calce (1972) che imita un villaggio di pescatori, con vicoli labirintici e angoli da cartolina. È una proprietà privata.",
+  "coordinates": {
+    "lat": 39.8158,
+    "lng": 4.2253
+  },
+  "area": "Sud-est (Sant Lluís)",
+  "tags": [
+    "sureste",
+    "pueblo blanco",
+    "fotogénico",
+    "sant lluís"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "parejas",
+      "cultura",
+      "primera-vez"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "seasonalHours": "È una proprietà privata con orari di visita limitati; rispetti il silenzio e gli accessi. Meglio andare fuori dall'ora di punta di mezzogiorno.",
+    "highlights": [
+      "il dedalo di vicoli imbiancati a calce",
+      "gli angoli fotogenici senza folla (presto al mattino o verso sera)",
+      "rispettare che è una proprietà privata"
+    ]
+  },
+  "images": [
+    "/uploads/binibeca-calle.webp"
+  ],
+  "imageAlt": "I vicoli imbiancati a calce di Binibeca Vell, stretti e in ombra"
+}

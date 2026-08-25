@@ -1,0 +1,47 @@
+{
+  "name": "Nécropole de Cala Morell",
+  "lang": "fr",
+  "translationKey": "necropolis-de-cala-morell",
+  "type": "monumento",
+  "description": "Nécropole de grottes (14 hypogées) creusées dans la roche, en usage du pré-talayotique jusqu'au IIe siècle apr. J.-C. Certaines conservent des colonnes intérieures, des fenêtres et une façade ornée de colonnes en relief d'influence classique.",
+  "coordinates": {
+    "lat": 40.0556,
+    "lng": 3.8786
+  },
+  "area": "Nord (Ciutadella)",
+  "tags": [
+    "norte",
+    "yacimiento",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza"
+    ],
+    "durationMin": 38,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "la nécropole de 14 grottes creusées dans la roche (hypogées)",
+      "les détails intérieurs : colonnes, fenêtres et reliefs",
+      "la combiner avec une baignade dans la crique de Cala Morell"
+    ]
+  },
+  "images": [
+    "/uploads/lg-necropolis-de-cala-morell.webp"
+  ],
+  "imageAlt": "L'intérieur d'une grotte funéraire de Cala Morell, creusée dans la roche, la lumière entrant par l'ouverture",
+  "imageCredit": "Dreizung / Wikimedia Commons (CC BY-SA 4.0)"
+}

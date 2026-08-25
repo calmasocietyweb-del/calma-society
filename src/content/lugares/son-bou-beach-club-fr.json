@@ -1,0 +1,50 @@
+{
+  "name": "Son Bou Beach Club",
+  "lang": "fr",
+  "translationKey": "son-bou-beach-club",
+  "type": "bar",
+  "description": "Un beach club au bord de la plus longue plage de l'île (Son Bou), avec transats, cabanes, palmiers et terrasses de bois, et une carte de cocktails remarquée (des sangrias classiques aux créations d'auteur). À côté, des paillotes qui servent une vraie cuisine (Ses Grulles, Ses Garces, Es Corb Marí), de bons points de coucher de soleil. Le luxe de plage, accessible.",
+  "coordinates": {
+    "lat": 39.9,
+    "lng": 4.08
+  },
+  "area": "Centre-sud (Alaior)",
+  "tags": [
+    "sur-centro",
+    "experiencia",
+    "alaior"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "familias",
+      "parejas",
+      "gastronomia"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-07-22",
+    "highlights": [
+      "réserver un transat ou une cabane face à la plus longue plage de l'île",
+      "prendre un cocktail sur la terrasse de bois au coucher du soleil",
+      "réserver en été : le secteur de Son Bou se remplit tôt"
+    ],
+    "officialUrl": "https://www.instagram.com/sonboubeachclub/"
+  },
+  "images": [
+    "/uploads/lg-son-bou-beach-club.webp"
+  ],
+  "imageAlt": "Les transats et les parasols de paille de la plage de Son Bou",
+  "imageCredit": "Menorquino / Wikimedia Commons (CC BY-SA 4.0)"
+}

@@ -1,0 +1,50 @@
+{
+  "name": "Noleggio di llaüt tradizionale / barca privata al tramonto",
+  "lang": "it",
+  "translationKey": "alquiler-de-llaut-tradicional-barco-privado-al-a",
+  "type": "experiencia",
+  "description": "Uscita in llaüt minorchino di legno (imbarcazione tradizionale, elegante, con solarium) o barca privata con skipper da Cala Galdana o Ciutadella verso i gioielli turchesi del sud: Cala Macarella, Macarelleta, Turqueta, Mitjana. Permette di gettare l'ancora, nuotare e fare snorkeling in cale che d'estate hanno un accesso via terra molto limitato. Possibilità di catering con prodotti locali e vini, e uscite al tramonto: lusso tranquillo per eccellenza.",
+  "coordinates": {
+    "lat": 39.93,
+    "lng": 3.96
+  },
+  "area": "Sud-ovest (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "experiencia",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-08-06",
+    "highlights": [
+      "navigare per mare le cale vergini del sud-ovest, lontano dalla folla",
+      "gettare l'ancora davanti a Macarella o Turqueta e fare il bagno dalla barca",
+      "tramonto a bordo con cava; in estate conviene prenotare lo skipper per tempo"
+    ],
+    "officialUrl": "https://www.alquilerbarcoenmenorca.es/",
+    "operatorName": "Minorboats"
+  },
+  "images": [
+    "/uploads/lg-alquiler-de-llaut-tradicional-barco-privado-al-a.webp"
+  ],
+  "imageAlt": "Llaüt di legno ormeggiati in fila nel porto, davanti alle case di Es Castell",
+  "imageCredit": "Markus Trienke / Wikimedia Commons (CC BY-SA 2.0)"
+}

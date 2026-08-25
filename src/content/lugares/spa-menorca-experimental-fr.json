@@ -1,0 +1,46 @@
+{
+  "name": "Spa Menorca Experimental",
+  "lang": "fr",
+  "translationKey": "spa-menorca-experimental",
+  "type": "spa",
+  "edition": "menorca",
+  "description": "Dans un domaine du XIXe siècle à quelques minutes à pied de Cala Llucalari, le spa du Menorca Experimental réunit cabines de soins, sauna et hammam, avec la cosmétique Biologique Recherche et un espace de yoga. Ouvert aux visiteurs, pas seulement aux résidents de l'hôtel.",
+  "coordinates": {
+    "lat": 39.8902,
+    "lng": 4.0899
+  },
+  "area": "Alaior",
+  "images": [
+    "/uploads/lg-spa-menorca-experimental.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza"
+    ],
+    "highlights": [
+      "Trois cabines de soins, sauna et bain de vapeur (hammam)",
+      "Soins visage et corps avec Biologique Recherche ; également Nüssa et Alex Carro",
+      "Cours de yoga et de Pilates ; espace bien-être ouvert aux visiteurs (10 h – 20 h)"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.menorcaexperimental.com/spa",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Campagne d'Alaior, avec des vaches paissant entre les murs de pierre sèche",
+  "imageCredit": "Discasto / Wikimedia Commons (CC BY-SA 4.0)"
+}

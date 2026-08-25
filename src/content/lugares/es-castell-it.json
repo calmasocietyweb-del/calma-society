@@ -1,0 +1,49 @@
+{
+  "name": "Es Castell",
+  "lang": "it",
+  "translationKey": "es-castell",
+  "type": "pueblo",
+  "description": "Paese dal tracciato militare britannico, fondato nel 1771 come Georgetown accanto all'imboccatura del porto di Maó. La piazza dell'Esplanada con il municipio dalla facciata rossa coloniale e il Museo Militare; la chiesa del Roser. Il suo gioiello è Cales Fonts, una piccola cala-porto dove gli antichi magazzini dei pescatori sono oggi ristoranti e bar con terrazze sull'acqua: la cena al tramonto più pittoresca dell'est.",
+  "coordinates": {
+    "lat": 39.8794,
+    "lng": 4.2906
+  },
+  "area": "Est (Es Castell)",
+  "tags": [
+    "este",
+    "pueblo",
+    "es-castell"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "naturaleza",
+      "cultura"
+    ],
+    "durationMin": 180,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "il porto di Cales Fonts al tramonto",
+      "la fortezza della Mola",
+      "una cena di pesce su una terrazza sull'acqua"
+    ]
+  },
+  "images": [
+    "/uploads/lg-es-castell.webp"
+  ],
+  "imageAlt": "Es Castell di notte, con le luci del molo riflesse nell'acqua",
+  "imageCredit": "Santiago Lap / Wikimedia Commons (CC BY-SA 3.0)"
+}

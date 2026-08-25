@@ -1,0 +1,48 @@
+{
+  "name": "Promenade en bateau vers les criques et grottes du sud (depuis Cala Galdana)",
+  "lang": "fr",
+  "translationKey": "paseo-barco-calas-cuevas-cala-galdana",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Une sortie en bateau depuis Cala Galdana montre par la mer les criques vierges du sud-ouest — Mitjana, Trebalúger, Macarella — et des grottes que l'on ne voit pas autrement, avec une halte baignade en eau turquoise. Idéale pour les petits : pas de marche et du temps à bord.",
+  "coordinates": {
+    "lat": 39.936,
+    "lng": 3.965
+  },
+  "area": "Ferreries (Cala Galdana)",
+  "images": [
+    "/uploads/lg-paseo-barco-calas-cuevas-cala-galdana.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza",
+      "primera-vez"
+    ],
+    "highlights": [
+      "voir depuis la mer Cala Mitjana, Trebalúger et Macarella, et des grottes cachées",
+      "une ou deux haltes baignade en eaux cristallines (des lunettes sont souvent prêtées)",
+      "sortie d'environ 3 h 30 sans marche, adaptée à tous les âges ; renseignez-vous sur les services à bord en réservant"
+    ],
+    "durationMin": 210,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-08-06",
+    "officialUrl": "https://www.marencalmamenorca.com/es/inicio",
+    "operatorName": "Mar en Calma"
+  },
+  "imageAlt": "Une crique du sud, au sable clair, avec une embarcation échouée sur le rivage",
+  "imageCredit": "Mediatres / Wikimedia Commons (CC BY-SA 3.0)"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "Son Martorellet (cheval de pure race minorquine)",
+  "lang": "fr",
+  "translationKey": "son-martorellet-caballos-menorquines",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Un élevage de 14 hectares consacré depuis 1997 au cheval de pure race minorquine, l'âme des fêtes de l'île. Entre la visite des écuries et le spectacle équestre « Somni », les enfants découvrent la culture minorquine de la manière la plus vivante.",
+  "coordinates": {
+    "lat": 39.957,
+    "lng": 3.985
+  },
+  "area": "Ferreries",
+  "images": [
+    "/uploads/lg-son-martorellet-caballos-menorquines.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "cultura",
+      "naturaleza"
+    ],
+    "highlights": [
+      "voir de près étalons et juments de pure race minorquine dans leurs prés",
+      "assister au spectacle équestre « Somni » ou à la visite guidée des installations",
+      "réserver sa place (billets via Eventbrite) ; ouvert de mai à octobre"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.sonmartorellet.com/es/inicio/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Un cheval noir de pure race minorquine, monté, dans le jaleo d'une fête de village",
+  "imageCredit": "MANovillo (computer down) from Madrid, España / Wikimedia Commons (CC BY 2.0)"
+}

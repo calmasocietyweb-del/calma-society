@@ -1,0 +1,55 @@
+{
+  "name": "Artrutx Sea Club",
+  "lang": "it",
+  "translationKey": "artrutx-sea-club",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Sea club accanto al faro di Cap d'Artrutx: ristorante e cocktail bar davanti al mare, con uno dei tramonti più belli dell'ovest.",
+  "coordinates": {
+    "lat": 39.9225937,
+    "lng": 3.824224
+  },
+  "area": "Ovest (Ciutadella)",
+  "practicalInfo": {
+    "horario": "Stagionale; gli orari cambiano a ogni stagione — consulti il sito web o Instagram."
+  },
+  "website": "https://www.artrutx.com/en/sea-club/",
+  "images": [
+    "/uploads/faro-artrutx.webp"
+  ],
+  "tags": [
+    "beach club",
+    "atardecer",
+    "faro",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "artrutx-cap",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "parejas",
+      "lujo-tranquilo",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "shuttleInfo": "In auto da Ciutadella (~8-10 km verso sud, 15-20 min). Parcheggio privato del ristorante e lungo la strada (d'estate si riempie presto: conviene arrivare in anticipo).",
+    "effortNote": "Terrazza pianeggiante accanto al faro di Cap d'Artrutx.",
+    "highlights": [
+      "la terrazza accanto al faro di Cap d'Artrutx",
+      "un cocktail o una cena con il tramonto",
+      "in estate conviene prenotare per tempo"
+    ]
+  },
+  "imageAlt": "Il faro di Cap d'Artrutx, a strisce, all'estremità sud-occidentale dell'isola"
+}

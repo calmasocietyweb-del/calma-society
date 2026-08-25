@@ -1,0 +1,47 @@
+{
+  "name": "Es Calo Blanc",
+  "lang": "it",
+  "translationKey": "es-calo-blanc",
+  "type": "cala",
+  "description": "Minuscola cala (pochi metri di larghezza appena) incassata tra le rocce, tra le più piccole dell'isola; un angolo curioso e poco conosciuto per una sosta breve. Si raggiunge accanto alla zona residenziale di Cap d'en Font (Sant Lluís), con un parcheggio sterrato nelle vicinanze e una scala fino alla sabbia sul lato ovest; ambiente roccioso, non adattato.",
+  "coordinates": {
+    "lat": 39.8294,
+    "lng": 4.211
+  },
+  "area": "Sud-est (Sant Lluis)",
+  "tags": [
+    "sur-este",
+    "cala",
+    "sant-lluis"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "cala",
+    "idealFor": [
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-07-22",
+    "highlights": [
+      "affacciarsi su una delle cale più minuscole dell'isola",
+      "un tuffo veloce tra le rocce in un angolo curioso",
+      "abbinarla a Binibèquer o Binidalí, a due passi"
+    ]
+  },
+  "images": [
+    "/uploads/lg-es-calo-blanc.webp"
+  ],
+  "imageAlt": "Es Caló Blanc: una piccola cala di sabbia chiara e acqua trasparente tra roccia bassa",
+  "imageCredit": "MontanNito / Wikimedia Commons (CC BY-SA 3.0)"
+}

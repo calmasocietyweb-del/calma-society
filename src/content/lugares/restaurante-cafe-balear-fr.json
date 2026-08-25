@@ -1,0 +1,32 @@
+{
+  "name": "Cafè Balear",
+  "lang": "fr",
+  "translationKey": "restaurante-cafe-balear",
+  "type": "restaurante",
+  "description": "Les fruits de mer emblématiques du port de Ciutadella, plus de cinquante ans d'histoire et un Sol du guide Repsol parmi les vétérans de l'île. Né dans les années soixante-dix comme taverne de marins — le grand-père, 'Bep Fitora', pêchait avec sa barque et sa femme Juanita cuisinait les prises —, il sert toujours le poisson et les fruits de mer débarqués par son propre bateau, la Rosa Santa Primera : gambas rouges de Ciutadella à la plancha et langouste rouge de Minorque selon la saison.",
+  "coordinates": {
+    "lat": 40,
+    "lng": 3.83
+  },
+  "area": "Ouest (Ciutadella)",
+  "practicalInfo": {
+    "acceso": "Passeig des Moll 15, port de Ciutadella.",
+    "horario": "À titre indicatif : du mardi au samedi, 13 h – 15 h 30 et 20 h – 23 h ; le lundi, dîners uniquement ; fermé le dimanche. Horaires saisonniers : confirmez avant d'y aller.",
+    "servicios": "Réservations : +34 971 38 00 05"
+  },
+  "priceRange": "€€€",
+  "website": "https://www.baleargrup.com/",
+  "images": [
+    "/uploads/ciutadella-puerto.webp"
+  ],
+  "tags": [
+    "oeste",
+    "gastronomia",
+    "ciutadella"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Cafè Balear (port de Ciutadella) : un demi-siècle de fruits de mer avec son propre bateau, la Rosa Santa Primera, gambas rouges à la plancha et un Sol du guide Repsol."
+  },
+  "imageAlt": "Le port de Ciutadella, les bateaux amarrés au pied de la vieille ville"
+}

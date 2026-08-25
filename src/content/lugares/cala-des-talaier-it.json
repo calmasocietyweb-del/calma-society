@@ -1,0 +1,47 @@
+{
+  "name": "Cala des Talaier",
+  "lang": "it",
+  "translationKey": "cala-des-talaier",
+  "type": "cala",
+  "description": "Cala piccola, appartata e riparata, di sabbia chiara e acque tranquille, con un isolotto davanti alla riva. Esigendo una camminata resta meno affollata di Son Saura; senza servizi.",
+  "coordinates": {
+    "lat": 39.921,
+    "lng": 3.9
+  },
+  "area": "Sud-ovest (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "cala",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "cala appartata e riparata con un isolotto davanti alla riva",
+      "meno affollata perché esige una camminata: con picnic, acqua e qualcosa per l'ombra",
+      "sabbia chiara e acque tranquille, ideale per staccare in coppia"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-des-talaier.webp"
+  ],
+  "imageAlt": "Cala des Talaier con la sabbia chiara, l'acqua trasparente e i pini fino alla riva",
+  "imageCredit": "Josefito123 / Wikimedia Commons (CC BY-SA 4.0)"
+}

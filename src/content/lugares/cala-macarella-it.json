@@ -1,0 +1,77 @@
+{
+  "name": "Cala Macarella",
+  "lang": "it",
+  "translationKey": "cala-macarella",
+  "type": "cala",
+  "description": "La cartolina per eccellenza del sud di Minorca: un ferro di cavallo di sabbia bianca, acqua turchese e la pineta fino alla riva. Accanto, la sorella minore, Cala Macarelleta. Una bellezza serena da godersi di prima mattina.",
+  "coordinates": {
+    "lat": 39.9356,
+    "lng": 3.9286
+  },
+  "area": "Sud (Ciutadella)",
+  "practicalInfo": {
+    "acceso": "A piedi da Cala Galdana (~30 min lungo il Camí de Cavalls) o con il bus stagionale; in estate l'accesso in auto è limitato",
+    "aparcamiento": "Dal 1º giugno al 30 settembre non si può arrivare in auto né in moto: il parcheggio pubblico è chiuso e si entra solo in bus, taxi autorizzato, bicicletta o a piedi. Il bus parte da Ciutadella tra le 8:25 e le 20:20 (ogni 40 minuti, e ogni 20 dal 15 giugno); 8,50 € andata e ritorno acquistando online (la metà con la tessera di trasporto del Consell). Fuori da queste date il parcheggio esiste, a capienza controllata, e si riempie presto.",
+    "servicios": "Chiosco stagionale; conviene portare acqua e qualcosa per l'ombra",
+    "mejorEpoca": "In piena estate l'auto non è un'opzione, quindi la domanda non è a che ora parcheggiare ma quale bus prendere: il primo, quello delle 8:25, regala la cala quasi vuota. A maggio e ottobre, quando si può ancora salire in auto, arrivi prima delle 10:00."
+  },
+  "images": [
+    "/uploads/cala-macarella.webp"
+  ],
+  "tags": [
+    "sur",
+    "turquesa",
+    "arena blanca",
+    "camí de cavalls",
+    "ciutadella"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "La cala più iconica del sud di Minorca: ferro di cavallo di sabbia bianca, acqua turchese e pineta fino alla riva, con Cala Macarelleta accanto. Meglio di prima mattina."
+  },
+  "windExposure": {
+    "openingBearingDeg": 195,
+    "embayment": "encajonada",
+    "municipioINE": "07015",
+    "shelteredFrom": [
+      "Tramuntana (N)",
+      "Gregal (NE)",
+      "Mestral (NO)"
+    ],
+    "exposedTo": [
+      "Migjorn (S)",
+      "Llebeig (SO)",
+      "Xaloc (SE)"
+    ],
+    "tienePradera": true,
+    "tieneVigilancia": true
+  },
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "primera-vez",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 240,
+    "carAccess": "solo-bus-lanzadera",
+    "busServed": true,
+    "carAccessClosedSummer": true,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "shuttleInfo": "1º giu–30 set: auto e moto private vietate. Bus navetta da Ciutadella, taxi autorizzato, bicicletta o a piedi (Camí de Cavalls da Cala Galdana). Fuori stagione: auto fino al parcheggio gratuito, a 15-20 min a piedi.",
+    "effortNote": "Accesso a piedi o in navetta d'estate; sentiero del Camí de Cavalls. Servizi non garantiti: con acqua e qualcosa per l'ombra.",
+    "highlights": [
+      "la cartolina del sud: ferro di cavallo di sabbia bianca, turchese e pineta",
+      "d'estate si arriva in navetta da Ciutadella o a piedi lungo il Camí de Cavalls",
+      "nessun servizio affidabile: scendere con picnic, acqua e qualcosa per l'ombra"
+    ]
+  },
+  "imageAlt": "Cala Macarella dal belvedere: la spiaggia con i bagnanti e l'acqua verde-turchese chiusa dai pini"
+}

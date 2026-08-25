@@ -1,0 +1,51 @@
+{
+  "name": "Playa de Binimel·la",
+  "lang": "fr",
+  "translationKey": "playa-de-binimel-la",
+  "type": "cala",
+  "description": "Vaste plage de sable rougeâtre, avec un îlot et des argiles rouges (bains de boue populaires). Point de départ classique vers Cala Pregonda ; accessible en voiture, ce qui la rend confortable au cœur du nord sauvage.",
+  "coordinates": {
+    "lat": 40.049,
+    "lng": 4.098
+  },
+  "area": "Nord (Es Mercadal)",
+  "tags": [
+    "norte",
+    "playa",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "le sable rougeâtre et les bains de boue des argiles",
+      "le point de départ classique de la marche vers Cala Pregonda",
+      "un accès facile en voiture et un parking au bord de la plage"
+    ]
+  },
+  "images": [
+    "/uploads/lg-playa-de-binimel-la.webp"
+  ],
+  "imageAlt": "La plage de Binimel·là, la lagune derrière et la garrigue de la côte nord",
+  "imageCredit": "carlos venegas gavilán / Wikimedia Commons (CC BY-SA 4.0)",
+  "practicalInfo": {
+    "aparcamiento": "Capacité contrôlée (saison 2026) : le parking de terre ferme est fermé une fois plein. C'est la porte d'entrée du nord rouge de l'île : en août, il se remplit dès le matin. Inutile de chercher une place aux alentours : les chemins sont étroits et le stationnement y est interdit.",
+    "mejorEpoca": "Mai, juin et septembre. Gardez à l'esprit que la marche vers Pregonda part aussi d'ici : le parking absorbe deux plages à la fois. Le contrôle d'accès fonctionne de 7 h 30 à 21 h et se maintient jusqu'au 15 octobre."
+  }
+}

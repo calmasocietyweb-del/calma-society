@@ -1,0 +1,51 @@
+{
+  "name": "Cala Macarelleta",
+  "lang": "it",
+  "translationKey": "cala-macarelleta",
+  "type": "cala",
+  "description": "La sorella minore e più intima di Macarella, separata da un istmo roccioso; acqua di un turchese intenso e atmosfera in parte naturista. Più raccolta e fotogenica, senza servizi propri.",
+  "coordinates": {
+    "lat": 39.9337,
+    "lng": 3.9278
+  },
+  "area": "Sud-ovest (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "cala",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "la sorella intima di Macarella, dietro un istmo roccioso",
+      "turchese intenso e atmosfera raccolta (in parte naturista)",
+      "si raggiunge a piedi da Macarella; nessun servizio: ognuno porta il necessario"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-macarelleta.webp"
+  ],
+  "imageAlt": "Cala Macarelleta: la sabbia bianca, l'acqua turchese e i pini sulla falesia",
+  "imageCredit": "Markus Trienke / Wikimedia Commons (CC BY-SA 2.0)",
+  "practicalInfo": {
+    "aparcamiento": "Non ha un parcheggio proprio: si arriva a piedi da Macarella, lungo un breve sentiero che sale la falesia. Questo significa che ne eredita la restrizione: dal 1º giugno al 30 settembre bisogna raggiungere Macarella in bus, taxi autorizzato, bicicletta o a piedi. Il bus parte da Ciutadella tra le 8:25 e le 20:20; 8,50 € andata e ritorno acquistando online (la metà con la tessera di trasporto del Consell).",
+    "mejorEpoca": "È piccola e si riempie prima di Macarella, quindi il primo bus della giornata (8:25) fa la differenza tra averla per sé o condividerla con molta gente. Maggio, giugno e settembre sono chiaramente migliori di agosto."
+  }
+}

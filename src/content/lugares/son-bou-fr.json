@@ -1,0 +1,57 @@
+{
+  "name": "Plage de Son Bou",
+  "lang": "fr",
+  "translationKey": "son-bou",
+  "type": "cala",
+  "description": "Le plus long ruban de sable de Minorque (près de 4 km), sable fin et eaux peu profondes, avec des paillotes et, à l'arrière, une vaste zone humide et un cordon dunaire.",
+  "coordinates": {
+    "lat": 39.895,
+    "lng": 4.078
+  },
+  "area": "Sud (Alaior)",
+  "tags": [
+    "sur",
+    "arena",
+    "accesible",
+    "alaior",
+    "familiar"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza"
+    ],
+    "durationMin": 240,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "effortLevel": "A1",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "certainty": "alta"
+    },
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Plage accessible : passerelles, fauteuil amphibie, sanitaires adaptés et personnel d'assistance (1er mai – 31 oct.). Grand parking, qui se remplit tôt en été.",
+    "highlights": [
+      "le ruban de sable de près de 4 km",
+      "la zone humide et le cordon dunaire à l'arrière",
+      "le service de baignade accessible avec fauteuil amphibie"
+    ]
+  },
+  "images": [
+    "/uploads/lg-son-bou.webp"
+  ],
+  "imageAlt": "La plage de Son Bou vue depuis la falaise : des kilomètres de sable et une eau turquoise",
+  "imageCredit": "Menorquino / Wikimedia Commons (CC BY-SA 4.0)"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Llucmaçanes Gran",
+  "lang": "fr",
+  "translationKey": "llucmacanes-gran",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Hôtel rural sur la plaça des Pla de Sant Gaietà, le cœur de Llucmaçanes, le plus petit village de Minorque et l'un des rares endroits où loger au sein d'un véritable hameau rural. Tenu par ses propriétaires, l'hébergement se répartit entre maisons, appartements et chambres.",
+  "coordinates": {
+    "lat": 39.86841,
+    "lng": 4.241323
+  },
+  "area": "Est (Maó)",
+  "practicalInfo": {
+    "acceso": "Plaça es Pla de Sant Gaietà 10, Llucmaçanes, 07712 Maó.",
+    "horario": "La saison d'ouverture n'est pas publiée ; confirmez les dates 2026 sur le site officiel.",
+    "servicios": "Maisons, appartements et chambres. Tenu par ses propriétaires."
+  },
+  "website": "https://www.llucmagran.com/",
+  "images": [
+    "/uploads/casa-piedra.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "agroturismo",
+    "mao"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Llucmaçanes Gran (Maó) : hôtel rural sur la place de Llucmaçanes, avec maisons, appartements et chambres."
+  },
+  "imageAlt": "Intérieur d'une maison méditerranéenne en pierre, avec poutres en bois et escalier.",
+  "imageCredit": "Adobe Stock"
+}

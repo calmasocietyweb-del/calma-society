@@ -1,0 +1,48 @@
+{
+  "name": "Kayak guidé vers les grottes marines depuis Cala Galdana",
+  "lang": "fr",
+  "translationKey": "kayak-galdana-rutas-cuevas-familia",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Depuis le calme abrité de Cala Galdana, une sortie en kayak révèle des grottes marines et des criques que l'on n'atteint que par la mer. Avec des itinéraires guidés pensés pour débuter, c'est l'une des plus belles manières de ramer en famille.",
+  "coordinates": {
+    "lat": 39.936,
+    "lng": 3.965
+  },
+  "area": "Ferreries (Cala Galdana)",
+  "images": [
+    "/uploads/lg-kayak-galdana-rutas-cuevas-familia.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "naturaleza",
+      "nautica",
+      "parejas"
+    ],
+    "highlights": [
+      "ramer en eaux tranquilles et entrer dans les grottes marines de la côte vierge",
+      "choisir un itinéraire guidé d'initiation, adapté aux familles et aux débutants",
+      "kayak simple ou double avec équipement inclus ; réservez à l'avance"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-08-06",
+    "officialUrl": "https://www.artiemhotels.com/experiencias/tour-cuevas-kayak.html",
+    "operatorName": "ARTIEM Sports"
+  },
+  "imageAlt": "Le rivage de Cala Galdana, avec la falaise percée en arrière-plan",
+  "imageCredit": "Ben Salter from Wales / Wikimedia Commons (CC BY 2.0)"
+}

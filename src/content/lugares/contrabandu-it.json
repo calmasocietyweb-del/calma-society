@@ -1,0 +1,28 @@
+{
+  "name": "Contrabandu",
+  "lang": "it",
+  "translationKey": "contrabandu",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Cocktail bar d'autore con aria da speakeasy e terrazza sul porto di Maó, ispirato al contrabbando dell'Ottocento.",
+  "coordinates": {
+    "lat": 39.8905966,
+    "lng": 4.2632449
+  },
+  "area": "Est (Maó)",
+  "practicalInfo": {
+    "acceso": "Posizione indicativa della zona; verificare il punto esatto sul sito o su Instagram.",
+    "horario": "Stagionale; gli orari cambiano ogni stagione — consultare il sito o Instagram."
+  },
+  "images": [
+    "/uploads/gin-menorca.webp"
+  ],
+  "tags": [
+    "coctelería",
+    "speakeasy",
+    "puerto",
+    "maó"
+  ],
+  "status": "draft",
+  "imageAlt": "Una bottiglia di gin di Minorca"
+}

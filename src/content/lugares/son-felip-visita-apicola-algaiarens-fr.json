@@ -1,0 +1,47 @@
+{
+  "name": "Son Felip — visite apicole d'Algaiarens",
+  "lang": "fr",
+  "translationKey": "son-felip-visita-apicola-algaiarens",
+  "type": "productor",
+  "edition": "menorca",
+  "description": "Une expérience apicole dans un domaine d'agriculture régénérative de la côte nord, entre Algaiarens et Cala del Pilar. Son miel de sulla d'Algaiarens a remporté la médaille de platine aux International Honey Awards de Londres, parmi les 50 meilleurs du monde.",
+  "coordinates": {
+    "lat": 40.02,
+    "lng": 3.9
+  },
+  "area": "Ciutadella (Camí de Cala Pilar, domaines Son Felip et Algaiarens, côte nord)",
+  "images": [
+    "/uploads/lg-son-felip-visita-apicola-algaiarens.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "naturaleza",
+      "familias",
+      "lujo-tranquilo",
+      "gastronomia"
+    ],
+    "highlights": [
+      "enfiler la tenue d'apiculteur et marcher parmi les ruches",
+      "visiter l'atelier et déguster des miels primés, accordés aux produits du domaine",
+      "réserver sa place en ligne (nouvelles dates chaque mois) ; chaussures confortables et casquette"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://sonfelip.com/visita_apicultura_algaiarens/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "La campagne et les dunes d'Algaiarens, sur la côte nord de Ciutadella",
+  "imageCredit": "Marcelsala007 / Wikimedia Commons (CC BY-SA 3.0)"
+}

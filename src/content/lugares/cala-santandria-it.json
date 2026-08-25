@@ -1,0 +1,58 @@
+{
+  "name": "Cala Santandria",
+  "lang": "it",
+  "translationKey": "cala-santandria",
+  "type": "cala",
+  "description": "Cala riparata di sabbia bianca e acque tranquille e limpide, molto protetta dal vento, ideale per famiglie con bambini. Urbanizzata e comoda, a due passi da Ciutadella.",
+  "coordinates": {
+    "lat": 39.969,
+    "lng": 3.829
+  },
+  "area": "Sud-ovest (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "cala",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "seasonWindow": {
+        "from": "05-01",
+        "to": "10-31"
+      },
+      "certainty": "alta"
+    },
+    "highlights": [
+      "una cala riparata dal vento, con sabbia bianca e acque molto tranquille",
+      "urbanizzata e comoda, con servizio di balneazione assistita in stagione (maggio-ottobre)",
+      "ideale per famiglie con bambini, molto vicina a Ciutadella"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-santandria.webp"
+  ],
+  "imageAlt": "Cala Santandria con la sabbia, l'acqua verde chiara e le case bianche affacciate sulla cala",
+  "imageCredit": "Herodotptlomeu / Wikimedia Commons (CC BY-SA 4.0)"
+}

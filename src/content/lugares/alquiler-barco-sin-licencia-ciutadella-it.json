@@ -1,0 +1,46 @@
+{
+  "name": "Noleggio barca senza patente da Ciutadella",
+  "lang": "it",
+  "translationKey": "alquiler-barco-sin-licencia-ciutadella",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Al timone della propria barca, senza patente nautica, dal porto di Ciutadella, per scoprire le cale dell'ovest con i propri tempi. Imbarcazioni fino a cinque persone e motore da 15 CV, per mezza giornata o una giornata intera.",
+  "coordinates": {
+    "lat": 39.9985,
+    "lng": 3.833
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [
+    "/uploads/ciutadella-puerto.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "parejas",
+      "familias",
+      "nautica",
+      "naturaleza"
+    ],
+    "highlights": [
+      "navigare senza patente (barche fino a 5 persone, motore da 15 CV) fino a 5 miglia",
+      "gettare l'ancora e fare il bagno in libertà nelle cale e nelle acque dell'ovest",
+      "noleggio per mezza giornata o giornata intera dal porto di Ciutadella"
+    ],
+    "durationMin": 240,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://twinsboats.com",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Il porto di Ciutadella con le imbarcazioni ormeggiate ai piedi del centro storico"
+}

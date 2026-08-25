@@ -1,0 +1,47 @@
+{
+  "name": "Cala Mica",
+  "lang": "it",
+  "translationKey": "cala-mica",
+  "type": "cala",
+  "description": "Cala vergine poco conosciuta a forma di conchiglia, con sabbia media e ciottoli, accanto a un'antica casa di campagna. Ricompensa chi prolunga a piedi il Camí de Cavalls oltre Cavalleria.",
+  "coordinates": {
+    "lat": 40.05,
+    "lng": 4.085
+  },
+  "area": "Nord (Es Mercadal)",
+  "tags": [
+    "norte",
+    "cala",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "una cala vergine a forma di conchiglia, poco conosciuta",
+      "prolungare il Camí de Cavalls da Binimel·la o Cavalleria",
+      "portare acqua e qualcosa per l'ombra: nessun servizio"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-mica.webp"
+  ],
+  "imageAlt": "Cala Mica dall'alto: una lingua di sabbia e le onde che si infrangono sulla riva",
+  "imageCredit": "Alejandro Muñoz Cabrisas / Wikimedia Commons (CC BY-SA 4.0)"
+}

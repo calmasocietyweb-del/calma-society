@@ -1,0 +1,49 @@
+{
+  "name": "Alaior",
+  "lang": "it",
+  "translationKey": "alaior",
+  "type": "pueblo",
+  "description": "Paese bianco dell'entroterra, culla del formaggio DOP Mahón-Menorca, del gelato e dei salumi artigianali. Fondato da Jaume II attorno alla collina di Ihalor. Centro storico medievale con la chiesa di Santa Eulàlia come grande punto di riferimento. Tappa gastronomica obbligata (caseifici) e passeggiata tranquilla, lontano dal viavai della costa.",
+  "coordinates": {
+    "lat": 39.9356,
+    "lng": 4.1392
+  },
+  "area": "Centro (Alaior)",
+  "tags": [
+    "centro",
+    "pueblo",
+    "alaior"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "naturaleza",
+      "familias"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "il centro bianco sulla collina",
+      "formaggio e gelato artigianali (DOP Mahón-Menorca)",
+      "il sito archeologico di Torre d'en Galmés a poca distanza"
+    ]
+  },
+  "images": [
+    "/uploads/lg-alaior.webp"
+  ],
+  "imageAlt": "Strada acciottolata di Alaior tra case bianche con persiane verdi",
+  "imageCredit": "Mathewr1999 / Wikimedia Commons (CC BY-SA 4.0)"
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Tramonto in barca da Ciutadella",
+  "lang": "it",
+  "translationKey": "atardecer-catamaran-ciutadella-oceancat",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Uscita in barca dal porto di Ciutadella, sulla costa di ponente, per vedere il sole tramontare dal mare — senza auto e a un ritmo sereno.",
+  "coordinates": {
+    "lat": 40.0006,
+    "lng": 3.8295
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [
+    "/uploads/lg-atardecer-catamaran-ciutadella-oceancat.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "familias",
+      "nautica",
+      "naturaleza"
+    ],
+    "highlights": [
+      "imbarcarsi nel porto storico di Ciutadella, senza auto",
+      "vedere il sole calare sul mare della costa di ponente",
+      "l'ora dorata con la luce bassa sull'acqua"
+    ],
+    "durationMin": 150,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-07-22",
+    "officialUrl": "https://oceancatmenorca.com/"
+  },
+  "imageAlt": "La costa ovest di Ciutadella nel tardo pomeriggio, con il mare aperto",
+  "imageCredit": "LucT / Wikimedia Commons (CC BY-SA 3.0)"
+}

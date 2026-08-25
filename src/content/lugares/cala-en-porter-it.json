@@ -1,0 +1,58 @@
+{
+  "name": "Cala en Porter",
+  "lang": "it",
+  "translationKey": "cala-en-porter",
+  "type": "cala",
+  "description": "Cala incassata tra alte falesie, con sabbia fine e acque tranquille, accanto a un nucleo residenziale con servizi. Famosa per la Cova d'en Xoroi (bar-belvedere e club nella roccia). Comoda in auto ma più urbana delle cale vergini vicine.",
+  "coordinates": {
+    "lat": 39.872,
+    "lng": 4.13
+  },
+  "area": "Sud centrale (Alaior)",
+  "tags": [
+    "sur-centro",
+    "cala",
+    "alaior"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "accessibleService": {
+      "amphibiousChair": true,
+      "adaptedToilet": true,
+      "reservedParking": true,
+      "staff": true,
+      "seasonWindow": {
+        "from": "05-01",
+        "to": "10-31"
+      },
+      "certainty": "alta"
+    },
+    "highlights": [
+      "fare il bagno in una cala di sabbia fine incassata tra alte falesie",
+      "salire alla Cova d'en Xoroi, sulla falesia, per un cocktail al tramonto",
+      "parcheggiare in alto nel nucleo residenziale e scendere in spiaggia per le scale"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-en-porter.webp"
+  ],
+  "imageAlt": "La cala di Cala en Porter con la spiaggia in fondo alla gola, tra le falesie",
+  "imageCredit": "Gimo61 / Wikimedia Commons (CC BY 3.0)"
+}

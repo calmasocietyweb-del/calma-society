@@ -1,0 +1,49 @@
+{
+  "name": "Cap de Cavalleria",
+  "lang": "it",
+  "translationKey": "faro-cavalleria",
+  "type": "monumento",
+  "description": "Il capo e il faro più a nord dell'isola: falesie drammatiche, vento e viste immense. Appuntamento obbligato al tramonto.",
+  "coordinates": {
+    "lat": 40.0915,
+    "lng": 4.092
+  },
+  "area": "Nord (Es Mercadal)",
+  "tags": [
+    "norte",
+    "faro",
+    "mirador",
+    "atardecer"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "parejas",
+      "naturaleza",
+      "lujo-tranquilo"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Strada stretta ma asfaltata, con parcheggio accanto al faro; si cammina appena. D'estate al tramonto si riempie.",
+    "highlights": [
+      "il punto più a nord dell'isola",
+      "le falesie e le viste immense",
+      "uno dei migliori tramonti di Minorca"
+    ]
+  },
+  "images": [
+    "/uploads/lg-faro-cavalleria.webp"
+  ],
+  "imageAlt": "Il faro bianco del cap de Cavalleria e le case del guardiano, sulla roccia",
+  "imageCredit": "Anka D. / Wikimedia Commons (CC BY 3.0)"
+}

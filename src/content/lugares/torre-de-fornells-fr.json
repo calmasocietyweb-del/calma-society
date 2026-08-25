@@ -1,0 +1,52 @@
+{
+  "name": "Torre de Fornells",
+  "lang": "fr",
+  "translationKey": "torre-de-fornells",
+  "type": "monumento",
+  "description": "Tour de défense britannico-espagnole (XVIIIe siècle) au plan octogonal, en pierre de marès, au-dessus de l'entrée de la baie de Fornells. Centre d'interprétation à l'intérieur et vue sur la baie. À combiner avec le village de pêcheurs de Fornells et sa gastronomie (caldereta de langouste).",
+  "coordinates": {
+    "lat": 40.0556,
+    "lng": 4.1372
+  },
+  "area": "Nord (Es Mercadal)",
+  "tags": [
+    "norte",
+    "monumento",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "fornells-cavalleria",
+      "norte"
+    ],
+    "highlights": [
+      "la tour de défense du XVIIIe siècle au-dessus de l'entrée de la baie",
+      "le centre d'interprétation à l'intérieur",
+      "la vue sur la baie de Fornells et la mer ouverte"
+    ]
+  },
+  "images": [
+    "/uploads/lg-torre-de-fornells.webp"
+  ],
+  "imageAlt": "La tour ronde de Fornells découpée sur le ciel, en haut de la colline",
+  "imageCredit": "Markus Trienke / Wikimedia Commons (CC BY-SA 2.0)"
+}

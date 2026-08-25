@@ -1,0 +1,46 @@
+{
+  "name": "Bodega Binitord",
+  "lang": "it",
+  "translationKey": "bodega-binitord",
+  "type": "bodega",
+  "edition": "menorca",
+  "description": "Cantina familiare costruita su un'antica cava a sud di Ciutadella, con 7 ettari di vigna e circa 30.000 bottiglie l'anno di Vi de la Terra Illa de Menorca. Una visita intima, senza fretta, tra ceppi che lottano contro la tramontana.",
+  "coordinates": {
+    "lat": 39.96,
+    "lng": 3.855
+  },
+  "area": "Ciutadella de Menorca",
+  "images": [
+    "/uploads/vino-bodega.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "lujo-tranquilo",
+      "cultura"
+    ],
+    "highlights": [
+      "passeggiare nel vigneto e conoscere la vinificazione con il team della casa",
+      "degustare i suoi vini (bianco, rosato, rosso) e il primo vermut di Minorca",
+      "prenotare online la visita guidata (ES/EN/FR), di circa 1 ora"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.binitord.com/tours",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Botti e bottiglie all'interno di una cantina"
+}

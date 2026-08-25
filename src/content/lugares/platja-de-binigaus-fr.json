@@ -1,0 +1,46 @@
+{
+  "name": "Platja de Binigaus",
+  "lang": "fr",
+  "translationKey": "platja-de-binigaus",
+  "type": "cala",
+  "description": "Longue plage vierge de sable doré, aux eaux peu profondes et cristallines, prolongement naturel de Sant Tomàs. Considérée comme l'une des meilleures plages naturistes de Minorque (dans sa partie ouest, plus intime entre végétation et falaises).",
+  "coordinates": {
+    "lat": 39.93,
+    "lng": 4.04
+  },
+  "area": "Centre-sud (Es Migjorn Gran)",
+  "tags": [
+    "sur-centro",
+    "playa",
+    "es-migjorn-gran"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "playa",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "marcher depuis Sant Tomàs jusqu'à cette longue plage vierge de sable doré",
+      "se baigner dans des eaux peu profondes et cristallines, avec une partie naturiste",
+      "pousser jusqu'au barranc de Binigaus et la Cova des Coloms depuis la plage"
+    ]
+  },
+  "images": [
+    "/uploads/lg-platja-de-binigaus.webp"
+  ],
+  "imageAlt": "La plage de Binigaus, le promontoire vert et l'eau claire battant le sable",
+  "imageCredit": "Boladevidre / Wikimedia Commons (CC BY-SA 2.0)"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Camí de Cavalls · Tappa 10: Punta Nati – Ciutadella",
+  "lang": "it",
+  "translationKey": "cami-de-cavalls-etapa-10-punta-nati-ciutadella",
+  "type": "ruta",
+  "edition": "menorca",
+  "description": "Una tappa breve e facile (5 km) tra l'austero faro di Punta Nati, in un paesaggio di pietra punteggiato di capanne di pastore, e il porto di Ciutadella. Perfetta per un primo assaggio del Camí de Cavalls a metà pomeriggio.",
+  "coordinates": {
+    "lat": 40.0578,
+    "lng": 3.8228
+  },
+  "area": "Ciutadella",
+  "images": [
+    "/uploads/lg-cami-de-cavalls-etapa-10-punta-nati-ciutadella.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "primera-vez",
+      "parejas"
+    ],
+    "highlights": [
+      "partire dal solitario faro di Punta Nati e dal suo paesaggio di pietra a secco",
+      "osservare le barraques, le antiche costruzioni di pastore in pietra",
+      "finire passeggiando all'imboccatura del porto di Ciutadella al tramonto"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.camidecavalls.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Il Camí de Cavalls sulle falesie, vicino a Punta Nati",
+  "imageCredit": "Franrull / Wikimedia Commons (CC BY-SA 4.0)"
+}

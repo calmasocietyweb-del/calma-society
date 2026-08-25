@@ -1,0 +1,47 @@
+{
+  "name": "Eolo Sunset Bar",
+  "lang": "it",
+  "translationKey": "eolo-sunset-bar",
+  "type": "bar",
+  "description": "Chiosco con stile sulle falesie di Cala'n Forcat, sulla costa ovest vicino a Ciutadella. Atmosfera rilassata, buoni cocktail e una delle migliori viste sul tramonto dell'isola. Un drink al calar del sole, senza pretese ma con criterio.",
+  "coordinates": {
+    "lat": 40.01,
+    "lng": 3.79
+  },
+  "area": "Ovest (Ciutadella)",
+  "tags": [
+    "oeste",
+    "experiencia",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "parejas",
+      "naturaleza",
+      "lujo-tranquilo"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "un drink al calar del sole sulle falesie di Cala'n Forcat",
+      "uno dei migliori tramonti della costa di ponente",
+      "atmosfera rilassata da chiosco con stile vicino a Ciutadella"
+    ]
+  },
+  "images": [
+    "/uploads/faro-punta-nati.webp"
+  ],
+  "imageAlt": "Il faro di Punta Nati sulla costa ovest, sul far della sera"
+}

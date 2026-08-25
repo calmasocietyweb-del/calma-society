@@ -1,0 +1,47 @@
+{
+  "name": "Tramonto in catamarano da Fornells",
+  "lang": "it",
+  "translationKey": "atardecer-catamaran-fornells",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Uscita in catamarano a vela dal porto di Fornells per vedere il sole calare dietro il Cap de Cavalleria, con una sosta all'ancora per nuotare e un aperitivo a bordo. Navigazione silenziosa lungo la costa nord, lontano dal rumore.",
+  "coordinates": {
+    "lat": 40.0536,
+    "lng": 4.1372
+  },
+  "area": "Es Mercadal (Fornells)",
+  "images": [
+    "/uploads/lg-atardecer-catamaran-fornells.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza",
+      "nautica"
+    ],
+    "highlights": [
+      "navigare a vela nella riserva marina del nord al tramonto",
+      "gettare l'ancora in una cala riparata per un ultimo bagno",
+      "brindisi con bibite e snack mentre il sole tramonta"
+    ],
+    "durationMin": 135,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.boatmenorca.es/catamaran-excursions-menorca/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "L'acqua limpida della baia di Fornells con il pontile di legno",
+  "imageCredit": "Markus Trienke / Wikimedia Commons (CC BY-SA 2.0)"
+}

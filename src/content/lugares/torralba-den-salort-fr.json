@@ -1,0 +1,47 @@
+{
+  "name": "Torralba d'en Salort",
+  "lang": "fr",
+  "translationKey": "torralba-den-salort",
+  "type": "monumento",
+  "description": "Village talayotique (UNESCO) qui abrite la taula la plus monumentale et la mieux conservée de Minorque (un sanctuaire de l'âge du fer), deux talayots, une salle hypostyle, des grottes creusées et une muraille cyclopéenne. Gestion privée, avec visite guidée.",
+  "coordinates": {
+    "lat": 39.9019,
+    "lng": 4.1389
+  },
+  "area": "Centre (Alaior)",
+  "tags": [
+    "centro",
+    "yacimiento",
+    "alaior"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "la taula la plus monumentale et la mieux conservée de Minorque",
+      "parcourir les talayots et la salle hypostyle du village (UNESCO)",
+      "à combiner le même jour avec une fromagerie du centre de l'île"
+    ]
+  },
+  "images": [
+    "/uploads/lg-torralba-den-salort.webp"
+  ],
+  "imageAlt": "La taula de Torralba d'en Salort debout, avec sa dalle horizontale posée sur le pilier",
+  "imageCredit": "Ben Salter from Wales / Wikimedia Commons (CC BY 2.0)"
+}

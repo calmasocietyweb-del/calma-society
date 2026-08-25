@@ -1,0 +1,102 @@
+{
+  "name": "Cova d'en Xoroi",
+  "lang": "it",
+  "translationKey": "cova-den-xoroi",
+  "type": "bar",
+  "edition": "menorca",
+  "description": "Grotta naturale aperta nella falesia di Cala'n Porter: belvedere e lounge al tramonto, discoteca nelle notti d'estate. Il locale più iconico di Minorca.",
+  "coordinates": {
+    "lat": 39.8656878,
+    "lng": 4.1327226
+  },
+  "area": "Sud (Alaior)",
+  "practicalInfo": {
+    "horario": "Stagionale; gli orari cambiano ogni stagione — consultare il sito o Instagram."
+  },
+  "website": "https://www.covadenxoroi.com/es",
+  "images": [
+    "/uploads/cova-den-xoroi.webp"
+  ],
+  "tags": [
+    "atardecer",
+    "discoteca",
+    "acantilado",
+    "cala'n porter"
+  ],
+  "status": "published",
+  "editorial": {
+    "lead": "C'è un posto a Minorca dove il tramonto si guarda da dentro la falesia. La Cova d'en Xoroi è una successione di grotte e terrazze scavate nella roccia sul mare di Cala'n Porter: di giorno un belvedere; al calare della sera un lounge con un drink davanti al sole; e nelle notti d'estate, il club più iconico dell'isola.",
+    "sections": [
+      {
+        "heading": "Una grotta aperta sul mare",
+        "body": [
+          "La prima cosa è la piacevole vertigine di affacciarsi. Le terrazze della Cova d'en Xoroi pendono da una falesia del sud, a Cala'n Porter, e scendono verso il Mediterraneo in una successione di balconi di pietra, anfratti e belvederi naturali. Non è una discoteca con vista: è la roccia stessa, strappata al mare, con un drink in mano.",
+          "È questo il suo segreto e la sua fama. Pochi luoghi di Minorca condensano così tanto l'isola in un solo gesto — pietra, luce e mare — e per questo è, probabilmente, lo spazio di svago più riconoscibile di tutta l'isola."
+        ]
+      },
+      {
+        "heading": "Il tramonto, il momento",
+        "body": [
+          "Se ci va una volta sola, ci vada al tramonto. Quando il sole comincia a scendere, le terrazze diventano un lounge tranquillo: musica soffusa, un drink servito bene e il cielo che cambia colore sull'acqua. È l'ora di calma della Cova, prima che la notte prenda ritmo.",
+          "Più tardi, d'estate, lo stesso spazio si trasforma in club e alza i giri. Le due anime convivono; sta a lei scegliere per quale venire. Per una serata di lusso tranquillo, il lounge del tramonto è il programma giusto."
+        ]
+      },
+      {
+        "heading": "La leggenda di Xoroi",
+        "body": [
+          "Il nome viene da un'antica leggenda minorchina. Racconta la tradizione che un naufrago di origine incerta, Xoroi, si rifugiò in queste grotte e visse nascosto nella falesia per anni. La storia ha tante versioni quante sono le voci che la raccontano, e qui sta il suo fascino: appartiene al folclore dell'isola, non alla sua storia documentata.",
+          "Conviene saperlo prima di scendere: aggiunge uno strato di racconto a un luogo che, di per sé, sembra già di un altro tempo."
+        ]
+      },
+      {
+        "heading": "Come viverla con calma",
+        "body": [
+          "La Cova ha tre vite a seconda dell'ora: belvedere di giorno, lounge al tramonto e discoteca di notte. Scelga la sua per tempo. D'estate conviene prenotare online, soprattutto per il tramonto, che è il momento più affollato.",
+          "Alla falesia si scende per scale intagliate nella roccia, quindi non è un luogo adatto a sedie a rotelle o a chi ha una mobilità molto ridotta. E come tutto a Minorca in vista dell'estate, orari e prezzi sono molto stagionali: verifichi sempre sul sito ufficiale prima di andare."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Coppie",
+      "Lusso tranquillo",
+      "Tramonto",
+      "Vita notturna"
+    ],
+    "goodToKnow": [
+      "Tre atmosfere a seconda dell'ora: belvedere di giorno (~8,5 €), lounge al tramonto (~12 €) e discoteca di notte. Prezzi indicativi.",
+      "D'estate conviene prenotare online, soprattutto per il tramonto.",
+      "Si scende per scale intagliate nella falesia: non adatto a sedie a rotelle o mobilità molto ridotta.",
+      "Orari molto stagionali (giu–ago da metà mattina al calar della notte; mag e ott dal pomeriggio). Verificare sul sito prima di andare."
+    ],
+    "transfer": true
+  },
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "calanporter-xoroi",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "parejas",
+      "lujo-tranquilo",
+      "vida-nocturna"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "semicubierto",
+    "needsReservation": true,
+    "officialUrl": "https://www.covadenxoroi.com/es",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Alla falesia si scende per scale intagliate; non adatto a sedia a rotelle o mobilità molto ridotta.",
+    "seasonalHours": "Giu-ago dalle 11:30 fino al calar della notte; mag/ott dalle 15. Di giorno belvedere (~8,5 €), pomeriggio lounge (~12 €), notte discoteca. D'estate è consigliabile prenotare online.",
+    "highlights": [
+      "le terrazze scavate nella falesia",
+      "un drink al tramonto",
+      "prenotare online d'estate"
+    ]
+  },
+  "imageAlt": "Le terrazze della Cova d'en Xoroi scavate nella falesia a picco sul mare"
+}

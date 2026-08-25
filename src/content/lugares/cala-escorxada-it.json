@@ -1,0 +1,46 @@
+{
+  "name": "Cala Escorxada",
+  "lang": "it",
+  "translationKey": "cala-escorxada",
+  "type": "cala",
+  "description": "Cala vergine e isolata con un'atmosfera da 'fine del mondo', sabbia fine e acque limpide, ricompensa di una buona camminata. Per viaggiatori che cercano solitudine e paesaggio; senza alcun servizio.",
+  "coordinates": {
+    "lat": 39.93,
+    "lng": 4.025
+  },
+  "area": "Sud centrale (Es Migjorn Gran)",
+  "tags": [
+    "sur-centro",
+    "cala",
+    "es-migjorn-gran"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "durationMin": 300,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "camminare lungo il Camí de Cavalls fino a una cala vergine da 'fine del mondo'",
+      "nuotare in acque limpide in una spiaggia quasi sempre solitaria",
+      "andare autosufficienti: senza servizi, senza ombra e con una camminata lunga"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-escorxada.webp"
+  ],
+  "imageAlt": "L'acqua turchese di Cala Escorxada sotto un pendio fitto di pini",
+  "imageCredit": "RD_Elsie from Sansepolcro (AR), Italy / Wikimedia Commons (CC BY 2.0)"
+}

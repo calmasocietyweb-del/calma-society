@@ -1,0 +1,49 @@
+{
+  "name": "Torralbenc",
+  "lang": "fr",
+  "translationKey": "torralbenc",
+  "type": "alojamiento",
+  "description": "Un ancien domaine entouré de vignes devenu agritourisme de luxe. Restaurant méditerranéen de produit local à la braise (conseillé par le chef étoilé Michelin Gorka Txapartegi), recommandé par les guides Michelin et Repsol depuis 2013 ; une cave primée par Wine Spectator. Visite guidée du vignoble et dégustation de trois vins avec apéritif. L'essence du luxe tranquille minorquin : le temps lent, le vin, la braise et le coucher de soleil.",
+  "coordinates": {
+    "lat": 39.91,
+    "lng": 4.16
+  },
+  "area": "Centre-sud (Alaior)",
+  "tags": [
+    "sur-centro",
+    "experiencia",
+    "alaior"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "gastronomia",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "dîner de produit local à la braise, entre les vignes, au coucher du soleil",
+      "déguster le vin élaboré sur le domaine-agritourisme",
+      "réserver à l'avance : capacité limitée et très demandé en été"
+    ]
+  },
+  "images": [
+    "/uploads/lg-torralbenc.webp"
+  ],
+  "imageAlt": "Vaches rouges minorquines paissant dans un pré de la campagne d'Alaior",
+  "imageCredit": "Alejandro Muñoz Cabrisas / Wikimedia Commons (CC BY-SA 4.0)"
+}

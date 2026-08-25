@@ -1,0 +1,48 @@
+{
+  "name": "Talatí de Dalt",
+  "lang": "fr",
+  "translationKey": "talati-de-dalt",
+  "type": "monumento",
+  "description": "L'un des ensembles talayotiques les plus pittoresques et les plus accessibles, inscrit à l'UNESCO. Sa taula, avec une colonne appuyée (tombée) et entourée d'oliviers centenaires, compte parmi les images les plus reconnaissables de la préhistoire minorquine.",
+  "images": [
+    "/uploads/talati-de-dalt.webp"
+  ],
+  "imageAlt": "La taula de Talatí de Dalt avec sa colonne tombée en appui, entourée d'oliviers, dans le village talayotique de Minorque.",
+  "imageCredit": "Paul Stephenson · Wikimedia (CC BY 2.0)",
+  "coordinates": {
+    "lat": 39.8836,
+    "lng": 4.2058
+  },
+  "area": "Centre (Maó)",
+  "tags": [
+    "centro",
+    "yacimiento",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "familias"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "la taula à la colonne appuyée, entourée d'oliviers",
+      "entrer dans les grottes et les recoins du village talayotique (UNESCO)",
+      "y aller tôt le matin ou en fin de journée : il y a peu d'ombre"
+    ]
+  }
+}

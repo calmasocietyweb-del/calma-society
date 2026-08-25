@@ -1,0 +1,47 @@
+{
+  "name": "Escursione in llaüt alle cale del sud (Mar en Calma, Cala Galdana)",
+  "lang": "it",
+  "translationKey": "excursion-llaut-mar-en-calma-galdana",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Scoprire dal mare le cale vergini del sud salpando da Cala Galdana su un llaüt minorchino, con soste bagno davanti ad arenili turchesi difficili da raggiungere via terra. Lusso tranquillo a fior d'acqua.",
+  "coordinates": {
+    "lat": 39.936,
+    "lng": 3.965
+  },
+  "area": "Ferreries (Cala Galdana)",
+  "images": [
+    "/uploads/lg-excursion-llaut-mar-en-calma-galdana.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "familias",
+      "nautica"
+    ],
+    "highlights": [
+      "navigare la costa sud tra falesie calcaree e pinete da Cala Galdana",
+      "due soste per bagno, snorkeling e paddle davanti a cale vergini",
+      "aperitivo minorchino a bordo; imbarcazione tradizionale di legno"
+    ],
+    "durationMin": 210,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.marencalmamenorca.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "La baia di Cala Galdana con le imbarcazioni all'ancora e gli edifici sopra la spiaggia",
+  "imageCredit": "pacai1952 / Wikimedia Commons (CC BY-SA 2.0)"
+}

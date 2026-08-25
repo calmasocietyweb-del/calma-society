@@ -1,0 +1,45 @@
+{
+  "name": "Randonnées à cheval sur la côte nord (Cavalls Son Àngel)",
+  "lang": "fr",
+  "translationKey": "rutas-a-caballo-cavalls-son-angel",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "À cheval à travers un domaine de 300 ha de forêt et de côte vierge au nord de Ciutadella, jusqu'à des criques cachées comme Codolar de Biniatram ou Ses Fontanelles. La nature authentique de la côte de tramontane, loin des foules, au rythme du cheval.",
+  "coordinates": {
+    "lat": 40.022,
+    "lng": 3.86
+  },
+  "area": "Ciutadella (Camí d'Algaiarens)",
+  "images": [
+    "/uploads/caballos-jinetes.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "parejas",
+      "familias"
+    ],
+    "highlights": [
+      "boucle à travers la forêt de Son Àngel avec deux criques vierges au passage",
+      "randonnée d'environ 2 h 30 jusqu'à Codolar de Biniatram, avec halte à Cala Ses Fontanelles",
+      "formules de 1 à 3 h pour les non-initiés (enfants à partir de 6 ans) et longues randonnées pour cavaliers confirmés"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.cavallssonangel.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Chevaux minorquins montés par des cavaliers"
+}

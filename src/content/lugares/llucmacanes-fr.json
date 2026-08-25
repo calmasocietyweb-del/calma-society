@@ -1,0 +1,47 @@
+{
+  "name": "Llucmacanes",
+  "lang": "fr",
+  "translationKey": "llucmacanes",
+  "type": "pueblo",
+  "description": "Hameau rural de Maó, petit village traditionnel minorquin de maisons blanches dans la campagne du sud-est. Ce n'est pas une destination touristique en soi, mais une image authentique de la Minorque intérieure et agricole ; une touche de caractère local, ou une halte en chemin vers les criques du sud-est. Le premier week-end d'août, il célèbre ses festes de Sant Gaietà, avec son propre jaleo.",
+  "coordinates": {
+    "lat": 39.8686,
+    "lng": 4.2431
+  },
+  "area": "Est (Maó)",
+  "tags": [
+    "este",
+    "nucleo",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "cultura"
+    ],
+    "durationMin": 30,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-07-22",
+    "highlights": [
+      "un hameau rural blanc à l'écart des routes touristiques",
+      "la campagne du sud-est et ses maisons paysannes traditionnelles",
+      "une halte brève et tranquille entre Maó et la côte sud"
+    ]
+  },
+  "images": [
+    "/uploads/lg-llucmacanes.webp"
+  ],
+  "imageAlt": "Un cheval noir cabré au milieu de la foule, pendant le jaleo nocturne de Llucmaçanes",
+  "imageCredit": "Songbird8 / Wikimedia Commons (CC BY-SA 4.0)"
+}

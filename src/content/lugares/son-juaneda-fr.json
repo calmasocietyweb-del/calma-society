@@ -1,0 +1,33 @@
+{
+  "name": "Son Juaneda",
+  "lang": "fr",
+  "translationKey": "son-juaneda",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Une maison de campagne minorquine du XVIIIe siècle sur la route de Cala Morell, aux mains de la même famille depuis 1967, quand Jerónimo Capella l'a achetée. Aujourd'hui, neuf chambres et un domaine qui continue de travailler ; l'électricité vient en bonne partie d'une installation photovoltaïque de 29 kWp.",
+  "coordinates": {
+    "lat": 40.015418,
+    "lng": 3.864467
+  },
+  "area": "Ouest (Ciutadella)",
+  "practicalInfo": {
+    "acceso": "Camí de Cala Morell, 07760 Ciutadella de Menorca.",
+    "horario": "La saison n'est pas publiée ; confirmez les dates 2026 sur le site officiel.",
+    "servicios": "Neuf chambres. Installation photovoltaïque de 29 kWp. agroturismo@sonjuaneda.com · +34 686 40 42 75."
+  },
+  "website": "http://sonjuaneda.com/",
+  "images": [
+    "/uploads/ciutadella-puerto.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "agroturismo",
+    "ciutadella"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Son Juaneda (Ciutadella) : agritourisme de neuf chambres dans une maison de campagne du XVIIIe siècle, sur la route de Cala Morell."
+  },
+  "imageAlt": "Le vieux port de Ciutadella au coucher du soleil, avec les toits de la vieille ville.",
+  "imageCredit": "Adobe Stock"
+}

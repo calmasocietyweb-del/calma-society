@@ -1,0 +1,48 @@
+{
+  "name": "Sant Lluis",
+  "lang": "fr",
+  "translationKey": "sant-lluis",
+  "type": "pueblo",
+  "description": "L'un des villages les plus blancs de l'île, et d'origine française : fondé en 1761 et baptisé en l'honneur de Louis XV pendant la brève domination française (1756-1763). Église néoclassique, le Molí de Dalt (moulin à farine du XVIIIe siècle, aujourd'hui musée ethnologique) et la place de Sa Creu avec son monolithe dédié à Louis XV. Tranquille, résidentiel et bien placé comme base pour explorer le sud-est et ses hameaux côtiers (Binibeca comprise).",
+  "coordinates": {
+    "lat": 39.8425,
+    "lng": 4.2747
+  },
+  "area": "Sud-est (Sant Lluis)",
+  "tags": [
+    "sur-este",
+    "pueblo",
+    "sant-lluis"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "cultura",
+      "familias"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "le village blanc au plan à la française",
+      "les moulins restaurés",
+      "une base pour Binibèquer et Punta Prima"
+    ]
+  },
+  "images": [
+    "/uploads/lg-sant-lluis.webp"
+  ],
+  "imageAlt": "Le moulin blanc et bleu de Sant Lluís au-dessus des maisons du village",
+  "imageCredit": "Jack ChampionJuchamco / Wikimedia Commons (CC BY-SA 4.0)"
+}

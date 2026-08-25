@@ -1,0 +1,55 @@
+{
+  "name": "Naveta des Tudons",
+  "lang": "fr",
+  "translationKey": "naveta-tudons",
+  "type": "monumento",
+  "description": "Le monument funéraire talayotique le mieux conservé de Minorque et un symbole de l'île. Il fait partie de la Menorca Talayótica, inscrite au patrimoine mondial de l'UNESCO depuis 2023.",
+  "images": [
+    "/uploads/naveta-tudons.webp"
+  ],
+  "imageAlt": "La Naveta des Tudons, sépulture collective préhistorique en forme de nef renversée, près de Ciutadella (Minorque).",
+  "imageCredit": "Menorquino · Wikimedia (CC BY-SA 3.0)",
+  "coordinates": {
+    "lat": 39.9967,
+    "lng": 3.884
+  },
+  "area": "Ciutadella (ouest)",
+  "practicalInfo": {
+    "acceso": "Au bord de la route Me-1, avec un parking signalé",
+    "horario": "Site en plein air ; consultez les horaires d'accès",
+    "mejorEpoca": "Toute l'année ; particulièrement beau au coucher du soleil"
+  },
+  "tags": [
+    "talayótico",
+    "patrimonio",
+    "unesco"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "eje-me1",
+    "cluster": "interior-cultura",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "primera-vez",
+      "familias"
+    ],
+    "durationMin": 40,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Parking au bord de la Me-1 (km ~40), puis courte marche de 5 min sur un chemin de terre ferme. Aucune ombre : évitez la mi-journée en été.",
+    "seasonalHours": "Le matin ou en fin de journée ; en toute saison. La plus belle lumière et moins de chaleur à la première ou à la dernière heure du jour.",
+    "highlights": [
+      "le monument funéraire talayotique le mieux conservé de l'île",
+      "une halte courte au bord de la Me-1, idéale entre Ciutadella et le centre",
+      "y aller à la première ou à la dernière heure du jour : il n'y a pas d'ombre"
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "name": "Distilleria Gin Xoriguer",
+  "lang": "it",
+  "translationKey": "destileria-gin-xoriguer",
+  "type": "productor",
+  "description": "Distilleria storica nel porto di Mahón che produce il gin di Minorca con alambicchi di rame di oltre 250 anni, fuoco di legna locale, alcol di vino, ginepro e acqua di pozzo di Mahón. La visita guidata si chiude con una degustazione di gin, liquori artigianali e della 'pomada' (gin e limonata, la bevanda delle feste patronali). Sosta gastronomica imprescindibile e molto ben situata.",
+  "coordinates": {
+    "lat": 39.89,
+    "lng": 4.262
+  },
+  "area": "Est (Maó)",
+  "tags": [
+    "este",
+    "experiencia",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 60,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "mao-puerto",
+      "este"
+    ],
+    "highlights": [
+      "il negozio accanto al porto di Maó",
+      "la degustazione del gin di Minorca",
+      "assaggiare la pomada (gin e limonata)"
+    ]
+  },
+  "images": [
+    "/uploads/lg-destileria-gin-xoriguer.webp"
+  ],
+  "imageAlt": "Una bottiglia di gin Xoriguer di Maó accanto a limoni tagliati",
+  "imageCredit": "MinorKan / Wikimedia Commons (CC BY-SA 3.0)"
+}

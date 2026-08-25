@@ -1,0 +1,46 @@
+{
+  "name": "Cicloturismo e mountain bike sul Camí de Cavalls (noleggio Velos Joan)",
+  "lang": "it",
+  "translationKey": "btt-cicloturismo-cami-de-cavalls-velos-joan",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Scoprire la costa pedalando: il Camí de Cavalls ammette tratti in mountain bike e l'isola è fatta per la bicicletta. Velos Joan, officina e noleggio di riferimento a Ciutadella, offre mountain bike, gravel ed elettriche con consegna negli hotel di tutta l'isola.",
+  "coordinates": {
+    "lat": 40.0014,
+    "lng": 3.8416
+  },
+  "area": "Ciutadella",
+  "images": [
+    "/uploads/lg-btt-cicloturismo-cami-de-cavalls-velos-joan.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "parejas",
+      "familias"
+    ],
+    "highlights": [
+      "noleggiare una mountain bike, gravel o e-bike di gamma (consegna in hotel disponibile)",
+      "pedalare i tratti ciclabili del Camí de Cavalls (formula mountain bike nelle versioni Basic, Standard o Plus)",
+      "scegliere il livello secondo l'esperienza; i tratti più duri solo per ciclisti esperti"
+    ],
+    "durationMin": 240,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://velosjoan.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Una strada rurale di Minorca tra muretti a secco",
+  "imageCredit": "Vriullop / Wikimedia Commons (CC BY-SA 3.0)"
+}

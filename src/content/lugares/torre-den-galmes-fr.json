@@ -1,0 +1,49 @@
+{
+  "name": "Torre d'en Galmés",
+  "lang": "fr",
+  "translationKey": "torre-den-galmes",
+  "type": "monumento",
+  "description": "Le plus grand village talayotique des Baléares (plus de 6 ha), inscrit à l'UNESCO au titre de la Minorque talayotique : talayots, enceinte de taula et système hydraulique.",
+  "images": [
+    "/uploads/torre-den-galmes.webp"
+  ],
+  "imageAlt": "Enceinte de taula du village talayotique de Torre d'en Galmés, le plus grand des Baléares, à Alaior (Minorque).",
+  "imageCredit": "Evelyne Bazalgette · Wikimedia (CC BY-SA 3.0)",
+  "coordinates": {
+    "lat": 39.9269,
+    "lng": 4.1283
+  },
+  "area": "Sud (Alaior)",
+  "tags": [
+    "talayótico",
+    "unesco",
+    "alaior",
+    "cultura"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "talayotic-alaior",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "primera-vez",
+      "familias"
+    ],
+    "durationMin": 75,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Piste de terre de 2 km et vaste site presque sans ombre : visitez-le tôt le matin ou en fin de journée en été.",
+    "highlights": [
+      "les talayots et l'enceinte de taula",
+      "le système hydraulique préhistorique",
+      "la vue vers le sud depuis les hauteurs"
+    ]
+  }
+}

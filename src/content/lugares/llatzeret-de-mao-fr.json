@@ -1,0 +1,47 @@
+{
+  "name": "Llatzeret de Maó",
+  "lang": "fr",
+  "translationKey": "llatzeret-de-mao",
+  "type": "monumento",
+  "edition": "menorca",
+  "description": "Ancien lazaret de quarantaine (XVIIIe-XIXe siècles) sur une île à part entière au cœur du port de Maó, ceint de murailles. On le visite en traversant en barque depuis Cales Fonts : l'une des expériences patrimoniales les plus singulières et sereines de l'île.",
+  "coordinates": {
+    "lat": 39.8766,
+    "lng": 4.3039
+  },
+  "area": "Maó (île du port)",
+  "images": [
+    "/uploads/lg-llatzeret-de-mao.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "lujo-tranquilo",
+      "naturaleza",
+      "parejas"
+    ],
+    "highlights": [
+      "traverser en barque depuis Cales Fonts jusqu'à l'île fortifiée du lazaret",
+      "parcourir avec un guide les cours de quarantaine, la chapelle et les enceintes d'isolement",
+      "lire l'histoire sanitaire de la Méditerranée dans l'un des plus grands ports naturels du monde"
+    ],
+    "durationMin": 180,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.menorca.es/en/Visitas_guiadas_a_la_Illa_de_Llatzeret/14057",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Le jardin intérieur du Llatzeret de Maó, avec un palmier et les murs de pierre",
+  "imageCredit": "Jorge Franganillo / Wikimedia Commons (CC BY 2.0)"
+}

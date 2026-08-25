@@ -1,0 +1,54 @@
+{
+  "name": "Fromagerie Subaida",
+  "lang": "fr",
+  "translationKey": "queseria-subaida",
+  "type": "productor",
+  "description": "Domaine d'élevage de 350 ha qui produit environ 80 pièces par jour de fromage Mahón-Menorca AOP artisanal. La visite comprend une démonstration de fabrication, la salle d'affinage et une dégustation de trois variétés avec sobrasada, saucisson, douceurs aux amandes, pain, vin et eau. L'une des expériences gastronomiques les plus authentiques et les mieux notées de l'île.",
+  "coordinates": {
+    "lat": 39.96,
+    "lng": 4.16
+  },
+  "area": "Centre (Es Mercadal)",
+  "tags": [
+    "centro",
+    "experiencia",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "familias",
+      "cultura",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-07-22",
+    "indoorAlternativeOf": [
+      "interior-cultura",
+      "centro"
+    ],
+    "highlights": [
+      "la visite guidée du domaine",
+      "la dégustation de fromage Mahón-Menorca AOP",
+      "réservez avant d'y aller"
+    ],
+    "officialUrl": "https://www.subaida.com/es/visitas"
+  },
+  "images": [
+    "/uploads/queso-tabla.webp"
+  ],
+  "imageAlt": "Plateau de fromage Mahón-Menorca à plusieurs stades d'affinage"
+}

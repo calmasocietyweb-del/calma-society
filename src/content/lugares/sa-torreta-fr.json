@@ -1,0 +1,47 @@
+{
+  "name": "Sa Torreta",
+  "lang": "fr",
+  "translationKey": "sa-torreta",
+  "type": "cala",
+  "description": "Une crique isolée et presque toujours déserte en plein parc naturel, dominée par la tour de défense britannique de Sa Torreta, face à l'Illa d'en Colom. Réservée aux marcheurs : la récompense sauvage d'une longue étape du Camí de Cavalls depuis Es Grau.",
+  "coordinates": {
+    "lat": 39.975,
+    "lng": 4.27
+  },
+  "area": "Nord (Maó)",
+  "tags": [
+    "norte",
+    "cala",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 300,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "une crique isolée et presque toujours déserte du Parc Natural",
+      "la tour de défense britannique face à l'Illa d'en Colom",
+      "la longue marche qui garantit la solitude ; aucun service"
+    ]
+  },
+  "images": [
+    "/uploads/lg-sa-torreta.webp"
+  ],
+  "imageAlt": "La crique de Sa Torreta depuis le sentier, entre maquis et roche orangée",
+  "imageCredit": "Nicolas G. Mertens / Wikimedia Commons (CC BY-SA 4.0)"
+}

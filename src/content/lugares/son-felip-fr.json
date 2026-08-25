@@ -1,0 +1,34 @@
+{
+  "name": "Son Felip",
+  "lang": "fr",
+  "translationKey": "son-felip",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Un domaine-ferme biologique au nord de Ciutadella, entre Algaiarens et Cala Pilar, avec une maison de campagne en usage exclusif : elle se loue entière, avec piscine au milieu des oliviers, potager biologique, chevaux de race minorquine et un chemin privé qui descend à Cala Pilar par le Camí de Cavalls. Certifié Starlight pour la qualité de son ciel nocturne. Ici, le luxe est littéral : le domaine entier pour vous.",
+  "coordinates": {
+    "lat": 40.047,
+    "lng": 3.908
+  },
+  "area": "Nord (Ciutadella)",
+  "practicalInfo": {
+    "acceso": "Nord de Ciutadella, secteur d'Algaiarens ; itinéraire communiqué à la réservation.",
+    "horario": "Usage exclusif sur réservation ; consultez les disponibilités sur le site officiel.",
+    "servicios": "Maison en usage exclusif, piscine, potager biologique, chevaux minorquins, accès privé vers Cala Pilar, ciel Starlight."
+  },
+  "website": "https://sonfelip.com/",
+  "images": [
+    "/uploads/playa-norte-menorca.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "villa",
+    "lujo",
+    "ciutadella"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Son Felip, au nord de Ciutadella : domaine biologique en usage exclusif entre Algaiarens et Cala Pilar, avec chevaux et ciel Starlight."
+  },
+  "imageAlt": "Plage de sable doré aux eaux calmes sur la côte nord de Minorque, avec de basses collines vertes.",
+  "imageCredit": "Adobe Stock"
+}

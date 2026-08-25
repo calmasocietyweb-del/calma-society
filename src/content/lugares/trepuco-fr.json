@@ -1,0 +1,47 @@
+{
+  "name": "Trepuco",
+  "lang": "fr",
+  "translationKey": "trepuco",
+  "type": "monumento",
+  "description": "Village talayotique (UNESCO) qui conserve l'une des taulas les plus grandes et les mieux conservées de l'île (4,8 m de hauteur), à l'intérieur d'une enceinte fortifiée du XIXe siècle. Tout près de Maó, idéal comme première rencontre avec la culture talayotique.",
+  "images": [
+    "/uploads/trepuco.webp"
+  ],
+  "imageAlt": "La grande taula du village talayotique de Trepucó en fin de journée, près de Maó (Minorque).",
+  "imageCredit": "Josefito123 · Wikimedia (CC BY-SA 4.0)",
+  "coordinates": {
+    "lat": 39.8703,
+    "lng": 4.2719
+  },
+  "area": "Est (Es Castell)",
+  "tags": [
+    "este",
+    "yacimiento",
+    "es-castell"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza"
+    ],
+    "durationMin": 38,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "l'une des plus grandes taulas de l'île (4,8 m), tout près de Maó",
+      "l'enceinte talayotique fortifiée (patrimoine mondial de l'UNESCO)",
+      "une courte visite de culture talayotique sans s'éloigner de la capitale"
+    ]
+  }
+}

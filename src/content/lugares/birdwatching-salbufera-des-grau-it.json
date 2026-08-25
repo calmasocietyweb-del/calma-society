@@ -1,0 +1,46 @@
+{
+  "name": "Birdwatching a s'Albufera des Grau (itinerari del parco)",
+  "lang": "it",
+  "translationKey": "birdwatching-salbufera-des-grau",
+  "type": "ruta",
+  "edition": "menorca",
+  "description": "L'unico parco naturale di Minorca e cuore della Riserva della Biosfera: tre sentieri brevi e pianeggianti con osservatori sulla laguna per vedere aironi, cormorani, svassi e rapaci. Natura serena, gratuita e alla portata di tutti.",
+  "coordinates": {
+    "lat": 39.9508,
+    "lng": 4.2453
+  },
+  "area": "Maó",
+  "images": [
+    "/uploads/lg-birdwatching-salbufera-des-grau.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "albufera-favaritx",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "familias",
+      "parejas"
+    ],
+    "highlights": [
+      "percorrere l'itinerario di Santa Madrona (2,8 km, il migliore per gli uccelli acquatici) con i suoi osservatori sulla laguna",
+      "completare i sentieri di Sa Gola (1,7 km, dune e spiaggia) e di Cala Llimpa (1,7 km, belvedere di Ses Puntes)",
+      "iniziare dal Centre de Recepció Rodríguez Femenias (strada Maó–Es Grau, km 3,5) per orientarsi"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://www.caib.es/sites/xarxanatura/es/parc_natural_de_salbufera_des_grau-46059/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "La baia des Grau con il paese bianco sullo sfondo e le barche all'ancora",
+  "imageCredit": "Discasto / Wikimedia Commons (CC BY-SA 4.0)"
+}

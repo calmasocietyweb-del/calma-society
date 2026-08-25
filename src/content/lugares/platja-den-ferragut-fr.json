@@ -1,0 +1,47 @@
+{
+  "name": "Platja d'en Ferragut",
+  "lang": "fr",
+  "translationKey": "platja-den-ferragut",
+  "type": "cala",
+  "description": "Petite plage voisine de Cavalleria, séparée par un éperon rocheux à demi immergé. Souvent moins fréquentée que sa voisine, elle sert de passage naturel vers Cala Mica.",
+  "coordinates": {
+    "lat": 40.055,
+    "lng": 4.089
+  },
+  "area": "Nord (Es Mercadal)",
+  "tags": [
+    "norte",
+    "playa",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "playa",
+    "idealFor": [
+      "naturaleza",
+      "familias"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "la plage attenante à Cavalleria, plus tranquille",
+      "franchir l'éperon rocheux depuis la plage voisine",
+      "une baignade sauvage, sans services"
+    ]
+  },
+  "images": [
+    "/uploads/lg-platja-den-ferragut.webp"
+  ],
+  "imageAlt": "Les platges de Cavalleria, à l'extrémité desquelles s'ouvre la platja d'en Ferragut",
+  "imageCredit": "Discasto / Wikimedia Commons (CC BY-SA 4.0)"
+}

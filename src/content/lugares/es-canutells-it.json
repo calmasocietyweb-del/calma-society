@@ -1,0 +1,47 @@
+{
+  "name": "Es Canutells",
+  "lang": "it",
+  "translationKey": "es-canutells",
+  "type": "cala",
+  "description": "Piccola cala riparata tra Cales Coves e Binidali, dalle acque tranquille, poco frequentata dai turisti e più dai minorchini. Atmosfera locale e quieta.",
+  "coordinates": {
+    "lat": 39.865,
+    "lng": 4.17
+  },
+  "area": "Sud-est (Maó)",
+  "tags": [
+    "sur-este",
+    "cala",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "cala",
+    "idealFor": [
+      "naturaleza",
+      "familias"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "un bagno riparato in una cala dall'atmosfera locale",
+      "l'ancoraggio di barche e i capanni tradizionali",
+      "snorkeling tranquillo in acque calme e poco frequentate"
+    ]
+  },
+  "images": [
+    "/uploads/lg-es-canutells.webp"
+  ],
+  "imageAlt": "La cala di Es Canutells con le barche all'ancora e la falesia che chiude l'ingresso",
+  "imageCredit": "Songbird8 / Wikimedia Commons (CC BY-SA 4.0)"
+}

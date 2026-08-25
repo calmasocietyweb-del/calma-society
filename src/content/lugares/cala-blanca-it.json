@@ -1,0 +1,46 @@
+{
+  "name": "Cala Blanca",
+  "lang": "it",
+  "translationKey": "cala-blanca",
+  "type": "cala",
+  "description": "Cala urbanizzata di circa 50 m di sabbia molto bianca e fine, con tutti i servizi e molto vicina a Ciutadella. Pratica per alloggiare e fare il bagno senza lunghi spostamenti, anche se senza la natura vergine delle cale dell'est.",
+  "coordinates": {
+    "lat": 39.954,
+    "lng": 3.803
+  },
+  "area": "Sud-ovest (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "cala",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "cala",
+    "idealFor": [
+      "familias"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "sabbia bianca e fine con tutti i servizi, a due passi da Ciutadella",
+      "acque basse e tranquille, comoda per le famiglie",
+      "accesso diretto in auto: buona base per alloggiare vicino all'acqua"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-blanca.webp"
+  ],
+  "imageAlt": "Cala Blanca con i bagnanti sulla riva e le terrazze affacciate sulla roccia",
+  "imageCredit": "Herodotptlomeu / Wikimedia Commons (CC BY-SA 4.0)"
+}

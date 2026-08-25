@@ -1,0 +1,34 @@
+{
+  "name": "Hevresac",
+  "lang": "it",
+  "translationKey": "hevresac",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Otto camere in una casa signorile di fine Settecento nel centro di Maó, restaurata con criterio: pavimenti in cementine originali, mobili vintage, arte contemporanea e una sostenibilità che non è posa (certificazione Biosphere, materiali naturali, aerotermia). Piccolo, singolare e profondamente legato alla città.",
+  "coordinates": {
+    "lat": 39.8875,
+    "lng": 4.26
+  },
+  "area": "Est (Maó)",
+  "practicalInfo": {
+    "acceso": "All'angolo tra le vie Anuncivay e San Fernando, centro di Maó; il porto a meno di 1 km.",
+    "horario": "Stagione e date da confermare sul sito ufficiale.",
+    "servicios": "8 camere, colazione con prodotti locali e biologici, certificazione Biosphere."
+  },
+  "website": "https://www.hotelhevresac.com/",
+  "images": [
+    "/uploads/casa-piedra.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "hotel",
+    "lujo",
+    "mao"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Hevresac, Maó: hotel boutique di 8 camere in una casa signorile del Settecento, con certificazione Biosphere."
+  },
+  "imageAlt": "Interno di una casa mediterranea in pietra, con travi di legno e scala.",
+  "imageCredit": "Adobe Stock"
+}

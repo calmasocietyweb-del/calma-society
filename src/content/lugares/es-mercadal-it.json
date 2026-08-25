@@ -1,0 +1,48 @@
+{
+  "name": "Es Mercadal",
+  "lang": "it",
+  "translationKey": "es-mercadal",
+  "type": "pueblo",
+  "description": "Paese bianco nel cuore geografico di Minorca, ai piedi del Monte Toro (il punto più alto, 358 m). Il nome viene dal privilegio di mercato concesso da Jaume II. La grande escursione è salire al santuario della Mare de Déu del Toro (1670), patrona dell'isola, con viste panoramiche su tutta Minorca. Base ideale, per la sua posizione centrale, per escursioni verso entrambe le coste.",
+  "coordinates": {
+    "lat": 39.9889,
+    "lng": 4.0942
+  },
+  "area": "Centro (Es Mercadal)",
+  "tags": [
+    "centro",
+    "pueblo",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "gastronomia"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "salire al Monte Toro al tramonto",
+      "il centro tranquillo da paese dell'interno",
+      "un caseificio DOP nelle vicinanze (Subaida)"
+    ]
+  },
+  "images": [
+    "/uploads/lg-es-mercadal.webp"
+  ],
+  "imageAlt": "La chiesa di Es Mercadal illuminata all'imbrunire, sulla sua terrazza di pietra",
+  "imageCredit": "Markus Trienke / Wikimedia Commons (CC BY-SA 2.0)"
+}

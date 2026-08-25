@@ -1,0 +1,47 @@
+{
+  "name": "Cala Tirant",
+  "lang": "it",
+  "translationKey": "cala-tirant",
+  "type": "cala",
+  "description": "Ampia spiaggia di sabbia fine e dorata tra Fornells e il capo di Cavalleria, divisa in due zone da una collina con passerella di legno. Più accessibile e familiare delle cale selvagge vicine, con una zona umida alle spalle.",
+  "coordinates": {
+    "lat": 40.057,
+    "lng": 4.117
+  },
+  "area": "Nord (Es Mercadal)",
+  "tags": [
+    "norte",
+    "playa",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "un ampio arenile dorato tra Fornells e Cavalleria",
+      "attraversare la passerella di legno tra le sue due zone",
+      "la spiaggia più accessibile e familiare vicino a Fornells"
+    ]
+  },
+  "images": [
+    "/uploads/lg-cala-tirant.webp"
+  ],
+  "imageAlt": "La spiaggia di Cala Tirant con la laguna alle spalle e le case bianche sul colle",
+  "imageCredit": "carlos venegas gavilán / Wikimedia Commons (CC BY-SA 4.0)"
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Morvedra Nou",
+  "lang": "fr",
+  "translationKey": "morvedra-nou",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Hôtel rural réservé aux adultes dans la campagne de Ciutadella, sur la route des criques du sud, avec des chambres rustiques donnant sur une terrasse ou un jardin privé — certaines avec piscine privée — et une cuisine minorquine traditionnelle à son restaurant. Ouvert de juin à octobre : un été à la campagne, à dix minutes de Macarella.",
+  "coordinates": {
+    "lat": 39.966,
+    "lng": 3.885
+  },
+  "area": "Ouest (Ciutadella)",
+  "practicalInfo": {
+    "acceso": "Campagne de Ciutadella, à environ 7 km de la ville, en direction des criques du sud.",
+    "horario": "Saison de juin à octobre ; confirmez les dates sur le site officiel.",
+    "servicios": "Réservé aux adultes, piscine extérieure, chambres avec terrasse ou jardin (certaines avec piscine privée), restaurant de cuisine minorquine."
+  },
+  "website": "https://annuahotels.com/es/hoteles-con-encanto-menorca/hotel-morvedra-nou-menorca",
+  "images": [
+    "/uploads/cami-de-cavalls.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "agroturismo",
+    "lujo",
+    "ciutadella"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Morvedra Nou, Ciutadella : hôtel rural réservé aux adultes sur la route des criques du sud, avec piscine et cuisine minorquine."
+  },
+  "imageAlt": "Crique aux eaux turquoise entre falaises et pins, sur le Camí de Cavalls.",
+  "imageCredit": "Pelayo Arbués / Unsplash"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "Son Xoriguer",
+  "lang": "fr",
+  "translationKey": "son-xoriguer",
+  "type": "cala",
+  "description": "Une large plage de sable à une dizaine de kilomètres de Ciutadella, dont la rive droite reste plus naturelle, avec des rochers dans l'eau. Elle marque la limite entre la côte urbanisée du sud-ouest et le littoral vierge du sud. Point de départ habituel des excursions en bateau.",
+  "coordinates": {
+    "lat": 39.926,
+    "lng": 3.805
+  },
+  "area": "Sud-ouest (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "playa",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "une large plage à ~10 km de Ciutadella, à la rive droite plus naturelle",
+      "la limite entre la côte urbanisée et les criques vierges du sud",
+      "départ d'excursions en bateau et de sports nautiques ; accès direct en voiture"
+    ]
+  },
+  "images": [
+    "/uploads/lg-son-xoriguer.webp"
+  ],
+  "imageAlt": "La côte près de Son Xoriguer, avec le chemin de terre qui suit le bord de mer",
+  "imageCredit": "Franrull / Wikimedia Commons (CC BY-SA 4.0)"
+}

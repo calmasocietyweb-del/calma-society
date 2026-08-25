@@ -1,0 +1,52 @@
+{
+  "name": "Fortezza della Mola",
+  "lang": "it",
+  "translationKey": "fortaleza-de-la-mola",
+  "type": "monumento",
+  "description": "Imponente fortezza militare (1848-1875) che custodisce l'ingresso del porto di Maó. Batterie, gallerie, cannoni Vickers e viste sul mare. Un complesso enorme, da percorrere in autonomia con la mappa, con audioguida o con visita guidata. Un grande programma di patrimonio per mezza giornata.",
+  "coordinates": {
+    "lat": 39.8819,
+    "lng": 4.3097
+  },
+  "area": "Est (Es Castell)",
+  "tags": [
+    "este",
+    "monumento",
+    "es-castell"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "mao-puerto",
+      "este"
+    ],
+    "highlights": [
+      "la fortezza dell'Ottocento sull'imboccatura del porto",
+      "le gallerie e le batterie",
+      "le viste su Maó dai belvederi"
+    ]
+  },
+  "images": [
+    "/uploads/lg-fortaleza-de-la-mola.webp"
+  ],
+  "imageAlt": "Un cannone Vickers della batteria della Mola, con la canna mimetizzata puntata verso il mare",
+  "imageCredit": "Àlex / Wikimedia Commons (CC BY-SA 4.0)"
+}
