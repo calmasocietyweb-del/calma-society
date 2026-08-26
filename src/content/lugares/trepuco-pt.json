@@ -1,0 +1,47 @@
+{
+  "name": "Trepuco",
+  "lang": "pt",
+  "translationKey": "trepuco",
+  "type": "monumento",
+  "description": "Povoado talaiótico (UNESCO) com uma das taulas maiores e mais bem conservadas da ilha (4,8 m de altura), dentro de um recinto fortificado oitocentista. Muito perto de Maó, ideal como primeiro contacto com a cultura talaiótica.",
+  "images": [
+    "/uploads/trepuco.webp"
+  ],
+  "imageAlt": "A grande taula do povoado talaiótico de Trepucó à última hora do dia, perto de Maó (Menorca).",
+  "imageCredit": "Josefito123 · Wikimedia (CC BY-SA 4.0)",
+  "coordinates": {
+    "lat": 39.8703,
+    "lng": 4.2719
+  },
+  "area": "Este (Es Castell)",
+  "tags": [
+    "este",
+    "yacimiento",
+    "es-castell"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza"
+    ],
+    "durationMin": 38,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "uma das taulas maiores da ilha (4,8 m), muito perto de Maó",
+      "o recinto talaiótico fortificado (Património Mundial da UNESCO)",
+      "uma visita curta de cultura talaiótica sem sair de perto da capital"
+    ]
+  }
+}

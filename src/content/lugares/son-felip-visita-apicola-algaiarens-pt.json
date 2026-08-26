@@ -1,0 +1,47 @@
+{
+  "name": "Son Felip — visita apícola de Algaiarens",
+  "lang": "pt",
+  "translationKey": "son-felip-visita-apicola-algaiarens",
+  "type": "productor",
+  "edition": "menorca",
+  "description": "Experiência apícola numa quinta de agricultura regenerativa da costa norte, entre Algaiarens e Cala del Pilar. O seu mel de zulla de Algaiarens ganhou a medalha de platina nos International Honey Awards de Londres, entre os 50 melhores do mundo.",
+  "coordinates": {
+    "lat": 40.02,
+    "lng": 3.9
+  },
+  "area": "Ciutadella (Camí de Cala Pilar, quintas Son Felip e Algaiarens, costa norte)",
+  "images": [
+    "/uploads/lg-son-felip-visita-apicola-algaiarens.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "naturaleza",
+      "familias",
+      "lujo-tranquilo",
+      "gastronomia"
+    ],
+    "highlights": [
+      "vestir o fato de apicultor e caminhar entre as colmeias",
+      "percorrer a casa do mel e provar méis premiados harmonizados com produto da quinta",
+      "reservar lugar online (datas novas todos os meses); calçado confortável e boné"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://sonfelip.com/visita_apicultura_algaiarens/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "O campo e as dunas de Algaiarens, na costa norte de Ciutadella",
+  "imageCredit": "Marcelsala007 / Wikimedia Commons (CC BY-SA 3.0)"
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Passeio de catamarã pela baía de Fornells e pela costa norte",
+  "lang": "pt",
+  "translationKey": "paseo-catamaran-bahia-fornells",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Do abrigo da grande baía de Fornells, uma saída de catamarã percorre com calma a costa norte e as suas enseadas mais remotas, com paragens para nadar. Grupos pequenos e embarcação estável: uma forma serena de navegarem também os mais velhos e as crianças.",
+  "coordinates": {
+    "lat": 40.0539,
+    "lng": 4.1356
+  },
+  "area": "Es Mercadal (Fornells)",
+  "images": [
+    "/uploads/lg-paseo-catamaran-bahia-fornells.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "naturaleza",
+      "nautica",
+      "lujo-tranquilo"
+    ],
+    "highlights": [
+      "navegar pela baía protegida de Fornells e pela costa norte em direção a Cala Pregonda",
+      "paragens para banho e snorkel em enseadas a que custa chegar por terra",
+      "saídas em grupo reduzido, estáveis e cómodas para todas as idades"
+    ],
+    "durationMin": 210,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-08-06",
+    "officialUrl": "https://www.katayak.net/",
+    "operatorName": "Katayak"
+  },
+  "imageAlt": "Casas brancas de Fornells debruçadas sobre a água da baía",
+  "imageCredit": "Nikodem Nijaki / Wikimedia Commons (CC BY-SA 3.0)"
+}

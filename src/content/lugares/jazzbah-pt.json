@@ -1,0 +1,66 @@
+{
+  "name": "Jazzbah",
+  "lang": "pt",
+  "translationKey": "jazzbah",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Sala de referência da noite de Ciutadella há mais de vinte anos: DJs, festas temáticas e concertos, no porto.",
+  "coordinates": {
+    "lat": 40.0025073,
+    "lng": 3.8360987
+  },
+  "area": "Oeste (Ciutadella)",
+  "practicalInfo": {
+    "horario": "Sazonal; os horários mudam a cada época — consulte o site ou o Instagram."
+  },
+  "website": "https://jazzbah.es/",
+  "images": [
+    "/uploads/lg-jazzbah.webp"
+  ],
+  "tags": [
+    "discoteca",
+    "conciertos",
+    "puerto",
+    "ciutadella"
+  ],
+  "status": "published",
+  "editorial": {
+    "lead": "Se Ciutadella tem uma catedral da noite, é o Jazzbah. Há mais de duas décadas que programa música ao vivo e sessões de DJ à beira do porto, e continua a ser a sala de referência para sair na cidade.",
+    "sections": [
+      {
+        "heading": "A sala da noite de Ciutadella",
+        "body": [
+          "Há lugares que resistem porque sabem o que são. O Jazzbah leva mais de vinte anos no porto de Ciutadella a ser o mesmo e a ser diferente cada noite: concertos ao vivo, sessões de DJ e festas temáticas, com vários ambientes — do palco à esplanada — num mesmo espaço.",
+          "Não é uma discoteca de pista e pouco mais: é uma sala com critério musical, das que programam e não se limitam a abrir."
+        ]
+      },
+      {
+        "heading": "À beira do porto",
+        "body": [
+          "Fica lá em baixo, no Pla de Sant Joan, o passeio do porto de Ciutadella onde se concentra a noite da cidade. Desce-se, escolhe-se a sala e fica-se: é o ponto de partida natural de qualquer noite em Ciutadella."
+        ]
+      },
+      {
+        "heading": "Como vivê-lo com calma",
+        "body": [
+          "Consulte a agenda antes de ir — o cartaz muda constantemente — e deixe a logística connosco. Horários e programação são sazonais: confirme no site ou no Instagram."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Música ao vivo",
+      "Sair à noite",
+      "Porto de Ciutadella"
+    ],
+    "goodToKnow": [
+      "Mais de duas décadas como sala de referência da noite de Ciutadella.",
+      "Concertos ao vivo, sessões de DJ e festas temáticas, com vários ambientes.",
+      "Fica no porto de Ciutadella (Passeig es Pla de Sant Joan).",
+      "Cartaz, horários e época mudam: confirme no site ou no Instagram."
+    ],
+    "transfer": true,
+    "transferText": "No porto de Ciutadella, estacionar à noite e no verão é difícil. Esqueça o carro: levamo-lo e vamos buscá-lo com motorista privado, sem voltas à procura de lugar."
+  },
+  "imageAlt": "O palácio cor-de-rosa da Plaça des Born de Ciutadella",
+  "imageCredit": "Américo Toledano / Wikimedia Commons (CC BY-SA 4.0)"
+}

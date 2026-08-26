@@ -1,0 +1,51 @@
+{
+  "name": "Praia de Binimel·la",
+  "lang": "pt",
+  "translationKey": "playa-de-binimel-la",
+  "type": "cala",
+  "description": "Ampla praia de areia avermelhada com um ilhéu e argilas vermelhas (banhos de lama populares). Ponto de partida clássico para Cala Pregonda; acessível de carro, o que a torna cómoda dentro do lado selvagem do norte.",
+  "coordinates": {
+    "lat": 40.049,
+    "lng": 4.098
+  },
+  "area": "Norte (Es Mercadal)",
+  "tags": [
+    "norte",
+    "playa",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "a areia avermelhada e os banhos de lama das argilas",
+      "o ponto de partida clássico para caminhar até Cala Pregonda",
+      "acesso cómodo de carro e estacionamento à beira da praia"
+    ]
+  },
+  "images": [
+    "/uploads/lg-playa-de-binimel-la.webp"
+  ],
+  "imageAlt": "A praia de Binimel·là com a lagoa atrás e o mato baixo da costa norte",
+  "imageCredit": "carlos venegas gavilán / Wikimedia Commons (CC BY-SA 4.0)",
+  "practicalInfo": {
+    "aparcamiento": "Lotação controlada (época de 2026): o estacionamento de terra fecha assim que enche. É a porta de entrada para o norte vermelho da ilha, pelo que em agosto enche de manhã. Não vale a pena procurar lugar nos arredores: os caminhos são estreitos e não é permitido estacionar neles.",
+    "mejorEpoca": "Maio, junho e setembro. Tenha em conta que daqui parte também a caminhada para Pregonda, pelo que o estacionamento absorve duas praias ao mesmo tempo. O controlo de acessos funciona das 7:30 às 21:00 e mantém-se até 15 de outubro."
+  }
+}

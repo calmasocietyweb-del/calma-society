@@ -1,0 +1,46 @@
+{
+  "name": "Mel i Reines — experiência apícola (Finca Lluriach)",
+  "lang": "pt",
+  "translationKey": "mel-i-reines-experiencia-apicola",
+  "type": "productor",
+  "edition": "menorca",
+  "description": "Projeto apícola de Ana Marquès e Raúl Ameller que cria abelhas-rainhas autóctones e abre as suas colmeias ao visitante. A experiência começa na antiga cozinha da histórica quinta de Lluriach, em Es Mercadal, antes de sair para o campo.",
+  "coordinates": {
+    "lat": 39.99,
+    "lng": 4.09
+  },
+  "area": "Es Mercadal (Finca Lluriach, Camí de Tramuntana, em direção à costa norte)",
+  "images": [
+    "/uploads/miel-menorca.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "naturaleza",
+      "familias",
+      "cultura",
+      "gastronomia"
+    ],
+    "highlights": [
+      "entender a vida da colmeia na cozinha da quinta de Lluriach",
+      "vestir o fato de apicultor e ver o trabalho das abelhas no campo",
+      "provar o mel acabado de extrair; grupos reduzidos (máx. 8 pessoas)"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.menorca.info/balears/economico/2025/09/19/2472611/abejas-experiencias-nueva-ruta-miel.html",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Mel de Menorca num frasco de vidro"
+}

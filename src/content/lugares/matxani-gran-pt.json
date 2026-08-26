@@ -1,0 +1,33 @@
+{
+ "name": "Matxani Gran",
+ "lang": "pt",
+ "translationKey": "matxani-gran",
+ "type": "alojamiento",
+ "edition": "menorca",
+ "description": "Agroturismo numa casa de campo menorquina nos arredores de Sant Climent, a caminho de Binidalí. Tem horta biológica própria — é de lá que saem os legumes que se servem — e animais de quinta, e as zonas comuns são daquelas que convidam a não sair: piscina, jardins e campo em redor.",
+ "coordinates": {
+  "lat": 39.860478,
+  "lng": 4.20941
+ },
+ "area": "Sudeste (Sant Climent)",
+ "practicalInfo": {
+  "acceso": "Carretera de Binidalí km 1,5, 07712 Sant Climent.",
+  "horario": "Não publica a sua época; confirme as datas de 2026 no site oficial.",
+  "servicios": "Horta biológica própria e animais de quinta. Piscina e jardins."
+ },
+ "website": "http://matxanigran.com/",
+ "images": [
+  "/uploads/talati-de-dalt.webp"
+ ],
+ "tags": [
+  "alojamiento",
+  "agroturismo",
+  "sant-climent"
+ ],
+ "status": "published",
+ "seo": {
+  "description": "Matxani Gran (Sant Climent): agroturismo numa casa de campo menorquina com horta biológica própria e animais de quinta."
+ },
+ "imageAlt": "A taula de Talatí de Dalt com a sua pilastra caída apoiada, entre oliveiras, no povoado talaiótico.",
+ "imageCredit": "Paul Stephenson · Wikimedia (CC BY 2.0)"
+}

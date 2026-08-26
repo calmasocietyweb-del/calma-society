@@ -1,0 +1,34 @@
+{
+  "name": "Ses Bruixes",
+  "lang": "pt",
+  "translationKey": "ses-bruixes",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Uma casa de capitão de mar de 1811 no centro de Maó, restaurada pela proprietária, arquiteta, em dois edifícios com quinze quartos. O seu jardim menorquino — onde serve o restaurante Es Jardí — é dos recantos mais queridos da cidade, e o spa Illa completa a casa. Elegância com memória: os elementos originais mandam.",
+  "coordinates": {
+    "lat": 39.887,
+    "lng": 4.263
+  },
+  "area": "Este (Maó)",
+  "practicalInfo": {
+    "acceso": "Centro de Maó.",
+    "horario": "Confirme a época e as datas no site oficial.",
+    "servicios": "15 quartos em dois edifícios, jardim com o restaurante Es Jardí, Illa Spa, terraço na cobertura."
+  },
+  "website": "https://hotelsesbruixes.com/",
+  "images": [
+    "/uploads/puerto-mao.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "hotel",
+    "lujo",
+    "mao"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Ses Bruixes, Maó: casa de 1811 com 15 quartos, jardim-restaurante e spa no centro da cidade."
+  },
+  "imageAlt": "O porto de Maó, com o seu passeio junto à água.",
+  "imageCredit": "Adobe Stock"
+}

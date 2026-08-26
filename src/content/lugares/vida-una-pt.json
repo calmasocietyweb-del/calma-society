@@ -1,0 +1,29 @@
+{
+  "name": "Vida Una",
+  "lang": "pt",
+  "translationKey": "vida-una",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Bar de cocktails e vermute com a música como pilar, no Moll de Llevant de Maó, com uma das melhores vistas do porto.",
+  "coordinates": {
+    "lat": 39.8904862,
+    "lng": 4.2725882
+  },
+  "area": "Este (Maó)",
+  "practicalInfo": {
+    "horario": "Sazonal; os horários mudam a cada época — consulte o site ou o Instagram."
+  },
+  "website": "https://vidaunamenorca.com/",
+  "images": [
+    "/uploads/lg-vida-una.webp"
+  ],
+  "tags": [
+    "coctelería",
+    "vermut",
+    "puerto",
+    "maó"
+  ],
+  "status": "published",
+  "imageAlt": "Pôr do sol alaranjado sobre as casas de Maó",
+  "imageCredit": "Biancachavez / Wikimedia Commons (CC BY-SA 4.0)"
+}

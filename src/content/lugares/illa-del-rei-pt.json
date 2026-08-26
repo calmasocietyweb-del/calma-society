@@ -1,0 +1,48 @@
+{
+  "name": "Illa del Rei",
+  "lang": "pt",
+  "translationKey": "illa-del-rei",
+  "type": "monumento",
+  "description": "Ilhéu no porto de Maó com o antigo hospital militar britânico (séc. XVIII), magnificamente restaurado por voluntários, e uma sede da galeria de arte Hauser & Wirth com jardim desenhado por Piet Oudolf. Mistura única de património britânico, arte contemporânea e travessia de barco.",
+  "coordinates": {
+    "lat": 39.8772,
+    "lng": 4.2906
+  },
+  "area": "Este (Maó)",
+  "tags": [
+    "este",
+    "monumento",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "o hospital naval britânico (1711) restaurado por voluntários",
+      "a galeria de arte Hauser & Wirth e o jardim de Piet Oudolf (entrada gratuita)",
+      "atravessar no barco de ligação desde o porto de Maó"
+    ]
+  },
+  "images": [
+    "/uploads/lg-illa-del-rei.webp"
+  ],
+  "imageAlt": "A Illa del Rei no porto de Maó, com o edifício vermelho do antigo hospital",
+  "imageCredit": "Dreizung / Wikimedia Commons (CC BY 3.0)"
+}

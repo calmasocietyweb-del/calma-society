@@ -1,0 +1,48 @@
+{
+  "name": "Sant Climent",
+  "lang": "pt",
+  "translationKey": "sant-climent",
+  "type": "pueblo",
+  "description": "Pequeno núcleo tranquilo do concelho de Maó, na estrada para Cala en Porter, com serviços básicos. A sua marca própria são os concertos de jazz que se realizam no seu casino ao longo do ano, um encontro cultural de ambiente local pouco conhecido do turismo de massas. Paragem discreta e autêntica, de passagem ou para um serão diferente.",
+  "coordinates": {
+    "lat": 39.8694,
+    "lng": 4.2419
+  },
+  "area": "Este (Maó)",
+  "tags": [
+    "este",
+    "nucleo",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "gastronomia",
+      "cultura"
+    ],
+    "durationMin": 45,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "um núcleo rural tranquilo no campo de Maó",
+      "o Casino de Sant Climent, bar-restaurante com sessões de jazz",
+      "paragem a caminho de Cala en Porter e da costa sul"
+    ]
+  },
+  "images": [
+    "/uploads/lg-sant-climent.webp"
+  ],
+  "imageAlt": "A povoação de Sant Climent vista do ar, rodeada de campos",
+  "imageCredit": "Arjuno3 / Wikimedia Commons (CC BY-SA 4.0)"
+}

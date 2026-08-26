@@ -1,0 +1,49 @@
+{
+  "name": "Restaurante Smoix",
+  "lang": "pt",
+  "translationKey": "restaurante-smoix",
+  "type": "restaurante",
+  "description": "Distinção Bib Gourmand do Guia Michelin desde 2023 e um Sol do Guia Repsol que conserva depois de se mudar para o Hotel Rural Sant Ignasi, uma quinta do século XVIII na estrada de Cala Morell, a cerca de 3 km de Ciutadella. Cozinha mediterrânica de produto local com técnica e influências internacionais, do chef Miquel Sánchez. A paragem de alta cozinha com critério a poente da ilha, agora entre azinheiras e campo.",
+  "coordinates": {
+    "lat": 40.0255,
+    "lng": 3.8653
+  },
+  "area": "Oeste (Ciutadella)",
+  "tags": [
+    "oeste",
+    "gastronomia",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "cena",
+    "idealFor": [
+      "gastronomia",
+      "lujo-tranquilo",
+      "parejas",
+      "cultura"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-07-22",
+    "highlights": [
+      "mesa com Bib Gourmand do Guia Michelin desde 2023 e um Sol do Guia Repsol",
+      "cozinha mediterrânica de produto biológico e da época",
+      "reservar com antecedência; fica no Hotel Rural Sant Ignasi, estrada de Cala Morell (~3 km de Ciutadella)"
+    ],
+    "officialUrl": "https://www.smoix.com/"
+  },
+  "images": [
+    "/uploads/embutidos-tabla.webp"
+  ],
+  "imageAlt": "Tábua de enchidos menorquinos cortados"
+}

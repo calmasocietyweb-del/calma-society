@@ -1,0 +1,48 @@
+{
+  "name": "Talati de Dalt",
+  "lang": "pt",
+  "translationKey": "talati-de-dalt",
+  "type": "monumento",
+  "description": "Um dos conjuntos talaióticos mais pitorescos e acessíveis, parte da UNESCO. A sua taula, com uma coluna encostada (caída), rodeada de oliveiras centenárias, é das imagens mais reconhecíveis da pré-história menorquina.",
+  "images": [
+    "/uploads/talati-de-dalt.webp"
+  ],
+  "imageAlt": "A taula de Talatí de Dalt com a sua coluna caída encostada, rodeada de oliveiras, no povoado talaiótico de Menorca.",
+  "imageCredit": "Paul Stephenson · Wikimedia (CC BY 2.0)",
+  "coordinates": {
+    "lat": 39.8836,
+    "lng": 4.2058
+  },
+  "area": "Centro (Maó)",
+  "tags": [
+    "centro",
+    "yacimiento",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "familias"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "a taula com a sua coluna encostada, rodeada de oliveiras",
+      "entrar nas grutas e recantos do povoado talaiótico (UNESCO)",
+      "ir à primeira ou à última hora: há pouca sombra"
+    ]
+  }
+}

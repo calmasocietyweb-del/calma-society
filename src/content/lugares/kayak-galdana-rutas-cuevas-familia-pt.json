@@ -1,0 +1,48 @@
+{
+  "name": "Caiaque guiado às grutas a partir de Cala Galdana",
+  "lang": "pt",
+  "translationKey": "kayak-galdana-rutas-cuevas-familia",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Da calma abrigada de Cala Galdana, uma saída de caiaque revela grutas marinhas e enseadas a que só se chega por mar. Com percursos guiados pensados para quem se inicia, é das formas mais bonitas de a família remar junta.",
+  "coordinates": {
+    "lat": 39.936,
+    "lng": 3.965
+  },
+  "area": "Ferreries (Cala Galdana)",
+  "images": [
+    "/uploads/lg-kayak-galdana-rutas-cuevas-familia.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "naturaleza",
+      "nautica",
+      "parejas"
+    ],
+    "highlights": [
+      "remar em águas tranquilas e entrar em grutas marinhas da costa virgem",
+      "escolher um percurso guiado de iniciação, adequado a famílias e principiantes",
+      "aluguer de caiaque individual ou duplo com equipamento incluído; reservar antes"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-08-06",
+    "officialUrl": "https://www.artiemhotels.com/experiencias/tour-cuevas-kayak.html",
+    "operatorName": "ARTIEM Sports"
+  },
+  "imageAlt": "A orla de Cala Galdana com a falésia escavada ao fundo",
+  "imageCredit": "Ben Salter from Wales / Wikimedia Commons (CC BY 2.0)"
+}

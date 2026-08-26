@@ -1,0 +1,47 @@
+{
+  "name": "Llucmacanes",
+  "lang": "pt",
+  "translationKey": "llucmacanes",
+  "type": "pueblo",
+  "description": "Aldeia rural de Maó, pequeno povoado tradicional menorquino de casas brancas no campo do sudeste. Não é um destino turístico em si, mas um retrato autêntico da Menorca interior e agrária; útil como pincelada de carácter local ou de passagem para as enseadas do sudeste. No primeiro fim de semana de agosto celebra as suas festes de Sant Gaietà, com jaleo próprio.",
+  "coordinates": {
+    "lat": 39.8686,
+    "lng": 4.2431
+  },
+  "area": "Este (Maó)",
+  "tags": [
+    "este",
+    "nucleo",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "cultura"
+    ],
+    "durationMin": 30,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-07-22",
+    "highlights": [
+      "um povoado rural branco fora das rotas turísticas",
+      "o campo do sudeste e as suas casas rurais tradicionais",
+      "uma paragem breve e tranquila no caminho entre Maó e a costa sul"
+    ]
+  },
+  "images": [
+    "/uploads/lg-llucmacanes.webp"
+  ],
+  "imageAlt": "Um cavalo preto empinado entre a multidão, no jaleo noturno de Llucmaçanes",
+  "imageCredit": "Songbird8 / Wikimedia Commons (CC BY-SA 4.0)"
+}

@@ -1,0 +1,68 @@
+{
+  "name": "Purobeach Menorca",
+  "lang": "pt",
+  "translationKey": "purobeach-menorca",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Beach club premium em S'Algar: piscina, acesso ao mar, restaurante e a música de marca do grupo Puro. O mais exclusivo da ilha.",
+  "coordinates": {
+    "lat": 39.8328797,
+    "lng": 4.2976315
+  },
+  "area": "Sudeste (Sant Lluís)",
+  "practicalInfo": {
+    "acceso": "Localização indicativa da zona; confirme o ponto exato no site ou no Instagram.",
+    "horario": "Sazonal; os horários mudam a cada época — consulte o site ou o Instagram."
+  },
+  "website": "https://www.purobeach.com/en/beach-club-menorca/",
+  "images": [
+    "/uploads/lg-purobeach-menorca.webp"
+  ],
+  "tags": [
+    "beach club",
+    "piscina",
+    "s'algar",
+    "lujo"
+  ],
+  "status": "published",
+  "editorial": {
+    "lead": "Menorca é a ilha da calma, mas também sabe montar um beach club de marca internacional. O Purobeach — o primeiro do grupo Puro na ilha, aberto em 2023 — traz a S'Algar a sua fórmula de piscina sobre o mar, restaurante e a música do seu próprio selo, com a mesura que o Mediterrâneo pede.",
+    "sections": [
+      {
+        "heading": "O selo Puro chega a Menorca",
+        "body": [
+          "O Purobeach é uma família internacional de beach clubs com algo pouco comum: um selo de música próprio. Em 2023 abriu a sua primeira casa em Menorca e plantou aqui a sua ideia de dia mediterrânico — piscina, acesso ao mar, restaurante e bem-estar — com um desenho cuidado que o afasta do bar de praia e o aproxima do clube de praia de gama alta.",
+          "Não é um espaço à beira de uma enseada, mas um recinto integrado que funciona como oásis: vem-se para passar o dia, não apenas para tomar um copo."
+        ]
+      },
+      {
+        "heading": "Um dia que se estende até ao copo",
+        "body": [
+          "O encanto de um lugar assim é o ritmo. De dia mandam a piscina e o mar; à medida que a tarde desce, sobem a música do selo Puro e os cocktails, e o plano de banho converte-se, sem pressa, em serão. É a versão tranquila de sair: um dia longo de sol que acaba num copo bem servido.",
+          "Para um casal ou um grupo que procura luxo sem estridências, é dos planos mais cómodos do sudeste."
+        ]
+      },
+      {
+        "heading": "Onde fica",
+        "body": [
+          "O Purobeach fica em S'Algar, uma urbanização tranquila da costa sudeste, no concelho de Sant Lluís, integrado no complexo Aluasoul Menorca. É zona de hotéis e pequenas enseadas, longe do bulício."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Casais",
+      "Luxo tranquilo",
+      "Dia de piscina e mar"
+    ],
+    "goodToKnow": [
+      "O primeiro beach club do grupo Puro em Menorca, aberto em 2023.",
+      "Está integrado no complexo Aluasoul Menorca, na urbanização de S'Algar (Sant Lluís).",
+      "Piscina, acesso ao mar, restaurante e a música do selo Puro.",
+      "Horários, carta e reservas são sazonais: confirme no site antes de ir."
+    ],
+    "transfer": true,
+    "transferText": "S'Algar é uma urbanização do sudeste e o serão acaba em cocktail: o cómodo — e o sensato — é não conduzir no regresso. Levamo-lo e vamos buscá-lo com motorista privado, em Mercedes Classe S ou Classe V."
+  },
+  "imageAlt": "O casario branco de Punta Prima junto ao mar, visto entre o mato baixo",
+  "imageCredit": "Dreizung / Wikimedia Commons (CC BY-SA 3.0)"
+}

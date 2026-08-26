@@ -1,0 +1,46 @@
+{
+  "name": "Platja de Binigaus",
+  "lang": "pt",
+  "translationKey": "platja-de-binigaus",
+  "type": "cala",
+  "description": "Longa praia virgem de areia dourada e águas pouco profundas e cristalinas, prolongamento natural de Sant Tomas. Considerada uma das melhores praias nudistas de Menorca (no troço oeste, mais recolhido entre vegetação e falésias).",
+  "coordinates": {
+    "lat": 39.93,
+    "lng": 4.04
+  },
+  "area": "Centro-sul (Es Migjorn Gran)",
+  "tags": [
+    "sur-centro",
+    "playa",
+    "es-migjorn-gran"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "playa",
+    "idealFor": [
+      "naturaleza"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-mas-caminata",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "D",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "caminhar desde Sant Tomas até esta longa praia virgem de areia dourada",
+      "tomar banho em águas pouco profundas e cristalinas, com troço nudista",
+      "chegar ao barranc de Binigaus e à Cova des Coloms a partir da praia"
+    ]
+  },
+  "images": [
+    "/uploads/lg-platja-de-binigaus.webp"
+  ],
+  "imageAlt": "A praia de Binigaus com o promontório verde e a água clara a bater na areia",
+  "imageCredit": "Boladevidre / Wikimedia Commons (CC BY-SA 2.0)"
+}

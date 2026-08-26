@@ -1,0 +1,32 @@
+{
+  "name": "Sa Pedrera d'es Pujol",
+  "lang": "pt",
+  "translationKey": "restaurante-sa-pedrera-des-pujol",
+  "type": "restaurante",
+  "description": "Cozinha de autor sobre o receituário e o produto da ilha numa casa de campo restaurada em Torret, no sul rural de Sant Lluís, que nasceu como casa de merendas nos anos sessenta. Daniel Mora (cozinha, asturiano com raízes menorquinas) e Nuria Pendás (sala) dirigem a casa desde 2003. O Guia Repsol distinguiu-a com um Sol na edição de 2025 — o único de Menorca nesse ano — e o Guia Michelin recomenda-a em 2026.",
+  "coordinates": {
+    "lat": 39.84,
+    "lng": 4.26
+  },
+  "area": "Sudeste (Sant Lluís)",
+  "practicalInfo": {
+    "acceso": "Camí d'es Pujol 14, Torret (Sant Lluís).",
+    "horario": "Sazonal; confirme dias e horário no site oficial antes de ir.",
+    "servicios": "Reservas: +34 971 150 717 · WhatsApp +34 629 642 422 · pedreramenorca@gmail.com"
+  },
+  "priceRange": "€€€",
+  "website": "https://www.sapedreradespujol.com/",
+  "images": [
+    "/uploads/mahonesa.webp"
+  ],
+  "tags": [
+    "sur-este",
+    "gastronomia",
+    "sant-lluis"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Sa Pedrera d'es Pujol (Torret, Sant Lluís): cozinha de autor de Daniel Mora e Nuria Pendás, Sol Repsol desde 2025 e recomendada pelo Guia Michelin 2026."
+  },
+  "imageAlt": "Maionese acabada de bater numa taça"
+}

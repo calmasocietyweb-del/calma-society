@@ -1,0 +1,45 @@
+{
+  "name": "Passeios a cavalo pela costa norte (Cavalls Son Àngel)",
+  "lang": "pt",
+  "translationKey": "rutas-a-caballo-cavalls-son-angel",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "A cavalo por uma quinta de 300 ha de bosque e costa virgem no norte de Ciutadella, até enseadas escondidas como o Codolar de Biniatram ou Ses Fontanelles. Natureza autêntica da tramontana, longe das multidões, ao ritmo do cavalo.",
+  "coordinates": {
+    "lat": 40.022,
+    "lng": 3.86
+  },
+  "area": "Ciutadella (Camí d'Algaiarens)",
+  "images": [
+    "/uploads/caballos-jinetes.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "excursion",
+    "idealFor": [
+      "naturaleza",
+      "parejas",
+      "familias"
+    ],
+    "highlights": [
+      "passeio circular pelo bosque de Son Àngel com visita a duas enseadas virgens",
+      "rota de ~2,5 h até ao Codolar de Biniatram com paragem na Cala Ses Fontanelles",
+      "opções de 1 a 3 h para principiantes (crianças a partir dos 6 anos) e rotas longas para experientes"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.cavallssonangel.com",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Cavalos menorquinos montados por cavaleiros"
+}

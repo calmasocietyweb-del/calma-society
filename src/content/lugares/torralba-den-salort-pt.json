@@ -1,0 +1,47 @@
+{
+  "name": "Torralba d'en Salort",
+  "lang": "pt",
+  "translationKey": "torralba-den-salort",
+  "type": "monumento",
+  "description": "Povoado talaiótico (UNESCO) com a taula mais monumental e perfeitamente conservada de Menorca (santuário da Idade do Ferro), dois talayots, sala hipóstila, grutas escavadas e muralha ciclópica. Gestão privada com visita guiada.",
+  "coordinates": {
+    "lat": 39.9019,
+    "lng": 4.1389
+  },
+  "area": "Centro (Alaior)",
+  "tags": [
+    "centro",
+    "yacimiento",
+    "alaior"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "a taula mais monumental e mais bem conservada de Menorca",
+      "percorrer os talayots e a sala hipóstila do povoado (UNESCO)",
+      "combinar com uma queijaria do centro no mesmo dia"
+    ]
+  },
+  "images": [
+    "/uploads/lg-torralba-den-salort.webp"
+  ],
+  "imageAlt": "A taula de Torralba d'en Salort de pé, com a sua laje horizontal sobre o suporte",
+  "imageCredit": "Ben Salter from Wales / Wikimedia Commons (CC BY 2.0)"
+}

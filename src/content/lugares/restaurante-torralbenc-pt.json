@@ -1,0 +1,33 @@
+{
+  "name": "Torralbenc",
+  "lang": "pt",
+  "translationKey": "restaurante-torralbenc",
+  "type": "restaurante",
+  "description": "A mesa do agroturismo Torralbenc, uma quinta de 74 hectares com adega própria na estrada de Maó para Cala en Porter (Alaior). Cozinha mediterrânica honesta e refinada — brasas, peixes e carnes, arrozes — com a assessoria do chef Gorka Txapartegi (Alameda, Hondarribia), legumes, ovos, azeite e vinho da própria quinta, e uma sala instalada num antigo edifício de colheita restaurado. Recomendado pelo Guia Michelin 2026; o hotel ostenta uma Chave Michelin desde novembro de 2024.",
+  "coordinates": {
+    "lat": 39.9,
+    "lng": 4.14
+  },
+  "area": "Sur (Alaior)",
+  "practicalInfo": {
+    "acceso": "Quinta Torralbenc, estrada Maó–Cala en Porter (Alaior). Localização aproximada: confirme o ponto exato no site oficial.",
+    "horario": "Hotel e restaurante sazonais (primavera–outono); confirme datas e horários de 2026 no site oficial.",
+    "servicios": "Reservas: +34 971 37 72 11 · info@torralbenc.com. Jantares de seis momentos ao pôr do sol e jantares em gruta, mediante reserva."
+  },
+  "priceRange": "€€€€",
+  "website": "https://www.torralbenc.com/",
+  "images": [
+    "/uploads/lg-restaurante-torralbenc.webp"
+  ],
+  "tags": [
+    "sur-centro",
+    "gastronomia",
+    "alaior"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Torralbenc (Alaior): cozinha mediterrânica com produto e vinho da sua quinta de 74 ha, recomendada pelo Guia Michelin 2026, num hotel com Chave Michelin."
+  },
+  "imageAlt": "Gado a pastar num restolho do campo de Alaior, junto ao mato baixo",
+  "imageCredit": "Discasto / Wikimedia Commons (CC BY-SA 4.0)"
+}

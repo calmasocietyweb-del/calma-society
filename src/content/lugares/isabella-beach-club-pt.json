@@ -1,0 +1,67 @@
+{
+  "name": "Isabella Beach Club",
+  "lang": "pt",
+  "translationKey": "isabella-beach-club",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Beach club nas Platges de Fornells, na costa norte: zona chill-out, cocktails e jantares com um dos melhores pores do sol do norte.",
+  "coordinates": {
+    "lat": 40.0503428,
+    "lng": 4.1083587
+  },
+  "area": "Norte (Es Mercadal)",
+  "practicalInfo": {
+    "horario": "Sazonal; os horários mudam a cada época — consulte o site ou o Instagram."
+  },
+  "website": "https://www.isabellamenorca.com/en/",
+  "images": [
+    "/uploads/lg-isabella-beach-club.webp"
+  ],
+  "tags": [
+    "beach club",
+    "atardecer",
+    "fornells",
+    "norte"
+  ],
+  "status": "published",
+  "editorial": {
+    "lead": "Há pores do sol do sul muito fotografados, mas o norte guarda os mais bravios. O Isabella Beach Club assenta num promontório de rocha à beira de água, nas Platges de Fornells, e é aí — entre sushi, grelha e um copo — que o sol se põe sobre o mar do norte.",
+    "sections": [
+      {
+        "heading": "O pôr do sol do norte",
+        "body": [
+          "A costa norte de Menorca é a mais agreste: vento, rocha e um mar que nem sempre está calmo. O Isabella tira partido precisamente disso. Está empoleirado num promontório rochoso à flor de água, nas Platges de Fornells, e fez nome pelos seus pores do sol, mais selvagens e silenciosos do que os do sul.",
+          "É um lugar para chegar com tempo, pedir alguma coisa e deixar o céu fazer o seu papel."
+        ]
+      },
+      {
+        "heading": "Sushi, grelha e cocktails",
+        "body": [
+          "A cozinha olha para o Oriente e para o Mediterrâneo ao mesmo tempo: fusão asiática e espanhola, com o sushi e a grelha como especialidades, produto local e uma boa carta de cocktails. Em algumas noites há DJ, e a mistura — boa mesa, um copo e música suave frente ao mar — é a sua assinatura.",
+          "Os jantares funcionam com reserva, pelo que convém organizar-se: não é um lugar para improvisar à última hora no verão."
+        ]
+      },
+      {
+        "heading": "Como vivê-lo com calma",
+        "body": [
+          "Reserve o jantar com antecedência no site, escolha uma mesa virada a oeste e deixe que a noite corra do pôr do sol ao último copo. É um daqueles planos que justificam subir até ao norte."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Casais",
+      "Pôr do sol",
+      "Jantar com copo"
+    ],
+    "goodToKnow": [
+      "Num promontório de rocha à beira de água, nas Platges de Fornells (costa norte).",
+      "Cozinha de fusão asiático-mediterrânica: sushi, grelha, produto local e cocktails.",
+      "Os jantares são com reserva (sistema online próprio).",
+      "Música com DJ em algumas noites; programação e horários sazonais — confirme no site."
+    ],
+    "transfer": true,
+    "transferText": "Regressa-se de noite por estradas secundárias do norte, pouco iluminadas e com curvas, e depois do copo conduzir é a última coisa que apetece. Levamo-lo e vamos buscá-lo com motorista privado."
+  },
+  "imageAlt": "A costa de Cala Tirant com as casas brancas sobre a colina",
+  "imageCredit": "carlos venegas gavilán / Wikimedia Commons (CC BY-SA 4.0)"
+}

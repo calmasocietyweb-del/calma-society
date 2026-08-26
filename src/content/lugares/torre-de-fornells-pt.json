@@ -1,0 +1,52 @@
+{
+  "name": "Torre de Fornells",
+  "lang": "pt",
+  "translationKey": "torre-de-fornells",
+  "type": "monumento",
+  "description": "Torre defensiva britânico-espanhola (séc. XVIII) de planta octogonal em marès, sobre a entrada da baía de Fornells. Centro de interpretação no interior e vistas para a baía. Combina com a povoação marinheira de Fornells e a sua gastronomia (caldereta de lagosta).",
+  "coordinates": {
+    "lat": 40.0556,
+    "lng": 4.1372
+  },
+  "area": "Norte (Es Mercadal)",
+  "tags": [
+    "norte",
+    "monumento",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "cultura",
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "fornells-cavalleria",
+      "norte"
+    ],
+    "highlights": [
+      "a torre de defesa do séc. XVIII sobre a entrada da baía",
+      "o centro de interpretação no interior",
+      "as vistas da baía de Fornells e do mar aberto"
+    ]
+  },
+  "images": [
+    "/uploads/lg-torre-de-fornells.webp"
+  ],
+  "imageAlt": "A torre redonda de Fornells recortada contra o céu, no alto da colina",
+  "imageCredit": "Markus Trienke / Wikimedia Commons (CC BY-SA 2.0)"
+}

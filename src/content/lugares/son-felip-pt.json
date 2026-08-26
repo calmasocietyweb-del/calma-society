@@ -1,0 +1,34 @@
+{
+  "name": "Son Felip",
+  "lang": "pt",
+  "translationKey": "son-felip",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Uma quinta biológica no norte de Ciutadella, entre Algaiarens e Cala Pilar, com uma casa de campo de uso exclusivo: aluga-se inteira, com piscina entre oliveiras, horta biológica, cavalos de raça menorquina e um caminho privado que desce a Cala Pilar pelo Camí de Cavalls. Certificada Starlight pela qualidade do seu céu noturno. Aqui o luxo é literal: a quinta inteira para si.",
+  "coordinates": {
+    "lat": 40.047,
+    "lng": 3.908
+  },
+  "area": "Norte (Ciutadella)",
+  "practicalInfo": {
+    "acceso": "Norte de Ciutadella, zona de Algaiarens; indicações ao reservar.",
+    "horario": "Uso exclusivo mediante reserva; consulte a disponibilidade no site oficial.",
+    "servicios": "Casa de uso exclusivo, piscina, horta biológica, cavalos menorquinos, acesso privado até Cala Pilar, céu Starlight."
+  },
+  "website": "https://sonfelip.com/",
+  "images": [
+    "/uploads/playa-norte-menorca.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "villa",
+    "lujo",
+    "ciutadella"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Son Felip, norte de Ciutadella: quinta biológica de uso exclusivo entre Algaiarens e Cala Pilar, com cavalos e céu Starlight."
+  },
+  "imageAlt": "Praia de areia dourada e águas tranquilas na costa norte de Menorca, com colinas verdes baixas.",
+  "imageCredit": "Adobe Stock"
+}

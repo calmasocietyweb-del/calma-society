@@ -1,0 +1,48 @@
+{
+  "name": "Sant Lluis",
+  "lang": "pt",
+  "translationKey": "sant-lluis",
+  "type": "pueblo",
+  "description": "Uma das povoações mais brancas da ilha, de origem francesa: fundada em 1761 e batizada em honra de Luís XV durante a breve dominação francesa (1756-1763). Igreja neoclássica, o Moli de Dalt (moinho de farinha do séc. XVIII, hoje museu etnológico) e a praça de Sa Creu, com um monólito dedicado a Luís XV. Tranquila, residencial e bem situada como base para explorar o sudeste e os seus núcleos costeiros (incluindo Binibeca).",
+  "coordinates": {
+    "lat": 39.8425,
+    "lng": 4.2747
+  },
+  "area": "Sudeste (Sant Lluis)",
+  "tags": [
+    "sur-este",
+    "pueblo",
+    "sant-lluis"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-este",
+    "cluster": "binibeca-sur-este",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "naturaleza",
+      "cultura",
+      "familias"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "a povoação branca de traçado francês",
+      "os moinhos restaurados",
+      "base para Binibèquer e Punta Prima"
+    ]
+  },
+  "images": [
+    "/uploads/lg-sant-lluis.webp"
+  ],
+  "imageAlt": "O moinho branco e azul de Sant Lluís sobre as casas da povoação",
+  "imageCredit": "Jack ChampionJuchamco / Wikimedia Commons (CC BY-SA 4.0)"
+}

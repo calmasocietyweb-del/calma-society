@@ -1,0 +1,34 @@
+{
+  "name": "Santa Ponsa (Fontenille)",
+  "lang": "pt",
+  "translationKey": "santa-ponsa-fontenille",
+  "type": "alojamiento",
+  "edition": "menorca",
+  "description": "Quinta apalaçada do século XVII no concelho de Alaior, restaurada pela coleção francesa Fontenille. Vinte e dois quartos e suites repartidos entre a casa principal e as dependências, piscina infinita entre jardins em socalcos, spa instalado nas antigas cisternas de pedra e o restaurante Nura. Com a sua irmã Torre Vella, forma o projeto de agroturismo de luxo mais ambicioso do centro da ilha.",
+  "coordinates": {
+    "lat": 39.913,
+    "lng": 4.112
+  },
+  "area": "Centro-sul (Alaior)",
+  "practicalInfo": {
+    "acceso": "Concelho de Alaior, a cerca de 15 minutos de Maó; indicações exatas no site oficial.",
+    "horario": "Época: confirme as datas de 2026 no site oficial.",
+    "servicios": "22 quartos e suites, piscina infinita, spa nas cisternas antigas, restaurante Nura, jardins em socalcos."
+  },
+  "website": "https://www.santa-ponsa.fontenille-collection.com/",
+  "images": [
+    "/uploads/alaior.webp"
+  ],
+  "tags": [
+    "alojamiento",
+    "agroturismo",
+    "lujo",
+    "alaior"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Santa Ponsa (Fontenille), Alaior: quinta apalaçada do séc. XVII com 22 quartos, spa nas cisternas e restaurante Nura."
+  },
+  "imageAlt": "Rua empedrada de casas caiadas com persianas verdes no centro histórico de Alaior.",
+  "imageCredit": "Mathewr1999 / Wikimedia Commons (CC BY-SA 4.0)"
+}

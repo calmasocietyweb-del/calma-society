@@ -1,0 +1,46 @@
+{
+  "name": "Lloc de Menorca (centro zoológico e quinta pedagógica)",
+  "lang": "pt",
+  "translationKey": "lloc-de-menorca-zoo-granja",
+  "type": "otro",
+  "edition": "menorca",
+  "description": "Um refúgio de fauna à beira da Me-1 onde os mais pequenos dão de comer às cabras-anãs, passeiam entre lémures em liberdade e, no verão, se refrescam na zona de água. Um dia completo de natureza sem se afastar do centro da ilha.",
+  "coordinates": {
+    "lat": 39.9072,
+    "lng": 4.2225
+  },
+  "area": "Alaior",
+  "images": [
+    "/uploads/lg-lloc-de-menorca-zoo-granja.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "talayotic-alaior",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza"
+    ],
+    "highlights": [
+      "dar de comer a cabras-anãs e ver lémures-de-cauda-anelada em semiliberdade",
+      "completar a visita com a zona de água 'Talaquàtic' e o parque infantil (no verão)",
+      "lanchar na zona de piquenique; comprar o bilhete online com desconto"
+    ],
+    "durationMin": 180,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": false,
+    "officialUrl": "https://llocdemenorca.com/en/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Uma manada de vacas de raça menorquina a descansar num prado",
+  "imageCredit": "Alejandro Muñoz Cabrisas / Wikimedia Commons (CC BY-SA 4.0)"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "Son Xoriguer",
+  "lang": "pt",
+  "translationKey": "son-xoriguer",
+  "type": "cala",
+  "description": "Ampla praia de areia a cerca de 10 km de Ciutadella, com a margem direita mais natural e rochas na água. Marca o limite entre a costa urbanizada do sudoeste e o litoral virgem do sul. Base habitual de passeios de barco.",
+  "coordinates": {
+    "lat": 39.926,
+    "lng": 3.805
+  },
+  "area": "Sudoeste (Ciutadella)",
+  "tags": [
+    "sur-oeste",
+    "playa",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-oeste",
+    "cluster": "calas-virgenes-ciutadella",
+    "plannerType": "playa",
+    "idealFor": [
+      "familias",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "B",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "praia ampla a ~10 km de Ciutadella, com a margem direita mais natural",
+      "marca o limite entre a costa urbanizada e as enseadas virgens do sul",
+      "partida de passeios de barco e desportos náuticos; acesso direto de carro"
+    ]
+  },
+  "images": [
+    "/uploads/lg-son-xoriguer.webp"
+  ],
+  "imageAlt": "A costa junto a Son Xoriguer, com o caminho de terra a acompanhar a beira do mar",
+  "imageCredit": "Franrull / Wikimedia Commons (CC BY-SA 4.0)"
+}

@@ -1,0 +1,53 @@
+{
+  "name": "Mercat des Peix",
+  "lang": "pt",
+  "translationKey": "mercat-des-peix",
+  "type": "comercio",
+  "description": "Antigo mercado do peixe de Mahón reconvertido em espaço gastronómico com alma local: peixe e marisco fresco, tapas, sandes, cervejas e vinhos da ilha. Instituição da capital perto do porto, ideal para sentir a cidade ao balcão.",
+  "coordinates": {
+    "lat": 39.888,
+    "lng": 4.264
+  },
+  "area": "Este (Maó)",
+  "tags": [
+    "este",
+    "gastronomia",
+    "mao"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "cena",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 60,
+    "carAccess": "sin-coche-ok",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "mao-puerto",
+      "este"
+    ],
+    "highlights": [
+      "petiscar peixe e marisco fresco em formato de tapa",
+      "o antigo mercado do peixe de Maó (1927) reconvertido",
+      "os serões gastronómicos com música do mercado (sex-dom)"
+    ]
+  },
+  "images": [
+    "/uploads/lg-mercat-des-peix.webp"
+  ],
+  "imageAlt": "O porto de Maó à noite, com as luzes da margem refletidas na água",
+  "imageCredit": "Santiago Lap / Wikimedia Commons (CC BY-SA 3.0)"
+}

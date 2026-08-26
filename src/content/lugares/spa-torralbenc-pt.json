@@ -1,0 +1,46 @@
+{
+  "name": "Spa Torralbenc (rituais Natura Bissé)",
+  "lang": "pt",
+  "translationKey": "spa-torralbenc",
+  "type": "spa",
+  "edition": "menorca",
+  "description": "Numa quinta agrícola de 74 hectares entre vinhas, o spa de Torralbenc propõe massagens e rituais com cosmética Natura Bissé. Aberto também a quem não está alojado: uma pausa de luxo sereno frente ao campo menorquino.",
+  "coordinates": {
+    "lat": 39.91,
+    "lng": 4.16
+  },
+  "area": "Alaior",
+  "images": [
+    "/uploads/lg-spa-torralbenc.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "lujo-tranquilo",
+      "parejas",
+      "naturaleza"
+    ],
+    "highlights": [
+      "Massagens e rituais faciais e corporais com produtos Natura Bissé",
+      "Massagem Torralbenc com óleos de alecrim e alfazema da própria quinta",
+      "Retiros de ioga e pilates na época, entre vinhas e campo"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://torralbenc.com/es/wellness/",
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Uma vaca de raça menorquina a pastar num restolho do campo de Alaior",
+  "imageCredit": "Discasto / Wikimedia Commons (CC BY-SA 4.0)"
+}

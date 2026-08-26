@@ -1,0 +1,47 @@
+{
+  "name": "Necrópole de Calescoves",
+  "lang": "pt",
+  "translationKey": "necropolis-de-calescoves",
+  "type": "monumento",
+  "description": "Necrópole pré-histórica de cerca de 90 grutas funerárias escavadas na falésia de uma enseada virgem e isolada. Envolvente natural imponente que combina património e banho em enseada sem serviços. Ideal para quem procura calma e autenticidade.",
+  "coordinates": {
+    "lat": 39.8689,
+    "lng": 4.1217
+  },
+  "area": "Centro-sul (Alaior)",
+  "tags": [
+    "sur-centro",
+    "yacimiento",
+    "alaior"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "percorrer uma necrópole pré-histórica de cerca de 90 grutas funerárias na falésia",
+      "combinar a visita com um banho na enseada virgem de Cales Coves",
+      "visitar com respeito e sem tocar em nada: sítio arqueológico protegido"
+    ]
+  },
+  "images": [
+    "/uploads/lg-necropolis-de-calescoves.webp"
+  ],
+  "imageAlt": "A entrada de uma gruta funerária de Cales Coves, entre blocos de pedra",
+  "imageCredit": "Dreizung / Wikimedia Commons (CC BY-SA 4.0)"
+}

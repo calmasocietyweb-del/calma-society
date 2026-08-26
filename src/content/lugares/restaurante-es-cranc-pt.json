@@ -1,0 +1,44 @@
+{
+  "name": "Restaurante Es Cranc",
+  "lang": "pt",
+  "translationKey": "restaurante-es-cranc",
+  "type": "restaurante",
+  "description": "Um dos restaurantes mais emblemáticos e tradicionais de Menorca para a caldereta de lagosta em Fornells, recomendado pelo Guia Michelin 2026 (um dos onze da ilha). Viveiro próprio de lagostas locais, selecionadas no momento. Versão um pouco mais leve do que a de Sa Llagosta. Preço da caldereta à volta de 69 EUR; a reserva é praticamente a única forma de conseguir mesa.",
+  "coordinates": {
+    "lat": 40.05,
+    "lng": 4.13
+  },
+  "area": "Norte (Es Mercadal)",
+  "tags": [
+    "norte",
+    "gastronomia",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "fornells-cavalleria",
+    "plannerType": "cena",
+    "idealFor": [
+      "gastronomia",
+      "parejas",
+      "lujo-tranquilo",
+      "familias"
+    ],
+    "durationMin": 150,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-07-22",
+    "officialUrl": "http://www.escranc.com/"
+  },
+  "images": [
+    "/uploads/langosta-parrilla.webp"
+  ],
+  "imageAlt": "Lagosta grelhada, aberta e pronta a servir"
+}

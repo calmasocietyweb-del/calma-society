@@ -1,0 +1,54 @@
+{
+  "name": "Queijaria Subaida",
+  "lang": "pt",
+  "translationKey": "queseria-subaida",
+  "type": "productor",
+  "description": "Quinta pecuária de 350 ha que produz cerca de 80 peças diárias de queijo Mahón-Menorca DOP artesanal. A visita inclui demonstração de fabrico, sala de maturação e prova de três variedades com sobrasada, salchichón, doces de amêndoa, pão, vinho e água. Uma das experiências gastronómicas mais autênticas e mais bem avaliadas da ilha.",
+  "coordinates": {
+    "lat": 39.96,
+    "lng": 4.16
+  },
+  "area": "Centro (Es Mercadal)",
+  "tags": [
+    "centro",
+    "experiencia",
+    "es-mercadal"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "familias",
+      "cultura",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-07-22",
+    "indoorAlternativeOf": [
+      "interior-cultura",
+      "centro"
+    ],
+    "highlights": [
+      "a visita guiada pela quinta",
+      "a prova de queijo Mahón-Menorca DOP",
+      "reservar antes de ir"
+    ],
+    "officialUrl": "https://www.subaida.com/es/visitas"
+  },
+  "images": [
+    "/uploads/queso-tabla.webp"
+  ],
+  "imageAlt": "Tábua com várias curas de queijo Mahón-Menorca"
+}

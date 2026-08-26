@@ -1,0 +1,33 @@
+{
+ "name": "Ses Sucreres",
+ "lang": "pt",
+ "translationKey": "hotel-ses-sucreres",
+ "type": "alojamiento",
+ "edition": "menorca",
+ "description": "Um hotel pequeno no centro histórico de Ferreries, na casa que foi a loja de guloseimas da vila: Ca Ses Sucreres, onde as crianças da terra vinham comprar. É hotel desde 2009 e cresceu com uma ampliação contemporânea que duplica a capacidade original e acrescenta zonas comuns, jardim e lago. Tem a marca Menorca Reserva de Biosfera.",
+ "coordinates": {
+  "lat": 39.983295,
+  "lng": 4.009739
+ },
+ "area": "Centro (Ferreries)",
+ "practicalInfo": {
+  "acceso": "Carrer de Sant Joan 15, 07750 Ferreries.",
+  "horario": "Não publica a sua época; confirme as datas de 2026 no site oficial.",
+  "servicios": "Jardim e lago na ampliação. Marca Menorca Reserva de Biosfera."
+ },
+ "website": "https://www.hotelsessucreres.com/",
+ "images": [
+  "/uploads/cala-galdana.webp"
+ ],
+ "tags": [
+  "alojamiento",
+  "hotel-de-pueblo",
+  "ferreries"
+ ],
+ "status": "published",
+ "seo": {
+  "description": "Ses Sucreres (Ferreries): hotel pequeno no centro histórico, na antiga loja de guloseimas da vila, hotel desde 2009."
+ },
+ "imageAlt": "A baía turquesa de Cala Galdana com veleiros e pinhal, no concelho de Ferreries.",
+ "imageCredit": "Adobe Stock"
+}

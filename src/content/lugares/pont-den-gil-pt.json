@@ -1,0 +1,47 @@
+{
+  "name": "Pont d'en Gil",
+  "lang": "pt",
+  "translationKey": "pont-den-gil",
+  "type": "monumento",
+  "description": "Gigantesco arco de rocha natural sobre o mar na costa oeste, junto a Ciutadella. Emoldura um dos pores do sol mais impressionantes da ilha, com um contraluz muito forte quando o sol se alinha com o arco. Pode até atravessar-se de barco por baixo. Miradouro de pôr do sol de primeira ordem.",
+  "coordinates": {
+    "lat": 40,
+    "lng": 3.8
+  },
+  "area": "Oeste (Ciutadella)",
+  "tags": [
+    "oeste",
+    "mirador",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "oeste",
+    "cluster": "ciutadella-ciudad",
+    "plannerType": "mirador",
+    "idealFor": [
+      "naturaleza",
+      "parejas"
+    ],
+    "durationMin": 60,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "o gigantesco arco de rocha natural recortado sobre o mar",
+      "um dos pores do sol mais impressionantes perto de Ciutadella",
+      "chega-se a pé ou de bicicleta pelo Camí de Cavalls (melhor vê-lo do mar)"
+    ]
+  },
+  "images": [
+    "/uploads/lg-pont-den-gil.webp"
+  ],
+  "imageAlt": "A plataforma de rocha da costa oeste de Ciutadella, batida pelo mar aberto",
+  "imageCredit": "LucT / Wikimedia Commons (CC BY-SA 3.0)"
+}

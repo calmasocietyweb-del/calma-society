@@ -1,0 +1,53 @@
+{
+  "name": "Hort de Sant Patrici",
+  "lang": "pt",
+  "translationKey": "hort-de-sant-patrici",
+  "type": "productor",
+  "description": "Conjunto em Ferreries que reúne queijaria da DOP Mahón-Menorca, museu etnológico do queijo (desde 1999, num antigo edifício agropecuário), adega própria e jardins com esculturas. Uma das lojas gourmet mais bem fornecidas da ilha; prova de queijos e vinhos numa esplanada com vista para o jardim. Combina património, produto e calma.",
+  "coordinates": {
+    "lat": 39.985,
+    "lng": 4.005
+  },
+  "area": "Centro (Ferreries)",
+  "tags": [
+    "centro",
+    "experiencia",
+    "ferreries"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "centro",
+    "cluster": "interior-cultura",
+    "plannerType": "interior-cultural",
+    "idealFor": [
+      "gastronomia",
+      "cultura",
+      "familias",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": true,
+    "weatherProof": "cubierto",
+    "needsReservation": true,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "indoorAlternativeOf": [
+      "interior-cultura",
+      "centro"
+    ],
+    "highlights": [
+      "o museu do queijo e os jardins",
+      "a adega e a prova",
+      "reservar a visita"
+    ]
+  },
+  "images": [
+    "/uploads/queso-mahon-cuna.webp"
+  ],
+  "imageAlt": "Uma cunha de queijo Mahón-Menorca com a sua casca alaranjada"
+}

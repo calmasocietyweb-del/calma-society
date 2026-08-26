@@ -1,0 +1,47 @@
+{
+  "name": "Necrópole de Cala Morell",
+  "lang": "pt",
+  "translationKey": "necropolis-de-cala-morell",
+  "type": "monumento",
+  "description": "Necrópole de grutas (14 hipogeus) escavadas na rocha, em uso desde o pré-talaiótico até ao séc. II d.C. Algumas com colunas interiores, janelas e uma fachada decorada com colunas em relevo de influência clássica.",
+  "coordinates": {
+    "lat": 40.0556,
+    "lng": 3.8786
+  },
+  "area": "Norte (Ciutadella)",
+  "tags": [
+    "norte",
+    "yacimiento",
+    "ciutadella"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "norte",
+    "cluster": "norte-ciutadella",
+    "plannerType": "yacimiento",
+    "idealFor": [
+      "cultura",
+      "naturaleza"
+    ],
+    "durationMin": 38,
+    "carAccess": "coche-mas-caminata",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "C",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "a necrópole de 14 grutas escavadas na rocha (hipogeus)",
+      "os detalhes interiores: colunas, janelas e relevos",
+      "combiná-la com um banho na enseada de Cala Morell"
+    ]
+  },
+  "images": [
+    "/uploads/lg-necropolis-de-cala-morell.webp"
+  ],
+  "imageAlt": "O interior de uma gruta funerária de Cala Morell, escavada na rocha, com a luz a entrar pela boca",
+  "imageCredit": "Dreizung / Wikimedia Commons (CC BY-SA 4.0)"
+}

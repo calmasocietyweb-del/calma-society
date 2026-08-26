@@ -1,0 +1,48 @@
+{
+  "name": "Passeio de barco pelas enseadas e grutas do sul (a partir de Cala Galdana)",
+  "lang": "pt",
+  "translationKey": "paseo-barco-calas-cuevas-cala-galdana",
+  "type": "experiencia",
+  "edition": "menorca",
+  "description": "Uma saída de barco de Cala Galdana mostra por mar as enseadas virgens do sudoeste — Mitjana, Trebalúger, Macarella — e grutas que não se veem de outra forma, com paragem para um banho em água turquesa. Ideal para os mais pequenos: sem caminhada e com tempo a bordo.",
+  "coordinates": {
+    "lat": 39.936,
+    "lng": 3.965
+  },
+  "area": "Ferreries (Cala Galdana)",
+  "images": [
+    "/uploads/lg-paseo-barco-calas-cuevas-cala-galdana.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "galdana-mitjana",
+    "plannerType": "actividad-acuatica",
+    "idealFor": [
+      "familias",
+      "ninos-pequenos",
+      "naturaleza",
+      "primera-vez"
+    ],
+    "highlights": [
+      "ver do mar Cala Mitjana, Trebalúger e Macarella, e grutas escondidas",
+      "uma ou duas paragens de banho em águas cristalinas (costumam emprestar óculos)",
+      "saída de cerca de 3 h 30 sem caminhada, adequada a todas as idades; pergunte pelos serviços a bordo ao reservar"
+    ],
+    "durationMin": 210,
+    "carAccess": "coche-directo",
+    "busServed": true,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "dataCertainty": "media",
+    "lastVerified": "2026-08-06",
+    "officialUrl": "https://www.marencalmamenorca.com/es/inicio",
+    "operatorName": "Mar en Calma"
+  },
+  "imageAlt": "Uma enseada do sul com a areia clara e uma embarcação varada na areia",
+  "imageCredit": "Mediatres / Wikimedia Commons (CC BY-SA 3.0)"
+}

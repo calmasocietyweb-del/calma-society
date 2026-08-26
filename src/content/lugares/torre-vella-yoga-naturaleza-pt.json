@@ -1,0 +1,45 @@
+{
+  "name": "Torre Vella – ioga e massagem ao ar livre (Fontenille)",
+  "lang": "pt",
+  "translationKey": "torre-vella-yoga-naturaleza",
+  "type": "spa",
+  "edition": "menorca",
+  "description": "Em 200 hectares de natureza entre oliveiras, vinhas e falésias, Torre Vella propõe ioga e meditação sob as azinheiras e mesas de massagem ao ar livre frente ao mar. Bem-estar de quinta, sem ruído, com o spa de Santa Ponsa a dez minutos.",
+  "coordinates": {
+    "lat": 39.9,
+    "lng": 4.1
+  },
+  "area": "Alaior",
+  "images": [
+    "/uploads/calma-menorca.webp"
+  ],
+  "tags": [],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "excursion",
+    "idealFor": [
+      "lujo-tranquilo",
+      "naturaleza",
+      "parejas"
+    ],
+    "highlights": [
+      "Ioga e meditação diários sob azinheiras e oliveiras",
+      "Massagem ao ar livre frente às falésias, com produtos naturais",
+      "Programa de bem-estar: aula de ioga + tratamento corporal + aperitivo na falésia"
+    ],
+    "durationMin": 120,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A1",
+    "isIndoor": false,
+    "indoorAlternativeOf": [],
+    "needsReservation": true,
+    "officialUrl": "https://www.torre-vella.fontenille-collection.com/en/yoga-wellness-spa-retreat-menorca/",
+    "dataCertainty": "media",
+    "lastVerified": "2026-06-24"
+  },
+  "imageAlt": "Um recanto de campo menorquino em calma, com luz baixa de fim de tarde"
+}

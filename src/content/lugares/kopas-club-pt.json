@@ -1,0 +1,66 @@
+{
+  "name": "Kopas Club",
+  "lang": "pt",
+  "translationKey": "kopas-club",
+  "type": "comercio",
+  "edition": "menorca",
+  "description": "Clube de vários pisos no porto de Ciutadella, com esplanadas, cocktails e música variada até de madrugada.",
+  "coordinates": {
+    "lat": 40.0026571,
+    "lng": 3.8361687
+  },
+  "area": "Oeste (Ciutadella)",
+  "practicalInfo": {
+    "horario": "Sazonal; os horários mudam a cada época — consulte o site ou o Instagram."
+  },
+  "website": "https://www.kopasclub.com/",
+  "images": [
+    "/uploads/lg-kopas-club.webp"
+  ],
+  "tags": [
+    "discoteca",
+    "coctelería",
+    "puerto",
+    "ciutadella"
+  ],
+  "status": "published",
+  "editorial": {
+    "lead": "O Kopas Club é o plano de quem quer escolher o ritmo da sua noite sem mudar de lugar. Em pleno porto de Ciutadella, distribui por vários pisos e esplanadas o copo tranquilo, os cocktails e a pista, com vista para a água.",
+    "sections": [
+      {
+        "heading": "Várias noites num mesmo lugar",
+        "body": [
+          "A ideia do Kopas é a variedade debaixo do mesmo teto: vários pisos, esplanadas e balcões que permitem passar da conversa com um copo para a pista sem sair do espaço. Em cima, a esplanada ao ar livre olha para o porto; em baixo, a música aperta.",
+          "É um lugar para uma noite longa que não se quer planear ao detalhe: sobe-se, desce-se e cada piso tem o seu tom."
+        ]
+      },
+      {
+        "heading": "No porto de Ciutadella",
+        "body": [
+          "Fica no Pla de Sant Joan, o passeio do porto onde pulsa a noite de Ciutadella, num espaço que os daqui recordarão como a antiga Esfera. Companhia não lhe falta: a poucos metros há outras salas, pelo que é fácil fazer a noite pela zona."
+        ]
+      },
+      {
+        "heading": "Como vivê-lo com calma",
+        "body": [
+          "Horários, programação e época mudam todos os anos, por isso confirme no site antes de ir. E para não pensar no carro, deixe que o levemos."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Sair à noite",
+      "Cocktails",
+      "Porto de Ciutadella"
+    ],
+    "goodToKnow": [
+      "Vários pisos e esplanadas com vista para o porto, do copo tranquilo à pista.",
+      "Cocktails e música variada, com vários ambientes num mesmo espaço.",
+      "Fica no porto de Ciutadella (Passeig es Pla de Sant Joan).",
+      "Horários, programação e época mudam: confirme no site."
+    ],
+    "transfer": true,
+    "transferText": "No porto de Ciutadella, estacionar à noite e no verão é difícil. Deixe o carro: levamo-lo e vamos buscá-lo com motorista privado."
+  },
+  "imageAlt": "O arco de pedra da câmara municipal de Ciutadella, com as bandeiras",
+  "imageCredit": "Américo Toledano / Wikimedia Commons (CC BY-SA 4.0)"
+}

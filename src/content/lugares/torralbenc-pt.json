@@ -1,0 +1,49 @@
+{
+  "name": "Torralbenc",
+  "lang": "pt",
+  "translationKey": "torralbenc",
+  "type": "alojamiento",
+  "description": "Antiga quinta rodeada de vinhas convertida em agroturismo de luxo. Restaurante mediterrânico de produto local na brasa (com a assessoria do chef com estrela Michelin Gorka Txapartegi), recomendado nos guias Michelin e Repsol desde 2013; adega premiada pela Wine Spectator. Rota guiada pela vinha + prova de três vinhos com aperitivo. A essência do luxo tranquilo menorquino: tempo lento, vinho, brasa e pôr do sol.",
+  "coordinates": {
+    "lat": 39.91,
+    "lng": 4.16
+  },
+  "area": "Centro-sul (Alaior)",
+  "tags": [
+    "sur-centro",
+    "experiencia",
+    "alaior"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "sur-centro",
+    "cluster": "son-bou-migjorn",
+    "plannerType": "atardecer",
+    "idealFor": [
+      "lujo-tranquilo",
+      "gastronomia",
+      "parejas",
+      "naturaleza"
+    ],
+    "durationMin": 90,
+    "carAccess": "coche-directo",
+    "busServed": false,
+    "carAccessClosedSummer": false,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "highlights": [
+      "jantar produto local na brasa entre vinhas ao pôr do sol",
+      "provar o vinho de produção própria da quinta-agroturismo",
+      "reservar com antecedência: lotação limitada e muito procurado no verão"
+    ]
+  },
+  "images": [
+    "/uploads/lg-torralbenc.webp"
+  ],
+  "imageAlt": "Vacas vermelhas menorquinas a pastar num prado do campo de Alaior",
+  "imageCredit": "Alejandro Muñoz Cabrisas / Wikimedia Commons (CC BY-SA 4.0)"
+}

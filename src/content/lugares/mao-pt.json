@@ -1,0 +1,50 @@
+{
+  "name": "Maó",
+  "lang": "pt",
+  "translationKey": "mao",
+  "type": "pueblo",
+  "description": "Capital cosmopolita com forte marca britânica do séc. XVIII, debruçada sobre o maior porto natural do Mediterrâneo. Centro elegante e destilaria de gin.",
+  "coordinates": {
+    "lat": 39.8885,
+    "lng": 4.2658
+  },
+  "area": "Este (Maó)",
+  "tags": [
+    "este",
+    "puerto",
+    "capital",
+    "maó"
+  ],
+  "status": "published",
+  "planner": {
+    "zone": "este",
+    "cluster": "mao-puerto",
+    "plannerType": "pueblo",
+    "idealFor": [
+      "cultura",
+      "gastronomia",
+      "primera-vez"
+    ],
+    "durationMin": 240,
+    "carAccess": "sin-coche-ok",
+    "busServed": true,
+    "effortLevel": "A2",
+    "isIndoor": false,
+    "weatherProof": "exterior",
+    "needsReservation": false,
+    "dataCertainty": "alta",
+    "lastVerified": "2026-06-22",
+    "effortNote": "Capital que se percorre a pé e bem ligada (autocarro para toda a ilha e para o aeroporto). Estacionamento pago no centro.",
+    "highlights": [
+      "o porto natural, um dos maiores do mundo",
+      "subir ao centro histórico por Ses Voltes",
+      "a destilaria de gin Xoriguer",
+      "o Mercat des Claustre del Carme"
+    ]
+  },
+  "images": [
+    "/uploads/lg-mao.webp"
+  ],
+  "imageAlt": "O porto de Maó visto do alto, com o Llatzeret e as embarcações fundeadas",
+  "imageCredit": "20702125@N05 / Wikimedia Commons (CC BY-SA 2.0)"
+}

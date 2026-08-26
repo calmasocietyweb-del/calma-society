@@ -1,0 +1,32 @@
+{
+  "name": "Cafè Balear",
+  "lang": "pt",
+  "translationKey": "restaurante-cafe-balear",
+  "type": "restaurante",
+  "description": "O marisco icónico do porto de Ciutadella, com mais de cinquenta anos de história e um Sol do Guia Repsol entre os veteranos da ilha. Nasceu nos anos setenta como taberna de pescadores — o avô, 'Bep Fitora', pescava com o seu barco e a mulher, Juanita, cozinhava as capturas — e hoje continua a servir o peixe e o marisco que a sua própria embarcação, a Rosa Santa Primera, desembarca: gamba vermelha de Ciutadella na chapa e lagosta vermelha de Menorca consoante a época.",
+  "coordinates": {
+    "lat": 40,
+    "lng": 3.83
+  },
+  "area": "Oeste (Ciutadella)",
+  "practicalInfo": {
+    "acceso": "Passeig des Moll 15, porto de Ciutadella.",
+    "horario": "A título indicativo: terça a sábado, 13:00–15:30 e 20:00–23:00; segunda apenas jantares; domingo encerrado. Horário sazonal: confirme antes de ir.",
+    "servicios": "Reservas: +34 971 38 00 05"
+  },
+  "priceRange": "€€€",
+  "website": "https://www.baleargrup.com/",
+  "images": [
+    "/uploads/ciutadella-puerto.webp"
+  ],
+  "tags": [
+    "oeste",
+    "gastronomia",
+    "ciutadella"
+  ],
+  "status": "published",
+  "seo": {
+    "description": "Cafè Balear (porto de Ciutadella): meio século de marisco com barco próprio, a Rosa Santa Primera, gamba vermelha na chapa e um Sol do Guia Repsol."
+  },
+  "imageAlt": "O porto de Ciutadella com as embarcações amarradas ao pé do centro histórico"
+}

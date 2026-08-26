@@ -1,0 +1,34 @@
+{
+ "name": "Menorca Experimental",
+ "lang": "pt",
+ "translationKey": "menorca-experimental",
+ "type": "alojamiento",
+ "edition": "menorca",
+ "description": "Uma quinta do século XIX com 30 hectares perto de Cala Llucalari, reconvertida pelo grupo Experimental com interiores de Dorothée Meilichzon. Quarenta e três quartos — nove com piscina privada —, piscina infinita no coração da quinta e cozinha de horta própria e de pequenos produtores da ilha. O espírito é o de uma casa de artista de férias: cor, calma e cocktails a sério ao pôr do sol.",
+ "coordinates": {
+  "lat": 39.906,
+  "lng": 4.118
+ },
+ "area": "Centro-sul (Alaior)",
+ "practicalInfo": {
+  "acceso": "Quinta no concelho de Alaior, perto de Cala Llucalari; indicações exatas no site oficial.",
+  "horario": "Época: confirme as datas de 2026 no site oficial.",
+  "servicios": "43 quartos (9 com piscina privada), piscina infinita, restaurante e esplanada com horta própria, cocktails."
+ },
+ "website": "https://www.menorcaexperimental.com/",
+ "images": [
+  "/uploads/alaior.webp"
+ ],
+ "tags": [
+  "alojamiento",
+  "hotel",
+  "lujo",
+  "alaior"
+ ],
+ "status": "published",
+ "seo": {
+  "description": "Menorca Experimental, Alaior: quinta do séc. XIX com 43 quartos, piscina infinita e cozinha de horta própria, perto de Cala Llucalari."
+ },
+ "imageAlt": "Rua empedrada de casas caiadas com persianas verdes no centro histórico de Alaior.",
+ "imageCredit": "Mathewr1999 / Wikimedia Commons (CC BY-SA 4.0)"
+}
