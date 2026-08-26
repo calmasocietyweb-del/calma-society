@@ -1,7 +1,7 @@
 {
-  "updated": "2026-08-25",
+  "updated": "2026-08-26",
   "ventana": {
-    "desde": "2026-08-25",
+    "desde": "2026-08-26",
     "hasta": "2026-09-21"
   },
   "nuevas": [
@@ -66,20 +66,6 @@
     }
   ],
   "dobles": [
-    {
-      "date": "2026-08-25",
-      "barcos": [
-        {
-          "ship": "SPIRIT OF ADVENTURE",
-          "eslora": 236
-        },
-        {
-          "ship": "SEA CLOUD SPIRIT",
-          "eslora": 125.7
-        }
-      ],
-      "nota": "Dos cruceros el mismo día. Si uno fondea, se desembarca en lancha y el tiempo real en tierra cambia."
-    },
     {
       "date": "2026-09-20",
       "barcos": [
