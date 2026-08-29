@@ -9,6 +9,7 @@ import { placeUrl, homePath, placesIndexPath, businessPath } from "../i18n/utils
 import { publishedPlaces, relatedPlaces } from "../lib/places";
 import { abs, placeSchema, breadcrumbSchema } from "../lib/schema";
 import { srcset } from "../lib/img";
+import { elegirTitulo } from "../lib/seo-title";
 import { menorcaBusUrl, partnerUrl } from "../lib/links";
 import { googleRatings, fmtScore, fmtReviews } from "../data/google-ratings";
 import MenorcaBusPromo from "../components/MenorcaBusPromo.astro";
@@ -150,62 +151,24 @@ const island = t("island.name");
 const areaCorta = (data.area ?? "").split(" (")[0].trim();
 const zona = !areaCorta ? island : areaCorta.includes(island) ? areaCorta : `${areaCorta}, ${island}`;
 
-/* EL PRESUPUESTO REAL DE CARACTERES (KAN-129, 2ª pasada).
-   Cuidado: este `title` NO es el que acaba viendo Google. `Seo.astro` le añade
-   después « · Calma Society», así que recortar aquí a 62 daba <title> de hasta
-   78 caracteres, cuando el buscador solo enseña unos 60. El tope se calcula a
-   partir del sufijo real para que no se quede obsoleto si cambia el nombre. */
-const MAX_TITULO = 60 - ` · ${SITE.name}`.length;
+/* El presupuesto de caracteres y el recorte viven en `lib/seo-title.ts`: la misma
+   lógica la usa la agenda (KAN-129 dejó 205 títulos largos en eventos), y tenerla
+   en un solo sitio evita que las dos secciones se separen con el tiempo.
 
-/* Palabras que no pueden quedarse solas al final de un recorte. El corte por
-   frontera de palabra dejaba títulos acabados en «— Es» (lo que quedaba de «Es
-   Mercadal») o en «del». Se descartan tantas como haga falta.
-   Van dos grupos: artículos y preposiciones, y los clasificadores geográficos
-   que SIEMPRE preceden a un nombre propio («Cap de Favàritx» recortado a «Cap»
-   no dice nada, así que se cae el «Cap» también). */
-const COLGANTES = new Set([
-  "de", "del", "la", "el", "los", "las", "es", "sa", "ses", "son", "des", "en", "y", "a", "por", "con",
-  "the", "of", "and", "in", "at", "to", "from",
-  "du", "le", "les", "et", "à", "sur",
-  "cap", "punta", "cala", "cales", "port", "illa", "illes", "torre", "faro", "far",
-  "mont", "monte", "cova", "coves", "platja", "playa", "sant", "santa", "san", "camí", "cami",
-]);
-
-function limpiarFinal(t: string): string {
-  return t.replace(/[,;:·—–-]+$/, "").trim();
-}
-
-function recortar(t: string): string {
-  if (t.length <= MAX_TITULO) return t;
-  const corte = t.lastIndexOf(" ", MAX_TITULO);
-  let out = t.slice(0, corte > 0 ? corte : MAX_TITULO).trim();
-  /* Un paréntesis abierto y sin cerrar deja el título manco («… (S'Algar»). */
-  const abre = (out.match(/\(/g) ?? []).length;
-  const cierra = (out.match(/\)/g) ?? []).length;
-  if (abre > cierra) out = out.slice(0, out.lastIndexOf("(")).trim();
-  out = limpiarFinal(out);
-  let palabras = out.split(" ");
-  while (palabras.length > 1 && COLGANTES.has(palabras[palabras.length - 1].toLowerCase())) {
-    palabras.pop();
-    out = limpiarFinal(palabras.join(" "));
-    palabras = out.split(" ");
-  }
-  return out;
-}
-
-/* Se degrada por pasos en vez de cortar a lo bruto: título completo → sin el
+   Se degrada por pasos en vez de cortar a lo bruto: título completo → sin el
    tipo → sin la isla → solo el nombre, y únicamente si ni así cabe se recorta.
    Así los nombres largos (las experiencias: «Kayak y snorkel por la Reserva
    Marina del Nord») conservan el nombre en vez de perder su parte útil. */
-const candidatos = data.seo?.title
-  ? [data.seo.title]
-  : [
-      `${data.name} — ${[typeRedundant ? null : typeLbl, zona].filter(Boolean).join(", ")}`,
-      `${data.name} — ${zona}`,
-      `${data.name} — ${areaCorta}`,
-      data.name,
-    ];
-const seoTitle = recortar(candidatos.find((c) => c.length <= MAX_TITULO) ?? candidatos.at(-1)!);
+const seoTitle = elegirTitulo(
+  data.seo?.title
+    ? [data.seo.title]
+    : [
+        `${data.name} — ${[typeRedundant ? null : typeLbl, zona].filter(Boolean).join(", ")}`,
+        `${data.name} — ${zona}`,
+        `${data.name} — ${areaCorta}`,
+        data.name,
+      ],
+);
 ---
 
 <BaseLayout title={seoTitle} description={data.seo?.description ?? data.description} locale={locale} alternates={alternates}>

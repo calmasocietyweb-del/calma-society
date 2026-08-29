@@ -14,6 +14,7 @@ import { getSection } from "../config/sections";
 import { articleSlugFor, placeSlugFor, getUpcomingEvents } from "../lib/content";
 import { abs, eventSchema, breadcrumbSchema } from "../lib/schema";
 import { srcset } from "../lib/img";
+import { elegirTitulo } from "../lib/seo-title";
 
 interface Props {
   entry: CollectionEntry<"eventos">;
@@ -81,7 +82,34 @@ const TITLE_SUFFIX: Record<Locale, string> = {
   it: "Eventi a Minorca",
   pt: "Agenda de Menorca",
 };
-const seoTitle = `${data.title} — ${TITLE_SUFFIX[locale]}`;
+
+/* Versión corta, para cuando la larga no cabe: conserva el contexto de sección
+   sin comerse 20 caracteres. */
+const TITLE_SUFFIX_CORTO: Record<Locale, string> = {
+  es: "Agenda",
+  en: "What's on",
+  fr: "Agenda",
+  de: "Termine",
+  it: "Eventi",
+  pt: "Agenda",
+};
+
+/* El sufijo se DEGRADA en vez de pegarse siempre (auditoría del 29-ago-2026).
+   Pegar el largo produjo 205 títulos de más de 65 caracteres —el peor, 117— de
+   los que Google enseña unos 60: sufijo y marca se comían 39 caracteres y el
+   nombre del evento se cortaba a media palabra. Muchos títulos ya llevan su
+   fecha dentro («… — hasta el 25 de octubre»), así que el sufijo es lo primero
+   que sobra.
+   El sufijo NO está por capricho: evita que las seis versiones de idioma
+   compartan <title> (lección KAN-88). Por eso se prueba primero el largo, luego
+   el corto, y solo se cae al título desnudo si ninguno cabe. En los nombres
+   propios idénticos en todos los idiomas —«Festes de Gràcia»— el hreflang y el
+   canonical siguen declarando la relación entre versiones. */
+const seoTitle = elegirTitulo([
+  `${data.title} — ${TITLE_SUFFIX[locale]}`,
+  `${data.title} — ${TITLE_SUFFIX_CORTO[locale]}`,
+  data.title,
+]);
 
 const canonical = abs(eventUrl(locale, entry.id));
 const eventLd = eventSchema({
