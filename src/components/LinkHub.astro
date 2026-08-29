@@ -13,7 +13,7 @@ import { SITE, type Locale } from "../config/site";
 
 // Idiomas con hub publicado (despliegue por mercados; CLAUDE.md §11: los
 // idiomas del componente se declaran con Extract, nunca con ternarios).
-type HubLocale = Extract<Locale, "es" | "en" | "fr">;
+type HubLocale = Extract<Locale, "es" | "en" | "fr" | "de">;
 
 interface Props {
   locale: HubLocale;
@@ -67,6 +67,18 @@ const LINKS: Record<HubLocale, Item[]> = {
     { icon: "guide", href: "/fr/newsletter", event: "bio-societe", label: "Rejoignez la Société", text: "Le meilleur de Minorque, seulement quand cela en vaut la peine. Sans bruit.", featured: true },
     { icon: "magazine", href: "/fr/", event: "bio-revue", label: "La revue", text: "Tout Calma Society : Minorque, sans hâte, dans un regard de luxe tranquille." },
   ],
+  // DE: las CUATRO herramientas ya existen en alemán (KAN-134), así que van todas.
+  // La única que falta es la guía de calas (el lead magnet): no hay PDF ni grupo de
+  // MailerLite en alemán, así que la tarjeta destacada capta hacia /de/newsletter
+  // sin prometer una guía que todavía no se entrega — mismo criterio que en FR.
+  de: [
+    { icon: "planner", href: "/de/reiseplaner", event: "bio-reiseplaner", label: "Reiseplaner", text: "Ihre maßgeschneiderte Route, Tag für Tag, nach dem, was Sie mögen." },
+    { icon: "calm", href: "/de/wo-das-meer-ruhig-ist", event: "bio-ruhiges-meer", label: "Wo das Meer ruhig ist", text: "Welche Buchten heute geschützt liegen, je nach Wind." },
+    { icon: "sunset", href: "/de/sonnenuntergaenge-und-drinks", event: "bio-sonnenuntergaenge", label: "Sonnenuntergänge & Drinks", text: "Die schönsten Sonnenuntergänge und wo Sie danach etwas trinken." },
+    { icon: "agenda", href: "/de/veranstaltungen", event: "bio-veranstaltungen", label: "Menorcas Veranstaltungen", text: "Feste, Konzerte und Märkte. Was auf der Insel passiert, aktuell gehalten." },
+    { icon: "guide", href: "/de/newsletter", event: "bio-society", label: "Der Society beitreten", text: "Das Beste von Menorca, nur wenn es sich lohnt. Ohne Lärm.", featured: true },
+    { icon: "magazine", href: "/de/", event: "bio-magazin", label: "Das Magazin", text: "Calma Society in Gänze: Menorca, ohne Eile, mit dem Blick des stillen Luxus." },
+  ],
 };
 
 const COPY: Record<HubLocale, { eyebrow: string; heading: string; sub: string; follow: string }> = {
@@ -87,6 +99,12 @@ const COPY: Record<HubLocale, { eyebrow: string; heading: string; sub: string; f
     heading: "Tout, au même endroit",
     sub: "Nos outils et nos guides pour vivre Minorque avec calme. Choisissez par où commencer.",
     follow: "Suivez-nous sur Instagram",
+  },
+  de: {
+    eyebrow: `${SITE.name} · ${SITE.edition}`,
+    heading: "Alles an einem Ort",
+    sub: "Unsere Werkzeuge und Leitfäden, um Menorca in Ruhe zu erleben. Wählen Sie, wo Sie beginnen.",
+    follow: "Folgen Sie uns auf Instagram",
   },
 };
 

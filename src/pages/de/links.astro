@@ -1,0 +1,18 @@
+---
+// Hub "link in bio" (DE): /de/links — Ziel des Links in der Bio in den sozialen Netzen.
+// Versammelt die Werkzeuge und Leitfäden, DIE es auf Deutsch GIBT. Die URL wird mit
+// UTM verlinkt (`?utm_source=instagram|pinterest&utm_medium=bio`); intern misst Umami.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import LinkHub from "../../components/LinkHub.astro";
+
+const alternates = { es: "/enlaces", en: "/en/links", fr: "/fr/liens", de: "/de/links" };
+---
+
+<BaseLayout
+  title="Links"
+  description="Alle Werkzeuge von Calma Society an einem Ort: die Karte des ruhigen Meeres, die Sonnenuntergänge, der Reiseplaner und die Veranstaltungen Menorcas — mit dem Blick des stillen Luxus."
+  locale="de"
+  alternates={alternates}
+>
+  <LinkHub locale="de" />
+</BaseLayout>

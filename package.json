@@ -15,7 +15,8 @@
     "import:agenda": "node scripts/import-agenda.mjs",
     "drafts": "node scripts/list-drafts.mjs",
     "test": "node --test \"src/lib/**/*.test.ts\"",
-    "paridad": "node scripts/check-paridad-idiomas.mjs"
+    "paridad": "node scripts/check-paridad-idiomas.mjs",
+    "auditar": "node scripts/auditar-web.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^6.0.3",
