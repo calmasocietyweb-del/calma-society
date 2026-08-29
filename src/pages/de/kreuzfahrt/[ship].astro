@@ -1,0 +1,71 @@
+---
+/**
+ * Kreuzfahrtschiff-Seite (DE): /de/kreuzfahrt/<ship>
+ * Wie die spanische: nur Schiffe, die MEHRFACH anlaufen und geprüfte Zeiten haben.
+ * Keine Seite pro Anlauf: Das wären 97 fast identische Seiten, also Füllmaterial.
+ */
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import CruiseShipPage from "../../../components/CruiseShipPage.astro";
+import JsonLd from "../../../components/JsonLd.astro";
+import cruceros from "../../../data/cruceros-menorca-2026.json";
+import { barcosConPagina, enHoras, type Call } from "../../../lib/cruises";
+
+export async function getStaticPaths() {
+  const barcos = barcosConPagina((cruceros as { calls: Call[] }).calls);
+  return barcos.map((barco) => ({ params: { ship: barco.slug }, props: { barco } }));
+}
+
+const { barco } = Astro.props;
+const fuente = {
+  updated: (cruceros as any).updated as string,
+  coveragePct: (cruceros as any).coveragePct as number,
+  officialSource: (cruceros as any).officialSource as string,
+};
+
+const alternates = {
+  es: `/crucero/${barco.slug}`,
+  en: `/en/cruise/${barco.slug}`,
+  de: `/de/kreuzfahrt/${barco.slug}`,
+};
+
+const title = `${barco.ship} auf Menorca: was tun bei Ihrem Anlauf in Mahón`;
+const description = `Die ${barco.ship} legt in Mahón um ${barco.arrival} an und läuft um ${barco.departure} aus: Das lässt Ihnen rund ${enHoras(barco.utilesMin, "de")} an Land. Wofür Sie Zeit haben, wofür nicht, und wie Sie vorankommen, ohne das Schiff zu verpassen.`;
+
+const faq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: `Wie viel Zeit habe ich beim Anlauf der ${barco.ship} in Mahón an Land?`,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: `Die ${barco.ship} legt um ${barco.arrival} an und läuft um ${barco.departure} aus (${enHoras(barco.escalaMin, "de")} im Hafen). Zieht man rund 30 Minuten fürs Ausschiffen und 60 Minuten Puffer für die Rückkehr an Bord ab, bleiben Ihnen etwa ${enHoras(barco.utilesMin, "de")} echte Zeit an Land.`,
+      },
+    },
+    {
+      "@type": "Question",
+      name: `Reicht die Zeit, um von der ${barco.ship} aus Ciutadella zu besuchen?`,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: barco.caben.some((p) => p.id === "ciutadella" || p.id === "ciutadella-y-cala")
+          ? `Ja. Ciutadella liegt 45 Autominuten vom Hafen von Mahón entfernt, also 90 Minuten hin und zurück: Mit rund ${enHoras(barco.utilesMin, "de")} an Land geht das mit Puffer auf.${barco.noCaben.some((p) => p.id === "ciutadella-y-cala") ? " Was nicht aufgeht, ist Ciutadella und eine Bucht im Süden am selben Tag zu verketten." : ""}`
+          : `Nicht in Ruhe. Ciutadella liegt 45 Autominuten entfernt (90 hin und zurück), und mit rund ${enHoras(barco.utilesMin, "de")} an Land würden Sie ständig auf die Uhr sehen.`,
+      },
+    },
+    {
+      "@type": "Question",
+      name: `Wie komme ich während des Anlaufs auf Menorca voran?`,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: `Mit einem privaten Chauffeur auf Stundenbasis werden Sie am Kai abgeholt, dorthin gebracht, wohin Sie möchten, dort erwartet und mit Puffer zum Schiff zurückgebracht; es gibt auch direkte Transfers Hafen ↔ Ziel.${barco.desembarcoMasivo ? " Dieses Schiff setzt mehr als 1.500 Menschen auf einmal an Land, und die Taxis am Hafen sind schnell vergriffen: Ein gebuchter Wagen spart Ihnen die erste Stunde." : ""}`,
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout title={title} appendSiteName={false} description={description} locale="de" alternates={alternates}>
+  <JsonLd schema={faq} />
+  <CruiseShipPage barco={barco} locale="de" fuente={fuente} />
+</BaseLayout>

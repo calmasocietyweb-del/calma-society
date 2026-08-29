@@ -16,9 +16,9 @@ import { srcset } from "../lib/img";
 import type { Locale } from "../config/site";
 
 /* Las páginas de escala existen en español e inglés. Con `locale: Locale`, un
-   idioma nuevo caía al inglés en los 13 sitios donde decide `isEs` —incluido el
+   idioma nuevo caía al inglés en los 13 sitios donde decidía `isEs` —incluido el
    formato de fechas— sin dar un aviso. Declarado, es error de compilación (KAN-133). */
-type ToolLocale = Extract<Locale, "es" | "en">;
+type ToolLocale = Extract<Locale, "es" | "en" | "de">;
 
 interface Props {
   barco: Barco;
@@ -27,10 +27,13 @@ interface Props {
   fuente: { updated: string; coveragePct: number; officialSource: string };
 }
 const { barco: b, locale, fuente } = Astro.props;
-const isEs = locale === "es";
 
-const T = isEs
-  ? {
+/* Registro por idioma: `isEs ? español : inglés` mandaba al alemán al inglés
+   en los 13 sitios donde decidía (KAN-134). */
+const tr = <T,>(m: Record<ToolLocale, T>): T => m[locale];
+
+const TEXTOS = {
+  es: {
       kicker: "Escala de crucero en Maó",
       horario: "Tu escala, hora a hora",
       atraca: "Atraca",
@@ -78,8 +81,8 @@ const T = isEs
       fotoPie: "En el muelle de Maó, a la hora del atraque · Foto: Menorca Bus",
       fotoAltAida: "La flota de Menorca Bus esperando al pie del AIDAstella en el muelle de cruceros de Maó.",
       fotoPieAida: "Tu coche, esperando a tu barco: la flota ante el AIDAstella en Maó · Foto: Menorca Bus",
-    }
-  : {
+  },
+  en: {
       kicker: "Cruise call in Maó",
       horario: "Your call, hour by hour",
       atraca: "Arrives",
@@ -127,11 +130,62 @@ const T = isEs
       fotoPie: "On the quay in Maó, at docking time · Photo: Menorca Bus",
       fotoAltAida: "The Menorca Bus fleet waiting beside AIDAstella on the cruise quay in Maó.",
       fotoPieAida: "Your car, waiting for your ship: the fleet before AIDAstella in Maó · Photo: Menorca Bus",
-    };
+  },
+  de: {
+      kicker: "Kreuzfahrt-Anlauf in Mahón",
+      horario: "Ihr Landgang, Stunde für Stunde",
+      atraca: "Ankunft",
+      zarpa: "Auslaufen",
+      escala: "Liegezeit",
+      utiles: "Echte Zeit an Land",
+      comoSale: "Woher diese Zahl kommt",
+      cuenta:
+        "Von der Liegezeit ziehen wir 30 Minuten fürs Ausschiffen und Verlassen des Kais ab sowie 60 Minuten Puffer für den Rückweg: Das „all aboard“ liegt meist eine halbe bis eine Stunde vor dem Auslaufen, und wir rechnen mit dem schlechtesten Fall. Uns ist lieber, Sie haben Zeit übrig, als dass Sie rennen müssen.",
+      cabe: "Wofür Sie Zeit haben",
+      justo: "wird knapp",
+      margen: "bleibt Ihnen",
+      noCabe: "Wofür Sie KEINE Zeit haben",
+      noCabeIntro: "Mit Ihren Stunden geht das nicht auf. Wir sagen es Ihnen lieber, als Ihnen einen Wettlauf zu verkaufen:",
+      masivo: "Sie gehen zu vielen gleichzeitig an Land",
+      masivoTxt:
+        "Dieses Schiff setzt mehr als 1.500 Menschen an einem kleinen Kai ab. Die erste halbe Stunde ist Schlangestehen, und die Taxis am Hafen sind schnell vergriffen. Wenn Ihr Wagen wartet, beginnen Sie den Tag eine Stunde vor allen anderen.",
+      manana: "Anlauf am Vormittag",
+      mananaTxt: "Sie laufen am frühen Nachmittag aus: Das Mittagessen fällt an Bord. Alles Folgende rechnet damit.",
+      atardecer: "Sie haben Zeit für den Sonnenuntergang",
+      atardecerTxt:
+        "Sie laufen spät genug aus, um die Sonne an Land untergehen zu sehen — ein Luxus, den fast kein Anlauf erlaubt.",
+      cena: "Und sogar für ein Abendessen an Land",
+      cenaTxt: "Mit dieser Auslaufzeit bleibt Raum für ein richtiges Abendessen am Hafen oder in Fornells, bevor Sie zurückkehren.",
+      fechas: "Wann das Schiff Mahón anläuft",
+      fechasNota: "Termine aus dem Anlaufkalender von Mahón",
+      aviso: "Die Zeiten können sich ändern",
+      avisoTxt:
+        "Dies sind die üblichen Zeiten dieses Schiffes in Mahón, kein Versprechen: Die Reederei kann sie ändern, und das Meer hat das letzte Wort. Bestätigen Sie die Rückkehrzeit immer bei Ihrem Schiff. Kalender aktualisiert am {fecha}; er deckt rund {cobertura} % der Saison ab.",
+      verCalendario: "Den vollständigen Kreuzfahrtkalender ansehen",
+      sigue: "Hier geht es weiter",
+      planificador: "Reiseplaner",
+      planificadorTxt: "Wenn Sie mit mehr Tagen wiederkommen, bauen wir Ihnen die ganze Reise.",
+      marEnCalma: "Wo das Meer ruhig ist",
+      marEnCalmaTxt: "Bevor Sie eine Bucht wählen: Sehen Sie nach, wo heute kein Wind weht.",
+      atardeceres: "Sonnenuntergänge und Drinks",
+      atardeceresTxt: "Wo die Sonne untergeht und wo Sie danach etwas trinken.",
+      comer: "Essen und Trinken",
+      comerTxt: "Wo Sie zu Abend essen, ohne danebenzugreifen.",
+      busTitle: "Damit es nicht zu spät wird",
+      busText:
+        "Das Risiko eines Landgangs ist nicht Langeweile, sondern der Blick auf die Uhr. Mit privatem Chauffeur werden Sie am Kai abgeholt, dorthin gebracht, wohin Sie möchten, dort erwartet und mit Puffer zum Schiff zurückgebracht. Es gibt auch direkte Transfers Hafen ↔ Ziel.",
+      busCta: "Mit Menorca Bus buchen",
+      fotoAlt: "Mercedes E-Klasse und V-Klasse von Menorca Bus warten am Kreuzfahrtkai von Mahón.",
+      fotoPie: "Am Kai von Mahón, zur Anlegezeit · Foto: Menorca Bus",
+      fotoAltAida: "Die Flotte von Menorca Bus wartet neben der AIDAstella am Kreuzfahrtkai von Mahón.",
+      fotoPieAida: "Ihr Wagen wartet auf Ihr Schiff: die Flotte vor der AIDAstella in Mahón · Foto: Menorca Bus",
+  },
+};
+const T = TEXTOS[locale];
 
 const fmtFecha = (iso: string) => {
   const [y, m, d] = iso.split("-").map(Number);
-  return new Intl.DateTimeFormat(isEs ? "es-ES" : "en-GB", { day: "numeric", month: "long", timeZone: "UTC" }).format(
+  return new Intl.DateTimeFormat(tr({ es: "es-ES", en: "en-GB", de: "de-DE" }), { day: "numeric", month: "long", timeZone: "UTC" }).format(
     new Date(Date.UTC(y, m - 1, d)),
   );
 };
@@ -148,15 +202,15 @@ const foto = esAidastella
   ? { src: "/uploads/mb-flota-aidastella.webp", w: 1600, h: 2400, aspect: "aspect-[2/3]", alt: T.fotoAltAida, pie: T.fotoPieAida }
   : { src: "/uploads/mb-flota-muelle.webp", w: 1600, h: 1066, aspect: "aspect-[3/2]", alt: T.fotoAlt, pie: T.fotoPie };
 
-const calendarioHref = isEs ? "/articulo/cruceros-en-menorca-2026" : "/en/article/cruises-in-menorca-2026";
+const calendarioHref = tr({ es: "/articulo/cruceros-en-menorca-2026", en: "/en/article/cruises-in-menorca-2026", de: "/de/artikel/kreuzfahrten-menorca-2026" });
 const enlaces = [
-  { href: isEs ? "/planificador" : "/en/trip-planner", t: T.planificador, d: T.planificadorTxt },
-  { href: isEs ? "/donde-el-mar-esta-en-calma" : "/en/where-the-sea-is-calm", t: T.marEnCalma, d: T.marEnCalmaTxt },
+  { href: tr({ es: "/planificador", en: "/en/trip-planner", de: "/de/reiseplaner" }), t: T.planificador, d: T.planificadorTxt },
+  { href: tr({ es: "/donde-el-mar-esta-en-calma", en: "/en/where-the-sea-is-calm", de: "/de/wo-das-meer-ruhig-ist" }), t: T.marEnCalma, d: T.marEnCalmaTxt },
   // Solo si sus horas lo permiten: no se ofrece un atardecer a quien zarpa a las cuatro.
   ...(b.llegaAlAtardecer
-    ? [{ href: isEs ? "/atardeceres-y-copas" : "/en/sunsets-and-drinks", t: T.atardeceres, d: T.atardeceresTxt }]
+    ? [{ href: tr({ es: "/atardeceres-y-copas", en: "/en/sunsets-and-drinks", de: "/de/sonnenuntergaenge-und-drinks" }), t: T.atardeceres, d: T.atardeceresTxt }]
     : []),
-  ...(b.daParaCenar ? [{ href: isEs ? "/comer-y-beber" : "/en/eat-and-drink", t: T.comer, d: T.comerTxt }] : []),
+  ...(b.daParaCenar ? [{ href: tr({ es: "/comer-y-beber", en: "/en/eat-and-drink", de: "/de/essen-und-trinken" }), t: T.comer, d: T.comerTxt }] : []),
 ];
 ---
 
@@ -164,9 +218,11 @@ const enlaces = [
   <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">{T.kicker}</p>
   <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">{b.ship}</h1>
   <p class="lead mt-5">
-    {isEs
-      ? `El ${b.ship} (${b.line}) atraca en Maó a las ${b.arrival} y zarpa a las ${b.departure}. Descontando el desembarque y el margen de vuelta, te quedan unas ${enHoras(b.utilesMin, "es")} de verdad en tierra. Esto es lo que da de sí ese tiempo — y lo que no.`
-      : `The ${b.ship} (${b.line}) berths in Maó at ${b.arrival} and sails at ${b.departure}. Once you take off disembarking and the margin to get back, you have around ${enHoras(b.utilesMin, "en")} truly ashore. Here is what that time is good for — and what it isn't.`}
+    {tr({
+      es: `El ${b.ship} (${b.line}) atraca en Maó a las ${b.arrival} y zarpa a las ${b.departure}. Descontando el desembarque y el margen de vuelta, te quedan unas ${enHoras(b.utilesMin, "es")} de verdad en tierra. Esto es lo que da de sí ese tiempo — y lo que no.`,
+      en: `The ${b.ship} (${b.line}) berths in Maó at ${b.arrival} and sails at ${b.departure}. Once you take off disembarking and the margin to get back, you have around ${enHoras(b.utilesMin, "en")} truly ashore. Here is what that time is good for — and what it isn't.`,
+      de: `Die ${b.ship} (${b.line}) legt in Mahón um ${b.arrival} an und läuft um ${b.departure} wieder aus. Nach Abzug des Ausschiffens und des Puffers für den Rückweg bleiben Ihnen rund ${enHoras(b.utilesMin, "de")} echte Zeit an Land. Das ist es, was diese Zeit hergibt — und was nicht.`,
+    })}
   </p>
 </div>
 
@@ -185,11 +241,11 @@ const enlaces = [
       </div>
       <div>
         <dt class="text-xs uppercase tracking-wider text-piedra-suave">{T.escala}</dt>
-        <dd class="font-display text-2xl text-piedra">{enHoras(b.escalaMin, locale as "es" | "en")}</dd>
+        <dd class="font-display text-2xl text-piedra">{enHoras(b.escalaMin, locale)}</dd>
       </div>
       <div>
         <dt class="text-xs uppercase tracking-wider text-oro">{T.utiles}</dt>
-        <dd class="font-display text-2xl text-arcilla">{enHoras(b.utilesMin, locale as "es" | "en")}</dd>
+        <dd class="font-display text-2xl text-arcilla">{enHoras(b.utilesMin, locale)}</dd>
       </div>
     </dl>
     <details class="mt-4 border-t border-niebla pt-3">
@@ -232,14 +288,14 @@ const enlaces = [
     {b.caben.map((p) => (
       <li class="rounded-xl border border-niebla bg-lino p-4">
         <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-          <h3 class="font-display text-lg text-tinta">{isEs ? p.es : p.en}</h3>
+          <h3 class="font-display text-lg text-tinta">{tr({ es: p.es, en: p.en, de: p.de })}</h3>
           <span class={`text-xs font-semibold ${vaJusto(p, b.utilesMin) ? "text-terracota" : "text-piedra-suave"}`}>
             {vaJusto(p, b.utilesMin)
               ? T.justo
-              : `${T.margen} ${enHoras(margenDe(p, b.utilesMin), locale as "es" | "en")}`}
+              : `${T.margen} ${enHoras(margenDe(p, b.utilesMin), locale)}`}
           </span>
         </div>
-        <p class="mt-1 text-sm leading-relaxed text-piedra-suave">{isEs ? p.detalleEs : p.detalleEn}</p>
+        <p class="mt-1 text-sm leading-relaxed text-piedra-suave">{tr({ es: p.detalleEs, en: p.detalleEn, de: p.detalleDe })}</p>
       </li>
     ))}
   </ol>
@@ -252,8 +308,8 @@ const enlaces = [
       <ul class="mt-3 space-y-2">
         {b.noCaben.map((p) => (
           <li class="rounded-xl border border-niebla bg-arena/40 p-4">
-            <p class="font-medium text-tinta">{isEs ? p.es : p.en}</p>
-            <p class="mt-1 text-sm leading-relaxed text-piedra-suave">{isEs ? p.detalleEs : p.detalleEn}</p>
+            <p class="font-medium text-tinta">{tr({ es: p.es, en: p.en, de: p.de })}</p>
+            <p class="mt-1 text-sm leading-relaxed text-piedra-suave">{tr({ es: p.detalleEs, en: p.detalleEn, de: p.detalleDe })}</p>
           </li>
         ))}
       </ul>

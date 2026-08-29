@@ -30,14 +30,13 @@ const { lang = "es" } = Astro.props;
 const conPagina = new Map(
   barcosConPagina((cruceros as { calls: Call[] }).calls).map((b) => [b.ship, b.slug]),
 );
-/* Prefijo de la página de barco por idioma. El alemán va a `null` A PROPÓSITO: esas
-   páginas todavía no existen en alemán (dependen de las herramientas, que no están
-   localizadas). El barco sale entonces como texto plano — igual que los barcos sin
-   página — en vez de enlazar a un 404 o de colar al lector en el sitio español. */
+/* Prefijo de la página de barco por idioma. Si un idioma no tiene esas páginas, va
+   a `null` y el barco sale como texto plano —igual que los barcos sin página— en vez
+   de enlazar a un 404 o de colar al lector en el sitio español. */
 const RUTA_BARCO: Record<LangCalendario, string | null> = {
   es: "/crucero",
   en: "/en/cruise",
-  de: null,
+  de: "/de/kreuzfahrt",
 };
 const paginaDe = (ship: string) => {
   const slug = conPagina.get(ship);
