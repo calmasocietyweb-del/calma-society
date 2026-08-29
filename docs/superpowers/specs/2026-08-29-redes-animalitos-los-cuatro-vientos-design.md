@@ -331,6 +331,25 @@ Quedan aquí para que nadie las vuelva a asumir.
    demasiado pequeño. La §12.1 se matiza abajo — y no importa, porque a ese tamaño la deriva
    tampoco se ve.
 
+Y otras tres que aparecieron al generar la primera semana completa:
+
+6. **El plano y la acción pueden contradecirse.** Salió un *primerísimo plano solo de la cara*
+   sobre «de pie ante los fogones removiendo una cazuela», y un *detalle de solo las patas, la
+   cabeza cortada* sobre «oteando la llegada del barco», que necesita cabeza. Cada acción
+   declara ahora su **foco** (`manos`, `cara` o `cuerpo`) y el plano se elige **después** de la
+   acción, entre los que pueden contarla.
+7. **Los accesorios se pegaban al azar**: un catalejo mientras cocinaba, un periódico doblado
+   mientras pelaba un higo. Ahora el accesorio solo aparece en acciones de **cuerpo** (viaje,
+   movimiento), donde llevar algo encima tiene sentido; las de manos ya traen su objeto.
+8. ⚠️ **Prohibir el texto en los negativos NO funciona.** Pedir «leyendo el periódico» y a la
+   vez «no text» son órdenes que se contradicen, y gana la acción: salió un mochuelo con la
+   cabecera real de *Diario de Menorca* y titulares en jerigonza — texto en la imagen (contra
+   la regla 6) y encima el nombre de una publicación real. Y al intentar prohibirlo nombrando
+   «publicaciones y marcas reales», el filtro de contenido de Higgsfield **rechazó la
+   generación**. La solución que sí funciona es **describir cómo se ve el papel**: doblado,
+   cerrado o vuelto de espaldas a la cámara. Las nueve acciones con papel impreso van marcadas
+   con `impreso: true`.
+
 ## 12. Definición de "hecho" de una pieza
 
 Una imagen está lista para programarse cuando:
