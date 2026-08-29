@@ -69,6 +69,7 @@ const breadcrumb = breadcrumbSchema([
 
 <BaseLayout
   title={data.seo?.title ?? data.title}
+  appendSiteName={false}
   description={data.seo?.description ?? data.excerpt}
   locale={locale}
   alternates={alternates}

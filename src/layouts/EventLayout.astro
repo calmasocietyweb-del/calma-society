@@ -14,7 +14,7 @@ import { getSection } from "../config/sections";
 import { articleSlugFor, placeSlugFor, getUpcomingEvents } from "../lib/content";
 import { abs, eventSchema, breadcrumbSchema } from "../lib/schema";
 import { srcset } from "../lib/img";
-import { elegirTitulo } from "../lib/seo-title";
+import { elegirTitulo, MAX_TITULO_SIN_MARCA } from "../lib/seo-title";
 
 interface Props {
   entry: CollectionEntry<"eventos">;
@@ -105,11 +105,14 @@ const TITLE_SUFFIX_CORTO: Record<Locale, string> = {
    el corto, y solo se cae al título desnudo si ninguno cabe. En los nombres
    propios idénticos en todos los idiomas —«Festes de Gràcia»— el hreflang y el
    canonical siguen declarando la relación entre versiones. */
-const seoTitle = elegirTitulo([
-  `${data.title} — ${TITLE_SUFFIX[locale]}`,
-  `${data.title} — ${TITLE_SUFFIX_CORTO[locale]}`,
-  data.title,
-]);
+const seoTitle = elegirTitulo(
+  [
+    `${data.title} — ${TITLE_SUFFIX[locale]}`,
+    `${data.title} — ${TITLE_SUFFIX_CORTO[locale]}`,
+    data.title,
+  ],
+  MAX_TITULO_SIN_MARCA,
+);
 
 const canonical = abs(eventUrl(locale, entry.id));
 const eventLd = eventSchema({
@@ -139,6 +142,7 @@ const breadcrumb = breadcrumbSchema([
 
 <BaseLayout
   title={seoTitle}
+  appendSiteName={false}
   description={data.description}
   locale={locale}
   alternates={alternates}

@@ -9,7 +9,7 @@ import { placeUrl, homePath, placesIndexPath, businessPath } from "../i18n/utils
 import { publishedPlaces, relatedPlaces } from "../lib/places";
 import { abs, placeSchema, breadcrumbSchema } from "../lib/schema";
 import { srcset } from "../lib/img";
-import { elegirTitulo } from "../lib/seo-title";
+import { elegirTitulo, MAX_TITULO_SIN_MARCA } from "../lib/seo-title";
 import { menorcaBusUrl, partnerUrl } from "../lib/links";
 import { googleRatings, fmtScore, fmtReviews } from "../data/google-ratings";
 import MenorcaBusPromo from "../components/MenorcaBusPromo.astro";
@@ -168,10 +168,11 @@ const seoTitle = elegirTitulo(
         `${data.name} — ${areaCorta}`,
         data.name,
       ],
+  MAX_TITULO_SIN_MARCA,
 );
 ---
 
-<BaseLayout title={seoTitle} description={data.seo?.description ?? data.description} locale={locale} alternates={alternates}>
+<BaseLayout title={seoTitle} appendSiteName={false} description={data.seo?.description ?? data.description} locale={locale} alternates={alternates}>
   <article class="mx-auto max-w-prosa px-5 pb-8 pt-12 sm:px-8 sm:pt-16">
     <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">
       {placeTypeLabel(data.type, locale)} · {data.area}

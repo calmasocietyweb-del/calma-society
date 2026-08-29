@@ -38,6 +38,8 @@ interface Props {
   authorName?: string;
   /** Excluir de buscadores (p. ej. páginas de "gracias"). */
   noindex?: boolean;
+  /** Ver `appendSiteName` en Seo.astro: las páginas de detalle lo ponen a false. */
+  appendSiteName?: boolean;
   /**
    * Imagen LCP a PRECARGAR (la foto del hero de la página, en /uploads/*.webp).
    * Emite un `<link rel="preload" as="image">` con su `srcset`/`sizes`, para que
@@ -68,6 +70,7 @@ const {
   modifiedTime,
   authorName,
   noindex = false,
+  appendSiteName = true,
   heroImage,
   heroImageSizes = "100vw",
   heroImageAvif = false,
@@ -186,6 +189,7 @@ const umamiOrigin = (() => {
       modifiedTime={modifiedTime}
       authorName={authorName}
       noindex={noindex}
+      appendSiteName={appendSiteName}
     />
 
     <meta name="theme-color" content="#73402d" />

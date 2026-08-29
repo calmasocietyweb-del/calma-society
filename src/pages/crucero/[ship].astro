@@ -68,7 +68,7 @@ const faq = {
 };
 ---
 
-<BaseLayout title={title} description={description} locale="es" alternates={alternates}>
+<BaseLayout title={title} appendSiteName={false} description={description} locale="es" alternates={alternates}>
   <JsonLd schema={faq} />
   <CruiseShipPage barco={barco} locale="es" fuente={fuente} />
 </BaseLayout>

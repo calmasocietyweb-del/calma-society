@@ -13,7 +13,15 @@
  */
 import { SITE } from "../config/site.ts";
 
+/** Presupuesto cuando Seo.astro AÑADE « · Calma Society» detrás (páginas de índice). */
 export const MAX_TITULO = 60 - ` · ${SITE.name}`.length;
+
+/**
+ * Presupuesto de las páginas de DETALLE, que desde KAN-136 no llevan la marca en
+ * el `<title>`: los 60 caracteres visibles son enteros para la pieza. Son 17 más
+ * que antes, y por eso muchos títulos vuelven a caber con su sufijo de sección.
+ */
+export const MAX_TITULO_SIN_MARCA = 60;
 
 /**
  * Palabras que no pueden quedarse solas al final de un recorte. Cortar por

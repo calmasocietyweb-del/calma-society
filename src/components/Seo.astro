@@ -17,6 +17,21 @@ interface Props {
   authorName?: string;
   /** Excluir de buscadores (p. ej. páginas de "gracias"). */
   noindex?: boolean;
+  /**
+   * Añadir « · Calma Society» al `<title>`. Por defecto sí.
+   *
+   * Las páginas de DETALLE (artículo, evento, ficha, barco) lo ponen a `false`:
+   * la marca ocupa 16 de los ~60 caracteres que Google enseña —un 27 % del
+   * espacio útil— y ahí el nombre propio de la pieza vale más. Google ya muestra
+   * el nombre del sitio por separado en los resultados de móvil, tomándolo del
+   * JSON-LD `WebSite`/`Organization` que emitimos igualmente, así que repetirlo
+   * en el `<title>` es en buena parte redundante (KAN-136).
+   *
+   * OJO: solo afecta al `<title>`. `og:title` y `twitter:title` MANTIENEN la
+   * marca — al compartir en redes no hay corte a 60 caracteres y ahí el nombre
+   * sí aporta contexto.
+   */
+  appendSiteName?: boolean;
 }
 const {
   title,
@@ -30,9 +45,12 @@ const {
   modifiedTime,
   authorName,
   noindex = false,
+  appendSiteName = true,
 } = Astro.props;
 
+/** Con marca: lo que se comparte en redes. Sin ella: lo que ve Google. */
 const fullTitle = `${title} · ${SITE.name}`;
+const pageTitle = appendSiteName ? fullTitle : title;
 const canonical = Astro.url.href;
 const ogLocale = getLocaleConfig(locale).htmlLang.replace("-", "_");
 // Imagen por defecto al compartir (Open Graph/Twitter): la portada de marca.
@@ -73,7 +91,7 @@ const xDefault = alternates?.[SITE.defaultLocale]
   : undefined;
 ---
 
-<title>{fullTitle}</title>
+<title>{pageTitle}</title>
 <meta name="description" content={metaDesc} />
 {/* max-image-preview:large permite a Google mostrar la imagen grande en
     Discover y en resultados (requisito práctico para salir en Discover). */}
