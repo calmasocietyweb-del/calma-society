@@ -1,0 +1,48 @@
+---
+// "Wo das Meer ruhig ist" (DE) — täglicher Bericht zum Windschutz je Bucht.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ParteCalmaMap from "../../components/ParteCalmaMap.astro";
+import NewsletterSignup from "../../components/NewsletterSignup.astro";
+
+const alternates = {
+  es: "/donde-el-mar-esta-en-calma",
+  en: "/en/where-the-sea-is-calm",
+  fr: "/fr/ou-la-mer-est-calme",
+  de: "/de/wo-das-meer-ruhig-ist",
+};
+---
+
+<BaseLayout
+  title="Wo das Meer ruhig ist"
+  description="Der tägliche Bericht zu Menorcas Buchten: wo das Wasser beim heutigen Wind am ruhigsten bleibt. Eine redaktionelle Einschätzung, keine amtliche Sicherheitswarnung."
+  locale="de"
+  alternates={alternates}
+>
+  <div class="mx-auto max-w-prosa px-5 pt-12 sm:px-8 sm:pt-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Calma Society · Menorca</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Wo das Meer ruhig ist</h1>
+    <p class="lead mt-5">
+      Der tägliche Bericht zu Menorcas Buchten: wo der Wind von heute das Wasser ruhig genug
+      lässt, um in aller Ruhe zu baden.
+    </p>
+    <p class="mt-5 text-base leading-relaxed text-piedra-suave">
+      Auf Menorca bestimmt der Wind. Weht die <strong>Tramuntana</strong> aus dem Norden, atmet
+      der Süden auf; drückt der Südwind, lohnt der Blick nach Norden. Wir legen die
+      Windvorhersage über die Ausrichtung jeder Bucht und schätzen so ihren
+      <strong>Schutz</strong> für heute. Wir messen nicht die Sicherheit beim Baden — wohl aber
+      die Ruhe des Meeres.
+    </p>
+    <p class="mt-4 text-base leading-relaxed text-piedra-suave">
+      Wir decken <strong>75 Buchten und Badezonen</strong> der ganzen Insel ab, und Sie sehen die
+      Vorhersage für <strong>heute und die nächsten Tage</strong>. Sie möchten wissen, wie wir
+      das berechnen? Wir erklären es unter
+      <a class="text-arcilla underline decoration-niebla underline-offset-4 hover:decoration-terracota" href="/de/wie-wir-die-ruhe-berechnen">wie wir die Ruhe berechnen</a>.
+    </p>
+  </div>
+
+  <div class="mt-10">
+    <ParteCalmaMap locale="de" />
+  </div>
+
+  <NewsletterSignup variant="inline" origen="herramienta" umamiEvent="newsletter-submit-herramienta" />
+</BaseLayout>

@@ -20,7 +20,7 @@ import { useTranslations } from "../i18n/ui";
    un ERROR DE COMPILACIÓN, no una página alemana escrita en inglés. Al traducir
    la herramienta, se añade el idioma aquí y TypeScript señala todo lo que falta
    por rellenar (KAN-133). */
-type ToolLocale = Extract<Locale, "es" | "en" | "fr">;
+type ToolLocale = Extract<Locale, "es" | "en" | "fr" | "de">;
 
 interface Props {
   locale: ToolLocale;
@@ -133,9 +133,44 @@ const faqsFr = [
   },
 ];
 
+const faqsDe = [
+  {
+    q: "Wann geht auf Menorca die Sonne unter?",
+    a: "Das hängt von der Jahreszeit ab. Im Hochsommer (Juni–Juli) geht die Sonne gegen 21:15–21:20 Uhr unter; im Frühjahr und Herbst zwischen 18:30 und 20:30 Uhr; und im tiefsten Winter gegen 17:20 Uhr. Die goldene Stunde liegt in den 30 bis 40 Minuten davor. Weiter oben auf dieser Seite finden Sie die Tabelle Monat für Monat mit den genauen Zeiten für Sonnenauf- und -untergang.",
+  },
+  {
+    q: "Wo sieht man auf Menorca die schönsten Sonnenuntergänge?",
+    a: "Die Klassiker im Westen und Norden: die Cova d'en Xoroi in der Steilküste von Cala'n Porter, wo man den Sonnenuntergang aus dem Inneren des Felsens betrachtet; das Cap de Cavalleria und der Leuchtturm von Favàritx, rau und dramatisch; Punta Nati und der Pont d'en Gil im Nordwesten von Ciutadella, in ihrer reinsten Form; und über dem Meer im Norden der Isabella Beach Club an den Platges de Fornells. Fast überall gibt es kaum Parkplätze — deshalb ist es am bequemsten, mit Chauffeur zu fahren.",
+  },
+  {
+    q: "Wo sieht man auf Menorca den Sonnenaufgang?",
+    a: "Mit Blick nach Osten. Es Castell und Cales Fonts gelten als einer der ersten Orte Spaniens, an denen die Sonne aufgeht; der Leuchtturm von Favàritx über seiner Mondlandschaft taugt für den Sonnenaufgang ebenso wie für den Sonnenuntergang; und die Gegend um Punta Prima, gegenüber der Illa de l'Aire, schenkt einen klaren Sonnenaufgang über dem Meer. Das sind Pläne für den frühen Morgen: ideal mit jemandem, der für Sie fährt.",
+  },
+  {
+    q: "Was sind die besten Beach Clubs auf Menorca?",
+    a: "Zu den bekanntesten zählen: Purobeach Menorca, der Isabella Beach Club (Fornells), der Artrutx Sea Club (Cala en Bosc), Cape Nao über der Cala Galdana, Bambú in Binibèquer und der Arena Beach Club. Es sind Orte für den Tag, der sich bis zum Drink im Sonnenuntergang zieht; im Sommer empfiehlt sich eine Reservierung, vor allem zum Abendessen.",
+  },
+  {
+    q: "Wo trinkt man auf Menorca einen guten Drink oder Cocktail?",
+    a: "Die besten Bars konzentrieren sich am Hafen von Mahón und am Hafen von Ciutadella. In Mahón das Vida Una (Vermut und Cocktails); an der Westküste das Jigger in Cala Blanca mit Autoren-Cocktails; und die sehr gut bewertete BB Cocktail Bar. Das sind Pläne für einen ruhigen Drink, nicht für die Diskothek.",
+  },
+  {
+    q: "Gibt es auf Menorca Nachtleben oder Diskotheken?",
+    a: "Ja, und es passt an zwei Orte. Die fünf Diskotheken der westlichen Inselhälfte liegen Schulter an Schulter auf sechzig Metern Kai im Hafen von Ciutadella: Jaleo (in einer natürlichen Höhle), IguanaPort, Jazzbah, Kopas und Lateral. In Mahón spielt die Nacht an der Hafensteigung: Akelarre, Ama-Gi und Mambo Deluxe. Außerhalb dieser beiden Punkte gibt es kaum etwas: In Cala en Porter muss die Musik unter freiem Himmel per Verordnung um 23:30 Uhr enden, und in Cales Fonts spielen die Restaurants auf Entscheidung des Hafens keine laute Musik. Neben den Diskotheken wandelt sich die Cova d'en Xoroi im Sommer von der Sonnenuntergangs-Lounge zum Club, und Es Claustre programmiert von Mai bis September Konzerte unter freiem Himmel in einem Kreuzgang aus dem 18. Jahrhundert, sonntags mit Jazz.",
+  },
+  {
+    q: "Kommt man auch ohne Auto hin? Warum empfehlen Sie einen Chauffeur?",
+    a: "Weil es das Bequemste und das Vernünftigste ist. An den Klippen zum Sonnenuntergang und in den Häfen gibt es fast nie einen Parkplatz — im Sommer ist alles schon im Morgengrauen voll —, und nach dem Drink ist Autofahren das Letzte, worauf man Lust hat. Deshalb bieten wir einen Transfer mit privatem Chauffeur an (Mercedes S-Klasse oder V-Klasse), vom ersten Sonnenuntergang bis zum letzten Cocktail: Wir bringen Sie hin und holen Sie wieder ab.",
+  },
+  {
+    q: "Wann haben diese Orte geöffnet?",
+    a: "Fast alles ist saisonal: Die Hauptsaison reicht von Mai–Juni bis September–Oktober, und viele Beach Clubs und Sonnenuntergangslokale schließen im Winter. Öffnungszeiten und Kapazitäten ändern sich jedes Jahr, deshalb sollten Sie vor dem Besuch auf der Website oder dem Instagram-Profil des jeweiligen Ortes nachsehen.",
+  },
+];
+
 /* Búsqueda por idioma, no escalera de ternarios: al ampliar `ToolLocale` estos
    registros dejan de compilar hasta que se rellenan. */
-const faqs = { es: faqsEs, en: faqsEn, fr: faqsFr }[locale];
+const faqs = { es: faqsEs, en: faqsEn, fr: faqsFr, de: faqsDe }[locale];
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -153,6 +188,7 @@ const eyebrow = {
   es: "Todo sobre la noche de Menorca",
   en: "All about Menorca after dark",
   fr: "Tout sur les nuits de Minorque",
+  de: "Alles über Menorca nach Einbruch der Dunkelheit",
 }[locale];
 ---
 

@@ -48,11 +48,13 @@ const TOOLS: Record<Locale, { href: string; label: string }[]> = {
     { href: "/fr/ou-la-mer-est-calme", label: "Mer calme" },
     { href: "/fr/couchers-et-cocktails", label: "Couchers & cocktails" },
   ],
-  // DE (despliegue por mercados): las herramientas van DETRÁS del contenido
-  // (llevan dataset propio y sus componentes aún no declaran "de" en ToolLocale).
-  // Mientras /de/wo-das-meer-ruhig-ist y /de/sonnenuntergaenge-und-drinks no
-  // existan, la lista va VACÍA: cero enlaces a páginas que no existen.
-  de: [],
+  // DE (despliegue por mercados): el mar en calma ya está traducido (KAN-134).
+  // El planificador y los atardeceres siguen fuera hasta que sus componentes
+  // declaren "de": solo se enlaza lo que EXISTE.
+  de: [
+    { href: "/de/wo-das-meer-ruhig-ist", label: "Ruhiges Meer" },
+    { href: "/de/sonnenuntergaenge-und-drinks", label: "Sonnenuntergänge" },
+  ],
   // IT y PT: dados de alta el 24-ago-2026 para traducir la web entera. Las
   // herramientas son lo ÚLTIMO que se traduce (llevan dataset propio), así que
   // por ahora el menú no ofrece ninguna: una lista vacía no pinta nada, y es

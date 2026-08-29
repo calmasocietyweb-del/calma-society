@@ -1,0 +1,68 @@
+---
+// "Sonnenuntergänge und Drinks" (DE) — Hub-Seite für Menorca nach Einbruch der
+// Dunkelheit: Sonnenuntergänge, Beach Clubs, Cocktailbars und Clubs, mit der Karte
+// jedes Ortes und dem Transfer mit Chauffeur (nicht selbst fahren). Gleiche Familie
+// wie der Reiseplaner und "Wo das Meer ruhig ist".
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import NightlifeMap from "../../components/NightlifeMap.astro";
+import SunTimes from "../../components/SunTimes.astro";
+import SunsetDrinksFaq from "../../components/SunsetDrinksFaq.astro";
+import NewsletterSignup from "../../components/NewsletterSignup.astro";
+
+const alternates = {
+  es: "/atardeceres-y-copas",
+  en: "/en/sunsets-and-drinks",
+  fr: "/fr/couchers-et-cocktails",
+  de: "/de/sonnenuntergaenge-und-drinks",
+};
+---
+
+<BaseLayout
+  title="Sonnenuntergänge und Drinks"
+  description="Menorcas Abende mit Urteilsvermögen: die schönsten Sonnenuntergänge, Beach Clubs, Cocktailbars an den Häfen und wo man ausgeht — mit einer Karte jedes Ortes und dem Weg dorthin, ohne selbst zu fahren."
+  locale="de"
+  alternates={alternates}
+>
+  <div class="mx-auto max-w-prosa px-5 pt-12 sm:px-8 sm:pt-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Calma Society · Menorca</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Sonnenuntergänge und Drinks</h1>
+    <p class="lead mt-5">
+      Die Insel, wenn das Licht sich ändert: die schönsten Sonnenuntergänge — und auch die
+      Sonnenaufgänge im Osten —, die Beach Clubs, die Cocktailbars an den Häfen und die Orte
+      zum Tanzen. Mit einer Karte jedes Ortes, seiner Google-Bewertung und, weiter unten, den
+      Zeiten für Sonnenauf- und -untergang Monat für Monat — und dem Weg zu jedem Ort, ohne
+      selbst zu fahren.
+    </p>
+    <p class="mt-5 text-base leading-relaxed text-piedra-suave">
+      An den Klippen zum Sonnenuntergang und in den Häfen gibt es fast nie einen Parkplatz, und
+      im Sommer ist alles schon im Morgengrauen voll. Deshalb ist es am bequemsten — und abends
+      am vernünftigsten —, kein Auto mitzubringen: Wir bringen Sie hin und holen Sie wieder ab,
+      mit privatem Chauffeur, vom ersten Sonnenuntergang bis zum letzten Cocktail. Das hier ist
+      unsere Auswahl, mit Urteilsvermögen und ohne Massen: nur Orte, die wir einzeln geprüft
+      haben, mit ihrer echten Google-Bewertung und dem ehrlichen Grund, warum man besser ohne
+      Auto hinfährt.
+    </p>
+  </div>
+
+  <nav aria-label="Abschnitte dieser Seite" class="mx-auto mt-8 max-w-prosa px-5 sm:px-8">
+    <ul class="flex flex-wrap gap-2 text-sm">
+      <li><a href="#karte" class="inline-block rounded-full border border-niebla bg-arena/40 px-3.5 py-1.5 text-piedra transition-colors hover:border-arcilla hover:text-arcilla">Die Karte der Nacht</a></li>
+      <li><a href="#sonnenzeiten" class="inline-block rounded-full border border-niebla bg-arena/40 px-3.5 py-1.5 text-piedra transition-colors hover:border-arcilla hover:text-arcilla">Sonnenzeiten</a></li>
+      <li><a href="#fragen" class="inline-block rounded-full border border-niebla bg-arena/40 px-3.5 py-1.5 text-piedra transition-colors hover:border-arcilla hover:text-arcilla">Häufige Fragen</a></li>
+    </ul>
+  </nav>
+
+  <div id="karte" class="mx-auto mt-6 max-w-5xl scroll-mt-32 px-5 sm:px-8">
+    <NightlifeMap locale="de" />
+  </div>
+
+  <div id="sonnenzeiten" class="mt-14 scroll-mt-32">
+    <SunTimes locale="de" />
+  </div>
+
+  <div id="fragen" class="scroll-mt-32">
+    <SunsetDrinksFaq locale="de" />
+  </div>
+
+  <NewsletterSignup variant="inline" origen="herramienta" umamiEvent="newsletter-submit-herramienta" />
+</BaseLayout>
