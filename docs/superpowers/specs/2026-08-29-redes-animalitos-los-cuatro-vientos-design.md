@@ -144,10 +144,15 @@ Sustituyen a los gates del sistema antiguo (que iban de fotos reales y resoluci�
 
 ---
 
-## 6. Banco de acciones (37)
+## 6. Banco de acciones (46)
 
 El motor creativo. Acciones **humanas** ejecutadas por los animales, agrupadas por sección de
-la revista. Se amplía con el tiempo; nunca se repite una acción dentro de 30 días.
+la revista. Se amplía con el tiempo.
+
+> **Ampliado a 46 el mismo día** (ver §11 bis): con 37, en otoño solo quedaban 26 disponibles y
+> un mes son 30 días. La no-repetición en 30 días es una restricción **blanda**: si el banco de
+> una sección y estación se queda corto, el planificador cede pero **deja aviso**. Nunca en
+> silencio.
 
 **Mesa y sobremesa** — *comer y beber*
 1. Tomando un gin con limón en una terraza del puerto
@@ -298,12 +303,41 @@ en plan Ultra. El coste no es una restricción de diseño.
 
 ---
 
+## 11 bis. Lo que cambió al construirlo (29-ago-2026)
+
+Cinco cosas que esta especificación daba por buenas y que solo se vieron ejecutando el sistema.
+Quedan aquí para que nadie las vuelva a asumir.
+
+1. **El `heroImage` de un artículo no siempre es una foto de SITIO.** De los 83 publicados,
+   **16 llevan una foto de plato o de producto**. El prompt las trataba como escenario y ponía
+   al gato a recoger aceitunas dentro de un montón de tomates. Se resolvió con `vientos/lugares.mjs`,
+   que reutiliza `sistema/lugares-conocidos.json` (106 fotos con su `tema`) para distinguir
+   escena de objeto. Cuando es un objeto, deja de ser el escenario y pasa a ser el producto que
+   aparece en la escena, y el sitio lo decide la acción.
+2. **El banco de 37 acciones se quedaba corto.** En otoño solo había 26 disponibles y un mes
+   son 30 días: el sistema habría empezado a repetir en silencio, exactamente el fallo que ya
+   tuvo el pipeline anterior. Se ampliaron a **46**, y la no-repetición pasó a ser una
+   restricción **blanda que deja aviso** en vez de una promesa que se rompe sola.
+3. **Emparejar acción con SECCIÓN no basta.** Salían cosas como «cocinando una caldereta»
+   sobre un artículo de avarcas: correcto por sección, absurdo al mirarlo. Se añadió una
+   puntuación de afinidad por palabras (comparando raíces de 5 letras, para que «aceite» case
+   con «aceitunas») y una regla para no malgastar en un artículo cualquiera una acción que
+   tiene dueño natural en otro.
+4. **`leerArticulos()` devuelve la URL con `utm_medium=reel`**, porque `urlArticulo()` usa ese
+   formato por defecto. De haberla copiado tal cual, la analítica habría atribuido a reels todo
+   el tráfico de los posts. `vientos/cerrar.mjs` la reconstruye con `utm_medium=post` y
+   `utm_campaign=los-cuatro-vientos`.
+5. **En un plano general amplísimo no se puede verificar la marca de identidad**: el animal es
+   demasiado pequeño. La §12.1 se matiza abajo — y no importa, porque a ese tamaño la deriva
+   tampoco se ve.
+
 ## 12. Definición de "hecho" de una pieza
 
 Una imagen está lista para programarse cuando:
 
 1. El personaje es reconocible y **su marca de identidad está presente** (verificado abriendo
-   la imagen, no dando el prompt por bueno).
+   la imagen, no dando el prompt por bueno). Excepción honesta: en el plano general amplísimo
+   el animal es demasiado pequeño para comprobarla; ahí basta el color y la silueta.
 2. El aspecto es fotográfico: cero dibujo, cero render, cero peluche.
 3. El sitio de Menorca es reconocible y corresponde al artículo.
 4. La acción es humana y creíble dentro de la escena.
