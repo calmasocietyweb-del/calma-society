@@ -28,7 +28,9 @@ const alternates = {
   de: `/de/kreuzfahrt/${barco.slug}`,
 };
 
-const title = `${barco.ship} auf Menorca: was tun bei Ihrem Anlauf in Mahón`;
+/* Corto a propósito: con "was tun bei Ihrem Anlauf in Mahón" los barcos de nombre
+   largo (Seven Seas Splendor) pasaban de 65 caracteres y Google los cortaba. */
+const title = `${barco.ship} auf Menorca: Ihr Landgang in Mahón`;
 const description = `Die ${barco.ship} legt in Mahón um ${barco.arrival} an und läuft um ${barco.departure} aus: Das lässt Ihnen rund ${enHoras(barco.utilesMin, "de")} an Land. Wofür Sie Zeit haben, wofür nicht, und wie Sie vorankommen, ohne das Schiff zu verpassen.`;
 
 const faq = {

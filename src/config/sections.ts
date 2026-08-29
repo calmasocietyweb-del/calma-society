@@ -53,9 +53,9 @@ export const SECTIONS: Section[] = [
     },
     seoTitle: {
       es: "Agenda de Menorca: fiestas, conciertos y mercados",
-      en: "What's on in Menorca: festivals, concerts and markets",
+      en: "What's on in Menorca: festivals and concerts",
       fr: "Agenda de Minorque : fêtes, concerts et marchés",
-      de: "Veranstaltungen auf Menorca: Feste, Konzerte und Märkte",
+      de: "Veranstaltungen auf Menorca: Feste und Konzerte",
       it: "Eventi a Minorca: feste, concerti e mercati",
       pt: "Agenda de Menorca: festas, concertos e mercados",
     },

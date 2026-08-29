@@ -618,3 +618,19 @@ body.bo {
   font-size: 13px;
   color: var(--bo-ink-2);
 }
+
+/* Título de página para lectores de pantalla (auditoría 29-ago-2026).
+   El panel presenta su identidad en la barra superior y no llevaba ningún <h1>,
+   así que un lector de pantalla no sabía en qué página estaba. Va oculto a la
+   vista para no tocar la estética de programa de gestión. */
+.bo-h1 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
