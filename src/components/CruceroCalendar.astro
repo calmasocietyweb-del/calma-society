@@ -11,12 +11,18 @@
  */
 import cruceros from "../data/cruceros-menorca-2026.json";
 import { barcosConPagina, type Call } from "../lib/cruises";
+import type { Locale } from "../config/site";
+
+/**
+ * Habla ES, EN y DE. NO está traducido a FR, IT ni PT: si se monta en una página de
+ * esos idiomas, salta en `astro check` en vez de caer al español (KAN-134).
+ */
+type LangCalendario = Extract<Locale, "es" | "en" | "de">;
 
 interface Props {
-  lang?: "es" | "en";
+  lang?: LangCalendario;
 }
 const { lang = "es" } = Astro.props;
-const isEs = lang === "es";
 
 /* Los barcos que TIENEN página propia (repiten escala y tienen horas): desde la tabla
    se entra en la suya, donde se le dice al crucerista cuánto tiempo tiene de verdad y
@@ -24,64 +30,97 @@ const isEs = lang === "es";
 const conPagina = new Map(
   barcosConPagina((cruceros as { calls: Call[] }).calls).map((b) => [b.ship, b.slug]),
 );
+/* Prefijo de la página de barco por idioma. El alemán va a `null` A PROPÓSITO: esas
+   páginas todavía no existen en alemán (dependen de las herramientas, que no están
+   localizadas). El barco sale entonces como texto plano — igual que los barcos sin
+   página — en vez de enlazar a un 404 o de colar al lector en el sitio español. */
+const RUTA_BARCO: Record<LangCalendario, string | null> = {
+  es: "/crucero",
+  en: "/en/cruise",
+  de: null,
+};
 const paginaDe = (ship: string) => {
   const slug = conPagina.get(ship);
-  return slug ? (isEs ? `/crucero/${slug}` : `/en/cruise/${slug}`) : null;
+  const base = RUTA_BARCO[lang];
+  return slug && base ? `${base}/${slug}` : null;
 };
 
 // Conteo dinámico: el descargo se actualiza solo en cada refresco del calendario.
 const nCalls = (cruceros as { totalListed?: number }).totalListed ?? cruceros.calls.length;
 const seasonEst = cruceros.seasonEstimate;
 
-const MONTHS: Record<string, string[]> = {
+const MONTHS: Record<LangCalendario, string[]> = {
   es: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
   en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+  de: ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
 };
-const DOW: Record<string, string[]> = {
+const DOW: Record<LangCalendario, string[]> = {
   es: ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"],
   en: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+  de: ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"],
 };
-const CONF: Record<string, { label: Record<string, string>; color: string }> = {
-  alta: { label: { es: "Confirmada", en: "Confirmed" }, color: "#4f7a52" },
-  media: { label: { es: "Prevista", en: "Scheduled" }, color: "#c08a2b" },
-  baja: { label: { es: "Por confirmar", en: "Unconfirmed" }, color: "#8a8170" },
+const CONF: Record<string, { label: Record<LangCalendario, string>; color: string }> = {
+  alta: { label: { es: "Confirmada", en: "Confirmed", de: "Bestätigt" }, color: "#4f7a52" },
+  media: { label: { es: "Prevista", en: "Scheduled", de: "Geplant" }, color: "#c08a2b" },
+  baja: { label: { es: "Por confirmar", en: "Unconfirmed", de: "Unbestätigt" }, color: "#8a8170" },
 };
 
-const T = isEs
-  ? {
-      thFecha: "Fecha",
-      thBarco: "Barco",
-      thNaviera: "Naviera",
-      thPax: "Capacidad",
-      thEstado: "Fiabilidad",
-      caption: "Escalas de cruceros previstas en el puerto de Maó en 2026.",
-      disclaimer:
-        `Calendario en actualización continua: recoge ${nCalls} de las ~${seasonEst} escalas previstas para 2026. Las próximas semanas se contrastan con el registro de atraques de la Autoridad Portuaria; las escalas más lejanas proceden de agregadores internacionales y pueden cambiar. Cuando una naviera no publica sus horas, lo decimos en vez de estimarlas. No es el calendario oficial.`,
-      legendTitle: "Fiabilidad:",
-      overnight: "pernocta",
-      overnightNote: "Pernocta: el barco duerme en el puerto y zarpa al día siguiente. Es la escala con más tiempo real en tierra.",
-      paxNote: "“Capacidad” es el máximo del barco, no el pasaje real embarcado. Las horas, cuando constan, son orientativas.",
-      ciutadella:
-        "Ciutadella apenas recibe cruceros en 2026: unas 2 escalas del pequeño National Geographic Orion (Lindblad), sin fecha confirmada. El resto del tráfico atraca en Maó.",
-      official: "Consulta el calendario oficial y actualizado en Ports de Balears",
-    }
-  : {
-      thFecha: "Date",
-      thBarco: "Ship",
-      thNaviera: "Line",
-      thPax: "Capacity",
-      thEstado: "Reliability",
-      caption: "Cruise calls scheduled at the port of Maó in 2026.",
-      disclaimer:
-        `Calendar under continuous update: it lists ${nCalls} of the ~${seasonEst} calls expected for 2026. The coming weeks are cross-checked against the Port Authority's berthing record; calls further out come from international aggregators and may change. When a cruise line does not publish its times, we say so instead of estimating them. This is not the official schedule.`,
-      legendTitle: "Reliability:",
-      overnight: "overnight",
-      overnightNote: "Overnight: the ship sleeps in port and sails the next day. It is the call with the most real time ashore.",
-      paxNote: "“Capacity” is the ship's maximum, not actual passengers aboard. Times, where given, are indicative.",
-      ciutadella:
-        "Ciutadella barely receives cruise ships in 2026: around 2 calls of the small National Geographic Orion (Lindblad), with no confirmed date. All other traffic docks in Maó.",
-      official: "Check the official, up-to-date schedule at Ports de Balears",
-    };
+/* Un registro por idioma, NO un ternario: con `isEs ? español : inglés` un idioma nuevo
+   caía al inglés en silencio. Así el compilador exige la entrada al ampliar el tipo. */
+const TEXTOS: Record<LangCalendario, Record<string, string>> = {
+  es: {
+    thFecha: "Fecha",
+    thBarco: "Barco",
+    thNaviera: "Naviera",
+    thPax: "Capacidad",
+    thEstado: "Fiabilidad",
+    caption: "Escalas de cruceros previstas en el puerto de Maó en 2026.",
+    disclaimer:
+      `Calendario en actualización continua: recoge ${nCalls} de las ~${seasonEst} escalas previstas para 2026. Las próximas semanas se contrastan con el registro de atraques de la Autoridad Portuaria; las escalas más lejanas proceden de agregadores internacionales y pueden cambiar. Cuando una naviera no publica sus horas, lo decimos en vez de estimarlas. No es el calendario oficial.`,
+    legendTitle: "Fiabilidad:",
+    overnight: "pernocta",
+    overnightNote: "Pernocta: el barco duerme en el puerto y zarpa al día siguiente. Es la escala con más tiempo real en tierra.",
+    paxNote: "“Capacidad” es el máximo del barco, no el pasaje real embarcado. Las horas, cuando constan, son orientativas.",
+    ciutadella:
+      "Ciutadella apenas recibe cruceros en 2026: unas 2 escalas del pequeño National Geographic Orion (Lindblad), sin fecha confirmada. El resto del tráfico atraca en Maó.",
+    official: "Consulta el calendario oficial y actualizado en Ports de Balears",
+  },
+  en: {
+    thFecha: "Date",
+    thBarco: "Ship",
+    thNaviera: "Line",
+    thPax: "Capacity",
+    thEstado: "Reliability",
+    caption: "Cruise calls scheduled at the port of Maó in 2026.",
+    disclaimer:
+      `Calendar under continuous update: it lists ${nCalls} of the ~${seasonEst} calls expected for 2026. The coming weeks are cross-checked against the Port Authority's berthing record; calls further out come from international aggregators and may change. When a cruise line does not publish its times, we say so instead of estimating them. This is not the official schedule.`,
+    legendTitle: "Reliability:",
+    overnight: "overnight",
+    overnightNote: "Overnight: the ship sleeps in port and sails the next day. It is the call with the most real time ashore.",
+    paxNote: "“Capacity” is the ship's maximum, not actual passengers aboard. Times, where given, are indicative.",
+    ciutadella:
+      "Ciutadella barely receives cruise ships in 2026: around 2 calls of the small National Geographic Orion (Lindblad), with no confirmed date. All other traffic docks in Maó.",
+    official: "Check the official, up-to-date schedule at Ports de Balears",
+  },
+  de: {
+    thFecha: "Datum",
+    thBarco: "Schiff",
+    thNaviera: "Reederei",
+    thPax: "Kapazität",
+    thEstado: "Verlässlichkeit",
+    caption: "Für 2026 im Hafen von Maó erwartete Kreuzfahrt-Anläufe.",
+    disclaimer:
+      `Fortlaufend aktualisierter Kalender: Er führt ${nCalls} der rund ${seasonEst} für 2026 erwarteten Anläufe auf. Die kommenden Wochen gleichen wir mit dem Liegeplatzregister der Hafenbehörde ab; weiter entfernte Anläufe stammen von internationalen Aggregatoren und können sich ändern. Wenn eine Reederei ihre Zeiten nicht veröffentlicht, sagen wir das, statt sie zu schätzen. Dies ist nicht der offizielle Fahrplan.`,
+    legendTitle: "Verlässlichkeit:",
+    overnight: "Übernachtung",
+    overnightNote: "Übernachtung: Das Schiff bleibt über Nacht im Hafen und läuft erst am Folgetag aus. Das ist der Anlauf mit der meisten echten Zeit an Land.",
+    paxNote: "„Kapazität“ ist das Maximum des Schiffes, nicht die tatsächlich an Bord befindlichen Passagiere. Die Zeiten sind, sofern angegeben, Richtwerte.",
+    ciutadella:
+      "Ciutadella empfängt 2026 kaum Kreuzfahrtschiffe: etwa zwei Anläufe der kleinen National Geographic Orion (Lindblad), ohne bestätigtes Datum. Der übrige Verkehr legt in Maó an.",
+    official: "Den offiziellen und aktuellen Fahrplan finden Sie bei Ports de Balears",
+  },
+};
+const T = TEXTOS[lang];
 
 // Agrupa las escalas por mes, conservando el orden.
 // La escala tal y como vive en el JSON: la del motor de cálculo + su fuente.
@@ -111,7 +150,10 @@ for (const c of cruceros.calls as CalendarCall[]) {
       : c.arrival || "";
   g.items.push({ ...c, d, dow, hours, overnight });
 }
-const fmtPax = (n: number | null) => (n == null ? "—" : "≈ " + n.toLocaleString(isEs ? "es-ES" : "en-US"));
+/* El alemán separa los miles con punto, como el español, pero no con coma como el inglés:
+   1.250 pasajeros, no 1,250. */
+const LOCALE_NUM: Record<LangCalendario, string> = { es: "es-ES", en: "en-US", de: "de-DE" };
+const fmtPax = (n: number | null) => (n == null ? "—" : "≈ " + n.toLocaleString(LOCALE_NUM[lang]));
 const officialUrl = cruceros.officialSource;
 const colCount = 5;
 ---
