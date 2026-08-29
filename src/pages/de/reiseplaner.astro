@@ -1,0 +1,45 @@
+---
+// "Planen Sie Ihre Reise nach Menorca" (DE) — Reiseplaner für Routen.
+// SEO: Neben dem interaktiven Plan (Rendering im Client, für Crawler unsichtbar)
+// veröffentlicht die Seite STATISCHE Beispielrouten und FAQ (PlannerSeoContent),
+// ausgerichtet auf "was auf Menorca unternehmen", "Route Menorca", "Menorca in 5 Tagen".
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PlannerView from "../../components/PlannerView.astro";
+import PlannerSeoContent from "../../components/PlannerSeoContent.astro";
+
+const alternates = {
+  es: "/planificador",
+  en: "/en/trip-planner",
+  de: "/de/reiseplaner",
+};
+---
+
+<BaseLayout
+  title="Reise nach Menorca planen: Routen für 3, 5 und 7 Tage"
+  description="Was Sie auf Menorca unternehmen können, Tag für Tag: Der Reiseplaner stellt Ihre Route nach Nähe und ohne Eile zusammen — Buchten, Tische mit Urteilsvermögen und ein Plan B, wenn das Wetter kippt."
+  locale="de"
+  alternates={alternates}
+>
+  <div class="mx-auto max-w-3xl px-5 pt-12 sm:px-8 sm:pt-16 print:hidden">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Calma Society · Menorca</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Planen Sie Ihre Reise nach Menorca</h1>
+    <p class="lead mt-5">
+      Ein Leitfaden Tag für Tag, nach Nähe verkettet und ohne Eile: die Insel in Ihrem Tempo,
+      mit dem Blick des stillen Luxus.
+    </p>
+    <p class="mt-5 text-base leading-relaxed text-piedra-suave">
+      Menorca ist eine <strong>Fischgräte</strong>: Alles hängt an der Achse Mahón–Ciutadella,
+      und die Buchten sind die Abzweigungen. Der Fehler ist das Zickzack. Wir schlagen Ihnen
+      einen Plan vor, der nach Gegenden bündelt, früh an die Buchten fährt, Spielraum für den
+      Wind lässt und einen Plan B für schlechtes Wetter bereithält. Sie passen ihn an; die
+      letzte Entscheidung liegt immer bei Ihnen.
+    </p>
+  </div>
+
+  <div class="mt-8">
+    <PlannerView locale="de" />
+  </div>
+
+  {/* Statische Beispielrouten + FAQ (SEO/GEO: echter, crawlbarer Inhalt). */}
+  <PlannerSeoContent locale="de" />
+</BaseLayout>

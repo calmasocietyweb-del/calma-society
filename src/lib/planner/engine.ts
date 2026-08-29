@@ -25,7 +25,7 @@ import { buildPlanB, weekdayForDay } from "./rules/planb.ts";
 import { addDaysISO, agendaForDay } from "./rules/agenda.ts";
 import type { PlannerEvent } from "./rules/agenda.ts";
 import { surveySeed } from "./rules/seed.ts";
-import { S } from "./strings.ts";
+import { S, type Lang } from "./strings.ts";
 import { sunTimes, MENORCA } from "../sun-core.ts";
 
 /** Atardecer real "HH:MM" (hora de Menorca) para una fecha ISO; undefined si no hay fecha. */
@@ -50,7 +50,7 @@ interface DayResult {
 export function planTrip(
   rawSurvey: Partial<Survey>,
   dataset: PlannerPlace[],
-  lang: "es" | "en" = "es",
+  lang: Lang = "es",
   events: PlannerEvent[] = [],
   foodByZone?: FoodByZone,
 ): Plan {
@@ -214,7 +214,7 @@ export function planTrip(
   return { base, baseReason, splitBase, days, globalNotices, menorcaBusHooks, signature };
 }
 
-function buildGlobalNotices(survey: Survey, base: string, lang: "es" | "en", splitBase?: string): Notice[] {
+function buildGlobalNotices(survey: Survey, base: string, lang: Lang, splitBase?: string): Notice[] {
   const t = S(lang).engine;
   const out: Notice[] = [];
   if (survey.transport === "coche-alquiler") {

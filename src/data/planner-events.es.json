@@ -1,5 +1,26 @@
 [
   {
+    "translationKey": "cavalcada-reis-menorca",
+    "title": "Cavalcada de Reis (Cabalgata de Reyes Magos)",
+    "startDate": "2026-01-05",
+    "zone": "varios",
+    "category": "fiesta"
+  },
+  {
+    "translationKey": "mercat-agrari-ciutadella",
+    "title": "Mercat Agrari de Ciutadella",
+    "startDate": "2026-01-07",
+    "zone": "oeste",
+    "category": "mercado"
+  },
+  {
+    "translationKey": "fira-sant-antoni-mercat-taronges-datils-ciutadella",
+    "title": "Fira i mercat de taronges i dàtils de Sant Antoni (Ciutadella)",
+    "startDate": "2026-01-17",
+    "zone": "oeste",
+    "category": "mercado"
+  },
+  {
     "translationKey": "sant-antoni-diada",
     "title": "Sant Antoni · Diada del Poble de Menorca",
     "startDate": "2026-01-17",
@@ -15,12 +36,205 @@
     "category": "concierto"
   },
   {
+    "translationKey": "fira-perdiu-es-mercadal",
+    "title": "Fira de la Perdiu de Menorca",
+    "startDate": "2026-02-07",
+    "endDate": "2026-02-08",
+    "zone": "centro",
+    "category": "otro"
+  },
+  {
+    "translationKey": "carnaval-darrers-dies-menorca",
+    "title": "Carnaval (Darrers Dies)",
+    "startDate": "2026-02-12",
+    "endDate": "2026-02-17",
+    "zone": "varios",
+    "category": "fiesta"
+  },
+  {
+    "translationKey": "fira-del-camp-alaior",
+    "title": "Fira del Camp de Menorca",
+    "startDate": "2026-03-14",
+    "endDate": "2026-03-15",
+    "zone": "sur-centro",
+    "category": "gastronomia"
+  },
+  {
+    "translationKey": "setmana-santa-menorca",
+    "title": "Setmana Santa (Semana Santa)",
+    "startDate": "2026-03-29",
+    "endDate": "2026-04-05",
+    "zone": "varios",
+    "category": "cultura"
+  },
+  {
+    "translationKey": "cova-den-xoroi-musica-atardecer",
+    "title": "Música al atardecer en la Cova d'en Xoroi",
+    "startDate": "2026-04-02",
+    "endDate": "2026-10-25",
+    "zone": "sur-centro",
+    "category": "concierto"
+  },
+  {
+    "translationKey": "opening-menorca-2026",
+    "title": "Opening Menorca 2026",
+    "startDate": "2026-04-07",
+    "endDate": "2026-04-25",
+    "zone": "varios",
+    "category": "cultura"
+  },
+  {
+    "translationKey": "vi-menorca-fest-mao",
+    "title": "Vi Menorca Fest",
+    "startDate": "2026-04-30",
+    "endDate": "2026-05-03",
+    "zone": "este",
+    "category": "gastronomia"
+  },
+  {
     "translationKey": "trail-cami-cavalls",
     "title": "Trail Menorca Camí de Cavalls",
     "startDate": "2026-05-01",
     "endDate": "2026-05-03",
     "zone": "varios",
     "category": "deporte"
+  },
+  {
+    "translationKey": "mare-de-deu-del-toro",
+    "title": "Mare de Déu del Toro (patrona de Menorca)",
+    "startDate": "2026-05-08",
+    "zone": "centro",
+    "category": "fiesta"
+  },
+  {
+    "translationKey": "fira-sant-isidre-ferreries",
+    "title": "Fira de Sant Isidre de Ferreries",
+    "startDate": "2026-05-16",
+    "endDate": "2026-05-17",
+    "zone": "sur-centro",
+    "category": "gastronomia"
+  },
+  {
+    "translationKey": "temporada-opera-mao",
+    "title": "Temporada d'Òpera de Maó",
+    "startDate": "2026-05-29",
+    "endDate": "2026-05-31",
+    "zone": "este",
+    "category": "cultura"
+  },
+  {
+    "translationKey": "enjoy-ciutadella-rutes-patrimoni",
+    "title": "Enjoy Ciutadella — rutas gratuitas de patrimonio",
+    "startDate": "2026-06-01",
+    "endDate": "2026-10-31",
+    "zone": "oeste",
+    "category": "cultura"
+  },
+  {
+    "translationKey": "mercat-ambulant-es-castell",
+    "title": "Mercadillo de Es Castell",
+    "startDate": "2026-06-01",
+    "zone": "este",
+    "category": "mercado"
+  },
+  {
+    "translationKey": "mercat-born-ciutadella",
+    "title": "Mercado del Born, Ciutadella",
+    "startDate": "2026-06-01",
+    "zone": "oeste",
+    "category": "mercado"
+  },
+  {
+    "translationKey": "mercat-ambulant-mao",
+    "title": "Mercadillo de Maó (s'Esplanada)",
+    "startDate": "2026-06-02",
+    "zone": "este",
+    "category": "mercado"
+  },
+  {
+    "translationKey": "mercat-nit-alaior",
+    "title": "Mercat de Nit de Alaior",
+    "startDate": "2026-06-03",
+    "endDate": "2026-09-09",
+    "zone": "sur-centro",
+    "category": "mercado"
+  },
+  {
+    "translationKey": "mercat-ambulant-alaior",
+    "title": "Mercadillo de Alaior",
+    "startDate": "2026-06-04",
+    "zone": "sur-centro",
+    "category": "mercado"
+  },
+  {
+    "translationKey": "mercat-nit-es-mercadal",
+    "title": "Mercado agroalimentario y artesano nocturno de Es Mercadal",
+    "startDate": "2026-06-04",
+    "endDate": "2026-09-24",
+    "zone": "centro",
+    "category": "mercado"
+  },
+  {
+    "translationKey": "mercat-nit-ferreries",
+    "title": "Mercat de Nit d'Estiu de Ferreries",
+    "startDate": "2026-06-05",
+    "endDate": "2026-09-11",
+    "zone": "sur-centro",
+    "category": "mercado"
+  },
+  {
+    "translationKey": "mercat-ferreries-dissabte",
+    "title": "Mercado artesano y agroalimentario de Ferreries",
+    "startDate": "2026-06-06",
+    "zone": "sur-centro",
+    "category": "mercado"
+  },
+  {
+    "translationKey": "mercat-ambulant-es-mercadal",
+    "title": "Mercadillo de Es Mercadal (domingos)",
+    "startDate": "2026-06-07",
+    "zone": "centro",
+    "category": "mercado"
+  },
+  {
+    "translationKey": "mercat-nit-fornells",
+    "title": "Mercado nocturno de Fornells",
+    "startDate": "2026-06-14",
+    "endDate": "2026-09-13",
+    "zone": "norte",
+    "category": "mercado"
+  },
+  {
+    "translationKey": "mercat-nit-cales-fonts-es-castell",
+    "title": "Mercado nocturno de Cales Fonts, Es Castell",
+    "startDate": "2026-06-15",
+    "endDate": "2026-09-15",
+    "zone": "este",
+    "category": "mercado"
+  },
+  {
+    "translationKey": "regata-menorca-sant-joan-trofeo-alfonso-xiii",
+    "title": "Regata Menorca Sant Joan – Trofeo Alfonso XIII",
+    "startDate": "2026-06-18",
+    "endDate": "2026-06-20",
+    "zone": "este",
+    "category": "deporte"
+  },
+  {
+    "translationKey": "moli-market-sant-lluis",
+    "title": "Molí Market, Sant Lluís",
+    "startDate": "2026-06-19",
+    "endDate": "2026-08-14",
+    "zone": "sur-este",
+    "category": "mercado"
+  },
+  {
+    "translationKey": "hauser-wirth-directionless",
+    "title": "«Directionless» en Hauser & Wirth Menorca — hasta el 25 de octubre",
+    "startDate": "2026-06-21",
+    "endDate": "2026-10-25",
+    "zone": "este",
+    "category": "cultura"
   },
   {
     "translationKey": "sant-joan",
@@ -31,11 +245,119 @@
     "category": "fiesta"
   },
   {
+    "translationKey": "mercat-nit-port-mao",
+    "title": "Mercat de Nit i Música al Port de Maó",
+    "startDate": "2026-06-27",
+    "endDate": "2026-08-29",
+    "zone": "este",
+    "category": "mercado"
+  },
+  {
+    "translationKey": "sant-pere-pescadors-mao-fornells",
+    "title": "Sant Pere (fiesta de los pescadores)",
+    "startDate": "2026-06-29",
+    "zone": "varios",
+    "category": "fiesta"
+  },
+  {
+    "translationKey": "volta-menorca-pati-de-vela-trofeu-lluis-gay",
+    "title": "Volta a Menorca en Patí de Vela – Trofeu Lluís Gay",
+    "startDate": "2026-07-01",
+    "endDate": "2026-07-07",
+    "zone": "este",
+    "category": "deporte"
+  },
+  {
+    "translationKey": "fosquets-de-lithica",
+    "title": "Fosquets de Lithica",
+    "startDate": "2026-07-02",
+    "endDate": "2026-09-10",
+    "zone": "oeste",
+    "category": "concierto"
+  },
+  {
+    "translationKey": "maria-terremoto-mao-2026",
+    "title": "María Terremoto en el Teatre Principal de Maó",
+    "startDate": "2026-07-02",
+    "zone": "este",
+    "category": "concierto"
+  },
+  {
+    "translationKey": "splendid-festival-mao",
+    "title": "Splendid Festival (Teatre Principal de Maó)",
+    "startDate": "2026-07-02",
+    "endDate": "2026-08-27",
+    "zone": "este",
+    "category": "concierto"
+  },
+  {
+    "translationKey": "concurs-formatge-dop-mahon-menorca",
+    "title": "Concurso del Queso DOP Mahón-Menorca",
+    "startDate": "2026-07-03",
+    "zone": "sur-centro",
+    "category": "gastronomia"
+  },
+  {
+    "translationKey": "festival-internacional-orgue-menorca",
+    "title": "I Festival Internacional d'Orgue de Menorca",
+    "startDate": "2026-07-03",
+    "endDate": "2026-10-11",
+    "zone": "varios",
+    "category": "concierto"
+  },
+  {
+    "translationKey": "festival-musica-mao-2026",
+    "title": "53è Festival de Música de Maó",
+    "startDate": "2026-07-03",
+    "endDate": "2026-08-26",
+    "zone": "este",
+    "category": "concierto"
+  },
+  {
+    "translationKey": "conciertos-orgue-santa-maria-mao",
+    "title": "Conciertos de órgano en Santa Maria de Maó",
+    "startDate": "2026-07-06",
+    "endDate": "2026-10-31",
+    "zone": "este",
+    "category": "concierto"
+  },
+  {
+    "translationKey": "dimarts-as-migjorn",
+    "title": "Dimarts as Migjorn (mercado nocturno de Es Migjorn Gran)",
+    "startDate": "2026-07-07",
+    "endDate": "2026-09-08",
+    "zone": "sur-centro",
+    "category": "mercado"
+  },
+  {
+    "translationKey": "festival-musica-estiu-ciutadella",
+    "title": "54è Festival de Música d'Estiu de Ciutadella",
+    "startDate": "2026-07-10",
+    "endDate": "2026-08-24",
+    "zone": "oeste",
+    "category": "concierto"
+  },
+  {
+    "translationKey": "festival-pedra-viva-lithica",
+    "title": "Festival Pedra Viva en Lithica",
+    "startDate": "2026-07-10",
+    "endDate": "2026-08-31",
+    "zone": "oeste",
+    "category": "cultura"
+  },
+  {
     "translationKey": "carme",
     "title": "Festes de la Mare de Déu del Carme",
     "startDate": "2026-07-16",
     "zone": "varios",
     "category": "fiesta"
+  },
+  {
+    "translationKey": "marco-flores-rayuela-mao-2026",
+    "title": "Compañía Marco Flores: 'Rayuela'",
+    "startDate": "2026-07-16",
+    "zone": "este",
+    "category": "cultura"
   },
   {
     "translationKey": "sant-marti",
@@ -62,12 +384,41 @@
     "category": "fiesta"
   },
   {
+    "translationKey": "maria-del-mar-bonet-mao-2026",
+    "title": "Maria del Mar Bonet en el Teatre Principal de Maó",
+    "startDate": "2026-07-30",
+    "zone": "este",
+    "category": "concierto"
+  },
+  {
+    "translationKey": "menorca-music-festival",
+    "title": "Menorca Music Festival",
+    "startDate": "2026-08-01",
+    "endDate": "2026-08-09",
+    "zone": "centro",
+    "category": "concierto"
+  },
+  {
     "translationKey": "sant-cristofol",
     "title": "Festes de Sant Cristòfol",
     "startDate": "2026-08-01",
     "endDate": "2026-08-02",
     "zone": "sur-centro",
     "category": "fiesta"
+  },
+  {
+    "translationKey": "pedra-viva-buika",
+    "title": "Pedra Viva: Buika en concierto",
+    "startDate": "2026-08-04",
+    "zone": "varios",
+    "category": "concierto"
+  },
+  {
+    "translationKey": "gala-estrelles-dansa-teatre-principal",
+    "title": "Gala d'Estrelles de la Dansa",
+    "startDate": "2026-08-06",
+    "zone": "este",
+    "category": "cultura"
   },
   {
     "translationKey": "sant-gaieta",
@@ -86,6 +437,21 @@
     "category": "fiesta"
   },
   {
+    "translationKey": "ukalari-menorca-live",
+    "title": "Ukalari Menorca Live",
+    "startDate": "2026-08-12",
+    "endDate": "2026-08-22",
+    "zone": "este",
+    "category": "concierto"
+  },
+  {
+    "translationKey": "pedra-viva-tancarville-la-mola",
+    "title": "Pedra Viva: «Tancarville» en la Fortalesa de la Mola",
+    "startDate": "2026-08-21",
+    "zone": "este",
+    "category": "cultura"
+  },
+  {
     "translationKey": "sant-climent",
     "title": "Festes de Sant Climent",
     "startDate": "2026-08-22",
@@ -100,6 +466,22 @@
     "endDate": "2026-08-24",
     "zone": "sur-centro",
     "category": "fiesta"
+  },
+  {
+    "translationKey": "vela-clasica-menorca-copa-rey-barcos-epoca",
+    "title": "Vela Clásica Menorca – Copa del Rey de Barcos de Época",
+    "startDate": "2026-08-25",
+    "endDate": "2026-08-29",
+    "zone": "este",
+    "category": "deporte"
+  },
+  {
+    "translationKey": "pedra-en-viu-mostra",
+    "title": "Pedra en Viu — mostra de artes escénicas",
+    "startDate": "2026-08-29",
+    "endDate": "2026-08-30",
+    "zone": "oeste",
+    "category": "cultura"
   },
   {
     "translationKey": "sant-lluis",
@@ -118,11 +500,151 @@
     "category": "fiesta"
   },
   {
+    "translationKey": "festival-cine-menorca-2026",
+    "title": "Festival Internacional de Cine de Menorca (FICME)",
+    "startDate": "2026-09-08",
+    "endDate": "2026-09-13",
+    "zone": "varios",
+    "category": "cultura"
+  },
+  {
+    "translationKey": "festes-sant-nicolau-es-mercadal",
+    "title": "Festes de Sant Nicolau (El Toro)",
+    "startDate": "2026-09-12",
+    "endDate": "2026-09-13",
+    "zone": "centro",
+    "category": "fiesta"
+  },
+  {
+    "translationKey": "cranc-illa-de-menorca-festival",
+    "title": "Cranc Illa de Menorca Festival",
+    "startDate": "2026-09-17",
+    "endDate": "2026-09-19",
+    "zone": "este",
+    "category": "concierto"
+  },
+  {
+    "translationKey": "festes-calan-porter-alaior",
+    "title": "Festes de Cala'n Porter",
+    "startDate": "2026-09-19",
+    "endDate": "2026-09-20",
+    "zone": "varios",
+    "category": "fiesta"
+  },
+  {
+    "translationKey": "fira-arrels-es-mercadal",
+    "title": "Fira Arrels",
+    "startDate": "2026-09-20",
+    "endDate": "2026-09-21",
+    "zone": "centro",
+    "category": "gastronomia"
+  },
+  {
+    "translationKey": "festes-es-caixers-alaior",
+    "title": "Festes des Caixers d'Alaior",
+    "startDate": "2026-09-26",
+    "endDate": "2026-09-27",
+    "zone": "sur-centro",
+    "category": "fiesta"
+  },
+  {
+    "translationKey": "artiem-half-menorca-triatlon",
+    "title": "Artiem Half Menorca (triatlón)",
+    "startDate": "2026-09-27",
+    "zone": "norte",
+    "category": "deporte"
+  },
+  {
+    "translationKey": "swim-in-menorca-travesia-macarella-son-xoriguer",
+    "title": "Swim in Menorca – Travesía a nado Macarella–Son Xoriguer",
+    "startDate": "2026-09-27",
+    "zone": "varios",
+    "category": "deporte"
+  },
+  {
+    "translationKey": "jornades-europees-patrimoni",
+    "title": "Jornades Europees de Patrimoni a Menorca",
+    "startDate": "2026-10-09",
+    "endDate": "2026-10-11",
+    "zone": "varios",
+    "category": "cultura"
+  },
+  {
+    "translationKey": "jornades-vedella-vermella",
+    "title": "Jornades Gastronòmiques de sa Vedella Vermella Menorquina",
+    "startDate": "2026-10-09",
+    "endDate": "2026-10-18",
+    "zone": "varios",
+    "category": "gastronomia"
+  },
+  {
     "translationKey": "menorca-doc-fest",
     "title": "Menorca Doc Fest",
     "startDate": "2026-10-09",
     "endDate": "2026-10-12",
     "zone": "este",
     "category": "cultura"
+  },
+  {
+    "translationKey": "volta-menorca-btt",
+    "title": "Volta a Menorca en BTT",
+    "startDate": "2026-10-09",
+    "endDate": "2026-10-11",
+    "zone": "varios",
+    "category": "deporte"
+  },
+  {
+    "translationKey": "fira-formatge-mahon-menorca-mao",
+    "title": "Fira del Formatge Mahón-Menorca",
+    "startDate": "2026-10-16",
+    "endDate": "2026-10-18",
+    "zone": "este",
+    "category": "gastronomia"
+  },
+  {
+    "translationKey": "volta-cicloturista-internacional-menorca",
+    "title": "Volta Cicloturista Internacional a Menorca",
+    "startDate": "2026-10-23",
+    "endDate": "2026-10-25",
+    "zone": "varios",
+    "category": "deporte"
+  },
+  {
+    "translationKey": "october-trail-menorca",
+    "title": "VIII October Trail Menorca — Camí de Cavalls",
+    "startDate": "2026-10-24",
+    "zone": "varios",
+    "category": "deporte"
+  },
+  {
+    "translationKey": "mitja-marato-menorca",
+    "title": "Mitja Marató de Menorca",
+    "startDate": "2026-11-01",
+    "zone": "oeste",
+    "category": "deporte"
+  },
+  {
+    "translationKey": "jornades-berenar-pages",
+    "title": "Jornades Gastronòmiques del Berenar Pagès",
+    "startDate": "2026-11-06",
+    "endDate": "2026-11-15",
+    "zone": "varios",
+    "category": "gastronomia"
+  },
+  {
+    "translationKey": "dimecres-dia-de-brou",
+    "title": "«Els dimecres és dia de Brou»",
+    "startDate": "2026-12-02",
+    "endDate": "2026-12-30",
+    "zone": "varios",
+    "category": "gastronomia"
+  },
+  {
+    "translationKey": "fira-nadal-mao-gastronomia-hivern",
+    "title": "Fira de Nadal de Maó",
+    "startDate": "2026-12-05",
+    "endDate": "2026-12-08",
+    "zone": "este",
+    "category": "mercado"
   }
 ]

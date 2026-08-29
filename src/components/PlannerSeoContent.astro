@@ -16,20 +16,28 @@ import { planTrip } from "../lib/planner/engine.ts";
 import type { Survey } from "../lib/planner/survey.ts";
 import dataEs from "../data/planner-data.es.json";
 import dataEn from "../data/planner-data.en.json";
+import dataDe from "../data/planner-data.de.json";
 import foodEs from "../data/planner-food.es.json";
 import foodEn from "../data/planner-food.en.json";
+import foodDe from "../data/planner-food.de.json";
 import JsonLd from "./JsonLd.astro";
 import { SITE, type Locale } from "../config/site";
 
 interface Props {
-  locale: Extract<Locale, "es" | "en">;
+  locale: Extract<Locale, "es" | "en" | "de">;
 }
 const { locale } = Astro.props;
-const isEs = locale === "es";
-const dataset = (isEs ? dataEs : dataEn) as any;
-const food = (isEs ? foodEs : foodEn) as any;
-const plannerPath = isEs ? "/planificador" : "/en/trip-planner";
-const placePrefix = isEs ? "/lugar" : "/en/place";
+/* Registro por idioma en vez de `isEs ? es : en`: con el alemán ese ternario
+   servía el contenido ENTERO en inglés sin avisar (KAN-134). */
+const tr = <T,>(m: Record<"es" | "en" | "de", T>): T => m[locale];
+/* Anotados como Record<…, any> a propósito: los tres JSON tienen formas
+   ligeramente distintas y TS no las unifica; el `any` ya estaba antes. */
+const DATASETS: Record<"es" | "en" | "de", any> = { es: dataEs, en: dataEn, de: dataDe };
+const FOODS: Record<"es" | "en" | "de", any> = { es: foodEs, en: foodEn, de: foodDe };
+const dataset = DATASETS[locale];
+const food = FOODS[locale];
+const plannerPath = tr({ es: "/planificador", en: "/en/trip-planner", de: "/de/reiseplaner" });
+const placePrefix = tr({ es: "/lugar", en: "/en/place", de: "/de/ort" });
 const byId = new Map<string, any>(dataset.map((p: any) => [p.id, p]));
 
 // ── Tres perfiles canónicos (mismo motor, cero invención) ───────────────────
@@ -37,26 +45,32 @@ const PROFILES: Array<{ survey: Partial<Survey>; qs: string; title: string; intr
   {
     survey: { days: 3, interests: ["calas", "gastronomia"], pace: "equilibrado" },
     qs: "days=3&interests=calas&interests=gastronomia",
-    title: isEs ? "Menorca en 3 días: lo esencial" : "Menorca in 3 days: the essentials",
-    intro: isEs
-      ? "Una escapada corta con base única: las calas más famosas del suroeste, una ciudad con alma y el primer contacto con la mesa menorquina."
-      : "A short break from a single base: the best-known south-western coves, a city with soul and a first taste of the Menorcan table.",
+    title: tr({ es: "Menorca en 3 días: lo esencial", en: "Menorca in 3 days: the essentials", de: "Menorca in 3 Tagen: das Wesentliche" }),
+    intro: tr({
+      es: "Una escapada corta con base única: las calas más famosas del suroeste, una ciudad con alma y el primer contacto con la mesa menorquina.",
+      en: "A short break from a single base: the best-known south-western coves, a city with soul and a first taste of the Menorcan table.",
+      de: "Eine kurze Auszeit von einem einzigen Standort aus: die bekanntesten Buchten des Südwestens, eine Stadt mit Seele und der erste Kontakt mit der menorquinischen Tafel.",
+    }),
   },
   {
     survey: { days: 5, interests: ["calas", "gastronomia"], pace: "equilibrado" },
     qs: "days=5&interests=calas&interests=gastronomia",
-    title: isEs ? "Menorca en 5 días: calas y gastronomía" : "Menorca in 5 days: coves & gastronomy",
-    intro: isEs
-      ? "El formato que recomendamos: un día por zona, sin cruzar la isla dos veces, con las calas por la mañana y la mesa como ancla de cada tarde."
-      : "The format we recommend: one area per day, never crossing the island twice, with coves in the morning and the table anchoring each evening.",
+    title: tr({ es: "Menorca en 5 días: calas y gastronomía", en: "Menorca in 5 days: coves & gastronomy", de: "Menorca in 5 Tagen: Buchten und Gastronomie" }),
+    intro: tr({
+      es: "El formato que recomendamos: un día por zona, sin cruzar la isla dos veces, con las calas por la mañana y la mesa como ancla de cada tarde.",
+      en: "The format we recommend: one area per day, never crossing the island twice, with coves in the morning and the table anchoring each evening.",
+      de: "Das Format, das wir empfehlen: ein Tag pro Gegend, ohne die Insel zweimal zu queren, mit den Buchten am Vormittag und dem Tisch als Anker jedes Abends.",
+    }),
   },
   {
     survey: { days: 7, interests: ["calas", "cultura", "gastronomia"], pace: "relajado" },
     qs: "days=7&interests=calas&interests=cultura&interests=gastronomia&pace=relajado",
-    title: isEs ? "Menorca en 7 días: la isla entera, sin prisa" : "Menorca in 7 days: the whole island, unhurried",
-    intro: isEs
-      ? "Una semana a ritmo relajado suma el interior talayótico y el norte agreste a las calas del sur: la isla completa como la entendemos en Calma Society."
-      : "A week at a relaxed pace adds the Talayotic interior and the wild north to the southern coves: the whole island as we understand it at Calma Society.",
+    title: tr({ es: "Menorca en 7 días: la isla entera, sin prisa", en: "Menorca in 7 days: the whole island, unhurried", de: "Menorca in 7 Tagen: die ganze Insel, ohne Eile" }),
+    intro: tr({
+      es: "Una semana a ritmo relajado suma el interior talayótico y el norte agreste a las calas del sur: la isla completa como la entendemos en Calma Society.",
+      en: "A week at a relaxed pace adds the Talayotic interior and the wild north to the southern coves: the whole island as we understand it at Calma Society.",
+      de: "Eine Woche in entspanntem Tempo ergänzt die Buchten des Südens um das talayotische Landesinnere und den rauen Norden: die ganze Insel, so wie wir sie bei Calma Society verstehen.",
+    }),
   },
 ];
 
@@ -77,8 +91,7 @@ const itinerarios = PROFILES.map((p) => {
 });
 
 // ── Preguntas frecuentes (respuestas VERIFICADAS, voz de marca) ──────────────
-const FAQS: Array<{ q: string; a: string }> = isEs
-  ? [
+const FAQS_ES: Array<{ q: string; a: string }> = [
       {
         q: "¿Cuántos días necesito para ver Menorca?",
         a: "Con 3 días se toca lo esencial de una zona; 5 días es el formato que recomendamos (un día por zona, sin zigzaguear); con 7 entran también el interior talayótico y el norte agreste. La isla es pequeña, pero se disfruta despacio.",
@@ -99,8 +112,9 @@ const FAQS: Array<{ q: string; a: string }> = isEs
         q: "¿Qué hacer en Menorca con niños pequeños?",
         a: "Playas de arena y aguas someras con servicios: Son Bou, Cala Galdana, Punta Prima o Es Grau (varias con baño asistido de mayo a octubre). El planificador evita las calas de caminata cuando viajas con carrito y acorta las jornadas.",
       },
-    ]
-  : [
+];
+
+const FAQS_EN: Array<{ q: string; a: string }> = [
       {
         q: "How many days do you need in Menorca?",
         a: "Three days cover the essentials of one area; five is the format we recommend (one area per day, no zigzagging); with seven you also take in the Talayotic interior and the wild north. The island is small, but it rewards a slow pace.",
@@ -121,7 +135,32 @@ const FAQS: Array<{ q: string; a: string }> = isEs
         q: "What to do in Menorca with small children?",
         a: "Sandy beaches with shallow water and services: Son Bou, Cala Galdana, Punta Prima or Es Grau (several with assisted bathing from May to October). The planner avoids walk-in coves when you travel with a stroller and keeps the days short.",
       },
-    ];
+];
+
+const FAQS_DE: Array<{ q: string; a: string }> = [
+  {
+    q: "Wie viele Tage braucht man für Menorca?",
+    a: "Mit 3 Tagen erfassen Sie das Wesentliche einer Gegend; 5 Tage sind das Format, das wir empfehlen (ein Tag pro Gegend, ohne Zickzack); mit 7 kommen auch das talayotische Landesinnere und der raue Norden dazu. Die Insel ist klein, aber sie will langsam genossen werden.",
+  },
+  {
+    q: "Was kann man auf Menorca bei Regen unternehmen?",
+    a: "Jeder Tag im Reiseplaner hat einen Plan B im Innenraum, in derselben Gegend: die Museen von Mahón und Ciutadella, die Ginbrennerei Xoriguer, Käsereien mit Führung (vorher reservieren), ein langes Mittagessen oder ein Spa. Wenn im Sommer die Hitze das Problem ist, wandert die Bucht auf den frühen Morgen und die Mittagszeit ins Kühle.",
+  },
+  {
+    q: "Kann man Menorca ohne Auto besuchen?",
+    a: "Ja, wenn Sie den Standort gut wählen: Mahón (der einzige Ort mit Direktbus vom Flughafen) oder Ciutadella. In der Saison sind die angebundenen Buchten mit Bus oder Shuttle erreichbar, und für alles Übrige löst ein privater Transfer den Tag. Der Reiseplaner weist auf jeden Fall hin.",
+  },
+  {
+    q: "Welche Gegend ist die beste zum Übernachten auf Menorca?",
+    a: "Das hängt von der Reise ab: Ciutadella für ein erstes Mal mit Atmosphäre; Cala Galdana oder Son Bou mit Familie; Fornells für Segeln und Langusten-Caldereta; Es Mercadal als zentraler Standort, um alles zu erkunden; Mahón für Kultur, Hafen und einfache Logistik. Der Reiseplaner empfiehlt Ihnen eine Gegend (nie Hotels), passend zu Ihrem Profil.",
+  },
+  {
+    q: "Was kann man auf Menorca mit kleinen Kindern unternehmen?",
+    a: "Sandstrände mit flachem Wasser und Einrichtungen: Son Bou, Cala Galdana, Punta Prima oder Es Grau (mehrere mit betreutem Baden von Mai bis Oktober). Der Reiseplaner meidet Buchten mit Fußmarsch, wenn Sie mit Kinderwagen reisen, und hält die Tage kurz.",
+  },
+];
+
+const FAQS: Array<{ q: string; a: string }> = tr({ es: FAQS_ES, en: FAQS_EN, de: FAQS_DE });
 
 // ── JSON-LD: FAQPage + un TouristTrip por itinerario estático ────────────────
 const faqLd = {
@@ -138,7 +177,7 @@ const tripLds = itinerarios.map((it) => ({
   "@type": "TouristTrip",
   name: it.title,
   description: it.intro,
-  touristType: isEs ? "lujo tranquilo" : "quiet luxury",
+  touristType: tr({ es: "lujo tranquilo", en: "quiet luxury", de: "stiller Luxus" }),
   provider: { "@type": "Organization", name: SITE.name, url: SITE.url },
   itinerary: {
     "@type": "ItemList",
@@ -150,21 +189,29 @@ const tripLds = itinerarios.map((it) => ({
   },
 }));
 
-const T = isEs
-  ? {
+const T = tr({
+  es: {
       heading: "Qué hacer en Menorca, según tus días",
       lead: "Tres itinerarios reales generados por nuestro motor —los mismos criterios que usará contigo—, para leer de un vistazo qué da de sí la isla. Personalízalos y serán tuyos.",
       customize: "Personalizar este itinerario",
       faqHeading: "Preguntas frecuentes al organizar un viaje a Menorca",
       day: "Día",
-    }
-  : {
+  },
+  en: {
       heading: "What to do in Menorca, by trip length",
       lead: "Three real itineraries generated by our engine —the same criteria it will use with you—, to see at a glance what the island offers. Customise them and they become yours.",
       customize: "Customise this itinerary",
       faqHeading: "Frequently asked questions when planning Menorca",
       day: "Day",
-    };
+  },
+  de: {
+      heading: "Was man auf Menorca unternehmen kann, je nach Reisedauer",
+      lead: "Drei echte Routen, von unserem Motor erstellt — nach denselben Kriterien, die er auch bei Ihnen anwendet —, damit Sie auf einen Blick sehen, was die Insel hergibt. Passen Sie sie an, und sie gehören Ihnen.",
+      customize: "Diese Route anpassen",
+      faqHeading: "Häufige Fragen bei der Planung einer Reise nach Menorca",
+      day: "Tag",
+  },
+});
 ---
 
 <section class="mx-auto max-w-3xl px-5 pb-4 sm:px-8 print:hidden">

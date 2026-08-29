@@ -44,7 +44,7 @@ function deriveZone(location) {
   return m2.size === 1 ? [...m2][0] : "varios";
 }
 
-const byLang = { es: [], en: [] };
+const byLang = { es: [], en: [], de: [] };
 for (const file of readdirSync(DIR).filter((f) => f.endsWith(".json"))) {
   const e = JSON.parse(readFileSync(join(DIR, file), "utf8"));
   if (!byLang[e.lang]) continue;
