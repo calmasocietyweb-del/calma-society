@@ -396,20 +396,38 @@ const eventos = defineCollection({
     }),
 });
 
+/** Texto localizado a los SEIS locales activos. `es` y `en` obligatorios; el resto
+ *  opcional porque el despliegue es por mercados. Ver el aviso de `autores`. */
+const textoPorIdioma = z.object({
+  es: z.string(),
+  en: z.string(),
+  fr: z.string().optional(),
+  de: z.string().optional(),
+  it: z.string().optional(),
+  pt: z.string().optional(),
+});
+
 /** Autores/firmas (E-E-A-T). Puede ser una persona o una firma editorial del medio;
  * textos y nombre localizados (la firma puede diferir ES/EN, p. ej. "Redacción de
  * Calma Society" / "Calma Society Editorial"). */
 const autores = defineCollection({
   loader: glob({ pattern: "**/*.json", base: "./src/content/autores" }),
   schema: z.object({
-      // `fr` opcional: despliegue por mercados. Si falta, se cae a en/es (ver
-      // el helper `pick()` en i18n/ui.ts).
-      name: z.object({ es: z.string(), en: z.string(), fr: z.string().optional() }),
-      role: z.object({ es: z.string(), en: z.string(), fr: z.string().optional() }),
-      bio: z.object({ es: z.string(), en: z.string(), fr: z.string().optional() }),
+      /* ⚠️ ESTE OBJETO DEBE LISTAR LOS SEIS LOCALES ACTIVOS (auditoría 29-ago-2026).
+         Zod DESCARTA en silencio las claves que no declara: mientras aquí solo
+         estaban es/en/fr, escribir la bio alemana en el JSON no servía de nada
+         —el fichero era correcto y el schema la tiraba—, y `pick()` caía al
+         inglés. Resultado: la firma del autor salía en INGLÉS en las páginas de
+         autor y en los artículos de de/it/pt. No hubo error de compilación.
+         `es` y `en` son obligatorios; el resto opcional (despliegue por mercados,
+         `pick()` en i18n/ui.ts cae a en/es). Al activar un idioma nuevo hay que
+         añadirlo aquí — lo vigila `src/lib/autores-schema.test.ts`. */
+      name: textoPorIdioma,
+      role: textoPorIdioma,
+      bio: textoPorIdioma,
       // `bio` es texto visible (corto). `seoDescription` la sustituye SOLO en la
       // <meta description> de la página de autor cuando la bio es muy corta para SEO.
-      seoDescription: z.object({ es: z.string(), en: z.string(), fr: z.string().optional() }).optional(),
+      seoDescription: textoPorIdioma.optional(),
       avatar: z.string().optional(),
       social: z
         .object({

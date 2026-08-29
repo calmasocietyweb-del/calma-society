@@ -1,14 +1,34 @@
 {
-  "name": { "es": "Redacción de Calma Society", "en": "Calma Society Editorial", "fr": "La rédaction de Calma Society" },
-  "role": { "es": "Equipo editorial", "en": "Editorial team", "fr": "Équipe éditoriale" },
+  "name": {
+    "es": "Redacción de Calma Society",
+    "en": "Calma Society Editorial",
+    "fr": "La rédaction de Calma Society",
+    "de": "Die Redaktion von Calma Society",
+    "it": "La redazione di Calma Society",
+    "pt": "A redação da Calma Society"
+  },
+  "role": {
+    "es": "Equipo editorial",
+    "en": "Editorial team",
+    "fr": "Équipe éditoriale",
+    "de": "Redaktionsteam",
+    "it": "Team editoriale",
+    "pt": "Equipa editorial"
+  },
   "bio": {
     "es": "La redacción de Calma Society. Cubrimos Menorca con criterio y de primera mano: cada cala, restaurante, ruta o evento se elige y se verifica antes de recomendarlo. Datos comprobados, voz propia y mirada de lujo tranquilo, los 365 días del año.",
     "en": "The Calma Society editorial team. We cover Menorca with judgement and first-hand: every cove, restaurant, route or event is chosen and checked before we recommend it. Verified facts, our own voice and a quiet-luxury eye, 365 days a year.",
-    "fr": "La rédaction de Calma Society. Nous couvrons Minorque avec discernement et de première main : chaque crique, restaurant, itinéraire ou événement est choisi et vérifié avant d'être recommandé. Des faits contrôlés, une voix qui nous est propre et un regard de luxe tranquille, 365 jours par an."
+    "fr": "La rédaction de Calma Society. Nous couvrons Minorque avec discernement et de première main : chaque crique, restaurant, itinéraire ou événement est choisi et vérifié avant d'être recommandé. Des faits contrôlés, une voix qui nous est propre et un regard de luxe tranquille, 365 jours par an.",
+    "de": "Die Redaktion von Calma Society. Wir berichten über Menorca mit Urteilsvermögen und aus erster Hand: Jede Bucht, jedes Restaurant, jede Route und jede Veranstaltung wird ausgewählt und überprüft, bevor wir sie empfehlen. Geprüfte Fakten, eine eigene Stimme und der Blick des stillen Luxus, 365 Tage im Jahr.",
+    "it": "La redazione di Calma Society. Raccontiamo Minorca con criterio e in prima persona: ogni cala, ristorante, itinerario o evento viene scelto e verificato prima di consigliarlo. Dati controllati, una voce che è la nostra e uno sguardo di lusso tranquillo, 365 giorni all'anno.",
+    "pt": "A redação da Calma Society. Cobrimos Menorca com critério e em primeira mão: cada enseada, restaurante, percurso ou evento é escolhido e verificado antes de o recomendarmos. Dados comprovados, voz própria e um olhar de luxo tranquilo, 365 dias por ano."
   },
   "seoDescription": {
     "es": "La redacción de Calma Society, revista independiente sobre Menorca con mirada de lujo tranquilo: criterio editorial, datos verificados de primera mano y voz propia.",
     "en": "The Calma Society editorial team, an independent magazine about Menorca with a quiet-luxury lens: editorial judgement, first-hand verified facts and a voice of its own.",
-    "fr": "La rédaction de Calma Society, magazine indépendant sur Minorque avec un regard de luxe tranquille : discernement éditorial, faits vérifiés de première main et voix qui lui est propre."
+    "fr": "La rédaction de Calma Society, magazine indépendant sur Minorque avec un regard de luxe tranquille : discernement éditorial, faits vérifiés de première main et voix qui lui est propre.",
+    "de": "Die Redaktion von Calma Society, unabhängiges Magazin über Menorca mit dem Blick des stillen Luxus: redaktionelles Urteil, aus erster Hand geprüfte Fakten und eine eigene Stimme.",
+    "it": "La redazione di Calma Society, rivista indipendente su Minorca con uno sguardo di lusso tranquillo: criterio editoriale, dati verificati in prima persona e voce propria.",
+    "pt": "A redação da Calma Society, revista independente sobre Menorca com um olhar de luxo tranquilo: critério editorial, dados verificados em primeira mão e voz própria."
   }
 }
