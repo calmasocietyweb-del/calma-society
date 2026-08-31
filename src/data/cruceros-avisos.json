@@ -1,8 +1,8 @@
 {
-  "updated": "2026-08-30",
+  "updated": "2026-08-31",
   "ventana": {
-    "desde": "2026-08-30",
-    "hasta": "2026-09-27"
+    "desde": "2026-08-31",
+    "hasta": "2026-09-28"
   },
   "nuevas": [
     {
@@ -48,6 +48,17 @@
       "consignatario": "FEDERICO CARDONA TREMOL S L",
       "escala": "M202600178",
       "nota": "El puerto la tiene y nosotros no. Falta capacidad de pasaje y naviera antes de publicarla."
+    },
+    {
+      "date": "2026-09-28",
+      "ship": "FOUR SEASONS I",
+      "arrival": "08:00",
+      "departure": "16:00",
+      "departureDate": null,
+      "muelle": "MUELLE CRUCEROS",
+      "consignatario": "AGENCIA MELIA VIVES S L",
+      "escala": "M202600195",
+      "nota": "El puerto la tiene y nosotros no. Falta capacidad de pasaje y naviera antes de publicarla."
     }
   ],
   "desaparecidas": [],
@@ -90,6 +101,20 @@
         {
           "ship": "EMERALD SAKARA",
           "eslora": 110
+        }
+      ],
+      "nota": "Dos cruceros el mismo día. Si uno fondea, se desembarca en lancha y el tiempo real en tierra cambia."
+    },
+    {
+      "date": "2026-09-28",
+      "barcos": [
+        {
+          "ship": "FOUR SEASONS I",
+          "eslora": 207
+        },
+        {
+          "ship": "MSC OPERA",
+          "eslora": 274.9
         }
       ],
       "nota": "Dos cruceros el mismo día. Si uno fondea, se desembarca en lancha y el tiempo real en tierra cambia."
