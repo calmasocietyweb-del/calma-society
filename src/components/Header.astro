@@ -29,8 +29,8 @@ const PAGES: Record<Locale, { about: string; newsletter: string; contact: string
 };
 const pages = PAGES[locale];
 
-// Herramientas interactivas por idioma. En FR (despliegue por mercados) solo van
-// las traducidas: Mar en calma + Atardeceres (el Planificador se añadirá después).
+// Herramientas interactivas por idioma. Solo se enlaza lo que EXISTE en ese idioma:
+// un menú que ofrece una herramienta inexistente es peor que no ofrecerla.
 const TOOLS: Record<Locale, { href: string; label: string }[]> = {
   es: [
     { href: "/donde-el-mar-esta-en-calma", label: "Mar en calma" },
@@ -42,10 +42,11 @@ const TOOLS: Record<Locale, { href: string; label: string }[]> = {
     { href: "/en/trip-planner", label: "Planner" },
     { href: "/en/sunsets-and-drinks", label: "Sunsets & drinks" },
   ],
-  // FR (despliegue por mercados): Mer calme + Couchers ya traducidos. El
-  // Planificateur queda fuera del despliegue FR hasta tener su pipeline de datos.
+  // FR: las tres traducidas. El Planificateur entró con KAN-138 (31-ago-2026),
+  // con su motor, sus datos (planner-data.fr / planner-events.fr) y su página.
   fr: [
     { href: "/fr/ou-la-mer-est-calme", label: "Mer calme" },
+    { href: "/fr/planificateur", label: "Planificateur" },
     { href: "/fr/couchers-et-cocktails", label: "Couchers & cocktails" },
   ],
   // DE (despliegue por mercados): el mar en calma ya está traducido (KAN-134).

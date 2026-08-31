@@ -18,7 +18,7 @@ import type { Locale } from "../config/site";
 /* Las páginas de escala existen en español e inglés. Con `locale: Locale`, un
    idioma nuevo caía al inglés en los 13 sitios donde decidía `isEs` —incluido el
    formato de fechas— sin dar un aviso. Declarado, es error de compilación (KAN-133). */
-type ToolLocale = Extract<Locale, "es" | "en" | "de">;
+type ToolLocale = Extract<Locale, "es" | "en" | "fr" | "de">;
 
 interface Props {
   barco: Barco;
@@ -131,6 +131,55 @@ const TEXTOS = {
       fotoAltAida: "The Menorca Bus fleet waiting beside AIDAstella on the cruise quay in Maó.",
       fotoPieAida: "Your car, waiting for your ship: the fleet before AIDAstella in Maó · Photo: Menorca Bus",
   },
+  fr: {
+      kicker: "Escale de croisière à Maó",
+      horario: "Votre escale, heure par heure",
+      atraca: "Accostage",
+      zarpa: "Appareillage",
+      escala: "Durée de l'escale",
+      utiles: "Temps réel à terre",
+      comoSale: "D'où vient ce chiffre",
+      cuenta:
+        "De la durée de l'escale, nous retranchons 30 minutes pour débarquer et sortir du quai, et 60 minutes de marge pour le retour : l'« all aboard » tombe généralement entre une demi-heure et une heure avant l'appareillage, et nous retenons ici le pire des cas. Nous préférons qu'il vous reste du temps plutôt que de vous faire courir.",
+      cabe: "Ce que vous avez le temps de faire",
+      justo: "c'est juste",
+      margen: "il vous reste",
+      noCabe: "Ce que vous n'avez PAS le temps de faire",
+      noCabeIntro: "Avec vos horaires, cela ne passe pas. Nous préférons vous le dire plutôt que de vous vendre une course :",
+      masivo: "Vous débarquez nombreux en même temps",
+      masivoTxt:
+        "Ce navire débarque plus de 1 500 personnes sur un petit quai. La première demi-heure, c'est la file d'attente, et les taxis du port s'épuisent très vite. Si votre voiture vous attend, vous commencez la journée une heure avant les autres.",
+      manana: "Escale du matin",
+      mananaTxt: "Vous appareillez en milieu d'après-midi : le déjeuner se prend à bord. Tout ce qui suit en tient compte.",
+      atardecer: "Vous avez le temps pour le coucher du soleil",
+      atardecerTxt:
+        "Vous appareillez assez tard pour voir le coucher du soleil à terre — un luxe que presque aucune escale ne permet.",
+      cena: "Et même de dîner à terre",
+      cenaTxt: "Avec cette heure d'appareillage, un vrai dîner tient dans le port ou à Fornells avant de remonter à bord.",
+      fechas: "Quand ce navire fait escale à Maó",
+      fechasNota: "Dates issues du calendrier des escales de Maó",
+      aviso: "Les horaires peuvent changer",
+      avisoTxt:
+        "Ce sont les horaires habituels de ce navire à Maó, non une promesse : la compagnie peut les modifier et la mer commande. Confirmez toujours l'heure de retour à bord auprès de votre navire. Calendrier mis à jour le {fecha} ; il couvre environ {cobertura} % de la saison.",
+      verCalendario: "Voir le calendrier complet des croisières",
+      sigue: "Poursuivre par ici",
+      planificador: "Planificateur de voyage",
+      planificadorTxt: "Si vous revenez avec plus de jours, nous vous montons le voyage entier.",
+      marEnCalma: "Où la mer est-elle calme",
+      marEnCalmaTxt: "Avant de choisir une crique, regardez où le vent ne souffle pas aujourd'hui.",
+      atardeceres: "Couchers de soleil et cocktails",
+      atardeceresTxt: "Où le soleil se couche, et où boire un verre ensuite.",
+      comer: "Manger et boire",
+      comerTxt: "Où dîner sans se tromper.",
+      busTitle: "Que l'heure ne vous surprenne pas",
+      busText:
+        "Le risque d'une escale n'est pas de s'ennuyer : c'est de regarder sa montre. Avec un chauffeur privé, on vous récupère sur le quai, on vous emmène où vous voulez, on vous attend et on vous ramène au navire avec de la marge. Il existe aussi un transfert direct port ↔ destination.",
+      busCta: "Réserver avec Menorca Bus",
+      fotoAlt: "Mercedes Classe E et Classe V de Menorca Bus attendant sur le quai des croisières de Maó.",
+      fotoPie: "Sur le quai de Maó, à l'heure de l'accostage · Photo : Menorca Bus",
+      fotoAltAida: "La flotte de Menorca Bus attendant au pied de l'AIDAstella sur le quai des croisières de Maó.",
+      fotoPieAida: "Votre voiture, qui attend votre navire : la flotte devant l'AIDAstella à Maó · Photo : Menorca Bus",
+  },
   de: {
       kicker: "Kreuzfahrt-Anlauf in Mahón",
       horario: "Ihr Landgang, Stunde für Stunde",
@@ -185,7 +234,7 @@ const T = TEXTOS[locale];
 
 const fmtFecha = (iso: string) => {
   const [y, m, d] = iso.split("-").map(Number);
-  return new Intl.DateTimeFormat(tr({ es: "es-ES", en: "en-GB", de: "de-DE" }), { day: "numeric", month: "long", timeZone: "UTC" }).format(
+  return new Intl.DateTimeFormat(tr({ es: "es-ES", en: "en-GB", fr: "fr-FR", de: "de-DE" }), { day: "numeric", month: "long", timeZone: "UTC" }).format(
     new Date(Date.UTC(y, m - 1, d)),
   );
 };
@@ -202,15 +251,15 @@ const foto = esAidastella
   ? { src: "/uploads/mb-flota-aidastella.webp", w: 1600, h: 2400, aspect: "aspect-[2/3]", alt: T.fotoAltAida, pie: T.fotoPieAida }
   : { src: "/uploads/mb-flota-muelle.webp", w: 1600, h: 1066, aspect: "aspect-[3/2]", alt: T.fotoAlt, pie: T.fotoPie };
 
-const calendarioHref = tr({ es: "/articulo/cruceros-en-menorca-2026", en: "/en/article/cruises-in-menorca-2026", de: "/de/artikel/kreuzfahrten-menorca-2026" });
+const calendarioHref = tr({ es: "/articulo/cruceros-en-menorca-2026", en: "/en/article/cruises-in-menorca-2026", fr: "/fr/article/escale-croisiere-mao-minorque", de: "/de/artikel/kreuzfahrten-menorca-2026" });
 const enlaces = [
-  { href: tr({ es: "/planificador", en: "/en/trip-planner", de: "/de/reiseplaner" }), t: T.planificador, d: T.planificadorTxt },
-  { href: tr({ es: "/donde-el-mar-esta-en-calma", en: "/en/where-the-sea-is-calm", de: "/de/wo-das-meer-ruhig-ist" }), t: T.marEnCalma, d: T.marEnCalmaTxt },
+  { href: tr({ es: "/planificador", en: "/en/trip-planner", fr: "/fr/planificateur", de: "/de/reiseplaner" }), t: T.planificador, d: T.planificadorTxt },
+  { href: tr({ es: "/donde-el-mar-esta-en-calma", en: "/en/where-the-sea-is-calm", fr: "/fr/ou-la-mer-est-calme", de: "/de/wo-das-meer-ruhig-ist" }), t: T.marEnCalma, d: T.marEnCalmaTxt },
   // Solo si sus horas lo permiten: no se ofrece un atardecer a quien zarpa a las cuatro.
   ...(b.llegaAlAtardecer
-    ? [{ href: tr({ es: "/atardeceres-y-copas", en: "/en/sunsets-and-drinks", de: "/de/sonnenuntergaenge-und-drinks" }), t: T.atardeceres, d: T.atardeceresTxt }]
+    ? [{ href: tr({ es: "/atardeceres-y-copas", en: "/en/sunsets-and-drinks", fr: "/fr/couchers-et-cocktails", de: "/de/sonnenuntergaenge-und-drinks" }), t: T.atardeceres, d: T.atardeceresTxt }]
     : []),
-  ...(b.daParaCenar ? [{ href: tr({ es: "/comer-y-beber", en: "/en/eat-and-drink", de: "/de/essen-und-trinken" }), t: T.comer, d: T.comerTxt }] : []),
+  ...(b.daParaCenar ? [{ href: tr({ es: "/comer-y-beber", en: "/en/eat-and-drink", fr: "/fr/manger-et-boire", de: "/de/essen-und-trinken" }), t: T.comer, d: T.comerTxt }] : []),
 ];
 ---
 
@@ -221,6 +270,7 @@ const enlaces = [
     {tr({
       es: `El ${b.ship} (${b.line}) atraca en Maó a las ${b.arrival} y zarpa a las ${b.departure}. Descontando el desembarque y el margen de vuelta, te quedan unas ${enHoras(b.utilesMin, "es")} de verdad en tierra. Esto es lo que da de sí ese tiempo — y lo que no.`,
       en: `The ${b.ship} (${b.line}) berths in Maó at ${b.arrival} and sails at ${b.departure}. Once you take off disembarking and the margin to get back, you have around ${enHoras(b.utilesMin, "en")} truly ashore. Here is what that time is good for — and what it isn't.`,
+      fr: `Le ${b.ship} (${b.line}) accoste à Maó à ${b.arrival} et appareille à ${b.departure}. Une fois retranchés le débarquement et la marge de retour, il vous reste environ ${enHoras(b.utilesMin, "fr")} vraiment à terre. Voici ce que ce temps permet — et ce qu'il ne permet pas.`,
       de: `Die ${b.ship} (${b.line}) legt in Mahón um ${b.arrival} an und läuft um ${b.departure} wieder aus. Nach Abzug des Ausschiffens und des Puffers für den Rückweg bleiben Ihnen rund ${enHoras(b.utilesMin, "de")} echte Zeit an Land. Das ist es, was diese Zeit hergibt — und was nicht.`,
     })}
   </p>
@@ -288,14 +338,14 @@ const enlaces = [
     {b.caben.map((p) => (
       <li class="rounded-xl border border-niebla bg-lino p-4">
         <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-          <h3 class="font-display text-lg text-tinta">{tr({ es: p.es, en: p.en, de: p.de })}</h3>
+          <h3 class="font-display text-lg text-tinta">{tr({ es: p.es, en: p.en, fr: p.fr, de: p.de })}</h3>
           <span class={`text-xs font-semibold ${vaJusto(p, b.utilesMin) ? "text-terracota" : "text-piedra-suave"}`}>
             {vaJusto(p, b.utilesMin)
               ? T.justo
               : `${T.margen} ${enHoras(margenDe(p, b.utilesMin), locale)}`}
           </span>
         </div>
-        <p class="mt-1 text-sm leading-relaxed text-piedra-suave">{tr({ es: p.detalleEs, en: p.detalleEn, de: p.detalleDe })}</p>
+        <p class="mt-1 text-sm leading-relaxed text-piedra-suave">{tr({ es: p.detalleEs, en: p.detalleEn, fr: p.detalleFr, de: p.detalleDe })}</p>
       </li>
     ))}
   </ol>
@@ -308,8 +358,8 @@ const enlaces = [
       <ul class="mt-3 space-y-2">
         {b.noCaben.map((p) => (
           <li class="rounded-xl border border-niebla bg-arena/40 p-4">
-            <p class="font-medium text-tinta">{tr({ es: p.es, en: p.en, de: p.de })}</p>
-            <p class="mt-1 text-sm leading-relaxed text-piedra-suave">{tr({ es: p.detalleEs, en: p.detalleEn, de: p.detalleDe })}</p>
+            <p class="font-medium text-tinta">{tr({ es: p.es, en: p.en, fr: p.fr, de: p.de })}</p>
+            <p class="mt-1 text-sm leading-relaxed text-piedra-suave">{tr({ es: p.detalleEs, en: p.detalleEn, fr: p.detalleFr, de: p.detalleDe })}</p>
           </li>
         ))}
       </ul>

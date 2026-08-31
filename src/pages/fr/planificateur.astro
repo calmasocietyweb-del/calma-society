@@ -1,0 +1,46 @@
+---
+// "Organisez votre voyage à Minorque" (FR) — planificateur d'itinéraires.
+// SEO: en plus du plan interactif (rendu côté client, invisible aux robots),
+// la page publie des itinéraires STATIQUES d'exemple et une FAQ (PlannerSeoContent)
+// ciblant "que faire à Minorque", "itinéraire Minorque", "Minorque en 5 jours".
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PlannerView from "../../components/PlannerView.astro";
+import PlannerSeoContent from "../../components/PlannerSeoContent.astro";
+
+const alternates = {
+  es: "/planificador",
+  en: "/en/trip-planner",
+  fr: "/fr/planificateur",
+  de: "/de/reiseplaner",
+};
+---
+
+<BaseLayout
+  title="Organisez votre voyage à Minorque : 3, 5 ou 7 jours"
+  description="Que faire à Minorque, jour après jour : le planificateur construit votre itinéraire par proximité et sans hâte — criques, tables choisies avec soin et plan B si le temps se gâte."
+  locale="fr"
+  alternates={alternates}
+>
+  <div class="mx-auto max-w-3xl px-5 pt-12 sm:px-8 sm:pt-16 print:hidden">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Calma Society · Minorque</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Organisez votre voyage à Minorque</h1>
+    <p class="lead mt-5">
+      Un guide jour par jour, enchaîné par la proximité et sans hâte : l'île à votre rythme, avec
+      le discernement du luxe tranquille.
+    </p>
+    <p class="mt-5 text-base leading-relaxed text-piedra-suave">
+      Minorque est une <strong>arête de poisson</strong> : tout dépend de l'axe Maó–Ciutadella et
+      les criques en sont les ramifications. L'erreur est de zigzaguer. Nous vous proposons un
+      plan qui regroupe par zones, part tôt vers les criques, laisse de la marge pour le vent et
+      prévoit un plan B en cas de mauvais temps. Vous l'ajustez ; la décision finale vous revient
+      toujours.
+    </p>
+  </div>
+
+  <div class="mt-8">
+    <PlannerView locale="fr" />
+  </div>
+
+  {/* Itinéraires statiques d'exemple + FAQ (SEO/GEO : contenu réel indexable). */}
+  <PlannerSeoContent locale="fr" />
+</BaseLayout>

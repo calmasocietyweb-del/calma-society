@@ -65,7 +65,7 @@ export function planTrip(
   const clusters = new Map(rankClusters(survey, base, usable).map((c) => [c.cluster, c]));
   const byId = new Map(usable.map((p) => [p.id, p]));
   // Guía de comida verificada de la zona BASE (desayuno) y anclas de base (llegada/salida).
-  const baseFood = foodByZone?.zones[BASE_SIDE[base]];
+  const baseFood = foodByZone?.zones?.[BASE_SIDE[base]];
 
   // Semilla del viaje: hace que dos encuestas distintas den planes distintos sin
   // perder la invariante "misma URL = mismo plan" (rules/seed.ts).
@@ -87,7 +87,7 @@ export function planTrip(
     const sunsetHint = sunsetHintFor(date);
 
     if (sk.dayTypeKey === "dia-llegada") {
-      result = arrivalDay(survey, base, usable, lang, foodByZone?.bases[base], sunsetHint, seed, used);
+      result = arrivalDay(survey, base, usable, lang, foodByZone?.bases?.[base], sunsetHint, seed, used);
       if (isCarless(survey) || base !== "mao") {
         menorcaBusHooks.push({ type: "transfer-aeropuerto", context: `Transfer aeropuerto → ${base}`, dayIndex: sk.dayIndex });
       }
@@ -96,7 +96,7 @@ export function planTrip(
         menorcaBusHooks.push({ type: "transfer-adaptado", context: `Transfer adaptado a una playa accesible desde ${base}`, dayIndex: sk.dayIndex });
       }
     } else if (sk.dayTypeKey === "dia-salida") {
-      result = departureDay(survey, base, lang, foodByZone?.bases[base], usable, seed, used);
+      result = departureDay(survey, base, lang, foodByZone?.bases?.[base], usable, seed, used);
       if (isCarless(survey)) {
         menorcaBusHooks.push({ type: "transfer-aeropuerto", context: `Transfer ${base} → aeropuerto`, dayIndex: sk.dayIndex });
       }
@@ -105,8 +105,8 @@ export function planTrip(
       result = sequenceDay({
         base, cluster: sk.cluster, zone: info.zone, places: info.places,
         travelFromBaseMin: info.travelFromBaseMin, pace, survey, lang,
-        zoneFood: foodByZone?.zones[info.zone], baseFood,
-        baseBreakfasts: foodByZone?.bases[base]?.breakfasts, dayIndex: sk.dayIndex,
+        zoneFood: foodByZone?.zones?.[info.zone], baseFood,
+        baseBreakfasts: foodByZone?.bases?.[base]?.breakfasts, dayIndex: sk.dayIndex,
         weekday, sunsetHint, seed, used,
       });
       // PASO 4: aviso de viento (FLEXIBLE) con alternativa resguardada en costa opuesta.
@@ -198,14 +198,14 @@ export function planTrip(
         .filter((z): z is PlannerZone => z !== "base" && z !== "cercano-aeropuerto"),
     ];
     const cands = [...new Set(visited)]
-      .map((z) => foodByZone.zones[z]?.signature)
+      .map((z) => foodByZone.zones?.[z]?.signature)
       .filter((s): s is NonNullable<typeof s> => !!s);
     const wantLux = survey.budget === "alto" || survey.interests.includes("lujo-tranquilo");
     const wantGastro = survey.interests.includes("gastronomia");
     const pick =
       (wantLux ? cands.find((c) => c.idealFor.includes("lujo-tranquilo")) : undefined) ||
       (wantGastro ? cands.find((c) => c.idealFor.includes("gastronomia")) : undefined) ||
-      foodByZone.zones[baseZone]?.signature ||
+      foodByZone.zones?.[baseZone]?.signature ||
       cands[0];
     if (pick) signature = { title: pick.title, desc: pick.desc };
   }

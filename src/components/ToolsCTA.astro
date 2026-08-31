@@ -13,8 +13,8 @@
  *   <ToolsCTA lang="es" />
  *   <ToolsCTA lang="en" tools={["calm-sea"]} />
  *
- * El planificador aún no existe en francés: en `fr` ese enlace se omite solo
- * (nunca se genera un enlace roto).
+ * El planificador aún no existe en italiano ni portugués: en `it`/`pt` ese
+ * enlace se omite solo (nunca se genera un enlace roto).
  */
 import { type Locale } from "../config/site";
 
@@ -61,8 +61,9 @@ const TOOLS: Record<"calm-sea" | "planner", Tool> = {
     href: {
       es: "/planificador",
       en: "/en/trip-planner",
+      fr: "/fr/planificateur",
       de: "/de/reiseplaner",
-      // El planificador en francés, italiano y portugués aún no está lanzado:
+      // El planificador en italiano y portugués aún no está lanzado:
       // sin `href`, el enlace se omite solo — nunca roto.
     },
     label: {

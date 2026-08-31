@@ -85,8 +85,21 @@ const rows: { label: string; value?: string }[] = [
 
 // Aviso de cierre estival al coche (Macarella, Favàritx…): va aparte, destacado.
 const shuttle = pl?.carAccessClosedSummer ? pl.shuttleInfo : undefined;
-// Página del planificador por idioma (FR aún no tiene: KAN-24).
-const plannerHref = L === "es" ? "/planificador" : L === "en" ? "/en/trip-planner" : null;
+/**
+ * Página del planificador por idioma. Registro, NO un ternario: el
+ * `L === "es" ? … : L === "en" ? … : null` que había aquí dejaba SIN enlace al
+ * alemán, que tiene su `/de/reiseplaner` desde KAN-134. `null` = ese idioma no
+ * tiene planificador todavía, y entonces no se pinta el enlace (nunca un 404).
+ */
+const PLANNER_HREF: Record<Locale, string | null> = {
+  es: "/planificador",
+  en: "/en/trip-planner",
+  fr: "/fr/planificateur",
+  de: "/de/reiseplaner",
+  it: null,
+  pt: null,
+};
+const plannerHref = PLANNER_HREF[L];
 
 const mapUrl = `https://www.google.com/maps/search/?api=1&query=${data.coordinates.lat},${data.coordinates.lng}`;
 const officialUrl = data.website ?? pl?.officialUrl;

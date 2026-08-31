@@ -211,7 +211,7 @@ export function recommendBase(s: Survey, lang: Lang = "es", dataset: PlannerPlac
     const zoneNames = S(lang).zoneName;
     return {
       base: pick.base,
-      baseReason: t.dataDriven(NICE[pick.base], pick.zones.map((z) => zoneNames[z]).join(lang === "es" ? " y " : " and ")),
+      baseReason: t.dataDriven(NICE[pick.base], pick.zones.map((z) => zoneNames[z]).join(S(lang).listJoin)),
       splitBase: maybeSplit(s, pick.base),
     };
   }

@@ -57,11 +57,12 @@ const LINKS: Record<HubLocale, Item[]> = {
     { icon: "magazine", href: "/en/", event: "bio-magazine", label: "The magazine", text: "All of Calma Society: Menorca, unhurried, with a quiet-luxury eye." },
   ],
   // FR: solo las herramientas que EXISTEN en francés (componer una URL no es
-  // que exista). Sin planificador ni guía de calas: cuando se traduzcan, se
-  // añaden aquí. La tarjeta destacada capta hacia /fr/newsletter sin prometer
+  // que exista). El planificador entró con KAN-138 (31-ago-2026). Sigue sin guía
+  // de calas: la tarjeta destacada capta hacia /fr/newsletter sin prometer
   // la guía (en FR aún no hay guía ni automatización de bienvenida; ver ui.ts).
   fr: [
     { icon: "calm", href: "/fr/ou-la-mer-est-calme", event: "bio-mer-calme", label: "Où la mer est calme", text: "Quelles criques restent abritées aujourd'hui, selon le vent." },
+    { icon: "planner", href: "/fr/planificateur", event: "bio-planificateur", label: "Planificateur de voyage", text: "Votre itinéraire sur mesure, jour après jour, selon ce que vous aimez." },
     { icon: "sunset", href: "/fr/couchers-et-cocktails", event: "bio-couchers", label: "Couchers de soleil & cocktails", text: "Les plus beaux couchers de soleil et où boire un verre, avec discernement." },
     { icon: "agenda", href: "/fr/agenda", event: "bio-agenda-fr", label: "L'agenda de Minorque", text: "Fêtes, concerts et marchés. Ce qui se passe sur l'île, tenu à jour." },
     { icon: "guide", href: "/fr/newsletter", event: "bio-societe", label: "Rejoignez la Société", text: "Le meilleur de Minorque, seulement quand cela en vaut la peine. Sans bruit.", featured: true },

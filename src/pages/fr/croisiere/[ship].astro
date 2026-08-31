@@ -1,0 +1,75 @@
+---
+/**
+ * Page de navire de croisière (FR) : /fr/croisiere/<ship>
+ * Comme l'espagnole : uniquement les navires qui font PLUSIEURS escales et dont les
+ * horaires sont vérifiés. Pas une page par escale : ce seraient 97 pages presque
+ * identiques, c'est-à-dire du remplissage.
+ */
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import CruiseShipPage from "../../../components/CruiseShipPage.astro";
+import JsonLd from "../../../components/JsonLd.astro";
+import cruceros from "../../../data/cruceros-menorca-2026.json";
+import { barcosConPagina, enHoras, type Call } from "../../../lib/cruises";
+
+export async function getStaticPaths() {
+  const barcos = barcosConPagina((cruceros as { calls: Call[] }).calls);
+  return barcos.map((barco) => ({ params: { ship: barco.slug }, props: { barco } }));
+}
+
+const { barco } = Astro.props;
+const fuente = {
+  updated: (cruceros as any).updated as string,
+  coveragePct: (cruceros as any).coveragePct as number,
+  officialSource: (cruceros as any).officialSource as string,
+};
+
+const alternates = {
+  es: `/crucero/${barco.slug}`,
+  en: `/en/cruise/${barco.slug}`,
+  fr: `/fr/croisiere/${barco.slug}`,
+  de: `/de/kreuzfahrt/${barco.slug}`,
+};
+
+/* Court à dessein : avec « que faire lors de votre escale à Maó », les navires au nom
+   long (Seven Seas Splendor) dépassaient 65 caractères et Google les coupait. */
+const title = `${barco.ship} à Minorque : votre escale à Maó`;
+const description = `Le ${barco.ship} accoste à Maó à ${barco.arrival} et appareille à ${barco.departure} : cela vous laisse environ ${enHoras(barco.utilesMin, "fr")} à terre. Ce que vous avez le temps de faire, ce que vous n'avez pas le temps de faire, et comment vous déplacer sans manquer le navire.`;
+
+const faq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: `Combien de temps ai-je à terre lors de l'escale du ${barco.ship} à Maó ?`,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: `Le ${barco.ship} accoste à ${barco.arrival} et appareille à ${barco.departure} (${enHoras(barco.escalaMin, "fr")} au port). En retranchant environ 30 minutes pour le débarquement et 60 minutes de marge pour le retour à bord, il vous reste à peu près ${enHoras(barco.utilesMin, "fr")} de temps réel à terre.`,
+      },
+    },
+    {
+      "@type": "Question",
+      name: `Ai-je le temps de visiter Ciutadella depuis le ${barco.ship} ?`,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: barco.caben.some((p) => p.id === "ciutadella" || p.id === "ciutadella-y-cala")
+          ? `Oui. Ciutadella est à 45 minutes de voiture du port de Maó, soit 90 minutes aller-retour : avec environ ${enHoras(barco.utilesMin, "fr")} à terre, cela passe avec de la marge.${barco.noCaben.some((p) => p.id === "ciutadella-y-cala") ? " Ce qui ne passe pas, c'est d'enchaîner Ciutadella et une crique du sud le même jour." : ""}`
+          : `Pas tranquillement. Ciutadella est à 45 minutes de voiture (90 aller-retour) et, avec environ ${enHoras(barco.utilesMin, "fr")} à terre, vous passeriez la journée à regarder votre montre.`,
+      },
+    },
+    {
+      "@type": "Question",
+      name: `Comment se déplacer à Minorque pendant l'escale ?`,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: `Avec un chauffeur privé à l'heure, on vous récupère sur le quai, on vous emmène où vous voulez, on vous y attend et on vous ramène au navire avec de la marge ; il existe aussi des transferts directs port ↔ destination.${barco.desembarcoMasivo ? " Ce navire débarque plus de 1 500 personnes d'un coup, et les taxis du port s'épuisent vite : une voiture réservée vous fait gagner la première heure." : ""}`,
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout title={title} appendSiteName={false} description={description} locale="fr" alternates={alternates}>
+  <JsonLd schema={faq} />
+  <CruiseShipPage barco={barco} locale="fr" fuente={fuente} />
+</BaseLayout>

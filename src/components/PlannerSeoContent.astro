@@ -17,27 +17,31 @@ import type { Survey } from "../lib/planner/survey.ts";
 import dataEs from "../data/planner-data.es.json";
 import dataEn from "../data/planner-data.en.json";
 import dataDe from "../data/planner-data.de.json";
+import dataFr from "../data/planner-data.fr.json";
 import foodEs from "../data/planner-food.es.json";
 import foodEn from "../data/planner-food.en.json";
 import foodDe from "../data/planner-food.de.json";
+import foodFr from "../data/planner-food.fr.json";
 import JsonLd from "./JsonLd.astro";
 import { SITE, type Locale } from "../config/site";
 
 interface Props {
-  locale: Extract<Locale, "es" | "en" | "de">;
+  locale: Extract<Locale, "es" | "en" | "de" | "fr">;
 }
 const { locale } = Astro.props;
 /* Registro por idioma en vez de `isEs ? es : en`: con el alemán ese ternario
    servía el contenido ENTERO en inglés sin avisar (KAN-134). */
-const tr = <T,>(m: Record<"es" | "en" | "de", T>): T => m[locale];
+const tr = <T,>(m: Record<"es" | "en" | "de" | "fr", T>): T => m[locale];
 /* Anotados como Record<…, any> a propósito: los tres JSON tienen formas
    ligeramente distintas y TS no las unifica; el `any` ya estaba antes. */
-const DATASETS: Record<"es" | "en" | "de", any> = { es: dataEs, en: dataEn, de: dataDe };
-const FOODS: Record<"es" | "en" | "de", any> = { es: foodEs, en: foodEn, de: foodDe };
+const DATASETS: Record<"es" | "en" | "de" | "fr", any> = { es: dataEs, en: dataEn, de: dataDe, fr: dataFr };
+const FOODS: Partial<Record<"es" | "en" | "de" | "fr", any>> = { es: foodEs, en: foodEn, de: foodDe, fr: foodFr };
 const dataset = DATASETS[locale];
+/* `undefined`, NO `{}`: un objeto vacío SUPERA el guardia `foodByZone?.` del
+   motor y revienta dentro, en `.zones[...]`. Rompió el build del francés. */
 const food = FOODS[locale];
-const plannerPath = tr({ es: "/planificador", en: "/en/trip-planner", de: "/de/reiseplaner" });
-const placePrefix = tr({ es: "/lugar", en: "/en/place", de: "/de/ort" });
+const plannerPath = tr({ es: "/planificador", en: "/en/trip-planner", de: "/de/reiseplaner", fr: "/fr/planificateur" });
+const placePrefix = tr({ es: "/lugar", en: "/en/place", de: "/de/ort", fr: "/fr/lieu" });
 const byId = new Map<string, any>(dataset.map((p: any) => [p.id, p]));
 
 // ── Tres perfiles canónicos (mismo motor, cero invención) ───────────────────
@@ -45,31 +49,34 @@ const PROFILES: Array<{ survey: Partial<Survey>; qs: string; title: string; intr
   {
     survey: { days: 3, interests: ["calas", "gastronomia"], pace: "equilibrado" },
     qs: "days=3&interests=calas&interests=gastronomia",
-    title: tr({ es: "Menorca en 3 días: lo esencial", en: "Menorca in 3 days: the essentials", de: "Menorca in 3 Tagen: das Wesentliche" }),
+    title: tr({ es: "Menorca en 3 días: lo esencial", en: "Menorca in 3 days: the essentials", de: "Menorca in 3 Tagen: das Wesentliche", fr: "Minorque en 3 jours : l'essentiel" }),
     intro: tr({
       es: "Una escapada corta con base única: las calas más famosas del suroeste, una ciudad con alma y el primer contacto con la mesa menorquina.",
       en: "A short break from a single base: the best-known south-western coves, a city with soul and a first taste of the Menorcan table.",
       de: "Eine kurze Auszeit von einem einzigen Standort aus: die bekanntesten Buchten des Südwestens, eine Stadt mit Seele und der erste Kontakt mit der menorquinischen Tafel.",
+      fr: "Une escapade courte depuis une base unique : les criques les plus célèbres du sud-ouest, une ville pleine d'âme et un premier contact avec la table minorquine.",
     }),
   },
   {
     survey: { days: 5, interests: ["calas", "gastronomia"], pace: "equilibrado" },
     qs: "days=5&interests=calas&interests=gastronomia",
-    title: tr({ es: "Menorca en 5 días: calas y gastronomía", en: "Menorca in 5 days: coves & gastronomy", de: "Menorca in 5 Tagen: Buchten und Gastronomie" }),
+    title: tr({ es: "Menorca en 5 días: calas y gastronomía", en: "Menorca in 5 days: coves & gastronomy", de: "Menorca in 5 Tagen: Buchten und Gastronomie", fr: "Minorque en 5 jours : criques et gastronomie" }),
     intro: tr({
       es: "El formato que recomendamos: un día por zona, sin cruzar la isla dos veces, con las calas por la mañana y la mesa como ancla de cada tarde.",
       en: "The format we recommend: one area per day, never crossing the island twice, with coves in the morning and the table anchoring each evening.",
       de: "Das Format, das wir empfehlen: ein Tag pro Gegend, ohne die Insel zweimal zu queren, mit den Buchten am Vormittag und dem Tisch als Anker jedes Abends.",
+      fr: "Le format que nous recommandons : un jour par zone, sans traverser l'île deux fois, avec les criques le matin et la table comme ancre de chaque soirée.",
     }),
   },
   {
     survey: { days: 7, interests: ["calas", "cultura", "gastronomia"], pace: "relajado" },
     qs: "days=7&interests=calas&interests=cultura&interests=gastronomia&pace=relajado",
-    title: tr({ es: "Menorca en 7 días: la isla entera, sin prisa", en: "Menorca in 7 days: the whole island, unhurried", de: "Menorca in 7 Tagen: die ganze Insel, ohne Eile" }),
+    title: tr({ es: "Menorca en 7 días: la isla entera, sin prisa", en: "Menorca in 7 days: the whole island, unhurried", de: "Menorca in 7 Tagen: die ganze Insel, ohne Eile", fr: "Minorque en 7 jours : l'île entière, sans hâte" }),
     intro: tr({
       es: "Una semana a ritmo relajado suma el interior talayótico y el norte agreste a las calas del sur: la isla completa como la entendemos en Calma Society.",
       en: "A week at a relaxed pace adds the Talayotic interior and the wild north to the southern coves: the whole island as we understand it at Calma Society.",
       de: "Eine Woche in entspanntem Tempo ergänzt die Buchten des Südens um das talayotische Landesinnere und den rauen Norden: die ganze Insel, so wie wir sie bei Calma Society verstehen.",
+      fr: "Une semaine au rythme détendu ajoute l'intérieur talayotique et le nord sauvage aux criques du sud : l'île dans son ensemble, telle que nous la concevons chez Calma Society.",
     }),
   },
 ];
@@ -160,7 +167,30 @@ const FAQS_DE: Array<{ q: string; a: string }> = [
   },
 ];
 
-const FAQS: Array<{ q: string; a: string }> = tr({ es: FAQS_ES, en: FAQS_EN, de: FAQS_DE });
+const FAQS_FR: Array<{ q: string; a: string }> = [
+  {
+    q: "Combien de jours faut-il pour découvrir Minorque ?",
+    a: "Avec 3 jours, vous découvrez l'essentiel d'une zone ; 5 jours est le format que nous recommandons (un jour par zone, sans zigzaguer) ; avec 7, vous ajoutez aussi l'intérieur talayotique et le nord sauvage. L'île est petite, mais elle se savoure lentement.",
+  },
+  {
+    q: "Que faire à Minorque s'il pleut ?",
+    a: "Chaque jour du planificateur prévoit un plan B intérieur dans la même zone : les musées de Maó et Ciutadella, la distillerie Xoriguer, des fromageries à visiter (réservez avant), un long déjeuner ou un spa. En été, si c'est la chaleur qui pose problème, la crique se fait tôt le matin et le milieu de journée passe à l'abri.",
+  },
+  {
+    q: "Peut-on visiter Minorque sans voiture ?",
+    a: "Oui, en choisissant bien sa base : Maó (seule ville avec un bus direct depuis l'aéroport) ou Ciutadella. En saison, les criques desservies se rejoignent en bus ou en navette, et pour le reste, un transfert privé résout la journée. Le planificateur signale chaque cas.",
+  },
+  {
+    q: "Quelle est la meilleure zone où loger à Minorque ?",
+    a: "Cela dépend du voyage : Ciutadella pour une première visite avec de l'ambiance ; Cala Galdana ou Son Bou en famille ; Fornells pour la voile et la caldereta de langouste ; Es Mercadal comme base centrale pour tout explorer ; Maó pour la culture, le port et une logistique facile. Le planificateur vous recommande une zone (jamais d'hôtels) selon votre profil.",
+  },
+  {
+    q: "Que faire à Minorque avec de jeunes enfants ?",
+    a: "Des plages de sable aux eaux peu profondes et bien équipées : Son Bou, Cala Galdana, Punta Prima ou Es Grau (plusieurs avec baignade assistée de mai à octobre). Le planificateur évite les criques à pied quand vous voyagez avec une poussette et raccourcit les journées.",
+  },
+];
+
+const FAQS: Array<{ q: string; a: string }> = tr({ es: FAQS_ES, en: FAQS_EN, de: FAQS_DE, fr: FAQS_FR });
 
 // ── JSON-LD: FAQPage + un TouristTrip por itinerario estático ────────────────
 const faqLd = {
@@ -177,7 +207,7 @@ const tripLds = itinerarios.map((it) => ({
   "@type": "TouristTrip",
   name: it.title,
   description: it.intro,
-  touristType: tr({ es: "lujo tranquilo", en: "quiet luxury", de: "stiller Luxus" }),
+  touristType: tr({ es: "lujo tranquilo", en: "quiet luxury", de: "stiller Luxus", fr: "luxe tranquille" }),
   provider: { "@type": "Organization", name: SITE.name, url: SITE.url },
   itinerary: {
     "@type": "ItemList",
@@ -210,6 +240,13 @@ const T = tr({
       customize: "Diese Route anpassen",
       faqHeading: "Häufige Fragen bei der Planung einer Reise nach Menorca",
       day: "Tag",
+  },
+  fr: {
+      heading: "Que faire à Minorque, selon la durée du séjour",
+      lead: "Trois itinéraires réels générés par notre moteur — les mêmes critères qu'il utilisera avec vous —, pour voir en un coup d'œil ce que l'île offre. Personnalisez-les et ils seront à vous.",
+      customize: "Personnaliser cet itinéraire",
+      faqHeading: "Questions fréquentes pour organiser un voyage à Minorque",
+      day: "Jour",
   },
 });
 ---
