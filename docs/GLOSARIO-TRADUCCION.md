@@ -110,6 +110,29 @@ Los nombres de lugares, negocios y fiestas de Menorca **se dejan tal cual**, en 
 | lujo tranquilo | quiet luxury | luxe tranquille | stiller Luxus | lusso tranquillo | luxo tranquilo |
 | sin prisa | unhurried | sans hâte | ohne Eile | senza fretta | sem pressa |
 
+### 4.1 Términos gastronómicos menorquines: NO se traducen
+
+Añadido tras el lote FR de "Vivir/Comer y beber" (31-ago-2026, KAN-138 — el francés completo). Son nombres de plato o de producto, no descriptores genéricos: se dejan intactos en las seis lenguas, igual que un topónimo. Se describe qué son (una vez, en el cuerpo del texto) en vez de traducir el nombre:
+
+> oliaigua · arròs de la terra · greixera (y "greixera de brossat") · formatjades · rubiols · cocarrois · flaons · crespells · carquinyols · pastissets · ensaïmada · matances · sobrassada · caldereta (de langosta) · gamba roja · pomada · marès · paret seca · lloc(s) · blat xeixa · avarques
+
+Ejemplo de patrón correcto (FR): «la **greixera de brossat**, un dessert au fromage frais, à l'œuf et au sucre» — no «la *tarte au fromage frais*» ni ninguna traducción del nombre del plato.
+
+**Caso especial — mahonesa/mayonnaise (FR).** Al traducir `salsa-mahonesa-origen.mdx` (la teoría del origen de la mayonesa en Maó) se mantiene el mismo rigor que el original: la palabra francesa *mayonnaise* (y su variante histórica *mahonnaise*) ya ES el propio argumento del artículo, así que no hace falta glosario adicional — traducir el cuerpo con naturalidad basta. Sí conviene que el título/slug francés use el término real de búsqueda: *mayonnaise* u *origine de la mahonnaise*, no una traducción forzada de "salsa mahonesa".
+
+### 4.2 Distinciones gastronómicas (Michelin / Repsol) — FR
+
+Añadido con el lote FR 4 (31-ago-2026, artículo `carte-haute-cuisine-minorque-2026.mdx`, `translationKey: mesa-alta-gama`). Decisiones tomadas para poder traducir sin bloquear el lote; **pendientes de confirmar por un francófono antes de pasar el artículo a `revisado`**:
+
+| Español | Francés elegido | Certeza |
+|---|---|---|
+| estrella Michelin | étoile Michelin | Alta — término oficial de la Guía Michelin en francés. |
+| Llave Michelin | Clé Michelin | Alta — término oficial («Clés Michelin», distinción hotelera). |
+| Sol / Soles Repsol | Soleil / Soleils Repsol | ⚠️ Media — traducción directa nuestra; la Guía Repsol (española) no tiene, que sepamos, un término francés fijado. Revisar si existe cobertura de prensa francesa que use otra forma. |
+| restaurantes "Recomendados" (Guía Michelin) | restaurants "recommandés" | ⚠️ Media — descriptivo, no el término técnico que usa Michelin en sus propias comunicaciones (`Bib Gourmand`, `l'Assiette Michelin`). El original en español tampoco usa un término técnico distinto de "recomendado", así que se mantuvo la traducción literal en vez de introducir matiz que el ES no tiene. |
+| producto de kilómetro cero | produit en circuit court | Alta — más natural en francés gastronómico que el calco «produit kilomètre zéro» (que también existe, pero suena más a etiqueta de marketing). |
+| criterio (sustantivo, "con criterio") | discernement (caso a caso) | Media — el francés no tiene una palabra fija tan flexible como "criterio"; se resolvió contextualmente. Si aparece con frecuencia en más lotes, valorar fijar aquí un término único. |
+
 ---
 
 ## 5. Los slugs son nativos, no traducciones
