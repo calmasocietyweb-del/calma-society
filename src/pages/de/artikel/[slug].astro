@@ -4,14 +4,10 @@ import { getCollection, getEntry, render } from "astro:content";
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
 import { articleSlugFor } from "../../../lib/content";
 import { articleUrl, homePath } from "../../../i18n/utils";
-// Componentes que el cuerpo MDX puede usar (inyectados, como en es/en/fr).
-import Figure from "../../../components/Figure.astro";
-import MenorcaBusCTA from "../../../components/MenorcaBusCTA.astro";
-import CruceroCalendar from "../../../components/CruceroCalendar.astro";
-import FlotaChofer from "../../../components/FlotaChofer.astro";
-import ToolsCTA from "../../../components/ToolsCTA.astro";
 
-const mdxComponents = { Figure, MenorcaBusCTA, CruceroCalendar, FlotaChofer, ToolsCTA };
+// Componentes que el cuerpo MDX puede usar. Fuente UNICA para los seis
+// idiomas: antes cada ruta tenia su copia y habian derivado (ver el fichero).
+import { mdxComponents } from "../../../components/mdxComponents";
 
 export async function getStaticPaths() {
   const arts = await getCollection(

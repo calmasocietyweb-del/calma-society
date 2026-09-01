@@ -4,16 +4,10 @@ import { getCollection, getEntry, render } from "astro:content";
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
 import { articleSlugFor } from "../../../lib/content";
 import { articleUrl, homePath } from "../../../i18n/utils";
-// Components the MDX body may use. Injected here (NOT imported in each .mdx)
-// so the Keystatic visual editor can open the articles.
-import Figure from "../../../components/Figure.astro";
-import MenorcaBusCTA from "../../../components/MenorcaBusCTA.astro";
-import CruceroCalendar from "../../../components/CruceroCalendar.astro";
-import FlotaChofer from "../../../components/FlotaChofer.astro";
-import NightlifeMap from "../../../components/NightlifeMap.astro";
-import ToolsCTA from "../../../components/ToolsCTA.astro";
 
-const mdxComponents = { Figure, MenorcaBusCTA, CruceroCalendar, FlotaChofer, NightlifeMap, ToolsCTA };
+// Componentes que el cuerpo MDX puede usar. Fuente UNICA para los seis
+// idiomas: antes cada ruta tenia su copia y habian derivado (ver el fichero).
+import { mdxComponents } from "../../../components/mdxComponents";
 
 export async function getStaticPaths() {
   const arts = await getCollection(
