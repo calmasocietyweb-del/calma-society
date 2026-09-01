@@ -1,8 +1,8 @@
 {
-  "updated": "2026-08-31",
+  "updated": "2026-09-01",
   "ventana": {
-    "desde": "2026-08-31",
-    "hasta": "2026-09-28"
+    "desde": "2026-09-01",
+    "hasta": "2026-09-29"
   },
   "nuevas": [
     {
@@ -61,7 +61,13 @@
       "nota": "El puerto la tiene y nosotros no. Falta capacidad de pasaje y naviera antes de publicarla."
     }
   ],
-  "desaparecidas": [],
+  "desaparecidas": [
+    {
+      "date": "2026-09-29",
+      "ship": "Scenic Eclipse II",
+      "nota": "La publicamos y el puerto NO la tiene, estando dentro de su ventana. ¿Cancelada? Verificar antes de retirarla."
+    }
+  ],
   "dudasDeNombre": [
     {
       "date": "2026-09-10",

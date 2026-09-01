@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "port": "Maó",
-  "updated": "2026-08-27",
+  "updated": "2026-09-01",
   "seasonEstimate": "125-130",
   "coveragePct": 82,
   "totalListed": 105,
@@ -892,11 +892,11 @@
       "ship": "Emerald Sakara",
       "line": "Emerald Cruises",
       "pax": 100,
-      "arrival": null,
-      "departure": null,
+      "arrival": "12:00",
+      "departure": "18:00",
       "confidence": "alta",
       "sourceCount": 2,
-      "source": "https://emerald.cruises/EU/en-GB/yacht/plan-your-journey/cruise-calendar"
+      "source": "https://www.portsdebalears.com/es/buques-en-puerto"
     },
     {
       "date": "2026-09-29",
