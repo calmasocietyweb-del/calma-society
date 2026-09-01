@@ -1,10 +1,10 @@
 ---
 // Confirmación de la solicitud de traslado (ES). El localizador llega por
-// ?ref= y se comunica en el texto sin leer el parámetro (página estática,
-// sin JS de cliente): el correo de confirmación del dueño lo repetirá.
+// ?ref= y se comunica en el texto sin leer el parámetro (página estática, sin JS
+// de cliente): el correo de confirmación lo repetirá.
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
-const pasos = [
+const steps = [
   "Revisamos tu trayecto y la disponibilidad.",
   "Te escribimos por correo con la confirmación y el precio cerrado.",
   "Confirmas y listo: te recogemos a tu hora, puerta a puerta.",
@@ -13,23 +13,20 @@ const pasos = [
 
 <BaseLayout
   title="Solicitud recibida"
-  description="Tu solicitud de traslado está registrada."
+  description="Tu solicitud de traslado ha quedado registrada."
   locale="es"
-  alternates={{ es: "/reservar-traslado/gracias", en: "/en/book-transfer/thanks" }}
+  alternates={{ es: "/reservar-traslado/gracias", en: "/en/book-transfer/gracias", fr: "/fr/reserver-un-transfert/gracias", de: "/de/transfer-buchen/gracias" }}
   noindex
 >
   <section class="mx-auto max-w-prosa px-5 py-16 sm:px-8">
     <div class="text-center">
       <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">Reserva de traslado</p>
       <h1 class="mt-2 font-display text-4xl text-tinta">Solicitud recibida</h1>
-      <p class="mt-4 text-piedra-suave">
-        Gracias. Menorca Bus ya tiene tu solicitud y te confirmará disponibilidad
-        y el precio cerrado por correo.
-      </p>
+      <p class="mt-4 text-piedra-suave">Gracias. Menorca Bus ya tiene tu solicitud y te confirmará disponibilidad y el precio cerrado por correo.</p>
     </div>
 
-    {/* Localizador destacado: lo rellena un script mínimo desde ?ref= (mejora
-        progresiva: sin JS, el aviso de la tarjeta indica que va en la URL). */}
+    {/* Localizador destacado, que rellena un script mínimo desde ?ref= (mejora
+        progresiva: sin JS, la nota de la tarjeta dice que está en la URL). */}
     <div id="ref-box" hidden class="mx-auto mt-8 max-w-sm rounded-2xl border border-oro-vivo/40 bg-crema/50 p-5 text-center">
       <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">Tu localizador</p>
       <p id="ref-code" class="mt-1 font-display text-3xl tracking-wider text-tinta"></p>
@@ -38,15 +35,15 @@ const pasos = [
     <div class="mt-8 rounded-2xl border border-niebla bg-white p-6 shadow-sm sm:p-8">
       <h2 class="font-display text-xl text-tinta">Qué pasa ahora</h2>
       <ol class="mt-4 space-y-4">
-        {pasos.map((p, i) => (
+        {steps.map((s, i) => (
           <li class="flex items-start gap-3">
             <span class="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-arcilla font-display text-sm text-crema">{i + 1}</span>
-            <span class="text-piedra">{p}</span>
+            <span class="text-piedra">{s}</span>
           </li>
         ))}
       </ol>
       <p class="mt-6 border-t border-niebla pt-4 text-sm text-piedra-suave">
-        Guarda tu <strong class="font-semibold text-piedra">localizador</strong>: aparece en la dirección de esta página (ref=…) y lo repetiremos en el correo. ¿Alguna duda? Escríbenos a <a href="mailto:hola@calmasociety.com" class="text-arcilla underline underline-offset-2 hover:text-terracota">hola@calmasociety.com</a>.
+        Guarda tu <strong class="font-semibold text-piedra">localizador</strong>: aparece en la dirección de esta página (ref=…) y te lo repetimos en el correo. ¿Alguna duda? Escríbenos a <a href="mailto:hola@calmasociety.com" class="text-arcilla underline underline-offset-2 hover:text-terracota">hola@calmasociety.com</a>.
       </p>
     </div>
 
@@ -55,8 +52,8 @@ const pasos = [
     </div>
 
     <script is:inline>
-      // Muestra el localizador del ?ref= en grande (mejora progresiva: sin JS,
-      // el aviso de la tarjeta indica que está en la dirección de la página).
+      // Enseña el localizador de ?ref= en grande (mejora progresiva: sin JS, la
+      // nota de la tarjeta remite a la dirección de la página).
       (function () {
         var ref = new URLSearchParams(location.search).get("ref") || "";
         if (/^CS-\d{4}-[A-Z0-9]{6}$/.test(ref)) {

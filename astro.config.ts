@@ -40,6 +40,33 @@ const lmLive = SITE.newsletter.leadMagnet.enabled;
 // sitemap mientras el interruptor esté apagado).
 const bookingsLive = SITE.bookings.enabled;
 
+// ── Rutas que NO deben anunciarse en el sitemap ──────────────────────────────
+// Se escriben en un solo sitio y con TODOS los idiomas. Al crear la ruta de un
+// idioma nuevo hay que añadirla aquí; lo vigila `src/lib/sitemap-exclusiones.test.ts`,
+// que compara estas listas contra las páginas que existen de verdad en `src/pages`.
+
+/** Bienvenida a la Sociedad (va con noindex) y panel interno. */
+const NOINDEX_SIEMPRE = [
+  "/sociedad-bienvenida",
+  "/society-welcome",
+  "/societe-bienvenue",
+  "/willkommen-in-der-society",
+  "/benvenuti-nella-society",
+  "/bem-vindo-a-society",
+  "/panel/",
+];
+
+/** Imán de captación: solo entra cuando `leadMagnet.enabled`. */
+const RUTAS_LEAD_MAGNET = ["/calas-tranquilas", "/quiet-coves"];
+
+/** Reserva de transfers: solo entra cuando `bookings.enabled`. */
+const RUTAS_RESERVAS = [
+  "/reservar-traslado",
+  "/book-transfer",
+  "/reserver-un-transfert",
+  "/transfer-buchen",
+];
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.url,
@@ -77,23 +104,28 @@ export default defineConfig({
     } satisfies import('astro').AstroIntegration,
     mdx(),
     sitemap({
-      // Excluye las páginas de confirmación ("gracias"), que van con noindex,
-      // y el panel interno (/panel/), que no debe anunciarse a buscadores.
+      // Excluye del sitemap lo que va con `noindex` y el panel interno.
+      //
+      // ⚠️ Las listas de rutas se escriben ENTERAS, con todos los idiomas, y se
+      // comprueban en `src/lib/sitemap-exclusiones.test.ts`. El 1-sep-2026 aquí
+      // solo estaban las variantes es/en/fr de la página de bienvenida, así que
+      // las versiones ALEMANA, ITALIANA y PORTUGUESA se anunciaban a Google
+      // llevando `noindex` — una señal contradictoria que nadie había mirado.
       filter: (page) =>
-        !page.includes("/sociedad-bienvenida") &&
-        !page.includes("/society-welcome") &&
-        !page.includes("/societe-bienvenue") &&
-        !page.includes("/panel/") &&
+        !NOINDEX_SIEMPRE.some((r) => page.includes(r)) &&
         // El imán entra en el sitemap solo cuando está vivo (si no, va noindex).
-        (lmLive ||
-          (!page.includes("/calas-tranquilas") && !page.includes("/quiet-coves"))) &&
+        (lmLive || !RUTAS_LEAD_MAGNET.some((r) => page.includes(r))) &&
         // Reservas de transfers: en el sitemap solo con el interruptor encendido.
-        (bookingsLive ||
-          (!page.includes("/reservar-traslado") && !page.includes("/book-transfer"))),
-      // Añade enlaces hreflang entre idiomas en el sitemap.
+        (bookingsLive || !RUTAS_RESERVAS.some((r) => page.includes(r))),
+      // Enlaces hreflang entre idiomas. Se derivan de `SITE.locales` para que
+      // añadir un idioma no deje su hreflang fuera sin que nadie se entere:
+      // hasta el 1-sep-2026 aquí solo había es/en/fr y el alemán —el segundo
+      // mercado con más demanda— no recibía anotación ninguna.
       i18n: {
-        defaultLocale: "es",
-        locales: { es: "es-ES", en: "en-GB", fr: "fr-FR" },
+        defaultLocale: SITE.defaultLocale,
+        locales: Object.fromEntries(
+          SITE.locales.map((l) => [l.code, l.htmlLang]),
+        ) as Record<string, string>,
       },
     }),
     // React + Keystatic solo en desarrollo y en Vercel (NUNCA en Cloudflare).

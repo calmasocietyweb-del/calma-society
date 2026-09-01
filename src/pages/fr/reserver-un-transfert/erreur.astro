@@ -1,0 +1,26 @@
+---
+// Error de la solicitud de traslado (FR). La API redirige aquí (303) cuando
+// algo falla, en vez de devolver texto pelado. Página estática (sin JS): mensaje
+// general y una salida clara. El `?motivo=` queda en la URL para el registro.
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Nous n'avons pas pu finaliser votre demande"
+  description="Nous n'avons pas pu enregistrer votre demande de transfert."
+  locale="fr"
+  alternates={{ es: "/reservar-traslado/erreur", en: "/en/book-transfer/erreur", fr: "/fr/reserver-un-transfert/erreur", de: "/de/transfer-buchen/erreur" }}
+  noindex
+>
+  <section class="mx-auto max-w-prosa px-5 py-16 text-center sm:px-8">
+    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">Réservation de transfert</p>
+    <h1 class="mt-2 font-display text-4xl text-tinta">Nous n'avons pas pu finaliser votre demande</h1>
+    <p class="mt-4 text-piedra-suave">
+      Il manque peut-être un champ obligatoire, ou le service n'est pas disponible en ce moment. Revenez au formulaire et vérifiez-le ; si le problème persiste, écrivez-nous à <a href="mailto:hola@calmasociety.com" class="text-arcilla underline underline-offset-2 hover:text-terracota">hola@calmasociety.com</a> et nous nous en occupons à la main.
+    </p>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a href="/fr/reserver-un-transfert" class="press inline-block rounded-full bg-arcilla px-8 py-3 font-semibold text-crema hover:bg-terracota">Revenir au formulaire</a>
+      <a href="/fr/" class="press inline-block rounded-full border border-niebla px-8 py-3 font-semibold text-piedra hover:border-arcilla">Aller au magazine</a>
+    </div>
+  </section>
+</BaseLayout>

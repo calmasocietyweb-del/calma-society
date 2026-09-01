@@ -52,6 +52,8 @@ type Ctx = { request: Request; env: Env };
 const THANKS_PATH: Record<string, string> = {
   es: "/reservar-traslado/gracias",
   en: "/en/book-transfer/thanks",
+  fr: "/fr/reserver-un-transfert/merci",
+  de: "/de/transfer-buchen/danke",
 };
 
 // Página de error de marca (sin JS): la API redirige aquí en vez de devolver
@@ -60,6 +62,8 @@ const THANKS_PATH: Record<string, string> = {
 const ERROR_PATH: Record<string, string> = {
   es: "/reservar-traslado/error",
   en: "/en/book-transfer/error",
+  fr: "/fr/reserver-un-transfert/erreur",
+  de: "/de/transfer-buchen/fehler",
 };
 
 function adminOk(request: Request, env: Env): boolean {

@@ -5,20 +5,20 @@
  * El formulario vive UNA sola vez en components/BookingForm.astro: aquí solo
  * queda la envoltura de la página (título, hreflang y el interruptor).
  */
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import BookingForm from "../../components/BookingForm.astro";
-import { SITE } from "../../config/site";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import BookingForm from "../../../components/BookingForm.astro";
+import { SITE } from "../../../config/site";
 
 const enabled = SITE.bookings.enabled;
 const alternates = { es: "/reservar-traslado", en: "/en/book-transfer", fr: "/fr/reserver-un-transfert", de: "/de/transfer-buchen" };
 ---
 
 <BaseLayout
-  title="Reserva tu traslado en Menorca"
-  description="Traslado privado o compartido en Menorca: aeropuerto, puerto y hotel, puerta a puerta y con precio cerrado."
-  locale="es"
+  title="Buchen Sie Ihren Transfer auf Menorca"
+  description="Privater oder gemeinsamer Transfer auf Menorca: Flughafen, Hafen und Hotel, von Tür zu Tür und zum Festpreis."
+  locale="de"
   alternates={alternates}
   noindex={!enabled}
 >
-  <BookingForm locale="es" />
+  <BookingForm locale="de" />
 </BaseLayout>

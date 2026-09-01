@@ -1,0 +1,520 @@
+---
+/**
+ * Formulario de reserva de transfers — ÚNICA copia del formulario.
+ *
+ * ⚠️ POR QUÉ ESTE COMPONENTE EXISTE (1-sep-2026). El formulario estaba escrito
+ * ENTERO dentro de cada página de idioma: ~280 líneas duplicadas en `es` y otras
+ * ~275 en `en`, con las cadenas incrustadas en el marcado. Al añadir francés y
+ * alemán habrían sido CUATRO copias del mismo formulario — exactamente el patrón
+ * que ese mismo día tumbó la build en `mdxComponents` (seis mapas de componentes
+ * que habían derivado sin que nadie lo viera). Aquí el marcado vive una sola vez
+ * y lo único que cambia por idioma son los textos.
+ *
+ * Los textos se declaran como `Record<BookingLocale, …>`: al desplegar la reserva
+ * en un idioma nuevo, `astro check` enumera uno a uno los que faltan por traducir
+ * (mismo criterio que `lib/bookings/catalog.ts`).
+ */
+import { VEHICLE_CATEGORIES, EXTRAS, type BookingLocale } from "../lib/bookings/catalog";
+
+interface Props {
+  locale: BookingLocale;
+}
+const { locale } = Astro.props;
+
+const field =
+  "mt-1 w-full rounded-lg border border-niebla bg-lino px-3.5 py-2.5 text-sm text-piedra placeholder:text-piedra-suave focus:border-terracota focus:outline-none";
+const labelCls = "text-sm font-medium text-piedra";
+
+/** Puntos de recogida sugeridos. Son topónimos: no se traducen. */
+const puntos = [
+  "Menorca (MAH)",
+  "Maó",
+  "Ciutadella",
+  "Alaior",
+  "Es Mercadal",
+  "Es Castell",
+  "Sant Lluís",
+  "Ferreries",
+  "Fornells",
+  "Cala en Porter",
+  "Son Bou",
+  "Cala Galdana",
+  "Punta Prima",
+  "Binibeca",
+  "Arenal d'en Castell",
+  "Son Parc",
+];
+
+interface Textos {
+  kicker: string;
+  h1: string;
+  intro: string;
+  seals: [string, string];
+  aeropuerto: string;
+  puertoMao: string;
+  puertoCiutadella: string;
+  honeypot: string;
+  paso1: string;
+  origen: string;
+  origenPh: string;
+  destino: string;
+  destinoPh: string;
+  trayecto: string;
+  soloIda: string;
+  idaVuelta: string;
+  fechaSalida: string;
+  horaSalida: string;
+  fechaRegreso: string;
+  horaRegreso: string;
+  soloIdaVuelta: string;
+  vuelo: string;
+  adultos: string;
+  ninos: string;
+  bebes: string;
+  paso2: string;
+  sinSorpresas: [string, string, string];
+  precioAConfirmar: string;
+  paso3: string;
+  nombre: string;
+  empresa: string;
+  documento: string;
+  email: string;
+  telefono: string;
+  direccion: string;
+  codigoPostal: string;
+  ciudad: string;
+  pais: string;
+  cupon: string;
+  cuponNota: string;
+  comentarios: string;
+  comentariosPh: string;
+  extras: string;
+  optin: string;
+  terminos: string;
+  boton: string;
+  letraPequena: string;
+}
+
+const T: Record<BookingLocale, Textos> = {
+  es: {
+    kicker: "Menorca, puerta a puerta",
+    h1: "Reserva tu traslado",
+    intro: "Cuéntanos el trayecto, elige el vehículo y deja tus datos. Menorca Bus te confirma disponibilidad y el precio cerrado por correo.",
+    seals: ["Gestionado por Menorca Bus", "Conductores profesionales"],
+    aeropuerto: "Aeropuerto de Menorca (MAH)",
+    puertoMao: "Puerto de Maó",
+    puertoCiutadella: "Puerto de Ciutadella",
+    honeypot: "No rellenes este campo",
+    paso1: "El trayecto",
+    origen: "Origen *",
+    origenPh: "Aeropuerto (MAH), puerto, hotel…",
+    destino: "Destino *",
+    destinoPh: "Zona, hotel o dirección",
+    trayecto: "Trayecto",
+    soloIda: "Solo ida",
+    idaVuelta: "Ida y vuelta",
+    fechaSalida: "Fecha de salida (o de llegada del vuelo) *",
+    horaSalida: "Hora de salida (o de llegada del vuelo) *",
+    fechaRegreso: "Fecha de regreso",
+    horaRegreso: "Hora de regreso",
+    soloIdaVuelta: "— solo ida y vuelta",
+    vuelo: "Nº de vuelo",
+    adultos: "Adultos *",
+    ninos: "Niños (2-11)",
+    bebes: "Bebés (0-2)",
+    paso2: "El vehículo",
+    sinSorpresas: ["Sin sorpresas: Menorca Bus te confirma el ", "precio cerrado", " por correo antes de nada."],
+    precioAConfirmar: "Precio a confirmar",
+    paso3: "Tus datos",
+    nombre: "Nombre y apellidos *",
+    empresa: "Empresa",
+    documento: "DNI/NIF o pasaporte *",
+    email: "Correo electrónico *",
+    telefono: "Teléfono móvil *",
+    direccion: "Dirección *",
+    codigoPostal: "Código postal *",
+    ciudad: "Ciudad *",
+    pais: "País *",
+    cupon: "Cupón",
+    cuponNota: "— p. ej. CALMASOCIETY",
+    comentarios: "Comentarios al conductor",
+    comentariosPh: "Equipaje, horarios, necesidades especiales…",
+    extras: "Extras (unidades)",
+    optin: "Quiero recibir novedades y ofertas de Menorca Bus.",
+    terminos: "Acepto los términos y condiciones del servicio. *",
+    boton: "Solicitar reserva",
+    letraPequena: "Menorca Bus confirma disponibilidad y el precio cerrado por correo. Cancelación gratuita hasta 24 h antes. La categoría del vehículo es orientativa y puede variar según disponibilidad manteniendo el nivel reservado.",
+  },
+  en: {
+    kicker: "Menorca, door to door",
+    h1: "Book your transfer",
+    intro: "Tell us the journey, choose the vehicle and leave your details. Menorca Bus confirms availability and the closed price by email.",
+    seals: ["Handled by Menorca Bus", "Professional drivers"],
+    aeropuerto: "Menorca Airport (MAH)",
+    puertoMao: "Port of Maó",
+    puertoCiutadella: "Port of Ciutadella",
+    honeypot: "Do not fill in this field",
+    paso1: "The journey",
+    origen: "Origin *",
+    origenPh: "Airport (MAH), harbour, hotel…",
+    destino: "Destination *",
+    destinoPh: "Area, hotel or address",
+    trayecto: "Journey",
+    soloIda: "One way",
+    idaVuelta: "Return",
+    fechaSalida: "Departure date (or flight arrival) *",
+    horaSalida: "Departure time (or flight arrival) *",
+    fechaRegreso: "Return date",
+    horaRegreso: "Return time",
+    soloIdaVuelta: "— return trips only",
+    vuelo: "Flight no.",
+    adultos: "Adults *",
+    ninos: "Children (2-11)",
+    bebes: "Infants (0-2)",
+    paso2: "The vehicle",
+    sinSorpresas: ["No surprises: Menorca Bus confirms the ", "closed price", " by email before anything."],
+    precioAConfirmar: "Price to confirm",
+    paso3: "Your details",
+    nombre: "Full name *",
+    empresa: "Company",
+    documento: "ID or passport *",
+    email: "Email *",
+    telefono: "Mobile phone *",
+    direccion: "Address *",
+    codigoPostal: "Postcode *",
+    ciudad: "City *",
+    pais: "Country *",
+    cupon: "Coupon",
+    cuponNota: "— e.g. CALMASOCIETY",
+    comentarios: "Comments to the driver",
+    comentariosPh: "Luggage, timings, special needs…",
+    extras: "Extras (units)",
+    optin: "I'd like to receive news and offers from Menorca Bus.",
+    terminos: "I accept the service terms and conditions. *",
+    boton: "Request booking",
+    letraPequena: "Menorca Bus confirms availability and the closed price by email. Free cancellation up to 24 h before. The vehicle category is indicative and may vary with availability, keeping the class you booked.",
+  },
+  fr: {
+    kicker: "Minorque, porte à porte",
+    h1: "Réservez votre transfert",
+    intro: "Dites-nous le trajet, choisissez le véhicule et laissez vos coordonnées. Menorca Bus vous confirme la disponibilité et le prix ferme par courriel.",
+    seals: ["Assuré par Menorca Bus", "Chauffeurs professionnels"],
+    aeropuerto: "Aéroport de Minorque (MAH)",
+    puertoMao: "Port de Maó",
+    puertoCiutadella: "Port de Ciutadella",
+    honeypot: "Ne remplissez pas ce champ",
+    paso1: "Le trajet",
+    origen: "Départ *",
+    origenPh: "Aéroport (MAH), port, hôtel…",
+    destino: "Destination *",
+    destinoPh: "Secteur, hôtel ou adresse",
+    trayecto: "Trajet",
+    soloIda: "Aller simple",
+    idaVuelta: "Aller-retour",
+    fechaSalida: "Date de départ (ou d'arrivée du vol) *",
+    horaSalida: "Heure de départ (ou d'arrivée du vol) *",
+    fechaRegreso: "Date du retour",
+    horaRegreso: "Heure du retour",
+    soloIdaVuelta: "— aller-retour uniquement",
+    vuelo: "N° de vol",
+    adultos: "Adultes *",
+    ninos: "Enfants (2-11)",
+    bebes: "Bébés (0-2)",
+    paso2: "Le véhicule",
+    sinSorpresas: ["Sans surprises : Menorca Bus vous confirme le ", "prix ferme", " par courriel avant toute chose."],
+    precioAConfirmar: "Prix à confirmer",
+    paso3: "Vos coordonnées",
+    nombre: "Nom et prénom *",
+    empresa: "Société",
+    documento: "Pièce d'identité ou passeport *",
+    email: "Courriel *",
+    telefono: "Téléphone portable *",
+    direccion: "Adresse *",
+    codigoPostal: "Code postal *",
+    ciudad: "Ville *",
+    pais: "Pays *",
+    cupon: "Code promo",
+    cuponNota: "— par ex. CALMASOCIETY",
+    comentarios: "Commentaires pour le chauffeur",
+    comentariosPh: "Bagages, horaires, besoins particuliers…",
+    extras: "Suppléments (unités)",
+    optin: "Je souhaite recevoir les actualités et les offres de Menorca Bus.",
+    terminos: "J'accepte les conditions générales du service. *",
+    boton: "Demander la réservation",
+    letraPequena: "Menorca Bus confirme la disponibilité et le prix ferme par courriel. Annulation gratuite jusqu'à 24 h avant. La catégorie du véhicule est indicative et peut varier selon la disponibilité, en conservant le niveau réservé.",
+  },
+  de: {
+    kicker: "Menorca, von Tür zu Tür",
+    h1: "Buchen Sie Ihren Transfer",
+    intro: "Nennen Sie uns die Strecke, wählen Sie das Fahrzeug und hinterlassen Sie Ihre Daten. Menorca Bus bestätigt Ihnen Verfügbarkeit und Festpreis per E-Mail.",
+    seals: ["Durchgeführt von Menorca Bus", "Professionelle Fahrer"],
+    aeropuerto: "Flughafen Menorca (MAH)",
+    puertoMao: "Hafen von Maó",
+    puertoCiutadella: "Hafen von Ciutadella",
+    honeypot: "Dieses Feld bitte nicht ausfüllen",
+    paso1: "Die Strecke",
+    origen: "Abholort *",
+    origenPh: "Flughafen (MAH), Hafen, Hotel…",
+    destino: "Ziel *",
+    destinoPh: "Gegend, Hotel oder Adresse",
+    trayecto: "Fahrt",
+    soloIda: "Einfache Fahrt",
+    idaVuelta: "Hin- und Rückfahrt",
+    fechaSalida: "Abfahrtsdatum (oder Ankunft des Flugs) *",
+    horaSalida: "Abfahrtszeit (oder Ankunft des Flugs) *",
+    fechaRegreso: "Datum der Rückfahrt",
+    horaRegreso: "Uhrzeit der Rückfahrt",
+    soloIdaVuelta: "— nur bei Hin- und Rückfahrt",
+    vuelo: "Flugnummer",
+    adultos: "Erwachsene *",
+    ninos: "Kinder (2-11)",
+    bebes: "Kleinkinder (0-2)",
+    paso2: "Das Fahrzeug",
+    sinSorpresas: ["Ohne Überraschungen: Menorca Bus bestätigt Ihnen den ", "Festpreis", " vorab per E-Mail."],
+    precioAConfirmar: "Preis auf Anfrage",
+    paso3: "Ihre Daten",
+    nombre: "Vor- und Nachname *",
+    empresa: "Firma",
+    documento: "Ausweis oder Reisepass *",
+    email: "E-Mail *",
+    telefono: "Mobiltelefon *",
+    direccion: "Adresse *",
+    codigoPostal: "Postleitzahl *",
+    ciudad: "Ort *",
+    pais: "Land *",
+    cupon: "Gutscheincode",
+    cuponNota: "— z. B. CALMASOCIETY",
+    comentarios: "Hinweise für den Fahrer",
+    comentariosPh: "Gepäck, Zeiten, besondere Bedürfnisse…",
+    extras: "Extras (Anzahl)",
+    optin: "Ich möchte Neuigkeiten und Angebote von Menorca Bus erhalten.",
+    terminos: "Ich akzeptiere die Geschäftsbedingungen des Services. *",
+    boton: "Reservierung anfragen",
+    letraPequena: "Menorca Bus bestätigt Verfügbarkeit und Festpreis per E-Mail. Kostenlose Stornierung bis 24 Std. vorher. Die Fahrzeugkategorie ist unverbindlich und kann je nach Verfügbarkeit variieren, wobei die gebuchte Klasse erhalten bleibt.",
+  },
+};
+
+const t = T[locale];
+// Los tres primeros puntos llevan nombre traducible (aeropuerto, puertos).
+const listaPuntos = [t.aeropuerto, t.puertoMao, t.puertoCiutadella, ...puntos.slice(1)];
+---
+
+<section class="mx-auto max-w-3xl px-5 py-12 sm:px-8">
+  <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">{t.kicker}</p>
+  <h1 class="mt-2 font-display text-4xl text-tinta">{t.h1}</h1>
+  <p class="mt-4 max-w-prosa text-piedra-suave">{t.intro}</p>
+
+  {/* Reaseguros de confianza (arriba, para enganchar) */}
+  <ul class="mt-6 flex flex-wrap gap-2 text-xs text-piedra">
+    {t.seals.map((s) => <li class="rounded-full bg-arena/70 px-3 py-1">{s}</li>)}
+  </ul>
+
+  {/* Datalist compartido por origen y destino */}
+  <datalist id="puntos-menorca">
+    {listaPuntos.map((p) => <option value={p} />)}
+  </datalist>
+
+  <form method="POST" action="/api/reservas" class="mt-8 space-y-8 rounded-2xl border border-niebla bg-white p-6 shadow-sm sm:p-8">
+    <input type="hidden" name="locale" value={locale} />
+    {/* Honeypot antispam: invisible para las personas, tentador para los bots. */}
+    <p class="hidden" aria-hidden="true">
+      <label>{t.honeypot} <input type="text" name="web" tabindex="-1" autocomplete="off" /></label>
+    </p>
+
+    {/* PASO 1 · El trayecto */}
+    <fieldset class="space-y-4">
+      <legend class="mb-1 flex items-center gap-3">
+        <span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-arcilla font-display text-base text-crema">1</span>
+        <span class="font-display text-xl text-tinta">{t.paso1}</span>
+      </legend>
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div>
+          <label for="origin" class={labelCls}>{t.origen}</label>
+          <input id="origin" type="text" name="origin" required list="puntos-menorca" placeholder={t.origenPh} class={field} />
+        </div>
+        <div>
+          <label for="destination" class={labelCls}>{t.destino}</label>
+          <input id="destination" type="text" name="destination" required list="puntos-menorca" placeholder={t.destinoPh} class={field} />
+        </div>
+      </div>
+
+      <fieldset>
+        <legend class={labelCls}>{t.trayecto}</legend>
+        <div class="mt-1 flex flex-wrap gap-x-6 gap-y-2">
+          <label class="flex items-center gap-2 text-sm text-piedra">
+            <input type="radio" name="tripType" value="ida" checked class="accent-terracota" />
+            {t.soloIda}
+          </label>
+          <label class="flex items-center gap-2 text-sm text-piedra">
+            <input type="radio" name="tripType" value="ida-vuelta" class="accent-terracota" />
+            {t.idaVuelta}
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div>
+          <label for="pickup-date" class={labelCls}>{t.fechaSalida}</label>
+          <input id="pickup-date" type="date" name="pickupDate" required class={field} />
+        </div>
+        <div>
+          <label for="pickup-time" class={labelCls}>{t.horaSalida}</label>
+          <input id="pickup-time" type="time" name="pickupTime" required class={field} />
+        </div>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div>
+          <label for="return-date" class={labelCls}>{t.fechaRegreso} <span class="text-piedra-suave">{t.soloIdaVuelta}</span></label>
+          <input id="return-date" type="date" name="returnDate" class={field} />
+        </div>
+        <div>
+          <label for="return-time" class={labelCls}>{t.horaRegreso} <span class="text-piedra-suave">{t.soloIdaVuelta}</span></label>
+          <input id="return-time" type="time" name="returnTime" class={field} />
+        </div>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-4">
+        <div class="sm:col-span-1">
+          <label for="flight-number" class={labelCls}>{t.vuelo}</label>
+          <input id="flight-number" type="text" name="flightNumber" placeholder="VY3715" class={field} />
+        </div>
+        <div>
+          <label for="adults" class={labelCls}>{t.adultos}</label>
+          <input id="adults" type="number" name="adults" min="1" max="50" value="1" required class={field} />
+        </div>
+        <div>
+          <label for="children" class={labelCls}>{t.ninos}</label>
+          <input id="children" type="number" name="children" min="0" max="50" value="0" class={field} />
+        </div>
+        <div>
+          <label for="infants" class={labelCls}>{t.bebes}</label>
+          <input id="infants" type="number" name="infants" min="0" max="50" value="0" class={field} />
+        </div>
+      </div>
+    </fieldset>
+
+    {/* PASO 2 · El vehículo (tarjetas radio, con hueco de precio: lo pone la API) */}
+    <fieldset class="space-y-4 border-t border-niebla pt-8">
+      <legend class="mb-1 flex items-center gap-3">
+        <span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-arcilla font-display text-base text-crema">2</span>
+        <span class="font-display text-xl text-tinta">{t.paso2}</span>
+      </legend>
+      <p class="text-sm text-piedra-suave">
+        {t.sinSorpresas[0]}<strong class="font-semibold text-piedra">{t.sinSorpresas[1]}</strong>{t.sinSorpresas[2]}
+      </p>
+      <div class="space-y-3">
+        {VEHICLE_CATEGORIES.map((c, i) => (
+          <label class="press flex cursor-pointer gap-4 rounded-xl border border-niebla bg-lino/60 p-4 has-[:checked]:border-terracota has-[:checked]:bg-arena/50 has-[:checked]:ring-1 has-[:checked]:ring-terracota">
+            <input type="radio" name="vehicleCategory" value={c.id} required checked={i === 0} class="mt-1 accent-terracota" />
+            <span class="flex-1">
+              <span class="flex items-start justify-between gap-3">
+                <span class="flex flex-wrap items-center gap-2">
+                  <span class="font-display text-lg text-tinta">{c.name[locale]}</span>
+                  <span class="rounded-full bg-arena px-2 py-0.5 text-xs font-semibold uppercase tracking-wider text-piedra">{c.badge[locale]}</span>
+                </span>
+                <span class="shrink-0 whitespace-nowrap text-right text-sm">
+                  {c.price ? (
+                    <span class="font-semibold text-arcilla">{c.price[locale]}</span>
+                  ) : (
+                    <span class="text-piedra-suave">{t.precioAConfirmar}</span>
+                  )}
+                </span>
+              </span>
+              <span class="mt-1 block text-sm text-piedra-suave">{c.tagline[locale]}</span>
+              <ul class="mt-2 list-disc pl-5 text-sm text-piedra-suave">
+                {c.points[locale].map((p) => <li>{p}</li>)}
+              </ul>
+            </span>
+          </label>
+        ))}
+      </div>
+    </fieldset>
+
+    {/* PASO 3 · Tus datos */}
+    <fieldset class="space-y-4 border-t border-niebla pt-8">
+      <legend class="mb-1 flex items-center gap-3">
+        <span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-arcilla font-display text-base text-crema">3</span>
+        <span class="font-display text-xl text-tinta">{t.paso3}</span>
+      </legend>
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div>
+          <label for="name" class={labelCls}>{t.nombre}</label>
+          <input id="name" type="text" name="name" required autocomplete="name" class={field} />
+        </div>
+        <div>
+          <label for="company" class={labelCls}>{t.empresa}</label>
+          <input id="company" type="text" name="company" autocomplete="organization" class={field} />
+        </div>
+        <div>
+          <label for="id-document" class={labelCls}>{t.documento}</label>
+          <input id="id-document" type="text" name="idDocument" required class={field} />
+        </div>
+        <div>
+          <label for="email" class={labelCls}>{t.email}</label>
+          <input id="email" type="email" name="email" required autocomplete="email" class={field} />
+        </div>
+        <div>
+          <label for="phone" class={labelCls}>{t.telefono}</label>
+          <input id="phone" type="tel" name="phone" required autocomplete="tel" class={field} />
+        </div>
+        <div>
+          <label for="address" class={labelCls}>{t.direccion}</label>
+          <input id="address" type="text" name="address" required autocomplete="street-address" class={field} />
+        </div>
+        <div>
+          <label for="postal-code" class={labelCls}>{t.codigoPostal}</label>
+          <input id="postal-code" type="text" name="postalCode" required autocomplete="postal-code" class={field} />
+        </div>
+        <div>
+          <label for="city" class={labelCls}>{t.ciudad}</label>
+          <input id="city" type="text" name="city" required autocomplete="address-level2" class={field} />
+        </div>
+        <div>
+          <label for="country" class={labelCls}>{t.pais}</label>
+          <input id="country" type="text" name="country" required autocomplete="country-name" class={field} />
+        </div>
+        <div>
+          <label for="coupon" class={labelCls}>{t.cupon} <span class="text-piedra-suave">{t.cuponNota}</span></label>
+          <input id="coupon" type="text" name="coupon" class={field} />
+        </div>
+      </div>
+
+      <div>
+        <label for="comments" class={labelCls}>{t.comentarios}</label>
+        <textarea id="comments" name="comments" rows="3" placeholder={t.comentariosPh} class={field}></textarea>
+      </div>
+
+      <div>
+        <p class={labelCls}>{t.extras}</p>
+        <div class="mt-1 grid gap-3 sm:grid-cols-2">
+          {EXTRAS.map((e) => (
+            <label class="flex items-center justify-between rounded-lg border border-niebla bg-lino/60 px-4 py-2.5">
+              <span class="text-sm text-piedra">{e.name[locale]}</span>
+              <input type="number" name={`extra-${e.id}`} min="0" max="9" value="0" class="w-16 rounded border border-niebla bg-white px-2 py-1 text-center text-sm" />
+            </label>
+          ))}
+        </div>
+      </div>
+
+      <label class="flex items-start gap-3 text-sm text-piedra-suave">
+        <input type="checkbox" name="marketingOptin" class="mt-0.5 accent-terracota" />
+        {t.optin}
+      </label>
+      <label class="flex items-start gap-3 text-sm text-piedra">
+        <input type="checkbox" name="terms" required class="mt-0.5 accent-terracota" />
+        {t.terminos}
+      </label>
+    </fieldset>
+
+    {/* CTA + reaseguro */}
+    <div class="border-t border-niebla pt-6">
+      <button type="submit" class="press w-full rounded-full bg-arcilla px-8 py-3.5 font-semibold text-crema hover:bg-terracota sm:w-auto">
+        {t.boton}
+      </button>
+      <p class="mt-3 text-xs text-piedra-suave">{t.letraPequena}</p>
+    </div>
+  </form>
+</section>

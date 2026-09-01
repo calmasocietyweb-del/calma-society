@@ -1,39 +1,39 @@
 ---
-// Confirmación de la solicitud de traslado (EN). El localizador llega por
+// Confirmación de la solicitud de traslado (DE). El localizador llega por
 // ?ref= y se comunica en el texto sin leer el parámetro (página estática, sin JS
 // de cliente): el correo de confirmación lo repetirá.
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 
 const steps = [
-  "We review your journey and availability.",
-  "We'll email you with the confirmation and the fixed price.",
-  "You confirm and that's it: we pick you up on time, door to door.",
+  "Wir prüfen Ihre Strecke und die Verfügbarkeit.",
+  "Wir schreiben Ihnen per E-Mail mit der Bestätigung und dem Festpreis.",
+  "Sie bestätigen, und fertig: Wir holen Sie pünktlich ab, von Tür zu Tür.",
 ];
 ---
 
 <BaseLayout
-  title="Request received"
-  description="Your transfer request has been registered."
-  locale="en"
-  alternates={{ es: "/reservar-traslado/thanks", en: "/en/book-transfer/thanks", fr: "/fr/reserver-un-transfert/thanks", de: "/de/transfer-buchen/thanks" }}
+  title="Anfrage eingegangen"
+  description="Ihre Transferanfrage wurde registriert."
+  locale="de"
+  alternates={{ es: "/reservar-traslado/danke", en: "/en/book-transfer/danke", fr: "/fr/reserver-un-transfert/danke", de: "/de/transfer-buchen/danke" }}
   noindex
 >
   <section class="mx-auto max-w-prosa px-5 py-16 sm:px-8">
     <div class="text-center">
-      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">Transfer booking</p>
-      <h1 class="mt-2 font-display text-4xl text-tinta">Request received</h1>
-      <p class="mt-4 text-piedra-suave">Thank you. Menorca Bus now has your request and will confirm availability and the fixed price by email.</p>
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">Transferbuchung</p>
+      <h1 class="mt-2 font-display text-4xl text-tinta">Anfrage eingegangen</h1>
+      <p class="mt-4 text-piedra-suave">Vielen Dank. Menorca Bus hat Ihre Anfrage und bestätigt Ihnen Verfügbarkeit und Festpreis per E-Mail.</p>
     </div>
 
     {/* Localizador destacado, que rellena un script mínimo desde ?ref= (mejora
         progresiva: sin JS, la nota de la tarjeta dice que está en la URL). */}
     <div id="ref-box" hidden class="mx-auto mt-8 max-w-sm rounded-2xl border border-oro-vivo/40 bg-crema/50 p-5 text-center">
-      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">Your reference</p>
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-oro">Ihre Vorgangsnummer</p>
       <p id="ref-code" class="mt-1 font-display text-3xl tracking-wider text-tinta"></p>
     </div>
 
     <div class="mt-8 rounded-2xl border border-niebla bg-white p-6 shadow-sm sm:p-8">
-      <h2 class="font-display text-xl text-tinta">What happens now</h2>
+      <h2 class="font-display text-xl text-tinta">Wie es jetzt weitergeht</h2>
       <ol class="mt-4 space-y-4">
         {steps.map((s, i) => (
           <li class="flex items-start gap-3">
@@ -43,12 +43,12 @@ const steps = [
         ))}
       </ol>
       <p class="mt-6 border-t border-niebla pt-4 text-sm text-piedra-suave">
-        Keep your <strong class="font-semibold text-piedra">reference</strong>: it appears in this page's address (ref=…) and we'll repeat it in the email. Any questions? Write to us at <a href="mailto:hola@calmasociety.com" class="text-arcilla underline underline-offset-2 hover:text-terracota">hola@calmasociety.com</a>.
+        Bewahren Sie Ihre <strong class="font-semibold text-piedra">Vorgangsnummer</strong> auf: Sie steht in der Adresse dieser Seite (ref=…) und wir wiederholen sie in der E-Mail. Noch Fragen? Schreiben Sie uns an <a href="mailto:hola@calmasociety.com" class="text-arcilla underline underline-offset-2 hover:text-terracota">hola@calmasociety.com</a>.
       </p>
     </div>
 
     <div class="mt-8 text-center">
-      <a href="/en/" class="press inline-block rounded-full bg-arcilla px-8 py-3 font-semibold text-crema hover:bg-terracota">Back to the magazine</a>
+      <a href="/de/" class="press inline-block rounded-full bg-arcilla px-8 py-3 font-semibold text-crema hover:bg-terracota">Zurück zum Magazin</a>
     </div>
 
     <script is:inline>

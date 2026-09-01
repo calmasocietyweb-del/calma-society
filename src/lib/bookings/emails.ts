@@ -21,7 +21,14 @@
  * puede editarlo antes de enviarlo: el módulo redacta, no envía.
  */
 
-export type Locale = "es" | "en";
+/**
+ * Idiomas del correo. Es el MISMO conjunto que el del formulario: si la reserva
+ * se ofrece en un idioma, su correo tiene que llegar en ese idioma. Atarlo a
+ * `BookingLocale` obliga al compilador a avisar cuando se despliegue otro.
+ */
+import type { BookingLocale } from "./catalog";
+
+export type Locale = BookingLocale;
 
 /** Lo mínimo que necesita este módulo de una fila de `bookings`. */
 export interface BookingRow {
@@ -126,20 +133,28 @@ const PREGUNTAS: Record<HuecoId, Record<Locale, string>> = {
   vuelo: {
     es: "Número de vuelo o barco de llegada (y compañía). Lo necesitamos para ajustar la hora de recogida y para seguir el vuelo si se retrasa.",
     en: "Your arrival flight or ferry number (and the operator). We need it to set the pick-up time and to track your arrival if it is delayed.",
+    fr: "Le numéro de votre vol ou de votre bateau d’arrivée (et la compagnie). Il nous est nécessaire pour ajuster l’heure de prise en charge et suivre votre arrivée en cas de retard.",
+    de: "Die Nummer Ihres Ankunftsflugs oder Ihrer Fähre (und die Gesellschaft). Wir benötigen sie, um die Abholzeit anzupassen und Ihre Ankunft bei Verspätung zu verfolgen.",
   },
   sillas: {
     es: "Edad y peso aproximado de cada menor que viaja, para llevar la silla homologada que corresponde.",
     en: "The age and approximate weight of each child travelling, so we bring the correct approved child seat.",
+    fr: "L’âge et le poids approximatif de chaque enfant qui voyage, afin d’emporter le siège homologué qui convient.",
+    de: "Alter und ungefähres Gewicht jedes mitreisenden Kindes, damit wir den passenden zugelassenen Kindersitz mitbringen.",
   },
   // Ojo con el registro: el correo trata de USTED de principio a fin. Un
   // "lleváis" aquí rompía el tono a media carta.
   equipaje: {
     es: "Cuántas maletas grandes y cuántos bultos de mano llevan, y si hay algo voluminoso (carrito, silla de ruedas, tabla, palos de golf, instrumento).",
     en: "How many large suitcases and cabin bags you are carrying, and whether there is anything bulky (pushchair, wheelchair, board, golf clubs, an instrument).",
+    fr: "Combien de grandes valises et de bagages à main vous emportez, et s’il y a un objet encombrant (poussette, fauteuil roulant, planche, clubs de golf, instrument).",
+    de: "Wie viele große Koffer und Handgepäckstücke Sie mitführen und ob etwas Sperriges dabei ist (Kinderwagen, Rollstuhl, Board, Golfschläger, ein Instrument).",
   },
   direccion: {
     es: "Dirección exacta de recogida, con número y, si es un hotel o apartamento, su nombre.",
     en: "The exact pick-up address, with street number and, if it is a hotel or apartment, its name.",
+    fr: "L’adresse exacte de prise en charge, avec le numéro et, s’il s’agit d’un hôtel ou d’un appartement, son nom.",
+    de: "Die genaue Abholadresse mit Hausnummer und, falls es sich um ein Hotel oder eine Wohnung handelt, deren Namen.",
   },
 };
 
@@ -192,6 +207,54 @@ const T = {
     lPasajeros: "Passengers",
     lRef: "Reference",
   },
+  fr: {
+    asunto: (ref: string) => `Votre transfert à Minorque — il nous manque quelques informations (réf. ${ref})`,
+    saludo: (n: string) => `Cher/Chère ${n},`,
+    intro:
+      "Nous avons bien reçu votre demande de transfert et nous vous écrivons pour vous demander quelques informations qui nous manquent. Dès que nous les aurons, nous vous enverrons le devis.",
+    resumen: "Votre demande :",
+    pedimos: (n: number) => (n === 1 ? "Il nous manquerait cette information :" : "Il nous manquerait ces informations :"),
+    cierre:
+      "Vous pouvez répondre directement à ce courriel. Si quelque chose a changé (date, heure ou nombre de passagers), indiquez-le-nous et nous le mettrons à jour.",
+    firma: "Cordialement,",
+    ida: "aller simple",
+    idaVuelta: "aller-retour",
+    pax: (a: number, n: number, b: number) => {
+      const p = [`${a} adulte${a === 1 ? "" : "s"}`];
+      if (n) p.push(`${n} enfant${n === 1 ? "" : "s"}`);
+      if (b) p.push(`${b} bébé${b === 1 ? "" : "s"}`);
+      return p.join(", ");
+    },
+    lVuelta: "Retour",
+    lTrayecto: "Trajet",
+    lFecha: "Date",
+    lPasajeros: "Passagers",
+    lRef: "Référence",
+  },
+  de: {
+    asunto: (ref: string) => `Ihr Transfer auf Menorca — uns fehlen noch einige Angaben (Ref. ${ref})`,
+    saludo: (n: string) => `Sehr geehrte/r ${n},`,
+    intro:
+      "Wir haben Ihre Transferanfrage erhalten und schreiben Ihnen, um einige noch fehlende Angaben zu erfragen. Sobald wir sie haben, senden wir Ihnen das Angebot.",
+    resumen: "Ihre Anfrage:",
+    pedimos: (n: number) => (n === 1 ? "Uns fehlt noch diese Angabe:" : "Uns fehlen noch diese Angaben:"),
+    cierre:
+      "Sie können einfach auf diese E-Mail antworten. Falls sich etwas geändert hat (Datum, Uhrzeit oder Anzahl der Fahrgäste), teilen Sie es uns mit und wir aktualisieren es.",
+    firma: "Mit freundlichen Grüßen,",
+    ida: "einfache Fahrt",
+    idaVuelta: "Hin- und Rückfahrt",
+    pax: (a: number, n: number, b: number) => {
+      const p = [`${a} Erwachsene${a === 1 ? "r" : ""}`];
+      if (n) p.push(`${n} Kind${n === 1 ? "" : "er"}`);
+      if (b) p.push(`${b} Kleinkind${b === 1 ? "" : "er"}`);
+      return p.join(", ");
+    },
+    lVuelta: "Rückfahrt",
+    lTrayecto: "Strecke",
+    lFecha: "Datum",
+    lPasajeros: "Fahrgäste",
+    lRef: "Referenz",
+  },
 } as const;
 
 /** Solo el nombre de pila: un correo formal pero no acartonado. */
@@ -219,7 +282,10 @@ export function componerPeticionDeInfo(
   para: string,
   remitente: string,
 ): CorreoCompuesto {
-  const locale: Locale = b.locale === "en" ? "en" : "es";
+  // Antes esto era `b.locale === "en" ? "en" : "es"`: una reserva en francés o
+  // en alemán recibía su correo EN ESPAÑOL sin que nada avisara. Ahora se busca
+  // en la tabla y solo se cae al español si el idioma no existe de verdad.
+  const locale: Locale = (b.locale in T ? b.locale : "es") as Locale;
   const t = T[locale];
   const huecos = huecosParaPresupuesto(b);
 

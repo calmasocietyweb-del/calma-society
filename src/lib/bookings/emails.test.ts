@@ -129,8 +129,24 @@ describe("el correo que se redacta", () => {
     assert.ok(!/Estimado/.test(en.cuerpo));
   });
 
-  test("un locale desconocido cae a español", () => {
-    const x = componerPeticionDeInfo(con({ locale: "de" }), "x@example.com", "Calma Society");
+  test("el francés y el alemán reciben SU idioma, no el español", () => {
+    // ⚠️ Este test decía «un locale desconocido cae a español» y usaba `de` como
+    // ejemplo. Era correcto mientras el correo solo hablaba es/en, pero escondía
+    // el fallo real: la reserva SÍ se ofrecía en otros idiomas y el cliente
+    // recibía su confirmación en español (un `b.locale === "en" ? "en" : "es"`).
+    const fr = componerPeticionDeInfo(con({ locale: "fr", flight_number: null }), "x@example.com", "Calma Society");
+    assert.match(fr.cuerpo, /^Cher\/Chère /);
+    assert.match(fr.cuerpo, /numéro de votre vol/);
+    assert.ok(!/Estimado|Dear /.test(fr.cuerpo));
+
+    const de = componerPeticionDeInfo(con({ locale: "de", flight_number: null }), "x@example.com", "Calma Society");
+    assert.match(de.cuerpo, /^Sehr geehrte\/r /);
+    assert.match(de.cuerpo, /Nummer Ihres Ankunftsflugs/);
+    assert.ok(!/Estimado|Dear /.test(de.cuerpo));
+  });
+
+  test("un idioma que NO está desplegado sí cae a español", () => {
+    const x = componerPeticionDeInfo(con({ locale: "it" }), "x@example.com", "Calma Society");
     assert.match(x.cuerpo, /^Estimado/);
   });
 
