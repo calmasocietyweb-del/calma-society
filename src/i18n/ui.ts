@@ -1096,6 +1096,7 @@ const EVENT_CATEGORIES: Record<string, Record<Locale, string>> = {
   deporte: { es: "Deporte", en: "Sport", fr: "Sport", de: "Sport", it: "Sport", pt: "Desporto" },
   cultura: { es: "Cultura", en: "Culture", fr: "Culture", de: "Kultur", it: "Cultura", pt: "Cultura" },
   gastronomia: { es: "Gastronomía", en: "Gastronomy", fr: "Gastronomie", de: "Gastronomie", it: "Gastronomia", pt: "Gastronomia" },
+  "que-hacer": { es: "Cosas que hacer", en: "Things to do", fr: "Choses à faire", de: "Erlebnisse", it: "Cose da fare", pt: "Coisas para fazer" },
   otro: { es: "Evento", en: "Event", fr: "Événement", de: "Veranstaltung", it: "Evento", pt: "Evento" },
 };
 
@@ -1121,6 +1122,9 @@ export const EXPERIENCE_TYPES = [
   { key: "deporte", label: { es: "Naturaleza y deporte", en: "Nature & sport", fr: "Nature et sport", de: "Natur und Sport", it: "Natura e sport", pt: "Natureza e desporto" } },
   { key: "mercado", label: { es: "Mercados y ferias", en: "Markets & fairs", fr: "Marchés et foires", de: "Märkte und Messen", it: "Mercati e fiere", pt: "Mercados e feiras" } },
   { key: "gastronomia", label: { es: "Gastronomía", en: "Food & drink", fr: "Gastronomie", de: "Essen und Trinken", it: "Gastronomia", pt: "Gastronomia" } },
+  // Lo que se puede hacer cualquier día, haya fiesta o no. Va al final de los
+  // chips a propósito: la agenda es primero "qué pasa estos días".
+  { key: "que-hacer", label: { es: "Cosas que hacer", en: "Things to do", fr: "Choses à faire", de: "Erlebnisse", it: "Cose da fare", pt: "Coisas para fazer" } },
   { key: "otro", label: { es: "Otros", en: "Other", fr: "Autres", de: "Sonstiges", it: "Altro", pt: "Outros" } },
 ] as const;
 

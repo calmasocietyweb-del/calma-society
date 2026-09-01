@@ -85,3 +85,44 @@ describe("orden de la agenda", () => {
     assert.deepEqual(ordenar(evs, HOY), ordenar(evs, HOY));
   });
 });
+
+/**
+ * "Cosas que hacer": fichas perennes con un rango de TEMPORADA (a menudo el año
+ * entero). Sin el nivel 0 contarían como "en curso" y se colarían delante de la
+ * próxima fiesta — el mismo síntoma que KAN-126, pero al revés.
+ */
+describe("cosas que hacer (fichas perennes)", () => {
+  const perenne = (start: string, end?: string) => ({
+    ...evento(start, end),
+    category: "que-hacer",
+  });
+
+  it("una ficha de todo el año NO adelanta a la próxima fiesta, aunque esté 'en curso'", () => {
+    const todoElAno = perenne("2026-01-01", "2026-12-31");
+    const proximaFiesta = evento("2026-09-07", "2026-09-09"); // Gràcia
+    assert.ok(compareEvents(proximaFiesta, todoElAno, hoy(HOY)) < 0);
+    assert.ok(compareEvents(todoElAno, proximaFiesta, hoy(HOY)) > 0);
+  });
+
+  it("va detrás incluso de un evento ya pasado este año (que ordena por su próxima cita)", () => {
+    const todoElAno = perenne("2026-01-01", "2026-12-31");
+    const yaPasado = evento("2026-01-05"); // Reis: su próxima cita es en enero
+    assert.ok(compareEvents(yaPasado, todoElAno, hoy(HOY)) < 0);
+  });
+
+  it("las perennes quedan al final y conservan su orden de entrada (empate estable)", () => {
+    const evs = [
+      perenne("2026-01-01", "2026-12-31"),
+      evento("2026-09-08"),
+      perenne("2026-05-01", "2026-10-31"),
+      evento("2026-10-11"),
+    ];
+    assert.deepEqual(ordenar(evs, HOY), [1, 3, 0, 2]);
+  });
+
+  it("una ficha con fecha de verdad NO se aparta aunque comparta rango largo", () => {
+    const festivalLargo = evento("2026-07-03", "2026-10-11"); // no lleva category
+    const todoElAno = perenne("2026-01-01", "2026-12-31");
+    assert.ok(compareEvents(festivalLargo, todoElAno, hoy(HOY)) < 0);
+  });
+});

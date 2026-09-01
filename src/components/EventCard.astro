@@ -34,10 +34,15 @@ const month = data.startDate
   .replace(".", "");
 const sameDay =
   data.endDate && data.endDate.toDateString() === data.startDate.toDateString();
+// Las fichas PERENNES ("Cosas que hacer") traen su temporada escrita en el
+// idioma de la ficha (`whenLabel`). Cuando la hay manda ella: sus fechas acotan
+// una temporada, no un acto, así que el sello de día/mes solo podría mentir
+// ("1 ene" para algo que se hace todo el año). Sin `whenLabel` nada cambia.
 const dateLabel =
-  !data.endDate || sameDay
+  data.whenLabel ??
+  (!data.endDate || sameDay
     ? formatDate(data.startDate, locale)
-    : `${formatDate(data.startDate, locale)} – ${formatDate(data.endDate, locale)}`;
+    : `${formatDate(data.startDate, locale)} – ${formatDate(data.endDate, locale)}`);
 ---
 
 <article data-agenda={data.category} class={animate ? "reveal group flex flex-col" : "group flex flex-col"}>
@@ -76,11 +81,16 @@ const dateLabel =
         </span>
       )
     }
-    {/* Badge de fecha (la proximidad de un vistazo) */}
-    <div class="absolute left-3 top-3 flex flex-col items-center bg-lino/95 px-2.5 py-1.5 text-center leading-none shadow-sm">
-      <span class="font-display text-xl text-tinta">{day}</span>
-      <span class="mt-0.5 text-[0.6rem] font-semibold uppercase tracking-wider text-oro">{month}</span>
-    </div>
+    {/* Badge de fecha (la proximidad de un vistazo). Las fichas perennes no lo
+        llevan: no tienen día al que llegar, y la foto respira mejor sin él. */}
+    {
+      !data.whenLabel && (
+        <div class="absolute left-3 top-3 flex flex-col items-center bg-lino/95 px-2.5 py-1.5 text-center leading-none shadow-sm">
+          <span class="font-display text-xl text-tinta">{day}</span>
+          <span class="mt-0.5 text-[0.6rem] font-semibold uppercase tracking-wider text-oro">{month}</span>
+        </div>
+      )
+    }
   </a>
 
   <p class="mt-4 border-t border-niebla/60 pt-3 text-xs font-semibold uppercase tracking-widest text-oro">

@@ -5,8 +5,9 @@
 import EventCard from "./EventCard.astro";
 import JsonLd from "./JsonLd.astro";
 import { getEvents } from "../lib/content";
+import { isEvergreen } from "../lib/events-order";
 import { EXPERIENCE_TYPES, experienceTypeLabel, useTranslations } from "../i18n/ui";
-import { abs, eventSchema } from "../lib/schema";
+import { abs, eventSchema, touristAttractionSchema } from "../lib/schema";
 import { eventUrl } from "../i18n/utils";
 import type { Locale } from "../config/site";
 
@@ -24,17 +25,30 @@ const present = EXPERIENCE_TYPES.map((e) => e.key).filter((key) =>
 
 // `url` apunta a NUESTRA página de detalle (KAN-102) — la misma que declara el
 // JSON-LD de esa página —; la web oficial del evento va en `sameAs`.
+// Las fichas de "Cosas que hacer" NO son citas: salen como `TouristAttraction`,
+// porque declararlas `Event` obligaría a dar por fecha de acto lo que es una
+// temporada (ver touristAttractionSchema en lib/schema.ts).
 const eventsLd = events.map((e) =>
-  eventSchema({
-    title: e.data.title,
-    description: e.data.description,
-    startDate: e.data.startDate,
-    endDate: e.data.endDate,
-    location: e.data.location,
-    image: e.data.image,
-    url: abs(eventUrl(locale, e.id)),
-    sameAs: e.data.sourceUrl,
-  }),
+  isEvergreen(e.data)
+    ? touristAttractionSchema({
+        name: e.data.title,
+        description: e.data.description,
+        location: e.data.location,
+        image: e.data.image,
+        url: abs(eventUrl(locale, e.id)),
+        sameAs: e.data.sourceUrl,
+        openingHours: e.data.whenLabel,
+      })
+    : eventSchema({
+        title: e.data.title,
+        description: e.data.description,
+        startDate: e.data.startDate,
+        endDate: e.data.endDate,
+        location: e.data.location,
+        image: e.data.image,
+        url: abs(eventUrl(locale, e.id)),
+        sameAs: e.data.sourceUrl,
+      }),
 );
 ---
 

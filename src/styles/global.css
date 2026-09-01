@@ -306,6 +306,7 @@
 .agenda-filterable:has(#agenda-deporte:checked) [data-agenda]:not([data-agenda="deporte"]),
 .agenda-filterable:has(#agenda-mercado:checked) [data-agenda]:not([data-agenda="mercado"]),
 .agenda-filterable:has(#agenda-gastronomia:checked) [data-agenda]:not([data-agenda="gastronomia"]),
+.agenda-filterable:has(#agenda-que-hacer:checked) [data-agenda]:not([data-agenda="que-hacer"]),
 .agenda-filterable:has(#agenda-otro:checked) [data-agenda]:not([data-agenda="otro"]) {
   display: none;
 }

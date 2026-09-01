@@ -2,8 +2,10 @@
  * Orden de la agenda (KAN-126). Módulo PURO, sin `astro:content`, para poder
  * probarlo con `node --test` igual que las reglas del planificador.
  *
- * Dos niveles:
+ * Tres niveles:
  *
+ *  0. Las fichas PERENNES ("Cosas que hacer") van siempre al final: no compiten
+ *     por proximidad porque no son citas, son temporadas.
  *  1. EN CURSO primero — los que ya han empezado pero aún no han terminado
  *     (`endDate >= hoy`), del que antes se acaba al que más tarde. Son los más
  *     útiles para quien está en la isla ahora: mercados nocturnos, festivales
@@ -18,10 +20,26 @@
  * caía al fondo de la agenda estando en marcha.
  */
 
+/**
+ * Categorías PERENNES: no son citas, son cosas que se pueden hacer cualquier
+ * día ("Cosas que hacer"). Sus fechas acotan una temporada, no un acto, así que
+ * el criterio de proximidad no les aplica: con un rango de todo el año contarían
+ * como "en curso" y se colarían POR DELANTE de la próxima fiesta, que es justo
+ * lo que la agenda tiene que enseñar primero. Van siempre al final.
+ */
+const EVERGREEN = new Set(["que-hacer"]);
+
 /** Lo mínimo que necesita el comparador de una ficha de evento. */
 export interface EventDates {
   startDate: Date;
   endDate?: Date;
+  /** Categoría de la ficha; solo se mira para apartar las perennes al final. */
+  category?: string;
+}
+
+/** ¿Es una ficha perenne (sin fecha de cita)? */
+export function isEvergreen(e: EventDates): boolean {
+  return !!e.category && EVERGREEN.has(e.category);
 }
 
 /** Fecha de fin efectiva (los eventos de un solo día terminan ese mismo día). */
@@ -49,8 +67,15 @@ function msUntilNext(start: Date, today: Date): number {
   return next.getTime() - today.getTime();
 }
 
-/** Comparador de los dos niveles. */
+/** Comparador de los dos niveles (con las perennes apartadas al final). */
 export function compareEvents(a: EventDates, b: EventDates, today: Date): number {
+  // Nivel 0: lo perenne SIEMPRE detrás de lo que tiene fecha. Entre ellas se
+  // mantiene el orden en que llegan (el comparador devuelve 0 → estable).
+  const aPerenne = isEvergreen(a);
+  const bPerenne = isEvergreen(b);
+  if (aPerenne !== bPerenne) return aPerenne ? 1 : -1;
+  if (aPerenne && bPerenne) return 0;
+
   const aVivo = isOngoing(a, today);
   const bVivo = isOngoing(b, today);
   if (aVivo !== bVivo) return aVivo ? -1 : 1;

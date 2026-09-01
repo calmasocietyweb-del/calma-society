@@ -354,6 +354,14 @@ const eventos = defineCollection({
       "deporte",
       "cultura",
       "gastronomia",
+      // "Cosas que hacer": lo que se puede hacer en Menorca CUALQUIER día, sin
+      // esperar a que haya fiesta — el 365 días del año que promete la marca
+      // (CLAUDE.md §1). No son citas con fecha, sino experiencias con una
+      // TEMPORADA real; por eso llevan `whenLabel` en vez de un rango de fechas
+      // visible, ordenan al final de la agenda (lib/events-order.ts) y emiten
+      // `TouristAttraction` en vez de `Event` (declarar un Event con fecha
+      // inventada sería mentirle a Google y a la IA).
+      "que-hacer",
       "otro",
     ]),
     description: z.string(),
@@ -373,6 +381,18 @@ const eventos = defineCollection({
      * vale y se retira (mejor sin foto que con foto falsa).
      */
     imageAlt: z.string().optional(),
+    /**
+     * Cuándo se puede hacer, en palabras y EN EL IDIOMA DE LA FICHA
+     * ("Todo el año", "De mayo a octubre", "Whole year round"…).
+     *
+     * Existe para las fichas de `que-hacer`: no tienen una fecha de cita, sino
+     * una temporada. Cuando está relleno sustituye al rango de fechas en la
+     * tarjeta y en la página de detalle, y la tarjeta deja de enseñar el sello
+     * de día/mes — que ahí solo podía mentir. `startDate`/`endDate` siguen
+     * existiendo (los pide el modelo y ordenan la colección), pero acotan la
+     * TEMPORADA, no un acto.
+     */
+    whenLabel: z.string().optional(),
     // Crédito de la foto (autor + licencia). Obligatorio mostrarlo para fotos
     // con licencia CC (Wikimedia Commons). Ej.: "MANovillo / Wikimedia (CC BY 2.0)".
     imageCredit: z.string().optional(),

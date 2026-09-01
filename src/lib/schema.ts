@@ -176,6 +176,51 @@ export function eventSchema(opts: {
   };
 }
 
+/**
+ * `TouristAttraction` para las fichas de "Cosas que hacer".
+ *
+ * POR QUÉ NO ES UN `Event`. Las fichas perennes no son citas: son cosas que se
+ * pueden hacer cualquier día de su temporada. Emitirlas como `Event` obligaría a
+ * declarar un `startDate` y un `endDate` que no significan lo que dicen —
+ * afirmarle a Google y a la IA que "subir al Toro" empieza el 1 de enero y
+ * termina el 31 de diciembre. Es dato estructurado falso, justo lo que este
+ * proyecto no hace (CLAUDE.md §8 y §12). `TouristAttraction` dice la verdad:
+ * esto es un sitio o una experiencia que se visita, y la temporada va en texto.
+ */
+export function touristAttractionSchema(opts: {
+  name: string;
+  description: string;
+  /** Zona o municipio; alimenta la dirección postal aproximada. */
+  location: string;
+  url?: string;
+  image?: string;
+  geo?: { lat: number; lng: number };
+  /** Web oficial del lugar o del operador (sourceUrl). */
+  sameAs?: string;
+  /** Temporada en palabras ("Todo el año", "De mayo a octubre"). */
+  openingHours?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "TouristAttraction",
+    name: opts.name,
+    description: opts.description,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: opts.location,
+      addressRegion: "Menorca",
+      addressCountry: "ES",
+    },
+    geo: opts.geo
+      ? { "@type": "GeoCoordinates", latitude: opts.geo.lat, longitude: opts.geo.lng }
+      : undefined,
+    image: opts.image ? [abs(opts.image)] : undefined,
+    url: opts.url,
+    sameAs: opts.sameAs ? [opts.sameAs] : undefined,
+    openingHours: opts.openingHours,
+  };
+}
+
 export function personSchema(opts: {
   name: string;
   description?: string;

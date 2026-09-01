@@ -12,7 +12,8 @@ import { SITE, type Locale } from "../config/site";
 import { articleUrl, eventUrl, placeUrl, homePath, formatDate } from "../i18n/utils";
 import { getSection } from "../config/sections";
 import { articleSlugFor, placeSlugFor, getUpcomingEvents } from "../lib/content";
-import { abs, eventSchema, breadcrumbSchema } from "../lib/schema";
+import { abs, eventSchema, touristAttractionSchema, breadcrumbSchema } from "../lib/schema";
+import { isEvergreen } from "../lib/events-order";
 import { srcset } from "../lib/img";
 import { elegirTitulo, MAX_TITULO_SIN_MARCA } from "../lib/seo-title";
 
@@ -115,17 +116,33 @@ const seoTitle = elegirTitulo(
 );
 
 const canonical = abs(eventUrl(locale, entry.id));
-const eventLd = eventSchema({
-  title: data.title,
-  description: data.description,
-  startDate: data.startDate,
-  endDate: data.endDate,
-  location: locationName,
-  url: canonical,
-  image: data.image,
-  geo: place ? { lat: place.data.coordinates.lat, lng: place.data.coordinates.lng } : undefined,
-  sameAs: data.sourceUrl,
-});
+const geo = place
+  ? { lat: place.data.coordinates.lat, lng: place.data.coordinates.lng }
+  : undefined;
+// Las fichas de "Cosas que hacer" salen como `TouristAttraction`, no como
+// `Event`: sus fechas acotan una temporada, no un acto (lib/schema.ts).
+const eventLd = isEvergreen(data)
+  ? touristAttractionSchema({
+      name: data.title,
+      description: data.description,
+      location: locationName,
+      url: canonical,
+      image: data.image,
+      geo,
+      sameAs: data.sourceUrl,
+      openingHours: data.whenLabel,
+    })
+  : eventSchema({
+      title: data.title,
+      description: data.description,
+      startDate: data.startDate,
+      endDate: data.endDate,
+      location: locationName,
+      url: canonical,
+      image: data.image,
+      geo,
+      sameAs: data.sourceUrl,
+    });
 // ── Malla interna ENTRE eventos (continuación de KAN-102) ────────────────────
 // Las páginas de detalle solo enlazaban hacia fuera; sin camino de rastreo
 // entre ellas se repite el patrón de las fichas de lugares (rastreadas sin
@@ -192,12 +209,21 @@ const breadcrumb = breadcrumbSchema([
         <div>
           <dt class="text-xs uppercase tracking-wide text-piedra-suave">{t("agenda.when")}</dt>
           <dd class="mt-0.5 text-sm text-piedra">
-            <time datetime={startISO}>{formatDate(data.startDate, locale)}</time>
             {
-              showRange && (
+              /* Ficha perenne ("Cosas que hacer"): su temporada va escrita en el
+                 idioma de la ficha. Enseñar "1 de enero – 31 de diciembre" sería
+                 dar por cita lo que es una temporada. */
+              data.whenLabel ? (
+                data.whenLabel
+              ) : (
                 <>
-                  {" – "}
-                  <time datetime={endISO}>{formatDate(data.endDate!, locale)}</time>
+                  <time datetime={startISO}>{formatDate(data.startDate, locale)}</time>
+                  {showRange && (
+                    <>
+                      {" – "}
+                      <time datetime={endISO}>{formatDate(data.endDate!, locale)}</time>
+                    </>
+                  )}
                 </>
               )
             }

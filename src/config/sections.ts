@@ -44,12 +44,12 @@ export const SECTIONS: Section[] = [
     label: { es: "Agenda", en: "What's on", fr: "Agenda", de: "Veranstaltungen", it: "Eventi", pt: "Agenda" },
     href: { es: "/agenda", en: "/en/whats-on", fr: "/fr/agenda", de: "/de/veranstaltungen", it: "/it/eventi", pt: "/pt/agenda" },
     intro: {
-      es: "Fiestas, conciertos y mercados. Qué pasa en Menorca, actualizado.",
-      en: "Festivals, concerts and markets. What's happening in Menorca, kept current.",
-      fr: "Fêtes, concerts et marchés. Ce qui se passe à Minorque, tenu à jour.",
-      de: "Feste, Konzerte und Märkte. Was auf Menorca los ist, immer aktuell.",
-      it: "Feste, concerti e mercati. Cosa succede a Minorca, sempre aggiornato.",
-      pt: "Festas, concertos e mercados. O que acontece em Menorca, sempre atualizado.",
+      es: "Fiestas, conciertos y mercados, actualizados. Y cosas que hacer cualquier día del año, haya fiesta o no.",
+      en: "Festivals, concerts and markets, kept current. Plus things to do any day of the year, fiesta or not.",
+      fr: "Fêtes, concerts et marchés, tenus à jour. Et des choses à faire n'importe quel jour de l'année, fête ou pas.",
+      de: "Feste, Konzerte und Märkte, immer aktuell. Dazu Erlebnisse für jeden Tag des Jahres, ob gefeiert wird oder nicht.",
+      it: "Feste, concerti e mercati, sempre aggiornati. E cose da fare in qualsiasi giorno dell'anno, ci sia festa o no.",
+      pt: "Festas, concertos e mercados, sempre atualizados. E coisas para fazer em qualquer dia do ano, haja festa ou não.",
     },
     seoTitle: {
       es: "Agenda de Menorca: fiestas, conciertos y mercados",
