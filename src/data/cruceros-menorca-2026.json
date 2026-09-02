@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "port": "Maó",
-  "updated": "2026-09-01",
+  "updated": "2026-09-02",
   "seasonEstimate": "125-130",
   "coveragePct": 82,
   "totalListed": 105,
@@ -903,22 +903,22 @@
       "ship": "Scenic Eclipse II",
       "line": "Scenic",
       "pax": 228,
-      "arrival": null,
-      "departure": null,
+      "arrival": "14:00",
+      "departure": "19:00",
       "confidence": "alta",
       "sourceCount": 2,
-      "source": "https://travel-dealz.com/deal/scenic-eclipse-mediterranean/"
+      "source": "https://www.portsdebalears.com/es/buques-en-puerto"
     },
     {
       "date": "2026-09-30",
       "ship": "Crystal Serenity",
       "line": "Crystal Cruises",
       "pax": 740,
-      "arrival": "08:00",
+      "arrival": "08:15",
       "departure": "18:00",
       "confidence": "alta",
-      "sourceCount": 3,
-      "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
+      "sourceCount": 2,
+      "source": "https://www.portsdebalears.com/es/buques-en-puerto"
     },
     {
       "date": "2026-10-03",

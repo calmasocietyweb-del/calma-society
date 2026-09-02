@@ -1,8 +1,8 @@
 {
-  "updated": "2026-09-01",
+  "updated": "2026-09-02",
   "ventana": {
-    "desde": "2026-09-01",
-    "hasta": "2026-09-29"
+    "desde": "2026-09-02",
+    "hasta": "2026-09-30"
   },
   "nuevas": [
     {
@@ -19,8 +19,8 @@
     {
       "date": "2026-09-06",
       "ship": "EMERALD SAKARA",
-      "arrival": "10:00",
-      "departure": "15:00",
+      "arrival": "09:30",
+      "departure": "20:00",
       "departureDate": null,
       "muelle": "MUELLE CRUCEROS",
       "consignatario": "AGENCIA MELIA VIVES S L",
@@ -61,13 +61,7 @@
       "nota": "El puerto la tiene y nosotros no. Falta capacidad de pasaje y naviera antes de publicarla."
     }
   ],
-  "desaparecidas": [
-    {
-      "date": "2026-09-29",
-      "ship": "Scenic Eclipse II",
-      "nota": "La publicamos y el puerto NO la tiene, estando dentro de su ventana. ¿Cancelada? Verificar antes de retirarla."
-    }
-  ],
+  "desaparecidas": [],
   "dudasDeNombre": [
     {
       "date": "2026-09-10",
@@ -121,6 +115,20 @@
         {
           "ship": "MSC OPERA",
           "eslora": 274.9
+        }
+      ],
+      "nota": "Dos cruceros el mismo día. Si uno fondea, se desembarca en lancha y el tiempo real en tierra cambia."
+    },
+    {
+      "date": "2026-09-29",
+      "barcos": [
+        {
+          "ship": "EMERALD SAKARA",
+          "eslora": 110
+        },
+        {
+          "ship": "SCENIC ECLIPSE II",
+          "eslora": 165.7
         }
       ],
       "nota": "Dos cruceros el mismo día. Si uno fondea, se desembarca en lancha y el tiempo real en tierra cambia."
