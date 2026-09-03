@@ -1,10 +1,10 @@
 {
   "season": 2026,
   "port": "Maó",
-  "updated": "2026-09-02",
+  "updated": "2026-09-03",
   "seasonEstimate": "125-130",
   "coveragePct": 82,
-  "totalListed": 105,
+  "totalListed": 109,
   "officialSource": "https://www.portsdebalears.com/es/buques-en-puerto",
   "sources": {
     "confirmadas": "menorca.info — datos de los consignatarios del puerto",
@@ -260,12 +260,13 @@
       "date": "2026-05-23",
       "ship": "Azamara Journey",
       "line": "Azamara Cruises",
-      "pax": 684,
+      "pax": 702,
       "arrival": "09:00",
       "departure": "22:00",
       "confidence": "media",
       "sourceCount": 1,
-      "source": "https://www.cruisemapper.com/ports/port-mahon-port-1368?month=2026-05"
+      "source": "https://www.cruisemapper.com/ports/port-mahon-port-1368?month=2026-05",
+      "paxNote": "702 pasajeros en ocupación doble (351 camarotes), según la ficha oficial de Azamara."
     },
     {
       "date": "2026-05-25",
@@ -326,12 +327,13 @@
       "date": "2026-06-01",
       "ship": "Azamara Quest",
       "line": "Azamara Cruises",
-      "pax": 684,
+      "pax": 702,
       "arrival": "08:00",
       "departure": "18:00",
       "confidence": "media",
       "sourceCount": 1,
-      "source": "https://www.cruisemapper.com/ports/port-mahon-port-1368?month=2026-06"
+      "source": "https://www.cruisemapper.com/ports/port-mahon-port-1368?month=2026-06",
+      "paxNote": "702 pasajeros en ocupación doble (351 camarotes), según la ficha oficial de Azamara."
     },
     {
       "date": "2026-06-01",
@@ -778,6 +780,17 @@
       "source": "https://www.portsdebalears.com/es/buques-en-puerto"
     },
     {
+      "date": "2026-09-06",
+      "ship": "Emerald Sakara",
+      "line": "Emerald Cruises",
+      "pax": 100,
+      "arrival": "09:30",
+      "departure": "20:00",
+      "confidence": "alta",
+      "sourceCount": 2,
+      "source": "https://emerald.cruises/EU/en-GB/yacht/yacht-cruising-experience/yacht-experience/our-yachts"
+    },
+    {
       "date": "2026-09-08",
       "ship": "MSC Opera",
       "line": "MSC Cruises",
@@ -809,6 +822,18 @@
       "confidence": "alta",
       "sourceCount": 3,
       "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
+    },
+    {
+      "date": "2026-09-12",
+      "ship": "Azamara Quest",
+      "line": "Azamara Cruises",
+      "pax": 702,
+      "paxNote": "702 pasajeros en ocupación doble (351 camarotes). Sube a 726 tras la reforma «Azamara Forward», que estrena el 18 de diciembre de 2026.",
+      "arrival": "11:00",
+      "departure": "18:00",
+      "confidence": "alta",
+      "sourceCount": 2,
+      "source": "https://connect.azamara.com/static-assets/content/azamara-connect/toolkits/aza_ships_fast_facts_flyer.pdf"
     },
     {
       "date": "2026-09-17",
@@ -866,6 +891,18 @@
       "source": "https://www.portsdebalears.com/es/buques-en-puerto"
     },
     {
+      "date": "2026-09-21",
+      "ship": "Hebridean Sky",
+      "line": "Noble Caledonia",
+      "pax": 118,
+      "paxNote": "118 pasajeros en 59 suites, cifra de la propia Noble Caledonia.",
+      "arrival": "08:00",
+      "departure": "18:30",
+      "confidence": "alta",
+      "sourceCount": 2,
+      "source": "https://www.noble-caledonia.co.uk/ships/sea/hebridean-sky/"
+    },
+    {
       "date": "2026-09-27",
       "ship": "Explora I",
       "line": "Explora Journeys",
@@ -886,6 +923,18 @@
       "confidence": "alta",
       "sourceCount": 3,
       "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
+    },
+    {
+      "date": "2026-09-28",
+      "ship": "Four Seasons I",
+      "line": "Four Seasons Yachts",
+      "pax": 190,
+      "paxNote": "Unos 190 pasajeros (máximo 222, en 95 suites).",
+      "arrival": "08:00",
+      "departure": "16:00",
+      "confidence": "alta",
+      "sourceCount": 2,
+      "source": "https://press.fourseasons.com/yachts/hotel-facts/"
     },
     {
       "date": "2026-09-29",
@@ -1168,12 +1217,13 @@
       "date": "2026-12-26",
       "ship": "Azamara Onward",
       "line": "Azamara Cruises",
-      "pax": 684,
+      "pax": 702,
       "arrival": "08:00",
       "departure": "20:00",
       "confidence": "alta",
       "sourceCount": 3,
-      "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html"
+      "source": "https://www.cruisetimetables.com/port-mahon-minorca-cruise-ship-schedule-2026.html",
+      "paxNote": "702 pasajeros en ocupación doble (351 camarotes), según la ficha oficial de Azamara."
     }
   ]
 }

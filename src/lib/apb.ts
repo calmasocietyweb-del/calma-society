@@ -97,6 +97,16 @@ const ALIAS_BARCOS: Record<string, string> = {
   // El puerto escribe "FOUR SEASONS" y nosotros "Four Seasons I" (el único
   // barco en servicio de la naviera). Confirmado en la escala del 17-ago-2026.
   FOURSEASONS: "FOURSEASONSI",
+  // El puerto escribe "NAUTICA" y nosotros "Oceania Nautica". Verificado el
+  // 3-sep-2026. (Se rebautiza «Oceania Aurelia» en noviembre de 2027: al cargar
+  // la temporada 2028 habrá que revisar este alias.)
+  NAUTICA: "OCEANIANAUTICA",
+  // El puerto escribe "EUROPA" y nosotros "MS Europa". Arbitrado con la eslora
+  // del propio registro de atraques —198,52 m, frente a los 198,60 m del MS
+  // Europa y los 225,62 m del Europa 2—, así que no hay duda de cuál es.
+  // `canon()` compara el nombre normalizado COMPLETO, y "Europa 2" normaliza a
+  // EUROPA2, de modo que este alias no puede fusionar los dos barcos.
+  EUROPA: "MSEUROPA",
 };
 
 /** El puerto escribe "AIDASTELLA" y nosotros "AIDAstella": es el mismo barco. */
