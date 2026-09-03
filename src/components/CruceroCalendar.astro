@@ -17,7 +17,7 @@ import type { Locale } from "../config/site";
  * Habla ES, EN y DE. NO está traducido a FR, IT ni PT: si se monta en una página de
  * esos idiomas, salta en `astro check` en vez de caer al español (KAN-134).
  */
-type LangCalendario = Extract<Locale, "es" | "en" | "fr" | "de">;
+type LangCalendario = Extract<Locale, "es" | "en" | "fr" | "de" | "it" | "pt">;
 
 interface Props {
   lang?: LangCalendario;
@@ -38,6 +38,10 @@ const RUTA_BARCO: Record<LangCalendario, string | null> = {
   en: "/en/cruise",
   fr: "/fr/croisiere",
   de: "/de/kreuzfahrt",
+  // El clúster de barco no existe todavía en italiano ni en portugués: `null`
+  // hace que el nombre del barco salga como texto, sin enlazar a un 404.
+  it: null,
+  pt: null,
 };
 const paginaDe = (ship: string) => {
   const slug = conPagina.get(ship);
@@ -54,17 +58,21 @@ const MONTHS: Record<LangCalendario, string[]> = {
   en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
   fr: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
   de: ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
+  it: ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"],
+  pt: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
 };
 const DOW: Record<LangCalendario, string[]> = {
   es: ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"],
   en: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
   fr: ["dim", "lun", "mar", "mer", "jeu", "ven", "sam"],
   de: ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"],
+  it: ["dom", "lun", "mar", "mer", "gio", "ven", "sab"],
+  pt: ["dom", "seg", "ter", "qua", "qui", "sex", "sáb"],
 };
 const CONF: Record<string, { label: Record<LangCalendario, string>; color: string }> = {
-  alta: { label: { es: "Confirmada", en: "Confirmed", fr: "Confirmée", de: "Bestätigt" }, color: "#4f7a52" },
-  media: { label: { es: "Prevista", en: "Scheduled", fr: "Prévue", de: "Geplant" }, color: "#c08a2b" },
-  baja: { label: { es: "Por confirmar", en: "Unconfirmed", fr: "À confirmer", de: "Unbestätigt" }, color: "#8a8170" },
+  alta: { label: { es: "Confirmada", en: "Confirmed", fr: "Confirmée", de: "Bestätigt", it: "Confermata", pt: "Confirmada" }, color: "#4f7a52" },
+  media: { label: { es: "Prevista", en: "Scheduled", fr: "Prévue", de: "Geplant", it: "Prevista", pt: "Prevista" }, color: "#c08a2b" },
+  baja: { label: { es: "Por confirmar", en: "Unconfirmed", fr: "À confirmer", de: "Unbestätigt", it: "Da confermare", pt: "Por confirmar" }, color: "#8a8170" },
 };
 
 /* Un registro por idioma, NO un ternario: con `isEs ? español : inglés` un idioma nuevo
@@ -138,6 +146,40 @@ const TEXTOS: Record<LangCalendario, Record<string, string>> = {
       "Ciutadella empfängt 2026 kaum Kreuzfahrtschiffe: etwa zwei Anläufe der kleinen National Geographic Orion (Lindblad), ohne bestätigtes Datum. Der übrige Verkehr legt in Maó an.",
     official: "Den offiziellen und aktuellen Fahrplan finden Sie bei Ports de Balears",
   },
+  it: {
+    thFecha: "Data",
+    thBarco: "Nave",
+    thNaviera: "Compagnia",
+    thPax: "Capacità",
+    thEstado: "Affidabilità",
+    caption: "Scali di crociera previsti nel porto di Maó nel 2026.",
+    disclaimer:
+      `Calendario in aggiornamento continuo: raccoglie ${nCalls} dei circa ${seasonEst} scali previsti per il 2026. Le settimane più vicine vengono confrontate con il registro degli ormeggi dell'Autorità Portuale; gli scali più lontani provengono da aggregatori internazionali e possono cambiare. Quando una compagnia non pubblica i suoi orari, lo diciamo invece di stimarli. Non è il calendario ufficiale.`,
+    legendTitle: "Affidabilità:",
+    overnight: "pernottamento",
+    overnightNote: "Pernottamento: la nave dorme in porto e salpa il giorno dopo. È lo scalo con più tempo reale a terra.",
+    paxNote: "La “capacità” è il massimo della nave, non i passeggeri effettivamente a bordo. Gli orari, quando indicati, sono orientativi.",
+    ciutadella:
+      "Ciutadella riceve pochissime navi da crociera nel 2026: circa 2 scali della piccola National Geographic Orion (Lindblad), senza data confermata. Tutto il resto del traffico attracca a Maó.",
+    official: "Consulti il calendario ufficiale e aggiornato su Ports de Balears",
+  },
+  pt: {
+    thFecha: "Data",
+    thBarco: "Navio",
+    thNaviera: "Companhia",
+    thPax: "Capacidade",
+    thEstado: "Fiabilidade",
+    caption: "Escalas de cruzeiro previstas no porto de Maó em 2026.",
+    disclaimer:
+      `Calendário em atualização contínua: reúne ${nCalls} das cerca de ${seasonEst} escalas previstas para 2026. As semanas mais próximas são cruzadas com o registo de atracações da Autoridade Portuária; as escalas mais distantes vêm de agregadores internacionais e podem mudar. Quando uma companhia não publica os seus horários, dizemo-lo em vez de os estimar. Não é o calendário oficial.`,
+    legendTitle: "Fiabilidade:",
+    overnight: "pernoita",
+    overnightNote: "Pernoita: o navio dorme no porto e zarpa no dia seguinte. É a escala com mais tempo real em terra.",
+    paxNote: "A “capacidade” é o máximo do navio, não os passageiros realmente a bordo. Os horários, quando constam, são orientativos.",
+    ciutadella:
+      "Ciutadella quase não recebe cruzeiros em 2026: cerca de 2 escalas do pequeno National Geographic Orion (Lindblad), sem data confirmada. O restante tráfego atraca em Maó.",
+    official: "Consulte o calendário oficial e atualizado em Ports de Balears",
+  },
 };
 const T = TEXTOS[lang];
 
@@ -171,7 +213,7 @@ for (const c of cruceros.calls as CalendarCall[]) {
 }
 /* El alemán separa los miles con punto, como el español, pero no con coma como el inglés:
    1.250 pasajeros, no 1,250. */
-const LOCALE_NUM: Record<LangCalendario, string> = { es: "es-ES", en: "en-US", fr: "fr-FR", de: "de-DE" };
+const LOCALE_NUM: Record<LangCalendario, string> = { es: "es-ES", en: "en-US", fr: "fr-FR", de: "de-DE", it: "it-IT", pt: "pt-PT" };
 const fmtPax = (n: number | null) => (n == null ? "—" : "≈ " + n.toLocaleString(LOCALE_NUM[lang]));
 const officialUrl = cruceros.officialSource;
 const colCount = 5;

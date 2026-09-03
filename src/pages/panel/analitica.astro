@@ -17,6 +17,8 @@
 // con expresion NO funciona (Astro solo analiza literales) - leccion KAN-122.
 import "../../styles/global.css";
 import { getCollection } from "astro:content";
+import { SITE } from "../../config/site";
+import { currentLocale, placeUrl } from "../../i18n/utils";
 
 const onVercel = !!process.env.VERCEL;
 
@@ -167,14 +169,39 @@ const toolRows = TOOLS.map((t) => {
   };
 });
 
+// ── Tráfico por idioma ───────────────────────────────────────────────────────
+// La web vive en seis idiomas, pero hasta ahora el panel sumaba todas las
+// versiones de una misma página en una sola fila: no había forma de ver qué
+// aporta cada mercado ni de saber si traducir un idioma devuelve algo. El
+// idioma sale del prefijo de la URL (`/it/…`), con `currentLocale`, que es el
+// mismo criterio que usa el sitio; la lista se deriva de `SITE.locales` para
+// que un idioma nuevo aparezca aquí solo, sin tocar este fichero.
+const vistasPorIdioma = SITE.locales
+  .map(({ code, label }) => ({
+    code,
+    label,
+    vistas: allPages
+      .filter((p) => currentLocale(cleanPath(p.x)) === code)
+      .reduce((n, p) => n + (Number(p.y) || 0), 0),
+  }))
+  .sort((a, b) => b.vistas - a.vistas);
+const totalVistasIdioma = vistasPorIdioma.reduce((n, l) => n + l.vistas, 0);
+
 // ── Filas de «Colaboradores» ─────────────────────────────────────────────────
 // Universo: fichas ES publicadas con web enlazada (lo que puede recibir un clic
 // saliente). Los locales del mapa de copas sin ficha propia aparecen con su id
-// en cuanto registran el primer clic. Visitas = suma de la ficha en ES+EN+FR.
+// en cuanto registran el primer clic. Visitas = la ficha sumada en los seis idiomas.
 const negociosRoster = configured
   ? await getCollection("lugares", (e) => e.data.lang === "es" && e.data.status === "published" && !!e.data.website)
   : [];
-const FICHA_RE = /^\/(?:lugar|en\/place|fr\/lieu)\/(.+)-(?:es|en|fr)$/;
+// El prefijo de ficha de CADA idioma activo, derivado de `placeUrl` (la misma
+// función que construye las URLs del sitio). Escrito a mano se quedó en tres
+// idiomas y las visitas a las fichas alemanas, italianas y portuguesas no
+// contaban para el colaborador: derivarlo evita que vuelva a desfasarse.
+const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const FICHA_RE = new RegExp(
+  `^(?:${SITE.locales.map((l) => esc(placeUrl(l.code, "").replace(/\/$/, ""))).join("|")})/(.+)-(?:${SITE.locales.map((l) => l.code).join("|")})$`,
+);
 const fichaViews: Record<string, number> = {};
 for (const p of allPages) {
   const m = cleanPath(p.x).match(FICHA_RE);
@@ -341,6 +368,39 @@ const totalSalidas = SALIDA_EVENTS.reduce((n, name) => n + eventCount(name), 0);
                   </tbody>
                 </table>
               </div>
+            </section>
+
+            <section>
+              <h2 class="font-display text-xl text-tinta">Visitas por idioma</h2>
+              <p class="mt-1 text-sm text-piedra-suave">
+                Qué aporta cada mercado, en los últimos 30 días. Es la forma de ver si
+                traducir un idioma devuelve tráfico.
+              </p>
+              <table class="mt-4 w-full border-collapse text-sm">
+                <thead>
+                  <tr class="border-b border-niebla text-left text-piedra-suave">
+                    <th scope="col" class="py-2 font-medium">Idioma</th>
+                    <th scope="col" class="py-2 text-right font-medium">Visitas</th>
+                    <th scope="col" class="py-2 text-right font-medium">Del total</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-niebla">
+                  {vistasPorIdioma.map((l) => (
+                    <tr>
+                      <td class="py-2 text-piedra">{l.label}</td>
+                      <td class="py-2 text-right font-semibold text-tinta">{l.vistas}</td>
+                      <td class="py-2 text-right text-piedra-suave">
+                        {totalVistasIdioma ? `${Math.round((l.vistas / totalVistasIdioma) * 100)} %` : "—"}
+                      </td>
+                    </tr>
+                  ))}
+                  {totalVistasIdioma === 0 && (
+                    <tr>
+                      <td colspan="3" class="py-2 text-sm text-piedra-suave">Sin datos todavía.</td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
             </section>
 
             <section>

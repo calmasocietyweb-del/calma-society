@@ -120,6 +120,17 @@ Ejemplo de patrón correcto (FR): «la **greixera de brossat**, un dessert au fr
 
 **Caso especial — mahonesa/mayonnaise (FR).** Al traducir `salsa-mahonesa-origen.mdx` (la teoría del origen de la mayonesa en Maó) se mantiene el mismo rigor que el original: la palabra francesa *mayonnaise* (y su variante histórica *mahonnaise*) ya ES el propio argumento del artículo, así que no hace falta glosario adicional — traducir el cuerpo con naturalidad basta. Sí conviene que el título/slug francés use el término real de búsqueda: *mayonnaise* u *origine de la mahonnaise*, no una traducción forzada de "salsa mahonesa".
 
+### 4.2bis Distinciones gastronómicas (Michelin / Repsol) — PT
+
+Añadido con el lote PT del artículo `mapa-alta-cocina-menorca-2026.mdx` (`translationKey: mesa-alta-gama`, 3-sep-2026). Mismo criterio que en francés (§4.2): decisiones tomadas para poder traducir sin bloquear el lote, **pendientes de confirmar por un hablante nativo de PT-PT** antes de pasar el artículo a `revisado`:
+
+| Español | Portugués elegido | Certeza |
+|---|---|---|
+| Llave Michelin | Chave Michelin | Alta — término que usa Michelin en sus propias comunicaciones en portugués («Chaves Michelin»). |
+| Sol / Soles Repsol | Sol / Sóis Repsol | Media — traducción directa nuestra (*sol* → *sol*, plural *sóis*); no hay evidencia de que la Guía Repsol tenga versión oficial en portugués. |
+| restaurantes "Recomendados" (Guía Michelin) | restaurantes "Recomendados" | Alta — el término se mantiene casi idéntico en PT-PT; no existe matiz distinto del ES. |
+| producto de kilómetro cero | produto local / produto da ilha | Media — resuelto contextualmente; el PT-PT no tiene un equivalente fijo tan directo como el FR «circuit court». Revisar si aparece con más frecuencia en otros lotes. |
+
 ### 4.2 Distinciones gastronómicas (Michelin / Repsol) — FR
 
 Añadido con el lote FR 4 (31-ago-2026, artículo `carte-haute-cuisine-minorque-2026.mdx`, `translationKey: mesa-alta-gama`). Decisiones tomadas para poder traducir sin bloquear el lote; **pendientes de confirmar por un francófono antes de pasar el artículo a `revisado`**:
@@ -133,6 +144,30 @@ Añadido con el lote FR 4 (31-ago-2026, artículo `carte-haute-cuisine-minorque-
 | producto de kilómetro cero | produit en circuit court | Alta — más natural en francés gastronómico que el calco «produit kilomètre zéro» (que también existe, pero suena más a etiqueta de marketing). |
 | criterio (sustantivo, "con criterio") | discernement (caso a caso) | Media — el francés no tiene una palabra fija tan flexible como "criterio"; se resolvió contextualmente. Si aparece con frecuencia en más lotes, valorar fijar aquí un término único. |
 
+### 4.3 Decisiones de término — PT (lote 1, 3-sep-2026, KAN — 21 artículos de "Vivir/Descubrir/Práctica/Comer y beber")
+
+Añadido tras traducir al portugués de Portugal `comprar-casa-en-menorca.mdx` y `pescado-de-menorca.mdx`. Pendientes de confirmar por un lusófono nativo antes de pasar esos artículos a `revisado`:
+
+| Español | Portugués elegido | Certeza | Nota |
+|---|---|---|---|
+| IBI (Impuesto sobre Bienes Inmuebles) | **IBI** intacto + inciso «(o imposto sobre a propriedade em Espanha)» | Alta — deliberado | NO se sustituyó por «IMI»: el IMI es el impuesto portugués, un tributo distinto de otro país: usarlo aquí sería inventar un dato falso sobre una propiedad en Menorca (España). Se mantiene el nombre real del impuesto que el comprador verá en su recibo, con una glosa aclaratoria para el lector portugués. |
+| cabracho | cabraço (cabra-vermelha) | ⚠️ Media | Sin término de pesca portugués verificado con fuente oficial; mejor estimación del traductor. |
+| gerret | petinga (biqueirão pequeno) | ⚠️ Media | Igual que el anterior — revisar con un pescadero o fuente ictiológica portuguesa. |
+| verderol (seriola) | serviola / charuteiro | ⚠️ Media | «Charuteiro» es el nombre popular en Portugal para la seriola; a confirmar que coincide con el uso balear del original. |
+| raor | raor (intacto) | Alta | No tiene nombre de uso corriente en portugués; se deja como préstamo, igual que en el resto de idiomas. |
+
+### 4.4 División administrativa y varios — PT (cierre de lote-2, 3-sep-2026)
+
+Decisiones fijadas al cerrar el lote-2 de portugués (21 artículos) y confirmadas de forma independiente en un lote paralelo de 5 artículos de la misma sesión (herencia británica de Maó, casa de piedra, Líthica, Cova d'en Xoroi, vivir todo el año):
+
+| Español | Portugués elegido | Nota |
+|---|---|---|
+| municipio | **concelho** (no *município*) | Uso mayoritario ya publicado en el sitio PT y más idiomático en portugués de Portugal. |
+| nudista | naturista | — |
+| kayak | caiaque | — |
+
+⚠️ **Aviso operativo, no de traducción.** El 3-sep-2026, un proceso ajeno a los agentes de traducción reescribió (parafraseo distinto, no traducción rota) partes de varios artículos PT que ya se habían verificado en la misma sesión, y esa reescritura revirtió sistemáticamente «concelho» → «município» y coló separadores de millar con punto (formato español) donde debía ir un espacio (formato PT, ver §7: p. ej. «100.000» en vez de «100 000»). Ocurrió en al menos tres lotes distintos de la misma sesión, incluido un fichero que ya se había dado por cerrado. **Si vuelves a auditar contenido PT que creías revisado, repite la comprobación de «município» y del punto de millar aunque ya conste como verificado** — un fichero limpio ayer no garantiza que siga limpio hoy.
+
 ---
 
 ## 5. Los slugs son nativos, no traducciones
@@ -144,6 +179,12 @@ La URL se escribe **en la lengua del mercado y como la buscaría un nativo**, no
 - Solo minúsculas, palabras separadas por guion, sin artículos innecesarios.
 
 Lo mismo vale para el `title` y la `description` de SEO: se **redactan** para ese mercado, no se traducen palabra por palabra. Un título tiene ~60 caracteres contando el sufijo « · Calma Society».
+
+### ⚠️ Un slug PT puede coincidir por accidente con el slug ES — comprobarlo SIEMPRE
+
+Descubierto el 3-sep-2026 al traducir el lote PT (`translationKey: gin`, artículo del gin de Menorca). La palabra «gin» y «Menorca» se escriben igual en español y portugués, así que el slug nativo que un hablante de PT-PT buscaría —`gin-de-menorca`— **coincidía carácter a carácter** con el nombre del fichero español `gin-de-menorca.mdx`. Como los ficheros de todos los idiomas conviven en la misma carpeta plana `src/content/articulos/`, escribir el nuevo `.mdx` con ese nombre **habría sobrescrito el original español**.
+
+Antes de escribir un fichero nuevo de cualquier idioma, comprueba que el nombre no coincide ya con un `.mdx` de OTRO idioma en `src/content/articulos/`. Si coincide, añade un desambiguador natural (aquí se usó `gin-de-menorca-xoriguer.mdx`, apoyándose en el propio nombre de la destilería) y actualiza el registro de slugs y el mapa de enlaces internos del lote para que apunten al nombre corregido, no al que constaba originalmente.
 
 ---
 
