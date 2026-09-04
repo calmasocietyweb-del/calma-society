@@ -1,81 +1,12 @@
 {
-  "updated": "2026-09-03",
+  "updated": "2026-09-04",
   "ventana": {
-    "desde": "2026-09-03",
+    "desde": "2026-09-04",
     "hasta": "2026-09-30"
   },
-  "nuevas": [
-    {
-      "date": "2026-09-03",
-      "ship": "CLUB MED 2",
-      "arrival": "08:00",
-      "departure": "18:00",
-      "departureDate": null,
-      "muelle": "MUELLE CRUCEROS",
-      "consignatario": "FEDERICO CARDONA TREMOL S L",
-      "escala": "M202600075",
-      "nota": "El puerto la tiene y nosotros no. Falta capacidad de pasaje y naviera antes de publicarla."
-    },
-    {
-      "date": "2026-09-06",
-      "ship": "EMERALD SAKARA",
-      "arrival": "09:30",
-      "departure": "20:00",
-      "departureDate": null,
-      "muelle": "MUELLE CRUCEROS",
-      "consignatario": "AGENCIA MELIA VIVES S L",
-      "escala": "M202600032",
-      "nota": "El puerto la tiene y nosotros no. Falta capacidad de pasaje y naviera antes de publicarla."
-    },
-    {
-      "date": "2026-09-12",
-      "ship": "AZAMARA QUEST",
-      "arrival": "11:00",
-      "departure": "18:00",
-      "departureDate": null,
-      "muelle": "MUELLE CRUCEROS",
-      "consignatario": "BALEARES CONSIGNATARIOS S L",
-      "escala": "M202600053",
-      "nota": "El puerto la tiene y nosotros no. Falta capacidad de pasaje y naviera antes de publicarla."
-    },
-    {
-      "date": "2026-09-21",
-      "ship": "HEBRIDEAN SKY",
-      "arrival": "08:00",
-      "departure": "18:30",
-      "departureDate": null,
-      "muelle": "MUELLE CRUCEROS",
-      "consignatario": "FEDERICO CARDONA TREMOL S L",
-      "escala": "M202600178",
-      "nota": "El puerto la tiene y nosotros no. Falta capacidad de pasaje y naviera antes de publicarla."
-    },
-    {
-      "date": "2026-09-28",
-      "ship": "FOUR SEASONS I",
-      "arrival": "08:00",
-      "departure": "16:00",
-      "departureDate": null,
-      "muelle": "MUELLE CRUCEROS",
-      "consignatario": "AGENCIA MELIA VIVES S L",
-      "escala": "M202600195",
-      "nota": "El puerto la tiene y nosotros no. Falta capacidad de pasaje y naviera antes de publicarla."
-    }
-  ],
+  "nuevas": [],
   "desaparecidas": [],
-  "dudasDeNombre": [
-    {
-      "date": "2026-09-10",
-      "puerto": "NAUTICA",
-      "nuestro": "Oceania Nautica",
-      "nota": "Mismo día y nombres que se solapan: casi seguro el mismo barco escrito de otra forma, no una cancelación. Si se confirma, añadirlo a ALIAS_BARCOS en src/lib/apb.ts y dejará de preguntarlo."
-    },
-    {
-      "date": "2026-09-20",
-      "puerto": "EUROPA",
-      "nuestro": "MS Europa",
-      "nota": "Mismo día y nombres que se solapan: casi seguro el mismo barco escrito de otra forma, no una cancelación. Si se confirma, añadirlo a ALIAS_BARCOS en src/lib/apb.ts y dejará de preguntarlo."
-    }
-  ],
+  "dudasDeNombre": [],
   "dobles": [
     {
       "date": "2026-09-20",
