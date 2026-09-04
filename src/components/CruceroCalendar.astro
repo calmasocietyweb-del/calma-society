@@ -14,8 +14,8 @@ import { barcosConPagina, type Call } from "../lib/cruises";
 import type { Locale } from "../config/site";
 
 /**
- * Habla ES, EN y DE. NO está traducido a FR, IT ni PT: si se monta en una página de
- * esos idiomas, salta en `astro check` en vez de caer al español (KAN-134).
+ * Habla los seis idiomas. Se declara el tipo (en vez de aceptar `Locale` a secas)
+ * para que un idioma nuevo salte en `astro check` en vez de caer al español (KAN-134).
  */
 type LangCalendario = Extract<Locale, "es" | "en" | "fr" | "de" | "it" | "pt">;
 
@@ -38,10 +38,8 @@ const RUTA_BARCO: Record<LangCalendario, string | null> = {
   en: "/en/cruise",
   fr: "/fr/croisiere",
   de: "/de/kreuzfahrt",
-  // El clúster de barco no existe todavía en italiano ni en portugués: `null`
-  // hace que el nombre del barco salga como texto, sin enlazar a un 404.
-  it: null,
-  pt: null,
+  it: "/it/crociera",
+  pt: "/pt/cruzeiro",
 };
 const paginaDe = (ship: string) => {
   const slug = conPagina.get(ship);

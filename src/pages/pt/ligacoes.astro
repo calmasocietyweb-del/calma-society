@@ -1,0 +1,18 @@
+---
+// Hub "link in bio" (PT): /pt/ligacoes — destino del enlace de la bio en redes.
+// Reúne las herramientas y guías QUE EXISTEN en portugués. Su URL se pega con UTM
+// (`?utm_source=instagram|pinterest&utm_medium=bio`); dentro, Umami.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import LinkHub from "../../components/LinkHub.astro";
+
+const alternates = { es: "/enlaces", en: "/en/links", fr: "/fr/liens", de: "/de/links", it: "/it/link", pt: "/pt/ligacoes" };
+---
+
+<BaseLayout
+  title="Ligações"
+  description="Todas as ferramentas da Calma Society num só lugar: o planeador de viagem, o mapa do mar calmo, os pores do sol e a agenda de Menorca, com o olhar do luxo tranquilo."
+  locale="pt"
+  alternates={alternates}
+>
+  <LinkHub locale="pt" />
+</BaseLayout>

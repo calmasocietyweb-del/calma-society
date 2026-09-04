@@ -1,7 +1,7 @@
 [
   {
     "translationKey": "que-hacer-a-caballo-costa-norte",
-    "title": "Parcourir la côte nord à cheval",
+    "title": "Percorrer a costa norte a cavalo",
     "startDate": "2026-01-01",
     "endDate": "2026-12-31",
     "zone": "oeste",
@@ -9,7 +9,7 @@
   },
   {
     "translationKey": "que-hacer-aves-salbufera-des-grau",
-    "title": "Observer les oiseaux à s'Albufera des Grau",
+    "title": "Ver aves em s'Albufera des Grau",
     "startDate": "2026-01-01",
     "endDate": "2026-12-31",
     "zone": "este",
@@ -17,7 +17,7 @@
   },
   {
     "translationKey": "que-hacer-cami-de-cavalls",
-    "title": "Parcourir une étape du Camí de Cavalls",
+    "title": "Percorrer uma etapa do Camí de Cavalls",
     "startDate": "2026-01-01",
     "endDate": "2026-12-31",
     "zone": "varios",
@@ -25,7 +25,7 @@
   },
   {
     "translationKey": "que-hacer-faro-favaritx",
-    "title": "Rejoindre le phare de Favàritx au crépuscule",
+    "title": "Chegar ao farol de Favàritx ao entardecer",
     "startDate": "2026-01-01",
     "endDate": "2026-12-31",
     "zone": "este",
@@ -33,7 +33,7 @@
   },
   {
     "translationKey": "que-hacer-fortalesa-la-mola",
-    "title": "Se perdre dans la forteresse de La Mola",
+    "title": "Perder-se pela Fortaleza de La Mola",
     "startDate": "2026-01-01",
     "endDate": "2026-12-31",
     "zone": "este",
@@ -41,7 +41,7 @@
   },
   {
     "translationKey": "que-hacer-gin-xoriguer",
-    "title": "Visiter la distillerie de gin du port de Maó",
+    "title": "Visitar a destilaria de gin do porto de Maó",
     "startDate": "2026-01-01",
     "endDate": "2026-12-31",
     "zone": "este",
@@ -49,7 +49,7 @@
   },
   {
     "translationKey": "que-hacer-lithica-pedreres",
-    "title": "Descendre dans les carrières de Lithica",
+    "title": "Descer às pedreiras de Lithica",
     "startDate": "2026-01-01",
     "endDate": "2026-12-31",
     "zone": "oeste",
@@ -57,7 +57,7 @@
   },
   {
     "translationKey": "que-hacer-menorca-talayotica",
-    "title": "Entrer dans la Minorque talayotique",
+    "title": "Entrar na Menorca talaiótica",
     "startDate": "2026-01-01",
     "endDate": "2026-12-31",
     "zone": "sur-centro",
@@ -65,7 +65,7 @@
   },
   {
     "translationKey": "que-hacer-mercat-ciutadella",
-    "title": "Faire son marché au marché municipal de Ciutadella",
+    "title": "Comprar no mercado municipal de Ciutadella",
     "startDate": "2026-01-01",
     "endDate": "2026-12-31",
     "zone": "oeste",
@@ -73,7 +73,7 @@
   },
   {
     "translationKey": "que-hacer-monte-toro",
-    "title": "Monter au Monte Toro pour voir l'île entière",
+    "title": "Subir ao Monte Toro para ver a ilha inteira",
     "startDate": "2026-01-01",
     "endDate": "2026-12-31",
     "zone": "centro",
@@ -81,7 +81,7 @@
   },
   {
     "translationKey": "que-hacer-queso-dop-subaida",
-    "title": "Déguster le fromage Mahón-Menorca à la fromagerie",
+    "title": "Provar queijo Mahón-Menorca na queijaria",
     "startDate": "2026-01-01",
     "endDate": "2026-12-31",
     "zone": "centro",
@@ -89,7 +89,7 @@
   },
   {
     "translationKey": "que-hacer-ruta-del-vino",
-    "title": "Suivre la route du vin de Minorque",
+    "title": "Fazer a rota do vinho de Menorca",
     "startDate": "2026-01-01",
     "endDate": "2026-12-31",
     "zone": "sur-este",
@@ -97,28 +97,28 @@
   },
   {
     "translationKey": "cavalcada-reis-menorca",
-    "title": "Cavalcada de Reis (défilé des Rois mages)",
+    "title": "Cavalcada de Reis (Cortejo dos Reis Magos)",
     "startDate": "2026-01-05",
     "zone": "varios",
     "category": "fiesta"
   },
   {
     "translationKey": "mercat-agrari-ciutadella",
-    "title": "Marché agricole de Ciutadella",
+    "title": "Mercado Agrário de Ciutadella",
     "startDate": "2026-01-07",
     "zone": "oeste",
     "category": "mercado"
   },
   {
     "translationKey": "fira-sant-antoni-mercat-taronges-datils-ciutadella",
-    "title": "Foire et marché aux oranges et aux dattes de Sant Antoni (Ciutadella)",
+    "title": "Fira i mercat de taronges i dàtils de Sant Antoni (Ciutadella)",
     "startDate": "2026-01-17",
     "zone": "oeste",
     "category": "mercado"
   },
   {
     "translationKey": "sant-antoni-diada",
-    "title": "Sant Antoni · Journée du peuple de Minorque",
+    "title": "Sant Antoni · Dia do Povo de Menorca",
     "startDate": "2026-01-17",
     "zone": "oeste",
     "category": "cultura"
@@ -133,7 +133,7 @@
   },
   {
     "translationKey": "fira-perdiu-es-mercadal",
-    "title": "Fira de la Perdiu, la foire de la perdrix",
+    "title": "Fira de la Perdiu de Menorca",
     "startDate": "2026-02-07",
     "endDate": "2026-02-08",
     "zone": "centro",
@@ -149,7 +149,7 @@
   },
   {
     "translationKey": "fira-del-camp-alaior",
-    "title": "Fira del Camp, la foire agricole de Minorque",
+    "title": "Fira del Camp de Menorca",
     "startDate": "2026-03-14",
     "endDate": "2026-03-15",
     "zone": "sur-centro",
@@ -157,7 +157,7 @@
   },
   {
     "translationKey": "setmana-santa-menorca",
-    "title": "Setmana Santa (Semaine sainte)",
+    "title": "Setmana Santa (Semana Santa)",
     "startDate": "2026-03-29",
     "endDate": "2026-04-05",
     "zone": "varios",
@@ -165,7 +165,7 @@
   },
   {
     "translationKey": "que-hacer-kayak-snorkel-reserva-nord",
-    "title": "Partir en kayak dans la réserve marine du Nord",
+    "title": "Sair de caiaque pela Reserva Marinha do Norte",
     "startDate": "2026-04-01",
     "endDate": "2026-10-31",
     "zone": "norte",
@@ -173,7 +173,7 @@
   },
   {
     "translationKey": "que-hacer-llatzeret-de-mao",
-    "title": "Traverser en barque jusqu'au Llatzeret de Maó",
+    "title": "Atravessar de barco até ao Llatzeret de Maó",
     "startDate": "2026-04-01",
     "endDate": "2026-10-31",
     "zone": "este",
@@ -181,7 +181,7 @@
   },
   {
     "translationKey": "que-hacer-llaut-costa-norte",
-    "title": "Naviguer la côte nord en llaüt minorquin",
+    "title": "Navegar a costa norte em llaüt menorquino",
     "startDate": "2026-04-01",
     "endDate": "2026-10-31",
     "zone": "norte",
@@ -189,7 +189,7 @@
   },
   {
     "translationKey": "cova-den-xoroi-musica-atardecer",
-    "title": "Musique au coucher du soleil à la Cova d'en Xoroi",
+    "title": "Música ao pôr do sol na Cova d'en Xoroi",
     "startDate": "2026-04-02",
     "endDate": "2026-10-25",
     "zone": "sur-centro",
@@ -197,7 +197,7 @@
   },
   {
     "translationKey": "vi-menorca-fest-mao",
-    "title": "Vi Menorca Fest, la fête du vin",
+    "title": "Vi Menorca Fest",
     "startDate": "2026-04-30",
     "endDate": "2026-05-03",
     "zone": "este",
@@ -213,14 +213,14 @@
   },
   {
     "translationKey": "mare-de-deu-del-toro",
-    "title": "Mare de Déu del Toro (patronne de Minorque)",
+    "title": "Mare de Déu del Toro (padroeira de Menorca)",
     "startDate": "2026-05-08",
     "zone": "centro",
     "category": "fiesta"
   },
   {
     "translationKey": "fira-sant-isidre-ferreries",
-    "title": "Foire de Sant Isidre de Ferreries",
+    "title": "Fira de Sant Isidre de Ferreries",
     "startDate": "2026-05-16",
     "endDate": "2026-05-17",
     "zone": "sur-centro",
@@ -228,7 +228,7 @@
   },
   {
     "translationKey": "temporada-opera-mao",
-    "title": "Saison d'opéra de Maó",
+    "title": "Temporada de Ópera de Maó",
     "startDate": "2026-05-29",
     "endDate": "2026-05-31",
     "zone": "este",
@@ -236,7 +236,7 @@
   },
   {
     "translationKey": "enjoy-ciutadella-rutes-patrimoni",
-    "title": "Enjoy Ciutadella — visites gratuites du patrimoine",
+    "title": "Enjoy Ciutadella — percursos gratuitos do património",
     "startDate": "2026-06-01",
     "endDate": "2026-10-31",
     "zone": "oeste",
@@ -244,28 +244,28 @@
   },
   {
     "translationKey": "mercat-ambulant-es-castell",
-    "title": "Marché d'Es Castell",
+    "title": "Mercado de Es Castell",
     "startDate": "2026-06-01",
     "zone": "este",
     "category": "mercado"
   },
   {
     "translationKey": "mercat-born-ciutadella",
-    "title": "Marché du Born, Ciutadella",
+    "title": "Mercado do Born, Ciutadella",
     "startDate": "2026-06-01",
     "zone": "oeste",
     "category": "mercado"
   },
   {
     "translationKey": "mercat-ambulant-mao",
-    "title": "Marché de Maó (s'Esplanada)",
+    "title": "Mercado de Maó (s'Esplanada)",
     "startDate": "2026-06-02",
     "zone": "este",
     "category": "mercado"
   },
   {
     "translationKey": "mercat-nit-alaior",
-    "title": "Marché nocturne d'Alaior",
+    "title": "Mercado noturno de Alaior",
     "startDate": "2026-06-03",
     "endDate": "2026-09-09",
     "zone": "sur-centro",
@@ -273,14 +273,14 @@
   },
   {
     "translationKey": "mercat-ambulant-alaior",
-    "title": "Marché d'Alaior",
+    "title": "Mercado de Alaior",
     "startDate": "2026-06-04",
     "zone": "sur-centro",
     "category": "mercado"
   },
   {
     "translationKey": "mercat-nit-es-mercadal",
-    "title": "Marché nocturne agroalimentaire et artisanal d'Es Mercadal",
+    "title": "Mercado noturno agroalimentar e de artesanato de Es Mercadal",
     "startDate": "2026-06-04",
     "endDate": "2026-09-24",
     "zone": "centro",
@@ -288,7 +288,7 @@
   },
   {
     "translationKey": "mercat-nit-ferreries",
-    "title": "Marché nocturne d'été de Ferreries",
+    "title": "Mercado noturno de verão de Ferreries",
     "startDate": "2026-06-05",
     "endDate": "2026-09-11",
     "zone": "sur-centro",
@@ -296,21 +296,21 @@
   },
   {
     "translationKey": "mercat-ferreries-dissabte",
-    "title": "Marché artisanal et agroalimentaire de Ferreries",
+    "title": "Mercado artesanal e agroalimentar de Ferreries",
     "startDate": "2026-06-06",
     "zone": "sur-centro",
     "category": "mercado"
   },
   {
     "translationKey": "mercat-ambulant-es-mercadal",
-    "title": "Marché d'Es Mercadal (dimanches)",
+    "title": "Mercado de Es Mercadal (domingos)",
     "startDate": "2026-06-07",
     "zone": "centro",
     "category": "mercado"
   },
   {
     "translationKey": "mercat-nit-fornells",
-    "title": "Marché nocturne de Fornells",
+    "title": "Mercado noturno de Fornells",
     "startDate": "2026-06-14",
     "endDate": "2026-09-13",
     "zone": "norte",
@@ -318,7 +318,7 @@
   },
   {
     "translationKey": "mercat-nit-cales-fonts-es-castell",
-    "title": "Marché nocturne de Cales Fonts, Es Castell",
+    "title": "Mercado noturno de Cales Fonts, Es Castell",
     "startDate": "2026-06-15",
     "endDate": "2026-09-15",
     "zone": "este",
@@ -326,7 +326,7 @@
   },
   {
     "translationKey": "regata-menorca-sant-joan-trofeo-alfonso-xiii",
-    "title": "Régate Menorca Sant Joan – Trophée Alphonse XIII",
+    "title": "Regata Menorca Sant Joan – Troféu Afonso XIII",
     "startDate": "2026-06-18",
     "endDate": "2026-06-20",
     "zone": "este",
@@ -342,7 +342,7 @@
   },
   {
     "translationKey": "hauser-wirth-directionless",
-    "title": "« Directionless » chez Hauser & Wirth Menorca — jusqu'au 25 octobre",
+    "title": "«Directionless» na Hauser & Wirth Menorca — até 25 de outubro",
     "startDate": "2026-06-21",
     "endDate": "2026-10-25",
     "zone": "este",
@@ -358,7 +358,7 @@
   },
   {
     "translationKey": "mercat-nit-port-mao",
-    "title": "Marché nocturne et musique au port de Maó",
+    "title": "Mercado noturno com música no porto de Maó",
     "startDate": "2026-06-27",
     "endDate": "2026-08-29",
     "zone": "este",
@@ -366,14 +366,14 @@
   },
   {
     "translationKey": "sant-pere-pescadors-mao-fornells",
-    "title": "Sant Pere (fête des pêcheurs)",
+    "title": "Sant Pere (festa dos pescadores)",
     "startDate": "2026-06-29",
     "zone": "varios",
     "category": "fiesta"
   },
   {
     "translationKey": "volta-menorca-pati-de-vela-trofeu-lluis-gay",
-    "title": "Tour de Minorque en patí de vela – Trophée Lluís Gay",
+    "title": "Volta a Menorca em Patí de Vela – Troféu Lluís Gay",
     "startDate": "2026-07-01",
     "endDate": "2026-07-07",
     "zone": "este",
@@ -397,14 +397,14 @@
   },
   {
     "translationKey": "concurs-formatge-dop-mahon-menorca",
-    "title": "Concours du fromage AOP Mahón-Menorca",
+    "title": "Concurso do Queijo DOP Mahón-Menorca",
     "startDate": "2026-07-03",
     "zone": "sur-centro",
     "category": "gastronomia"
   },
   {
     "translationKey": "festival-internacional-orgue-menorca",
-    "title": "1er Festival international d'orgue de Minorque",
+    "title": "1.º Festival Internacional de Órgão de Menorca",
     "startDate": "2026-07-03",
     "endDate": "2026-10-11",
     "zone": "varios",
@@ -412,7 +412,7 @@
   },
   {
     "translationKey": "festival-musica-mao-2026",
-    "title": "53e Festival de Música de Maó",
+    "title": "53.º Festival de Música de Maó",
     "startDate": "2026-07-03",
     "endDate": "2026-08-26",
     "zone": "este",
@@ -420,7 +420,7 @@
   },
   {
     "translationKey": "conciertos-orgue-santa-maria-mao",
-    "title": "Concerts d'orgue à Santa Maria de Maó",
+    "title": "Concertos de órgão em Santa Maria de Maó",
     "startDate": "2026-07-06",
     "endDate": "2026-10-31",
     "zone": "este",
@@ -428,7 +428,7 @@
   },
   {
     "translationKey": "dimarts-as-migjorn",
-    "title": "Dimarts as Migjorn (marché nocturne d'Es Migjorn Gran)",
+    "title": "Dimarts as Migjorn (mercado noturno de Es Migjorn Gran)",
     "startDate": "2026-07-07",
     "endDate": "2026-09-08",
     "zone": "sur-centro",
@@ -436,7 +436,7 @@
   },
   {
     "translationKey": "festival-musica-estiu-ciutadella",
-    "title": "54e Festival de musique d'été de Ciutadella",
+    "title": "54.º Festival de Música de Verão de Ciutadella",
     "startDate": "2026-07-10",
     "endDate": "2026-08-24",
     "zone": "oeste",
@@ -444,7 +444,7 @@
   },
   {
     "translationKey": "festival-pedra-viva-lithica",
-    "title": "Festival Pedra Viva à Lithica",
+    "title": "Festival Pedra Viva em Lithica",
     "startDate": "2026-07-10",
     "endDate": "2026-08-31",
     "zone": "oeste",
@@ -554,7 +554,7 @@
   },
   {
     "translationKey": "pedra-en-viu-mostra",
-    "title": "Pedra en Viu — vitrine des arts vivants",
+    "title": "Pedra en Viu — mostra de artes performativas",
     "startDate": "2026-08-29",
     "endDate": "2026-08-30",
     "zone": "oeste",
@@ -578,7 +578,7 @@
   },
   {
     "translationKey": "festival-cine-menorca-2026",
-    "title": "Festival international de cinéma de Minorque (FICME)",
+    "title": "Festival Internacional de Cinema de Menorca (FICME)",
     "startDate": "2026-09-08",
     "endDate": "2026-09-13",
     "zone": "varios",
@@ -602,7 +602,7 @@
   },
   {
     "translationKey": "mostra-cuina-menorquina",
-    "title": "Mostra de Cuina Menorquina : la cuisine de l'île à table",
+    "title": "Mostra de Cuina Menorquina: a cozinha da ilha à mesa",
     "startDate": "2026-09-18",
     "endDate": "2026-10-04",
     "zone": "varios",
@@ -634,21 +634,21 @@
   },
   {
     "translationKey": "artiem-half-menorca-triatlon",
-    "title": "Artiem Half Menorca (triathlon)",
+    "title": "Artiem Half Menorca (triatlo)",
     "startDate": "2026-09-27",
     "zone": "norte",
     "category": "deporte"
   },
   {
     "translationKey": "swim-in-menorca-travesia-macarella-son-xoriguer",
-    "title": "Swim in Menorca – traversée à la nage Macarella–Son Xoriguer",
+    "title": "Swim in Menorca – travessia a nado Macarella–Son Xoriguer",
     "startDate": "2026-09-27",
     "zone": "varios",
     "category": "deporte"
   },
   {
     "translationKey": "teatre-principal-mao-tardor-hivern",
-    "title": "Saison d'automne-hiver du Teatre Principal de Maó",
+    "title": "Temporada de outono-inverno do Teatre Principal de Maó",
     "startDate": "2026-10-02",
     "endDate": "2026-12-29",
     "zone": "este",
@@ -656,7 +656,7 @@
   },
   {
     "translationKey": "jornades-europees-patrimoni",
-    "title": "Journées européennes du patrimoine à Minorque",
+    "title": "Jornadas Europeias do Património em Menorca",
     "startDate": "2026-10-09",
     "endDate": "2026-10-11",
     "zone": "varios",
@@ -664,7 +664,7 @@
   },
   {
     "translationKey": "jornades-vedella-vermella",
-    "title": "Journées gastronomiques de la Vedella Vermella Menorquina",
+    "title": "Jornadas gastronómicas da Vedella Vermella Menorquina",
     "startDate": "2026-10-09",
     "endDate": "2026-10-18",
     "zone": "varios",
@@ -680,7 +680,7 @@
   },
   {
     "translationKey": "volta-menorca-btt",
-    "title": "Volta a Menorca en BTT (VTT)",
+    "title": "Volta a Menorca em BTT",
     "startDate": "2026-10-09",
     "endDate": "2026-10-11",
     "zone": "varios",
@@ -711,14 +711,14 @@
   },
   {
     "translationKey": "mitja-marato-menorca",
-    "title": "Mitja Marató de Menorca (semi-marathon)",
+    "title": "Mitja Marató de Menorca (meia-maratona)",
     "startDate": "2026-11-01",
     "zone": "oeste",
     "category": "deporte"
   },
   {
     "translationKey": "jornades-berenar-pages",
-    "title": "Journées gastronomiques du Berenar Pagès",
+    "title": "Jornadas gastronómicas do Berenar Pagès",
     "startDate": "2026-11-06",
     "endDate": "2026-11-15",
     "zone": "varios",
@@ -726,7 +726,7 @@
   },
   {
     "translationKey": "dimecres-dia-de-brou",
-    "title": "« Els dimecres és dia de Brou » — les mercredis du brou",
+    "title": "«Els dimecres és dia de Brou» — as quartas-feiras do brou",
     "startDate": "2026-12-02",
     "endDate": "2026-12-30",
     "zone": "varios",
@@ -734,7 +734,7 @@
   },
   {
     "translationKey": "fira-nadal-mao-gastronomia-hivern",
-    "title": "Fira de Nadal — le marché de Noël de Maó",
+    "title": "Fira de Nadal — o mercado de Natal de Maó",
     "startDate": "2026-12-05",
     "endDate": "2026-12-08",
     "zone": "este",
@@ -742,7 +742,7 @@
   },
   {
     "translationKey": "fires-nadal-menorca",
-    "title": "Foires et marchés de Noël dans les villages de Minorque",
+    "title": "Feiras e mercados de Natal pelas vilas de Menorca",
     "startDate": "2026-12-05",
     "endDate": "2026-12-24",
     "zone": "varios",

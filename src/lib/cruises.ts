@@ -42,6 +42,9 @@ export const MARGEN_VUELTA_MIN = 60; // el "all aboard" suele ser 30-60 min ante
  * desde el puerto de Maó). La estancia es lo mínimo para que el viaje merezca la pena:
  * ir a una cala para estar 20 minutos no es un plan, es una carrera.
  */
+/** Los seis idiomas del sitio, aquí en local para que el módulo siga siendo PURO. */
+type PlanLocale = "es" | "en" | "fr" | "de" | "it" | "pt";
+
 export type Plan = {
   id: string;
   /** minutos de coche en total (ida y vuelta, y los saltos intermedios) */
@@ -52,105 +55,182 @@ export type Plan = {
   en: string;
   fr: string;
   de: string;
+  it: string;
+  pt: string;
   /** el detalle que lo hace creíble */
   detalleEs: string;
   detalleEn: string;
   detalleFr: string;
   detalleDe: string;
+  detalleIt: string;
+  detallePt: string;
 };
 
+/**
+ * Título y detalle van en DOS registros por idioma, no en catorce argumentos
+ * sueltos: con la firma posicional anterior, añadir italiano y portugués
+ * significaba contar hasta quince cadenas seguidas, y una fuera de sitio no da
+ * error de compilación — solo enseña el idioma equivocado. Con `Record<PlanLocale, string>`
+ * el compilador exige las seis y nombra cuál falta.
+ */
 const plan = (
   id: string,
   cocheMin: number,
   estanciaMin: number,
-  es: string,
-  en: string,
-  fr: string,
-  de: string,
-  detalleEs: string,
-  detalleEn: string,
-  detalleFr: string,
-  detalleDe: string,
-): Plan => ({ id, cocheMin, estanciaMin, es, en, fr, de, detalleEs, detalleEn, detalleFr, detalleDe });
+  titulo: Record<PlanLocale, string>,
+  detalle: Record<PlanLocale, string>,
+): Plan => ({
+  id,
+  cocheMin,
+  estanciaMin,
+  es: titulo.es,
+  en: titulo.en,
+  fr: titulo.fr,
+  de: titulo.de,
+  it: titulo.it,
+  pt: titulo.pt,
+  detalleEs: detalle.es,
+  detalleEn: detalle.en,
+  detalleFr: detalle.fr,
+  detalleDe: detalle.de,
+  detalleIt: detalle.it,
+  detallePt: detalle.pt,
+});
 
 /** De menos a más ambicioso. Todos parten del muelle de Maó. */
 export const PLANES: Plan[] = [
   plan(
     "mao-a-pie", 0, 150,
-    "Maó a pie, sin coche",
-    "Maó on foot, no car",
-    "Maó à pied, sans voiture",
-    "Mahón zu Fuß, ohne Auto",
-    "Del muelle se sube a la ciudad de arriba: el mercado del Claustre, las calles georgianas y una copa mirando el puerto. No hace falta coche.",
-    "From the quay you climb to the upper town: the Claustre market, the Georgian streets and a drink looking over the harbour. No car needed.",
-    "Du quai, on monte à la ville haute : le marché du Claustre, les rues géorgiennes et un verre face au port. Pas besoin de voiture.",
-    "Vom Kai steigt man hinauf in die Oberstadt: der Markt im Claustre, die georgianischen Straßen und ein Glas mit Blick auf den Hafen. Ein Auto braucht es nicht.",
+    {
+      es: "Maó a pie, sin coche",
+      en: "Maó on foot, no car",
+      fr: "Maó à pied, sans voiture",
+      de: "Mahón zu Fuß, ohne Auto",
+      it: "Maó a piedi, senza auto",
+      pt: "Maó a pé, sem carro",
+    },
+    {
+      es: "Del muelle se sube a la ciudad de arriba: el mercado del Claustre, las calles georgianas y una copa mirando el puerto. No hace falta coche.",
+      en: "From the quay you climb to the upper town: the Claustre market, the Georgian streets and a drink looking over the harbour. No car needed.",
+      fr: "Du quai, on monte à la ville haute : le marché du Claustre, les rues géorgiennes et un verre face au port. Pas besoin de voiture.",
+      de: "Vom Kai steigt man hinauf in die Oberstadt: der Markt im Claustre, die georgianischen Straßen und ein Glas mit Blick auf den Hafen. Ein Auto braucht es nicht.",
+      it: "Dal molo si sale alla città alta: il mercato del Claustre, le vie georgiane e un bicchiere con vista sul porto. L'auto non serve.",
+      pt: "Do cais sobe-se à cidade alta: o mercado do Claustre, as ruas georgianas e um copo com vista para o porto. Não é preciso carro.",
+    },
   ),
   plan(
     "es-grau", 30, 150,
-    "Es Grau: playa y albufera",
-    "Es Grau: beach and lagoon",
-    "Es Grau : plage et lagune",
-    "Es Grau: Strand und Lagune",
-    "Quince minutos en coche y estás en el corazón de la Reserva de Biosfera: arena tranquila, la albufera detrás y las barcas quietas.",
-    "Fifteen minutes by car and you are in the heart of the Biosphere Reserve: quiet sand, the lagoon behind and the boats still.",
-    "Quinze minutes de voiture et vous êtes au cœur de la Réserve de biosphère : du sable tranquille, la lagune derrière et les barques immobiles.",
-    "Fünfzehn Minuten mit dem Auto und Sie sind im Herzen des Biosphärenreservats: ruhiger Sand, dahinter die Lagune und die stillliegenden Boote.",
+    {
+      es: "Es Grau: playa y albufera",
+      en: "Es Grau: beach and lagoon",
+      fr: "Es Grau : plage et lagune",
+      de: "Es Grau: Strand und Lagune",
+      it: "Es Grau: spiaggia e laguna",
+      pt: "Es Grau: praia e lagoa",
+    },
+    {
+      es: "Quince minutos en coche y estás en el corazón de la Reserva de Biosfera: arena tranquila, la albufera detrás y las barcas quietas.",
+      en: "Fifteen minutes by car and you are in the heart of the Biosphere Reserve: quiet sand, the lagoon behind and the boats still.",
+      fr: "Quinze minutes de voiture et vous êtes au cœur de la Réserve de biosphère : du sable tranquille, la lagune derrière et les barques immobiles.",
+      de: "Fünfzehn Minuten mit dem Auto und Sie sind im Herzen des Biosphärenreservats: ruhiger Sand, dahinter die Lagune und die stillliegenden Boote.",
+      it: "Quindici minuti di auto e si è nel cuore della Riserva della Biosfera: sabbia tranquilla, la laguna alle spalle e le barche immobili.",
+      pt: "Quinze minutos de carro e está no coração da Reserva da Biosfera: areia tranquila, a lagoa por trás e os barcos parados.",
+    },
   ),
   plan(
     "favaritx", 60, 90,
-    "El faro de Favàritx",
-    "Favàritx lighthouse",
-    "Le phare de Favàritx",
-    "Der Leuchtturm von Favàritx",
-    "Pizarra negra, paisaje casi lunar y el faro más cinematográfico de la isla, a media hora del muelle.",
-    "Black slate, an almost lunar landscape and the island's most cinematic lighthouse, half an hour from the quay.",
-    "Ardoise noire, un paysage presque lunaire et le phare le plus cinématographique de l'île, à une demi-heure du quai.",
-    "Schwarzer Schiefer, eine fast mondähnliche Landschaft und der filmreifste Leuchtturm der Insel, eine halbe Stunde vom Kai entfernt.",
+    {
+      es: "El faro de Favàritx",
+      en: "Favàritx lighthouse",
+      fr: "Le phare de Favàritx",
+      de: "Der Leuchtturm von Favàritx",
+      it: "Il faro di Favàritx",
+      pt: "O farol de Favàritx",
+    },
+    {
+      es: "Pizarra negra, paisaje casi lunar y el faro más cinematográfico de la isla, a media hora del muelle.",
+      en: "Black slate, an almost lunar landscape and the island's most cinematic lighthouse, half an hour from the quay.",
+      fr: "Ardoise noire, un paysage presque lunaire et le phare le plus cinématographique de l'île, à une demi-heure du quai.",
+      de: "Schwarzer Schiefer, eine fast mondähnliche Landschaft und der filmreifste Leuchtturm der Insel, eine halbe Stunde vom Kai entfernt.",
+      it: "Ardesia nera, un paesaggio quasi lunare e il faro più cinematografico dell'isola, a mezz'ora dal molo.",
+      pt: "Ardósia negra, uma paisagem quase lunar e o farol mais cinematográfico da ilha, a meia hora do cais.",
+    },
   ),
   plan(
     "fornells", 40, 180,
-    "Fornells: la bahía y una caldereta",
-    "Fornells: the bay and a lobster stew",
-    "Fornells : la baie et une caldereta",
-    "Fornells: die Bucht und eine Caldereta",
-    "Veinte minutos al norte, un pueblo blanco de pescadores sobre una bahía enorme, y la caldereta de langosta que le dio fama.",
-    "Twenty minutes north, a white fishing village on a huge bay, and the lobster stew that made it famous.",
-    "Vingt minutes vers le nord, un village blanc de pêcheurs au bord d'une immense baie, et la caldereta de langouste qui a fait sa renommée.",
-    "Zwanzig Minuten nach Norden, ein weißes Fischerdorf an einer riesigen Bucht und die Langusten-Caldereta, die es berühmt gemacht hat.",
+    {
+      es: "Fornells: la bahía y una caldereta",
+      en: "Fornells: the bay and a lobster stew",
+      fr: "Fornells : la baie et une caldereta",
+      de: "Fornells: die Bucht und eine Caldereta",
+      it: "Fornells: la baia e una caldereta",
+      pt: "Fornells: a baía e uma caldereta",
+    },
+    {
+      es: "Veinte minutos al norte, un pueblo blanco de pescadores sobre una bahía enorme, y la caldereta de langosta que le dio fama.",
+      en: "Twenty minutes north, a white fishing village on a huge bay, and the lobster stew that made it famous.",
+      fr: "Vingt minutes vers le nord, un village blanc de pêcheurs au bord d'une immense baie, et la caldereta de langouste qui a fait sa renommée.",
+      de: "Zwanzig Minuten nach Norden, ein weißes Fischerdorf an einer riesigen Bucht und die Langusten-Caldereta, die es berühmt gemacht hat.",
+      it: "Venti minuti verso nord, un paese bianco di pescatori affacciato su una baia enorme, e la caldereta di aragosta che l'ha resa famosa.",
+      pt: "Vinte minutos para norte, uma aldeia branca de pescadores sobre uma baía enorme, e a caldereta de lagosta que lhe deu fama.",
+    },
   ),
   plan(
     "cala-galdana", 68, 180,
-    "Una cala del sur: Cala Galdana",
-    "A southern cove: Cala Galdana",
-    "Une crique du sud : Cala Galdana",
-    "Eine Bucht im Süden: Cala Galdana",
-    "Media hora de coche hasta Cala Galdana y, si te apetece andar, media hora a pie más hasta Macarella, que es la postal de la isla.",
-    "Half an hour to Cala Galdana and, if you fancy the walk, half an hour more on foot to Macarella, the island's postcard.",
-    "Une demi-heure de voiture jusqu'à Cala Galdana et, si le cœur vous en dit, une demi-heure de marche de plus jusqu'à Macarella, la carte postale de l'île.",
-    "Eine halbe Stunde mit dem Auto bis Cala Galdana und, wenn Sie Lust zu laufen haben, eine weitere halbe Stunde zu Fuß bis Macarella, dem Postkartenmotiv der Insel.",
+    {
+      es: "Una cala del sur: Cala Galdana",
+      en: "A southern cove: Cala Galdana",
+      fr: "Une crique du sud : Cala Galdana",
+      de: "Eine Bucht im Süden: Cala Galdana",
+      it: "Una cala del sud: Cala Galdana",
+      pt: "Uma enseada do sul: Cala Galdana",
+    },
+    {
+      es: "Media hora de coche hasta Cala Galdana y, si te apetece andar, media hora a pie más hasta Macarella, que es la postal de la isla.",
+      en: "Half an hour to Cala Galdana and, if you fancy the walk, half an hour more on foot to Macarella, the island's postcard.",
+      fr: "Une demi-heure de voiture jusqu'à Cala Galdana et, si le cœur vous en dit, une demi-heure de marche de plus jusqu'à Macarella, la carte postale de l'île.",
+      de: "Eine halbe Stunde mit dem Auto bis Cala Galdana und, wenn Sie Lust zu laufen haben, eine weitere halbe Stunde zu Fuß bis Macarella, dem Postkartenmotiv der Insel.",
+      it: "Mezz'ora di auto fino a Cala Galdana e, se ha voglia di camminare, un'altra mezz'ora a piedi fino a Macarella, la cartolina dell'isola.",
+      pt: "Meia hora de carro até Cala Galdana e, se lhe apetecer andar, mais meia hora a pé até Macarella, que é o postal da ilha.",
+    },
   ),
   plan(
     "ciutadella", 90, 180,
-    "Ciutadella, al otro extremo de la isla",
-    "Ciutadella, at the other end of the island",
-    "Ciutadella, à l'autre bout de l'île",
-    "Ciutadella, am anderen Ende der Insel",
-    "Cuarenta y cinco minutos por la carretera que cruza Menorca, y otros tantos de vuelta. A cambio: el casco antiguo con más carácter de las Baleares y su puerto encajonado.",
-    "Forty-five minutes along the road that crosses Menorca, and as many back. In exchange: the old town with the most character in the Balearics and its narrow harbour.",
-    "Quarante-cinq minutes par la route qui traverse Minorque, et autant au retour. En échange : la vieille ville la plus attachante des Baléares et son port encaissé.",
-    "Fünfundvierzig Minuten über die Straße, die Menorca quert, und ebenso lange zurück. Dafür: die Altstadt mit dem meisten Charakter auf den Balearen und ihr eingeschnittener Hafen.",
+    {
+      es: "Ciutadella, al otro extremo de la isla",
+      en: "Ciutadella, at the other end of the island",
+      fr: "Ciutadella, à l'autre bout de l'île",
+      de: "Ciutadella, am anderen Ende der Insel",
+      it: "Ciutadella, all'altro capo dell'isola",
+      pt: "Ciutadella, no outro extremo da ilha",
+    },
+    {
+      es: "Cuarenta y cinco minutos por la carretera que cruza Menorca, y otros tantos de vuelta. A cambio: el casco antiguo con más carácter de las Baleares y su puerto encajonado.",
+      en: "Forty-five minutes along the road that crosses Menorca, and as many back. In exchange: the old town with the most character in the Balearics and its narrow harbour.",
+      fr: "Quarante-cinq minutes par la route qui traverse Minorque, et autant au retour. En échange : la vieille ville la plus attachante des Baléares et son port encaissé.",
+      de: "Fünfundvierzig Minuten über die Straße, die Menorca quert, und ebenso lange zurück. Dafür: die Altstadt mit dem meisten Charakter auf den Balearen und ihr eingeschnittener Hafen.",
+      it: "Quarantacinque minuti sulla strada che attraversa Minorca, e altrettanti al ritorno. In cambio: il centro storico con più carattere delle Baleari e il suo porto incassato.",
+      pt: "Quarenta e cinco minutos pela estrada que atravessa Menorca, e outros tantos de regresso. Em troca: o centro histórico com mais carácter das Baleares e o seu porto encaixado.",
+    },
   ),
   plan(
     "ciutadella-y-cala", 106, 240,
-    "Ciutadella y, de camino, una cala del sur",
-    "Ciutadella plus a southern cove on the way",
-    "Ciutadella et, en chemin, une crique du sud",
-    "Ciutadella und unterwegs eine Bucht im Süden",
-    "El plan completo: cruzar la isla, ver Ciutadella y bajar a una cala del sur antes de volver. Cerca de dos horas de coche en total — solo sale si la escala es larga.",
-    "The full day: cross the island, see Ciutadella and drop down to a southern cove before heading back. Close to two hours of driving in total — it only works if the call is long.",
-    "La journée complète : traverser l'île, voir Ciutadella et descendre vers une crique du sud avant de rentrer. Près de deux heures de route au total — cela ne tient que si l'escale est longue.",
-    "Der komplette Tag: die Insel queren, Ciutadella ansehen und vor der Rückkehr noch zu einer Bucht im Süden hinunter. Insgesamt knapp zwei Stunden Fahrt — das geht nur bei einem langen Anlauf auf.",
+    {
+      es: "Ciutadella y, de camino, una cala del sur",
+      en: "Ciutadella plus a southern cove on the way",
+      fr: "Ciutadella et, en chemin, une crique du sud",
+      de: "Ciutadella und unterwegs eine Bucht im Süden",
+      it: "Ciutadella e, lungo la strada, una cala del sud",
+      pt: "Ciutadella e, a caminho, uma enseada do sul",
+    },
+    {
+      es: "El plan completo: cruzar la isla, ver Ciutadella y bajar a una cala del sur antes de volver. Cerca de dos horas de coche en total — solo sale si la escala es larga.",
+      en: "The full day: cross the island, see Ciutadella and drop down to a southern cove before heading back. Close to two hours of driving in total — it only works if the call is long.",
+      fr: "La journée complète : traverser l'île, voir Ciutadella et descendre vers une crique du sud avant de rentrer. Près de deux heures de route au total — cela ne tient que si l'escale est longue.",
+      de: "Der komplette Tag: die Insel queren, Ciutadella ansehen und vor der Rückkehr noch zu einer Bucht im Süden hinunter. Insgesamt knapp zwei Stunden Fahrt — das geht nur bei einem langen Anlauf auf.",
+      it: "Il programma completo: attraversare l'isola, vedere Ciutadella e scendere a una cala del sud prima di rientrare. Quasi due ore di auto in totale — regge solo se lo scalo è lungo.",
+      pt: "O plano completo: atravessar a ilha, ver Ciutadella e descer a uma enseada do sul antes de regressar. Perto de duas horas de carro no total — só compensa se a escala for longa.",
+    },
   ),
 ];
 
@@ -264,11 +344,20 @@ export function barcosConPagina(calls: Call[]): Barco[] {
 }
 
 /** Cuánto tiempo útil, en «5 h 30» y no en minutos sueltos. */
-export const enHoras = (min: number, locale: "es" | "en" | "fr" | "de"): string => {
+export const enHoras = (min: number, locale: PlanLocale): string => {
   const h = Math.floor(min / 60);
   const m = min % 60;
+  /* La forma compacta «5 h 30 min» vale en las seis lenguas: es DURACIÓN, no hora
+     de reloj (esa sí cambia de formato por mercado y sale del dato del puerto). */
   if (m) return `${h} h ${m} min`;
-  /* La palabra suelta sí cambia: "5 horas" / "5 hours" / "5 Stunden". */
-  const palabra: Record<"es" | "en" | "fr" | "de", string> = { es: "horas", en: "hours", fr: "heures", de: "Stunden" };
+  /* La palabra suelta sí cambia: "5 horas" / "5 hours" / "5 Stunden" / "5 ore". */
+  const palabra: Record<PlanLocale, string> = {
+    es: "horas",
+    en: "hours",
+    fr: "heures",
+    de: "Stunden",
+    it: "ore",
+    pt: "horas",
+  };
   return `${h} ${palabra[locale]}`;
 };

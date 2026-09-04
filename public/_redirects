@@ -54,13 +54,25 @@
 /fr/lieu/contrabandu-fr     /fr/couchers-et-cocktails/    301
 /fr/lieu/contrabandu-fr/    /fr/couchers-et-cocktails/    301
 
+# ── Agenda en portugués: índice y detalle no comparten prefijo ─────────────
+# El PT es el único idioma donde el índice de la agenda (`/pt/agenda`, de
+# sections.ts) y el detalle de cada evento (`/pt/eventos/<slug>`, de i18n/utils.ts)
+# cuelgan de rutas distintas. En los otros cinco coinciden. Resultado: quien sube
+# un nivel desde una ficha se come un 404 (comprobado en producción el 4-sep-2026).
+# Se redirige el índice que NO existe hacia el que sí, en vez de mover 96 URLs ya
+# publicadas. Si algún día se unifica el prefijo, esta regla se invierte.
+/pt/eventos                 /pt/agenda/             301
+/pt/eventos/                /pt/agenda/             301
+
 # ── Barcos retirados del calendario del puerto ─────────────────────────────
 # YA NO SE MANTIENEN A MANO. El robot del puerto (KAN-77) borra la escala
 # cuando el barco deja de venir y su página deja de generarse, pero Google
 # conserva la URL: es lo que dejó `/crucero/azamara-onward` en 404 (KAN-100),
 # y añadir el barco a mano solo tapa el caso de hoy — mañana cae otro.
 # Ahora lo genera `scripts/cruceros-redirects.mjs` en el bloque de abajo, que
-# además cubre la ruta EN (`/en/cruise/<slug>`), la que se nos había olvidado.
+# cubre los SEIS idiomas y manda a cada uno a SU guía de escala (durante un
+# tiempo solo cubrió ES y EN: al abrir el clúster en FR, DE, IT y PT nadie
+# amplió la lista y esas URLs se habrían quedado en 404 igual que la primera).
 # Sigue siendo regla EXACTA por barco: un comodín /crucero/* tumbaría las
 # escalas vigentes.
 
@@ -69,9 +81,17 @@
 # sigue pidiendo la URL. Se manda a la guía de escala, que sigue viva.
 
 # Azamara Onward — sin página desde 2026-07-24
-/crucero/azamara-onward          /articulo/cruceros-en-menorca-2026/   301
-/crucero/azamara-onward/         /articulo/cruceros-en-menorca-2026/   301
-/en/cruise/azamara-onward        /en/article/cruises-in-menorca-2026/  301
-/en/cruise/azamara-onward/       /en/article/cruises-in-menorca-2026/  301
+/crucero/azamara-onward         /articulo/cruceros-en-menorca-2026/  301
+/crucero/azamara-onward/        /articulo/cruceros-en-menorca-2026/  301
+/en/cruise/azamara-onward       /en/article/cruises-in-menorca-2026/  301
+/en/cruise/azamara-onward/      /en/article/cruises-in-menorca-2026/  301
+/fr/croisiere/azamara-onward    /fr/article/escale-croisiere-mao-minorque/  301
+/fr/croisiere/azamara-onward/   /fr/article/escale-croisiere-mao-minorque/  301
+/de/kreuzfahrt/azamara-onward   /de/artikel/kreuzfahrten-menorca-2026/  301
+/de/kreuzfahrt/azamara-onward/  /de/artikel/kreuzfahrten-menorca-2026/  301
+/it/crociera/azamara-onward     /it/articolo/crociere-a-minorca-2026/  301
+/it/crociera/azamara-onward/    /it/articolo/crociere-a-minorca-2026/  301
+/pt/cruzeiro/azamara-onward     /pt/artigo/cruzeiros-em-menorca-2026/  301
+/pt/cruzeiro/azamara-onward/    /pt/artigo/cruzeiros-em-menorca-2026/  301
 
 # <<< AUTO

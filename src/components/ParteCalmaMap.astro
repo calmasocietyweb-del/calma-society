@@ -22,8 +22,9 @@ import JsonLd from "./JsonLd.astro";
 /*
  * Idiomas en los que ESTA herramienta está desplegada. No es lo mismo que los
  * locales del sitio: el despliegue es por mercados (CLAUDE.md decisión 2), y
- * «Dónde el mar está en calma» solo tiene página en es/en/fr
- * (`/donde-el-mar-esta-en-calma`, `/en/where-the-sea-is-calm`, `/fr/ou-la-mer-est-calme`).
+ * «Dónde el mar está en calma» está en los seis idiomas activos
+ * (`/donde-el-mar-esta-en-calma`, `/en/where-the-sea-is-calm`, `/fr/ou-la-mer-est-calme`,
+ * `/de/wo-das-meer-ruhig-ist`, `/it/dove-il-mare-e-calmo`, `/pt/onde-o-mar-esta-calmo`).
  *
  * Declararlo aquí es lo que evita el fallo silencioso al añadir un idioma: sin
  * esto, `T[locale]` era `undefined` en alemán y la herramienta reventaba en
@@ -31,7 +32,7 @@ import JsonLd from "./JsonLd.astro";
  * tenga su copy traducido. Para sumar un idioma: traduce los bloques `T`,
  * `HOY_MANANA`, los tramos del día y el cielo, y añádelo a esta unión.
  */
-type ToolLocale = Extract<Locale, "es" | "en" | "fr" | "de">;
+type ToolLocale = Extract<Locale, "es" | "en" | "fr" | "de" | "it" | "pt">;
 
 interface Props {
   locale: ToolLocale;
@@ -293,14 +294,14 @@ const markers = parte.calas.map((c, i) => {
 
 // Pueblos de referencia para orientarse (no son calas). Faint, decorativos.
 const TOWNS = [
-  { es: "Ciutadella", en: "Ciutadella", fr: "Ciutadella", de: "Ciutadella", lat: 40.0006, lng: 3.8377 },
-  { es: "Ferreries", en: "Ferreries", fr: "Ferreries", de: "Ferreries", lat: 39.9786, lng: 4.0103 },
-  { es: "Es Migjorn Gran", en: "Es Migjorn Gran", fr: "Es Migjorn Gran", de: "Es Migjorn Gran", lat: 39.9476, lng: 4.0314 },
-  { es: "Es Mercadal", en: "Es Mercadal", fr: "Es Mercadal", de: "Es Mercadal", lat: 39.9908, lng: 4.0922 },
-  { es: "Alaior", en: "Alaior", fr: "Alaior", de: "Alaior", lat: 39.9357, lng: 4.1389 },
-  { es: "Maó", en: "Mahón", fr: "Maó", de: "Mahón", lat: 39.8885, lng: 4.2658 },
-  { es: "Es Castell", en: "Es Castell", fr: "Es Castell", de: "Es Castell", lat: 39.8794, lng: 4.2914 },
-  { es: "Sant Lluís", en: "Sant Lluís", fr: "Sant Lluís", de: "Sant Lluís", lat: 39.8475, lng: 4.2561 },
+  { es: "Ciutadella", en: "Ciutadella", fr: "Ciutadella", de: "Ciutadella", it: "Ciutadella", pt: "Ciutadella", lat: 40.0006, lng: 3.8377 },
+  { es: "Ferreries", en: "Ferreries", fr: "Ferreries", de: "Ferreries", it: "Ferreries", pt: "Ferreries", lat: 39.9786, lng: 4.0103 },
+  { es: "Es Migjorn Gran", en: "Es Migjorn Gran", fr: "Es Migjorn Gran", de: "Es Migjorn Gran", it: "Es Migjorn Gran", pt: "Es Migjorn Gran", lat: 39.9476, lng: 4.0314 },
+  { es: "Es Mercadal", en: "Es Mercadal", fr: "Es Mercadal", de: "Es Mercadal", it: "Es Mercadal", pt: "Es Mercadal", lat: 39.9908, lng: 4.0922 },
+  { es: "Alaior", en: "Alaior", fr: "Alaior", de: "Alaior", it: "Alaior", pt: "Alaior", lat: 39.9357, lng: 4.1389 },
+  { es: "Maó", en: "Mahón", fr: "Maó", de: "Mahón", it: "Maó", pt: "Maó", lat: 39.8885, lng: 4.2658 },
+  { es: "Es Castell", en: "Es Castell", fr: "Es Castell", de: "Es Castell", it: "Es Castell", pt: "Es Castell", lat: 39.8794, lng: 4.2914 },
+  { es: "Sant Lluís", en: "Sant Lluís", fr: "Sant Lluís", de: "Sant Lluís", it: "Sant Lluís", pt: "Sant Lluís", lat: 39.8475, lng: 4.2561 },
 ].map((t) => ({ ...t, ...project(t.lat, t.lng) }));
 
 // Barra de escala (≈ px por km en la proyección; 1° ≈ 110,57 km).
@@ -381,9 +382,9 @@ const hayTimeline = FRAMES.length > 1 && (tl.calas || []).length > 0;
 const calaEnFrame = (id: string, frame: any) => {
   const m = calaMeta[id];
   const w = m ? frame.winds[m.ine] : null;
-  if (!m || !w || w.d == null) return { band: "sin-dato", windName: txt({ es: "Sin previsión", en: "No forecast", fr: "Sans prévision", de: "Keine Vorhersage" }), windKmh: 0 };
+  if (!m || !w || w.d == null) return { band: "sin-dato", windName: txt({ es: "Sin previsión", en: "No forecast", fr: "Sans prévision", de: "Keine Vorhersage", it: "Nessuna previsione", pt: "Sem previsão" }), windKmh: 0 };
   const deg = degDe(w.d);
-  return { band: bandaDe(m.op, w.d, w.v), windName: deg == null ? txt({ es: "Calma", en: "Calm", fr: "Calme", de: "Windstille" }) : nombreViento(deg), windKmh: w.v };
+  return { band: bandaDe(m.op, w.d, w.v), windName: deg == null ? txt({ es: "Calma", en: "Calm", fr: "Calme", de: "Windstille", it: "Calma", pt: "Calmaria" }) : nombreViento(deg), windKmh: w.v };
 };
 // Banda inicial (render del servidor): del primer frame si hay previsión; si no,
 // del parte diario canónico (parte-calma.json). Nunca "alto" por ausencia de dato.
@@ -740,6 +741,116 @@ const T = {
     methodology: "Wie wir die Ruhe berechnen",
     methodologyHref: "/de/wie-wir-die-ruhe-berechnen",
   },
+  it: {
+    stale: "Oggi non siamo riusciti ad aggiornare: mostriamo l'ultimo bollettino disponibile.",
+    staleAviso: "Questa previsione potrebbe non essere aggiornata. Prima di fare il bagno controlli sempre le bandiere e i bagnini.",
+    mapAria:
+      "Mappa di Minorca con lo stato del mare previsto oggi in ogni cala. Il dettaglio è nell'elenco qui sotto.",
+    costaNorte: "COSTA NORD",
+    costaSur: "COSTA SUD",
+    mapCredit: "Contorno: © OpenStreetMap · Rilievo: GEBCO 2020 · Fonte: AEMET",
+    zoomIn: "Ingrandisci la mappa",
+    zoomOut: "Riduci la mappa",
+    zoomHint: "Ingrandisca e trascini la mappa con il dito.",
+    legendTitle: "Come leggere la mappa",
+    legendCosta: "La riva è colorata con il riparo di ogni tratto, secondo dove guarda la costa e da dove soffia il vento oggi.",
+    legendPuntos: "Ogni punto è una cala. Lo tocchi e scende alla sua scheda.",
+    legendHilo: "Alcune cale sono quasi attaccate: il loro punto si sposta un poco per restare visibile, e un filo lo lega al suo posto sulla costa.",
+    legendNeutro: "Nei porti e nelle insenature profonde (Maó, Fornells) non coloriamo la riva: lì la costa guarda da una parte e la cala, riparata all'interno, dall'altra. Fa fede il punto.",
+    legendGris: "Porto o insenatura",
+    filterTitle: "Filtra per stato del mare",
+    windTitle: "Vento generale",
+    skyTitle: "Cielo e temperatura",
+    timelineTitle: "Previsione · prossimi giorni",
+    buscar: "Cerca una cala per nome…",
+    verEnMapa: "Vedi sulla mappa",
+    todas: "Tutte",
+    abrigo: { alto: "Mare calmo", medio: "Un po' di onda", bajo: "Mare mosso", "sin-dato": "Nessuna previsione" } as Record<string, string>,
+    subAbrigo: {
+      alto: "riparata dal vento",
+      medio: "un po' esposta al vento",
+      bajo: "esposta al vento",
+      "sin-dato": "nessun dato sul vento per questo momento",
+    } as Record<string, string>,
+    viento: "Vento",
+    medusasTitle: "Possibilità di meduse",
+    legendMedusa:
+      "Medusa rosa: il vento spinge verso quella cala da ore — potrebbero essercene. Non è un avvistamento; vale solo per oggi.",
+    medusasSublabel: "Spinta del vento verso la cala (indicativa)",
+    medusasBand: { baja: "Bassa", media: "Moderata", alta: "Alta" } as Record<string, string>,
+    medusasCopy: {
+      baja: "Questo NON significa che non ci siano meduse: possono essere presenti per correnti che non misuriamo. Oggi il vento non favorisce il loro arrivo in questa cala.",
+      media: "Il vento soffia verso la cala da diverse ore; se ci sono meduse al largo, le condizioni favoriscono il loro avvicinamento. Non è un'osservazione.",
+      alta: "Il vento entra di fronte in questa cala da più di mezza giornata: condizioni favorevoli perché, se ce ne sono, arrivino a riva. Non ne rileviamo nessuna.",
+    } as Record<string, string>,
+    medusasNoData: "Oggi non abbiamo dati sul vento sufficienti per stimarlo.",
+    medusasEmpujeDato: "{horas} h delle ultime {ventana} a spingere verso questa cala.",
+    medusasDisclaimer:
+      "Stimiamo le condizioni di arrivo a partire dal vento delle ultime 48 h; non rileviamo meduse né affermiamo che ce ne siano. Non tiene conto delle correnti marine. Per la presenza reale, controlli le bandiere e chieda ai bagnini della spiaggia.",
+    noLifeguard:
+      "Cala senza servizio di salvataggio: non ci sono bandiere da controllare. Presti la massima attenzione e non faccia il bagno da solo.",
+    noLifeguardShort: "Senza bagnino",
+    disclaimerTitle: "Come leggere questo bollettino",
+    disclaimer:
+      "È una stima editoriale indicativa a partire dalla previsione del vento. Misura soltanto il RIPARO dal vento, non le correnti, il fondale né altri pericoli della balneazione. Non è un avviso di sicurezza ufficiale e non sostituisce le bandiere né il giudizio dei bagnini.",
+    methodology: "Come calcoliamo la calma",
+    methodologyHref: "/it/come-calcoliamo-la-calma",
+  },
+  pt: {
+    stale: "Hoje não conseguimos atualizar; mostramos o último boletim disponível.",
+    staleAviso: "Esta previsão pode não estar atualizada. Consulte sempre as bandeiras e os nadadores-salvadores antes de se banhar.",
+    mapAria:
+      "Mapa de Menorca com o estado do mar previsto hoje em cada enseada. O detalhe está na lista seguinte.",
+    costaNorte: "COSTA NORTE",
+    costaSur: "COSTA SUL",
+    mapCredit: "Contorno: © OpenStreetMap · Relevo: GEBCO 2020 · Fonte: AEMET",
+    zoomIn: "Ampliar o mapa",
+    zoomOut: "Reduzir o mapa",
+    zoomHint: "Amplie e arraste o mapa com o dedo.",
+    legendTitle: "Como ler o mapa",
+    legendCosta: "A margem está pintada com o abrigo de cada troço, consoante o lado para onde a costa está virada e de onde sopra hoje o vento.",
+    legendPuntos: "Cada ponto é uma enseada. Toque-lhe e desce à respetiva ficha.",
+    legendHilo: "Há enseadas quase coladas: o seu ponto afasta-se um pouco para se ver, e um fio prende-o ao seu lugar na costa.",
+    legendNeutro: "Nos portos e nas rias (Maó, Fornells) não pintamos a margem: aí a costa está virada para um lado e a enseada, abrigada lá dentro, para o outro. Manda o ponto.",
+    legendGris: "Porto ou ria",
+    filterTitle: "Filtrar por estado do mar",
+    windTitle: "Vento geral",
+    skyTitle: "Céu e temperatura",
+    timelineTitle: "Previsão · próximos dias",
+    buscar: "Procurar uma enseada pelo nome…",
+    verEnMapa: "Ver no mapa",
+    todas: "Todas",
+    abrigo: { alto: "Mar calmo", medio: "Alguma ondulação", bajo: "Mar agitado", "sin-dato": "Sem previsão" } as Record<string, string>,
+    subAbrigo: {
+      alto: "abrigada do vento",
+      medio: "algo exposta ao vento",
+      bajo: "exposta ao vento",
+      "sin-dato": "sem dados de vento para este momento",
+    } as Record<string, string>,
+    viento: "Vento",
+    medusasTitle: "Possibilidade de alforrecas",
+    legendMedusa:
+      "Alforreca cor-de-rosa: o vento leva horas a empurrar para essa enseada — pode haver. Não é um avistamento; só vale para hoje.",
+    medusasSublabel: "Empurrão do vento para a enseada (indicativo)",
+    medusasBand: { baja: "Baixa", media: "Moderada", alta: "Alta" } as Record<string, string>,
+    medusasCopy: {
+      baja: "Isto NÃO significa que não haja alforrecas: podem estar presentes por correntes que não medimos. Hoje o vento não favorece a sua chegada a esta enseada.",
+      media: "O vento sopra para a enseada há várias horas; se houver alforrecas ao largo, há condições para que se aproximem. Não é uma observação.",
+      alta: "O vento entra de frente nesta enseada há mais de meio dia: condições favoráveis para que, a existirem, cheguem à margem. Não detetamos nenhuma.",
+    } as Record<string, string>,
+    medusasNoData: "Não temos dados de vento suficientes para o estimar hoje.",
+    medusasEmpujeDato: "{horas} h das últimas {ventana} a empurrar para esta enseada.",
+    medusasDisclaimer:
+      "Estimamos as condições de chegada a partir do vento das últimas 48 h; não detetamos alforrecas nem afirmamos que as haja. Não capta as correntes marinhas. Para a presença real, consulte as bandeiras e os nadadores-salvadores da praia.",
+    noLifeguard:
+      "Enseada sem vigilância: não há bandeiras para consultar. Redobre a precaução e nunca se banhe sozinho.",
+    noLifeguardShort: "Sem vigilância",
+    disclaimerTitle: "Como ler este boletim",
+    disclaimer:
+      "É uma estimativa editorial indicativa a partir da previsão do vento. Mede apenas o ABRIGO em relação ao vento, não as correntes, o fundo nem outros perigos do banho. Não é um aviso oficial de segurança nem substitui as bandeiras ou o critério dos nadadores-salvadores.",
+    methodology: "Como calculamos a calma",
+    methodologyHref: "/pt/como-calculamos-a-calma",
+  },
 }[locale];
 
 // Etiqueta de día RELATIVA y LOCALIZADA derivada de la FECHA ABSOLUTA del frame.
@@ -753,24 +864,32 @@ const DOW_LABELS: Record<string, string[]> = {
   en: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
   fr: ["dim", "lun", "mar", "mer", "jeu", "ven", "sam"],
   de: ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"],
+  it: ["dom", "lun", "mar", "mer", "gio", "ven", "sab"],
+  pt: ["dom", "seg", "ter", "qua", "qui", "sex", "sáb"],
 };
 const REL_LABELS = {
   es: { hoy: "Hoy", manana: "Mañana" },
   en: { hoy: "Today", manana: "Tomorrow" },
   fr: { hoy: "Aujourd'hui", manana: "Demain" },
   de: { hoy: "Heute", manana: "Morgen" },
+  it: { hoy: "Oggi", manana: "Domani" },
+  pt: { hoy: "Hoje", manana: "Amanhã" },
 }[locale];
 const MONTH_LABELS: Record<string, string[]> = {
   es: ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"],
   en: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
   fr: ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."],
   de: ["Jan.", "Feb.", "März", "Apr.", "Mai", "Juni", "Juli", "Aug.", "Sept.", "Okt.", "Nov.", "Dez."],
+  it: ["gen.", "febbr.", "mar.", "apr.", "magg.", "giugno", "luglio", "ag.", "sett.", "ott.", "nov.", "dic."],
+  pt: ["jan.", "fev.", "mar.", "abr.", "maio", "jun.", "jul.", "ago.", "set.", "out.", "nov.", "dez."],
 };
 const PERIOD_LABELS = ({
   es: { "Mañana": "Mañana", "Tarde": "Tarde", "Todo el día": "Todo el día" },
   en: { "Mañana": "Morning", "Tarde": "Afternoon", "Todo el día": "All day" },
   fr: { "Mañana": "Matin", "Tarde": "Après-midi", "Todo el día": "Toute la journée" },
   de: { "Mañana": "Vormittag", "Tarde": "Nachmittag", "Todo el día": "Ganzer Tag" },
+  it: { "Mañana": "Mattina", "Tarde": "Pomeriggio", "Todo el día": "Tutto il giorno" },
+  pt: { "Mañana": "Manhã", "Tarde": "Tarde", "Todo el día": "Todo o dia" },
 }[locale] ?? {}) as Record<string, string>;
 const dowLoc = DOW_LABELS[locale];
 const monLoc = MONTH_LABELS[locale];
@@ -792,6 +911,8 @@ const SKY_LABELS = ({
   en: { sol: "Clear", poco: "Partly cloudy", nubes: "Cloudy", lluvia: "Rain", tormenta: "Storm" },
   fr: { sol: "Dégagé", poco: "Peu nuageux", nubes: "Nuageux", lluvia: "Pluie", tormenta: "Orage" },
   de: { sol: "Klar", poco: "Leicht bewölkt", nubes: "Bewölkt", lluvia: "Regen", tormenta: "Gewitter" },
+  it: { sol: "Sereno", poco: "Poco nuvoloso", nubes: "Nuvoloso", lluvia: "Pioggia", tormenta: "Temporale" },
+  pt: { sol: "Céu limpo", poco: "Pouco nublado", nubes: "Nublado", lluvia: "Chuva", tormenta: "Trovoada" },
 }[locale] ?? {}) as Record<string, string>;
 const sunIcon =
   '<g fill="none" stroke="#A8895C" stroke-width="2" stroke-linecap="round"><line x1="16" y1="2.5" x2="16" y2="6"/><line x1="16" y1="26" x2="16" y2="29.5"/><line x1="2.5" y1="16" x2="6" y2="16"/><line x1="26" y1="16" x2="29.5" y2="16"/><line x1="6.7" y1="6.7" x2="9.2" y2="9.2"/><line x1="22.8" y1="22.8" x2="25.3" y2="25.3"/><line x1="6.7" y1="25.3" x2="9.2" y2="22.8"/><line x1="22.8" y1="9.2" x2="25.3" y2="6.7"/></g><circle cx="16" cy="16" r="6.5" fill="#A8895C"/>';
@@ -822,7 +943,7 @@ const graph = [
     geo: { "@type": "GeoCoordinates", latitude: c.lat, longitude: c.lng },
     additionalProperty: {
       "@type": "PropertyValue",
-      name: txt({ es: "Estado del mar previsto", en: "Forecast sea state", fr: "État de la mer prévu", de: "Vorhergesagter Seegang" }),
+      name: txt({ es: "Estado del mar previsto", en: "Forecast sea state", fr: "État de la mer prévu", de: "Vorhergesagter Seegang", it: "Stato del mare previsto", pt: "Estado do mar previsto" }),
       value: T.abrigo[F0cala[c.id].band],
       observationDate: parte.forecastDate,
     },
@@ -838,7 +959,7 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
     {parte.validityNote}{" "}
     {/* «Fuente: AEMET» es la leyenda LITERAL que exige AEMET para productos
         derivados (verificado 17-jul-2026). No sustituir por «Datos:» ni similar. */}
-    <span class="text-piedra-suave">· {txt({ es: "Fuente", en: "Source", fr: "Source", de: "Quelle" })}: {parte.sources.join(", ")}</span>
+    <span class="text-piedra-suave">· {txt({ es: "Fuente", en: "Source", fr: "Source", de: "Quelle", it: "Fonte", pt: "Fonte" })}: {parte.sources.join(", ")}</span>
   </p>
   {parte.stale && (
     <p class="mt-2 rounded-md border border-niebla bg-arena px-4 py-2 text-sm text-piedra">{T.stale}</p>
@@ -935,7 +1056,7 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
       subLabel: T.subAbrigo,
       dirDeg: DIR_DEG,
       vientos: VIENTOS,
-      calma: txt({ es: "Calma", en: "Calm", fr: "Calme", de: "Windstille" }),
+      calma: txt({ es: "Calma", en: "Calm", fr: "Calme", de: "Windstille", it: "Calma", pt: "Calmaria" }),
       viento: T.viento,
       dow: dowLoc,
       months: monLoc,

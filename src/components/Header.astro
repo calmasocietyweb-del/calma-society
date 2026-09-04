@@ -57,12 +57,18 @@ const TOOLS: Record<Locale, { href: string; label: string }[]> = {
     { href: "/de/sonnenuntergaenge-und-drinks", label: "Sonnenuntergänge" },
     { href: "/de/reiseplaner", label: "Reiseplaner" },
   ],
-  // IT y PT: dados de alta el 24-ago-2026 para traducir la web entera. Las
-  // herramientas son lo ÚLTIMO que se traduce (llevan dataset propio), así que
-  // por ahora el menú no ofrece ninguna: una lista vacía no pinta nada, y es
-  // preferible a un enlace a una página que todavía no existe.
-  it: [],
-  pt: [],
+  // IT y PT: las tres herramientas traducidas el 4-sep-2026, con su dataset
+  // propio compilado desde las fichas (planner-data.it/pt, planner-events.it/pt).
+  it: [
+    { href: "/it/dove-il-mare-e-calmo", label: "Mare calmo" },
+    { href: "/it/pianificatore-di-viaggio", label: "Pianificatore" },
+    { href: "/it/tramonti-e-cocktail", label: "Tramonti" },
+  ],
+  pt: [
+    { href: "/pt/onde-o-mar-esta-calmo", label: "Mar calmo" },
+    { href: "/pt/planeador-de-viagem", label: "Planeador" },
+    { href: "/pt/pores-do-sol-e-copos", label: "Pôr do sol" },
+  ],
 };
 const tools = TOOLS[locale];
 ---

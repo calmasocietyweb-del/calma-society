@@ -1,0 +1,67 @@
+---
+// "Tramonti e cocktail" (IT) — pagina-hub della notte di Minorca: tramonti,
+// beach club, cocktail bar e club, con la mappa di ogni locale e il transfer con
+// autista (non guidi). Stessa famiglia del Pianificatore e di "Dove il mare è calmo".
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import NightlifeMap from "../../components/NightlifeMap.astro";
+import SunTimes from "../../components/SunTimes.astro";
+import SunsetDrinksFaq from "../../components/SunsetDrinksFaq.astro";
+import NewsletterSignup from "../../components/NewsletterSignup.astro";
+
+const alternates = {
+  es: "/atardeceres-y-copas",
+  en: "/en/sunsets-and-drinks",
+  fr: "/fr/couchers-et-cocktails",
+  de: "/de/sonnenuntergaenge-und-drinks",
+  it: "/it/tramonti-e-cocktail",
+  pt: "/pt/pores-do-sol-e-copos",
+};
+---
+
+<BaseLayout
+  title="Tramonti e cocktail a Minorca"
+  description="La notte di Minorca con criterio: i tramonti più belli, i beach club, i cocktail bar di porto e dove uscire, con la mappa di ogni locale e come arrivarci senza guidare."
+  locale="it"
+  alternates={alternates}
+>
+  <div class="mx-auto max-w-prosa px-5 pt-12 sm:px-8 sm:pt-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Calma Society · Minorca</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Tramonti e cocktail</h1>
+    <p class="lead mt-5">
+      L'isola quando cambia la luce: i tramonti più belli —e anche le albe di levante—, i beach
+      club, i cocktail bar di porto e dove andare a ballare. Con la mappa di ogni locale, la sua
+      valutazione su Google e, più in basso, a che ora sorge e tramonta il sole mese per mese —e
+      come raggiungere ciascun posto senza guidare.
+    </p>
+    <p class="mt-5 text-base leading-relaxed text-piedra-suave">
+      Sulle scogliere del tramonto e attorno ai porti non c'è quasi mai dove parcheggiare, e
+      d'estate è tutto pieno già all'alba. La decisione più comoda —e la più sensata la sera— è
+      lasciare l'auto: la portiamo e la veniamo a prendere con un autista privato, dal primo
+      tramonto all'ultimo cocktail. Questa è la nostra selezione, con criterio e senza folla:
+      solo locali che abbiamo verificato uno per uno, con la loro vera valutazione Google e il
+      motivo onesto per cui conviene arrivare senza auto.
+    </p>
+  </div>
+
+  <nav aria-label="Sezioni della pagina" class="mx-auto mt-8 max-w-prosa px-5 sm:px-8">
+    <ul class="flex flex-wrap gap-2 text-sm">
+      <li><a href="#mappa" class="inline-block rounded-full border border-niebla bg-arena/40 px-3.5 py-1.5 text-piedra transition-colors hover:border-arcilla hover:text-arcilla">La mappa della notte</a></li>
+      <li><a href="#ore-del-sole" class="inline-block rounded-full border border-niebla bg-arena/40 px-3.5 py-1.5 text-piedra transition-colors hover:border-arcilla hover:text-arcilla">Ore del sole</a></li>
+      <li><a href="#domande" class="inline-block rounded-full border border-niebla bg-arena/40 px-3.5 py-1.5 text-piedra transition-colors hover:border-arcilla hover:text-arcilla">Domande frequenti</a></li>
+    </ul>
+  </nav>
+
+  <div id="mappa" class="mx-auto mt-6 max-w-5xl scroll-mt-32 px-5 sm:px-8">
+    <NightlifeMap locale="it" />
+  </div>
+
+  <div id="ore-del-sole" class="mt-14 scroll-mt-32">
+    <SunTimes locale="it" />
+  </div>
+
+  <div id="domande" class="scroll-mt-32">
+    <SunsetDrinksFaq locale="it" />
+  </div>
+
+  <NewsletterSignup variant="inline" origen="herramienta" umamiEvent="newsletter-submit-herramienta" />
+</BaseLayout>

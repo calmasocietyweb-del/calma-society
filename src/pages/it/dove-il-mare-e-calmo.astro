@@ -1,0 +1,50 @@
+---
+// «Dove il mare è calmo» (IT) — bollettino quotidiano del riparo cala per cala.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ParteCalmaMap from "../../components/ParteCalmaMap.astro";
+import NewsletterSignup from "../../components/NewsletterSignup.astro";
+
+const alternates = {
+  es: "/donde-el-mar-esta-en-calma",
+  en: "/en/where-the-sea-is-calm",
+  fr: "/fr/ou-la-mer-est-calme",
+  de: "/de/wo-das-meer-ruhig-ist",
+  it: "/it/dove-il-mare-e-calmo",
+  pt: "/pt/onde-o-mar-esta-calmo",
+};
+---
+
+<BaseLayout
+  title="Dove il mare è calmo"
+  description="La previsione quotidiana per le cale di Minorca: dove il vento di oggi lascia il mare più calmo per un bagno senza fretta. Una stima editoriale, non un avviso di sicurezza."
+  locale="it"
+  alternates={alternates}
+>
+  <div class="mx-auto max-w-prosa px-5 pt-12 sm:px-8 sm:pt-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Calma Society · Minorca</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Dove il mare è calmo</h1>
+    <p class="lead mt-5">
+      La previsione quotidiana per le cale di Minorca: dove il vento di oggi lascia
+      l'acqua serena per un bagno senza fretta.
+    </p>
+    <p class="mt-5 text-base leading-relaxed text-piedra-suave">
+      A Minorca comanda il vento. Quando la <strong>Tramontana</strong> soffia da nord, la
+      costa sud resta calma; quando si alza il vento da sud, guardi a nord. Incrociamo la
+      previsione del vento con l'orientamento di ogni cala per stimarne il
+      <strong>riparo</strong> di oggi. Non misuriamo la sicurezza della balneazione — soltanto
+      la calma attesa del mare.
+    </p>
+    <p class="mt-4 text-base leading-relaxed text-piedra-suave">
+      Copriamo <strong>75 cale e punti di balneazione</strong> in tutta l'isola, con la
+      previsione per <strong>oggi e i prossimi giorni</strong>. Vuole sapere come lo
+      facciamo? Lo spieghiamo in
+      <a class="text-arcilla underline decoration-niebla underline-offset-4 hover:decoration-terracota" href="/it/come-calcoliamo-la-calma">come calcoliamo la calma</a>.
+    </p>
+  </div>
+
+  <div class="mt-10">
+    <ParteCalmaMap locale="it" />
+  </div>
+
+  <NewsletterSignup variant="inline" origen="herramienta" umamiEvent="newsletter-submit-herramienta" />
+</BaseLayout>

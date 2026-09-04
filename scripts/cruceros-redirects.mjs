@@ -9,7 +9,7 @@
  *      web (`barcosConPagina`), no con una copia que se puede desincronizar.
  *   2. Los apunta en un registro histórico (`cruceros-slugs-historicos.json`).
  *   3. Para cada slug del registro que ya NO tiene página, escribe su 301 en
- *      un bloque automático de `public/_redirects` — en ES y en EN.
+ *      un bloque automático de `public/_redirects` — en los SEIS idiomas.
  *
  * El bloque automático está delimitado y se regenera entero: NO editarlo a
  * mano. Las reglas escritas a mano viven fuera de él y no se tocan.
@@ -25,9 +25,32 @@ const CALENDARIO = "src/data/cruceros-menorca-2026.json";
 const REGISTRO = "src/data/cruceros-slugs-historicos.json";
 const REDIRECTS = "public/_redirects";
 
-// A dónde mandamos a quien buscaba un barco retirado: la guía de escala, que sigue viva.
-const DESTINO_ES = "/articulo/cruceros-en-menorca-2026/";
-const DESTINO_EN = "/en/article/cruises-in-menorca-2026/";
+/**
+ * A dónde mandamos a quien buscaba un barco retirado: la guía de escala de SU
+ * idioma, que sigue viva. Una entrada por idioma con página de barco: cuando el
+ * clúster se abrió en FR y DE (y luego en IT y PT) nadie amplió esta lista, así
+ * que sus URLs se habrían quedado en 404 — justo el agujero que cerró KAN-100.
+ * Regla: si añades un idioma a las rutas `/<lang>/<prefijo>/<slug>`, lo añades aquí.
+ */
+const IDIOMAS = [
+  { barco: "/crucero", guia: "/articulo/cruceros-en-menorca-2026/" },
+  { barco: "/en/cruise", guia: "/en/article/cruises-in-menorca-2026/" },
+  { barco: "/fr/croisiere", guia: "/fr/article/escale-croisiere-mao-minorque/" },
+  { barco: "/de/kreuzfahrt", guia: "/de/artikel/kreuzfahrten-menorca-2026/" },
+  { barco: "/it/crociera", guia: "/it/articolo/crociere-a-minorca-2026/" },
+  { barco: "/pt/cruzeiro", guia: "/pt/artigo/cruzeiros-em-menorca-2026/" },
+];
+/**
+ * Alinea la columna de origen sin llegar a pegarla al destino: Cloudflare separa
+ * origen y destino por espacios, así que un `padEnd` a un ancho fijo que un slug
+ * largo alcanzara exactamente dejaría CERO espacios y la regla quedaría rota
+ * («/de/kreuzfahrt/ritz-carlton-evrima//de/artikel/…»). Se calcula sobre los
+ * orígenes reales de esta pasada y siempre sobra un hueco.
+ */
+const alinear = (origenes) => {
+  const ancho = Math.max(...origenes.map((o) => o.length)) + 2;
+  return (origen) => origen.padEnd(ancho);
+};
 
 const INICIO = "# >>> AUTO — barcos retirados (scripts/cruceros-redirects.mjs). NO EDITAR A MANO.";
 const FIN = "# <<< AUTO";
@@ -109,12 +132,17 @@ if (retirados.length) {
     "# sigue pidiendo la URL. Se manda a la guía de escala, que sigue viva.",
     "",
   );
+  // Con y sin barra final: Cloudflare no las trata como la misma URL.
+  const origenes = retirados.flatMap(([slug]) =>
+    IDIOMAS.flatMap(({ barco }) => [`${barco}/${slug}`, `${barco}/${slug}/`]),
+  );
+  const col = alinear(origenes);
   for (const [slug, datos] of retirados) {
     lineas.push(`# ${datos.ship} — sin página desde ${datos.retiradoDesde}`);
-    lineas.push(`/crucero/${slug}          ${DESTINO_ES}   301`);
-    lineas.push(`/crucero/${slug}/         ${DESTINO_ES}   301`);
-    lineas.push(`/en/cruise/${slug}        ${DESTINO_EN}  301`);
-    lineas.push(`/en/cruise/${slug}/       ${DESTINO_EN}  301`);
+    for (const { barco, guia } of IDIOMAS) {
+      lineas.push(`${col(`${barco}/${slug}`)}${guia}  301`);
+      lineas.push(`${col(`${barco}/${slug}/`)}${guia}  301`);
+    }
     lineas.push("");
   }
   lineas.push(FIN);
@@ -143,7 +171,9 @@ if (bajas) console.log(`⚠️  ${bajas} barco(s) se han quedado SIN página hoy
 if (recuperados) console.log(`↩️  ${recuperados} barco(s) han vuelto al calendario → se les retira el 301.`);
 if (retirados.length) {
   console.log(`Barcos retirados con 301: ${retirados.length}`);
-  for (const [slug, d] of retirados) console.log(`   ${d.ship} → /crucero/${slug} y /en/cruise/${slug}`);
+  for (const [slug, d] of retirados) {
+    console.log(`   ${d.ship} → ${IDIOMAS.map((i) => `${i.barco}/${slug}`).join(" · ")}`);
+  }
 } else {
   console.log("Ningún barco retirado: no hace falta ninguna redirección.");
 }

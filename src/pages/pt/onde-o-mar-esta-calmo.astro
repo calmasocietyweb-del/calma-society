@@ -1,0 +1,50 @@
+---
+// «Onde o mar está calmo» (PT) — boletim diário do abrigo enseada a enseada.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ParteCalmaMap from "../../components/ParteCalmaMap.astro";
+import NewsletterSignup from "../../components/NewsletterSignup.astro";
+
+const alternates = {
+  es: "/donde-el-mar-esta-en-calma",
+  en: "/en/where-the-sea-is-calm",
+  fr: "/fr/ou-la-mer-est-calme",
+  de: "/de/wo-das-meer-ruhig-ist",
+  it: "/it/dove-il-mare-e-calmo",
+  pt: "/pt/onde-o-mar-esta-calmo",
+};
+---
+
+<BaseLayout
+  title="Onde o mar está calmo"
+  description="A previsão diária para as enseadas de Menorca: onde o vento de hoje deixa o mar mais calmo para um banho sem pressa. Uma estimativa editorial, não um aviso de segurança."
+  locale="pt"
+  alternates={alternates}
+>
+  <div class="mx-auto max-w-prosa px-5 pt-12 sm:px-8 sm:pt-16">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Calma Society · Menorca</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Onde o mar está calmo</h1>
+    <p class="lead mt-5">
+      A previsão diária para as enseadas de Menorca: onde o vento de hoje deixa a água
+      serena para um banho sem pressa.
+    </p>
+    <p class="mt-5 text-base leading-relaxed text-piedra-suave">
+      Em Menorca, quem manda é o vento. Quando a <strong>Tramontana</strong> sopra de norte,
+      a costa sul fica calma; quando se levanta o vento de sul, olhe para norte. Cruzamos a
+      previsão do vento com a orientação de cada enseada para estimar o seu
+      <strong>abrigo</strong> de hoje. Não medimos a segurança do banho — apenas a calma
+      esperada do mar.
+    </p>
+    <p class="mt-4 text-base leading-relaxed text-piedra-suave">
+      Cobrimos <strong>75 enseadas e zonas de banho</strong> em toda a ilha, com a previsão
+      para <strong>hoje e os próximos dias</strong>. Quer saber como o fazemos? Explicamos
+      em
+      <a class="text-arcilla underline decoration-niebla underline-offset-4 hover:decoration-terracota" href="/pt/como-calculamos-a-calma">como calculamos a calma</a>.
+    </p>
+  </div>
+
+  <div class="mt-10">
+    <ParteCalmaMap locale="pt" />
+  </div>
+
+  <NewsletterSignup variant="inline" origen="herramienta" umamiEvent="newsletter-submit-herramienta" />
+</BaseLayout>

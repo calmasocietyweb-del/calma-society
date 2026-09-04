@@ -1,0 +1,175 @@
+---
+// «Come calcoliamo la calma» (IT) — metodologia aperta del bollettino delle cale.
+// Centrale per il GEO (citabilità da parte dell'IA) e l'E-E-A-T: spiega il modello con
+// onestà, con dati strutturati FAQPage + BreadcrumbList. È la destinazione del link
+// «Come calcoliamo la calma» dello strumento /it/dove-il-mare-e-calmo.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import JsonLd from "../../components/JsonLd.astro";
+import { SITE } from "../../config/site";
+
+const alternates = {
+  es: "/como-calculamos-la-calma",
+  en: "/en/how-we-calculate-calm",
+  fr: "/fr/comment-on-calcule-le-calme",
+  de: "/de/wie-wir-die-ruhe-berechnen",
+  it: "/it/come-calcoliamo-la-calma",
+  pt: "/pt/como-calculamos-a-calma",
+};
+const abs = (p: string) => new URL(p, SITE.url).href;
+const toolHref = "/it/dove-il-mare-e-calmo";
+
+// Un'unica fonte per le FAQ visibili E per il JSON-LD (nessun testo duplicato).
+const faqs = [
+  {
+    q: "Che cosa significa «mare calmo» in questa previsione?",
+    a: "Che la cala è riparata dal vento previsto per oggi e che quindi l'acqua vi è di solito più calma. Misura il RIPARO dal vento, non la sicurezza della balneazione: non tiene conto delle correnti, dei fondali né degli altri pericoli.",
+  },
+  {
+    q: "Perché nord e sud cambiano con il vento?",
+    a: "A Minorca comanda il vento. Quando la Tramontana soffia da nord, la costa sud è riparata e resta calma; quando si alza il Migjorn da sud, conviene guardare a nord. Ogni cala si apre sul mare in una direzione diversa, così lo stesso vento ne lascia alcune calme e altre mosse.",
+  },
+  {
+    q: "Mi dice se è sicuro fare il bagno?",
+    a: "No. È una stima editoriale indicativa dello stato del mare a partire dal vento, non un avviso di sicurezza ufficiale. Non sostituisce le bandiere delle spiagge né il giudizio dei bagnini. Molte cale non hanno servizio di salvataggio: presti la massima attenzione e non faccia mai il bagno da solo.",
+  },
+  {
+    q: "Da dove vengono i dati?",
+    a: "Dalla previsione del vento dell'AEMET (l'agenzia meteorologica nazionale spagnola) per ogni comune, aggiornata ogni giorno e sempre datata. Il contorno della mappa viene da OpenStreetMap. L'orientamento di ogni cala è un dato editoriale nostro, curato a mano.",
+  },
+  {
+    q: "Perché fasce (mare calmo / un po' di onda / mare mosso) e non una percentuale?",
+    a: "Perché una percentuale esatta sarebbe falsa precisione: il vento previsto ha il suo margine e può girare. Comunicare per fasce è più onesto e più utile nel momento di scegliere verso quale cala andare.",
+  },
+  {
+    q: "Ogni quanto viene aggiornato?",
+    a: "Ogni mattina, automaticamente, con l'ultima previsione dell'AEMET. Può anche far scorrere la linea temporale per vedere la previsione dei prossimi giorni, divisa fra mattina e pomeriggio.",
+  },
+  {
+    q: "E le meduse?",
+    a: "Segnaliamo con una medusa rosa le cale verso cui il vento spinge da ore. Non è un avvistamento: nessuno è andato a vedere. È una condizione di arrivo, calcolata con lo stesso vento dell'AEMET, e vale solo per oggi. Conta sempre quello che vedrà sul posto: le bandiere e i bagnini.",
+  },
+  {
+    q: "Come si calcola questa possibilità di meduse?",
+    a: "La medusa non nuota: deriva, e il vento che sposta l'acqua se la porta dietro. Guardiamo le ultime 48 ore di vento (dando più peso a quanto è accaduto un giorno fa, il tempo che serve perché si veda) e contiamo quante ore sono entrate di fronte verso la cala con forza sufficiente a trascinare l'acqua: sotto i 18 km/h circa, il vento muove poco la superficie. Per questo il segnale può comparire con il mare già calmo: ad avvicinarle è stato il vento dell'altro ieri, non quello di adesso.",
+  },
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Pagina iniziale", item: abs("/it/") },
+        { "@type": "ListItem", position: 2, name: "Dove il mare è calmo", item: abs(toolHref) },
+        { "@type": "ListItem", position: 3, name: "Come calcoliamo la calma", item: abs("/it/come-calcoliamo-la-calma") },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Come calcoliamo la calma"
+  description="La metodologia aperta dietro la previsione quotidiana delle cale di Minorca: incrociamo il vento dell'AEMET con l'orientamento di ogni cala per stimarne il riparo. Che cosa misura e che cosa no."
+  locale="it"
+  alternates={alternates}
+>
+  <article class="mx-auto max-w-prosa px-5 pb-8 pt-12 sm:px-8 sm:pt-16">
+    <nav aria-label="Percorso di navigazione" class="text-xs text-piedra-suave">
+      <a href="/it/" class="hover:text-terracota">Pagina iniziale</a>
+      <span aria-hidden="true"> · </span>
+      <a href={toolHref} class="hover:text-terracota">Dove il mare è calmo</a>
+    </nav>
+
+    <p class="mt-4 text-xs font-semibold uppercase tracking-[0.25em] text-oro">Calma Society · Minorca</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Come calcoliamo la calma</h1>
+    <p class="lead mt-5">
+      Dietro la mappa quotidiana c'è un modello semplice e aperto. Lo spieghiamo qui senza righe
+      in piccolo: che cosa misura, come funziona e, soprattutto, che cosa <em>non</em> misura.
+    </p>
+
+    <div class="article-body mt-10">
+      <h2>Che cosa misuriamo (e che cosa no)</h2>
+      <p>
+        Misuriamo il <strong>riparo del mare dal vento</strong>: quanto ogni cala è protetta dal
+        vento previsto per oggi, comunicato in tre fasce — <strong>mare calmo</strong>,
+        <strong>un po' di onda</strong> e <strong>mare mosso</strong>. È una stima editoriale
+        indicativa per aiutarla a scegliere una cala con l'acqua serena.
+      </p>
+      <p>
+        <strong>Non misuriamo la sicurezza della balneazione.</strong> Questa previsione non tiene
+        conto delle correnti, dei fondali né degli altri pericoli, e non sostituisce le bandiere
+        delle spiagge né il giudizio dei bagnini. È una guida per trovare la calma, non un avviso
+        ufficiale.
+      </p>
+
+      <h2>Come lo calcoliamo, passo per passo</h2>
+      <ol>
+        <li>
+          <strong>Il vento del giorno.</strong> Prendiamo la previsione del vento dell'<strong>AEMET</strong>
+          per il comune di ogni cala: da dove soffia e con quale forza.
+        </li>
+        <li>
+          <strong>L'orientamento della cala.</strong> Ogni cala si apre sul mare in una direzione
+          precisa. Conserviamo questo dato, curato a mano, per ciascuna di esse.
+        </li>
+        <li>
+          <strong>L'incrocio.</strong> Se il vento entra dritto nella cala, il mare si muove e il
+          riparo scende; se la cala volta le spalle al vento, l'acqua si calma. Da questo calcolo
+          ricaviamo la fascia del giorno.
+        </li>
+      </ol>
+      <p>
+        Usiamo fasce invece di una percentuale esatta, ed è una scelta voluta: la previsione del
+        vento ha il suo margine e il vento può girare nel pomeriggio. Le fasce sono più oneste.
+      </p>
+
+      <h2>La previsione dei prossimi giorni</h2>
+      <p>
+        Oltre al bollettino di oggi, può far scorrere la <strong>linea temporale</strong> per
+        vedere come cambia il mare di ogni cala nei prossimi giorni, divisa fra mattina e
+        pomeriggio. Il vento generale e lo stato delle cale cambiano con lei mentre sposta il
+        cursore.
+      </p>
+
+      <h2>Fonti e aggiornamenti</h2>
+      <p>
+        Il vento viene dall'<strong>AEMET</strong> (dati ufficiali, aggiornati ogni giorno e sempre
+        datati). Il contorno della mappa viene da <strong>OpenStreetMap</strong>. Quando un giorno
+        non riusciamo ad aggiornare, conserviamo l'ultimo bollettino disponibile e lo segnaliamo:
+        non mostriamo mai un falso «oggi».
+      </p>
+
+      <h2>Limiti onesti</h2>
+      <ul>
+        <li>Non misura le correnti, i fondali né i pericoli della balneazione.</li>
+        <li>Non rileva le meduse: quando segnaliamo una cala, diciamo che il vento spinge verso di lei, non che ce ne siano.</li>
+        <li>Non è un avviso di sicurezza e non sostituisce le bandiere né i bagnini.</li>
+        <li>Molte cale non hanno servizio di salvataggio: presti la massima attenzione.</li>
+      </ul>
+
+      <h2>Domande frequenti</h2>
+      {faqs.map((f) => (
+        <div class="mt-6">
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
+
+      <p class="mt-10">
+        <a href={toolHref} class="font-medium">← Vedi la previsione delle cale di oggi</a>
+      </p>
+    </div>
+
+    <JsonLd schema={jsonLd} />
+  </article>
+</BaseLayout>

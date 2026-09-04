@@ -1,5 +1,101 @@
 [
   {
+    "translationKey": "que-hacer-a-caballo-costa-norte",
+    "title": "Ride the north coast on horseback",
+    "startDate": "2026-01-01",
+    "endDate": "2026-12-31",
+    "zone": "oeste",
+    "category": "que-hacer"
+  },
+  {
+    "translationKey": "que-hacer-aves-salbufera-des-grau",
+    "title": "Watch birds at s'Albufera des Grau",
+    "startDate": "2026-01-01",
+    "endDate": "2026-12-31",
+    "zone": "este",
+    "category": "que-hacer"
+  },
+  {
+    "translationKey": "que-hacer-cami-de-cavalls",
+    "title": "Walk a stage of the Camí de Cavalls",
+    "startDate": "2026-01-01",
+    "endDate": "2026-12-31",
+    "zone": "varios",
+    "category": "que-hacer"
+  },
+  {
+    "translationKey": "que-hacer-faro-favaritx",
+    "title": "Reach the Favàritx lighthouse at dusk",
+    "startDate": "2026-01-01",
+    "endDate": "2026-12-31",
+    "zone": "este",
+    "category": "que-hacer"
+  },
+  {
+    "translationKey": "que-hacer-fortalesa-la-mola",
+    "title": "Get lost inside the La Mola fortress",
+    "startDate": "2026-01-01",
+    "endDate": "2026-12-31",
+    "zone": "este",
+    "category": "que-hacer"
+  },
+  {
+    "translationKey": "que-hacer-gin-xoriguer",
+    "title": "Visit the gin distillery on Maó harbour",
+    "startDate": "2026-01-01",
+    "endDate": "2026-12-31",
+    "zone": "este",
+    "category": "que-hacer"
+  },
+  {
+    "translationKey": "que-hacer-lithica-pedreres",
+    "title": "Descend into the Lithica quarries",
+    "startDate": "2026-01-01",
+    "endDate": "2026-12-31",
+    "zone": "oeste",
+    "category": "que-hacer"
+  },
+  {
+    "translationKey": "que-hacer-menorca-talayotica",
+    "title": "Step into Talayotic Menorca",
+    "startDate": "2026-01-01",
+    "endDate": "2026-12-31",
+    "zone": "sur-centro",
+    "category": "que-hacer"
+  },
+  {
+    "translationKey": "que-hacer-mercat-ciutadella",
+    "title": "Shop at Ciutadella's municipal market",
+    "startDate": "2026-01-01",
+    "endDate": "2026-12-31",
+    "zone": "oeste",
+    "category": "que-hacer"
+  },
+  {
+    "translationKey": "que-hacer-monte-toro",
+    "title": "Climb Monte Toro and see the whole island",
+    "startDate": "2026-01-01",
+    "endDate": "2026-12-31",
+    "zone": "centro",
+    "category": "que-hacer"
+  },
+  {
+    "translationKey": "que-hacer-queso-dop-subaida",
+    "title": "Taste Mahón-Menorca cheese at the dairy",
+    "startDate": "2026-01-01",
+    "endDate": "2026-12-31",
+    "zone": "centro",
+    "category": "que-hacer"
+  },
+  {
+    "translationKey": "que-hacer-ruta-del-vino",
+    "title": "Follow the Menorca wine route",
+    "startDate": "2026-01-01",
+    "endDate": "2026-12-31",
+    "zone": "sur-este",
+    "category": "que-hacer"
+  },
+  {
     "translationKey": "cavalcada-reis-menorca",
     "title": "Three Kings Parade",
     "startDate": "2026-01-05",
@@ -66,6 +162,30 @@
     "endDate": "2026-04-05",
     "zone": "varios",
     "category": "cultura"
+  },
+  {
+    "translationKey": "que-hacer-kayak-snorkel-reserva-nord",
+    "title": "Paddle out into the Northern Marine Reserve",
+    "startDate": "2026-04-01",
+    "endDate": "2026-10-31",
+    "zone": "norte",
+    "category": "que-hacer"
+  },
+  {
+    "translationKey": "que-hacer-llatzeret-de-mao",
+    "title": "Cross by boat to the Maó Lazaretto",
+    "startDate": "2026-04-01",
+    "endDate": "2026-10-31",
+    "zone": "este",
+    "category": "que-hacer"
+  },
+  {
+    "translationKey": "que-hacer-llaut-costa-norte",
+    "title": "Sail the north coast in a Menorcan llaüt",
+    "startDate": "2026-04-01",
+    "endDate": "2026-10-31",
+    "zone": "norte",
+    "category": "que-hacer"
   },
   {
     "translationKey": "cova-den-xoroi-musica-atardecer",
@@ -524,6 +644,14 @@
     "category": "concierto"
   },
   {
+    "translationKey": "mostra-cuina-menorquina",
+    "title": "Mostra de Cuina Menorquina: the island's kitchen on show",
+    "startDate": "2026-09-18",
+    "endDate": "2026-10-04",
+    "zone": "varios",
+    "category": "gastronomia"
+  },
+  {
     "translationKey": "festes-calan-porter-alaior",
     "title": "Cala'n Porter Festival",
     "startDate": "2026-09-19",
@@ -534,8 +662,8 @@
   {
     "translationKey": "fira-arrels-es-mercadal",
     "title": "Fira Arrels (Roots Fair)",
-    "startDate": "2026-09-20",
-    "endDate": "2026-09-21",
+    "startDate": "2026-09-19",
+    "endDate": "2026-09-20",
     "zone": "centro",
     "category": "gastronomia"
   },
@@ -560,6 +688,14 @@
     "startDate": "2026-09-27",
     "zone": "varios",
     "category": "deporte"
+  },
+  {
+    "translationKey": "teatre-principal-mao-tardor-hivern",
+    "title": "Autumn–winter season at the Teatre Principal in Maó",
+    "startDate": "2026-10-02",
+    "endDate": "2026-12-29",
+    "zone": "este",
+    "category": "cultura"
   },
   {
     "translationKey": "jornades-europees-patrimoni",
@@ -645,6 +781,14 @@
     "startDate": "2026-12-05",
     "endDate": "2026-12-08",
     "zone": "este",
+    "category": "mercado"
+  },
+  {
+    "translationKey": "fires-nadal-menorca",
+    "title": "Christmas fairs and markets around the villages of Menorca",
+    "startDate": "2026-12-05",
+    "endDate": "2026-12-24",
+    "zone": "varios",
     "category": "mercado"
   }
 ]

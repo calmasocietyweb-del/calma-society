@@ -8,6 +8,7 @@
  */
 import type { PlannerPlace, PlannerZone, BaseZone } from "../types.ts";
 import type { Survey } from "../survey.ts";
+import type { Lang } from "../strings.ts";
 import { affinity, estimateTravelMin } from "./interests.ts";
 import { surveySeed, pickRotating } from "./seed.ts";
 
@@ -22,7 +23,12 @@ export interface ClusterInfo {
 export interface DaySkeleton {
   dayIndex: number;
   dayTypeKey: string;
-  label: { es: string; en: string; de: string; fr: string };
+  /* `Record<Lang, string>` y NO un objeto de claves escritas a mano: con
+     `{ es; en; de; fr }` el italiano y el portugués habrían entrado sin que el
+     compilador dijera nada, y el TÍTULO DE CADA DÍA —lo más visible del plan—
+     se habría servido en español. Ampliar `Lang` ahora enumera aquí lo que
+     falta (CLAUDE.md §11). */
+  label: Record<Lang, string>;
   zone: PlannerZone | "base" | "cercano-aeropuerto";
   cluster?: string;
 }
@@ -65,15 +71,15 @@ export function rankClusters(s: Survey, base: BaseZone, dataset: PlannerPlace[])
 }
 
 // Etiqueta y clave de tipo-de-día por zona (cruza con src/data/dayTypes.ts).
-const ZONE_DAY: Record<PlannerZone, { key: string; es: string; en: string; de: string; fr: string }> = {
-  "sur-oeste": { key: "calas-suroeste", es: "Día de calas del suroeste", en: "Southwest coves day", de: "Tag der Buchten im Südwesten", fr: "Jour des criques du sud-ouest" },
-  "sur-centro": { key: "familiar", es: "Día de playas del sur-centro", en: "South-central beaches day", de: "Tag der Strände im Süden der Inselmitte", fr: "Jour des plages du sud-centre" },
-  "sur-este": { key: "sureste-tranquilo", es: "Día del sureste tranquilo", en: "Quiet south-east day", de: "Tag im ruhigen Südosten", fr: "Jour dans le sud-est tranquille" },
-  norte: { key: "norte-agreste", es: "Día del norte agreste", en: "Wild north day", de: "Tag im rauen Norden", fr: "Jour dans le nord sauvage" },
-  oeste: { key: "calas-suroeste", es: "Día de Ciutadella y el oeste", en: "Ciutadella & the west day", de: "Tag in Ciutadella und im Westen", fr: "Jour à Ciutadella et dans l'ouest" },
-  este: { key: "sureste-tranquilo", es: "Día de Maó y el este", en: "Maó & the east day", de: "Tag in Mahón und im Osten", fr: "Jour à Maó et dans l'est" },
-  centro: { key: "cultura-talayotica", es: "Día de interior y cultura", en: "Inland & culture day", de: "Tag im Landesinneren und für Kultur", fr: "Jour dans l'intérieur des terres et la culture" },
-  "eje-me1": { key: "cultura-talayotica", es: "Día de cultura en el eje Me-1", en: "Culture along the Me-1 day", de: "Kulturtag entlang der Me-1", fr: "Jour de culture sur l'axe Me-1" },
+const ZONE_DAY: Record<PlannerZone, { key: string } & Record<Lang, string>> = {
+  "sur-oeste": { key: "calas-suroeste", es: "Día de calas del suroeste", en: "Southwest coves day", de: "Tag der Buchten im Südwesten", fr: "Jour des criques du sud-ouest", it: "Giornata delle cale del sud-ovest", pt: "Dia das enseadas do sudoeste" },
+  "sur-centro": { key: "familiar", es: "Día de playas del sur-centro", en: "South-central beaches day", de: "Tag der Strände im Süden der Inselmitte", fr: "Jour des plages du sud-centre", it: "Giornata delle spiagge del sud-centro", pt: "Dia das praias do sul-centro" },
+  "sur-este": { key: "sureste-tranquilo", es: "Día del sureste tranquilo", en: "Quiet south-east day", de: "Tag im ruhigen Südosten", fr: "Jour dans le sud-est tranquille", it: "Giornata del sud-est tranquillo", pt: "Dia do sudeste tranquilo" },
+  norte: { key: "norte-agreste", es: "Día del norte agreste", en: "Wild north day", de: "Tag im rauen Norden", fr: "Jour dans le nord sauvage", it: "Giornata del nord selvaggio", pt: "Dia do norte agreste" },
+  oeste: { key: "calas-suroeste", es: "Día de Ciutadella y el oeste", en: "Ciutadella & the west day", de: "Tag in Ciutadella und im Westen", fr: "Jour à Ciutadella et dans l'ouest", it: "Giornata di Ciutadella e dell'ovest", pt: "Dia de Ciutadella e do oeste" },
+  este: { key: "sureste-tranquilo", es: "Día de Maó y el este", en: "Maó & the east day", de: "Tag in Mahón und im Osten", fr: "Jour à Maó et dans l'est", it: "Giornata di Maó e dell'est", pt: "Dia de Maó e do leste" },
+  centro: { key: "cultura-talayotica", es: "Día de interior y cultura", en: "Inland & culture day", de: "Tag im Landesinneren und für Kultur", fr: "Jour dans l'intérieur des terres et la culture", it: "Giornata di entroterra e cultura", pt: "Dia de interior e cultura" },
+  "eje-me1": { key: "cultura-talayotica", es: "Día de cultura en el eje Me-1", en: "Culture along the Me-1 day", de: "Kulturtag entlang der Me-1", fr: "Jour de culture sur l'axe Me-1", it: "Giornata di cultura sull'asse Me-1", pt: "Dia de cultura no eixo Me-1" },
 };
 
 function fullDay(dayIndex: number, info: ClusterInfo, revisit = false): DaySkeleton {
@@ -87,8 +93,10 @@ function fullDay(dayIndex: number, info: ClusterInfo, revisit = false): DaySkele
         en: `More: ${z.en.replace(/ day$/, "")}`,
         de: `Mehr: ${z.de.replace(/^Tag /, "")}`,
         fr: `Encore : ${z.fr.replace(/^Jour /, "")}`,
+        it: `Ancora: ${z.it.replace(/^Giornata (delle |dell'|del |di )?/, "")}`,
+        pt: `Mais: ${z.pt.replace(/^Dia (das |dos |de |do )?/, "")}`,
       }
-    : { es: z.es, en: z.en, de: z.de, fr: z.fr };
+    : { es: z.es, en: z.en, de: z.de, fr: z.fr, it: z.it, pt: z.pt };
   return { dayIndex, dayTypeKey: z.key, label, zone: info.zone, cluster: info.cluster };
 }
 
@@ -116,13 +124,13 @@ function nextCluster(
 }
 
 const ARRIVAL: Pick<DaySkeleton, "dayTypeKey" | "label" | "zone"> = {
-  dayTypeKey: "dia-llegada", zone: "base", label: { es: "Día de llegada", en: "Arrival day", de: "Ankunftstag", fr: "Jour d'arrivée" },
+  dayTypeKey: "dia-llegada", zone: "base", label: { es: "Día de llegada", en: "Arrival day", de: "Ankunftstag", fr: "Jour d'arrivée", it: "Giorno di arrivo", pt: "Dia de chegada" },
 };
 const DEPARTURE: Pick<DaySkeleton, "dayTypeKey" | "label" | "zone"> = {
-  dayTypeKey: "dia-salida", zone: "cercano-aeropuerto", label: { es: "Día de salida", en: "Departure day", de: "Abreisetag", fr: "Jour de départ" },
+  dayTypeKey: "dia-salida", zone: "cercano-aeropuerto", label: { es: "Día de salida", en: "Departure day", de: "Abreisetag", fr: "Jour de départ", it: "Giorno di partenza", pt: "Dia de partida" },
 };
 const COLCHON: Pick<DaySkeleton, "dayTypeKey" | "label" | "zone"> = {
-  dayTypeKey: "relax-lujo", zone: "base", label: { es: "Día colchón (repite tu favorita o descansa)", en: "Buffer day (revisit a favourite or rest)", de: "Pufftag (Lieblingsort wiederholen oder ausruhen)", fr: "Jour tampon (repartez vers votre préférée ou reposez-vous)" },
+  dayTypeKey: "relax-lujo", zone: "base", label: { es: "Día colchón (repite tu favorita o descansa)", en: "Buffer day (revisit a favourite or rest)", de: "Pufftag (Lieblingsort wiederholen oder ausruhen)", fr: "Jour tampon (repartez vers votre préférée ou reposez-vous)", it: "Giorno cuscinetto (torni alla sua preferita o riposi)", pt: "Dia tampão (repita a sua preferida ou descanse)" },
 };
 
 /** Compone el esqueleto día a día respetando las invariantes del PASO 1. */

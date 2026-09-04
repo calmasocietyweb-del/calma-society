@@ -1,0 +1,48 @@
+---
+// "Organizzi il suo viaggio a Minorca" (IT) — pianificatore di itinerari.
+// SEO: oltre al piano interattivo (renderizzato lato client, invisibile ai
+// crawler), la pagina pubblica itinerari STATICI di esempio e una FAQ
+// (PlannerSeoContent) mirati a "cosa fare a Minorca", "itinerario Minorca",
+// "Minorca in 5 giorni".
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PlannerView from "../../components/PlannerView.astro";
+import PlannerSeoContent from "../../components/PlannerSeoContent.astro";
+
+const alternates = {
+  es: "/planificador",
+  en: "/en/trip-planner",
+  fr: "/fr/planificateur",
+  de: "/de/reiseplaner",
+  it: "/it/pianificatore-di-viaggio",
+  pt: "/pt/planeador-de-viagem",
+};
+---
+
+<BaseLayout
+  title="Cosa fare a Minorca: 3, 5 o 7 giorni"
+  description="Cosa fare a Minorca giorno per giorno: il pianificatore costruisce il suo itinerario per vicinanza e senza fretta — cale, tavole scelte con criterio e un piano B se il tempo cambia."
+  locale="it"
+  alternates={alternates}
+>
+  <div class="mx-auto max-w-3xl px-5 pt-12 sm:px-8 sm:pt-16 print:hidden">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-oro">Calma Society · Minorca</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Organizzi il suo viaggio a Minorca</h1>
+    <p class="lead mt-5">
+      Una guida giorno per giorno, concatenata per vicinanza e senza fretta: l'isola al suo
+      ritmo, con il criterio del lusso tranquillo.
+    </p>
+    <p class="mt-5 text-base leading-relaxed text-piedra-suave">
+      Minorca è una <strong>lisca di pesce</strong>: tutto dipende dall'asse Maó–Ciutadella e le
+      cale ne sono le diramazioni. L'errore è zigzagare. Le proponiamo un piano che raggruppa
+      per zone, parte presto verso le cale, lascia margine per il vento e prevede un piano B in
+      caso di maltempo. Lei lo adatta; la decisione finale è sempre sua.
+    </p>
+  </div>
+
+  <div class="mt-8">
+    <PlannerView locale="it" />
+  </div>
+
+  {/* Itinerari statici di esempio + FAQ (SEO/GEO: contenuto reale indicizzabile). */}
+  <PlannerSeoContent locale="it" />
+</BaseLayout>

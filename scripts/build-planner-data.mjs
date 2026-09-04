@@ -96,7 +96,7 @@ function blurbOf(s) {
   return (i > 100 ? cut.slice(0, i) : cut).replace(/[\s,;:.]+$/, "") + "…";
 }
 
-const byLang = { es: [], en: [], fr: [], de: [] };
+const byLang = { es: [], en: [], fr: [], de: [], it: [], pt: [] };
 const statusCount = { published: 0, draft: 0, pending: 0 };
 // NOTA (decisión registrada, jul 2026): el dataset del MOTOR incluye fichas en
 // draft a propósito. No son contenido editorial publicado: son DATOS verificados

@@ -18,7 +18,7 @@
  */
 import type { BaseZone, Weekday, PlannerZone } from "./types.ts";
 
-export type Lang = "es" | "en" | "de" | "fr";
+export type Lang = "es" | "en" | "de" | "fr" | "it" | "pt";
 
 /** Nombres "bonitos" de las zonas base — proper nouns, iguales en todo idioma. */
 export const NICE: Record<BaseZone, string> = {
@@ -874,9 +874,352 @@ const FR: Strings = {
   },
 };
 
+// ── Italiano (voce "lusso tranquillo": sobria, con criterio, senza esclamazioni).
+//    Forma di cortesia LEI nel corpo del testo; le etichette brevi restano neutre
+//    (docs/GLOSARIO-TRADUCCION.md: un rótulo nunca lleva imperativo de cortesía).
+const IT: Strings = {
+  paceName: { relajado: "rilassato", equilibrado: "equilibrato", intenso: "intenso" },
+  weekdayName: {
+    lun: "lunedì", mar: "martedì", mie: "mercoledì", jue: "giovedì",
+    vie: "venerdì", sab: "sabato", dom: "domenica",
+  },
+  monthName: ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"],
+  dayMonth: (day, month) => `${day} ${month}`,
+  listJoin: " e ",
+  zoneName: {
+    oeste: "Ciutadella e l'ovest",
+    "sur-oeste": "le cale del sud-ovest",
+    "sur-centro": "le spiagge del sud-centro",
+    "sur-este": "il sud-est tranquillo",
+    este: "Maó e l'est",
+    norte: "il nord selvaggio",
+    centro: "l'entroterra",
+    "eje-me1": "l'asse della Me-1",
+  },
+  base: {
+    chosenCarlessLimited: (place) =>
+      `Soggiorna a ${place}. Attenzione: senza auto questa base ha trasporti pubblici limitati; valuti transfer o escursioni per spostarsi.`,
+    chosenDefault: (place) =>
+      `Soggiorna a ${place}; il piano si organizza attorno a quella base per ridurre l'auto di ogni giorno.`,
+    ferry: (place) =>
+      `Arriva dal porto di ${place}, quindi la sistemiamo su quel lato per iniziare senza attraversare l'isola.`,
+    carlessCulture:
+      "Senza auto, Maó è la base migliore: l'unico centro con autobus diretto dall'aeroporto e collegamenti con tutta l'isola, ideale per cultura e gastronomia.",
+    carlessBalanced:
+      "Senza auto, Ciutadella è la base più equilibrata: centro storico, atmosfera e autobus verso le cale dell'ovest.",
+    nautica:
+      "Per vela, kayak e immersioni, Fornells e la sua baia protetta sono la migliore base nautica (e un porto di pescatori pieno di fascino).",
+    familySonBou:
+      "In famiglia e con un budget contenuto, Son Bou offre la spiaggia di sabbia più lunga, acque basse e appartamenti con cucina (meglio cenare in autonomia).",
+    familyGaldana:
+      "In famiglia, Cala Galdana è la migliore base balneare: acque calme e poco profonde, posizione centrale sulla costa sud e a una passeggiata da Mitjana.",
+    nightlife:
+      "Per l'atmosfera e la vita notturna, Ciutadella è la prima scelta: centro storico vivo, porto e gastronomia.",
+    quietLuxury:
+      "Per una coppia che cerca calma con criterio, Ciutadella (centro storico o agriturismo nei dintorni) unisce bellezza, gastronomia e accesso alle cale del sud-ovest.",
+    broad:
+      "Se vuole percorrere tutta l'isola, Es Mercadal è la base centrale ed equidistante (i collegamenti migliori), perfetta per raggiungere ogni giorno una costa diversa.",
+    firstTime:
+      "Per una prima volta equilibrata, Ciutadella è la scelta sicura: una città con un'anima, atmosfera e a due passi dalle cale più famose del sud e dell'ovest.",
+    dataDriven: (place, zones) =>
+      `Le proponiamo ${place}: fra le sei basi possibili è quella che avvicina di più ciò che ci ha chiesto (${zones}), così l'auto di ogni giorno è breve invece di attraversare l'isola.`,
+  },
+  arrival: {
+    usefulTime: (time) =>
+      `Ora utile stimata all'arrivo alla base: ${time} (margine aeroporto/transfer incluso).`,
+    stopForSupplies: "Lungo il tragitto si fermi per l'acqua e qualcosa per la colazione (supermercati a Maó, Ciutadella o Alaior).",
+    lightFirstDay: "Il giorno 1 resta leggero e vicino alla base: nessuna cala lontana.",
+    lateArrival: "Arriva tardi: solo logistica e cena nei dintorni. Nessuna visita il primo giorno.",
+    settleIn: "Arrivo e sistemazione",
+    settleInReason: "Posi le valigie e prenda fiato prima di iniziare.",
+    townStroll: "Passeggiata nel centro della base",
+    townStrollReason: "Un primo contatto tranquillo, senza auto.",
+    lunchInBase: "Pranzo tranquillo alla base",
+    lunchInBaseReason: "Vicino all'alloggio.",
+    easyNearbyReason: "Una cala di accesso facile vicino alla base per aprire il viaggio.",
+    lunchNearBase: "Pranzo vicino alla base",
+    lunchNearBaseReason: "Check-in e primo pasto senza fretta.",
+    sunsetNearBase: "Tramonto nei dintorni della base",
+    sunsetNearBaseReason: "Chiuda il primo giorno con calma.",
+    dinnerNearBase: "Cena vicino alla base",
+    dinnerNearBaseReason: "Nessuno spostamento lungo alla fine del viaggio.",
+  },
+  departure: {
+    activityLimit: (time) =>
+      `Ora limite per le attività l'ultimo giorno: ${time}. Poi, verso l'aeroporto con margine.`,
+    minimalPlan: "L'ultimo giorno, programma minimo e vicino all'aeroporto: valigia e un caffè veloce.",
+    islandCrossing:
+      "Rischio di attraversare l'isola: da Ciutadella sono 45 minuti sulla Me-1. Parta con margine, oppure valuti di dormire l'ultima notte più vicino a Maó.",
+    refuel:
+      "Faccia rifornimento prima di riconsegnare l'auto (distributori a Maó e lungo la Me-1, non a ridosso dell'aeroporto).",
+    breakfastPacking: "Colazione con calma e valigia",
+    breakfastPackingReason: "Senza fretta, ma con margine.",
+    shortStroll: "Passeggiata breve vicino alla base o all'aeroporto",
+    shortStrollReason: "Niente cale da raggiungere a piedi né Camí de Cavalls il giorno della partenza.",
+  },
+  intraday: {
+    whatToSee: (joined) => `Da vedere e da fare: ${joined}.`,
+    breakfast: (town) => `Colazione con calma a ${town}`,
+    breakfastReason:
+      "Inizi senza fretta vicino all'alloggio (prenda acqua e, se in programma c'è una cala, arrivi presto).",
+    anchorFallbackReason: (name) => `${name}: corrisponde al suo profilo e si trova nel settore della giornata.`,
+    lunchAt: (name) => `Pranzo a ${name}`,
+    lunchAtReason: "Prodotti locali, scelti con criterio.",
+    lunchInTown: (name) => `Pranzo a ${name}`,
+    lunchInTownReason: "Cerchi una terrazza tranquilla in paese; prodotti locali.",
+    lunchLocal: "Pranzo con prodotti locali in zona",
+    lunchLocalReason: "Pausa di mezzogiorno; eviti di guidare con il sole alto.",
+    dinnerStroll: (name) => `Passeggi per ${name} e ceni lì`,
+    dinnerStrollAnchorReason: "Cena in paese dopo la giornata, senza spostamenti.",
+    dinnerStrollHighlightsReason: (joined) => `Lungo il percorso, da non perdere: ${joined}.`,
+    dinnerStrollDefaultReason: "Passeggi senza fretta nel centro storico e scelga una terrazza per cenare.",
+    dinnerAt: (name) => `Cena a ${name}`,
+    dinnerAtReason: "Una cena scelta con criterio in zona.",
+    dinnerLocal: "Cena tranquilla in zona",
+    dinnerLocalReason: "Chiuda la giornata senza spostamenti lunghi.",
+    reservation: (name) => `Prenoti ${name} con anticipo.`,
+    parkingClosed: (name, shuttle) => `${name}: circolazione limitata in estate. ${shuttle}`,
+    parkingClosedFallback: "Prenda la navetta o ci vada a piedi.",
+    goEarly: (name) => `Vada presto a ${name}: il parcheggio si riempie in fretta.`,
+    effort: (name, note) => `${name} richiede una buona forma fisica: ${note}.`,
+    effortFallbackNote: "camminata o terreno impegnativo",
+    waterShade: (name) => `Porti acqua, un riparo dal sole e scarpe comode per ${name}.`,
+    confirmHours: (name) => `Confermi l'orario di ${name} il giorno della visita.`,
+    pace: (pace, dropped) =>
+      `Per non sovraccaricare la giornata (ritmo ${pace}) ho lasciato fuori: ${dropped}. Potrà recuperarla un altro giorno.`,
+    closedThatDay: (name, weekday) =>
+      `${name} è chiuso quel giorno (${weekday}): lo lasciamo fuori e scegliamo un'alternativa aperta.`,
+  },
+  planb: {
+    longLunch: "Pranzo lungo scelto con criterio (l'ancora della giornata)",
+    longLunchReason: "Con pioggia o caldo forte, il pranzo occupa la fascia centrale, dalle 13 alle 15.",
+    indoorReason: (needsReservation) =>
+      `Luogo al chiuso o coperto in zona${needsReservation ? " (è necessaria la prenotazione)" : ""}.`,
+    fewIndoors:
+      "Pochi luoghi al chiuso in questa zona per una giornata di pioggia: valuti l'asse della Me-1 (musei di città, caseificio) o una giornata in città (Ciutadella/Maó).",
+    mondayClosed:
+      "È lunedì: molti musei e caseifici chiudono. Confermi gli orari; restano aperti la cattedrale, i mercati, i belvedere e le grotte-belvedere.",
+    extremeHeat:
+      "Con caldo estremo (>34°): cala molto presto (prima delle 12) e dalle 18 in poi; a mezzogiorno, al coperto o riposo.",
+  },
+  wind: {
+    tramontana: (backup) =>
+      `Con la Tramontana (vento del nord, il più frequente a Minorca) questa costa sarà mossa. Consulti il bollettino quella mattina${backup ? `; un'alternativa riparata nel sud: ${backup}` : ""}.`,
+    migjorn: (backup) =>
+      `Il sud di solito è protetto dalla Tramontana; ma con vento di Migjorn (da sud) cerchi il nord${backup ? `: ${backup}` : ""}. Consulti il bollettino ogni mattina.`,
+  },
+  agenda: {
+    inZone: (title, date) =>
+      `Coincide con ${title} in questa zona (${date}): prenoti alloggio e tavolo con anticipo e metta in conto molta gente.`,
+    otherZone: (title, date, zone) =>
+      `Il ${date} c'è ${title} (${zone}). Può riorganizzare una giornata per vederla, oppure semplicemente tenerne conto.`,
+  },
+  engine: {
+    rentalCar:
+      "Prenoti l'auto a noleggio con anticipo: in estate la flotta si esaurisce e i prezzi salgono.",
+    splitBase: (days, base, splitBase) =>
+      `Con ${days} giorni e interessi su coste opposte, valuti di dividere il soggiorno: metà a ${base}, metà a ${splitBase}.`,
+    carless:
+      "Senza auto: alcune cale imperdibili richiedono autobus più transfer, oppure un'escursione in barca. Lo segnaliamo giorno per giorno.",
+    accessibilityFilter: (level, efforts) =>
+      `Piano filtrato per livello di sforzo (${level}): solo luoghi di livello ${efforts}. Le spiagge con bagno assistito sono A1 (Son Bou, Punta Prima, Es Grau).`,
+    accessibilityWindow:
+      "I servizi di bagno assistito (sedia anfibia, personale) sono attivi dal 1º maggio al 31 ottobre. Fuori da quelle date, confermi con il comune.",
+    freeDay: "Giorno libero: torni alla sua cala preferita o riposi",
+    freeDayReason: "Un margine per riordinare la giornata per vento o per stanchezza.",
+    busTransferDay: (place: string) =>
+      `Senza auto: raggiunga ${place} con un transfer porta a porta di Menorca Bus (questa zona non ha un autobus diretto comodo).`,
+    budgetShaped: (budget) =>
+      budget === "ajustado"
+        ? "Con un budget contenuto il piano si appoggia su ciò che non si paga: cale, belvedere e tratti del Camí de Cavalls. A Minorca non è accontentarsi — è quasi tutto il meglio."
+        : budget === "alto"
+          ? "Con un budget alto il piano osa ciò che va prenotato: uscite in mare, tavole d'autore e benessere. Prenoti con anticipo in alta stagione."
+          : "Il piano mescola l'accesso libero con qualche esperienza a pagamento; può alzare o abbassare l'asticella cambiando il budget nel questionario.",
+    costDisclaimer:
+      "I costi sono una FASCIA indicativa (gratis · € · €€ · €€€), non una tariffa: confermi il prezzo del giorno sul sito di ogni luogo.",
+  },
+  costName: { gratis: "gratis", "€": "economico", "€€": "a pagamento", "€€€": "alto" },
+  dayCost: {
+    free: "Nessun ingresso a pagamento",
+    paid: (n) => (n === 1 ? "1 tappa a pagamento" : `${n} tappe a pagamento`),
+  },
+};
+
+// ── Português europeu (voz "luxo tranquilo": sóbria, com critério, sem
+//    exclamações). Tratamento na 3.ª pessoa no corpo do texto; infinitivo nos
+//    rótulos (docs/GLOSARIO-TRADUCCION.md). PT-PT, nunca PT-BR: autocarro,
+//    aluguer, pequeno-almoço, esplanada, concelho.
+const PT: Strings = {
+  paceName: { relajado: "relaxado", equilibrado: "equilibrado", intenso: "intenso" },
+  weekdayName: {
+    lun: "segunda-feira", mar: "terça-feira", mie: "quarta-feira", jue: "quinta-feira",
+    vie: "sexta-feira", sab: "sábado", dom: "domingo",
+  },
+  monthName: ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"],
+  dayMonth: (day, month) => `${day} de ${month}`,
+  listJoin: " e ",
+  zoneName: {
+    oeste: "Ciutadella e o oeste",
+    "sur-oeste": "as enseadas do sudoeste",
+    "sur-centro": "as praias do sul-centro",
+    "sur-este": "o sudeste tranquilo",
+    este: "Maó e o leste",
+    norte: "o norte agreste",
+    centro: "o interior",
+    "eje-me1": "o eixo da Me-1",
+  },
+  base: {
+    chosenCarlessLimited: (place) =>
+      `Fica alojado em ${place}. Atenção: sem carro, esta base tem transportes públicos limitados; pondere transfers ou excursões para se deslocar.`,
+    chosenDefault: (place) =>
+      `Fica alojado em ${place}; o plano organiza-se à volta dessa base para reduzir o carro de cada dia.`,
+    ferry: (place) =>
+      `Chega pelo porto de ${place}, por isso propomos ficar desse lado para começar sem atravessar a ilha.`,
+    carlessCulture:
+      "Sem carro, Maó é a melhor base: o único núcleo com autocarro direto do aeroporto e ligações a toda a ilha, ideal para cultura e gastronomia.",
+    carlessBalanced:
+      "Sem carro, Ciutadella é a base mais equilibrada: centro histórico, ambiente e autocarros para as enseadas do oeste.",
+    nautica:
+      "Para vela, caiaque e mergulho, Fornells e a sua baía protegida são a melhor base náutica (e um porto piscatório cheio de encanto).",
+    familySonBou:
+      "Em família e com orçamento apertado, Son Bou oferece o areal mais longo, águas pouco profundas e apartamentos com cozinha (melhor jantar em casa).",
+    familyGaldana:
+      "Em família, Cala Galdana é a melhor base balnear: águas calmas e pouco profundas, posição central na costa sul e a um passeio de Mitjana.",
+    nightlife:
+      "Para ambiente e vida noturna, Ciutadella é a primeira escolha: centro histórico vivo, porto e gastronomia.",
+    quietLuxury:
+      "Para um casal que procura calma com critério, Ciutadella (centro histórico ou agroturismo nos arredores) junta beleza, gastronomia e acesso às enseadas do sudoeste.",
+    broad:
+      "Se quiser percorrer toda a ilha, Es Mercadal é a base central e equidistante (as melhores ligações), perfeita para sair todos os dias para uma costa diferente.",
+    firstTime:
+      "Para uma primeira vez equilibrada, Ciutadella é a recomendação segura: uma cidade com alma, ambiente e à distância das enseadas mais famosas do sul e do oeste.",
+    dataDriven: (place, zones) =>
+      `Propomos ${place}: das seis bases possíveis, é a que deixa mais perto o que nos pediu (${zones}), para que o carro de cada dia seja curto em vez de atravessar a ilha.`,
+  },
+  arrival: {
+    usefulTime: (time) =>
+      `Hora útil estimada à chegada à base: ${time} (inclui a margem de aeroporto/transfer).`,
+    stopForSupplies: "Pelo caminho, pare para comprar água e algo para o pequeno-almoço (supermercados em Maó, Ciutadella ou Alaior).",
+    lightFirstDay: "O dia 1 é leve e perto da base: nada de enseadas distantes.",
+    lateArrival: "Chega tarde: apenas logística e jantar por perto. Nada de visitas no primeiro dia.",
+    settleIn: "Chegada e instalação",
+    settleInReason: "Deixe as malas e respire antes de começar.",
+    townStroll: "Passeio pelo centro da base",
+    townStrollReason: "Um primeiro contacto tranquilo, sem carro.",
+    lunchInBase: "Almoço tranquilo na base",
+    lunchInBaseReason: "Perto do alojamento.",
+    easyNearbyReason: "Uma enseada de acesso fácil perto da base para estrear a viagem.",
+    lunchNearBase: "Almoço perto da base",
+    lunchNearBaseReason: "Check-in e primeira refeição sem pressa.",
+    sunsetNearBase: "Pôr do sol nos arredores da base",
+    sunsetNearBaseReason: "Feche o primeiro dia com calma.",
+    dinnerNearBase: "Jantar perto da base",
+    dinnerNearBaseReason: "Sem deslocações longas no fim da viagem.",
+  },
+  departure: {
+    activityLimit: (time) =>
+      `Hora limite de atividade no último dia: ${time}. Depois, direto ao aeroporto com margem.`,
+    minimalPlan: "No último dia, plano mínimo e perto do aeroporto: mala e um café rápido.",
+    islandCrossing:
+      "Risco de atravessar a ilha: de Ciutadella são 45 min pela Me-1. Saia com folga ou pondere dormir a última noite mais perto de Maó.",
+    refuel:
+      "Abasteça antes de devolver o carro (estações de serviço em Maó e junto à Me-1, não coladas ao aeroporto).",
+    breakfastPacking: "Pequeno-almoço com calma e mala",
+    breakfastPackingReason: "Sem pressas, mas com margem.",
+    shortStroll: "Passeio curto perto da base ou do aeroporto",
+    shortStrollReason: "Nada de enseadas a pé nem de Camí de Cavalls no dia da partida.",
+  },
+  intraday: {
+    whatToSee: (joined) => `O que ver e fazer: ${joined}.`,
+    breakfast: (town) => `Pequeno-almoço com calma em ${town}`,
+    breakfastReason:
+      "Comece sem pressa perto do alojamento (leve água e, se houver enseada no programa, chegue cedo).",
+    anchorFallbackReason: (name) => `${name}: encaixa no seu perfil e fica no setor do dia.`,
+    lunchAt: (name) => `Almoço em ${name}`,
+    lunchAtReason: "Produto local, escolhido com critério.",
+    lunchInTown: (name) => `Almoçar em ${name}`,
+    lunchInTownReason: "Procure uma esplanada tranquila na vila; produto local.",
+    lunchLocal: "Almoço com produto local na zona",
+    lunchLocalReason: "Pausa de meio-dia; evite conduzir com o sol alto.",
+    dinnerStroll: (name) => `Passeie por ${name} e jante lá`,
+    dinnerStrollAnchorReason: "Jantar na vila depois da jornada, sem deslocações.",
+    dinnerStrollHighlightsReason: (joined) => `A caminho, não perca: ${joined}.`,
+    dinnerStrollDefaultReason: "Passeie sem pressa pelo centro histórico e escolha uma esplanada para jantar.",
+    dinnerAt: (name) => `Jantar em ${name}`,
+    dinnerAtReason: "Um jantar escolhido com critério na zona.",
+    dinnerLocal: "Jantar tranquilo na zona",
+    dinnerLocalReason: "Feche o dia sem deslocações longas.",
+    reservation: (name) => `Reserve ${name} com antecedência.`,
+    parkingClosed: (name, shuttle) => `${name}: circulação restrita no verão. ${shuttle}`,
+    parkingClosedFallback: "Use o autocarro de ligação ou vá a pé.",
+    goEarly: (name) => `Vá cedo a ${name}: o estacionamento enche depressa.`,
+    effort: (name, note) => `${name} exige boa forma física: ${note}.`,
+    effortFallbackNote: "caminhada ou terreno exigente",
+    waterShade: (name) => `Leve água, sombra e calçado confortável para ${name}.`,
+    confirmHours: (name) => `Confirme o horário de ${name} no dia da visita.`,
+    pace: (pace, dropped) =>
+      `Para não sobrecarregar o dia (ritmo ${pace}) deixei de fora: ${dropped}. Pode recuperá-la noutro dia.`,
+    closedThatDay: (name, weekday) =>
+      `${name} encerra nesse dia (${weekday}): deixámo-lo de fora e escolhemos uma alternativa aberta.`,
+  },
+  planb: {
+    longLunch: "Almoço longo escolhido com critério (âncora do dia)",
+    longLunchReason: "Com chuva ou calor, o almoço ocupa o bloco central, das 13h às 15h.",
+    indoorReason: (needsReservation) =>
+      `Interior ou local coberto na zona${needsReservation ? " (exige reserva)" : ""}.`,
+    fewIndoors:
+      "Poucos interiores nesta zona para um dia de chuva: pondere o eixo da Me-1 (museus de cidade, queijaria) ou um dia de cidade (Ciutadella/Maó).",
+    mondayClosed:
+      "É segunda-feira: muitos museus e queijarias encerram. Confirme os horários; abrem a catedral, os mercados, os miradouros e as grutas-miradouro.",
+    extremeHeat:
+      "Com calor extremo (>34°): enseada muito cedo (antes das 12h) e a partir das 18h; ao meio-dia, à sombra ou de sesta.",
+  },
+  wind: {
+    tramontana: (backup) =>
+      `Com Tramontana (vento de norte, o mais frequente em Menorca) esta costa estará agitada. Consulte a previsão nessa manhã${backup ? `; alternativa abrigada no sul: ${backup}` : ""}.`,
+    migjorn: (backup) =>
+      `O sul costuma estar protegido da Tramontana; mas com vento de Migjorn (de sul) procure o norte${backup ? `: ${backup}` : ""}. Consulte a previsão todas as manhãs.`,
+  },
+  agenda: {
+    inZone: (title, date) =>
+      `Coincide com ${title} nesta zona (${date}): reserve alojamento e mesa com antecedência e conte com muita gente.`,
+    otherZone: (title, date, zone) =>
+      `A ${date} há ${title} (${zone}). Pode reorganizar um dia para a ver, ou apenas tê-la em conta.`,
+  },
+  engine: {
+    rentalCar:
+      "Reserve o carro de aluguer com antecedência: no verão a frota esgota-se e os preços disparam.",
+    splitBase: (days, base, splitBase) =>
+      `Com ${days} dias e interesses em costas opostas, pondere dividir a estadia: metade em ${base}, metade em ${splitBase}.`,
+    carless:
+      "Sem carro: algumas enseadas de topo exigem autocarro mais transfer, ou uma excursão de barco. Assinalamo-lo em cada dia.",
+    accessibilityFilter: (level, efforts) =>
+      `Plano filtrado por esforço (${level}): apenas locais de nível ${efforts}. As praias com banho assistido são A1 (Son Bou, Punta Prima, Es Grau).`,
+    accessibilityWindow:
+      "Os serviços de banho assistido (cadeira anfíbia, pessoal) funcionam de 1 de maio a 31 de outubro. Fora dessas datas, confirme com a câmara municipal.",
+    freeDay: "Dia livre: repita a sua enseada preferida ou descanse",
+    freeDayReason: "Margem para reorganizar por causa do vento ou do cansaço.",
+    busTransferDay: (place: string) =>
+      `Sem carro: chegue a ${place} com um transfer porta a porta da Menorca Bus (esta zona não tem autocarro direto cómodo).`,
+    budgetShaped: (budget) =>
+      budget === "ajustado"
+        ? "Com orçamento apertado, o plano apoia-se no que não se paga: enseadas, miradouros e troços do Camí de Cavalls. Em Menorca isso não é contentar-se — é quase tudo o que há de melhor."
+        : budget === "alto"
+          ? "Com orçamento alto, o plano arrisca no que é preciso reservar: sair para o mar, mesas de autor e bem-estar. Reserve com antecedência na época alta."
+          : "O plano mistura o acesso livre com alguma experiência paga; pode subir ou baixar a fasquia mudando o orçamento no questionário.",
+    costDisclaimer:
+      "Os custos são uma FAIXA indicativa (grátis · € · €€ · €€€), não uma tarifa: confirme o preço do dia no site de cada local.",
+  },
+  costName: { gratis: "grátis", "€": "económico", "€€": "pago", "€€€": "alto" },
+  dayCost: {
+    free: "Sem entradas pagas",
+    paid: (n) => (n === 1 ? "1 paragem paga" : `${n} paragens pagas`),
+  },
+};
+
 /** Devuelve el diccionario de textos del idioma pedido (default español). */
 export function S(lang: Lang): Strings {
   /* Registro por idioma, NO un ternario: con `lang === "en" ? EN : ES` el alemán
      habría generado TODO el plan en español, sin ningún aviso (KAN-134). */
-  return ({ es: ES, en: EN, de: DE, fr: FR } as Record<Lang, Strings>)[lang] ?? ES;
+  return ({ es: ES, en: EN, de: DE, fr: FR, it: IT, pt: PT } as Record<Lang, Strings>)[lang] ?? ES;
 }

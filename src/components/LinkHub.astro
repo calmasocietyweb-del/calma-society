@@ -13,7 +13,7 @@ import { SITE, type Locale } from "../config/site";
 
 // Idiomas con hub publicado (despliegue por mercados; CLAUDE.md §11: los
 // idiomas del componente se declaran con Extract, nunca con ternarios).
-type HubLocale = Extract<Locale, "es" | "en" | "fr" | "de">;
+type HubLocale = Extract<Locale, "es" | "en" | "fr" | "de" | "it" | "pt">;
 
 interface Props {
   locale: HubLocale;
@@ -80,6 +80,27 @@ const LINKS: Record<HubLocale, Item[]> = {
     { icon: "guide", href: "/de/newsletter", event: "bio-society", label: "Der Society beitreten", text: "Das Beste von Menorca, nur wenn es sich lohnt. Ohne Lärm.", featured: true },
     { icon: "magazine", href: "/de/", event: "bio-magazin", label: "Das Magazin", text: "Calma Society in Gänze: Menorca, ohne Eile, mit dem Blick des stillen Luxus." },
   ],
+  // IT: las CUATRO herramientas existen ya en italiano (4-sep-2026). NO se enlaza
+  // la guía de las calas (el lead magnet): no hay PDF ni grupo de MailerLite en
+  // italiano, así que la tarjeta destacada capta hacia /it/newsletter sin prometer
+  // una guía que todavía no se entrega — mismo criterio que en FR y DE.
+  it: [
+    { icon: "planner", href: "/it/pianificatore-di-viaggio", event: "bio-pianificatore", label: "Pianificatore di viaggio", text: "Il suo itinerario su misura, giorno per giorno, in base a ciò che le piace." },
+    { icon: "calm", href: "/it/dove-il-mare-e-calmo", event: "bio-mare-calmo", label: "Dove il mare è calmo", text: "Quali cale restano riparate oggi, a seconda del vento." },
+    { icon: "sunset", href: "/it/tramonti-e-cocktail", event: "bio-tramonti", label: "Tramonti & cocktail", text: "I tramonti più belli e dove bere qualcosa, con criterio." },
+    { icon: "agenda", href: "/it/eventi", event: "bio-eventi", label: "L'agenda di Minorca", text: "Feste, concerti e mercati. Cosa succede sull'isola, sempre aggiornato." },
+    { icon: "guide", href: "/it/newsletter", event: "bio-society-it", label: "Entra nella Society", text: "Il meglio di Minorca, solo quando ne vale la pena. Senza rumore.", featured: true },
+    { icon: "magazine", href: "/it/", event: "bio-rivista", label: "La rivista", text: "Tutta Calma Society: Minorca, senza fretta, con lo sguardo del lusso tranquillo." },
+  ],
+  // PT: mismo caso que IT — las cuatro herramientas existen, el lead magnet no.
+  pt: [
+    { icon: "planner", href: "/pt/planeador-de-viagem", event: "bio-planeador", label: "Planeador de viagem", text: "O seu itinerário à medida, dia a dia, segundo aquilo de que gosta." },
+    { icon: "calm", href: "/pt/onde-o-mar-esta-calmo", event: "bio-mar-calmo-pt", label: "Onde o mar está calmo", text: "Que enseadas ficam abrigadas hoje, consoante o vento." },
+    { icon: "sunset", href: "/pt/pores-do-sol-e-copos", event: "bio-pores-do-sol", label: "Pores do sol & copos", text: "Os melhores pores do sol e onde beber um copo, com critério." },
+    { icon: "agenda", href: "/pt/agenda", event: "bio-agenda-pt", label: "A agenda de Menorca", text: "Festas, concertos e mercados. O que acontece na ilha, sempre atualizado." },
+    { icon: "guide", href: "/pt/newsletter", event: "bio-society-pt", label: "Juntar-se à Society", text: "O melhor de Menorca, só quando vale a pena. Sem ruído.", featured: true },
+    { icon: "magazine", href: "/pt/", event: "bio-revista-pt", label: "A revista", text: "Toda a Calma Society: Menorca, sem pressa, com o olhar do luxo tranquilo." },
+  ],
 };
 
 const COPY: Record<HubLocale, { eyebrow: string; heading: string; sub: string; follow: string }> = {
@@ -106,6 +127,19 @@ const COPY: Record<HubLocale, { eyebrow: string; heading: string; sub: string; f
     heading: "Alles an einem Ort",
     sub: "Unsere Werkzeuge und Leitfäden, um Menorca in Ruhe zu erleben. Wählen Sie, wo Sie beginnen.",
     follow: "Folgen Sie uns auf Instagram",
+  },
+  it: {
+    eyebrow: `${SITE.name} · ${SITE.edition}`,
+    heading: "Tutto in un unico posto",
+    sub: "I nostri strumenti e le nostre guide per vivere Minorca con calma. Scelga da dove cominciare.",
+    // Etiqueta corta = imperativo de TÚ, sin cortesía (docs/GLOSARIO-TRADUCCION.md §2).
+    follow: "Seguici su Instagram",
+  },
+  pt: {
+    eyebrow: `${SITE.name} · ${SITE.edition}`,
+    heading: "Tudo num só lugar",
+    sub: "As nossas ferramentas e guias para viver Menorca com calma. Escolha por onde começar.",
+    follow: "Siga-nos no Instagram",
   },
 };
 

@@ -15,10 +15,10 @@ import MenorcaBusCTA from "./MenorcaBusCTA.astro";
 import { srcset } from "../lib/img";
 import type { Locale } from "../config/site";
 
-/* Las páginas de escala existen en español e inglés. Con `locale: Locale`, un
+/* Las páginas de escala existen ya en los SEIS idiomas. Con `locale: Locale`, un
    idioma nuevo caía al inglés en los 13 sitios donde decidía `isEs` —incluido el
    formato de fechas— sin dar un aviso. Declarado, es error de compilación (KAN-133). */
-type ToolLocale = Extract<Locale, "es" | "en" | "fr" | "de">;
+type ToolLocale = Extract<Locale, "es" | "en" | "fr" | "de" | "it" | "pt">;
 
 interface Props {
   barco: Barco;
@@ -229,12 +229,114 @@ const TEXTOS = {
       fotoAltAida: "Die Flotte von Menorca Bus wartet neben der AIDAstella am Kreuzfahrtkai von Mahón.",
       fotoPieAida: "Ihr Wagen wartet auf Ihr Schiff: die Flotte vor der AIDAstella in Mahón · Foto: Menorca Bus",
   },
+  /* Italiano: «lei» en el cuerpo, pero los rótulos cortos van sin cortesía
+     («Prenota con Menorca Bus», no «Prenoti…») — glosario §2. */
+  it: {
+      kicker: "Scalo di crociera a Maó",
+      horario: "Il suo scalo, ora per ora",
+      atraca: "Attracco",
+      zarpa: "Partenza",
+      escala: "Durata dello scalo",
+      utiles: "Tempo reale a terra",
+      comoSale: "Da dove viene questo numero",
+      cuenta:
+        "Dalla durata dello scalo togliamo 30 minuti per sbarcare e uscire dal molo, e 60 minuti di margine per il ritorno: l'«all aboard» cade di solito tra mezz'ora e un'ora prima della partenza, e qui contiamo il caso peggiore. Preferiamo che le avanzi tempo piuttosto che farla correre.",
+      cabe: "Cosa fa in tempo a fare",
+      justo: "è di misura",
+      margen: "le avanzano",
+      noCabe: "Cosa NON fa in tempo a fare",
+      noCabeIntro: "Con i suoi orari, questo non ci sta. Preferiamo dirglielo piuttosto che venderle una corsa:",
+      masivo: "Scendete a terra in tanti nello stesso momento",
+      masivoTxt:
+        "Questa nave sbarca più di 1.500 persone su un molo piccolo. La prima mezz'ora è coda, e i taxi del porto finiscono subito. Se ha l'auto ad aspettarla, comincia la giornata un'ora prima degli altri.",
+      manana: "Scalo di mattina",
+      mananaTxt: "Salpate a metà pomeriggio: il pranzo si fa a bordo. Tutto quello che segue ne tiene conto.",
+      atardecer: "Fa in tempo a vedere il tramonto",
+      atardecerTxt:
+        "Salpate abbastanza tardi da vedere il sole tramontare a terra — un lusso che quasi nessuno scalo permette.",
+      cena: "E perfino a cenare a terra",
+      cenaTxt: "Con quell'ora di partenza c'è spazio per una cena vera al porto o a Fornells prima di rientrare a bordo.",
+      fechas: "Quando fa scalo a Maó",
+      fechasNota: "Date dal calendario degli scali di Maó",
+      aviso: "Gli orari possono cambiare",
+      avisoTxt:
+        "Questi sono gli orari abituali di questa nave a Maó, non una promessa: la compagnia può cambiarli e il mare comanda. Confermi sempre l'ora di rientro a bordo con la sua nave. Calendario aggiornato il {fecha}; copre circa il {cobertura} % della stagione.",
+      verCalendario: "Vedi il calendario completo delle crociere",
+      sigue: "Da qui si continua",
+      planificador: "Pianificatore di viaggio",
+      planificadorTxt: "Se torna con più giorni, le montiamo il viaggio intero.",
+      marEnCalma: "Dove il mare è calmo",
+      marEnCalmaTxt: "Prima di scegliere la cala, guardi dove oggi non soffia il vento.",
+      atardeceres: "Tramonti e cocktail",
+      atardeceresTxt: "Dove tramonta il sole e dove bere qualcosa dopo.",
+      comer: "Mangiare e bere",
+      comerTxt: "Dove cenare senza sbagliare.",
+      busTitle: "Che non le si faccia tardi",
+      busText:
+        "Il rischio di uno scalo non è annoiarsi: è guardare l'orologio. Con autista privato la vengono a prendere al molo, la portano dove vuole, l'aspettano e la riportano alla nave con margine. C'è anche il transfer diretto porto ↔ destinazione.",
+      busCta: "Prenota con Menorca Bus",
+      fotoAlt: "Mercedes Classe E e Classe V di Menorca Bus in attesa sul molo delle crociere di Maó.",
+      fotoPie: "Sul molo di Maó, all'ora dell'attracco · Foto: Menorca Bus",
+      fotoAltAida: "La flotta di Menorca Bus in attesa ai piedi dell'AIDAstella sul molo delle crociere di Maó.",
+      fotoPieAida: "La sua auto, che aspetta la sua nave: la flotta davanti all'AIDAstella a Maó · Foto: Menorca Bus",
+  },
+  /* Portugués EUROPEO (de Portugal): «você»/3.ª persona en el cuerpo, infinitivo
+     en los rótulos, y separador de millar con ESPACIO (1 500), no con punto. */
+  pt: {
+      kicker: "Escala de cruzeiro em Maó",
+      horario: "A sua escala, hora a hora",
+      atraca: "Atraca",
+      zarpa: "Zarpa",
+      escala: "Duração da escala",
+      utiles: "Tempo real em terra",
+      comoSale: "De onde vem este número",
+      cuenta:
+        "À duração da escala descontamos 30 minutos para desembarcar e sair do cais, e 60 minutos de margem para o regresso: o «all aboard» costuma ser entre meia hora e uma hora antes da partida, e aqui contamos com o pior cenário. Preferimos que lhe sobre tempo a que tenha de correr.",
+      cabe: "O que dá tempo para fazer",
+      justo: "à justa",
+      margen: "sobram-lhe",
+      noCabe: "O que NÃO dá tempo para fazer",
+      noCabeIntro: "Com as suas horas, isto não sai. Preferimos dizer-lho a vender-lhe uma corrida:",
+      masivo: "Descem muitos ao mesmo tempo",
+      masivoTxt:
+        "Este navio desembarca mais de 1 500 pessoas num cais pequeno. A primeira meia hora é fila, e os táxis do porto esgotam-se depressa. Se tiver o carro à espera, começa o dia uma hora antes dos restantes.",
+      manana: "Escala de manhã",
+      mananaTxt: "Zarpam a meio da tarde: o almoço fica a bordo. Tudo o que se segue conta com isso.",
+      atardecer: "Dá-lhe tempo para o pôr do sol",
+      atardecerTxt:
+        "Zarpam suficientemente tarde para ver o sol pôr-se em terra — um luxo que quase nenhuma escala permite.",
+      cena: "E até para jantar em terra",
+      cenaTxt: "Com essa hora de partida cabe um jantar a sério no porto ou em Fornells antes de voltar a bordo.",
+      fechas: "Quando faz escala em Maó",
+      fechasNota: "Datas do calendário de escalas de Maó",
+      aviso: "Os horários podem mudar",
+      avisoTxt:
+        "Estes são os horários habituais deste navio em Maó, não uma promessa: a companhia pode alterá-los e o mar é que manda. Confirme sempre a hora de regresso a bordo com o seu navio. Calendário atualizado a {fecha}; cobre cerca de {cobertura} % da época.",
+      verCalendario: "Ver o calendário completo de cruzeiros",
+      sigue: "Continue por aqui",
+      planificador: "Planeador de viagem",
+      planificadorTxt: "Se voltar com mais dias, montamos-lhe a viagem inteira.",
+      marEnCalma: "Onde o mar está calmo",
+      marEnCalmaTxt: "Antes de escolher enseada, veja onde hoje não sopra o vento.",
+      atardeceres: "Pores do sol e copos",
+      atardeceresTxt: "Onde o sol se põe e onde beber um copo depois.",
+      comer: "Comer e beber",
+      comerTxt: "Onde jantar sem se enganar.",
+      busTitle: "Para que não se lhe faça tarde",
+      busText:
+        "O risco de uma escala não é aborrecer-se: é olhar para o relógio. Com motorista privado vão buscá-lo ao cais, levam-no aonde quiser, esperam por si e devolvem-no ao navio com margem. Há também transfer direto porto ↔ destino.",
+      busCta: "Reservar com Menorca Bus",
+      fotoAlt: "Mercedes Classe E e Classe V da Menorca Bus à espera no cais de cruzeiros de Maó.",
+      fotoPie: "No cais de Maó, à hora da atracação · Foto: Menorca Bus",
+      fotoAltAida: "A frota da Menorca Bus à espera junto ao AIDAstella no cais de cruzeiros de Maó.",
+      fotoPieAida: "O seu carro, à espera do seu navio: a frota diante do AIDAstella em Maó · Foto: Menorca Bus",
+  },
 };
 const T = TEXTOS[locale];
 
 const fmtFecha = (iso: string) => {
   const [y, m, d] = iso.split("-").map(Number);
-  return new Intl.DateTimeFormat(tr({ es: "es-ES", en: "en-GB", fr: "fr-FR", de: "de-DE" }), { day: "numeric", month: "long", timeZone: "UTC" }).format(
+  return new Intl.DateTimeFormat(tr({ es: "es-ES", en: "en-GB", fr: "fr-FR", de: "de-DE", it: "it-IT", pt: "pt-PT" }), { day: "numeric", month: "long", timeZone: "UTC" }).format(
     new Date(Date.UTC(y, m - 1, d)),
   );
 };
@@ -251,16 +353,22 @@ const foto = esAidastella
   ? { src: "/uploads/mb-flota-aidastella.webp", w: 1600, h: 2400, aspect: "aspect-[2/3]", alt: T.fotoAltAida, pie: T.fotoPieAida }
   : { src: "/uploads/mb-flota-muelle.webp", w: 1600, h: 1066, aspect: "aspect-[3/2]", alt: T.fotoAlt, pie: T.fotoPie };
 
-const calendarioHref = tr({ es: "/articulo/cruceros-en-menorca-2026", en: "/en/article/cruises-in-menorca-2026", fr: "/fr/article/escale-croisiere-mao-minorque", de: "/de/artikel/kreuzfahrten-menorca-2026" });
+const calendarioHref = tr({ es: "/articulo/cruceros-en-menorca-2026", en: "/en/article/cruises-in-menorca-2026", fr: "/fr/article/escale-croisiere-mao-minorque", de: "/de/artikel/kreuzfahrten-menorca-2026", it: "/it/articolo/crociere-a-minorca-2026", pt: "/pt/artigo/cruzeiros-em-menorca-2026" });
+
+/* El tipo admite `null` = «esa herramienta aún no tiene página en ese idioma», y
+   entonces la tarjeta no se pinta. Hoy las cuatro existen en los seis idiomas
+   (verificado contra `src/pages/`, no supuesto: componer una URL no es que exista),
+   pero el hueco declarado evita que el próximo mercado enlace a un 404. */
 const enlaces = [
-  { href: tr({ es: "/planificador", en: "/en/trip-planner", fr: "/fr/planificateur", de: "/de/reiseplaner" }), t: T.planificador, d: T.planificadorTxt },
-  { href: tr({ es: "/donde-el-mar-esta-en-calma", en: "/en/where-the-sea-is-calm", fr: "/fr/ou-la-mer-est-calme", de: "/de/wo-das-meer-ruhig-ist" }), t: T.marEnCalma, d: T.marEnCalmaTxt },
+  { href: tr<string | null>({ es: "/planificador", en: "/en/trip-planner", fr: "/fr/planificateur", de: "/de/reiseplaner", it: "/it/pianificatore-di-viaggio", pt: "/pt/planeador-de-viagem" }), t: T.planificador, d: T.planificadorTxt },
+  { href: tr<string | null>({ es: "/donde-el-mar-esta-en-calma", en: "/en/where-the-sea-is-calm", fr: "/fr/ou-la-mer-est-calme", de: "/de/wo-das-meer-ruhig-ist", it: "/it/dove-il-mare-e-calmo", pt: "/pt/onde-o-mar-esta-calmo" }), t: T.marEnCalma, d: T.marEnCalmaTxt },
   // Solo si sus horas lo permiten: no se ofrece un atardecer a quien zarpa a las cuatro.
   ...(b.llegaAlAtardecer
-    ? [{ href: tr({ es: "/atardeceres-y-copas", en: "/en/sunsets-and-drinks", fr: "/fr/couchers-et-cocktails", de: "/de/sonnenuntergaenge-und-drinks" }), t: T.atardeceres, d: T.atardeceresTxt }]
+    ? [{ href: tr<string | null>({ es: "/atardeceres-y-copas", en: "/en/sunsets-and-drinks", fr: "/fr/couchers-et-cocktails", de: "/de/sonnenuntergaenge-und-drinks", it: "/it/tramonti-e-cocktail", pt: "/pt/pores-do-sol-e-copos" }), t: T.atardeceres, d: T.atardeceresTxt }]
     : []),
-  ...(b.daParaCenar ? [{ href: tr({ es: "/comer-y-beber", en: "/en/eat-and-drink", fr: "/fr/manger-et-boire", de: "/de/essen-und-trinken" }), t: T.comer, d: T.comerTxt }] : []),
-];
+  // La portada de sección (src/config/sections.ts), también en los seis idiomas.
+  ...(b.daParaCenar ? [{ href: tr<string | null>({ es: "/comer-y-beber", en: "/en/eat-and-drink", fr: "/fr/manger-et-boire", de: "/de/essen-und-trinken", it: "/it/mangiare-e-bere", pt: "/pt/comer-e-beber" }), t: T.comer, d: T.comerTxt }] : []),
+].filter((e): e is { href: string; t: string; d: string } => e.href !== null);
 ---
 
 <div class="mx-auto max-w-prosa px-5 pt-12 sm:px-8 sm:pt-16">
@@ -272,6 +380,8 @@ const enlaces = [
       en: `The ${b.ship} (${b.line}) berths in Maó at ${b.arrival} and sails at ${b.departure}. Once you take off disembarking and the margin to get back, you have around ${enHoras(b.utilesMin, "en")} truly ashore. Here is what that time is good for — and what it isn't.`,
       fr: `Le ${b.ship} (${b.line}) accoste à Maó à ${b.arrival} et appareille à ${b.departure}. Une fois retranchés le débarquement et la marge de retour, il vous reste environ ${enHoras(b.utilesMin, "fr")} vraiment à terre. Voici ce que ce temps permet — et ce qu'il ne permet pas.`,
       de: `Die ${b.ship} (${b.line}) legt in Mahón um ${b.arrival} an und läuft um ${b.departure} wieder aus. Nach Abzug des Ausschiffens und des Puffers für den Rückweg bleiben Ihnen rund ${enHoras(b.utilesMin, "de")} echte Zeit an Land. Das ist es, was diese Zeit hergibt — und was nicht.`,
+      it: `La ${b.ship} (${b.line}) attracca a Maó alle ${b.arrival} e salpa alle ${b.departure}. Tolti lo sbarco e il margine per il ritorno, le restano circa ${enHoras(b.utilesMin, "it")} davvero a terra. Ecco cosa rende quel tempo — e cosa no.`,
+      pt: `O ${b.ship} (${b.line}) atraca em Maó às ${b.arrival} e zarpa às ${b.departure}. Descontando o desembarque e a margem de regresso, sobram-lhe cerca de ${enHoras(b.utilesMin, "pt")} realmente em terra. Isto é o que esse tempo dá de si — e o que não dá.`,
     })}
   </p>
 </div>
@@ -338,14 +448,14 @@ const enlaces = [
     {b.caben.map((p) => (
       <li class="rounded-xl border border-niebla bg-lino p-4">
         <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-          <h3 class="font-display text-lg text-tinta">{tr({ es: p.es, en: p.en, fr: p.fr, de: p.de })}</h3>
+          <h3 class="font-display text-lg text-tinta">{tr({ es: p.es, en: p.en, fr: p.fr, de: p.de, it: p.it, pt: p.pt })}</h3>
           <span class={`text-xs font-semibold ${vaJusto(p, b.utilesMin) ? "text-terracota" : "text-piedra-suave"}`}>
             {vaJusto(p, b.utilesMin)
               ? T.justo
               : `${T.margen} ${enHoras(margenDe(p, b.utilesMin), locale)}`}
           </span>
         </div>
-        <p class="mt-1 text-sm leading-relaxed text-piedra-suave">{tr({ es: p.detalleEs, en: p.detalleEn, fr: p.detalleFr, de: p.detalleDe })}</p>
+        <p class="mt-1 text-sm leading-relaxed text-piedra-suave">{tr({ es: p.detalleEs, en: p.detalleEn, fr: p.detalleFr, de: p.detalleDe, it: p.detalleIt, pt: p.detallePt })}</p>
       </li>
     ))}
   </ol>
@@ -358,8 +468,8 @@ const enlaces = [
       <ul class="mt-3 space-y-2">
         {b.noCaben.map((p) => (
           <li class="rounded-xl border border-niebla bg-arena/40 p-4">
-            <p class="font-medium text-tinta">{tr({ es: p.es, en: p.en, fr: p.fr, de: p.de })}</p>
-            <p class="mt-1 text-sm leading-relaxed text-piedra-suave">{tr({ es: p.detalleEs, en: p.detalleEn, fr: p.detalleFr, de: p.detalleDe })}</p>
+            <p class="font-medium text-tinta">{tr({ es: p.es, en: p.en, fr: p.fr, de: p.de, it: p.it, pt: p.pt })}</p>
+            <p class="mt-1 text-sm leading-relaxed text-piedra-suave">{tr({ es: p.detalleEs, en: p.detalleEn, fr: p.detalleFr, de: p.detalleDe, it: p.detalleIt, pt: p.detallePt })}</p>
           </li>
         ))}
       </ul>
@@ -413,18 +523,24 @@ const enlaces = [
     </p>
   </div>
 
-  {/* ── Enlaces a la casa (los que sus horas permiten) ── */}
-  <h2 class="mt-10 font-display text-2xl text-tinta">{T.sigue}</h2>
-  <div class="mt-4 grid gap-3 sm:grid-cols-2">
-    {enlaces.map((e) => (
-      <a
-        href={e.href}
-        class="rounded-xl border border-niebla bg-lino p-4 transition-colors hover:border-arcilla"
-        data-umami-event="crucero-enlace-interno"
-      >
-        <p class="font-display text-lg text-tinta">{e.t}</p>
-        <p class="mt-1 text-sm text-piedra-suave">{e.d}</p>
-      </a>
-    ))}
-  </div>
+  {/* ── Enlaces a la casa (los que sus horas Y su idioma permiten) ── */}
+  {/* La lista puede quedar vacía si un idioma no tiene aún esas herramientas, y un
+      titular sin nada debajo es peor que no ponerlo. */}
+  {enlaces.length > 0 && (
+    <>
+      <h2 class="mt-10 font-display text-2xl text-tinta">{T.sigue}</h2>
+      <div class="mt-4 grid gap-3 sm:grid-cols-2">
+        {enlaces.map((e) => (
+          <a
+            href={e.href}
+            class="rounded-xl border border-niebla bg-lino p-4 transition-colors hover:border-arcilla"
+            data-umami-event="crucero-enlace-interno"
+          >
+            <p class="font-display text-lg text-tinta">{e.t}</p>
+            <p class="mt-1 text-sm text-piedra-suave">{e.d}</p>
+          </a>
+        ))}
+      </div>
+    </>
+  )}
 </section>

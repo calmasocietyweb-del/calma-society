@@ -1,0 +1,77 @@
+---
+/**
+ * Página de navio de cruzeiro (PT): /pt/cruzeiro/<ship>
+ * Como a espanhola: só os navios que fazem VÁRIAS escalas e com horários
+ * verificados. Não é uma página por escala: seriam 97 páginas quase iguais,
+ * ou seja, enchimento.
+ */
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import CruiseShipPage from "../../../components/CruiseShipPage.astro";
+import JsonLd from "../../../components/JsonLd.astro";
+import cruceros from "../../../data/cruceros-menorca-2026.json";
+import { barcosConPagina, enHoras, type Call } from "../../../lib/cruises";
+
+export async function getStaticPaths() {
+  const barcos = barcosConPagina((cruceros as { calls: Call[] }).calls);
+  return barcos.map((barco) => ({ params: { ship: barco.slug }, props: { barco } }));
+}
+
+const { barco } = Astro.props;
+const fuente = {
+  updated: (cruceros as any).updated as string,
+  coveragePct: (cruceros as any).coveragePct as number,
+  officialSource: (cruceros as any).officialSource as string,
+};
+
+const alternates = {
+  es: `/crucero/${barco.slug}`,
+  en: `/en/cruise/${barco.slug}`,
+  fr: `/fr/croisiere/${barco.slug}`,
+  de: `/de/kreuzfahrt/${barco.slug}`,
+  it: `/it/crociera/${barco.slug}`,
+  pt: `/pt/cruzeiro/${barco.slug}`,
+};
+
+/* Curto de propósito: com «o que fazer na sua escala em Maó» os navios de nome
+   comprido (Seven Seas Splendor) passavam dos 65 caracteres e o Google cortava-os. */
+const title = `${barco.ship} em Menorca: a sua escala em Maó`;
+const description = `O ${barco.ship} atraca em Maó às ${barco.arrival} e zarpa às ${barco.departure}: sobram-lhe cerca de ${enHoras(barco.utilesMin, "pt")} em terra. O que dá tempo para fazer, o que não dá, e como circular sem perder o navio.`;
+
+const faq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: `Quanto tempo tenho em terra na escala do ${barco.ship} em Maó?`,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: `O ${barco.ship} atraca às ${barco.arrival} e zarpa às ${barco.departure} (${enHoras(barco.escalaMin, "pt")} no porto). Descontando cerca de 30 minutos para o desembarque e 60 minutos de margem para o regresso a bordo, sobram-lhe aproximadamente ${enHoras(barco.utilesMin, "pt")} de tempo real em terra.`,
+      },
+    },
+    {
+      "@type": "Question",
+      name: `Dá-me tempo para visitar Ciutadella a partir do ${barco.ship}?`,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: barco.caben.some((p) => p.id === "ciutadella" || p.id === "ciutadella-y-cala")
+          ? `Sim. Ciutadella fica a 45 minutos de carro do porto de Maó, ou seja 90 minutos de ida e volta: com cerca de ${enHoras(barco.utilesMin, "pt")} em terra, cabe com margem.${barco.noCaben.some((p) => p.id === "ciutadella-y-cala") ? " O que não cabe é encadear Ciutadella e uma enseada do sul no mesmo dia." : ""}`
+          : `Não com calma. Ciutadella fica a 45 minutos de carro (90 de ida e volta) e, com cerca de ${enHoras(barco.utilesMin, "pt")} em terra, passaria o dia a olhar para o relógio.`,
+      },
+    },
+    {
+      "@type": "Question",
+      name: `Como me desloco em Menorca durante a escala?`,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: `Com um motorista privado à hora, vão buscá-lo ao cais, levam-no aonde quiser, esperam por si no local e devolvem-no ao navio com margem; há também transfers diretos porto ↔ destino.${barco.desembarcoMasivo ? " Este navio desembarca mais de 1 500 pessoas de uma só vez, e os táxis do porto esgotam-se depressa: um carro reservado faz-lhe ganhar a primeira hora." : ""}`,
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout title={title} appendSiteName={false} description={description} locale="pt" alternates={alternates}>
+  <JsonLd schema={faq} />
+  <CruiseShipPage barco={barco} locale="pt" fuente={fuente} />
+</BaseLayout>

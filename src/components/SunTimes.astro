@@ -13,11 +13,12 @@ import { sunTimes, fmtMenorcaTime, dayLength, MENORCA } from "../lib/sun";
 import type { Locale } from "../config/site";
 import { INTL_LOCALE } from "../i18n/utils";
 
-/* Tabla de la herramienta "Atardeceres y copas", desplegada POR MERCADOS: existe
-   en español, inglés, francés y alemán. El italiano y el portugués entran cuando
-   se traduzca la herramienta entera; declararlo aquí hace que intentar montarla
-   antes sea un error de compilación en vez de una tabla en otro idioma (KAN-133). */
-type ToolLocale = Extract<Locale, "es" | "en" | "fr" | "de">;
+/* Tabla de la herramienta "Atardeceres y copas". Desde el 4-sep-2026 existe en
+   los SEIS idiomas activos (el italiano y el portugués entraron con la
+   traducción completa de la herramienta). Se sigue declarando con `Extract`
+   —y no con `Locale` a secas— para que dar de alta un idioma nuevo sea un error
+   de compilación en vez de una tabla servida en otro idioma (KAN-133). */
+type ToolLocale = Extract<Locale, "es" | "en" | "fr" | "de" | "it" | "pt">;
 
 interface Props {
   locale: ToolLocale;
@@ -103,6 +104,28 @@ const TT = {
     colLen: "Tageslicht",
     note: "Zeiten berechnet für die Inselmitte, in Ortszeit (MEZ/MESZ, Sommerzeit inbegriffen). An der Westküste (Ciutadella, Punta Nati) geht die Sonne einige Minuten später unter; im Osten (Maó, Favàritx) geht sie einige Minuten früher auf. Kommen Sie immer mit Vorlauf: Das Schöne beginnt, bevor die Sonne das Meer berührt.",
     thisMonth: "Aktueller Monat",
+  },
+  it: {
+    eyebrow: "A che ora tramonta il sole",
+    title: "Alba e tramonto a Minorca, mese per mese",
+    lead: `Quasi tutto in questa pagina ruota attorno a un'ora: quella del tramonto. A Minorca il sole cala verso le ${latestSet} nel pieno dell'estate e già alle ${earliestSet} nel cuore dell'inverno. L'ora d'oro —quella luce calda che rende tutto più bello— arriva nei 30-40 minuti precedenti: è il momento in cui conviene avere già il bicchiere in mano.`,
+    colMonth: "Mese",
+    colRise: "Alba",
+    colSet: "Tramonto",
+    colLen: "Luce",
+    note: "Orari calcolati per il centro di Minorca, in ora locale (CET/CEST, cambio dell'ora incluso). La costa ovest (Ciutadella, Punta Nati) vede il tramonto qualche minuto più tardi; l'est (Maó, Favàritx) vede l'alba qualche minuto prima. Arrivi sempre con un po' di margine: il bello comincia prima che il sole tocchi il mare.",
+    thisMonth: "Mese in corso",
+  },
+  pt: {
+    eyebrow: "A que horas se põe o sol",
+    title: "Nascer e pôr do sol em Menorca, mês a mês",
+    lead: `Quase tudo nesta página gira à volta de uma hora: a do pôr do sol. Em Menorca o sol põe-se por volta das ${latestSet} em pleno verão e já às ${earliestSet} no mais fundo do inverno. A hora dourada —aquela luz quente que torna tudo mais bonito— chega nos 30 a 40 minutos anteriores: é o momento de já ter o copo na mão.`,
+    colMonth: "Mês",
+    colRise: "Nascer",
+    colSet: "Pôr do sol",
+    colLen: "Luz",
+    note: "Horas calculadas para o centro de Menorca, em hora local (CET/CEST, mudança de hora incluída). A costa oeste (Ciutadella, Punta Nati) vê o pôr do sol alguns minutos mais tarde; o leste (Maó, Favàritx) vê o nascer do sol alguns minutos antes. Chegue sempre com folga: o melhor começa antes de o sol tocar o mar.",
+    thisMonth: "Mês atual",
   },
 };
 const T = TT[locale];

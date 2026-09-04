@@ -23,14 +23,20 @@ import dataEs from "../data/planner-data.es.json";
 import dataEn from "../data/planner-data.en.json";
 import dataDe from "../data/planner-data.de.json";
 import dataFr from "../data/planner-data.fr.json";
+import dataIt from "../data/planner-data.it.json";
+import dataPt from "../data/planner-data.pt.json";
 import eventsEs from "../data/planner-events.es.json";
 import eventsEn from "../data/planner-events.en.json";
 import eventsDe from "../data/planner-events.de.json";
 import eventsFr from "../data/planner-events.fr.json";
+import eventsIt from "../data/planner-events.it.json";
+import eventsPt from "../data/planner-events.pt.json";
 import foodEs from "../data/planner-food.es.json";
 import foodEn from "../data/planner-food.en.json";
 import foodDe from "../data/planner-food.de.json";
 import foodFr from "../data/planner-food.fr.json";
+import foodIt from "../data/planner-food.it.json";
+import foodPt from "../data/planner-food.pt.json";
 import outline from "../data/menorca-outline.json";
 import { VARIANT_COUNT } from "../lib/planner/survey";
 import { SITE } from "../config/site";
@@ -124,7 +130,7 @@ const ISLAND = { path: ISLAND_PATH, w: MAP_W, h: MAP_H, kx: KX, minX: MIN_X, max
    solo aviso; ahora esos textos van por `tr({ es, en, de })`, un registro que el
    compilador obliga a completar. El tipo sigue acotado a los idiomas con dataset
    propio: si se monta en otro, salta en `astro check` (KAN-133). */
-type ToolLocale = Extract<Locale, "es" | "en" | "de" | "fr">;
+type ToolLocale = Extract<Locale, "es" | "en" | "de" | "fr" | "it" | "pt">;
 
 interface Props {
   locale: ToolLocale;
@@ -136,11 +142,18 @@ const { locale } = Astro.props as Props;
    servía SIEMPRE el inglés sin un solo aviso. Con Record<ToolLocale, T> el
    compilador exige la entrada del idioma nuevo en CADA llamada (KAN-134). */
 const tr = <T,>(m: Record<ToolLocale, T>): T => m[locale];
-const dataset = { es: dataEs, en: dataEn, de: dataDe, fr: dataFr }[locale];
-const events = { es: eventsEs, en: eventsEn, de: eventsDe, fr: eventsFr }[locale];
-// `fr` no tiene JSON de comida propio todavía: Partial + `?? {}` para que el
-// motor degrade (foodByZone es opcional) en vez de romper el build.
-const foodMap: Partial<Record<ToolLocale, typeof foodEs>> = { es: foodEs, en: foodEn, de: foodDe, fr: foodFr as unknown as typeof foodEs };
+const dataset = { es: dataEs, en: dataEn, de: dataDe, fr: dataFr, it: dataIt, pt: dataPt }[locale];
+const events = { es: eventsEs, en: eventsEn, de: eventsDe, fr: eventsFr, it: eventsIt, pt: eventsPt }[locale];
+// Los seis idiomas tienen ya su JSON de comida propio. Se mantiene `Partial` a
+// propósito: es la red que dejó pasar el francés sin romper el build cuando le
+// faltaba el suyo, y el motor degrada (foodByZone es opcional) si un idioma
+// nuevo llega antes que su fichero.
+const foodMap: Partial<Record<ToolLocale, typeof foodEs>> = {
+  es: foodEs, en: foodEn, de: foodDe,
+  fr: foodFr as unknown as typeof foodEs,
+  it: foodIt as unknown as typeof foodEs,
+  pt: foodPt as unknown as typeof foodEs,
+};
 /* `undefined`, NO `{}` — ver el comentario gemelo en PlannerSeoContent. */
 const food = foodMap[locale];
 
@@ -279,6 +292,78 @@ const TEXTOS = {
       gateThanks: "Fait : dossier débloqué. Conservez aussi le lien pour retrouver votre plan.",
       gateSending: "Un instant…",
   },
+  // Voce "lusso tranquillo": LEI nel corpo del testo, ma imperativo di TU nei
+  // pulsanti e nelle etichette («Crea il mio piano», mai «Crei il suo piano»).
+  // docs/GLOSARIO-TRADUCCION.md §2 — l'errore uscito nella prima tanda italiana.
+  it: {
+      formTitle: "Ci dica come viaggia",
+      b1: "L'essenziale", b2: "Arrivo e partenza", b3: "Dove dorme", b4: "Il suo stile", b5: "Chi viaggia con lei", b6: "Extra",
+      days: "Quanti giorni?", dates: "Date (facoltativo)", arr: "Arrivo", dep: "Partenza",
+      dateHint: "Se indica arrivo e partenza, sono loro a definire la durata del viaggio (e le incrociamo con il calendario delle feste).",
+      transport: "Come si sposta?", t_coche: "Auto a noleggio", t_ferry: "La mia auto in traghetto", t_sin: "Senza auto",
+      ferryPort: "Se arriva in traghetto, da quale porto?", flights: "Orari dei voli (facoltativo, affinano il primo e l'ultimo giorno)",
+      base: "Dove alloggia?", b_rec: "Consigliami una zona",
+      pace: "Che ritmo cerca?", p_rel: "Rilassato", p_eq: "Equilibrato", p_int: "Intenso",
+      interests: "Che cosa la attrae? (ne scelga quanti vuole)",
+      i_calas: "Cale e spiagge", i_gastro: "Gastronomia", i_cultura: "Cultura e storia", i_nat: "Natura ed escursioni", i_noche: "Vita notturna", i_naut: "Nautica", i_lujo: "Lusso tranquillo",
+      kids: "Viaggia con bambini?", kidAges: "Età", budget: "Budget",
+      bud_a: "Contenuto", bud_m: "Medio", bud_alto: "Alto",
+      boat: "Ha voglia di barca e tramonti?", acc: "Ha bisogno di accessibilità?",
+      yes: "Sì", no: "No",
+      acc_ning: "Nessuna", acc_carr: "Passeggino", acc_mov: "Mobilità ridotta", acc_may: "Persone anziane",
+      submit: "Crea il mio piano", recompute: "Aggiorna il piano",
+      base_z: { ciutadella: "Ciutadella", mao: "Maó", "cala-galdana": "Cala Galdana", "son-bou": "Son Bou", "es-mercadal": "Es Mercadal", fornells: "Fornells" } as Record<string, string>,
+      slot: { llegada: "Arrivo", desayuno: "Colazione", manana: "Mattina", comida: "Pranzo", tarde: "Pomeriggio", atardecer: "Tramonto", cena: "Cena" } as Record<string, string>,
+      planBtitle: "Se piove o fa molto caldo", whyTitle: "Perché questa giornata", busCTA: "Risolvilo con Menorca Bus",
+      globalTitle: "Prima di partire", hours: "h utili", empty: "Compili il questionario e crei il suo piano.",
+      intro: "Una guida giorno per giorno, concatenata per vicinanza e senza fretta: l'isola, al suo ritmo.",
+      saveTitle: "Il suo dossier di viaggio, in PDF",
+      saveText: "Ci lasci la sua e-mail e sblocchiamo il suo dossier: il piano con la copertina, un giorno per pagina e il piano B per il maltempo. Entra inoltre nella Society, con il meglio di Minorca.",
+      savePdf: "Apri il dossier (salva/stampa)", copyLink: "Copia link", copied: "Link copiato!",
+      emailPlaceholder: "La sua e-mail", emailBtn: "Sblocca il mio dossier",
+      consentPrefix: "Accetto la", consentLink: "politica sulla privacy", consentSuffix: "per ricevere la newsletter di Calma Society.",
+      doubleOptin: "Riceverà un'e-mail per confermare l'iscrizione (controlli anche lo spam).",
+      privacy: "Niente spam · si cancella quando vuole.",
+      gateHint: "Il dossier si sblocca con la sua e-mail — è un attimo.",
+      gateThanks: "Fatto: dossier sbloccato. Conservi anche il link per tornare al suo piano.",
+      gateSending: "Un attimo…",
+  },
+  // Voz "luxo tranquilo" em português EUROPEU: 3.ª pessoa no corpo do texto,
+  // INFINITIVO nos rótulos e botões («Criar o meu plano», «Ver tudo»).
+  // PT-PT, nunca PT-BR: aluguer, autocarro, pequeno-almoço, ligação.
+  pt: {
+      formTitle: "Diga-nos como viaja",
+      b1: "O essencial", b2: "Chegada e partida", b3: "Onde dorme", b4: "O seu estilo", b5: "Quem viaja consigo", b6: "Extras",
+      days: "Quantos dias?", dates: "Datas (opcional)", arr: "Chegada", dep: "Partida",
+      dateHint: "Se indicar a chegada e a partida, são elas que definem a duração da viagem (e cruzamo-las com o calendário de festas).",
+      transport: "Como se desloca?", t_coche: "Carro de aluguer", t_ferry: "O meu carro no ferry", t_sin: "Sem carro",
+      ferryPort: "Se vier de ferry, por que porto?", flights: "Horas de voo (opcional, afinam o primeiro e o último dia)",
+      base: "Onde fica alojado?", b_rec: "Recomendar-me uma zona",
+      pace: "Que ritmo procura?", p_rel: "Relaxado", p_eq: "Equilibrado", p_int: "Intenso",
+      interests: "O que o move? (escolha os que quiser)",
+      i_calas: "Enseadas e praias", i_gastro: "Gastronomia", i_cultura: "Cultura e história", i_nat: "Natureza e caminhadas", i_noche: "Vida noturna", i_naut: "Náutica", i_lujo: "Luxo tranquilo",
+      kids: "Viaja com crianças?", kidAges: "Idades", budget: "Orçamento",
+      bud_a: "Apertado", bud_m: "Médio", bud_alto: "Alto",
+      boat: "Apetece-lhe barco e pores do sol?", acc: "Precisa de acessibilidade?",
+      yes: "Sim", no: "Não",
+      acc_ning: "Nenhuma", acc_carr: "Carrinho de bebé", acc_mov: "Mobilidade reduzida", acc_may: "Pessoas idosas",
+      submit: "Criar o meu plano", recompute: "Atualizar o plano",
+      base_z: { ciutadella: "Ciutadella", mao: "Maó", "cala-galdana": "Cala Galdana", "son-bou": "Son Bou", "es-mercadal": "Es Mercadal", fornells: "Fornells" } as Record<string, string>,
+      slot: { llegada: "Chegada", desayuno: "Pequeno-almoço", manana: "Manhã", comida: "Almoço", tarde: "Tarde", atardecer: "Pôr do sol", cena: "Jantar" } as Record<string, string>,
+      planBtitle: "Se chover ou fizer muito calor", whyTitle: "Porquê este dia", busCTA: "Resolver com a Menorca Bus",
+      globalTitle: "Antes de sair", hours: "h úteis", empty: "Preencha o questionário e crie o seu plano.",
+      intro: "Um guia dia a dia, encadeado por proximidade e sem pressa: a ilha, ao seu ritmo.",
+      saveTitle: "O seu dossiê de viagem, em PDF",
+      saveText: "Deixe-nos o seu e-mail e desbloqueamos o seu dossiê: o plano com capa, um dia por página e o plano B para mau tempo. Entra ainda para a Society, com o melhor de Menorca.",
+      savePdf: "Abrir o dossiê (guardar/imprimir)", copyLink: "Copiar ligação", copied: "Ligação copiada!",
+      emailPlaceholder: "O seu e-mail", emailBtn: "Desbloquear o meu dossiê",
+      consentPrefix: "Aceito a", consentLink: "política de privacidade", consentSuffix: "para receber a newsletter da Calma Society.",
+      doubleOptin: "Vai receber um e-mail para confirmar a subscrição (verifique o spam).",
+      privacy: "Sem spam · cancela quando quiser.",
+      gateHint: "O dossiê desbloqueia-se com o seu e-mail — é um instante.",
+      gateThanks: "Feito: dossiê desbloqueado. Guarde também a ligação para voltar ao seu plano.",
+      gateSending: "Um instante…",
+  },
 };
 const T = TEXTOS[locale];
 
@@ -298,34 +383,36 @@ const CFG = {
   whyTitle: T.whyTitle,
   busCTA: T.busCTA,
   globalTitle: T.globalTitle,
-  signatureTitle: tr({ es: "La experiencia del viaje", en: "The signature of your trip", de: "Das Besondere Ihrer Reise", fr: "La signature du voyage" }),
-  reservar: tr({ es: "Reservar", en: "Book", de: "Buchen", fr: "Réserver" }),
+  signatureTitle: tr({ es: "La experiencia del viaje", en: "The signature of your trip", de: "Das Besondere Ihrer Reise", fr: "La signature du voyage", it: "La firma del viaggio", pt: "A assinatura da viagem" }),
+  reservar: tr({ es: "Reservar", en: "Book", de: "Buchen", fr: "Réserver", it: "Prenota", pt: "Reservar" }),
   // Fichas de experiencia (no de negocio): el enlace nombra al operador para no
   // dar por hecho que es EL negocio de la ficha (KAN-60). "%s" = operador.
-  reservarCon: tr({ es: "Reservar con %s", en: "Book with %s", de: "Buchen bei %s", fr: "Réserver avec %s" }),
-  webDe: tr({ es: "Web de %s", en: "%s’s site", de: "Website von %s", fr: "Site de %s" }),
+  reservarCon: tr({ es: "Reservar con %s", en: "Book with %s", de: "Buchen bei %s", fr: "Réserver avec %s", it: "Prenota con %s", pt: "Reservar com %s" }),
+  webDe: tr({ es: "Web de %s", en: "%s’s site", de: "Website von %s", fr: "Site de %s", it: "Sito di %s", pt: "Site de %s" }),
   hours: T.hours,
   // Mensajes de validación de fechas (los usa el island).
-  dateInvalid: tr({ es: "Las fechas no son válidas. Revisa el formato (día, mes y año).", en: "The dates are not valid. Check the format (day, month, year).", de: "Die Daten sind ungültig. Prüfen Sie das Format (Tag, Monat, Jahr).", fr: "Les dates ne sont pas valides. Vérifiez le format (jour, mois, année)." }),
-  dateOrder: tr({ es: "La fecha de salida no puede ser anterior a la de llegada.", en: "The departure date can't be earlier than the arrival date.", de: "Das Abreisedatum darf nicht vor dem Ankunftsdatum liegen.", fr: "La date de départ ne peut pas être antérieure à celle de l'arrivée." }),
-  dateTooLong: tr({ es: "El planificador llega hasta 21 días. Acorta las fechas o elige una estancia más corta.", en: "The planner covers up to 21 days. Shorten the dates or pick a shorter stay.", de: "Der Reiseplaner deckt bis zu 21 Tage ab. Kürzen Sie die Daten oder wählen Sie einen kürzeren Aufenthalt.", fr: "Le planificateur couvre jusqu'à 21 jours. Raccourcissez les dates ou choisissez un séjour plus court." }),
-  dateNeedArrival: tr({ es: "Indica también la fecha de llegada para calcular la duración del viaje.", en: "Add the arrival date too so we can work out the trip length.", de: "Geben Sie auch das Ankunftsdatum an, damit wir die Dauer der Reise berechnen können.", fr: "Indiquez aussi la date d'arrivée pour calculer la durée du voyage." }),
+  dateInvalid: tr({ es: "Las fechas no son válidas. Revisa el formato (día, mes y año).", en: "The dates are not valid. Check the format (day, month, year).", de: "Die Daten sind ungültig. Prüfen Sie das Format (Tag, Monat, Jahr).", fr: "Les dates ne sont pas valides. Vérifiez le format (jour, mois, année).", it: "Le date non sono valide. Controlli il formato (giorno, mese e anno).", pt: "As datas não são válidas. Verifique o formato (dia, mês e ano)." }),
+  dateOrder: tr({ es: "La fecha de salida no puede ser anterior a la de llegada.", en: "The departure date can't be earlier than the arrival date.", de: "Das Abreisedatum darf nicht vor dem Ankunftsdatum liegen.", fr: "La date de départ ne peut pas être antérieure à celle de l'arrivée.", it: "La data di partenza non può essere anteriore a quella di arrivo.", pt: "A data de partida não pode ser anterior à de chegada." }),
+  dateTooLong: tr({ es: "El planificador llega hasta 21 días. Acorta las fechas o elige una estancia más corta.", en: "The planner covers up to 21 days. Shorten the dates or pick a shorter stay.", de: "Der Reiseplaner deckt bis zu 21 Tage ab. Kürzen Sie die Daten oder wählen Sie einen kürzeren Aufenthalt.", fr: "Le planificateur couvre jusqu'à 21 jours. Raccourcissez les dates ou choisissez un séjour plus court.", it: "Il pianificatore arriva fino a 21 giorni. Accorci le date o scelga un soggiorno più breve.", pt: "O planeador vai até 21 dias. Encurte as datas ou escolha uma estadia mais curta." }),
+  dateNeedArrival: tr({ es: "Indica también la fecha de llegada para calcular la duración del viaje.", en: "Add the arrival date too so we can work out the trip length.", de: "Geben Sie auch das Ankunftsdatum an, damit wir die Dauer der Reise berechnen können.", fr: "Indiquez aussi la date d'arrivée pour calculer la durée du voyage.", it: "Indichi anche la data di arrivo per calcolare la durata del viaggio.", pt: "Indique também a data de chegada para calcular a duração da viagem." }),
   renderError: tr({
     es: "No hemos podido generar el plan con esos datos. Revisa la encuesta y vuelve a crearlo.",
     en: "We couldn't build the plan with that input. Check the survey and create it again.",
     de: "Mit diesen Angaben konnten wir keinen Plan erstellen. Prüfen Sie die Umfrage und erstellen Sie ihn erneut.",
     fr: "Nous n'avons pas pu générer le plan avec ces données. Vérifiez le questionnaire et recréez-le.",
+    it: "Non siamo riusciti a generare il piano con questi dati. Controlli il questionario e lo crei di nuovo.",
+    pt: "Não conseguimos gerar o plano com esses dados. Reveja o questionário e crie-o de novo.",
   }),
   menorcaBusUrl: SITE.partners.menorcaBus.url,
   copied: T.copied,
   // Wizard (paso a paso): etiquetas que necesita el island.
-  wizard: { step: tr({ es: "Paso", en: "Step", de: "Schritt", fr: "Étape" }), of: tr({ es: "de", en: "of", de: "von", fr: "sur" }), next: tr({ es: "Siguiente →", en: "Next →", de: "Weiter →", fr: "Suivant →" }), submit: T.submit },
+  wizard: { step: tr({ es: "Paso", en: "Step", de: "Schritt", fr: "Étape", it: "Passo", pt: "Passo" }), of: tr({ es: "de", en: "of", de: "von", fr: "sur", it: "di", pt: "de" }), next: tr({ es: "Siguiente →", en: "Next →", de: "Weiter →", fr: "Suivant →", it: "Avanti →", pt: "Seguinte →" }), submit: T.submit },
   // Tira-resumen del resultado ("de un vistazo").
-  overviewLabel: tr({ es: "Tu viaje de un vistazo", en: "Your trip at a glance", de: "Ihre Reise auf einen Blick", fr: "Votre voyage en un coup d'œil" }),
-  dayWord: tr({ es: "Día", en: "Day", de: "Tag", fr: "Jour" }),
+  overviewLabel: tr({ es: "Tu viaje de un vistazo", en: "Your trip at a glance", de: "Ihre Reise auf einen Blick", fr: "Votre voyage en un coup d'œil", it: "Il suo viaggio a colpo d'occhio", pt: "A sua viagem num relance" }),
+  dayWord: tr({ es: "Día", en: "Day", de: "Tag", fr: "Jour", it: "Giorno", pt: "Dia" }),
   // Silueta de la isla: el localizador de cada día (ver frontmatter).
   island: ISLAND,
-  mapAria: tr({ es: "Dónde cae este día en Menorca", en: "Where this day falls on Menorca", de: "Wo dieser Tag auf Menorca liegt", fr: "Où se situe cette journée à Minorque" }),
+  mapAria: tr({ es: "Dónde cae este día en Menorca", en: "Where this day falls on Menorca", de: "Wo dieser Tag auf Menorca liegt", fr: "Où se situe cette journée à Minorque", it: "Dove cade questa giornata a Minorca", pt: "Onde fica este dia em Menorca" }),
   // Centro de cada zona base, para dibujar el trayecto del día desde donde duermes.
   baseCoords: {
     ciutadella: [39.998, 3.8416], mao: [39.8885, 4.2658],
@@ -333,17 +420,17 @@ const CFG = {
     "es-mercadal": [39.9887, 4.093], fornells: [40.0559, 4.1332],
   } as Record<string, [number, number]>,
   // Rótulos del nuevo resultado editorial.
-  journeyTitle: tr({ es: "La jornada", en: "The day", de: "Der Tagesablauf", fr: "La journée" }),
-  tableTitle: tr({ es: "Dónde comer", en: "Where to eat", de: "Wo Sie essen", fr: "Où manger" }),
-  noticesTitle: tr({ es: "Ten en cuenta", en: "Worth knowing", de: "Gut zu wissen", fr: "À savoir" }),
-  nearbyTitle: tr({ es: "También cerca", en: "Also nearby", de: "Ebenfalls in der Nähe", fr: "Également à proximité" }),
-  swapTitle: tr({ es: "En su lugar", en: "Instead", de: "Stattdessen", fr: "Autrement" }),
-  variantTitle: tr({ es: "¿Otra manera de verlo?", en: "Another way to see it", de: "Eine andere Art, es zu sehen?", fr: "Une autre façon de voir les choses ?" }),
-  variantCta: tr({ es: "Enséñame otra versión", en: "Show me another version", de: "Zeigen Sie mir eine andere Version", fr: "Me montrer une autre version" }),
-  variantOf: tr({ es: "Versión %a de %b", en: "Version %a of %b", de: "Version %a von %b", fr: "Version %a sur %b" }),
-  stopsWord: tr({ es: "paradas", en: "stops", de: "Stationen", fr: "étapes" }),
-  planLead: tr({ es: "Tu base", en: "Your base", de: "Ihr Standort", fr: "Votre base" }),
-  andWord: tr({ es: "y", en: "and", de: "und", fr: "et" }),
+  journeyTitle: tr({ es: "La jornada", en: "The day", de: "Der Tagesablauf", fr: "La journée", it: "La giornata", pt: "O dia" }),
+  tableTitle: tr({ es: "Dónde comer", en: "Where to eat", de: "Wo Sie essen", fr: "Où manger", it: "Dove mangiare", pt: "Onde comer" }),
+  noticesTitle: tr({ es: "Ten en cuenta", en: "Worth knowing", de: "Gut zu wissen", fr: "À savoir", it: "Da tenere presente", pt: "A ter em conta" }),
+  nearbyTitle: tr({ es: "También cerca", en: "Also nearby", de: "Ebenfalls in der Nähe", fr: "Également à proximité", it: "Anche nei dintorni", pt: "Também por perto" }),
+  swapTitle: tr({ es: "En su lugar", en: "Instead", de: "Stattdessen", fr: "Autrement", it: "In alternativa", pt: "Em vez disso" }),
+  variantTitle: tr({ es: "¿Otra manera de verlo?", en: "Another way to see it", de: "Eine andere Art, es zu sehen?", fr: "Une autre façon de voir les choses ?", it: "Un altro modo di vederla?", pt: "Outra forma de o ver?" }),
+  variantCta: tr({ es: "Enséñame otra versión", en: "Show me another version", de: "Zeigen Sie mir eine andere Version", fr: "Me montrer une autre version", it: "Mostrami un'altra versione", pt: "Ver outra versão" }),
+  variantOf: tr({ es: "Versión %a de %b", en: "Version %a of %b", de: "Version %a von %b", fr: "Version %a sur %b", it: "Versione %a di %b", pt: "Versão %a de %b" }),
+  stopsWord: tr({ es: "paradas", en: "stops", de: "Stationen", fr: "étapes", it: "tappe", pt: "paragens" }),
+  planLead: tr({ es: "Tu base", en: "Your base", de: "Ihr Standort", fr: "Votre base", it: "La sua base", pt: "A sua base" }),
+  andWord: tr({ es: "y", en: "and", de: "und", fr: "et", it: "e", pt: "e" }),
   variantCount: VARIANT_COUNT,
   // Coste orientativo. "gratis" se escribe con palabra; el resto, con la misma
   // escala de € que el sitio ya usa para las mesas.
@@ -352,32 +439,38 @@ const CFG = {
     en: { gratis: "Free", "€": "€", "€€": "€€", "€€€": "€€€" },
     de: { gratis: "Kostenlos", "€": "€", "€€": "€€", "€€€": "€€€" },
     fr: { gratis: "Gratuit", "€": "€", "€€": "€€", "€€€": "€€€" },
+    it: { gratis: "Gratis", "€": "€", "€€": "€€", "€€€": "€€€" },
+    pt: { gratis: "Grátis", "€": "€", "€€": "€€", "€€€": "€€€" },
   }),
   costTitle: tr({
     es: { gratis: "Acceso libre", "€": "Coste bajo", "€€": "De pago", "€€€": "Coste alto" },
     en: { gratis: "Free access", "€": "Low cost", "€€": "Paid", "€€€": "High-end" },
     de: { gratis: "Freier Zutritt", "€": "Günstig", "€€": "Kostenpflichtig", "€€€": "Gehoben" },
     fr: { gratis: "Accès libre", "€": "Coût faible", "€€": "Payant", "€€€": "Coût élevé" },
+    it: { gratis: "Accesso libero", "€": "Costo basso", "€€": "A pagamento", "€€€": "Costo alto" },
+    pt: { gratis: "Acesso livre", "€": "Custo baixo", "€€": "Pago", "€€€": "Custo alto" },
   }),
-  dayCostFree: tr({ es: "Sin entradas de pago", en: "No paid entries", de: "Keine kostenpflichtigen Eintritte", fr: "Aucune entrée payante" }),
-  dayCostPaid: tr({ es: "%n de pago", en: "%n paid", de: "%n kostenpflichtig", fr: "%n payantes" }),
+  dayCostFree: tr({ es: "Sin entradas de pago", en: "No paid entries", de: "Keine kostenpflichtigen Eintritte", fr: "Aucune entrée payante", it: "Nessun ingresso a pagamento", pt: "Sem entradas pagas" }),
+  dayCostPaid: tr({ es: "%n de pago", en: "%n paid", de: "%n kostenpflichtig", fr: "%n payantes", it: "%n a pagamento", pt: "%n pagas" }),
   // Enlaces de la respuesta: ficha /lugar (solo published), Google Maps por
   // coordenadas (sin API ni JS externo: solo una URL) y web oficial.
-  placePrefix: tr({ es: "/lugar", en: "/en/place", de: "/de/ort", fr: "/fr/lieu" }),
-  gmapsLabel: tr({ es: "Cómo llegar", en: "Directions", de: "Route", fr: "Itinéraire" }),
-  routeLabel: tr({ es: "La ruta del día, en Google Maps", en: "The day's route, in Google Maps", de: "Die Route des Tages in Google Maps", fr: "L'itinéraire du jour, sur Google Maps" }),
-  officialLabel: tr({ es: "Web oficial", en: "Official site", de: "Offizielle Website", fr: "Site officiel" }),
-  photoBy: tr({ es: "Foto:", en: "Photo:", de: "Foto:", fr: "Photo :" }),
-  dateLocale: tr({ es: "es-ES", en: "en-GB", de: "de-DE", fr: "fr-FR" }),
+  placePrefix: tr({ es: "/lugar", en: "/en/place", de: "/de/ort", fr: "/fr/lieu", it: "/it/luogo", pt: "/pt/local" }),
+  gmapsLabel: tr({ es: "Cómo llegar", en: "Directions", de: "Route", fr: "Itinéraire", it: "Come arrivare", pt: "Como chegar" }),
+  routeLabel: tr({ es: "La ruta del día, en Google Maps", en: "The day's route, in Google Maps", de: "Die Route des Tages in Google Maps", fr: "L'itinéraire du jour, sur Google Maps", it: "Il percorso della giornata, su Google Maps", pt: "O percurso do dia, no Google Maps" }),
+  officialLabel: tr({ es: "Web oficial", en: "Official site", de: "Offizielle Website", fr: "Site officiel", it: "Sito ufficiale", pt: "Site oficial" }),
+  photoBy: tr({ es: "Foto:", en: "Photo:", de: "Foto:", fr: "Photo :", it: "Foto:", pt: "Foto:" }),
+  dateLocale: tr({ es: "es-ES", en: "en-GB", de: "de-DE", fr: "fr-FR", it: "it-IT", pt: "pt-PT" }),
   // Herramienta propia: el parte del mar, enlazado en los días de playa.
+  // Rutas COMPROBADAS contra src/pages/ antes de enlazarlas (una URL compuesta
+  // no es una URL que exista): /it/dove-il-mare-e-calmo y /pt/onde-o-mar-esta-calmo.
   seaCalm: {
-    href: tr({ es: "/donde-el-mar-esta-en-calma", en: "/en/where-the-sea-is-calm", de: "/de/wo-das-meer-ruhig-ist", fr: "/fr/ou-la-mer-est-calme" }),
-    text: tr({ es: "El día antes, mira dónde está el mar en calma", en: "The day before, check where the sea is calm", de: "Sehen Sie am Vortag nach, wo das Meer ruhig ist", fr: "La veille, consultez où la mer est calme" }),
+    href: tr({ es: "/donde-el-mar-esta-en-calma", en: "/en/where-the-sea-is-calm", de: "/de/wo-das-meer-ruhig-ist", fr: "/fr/ou-la-mer-est-calme", it: "/it/dove-il-mare-e-calmo", pt: "/pt/onde-o-mar-esta-calmo" }),
+    text: tr({ es: "El día antes, mira dónde está el mar en calma", en: "The day before, check where the sea is calm", de: "Sehen Sie am Vortag nach, wo das Meer ruhig ist", fr: "La veille, consultez où la mer est calme", it: "Il giorno prima, guardi dove il mare è calmo", pt: "Na véspera, veja onde o mar está calmo" }),
   },
   // Portada del dossier de impresión (PDF): el island la rellena al renderizar.
-  printTitleTpl: tr({ es: "Tu Menorca en {N} días", en: "Your Menorca in {N} days", de: "Ihr Menorca in {N} Tagen", fr: "Votre Minorque en {N} jours" }),
-  printTitleOne: tr({ es: "Tu Menorca en 1 día", en: "Your Menorca in 1 day", de: "Ihr Menorca an 1 Tag", fr: "Votre Minorque en 1 jour" }),
-  printGenerated: tr({ es: "plan generado el", en: "plan generated on", de: "Plan erstellt am", fr: "plan généré le" }),
+  printTitleTpl: tr({ es: "Tu Menorca en {N} días", en: "Your Menorca in {N} days", de: "Ihr Menorca in {N} Tagen", fr: "Votre Minorque en {N} jours", it: "La sua Minorca in {N} giorni", pt: "A sua Menorca em {N} dias" }),
+  printTitleOne: tr({ es: "Tu Menorca en 1 día", en: "Your Menorca in 1 day", de: "Ihr Menorca an 1 Tag", fr: "Votre Minorque en 1 jour", it: "La sua Minorca in 1 giorno", pt: "A sua Menorca em 1 dia" }),
+  printGenerated: tr({ es: "plan generado el", en: "plan generated on", de: "Plan erstellt am", fr: "plan généré le", it: "piano generato il", pt: "plano gerado a" }),
   // Gate del dossier (decisión del dueño, 3-jul): el PDF se desbloquea con el correo.
   gateHint: T.gateHint,
   gateThanks: T.gateThanks,
@@ -629,8 +722,8 @@ const ICON: Record<string, string> = {
 
     {/* Navegación del wizard (solo con JS). Sin JS se usa el envío de abajo. */}
     <div class="planner-nav">
-      <button type="button" id="planner-back" class="text-sm font-medium text-piedra-suave transition-colors hover:text-arcilla">← {tr({ es: "Atrás", en: "Back", de: "Zurück", fr: "Précédent" })}</button>
-      <button type="button" id="planner-next" class="rounded-full bg-arcilla px-7 py-3 font-medium text-crema transition-colors hover:bg-terracota">{tr({ es: "Siguiente →", en: "Next →", de: "Weiter →", fr: "Suivant →" })}</button>
+      <button type="button" id="planner-back" class="text-sm font-medium text-piedra-suave transition-colors hover:text-arcilla">← {tr({ es: "Atrás", en: "Back", de: "Zurück", fr: "Précédent", it: "Indietro", pt: "Anterior" })}</button>
+      <button type="button" id="planner-next" class="rounded-full bg-arcilla px-7 py-3 font-medium text-crema transition-colors hover:bg-terracota">{tr({ es: "Siguiente →", en: "Next →", de: "Weiter →", fr: "Suivant →", it: "Avanti →", pt: "Seguinte →" })}</button>
     </div>
 
     <div class="planner-submit-row">
@@ -643,7 +736,7 @@ const ICON: Record<string, string> = {
   {/* ── PORTADA DEL DOSSIER (solo se ve al imprimir/PDF; el island la rellena) ── */}
   <div id="planner-print-cover" class="hidden" aria-hidden="true">
     <Logo large />
-    <p class="cover-tagline">{tr({ es: "El Mediterráneo, sin prisa", en: "The Mediterranean, at ease", de: "Das Mittelmeer, ohne Eile", fr: "La Méditerranée, sans hâte" })}</p>
+    <p class="cover-tagline">{tr({ es: "El Mediterráneo, sin prisa", en: "The Mediterranean, at ease", de: "Das Mittelmeer, ohne Eile", fr: "La Méditerranée, sans hâte", it: "Il Mediterraneo, senza fretta", pt: "O Mediterrâneo, sem pressa" })}</p>
     <hr class="cover-rule" />
     <p id="planner-print-title" class="cover-title"></p>
     <p id="planner-print-sub" class="cover-sub"></p>
@@ -653,11 +746,13 @@ const ICON: Record<string, string> = {
         en: "An itinerary chained by proximity, unhurried and with a quiet-luxury eye. Times are indicative; the island leads.",
         de: "Eine Route, nach Nähe verkettet, ohne Eile und mit dem Blick des stillen Luxus. Die Zeiten sind Richtwerte; die Insel gibt den Takt vor.",
         fr: "Un itinéraire enchaîné par la proximité, sans hâte et avec le discernement du luxe tranquille. Les horaires sont indicatifs ; c'est l'île qui décide.",
+        it: "Un itinerario concatenato per vicinanza, senza fretta e con il criterio del lusso tranquillo. Gli orari sono indicativi; comanda l'isola.",
+        pt: "Um itinerário encadeado por proximidade, sem pressa e com o critério do luxo tranquilo. As horas são indicativas; quem manda é a ilha.",
       })}
     </p>
     <hr class="cover-rule" />
     <p class="cover-foot">
-      calmasociety.com/{tr({ es: "planificador", en: "en/trip-planner", de: "de/reiseplaner", fr: "fr/planificateur" })} · <span id="planner-print-date"></span>
+      calmasociety.com/{tr({ es: "planificador", en: "en/trip-planner", de: "de/reiseplaner", fr: "fr/planificateur", it: "it/pianificatore-di-viaggio", pt: "pt/planeador-de-viagem" })} · <span id="planner-print-date"></span>
     </p>
   </div>
 
@@ -676,6 +771,8 @@ const ICON: Record<string, string> = {
         en: "This plan is yours: adjust it, cross things out, come back to it. Whenever you want more island —the calm-sea report, the agenda, tables chosen with care— we are at calmasociety.com.",
         de: "Dieser Plan gehört Ihnen: Passen Sie ihn an, streichen Sie darin, kehren Sie zu ihm zurück. Wann immer Sie mehr Insel möchten — den Bericht zum ruhigen Meer, den Veranstaltungskalender, sorgfältig ausgewählte Tische —, finden Sie uns auf calmasociety.com.",
         fr: "Ce plan est le vôtre : ajustez-le, raturez-le, revenez-y. Quand vous voudrez plus d'île — le bulletin de mer calme, l'agenda, les tables choisies avec soin —, nous sommes sur calmasociety.com.",
+        it: "Questo piano è suo: lo adatti, lo cancelli, ci torni sopra. Quando vorrà altra isola — il bollettino del mare calmo, il calendario, le tavole scelte con criterio —, ci trova su calmasociety.com.",
+        pt: "Este plano é seu: ajuste-o, risque-o, volte a ele. Quando quiser mais ilha — o boletim do mar calmo, a agenda, as mesas escolhidas com critério —, estamos em calmasociety.com.",
       })}
     </p>
     <p class="cover-foot">calmasociety.com · @calma.society</p>

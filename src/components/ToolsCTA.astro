@@ -13,8 +13,9 @@
  *   <ToolsCTA lang="es" />
  *   <ToolsCTA lang="en" tools={["calm-sea"]} />
  *
- * El planificador aún no existe en italiano ni portugués: en `it`/`pt` ese
- * enlace se omite solo (nunca se genera un enlace roto).
+ * Desde el 4-sep-2026 las dos herramientas existen en los seis idiomas. El
+ * componente sigue omitiendo el enlace que no tenga `href` en ese idioma:
+ * nunca se genera un enlace roto.
  */
 import { type Locale } from "../config/site";
 
@@ -38,7 +39,8 @@ const TOOLS: Record<"calm-sea" | "planner", Tool> = {
       en: "/en/where-the-sea-is-calm",
       fr: "/fr/ou-la-mer-est-calme",
       de: "/de/wo-das-meer-ruhig-ist",
-      // IT y PT todavía no: sin href, el enlace se omite solo — nunca roto.
+      it: "/it/dove-il-mare-e-calmo",
+      pt: "/pt/onde-o-mar-esta-calmo",
     },
     label: {
       es: "¿Dónde está el mar en calma hoy?",
@@ -63,8 +65,8 @@ const TOOLS: Record<"calm-sea" | "planner", Tool> = {
       en: "/en/trip-planner",
       fr: "/fr/planificateur",
       de: "/de/reiseplaner",
-      // El planificador en italiano y portugués aún no está lanzado:
-      // sin `href`, el enlace se omite solo — nunca roto.
+      it: "/it/pianificatore-di-viaggio",
+      pt: "/pt/planeador-de-viagem",
     },
     label: {
       es: "Planifica tu viaje a Menorca",

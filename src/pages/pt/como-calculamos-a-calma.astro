@@ -1,0 +1,174 @@
+---
+// «Como calculamos a calma» (PT) — metodologia aberta do boletim das enseadas.
+// Central para o GEO (citabilidade pela IA) e o E-E-A-T: explica o modelo com honestidade,
+// com dados estruturados FAQPage + BreadcrumbList. É o destino do link «Como calculamos a
+// calma» da ferramenta /pt/onde-o-mar-esta-calmo.
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import JsonLd from "../../components/JsonLd.astro";
+import { SITE } from "../../config/site";
+
+const alternates = {
+  es: "/como-calculamos-la-calma",
+  en: "/en/how-we-calculate-calm",
+  fr: "/fr/comment-on-calcule-le-calme",
+  de: "/de/wie-wir-die-ruhe-berechnen",
+  it: "/it/come-calcoliamo-la-calma",
+  pt: "/pt/como-calculamos-a-calma",
+};
+const abs = (p: string) => new URL(p, SITE.url).href;
+const toolHref = "/pt/onde-o-mar-esta-calmo";
+
+// Uma única fonte para as FAQ visíveis E para o JSON-LD (sem texto duplicado).
+const faqs = [
+  {
+    q: "O que significa «mar calmo» nesta previsão?",
+    a: "Que a enseada está abrigada do vento previsto para hoje e que, por isso, a água costuma estar mais calma. Mede o ABRIGO em relação ao vento, não a segurança do banho: não tem em conta as correntes, o fundo nem os outros perigos.",
+  },
+  {
+    q: "Porque é que o norte e o sul mudam com o vento?",
+    a: "Em Menorca, quem manda é o vento. Quando a Tramontana sopra de norte, a costa sul fica abrigada e calma; quando se levanta o Migjorn de sul, olhe para norte. Cada enseada abre-se para o mar numa direção diferente, por isso o mesmo vento deixa umas calmas e outras agitadas.",
+  },
+  {
+    q: "Isto diz-me se é seguro tomar banho?",
+    a: "Não. É uma estimativa editorial indicativa do estado do mar a partir do vento, não um aviso oficial de segurança. Não substitui as bandeiras das praias nem o critério dos nadadores-salvadores. Muitas enseadas não têm vigilância: redobre a precaução e nunca se banhe sozinho.",
+  },
+  {
+    q: "De onde vêm os dados?",
+    a: "Da previsão do vento do AEMET (a agência meteorológica nacional espanhola) para cada concelho, atualizada todos os dias e sempre datada. O contorno do mapa vem do OpenStreetMap. A orientação de cada enseada é um dado editorial nosso, tratado à mão.",
+  },
+  {
+    q: "Porquê escalões (mar calmo / alguma ondulação / mar agitado) e não uma percentagem?",
+    a: "Porque uma percentagem exata seria falsa precisão: o vento previsto tem a sua margem e pode rodar. Comunicar por escalões é mais honesto e mais útil na hora de escolher para que enseada ir.",
+  },
+  {
+    q: "Com que frequência é atualizado?",
+    a: "Todas as manhãs, automaticamente, com a última previsão do AEMET. Também pode arrastar a linha temporal para ver a previsão dos próximos dias, dividida entre manhã e tarde.",
+  },
+  {
+    q: "E as alforrecas?",
+    a: "Assinalamos com uma alforreca cor-de-rosa as enseadas para as quais o vento empurra há horas. Não é um avistamento: ninguém foi lá ver. É uma condição de chegada, calculada com o mesmo vento do AEMET, e só vale para hoje. Manda sempre o que vir no local: as bandeiras e os nadadores-salvadores.",
+  },
+  {
+    q: "Como se calcula essa possibilidade de alforrecas?",
+    a: "A alforreca não nada: deriva, e o vento que desloca a água leva-a consigo. Olhamos para as últimas 48 horas de vento (dando mais peso ao que aconteceu há um dia, o tempo que demora a notar-se) e contamos quantas horas entraram de frente para a enseada com força suficiente para arrastar a água: abaixo dos 18 km/h, mais ou menos, o vento quase não mexe a superfície. Por isso o sinal pode aparecer com o mar já calmo: o que as aproximou foi o vento de anteontem, não o de agora.",
+  },
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Início", item: abs("/pt/") },
+        { "@type": "ListItem", position: 2, name: "Onde o mar está calmo", item: abs(toolHref) },
+        { "@type": "ListItem", position: 3, name: "Como calculamos a calma", item: abs("/pt/como-calculamos-a-calma") },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Como calculamos a calma"
+  description="A metodologia aberta por trás da previsão diária das enseadas de Menorca: cruzamos o vento do AEMET com a orientação de cada enseada para estimar o seu abrigo. O que mede e o que não mede."
+  locale="pt"
+  alternates={alternates}
+>
+  <article class="mx-auto max-w-prosa px-5 pb-8 pt-12 sm:px-8 sm:pt-16">
+    <nav aria-label="Trilho de navegação" class="text-xs text-piedra-suave">
+      <a href="/pt/" class="hover:text-terracota">Início</a>
+      <span aria-hidden="true"> · </span>
+      <a href={toolHref} class="hover:text-terracota">Onde o mar está calmo</a>
+    </nav>
+
+    <p class="mt-4 text-xs font-semibold uppercase tracking-[0.25em] text-oro">Calma Society · Menorca</p>
+    <h1 class="mt-3 font-display text-4xl text-tinta sm:text-5xl">Como calculamos a calma</h1>
+    <p class="lead mt-5">
+      Por trás do mapa diário há um modelo simples e aberto. Explicamo-lo aqui sem letras
+      pequenas: o que mede, como funciona e, sobretudo, o que <em>não</em> mede.
+    </p>
+
+    <div class="article-body mt-10">
+      <h2>O que medimos (e o que não medimos)</h2>
+      <p>
+        Medimos o <strong>abrigo do mar em relação ao vento</strong>: até que ponto cada enseada
+        está protegida do vento previsto para hoje, comunicado em três escalões —
+        <strong>mar calmo</strong>, <strong>alguma ondulação</strong> e <strong>mar agitado</strong>.
+        É uma estimativa editorial indicativa para o ajudar a escolher uma enseada com a água
+        serena.
+      </p>
+      <p>
+        <strong>Não medimos a segurança do banho.</strong> Esta previsão não tem em conta as
+        correntes, o fundo nem os outros perigos, e não substitui as bandeiras das praias nem o
+        critério dos nadadores-salvadores. É um guia para encontrar a calma, não um aviso oficial.
+      </p>
+
+      <h2>Como o calculamos, passo a passo</h2>
+      <ol>
+        <li>
+          <strong>O vento do dia.</strong> Tomamos a previsão de vento do <strong>AEMET</strong>
+          para o concelho de cada enseada: de onde sopra e com que força.
+        </li>
+        <li>
+          <strong>A orientação da enseada.</strong> Cada enseada abre-se para o mar numa direção
+          precisa. Guardamos esse dado, tratado à mão, para cada uma delas.
+        </li>
+        <li>
+          <strong>O cruzamento.</strong> Se o vento entra a direito na enseada, o mar agita-se e o
+          abrigo desce; se a enseada volta as costas ao vento, a água acalma. Desse cálculo sai o
+          escalão do dia.
+        </li>
+      </ol>
+      <p>
+        Usamos escalões em vez de uma percentagem exata, e é de propósito: a previsão do vento tem
+        a sua margem e o vento pode rodar à tarde. Os escalões são mais honestos.
+      </p>
+
+      <h2>A previsão dos próximos dias</h2>
+      <p>
+        Além do boletim de hoje, pode arrastar a <strong>linha temporal</strong> para ver como
+        evolui o mar de cada enseada nos próximos dias, dividida entre manhã e tarde. O vento geral
+        e o estado das enseadas mudam consigo à medida que desloca o cursor.
+      </p>
+
+      <h2>Fontes e atualizações</h2>
+      <p>
+        O vento vem do <strong>AEMET</strong> (dados oficiais, atualizados todos os dias e sempre
+        datados). O contorno do mapa vem do <strong>OpenStreetMap</strong>. Quando num dia não
+        conseguimos atualizar, mantemos o último boletim disponível e assinalamo-lo: nunca
+        mostramos um falso «hoje».
+      </p>
+
+      <h2>Limites honestos</h2>
+      <ul>
+        <li>Não mede as correntes, o fundo nem os perigos do banho.</li>
+        <li>Não deteta alforrecas: quando assinalamos uma enseada, dizemos que o vento empurra para lá, não que as haja.</li>
+        <li>Não é um aviso de segurança e não substitui as bandeiras nem os nadadores-salvadores.</li>
+        <li>Muitas enseadas não têm vigilância: redobre a precaução.</li>
+      </ul>
+
+      <h2>Perguntas frequentes</h2>
+      {faqs.map((f) => (
+        <div class="mt-6">
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
+
+      <p class="mt-10">
+        <a href={toolHref} class="font-medium">← Ver a previsão das enseadas de hoje</a>
+      </p>
+    </div>
+
+    <JsonLd schema={jsonLd} />
+  </article>
+</BaseLayout>

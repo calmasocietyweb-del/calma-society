@@ -1,6 +1,6 @@
 ---
 /**
- * Preguntas frecuentes de "Atardeceres y copas" (ES/EN).
+ * Preguntas frecuentes de "Atardeceres y copas" (los seis idiomas activos).
  *
  * Una sola fuente para el FAQ VISIBLE y el JSON-LD `FAQPage` (sin duplicar
  * texto), igual que en "Cómo calculamos la calma". Respuestas concretas,
@@ -14,13 +14,13 @@ import JsonLd from "./JsonLd.astro";
 import type { Locale } from "../config/site";
 import { useTranslations } from "../i18n/ui";
 
-/* Esta herramienta está desplegada POR MERCADOS: hoy solo existe en español,
-   inglés y francés. Declararlo en el tipo (en vez de dejar un ternario que caía
-   a inglés en silencio) hace que pasarle un idioma que aún no tiene textos sea
-   un ERROR DE COMPILACIÓN, no una página alemana escrita en inglés. Al traducir
-   la herramienta, se añade el idioma aquí y TypeScript señala todo lo que falta
-   por rellenar (KAN-133). */
-type ToolLocale = Extract<Locale, "es" | "en" | "fr" | "de">;
+/* Desde el 4-sep-2026 esta herramienta existe en los SEIS idiomas activos.
+   Se sigue declarando en el tipo (en vez de dejar un ternario que caía a inglés
+   en silencio) para que pasarle un idioma que aún no tenga textos sea un ERROR
+   DE COMPILACIÓN, no una página alemana escrita en inglés. Al dar de alta un
+   idioma nuevo se añade aquí y TypeScript señala todo lo que falta por rellenar
+   (KAN-133). */
+type ToolLocale = Extract<Locale, "es" | "en" | "fr" | "de" | "it" | "pt">;
 
 interface Props {
   locale: ToolLocale;
@@ -168,9 +168,79 @@ const faqsDe = [
   },
 ];
 
+const faqsIt = [
+  {
+    q: "A che ora tramonta il sole a Minorca?",
+    a: "Dipende dalla stagione. In piena estate (giugno–luglio) il sole tramonta verso le 21:15–21:20; in primavera e in autunno, tra le 18:30 e le 20:30; e nel cuore dell'inverno, intorno alle 17:20. L'ora d'oro arriva nei 30-40 minuti precedenti. Più in alto in questa pagina trova la tabella mese per mese con gli orari esatti di alba e tramonto.",
+  },
+  {
+    q: "Dove si vedono i tramonti più belli di Minorca?",
+    a: "I classici dell'ovest e del nord: la Cova d'en Xoroi, sulla scogliera di Cala'n Porter, dove il tramonto si guarda da dentro la roccia; il Cap de Cavalleria e il Faro di Favàritx, aspri e drammatici; Punta Nati e il Pont d'en Gil, a nord-ovest di Ciutadella, nella loro versione più pura; e, sul mare del nord, l'Isabella Beach Club alle Platges de Fornells. Quasi nessuno ha parcheggio, ed è per questo che la scelta più comoda è arrivare con autista.",
+  },
+  {
+    q: "Dove vedere l'alba a Minorca?",
+    a: "Guardando a est. Es Castell e Cales Fonts rivendicano di essere tra i primi punti di Spagna a veder sorgere il sole; il Faro di Favàritx, sopra il suo paesaggio lunare, vale tanto per l'alba quanto per il tramonto; e la zona di Punta Prima, di fronte all'Illa de l'Aire, regala un'alba limpida sul mare. Sono piani di primo mattino: ideali con qualcuno che guidi al posto suo.",
+  },
+  {
+    q: "Quali sono i migliori beach club di Minorca?",
+    a: "Tra i più noti: il Purobeach Menorca, l'Isabella Beach Club (Fornells), l'Artrutx Sea Club (Cala en Bosc), il Cape Nao sopra Cala Galdana, il Bambú a Binibèquer e l'Arena Beach Club. Sono posti da giorno che si allungano fino al drink del tramonto; d'estate conviene prenotare, soprattutto per cena.",
+  },
+  {
+    q: "Dove bere un buon drink o un cocktail a Minorca?",
+    a: "Il porto di Maó e quello di Ciutadella concentrano i banconi migliori. A Maó, Vida Una (vermut e cocktail); sulla costa ovest, Jigger, a Cala Blanca, con cocktail d'autore; e BB Cocktail Bar, molto ben valutato. Sono piani da bicchiere tranquillo, non da discoteca.",
+  },
+  {
+    q: "C'è vita notturna o ci sono discoteche a Minorca?",
+    a: "C'è, e sta tutta in due posti. Le cinque discoteche della metà ovest dell'isola stanno una accanto all'altra su sessanta metri di banchina, nel porto di Ciutadella: Jaleo (dentro una grotta naturale), IguanaPort, Jazzbah, Kopas e Lateral. A Maó la notte è sulla salita del porto: Akelarre, Ama-Gi e Mambo Deluxe. Fuori da questi due punti non c'è quasi nulla: a Cala en Porter la musica all'aperto deve finire alle 23:30 per regolamento, e a Cales Fonts i ristoranti non mettono musica alta per decisione del porto. Oltre alle discoteche, la Cova d'en Xoroi passa da lounge del tramonto a club in estate, ed Es Claustre programma concerti all'aperto in un chiostro del Settecento, da maggio a settembre, con jazz la domenica.",
+  },
+  {
+    q: "Si può arrivare senza auto? Perché consigliate un autista?",
+    a: "Perché è la scelta più comoda e più sensata. Sulle scogliere del tramonto e nei porti non c'è quasi mai dove parcheggiare —e d'estate è tutto pieno già all'alba—, e dopo il drink guidare è l'ultima cosa che si desidera. Per questo offriamo un transfer con autista privato (Mercedes Classe S o Classe V) dal primo tramonto all'ultimo cocktail: l'accompagniamo e la veniamo a prendere.",
+  },
+  {
+    q: "Quando sono aperti questi locali?",
+    a: "Quasi tutto è stagionale: la stagione forte va da maggio–giugno a settembre–ottobre, e molti beach club e locali del tramonto chiudono in inverno. Orari e capienza cambiano ogni anno, quindi conviene confermare sul sito o sull'Instagram di ogni locale prima di andare.",
+  },
+];
+
+const faqsPt = [
+  {
+    q: "A que horas se põe o sol em Menorca?",
+    a: "Depende da época. Em pleno verão (junho–julho) o sol põe-se por volta das 21:15–21:20; na primavera e no outono, entre as 18:30 e as 20:30; e no mais fundo do inverno, cerca das 17:20. A hora dourada chega nos 30 a 40 minutos anteriores. Mais acima nesta página encontra a tabela mês a mês com as horas exatas do nascer e do pôr do sol.",
+  },
+  {
+    q: "Onde se veem os melhores pores do sol de Menorca?",
+    a: "Os clássicos do oeste e do norte: a Cova d'en Xoroi, na falésia de Cala'n Porter, onde o pôr do sol se vê de dentro da rocha; o Cap de Cavalleria e o Farol de Favàritx, agrestes e dramáticos; Punta Nati e o Pont d'en Gil, a noroeste de Ciutadella, na sua versão mais pura; e, sobre o mar do norte, o Isabella Beach Club nas Platges de Fornells. Quase nenhum tem estacionamento, daí que o mais cómodo seja ir com motorista.",
+  },
+  {
+    q: "Onde ver o nascer do sol em Menorca?",
+    a: "Olhando para leste. Es Castell e Cales Fonts gabam-se de ser dos primeiros pontos de Espanha a ver o sol nascer; o Farol de Favàritx, sobre a sua paisagem lunar, serve tanto para o nascer como para o pôr do sol; e a zona de Punta Prima, em frente à Illa de l'Aire, oferece um nascer do sol limpo sobre o mar. São planos de madrugada: ideais com alguém que conduza por si.",
+  },
+  {
+    q: "Quais são os melhores beach clubs de Menorca?",
+    a: "Entre os mais conhecidos: o Purobeach Menorca, o Isabella Beach Club (Fornells), o Artrutx Sea Club (Cala en Bosc), o Cape Nao sobre Cala Galdana, o Bambú em Binibèquer e o Arena Beach Club. São sítios de dia que se prolongam até ao copo do pôr do sol; no verão convém reservar, sobretudo para jantar.",
+  },
+  {
+    q: "Onde tomar um bom copo ou cocktail em Menorca?",
+    a: "O porto de Maó e o de Ciutadella concentram os melhores balcões. Em Maó, o Vida Una (vermute e cocktails); na costa oeste, o Jigger, em Cala Blanca, com coquetelaria de autor; e o BB Cocktail Bar, muito bem avaliado. São planos de copo tranquilo, não de discoteca.",
+  },
+  {
+    q: "Há vida noturna ou discotecas em Menorca?",
+    a: "Há, e cabe em dois sítios. As cinco discotecas da metade oeste da ilha estão lado a lado em sessenta metros de cais, no porto de Ciutadella: Jaleo (dentro de uma gruta natural), IguanaPort, Jazzbah, Kopas e Lateral. Em Maó, a noite está na encosta do porto: Akelarre, Ama-Gi e Mambo Deluxe. Fora destes dois pontos quase não há nada: em Cala en Porter a música ao ar livre tem de acabar às 23:30 por regulamento, e em Cales Fonts os restaurantes não põem música alta por decisão do porto. Além das discotecas, a Cova d'en Xoroi passa de lounge de pôr do sol a club no verão, e o Es Claustre programa concertos ao ar livre num claustro do século XVIII, de maio a setembro, com jazz aos domingos.",
+  },
+  {
+    q: "É possível chegar sem carro? Porque recomendam motorista?",
+    a: "Porque é o mais cómodo e o mais sensato. Nas falésias do pôr do sol e nos portos quase nunca há onde estacionar —e no verão enche logo ao amanhecer—, e depois do copo conduzir é a última coisa que apetece. Por isso oferecemos transfer com motorista privado (Mercedes Classe S ou Classe V) do primeiro pôr do sol ao último cocktail: levamo-lo e vamos buscá-lo.",
+  },
+  {
+    q: "Quando abrem estes sítios?",
+    a: "Quase tudo é sazonal: a época forte vai de maio–junho a setembro–outubro, e muitos beach clubs e locais de pôr do sol fecham no inverno. Os horários e as lotações mudam todos os anos, por isso convém confirmar no site ou no Instagram de cada sítio antes de ir.",
+  },
+];
+
 /* Búsqueda por idioma, no escalera de ternarios: al ampliar `ToolLocale` estos
    registros dejan de compilar hasta que se rellenan. */
-const faqs = { es: faqsEs, en: faqsEn, fr: faqsFr, de: faqsDe }[locale];
+const faqs = { es: faqsEs, en: faqsEn, fr: faqsFr, de: faqsDe, it: faqsIt, pt: faqsPt }[locale];
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -189,6 +259,8 @@ const eyebrow = {
   en: "All about Menorca after dark",
   fr: "Tout sur les nuits de Minorque",
   de: "Alles über Menorca nach Einbruch der Dunkelheit",
+  it: "Tutto sulla notte di Minorca",
+  pt: "Tudo sobre a noite de Menorca",
 }[locale];
 ---
 
